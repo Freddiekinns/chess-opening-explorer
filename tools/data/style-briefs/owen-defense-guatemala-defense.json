@@ -1,0 +1,104 @@
+{
+  "slug": "owen-defense-guatemala-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Owen Defense: Guatemala Defense",
+    "eco": "B00",
+    "moves": "1. e4 b6 2. d4 Ba6",
+    "fen": "rn1qkbnr/p1pppppp/bp6/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "owen-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Owen Defence 1.e4 b6 2.d4 Black plays 2...Ba6, the Guatemala move, to trade off White's light-squared bishop if it develops to d3 or e2, a trappy way to disrupt White's development. White simply plays 3.Bxa6 Nxa6 4.Nf3 or Qe2 and enjoys a centre and space advantage. It is a rare, offbeat sideline rated slightly worse for Black.",
+  "white_ideas": [
+    {
+      "idea": "Take the bishop with Bxa6 or play Nf3 and Nc3 and keep a pawn centre"
+    },
+    {
+      "idea": "Use the e4/d4 space advantage to build an attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the light-squared bishops and hit the centre with ...e6, ...Nf6 and ...c5"
+    },
+    {
+      "idea": "Aim for ...Qe7 and ...Nf6 with quick piece play"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn centre on e4/d4 against Black fianchetto pawns, a Pirc/Alekhine-style set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays an eccentric set-up; White gets a normal edge. Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "Slightly unsound for Black but not refuted; White gets an easy edge."
+    },
+    "structure": {
+      "notes": "White's centre against Black's hypermodern pieces, left in tension: Flexible."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever choose it; offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easy for White; Black needs careful play. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "hypermodern centre",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Offbeat but not forcing; White enjoys an easy edge."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Considered slightly unsound for Black; White gets an easy edge."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "White's centre vs a hypermodern set-up, left in tension."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Not a theory line; Dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre"
+      ],
+      "reason": "Black lets White build a centre and attacks it with pieces and breaks."
+    }
+  }
+}

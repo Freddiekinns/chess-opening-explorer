@@ -1,0 +1,108 @@
+{
+  "slug": "danish-gambit-accepted-schlechter-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Danish Gambit Accepted: Schlechter Defense",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 d5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3p4/2B1P3/8/PB3PPP/RN1QK1NR w KQkq - 0 6"
+  },
+  "parent": "danish-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Danish Gambit Accepted Black plays 5...d5, returning a pawn to counter the bishops. White plays 6.Bxd5 or 6.exd5, regaining one pawn with a lead in development, and the b2 bishop and c4 bishop aim at the kingside. Black must be careful with the king, but the extra material gives Black a safe edge with accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Regain one pawn with Bxd5 and attack the Black king with the bishops and queen"
+    },
+    {
+      "idea": "Use the open diagonals and quick development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Neutralise the bishops with ...d5 and ...Nf6 and consolidate"
+    },
+    {
+      "idea": "Trade queens and keep the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with White bishops on b2 and c4"
+    },
+    {
+      "structure": "Black pawn majority on the kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open, forcing play with White down material for development."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White is two pawns down at the root; 5...d5 returns one."
+    },
+    "soundness": {
+      "notes": "Danish Gambit is unsound against accurate defence."
+    },
+    "structure": {
+      "notes": "Central pawns are traded and lines are open."
+    },
+    "approach": {
+      "notes": "Strong players hardly choose the Danish."
+    },
+    "level": {
+      "reason": "intermediate",
+      "notes": "Gambit lines with forcing tactics, though dubious."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Open diagonals"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "White is down material for development."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives two pawns for development; Black can keep material."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can return a pawn and stay comfortably ahead."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Central pawns are traded and the bishops rake open diagonals."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom choose the Danish."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs known lines but dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White uses the bishops and quick development against the king."
+    }
+  }
+}

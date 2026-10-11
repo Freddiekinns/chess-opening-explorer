@@ -1,0 +1,44 @@
+{
+  "slug": "sicilian-defense-katalimov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Katalimov Variation",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 b6",
+    "fen": "rnbqkbnr/p2ppppp/1p6/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "Black plays ...b6 and ...Bb7 against 2.Nf3, aiming for a hypermodern pressure on e4 and the long diagonal instead of the usual Sicilian set-ups. White typically takes the centre with 3.d4 cxd4 4.Nxd4 Bb7 5.Nc3 and gets a comfortable game. Reading is from the moves; no subtree data was given.",
+  "white_ideas": [
+    { "idea": "Open the position with d4 and play Nc3 and Bd3 with a space edge" },
+    { "idea": "Use the extra central space and the e4 pawn against the b7 bishop" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the queen's bishop and press on e4 and the long diagonal" },
+    { "idea": "Develop ...Nf6, ...e6 and ...Be7 with a flexible, solid structure" }
+  ],
+  "typical_structures": [
+    { "structure": "Open Sicilian structure with Black bishop on b7 and a half-open c-file" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, hypermodern, with White having a small edge in space." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Playable but considered slightly inferior to main Sicilians." },
+    "structure": { "notes": "The Open Sicilian asymmetry with a half-open c-file." },
+    "approach": { "notes": "Rare at strong level." },
+    "level": { "reason": "understanding", "notes": "Needs understanding of the fianchetto structure but little theory." }
+  },
+  "plan_phrases": ["fianchetto", "pressure on e4"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "Quiet development with no clear risk on either side." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.65, "reason": "Playable, if slightly inferior for Black." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "An asymmetric Sicilian centre with a half-open c-file." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom choose 2...b6." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plan-based play with little theory." },
+    "plans": { "value": ["fianchetto"], "reason": "The b7 bishop on the long diagonal defines Black's play." }
+  }
+}

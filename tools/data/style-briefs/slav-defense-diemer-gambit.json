@@ -1,0 +1,121 @@
+{
+  "slug": "slav-defense-diemer-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Diemer Gambit",
+    "eco": "D10",
+    "moves": "1. d4 d5 2. c4 c6 3. e4",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PPP3/8/PP3PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "slav-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White plays 3.e4 against the Slav, a Diemer-Duhm style gambit: 3...dxe4 4.Nc3 and White develops quickly with f3, Bg5, Bc4 or Nxe4 for the pawn. Black has a solid pawn on c6 and the extra pawn, and can usually return it to get a good position. White looks for a kingside attack.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, f3 or Bg5 for a pawn, using the open e-file and lines to attack"
+    },
+    {
+      "idea": "Play Bc4 and Nxe4 hitting f7 and the kingside"
+    },
+    {
+      "idea": "Recapture on e4 with a knight and keep a lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4, play ...e5 or ...Nf6 and return the pawn at the right moment"
+    },
+    {
+      "idea": "Develop the c8 bishop first with ...Bf5 or ...Bg4"
+    },
+    {
+      "idea": "Keep the extra pawn and trade queens"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black extra pawn on e4, or the pawn returned and an open centre"
+    },
+    {
+      "structure": "Open e- and d-files with Black's c6/d5 structure broken"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with quick development against a king that has not castled; forcing and tactical if Black grabs and plays on."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "3...dxe4 wins a pawn that Black can often keep for a time but gives back to get a safe position."
+    },
+    "soundness": {
+      "notes": "Strong players think the Diemer gambits against the Slav do not give enough for the pawn."
+    },
+    "structure": {
+      "notes": "The centre opens after ...dxe4: open."
+    },
+    "approach": {
+      "notes": "Played for surprise, seldom chosen by strong players; offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on the king",
+    "open lines for the pieces"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...e6",
+      "moves": "1. d4 d5 2. c4 c6 3. e4 e6",
+      "how": "Black ignores the gambit and heads for a French-style structure with ...dxe4 later."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A White gambit with open lines and quick attacking ideas."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.88,
+      "reason": "White offers the e4 pawn for development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.6,
+      "reason": "Considered not enough for the pawn.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre opens after ...dxe4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom chosen against the Slav by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.65,
+      "reason": "A dubious gambit is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White gives a pawn for development and attack."
+    }
+  }
+}

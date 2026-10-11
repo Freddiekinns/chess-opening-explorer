@@ -72,8 +72,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **Style tags tail**: 848 variations (16% of pages, 0.8% of games); plan in
-  `archive.md`, runbook in `tools/style-tags/README.md`.
+- **Style tags tail**: 568 variations left (tail-38 to tail-66; #174 did 280);
+  plan in `archive.md`, runbook in `tools/style-tags/README.md`.
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.

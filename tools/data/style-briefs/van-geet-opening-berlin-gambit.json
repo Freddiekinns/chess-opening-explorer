@@ -1,0 +1,112 @@
+{
+  "slug": "van-geet-opening-berlin-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Berlin Gambit",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. d4 d5 3. Nc3 dxe4 4. d5",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/3P4/4p3/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "nimzowitsch-defense-scandinavian-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 Nc6 2.d4 d5 3.Nc3 dxe4 4.d5 White gains a tempo on the c6 knight, which usually retreats to e5, and plays for a lead in development with Qd4 or Bf4 while Black is a pawn up. Black tries to consolidate with ...Ng6 or ...Nf6 and ...e6. The name and exact theory are unfamiliar, so this is reasoned from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Gain a tempo with d5 and follow with Qd4, Bf4 or Bg5 against the displaced knight"
+    },
+    {
+      "idea": "Develop quickly and regain the e4 pawn or attack the exposed knight on e5"
+    },
+    {
+      "idea": "Use the cramping pawn on d5 to restrict Black"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra e4 pawn and move the knight to a safe square (...Ne5, ...Ng6)"
+    },
+    {
+      "idea": "Break the d5 pawn with ...e6 or ...c6"
+    },
+    {
+      "idea": "Trade down White lead in development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn on d5 against a Black pawn on e4 with Black a pawn up, French-like asymmetry"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early tempo gains and a pawn down for White make for concrete play with tactics around the knight on e5."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black has captured on e4 and can keep the pawn if White does not regain it by force."
+    },
+    "soundness": {
+      "notes": "Black can simply hold the pawn; White has no clear compensation."
+    },
+    "structure": {
+      "notes": "d5 pawn cramps Black while pieces stay mobile, lines open quickly."
+    },
+    "approach": {
+      "notes": "A rare sideline of an uncommon defence, seldom chosen by strong White players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory and fairly clear plans, but it is not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "space advantage",
+    "attack the displaced knight"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White is a pawn down and plays for fast tactics against the knight."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "Black holds the e4 pawn unless White wins it back by development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can keep the pawn and White has only a short lead in development."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "White d5 pawn against Black e-pawn gives a French-like asymmetry with open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rare line of a rare defence, played for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Few forcing lines to learn, but the position is awkward to play well."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "space_advantage"
+      ],
+      "reason": "White aims at a lead in development and the d5 spearhead."
+    }
+  }
+}

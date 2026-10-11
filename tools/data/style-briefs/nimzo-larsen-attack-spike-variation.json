@@ -1,0 +1,115 @@
+{
+  "slug": "nimzo-larsen-attack-spike-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Spike Variation",
+    "eco": "A01",
+    "moves": "1. b3 Nf6 2. Bb2 g6 3. g4",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/6P1/1P6/PBPPPP1P/RN1QKBNR b KQkq - 0 3"
+  },
+  "parent": "nimzo-larsen-attack-indian-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.b3 Nf6 2.Bb2 g6, White plays 3.g4, the Spike, grabbing kingside space and threatening g5 to kick the knight away from the long diagonal. Black cannot take on g4 because Bxh8 follows once the f6 knight moves, so Black plays 3...Bg7 or ...d5 and counters in the centre. White's king is loosened, so the game is double-edged.",
+  "white_ideas": [
+    {
+      "idea": "Push g5 to drive the knight away and open the long diagonal"
+    },
+    {
+      "idea": "Play Bg2, Nf3 and d3 or e3, supported by the b2 bishop"
+    },
+    {
+      "idea": "Use space on the kingside and keep the king flexible"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop ...Bg7 and attack the loosened g4 with ...d5 and ...h5"
+    },
+    {
+      "idea": "Strike with ...c5 and ...d5 in the centre"
+    },
+    {
+      "idea": "Meet g5 with ...Nh5 or ...Ng4 tricks"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on b3, g4 against Black fianchetto on g7"
+    },
+    {
+      "structure": "Flexible centre with long diagonals contested"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The early g4 loosens White and invites mutual attacks and sharp tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given: 3...Nxg4 fails to Bxh8 and the position stays even in material."
+    },
+    "soundness": {
+      "notes": "Playable and played by Larsen, though it weakens the king."
+    },
+    "structure": {
+      "notes": "The centre is undecided and flank pawns decide the middlegame."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players and chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans need care but the theory is small."
+    }
+  },
+  "plan_phrases": [
+    "Pawn storm",
+    "Fianchetto",
+    "Long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "The early g4 loosens White and invites mutual attacks and sharp tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No pawn is given: 3...Nxg4 fails to Bxh8 and the position stays even in material."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Playable and played by Larsen, though it weakens the king."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is undecided and flank pawns decide the middlegame."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Rarely played by strong players and chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans need care but the theory is small."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "fianchetto"
+      ],
+      "reason": "White's g-pawn runs at Black's kingside and the b2 bishop works on the long diagonal."
+    }
+  }
+}

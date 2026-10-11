@@ -1,0 +1,46 @@
+{
+  "slug": "english-opening-mikenas-carls",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Mikenas-Carls, Sicilian",
+    "eco": "A19",
+    "moves": "1. c4 Nf6 2. Nc3 e6 3. e4 c5",
+    "fen": "rnbqkb1r/pp1p1ppp/4pn2/2p5/2P1P3/2N5/PP1P1PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "english-opening-mikenas-carls-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White claims the centre with e4 and Black counters ...c5, reaching a Sicilian-style structure. The most played 4.e5 Ng8 5.Nf3 Nc6 6.d4 cxd4 7.Nxd4 is an Open Sicilian with an extra tempo structure: White has space on e5 and Black has to find play against it. The alternative 4.Nf3 Nc6 5.d4 cxd4 6.Nxd4 gives a normal Sicilian-like game.",
+  "white_ideas": [
+    { "idea": "Gain space with 4.e5, then develop with Nf3, d4 and Bf4 or Bb5 pinning." },
+    { "idea": "Exploit the knight's retreat to g8 to build a lead in the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Attack e5 with ...Nc6, ...f6 or ...d6 and open the position with ...cxd4." },
+    { "idea": "Re-route the knight and aim for ...b5 or ...d5 breaks." }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian-like asymmetric centre: White e5 pawn and space, Black half-open c-file." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "A space-for-time trade with an unbalanced centre but no early forcing sequence." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Playable for both sides; used occasionally by strong players." },
+    "structure": { "notes": "Asymmetric centre with a half-open c-file for Black, as in Sicilians." },
+    "approach": { "notes": "Less common but respectable; strong players do play 3.e4 against the Anglo-Indian." },
+    "level": { "reason": "understanding", "notes": "Plans around the e5 pawn are clear; little theory." }
+  },
+  "plan_phrases": ["space advantage", "attack e5", "Sicilian-style break"],
+  "sublines_that_differ": [
+    { "name": "4.Nf3 Nc6 5.d4", "moves": "1. c4 Nf6 2. Nc3 e6 3. e4 c5 4. Nf3 Nc6 5. d4", "how": "Heads for a normal Open Sicilian without the 4.e5 space grab." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Unbalanced pawn structure but no forcing early tactics." },
+    "gambit": { "value": "none", "confidence": 0.97, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A playable line for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Sicilian-style asymmetric centre with a half-open c-file." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "Less common but chosen by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are clear but need positional judgment." },
+    "plans": { "value": ["space_advantage"], "reason": "White gains space with e5 and Black must find counterplay." }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "fried-fox-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Fried Fox Defense",
+    "eco": "B00",
+    "moves": "1. e4 f6 2. d4 Kf7",
+    "fen": "rnbq1bnr/pppppkpp/5p2/8/3PP3/8/PPP2PPP/RNBQKBNR w KQ - 1 3"
+  },
+  "parent": "barnes-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black plays 1...f6 and after 2.d4 steps with 2...Kf7, giving up castling and blocking development. White simply develops with Nf3, Nc3 and Bc4+ or a quick e5 push, and Black's king is exposed. The line is a joke opening that scores through surprise.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3 and Nc3, and use Bc4+ or Qh5+ ideas"
+    },
+    {
+      "idea": "Take space with e5 and a strong centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Re-route the king to g6 or e8 after development"
+    },
+    {
+      "idea": "Hope White overpresses against the exposed king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn centre e4/d4 against Black f6 and e6/d5"
+    },
+    {
+      "structure": "Black king uncastled on f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's king is exposed so play is risky for Black."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit offered."
+    },
+    "soundness": {
+      "notes": "Considered unsound: the king is exposed with no compensation."
+    },
+    "structure": {
+      "notes": "White has a big centre but Black can strike with ...e5."
+    },
+    "approach": {
+      "notes": "No strong player plays it."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so not a repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Exposed king"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Black's king is exposed so one slip loses quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "Blocks development and exposes the king for no gain."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "White's centre is not fixed and Black can challenge it."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players do not play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.65,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White takes the centre and space."
+    }
+  }
+}

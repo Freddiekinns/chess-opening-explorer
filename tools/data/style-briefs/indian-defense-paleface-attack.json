@@ -1,0 +1,112 @@
+{
+  "slug": "indian-defense-paleface-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Paleface Attack, Blackmar-Diemer Gambit Deferred",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. f3 d5 3. e4",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3PP3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "paleface-attack",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Against 1.d4 Nf6 White plays 2.f3 and 3.e4 after ...d5, a Blackmar-Diemer Gambit deferred. If Black takes with 3...dxe4 4.Nc3 reaches a BDG-type game, while Black can strike with the Kraus-Muhlherr counter-gambit 3...e5 4.dxe5 Nxe4. White builds a broad centre and attacks quickly, but Black's counterplay is easy.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with e4, Nc3 and attack on the kingside"
+    },
+    {
+      "idea": "Develop with Bf4 and Qd2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and consolidate, or strike with ...e5"
+    },
+    {
+      "idea": "Use extra pawn and ...c5 or ...e5 breaks"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "BDG-like open centre"
+    },
+    {
+      "structure": "Counter-gambit open lines after ...e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Gambit tactics with exposed kings."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "3.e4 dxe4 gives a pawn that Black can keep."
+    },
+    "soundness": {
+      "notes": "Strong players consider the f3/e4 plans dubious."
+    },
+    "structure": {
+      "notes": "The centre clashes and opens."
+    },
+    "approach": {
+      "notes": "Rare and played mostly for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so not a good first choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Kraus-Muhlherr Counter Gambit",
+      "moves": "1. d4 Nf6 2. f3 d5 3. e4 e5 4. dxe5 Nxe4",
+      "how": "Black strikes back in the centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Gambit play with an open centre and exposed kings."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "3.e4 offers a pawn that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Black can consolidate or counter without risk."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawn exchanges and open lines follow."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose 2.f3."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for development and an attack for the pawn."
+    }
+  }
+}

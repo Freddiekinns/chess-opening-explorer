@@ -1,0 +1,105 @@
+{
+  "slug": "zukertort-opening-basman-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Basman Defense",
+    "eco": "A04",
+    "moves": "1. Nf3 h6",
+    "fen": "rnbqkbnr/ppppppp1/7p/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Basman's 1...h6 against 1.Nf3 is a waiting move: Black prepares ...g5 or ...e5 and ...d5 with an odd kingside structure. White replies with a normal centre, e4 and d4 or c4 and g3, and gets a free hand. It is an offbeat choice seen mostly for surprise and does not give Black a concrete advantage.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with e4, d4 and c4 as Black has lost time"
+    },
+    {
+      "idea": "Develop normally and use the extra tempo"
+    },
+    {
+      "idea": "Fianchetto with g3 and Bg2 if preferred"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Prepare ...g5 or ...e5 and ...d5 to claim the centre"
+    },
+    {
+      "idea": "Play ...e6 and ...d5 to reach a Dutch- or Queen's Pawn-like set-up"
+    },
+    {
+      "idea": "Surprise the opponent with unusual structures"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flexible; ...h6 spends a tempo and Black structures vary"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet and flexible without early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material offered."
+    },
+    "soundness": {
+      "notes": "Playable but a wasted tempo."
+    },
+    "structure": {
+      "notes": "Centre not yet formed."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory, plans vague."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Quiet and flexible; neither solid nor sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Wastes a tempo but not unsound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "Centre not yet determined."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Few concrete lines but plans are vague."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No named plan from the evidence."
+    }
+  }
+}

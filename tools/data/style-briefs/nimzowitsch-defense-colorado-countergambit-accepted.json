@@ -1,0 +1,113 @@
+{
+  "slug": "nimzowitsch-defense-colorado-countergambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Colorado Countergambit Accepted",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nf3 f5 3. exf5",
+    "fen": "r1bqkbnr/ppppp1pp/2n5/5P2/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense-colorado-countergambit",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 Nc6 2.Nf3 f5 3.exf5 Black is a pawn down and plays for development, usually ...e5 or ...d5 and ...Nf6, using the open lines against White's king. White keeps the pawn and develops with d4 or Nc3 and often returns the pawn for safety. A rare countergambit where Black is playing for tactics.",
+  "white_ideas": [
+    {
+      "idea": "Keep the f5 pawn and develop with d4, Nc3 and Bc4"
+    },
+    {
+      "idea": "Play d4 and Bd3 to take the centre and use the extra pawn"
+    },
+    {
+      "idea": "Return the pawn later for safety if needed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike in the centre with ...e5 or ...d5 and develop quickly"
+    },
+    {
+      "idea": "Play ...Nf6, ...d5 and use the open lines against the white king"
+    },
+    {
+      "idea": "Win the f5 pawn back or build an attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file and centre with a White extra pawn on f5"
+    },
+    {
+      "structure": "Black e5/d5 centre against White's d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early countergambit with open lines; both kings are exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.exf5 White holds a pawn; the pawn on f5 can be kept."
+    },
+    "soundness": {
+      "notes": "The Colorado Countergambit is considered unsound."
+    },
+    "structure": {
+      "notes": "The centre opens up with open files."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever play it; offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious line is never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open lines against the white king"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "An early Black gambit with open lines and mutual risk."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black offers the f-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.75,
+      "reason": "Considered unsound by strong players.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre and the e- and f-files open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.65,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for quick development and open lines."
+    }
+  }
+}

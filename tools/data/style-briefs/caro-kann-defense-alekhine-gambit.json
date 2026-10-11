@@ -1,0 +1,113 @@
+{
+  "slug": "caro-kann-defense-alekhine-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Alekhine Gambit",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Bd3",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/3PN3/3B4/PPP2PPP/R1BQK1NR b KQkq - 2 5"
+  },
+  "parent": "caro-kann-defense-main-line",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After the Caro-Kann Classical exchanges, 5.Bd3 leaves the d4 pawn en prise: Black can take it with ...Qxd4, and White hopes for rapid development with Nf3, Nxf6+ and Qe2 or Bxh7 ideas against the queen and king. Black can also decline with ...Nxe4 or ...e6 and keep a sound Caro-Kann structure. It is a rare sideline and the evidence is thin, so this is read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bd3, Qe2 and Nf3, castle and attack"
+    },
+    {
+      "idea": "Use the open e-file and pressure on h7"
+    },
+    {
+      "idea": "Recapture and keep a lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the d4 pawn with ...Qxd4 and use the queen carefully"
+    },
+    {
+      "idea": "Or trade knights on e4 and play ...Nd7 and ...e6"
+    },
+    {
+      "idea": "Use the sound Caro structure to defend"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file with White bishop on d3"
+    },
+    {
+      "structure": "Black solid c6/e6 pawns against White centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The gambit invites forcing play with open lines and threats against h7."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White leaves the d4 pawn for development and attacking chances; Black can keep it."
+    },
+    "soundness": {
+      "notes": "Black can take material and defend with the sound Caro structure, so the compensation is doubtful."
+    },
+    "structure": {
+      "notes": "Pieces fight on open lines after the exchanges on e4."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose this White gambit."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Moves are simple to learn, but the gambit is dubious so not a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Pressure on h7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The gambit invites forcing play with open lines and threats against h7."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "White leaves the d4 pawn for development and attacking chances; Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can take material and defend with the sound Caro structure, so the compensation is doubtful."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Pieces fight on open lines after the exchanges on e4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose this White gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.45,
+      "reason": "Moves are simple to learn, but the gambit is dubious so not a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White hopes to use faster development for an attack."
+    }
+  }
+}

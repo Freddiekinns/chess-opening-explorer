@@ -1,0 +1,110 @@
+{
+  "slug": "scotch-game-relfsson-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Relfsson Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bb5",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/1B6/3pP3/5N2/PPP2PPP/RNBQK2R b KQkq - 1 4"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "The Relfsson Gambit (MacLopez) plays 4.Bb5 instead of recapturing on d4, pinning the c6 knight while the d4 pawn stays with Black. Black can keep the pawn with ...Bc5 or ...Nf6 while White develops quickly with O-O and c3 for an Open Spanish-like attack. It is a rare surprise weapon.",
+  "white_ideas": [
+    {
+      "idea": "Castle quickly and play c3 to open lines against the centre"
+    },
+    {
+      "idea": "Use the pin on c6 and pressure e5 or f7"
+    },
+    {
+      "idea": "Regain the d4 pawn with Nxd4 when possible"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...Bc5 or ...Nf6, ...d6"
+    },
+    {
+      "idea": "Unpin with ...Bd7 or ...a6 and consolidate"
+    },
+    {
+      "idea": "Return the pawn if needed for safe development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black a pawn up after ...dxc3, or e-file open if White regains"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open lines and a pawn offered; both sides must find concrete moves."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can simply keep the d4 pawn if he wishes."
+    },
+    "soundness": {
+      "notes": "Considered inferior to 4.Nxd4; Black can hold the extra pawn."
+    },
+    "structure": {
+      "notes": "Centre opens at once, pieces rule."
+    },
+    "approach": {
+      "notes": "A seldom-played sideline of the Scotch."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to memorise but rewards open-game tactics."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on the pinned knight"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "White is a pawn down for open lines and quick development."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White leaves the d-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Inferior to the regular recapture; Black can hold the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Centre pawns come off and pieces take over."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rare gambit chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious so not Beginner, little theory to learn."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for fast development in return for the pawn."
+    }
+  }
+}

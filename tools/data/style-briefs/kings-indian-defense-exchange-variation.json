@@ -1,0 +1,106 @@
+{
+  "slug": "kings-indian-defense-exchange-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Exchange Variation",
+    "eco": "E92",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. dxe5",
+    "fen": "rnbq1rk1/ppp2pbp/3p1np1/4P3/2P1P3/2N2N2/PP2BPPP/R1BQK2R b KQ - 0 7"
+  },
+  "parent": "kings-indian-defense-orthodox-variation",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "White resolves the tension at once with 7.dxe5 dxe5 8.Qxd8 Rxd8 9.Bg5, trading queens and heading for a quiet endgame-like middlegame. White has a slightly freer game and a target on Black's e5 pawn and the d-file; Black develops with ...Re8, ...c6 or ...Nbd7, using the bishop on g7 and a solid pawn on e5. There is no pawn storm and few attacks; the game is a manoeuvring fight for small edges, famously drawish.",
+  "white_ideas": [
+    { "idea": "Use the half-open d-file and the d5 square; Nd5 to hit the weak c7 pawn" },
+    { "idea": "Play Bg5, Nd5 and O-O-O or Rd1 to pressure Black's position" },
+    { "idea": "Trade pieces and aim for an edge in space with e4 and c4 held" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the centre with ...Re8, ...c6 and ...Nbd7 and bring the bishop to ...e6 or ...Bf8" },
+    { "idea": "Meet Nd5 by ...Nxd5 or ...c6; keep the e5 pawn defended" },
+    { "idea": "Neutralise the queenless middlegame and head for a draw or a long manoeuvring game" }
+  ],
+  "typical_structures": [
+    { "structure": "Queenless middlegame with White pawns c4/e4 against Black e5 and c7; open d-file" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Queens are off early and neither side has a direct attack; Black is hard to break. Solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The e5 pawn is recaptured at once."
+    },
+    "soundness": {
+      "notes": "Sound for both; roughly equal."
+    },
+    "structure": {
+      "notes": "A symmetrical-ish exchange structure with an open d-file. Semi-open."
+    },
+    "approach": {
+      "notes": "A well-known main-line sideline played by strong players. Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans such as the Nd5 and the ...c6 set-up are simple, but the endgame needs technique. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "queen trade early",
+    "knight outpost on d5",
+    "half-open d-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "9.Bg5 Re8 10.Nd5",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. dxe5 dxe5 8. Qxd8 Rxd8 9. Bg5 Re8 10. Nd5",
+      "how": "White puts a knight on d5 and aims at c7."
+    },
+    {
+      "name": "9.Bg5 c6",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. dxe5 dxe5 8. Qxd8 Rxd8 9. Bg5 c6",
+      "how": "Black prevents Nd5 with a solid pawn on c6."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.7,
+      "reason": "Early queen trade and a compact Black position with no forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A respectable, roughly equal line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "A fixed exchange structure with a half-open d-file; Flexible is the alternative."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream line against the King's Indian."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Not the full King's Indian race, but the queenless plans need judgement."
+    },
+    "plans": {
+      "value": ["knight_outpost"],
+      "reason": "Nd5 is White's main idea and Black fights to prevent or exchange it."
+    }
+  }
+}

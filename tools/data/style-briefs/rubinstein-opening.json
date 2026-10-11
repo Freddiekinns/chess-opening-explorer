@@ -1,0 +1,102 @@
+{
+  "slug": "rubinstein-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rubinstein Opening",
+    "eco": "D05",
+    "moves": "1. d4 Nf6 2. Nf3 e6 3. e3 c5 4. Bd3 d5 5. b3",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/3P4/1P1BPN2/P1P2PPP/RNBQK2R b KQkq - 0 5"
+  },
+  "parent": "yusupov-rubinstein-system",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "White sets up the Colle-Zukertort system against ...c5 and ...d5, with pawns on d4, e3 and b3, bishops on d3 and b2, a knight on f3 and another coming to bd2, and castling kingside. Black usually plays 5...Nc6 6.O-O Bd6 7.Bb2 O-O. White's plan is the central break e4 (after Nbd2 and Ne5), a possible kingside attack on h7, or pressure from the b2 bishop on the long diagonal. Black has easy equality and counters with ...cxd4 and ...e5.",
+  "white_ideas": [
+    { "idea": "Bb2, Nbd2 or Nc3 and Ne5 to prepare the e4 break" },
+    { "idea": "Use the b2 bishop and Bd3 for a kingside attack on h7" },
+    { "idea": "Keep a solid centre with e3 and d4 and avoid early tactics" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop ...Nc6, ...Bd6, ...O-O and hit the centre with ...cxd4 or ...e5" },
+    { "idea": "Prevent the e4 break by keeping the d5 pawn and covering e4" },
+    { "idea": "Trade a pair of minor pieces and aim for equality" }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e3/b3 against Black c5/d5/e6 (Colle-Zukertort / hanging-pawn style tension)" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A classic quiet system with few ways to go wrong quickly; the e4 break is the one sharp moment. Solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound; roughly equal."
+    },
+    "structure": {
+      "notes": "Centre in tension, e4 break pending; like the London and Colle, this is Flexible."
+    },
+    "approach": {
+      "notes": "White reaches the same set-up against almost any Black defence. System."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans and little theory; the kind of line a coach hands a new player. Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Colle-Zukertort set-up",
+    "e4 break",
+    "fianchetto bishop on b2",
+    "kingside attack on h7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5...Nc6 6.O-O",
+      "moves": "1. d4 d5 2. Nf3 Nf6 3. e3 e6 4. Bd3 c5 5. b3 Nc6",
+      "how": "The main line, where Black develops quickly and White castles and plays Bb2."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "A quiet system with few risks, though the e4 break can produce attacking chances."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A well-established, healthy system."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays in tension and the e4 break decides the structure."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.9,
+      "reason": "A Colle-Zukertort set-up playable against almost anything."
+    },
+    "level": {
+      "value": "beginner",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Clear plans and little to memorise, like the Colle and London."
+    },
+    "plans": {
+      "value": ["fianchetto", "kingside_attack"],
+      "reason": "Bb2 on the long diagonal and the e4 break feeding a kingside attack."
+    }
+  }
+}

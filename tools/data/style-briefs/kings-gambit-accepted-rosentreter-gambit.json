@@ -1,0 +1,121 @@
+{
+  "slug": "kings-gambit-accepted-rosentreter-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Rosentreter Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. d4",
+    "fen": "rnbqkbnr/pppp1p1p/8/6p1/3PPp2/5N2/PPP3PP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "In the King's Knight's Gambit White answers ...g5 with 4.d4 instead of Bc4 or h4, aiming for a quick centre. After 4...g4 White can sacrifice more with 5.Ne5 (Bird/Rosentreter) or play 5.Bxf4 and 5.Nc3 for a lead in development. Black keeps the pawn and White gets open lines and quick development for a kingside attack.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with d4 and open files"
+    },
+    {
+      "idea": "Recapture f4 and develop quickly (Bxf4)"
+    },
+    {
+      "idea": "Use the open f-file and Ne5 or Bxf4 for a kingside attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...g4 and ...Bg7"
+    },
+    {
+      "idea": "Challenge the knight on f3 and the d4 pawn"
+    },
+    {
+      "idea": "Return material when needed to neutralise the attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black g- and f-pawns advanced, White d4 and e4"
+    },
+    {
+      "structure": "Open f-file and weakened Black kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing and risky for both sides, with sacrifices on f3 and e5 common."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the f-pawn (and often more) for development."
+    },
+    "soundness": {
+      "notes": "Most strong players consider the 4.d4 line inferior to the main KGA lines."
+    },
+    "structure": {
+      "notes": "Centre opens quickly; the f-file is the key line."
+    },
+    "approach": {
+      "notes": "Rare, even in the King's Gambit; played by specialists."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp theory with sacrifices that must be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open f-file",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Bird Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. d4 g4 5. Ne5 Qh4+ 6. g3",
+      "how": "White sacrifices a piece for open lines; Black can keep it."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "Gambit with mutual attacking chances and tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the f4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Considered inferior to the main KGA lines."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Open lines and files from the start."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Rare even among King's Gambit specialists."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Not Beginner for a dubious gambit; forcing lines to remember."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "The gambit is played for speed and attack."
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "caro-kann-defense-goldman-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Goldman Variation",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. Nc3 d5 3. Qf3",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/4P3/2N2Q2/PPPP1PPP/R1B1KBNR b KQkq - 1 3"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White defends e4 with the queen instead of a knight or e5, so Nf3 is blocked and the queen is early. Black can play 3...dxe4 4.Nxe4 Nf6 or ...Bf5, or 3...Nf6, and develops comfortably, usually reaching a normal Caro-Kann with the queen misplaced on f3. White hopes for tricks on the f-file and quick Bc4 or Bd3 development.",
+  "white_ideas": [
+    { "idea": "Keep the e-pawn defended and develop with Bc4 or Bd3, Nge2 and castling." },
+    { "idea": "Use the queen on f3 to pressure f7 and the long diagonal." }
+  ],
+  "black_ideas": [
+    { "idea": "Trade pawns with ...dxe4 and develop with ...Nf6 or ...Bf5, gaining tempi on the queen." },
+    { "idea": "Keep the Caro-Kann structure and play ...e6 and ...Nd7." }
+  ],
+  "typical_structures": [
+    { "structure": "Caro-Kann set-up with ...c6 and an open d-file after the exchange on e4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black has few risks and a comfortable game; the early queen rarely creates real threats." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Playable but slightly awkward for White; not refuted." },
+    "structure": { "notes": "Typical Caro-Kann with a half-open d-file after ...dxe4." },
+    "approach": { "notes": "A sideline strong players seldom pick for White; mainly a change of pace." },
+    "level": { "reason": "neither", "notes": "Few theoretical demands, but not a first-repertoire choice for White." }
+  },
+  "plan_phrases": ["early queen", "development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Black gets an easy Caro-Kann with few risks." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Passive but not refuted." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Caro-Kann with a half-open d-file after ...dxe4." },
+    "approach": { "value": "offbeat", "confidence": 0.6, "reason": "Strong players seldom play the early queen against the Caro-Kann." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Simple ideas but an unusual choice for White." },
+    "plans": { "value": ["early_queen"], "reason": "White's queen comes out early on f3." }
+  }
+}

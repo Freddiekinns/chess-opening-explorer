@@ -1,0 +1,107 @@
+{
+  "slug": "french-defense-franco-hiva-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Franco-Hiva Gambit Accepted",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. d4 f5 3. exf5",
+    "fen": "rnbqkbnr/pppp2pp/4p3/5P2/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "french-defense-franco-hiva-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black plays 2...f5 against the French centre and White takes 3.exf5 with a pawn up. Black answers 3...Nf6, aiming for ...d5, ...Bd6 and a kingside attack, while White develops with Nc3, Bd3 and Nf3 and can return the pawn to ease the pressure. Black has weakened the king and is playing for development; it is a surprise weapon.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, Nf3, Bd3 and castle, keeping the extra pawn"
+    },
+    {
+      "idea": "Hit the Black centre with d4 and e5 or Bb5+ ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop fast with ...Nf6, ...d5 and ...Bd6"
+    },
+    {
+      "idea": "Aim pieces at the white king and recapture on f5 when possible"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French-type centre with d4 against ...d5 and an extra White f5 pawn"
+    },
+    {
+      "structure": "Open e-file and f-file with weakened Black king"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's king is weakened by the early ...f5; play is open and relies on quick development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "2...f5 3.exf5 gives up a pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "Strong players consider 2...f5 dubious; White just develops and keeps the extra pawn."
+    },
+    "structure": {
+      "notes": "The d4/d5 French centre with an open e-file after captures."
+    },
+    "approach": {
+      "notes": "Strong players almost never play 2...f5 in the French. Chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A dubious line that is not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Surprise weapon"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black's early ...f5 invites tactics on the kingside and e-file."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black gives up a pawn with 2...f5 that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Weakens the king and gives a pawn for little compensation."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "d4 against ...d5 with an open e-file after captures, not yet fully open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players seldom meet 2.d4 with ...f5."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious, so never Beginner; little theory to learn."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for rapid development after giving the pawn."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "neo-grunfeld-defense-with-nf3",
+  "tier": "unsourced",
+  "root": {
+    "name": "Neo-Grünfeld Defense: with Nf3",
+    "eco": "D70",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nf3 d5",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "Black meets 3.Nf3 with ...d5 in Grünfeld style. The most common continuation is the Neo-Grünfeld with 4.g3 Bg7 5.Bg2 O-O 6.O-O, where White fianchettoes and Black decides between ...dxc4, ...c6 or ...Nbd7. White can instead take on d5 and play e4 for a Grünfeld proper. No subtree data was supplied, so the branch is read from the moves.",
+  "white_ideas": [
+    { "idea": "Fianchetto with g3 and Bg2, castle and keep a flexible centre" },
+    { "idea": "Pressure d5 and recapture on c4 for a queenside edge" }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the bishop to g7 and challenge the centre with ...dxc4 or ...c5" },
+    { "idea": "Use ...Bg7 on the long diagonal against the d4 point" }
+  ],
+  "typical_structures": [
+    { "structure": "Neo-Grünfeld: d4/c4 against d5/g6 with both bishops fianchettoed" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Strategic play with tension on c4/d5; less forcing than the Exchange Grünfeld." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Nothing is given up." },
+    "soundness": { "notes": "A mainstream line for both sides." },
+    "structure": { "notes": "Centre tension on c4 and d5 is unresolved; a flexible centre." },
+    "approach": { "notes": "A normal main-line choice." },
+    "level": { "reason": "understanding", "notes": "Positional manoeuvring with transpositions to know." }
+  },
+  "plan_phrases": ["fianchetto on the long diagonal", "hypermodern centre"],
+  "sublines_that_differ": [
+    { "name": "Exchange Grünfeld transposition", "moves": "4.cxd5 Nxd5 5.e4", "how": "Gives a Grünfeld proper with White's big centre." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Strategic fianchetto play without forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream line." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The c4/d5 centre stays in tension." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "A normal main-line choice." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans matter more than forcing theory." },
+    "plans": { "value": ["fianchetto", "hypermodern_centre"], "reason": "Both sides fianchetto, and Black lets White build the centre." }
+  }
+}

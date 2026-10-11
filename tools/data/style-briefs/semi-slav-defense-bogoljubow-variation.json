@@ -1,0 +1,114 @@
+{
+  "slug": "semi-slav-defense-bogoljubow-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Bogoljubow Variation",
+    "eco": "D46",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7 6. Bd3 Be7",
+    "fen": "r1bqk2r/pp1nbppp/2p1pn2/3p4/2PP4/2NBPN2/PP3PPP/R1BQK2R w KQkq - 4 7"
+  },
+  "parent": "semi-slav-defense-main-line",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black builds the Semi-Slav set-up with c6, e6, Nbd7 and Be7 and castles, keeping the ...dxc4 and ...e5 breaks in reserve. White develops Bd3 and Nf3, castles and chooses between b3 and e4 to open the centre. The game is a positional fight over the centre rather than a forced tactical melee.",
+  "white_ideas": [
+    {
+      "idea": "Castle and play e3-e4 to break in the centre"
+    },
+    {
+      "idea": "Play b3 and Bb2 for pressure on the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break with ...dxc4 and ...e5 once Bxc4 loses time"
+    },
+    {
+      "idea": "Keep the Meran-style ...dxc4, ...b5 queenside expansion available"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav triangle c6/d5/e6 with tension on c4 and d5"
+    },
+    {
+      "structure": "Isolated or hanging pawns if the centre opens after ...e5 or e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A solid Black set-up with few early weaknesses; the tension is held back."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Fully sound, a main-line Semi-Slav system."
+    },
+    "structure": {
+      "notes": "Flexible: the c4/d5 tension is unresolved until a central break."
+    },
+    "approach": {
+      "notes": "Standard main-line defensive set-up played at all levels."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Typical breaks (e4, ...e5, ...dxc4/...b5) must be timed well, but little forcing theory."
+    }
+  },
+  "plan_phrases": [
+    "central break ...e5",
+    "queenside expansion",
+    "hanging pawns"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Meran-style ...dxc4",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 c6 5. e3 Nbd7 6. Bd3 dxc4 7. Bxc4 b5",
+      "how": "Black grabs queenside space and aims for ...c5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black keeps a compact structure with few early weaknesses."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A main-line Semi-Slav system."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The c4/d5 tension stays unresolved for a long time."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A main-line defence for Black, not a system or a rarity."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Needs timing of breaks rather than long forcing lines."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "Black can expand with ...dxc4 and ...b5."
+    }
+  }
+}

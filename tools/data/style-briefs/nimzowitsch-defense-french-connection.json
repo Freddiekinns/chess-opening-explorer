@@ -1,0 +1,111 @@
+{
+  "slug": "nimzowitsch-defense-french-connection",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: French Connection",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nc3 e6",
+    "fen": "r1bqkbnr/pppp1ppp/2n1p3/8/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 2.Nc3 e6 Black heads for a French Defence with the knight already on c6. White usually plays 3.d4 d5 and the position is a French with an extra Nc6, or 3.Nf3 d5 4.d4. The e5 advance leaves White with a space edge and Black with ...f6 and ...Bb4 counterplay, as in the Advance or Classical French. It is a solid set-up with a few French-like traps.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre with d4 and Nf3"
+    },
+    {
+      "idea": "Advance e5 for space or exchange on d5"
+    },
+    {
+      "idea": "Develop Bd3 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...d5 and ...Bb4"
+    },
+    {
+      "idea": "Attack d4 with ...Nc6 and ...f6"
+    },
+    {
+      "idea": "Reach a French structure with the c8-bishop free later"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French pawn structure e6/d5 with Black knight on c6"
+    },
+    {
+      "structure": "Locked e5 chain when White advances"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid French-style set-up; it is hard for White to break through."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound; sources say not refuted."
+    },
+    "structure": {
+      "notes": "Likely French-style centre, partly closed after e5, with a half-open c-file."
+    },
+    "approach": {
+      "notes": "Uncommon among strong players, chosen to avoid theory."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are French-like, which takes practice."
+    }
+  },
+  "plan_phrases": [
+    "French structure",
+    "solid centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "French-style set-up, hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Sound, if rare."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "French-like centre with a half-open c-file, though it may close after e5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Played rarely by strong players, mainly to avoid preparation."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans need understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Evidence is thin; no named plan is clearly characteristic."
+    }
+  }
+}

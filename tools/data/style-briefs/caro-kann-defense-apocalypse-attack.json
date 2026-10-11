@@ -1,0 +1,112 @@
+{
+  "slug": "caro-kann-defense-apocalypse-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Apocalypse Attack",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. Nf3 d5 3. exd5 cxd5 4. Ne5",
+    "fen": "rnbqkbnr/pp2pppp/8/3pN3/8/8/PPPP1PPP/RNBQKB1R b KQkq - 1 4"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White meets the Caro-Kann with an early Nf3 and exchanges, then jumps in with 4.Ne5, which eyes f7 and keeps the d-pawn flexible. Black's natural moves 4...Nf6, ...Nc6 or ...Bf5 get easy development and a Panov-like symmetrical structure. White gets little from the odd knight placement.",
+  "white_ideas": [
+    {
+      "idea": "Use the Ne5 outpost and follow with d4 or Bb5+"
+    },
+    {
+      "idea": "Develop quickly and prepare c4 for an Exchange-style structure"
+    },
+    {
+      "idea": "Trade the knight for Black's defender on c6 if allowed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6, ...Nc6 and ...e6"
+    },
+    {
+      "idea": "Challenge the knight with ...Nc6 or ...f6 and hit d4 with ...Bf5"
+    },
+    {
+      "idea": "Use the d5 pawn as a firm centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Exchange structure with Black d5 against the open e-file"
+    },
+    {
+      "structure": "Symmetrical set-up with equal pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black develops freely and the structure is symmetrical and not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is sacrificed; the exchange on d5 is even."
+    },
+    "soundness": {
+      "notes": "The line is harmless for Black, who equalises with natural moves."
+    },
+    "structure": {
+      "notes": "Black has a d5 pawn against an open e-file, as in the Exchange Caro-Kann."
+    },
+    "approach": {
+      "notes": "This early Ne5 is seldom played by strong players and is a surprise choice."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Black has no theory to learn and White gains little, so the line is easy to meet."
+    }
+  },
+  "plan_phrases": [
+    "Symmetrical structure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Black develops freely and the structure is symmetrical and not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is sacrificed; the exchange on d5 is even."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "The line is harmless for Black, who equalises with natural moves."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Black has a d5 pawn against an open e-file, as in the Exchange Caro-Kann."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "This early Ne5 is seldom played by strong players and is a surprise choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Black has no theory to learn and White gains little, so the line is easy to meet."
+    },
+    "plans": {
+      "value": [
+        "symmetrical_structure"
+      ],
+      "reason": "Exchanges on d5 lead to mirror-image pawns and a slow fight."
+    }
+  }
+}

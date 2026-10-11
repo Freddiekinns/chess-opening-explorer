@@ -1,0 +1,110 @@
+{
+  "slug": "bogo-indian-defense-grunfeld-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: Grünfeld Variation",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Nbd2",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP1NPPPP/R1BQKB1R b KQkq - 3 4"
+  },
+  "parent": "bogo-indian-defense",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White develops the knight to d2 with 4.Nbd2, avoiding the doubled pawns of 4.Nc3 and 4.Bd2 trades. Black chooses between ...O-O, ...d5 and ...b6, usually reaching a QGD-style or Queen's Indian set-up. White plays a3 and e3 with Qc2 and an e4 break. The game is quiet and strategic.",
+  "white_ideas": [
+    {
+      "idea": "Develop with a3 to ask the bishop, then e3 and Qc2"
+    },
+    {
+      "idea": "Prepare e4 for a centre"
+    },
+    {
+      "idea": "Keep the pawn structure intact"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Castle and play ...d5 or ...b6 and ...Bb7"
+    },
+    {
+      "idea": "Trade the bishop on d2 or retreat to e7"
+    },
+    {
+      "idea": "Aim for equality in a QGD structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD-style centre with c4/d4 v d5/e6"
+    },
+    {
+      "structure": "Queen's Indian structure after ...b6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet and positional, a low-risk line for both sides."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "Centre tension between c4/d4 and e6/d5, flexible."
+    },
+    "approach": {
+      "notes": "A regular choice for strong players among Bogo-Indian lines."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "No concrete lines but careful positional play."
+    }
+  },
+  "plan_phrases": [
+    "solid centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Quiet, safe Bogo-Indian set-up."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A standard respectable line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Played regularly by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional play with modest theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single named plan dominates."
+    }
+  }
+}

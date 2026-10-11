@@ -1,0 +1,46 @@
+{
+  "slug": "benoni-defense-fianchetto-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Fianchetto Variation",
+    "eco": "A61",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6 7. g3",
+    "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP4/8/2N2NP1/PP2PP1P/R1BQKB1R b KQkq - 0 7"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "White develops the king's bishop on g2 and castles instead of building the e4/f4 centre, so the e4 break stays in reserve. Black castles, plays ...Re8, ...Nbd7 and ...a6 and prepares ...b5 or ...Nh5 and ...f5. The play is strategic: White restrains the queenside break while Black seeks activity on the e- and c-files.",
+  "white_ideas": [
+    { "idea": "Hold the d5 space advantage and play e4 or Nd2 at the right moment" },
+    { "idea": "Neutralise ...b5 with a4 and put pressure on the long diagonal" }
+  ],
+  "black_ideas": [
+    { "idea": "Break with ...b5 on the queenside, using the half-open e- and c-files" },
+    { "idea": "Challenge e4 with ...Re8, ...Nbd7 and ...Nc5 pieces" }
+  ],
+  "typical_structures": [
+    { "structure": "Benoni structure: White pawn on d5 versus Black c5/d6, White majority in the centre and kingside, Black majority on the queenside" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Less forcing than the Modern or Four Pawns Benoni, but the asymmetric structure still gives Black counter-chances and White space." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "A solid, long-standing way for White to meet the Benoni." },
+    "structure": { "notes": "Fixed asymmetric centre; Black presses along the e- and c-files." },
+    "approach": { "notes": "A mainstream choice against the Benoni, standard." },
+    "level": { "reason": "understanding", "notes": "Needs good timing of e4 and ...b5, but less forcing theory than other Benoni lines." }
+  },
+  "plan_phrases": ["space advantage", "queenside expansion with ...b5", "fianchetto"],
+  "sublines_that_differ": [
+    { "name": "Black's ...Nh5 and ...f5 plans", "moves": "9.O-O Nh5", "how": "Black goes after the kingside rather than the queenside." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Strategic Benoni with sharp potential but White's set-up cuts most forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A mainstream line for both sides." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "A fixed asymmetric centre pressed along the e- and c-files." },
+    "approach": { "value": "standard", "confidence": 0.85, "reason": "A mainstream line against the Benoni." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plan-based play with moderate theory." },
+    "plans": { "value": ["space_advantage", "queenside_expansion", "fianchetto"], "reason": "White's d5 space, Black's ...b5 break and the g2 bishop define the structure." }
+  }
+}

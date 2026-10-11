@@ -1,0 +1,116 @@
+{
+  "slug": "robatsch-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Robatsch Defense",
+    "eco": "A41",
+    "moves": "1. d4 d6 2. Nf3 g6 3. c4 Bg7 4. e4 Bg4",
+    "fen": "rn1qk1nr/ppp1ppbp/3p2p1/8/2PPP1b1/5N2/PP3PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black fianchettoes with ...g6 and ...Bg7 and plays ...d6 before ...Nf6, then pins the f3 knight with ...Bg4 after White has built the pawn centre c4, d4 and e4. White enjoys space; Black aims to undermine the centre later with ...c5, ...e5 or ...Nc6 and ...Qd7. It is a hypermodern, flexible defence against many White set-ups rather than a forcing line.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with c4, d4, e4 and develop Nc3, Be2"
+    },
+    {
+      "idea": "Break the pin with h3 or Be2 and keep the space"
+    },
+    {
+      "idea": "Aim to hold the centre and attack with f4 or e5 at the right moment"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto and wait, then strike with ...c5 or ...e5"
+    },
+    {
+      "idea": "Pin the knight with ...Bg4 to pressure d4"
+    },
+    {
+      "idea": "Develop ...Nd7 and ...Ngf6 to challenge the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Pirc/Modern set-up against a broad white pawn centre"
+    },
+    {
+      "structure": "Black fianchetto against Maroczy-type or Four Pawns-style pawn structures"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black accepts a space deficit and aims to counterattack later; not forcing, with a sound pawn structure."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed."
+    },
+    "soundness": {
+      "notes": "Playable, less common but not refuted."
+    },
+    "structure": {
+      "notes": "The centre remains undecided until Black strikes with ...c5 or ...e5."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players, who prefer other defences to 1.d4; the Modern set-up is used more against 1.e4."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black needs to understand when and how to strike at the centre."
+    }
+  },
+  "plan_phrases": [
+    "Hypermodern centre",
+    "Fianchetto",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Hypermodern, neither especially forcing nor especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Playable if less used."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "White big centre is not fixed and Black attacks it later."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Seldom played by strong players; could be read as standard or a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are conceptual, with moderate theory."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Black allows a centre and strikes at it with pieces and pawns."
+    }
+  }
+}

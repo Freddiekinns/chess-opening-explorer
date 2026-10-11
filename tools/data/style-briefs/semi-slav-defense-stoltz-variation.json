@@ -1,0 +1,111 @@
+{
+  "slug": "semi-slav-defense-stoltz-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Stoltz Variation",
+    "eco": "D45",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7 6. Qc2",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/2N1PN2/PPQ2PPP/R1B1KB1R b KQkq - 3 6"
+  },
+  "parent": "semi-slav-defense-normal-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White plays e3, Nf3 and Qc2 against the Semi-Slav; Black develops Bd6 and castles, and White often adds b3 or g4 (Shabalov attack). Black aims for the ...e5 break. The game is a manoeuvring battle in a solid Semi-Slav structure, with sharper kingside play in the g4 branch.",
+  "white_ideas": [
+    {
+      "idea": "Develop Qc2, Bd3 and castle"
+    },
+    {
+      "idea": "Play b3 and Bb2 or g4 to attack"
+    },
+    {
+      "idea": "Prepare e4 to open the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop Bd6, Nbd7 and castle"
+    },
+    {
+      "idea": "Strike with ...e5 or ...dxc4 and ...e5"
+    },
+    {
+      "idea": "Challenge the queen and hold d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Semi-Slav chain d5/c6/e6 vs White c4/d4/e3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid and manoeuvring."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Centre in tension like the QGD."
+    },
+    "approach": {
+      "notes": "Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans more than forcing lines."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    {
+      "name": "Shabalov Attack",
+      "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. e3 Nbd7 6. Qc2 Bd6 7. g4",
+      "how": "White attacks on the kingside; far sharper than the main line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Semi-Slav structure is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Mainstream."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre in tension like the QGD."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Standard."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Moderate theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan stands out enough to name."
+    }
+  }
+}

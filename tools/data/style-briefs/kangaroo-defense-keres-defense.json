@@ -1,0 +1,121 @@
+{
+  "slug": "kangaroo-defense-keres-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Kangaroo Defense: Keres Defense, Transpositional Variation",
+    "eco": "A40",
+    "moves": "1. d4 e6 2. c4 Bb4+ 3. Nc3",
+    "fen": "rnbqk1nr/pppp1ppp/4p3/8/1bPP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 2 3"
+  },
+  "parent": "kangaroo-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.d4 e6 2.c4 Bb4+ 3.Nc3 the position is a Nimzo-Indian by transposition, since the usual reply is 3...Nf6, though Black can also play 3...c5. Black pins the knight, aims to double White's pawns with ...Bxc3+ and holds the centre with pieces rather than pawns. White gets the bishop pair and a big centre.",
+  "white_ideas": [
+    {
+      "idea": "Play e3 and Bd3 (Rubinstein) or Qc2 (Classical) to keep the bishop pair and meet ...Bxc3 with Qxc3"
+    },
+    {
+      "idea": "Build a big centre with e3 and Nge2 or f3 and e4"
+    },
+    {
+      "idea": "Gain the bishop pair and attack the doubled pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Nf6 and ...Bxc3+ to double the white pawns"
+    },
+    {
+      "idea": "Control e4 with ...Nf6 and ...d5 or ...b6 and ...Bb7"
+    },
+    {
+      "idea": "Hit the centre with ...c5 and ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Nimzo-Indian with doubled c-pawns for White, Black bishop pair given up"
+    },
+    {
+      "structure": "Rubinstein structure with c4/d4/e3 against ...d5 and ...c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Reads as a Nimzo-Indian: rich but strategic, neither especially sharp nor passive."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound; the Nimzo-Indian is a main defence."
+    },
+    "structure": {
+      "notes": "Central tension, with the centre undecided for a long time: flexible."
+    },
+    "approach": {
+      "notes": "This move order is a transposition to the Nimzo-Indian, a main-line defence; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Nimzo plans are understanding-heavy: doubled pawns, bishop pair and control of e4."
+    }
+  },
+  "plan_phrases": [
+    "doubled pawns",
+    "bishop pair",
+    "control of e4"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black avoids the Nimzo with 3...c5",
+      "moves": "1. d4 e6 2. c4 Bb4+ 3. Nc3 c5",
+      "how": "Reaches a Benoni-like position instead."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "A Nimzo-Indian type with rich play but no forced lines (the Rubinstein is Balanced)."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.95,
+      "reason": "The Nimzo is a main defence.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The central tension stays unresolved."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A transposition to a main defence."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.45,
+      "reason": "Nimzo ideas need understanding of structure and piece play, but plans are well known.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "bishop_pair"
+      ],
+      "reason": "The pin ...Bxc3+ doubles White's pawns for the bishop pair."
+    }
+  }
+}

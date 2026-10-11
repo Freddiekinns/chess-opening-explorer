@@ -1,0 +1,110 @@
+{
+  "slug": "indian-defense-czech-indian",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Czech-Indian",
+    "eco": "A46",
+    "moves": "1. d4 Nf6 2. Nf3 c6",
+    "fen": "rnbqkb1r/pp1ppppp/2p2n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "indian-defense-knights-variation",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "Black waits with 2...c6, a flexible move that can become a Slav (...d5), a Czech Benoni (...e5), or a King's Indian or Queen's Indian set-up. White can play for the usual centre with c4 or e3 and Bf4. The game is flexible and positional, with no forcing lines. I know this only as a transposing move order.",
+  "white_ideas": [
+    {
+      "idea": "Develop with c4, Nc3 or e3 and Bf4 or g3"
+    },
+    {
+      "idea": "Take a space edge in the centre"
+    },
+    {
+      "idea": "Choose a favourite set-up against the c6 pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Aim for a Slav-style set-up with ...d5"
+    },
+    {
+      "idea": "Choose ...g6 or ...e6 depending on White's set-up"
+    },
+    {
+      "idea": "Keep the option of ...Qb6 or ...Bf5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav-style c6/d5 structure"
+    },
+    {
+      "structure": "Possible Czech Benoni or KID structures after ...e5 or ...g6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid and flexible for Black; it is hard to attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Centre undecided, so flexible."
+    },
+    "approach": {
+      "notes": "Played rarely by strong players but not an oddity."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Choosing the right set-up is the hard part."
+    }
+  },
+  "plan_phrases": [
+    "solid centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.45,
+      "reason": "A waiting move leading to a Slav-style shell."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A playable move order."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre is not yet defined."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.45,
+      "reason": "Seldom seen, but respectable."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Flexible move orders need understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Too early for a named plan."
+    }
+  }
+}

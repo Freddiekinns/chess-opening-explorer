@@ -1,0 +1,116 @@
+{
+  "slug": "bishops-opening-philidor-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Philidor Variation",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. c3",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/2B1P3/2P5/PP1P1PPP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "bishops-opening-boi-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White plays 3.c3 to build a pawn centre with d4, as in the Giuoco Piano, after Bc4 Bc5. Black usually plays 3...Nf6 and White chooses between 4.d4 exd4 5.cxd4 Bb4+ (open play) or the quiet 4.d3. White wants the ideal centre and Black counters with ...d5. It is a respectable, flexible Italian-style position.",
+  "white_ideas": [
+    {
+      "idea": "Build the c3/d4 centre"
+    },
+    {
+      "idea": "Develop Nf3, O-O, Bb3 and play d4"
+    },
+    {
+      "idea": "Aim for a small edge in an open position"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...d5 or ...Nxe4"
+    },
+    {
+      "idea": "Develop ...Nf6, ...d6, ...O-O"
+    },
+    {
+      "idea": "Equalise by timely exchanges"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Italian-style centre with c3/d4 against e5/d5"
+    },
+    {
+      "structure": "Open centre after d4 exd4 cxd4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Balanced and flexible, between the Italian's quiet and open lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Centre in tension, White's d4 and Black's ...d5 undecided, flexible."
+    },
+    "approach": {
+      "notes": "A sound line used from time to time."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans clear and moderate theory."
+    }
+  },
+  "plan_phrases": [
+    "pawn centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4.d4 exd4 5.cxd4 Bb4+",
+      "moves": "1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. cxd4 Bb4+",
+      "how": "Opens the centre and brings tactics."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither especially safe nor sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A respectable line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre in tension, like the Italian Game."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Played now and then by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Clear plans, moderate theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single named plan is characteristic."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "kings-indian-attack-keres-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Keres Variation",
+    "eco": "A07",
+    "moves": "1. Nf3 d5 2. g3 Bg4",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p4/6b1/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 1 3"
+  },
+  "parent": "kings-indian-attack",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black develops the c8-bishop to g4 immediately, pinning the Nf3, and White continues with Bg2 and O-O, h3 and d3, aiming for the usual King's Indian Attack structure. After 3.Bg2 Nd7 Black will play ...e6 or ...c6 and a solid set-up. The play is slow, flexible and positional, with White aiming for e4.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bg2, O-O, d3 and Nbd2"
+    },
+    {
+      "idea": "Drive the bishop away with h3 and play e4"
+    },
+    {
+      "idea": "Build a kingside space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop quickly with ...Nd7, ...e6, ...c6 and pin the knight"
+    },
+    {
+      "idea": "Keep a solid d5 centre"
+    },
+    {
+      "idea": "Break with ...e5 or ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "King's Indian Attack structure with pawns on d3, e4 against d5/e6/c6"
+    },
+    {
+      "structure": "Flexible centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Steady and manoeuvring; neither side has an early attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Centre not fixed; White's e4 break still to come, flexible."
+    },
+    "approach": {
+      "notes": "The KIA is a set-up White can play against almost anything."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but need practice to play well."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on g2",
+    "e4 pawn break",
+    "kingside space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet slow play, not sharp but not especially solid either."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A standard KIA line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.6,
+      "reason": "White's KIA set-up is played against many replies."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Clear set-up, but the timing needs experience."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Fianchetto on g2 is the main idea."
+    }
+  }
+}

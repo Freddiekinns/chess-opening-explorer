@@ -1,0 +1,112 @@
+{
+  "slug": "latvian-gambit-accepted-main-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit Accepted: Main Line",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. d4",
+    "fen": "rnb1kbnr/pppp2pp/5q2/4Np2/3PP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "After 1.e4 e5 2.Nf3 f5 3.Nxe5 Qf6 4.d4 d6 White's knight is attacked, 5.Nc4 fxe4 follows, and Black gets a lead in development and open f- and e-files for the pawn. The game is a wild, tactical race: White must consolidate and find the right defensive moves, while Black needs precise follow-up. It is seldom played by strong players and is regarded as unsound.",
+  "white_ideas": [
+    {
+      "idea": "Retreat 5.Nc4, take the pawn and develop with Nc3 and Be3, aiming to return material for a safe position"
+    },
+    {
+      "idea": "Use the central pawn on d4 and the e4 pawn captured to cramp Black"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the f-file with ...fxe4 and develop quickly with ...Nf6 and ...Be7 or ...Qg6"
+    },
+    {
+      "idea": "Aim for tactical shots against the white king and the knight on e5/c4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a pawn missing on e5 and f-file open for Black's major pieces"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has sacrificed a pawn and the queen comes out early; tactics decide quickly. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White wins the e5 pawn with 3.Nxe5 and can keep it by consolidating."
+    },
+    "soundness": {
+      "notes": "Objectively refuted or close to it; the Latvian is the standard textbook dubious gambit."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces on the f-file and central diagonals from move three."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players; a pure surprise weapon."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious lines are never Beginner; both sides need concrete tactical knowledge. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "early queen",
+    "open f-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4.Nc4 / 5.Nxf7 sidelines",
+      "moves": "3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4 6.Nc3 Qg6",
+      "how": "Black's later queen move choices vary, but the pawn stays with White."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.93,
+      "reason": "A pawn-down gambit with an early queen and wild tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.95,
+      "reason": "Black gives the e5 pawn for time and activity."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.9,
+      "reason": "The Latvian Gambit is the standard example of a refuted gambit."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "The centre and f-file open straight away."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.92,
+      "reason": "Strong players hardly ever choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.6,
+      "reason": "Short theory but tactical; Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black develops fast and the queen comes out on move three."
+    }
+  }
+}

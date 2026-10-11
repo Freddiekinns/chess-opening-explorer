@@ -1,0 +1,108 @@
+{
+  "slug": "van-geet-opening-napoleon-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Napoleon Attack",
+    "eco": "A00",
+    "moves": "1. Nc3 e5 2. Nf3 Nc6 3. d4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3P4/2N2N2/PPP1PPPP/R1BQKB1R b KQkq - 0 3"
+  },
+  "parent": "van-geet-opening-reversed-nimzowitsch",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "In the Van Geet 1.Nc3 e5 2.Nf3 Nc6, White strikes in the centre at once with 3.d4, often reaching a Scotch-like position after 3...exd4 4.Nxd4 with the extra Nc3. Black can also play 3...Bb4 or 3...exd4 and then ...Nf6, with a standard open game. I am not sure of the exact branches.",
+  "white_ideas": [
+    {
+      "idea": "Play 3.d4 exd4 4.Nxd4 and aim for open lines with Bb5 or Nxc6"
+    },
+    {
+      "idea": "Develop with Bc4, Be3 and castle quickly"
+    },
+    {
+      "idea": "Use the early d4 to gain space and open the position"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on d4 and develop ...Nf6 and ...Bc5 or ...Bb4"
+    },
+    {
+      "idea": "Trade the d4 knight to relieve the cramp"
+    },
+    {
+      "idea": "Hit back at the centre with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Scotch-like open centre after exd4 Nxd4"
+    },
+    {
+      "structure": "Open game with the e-pawn exchanged and pieces active"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open centre with piece play but no immediate tactics; I read it as even."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "d4 is recaptured on d4 at once; no material changes hands."
+    },
+    "soundness": {
+      "notes": "It is a sound Scotch-style set-up."
+    },
+    "structure": {
+      "notes": "The centre opens early, as in the Scotch: open."
+    },
+    "approach": {
+      "notes": "The Van Geet is a rare opening that strong players seldom pick; this is a branch of it. Offbeat, low confidence."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Open game plans, with little to memorise."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "An open centre without forcing sharpness."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "A Scotch-like set-up with a sound structure.",
+      "side": null
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The d-pawn is exchanged and the pieces get open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "1.Nc3 is seldom played by strong players, though not for surprise only."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Open game plans, not many forcing lines.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan from the evidence available."
+    }
+  }
+}

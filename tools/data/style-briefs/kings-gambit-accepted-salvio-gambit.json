@@ -1,0 +1,112 @@
+{
+  "slug": "kings-gambit-accepted-salvio-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Salvio Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Ne5",
+    "fen": "rnbqkbnr/pppp1p1p/8/4N3/2B1Ppp1/8/PPPP2PP/RNBQK2R b KQkq - 1 5"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White sacrifices a pawn with 4.Bc4 g4 5.Ne5 and Black replies 5...Qh4+ 6.Kf1, when White has lost castling but has a large development lead. The play is wild with piece sacrifices for both sides. Theory is rarely played and judged dubious for White.",
+  "white_ideas": [
+    {
+      "idea": "Use Ne5 and Bc4 against f7 for a quick attack"
+    },
+    {
+      "idea": "Open the f-file with the king on f1 and play d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nh6 and ...d6 and defend f7"
+    },
+    {
+      "idea": "Consolidate extra pawns and counter on the dark squares"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, White king on f1, Black queen out early"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wild with early king exposure for White."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White's f-pawn is gone and Black can keep it."
+    },
+    "soundness": {
+      "notes": "White's king loses castling for the attack, so it is regarded as dubious."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines to know."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "lead in development",
+    "early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Cochrane Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Ne5 Qh4+ 6. Kf1 f3",
+      "how": "Black closes the position with a pawn sacrifice."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "Wild forcing play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives material."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "White's king is exposed for a risky attack."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Open lines everywhere."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Long forcing lines."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "White aims at f7 and develops fast."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "nimzo-indian-defense-dilworth-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Dilworth Gambit",
+    "eco": "E20",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e4",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White plays 4.e4 against the Nimzo-Indian, offering the pawn: Black takes with 4...Nxe4 and White tries 5.Qg4 or Qf3 to hit g7 and b4, aiming for a wild attack. Black replies ...Nxc3 and ...Bxc3+ and consolidates. The line is a rare surprise gambit.",
+  "white_ideas": [
+    {
+      "idea": "Sacrifice the e4 pawn for development and an attack with Qg4 or Qf3"
+    },
+    {
+      "idea": "Hit g7 and the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and trade the knights to simplify"
+    },
+    {
+      "idea": "Return the pawn if needed to consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black pieces active"
+    },
+    {
+      "structure": "White tries to exploit Black's uncastled king"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with immediate tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "Black can take on e4 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "Considered unsound against correct play."
+    },
+    "structure": {
+      "notes": "The centre opens."
+    },
+    "approach": {
+      "notes": "Rare; played for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A gambit with immediate tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "4.e4 offers a pawn that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Considered unsound against correct play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawn exchanges open the position."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Rarely used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for quick development against the uncastled Black king."
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "philidor-defense-steinitz-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Steinitz Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. Bc4 Be7 4. c3",
+    "fen": "rnbqk1nr/ppp1bppp/3p4/4p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4"
+  },
+  "parent": "philidor-defense",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "White develops Bc4 and plays c3 to prepare d4, while Black holds e5 with ...d6 and ...Be7 and aims for ...Nf6, ...O-O and a compact set-up. White usually gets more space after d4, and Black must free his game with ...exd4 or ...d5 at the right time. The game is quiet, with few forcing lines.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre with c3 and d4"
+    },
+    {
+      "idea": "Develop smoothly with Nbd2, O-O and Re1 and use the space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e5 with Nd7 or Nf6 and castle"
+    },
+    {
+      "idea": "Break with ...exd4 or ...d5 to free the game"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4/e4 centre against Black d6/e5 chain, often resolved by ...exd4 cxd4"
+    },
+    {
+      "structure": "Hanham-style Black set-up with pawns on d6 and e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A cramped but resilient set-up for Black with little early risk."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound; the Philidor is dynamically balanced."
+    },
+    "structure": {
+      "notes": "Flexible until White plays d4 and Black decides how to resolve the centre."
+    },
+    "approach": {
+      "notes": "A respectable but less common defence; standard rather than offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans and few traps beyond move-order care."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "compact centre",
+    "break with ...exd4 or ...d5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.7,
+      "reason": "Black builds a compact, hard-to-break set-up."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The Philidor is considered sound if passive."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre stays undecided until d4 and ...exd4 or ...d5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Less common but respectable at every level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are clear but Black must time the freeing break."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White gains space while Black waits to free the game."
+    }
+  }
+}

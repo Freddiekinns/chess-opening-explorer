@@ -1,0 +1,106 @@
+{
+  "slug": "benko-gambit-accepted-fianchetto-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Accepted: Fianchetto Variation",
+    "eco": "A58",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6 6. Nc3 Bxa6 7. g3 d6 8. Bg2 Bg7 9. Nf3",
+    "fen": "rn1qk2r/4ppbp/b2p1np1/2pP4/8/2N2NP1/PP2PPBP/R1BQK2R b KQkq - 3 9"
+  },
+  "parent": "benko-gambit-accepted-fully-accepted-variation",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "White declines to attack and fianchettoes with g3 and Bg2, keeping the extra pawn while Black has half-open a- and b-files. Black fianchettoes too, castles and plays ...Nbd7 and ...Rb8 with long-term queenside pressure. The game is a slow positional fight with no quick tactics.",
+  "white_ideas": [
+    {
+      "idea": "Hold the extra pawn with Nd2 or Nf3 and play Bg2"
+    },
+    {
+      "idea": "Return the pawn at the right moment, with Nd2, Qc2 and a4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure the queenside with ...Rb8 and ...Qa5"
+    },
+    {
+      "idea": "Use the long diagonal and the half-open a- and b-files"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benko structure: White d5 pawn against Black c5/d6, Black with half-open files"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Long-term positional compensation."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "White can keep the extra pawn."
+    },
+    "soundness": {
+      "notes": "Sound; Benko is respected."
+    },
+    "structure": {
+      "notes": "Semi-open: asymmetric with half-open files."
+    },
+    "approach": {
+      "notes": "A standard main-line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional compensation to be understood."
+    }
+  },
+  "plan_phrases": [
+    "queenside pressure",
+    "half-open files",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Long-term pressure rather than forcing play."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black gives a pawn for lasting pressure."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Benko is sound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Asymmetric structure with half-open files."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal Benko line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs positional understanding."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Both sides fianchetto; Black presses on the queenside."
+    }
+  }
+}

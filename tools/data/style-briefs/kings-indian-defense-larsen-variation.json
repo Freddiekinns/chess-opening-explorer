@@ -1,0 +1,121 @@
+{
+  "slug": "kings-indian-defense-larsen-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Larsen Variation",
+    "eco": "E90",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be3",
+    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N1BN2/PP3PPP/R2QKB1R b KQ - 3 6"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White develops the bishop to e3 against the King's Indian, defending d4 and preparing Qd2 or d5. Black reacts with ...e5, after which 7.d5 closes the centre and 7.dxe5 dxe5 8.Qxd8 offers a queenless endgame, or ...c5, with Black aiming for a queenside or kingside break. The positions are strategic with space for White and counterplay for Black. It is less forcing than the Sämisch or Classical.",
+  "white_ideas": [
+    {
+      "idea": "Defend d4 with Be3 and play d5 for space"
+    },
+    {
+      "idea": "Prepare Qd2 and Bh6 or a queenside expansion with c5"
+    },
+    {
+      "idea": "Keep a space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike at the centre with ...e5 or ...c5"
+    },
+    {
+      "idea": "Counterattack on the kingside with ...Nh5/...f5"
+    },
+    {
+      "idea": "Trade queens if dxe5 to reach a safe endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Closed King's Indian centre after d5 with White's pawns on c4/d5/e4"
+    },
+    {
+      "structure": "Open endgame after dxe5 dxe5 Qxd8"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Strategic and steady, rather than a forcing KID line."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "After 7.d5 the centre closes and play moves to the wings."
+    },
+    "approach": {
+      "notes": "A regular KID line played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "KID plans are hard to get right."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "fianchetto on g7",
+    "central break ...e5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Queenswap line",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be3 e5 7. dxe5 dxe5 8. Qxd8",
+      "how": "A queenless middlegame instead of the closed centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Strategic play, less forcing than the Sämisch but not especially safe."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A standard respectable line."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.5,
+      "reason": "After d5 the centre locks."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Regularly played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "KID plans are hard, but this branch is less forcing than the Mar del Plata."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "fianchetto"
+      ],
+      "reason": "White's space and Black's g7 bishop."
+    }
+  }
+}

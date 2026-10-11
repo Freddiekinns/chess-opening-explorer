@@ -1,0 +1,107 @@
+{
+  "slug": "benoni-defense-pawn-storm-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Pawn Storm Variation",
+    "eco": "A66",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4",
+    "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP4/4PP2/2N5/PP4PP/R1BQKBNR b KQkq - 0 7"
+  },
+  "parent": "benoni-defense-kings-pawn-line",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "The Four Pawns Attack: White builds the broadest centre with pawns on d5, e4 and f4 and threatens e4-e5. Black replies 7...Bg7 8.Nf3 O-O and strikes at the centre with ...Re8 and ...Nbd7 (or ...c4 ideas later), aiming at the e4 pawn and the e5 square. White plays Be2, O-O and e5 to open lines for the pieces before Black's counterplay on the e-file and queenside arrives. The game is concrete and tactical, with a lot of known theory.",
+  "white_ideas": [
+    { "idea": "Push e4-e5 to break open the centre while Black's king is still in the middle of development" },
+    { "idea": "Hold the space with d5, e4, f4 and play on the kingside with Bd3, Nf3, O-O" },
+    { "idea": "Meet ...Re8 and ...c4 with accurate piece placement; Bb5+ ideas" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at e4 with ...Re8, ...Nbd7 and ...Nh5 or ...Ng4 to stop e5" },
+    { "idea": "Fianchetto with ...Bg7 and later ...Bg4 or ...Qh4+ ideas" },
+    { "idea": "Queenside play with ...a6, ...b5 once the centre is stable" }
+  ],
+  "typical_structures": [
+    { "structure": "Modern Benoni with White d5, e4, f4 against Black c5, d6, g6; half-open e-file for Black" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Dangerous central expansion vs counterattack; one inaccurate move loses quickly. Sharp."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given; Black's ...b5 gambit ideas occur only later."
+    },
+    "soundness": {
+      "notes": "Black's set-up is sound but theory is demanding; the line has been called one of White's most dangerous."
+    },
+    "structure": {
+      "notes": "Fixed asymmetric centre: White d5/e4/f4 vs Black c5/d6, with a half-open e-file for Black. Semi-open, though it plays closed until e5."
+    },
+    "approach": {
+      "notes": "A main-line White reply to the Benoni, played at every level. Standard."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Black must know the e5 break and the move orders in detail; Advanced."
+    }
+  },
+  "plan_phrases": [
+    "space advantage in the centre",
+    "e4-e5 break",
+    "central pawn majority",
+    "counterplay with ...Re8 and ...c4"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Four Pawns with 8.Nf3",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Bg7 8. Nf3",
+      "how": "Main continuation; Black castles and chooses between ...Re8 and ...c4 pushes."
+    },
+    {
+      "name": "Taimanov Attack",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Bg7 8. Bb5+",
+      "how": "White forces a bishop check to disrupt Black's development."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "White's pawn mass attacks at once and Black must find precise counter-strikes."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered in the main lines."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.88,
+      "reason": "Four Pawns is a respected main-line try and Black's defence is accepted."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Fixed asymmetric centre with a half-open e-file for Black, like the Sicilian pattern; it could be read as Closed."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A main-line attack against the Benoni played by strong players."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.7,
+      "reason": "Sharp, heavily theoretical lines with precise timing for Black."
+    },
+    "plans": {
+      "value": ["space_advantage", "central_pawn_majority"],
+      "reason": "White's d5/e4/f4 pawn mass aims for e5 and central control."
+    }
+  }
+}

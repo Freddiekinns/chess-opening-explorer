@@ -1,0 +1,93 @@
+{
+  "slug": "hippopotamus-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hippopotamus Defense",
+    "eco": "B00",
+    "moves": "1. e4 Nh6",
+    "fen": "rnbqkb1r/pppppppp/7n/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black adopts a set-up of pawns on the sixth rank (g6, f6, e6, d6) with the king's bishop on g7 and the king's knight on h6, aiming for a compact, flexible position. The input's most played line is 2.d4 g6 3.c4 f6. White gets a big centre and space; Black waits and breaks later with ...c6, ...e5 or ...d5. The set-up can be played against almost anything.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4, c4, Nc3 and Be3 and gain space." },
+    { "idea": "Attack Black's compact set-up with an early Bxh6 or h4-h5 and a kingside pawn push." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the sixth-rank pawn wall and fianchetto Bg7, then play ...c6, ...e5 or ...d5." },
+    { "idea": "Keep the position compact and counter in the centre when White overextends." }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawns on d6, e6, f6, g6 with the Bg7 and the knight on h6 against a big White centre." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Compact, passive and difficult to crack, with few early tactics, but White has an easy space edge."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Passive but defensible, with no clear refutation."
+    },
+    "structure": {
+      "notes": "Black keeps pawns back and the centre undecided, waiting to break later."
+    },
+    "approach": {
+      "notes": "A set-up you can play against almost anything, as the site's anchor says."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Flexible plans and timing of the breaks take understanding; not a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "hedgehog-style pawn wall on the sixth rank",
+    "fianchetto bishop on g7",
+    "break with ...c6, ...e5 or ...d5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Compact set-up that is hard to break down quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Passive but not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Black waits and the centre is undecided."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.7,
+      "reason": "The set-up is used against almost anything."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans and timing need understanding, little memory."
+    },
+    "plans": {
+      "value": ["hedgehog", "fianchetto"],
+      "reason": "Black keeps pawns on the sixth rank and fianchettoes the king's bishop."
+    }
+  }
+}

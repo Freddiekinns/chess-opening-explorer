@@ -1,0 +1,121 @@
+{
+  "slug": "ponziani-opening-ponziani-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Ponziani Countergambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 f5",
+    "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "ponziani-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black meets 3.c3 with 3...f5, a countergambit at once attacking the e4 pawn. The main line 4.d4 d6 5.d5 fxe4 6.Ng5 Nb8 7.Nxe4 Nf6 8.Bd3 gives White the better centre and development, with Black's king-side loosened. It is sharp, but strong players regard it as dubious for Black.",
+  "white_ideas": [
+    {
+      "idea": "Play d4 and d5 to gain space and kick the knight"
+    },
+    {
+      "idea": "Take on e4 with the knight and develop Bd3 and O-O"
+    },
+    {
+      "idea": "Use the weak e6 and g6 squares and the open f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and rely on ...Nf6 and ...Be7"
+    },
+    {
+      "idea": "Play ...Nb8 and ...Nbd7 to regroup"
+    },
+    {
+      "idea": "Counter on the f-file or by ...e4 to release the tension"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a White space edge and a Black loosened kingside"
+    },
+    {
+      "structure": "White d5 pawn cramping the Black pieces"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early counterattack with open lines and mutual tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "The 3...f5 countergambit lets White take on f5 or e5, and Black plays for tempo and the f-file."
+    },
+    "soundness": {
+      "notes": "White gets a clear advantage with d4-d5 and the extra tempo."
+    },
+    "structure": {
+      "notes": "Pawns come off in the centre and the pieces play on open lines."
+    },
+    "approach": {
+      "notes": "Strong players seldom play 3...f5; it is a surprise try."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Black needs to know the main line; dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Open f-file",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Schmidt Attack",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 f5 4. d4 d6 5. d5",
+      "how": "White gains space and kicks the knight; the main line in the tree."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Early counterattack with open lines and mutual tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "The 3...f5 countergambit lets White take on f5 or e5, and Black plays for tempo and the f-file."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "White gets a clear advantage with d4-d5 and the extra tempo."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Pawns come off in the centre and the pieces play on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom play 3...f5; it is a surprise try."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Black needs to know the main line; dubious, so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black relies on counterplay on the f-file and development while White exploits the loose king."
+    }
+  }
+}

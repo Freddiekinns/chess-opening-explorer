@@ -1,0 +1,121 @@
+{
+  "slug": "kings-indian-defense-steiner-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Steiner Attack",
+    "eco": "E81",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Bg5",
+    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/6B1/2PPP3/2N2P2/PP4PP/R2QKBNR b KQ - 2 6"
+  },
+  "parent": "kings-indian-defense-samisch-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "A sharper version of the Sämisch where White adds 6.Bg5 to the f3 and e4 centre, aiming for Qd2, O-O-O and a kingside pawn storm. Black replies with ...c5, and after 7.d5 usually ...e6 or ...a6 reaches Benoni-style structures, with queenside play and ...b5 breaks against White's space and attack. The game often features opposite-wing action, though it is less forcing than the main Sämisch lines.",
+  "white_ideas": [
+    {
+      "idea": "Keep the Bg5 and Qd2 for a quick O-O-O"
+    },
+    {
+      "idea": "Push d5 to gain space and fix the centre"
+    },
+    {
+      "idea": "Advance g4/h4 for a pawn storm if Black castles short"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break with ...c5 and challenge d4"
+    },
+    {
+      "idea": "After 7.d5 play ...e6 or ...a6 and ...b5 to create queenside play"
+    },
+    {
+      "idea": "Use ...h6 or ...Nc6/...e5 to put the Bg5 question to White"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-type centre with White pawns on c4, d5, e4 and f3 against Black c5, d6"
+    },
+    {
+      "structure": "King's Indian locked centre with opposite-side attacks"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Space and a kingside pawn storm for White against Black counterplay on the queenside; typical King's Indian sharp play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines."
+    },
+    "soundness": {
+      "notes": "Sound for both; the Bg5 sideline is a respected attacking weapon with no refutation."
+    },
+    "structure": {
+      "notes": "After 7.d5 the centre is fixed asymmetrically with Black pressing along the half-open e-file and queenside, which I read as semi-open Benoni type; low confidence versus closed."
+    },
+    "approach": {
+      "notes": "An established sideline of the Sämisch, standard at a high level."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Black must understand King's Indian Benoni-type plans and the sharp sidelines; advanced by understanding."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Queenside expansion",
+    "Kingside pawn storm"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6...Nc6",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Bg5 Nc6",
+      "how": "Black plays for ...e5 and a closed King's Indian structure instead of the Benoni-type c5 plan."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Opposite-side attacking plans with the centre fixed."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Respected line for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "After 7.d5 Black presses on the half-open e and b files in a Benoni-type centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A sideline of the Sämisch, not a system."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "King's Indian Benoni-type plans and theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "queenside_expansion"
+      ],
+      "reason": "White gains space with d5; Black expands on the queenside."
+    }
+  }
+}

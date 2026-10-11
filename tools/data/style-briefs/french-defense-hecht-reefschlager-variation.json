@@ -1,0 +1,46 @@
+{
+  "slug": "french-defense-hecht-reefschlager-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Hecht-Reefschläger Variation",
+    "eco": "C10",
+    "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nc6",
+    "fen": "r1bqkbnr/ppp2ppp/2n1p3/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "french-defense-paulsen-variation",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "Black develops the knight to c6 against the French centre, which blocks the c-pawn and invites ...Nf6 and ...Bb4 later. The usual game goes 4.Nf3 Nf6 and 5.e5 or 5.Bg5, with White taking space. Reasoning is from the moves, as the line is rare.",
+  "white_ideas": [
+    { "idea": "Play e5 to gain space and cramp Black's kingside pieces" },
+    { "idea": "Develop quickly and meet ...Bb4 or ...dxe4 with simple recaptures" }
+  ],
+  "black_ideas": [
+    { "idea": "Put pressure on d4 with ...Nc6 and ...Bb4 and fight for e4" },
+    { "idea": "Keep a normal French structure while avoiding main-line theory" }
+  ],
+  "typical_structures": [
+    { "structure": "French pawn chain e5/d4 against e6/d5, with Black's knight on c6 and no c6 support for ...d5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "French-type position with White gaining space; Black is solid but slightly passive." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material offered." },
+    "soundness": { "notes": "Playable for Black but less accurate than 3...Nf6 or 3...Bb4." },
+    "structure": { "notes": "After e5 the pawn chain locks." },
+    "approach": { "notes": "A rare sideline that strong players seldom choose." },
+    "level": { "reason": "understanding", "notes": "Few forcing lines, Black needs to find plans against the space." }
+  },
+  "plan_phrases": ["space advantage"],
+  "sublines_that_differ": [
+    { "name": "3...Nc6 4.Nf3 Nf6 5.e5", "moves": "5.e5 Nd7", "how": "Gives a closed French with extra space for White." }
+  ],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.45, "reason": "A French chain with few forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Playable but slightly inferior for Black, not close to refuted." },
+    "structure": { "value": "closed", "confidence": 0.5, "reason": "After e5 the chain locks as in the Advance French." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players seldom choose 3...Nc6." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Plan-based French play with little theory." },
+    "plans": { "value": ["space_advantage"], "reason": "White gains space with e5." }
+  }
+}

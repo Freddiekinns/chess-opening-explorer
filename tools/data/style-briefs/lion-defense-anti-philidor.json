@@ -1,0 +1,118 @@
+{
+  "slug": "lion-defense-anti-philidor",
+  "tier": "unsourced",
+  "root": {
+    "name": "Lion Defense: Anti-Philidor",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 Nbd7 4. f4",
+    "fen": "r1bqkb1r/pppnpppp/3p1n2/8/3PPP2/2N5/PPP3PP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White plays 4.f4 against the Lion, taking space with e4, d4 and f4 in an Austrian-Attack style set-up. Black answers 4...e5, the Lion's Cave, aiming at the d4 centre; after 5.Nf3 exd4 6.Qxd4 c6 White gets a lead in development and Black a solid shell. The game is open and lively, with White's pawn centre as the target and Black's pieces ready to strike back.",
+  "white_ideas": [
+    {
+      "idea": "Take space with e4, d4, f4 and develop Nf3 and Bd3"
+    },
+    {
+      "idea": "Maintain the centre or recapture on d4 with the queen"
+    },
+    {
+      "idea": "Aim for a kingside attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike the centre with ...e5"
+    },
+    {
+      "idea": "Develop ...c6, ...Be7, ...Qc7 and castle"
+    },
+    {
+      "idea": "Counterattack the over-extended centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...exd4 and Qxd4"
+    },
+    {
+      "structure": "Philidor-style structure with Black d6/e5 and White f4/e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides have real chances of tactics; the f4/e5 clash makes it double-edged."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes in the main line."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "Central pawn exchanges give open lines."
+    },
+    "approach": {
+      "notes": "Played by strong players now and then, but not a main line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans against the f4 centre are subtle."
+    }
+  },
+  "plan_phrases": [
+    "central break ...e5",
+    "pawn centre",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Lion Claw Gambit",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 Nbd7 4. f4 e5 5. Nf3 exd4 6. Qxd4 c6 7. Bc4 d5",
+      "how": "Black gambits a pawn for open lines and quick development."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The f4 centre against ...e5 invites tactics and double-edged play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "The main line is not a gambit; Lion Claw is a sub-line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Sound, if double-edged."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Pawns are exchanged on d4, opening the position."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "The Lion is respectable but rare; the Pirc relation is mainstream."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Theory is limited but needs good understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No named plan is clearly characteristic."
+    }
+  }
+}

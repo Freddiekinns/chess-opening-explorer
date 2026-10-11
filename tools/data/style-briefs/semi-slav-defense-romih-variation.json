@@ -1,0 +1,108 @@
+{
+  "slug": "semi-slav-defense-romih-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Romih Variation",
+    "eco": "D46",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7 6. Bd3 Bb4",
+    "fen": "r1bqk2r/pp1n1ppp/2p1pn2/3p4/1bPP4/2NBPN2/PP3PPP/R1BQK2R w KQkq - 4 7"
+  },
+  "parent": "semi-slav-defense-main-line",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Meran-type move order 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Nf3 c6 5.e3 Nbd7 6.Bd3 Black plays 6...Bb4, pinning the knight before the usual ...dxc4. After 7.O-O O-O White often plays 8.a3 or 8.Qc2, and Black follows with ...dxc4 Bxc4 and ...e5 or ...c5, aiming at central freedom. It is less theoretical than the Meran but still gives Black active play.",
+  "white_ideas": [
+    {
+      "idea": "Castle and put the queen on c2 or play a3 to challenge the bishop"
+    },
+    {
+      "idea": "Support e4 with e3, Bd3 and a central break e4"
+    },
+    {
+      "idea": "Keep a space edge in the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take dxc4 Bxc4 and break with ...e5 or ...c5"
+    },
+    {
+      "idea": "Use the pin on c3 to prevent e4"
+    },
+    {
+      "idea": "Complete development with ...O-O and ...b6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Semi-Slav with the d-pawns often exchanged and a central pawn tension, or an open centre after ...e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has a sound set-up but White has a lasting edge in space; play is mostly manoeuvring."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Established, objectively equal."
+    },
+    "structure": {
+      "notes": "Tension between c4, d4 and d5, e6 pawns; centre not resolved."
+    },
+    "approach": {
+      "notes": "Standard queen-pawn defence, played at strong levels."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Requires understanding of Semi-Slav structures and some theory."
+    }
+  },
+  "plan_phrases": [
+    "central break",
+    "piece activity"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Sound but unsettled, with chances for both sides and no forced attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Main-line Semi-Slav idea."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre in tension, with ...dxc4 and ...e5 not yet settled."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal respectable line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.6,
+      "reason": "Requires a feel for the structures and some memorised sequences."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No named plan clearly stands out."
+    }
+  }
+}

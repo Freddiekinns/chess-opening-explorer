@@ -1,0 +1,121 @@
+{
+  "slug": "polish-opening-outflank-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Outflank Variation",
+    "eco": "A00",
+    "moves": "1. b4 c6",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 1.b4 c6 Black prepares ...d5 and ...Qb6 or ...a5 against the b4-pawn, a Slav-like set-up. White fianchettoes with 2.Bb2 and plays a3 or b5 ideas, aiming for flank play and the long diagonal. The most played sub-line is the Schuehler Gambit 2.Bb2 a5 3.b5, but the quieter 3.b5 cxb5 or 3.a3 axb4 lines are the less committal choice. The game is positional and flank-based.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto the queen bishop on b2 and hit e5 and g7"
+    },
+    {
+      "idea": "Gain queenside space with a3, b5 or c4"
+    },
+    {
+      "idea": "Develop with Nf3, e3, Be2 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Build a Slav-style centre with ...d5, ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Attack b4 with ...a5 or ...Qb6"
+    },
+    {
+      "idea": "Develop the c8 bishop freely before closing the e6 pawn in"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Asymmetrical flank structure with White pawn on b4 or a3 and Black pawns on c6/d5"
+    },
+    {
+      "structure": "Open a-file or b-file after ...a5 and bxa5 trades"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow flank play with no early forcing tactics, apart from the Schuehler Gambit sideline."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The main 2.Bb2 line gives no material; the Schuehler Gambit 3.b5 cxb5 is a sub-line."
+    },
+    "soundness": {
+      "notes": "Sound but gives Black an easy game; no refutation."
+    },
+    "structure": {
+      "notes": "Centre not fixed; White works from the flank with the bishop on b2, so flexible."
+    },
+    "approach": {
+      "notes": "Rare at the top, chosen for surprise; ...c6 is one of the less common replies."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forced lines; the hard part is choosing the right plan against a Slav-style set-up."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on b2",
+    "queenside expansion",
+    "long diagonal pressure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Schuehler Gambit",
+      "moves": "1. b4 c6 2. Bb2 a5 3. b5",
+      "how": "White offers the b-pawn for open lines and quick development; a gambit unlike the main quiet line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Slow flank play, neither particularly safe nor sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "The main line keeps material level; the gambit is a sub-line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "No refutation, only a modest edge for Black."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "A flank opening where the centre is not yet settled."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Rare among strong players and chosen mainly for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Bb2 on the long diagonal and queenside pawn pushes."
+    }
+  }
+}

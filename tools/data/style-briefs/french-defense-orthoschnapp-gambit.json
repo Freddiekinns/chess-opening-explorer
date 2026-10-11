@@ -1,0 +1,51 @@
+{
+  "slug": "french-defense-orthoschnapp-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Orthoschnapp Gambit",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. c4 d5 3. cxd5 exd5 4. Qb3",
+    "fen": "rnbqkbnr/ppp2ppp/8/3p4/4P3/1Q6/PP1P1PPP/RNB1KBNR b KQkq - 1 4"
+  },
+  "parent": "french-defense-steiner-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After the exchange on d5, White's 4.Qb3 hits d5 and b7 and invites 4...dxe4, offering a pawn for activity. Black can also defend with 4...Nf6 or 4...Be6 and reach a normal exchange-type position with White's queen out early. I am not sure which reply is main; the gambit pawn on e4 can be kept by Black with careful play.",
+  "white_ideas": [
+    { "idea": "Use the queen on b3 to pressure d5 and b7 and develop Nc3, Nf3 and Bb5+ quickly." },
+    { "idea": "Regain the e4 pawn with Nc3 and Bb5+ if Black takes it." }
+  ],
+  "black_ideas": [
+    { "idea": "Defend d5 with ...Nf6 or ...Be6 and develop calmly." },
+    { "idea": "Accept with ...dxe4 and return the pawn when needed to complete development." }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawn on d5 with an open e-file after trades, or Black a pawn up after ...dxe4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Queen-led early play with open lines; risks on both sides but not clearly attacking." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "If Black captures with 4...dxe4 the pawn is not regained by force."
+    },
+    "soundness": { "notes": "Early queen sortie for a pawn; not enough compensation against accurate play." },
+    "structure": { "notes": "Pawns exchanged in the centre leaves open lines." },
+    "approach": { "notes": "Strong players rarely choose it; mostly a surprise." },
+    "level": { "reason": "neither", "notes": "Dubious, so not Beginner; plans are simple." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "4...Nf6", "moves": "1. e4 e6 2. c4 d5 3. cxd5 exd5 4. Qb3 Nf6", "how": "Black declines the gambit; no material changes hands." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "An early queen and a pawn gambit with open lines." },
+    "gambit": { "value": "white", "confidence": 0.55, "reason": "White offers the e4 pawn which Black can keep." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.55, "reason": "An early queen sortie for thin compensation." },
+    "structure": { "value": "open", "confidence": 0.5, "reason": "Central pawns are exchanged, leaving open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players seldom meet the French with this line." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Dubious lines are never Beginner." },
+    "plans": { "value": ["early_queen", "lead_in_development"], "reason": "White's queen comes out early to speed development." }
+  }
+}

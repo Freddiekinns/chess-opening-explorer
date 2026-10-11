@@ -1,0 +1,106 @@
+{
+  "slug": "kings-indian-defense-kramer-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Kramer Variation",
+    "eco": "E70",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nge2",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/2N5/PP2NPPP/R1BQKB1R b KQkq - 1 5"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White develops the king's knight on e2 instead of f3, keeping the f-pawn free and planning Ng3, Be2 and O-O (or a quick f3/Be3 set-up). After 5...O-O 6.Ng3 e5 7.d5 the centre locks and the game becomes a King's Indian structure where White plays on the queenside with c5 or Be3 and Black pushes ...Na6, ...Nh5 and ...f5. It is quieter than the Mar del Plata and less theory-heavy, but Black still needs to time the f5 break correctly.",
+  "white_ideas": [
+    { "idea": "Ng3, Be2, O-O and Be3 with a solid central set-up" },
+    { "idea": "Close the centre with d5 and play c5 or queenside space gains" },
+    { "idea": "Keep the f-pawn free for f3 and a flexible Be3/Qd2 attack" }
+  ],
+  "black_ideas": [
+    { "idea": "Castle, play ...e5 and meet d5 with ...Na6 or ...Nbd7 and ...Nh5 to hit Ng3" },
+    { "idea": "Kingside expansion with ...f5, ...Nf6 re-routes and ...Kh8" },
+    { "idea": "Break with ...c6 if White locks the centre or keep ...exd4 options" }
+  ],
+  "typical_structures": [
+    { "structure": "Locked King's Indian centre: White d5/e4/c4 against Black e5/d6, with play on opposite wings" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Less forcing than the Classical or Sämisch because the knight on e2/g3 slows White's own attack; no mutual race by force. Balanced, though King's Indian structures always carry some risk."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "After 6.Ng3 e5 7.d5 the centre is locked and play moves to the wings. Closed."
+    },
+    "approach": {
+      "notes": "A system-flavoured move order against the KID but it is not played against everything; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans and timing of ...f5 are the hard part, but the line is less forcing than the Mar del Plata; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "locked centre with wing play",
+    "queenside space against ...f5",
+    "knight re-routing"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6.Ng3 e5 7.d5",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nge2 O-O 6. Ng3 e5 7. d5",
+      "how": "The main line; centre locks and play moves to the wings."
+    },
+    {
+      "name": "5...Nc6 6.Ng3",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nge2 Nc6",
+      "how": "Black pressures d4 early and steers towards an e5 break with more tension."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "A quieter White set-up than the Classical KID, though the locked centre still brings wing play and risk."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.92,
+      "reason": "A regular, healthy anti-KID system."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.65,
+      "reason": "After ...e5 and d5 the centre locks, as in the King's Indian anchor."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "It is a specific line against the KID, not a set-up for any defence."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "KID structures are demanding, but this branch is less forcing; could be read as Advanced."
+    },
+    "plans": {
+      "value": ["space_advantage", "pawn_storm"],
+      "reason": "White gains queenside space while Black storms the kingside with ...f5."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "englund-gambit-declined-reversed-brooklyn",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit Declined: Reversed Brooklyn",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. Nf3 e4 3. Ng1",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/3Pp3/8/PPP1PPPP/RNBQKBNR b KQkq - 1 3"
+  },
+  "parent": "englund-gambit-declined-reversed-krebs",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black answers 1.d4 with ...e5 and after 2.Nf3 e4 White retreats with 3.Ng1, a reversed version of the Brooklyn idea. White has lost time but Black's e4 pawn is a target for Nc3, d3 or Bf4 and Black must support it. White gets a quiet set-up, Black a space edge. The position is rare, so the evidence is thin.",
+  "white_ideas": [
+    {
+      "idea": "Hit e4 with Nc3, d3 or Bf4, or play e3 and Bd3"
+    },
+    {
+      "idea": "Develop fast and aim at the weak e4 pawn"
+    },
+    {
+      "idea": "Return to a normal d4 structure after pieces come out"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support the e4 pawn with ...f5 or ...d5"
+    },
+    {
+      "idea": "Develop ...Nf6, ...Bb4+ or ...Nc6"
+    },
+    {
+      "idea": "Use the extra space and attack on the kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black advanced e4 pawn against White d4"
+    },
+    {
+      "structure": "Space for Black on the e-file, chances for White to undermine"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side commits to a sharp attack; the e4 pawn is the focus of play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The knight retreats and no material is given up, since the gambit is declined."
+    },
+    "soundness": {
+      "notes": "Playable for both; White has lost time but nothing is refuted."
+    },
+    "structure": {
+      "notes": "The e4 pawn creates a tense, undecided centre."
+    },
+    "approach": {
+      "notes": "Part of the Englund family, which strong players hardly use."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few theory lines but the tense centre needs careful handling."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Pressure on e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Neither side commits to a sharp attack; the e4 pawn is the focus of play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "The knight retreats and no material is given up, since the gambit is declined."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Playable for both; White has lost time but nothing is refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The e4 pawn creates a tense, undecided centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Part of the Englund family, which strong players hardly use."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.4,
+      "reason": "Few theory lines but the tense centre needs careful handling."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "Black has gained space with the advanced e4 pawn."
+    }
+  }
+}

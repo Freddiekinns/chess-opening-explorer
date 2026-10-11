@@ -1,0 +1,111 @@
+{
+  "slug": "queens-gambit-accepted-janowski-larsen-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Janowski-Larsen Variation",
+    "eco": "D25",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 Bg4",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/8/2pP2b1/4PN2/PP3PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black develops the bishop to g4 before ...e6, pinning the Nf3, then recaptures on c4 after 5.Bxc4 e6. White develops with Nc3, O-O, h3 or Qb3, and Black plays ...Nbd7, ...Bxf3 or ...c5 and ...Be7. The game is open and active, with a slight space edge for White and an easy development for Black. It is a respectable QGA line.",
+  "white_ideas": [
+    {
+      "idea": "Take c4 with the bishop and develop Nc3, O-O and h3"
+    },
+    {
+      "idea": "Use Qb3 to pressure b7"
+    },
+    {
+      "idea": "Play e4 and build a centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin the knight and trade it with ...Bxf3"
+    },
+    {
+      "idea": "Play ...c5 and ...Nc6 for central counterplay"
+    },
+    {
+      "idea": "Develop ...Be7 and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGA open centre with White d4/e3 against Black e6/d-file semi-open"
+    },
+    {
+      "structure": "Possible isolated d-pawn after ...c5 exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Even and active; neither safe nor sharp."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4-pawn is regained by 5.Bxc4."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "QGA structure with the c-pawn gone and central exchanges, open."
+    },
+    "approach": {
+      "notes": "A standard QGA line, regularly played."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are straightforward but sensitive to move order."
+    }
+  },
+  "plan_phrases": [
+    "pin on f3",
+    "open centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Active but not forcing for either side."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "The pawn is regained immediately."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Established QGA line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "QGA centre with exchanges, open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Standard choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Moderate theory, clear plans."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single named plan is characteristic."
+    }
+  }
+}

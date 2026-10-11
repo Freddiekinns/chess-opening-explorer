@@ -1,0 +1,111 @@
+{
+  "slug": "zukertort-opening-santasieres-folly",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Santasiere's Folly",
+    "eco": "A06",
+    "moves": "1. b4 d5 2. Nf3",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/1P6/5N2/P1PPPPPP/RNBQKB1R b KQkq - 1 2"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Santasiere's Folly is a Reti-like set-up with b4 and Bb2, usually reached by 1.Nf3 d5 2.b4 Nf6 3.Bb2 e6 4.e3. White gains queenside space and puts the bishop on the long diagonal; Black can challenge with ...a5 or ...c5 or grab on b4. It is offbeat system play for White rather than main-line theory.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto Bb2, support b4 with a3 and c4"
+    },
+    {
+      "idea": "Aim at the long diagonal and play for queenside space"
+    },
+    {
+      "idea": "Develop with e3, Be2 and castle short"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge b4 with ...a5 or ...c5"
+    },
+    {
+      "idea": "Claim the centre with ...e6 and ...c5"
+    },
+    {
+      "idea": "Develop ...Nf6, ...Bf5 or ...Bg4 and ...e6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White flank pawns on b4 and a3, symmetrical-ish centre with Black pawn on d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring with no early forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "b4 is not simply hanging, so not really a gambit."
+    },
+    "soundness": {
+      "notes": "Playable though slightly worse than main lines."
+    },
+    "structure": {
+      "notes": "Centre undecided, flank play."
+    },
+    "approach": {
+      "notes": "Rare, played by few strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Modest theory, judgement needed."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Quiet flank set-up, neither especially safe nor forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Normal development, b4 is not hanging by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Playable even if not ambitious."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre not yet resolved, flank opening."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom seen among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are clear but the structure takes judgement."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Bb2 and the b4 push define the set-up."
+    }
+  }
+}

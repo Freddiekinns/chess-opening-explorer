@@ -1,0 +1,126 @@
+{
+  "slug": "kings-gambit-declined-norwalde-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Norwalde Variation",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Qf6",
+    "fen": "rnb1kbnr/pppp1ppp/5q2/4p3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black replies to 2.f4 with 2...Qf6, protecting e5 and aiming at f4 and the queenside, at the cost of an early queen move. White gets a lead in development with 3.Nc3 Qxf4 4.d4 (Schubert) or 4.Nf3 Bb4 5.Bc4 (Bücker Gambit), where the black queen is chased and the f-pawn is a gambit pawn. Black has an extra pawn but the queen is exposed.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, d4 and Nf3 while the black queen is out"
+    },
+    {
+      "idea": "Attack the exposed queen on f4 and use the open f-file and the e-file"
+    },
+    {
+      "idea": "Play Bc4 and castle quickly for an attack on f7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on f4 with the queen and hold the extra pawn"
+    },
+    {
+      "idea": "Develop with ...Bb4 and ...Nc6 and defend f7"
+    },
+    {
+      "idea": "Return the pawn to complete development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file and f-file with a black queen on f4"
+    },
+    {
+      "structure": "White d4/e4 centre against ...exd4 or a queen on f6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The early queen move makes it forcing: White develops with tempi on the queen."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 3.Nc3 Qxf4 White has given the f-pawn for development and Black can keep it; in the quieter 3.fxe5 Qxe5 nothing is given. I read the gambit lines as the main ones."
+    },
+    "soundness": {
+      "notes": "Considered dubious for Black: the early queen costs time."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces after the f- and e-pawns exchange: open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players, hence offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "It is dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "chase the early queen",
+    "open f-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Schubert Variation",
+      "moves": "1. e4 e5 2. f4 Qf6 3. Nc3 Qxf4 4. d4",
+      "how": "White offers the pawn for central control and development."
+    },
+    {
+      "name": "Bücker Gambit",
+      "moves": "1. e4 e5 2. f4 Qf6 3. Nc3 Qxf4 4. Nf3 Bb4 5. Bc4",
+      "how": "White sacrifices more material for an attack on f7."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "An early queen move and gambit play with forcing tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.5,
+      "reason": "The main lines let Black take f4 with the queen; the root itself gives nothing."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.6,
+      "reason": "The early queen move is considered inferior.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The e- and f-files and the centre open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose 2...Qf6."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Dubious, so not Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "The black queen comes out early and White develops with tempo."
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "neo-grunfeld-defense-with-g3",
+  "tier": "unsourced",
+  "root": {
+    "name": "Neo-Grünfeld Defense: with g3",
+    "eco": "D70",
+    "moves": "1. d4 Nf6 2. c4 g6 3. g3 d5",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "kings-indian-defense-fianchetto-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.d4 Nf6 2.c4 g6 3.g3 d5 White usually plays 4.Bg2, and Black chooses 4...c6 (Slav-style) or 4...Bg7. Black challenges the centre immediately, exchanging on c4 or d4 for easy development. White's bishop on g2 presses down the long diagonal while Black tries to hold d5 and break with ...c5 or ...e5.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with Bg2, castle and Nf3, then press d5 and the long diagonal"
+    },
+    {
+      "idea": "Capture on d5 and use the centre pawn majority for a small edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...dxc4 and ...Bg7, then play ...c5 or ...e5"
+    },
+    {
+      "idea": "Hold d5 with ...c6 and build a Slav-like fortress"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD/Slav-type centre with fianchettoed bishops"
+    },
+    {
+      "structure": "Symmetrical-looking structures that release into a Grünfeld exchange"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Middlegame battle for small advantages; solid but flexible."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands (any pawn on c4 is regained)."
+    },
+    "soundness": {
+      "notes": "A fully respectable system."
+    },
+    "structure": {
+      "notes": "The d4/d5 tension stays flexible, with c-pawn and e-pawn breaks later."
+    },
+    "approach": {
+      "notes": "A standard but less common choice against the Fianchetto King's Indian setup; played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional understanding of the long diagonal and ...c5 break."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Challenge the centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Positional struggle without forcing lines; neither solid fortress nor sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A fully respectable mainstream line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The d4/d5 centre stays in tension with c- and e-pawn breaks pending."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "Played by strong players but not a system for all openings."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Needs positional understanding more than memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both sides fianchetto and fight for the long diagonal."
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "slug": "kings-gambit-accepted-muzio-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Muzio Gambit, Wild Muzio Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. O-O",
+    "fen": "rnbqkbnr/pppp1p1p/8/8/2B1Ppp1/5N2/PPPP2PP/RNBQ1RK1 b kq - 1 5"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White sacrifices a piece with 4.Bc4 g4 5.O-O gxf3 6.Qxf3, getting a huge lead in development, open f-file and attack against Black's king. Black can defend with ...Qf6, ...Nc6 or ...Be7 and keep the extra material; White must find continuous threats. The game is wild and forcing.",
+  "white_ideas": [
+    {
+      "idea": "Castle and open the f-file with Qxf3"
+    },
+    {
+      "idea": "Attack f7 with Bc4, Qxf3 and e5"
+    },
+    {
+      "idea": "Keep the initiative with fast development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend with ...Qf6 and ...Nc6"
+    },
+    {
+      "idea": "Return the piece if necessary for the initiative"
+    },
+    {
+      "idea": "Consolidate and use the extra material"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black missing the f-pawns, White missing a piece"
+    },
+    {
+      "structure": "Open f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A wild line where White gives a whole piece for the attack."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives a knight for a pawn and attack."
+    },
+    "soundness": {
+      "notes": "Considered unsound by strong players, but still trappy."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines to know."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack",
+    "attack on f7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Brentano Defense",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. O-O d5",
+      "how": "Black counters in the centre instead of taking on f3."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "Piece sacrifice for attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.97,
+      "reason": "White gives a piece."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Considered close to refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Forcing lines to remember but a dubious line cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack",
+        "pressure_on_f7"
+      ],
+      "reason": "White attacks f7 and the king for the piece."
+    }
+  }
+}

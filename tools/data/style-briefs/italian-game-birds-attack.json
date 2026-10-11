@@ -1,0 +1,46 @@
+{
+  "slug": "italian-game-birds-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Bird's Attack",
+    "eco": "C53",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. b4",
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/1PB1P3/2P2N2/P2P1PPP/RNBQK2R b KQkq - 0 5"
+  },
+  "parent": "italian-game-classical-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White offers the b-pawn with 5.b4, an Evans-like thrust, hoping to win time against the bishop and build a central pawn pair with d4. Black normally declines with 5...Bb6 6.a4 a6 7.a5 Ba7, after which White gets d4 and a strong centre while Black's bishop is shut in on a7. Taking with 5...Bxb4 6.cxb4 Nxb4 is the dangerous gambit line.",
+  "white_ideas": [
+    { "idea": "Gain space on the queenside with b4, a4 and a5, trapping the bishop on a7." },
+    { "idea": "Build a big centre with d4 and use the open lines for an attack on f7." }
+  ],
+  "black_ideas": [
+    { "idea": "Decline with ...Bb6 and strike back with ...d5 or ...a6 and ...d6." },
+    { "idea": "Accept with ...Bxb4 and defend accurately, returning the pawns when needed." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on b4, c3 and d4 after a4-a5, Black bishop on a7 with an open centre." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open centre with a space grab and pressure against f7; double-edged but not forced." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "In the main line 5...Bb6 the pawn is declined, so no material changes hands." },
+    "soundness": { "notes": "Playable for both; a respectable sideline." },
+    "structure": { "notes": "The centre opens after d4 and exd4, with open lines for the pieces." },
+    "approach": { "notes": "A rare sideline used for surprise." },
+    "level": { "reason": "understanding", "notes": "Needs sound tactical and positional judgment but little theory." }
+  },
+  "plan_phrases": ["queenside space", "central pawn majority", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "5...Bxb4 6.cxb4 Nxb4", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. b4 Bxb4 6. cxb4 Nxb4", "how": "Black accepts and grabs two pawns for the centre; a real gambit." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Open centre but the main line is declined with no forced tactics." },
+    "gambit": { "value": "none", "confidence": 0.6, "reason": "The main line 5...Bb6 declines, so no material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.75, "reason": "Playable for both sides." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "d4 breaks the centre open for the pieces." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "A seldom-used sideline of the Italian." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Needs judgment in open positions." },
+    "plans": { "value": ["queenside_expansion", "central_pawn_majority"], "reason": "White advances the b and a pawns and builds a centre." }
+  }
+}

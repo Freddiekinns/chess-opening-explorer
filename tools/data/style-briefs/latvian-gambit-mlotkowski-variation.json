@@ -1,0 +1,105 @@
+{
+  "slug": "latvian-gambit-mlotkowski-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Mlotkowski Variation",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nc3",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 1 3"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 1.e4 e5 2.Nf3 f5 White develops 3.Nc3 and plays Nxe5 ideas if Black takes on e4. Black opens the f-file with ...fxe4 and goes for ...Qf6 or ...Nf6, accepting a loosened king for activity. Strong players do not trust it and White tends to keep a lasting advantage.",
+  "white_ideas": [
+    {
+      "idea": "Capture e5 with the knight and hit the Black king"
+    },
+    {
+      "idea": "Develop with d3 or d4 and keep a safe extra pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the f-file with ...fxe4 and develop with ...Qf6 or ...Nf6"
+    },
+    {
+      "idea": "Use traps against careless White play"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the e- and f-files open and an exposed Black king"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Risky, trap-based counterattack."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black gives up central material for open lines and White can keep it with accurate play."
+    },
+    "soundness": {
+      "notes": "Strong players consider the Latvian unsound; it scores through surprise."
+    },
+    "structure": {
+      "notes": "Open: central pawns come off and pieces fight on open lines."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players, chosen for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Tactics and refutations of traps; a dubious gambit is not a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Forcing tactical play with an exposed king."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black gives material for activity; the anchor treats the Latvian as a Black gambit."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "The Latvian is a classic dubious gambit."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The e- and f-files open immediately."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "The Latvian is an anchor offbeat opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black brings the queen out early for activity."
+    }
+  }
+}

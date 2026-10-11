@@ -1,0 +1,114 @@
+{
+  "slug": "bird-opening-lasker-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Lasker Variation",
+    "eco": "A03",
+    "moves": "1. f4 d5 2. Nf3 Nf6 3. e3 c5",
+    "fen": "rnbqkb1r/pp2pppp/5n2/2pp4/5P2/4PN2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "bird-opening-dutch-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In this reversed-Dutch Bird, Black plays 3...c5 against 3.e3 in the style of the Queen's Gambit. White usually plays 4.b3 Nc6 5.Bb2 e6 and develops with Be2, O-O and d3 or Ne5, with the f4 pawn controlling e5. Black fights for the centre and the dark squares are the battleground.",
+  "white_ideas": [
+    {
+      "idea": "Play b3 and Bb2 to put pressure on the long diagonal"
+    },
+    {
+      "idea": "Control e5 with the f4 pawn and a knight, then castle"
+    },
+    {
+      "idea": "Play Be2, O-O and d3 or Ne5 and keep a flexible set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Nc6, ...e6 and ...Be7 and fight for the centre with ...c4 or ...e5"
+    },
+    {
+      "idea": "Pin the knight with ...Bg4 or hit the centre with ...c4"
+    },
+    {
+      "idea": "Exploit the weakened e1-h4 diagonal with ...Qb6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed Dutch with White f4/e3 pawns against Black c5/d5"
+    },
+    {
+      "structure": "Black c5/d5/e6 centre against a White fianchetto bishop on b2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional play with both sides developing to good squares; the f4 pawn gives some tactical risk but not much."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound; no refutation."
+    },
+    "structure": {
+      "notes": "Pawn tension in the centre with c5 and d5 against f4 and e3: flexible."
+    },
+    "approach": {
+      "notes": "A respected opening used by strong players, though uncommon: standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but the f4 weakening needs care."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on b2",
+    "control of e5",
+    "reversed Dutch"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Positional play with some kingside risk but no forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "No refutation.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is in tension with pawns on c5, d5, e3 and f4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A respected if uncommon choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Clear plans.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White plays b3 and Bb2 and controls e5."
+    }
+  }
+}

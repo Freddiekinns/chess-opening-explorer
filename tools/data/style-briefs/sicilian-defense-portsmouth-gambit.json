@@ -1,0 +1,105 @@
+{
+  "slug": "sicilian-defense-portsmouth-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Portsmouth Gambit",
+    "eco": "B30",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. b4",
+    "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/1P2P3/5N2/P1PP1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "sicilian-defense-old-sicilian",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White offers the b-pawn with a Wing Gambit, 3.b4. After 3...cxb4 White follows with 4.a3 or 4.d4, looking to open the a- and d-files, build a big centre and develop quickly with Bb2 and Bd3. Black can take the pawn and consolidate with ...d5 or ...e5, or decline with 3...Nxb4. The name is not familiar to me, but the moves are clear: this is a rare Sicilian anti-line played for surprise. With correct play Black stays a pawn up and White's compensation falls short.",
+  "white_ideas": [
+    { "idea": "Open the a-file and d-file with a3 and d4 and develop rapidly" },
+    { "idea": "Build the e4/d4 centre and aim at the kingside with Bd3 and O-O" },
+    { "idea": "Use Bb2 on the long diagonal against g7" }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn with ...cxb4 and consolidate with ...e6 or ...d5" },
+    { "idea": "Respond to d4 with ...d5 or ...e5 and trade into a pawn-up position" },
+    { "idea": "Develop quickly and castle to avoid tactics" }
+  ],
+  "typical_structures": [
+    { "structure": "White has e4/d4 pawns against Black's d- or e-pawn centre; Black is a pawn up, no b-pawn for White" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A wing gambit leads to open, double-edged play with White chasing development; I read it as Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 3...cxb4 Black can hold the pawn."
+    },
+    "soundness": {
+      "notes": "Wing gambits against the Sicilian are considered unsound at a high level."
+    },
+    "structure": {
+      "notes": "A Sicilian-like asymmetric centre with half-open c- and d-files; taxonomy puts every Sicilian here. Semi-open."
+    },
+    "approach": {
+      "notes": "Strong players rarely play this. Offbeat."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious, so never Beginner; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development for a pawn",
+    "open files and central break"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...cxb4 4.a3",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. b4 cxb4 4. a3",
+      "how": "White opens the a-file and tries to hold the centre with d4."
+    },
+    {
+      "name": "3...Nxb4",
+      "moves": "1. e4 c5 2. Nf3 Nc6 3. b4 Nxb4",
+      "how": "Black takes with the knight and White tries quick central play with d4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A pawn is offered for lines and development, so play is concrete and risky."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives the b-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "Wing gambits against the Sicilian are generally thought to fall short."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "A Sicilian asymmetric centre with a half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Rarely seen among strong players, played for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never Beginner; it relies on tactics."
+    },
+    "plans": {
+      "value": ["lead_in_development"],
+      "reason": "The pawn is paid for with speed of development."
+    }
+  }
+}

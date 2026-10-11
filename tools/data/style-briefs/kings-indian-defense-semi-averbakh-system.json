@@ -1,0 +1,99 @@
+{
+  "slug": "kings-indian-defense-semi-averbakh-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Semi-Averbakh System",
+    "eco": "E73",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Be2 O-O 6. Be3",
+    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N1B3/PP2BPPP/R2QK1NR b KQ - 3 6"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White develops the dark-squared bishop to e3 before the knight, aiming for Qd2, Nf3 or Nge2 and a quick d5. Black usually plays 6...e5 or 6...Nc6, with 6...Ng4 hitting the bishop and 6...c5 as options. After d5 the centre locks and the game becomes the King's Indian race: Black attacks the kingside with ...f5 and White expands on the queenside with c5.",
+  "white_ideas": [
+    { "idea": "Support the centre with Be3 and Qd2, play d5 and expand with c5 and Nb5." },
+    { "idea": "Meet 6...Ng4 with Bg5 and keep the e4 pawn solid." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike with ...e5 or ...c5 to fight for the centre." },
+    { "idea": "After d5 swing the knight to e8 or d7 and play ...f5 and ...g5 for the kingside attack." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian locked centre with White pawns on c4, d5, e4 against Black pawns on d6, e5, with opposite-wing play." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The King's Indian centre-lock leads to a race on opposite wings, with pawn storms and sacrifices."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main line."
+    },
+    "soundness": {
+      "notes": "Fully respectable for both sides."
+    },
+    "structure": {
+      "notes": "After ...e5 and d5 the central pawns lock, which is the typical outcome."
+    },
+    "approach": {
+      "notes": "A normal Be3 branch of the main King's Indian; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Timing of the pawn storm and defence against c5 need understanding; the move order theory is moderate."
+    }
+  },
+  "plan_phrases": [
+    "...f5 kingside pawn storm",
+    "c5 queenside expansion for White",
+    "locked centre and space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6...Ng4 line",
+      "moves": "6... Ng4 7. Bg5 h6 8. Bh4 g5 9. Bg3",
+      "how": "Black chases the bishop and weakens his own kingside, giving a sharper and more tactical game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "King's Indian structures lead to mutual attacks on opposite wings."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A main King's Indian line."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.55,
+      "reason": "After ...e5 and d5 the centre locks and play moves to the wings."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream White set-up."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Less forcing theory than the main KID lines but the plans need understanding."
+    },
+    "plans": {
+      "value": ["kingside_attack", "pawn_storm", "space_advantage"],
+      "reason": "Black storms the kingside and White holds central space."
+    }
+  }
+}

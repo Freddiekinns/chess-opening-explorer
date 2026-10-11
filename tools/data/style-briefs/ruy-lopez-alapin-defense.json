@@ -1,0 +1,98 @@
+{
+  "slug": "ruy-lopez-alapin-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Alapin Defense",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Bb4",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/1B2p3/1b2P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black copies White's bishop move with 3...Bb4, a rare symmetrical reply to the Ruy Lopez. White plays 4.c3 hitting the bishop, when Black retreats ...Ba5 and after 5.Bxc6 dxc6 (the Alapin Gambit in the input's pages) play opens up, or 5.O-O Nge7 quietly. I am unsure of the exact theory; the line is rare, and White should be better with the centre and the tempo gained against the bishop.",
+  "white_ideas": [
+    { "idea": "Gain time with c3 and d4 to take the centre." },
+    { "idea": "Exchange on c6 to wreck Black's structure and win the e5 pawn or the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Retreat to a5 and develop ...Nge7 and ...O-O with a compact position." },
+    { "idea": "After Bxc6 dxc6 use the bishop pair and open d-file for activity." }
+  ],
+  "typical_structures": [
+    { "structure": "Open e-pawn centre with doubled c-pawns for Black after Bxc6 dxc6 and the d-file open." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early forcing exchanges and tempo play; Black's bishop shuffles lose time, so the line is risky for Black."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Not sure; the Alapin Gambit name may mean Black offers the e5 pawn, but the main play does not clearly give material."
+    },
+    "soundness": {
+      "notes": "Black loses time with the bishop and White gets an easy edge, so dubious for Black."
+    },
+    "structure": {
+      "notes": "Centre pawns are exchanged after d4 or Bxc6 and Nxe5, leaving open lines."
+    },
+    "approach": {
+      "notes": "Strong players seldom play 3...Bb4; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so not beginner; little theory to learn."
+    }
+  },
+  "plan_phrases": [
+    "bishop pair for Black after Bxc6",
+    "tempo on the bishop with c3"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Alapin Gambit",
+      "moves": "4. c3 Ba5 5. Bxc6 dxc6 6. Nxe5",
+      "how": "White takes the e5 pawn and Black plays for activity with the open d-file and bishop pair."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Early tempo play and exchanges lead to forcing, open positions."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "Unsure; the main play does not clearly give material."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Bishop moves lose time and White gets an easy edge."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Centre pawns are exchanged and the game turns on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever play 3...Bb4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious so never beginner, with little theory."
+    },
+    "plans": {
+      "value": ["bishop_pair"],
+      "reason": "After Bxc6 dxc6 Black has the two bishops."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "bishops-opening-boden-kieseritzky-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Boden-Kieseritzky Gambit",
+    "eco": "C27",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Bc4 Nxe4 4. Nc3",
+    "fen": "rnbqkb1r/pppp1ppp/8/4p3/2B1n3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 1 4"
+  },
+  "parent": "petrovs-defense-italian-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black has taken the e4 pawn and White offers to trade knights with 4.Nc3. In the main line 4...Nxc3 5.dxc3 f6 6.Nh4 g6 7.f4 White gets open lines, the bishop on c4 and a lead in development for the pawn, while Black tries to consolidate with ...Qe7 and ...d5. The alternative 4...d5 5.Bxd5 Nxc3 6.Bxf7+ or 5.Nxd5 lines are very tactical. White's play is easy to like at club level; with correct defence Black stays a pawn up.",
+  "white_ideas": [
+    { "idea": "Recapture dxc3 and open the d-file and the c4-h4 diagonal for the pieces" },
+    { "idea": "Nh4 and f4 to attack the kingside and prevent ...f6 and ...Qe7 consolidation" },
+    { "idea": "Use Bxf7+ and Qh5+ tricks against a loose king" }
+  ],
+  "black_ideas": [
+    { "idea": "Trade the active knight with ...Nxc3 and consolidate with ...f6 and ...Qe7" },
+    { "idea": "Challenge with ...d5 to blunt the bishop on c4" },
+    { "idea": "Keep the extra pawn and trade queens" }
+  ],
+  "typical_structures": [
+    { "structure": "White has an open d-file and doubled c-pawns after dxc3, Black has an extra pawn and a slightly loosened kingside" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White's lead in development, the f7 target and the early Qh5 or Nh4 ideas make play forcing. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White is a pawn down after 3...Nxe4 and cannot force it back; Black keeps it with correct play."
+    },
+    "soundness": {
+      "notes": "Opinion is that White's compensation is not quite enough; I take it as dubious for White, with medium confidence."
+    },
+    "structure": {
+      "notes": "Open d-file and diagonals after the trade on c3. Open."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose it as a main weapon; offbeat."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "A dubious gambit is never Beginner; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development for a pawn",
+    "pressure on f7",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Lichtenhein Defense",
+      "moves": "1. e4 e5 2. Nf3 Nf6 3. Bc4 Nxe4 4. Nc3 d5",
+      "how": "Black counterattacks with ...d5 and the lines are much more tactical."
+    },
+    {
+      "name": "4...Nxc3 5.dxc3",
+      "moves": "1. e4 e5 2. Nf3 Nf6 3. Bc4 Nxe4 4. Nc3 Nxc3 5. dxc3",
+      "how": "The main line, where White gets open lines for the pawn."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "An open game with a pawn sacrificed for lines against Black's king."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White is a pawn down and cannot force it back."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Accurate defence leaves Black a pawn up; White's compensation is thought to fall short."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Central pawns have been exchanged, leaving open files and diagonals."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "A gambit that strong players rarely pick."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.65,
+      "reason": "Dubious gambit relying on tactics and move orders."
+    },
+    "plans": {
+      "value": ["lead_in_development", "pressure_on_f7", "kingside_attack"],
+      "reason": "White's pieces aim at f7 and the king for the pawn."
+    }
+  }
+}

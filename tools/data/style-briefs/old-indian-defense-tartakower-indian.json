@@ -1,0 +1,121 @@
+{
+  "slug": "old-indian-defense-tartakower-indian",
+  "tier": "unsourced",
+  "root": {
+    "name": "Old Indian Defense: Tartakower-Indian",
+    "eco": "A54",
+    "moves": "1. d4 Nf6 2. c4 d6 3. Nf3 Bg4",
+    "fen": "rn1qkb1r/ppp1pppp/3p1n2/8/2PP2b1/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4"
+  },
+  "parent": "old-indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black pins the f3 knight early with ...Bg4 before committing the centre, hoping to take on f3 and then play ...Nbd7, ...e5 and ...c6 in the Old Indian manner. White plays 4.Nc3 Nbd7 5.e4 (or hits b7 with 4.Qb3) and gets the bishop pair and a big centre if Black takes on f3. Black is solid but a little cramped.",
+  "white_ideas": [
+    {
+      "idea": "Keep the bishop pair, build a centre with e4 and Be2, or add Qb3 pressure on b7"
+    },
+    {
+      "idea": "Break the pin with h3 and g4 or Nd2 and keep the centre"
+    },
+    {
+      "idea": "Use the space for a kingside advance"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin and trade the f3 knight, then play ...Nbd7, ...e5 and ...Be7"
+    },
+    {
+      "idea": "Meet Qb3 with ...Qc8 or ...Nbd7 and keep the bishop outside the pawn chain"
+    },
+    {
+      "idea": "Aim for an Old Indian structure with ...e5 and ...c6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Old Indian pawns on d6/e5 with a bishop outside the chain"
+    },
+    {
+      "structure": "White c4/d4/e4 centre against ...d6 and ...e5, centre in tension"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A cramped but solid Black set-up. Nothing forcing, though Qb3 hitting b7 asks small questions."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No sacrifice; the b7 pawn is protected after ...Nbd7 or ...Qc8."
+    },
+    "soundness": {
+      "notes": "Sound but gives White the bishop pair and space; no refutation."
+    },
+    "structure": {
+      "notes": "White d4/c4 (and later e4) against d6/e5; the centre stays in tension: flexible."
+    },
+    "approach": {
+      "notes": "Rare move order, seldom played by strong players, so I lean offbeat, but the Old Indian as a whole is respectable. I am unsure."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are understandable, mostly about bishop pair and space."
+    }
+  },
+  "plan_phrases": [
+    "bishop pair for White",
+    "space advantage",
+    "Old Indian centre with ...d6 and ...e5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4.Qb3",
+      "moves": "1. d4 Nf6 2. c4 d6 3. Nf3 Bg4 4. Qb3",
+      "how": "White hits b7 at once and Black has to answer with ...Nbd7 or ...Qc8."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "An Old Indian set-up that is hard to break but cramped."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up on purpose."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.85,
+      "reason": "No refutation; White gets the bishop pair at most.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The d4/c4 centre against d6/e5 stays in tension."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Early ...Bg4 in the Old Indian is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Understandable plans with small tactical points.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "bishop_pair",
+        "space_advantage"
+      ],
+      "reason": "White keeps the bishop pair and the centre after ...Bxf3."
+    }
+  }
+}

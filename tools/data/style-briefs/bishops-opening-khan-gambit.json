@@ -1,0 +1,113 @@
+{
+  "slug": "bishops-opening-khan-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Khan Gambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 d5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 0 3"
+  },
+  "parent": "bishops-opening",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "After 1.e4 e5 2.Bc4 Black strikes in the centre with 2...d5. Play usually follows 3.exd5 Nf6 or 3.Bxd5 Nf6 4.Bb3 Nxe4, where Black regains the pawn at once and gets a comfortable game. The result is an open, roughly equal position.",
+  "white_ideas": [
+    {
+      "idea": "Take on d5 and hold the extra pawn if Black does not recover it"
+    },
+    {
+      "idea": "Develop with Nf3 and castle, using the bishop on c4 or b3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the pawn with ...Nf6 and ...Nxd5 or ...Nxe4"
+    },
+    {
+      "idea": "Develop actively and hit the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file after the e-pawns trade"
+    },
+    {
+      "structure": "Near-symmetrical central structure once the pawn is recovered"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A direct central break that equalises with simple moves."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": false,
+      "notes": "Black normally regains the pawn by force, so it is a gambit in name only."
+    },
+    "soundness": {
+      "notes": "Black is theoretically fine; the central break is a recognised equaliser."
+    },
+    "structure": {
+      "notes": "Open: the e- and d-pawns come off early."
+    },
+    "approach": {
+      "notes": "A sideline of the Bishop's Opening, but a standard Black reply."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A direct line with a clear idea."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "central break ...d5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Bxd5 line",
+      "moves": "1. e4 e5 2. Bc4 d5 3. Bxd5 Nf6 4. Bb3 Nxe4",
+      "how": "Black regains the pawn at once; White keeps only the bishop on b3."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Open equal play, neither especially forcing nor especially safe."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The pawn comes back by force, so no real gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Black's ...d5 is an accepted equaliser."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Central pawns come off and pieces get open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Rare line but a normal choice at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "A direct central idea, not a long theory line."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Open positions reward quick development."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "englund-gambit-stockholm-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit: Stockholm Variation",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. dxe5 Nc6 3. Nf3 Qe7 4. Qd5",
+    "fen": "r1b1kbnr/ppppqppp/2n5/3QP3/8/5N2/PPP1PPPP/RNB1KB1R b KQkq - 4 4"
+  },
+  "parent": "englund-gambit-main-line",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "Black sacrifices a pawn with 1...e5, and after 2.dxe5 Nc6 3.Nf3 Qe7 White plays 4.Qd5, defending e5 and hitting b7. Black continues 4...f6 5.exf6 Nxf6 and has a lead in development for the pawn, with White's queen exposed. White can retreat to Qb5 or play 6.Qb5.",
+  "white_ideas": [
+    {
+      "idea": "Keep the pawn and untangle with Qb5 or Qd1"
+    },
+    {
+      "idea": "Develop Bf4/Nc3 and castle"
+    },
+    {
+      "idea": "Trade queens to cash in the extra pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop quickly with ...Nxf6, ...Bc5 and ...d6"
+    },
+    {
+      "idea": "Harass the queen with ...Nb4 and ...Bc5"
+    },
+    {
+      "idea": "Create threats on the open e-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White extra e5 pawn exchanged for f-pawn; open centre"
+    },
+    {
+      "structure": "Black active pieces vs exposed queen"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A trappy gambit where Black must find tactics to survive; White gets a good position with care."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the e5 pawn."
+    },
+    "soundness": {
+      "notes": "Englund is an anchor of dubious Black gambits."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Rare; anchor of offbeat openings."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Traps need to be known and White's refutations are straightforward."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Gambit with tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.97,
+      "reason": "Black gives a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.95,
+      "reason": "Anchor says so."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Anchor."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.7,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Black plays for tempo against the exposed white queen."
+    }
+  }
+}

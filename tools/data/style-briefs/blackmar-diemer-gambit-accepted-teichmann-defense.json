@@ -1,0 +1,112 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-teichmann-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Teichmann Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Bg4",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/8/3P2b1/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "In the BDG Accepted Black plays 5...Bg4 and after 6.h3 Bxf3 7.Qxf3 c6 hands White the bishop pair in return for keeping the extra pawn. White gets open lines and play against the king, with Be3, g4 or Qf2 as typical moves. Black consolidates and aims for a safe extra pawn.",
+  "white_ideas": [
+    {
+      "idea": "Use the bishop pair with Bd3 and Be3"
+    },
+    {
+      "idea": "Attack with g4 and Qf2 or Qf4 against the Black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the f3 knight and play ...c6 and ...e6"
+    },
+    {
+      "idea": "Consolidate the extra pawn with ...Nbd7 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White bishop pair against knights with open f-file and e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open and tactical with White playing for the attack."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "Black can keep the extra pawn."
+    },
+    "soundness": {
+      "notes": "Engines judge White's compensation insufficient."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare at master level, used for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long specific lines."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "bishop pair",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Seidel-Hall Attack",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Bg4 6. h3 Bxf3 7. Qxf3 c6 8. g4",
+      "how": "White storms the kingside with g4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Open gambit lines and mutual attacks."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives up a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Engines say Black holds the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Open lines throughout."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Gambit theory; dubious lines are never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "bishop_pair"
+      ],
+      "reason": "White has the bishop pair and develops fast."
+    }
+  }
+}

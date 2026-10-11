@@ -1,0 +1,120 @@
+{
+  "slug": "kings-gambit-accepted-allgaier-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Allgaier Gambit",
+    "eco": "C39",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ng5",
+    "fen": "rnbqkbnr/pppp1p1p/8/6N1/4PppP/8/PPPP2P1/RNBQKB1R b KQkq - 1 5"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "White sacrifices a knight on f7 for a pawn and an attack: after 5.Ng5 h6 6.Nxf7 Kxf7 White plays 7.Bc4+ (Urusov Attack, with 7...d5 8.Bxd5+ Ke8 9.d4) or 7.d4 (Thorold Attack) aiming at the exposed king. Black has to find the way to give back material and consolidate. Theory is long and sharp; most analysis favours Black.",
+  "white_ideas": [
+    {
+      "idea": "Open the king with the knight sacrifice on f7 and attack with Bc4+, d4 and Qd3"
+    },
+    {
+      "idea": "Use the h4 and f-pawns to win lines against the Black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the knight and bring the king to safety on e8 after Bxd5+"
+    },
+    {
+      "idea": "Return material to neutralise the attack and keep the extra pawn on f4 and g4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Wide-open positions with the White king's side open and the Black king in the centre"
+    },
+    {
+      "structure": "Black pawns on f4 and g4 cramping White's kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A wild attack: White is down a knight for pawns and the lines are forcing."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White sacrifices a knight on f7 for two pawns' worth of attack; Black can keep the extra piece."
+    },
+    "soundness": {
+      "notes": "Considered unsound by modern theory; Black can defend with accurate play."
+    },
+    "structure": {
+      "notes": "Open, with central lines cleared quickly."
+    },
+    "approach": {
+      "notes": "A rare, risky gambit seldom seen from strong players; chosen for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing theory that must be known, but unsound so not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Knight sacrifice on f7",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Urusov Attack",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ng5 h6 6. Nxf7 Kxf7 7. Bc4+",
+      "how": "Check on f7 file and attacks along the a2-g8 diagonal."
+    },
+    {
+      "name": "Thorold Attack",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ng5 h6 6. Nxf7 Kxf7 7. d4",
+      "how": "Central pawn break first, bishop later."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "A knight sacrifice for the attack with long forcing lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.95,
+      "reason": "White gives a knight on f7 (and pawns) for an attack; Black can keep the material."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "Theory favours Black after accurate defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Central pawns come off and the king is exposed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom chosen by strong players in recent years."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs memorised sharp lines, but a dubious gambit is not a repertoire anchor."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "Attack against the Black king after the f7 sacrifice."
+    }
+  }
+}

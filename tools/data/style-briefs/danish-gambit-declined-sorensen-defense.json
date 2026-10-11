@@ -1,0 +1,46 @@
+{
+  "slug": "danish-gambit-declined-sorensen-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Danish Gambit Declined: Sörensen Defense",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3 d5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3p4/3pP3/2P5/PP3PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "danish-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "Black declines the gambit by striking at the centre with 3...d5. After 4.exd5 Qxd5 5.cxd4 White recovers the pawn and has an isolated d-pawn with open lines for the pieces, while Black has easy development. The position is level and open, and neither side is behind in material.",
+  "white_ideas": [
+    { "idea": "Recapture on d4, develop Nc3 and Nf3 and use the open lines" },
+    { "idea": "Play for the initiative against the Black queen on d5" }
+  ],
+  "black_ideas": [
+    { "idea": "Develop smoothly with ...Nf6, ...Nc6 and ...Bb4+ and target the d4 pawn" },
+    { "idea": "Trade pieces to reach an easy equality" }
+  ],
+  "typical_structures": [
+    { "structure": "Isolated d4 pawn for White against a symmetrical set-up, open central files" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open but even; Black has no real risks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Declined; White regains the pawn on d4." },
+    "soundness": { "notes": "A good equalising line for Black." },
+    "structure": { "notes": "Central pawns exchanged, open lines for pieces." },
+    "approach": { "notes": "Normal for the Danish." },
+    "level": { "reason": "understanding", "notes": "Open play with straightforward plans." }
+  },
+  "plan_phrases": ["isolated queen's pawn", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Accepted Danish", "moves": "3...dxc3 4.Bc4", "how": "The real gambit, much sharper." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Open but level play without much risk." },
+    "gambit": { "value": "none", "confidence": 0.85, "reason": "Declined line, material is level." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A good equalising line for Black." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "Central pawns come off, leaving open lines." },
+    "approach": { "value": "standard", "confidence": 0.7, "reason": "A normal reply to the Danish." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.65, "reason": "Open play with simple plans." },
+    "plans": { "value": ["isolated_queens_pawn", "lead_in_development"], "reason": "White gets an isolated d-pawn and active pieces." }
+  }
+}

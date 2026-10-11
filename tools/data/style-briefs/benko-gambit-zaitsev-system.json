@@ -1,0 +1,106 @@
+{
+  "slug": "benko-gambit-zaitsev-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit: Zaitsev System",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. Nc3",
+    "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 5"
+  },
+  "parent": "benko-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White declines to take on a6 and develops with 5.Nc3. After 5...axb5 6.e4 b4 7.Nb5 d6 8.Bf4 Nh5 White hits the bishop and Black fights for the e5 and c4 squares; the alternative 5...Qa5 is a more restrained line. Black has given a pawn for pressure on the a- and b-files and the long diagonal, and White tries to consolidate with e4 and a knight on b5 or d5. The game is positional compensation with real tactics, not an attack on the king.",
+  "white_ideas": [
+    { "idea": "Develop e4, Be2/Nf3 and castle while keeping the pawn" },
+    { "idea": "Place a knight on b5 or d5 and use the bishop on f4 to stop ...e6 and ...Nh5" },
+    { "idea": "Return the pawn only when it neutralises Black's pressure" }
+  ],
+  "black_ideas": [
+    { "idea": "Pressure the queenside with ...Bg7, ...O-O, ...Qa5 and rooks on the a- and b-files" },
+    { "idea": "Hit the centre with ...Nbd7, ...e6 or ...Nh5" },
+    { "idea": "Develop the bishop on g7 to put pressure on the long diagonal and the c3 and b2 squares" }
+  ],
+  "typical_structures": [
+    { "structure": "White has an extra pawn on the queenside and a centre; Black has half-open a- and b-files and a fianchettoed bishop" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Zaitsev poses concrete questions with the Nb5 and Bf4 tries; Black risks a pawn for pressure. Sharp, with moderate confidence; the compensation is long-term rather than direct attack."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can hold the extra pawn; Black has lasting pressure."
+    },
+    "soundness": {
+      "notes": "The Benko is sound; Zaitsev is a respected White try."
+    },
+    "structure": {
+      "notes": "Half-open a- and b-files for Black, a fixed d5/c5 pawn pair; an asymmetric centre. Semi-open."
+    },
+    "approach": {
+      "notes": "A known and regularly played gambit at the top level. Standard."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Black needs to know the move orders and compensation plans; Advanced."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "fianchetto bishop on g7",
+    "pressure on the a- and b-files"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5...Qa5",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. Nc3 Qa5",
+      "how": "Black avoids the capture on b5 and keeps tension, a different structure."
+    },
+    {
+      "name": "5...axb5 6.e4 b4 7.Nb5",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. Nc3 axb5 6. e4 b4 7. Nb5",
+      "how": "The main Zaitsev idea, where White uses the knight on b5 and a quick Bf4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A pawn down for pressure with concrete lines; Balanced is the alternative since the compensation is positional."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.95,
+      "reason": "Black gave a pawn that White can keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The Benko is an accepted, sound gambit."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Half-open a- and b-files and a fixed, asymmetric centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A regularly played gambit at all levels."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Move orders and compensation plans must be learned; could be Intermediate."
+    },
+    "plans": {
+      "value": ["queenside_expansion", "fianchetto"],
+      "reason": "Black pushes on the queenside files and puts the bishop on g7."
+    }
+  }
+}

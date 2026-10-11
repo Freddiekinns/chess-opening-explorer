@@ -1,0 +1,113 @@
+{
+  "slug": "queens-gambit-accepted-accelerated-mannheim-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Accelerated Mannheim Variation",
+    "eco": "D20",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Qa4+",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/Q1pP4/8/PP2PPPP/RNB1KBNR b KQkq - 1 3"
+  },
+  "parent": "queens-gambit-accepted",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White checks at once with 3.Qa4+ to regain the pawn on c4. Black replies ...Nc6, ...Nd7 or ...Bd7, and the game normally continues with e3 or Nf3 and Qxc4. The queen is exposed early so Black can gain time, but the line is level and positional.",
+  "white_ideas": [
+    {
+      "idea": "Regain the c4 pawn with the queen"
+    },
+    {
+      "idea": "Develop e3, Nf3 and Bxc4"
+    },
+    {
+      "idea": "Build the centre with d4 and e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain time against the queen with ...Nc6 or ...Bd7"
+    },
+    {
+      "idea": "Strike with ...e5 or ...c5"
+    },
+    {
+      "idea": "Develop and equalise"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGA structure with White d4 and Black c-pawn gone"
+    },
+    {
+      "structure": "Open centre for rapid development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A minor sideline with early queen activity and few risks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The pawn comes back at once."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Open QGA structure."
+    },
+    "approach": {
+      "notes": "A rare alternative to 3.Nf3/e3 that occasionally appears."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Straightforward positional play."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "regain the pawn"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Equal and positional."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Pawn regained at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A normal sideline."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "QGA anchor structure."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Rare but played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Little theory."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The queen comes out on move 3."
+    }
+  }
+}

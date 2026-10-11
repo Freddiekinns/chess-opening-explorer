@@ -1,0 +1,93 @@
+{
+  "slug": "benoni-defense-taimanov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Taimanov Variation",
+    "eco": "A67",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Bg7 8. Bb5+",
+    "fen": "rnbqk2r/pp3pbp/3p1np1/1BpP4/4PP2/2N5/PP4PP/R1BQK1NR b KQkq - 2 8"
+  },
+  "parent": "benoni-defense-pawn-storm-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "A branch of the Four Pawns Attack against the Modern Benoni. White checks with 8.Bb5+, Black blocks with 8...Nfd7 (the input's main line), and play continues 9.a4 O-O 10.Nf3 with the Zaitsev set-up, or 9.Bd3. White has a big pawn centre with e4-e5 threats; Black aims for ...Na6, ...Nb6 and ...c4 or ...b5 breaks and pressure on the e-file. Both sides take large risks and theory is deep.",
+  "white_ideas": [
+    { "idea": "Support the e4-e5 break with Nf3, O-O and a4, and use the centre space and attack on the kingside." },
+    { "idea": "Play for e5 and use the bishop on b5 to restrain ...a6 and ...b5." }
+  ],
+  "black_ideas": [
+    { "idea": "Block with ...Nfd7, castle and reposition the knight with ...Na6-c7 and aim for ...b5." },
+    { "idea": "Strike with ...c4 or ...Re8 to exploit the e-file and the weak d4 and e5 squares." }
+  ],
+  "typical_structures": [
+    { "structure": "Four Pawns centre of c-pawn gone, d5, e4, f4 against Black's c5/d6 and a half-open e-file." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn centre against active counterplay; one slip in the e4-e5 timing or ...b5 breaks loses quickly, so the play is sharp."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered in the main line."
+    },
+    "soundness": {
+      "notes": "Established Benoni line with deep theory; both sides are sound."
+    },
+    "structure": {
+      "notes": "A fixed asymmetric centre with Black's half-open e-file, which is semi-open by the rubric."
+    },
+    "approach": {
+      "notes": "A mainstream Benoni sub-line chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "The Four Pawns lines are long and forcing, so Black must know the theory."
+    }
+  },
+  "plan_phrases": [
+    "space advantage for White",
+    "e4-e5 central break",
+    "queenside expansion for Black"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Four Pawns Benoni positions are forcing and risky for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Theoretical main line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Fixed asymmetric centre with Black pressing along the e-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream choice."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Long forcing Four Pawns theory must be known."
+    },
+    "plans": {
+      "value": ["space_advantage", "pawn_storm", "queenside_expansion"],
+      "reason": "White's central space and Black's queenside counterplay."
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "slug": "scandinavian-defense-anderssen-counterattack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Anderssen Counterattack",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 e5",
+    "fen": "rnb1kbnr/ppp2ppp/8/q3p3/3P4/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "scandinavian-defense-main-line",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "After 4.d4 e5 Black counters at once, with the queen on a5 pinning the c3-knight. 5.dxe5 wins a pawn and Black gets quick development (...Nc6, ...Bb4 or ...Bg4) and pins against it; 5.Nf3 (the Goteborg System) lets Black play ...e4 or ...exd4 with a messy centre. White usually keeps the extra pawn and consolidates, so Black has to prove the compensation. I know this line only roughly.",
+  "white_ideas": [
+    {
+      "idea": "Take 5.dxe5 and consolidate the extra pawn with Nf3 and Bd2"
+    },
+    {
+      "idea": "Break the pin on c3 and complete development"
+    },
+    {
+      "idea": "Aim for a better endgame a pawn up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the pins on c3 with ...Bb4 and ...Bg4"
+    },
+    {
+      "idea": "Develop fast with ...Nc6 and ...Nge7 and attack the e5 pawn"
+    },
+    {
+      "idea": "Hit e5 before White can consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the e-file and d-file open after dxe5"
+    },
+    {
+      "structure": "Black queen on a5 and bishops pinning the c3-knight"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Concrete play with early pins and an extra pawn at stake; the queen is exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 5.dxe5 White keeps the pawn if he can consolidate; Black is playing for development."
+    },
+    "soundness": {
+      "notes": "Engines tend to favour White; Black's compensation is unclear, so risky."
+    },
+    "structure": {
+      "notes": "Pawn exchanges on e5 and d4 open the centre and the e-file."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Concrete lines must be known, and Black must also judge the compensation."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pin on the c3 knight",
+    "early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Goteborg System",
+      "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 e5 5. Nf3",
+      "how": "White does not take on e5 and keeps the tension."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black plays on pins and development for a pawn; one slip loses quickly."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.55,
+      "reason": "After 5.dxe5 Black has given a pawn for development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.45,
+      "reason": "Black's compensation is doubtful; engines prefer White."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Central pawns come off and the e-file opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.4,
+      "reason": "Concrete theory with a risky evaluation; not beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Black's compensation is development with an early queen."
+    }
+  }
+}

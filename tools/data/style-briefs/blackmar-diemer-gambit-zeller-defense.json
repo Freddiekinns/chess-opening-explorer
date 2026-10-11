@@ -1,0 +1,121 @@
+{
+  "slug": "blackmar-diemer-gambit-zeller-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit: Zeller Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Bf5",
+    "fen": "rn1qkbnr/ppp1pppp/8/5b2/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White offers a pawn for development and the f-file; Black meets 3.Nc3 with 3...Bf5 and, after 4.f3 exf3 5.Qxf3, retreats the bishop to c8 or goes ...Nf6 and ...e6. White aims for fast development, Bc4/Bf4 and a kingside attack; Black consolidates the extra pawn and trades down. Most club games are open and tactical.",
+  "white_ideas": [
+    {
+      "idea": "Regain activity with f3 and Qxf3, hitting f7/b7"
+    },
+    {
+      "idea": "Develop Bc4, Bf4, Nge2 and castle quickly"
+    },
+    {
+      "idea": "Use the half-open f-file and g4/h4 pushes against the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop the bishop actively with ...Bf5 and keep the extra pawn"
+    },
+    {
+      "idea": "Return to ...e6 and ...Nf6 and trade pieces"
+    },
+    {
+      "idea": "Neutralise the f-file with ...Bg6 and ...e6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White d4 against Black missing the e-pawn"
+    },
+    {
+      "structure": "White pawn deficit offset by lead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Zeller is a mutual-attack line: White sacrifices a pawn and attacks, Black must avoid early traps on f7, b7 and the e-file."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the e-pawn; Black can keep it with ...exf3 or ...dxe4."
+    },
+    "soundness": {
+      "notes": "Engine and master opinion on the BDG as a whole is that compensation is not enough; Black has the Zeller 3...Bf5 as a sound-looking route."
+    },
+    "structure": {
+      "notes": "Centre opens at once: e-file and f-file become the main lines, White keeps d4."
+    },
+    "approach": {
+      "notes": "The BDG is played by a small band of specialists; strong players seldom choose it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Traps and forcing early lines must be known by both sides, and the move order matters."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on the f-file",
+    "regain the pawn"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Soller Attack",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Bf5 4. f3 Nf6 5. Bc4",
+      "how": "White develops with Bc4 and keeps the f-pawn flexible; Black has a sounder game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Gambit with early forcing play and traps for both sides."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White offers the e-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Compensation is judged insufficient; Black has a healthy extra pawn after 4.f3 exf3."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The e- and f-files open straight away."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom chosen by strong players; it scores through surprise at club level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious gambit, so not Beginner, and the traps are known rather than deeply theoretical."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White sacrifices a pawn for pieces out quickly and a kingside attack."
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "slug": "ruy-lopez-spanish-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Spanish Countergambit",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d5",
+    "fen": "r1bqkbnr/ppp2ppp/2n5/1B1pp3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black meets 3.Bb5 with the counterstrike 3...d5, often followed by 4.Nxe5 dxe4 or 4.exd5 Qxd5, going for sharp open play at the cost of a pawn. White can take on e5 and develop with Nxc6 and O-O, or play for a quiet edge with 4.exd5. The Harding and Fricke gambit lines have Black giving more, with ...Qg5 hitting g2 and e5. Strong players expect White to come out ahead.",
+  "white_ideas": [
+    {
+      "idea": "Win the e5 pawn with Nxe5 and complete development"
+    },
+    {
+      "idea": "Trade into a pawn-up ending via Nxc6 and Qe2 or O-O"
+    },
+    {
+      "idea": "Meet ...Qg5 with accurate castling and Nxc6 ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Counterattack with ...d5 and open the centre"
+    },
+    {
+      "idea": "Hit g2 and e5 with the queen and develop pieces quickly"
+    },
+    {
+      "idea": "Use the pin on e1 and the open d- and e-files"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with pawns exchanged on d5/e4"
+    },
+    {
+      "structure": "Black king still in the centre while White is a pawn up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open, tactical, with Black's early queen and counterattack against a king-side pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can capture e5 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "White's extra pawn is usually kept, so Black's countergambit is dubious."
+    },
+    "structure": {
+      "notes": "Central pawns come off early and lines open."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players against the Ruy Lopez."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious, so not Beginner; the tactics are quite concrete."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Early queen",
+    "Counterattack in centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Harding Gambit",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d5 4. Nxe5 Qg5 5. Nxc6",
+      "how": "Black adds a queen counterattack on g2 and e5 for a second pawn."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Open play with early queen sorties and a counterattack in the centre."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.75,
+      "reason": "Black counters with ...d5 and gives a pawn that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The pawn is usually kept by White."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre pawns trade off early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom chosen by strong players in the Ruy Lopez."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious, not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Development for a pawn with queen sorties."
+    }
+  }
+}

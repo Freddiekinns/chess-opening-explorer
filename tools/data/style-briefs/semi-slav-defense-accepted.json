@@ -1,0 +1,112 @@
+{
+  "slug": "semi-slav-defense-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense Accepted",
+    "eco": "D44",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 dxc4",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/6B1/2pP4/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 6"
+  },
+  "parent": "semi-slav-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "This is the hub after 5.Bg5 dxc4 in the Semi-Slav: Black grabs the c4 pawn and White chooses between the sharp 6.e4 (the Botvinnik, with ...b5, e5, ...h6 and Bxf6/Nxg5 tactics) and the calmer 6.a4 Bb4 7.e3, which stops ...b5. The 6.a4 line is the one shown as most played here, but the root also leads into the Botvinnik complications. The tag is read mostly from the forcing Botvinnik side, with the quieter 6.a4 as the main alternative.",
+  "white_ideas": [
+    {
+      "idea": "Play 6.e4 b5 7.e5 h6 8.Bh4 g5 and sacrifice on g5 for an attack, or play 6.a4 and regain c4 with Bxc4"
+    },
+    {
+      "idea": "Use the Bg5 pin and central pawn to cramp Black's development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn with ...b5 and ...Bb7, or answer 6.a4 with ...Bb4 and ...Qa5"
+    },
+    {
+      "idea": "Counter in the centre with ...c5 once the bishop on c8 is out"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on b5/c6/e6 against a White centre pawn on e4-e5 (Botvinnik)"
+    },
+    {
+      "structure": "Black pawn on c4 and e6 against White pawn on a4 (6.a4 lines)"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Botvinnik branch is the anchor Sharp line with long forcing theory; the 6.a4 branch is quieter. Read as Sharp with doubt."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black's c4 pawn is captured back by force in most lines; in the Botvinnik the pawn is held but White gets compensation, which is not read as a gambit here."
+    },
+    "soundness": {
+      "notes": "Sound for both sides; a main-line Semi-Slav branch."
+    },
+    "structure": {
+      "notes": "Central tension and open lines for the pieces, with White's e-pawn pushing; open centre."
+    },
+    "approach": {
+      "notes": "A respected, heavily played main line used by strong players: standard."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "The Botvinnik branch is a long forcing theory line (Advanced for memory); the 6.a4 branch is much milder. Judged Advanced with low confidence."
+    }
+  },
+  "plan_phrases": [
+    "pawn grab on c4",
+    "Bg5 pin",
+    "central break e4-e5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6.a4",
+      "moves": "6.a4 Bb4 7.e3",
+      "how": "White stops ...b5 and regains the c4 pawn calmly, a Solid Balanced game rather than the Botvinnik melee."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The 6.e4 Botvinnik complications dominate, though the 6.a4 branch is quieter."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Black's pawn on c4 is a capture, not a gambit; material comes back in most lines."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides play a main-line Semi-Slav."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Pieces fight along open lines and diagonals after ...dxc4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A regular branch of the Semi-Slav."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "both",
+      "confidence": 0.45,
+      "reason": "The Botvinnik side needs deep memorised theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single plan from the table clearly dominates this hub."
+    }
+  }
+}

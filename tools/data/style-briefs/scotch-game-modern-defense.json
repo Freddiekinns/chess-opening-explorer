@@ -1,0 +1,120 @@
+{
+  "slug": "scotch-game-modern-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Modern Defense",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nc3 Bb4",
+    "fen": "r1b1k1nr/pppp1ppp/2n5/8/1b1NP2q/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+  },
+  "parent": "scotch-game-steinitz-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Steinitz Scotch Black brings the queen out at once with ...Qh4 and, after 5.Nc3 Bb4, pins the knight. White usually plays Nxc6 bxc6 Bd3, challenging with exchanges and gaining time against the queen. Black gets the bishop pair and a pawn on d5, White leads in development and tries to use the open e-file.",
+  "white_ideas": [
+    {
+      "idea": "Play Nxc6 bxc6 and Bd3, hitting the queen with tempo"
+    },
+    {
+      "idea": "Castle early and open the e-file"
+    },
+    {
+      "idea": "Use the development lead and Nd5 or Qd3 ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Exchange on c6 to reach ...d5 and open lines"
+    },
+    {
+      "idea": "Keep the queen active while developing ...Ne7"
+    },
+    {
+      "idea": "Use the bishop pair and e-pawn pressure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...d5 and exd5 cxd5, with doubled c-pawns for Black"
+    },
+    {
+      "structure": "Black queen and bishop active on h4 and b4 against a White development lead"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The early queen makes play tactical, but it trades down to a pawn structure both sides can accept."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d4 pawn is recaptured at once; no material is given up."
+    },
+    "soundness": {
+      "notes": "The Steinitz line is playable for Black and respected."
+    },
+    "structure": {
+      "notes": "Centre pawns come off and play turns on open lines for the pieces."
+    },
+    "approach": {
+      "notes": "The Steinitz is less common than 4...Nf6 or 4...Bc5 but remains a respectable choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black must manage the exposed queen; White has clear development plans."
+    }
+  },
+  "plan_phrases": [
+    "Early queen",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6.Nxc6 main continuation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nc3 Bb4 6. Nxc6 bxc6 7. Bd3 d5",
+      "how": "The main continuation, aiming for ...d5 and open play."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "The early queen makes play tactical, but it trades down to a pawn structure both sides can accept."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The d4 pawn is recaptured at once; no material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "The Steinitz line is playable for Black and respected."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Centre pawns come off and play turns on open lines for the pieces."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "The Steinitz is less common than 4...Nf6 or 4...Bc5 but remains a respectable choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Black must manage the exposed queen; White has clear development plans."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black's queen comes out early and White uses tempi against her."
+    }
+  }
+}

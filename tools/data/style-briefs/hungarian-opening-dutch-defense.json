@@ -1,0 +1,108 @@
+{
+  "slug": "hungarian-opening-dutch-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Dutch Defense",
+    "eco": "A00",
+    "moves": "1. g3 f5",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black meets 1.g3 with a Dutch-style ...f5, taking e4 under control and claiming kingside space. White normally plays 2.Bg2 Nf6 3.Nf3 and the game transposes to a Dutch against a fianchetto set-up, with Black choosing between a Stonewall (...e6, ...d5), a Leningrad (...g6, ...d6) or a Classical ...e6/...d6 formation. White presses on the long diagonal and the e4 break; Black plays for kingside space and the e4 square. Play is strategic and slow rather than forcing, but ...f5 leaves the king and e6 square a little loose.",
+  "white_ideas": [
+    { "idea": "Fianchetto Bg2, Nf3, O-O and aim the bishop at b7/e4 square" },
+    { "idea": "Prepare d4/c4 and a later e4 or Nh4 break to challenge f5" },
+    { "idea": "Exploit the weakened e6 and the long diagonal once Black commits to ...e6" }
+  ],
+  "black_ideas": [
+    { "idea": "Control e4 with ...f5 and ...Nf6, then build a Stonewall with ...e6, ...d5, ...c6" },
+    { "idea": "Leningrad set-up with ...g6, ...Bg7, ...d6 and ...e5 for central space" },
+    { "idea": "Kingside expansion with ...Ne4 outpost or ...g5 later" }
+  ],
+  "typical_structures": [
+    { "structure": "Stonewall: Black pawns on c6, d5, e6, f5 against White's g3/d3 or d4 set-up" },
+    { "structure": "Leningrad Dutch: Black pawns d6/f5 with ...e5 break against a g3 fianchetto" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White's 1.g3 and 2.Bg2 keep things slow, so this is quieter than the main-line Dutch, but ...f5 still weakens the king and the e6/e8-h5 diagonal. Not forcing early; I read it as Balanced and it could be called Sharp by analogy with the Dutch."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "The Dutch against a g3 fianchetto is entirely sound; White gets at most a small edge."
+    },
+    "structure": {
+      "notes": "Centre not yet decided: Black may go Stonewall (closed) or Leningrad ...e5 (tension). Flexible."
+    },
+    "approach": {
+      "notes": "A recognised Dutch reply to a flank opening, played at all levels. Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dutch set-ups need a feel for where the king and e4 square are weak; little forced theory against 1.g3. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "control e4 with ...f5",
+    "fianchetto on the long diagonal",
+    "Stonewall or Leningrad set-up",
+    "kingside space"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Stonewall set-up",
+      "moves": "1. g3 f5 2. Bg2 Nf6 3. Nf3 e6 4. O-O Be7 5. d3 O-O 6. c4 d5",
+      "how": "Locks the centre and gives Black a closed, kingside-minded structure."
+    },
+    {
+      "name": "Leningrad set-up",
+      "moves": "1. g3 f5 2. Bg2 Nf6 3. Nf3 g6 4. O-O Bg7 5. d3 d6",
+      "how": "Black aims for ...e5 with a more dynamic centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A Dutch reply to a slow fianchetto: no early forcing play, but ...f5 weakens Black's king."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.93,
+      "reason": "The Dutch against 1.g3 is a normal, healthy reply."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Black can choose a Stonewall or a Leningrad ...e5 set-up, so the centre is undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A respectable reply to 1.g3 used at all levels, not a set-up to play against everything."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Little to memorise but Dutch king safety and e4 control need judgement."
+    },
+    "plans": {
+      "value": ["fianchetto"],
+      "reason": "Both sides usually fianchetto a bishop; no other plan is clearly dominant."
+    }
+  }
+}

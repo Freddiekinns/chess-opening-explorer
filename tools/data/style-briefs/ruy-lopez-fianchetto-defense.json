@@ -1,0 +1,121 @@
+{
+  "slug": "ruy-lopez-fianchetto-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Fianchetto Defense",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 g6",
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black answers 3.Bb5 with ...g6 and ...Bg7 (the Smyslov or Barnes Fianchetto Defence) instead of challenging the bishop with ...a6. White usually builds the centre with c3 and d4, or plays 4.d4 exd4 5.Nxd4 for a space edge, while Black develops with ...d6, ...Nge7 and ...Bd7 and waits. Black's position is sound but passive and White's centre is bigger.",
+  "white_ideas": [
+    {
+      "idea": "Build the ideal centre with c3 and d4, keeping Bb5 or taking on c6"
+    },
+    {
+      "idea": "Play 4.d4 exd4 5.Nxd4 and use the extra space against the fianchettoed bishop"
+    },
+    {
+      "idea": "Castle and push e4-e5 or add Re1 pressure on e5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto on g7 and develop the knight to e7 and bishop to d7 to unpin"
+    },
+    {
+      "idea": "Hold e5 and break with ...f5 in the Kevitz-style lines"
+    },
+    {
+      "idea": "Open the position with ...exd4 and use the g7 bishop against the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/d4 centre against Black's d6 and a fianchetto bishop on g7"
+    },
+    {
+      "structure": "Open game after ...exd4 with White's knight on d4 hitting the fianchetto bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's set-up is compact and sound but passive; White presses with space. Few ways to lose quickly, unless Black tries the Kevitz-style ...f5."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is sacrificed in the main lines; ...f5 after 4.c3 is a rare sideline."
+    },
+    "soundness": {
+      "notes": "Considered playable and respectable though not an equaliser."
+    },
+    "structure": {
+      "notes": "White builds e4/d4 against e5/d6; either the centre opens after ...exd4 or it stays in tension; flexible."
+    },
+    "approach": {
+      "notes": "A sideline of the Ruy Lopez played by Smyslov and others: respectable but uncommon, standard rather than offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Mostly strategic plans, with little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on g7",
+    "White centre with c3 and d4",
+    "space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Kevitz Gambit",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 g6 4. c3 f5",
+      "how": "Black goes for ...f5 at once, a sharper counter that sacrifices a pawn after exf5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Compact and sound, if passive, with steady manoeuvring instead of early forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given in the main lines."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.85,
+      "reason": "A respectable sideline with no refutation.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "e4/d4 against e5/d6, with the centre staying in tension or opening."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A known if uncommon defence, played by strong players from time to time."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Plans are straightforward.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Black fianchettoes while White builds a bigger centre."
+    }
+  }
+}

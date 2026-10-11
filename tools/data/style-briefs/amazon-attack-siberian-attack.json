@@ -1,0 +1,44 @@
+{
+  "slug": "amazon-attack-siberian-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Amazon Attack: Siberian Attack",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. Qd3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/2NQ4/PPP1PPPP/R1B1KBNR b KQkq - 1 3"
+  },
+  "parent": "queens-pawn-game-chigorin-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White brings the queen to d3 on move three, eyeing the b5 and h7 squares and keeping the c-pawn flexible. It is a very rare line that blocks White's own bishop and knights, and Black simply develops with ...e6, ...c5 or ...Bf5 and gets an easy game. I am unsure of the details; the queen on d3 gives Black comfortable play.",
+  "white_ideas": [
+    { "idea": "Develop with Bf4, e3, O-O-O and use the queen on d3 to eye h7 and b5." },
+    { "idea": "Keep options for e4 and Nb5 ideas against c7." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop naturally with ...c5, ...Nc6 and ...Bf5, hitting the queen with tempo." },
+    { "idea": "Strike with ...c5 or ...e5 to exploit White's awkward piece placement." }
+  ],
+  "typical_structures": [
+    { "structure": "Queen's Pawn structure with White d4 and Black d5, a flexible centre and a misplaced queen." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Awkward and quiet; Black develops with tempo and risk is small." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Passive and loses time but not outright refuted." },
+    "structure": { "notes": "Both sides keep the centre tension and options open." },
+    "approach": { "notes": "A very rare queen sortie that strong players do not play." },
+    "level": { "reason": "neither", "notes": "Few theory demands but a poor repertoire choice." }
+  },
+  "plan_phrases": ["early queen"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet but awkward play with no forcing lines." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Passive but not refuted." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre is undecided and both sides keep options." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players essentially never play 3.Qd3." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple moves but a poor first repertoire." },
+    "plans": { "value": ["early_queen"], "reason": "White's queen comes out to d3 on move three." }
+  }
+}

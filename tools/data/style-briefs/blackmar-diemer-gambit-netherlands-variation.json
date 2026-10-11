@@ -1,0 +1,112 @@
+{
+  "slug": "blackmar-diemer-gambit-netherlands-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit: Netherlands Variation",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 f5",
+    "fen": "rnbqkbnr/ppp1p1pp/8/5p2/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 1.d4 d5 2.e4 dxe4 3.Nc3 Black defends the extra pawn with ...f5 instead of ...Nf6. White usually plays 4.g4, 4.Bg5 or 4.f3 to open lines against a king loosened by the f-pawn advance. Play is open and tactical, with White chasing a lead in development and Black trying to consolidate the pawn.",
+  "white_ideas": [
+    {
+      "idea": "Hit the weakened e8-h5 diagonal and the kingside with Bg5, Qh5+ or g4 ideas"
+    },
+    {
+      "idea": "Develop quickly with f3 or Bc4 and Nge2, recovering the pawn or attacking"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the e4 pawn with ...f5 and ...Nf6"
+    },
+    {
+      "idea": "Trade pieces and use the extra pawn in the endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after the e-pawn exchange, Black pawns on e6 and f5 against an open f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open tactical gambit play with a loosened Black king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White offered the e-pawn and Black has not given it back by force."
+    },
+    "soundness": {
+      "notes": "Parent BDG is judged insufficient for White by engines; ...f5 is a risky reply that loosens Black, so the verdict is close to level and uncertain."
+    },
+    "structure": {
+      "notes": "Open: the e-pawn is gone and White plays for open files and diagonals."
+    },
+    "approach": {
+      "notes": "A rare gambit line that strong players seldom choose."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Tactical lines to know, and a dubious gambit is not a first-repertoire pick."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack",
+    "pressure on the e8-h5 diagonal"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Pohmlann with 4.g4",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 f5 4. g4",
+      "how": "A sharper pawn break that opens the kingside at once."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Open gambit lines with a loosened king and forcing play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the e-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Engines call BDG compensation insufficient, though the line is playable below master level."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The e-file opens straight away and pieces fight on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players hardly ever play the BDG or this reply."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never beginner and the tactics need learning."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White develops fast against the king."
+    }
+  }
+}

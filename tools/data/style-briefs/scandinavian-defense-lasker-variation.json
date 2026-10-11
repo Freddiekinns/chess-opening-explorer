@@ -1,0 +1,117 @@
+{
+  "slug": "scandinavian-defense-lasker-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Lasker Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Nf3 Bg4 6. h3",
+    "fen": "rn2kb1r/ppp1pppp/5n2/q7/3P2b1/2N2N1P/PPP2PP1/R1BQKB1R b KQkq - 0 6"
+  },
+  "parent": "scandinavian-defense-main-line",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Scandinavian main line 1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 Nf6 5.Nf3 Bg4 6.h3, White asks the bishop what it will do. After 6...Bxf3 7.gxf3 White has the bishop pair but doubled f-pawns and an open g-file; Black usually plays ...e6, ...c6 and ...Nbd7 or ...Nc6 and aims for a solid set-up. Play is steady rather than forcing.",
+  "white_ideas": [
+    {
+      "idea": "Take the bishop pair and use the open g-file after gxf3"
+    },
+    {
+      "idea": "Develop with Bd2, Bc4 or Be3 and castle long or short"
+    },
+    {
+      "idea": "Push e4 or d5 to take space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...e6, ...c6 and ...Bb4 or ...Nbd7 for a compact set-up"
+    },
+    {
+      "idea": "Target the doubled f-pawns and the kingside weaknesses"
+    },
+    {
+      "idea": "Castle long onto the d-file or short with ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Doubled White f-pawns against an intact Black structure; Black has a half-open d-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has a sound shell and White has structural weaknesses, so there is little forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered; h3 only forces the bishop decision."
+    },
+    "soundness": {
+      "notes": "Established main line, objectively balanced."
+    },
+    "structure": {
+      "notes": "Scandinavian structure with a half-open d-file, typical semi-open."
+    },
+    "approach": {
+      "notes": "Respectable and standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans and modest theory; understanding of doubled pawns matters."
+    }
+  },
+  "plan_phrases": [
+    "bishop pair",
+    "doubled pawns"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Bh5 line",
+      "moves": "6...Bh5 7.g4 Bg6 8.Ne5",
+      "how": "Sharper, with White advancing on the kingside and Black hitting back at the dark squares."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Black is solid but White has dynamic kingside play and the bishop pair."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Main-line theory, equal."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Half-open d-file for Black, typical Scandinavian structure."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Established, respectable main line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear but the doubled-pawn structure needs judgement."
+    },
+    "plans": {
+      "value": [
+        "bishop_pair",
+        "doubled_pawns"
+      ],
+      "reason": "White gets the bishop pair at the cost of doubled f-pawns."
+    }
+  }
+}

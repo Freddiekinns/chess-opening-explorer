@@ -1,0 +1,105 @@
+{
+  "slug": "polish-opening-symmetrical-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Symmetrical Variation",
+    "eco": "A00",
+    "moves": "1. b4 b5",
+    "fen": "rnbqkbnr/p1pppppp/8/1p6/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black copies with 1...b5. White plays 2.Bb2 Bb7 3.a3 or e3 with symmetrical play, each side fianchettoing and neither achieving much. Quiet manoeuvring in a flank structure.",
+  "white_ideas": [
+    {
+      "idea": "Bb2, e3, Nf3, a3"
+    },
+    {
+      "idea": "Seek an edge in the symmetrical structure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Mirror with ...Bb7, ...e6, ...Nf6"
+    },
+    {
+      "idea": "Keep the symmetry"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Mirror-image b-pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mirror-image b-pawns and fianchettoed bishops; quiet manoeuvring with small edges."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound; neither side can easily exploit the symmetry."
+    },
+    "structure": {
+      "notes": "Neither side has played a central pawn move, so the centre is undecided."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players; the Polish is a surprise weapon."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory, though no obvious plan either."
+    }
+  },
+  "plan_phrases": [
+    "Symmetrical structure",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Symmetrical and quiet, neither solid nor sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre unsettled."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Used for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Little theory, no sharp lines."
+    },
+    "plans": {
+      "value": [
+        "symmetrical_structure",
+        "fianchetto"
+      ],
+      "reason": "Mirror-image pawns with bishops on the long diagonal."
+    }
+  }
+}

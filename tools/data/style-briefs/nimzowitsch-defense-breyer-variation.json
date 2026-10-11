@@ -1,0 +1,108 @@
+{
+  "slug": "nimzowitsch-defense-breyer-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Breyer Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nc3 Nf6 3. d4 e5",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 Nc6 2.Nc3 Nf6 3.d4 e5 Black strikes in the centre at once. White usually plays 4.dxe5 Nxe4 and trades knights or develops with Nf3, reaching open positions where Black's early knight moves cost a little time. Black aims for quick equality through piece activity.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and challenge the e4 knight with Nxe4 or Qd5"
+    },
+    {
+      "idea": "Develop Nf3, Bc4 or Bd3 and castle"
+    },
+    {
+      "idea": "Use the lead in development against Black's loose pieces"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on e4 and trade into an open, equal position"
+    },
+    {
+      "idea": "Develop quickly with ...Bb4, ...d5 and ...Be7"
+    },
+    {
+      "idea": "Counterattack the e5 pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file after dxe5 Nxe4 with symmetrical-ish development and few pawn weaknesses"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open play with tactics around the e-file, but no forced mutual attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn offered; e5 is traded."
+    },
+    "soundness": {
+      "notes": "Playable for Black, roughly level."
+    },
+    "structure": {
+      "notes": "The centre pawns come off early leaving open lines."
+    },
+    "approach": {
+      "notes": "Nimzowitsch Defence is seldom chosen by strong players, and 3...e5 more so."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not much to memorise, but knowing where the pieces belong helps."
+    }
+  },
+  "plan_phrases": [
+    "open e-file",
+    "quick development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Open and tactical in places but not a mutual attack; likely heads to quick equality."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Playable and close to equal."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Centre pawns come off straight away and pieces take over."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare defence among strong players, chosen to avoid theory."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are simple but tactics need care."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear named plan from the evidence."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "kings-gambit-declined-miles-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Miles Defense",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Nc6 3. Nf3 f5",
+    "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/4PP2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-gambit-declined-queens-knight-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 2.f4 Nc6 3.Nf3 Black hits e4 at once with 3...f5, the Adelaide-Wahls idea. White simply takes 4.exf5 and Black gives up a pawn for activity with 4...e4 5.Ne5 Nf6, with open lines and a lead in development as compensation. It is a rare, double-edged countergambit that most strong players meet by taking the pawn and consolidating.",
+  "white_ideas": [
+    {
+      "idea": "Take on f5 and meet ...e4 with Ne5, then trade pieces or play d3/d4 to cash in the extra pawn"
+    },
+    {
+      "idea": "Return the pawn if needed to reach a safe, slightly better game"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain time with ...e4 and ...Nf6, develop quickly and use the open e-file and the kingside"
+    },
+    {
+      "idea": "Harass the white knight on e5 and win back material through tactics"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn up on f4 and f5 against a Black pawn on e4, open centre and kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is a pawn down and plays for tactics against an exposed centre; both kings are loose. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 4.exf5 e4 5.Ne5 White is a pawn up and can hold it with correct play, so Black's ...f5 is a countergambit."
+    },
+    "soundness": {
+      "notes": "Black's compensation is usually judged insufficient against accurate play; it is rare because it is not trusted."
+    },
+    "structure": {
+      "notes": "Open lines on the e-file and diagonals straight away."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players; played mainly as a surprise on top of the King's Gambit Declined."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs concrete tactical knowledge for both sides; dubious lines are never Beginner. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "countergambit",
+    "open e-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4.d4 or 4.Nxe5 sidelines",
+      "moves": "4.d4 fxe4 5.Nxe5",
+      "how": "White avoids the exf5 e4 sequence and keeps the pawn centre, a more positional treatment."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "A countergambit with open lines and loose kings, and tactical play from move four."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "After 4.exf5 e4 Black has given a pawn for development, and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Black's compensation is generally considered insufficient and the line is rare."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The e-file and diagonals open at once after exf5 and ...e4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom seen among strong players; mostly a surprise weapon."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Tactical but short; a Dubious line is not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for time and development in return for the pawn."
+    }
+  }
+}

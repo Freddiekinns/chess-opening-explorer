@@ -1,0 +1,119 @@
+{
+  "slug": "semi-slav-defense-quiet-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Quiet Variation",
+    "eco": "D30",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. e3 e6 5. Nbd2",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/4PN2/PP1N1PPP/R1BQKB1R b KQkq - 1 5"
+  },
+  "parent": "slav-defense-quiet-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Both sides develop quietly with e3 and Nbd2, and Black keeps the Semi-Slav triangle c6-d5-e6 while developing ...Nbd7. The game usually continues with Bd3, then ...dxc4 Bxc4 and ...b5, heading for Meran-type ideas, or ...Bd6 and ...O-O. White tries e4 or a slow build-up; Black uses the c5 break to free the position.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bd3 and O-O, then push e4 when ready"
+    },
+    {
+      "idea": "Capture on c4 with the bishop and meet ...b5 with Bd3"
+    },
+    {
+      "idea": "Keep a flexible centre and avoid the sharp Meran theory"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...dxc4 and ...b5 followed by ...Bb7 and ...c5"
+    },
+    {
+      "idea": "Keep ...Bd6 for e5 pressure and castle"
+    },
+    {
+      "idea": "Break with ...e5 or ...c5 to free pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Semi-Slav triangle with c6, d5, e6 against c4, d4, e3"
+    },
+    {
+      "structure": "After ...dxc4 and ...b5 a Meran-type structure with a Black queenside majority"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet development with little forcing play, and Black's structure is hard to break."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Any pawn on c4 returns quickly; nothing is sacrificed."
+    },
+    "soundness": {
+      "notes": "Respected main-line system for both sides."
+    },
+    "structure": {
+      "notes": "The centre stays in tension until ...dxc4 or ...e5 resolves it."
+    },
+    "approach": {
+      "notes": "A normal line of the Semi-Slav played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The plans are clear and theory is moderate."
+    }
+  },
+  "plan_phrases": [
+    "Queenside expansion",
+    "Free the position with ...c5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Meran-type 6.Bd3 dxc4 7.Bxc4 b5",
+      "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. e3 e6 5. Nbd2 Nbd7 6. Bd3 dxc4 7. Bxc4 b5",
+      "how": "Black expands at once and the game becomes a more active Meran-style fight."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Quiet development with little forcing play, and Black's structure is hard to break."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Any pawn on c4 returns quickly; nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Respected main-line system for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre stays in tension until ...dxc4 or ...e5 resolves it."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal line of the Semi-Slav played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "The plans are clear and theory is moderate."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "Black advances ...b5 and ...c5 to gain space on the queenside."
+    }
+  }
+}

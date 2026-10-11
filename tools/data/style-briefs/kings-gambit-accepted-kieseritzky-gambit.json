@@ -1,0 +1,112 @@
+{
+  "slug": "kings-gambit-accepted-kieseritzky-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Kieseritzky Gambit",
+    "eco": "C39",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5",
+    "fen": "rnbqkbnr/pppp1p1p/8/4N3/4PppP/8/PPPP2P1/RNBQKB1R b KQkq - 1 5"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "White sacrifices the f-pawn and answers 3...g5 with 4.h4 g4 5.Ne5, aiming at f7 and the weak squares around Black's kingside. Black has several defences such as 5...Nf6, 5...d6 or 5...Qe7, and play becomes sharp and forcing. White develops fast and attacks, while Black tries to consolidate the extra material.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bc4 and d4 and hit f7"
+    },
+    {
+      "idea": "Recover the f4 pawn with Bxf4 and use the open f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Consolidate with ...d6, ...Nf6 and ...Bg7"
+    },
+    {
+      "idea": "Return material when needed to neutralise White's initiative"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside with Black pawns on f4 and g4 and a White knight on e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp, forcing theory with mutual attacking chances."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White's f-pawn is gone and Black can keep material with accurate defence."
+    },
+    "soundness": {
+      "notes": "Considered roughly playable for White despite engine doubts."
+    },
+    "structure": {
+      "notes": "Open: pawns and pieces fight on open lines."
+    },
+    "approach": {
+      "notes": "A main-line King's Gambit variation, played by strong players now and then."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing theory to learn on both sides."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Cotter Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ng5 h6 6. Nxf7",
+      "how": "White sacrifices a piece for a violent attack."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "Forcing play with both kings in danger."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives up the f-pawn and more."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Theory judges the main lines playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.9,
+      "reason": "Open files and diagonals everywhere."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A recognised, if rare, line in the King's Gambit."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Long forcing lines must be known."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "White aims at f7 and plays for development."
+    }
+  }
+}

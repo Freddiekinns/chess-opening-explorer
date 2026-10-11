@@ -1,0 +1,115 @@
+{
+  "slug": "latvian-gambit-accepted-bilguer-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit Accepted: Bilguer Variation",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. d4 d6 5. Nc4",
+    "fen": "rnb1kbnr/ppp3pp/3p1q2/5p2/2NPP3/8/PPP2PPP/RNBQKB1R b KQkq - 1 5"
+  },
+  "parent": "latvian-gambit-accepted-main-line",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4 Black has given a pawn for the White e-pawn, and 6.Nc3 Qg6 7.Ne3 is the typical continuation. Black aims at the open f-file and White's kingside with ...Nf6, ...Be7 and ...O-O, while White simply keeps the extra pawn and completes development. White should stand better with accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn and drive Black's queen with Nc3 and Ne3"
+    },
+    {
+      "idea": "Develop Be2 or Bc4 and castle"
+    },
+    {
+      "idea": "Avoid early tricks on the f-file and h4-d8 diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain activity with ...fxe4 and ...Nf6"
+    },
+    {
+      "idea": "Use the open f-file and ...Bc5 or ...Be7 for an attack"
+    },
+    {
+      "idea": "Look for tactics against a slow white king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e- and f-files with White pawn on d4 and Black pawn on d6"
+    },
+    {
+      "structure": "White knights on c4 and e3, Black queen on g6 or f6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open and tactical, with Black taking risks to catch up in development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White wins the e5 pawn and can hold it."
+    },
+    "soundness": {
+      "notes": "The Latvian is a dubious anchor; this main line leaves White a pawn up with a safe position."
+    },
+    "structure": {
+      "notes": "e-pawn trades and the f-file open early."
+    },
+    "approach": {
+      "notes": "A named offbeat anchor."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious, so not Beginner; tactical."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Early queen",
+    "Open f-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Tactical, open play with Black attacking down the f-file."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black plays 2...f5 and loses the e-pawn for activity."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.9,
+      "reason": "Latvian Gambit is a soundness anchor for dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Central pawns come off and lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Latvian Gambit is an offbeat anchor."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Dubious, never Beginner; the tactics are not deep."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Black plays for development and an early queen on f6/g6."
+    }
+  }
+}

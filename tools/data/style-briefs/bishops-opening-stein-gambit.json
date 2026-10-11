@@ -1,0 +1,115 @@
+{
+  "slug": "bishops-opening-stein-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Stein Gambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. f4",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/2B1PP2/8/PPPP2PP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "bishops-opening-boi-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "A Bishop's Opening hybrid where White follows 2.Bc4 Bc5 with the King's Gambit pawn move 3.f4. This is the same position as the King's Gambit Declined, Classical with 3.Bc4. Black can take with 3...exf4 or decline with ...d6 or ...Nf6, and White develops quickly with Nf3, c3 and d4 aiming at f7 and the f-file. If Black takes, White regains the pawn quickly with Bxf4.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3, c3 and d4 and take the f4 pawn back if it was captured"
+    },
+    {
+      "idea": "Pressure on f7 with Bc4 and the half-open f-file after fxe5 or f5 ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e5 with ...d6 and ...Nf6 and keep the bishop on c5"
+    },
+    {
+      "idea": "Take on f4 and give the pawn back for a safe centre, then break with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "King's Gambit Declined centres with a White f4 pawn against e5/d6"
+    },
+    {
+      "structure": "Open positions after ...exf4 where White regains the pawn with Bxf4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "King's Gambit style: open f-file, exposed kings and early tactics on f7 and g1-a7."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "The f4 pawn is offered but in the usual lines (3...exf4 4.Nf3 d6 5.c3 Nf6 6.d4) White gets it back; the declined lines have no gambit at all."
+    },
+    "soundness": {
+      "notes": "A sound King's Gambit setup; Black's ...Bc5 is the classical reply and White's play is respectable."
+    },
+    "structure": {
+      "notes": "Open lines on the f-file and the a2-g8 diagonal, but a fixed f4/e4 centre against e5 in the declined lines."
+    },
+    "approach": {
+      "notes": "Less common than the Italian but part of the standard King's Gambit and Bishop's Opening family."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Sharp King's Gambit tactics need accurate play; moderate theory."
+    }
+  },
+  "plan_phrases": [
+    "Pressure on f7",
+    "Quick development",
+    "King's Gambit centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "King's Gambit Declined: Classical, 3.Bc4",
+      "moves": "1. e4 e5 2. f4 Bc5 3. Bc4",
+      "how": "Transposes to this exact position by move order; most games are played from here."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Open f-file and exposed kings from the King's Gambit, with tactics on f7."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.45,
+      "reason": "The pawn comes back by force after 3...exf4 and the declined lines have no gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "3.f4 against ...Bc5 is a respectable King's Gambit set-up."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Pieces aim down the f-file and diagonals; the centre opens quickly after d4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Less common but within the normal King's Gambit and Bishop's Opening family."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Needs accurate tactics against f7 and f-file ideas but not heavy theory."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "Bc4 aims at f7 and White develops fast."
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "dutch-defense-semi-leningrad-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Semi-Leningrad Variation",
+    "eco": "A81",
+    "moves": "1. d4 f5 2. g3 Nf6 3. Bg2 g6",
+    "fen": "rnbqkb1r/ppppp2p/5np1/5p2/3P4/6P1/PPP1PPBP/RNBQK1NR w KQkq - 0 4"
+  },
+  "parent": "dutch-defense-fianchetto-attack",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Against the fianchetto set-up Black plays the Leningrad formation (...g6, ...Bg7, ...d6, ...O-O) with a fianchetto of his own. After 4.Nf3 Bg7 5.O-O O-O 6.c4 d6 Black prepares ...Qe8, ...Nc6 and ...e5. White aims for the d5 or d4-d5 advance and the c4/Nc3 build-up against the f5 pawn and e4; Black aims for a kingside attack with ...e5 and ...Ng4.",
+  "white_ideas": [
+    { "idea": "Build c4, Nc3, d5 and use the long diagonal to restrain the Dutch centre." },
+    { "idea": "Prepare e4 or Qc2 and Rb1 with b4 to attack on the queenside." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...d6, ...Qe8, ...Nc6 and ...e5 to strike at the centre and attack on the kingside." },
+    { "idea": "Fianchetto Bg7 and aim ...Ne4 and ...Ng4 for an attack with pieces and pawn pushes." }
+  ],
+  "typical_structures": [
+    { "structure": "Leningrad pawn centre with Black pawns on f5, d6 and e5 against White's c4/d4 centre, kings castled short." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Dutch is unbalanced by design: Black weakens e8-h5 and plays for kingside attack while White presses in the centre and on the queenside."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Fully playable; used by strong players."
+    },
+    "structure": {
+      "notes": "Centre in tension with ...e5 and d5 possible, leaving the structure undecided."
+    },
+    "approach": {
+      "notes": "A main branch of the Dutch, played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The Leningrad plans (...e5, kingside attack, timing of ...Qe8) are subtle and need understanding more than memory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto bishop on g7",
+    "...e5 central break",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Dutch positions are unbalanced, with Black weakening the king for kingside play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A main-line Leningrad type position."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre in tension and not yet decided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream branch of the Dutch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Strategic plans take understanding rather than memory."
+    },
+    "plans": {
+      "value": ["fianchetto", "kingside_attack"],
+      "reason": "Black fianchettoes and aims for a kingside attack."
+    }
+  }
+}

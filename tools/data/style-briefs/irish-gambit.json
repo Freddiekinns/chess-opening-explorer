@@ -1,0 +1,106 @@
+{
+  "slug": "irish-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Irish Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nxe5",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4N3/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "kings-knight-opening-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "The Irish (Chicago) Gambit starts with 3.Nxe5 Nxe5 4.d4, when White gives a knight for a pawn and then tries to regain it with a fork on e5. After 4...Ng6 5.e5 or 4...Nc6 5.d5 White has a space advantage and active pieces, but with correct play Black keeps the extra piece and consolidates. It is a rarity, tactically interesting at club level.",
+  "white_ideas": [
+    {
+      "idea": "Play d4 to attack the knight on e5, gain space with e5 and develop the bishops quickly"
+    },
+    {
+      "idea": "Aim at Bc4, Qh5 or Qd2 and a rapid attack on the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the knight, retreat it to g6 or c6, and develop calmly"
+    },
+    {
+      "idea": "Return material only if needed, then use the extra piece in the endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn centre on d4/e4 with Black a knight up and a loosened kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices a piece for central control and initiative; tactics decide. Sharp."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 3.Nxe5 Nxe5 4.d4 White has given a knight for a pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Considered unsound; Black can consolidate against accurate play."
+    },
+    "structure": {
+      "notes": "Open lines and rapid development in the centre; Open."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players; a surprise weapon."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious lines are never Beginner; both sides need tactical precision. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "central space",
+    "attack on the kingside"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "A piece sacrifice for an attack; tactical from move three."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives a knight for a pawn on e5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.75,
+      "reason": "The sacrifice is not considered sound against best play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Centre and diagonals open quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Short lines but tactical; Dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White gives material for time and aims at the king."
+    }
+  }
+}

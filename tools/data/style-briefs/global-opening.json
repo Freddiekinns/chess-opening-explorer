@@ -1,0 +1,108 @@
+{
+  "slug": "global-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Global Opening",
+    "eco": "A00",
+    "moves": "1. h3 e5 2. a3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/P6P/1PPPPPP1/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "clemenz-opening",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White starts 1.h3 and follows with the waiting 2.a3, a very slow set-up without a clear plan. Black can occupy the centre freely with ...d5, ...Nf6 and ...Bd6, and White tries to catch up with e4 or g3-Bg2 later. There is no forcing theory, and the line is chosen almost entirely for surprise.",
+  "white_ideas": [
+    {
+      "idea": "Make useful waiting moves and develop later with Nf3 and g3"
+    },
+    {
+      "idea": "Fight for the centre with e4 once Black commits"
+    },
+    {
+      "idea": "Avoid theory and play a quiet game"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...d5, ...Nf6 and ...Bc5 or ...Bd6"
+    },
+    {
+      "idea": "Develop freely and use the extra tempi"
+    },
+    {
+      "idea": "Punish the slow start with a space advantage"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black classical centre with White flank pawns on a3/h3"
+    },
+    {
+      "structure": "Reversed set-ups depending on White's later e4/d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, quiet play with no early pressure on either side."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Not refuted, but gives Black an easy game; I treat it as sound with low confidence."
+    },
+    "structure": {
+      "notes": "The centre is undecided and Black can build it first."
+    },
+    "approach": {
+      "notes": "Strong players essentially never play it."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Neither memory nor understanding is demanding; it is simply a low-quality set-up for White."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Quiet but without a hard-to-break structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Slow rather than refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not a good first choice, but not hard."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No characteristic plan."
+    }
+  }
+}

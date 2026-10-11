@@ -1,0 +1,112 @@
+{
+  "slug": "zukertort-opening-speelsmet-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Speelsmet Gambit",
+    "eco": "A04",
+    "moves": "1. Nf3 c5 2. d4 cxd4 3. e3",
+    "fen": "rnbqkbnr/pp1ppppp/8/8/3p4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "zukertort-opening-sicilian-invitation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.Nf3 c5 2.d4 cxd4, White plays 3.e3 instead of recapturing with the knight, offering the d4 pawn for quick development and the c-file or central play with exd4. Black can keep the pawn with ...e5 or ...Nf6, returning it when convenient. The line is rare and read from the moves, so evidence is thin.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bc4, O-O and Nc3, then recapture on d4 with exd4 or Nxd4"
+    },
+    {
+      "idea": "Use quick development and the open d-file against the Black queen"
+    },
+    {
+      "idea": "Play Bb5+ and Qxd4 ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn with ...e5 or ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Develop ...Nc6 and ...Bc5 and castle"
+    },
+    {
+      "idea": "Return the pawn for a safe position"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after exd4 with White development lead"
+    },
+    {
+      "structure": "Black extra pawn on d4 against the White e3 pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early pawn offer with open lines and quick development tends to be double-edged."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White does not recapture the d4 pawn at once, and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Black can keep the pawn with sensible development, so the compensation is doubtful."
+    },
+    "structure": {
+      "notes": "The d-file and the diagonals open as pieces develop."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever play 3.e3 here; it is a surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few moves to learn, but dubious so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "An early pawn offer with open lines and quick development tends to be double-edged."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White does not recapture the d4 pawn at once, and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can keep the pawn with sensible development, so the compensation is doubtful."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The d-file and the diagonals open as pieces develop."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Strong players hardly ever play 3.e3 here; it is a surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.45,
+      "reason": "Few moves to learn, but dubious so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White gives a pawn for faster development."
+    }
+  }
+}

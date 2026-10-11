@@ -1,0 +1,110 @@
+{
+  "slug": "sicilian-defense-myers-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Myers Attack, with a4",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. a4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/P3P3/8/1PPP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White plays the strange 2.a4 (or 2.h4) against the Sicilian, losing a tempo. Black develops with ...Nc6, ...d6 and ...Nf6 or even grabs the centre with ...d5. White hopes for a quiet game with a4 helping against ...b5, but he has not really developed. It is a surprise weapon.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3, d4 and treat a4 as a restraint on ...b5"
+    },
+    {
+      "idea": "Hope Black overreaches against the rook-pawn advance"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop normally and take space with ...d5 or ...Nf6"
+    },
+    {
+      "idea": "Use the half-open c-file and lead in development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian pawn asymmetry with a4 pawn"
+    },
+    {
+      "structure": "Open Sicilian structures after Nf3 and d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A slow, odd line where White has lost a tempo."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Playable if pointless; Black is comfortably equal."
+    },
+    "structure": {
+      "notes": "Sicilian asymmetry: half-open c-file for Black."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Nothing to study; not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Wing pawn push"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Myers Attack, with h4",
+      "moves": "1. e4 c5 2. h4",
+      "how": "Even more committal wing advance."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Slow position where White has lost a tempo."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Not refuted, simply a tempo down."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Sicilian asymmetric centre with a half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "2.a4 is a surprise sideline."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Not a good repertoire choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No recognisable plan from the list."
+    }
+  }
+}

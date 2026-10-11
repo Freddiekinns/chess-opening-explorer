@@ -1,0 +1,114 @@
+{
+  "slug": "french-defense-pelikan-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Pelikan Variation",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. Nc3 d5 3. f4",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "french-defense-queens-knight",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "White plays 3.f4 against the French, building an e5/f4 chain or a Stonewall-like set-up without committing to the main theory. Black usually replies 3...Nf6 4.e5 Nfd7 or 3...dxe4, and plays against the centre with ...c5 and ...Nc6. White aims for a kingside attack with Nf3, Bd3 and O-O. It is a rare, system-like sideline and I know it only roughly.",
+  "white_ideas": [
+    {
+      "idea": "Advance e5 and support it with f4"
+    },
+    {
+      "idea": "Develop Nf3, Bd3, O-O and attack on the kingside"
+    },
+    {
+      "idea": "Hold the space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Undermine the centre with ...c5 and ...Nc6"
+    },
+    {
+      "idea": "Attack e5 with ...f6 or ...Qb6"
+    },
+    {
+      "idea": "Take on e4 and trade pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Locked chain e5/f4 against e6/d5"
+    },
+    {
+      "structure": "Closed centre where play shifts to the wings"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Closed and slow with a possible kingside attack; not particularly sharp."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given in the main lines."
+    },
+    "soundness": {
+      "notes": "Probably sound but slightly worse for White than the main lines."
+    },
+    "structure": {
+      "notes": "If Black plays ...Nf6, e5 follows and the centre locks."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear, but the light-squared bishop and ...c5 break need care."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Thin evidence; semi-closed with attacking chances for White."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Not refuted, just slightly inferior."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.45,
+      "reason": "e5 chain locks the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.4,
+      "reason": "Plans need understanding."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "kingside_attack"
+      ],
+      "reason": "e5/f4 space and a kingside plan."
+    }
+  }
+}

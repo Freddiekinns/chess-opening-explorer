@@ -1,0 +1,46 @@
+{
+  "slug": "queens-gambit-accepted-mannheim-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Mannheim Variation",
+    "eco": "D23",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Qa4+",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/Q1pP4/5N2/PP2PPPP/RNB1KB1R b KQkq - 3 4"
+  },
+  "parent": "queens-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White checks at once to win the c4 pawn back with the queen. After 4...c6 5.Qxc4 Bf5 Black develops the light bishop with tempo and has an easy game, with White's queen exposed on c4 and a slight space edge for White in the centre. The play is quiet and the pawn is simply regained, so there is no real gambit.",
+  "white_ideas": [
+    { "idea": "Regain c4 with the queen and develop with Nc3, g3 or e3 and Bg2, keeping the d4 pawn strong." },
+    { "idea": "Use the extra central pawn for a small space edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop the bishop to f5 with tempo against the queen, then ...e6, ...Nbd7 and ...Nb6." },
+    { "idea": "Challenge d4 with ...e5 or ...Nb6 and ...Be4 ideas." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 pawn against Black's c6/e6 set-up with an open c-file and active pieces." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet development with some early queen play; neither side forced to take risks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The c4 pawn comes straight back by force." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "QGA centre with an open c-file; White d4 pawn against Black's c6 and e6." },
+    "approach": { "notes": "A less common line than 4.e3 but played by strong players." },
+    "level": { "reason": "understanding", "notes": "Easy-to-follow plans with moderate theory." }
+  },
+  "plan_phrases": ["early queen", "development"],
+  "sublines_that_differ": [
+    { "name": "4...Nc6", "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Qa4+ Nc6", "how": "Black allows 5.Qxc4 with a different set-up." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet but not especially hard to break; early queen gives some play." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "The pawn comes back by force." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A normal sideline." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "QGA structure with c-pawn gone and open lines." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear plans with moderate theory." },
+    "plans": { "value": ["early_queen"], "reason": "White's queen returns to c4 early." }
+  }
+}

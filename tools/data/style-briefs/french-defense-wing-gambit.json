@@ -1,0 +1,111 @@
+{
+  "slug": "french-defense-wing-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Wing Gambit",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. Nf3 d5 3. e5 c5 4. b4",
+    "fen": "rnbqkbnr/pp3ppp/4p3/2ppP3/1P6/5N2/P1PP1PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "french-defense-knight-variation",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "In the Advance French (via 2.Nf3) White plays 4.b4, offering the b-pawn so that after ...cxb4 White can play a3 or d4 and gain central space and development. Black can take the pawn and hold it or ignore it with ...Nc6; White aims for a central break and attack on the queenside. It is a rare surprise line.",
+  "white_ideas": [
+    {
+      "idea": "Deflect the c5 pawn and build a centre with d4"
+    },
+    {
+      "idea": "Open the a- and b-files with a3"
+    },
+    {
+      "idea": "Develop quickly and use the space e5 gives"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on b4 and keep the pawn"
+    },
+    {
+      "idea": "Hit d4 with ...Nc6 and ...Qb6"
+    },
+    {
+      "idea": "Return the pawn to consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French Advance chain with White e5 and Black missing the c-pawn or b4 pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A surprise gambit where White tries to take the sting out of ...c5."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the b-pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Treated as dubious; Black can take the pawn and stay solid."
+    },
+    "structure": {
+      "notes": "Advance structure with e5 locked against d5."
+    },
+    "approach": {
+      "notes": "Rare and a practical surprise; strong players seldom play it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "A few key lines must be known, but the idea is simple."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Gambit with open play on the queenside."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White offers a pawn that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The b-pawn offer is considered unsound."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.5,
+      "reason": "French Advance chain."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "lead_in_development"
+      ],
+      "reason": "White tries to use the space e5 gives and quick development."
+    }
+  }
+}

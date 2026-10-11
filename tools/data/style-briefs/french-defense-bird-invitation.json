@@ -1,0 +1,44 @@
+{
+  "slug": "french-defense-bird-invitation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Bird Invitation",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. Bb5",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/1B6/4P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White develops the bishop to b5 on move two, inviting a Ruy Lopez-style game with the e6 pawn already played. Black can reply 2...c6 3.Ba4 d5 or 2...Nf6 and reach a sound French-like or Sicilian-like position with a free game, since the bishop does little here. I am unsure of the main reply but the line is a rare sideline.",
+  "white_ideas": [
+    { "idea": "Continue with Nf3, d4 or c3 and keep the bishop active on the a4-e8 diagonal." },
+    { "idea": "Hope Black moves the pawns so that Bxc6 or a quick d4 gives an edge." }
+  ],
+  "black_ideas": [
+    { "idea": "Challenge the centre with ...c6 and ...d5, gaining time against the bishop." },
+    { "idea": "Develop with ...Nf6 and ...d5 and reach a normal French structure." }
+  ],
+  "typical_structures": [
+    { "structure": "French pawns on e6 and d5 against e4, with White's bishop misplaced on a4 or b5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Quiet, with no forcing tactics; Black has an easy game." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Not refuted but loses time; I judge it sound but passive." },
+    "structure": { "notes": "French-type e4 against ...d5; the centre opens or locks depending on later moves." },
+    "approach": { "notes": "A rare early bishop sortie that strong players hardly play." },
+    "level": { "reason": "neither", "notes": "Few theory demands, but not a recommended first repertoire." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Quiet development with no forcing play." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Loses time but is not refuted." },
+    "structure": { "value": "semi_open", "confidence": 0.35, "reason": "French-like centre where e4 faces ...d5." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players hardly ever play 2.Bb5 against the French." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.5, "reason": "Simple but not a good first choice for White." },
+    "plans": { "value": [], "reason": "No clear plan from the evidence." }
+  }
+}

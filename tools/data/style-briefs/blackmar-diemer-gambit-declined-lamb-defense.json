@@ -1,0 +1,113 @@
+{
+  "slug": "blackmar-diemer-gambit-declined-lamb-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Declined: Lamb Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 Nc6",
+    "fen": "r1bqkb1r/ppp1pppp/2n2n2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 1 5"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 4.f3 Black ignores the pawn tension and plays 4...Nc6, the Lamb Defense, hitting d4. White recaptures with 5.fxe4 or pushes 5.d5, getting space and a centre and a quick lead against Black's pieces. Black's pieces are awkward and the game is tactical in the centre. Detail is thin and read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Recapture on e4 with fxe4 and push d5 to gain space"
+    },
+    {
+      "idea": "Develop Nf3, Bc4 or Bf4 and castle"
+    },
+    {
+      "idea": "Use the e4-d4 centre against the Black knights"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit d4 with ...Nc6 and ...e5"
+    },
+    {
+      "idea": "Develop ...Bf5 or ...Bg4 and ...e6"
+    },
+    {
+      "idea": "Strike with ...e5 once White overextends"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4-d4 centre against ...Nc6 with ...e5 breaks"
+    },
+    {
+      "structure": "Locked pawns after d5 and ...e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White has a centre and Black counters at once, so open play with tactics follows."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black declines the gambit, so the e4 pawn is recaptured and no material is given."
+    },
+    "soundness": {
+      "notes": "Black's declining moves are playable and White is fine."
+    },
+    "structure": {
+      "notes": "The centre is in tension until d5 or ...e5 settles it."
+    },
+    "approach": {
+      "notes": "Part of the BDG family, which strong players seldom choose."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Concrete tactics and a clear centre; the detail is not heavy."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Central pawns"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White has a centre and Black counters at once, so open play with tactics follows."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Black declines the gambit, so the e4 pawn is recaptured and no material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Black's declining moves are playable and White is fine."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is in tension until d5 or ...e5 settles it."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Part of the BDG family, which strong players seldom choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "Concrete tactics and a clear centre; the detail is not heavy."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White builds a pawn centre and uses its space."
+    }
+  }
+}

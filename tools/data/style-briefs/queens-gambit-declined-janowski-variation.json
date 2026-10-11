@@ -1,0 +1,102 @@
+{
+  "slug": "queens-gambit-declined-janowski-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Janowski Variation",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 a6",
+    "fen": "rnbqkbnr/1pp2ppp/p3p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-declined-queens-knight-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black adds the waiting move 3...a6 in the QGD, keeping options for ...dxc4 and ...b5 and covering b5 against White's knight or bishop ideas. White usually answers with 4.cxd5 exd5 5.Bg5 or 4.e4 and gets a normal QGD structure against an extra Black queenside move. It is a rare line and I am not sure of the main branch.",
+  "white_ideas": [
+    {
+      "idea": "Play 4.cxd5 exd5 and head for an Exchange QGD structure with Bg5, e3, Bd3 and the minority attack"
+    },
+    {
+      "idea": "Strike in the centre with e4 if Black has committed to an unusual move order"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...dxc4 and ...b5 to hold the pawn"
+    },
+    {
+      "idea": "Develop with ...Nf6, ...c5 and ...Nc6 and treat a6 as a useful queenside move"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Exchange QGD structure (pawns on d4 against d5, half-open c-file) after cxd5 exd5"
+    },
+    {
+      "structure": "QGD with a6 inserted, Black pawns on d5 and e6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A QGD structure with a slow extra queenside move; no sharp play comes from the move itself."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given; any ...dxc4 pawn comes back."
+    },
+    "soundness": {
+      "notes": "Black loses a tempo but nothing is hanging, so it is sound."
+    },
+    "structure": {
+      "notes": "QGD with the centre in tension (d5/e6 against c4/d4), or an exchange structure with a half-open c-file; flexible."
+    },
+    "approach": {
+      "notes": "A rare sideline that strong players seldom pick. Not played against everything, so not a system."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Mostly standard QGD ideas, no long forced lines."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "QGD structure with Black's pawns on d5 and e6 and no early forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.85,
+      "reason": "A slow tempo but no weakness.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "QGD centre in tension, or an exchange structure."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.4,
+      "reason": "3...a6 is seldom chosen by strong players, though not a surprise gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Standard QGD plans.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [],
+      "reason": "The branch is too rare to name a plan with confidence."
+    }
+  }
+}

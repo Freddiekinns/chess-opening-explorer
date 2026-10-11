@@ -1,0 +1,106 @@
+{
+  "slug": "queens-gambit-declined-lasker-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Lasker Defense",
+    "eco": "D53",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. Bg5 Be7 5. e3 Ne4",
+    "fen": "rnbqk2r/ppp1bppp/4p3/3p2B1/2PPn3/2N1P3/PP3PPP/R2QKBNR w KQkq - 1 6"
+  },
+  "parent": "queens-gambit-declined",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "Black meets the pin on f6 by playing ...Ne4 (usually after ...O-O, Nf3, ...h6, Bh4), then trades off pieces: Bxe7 Qxe7 and Nxe4 dxe4 or cxd5 Nxc3 bxc3 exd5. Each exchange relieves Black's cramped position and removes the problem bishop on c8's blockers. White keeps a small space edge and usually a safe, long middlegame, with the Carlsbad-like structure or the e4 break; Black aims for ...c5 or ...Be6 development. It is a classic simplifying defence with very few risks.",
+  "white_ideas": [
+    { "idea": "Keep the space edge and play for e4 or a central break after Rc1 and Qb3" },
+    { "idea": "Exchange on e7 and c3 to leave Black with a slightly passive structure" },
+    { "idea": "Use the open b-file and minority-attack ideas when the structure allows" }
+  ],
+  "black_ideas": [
+    { "idea": "Trade pieces with ...Ne4 and ...Nxc3 to relieve the cramped position" },
+    { "idea": "Free the position with ...c5 or ...Be6/...Nd7 and equalise" },
+    { "idea": "Develop the light-squared bishop and break with ...c5" }
+  ],
+  "typical_structures": [
+    { "structure": "QGD with e3/d4/c4 for White against ...d5/e6 for Black, after exchanges a Carlsbad-like structure or c3-d4 pawn chain" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Piece trades and a safe pawn structure make this very hard to break; Solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The Queen's Gambit is not a gambit."
+    },
+    "soundness": {
+      "notes": "Sound for both; a classic defence."
+    },
+    "structure": {
+      "notes": "A QGD pawn centre in tension; the taxonomy treats the QGD as Flexible."
+    },
+    "approach": {
+      "notes": "A main-line defence played at all levels. Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forced lines; Black needs to understand the exchanges and the ...c5 break. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "simplify with piece exchanges",
+    "central tension",
+    "...c5 break"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "9.cxd5 Nxc3 10.bxc3 exd5",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 Ne4 8. Bxe7 Qxe7 9. cxd5 Nxc3 10. bxc3 exd5",
+      "how": "White gets a pawn majority and the bishop pair is gone, leading to a Carlsbad-like structure."
+    },
+    {
+      "name": "9.Nxe4 dxe4",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 Ne4 8. Bxe7 Qxe7 9. Nxe4 dxe4",
+      "how": "Black gets a queen-side pawn lever and an advanced e4 pawn."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.85,
+      "reason": "Trades pieces and keeps a compact structure; very hard to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "QGD lines involve no material sacrifice."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "A classic, fully sound defence."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The QGD centre is in tension; exchange lines can reach a Semi-open Carlsbad structure."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A mainstream line against the Queen's Gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Needs knowledge of the exchanges and the ...c5 break but little forcing theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "The line is about simplification and no table plan is clearly characteristic."
+    }
+  }
+}

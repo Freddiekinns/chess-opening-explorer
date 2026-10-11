@@ -1,0 +1,105 @@
+{
+  "slug": "queens-indian-defense-anti-queens-indian-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Anti-Queen's Indian System",
+    "eco": "E17",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. Nc3",
+    "fen": "rn1qk2r/pbppbppp/1p2pn2/8/2PP4/2N2NP1/PP2PPBP/R1BQK2R b KQkq - 4 6"
+  },
+  "parent": "queens-indian-defense-traditional-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.g3 Bb7 5.Bg2 Be7 6.Nc3 Black chooses between 6...O-O, 6...d5 and 6...Ne4. White has two fianchettoed bishops and central influence, with Nd2 or Qc2 to follow, and Black fights for e4. It is a positional struggle with small edges.",
+  "white_ideas": [
+    {
+      "idea": "Control e4 and the centre with Nc3, Qc2 and d5 or e4 ideas"
+    },
+    {
+      "idea": "Use the Bg2 and queen on c2 to put pressure on the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Contest e4 with ...Ne4 or ...d5"
+    },
+    {
+      "idea": "Keep the structure sound and trade pieces with ...Bb7 on the long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen-pawn structure with Black fianchettoed bishop on b7 against White fianchetto on g2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Typical positional Queen's Indian play, hard for either side to lose quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "A normal main line."
+    },
+    "structure": {
+      "notes": "The d4/c4 pawns against ...e6 and ...d5 or ...d6 are in tension and unsettled."
+    },
+    "approach": {
+      "notes": "Standard main-line variation, not a universal set-up."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Takes positional understanding, with moderate theory."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Queen's Indian with ...e6 and ...Be7 is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A mainstream line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.8,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A main-line variation."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional play with moderate theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Both sides use fianchettoed bishops to control the centre."
+    }
+  }
+}

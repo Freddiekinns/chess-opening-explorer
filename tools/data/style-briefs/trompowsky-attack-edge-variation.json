@@ -1,0 +1,119 @@
+{
+  "slug": "trompowsky-attack-edge-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Trompowsky Attack: Edge Variation",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Bg5 Ne4 3. Bh4",
+    "fen": "rnbqkb1r/pppppppp/8/8/3Pn2B/8/PPP1PPPP/RN1QKBNR b KQkq - 4 3"
+  },
+  "parent": "trompowsky-attack",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 2.Bg5 Ne4 White retreats the bishop with 3.Bh4, keeping it on the diagonal; Black replies ...g5, ...c5 or ...d5, and the game develops with f3 to kick the knight. White aims for a big centre with e4 and a solid space edge; Black gets counterplay with ...Qa5+ or ...c5.",
+  "white_ideas": [
+    {
+      "idea": "Kick the knight with f3 and build e4"
+    },
+    {
+      "idea": "Use the bishop pair after Bxd8 or a pin"
+    },
+    {
+      "idea": "Gain space in the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the knight or bishop pair"
+    },
+    {
+      "idea": "Break with ...c5 and ...Qa5+"
+    },
+    {
+      "idea": "Attack the centre with ...d5 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White centre with pawns on d4/e4 vs Black set-up"
+    },
+    {
+      "structure": "Possible Hergert Gambit pawn offer"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Double-edged, with early ...g5 and f3 lines being forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given in the main line; the Hergert Gambit is a sideline."
+    },
+    "soundness": {
+      "notes": "Sound; the Trompowsky is respected."
+    },
+    "structure": {
+      "notes": "A centre that is partly undecided."
+    },
+    "approach": {
+      "notes": "Standard anti-Indian line used by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A coach could hand it to a club player, but Black's counterplay needs care."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "bishop pair"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Hergert Gambit",
+      "moves": "1. d4 Nf6 2. Bg5 Ne4 3. Bh4 d5 4. f3 Nf6 5. Nc3 Bf5 6. e4",
+      "how": "White offers a pawn for a big centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early f3 and ...g5 lines are forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "Main line gives no pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Respected line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Played by strong players against 1...Nf6."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Reasonable theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White aims for a big centre."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "englund-gambit-soller-gambit-deferred",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit: Soller Gambit Deferred",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. dxe5 Nc6 3. Nf3 f6",
+    "fen": "r1bqkbnr/pppp2pp/2n2p2/4P3/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 1.d4 e5 2.dxe5 Nc6 3.Nf3 Black plays 3...f6 instead of 3...Qe7, a deferred Soller idea trying to rebuild the pawn centre. White can take with exf6 or develop with Nc3, and keeps the extra pawn with a simple edge. Strong players consider it unsound for Black.",
+  "white_ideas": [
+    {
+      "idea": "Take on f6 or play Nc3 and keep the extra pawn"
+    },
+    {
+      "idea": "Develop with e3 and Bd3 or Bf4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recover the e5 pawn with ...Qe7 or ...fxe5"
+    },
+    {
+      "idea": "Develop quickly and set traps"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a White pawn on e5 and a Black pawn on f6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit that relies on traps and quick development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black gives a central pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "Considered unsound."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Traps to learn; dubious line."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Gambit with tactical traps."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "The Englund is a dubious gambit."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre opens quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "An anchor offbeat opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Black plays for development and traps."
+    }
+  }
+}

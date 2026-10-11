@@ -1,0 +1,92 @@
+{
+  "slug": "creepy-crawly-formation-classical-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Creepy Crawly Formation: Classical Defense",
+    "eco": "A00",
+    "moves": "1. h3 d5 2. a3 e5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/8/P6P/1PPPPPP1/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "clemenz-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White plays rim pawn moves h3 and a3 and plans g4, Bb2 and a flank set-up, while Black takes a classical pawn centre with ...d5 and ...e5. It is a hypermodern joke-like opening: White lets Black have the centre and tries to undermine it later with c4, d3, e4 or g4. Black develops naturally and usually stands well.",
+  "white_ideas": [
+    { "idea": "Play g4, Bg2 or Bb2 with a flank set-up and challenge the centre with c4." },
+    { "idea": "Hold back the centre and hit it later with d3, e4 or c4." }
+  ],
+  "black_ideas": [
+    { "idea": "Build a strong centre with ...d5, ...e5, ...Nf6, ...Bd6 and develop naturally." },
+    { "idea": "Gain space on both wings with ...c5 or ...f5 as White wastes tempi." }
+  ],
+  "typical_structures": [
+    { "structure": "Black pawn centre d5 and e5 against White's flank pawns on a3, h3 and later g4." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White's slow rim moves lose time but Black's centre is not under direct threat; the play is unbalanced in the sense of structure but slow."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Slightly loose with two wasted pawn moves but nothing refuted."
+    },
+    "structure": {
+      "notes": "White's centre is undecided and the position is flank-led."
+    },
+    "approach": {
+      "notes": "A joke-like irregular opening seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "No deep theory, but no clear plans to hand a beginner."
+    }
+  },
+  "plan_phrases": [
+    "undermine Black's centre later",
+    "flank set-up with g4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Slow flank play with neither forcing nor especially solid positions."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Passive but not unsound for White."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "White's centre is unresolved and the fight is flank-led."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom played by strong players, chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Not for beginners and little to memorise."
+    },
+    "plans": {
+      "value": ["hypermodern_centre"],
+      "reason": "White lets Black build the centre then attacks it later."
+    }
+  }
+}

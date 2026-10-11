@@ -1,0 +1,44 @@
+{
+  "slug": "caro-kann-defense-forgacs-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Forgacs Variation",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Nxf6+ exf6 6. Bc4",
+    "fen": "rnbqkb1r/pp3ppp/2p2p2/8/2BP4/8/PPP2PPP/R1BQK1NR b KQkq - 1 6"
+  },
+  "parent": "caro-kann-defense-tartakower-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After the exchange on f6, Black has doubled f-pawns but an open e-file and active pieces. White plays 6.Bc4, aiming at f7, and Black usually answers 6...Bd6 7.Qe2+ Qe7 trading queens or developing safely. The result is a quiet, slightly better game for White in theory, with Black's structure the long-term concern.",
+  "white_ideas": [
+    { "idea": "Develop with Bc4, Qe2 and Ne2 and pressure the doubled pawns and the e-file." },
+    { "idea": "Trade queens and play for the better structure in the endgame." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop quickly with ...Bd6, ...O-O and ...Re8 using the open e-file." },
+    { "idea": "Use the bishop pair and active pieces to compensate for the doubled pawns." }
+  ],
+  "typical_structures": [
+    { "structure": "Black doubled f-pawns with an open e-file and White's d4 pawn." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Steady play with little risk; the Caro-Kann stays hard to break down even with the doubled pawns." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "Caro-Kann with an open e-file and Black's pawn on c6." },
+    "approach": { "notes": "A recognised branch of the Tartakower; less common than main lines but played." },
+    "level": { "reason": "understanding", "notes": "Requires judgment of the doubled pawns, little theory." }
+  },
+  "plan_phrases": ["doubled pawns", "open e-file"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Caro-Kann with a steady position and few risks." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A standard line." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "Caro-Kann with an open e-file and a fixed c6 pawn." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A recognised branch played by strong players now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Needs structural judgment with limited theory." },
+    "plans": { "value": ["doubled_pawns"], "reason": "Black has doubled f-pawns for open lines." }
+  }
+}

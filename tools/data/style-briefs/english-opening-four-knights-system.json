@@ -1,0 +1,105 @@
+{
+  "slug": "english-opening-four-knights-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Four Knights System, Nimzowitsch Variation",
+    "eco": "A28",
+    "moves": "1. c4 e5 2. Nc3 Nf6 3. Nf3 Nc6 4. e4",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2P1P3/2N2N2/PP1P1PPP/R1BQKB1R b KQkq - 0 4"
+  },
+  "parent": "english-opening-kings-english-variation",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White adds e4 to the Four Knights with c4, Nc3 and Nf3, striking a Maroczy-like centre. Black usually replies 4...Bb4 and play follows with Nd5 ideas and the e4 pawn under pressure. White controls d5 and plays for queenside expansion and the long diagonal.",
+  "white_ideas": [
+    {
+      "idea": "Control d5 with Nd5 and e4"
+    },
+    {
+      "idea": "Expand with a3 and b4 or Be2 and O-O"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin with ...Bb4 and break with ...d5"
+    },
+    {
+      "idea": "Trade knights and use ...Nxe4 tactics"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White c4/e4 centre against Black e5 with an outpost on d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Balanced flexible play with some tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Flexible: English-type centre with tension."
+    },
+    "approach": {
+      "notes": "A standard English line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Strategic plans."
+    }
+  },
+  "plan_phrases": [
+    "knight outpost",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flexible English play with some tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "English centre with tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal English line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Strategic plans."
+    },
+    "plans": {
+      "value": [
+        "knight_outpost",
+        "space_advantage"
+      ],
+      "reason": "White controls d5 and gains space."
+    }
+  }
+}

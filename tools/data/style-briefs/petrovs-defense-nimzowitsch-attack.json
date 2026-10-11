@@ -1,0 +1,115 @@
+{
+  "slug": "petrovs-defense-nimzowitsch-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Nimzowitsch Attack",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. Nc3",
+    "fen": "rnbqkb1r/ppp2ppp/3p4/8/4n3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 1 5"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 3.Nxe5 d6 4.Nf3 Nxe4 White plays 5.Nc3, offering a trade of knights; after 5...Nxc3 6.dxc3 White gets the bishop pair and doubled c-pawns, while Black has a solid position. Queens often come off, and the game is a quiet manoeuvring one.",
+  "white_ideas": [
+    {
+      "idea": "Trade knights and queens and use the bishop pair"
+    },
+    {
+      "idea": "Castle long or short, develop Be3, Bd3"
+    },
+    {
+      "idea": "Use the e-file and open diagonals"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade pieces to neutralise White's lead"
+    },
+    {
+      "idea": "Play ...Be7, ...Nc6 and castle"
+    },
+    {
+      "idea": "Hold the symmetrical structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical e-file structure after trades"
+    },
+    {
+      "structure": "White doubled c-pawns for the bishops"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid and drawish, with little risk for Black."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Symmetrical exchange structure with the e-file open: Semi-open under the taxonomy."
+    },
+    "approach": {
+      "notes": "Standard line in the Petrov."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional play."
+    }
+  },
+  "plan_phrases": [
+    "doubled pawns",
+    "bishop pair",
+    "symmetrical structure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "Known as drawish; Black is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A mainstream line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Symmetrical structure with one open file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Normal choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Positional with modest theory."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "bishop_pair"
+      ],
+      "reason": "White accepts doubled c-pawns for the bishops."
+    }
+  }
+}

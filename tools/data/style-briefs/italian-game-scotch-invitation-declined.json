@@ -1,0 +1,106 @@
+{
+  "slug": "italian-game-scotch-invitation-declined",
+  "tier": "unsourced",
+  "root": {
+    "name": "Italian Game: Scotch Invitation Declined",
+    "eco": "C55",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d4 d6",
+    "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2BPP3/5N2/PPP2PPP/RNBQK2R w KQkq - 0 5"
+  },
+  "parent": "italian-game-two-knights-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 4.d4 Black declines to take on d4 and plays 4...d6, keeping e5 defended in a Philidor-like set-up. White chooses between the quiet 5.Nc3 (Black plays ...Be7 and castles) and 5.dxe5 dxe5 6.Qxd8+ with a queen trade, where White has a lead in space and Black holds with ...Bb4 or ...Nd7 ideas. The game is usually a slow manoeuvring fight; Black is solid but a little passive.",
+  "white_ideas": [
+    { "idea": "Build space with Nc3, O-O and Bg5, keeping the tension on e5" },
+    { "idea": "Exchange on e5 and trade queens to exploit a small development lead" },
+    { "idea": "Prepare d5 or a central break when Black is passive" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold e5 with ...d6, ...Be7 and ...O-O, as in a Philidor structure" },
+    { "idea": "Develop ...Bg4, ...Nd7 and ...exd4 once the centre can be opened on Black's terms" },
+    { "idea": "Trade queens and play for a safe, equal endgame" }
+  ],
+  "typical_structures": [
+    { "structure": "Philidor-like with Black pawns on d6/e5 against White pawns on d4/e4, with the centre in tension" }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's d6/e5 shape is hard to break down and White has no direct attack; if the queens come off it is steady. Solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Gambit declined, so no material changes hands."
+    },
+    "soundness": {
+      "notes": "Sound for both; Black is a little passive."
+    },
+    "structure": {
+      "notes": "Centre in tension (d4 against e5, with exchanges possible): Flexible."
+    },
+    "approach": {
+      "notes": "A normal side line of the Italian; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Slow strategic play with few forced lines; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "tension in the centre",
+    "Philidor-style set-up",
+    "space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5.dxe5 dxe5 6.Qxd8+",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d4 d6 5. dxe5 dxe5 6. Qxd8+ Nxd8",
+      "how": "An early queen trade gives a drawish structure where White is better developed."
+    },
+    {
+      "name": "5.Nc3 Be7",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d4 d6 5. Nc3 Be7 6. O-O O-O",
+      "how": "The quiet main set-up with tension kept on e5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Black's d6/e5 centre is hard to dislodge and there is no immediate attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Gambit declined; no material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides' play is healthy."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The d4/e5 tension can be released in several ways."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A respectable side line of the Italian, not an off-the-wall choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Not much to memorise but the Philidor-like plans take judgement."
+    },
+    "plans": {
+      "value": ["space_advantage"],
+      "reason": "White's centre gives a space edge and Black's defence is about holding e5."
+    }
+  }
+}

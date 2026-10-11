@@ -1,0 +1,49 @@
+{
+  "slug": "kings-indian-attack-omega-delta-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Omega-Delta Gambit",
+    "eco": "A07",
+    "moves": "1. Nf3 d5 2. g3 e5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "kings-indian-attack",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black plays 2...e5 at once, offering the e-pawn to 3.Nxe5 for quick development and central control. White can take the pawn and defend with Bg2 and d3 or d4, while Black hopes for ...Bd6, ...Nf6 and ...Qe7 pressure on the e-file. I am unsure of the theory, but it reads as a dubious Black gambit that strong players avoid.",
+  "white_ideas": [
+    { "idea": "Take the e5 pawn with Nxe5 and consolidate with d4, Bg2 and Nc3." },
+    { "idea": "Or ignore it and play d3 to keep the extra pawn if Black pushes." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Nf6, ...Bd6 or ...Qe7 and hit the knight on e5 to regain the pawn." },
+    { "idea": "Use the open e-file against White's king in the centre." }
+  ],
+  "typical_structures": [
+    { "structure": "White a pawn up with Nxe5 and a g3 fianchetto; Black centre pawn on d5 and open e-file." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Black gives a pawn for speed; the e-file and early tactics make it sharp." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take 3.Nxe5 and keep the pawn with ordinary development."
+    },
+    "soundness": { "notes": "Compensation is insufficient against accurate play; dubious for Black." },
+    "structure": { "notes": "The e-pawn is gone so the e-file and diagonals open for the pieces." },
+    "approach": { "notes": "A rare gambit; strong players almost never play 2...e5 here." },
+    "level": { "reason": "neither", "notes": "Dubious so never Beginner; plans are simple." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "A pawn gambit with open lines and early tactics." },
+    "gambit": { "value": "black", "confidence": 0.8, "reason": "Black offers the e5 pawn for development." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.7, "reason": "Compensation is thin against sensible play." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "The e-pawn is gone and lines open for the pieces." },
+    "approach": { "value": "offbeat", "confidence": 0.8, "reason": "Strong players seldom play 2...e5 against the King's Indian Attack." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Dubious lines are never Beginner." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black plays for quick development against the extra pawn." }
+  }
+}

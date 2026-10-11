@@ -1,0 +1,112 @@
+{
+  "slug": "french-defense-diemer-duhm-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Diemer-Duhm Gambit",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. d4 d5 3. c4",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PPP3/8/PP3PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "After 3.c4 White offers to change the centre, hoping for 3...dxc4 4.Bxc4 or quick development. Black can accept and White regains the pawn with Bxc4, or play 3...c6 and reach an exchange-style structure. White gets a lead in development and open lines at the cost of some structure. It is a rare sideline and I know it only roughly.",
+  "white_ideas": [
+    {
+      "idea": "Regain the c4 pawn with Bxc4"
+    },
+    {
+      "idea": "Develop quickly with Nc3, Nf3 and aim at Black's centre"
+    },
+    {
+      "idea": "Use the d4/e4 centre for space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn with ...dxc4 and develop ...Nf6"
+    },
+    {
+      "idea": "Hit the centre with ...c5"
+    },
+    {
+      "idea": "Reach an easy French position"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after dxc4 and Bxc4 with White d4/e4"
+    },
+    {
+      "structure": "Possible isolated pawn if Black exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mostly quiet; White's idea is development, not a long attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The pawn comes back with Bxc4, so little material is given."
+    },
+    "soundness": {
+      "notes": "Considered inferior; Black can equalise or better."
+    },
+    "structure": {
+      "notes": "Centre opens after cxd5 or dxc4, but the structure is not fixed yet."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not a recommended repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Evidence is thin; the play seems mostly open but not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "The pawn is regained, though the line is named a gambit."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Considered inferior to the main lines."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Pawn exchanges in the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.45,
+      "reason": "Not beginner, as it is dubious."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White hopes for development."
+    }
+  }
+}

@@ -26,7 +26,12 @@ Each variation in your input file
 - **Write each brief as soon as it is finished**, before starting the next, and
   skip any slug whose brief file already exists, so an interrupted run resumes.
 - Describe the main line of the root, the branch strong players choose most, and
-  read every axis from that same branch.
+  read every axis from that same branch. Where `subtree_most_played` is listed,
+  that is the line this variation's pages mostly show; a sharper branch with its
+  own named variation is not this one's main line (Semi-Slav Accepted was tagged
+  from the 6.e4 Botvinnik, which is a separate variation).
+- If you write helper scripts, keep them in a scratchpad folder of your own:
+  agents running alongside each other have run one another's scripts.
 - Where you are unsure what the position is or how it is played, say so in
   `confidence` and keep the evidence short rather than inventing detail. A name
   you do not recognise is common in the tail; reason from the moves.

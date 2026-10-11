@@ -1,0 +1,99 @@
+{
+  "slug": "sicilian-defense-flohr-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Flohr Variation",
+    "eco": "B32",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Qc7",
+    "fen": "r1b1kbnr/ppqppppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "sicilian-defense-open",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black develops the queen to c7 early, keeping the d- and e-pawns flexible for a Taimanov or Paulsen-type set-up. White can play 5.Nc3 e6 with a Taimanov structure, or 5.Nb5, the line the input's pages show, hitting the queen and aiming for d6, where Black usually reroutes the queen with ...Qb8. White aims for the Maróczy bind or quick development; Black for ...e6, ...a6 and ...Nf6 with c-file pressure.",
+  "white_ideas": [
+    { "idea": "Gain time with Nb5 against the queen and aim for Nd6+ or a Maróczy bind with c4." },
+    { "idea": "Develop with Nc3 and Be3 and castle queenside for a kingside attack." }
+  ],
+  "black_ideas": [
+    { "idea": "Reroute the queen and build a flexible Taimanov-type centre with ...e6, ...a6 and ...Nf6." },
+    { "idea": "Use the half-open c-file and the queen's pressure on c3 and c2 squares." }
+  ],
+  "typical_structures": [
+    { "structure": "Sicilian asymmetry with White's e4 against Black's d6/e6, half-open c-file for Black." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Sicilian leads to unbalanced play with opposite wings; the Qc7 order is somewhat calmer than Najdorf lines but remains double-edged."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "A playable Sicilian line."
+    },
+    "structure": {
+      "notes": "Fixed asymmetric centre with a half-open c-file is semi-open like all Sicilians."
+    },
+    "approach": {
+      "notes": "A named branch within the Open Sicilian used by strong players, so standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Taimanov-type plans need some understanding but theory is moderate."
+    }
+  },
+  "plan_phrases": [
+    "half-open c-file",
+    "opposite-side castling",
+    "Maróczy bind"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5.Nc3 Taimanov-type play",
+      "moves": "5. Nc3 e6 6. Be3 a6",
+      "how": "Transposes to the Taimanov with a more positional game and a possible Be3 and Qd2 attack plan."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Open Sicilian positions are unbalanced with opposite wings and mutual risk."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A playable and well-tested Sicilian line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.85,
+      "reason": "Every Sicilian is Semi-open under the rubric."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A respectable branch used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Taimanov-type, not Advanced."
+    },
+    "plans": {
+      "value": ["half_open_c_file", "opposite_side_castling"],
+      "reason": "Black uses the c-file and White often castles queenside against a kingside attack."
+    }
+  }
+}

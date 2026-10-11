@@ -1,0 +1,99 @@
+{
+  "slug": "ruy-lopez-lucena-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Lucena Variation",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Be7",
+    "fen": "r1bqk1nr/ppppbppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black plays 3...Be7 against the Ruy Lopez, delaying ...a6 and ...Nf6. White plays 4.O-O or 4.Bxc6 dxc6 5.d4, and the game often transposes into the Closed Spanish or an Exchange structure. Black is solid but a bit passive.",
+  "white_ideas": [
+    {
+      "idea": "Play O-O, Re1, c3 and d4"
+    },
+    {
+      "idea": "Exchange on c6 for the bishop pair"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...O-O"
+    },
+    {
+      "idea": "Play ...d6 and ...exd4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Spanish structure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black postpones ...a6 and ...Nf6; play is a slow Spanish manoeuvring game, usually transposing after 4.O-O Nf6."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound, though 4.Bxc6 dxc6 5.d4 gives White an easy game."
+    },
+    "structure": {
+      "notes": "Closed-Spanish type tension; the e4/e5 centre is not settled."
+    },
+    "approach": {
+      "notes": "Uncommon move order but a respectable one that strong players meet via transposition."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Ordinary Spanish understanding."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Closed Spanish type: slow, neither sharp nor especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Centre tension as in the Closed Ruy Lopez."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Rare but respectable."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Needs ordinary Spanish understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is specific to the move order."
+    }
+  }
+}

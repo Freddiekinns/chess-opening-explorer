@@ -1,0 +1,110 @@
+{
+  "slug": "three-knights-opening-winawer-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Three Knights Opening: Winawer Defense",
+    "eco": "C46",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 f5",
+    "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 0 4"
+  },
+  "parent": "three-knights-opening",
+  "written_at": "2026-10-10",
+  "confidence": "low",
+  "overview": "Black answers 3.Nc3 with the Schliemann-type 3...f5, hitting e4. White can take 4.exf5 or 4.Nxe5 and aims for central control and an extra pawn; Black aims for open lines, ...e4 or ...fxe4 and quick development. The game is double-edged and tactical.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn on f5 or e5 and consolidate"
+    },
+    {
+      "idea": "Play d2-d4 to open the centre"
+    },
+    {
+      "idea": "Develop Bc4/Bb5 against the exposed Black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open lines with ...fxe4 or ...e4"
+    },
+    {
+      "idea": "Develop quickly and use the f-file and Qh4"
+    },
+    {
+      "idea": "Recover the pawn with active pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black f-pawn exchanged for e4 pawn, White knights centralised"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The move 3...f5 weakens Black's king and invites tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black usually gives a pawn for open lines and development, as in the Schliemann."
+    },
+    "soundness": {
+      "notes": "The Winawer/Gothic idea is treated as risky; White usually has a pleasant extra pawn."
+    },
+    "structure": {
+      "notes": "Centre opens early with e-file and f-file pressure."
+    },
+    "approach": {
+      "notes": "Rare; seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Early tactics need to be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open f-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "3...f5 invites mutual tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.5,
+      "reason": "Black is offering a pawn in most lines, similar to the Schliemann."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Considered inferior; White gets a pawn up."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Early exchanges on f5/e4 open the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rare among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for activity after offering a pawn."
+    }
+  }
+}

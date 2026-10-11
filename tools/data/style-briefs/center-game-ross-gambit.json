@@ -1,0 +1,105 @@
+{
+  "slug": "center-game-ross-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Ross Gambit",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. Bd3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/3pP3/3B4/PPP2PPP/RNBQK1NR b KQkq - 1 3"
+  },
+  "parent": "center-game-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.e4 e5 2.d4 exd4 White plays 3.Bd3, offering the d4 pawn for quick development. Black can keep the pawn with 3...Nf6 or 3...Nc6, and White tries for e5 and Nf3 and castling. The gambit is seldom seen and considered insufficient.",
+  "white_ideas": [
+    {
+      "idea": "Win time with Nf3, O-O and e5"
+    },
+    {
+      "idea": "Hit f7 and use open lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...Nf6, ...Nc6 and ...Bc5"
+    },
+    {
+      "idea": "Return the pawn at the right moment to complete development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, White with a development lead"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is a pawn down and plays for e5, Nf3, O-O and an attack on the king; forcing and risky for both."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the d-pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "3.Bd3 is regarded as inferior to 3.Qxd4 or 3.c3; Black keeps the pawn with ...Nf6 or ...Nc6."
+    },
+    "structure": {
+      "notes": "The d-pawns are gone and the e-file and diagonals open at once."
+    },
+    "approach": {
+      "notes": "Strong players choose the Center Game main lines far more often than this gambit."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious gambit is not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A pawn gambit for development in an open centre."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "Black can keep the d4 pawn if it wants."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The compensation is generally considered insufficient."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens immediately."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for speed against f7 and the open lines."
+    }
+  }
+}

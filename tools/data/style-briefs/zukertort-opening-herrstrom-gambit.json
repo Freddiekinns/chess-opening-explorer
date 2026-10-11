@@ -1,0 +1,113 @@
+{
+  "slug": "zukertort-opening-herrstrom-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Herrstrom Gambit",
+    "eco": "A04",
+    "moves": "1. Nf3 g5",
+    "fen": "rnbqkbnr/pppppp1p/8/6p1/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black replies to 1.Nf3 with the pawn lunge 1...g5, offering the pawn to 2.Nxg5. Black hopes to build quick development with ...Bg7, ...d6 and ...e5, using the long diagonal against b2. White can take the pawn and return it when needed, getting a comfortable edge. This is a surprise try rather than a respected line.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with Nxg5 and consolidate with d4, e4 or g3"
+    },
+    {
+      "idea": "Fianchetto and punish Black's loosened kingside"
+    },
+    {
+      "idea": "Return material if needed to complete development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Bg7 and ...e5 to open the long diagonal against b2"
+    },
+    {
+      "idea": "Strike in the centre with ...d5 and ...e5"
+    },
+    {
+      "idea": "Develop fast and use the g-file against the white knight"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White extra pawn with an open g-file for Black"
+    },
+    {
+      "structure": "Black pawns on e5 and d5 against a White fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early pawn offer and open lines lead to forcing, unbalanced play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black gives the g-pawn for time and the long diagonal."
+    },
+    "soundness": {
+      "notes": "White keeps the pawn with a good position, and strong players regard 1...g5 as unsound."
+    },
+    "structure": {
+      "notes": "Black aims for central pawn breaks and diagonals, but the position is not fixed."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever play 1...g5; it is a surprise tactic."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few moves to learn, but it is dubious so never a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Long diagonal pressure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Early pawn offer and open lines lead to forcing, unbalanced play."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black gives the g-pawn for time and the long diagonal."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "White keeps the pawn with a good position, and strong players regard 1...g5 as unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Black aims for central pawn breaks and diagonals, but the position is not fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever play 1...g5; it is a surprise tactic."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Few moves to learn, but it is dubious so never a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black hopes to use faster development and the long diagonal for the pawn."
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "zukertort-opening-st-george-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: St. George Defense",
+    "eco": "A04",
+    "moves": "1. Nf3 a6",
+    "fen": "rnbqkbnr/1ppppppp/p7/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black answers 1.Nf3 with the flank move 1...a6, preparing ...b5, ...Bb7 and ...e6 as a hypermodern set-up and keeping options open. White can take the centre with e4 and d4 or fianchetto; Black reacts with ...b5, ...Bb7 and ...e6, or ...c5. It is an offbeat way to avoid theory; it costs a tempo and gives White easy development.",
+  "white_ideas": [
+    { "idea": "Occupy the centre with e4 and d4 and develop with ease while Black's a-pawn move is slow." },
+    { "idea": "Play c4 and g3 and keep a flexible English or Réti set-up." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto the queen's bishop with ...b5 and ...Bb7 and attack the centre from the wings." },
+    { "idea": "Develop with ...e6, ...c5 and ...Nf6 and transpose to a Sicilian or Hedgehog-type game." }
+  ],
+  "typical_structures": [
+    { "structure": "Black queenside pawns on a6 and b5 with a bishop on b7 against a White centre." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow and flexible; neither side is forced into tactics early."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Just a pawn move, no material is given."
+    },
+    "soundness": {
+      "notes": "Loses a tempo but Black is not worse by force."
+    },
+    "structure": {
+      "notes": "The centre is undecided and the setup is flank-led."
+    },
+    "approach": {
+      "notes": "Strong players seldom answer 1.Nf3 with 1...a6; it is a surprise weapon."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory and loose plans; not a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "...b5 and ...Bb7 flank set-up",
+    "hypermodern play from the wings"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Slow flexible play that is neither especially solid nor forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A wasted tempo but nothing is refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre is left open to many set-ups."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Seldom played by strong players and chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.65,
+      "reason": "Not a beginner choice and little theory."
+    },
+    "plans": {
+      "value": ["fianchetto", "queenside_expansion"],
+      "reason": "Black aims for ...b5 and a bishop on b7."
+    }
+  }
+}

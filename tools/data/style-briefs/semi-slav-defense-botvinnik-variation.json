@@ -1,0 +1,46 @@
+{
+  "slug": "semi-slav-defense-botvinnik-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Botvinnik Variation",
+    "eco": "D44",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 dxc4 6. e4",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/6B1/2pPP3/2N2N2/PP3PPP/R2QKB1R b KQkq - 0 6"
+  },
+  "parent": "semi-slav-defense-accepted",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "White plays 6.e4 against the pawn on c4, and Black holds it with 6...b5. The main line runs 7.e5 h6 8.Bh4 g5 9.Nxg5 hxg5 10.Bxg5 Nbd7 11.exf6, with White's piece sacrifice for two pawns against a loosened Black king. Both sides must know long forcing lines, and an error loses quickly.",
+  "white_ideas": [
+    { "idea": "Sacrifice a knight on g5 for two pawns and attack the Black king and centre" },
+    { "idea": "Fianchetto with g3 and Bg2 after exf6 to hit the long diagonal and Black's queenside" }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the extra c4 pawn with ...b5 and undermine the centre with ...c5" },
+    { "idea": "Counter on the long diagonal with ...Bb7 and ...Qb6 while the king stays safe" }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre with e-file and long diagonal contested; Black king exposed after ...g5" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing, theory-heavy play where both sides sacrifice material and one slip decides the game." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Material is traded back and forth; neither side is clearly gambiting." },
+    "soundness": { "notes": "A fully respectable main line at top level." },
+    "structure": { "notes": "The centre is in tension and opens in the main line." },
+    "approach": { "notes": "A well-known main line." },
+    "level": { "reason": "memory", "notes": "Long forcing sequences must be known by both sides." }
+  },
+  "plan_phrases": ["kingside attack", "queenside expansion with ...b5"],
+  "sublines_that_differ": [
+    { "name": "Moscow Variation", "moves": "5...h6", "how": "Not this root, but a quieter alternative to the Botvinnik." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.95, "reason": "Forcing theory with mutual sacrifices and a king under fire." },
+    "gambit": { "value": "none", "confidence": 0.6, "reason": "Material changes hands in both directions and neither side is clearly offering a gambit." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A mainstream top-level line." },
+    "structure": { "value": "semi_open", "confidence": 0.4, "reason": "The e5 pawn and ...c5 break give central tension with open lines." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A mainstream line of the Semi-Slav." },
+    "level": { "value": "advanced", "why": "memory", "confidence": 0.9, "reason": "Long forcing lines need to be known by both sides." },
+    "plans": { "value": ["kingside_attack", "queenside_expansion"], "reason": "White attacks the king, Black plays ...b5 and ...c5." }
+  }
+}

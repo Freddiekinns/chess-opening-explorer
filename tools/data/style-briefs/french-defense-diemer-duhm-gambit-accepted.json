@@ -1,0 +1,111 @@
+{
+  "slug": "french-defense-diemer-duhm-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Diemer-Duhm Gambit Accepted",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. d4 d5 3. c4 dxe4",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/8/2PPp3/8/PP3PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "french-defense-diemer-duhm-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "After 2.d4 d5 White plays 3.c4 and Black takes on e4; White follows with Nc3 and f3 to recover the pawn or build an attack. Black can keep the pawn and aim to consolidate with ...Nf6 and ...Bb4. White gets open lines and rapid development, Black the extra pawn.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with f3 and hit e4 and e6"
+    },
+    {
+      "idea": "Develop Nc3, Be3 and Qb3"
+    },
+    {
+      "idea": "Regain the pawn with strong piece play"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...Nf6 and ...f5"
+    },
+    {
+      "idea": "Pin the knight with ...Bb4"
+    },
+    {
+      "idea": "Strike with ...c5 to break White's centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French centre opened up with White c4/d4 vs Black e6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with a lead in development for White."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the e4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Considered dubious; Black has several solid answers."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Rare; strong players seldom choose it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Theory of the main lines."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "central pawn majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Gambit with open play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Black can consolidate."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The e-file and diagonals open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Not Beginner for a dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White uses c4/d4 and speed."
+    }
+  }
+}

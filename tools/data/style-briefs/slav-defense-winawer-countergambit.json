@@ -1,0 +1,120 @@
+{
+  "slug": "slav-defense-winawer-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Winawer Countergambit",
+    "eco": "D10",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 e5",
+    "fen": "rnbqkbnr/pp3ppp/2p5/3pp3/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "slav-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black strikes with 3...e5 against the Slav, a counter-gambit that gives up the centre for activity. After 4.dxe5 d4 5.Ne4 Qa5+ 6.Bd2 Black plays on the dark squares and White has an extra pawn, or 4.cxd5 cxd5 5.dxe5 d4 leads to similar play. White can play the safe 4.e4 (Anti-Winawer) to avoid theory. Black is tactically active and accepts risk.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and keep the pawn, with Ne4 and Bd2 meeting the checks"
+    },
+    {
+      "idea": "Play 4.cxd5 cxd5 5.Nf3 and hold the centre"
+    },
+    {
+      "idea": "Develop quickly and return the pawn at the right moment"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Push ...d4 to win a tempo on Nc3 and play ...Qa5+"
+    },
+    {
+      "idea": "Recapture the e5 pawn with ...Qxe5 or ...Bb4"
+    },
+    {
+      "idea": "Use open lines and the queen check for tactics"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black d4 pawn wedge against the white knight"
+    },
+    {
+      "structure": "Open centre with White extra pawn on e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A Black counter-gambit with forcing early tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "4.dxe5 d4 5.Ne4 gives White a pawn that Black can win back only with accurate play; White can keep it."
+    },
+    "soundness": {
+      "notes": "Theory considers it unsound but playable for a while; dubious."
+    },
+    "structure": {
+      "notes": "Black pawns on d4 and c6 against White's e5: centre opens, open."
+    },
+    "approach": {
+      "notes": "A rare gambit, played seldom by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious line, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "tactics on the dark squares",
+    "Qa5+ and d4 wedge"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Anti-Winawer 4.e4",
+      "moves": "1. d4 d5 2. c4 c6 3. Nc3 e5 4. e4",
+      "how": "White plays e4 immediately and Black gets a different type of position."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "A Black counter-gambit with early forcing tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black sacrifices the e5 pawn for activity and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.55,
+      "reason": "Considered unsound by theory, playable at lower levels.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre opens with a d4 wedge and open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never Beginner.",
+      "why": "both"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black gives a pawn for quick piece play."
+    }
+  }
+}

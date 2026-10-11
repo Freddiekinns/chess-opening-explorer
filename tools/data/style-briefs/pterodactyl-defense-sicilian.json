@@ -1,0 +1,121 @@
+{
+  "slug": "pterodactyl-defense-sicilian",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pterodactyl Defense: Sicilian, Siroccopteryx",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c5 4. Nf3 Qa5 5. Bc4",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1p5/2BPP3/2N2N2/PPP2PPP/R1BQK2R b KQkq - 3 5"
+  },
+  "parent": "modern-defense-pterodactyl-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black fianchettoes the king's bishop, plays ...c5 and puts the queen on a5 early, pressuring the c3 knight and e5/c3 squares. After 5.Bc4 White develops quickly and eyes f7, while Black goes ...Nf6 and ...cxd4 or ...e6 to counterattack in a Sicilian-style fight. Black accepts early queen exposure for counterplay on the c-file and long diagonal.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bc4, O-O and Bf4/Be3 and play against the early queen"
+    },
+    {
+      "idea": "Capture on c5 or break with e5 if Black is not careful"
+    },
+    {
+      "idea": "Pressure f7 and the d5 square"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto and hit d4 with ...c5"
+    },
+    {
+      "idea": "Use the queen on a5 to pin Nc3 and prepare ...cxd4"
+    },
+    {
+      "idea": "Counterattack with ...Nf6 and ...O-O, trading when needed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian-type pawn structure with open c-file and White centre"
+    },
+    {
+      "structure": "Black bishop on g7 on the long diagonal"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen and fianchetto against a central pawn pair; positions are unbalanced with real tactical risk for Black."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given, though ...cxd4 lines can be sharp."
+    },
+    "soundness": {
+      "notes": "Considered playable with exact play; not a refutation."
+    },
+    "structure": {
+      "notes": "Sicilian-style pawn structure with a half-open c-file."
+    },
+    "approach": {
+      "notes": "Rare; strong players seldom play the Pterodactyl, which is chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black must handle the early queen and avoid tactics; understanding rather than long theory."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Early queen",
+    "Counterattack on c-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5.dxc5",
+      "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c5 4. Nf3 Qa5 5. dxc5",
+      "how": "White takes the pawn; Black must regain it with ...Bxc3+ or ...Qxc5 ideas."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early queen sortie and counterplay against White's centre; unbalanced."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No deliberate material sacrifice."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Playable, if slightly risky."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "Sicilian-style structure with a c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Requires care with the early queen."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "early_queen"
+      ],
+      "reason": "Bishop on g7 and queen on a5."
+    }
+  }
+}

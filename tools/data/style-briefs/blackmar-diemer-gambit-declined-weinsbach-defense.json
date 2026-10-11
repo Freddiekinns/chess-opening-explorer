@@ -1,0 +1,119 @@
+{
+  "slug": "blackmar-diemer-gambit-declined-weinsbach-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Declined: Weinsbach Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 e6",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 4.f3 Black plays 4...e6 rather than taking the pawn again, so that 5.fxe4 regains material and White gets a big centre. Black usually pins with ...Bb4 and White replies Bd3, when ...Nxe4 or ...Bxc3+ lines (the Pfrang Gambit) become sharp. White has a space and development edge but little real attack; I am not sure of the details.",
+  "white_ideas": [
+    {
+      "idea": "Recapture on e4 and build a centre with Bd3, Nge2 or Qf3"
+    },
+    {
+      "idea": "Use the open f-file and kingside pieces for an attack"
+    },
+    {
+      "idea": "Offer the e4 pawn in the Pfrang line for a lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin with ...Bb4 and trade bishop for knight"
+    },
+    {
+      "idea": "Challenge the centre with ...c5 or ...Nxe4"
+    },
+    {
+      "idea": "Develop and castle before White's attack builds"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4/e4 centre against ...e6"
+    },
+    {
+      "structure": "Open lines after ...Bxc3+ bxc3 with weakened white queenside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open, tactical, with White developing quickly and Black in the pinning lines having real counter-chances."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black declined the second pawn; 5.fxe4 regains material. The Pfrang line sacrifices one later."
+    },
+    "soundness": {
+      "notes": "Declined lines are fine for Black, and White's centre is playable; I read it as sound but unclear."
+    },
+    "structure": {
+      "notes": "Centre pawns exchange and the position opens."
+    },
+    "approach": {
+      "notes": "The BDG family is rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs concrete tactical knowledge but no deep theory."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Pfrang Gambit",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 e6 5. fxe4 Bb4 6. Bd3 Bxc3+ 7. bxc3 Nxe4 8. Be3",
+      "how": "White sacrifices a pawn for development; this is where material actually changes hands."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Open lines and early pins in a BDG-style centre."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Black has declined and material is level after 5.fxe4, although the Pfrang line gives a pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "White is slightly worse at worst; no outright refutation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Pawns come off and files open quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "BDG family is seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Tactical but not memory heavy."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for development."
+    }
+  }
+}

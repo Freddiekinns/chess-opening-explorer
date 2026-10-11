@@ -1,0 +1,107 @@
+{
+  "slug": "indian-defense-maddigan-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Maddigan Gambit",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Nc3 e5",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.d4 Nf6 2.Nc3 Black plays 2...e5, offering the e-pawn. If White takes with 3.dxe5, Black plays 3...Ng4 and regains the pawn with ...Nxe5 or ...Nc6 and ...Ngxe5 for quick development. White can decline with 3.Nf3 e4 and gain space, or 3.e4. The line is a rare counter-gambit that scores through surprise.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and defend with Bf4 and e3, then keep the extra pawn if possible"
+    },
+    {
+      "idea": "Decline with 3.Nf3 e4 and attack Black's advanced pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture e5 quickly with ...Ng4 and ...Nc6"
+    },
+    {
+      "idea": "Use fast development and central tension to compensate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open central lines after dxe5 with Black pieces active"
+    },
+    {
+      "structure": "Advanced Black e4 pawn after 3.Nf3 e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early central clash, with Black fighting for the e5 pawn immediately."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "2...e5 offers a pawn that White can take, though Black usually regains it."
+    },
+    "soundness": {
+      "notes": "Considered dubious: White can decline or take and keep a small plus."
+    },
+    "structure": {
+      "notes": "Central pawns exchanged and lines open fast."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious gambit with moderate theory."
+    }
+  },
+  "plan_phrases": [
+    "Counter-gambit",
+    "Fast development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Counter-gambit with an early central fight and open lines."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black offers the e5 pawn that White can capture, though Black can regain it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Strong players consider White clearly better against accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "dxe5 and ...Ng4 open the centre at once."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely seen among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for quick development and regaining the pawn."
+    }
+  }
+}

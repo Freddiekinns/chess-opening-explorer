@@ -1,0 +1,51 @@
+{
+  "slug": "french-defense-carlson-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Carlson Gambit",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. d4 d5 3. Nf3 dxe4 4. Ne5",
+    "fen": "rnbqkbnr/ppp2ppp/4p3/4N3/3Pp3/8/PPP2PPP/RNBQKB1R b KQkq - 1 4"
+  },
+  "parent": "french-defense-perseus-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White offers the e4 pawn by allowing 3...dxe4 and then plays 4.Ne5 rather than the Perseus Gambit's 4.Bd3, hoping for Bc4, Qe2 or Qg4 ideas against f7 and g7. Black can keep the pawn with ...Nf6 or ...Nd7 and ...Bd6 or ...c5. I am not sure of the exact theory, but the position is a rare gambit without enough compensation.",
+  "white_ideas": [
+    { "idea": "Develop the bishop to c4 and the queen to e2 or g4 to pile onto f7 and g7." },
+    { "idea": "Use the knight on e5 to disrupt Black's development and regain the pawn if Black errs." }
+  ],
+  "black_ideas": [
+    { "idea": "Develop with ...Nf6 or ...Nd7 to trade off the e5 knight and keep the extra pawn." },
+    { "idea": "Hit the centre with ...c5 once the king is safe." }
+  ],
+  "typical_structures": [
+    { "structure": "Black a pawn up with a pawn on e4 or traded, White's d4 pawn and active knight." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Forcing piece play against f7 and the king; both sides lose quickly with a slip." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 3...dxe4 the pawn is not regained by force, so Black can keep it."
+    },
+    "soundness": { "notes": "Not enough for the pawn against accurate play; dubious for White." },
+    "structure": { "notes": "The e-pawns come off, so the centre opens quickly." },
+    "approach": { "notes": "A rare sideline of an already rare gambit; strong players seldom play it." },
+    "level": { "reason": "neither", "notes": "Dubious, so never Beginner; the ideas are straightforward." }
+  },
+  "plan_phrases": ["pressure on f7", "lead in development"],
+  "sublines_that_differ": [
+    { "name": "Perseus Gambit", "moves": "1. e4 e6 2. d4 d5 3. Nf3 dxe4 4. Bd3", "how": "The parent gambit, a different piece sacrifice route." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "A pawn gambit with attacking chances against f7 and an exposed king." },
+    "gambit": { "value": "white", "confidence": 0.7, "reason": "White gives the e4 pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.75, "reason": "Compensation is thin against sensible defence." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "Central pawns come off and the pieces play on open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "A rare gambit strong players hardly use." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Dubious lines are never Beginner and it is not hard to understand." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White aims pieces at f7 for the pawn." }
+  }
+}

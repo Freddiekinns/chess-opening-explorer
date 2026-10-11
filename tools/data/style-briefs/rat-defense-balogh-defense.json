@@ -1,0 +1,119 @@
+{
+  "slug": "rat-defense-balogh-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rat Defense: Balogh Defense",
+    "eco": "A82",
+    "moves": "1. e4 d6 2. d4 f5",
+    "fen": "rnbqkbnr/ppp1p1pp/3p4/5p2/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 d6 2.d4 Black plays the Dutch-like 2...f5, challenging e4 at once. White normally answers 3.exf5 Bxf5 (or 3.Nc3 or 3.Bd3) and gets a lead in development and a stronger centre, since Black has weakened his kingside and the e8-h5 diagonal. Black recovers the pawn easily on f5 but is behind in development.",
+  "white_ideas": [
+    {
+      "idea": "Take on f5 and develop quickly with Nc3, Nf3 or Bd3"
+    },
+    {
+      "idea": "Use the weakened e8-h5 diagonal and the e-file against Black's king"
+    },
+    {
+      "idea": "Play g4!? against the bishop on f5 in sharper lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on f5 and play for ...Nf6, ...e6 and a Dutch or Pirc structure"
+    },
+    {
+      "idea": "Challenge the centre with ...e5 or ...Nf6 and hope for counterplay"
+    },
+    {
+      "idea": "Aim for safe piece placement and wait for White to overextend"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4 centre with the e-pawn exchanged, Black with ...d6 and a bishop on f5"
+    },
+    {
+      "structure": "Open e-file after exf5 and ...Bxf5 with Black's king still in the centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Weakens Black's king early and invites forcing play (exf5, g4, Qh5+ tricks); one error can lose quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "3.exf5 Bxf5 regains the pawn at once; no pawn is given for good."
+    },
+    "soundness": {
+      "notes": "Early ...f5 without development is considered dubious for Black."
+    },
+    "structure": {
+      "notes": "The e-file opens after exchanges and White keeps the d4 pawn; semi-open for White on the e-file. I am unsure."
+    },
+    "approach": {
+      "notes": "A rare side-branch of the Rat; strong players seldom play it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious line is not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on the weakened e8-h5 diagonal"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3.Nc3",
+      "moves": "1. e4 d6 2. d4 f5 3. Nc3",
+      "how": "White keeps the tension and can later play exf5 or Bd3; Black has to find ...Nf6 and ...g6."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "An early ...f5 weakens Black's king and invites forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.75,
+      "reason": "The f5 pawn is regained on f5 immediately."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.6,
+      "reason": "The early ...f5 is considered inferior by strong players.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "The e-file opens after exf5; the rest of the centre is unclear."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Seldom played at a high level; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.65,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White develops faster against the weakened king."
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "blackmar-diemer-gambit-fritz-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit: Fritz Attack",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Bc4",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2BPp3/8/PPP2PPP/RNBQK1NR b KQkq - 1 3"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White offers the e4 pawn and develops the bishop at once with 3.Bc4 instead of the usual 3.Nc3. Black can take with a developing move such as 3...Nf6 and, after 4.Nc3 or 4.f3, play ...e6, ...c6 or ...Bg4 to consolidate. White hopes for open lines and quick attacks against f7 and h7; strong players regard the compensation as insufficient. I am not certain of the exact branches.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Nc3, Nge2 and Bf4 and use the open f-file or Bc4 to pressure f7." },
+    { "idea": "Break with f3 to open lines, hoping Black's king stays in the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Take the pawn with ...Nf6 and ...e6 or ...c6 and trade pieces to head for a better endgame." },
+    { "idea": "Hit the bishop with ...Nf6 and ...e6 and develop without weakening." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 pawn with open e-file and f-file; Black with an extra pawn and solid ...c6/...e6 set-up." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Open tactical play with White chasing attack for a pawn; sharp for both." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black is a pawn up and can keep it with accurate development."
+    },
+    "soundness": { "notes": "The BDG is judged insufficient by engines, and this version has even less development support." },
+    "structure": { "notes": "Open lines for the pieces from the start." },
+    "approach": { "notes": "Rare at strong level; the BDG is a surprise weapon." },
+    "level": { "reason": "neither", "notes": "Dubious so never Beginner; the attacking ideas are easy to follow." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack", "pressure on f7"],
+  "sublines_that_differ": [
+    { "name": "Main BDG", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3", "how": "The standard Blackmar-Diemer, with Nc3 and f3 before the bishop move." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "Open attacking play for a pawn with a risky king-side attack." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White gives the e4 pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.65, "reason": "Engines judge the compensation insufficient." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "Open lines for the pieces from the start." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose the BDG." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Dubious lines are never Beginner and the attack is easy to follow." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White gives a pawn for speed and an attack." }
+  }
+}

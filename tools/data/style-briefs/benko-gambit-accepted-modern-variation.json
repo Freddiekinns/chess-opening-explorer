@@ -1,0 +1,49 @@
+{
+  "slug": "benko-gambit-accepted-modern-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Accepted: Modern Variation",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. e3",
+    "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/4P3/PP3PPP/RNBQKBNR b KQkq - 0 5"
+  },
+  "parent": "benko-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White accepts the Benko pawn and supports the centre with 5.e3 aiming for Nc3 and Bxa6 rather than clinging to the pawn. Black continues 5...g6 and ...Bg7 and plays for the long-term pressure of the half-open a and b files and the fianchettoed bishop. The compensation is positional rather than a quick attack, but White's king and structure can be pressed for many moves.",
+  "white_ideas": [
+    { "idea": "Develop with Nc3, Nf3, Be2 and castle, giving back the pawn only for a good structure." },
+    { "idea": "Exchange the a6 bishop with Bxa6 or return the pawn with bxa6 to neutralise the pressure." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...g6 and ...Bg7, play ...d6 and use Ra7/Rb8 and Qa5 on the half-open files." },
+    { "idea": "Pressure b2 and a2 with rooks and the queen for long-term compensation." }
+  ],
+  "typical_structures": [
+    { "structure": "Benko pawn structure: White d5 pawn and extra b5 pawn, Black half-open a and b files and fianchettoed bishop." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Material imbalance and long-term pressure leave both sides precise play; double-edged." },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can hold the pawn, though Black gets long-term compensation."
+    },
+    "soundness": { "notes": "Sound; the Benko is a respected gambit at all levels." },
+    "structure": { "notes": "Half-open a and b files for Black with a fixed asymmetric centre." },
+    "approach": { "notes": "Standard for Black; a respectable gambit played by strong players." },
+    "level": { "reason": "understanding", "notes": "Long-term compensation is hard to judge but there is limited forced theory." }
+  },
+  "plan_phrases": ["fianchetto", "queenside pressure on half-open files"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Pawn imbalance with risk for both sides, though compensation is positional." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black gives the b-pawn and White can keep it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "The Benko is a respected sound gambit." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Fixed asymmetric centre with half-open files for Black." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played by strong players." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Long-term compensation needs judgment, with moderate theory." },
+    "plans": { "value": ["fianchetto", "queenside_expansion"], "reason": "Black fianchettoes and uses the queenside files." }
+  }
+}

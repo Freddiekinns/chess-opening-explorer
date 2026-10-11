@@ -1,0 +1,46 @@
+{
+  "slug": "benoni-defense-four-pawns-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Four Pawns Attack",
+    "eco": "A68",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Bg7 8. Nf3 O-O",
+    "fen": "rnbq1rk1/pp3pbp/3p1np1/2pP4/4PP2/2N2N2/PP4PP/R1BQKB1R w KQ - 3 9"
+  },
+  "parent": "benoni-defense-pawn-storm-variation",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "White builds the biggest possible centre with e4 and f4 and aims at e5, while Black counters with ...Re8, ...Bg4 and the thrust ...c4 or ...b5. The main line is 9.Be2 Re8 10.e5, with long forcing sequences after dxe5 fxe5 Nfd7. White's centre can crush Black or become a target.",
+  "white_ideas": [
+    { "idea": "Push e5 to break through and attack the Black king" },
+    { "idea": "Keep the space advantage and use the centre pawns in a kingside attack" }
+  ],
+  "black_ideas": [
+    { "idea": "Strike at the centre with ...Re8 and ...Bg4 and prepare ...c4 or ...b5" },
+    { "idea": "Use the half-open e-file and the long diagonal against White's overextended pawns" }
+  ],
+  "typical_structures": [
+    { "structure": "White pawns on d5, e4, f4 against Black c5/d6; Black has a queenside majority" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Highly forcing and sharp, with both sides taking risks in the centre." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Pawns may be sacrificed in lines but no gambit is the main idea." },
+    "soundness": { "notes": "A mainstream line for both sides." },
+    "structure": { "notes": "Fixed asymmetric centre with Black pressing along the e-file and c-file." },
+    "approach": { "notes": "A main-line way of meeting the Benoni." },
+    "level": { "reason": "both", "notes": "Sharp theory must be known, and plans in the fixed structure are hard." }
+  },
+  "plan_phrases": ["space advantage", "kingside attack", "central pawn majority"],
+  "sublines_that_differ": [
+    { "name": "Mikenas-Flohr", "moves": "9.Bd3", "how": "Aims at faster kingside play with a different structure." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "A sharp, forcing line where both sides take risks." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No material is offered in the main line." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A theoretically respectable main line." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "A fixed asymmetric centre pressed along the e- and c-files." },
+    "approach": { "value": "standard", "confidence": 0.9, "reason": "A main-line way of meeting the Benoni." },
+    "level": { "value": "advanced", "why": "both", "confidence": 0.75, "reason": "Long forcing lines and hard plans." },
+    "plans": { "value": ["space_advantage", "kingside_attack", "central_pawn_majority"], "reason": "White's e4/f4 centre drives an attack on the king." }
+  }
+}

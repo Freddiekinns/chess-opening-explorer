@@ -1,0 +1,121 @@
+{
+  "slug": "benko-gambit-declined-main-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Declined: Main Line",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. Nf3",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 4"
+  },
+  "parent": "benko-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 4.Nf3 White does not take the b5 pawn at once, but in practice play usually goes 4...g6 5.cxb5 a6, reaching the normal Benko Gambit. Black gives a pawn for half-open a- and b-files, a Bg7 on the long diagonal and long-term pressure on the queenside, accepting a slightly worse-looking position. White tries to hold the extra pawn and trade pieces, while Black gets lasting compensation even in endgames.",
+  "white_ideas": [
+    {
+      "idea": "Take on b5 and return the pawn at the right moment"
+    },
+    {
+      "idea": "Develop Nc3, g3 and Bg2, or e4 and Be2, to cover b2 and the queenside"
+    },
+    {
+      "idea": "Neutralise the half-open files and aim for a safe structure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...a6 and recapture on a6 to open the queenside files"
+    },
+    {
+      "idea": "Fianchetto the bishop to g7 and put rooks on a8 and b8"
+    },
+    {
+      "idea": "Pressure b2 and the queenside, and break with ...e6 or ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benko queenside with White d5 pawn and half-open a/b files for Black"
+    },
+    {
+      "structure": "Black has a pawn minority but active pieces"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional compensation for a pawn that gives unbalanced positions where Black takes the long-term risk."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the b5 pawn and White can keep it if Black cannot prove pressure."
+    },
+    "soundness": {
+      "notes": "Benko is a sound anchor for a gambit."
+    },
+    "structure": {
+      "notes": "Fixed asymmetric centre with a half-open file pressure, which fits semi-open."
+    },
+    "approach": {
+      "notes": "Played regularly by strong players, a standard gambit."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black needs to understand pressure on the queenside and good timing for ...e6 and ...d6."
+    }
+  },
+  "plan_phrases": [
+    "Half-open a- and b-files",
+    "Fianchetto",
+    "Queenside pressure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Declined 4...bxc4",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. Nf3 bxc4",
+      "how": "Black takes the c4 pawn, leaving the gambit in other lines with an extra pawn for Black."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black gambit with unbalanced play, sacrificing a pawn for lasting pressure."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black gives the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The Benko is a sound gambit."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "White d5 vs half-open a/b files for Black."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Regularly played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Ideas are easy to learn but timing takes understanding."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Bg7 and play on the a- and b-files."
+    }
+  }
+}

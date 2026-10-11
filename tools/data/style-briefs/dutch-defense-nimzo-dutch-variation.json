@@ -1,0 +1,111 @@
+{
+  "slug": "dutch-defense-nimzo-dutch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Nimzo-Dutch Variation",
+    "eco": "A90",
+    "moves": "1. d4 f5 2. c4 Nf6 3. g3 e6 4. Bg2 Bb4+",
+    "fen": "rnbqk2r/pppp2pp/4pn2/5p2/1bPP4/6P1/PP2PPBP/RNBQK1NR w KQkq - 2 5"
+  },
+  "parent": "dutch-defense-classical-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.d4 f5 2.c4 Nf6 3.g3 e6 4.Bg2 Bb4+ Black pins before castling and takes aim at e4 and the White centre. White usually plays 5.Bd2 Be7 (the Alekhine Variation), 5.Nc3 O-O 6.Nh3 or 5.Nd2. Black then plays ...O-O, ...d6, ...Qe8 and ...Qh5 or ...Ne4, aiming for a kingside attack, while White uses the bishop on g2 and a central pawn break e4. Both sides have real winning chances, which makes the line sharp.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, Nh3, O-O and e4 to break the centre"
+    },
+    {
+      "idea": "Use the Bg2 on the long diagonal against e6"
+    },
+    {
+      "idea": "Gain space with d5 or e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin with ...Bb4 and play ...O-O, ...d6, ...Qe8"
+    },
+    {
+      "idea": "Build a kingside attack with ...Qh5 and ...Ne4"
+    },
+    {
+      "idea": "Control e4 and keep the Dutch structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch structure f5, e6, d6 against c4 and d4, with a flexible centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Dutch is known for unbalanced positions with attack chances for both sides."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Established, sound."
+    },
+    "structure": {
+      "notes": "Centre pawns not yet locked, tension around e4."
+    },
+    "approach": {
+      "notes": "Standard line of a respected defence."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans need understanding."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "control of e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Dutch positions are unbalanced with mutual kingside chances."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Established theory."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Centre in tension with e4 contested."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "Mainstream Dutch line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear but the Dutch needs judgement."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "fianchetto"
+      ],
+      "reason": "Black attacks on the kingside; White uses the Bg2 fianchetto."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "caro-kann-defense-endgame-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Endgame Variation",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. Nf3 d5 3. d3 dxe4 4. dxe4 Qxd1+ 5. Kxd1",
+    "fen": "rnb1kbnr/pp2pppp/2p5/8/4P3/5N2/PPP2PPP/RNBK1B1R b kq - 0 5"
+  },
+  "parent": "caro-kann-defense-endgame-offer",
+  "written_at": "2026-10-10",
+  "confidence": "medium",
+  "overview": "White offers an early queen swap with 3.d3 dxe4 4.dxe4 Qxd1+ 5.Kxd1, forfeiting castling. Black develops freely with ...Bg4, ...Nd7, ...e6 and ...O-O-O or ...Ngf6, while White tries to use the bishop pair and the d-file with Ke1 or Ke2 later. The game is a quiet queenless position that is easy to equalise.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bf4, Nbd2 and bring the king to e2 or c1"
+    },
+    {
+      "idea": "Contest the d-file with Re1 and Nc3"
+    },
+    {
+      "idea": "Look for a small endgame edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Bg4, ...Nd7, ...e6 and ...Ngf6"
+    },
+    {
+      "idea": "Use the open d-file and the White king's awkward position"
+    },
+    {
+      "idea": "Aim for a safe, equal endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queenless middlegame with e4 against c6/e7 and an open d-file"
+    },
+    {
+      "structure": "Symmetrical-ish pawn structure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Safe and steady, with queens off early."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given; the queen swap is even."
+    },
+    "soundness": {
+      "notes": "Sound and equal; White loses castling, but that is minor."
+    },
+    "structure": {
+      "notes": "Semi-open d-file in a queenless game."
+    },
+    "approach": {
+      "notes": "A drawish try seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to learn and equal, not instructive."
+    }
+  },
+  "plan_phrases": [
+    "queenless middlegame",
+    "open d-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.8,
+      "reason": "Queens are off, so few ways to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Equal and safe."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Open d-file after the queen swap with a pawn asymmetry."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "A drawish try seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Easy to play but unlikely to be a repertoire choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is named."
+    }
+  }
+}

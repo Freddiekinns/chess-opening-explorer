@@ -1,0 +1,46 @@
+{
+  "slug": "latvian-gambit-mayet-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Mayet Attack",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Bc4",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "White develops the bishop to c4 against the Latvian, ready to take e5 after ...fxe4. The main line is 3...fxe4 4.Nxe5, and Black tries 4...d5 5.Qh5+ g6 6.Nxg6 with great complications, or 4...Qg5. White gets a pawn up and a strong initiative.",
+  "white_ideas": [
+    { "idea": "Take the pawn on e5, then use Qh5+ and the bishop on c4 against Black's weakened king" },
+    { "idea": "Keep the extra pawn and develop quickly, aiming at f7" }
+  ],
+  "black_ideas": [
+    { "idea": "Rely on rapid development and tricks such as ...d5 and ...Qg5" },
+    { "idea": "Hope White misjudges the tactics around g6 and h5" }
+  ],
+  "typical_structures": [
+    { "structure": "Open e- and f-files with Black's king exposed and White a pawn up" }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early forcing play with the queens and kings in danger." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "White simply keeps the e-pawn after 3...fxe4 4.Nxe5." },
+    "soundness": { "notes": "Strong players regard the Latvian as dubious; the Mayet Attack is a direct way to punish it." },
+    "structure": { "notes": "Lines open fast in the e- and f-files." },
+    "approach": { "notes": "Strong players seldom play the Latvian at all." },
+    "level": { "reason": "memory", "notes": "Black needs tricks and theory; a dubious line is not a first repertoire choice." }
+  },
+  "plan_phrases": ["lead in development", "attack on f7", "early queen"],
+  "sublines_that_differ": [
+    { "name": "Morgado Defense", "moves": "3...Nf6", "how": "Black develops rather than taking on e4, a calmer game." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Forcing tactics with exposed kings." },
+    "gambit": { "value": "black", "confidence": 0.95, "reason": "Black gives a pawn with 3...fxe4 and the Latvian is a gambit." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.9, "reason": "The Latvian is regarded as unsound and the Mayet is a good test." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "Open e- and f-files with early piece play." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "The Latvian is a rarity at strong level." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.7, "reason": "A dubious line is never Beginner." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White's bishop and queen target f7 while Black needs a lead in development." }
+  }
+}

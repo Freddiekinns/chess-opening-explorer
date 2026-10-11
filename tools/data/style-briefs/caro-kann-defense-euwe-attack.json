@@ -1,0 +1,104 @@
+{
+  "slug": "caro-kann-defense-euwe-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Euwe Attack",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. b3",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "The Euwe Attack plays 2.b3 against the Caro-Kann, aiming for a quiet Nimzo-Larsen-style set-up with Bb2 and Nf3. After 2...d5 Black takes the centre (3.Bb2 dxe4 or 3.e5 Bf5) and White gets a slow game with a fianchettoed bishop; theory is minimal. It is an offbeat way to avoid main-line Caro-Kann theory.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bb2, Nf3 and e3 and aim to take the centre later with c4"
+    },
+    {
+      "idea": "Use the long diagonal against the black kingside and the e5 square"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...d5 and ...Nf6, ...Bf5 and ...e6, which is simple and comfortable"
+    },
+    {
+      "idea": "Exchange on e4 and play for a Caro-Kann type solid structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on b3/e4/d3 against ...c6/d5, a flexible, slow set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A quiet, low-theory line where neither side takes risks; Black is comfortable. Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound; a safe if slightly passive alternative."
+    },
+    "structure": {
+      "notes": "Centre pawns in tension, undecided: Flexible."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players, an offbeat way to dodge theory."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear and theory is light. Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow flank-style play with no forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.99,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Safe for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided with a fianchettoed bishop."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare among strong players, though it is a regular surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Easy to play but not a standard repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White's bishop on b2 on the long diagonal."
+    }
+  }
+}

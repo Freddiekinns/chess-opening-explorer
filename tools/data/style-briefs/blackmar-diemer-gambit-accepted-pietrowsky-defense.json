@@ -1,0 +1,108 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-pietrowsky-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Pietrowsky Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Nc6",
+    "fen": "r1bqkb1r/ppp1pppp/2n2n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Blackmar-Diemer Gambit Accepted Black plays 5...Nc6 instead of ...e6, ...c6 or ...g6. White develops with Bb5 or Bc4, Bf4 and Qe2 or Qd2 and tries to use the f-file and Bg5, aiming at Black's king. Black can consolidate by giving back the pawn but White's compensation is not sound against accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bb5, Bf4 and Qe2 and castle long or short"
+    },
+    {
+      "idea": "Attack down the f-file and aim at f7 and g7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn and complete development with ...Bg4 and ...e6"
+    },
+    {
+      "idea": "Trade queens and consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with a White lead in development"
+    },
+    {
+      "structure": "Black pawn on e-file or c6 supported by pieces"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit tactical fight with White hoping for an early attack."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White is a pawn down after 4...exf3 5.Nxf3 and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Engines favour Black; White's compensation is insufficient."
+    },
+    "structure": {
+      "notes": "The centre opens and play is on open files."
+    },
+    "approach": {
+      "notes": "Strong players seldom use the BDG at all."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp theory needed but dubious so not a good first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Open gambit play with fast attacks and tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.95,
+      "reason": "White is a pawn down for development and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Engines and masters judge White's compensation insufficient."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Pieces fight on open files and diagonals."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose the BDG."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs prepared lines but is dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White develops fast and aims at the Black king."
+    }
+  }
+}

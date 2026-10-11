@@ -1,0 +1,44 @@
+{
+  "slug": "richter-veresov-attack-boyce-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Richter-Veresov Attack: Boyce Defense",
+    "eco": "D01",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. Bg5 Ne4",
+    "fen": "rnbqkb1r/ppp1pppp/8/3p2B1/3Pn3/2N5/PPP1PPPP/R2QKBNR w KQkq - 2 4"
+  },
+  "parent": "richter-veresov-attack",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black answers the pin with 3...Ne4, challenging White's knight and bishop at once. White can take with 4.Nxe4 dxe4 and play Qd2 and e3 for a small lead, or retreat 4.Bf4 or 4.Bh4 and keep the bishop pair ideas. The play is sound, balanced and fairly quiet with piece trades; I am unsure of the exact theory.",
+  "white_ideas": [
+    { "idea": "Trade on e4 and develop with Qd2, f3 or e3 to challenge the pawn on e4." },
+    { "idea": "Or retreat the bishop and use d4 and Nb5 ideas against c7." }
+  ],
+  "black_ideas": [
+    { "idea": "Trade the knights and use ...c6, ...Bf5 and ...e6 for a solid game." },
+    { "idea": "Strike with ...c5 or ...Nxc3 to exploit the loose bishop." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 pawn against Black's e4 and d-pawn structure, or a Queen's Pawn set-up after trades." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Piece trades and a roughly even position; neither forcing nor passive." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "The centre stays flexible after the trades." },
+    "approach": { "notes": "A recognised reply in a respected White opening." },
+    "level": { "reason": "understanding", "notes": "Requires positional play but little theory." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Piece trades and an even position." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A normal reply." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre stays undecided after the trades." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A recognised reply in the Richter-Veresov." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Needs positional judgment more than memory." },
+    "plans": { "value": [], "reason": "No clear plan from the evidence." }
+  }
+}

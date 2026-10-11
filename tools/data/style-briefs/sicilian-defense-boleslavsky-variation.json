@@ -1,0 +1,111 @@
+{
+  "slug": "sicilian-defense-boleslavsky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Boleslavsky Variation",
+    "eco": "B58",
+    "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Be2 e5",
+    "fen": "r1bqkb1r/pp3ppp/2np1n2/4p3/3NP3/2N5/PPP1BPPP/R1BQK2R w KQkq - 0 7"
+  },
+  "parent": "sicilian-defense-classical-variation",
+  "written_at": "2026-10-10",
+  "confidence": "high",
+  "overview": "In the Classical Sicilian Black plays ...e5 at once, kicking the d4 knight and gaining space at the cost of a weak d5 square and a backward d6 pawn. White usually plays Nb3 and Be3, aiming for a knight on d5, while Black develops with ...Be7 and ...O-O. The game is strategic rather than a tactical melee.",
+  "white_ideas": [
+    {
+      "idea": "Retreat with Nb3 and Be3, then play Nd5 to exploit the hole"
+    },
+    {
+      "idea": "Play Bg5 or Ndb5 to disturb Black's set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Solidly develop with ...Be7 and ...O-O"
+    },
+    {
+      "idea": "Trade the knight on d5 and use ...d5 or ...b5 at the right moment"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on d6 and e5 against White's e4, with a hole on d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A steady Sicilian where Black gives up the usual counterplay for a solid set-up."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound and respectable; Black is slightly worse but safe."
+    },
+    "structure": {
+      "notes": "Semi-open: Sicilian asymmetry with a half-open c-file."
+    },
+    "approach": {
+      "notes": "A standard Classical Sicilian line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans around d5 and the backward pawn matter more than theory."
+    }
+  },
+  "plan_phrases": [
+    "knight outpost",
+    "backward d6 pawn"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Louma Variation",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Be2 e5 7. Nxc6 bxc6",
+      "how": "Black takes with the b-pawn and fights for the centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black gives up counterplay for a hard-to-break structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Respectable mainstream Sicilian line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.75,
+      "reason": "Sicilian asymmetry with a half-open file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal Classical Sicilian line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans over theory."
+    },
+    "plans": {
+      "value": [
+        "knight_outpost",
+        "half_open_c_file"
+      ],
+      "reason": "White aims at a d5 outpost."
+    }
+  }
+}

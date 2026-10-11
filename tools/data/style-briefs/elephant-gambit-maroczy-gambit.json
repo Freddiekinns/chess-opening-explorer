@@ -1,0 +1,106 @@
+{
+  "slug": "elephant-gambit-maroczy-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Elephant Gambit: Maróczy Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 d5 3. exd5 Bd6",
+    "fen": "rnbqk1nr/ppp2ppp/3b4/3Pp3/8/5N2/PPPP1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "elephant-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Elephant Gambit 1.e4 e5 2.Nf3 d5 3.exd5 Black plays 3...Bd6 instead of the usual ...e4. White keeps the extra pawn with 4.d4 or 4.Nc3, develops quickly and Black plays ...Nf6, ...O-O and ...e4 for piece play. Black's compensation is thin and the line is a surprise weapon.",
+  "white_ideas": [
+    {
+      "idea": "Hit the centre with d4 and Nc3 and keep the pawn on d5"
+    },
+    {
+      "idea": "Develop with Bd3 or Be2 and castle, then consolidate"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...O-O and push ...e4 to gain space"
+    },
+    {
+      "idea": "Attack the d5 pawn and the d4 point with the bishop on d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White d5 pawn against Black e5 and d6 bishop"
+    },
+    {
+      "structure": "Black pieces active on the e-file after ...e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Gambit tactics around e4 and d4 with Black playing for activity."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black gives the d-pawn at move 2 and White keeps it after 3.exd5 Bd6 4.d4."
+    },
+    "soundness": {
+      "notes": "An Elephant Gambit line; strong players consider it unsound."
+    },
+    "structure": {
+      "notes": "The centre opens quickly."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players; chosen mainly for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Black gambit with open lines and tactics around e4."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives a pawn with ...d5 that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "The Elephant Gambit is considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "e-file and d-file open quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players hardly play the Elephant Gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black compensates with quick development."
+    }
+  }
+}

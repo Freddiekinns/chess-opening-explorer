@@ -1,0 +1,112 @@
+{
+  "slug": "queens-indian-defense-capablanca-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Capablanca Variation",
+    "eco": "E16",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Bb4+",
+    "fen": "rn1qk2r/pbpp1ppp/1p2pn2/8/1bPP4/5NP1/PP2PPBP/RNBQK2R w KQkq - 3 6"
+  },
+  "parent": "queens-indian-defense-fianchetto-variation",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "Against the g3 Queen's Indian, Black checks with 5...Bb4+ and usually trades the dark-squared bishop after 6.Bd2 Bxd2+ 7.Nbxd2 (or 6.Nbd2). White keeps a small space edge and the long diagonal; Black holds e4 and the light squares with ...Bb7. The game is a slow manoeuvring fight over the e4/d5 squares, with both sides castling and plans decided by who breaks in the centre first.",
+  "white_ideas": [
+    {
+      "idea": "Trade on d2 and recapture with the b1-knight, then castle and play Qc2 and e4 or d5"
+    },
+    {
+      "idea": "Keep the Bg2 and Nbd2-f3 flexible, aiming for a slight space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Swap the dark-squared bishops to ease the cramp, then contest e4 with ...Ne4 or ...d6/...Nbd7"
+    },
+    {
+      "idea": "Keep the Bb7 on the long diagonal and wait for ...c5 or ...d5 in the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Mirrored fianchetto set-ups with c4/d4 against ...e6/...d6, the centre left in tension"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet trades after 6.Bd2 Bxd2+ and few forcing lines; Black is hard to break down and White presses slowly, which is Solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "Fully sound, a regular top-level line; neither side takes a risk."
+    },
+    "structure": {
+      "notes": "Pawns on c4/d4 against e6/b6 with the centre unresolved and pieces doing the work: Flexible."
+    },
+    "approach": {
+      "notes": "A normal branch of the Queen's Indian, played by strong players at all levels: standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little forcing theory, but the plans (when to play e4, when to swap bishops) take positional judgement; Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "long diagonal",
+    "slow manoeuvring"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Nimzowitsch Variation",
+      "moves": "6.Bd2 Qe7",
+      "how": "Black keeps the queen's bishop pair tension rather than trading, a slightly more complex game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Bishop trade on d2 leads to a quiet, hard-to-crack position with few forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.99,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "A mainstream line that neither side risks anything in."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.8,
+      "reason": "The centre stays in tension with c4/d4 against e6 and the flank bishops."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A regular line of the Queen's Indian, not a universal set-up."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Positional plans matter more than memorised lines."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Fianchettoed bishops on g2 and b7 and a small White space edge."
+    }
+  }
+}

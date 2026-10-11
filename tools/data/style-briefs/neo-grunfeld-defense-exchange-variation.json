@@ -1,0 +1,112 @@
+{
+  "slug": "neo-grunfeld-defense-exchange-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Neo-Grünfeld Defense: Exchange Variation",
+    "eco": "D71",
+    "moves": "1. d4 Nf6 2. c4 g6 3. g3 Bg7 4. Bg2 d5 5. cxd5 Nxd5",
+    "fen": "rnbqk2r/ppp1ppbp/6p1/3n4/3P4/6P1/PP2PPBP/RNBQK1NR w KQkq - 0 6"
+  },
+  "parent": "grunfeld-defense-counterthrust-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 5.cxd5 Nxd5 White chooses between 6.Nc3 Nxc3 7.bxc3 c5, giving a big pawn centre under pressure from Black pieces and the Bg7, and 6.e4 Nb6 with a central pawn pair. Black attacks the centre with ...c5 and ...Nc6, keeping the fianchettoed bishop on the long diagonal. White needs to keep Bg2 active and the centre protected, and Black seeks piece play.",
+  "white_ideas": [
+    {
+      "idea": "Build a broad d4/c3/e4 centre and develop with Bg2 and Nf3"
+    },
+    {
+      "idea": "Use the long diagonal and central space while keeping the structure protected"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Attack d4 with ...c5, ...Nc6 and ...Bg7"
+    },
+    {
+      "idea": "Trade the centre knight and aim at the pawn centre with piece pressure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on c3/d4/e2 or d4/e4 against Black ...c5 pressure, both fianchettoed bishops on the long diagonal"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Less forcing than the Exchange Grünfeld with Nf3 and Bd2, with tension on d4 and complex manoeuvring."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "A standard mainstream line where both sides are fine."
+    },
+    "structure": {
+      "notes": "Centre pawns under tension on d4 and c5, neither locked nor open."
+    },
+    "approach": {
+      "notes": "A main line of the Neo-Grünfeld, played by strong players, not a universal set-up."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans matter more than concrete lines, so it takes understanding of the centre rather than memory."
+    }
+  },
+  "plan_phrases": [
+    "Hypermodern centre",
+    "Fianchetto",
+    "Central pawn majority"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Classical Exchange Grünfeld",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5",
+      "how": "White sits on a big centre with e4 earlier and sharper theory"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Central tension and manoeuvring, but not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Pawns are exchanged on d5 and nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Both sides are fully sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The d4 pawn is under tension and the centre is not settled."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A main-line Neo-Grünfeld variation."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans around the centre matter more than memorised lines."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black attacks White centre with pieces and the long diagonal."
+    }
+  }
+}

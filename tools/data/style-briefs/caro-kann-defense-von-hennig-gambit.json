@@ -1,0 +1,111 @@
+{
+  "slug": "caro-kann-defense-von-hennig-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: von Hennig Gambit",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Bc4",
+    "fen": "rnbqkbnr/pp2pppp/2p5/8/2BPp3/2N5/PPP2PPP/R1BQK1NR b KQkq - 1 4"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 c6 2.d4 d5 3.Nc3 dxe4 White plays 4.Bc4 instead of recapturing on e4. The idea is to meet 4...Nf6 with attacks on f7 and quick development for the pawn. Black can usually play ...Nf6 or ...e6 and keep the extra pawn, so the line is rare and unsound-looking.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bc4, Nge2 or Nf3, aiming at f7"
+    },
+    {
+      "idea": "Use the lead in development to attack before Black consolidates"
+    },
+    {
+      "idea": "Recover the e4 pawn when it is safe"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Neutralise Bc4 with ...Bf5 or ...e6 and ...Bd6"
+    },
+    {
+      "idea": "Trade pieces and convert the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann with Black a pawn up and White ahead in development; open centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is a pawn down and plays for traps on f7."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "The e4 pawn stays with Black unless White recovers it by force."
+    },
+    "soundness": {
+      "notes": "Rare and likely inferior to 4.Nxe4."
+    },
+    "structure": {
+      "notes": "Semi-open Caro-Kann structure with the d-pawns exchanged."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Gambit not a good first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White gambits a pawn for fast development and attacking chances."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "Black can keep the pawn after 4.Bc4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black has simple ways to hold the pawn."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "Caro-Kann structure with the d-file half open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players rarely choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious so never Beginner; little to memorise."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for development and pressure on f7."
+    }
+  }
+}

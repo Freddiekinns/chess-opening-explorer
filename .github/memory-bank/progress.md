@@ -4,6 +4,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **2026-10-11**: analytics read-out, four gap events, soft-404 pre-render fix.
 - **2026-10-10 (#171–#173)**: the 43 description claims the briefs marked wrong
   fixed; E2E 9/9 green and in CI (**Test E2E**); search intent misreads ("solid
   response to e4", "for white", "advanced sicilian defence"); dead category

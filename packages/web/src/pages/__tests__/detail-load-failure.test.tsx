@@ -14,6 +14,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { vi, describe, test, expect, beforeEach, afterEach } from 'vitest';
 import OpeningDetailPage from '../OpeningDetailPage';
 import { mockOpeningDataSimple } from '../../test/fixtures/openingData';
+import { capturePrerender } from '../../lib/prerender';
 
 const mockFetch = vi.fn();
 global.fetch = mockFetch;
@@ -127,5 +128,68 @@ describe('Opening detail page when the load fails', () => {
 
     await waitFor(() => expect(screen.getByText('Italian Game')).toBeInTheDocument());
     expect(pageCalls()).toBe(2);
+  });
+});
+
+/*
+ * Fixing the wording was not enough: 86 real pages were still soft 404s after
+ * it shipped, recrawled since. createRoot throws the middleware's content away
+ * on mount, so until the aggregate fetch answers (3s on a cold start) the
+ * crawler's rendered DOM holds "Loading opening..." and nothing else — and a
+ * failed fetch leaves an error message. Either is a thin page. The first page
+ * of a visit keeps what the middleware drew until the real page replaces it.
+ */
+describe('Opening detail page before it has loaded', () => {
+  const path = `/opening/${encodeURIComponent(opening.fen)}`;
+  const PRE = 'A classical opening the middleware described';
+
+  const prerenderAt = (at: string) => {
+    window.history.replaceState({}, '', at);
+    document.body.innerHTML = `<div id="root"><main><h1>Italian Game</h1><p>${PRE}</p></main></div>`;
+    capturePrerender();
+    document.body.innerHTML = '';
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    window.history.replaceState({}, '', '/');
+  });
+
+  test('keeps the pre-rendered opening on screen while the page loads', async () => {
+    prerenderAt(path);
+    withPageResponse(() => new Promise(() => {}));
+    await act(async () => {
+      renderPage();
+    });
+
+    expect(screen.getByText(PRE)).toBeInTheDocument();
+    expect(screen.queryByText('Loading opening...')).not.toBeInTheDocument();
+  });
+
+  test('keeps the pre-rendered opening under a failed load', async () => {
+    prerenderAt(path);
+    withPageResponse(() => respond(500, { success: false }));
+    await act(async () => {
+      renderPage();
+    });
+
+    expect(
+      await screen.findByRole('heading', { name: "This opening didn't load" })
+    ).toBeInTheDocument();
+    expect(screen.getByText(PRE)).toBeInTheDocument();
+  });
+
+  test("never shows another page's pre-render", async () => {
+    prerenderAt('/opening/some-other-position');
+    withPageResponse(() => new Promise(() => {}));
+    await act(async () => {
+      renderPage();
+    });
+
+    expect(screen.getByText('Loading opening...')).toBeInTheDocument();
+    expect(screen.queryByText(PRE)).not.toBeInTheDocument();
   });
 });

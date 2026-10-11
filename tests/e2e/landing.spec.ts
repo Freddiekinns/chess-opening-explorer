@@ -14,7 +14,10 @@ test.describe('landing page', () => {
     });
     await searchInput.fill('Sicilian');
 
-    const suggestion = page.getByRole('button', { name: /Sicilian Defense/ }).first();
+    const suggestion = page
+      .locator('.search-suggestions')
+      .getByRole('button', { name: /Sicilian Defense/ })
+      .first();
     await expect(suggestion).toBeVisible();
     await suggestion.click();
 

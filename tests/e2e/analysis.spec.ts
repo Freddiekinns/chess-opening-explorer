@@ -11,9 +11,9 @@ test.describe('analysis page', () => {
 
     await page.goto('/analyse');
 
-    await expect(page.getByRole('heading', { name: 'Analyse Your Games' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Analyse your games' })).toBeVisible();
 
-    const usernameInput = page.getByRole('textbox');
+    const usernameInput = page.getByRole('textbox', { name: 'Username' });
     await usernameInput.fill(username);
 
     await page.getByRole('button', { name: 'Analyse' }).click();

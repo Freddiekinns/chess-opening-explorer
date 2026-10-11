@@ -34,6 +34,7 @@ both bare `jest` and cover only the backend half. Type errors surface from
 | TypeScript              | `npm run build`          |
 | a dependency            | `npm run security:audit` |
 | the build or SEO output | `npm run build:vercel`   |
+| a page's markup or copy | `npm run test:e2e`       |
 | before committing       | `npm run format`         |
 
 That fourth row is not belt-and-braces: the sitemap `lastmod` bug passed its own

@@ -28,7 +28,8 @@ test.describe('mobile layout: no horizontal overflow', () => {
     await expect(
       page.getByRole('heading', { level: 1, name: testOpenings[0].name, exact: true })
     ).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Learning resources' })).toBeVisible();
+    // Mobile folds the learning resources into collapsible sections.
+    await expect(page.getByRole('button', { name: /Videos \(1\)/ })).toBeVisible();
 
     // The critical assertion: document should not be wider than viewport
     const overflow = await page.evaluate(() => {

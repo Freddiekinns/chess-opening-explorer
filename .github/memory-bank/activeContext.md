@@ -2,28 +2,25 @@
 
 **Date:** 2026-10-10
 
-## Current Task: Fix the description claims the style briefs proved wrong
+## Current Task: E2E specs green and in CI
 
-Branch `fix/brief-audited-descriptions`. The 105 researched briefs in
-`tools/data/style-briefs/` audit each root position's `analysis_json`
-description and `common_plans` claim by claim; 43 claims in 32 briefs were
-"wrong". All 43 are corrected in `api/data/eco/` with narrow edits (41 lines,
-one per field), plus one the audit mislabelled: the Ruy Lopez brief marks
-"Nf3-d2-f1-g3" supported while its note says the route is the b1 knight's, the
-same error flagged on the Morphy page. New text is British English; opening
-names keep the data's spelling. Three audit verdicts were debatable (Old
-Sicilian 3.c3 does transpose to the Alapin, BDG 2...c6, Najdorf ...e5 and d5),
-so those fixes are worded to be true either way. The Dragon page's description
-is rewritten whole — it described the Accelerated Dragon.
+Branch `test/e2e-green`, stacked on #171. All 9 Playwright specs failed on
+`main` — the first eight on stale selectors and mocks, and locally on a missing
+Chromium. Fixes, specs only (no app code changed): `mockApi.ts` answers
+`/api/openings/browse` (honouring `level` and `family`) and serves studies in
+schema v2 (`study_title`, `chapters_matched`, `match`), which had rendered an
+empty title. Selectors follow today's copy: "Paste a game", "Surprise me" on the
+landing page, the hero search rows (buttons), the Difficulty/Family menus
+(Family is a dialog of buttons, not a listbox), "Analyse your games" and the
+"Username" textbox. Mobile detail folds learning resources into "Videos (n)" /
+"Studies (n)" buttons, so the overflow spec waits on those.
 
-Follow-ups: the B54 name itself reads "Dragon Variation, Accelerated Dragon",
-which is where the confusion started; the unsourced tail has no audit, so a Jev
-pass needs evidence first (backlog → Enablers).
+`webServer` now starts only `dev:web` — every `/api` call is mocked. CI job
+**Test E2E** installs Chromium and uploads the report on failure. 27 of 27 with
+`--repeat-each=3` under `CI=1`.
 
-## Previous Task: Backlog "Now" items 1–3 (#170)
+## Previous Task: Brief-audited description fixes (#171)
 
-Analyse cards floor 3 with no `list[0]` fallback (owner decision, not 10/20),
-"won X of Y", needs-work by games lost; billions as `B`; Discover facet
-"Difficulty"; move-row legend; explorer steps keep their scroll. "off-book"
-stays. Full text: `archive.md`. Left in **Now**: the popularity stats refresh
-(parked by the owner 2026-10-10).
+All 43 claims the style briefs marked wrong, in 32 pages, plus a mislabelled Ruy
+Lopez one, fixed in `api/data/eco/`. Merging is the owner's: auto mode refuses
+`gh pr merge`. Full text: `archive.md`.

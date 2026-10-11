@@ -2,11 +2,14 @@
  * Query Intent Parser - Natural language query understanding
  */
 
-const { QUERY_PATTERNS, SEMANTIC_MAPPINGS } = require('./SearchConstants');
+const { QUERY_PATTERNS, SEMANTIC_MAPPINGS, STYLE_AXES } = require('./SearchConstants');
 const QueryUtils = require('./QueryUtils');
 
 // Words after a level word that name no opening ("beginner openings").
 const GENERIC_WORDS = new Set(['opening', 'openings', 'line', 'lines', 'option', 'options']);
+
+// A move as typed: "e4", "nf3".
+const MOVE_WORD = /^[nbrqk]?[a-h][1-8]$/;
 
 class QueryIntentParser {
   /**
@@ -35,23 +38,20 @@ class QueryIntentParser {
 
     // Check for response patterns (e.g., "solid response to d4")
     const responseMatch = query.match(QUERY_PATTERNS.RESPONSE_TO);
-    if (responseMatch) {
+    // The word in front of "response", if any. A style word narrows the
+    // replies; any other word names an opening ("pirc defence against e4"),
+    // which the fuzzy pass finds and a list of every reply to e4 buries.
+    const words = query.split(' ');
+    const responseIndex = words.findIndex(word =>
+      ['response', 'defense', 'defence', 'counter'].includes(word)
+    );
+    const modifier = responseIndex > 0 ? words[responseIndex - 1] : null;
+    if (responseMatch && (!modifier || Object.hasOwn(STYLE_AXES, modifier))) {
       intent.type = 'response_search';
       intent.targetMoves = QueryUtils.extractMoves(responseMatch[3]);
-      
-      // Check if there's a style modifier before "response"
-      const words = query.split(' ');
-      const responseIndex = words.findIndex(word => 
-        ['response', 'defense', 'defence', 'counter'].includes(word)
-      );
-      
-      if (responseIndex > 0) {
-        const potentialModifier = words[responseIndex - 1];
-        if (SEMANTIC_MAPPINGS[potentialModifier]) {
-          intent.modifiers = [potentialModifier];
-        }
+      if (modifier) {
+        intent.modifiers = [modifier];
       }
-      
       return intent;
     }
 
@@ -74,12 +74,15 @@ class QueryIntentParser {
       intent.type = 'complexity_search';
       intent.complexity = complexityMatch[1];
       
-      // Parse the opening part: style words, and whatever names an opening
+      // Parse the opening part: style words, moves ("beginner e4 openings"),
+      // and whatever names an opening
       const openingPart = complexityMatch[2];
       intent.style = QueryUtils.extractStylesFromText(openingPart);
-      const nameWords = openingPart
-        .split(/\s+/)
-        .filter(word => !intent.style.includes(word) && !GENERIC_WORDS.has(word));
+      const words = openingPart.split(/\s+/);
+      intent.targetMoves = words.filter(word => MOVE_WORD.test(word));
+      const nameWords = words.filter(word =>
+        !intent.style.includes(word) && !GENERIC_WORDS.has(word) && !MOVE_WORD.test(word)
+      );
       if (nameWords.length > 0) {
         intent.openingName = nameWords.join(' ');
       }

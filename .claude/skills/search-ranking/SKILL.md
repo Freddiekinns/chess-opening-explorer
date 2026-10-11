@@ -82,8 +82,11 @@ replaces that list a moment later. They must agree — see
   openings" were both read as a style word in front of an opening _name_ until
   2026-10-10, because the modifier pattern ran first; a style word only counts
   if `STYLE_AXES` has it (a `SEMANTIC_MAPPINGS`-only word such as "defense"
-  matches nothing and emptied the list). "For white/black" is the side whose
-  move first gave the line its "Family: first variation" name — the Sicilian is
+  matches nothing and emptied the list). Any other word in front of "defence
+  against" names an opening ("pirc defence against e4"), so the response pattern
+  stands aside for the typo pass; a move after a level word ("beginner e4
+  openings") is a move, not a name. "For white/black" is the side whose move
+  first gave the line its "Family: first variation" name — the Sicilian is
   Black's at every depth, the Smith-Morra White's. `scoreSemanticResults` is not
   capped at 1: style plus move already reaches 0.95, and the cap tied every
   result. `tests/unit/search-intent-misreads.test.js` pins all of it.

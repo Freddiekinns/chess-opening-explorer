@@ -6,8 +6,9 @@
  * lines of name and ECO code, on every keystroke, mostly on phones. The
  * projection took it to 4.4 KB.
  *
- * `/semantic-search` was projected when that was fixed; `/search` and
- * `/search-by-category` were not, and this test is why they are now.
+ * `/semantic-search` was projected when that was fixed; `/search` was not, and
+ * this test is why it is now. (`/search-by-category`, also unprojected then,
+ * was removed on 2026-10-10: nothing called it, and it read the old LLM tags.)
  */
 const request = require('supertest');
 const express = require('express');
@@ -16,7 +17,6 @@ jest.mock('fs');
 jest.mock('path');
 jest.mock('../../packages/api/src/services/search-service', () => ({
   search: jest.fn(),
-  searchByCategory: jest.fn(),
 }));
 jest.mock('../../packages/api/src/utils/path-resolver', () => ({
   getECODataPath: jest.fn(() => '/mock/data/eco'),
@@ -96,22 +96,5 @@ describe('search routes return the projected shape', () => {
 
     expect(cached.body.cached).toBe(true);
     expect(Object.keys(cached.body.data[0]).sort()).toEqual(Object.keys(fresh.body.data[0]).sort());
-  });
-
-  test('GET /search-by-category drops them too', async () => {
-    const searchService = require('../../packages/api/src/services/search-service');
-    searchService.searchByCategory.mockResolvedValue({
-      results: [{ fen: 'x', searchScore: 1, ...OPENING }],
-      totalResults: 1,
-      hasMore: false,
-      category: 'aggressive',
-    });
-
-    const res = await request(app).get('/api/openings/search-by-category?category=aggressive');
-
-    expect(res.status).toBe(200);
-    expect(res.body.data).toHaveLength(1);
-    expect(Object.keys(res.body.data[0]).sort()).toEqual([...PROJECTED].sort());
-    FAT_FIELDS.forEach((field) => expect(res.body.data[0]).not.toHaveProperty(field));
   });
 });

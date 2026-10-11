@@ -5,7 +5,6 @@
 const {
   CHESS_MOVE_PATTERNS,
   ECO_CODE_PATTERN,
-  SEMANTIC_MAPPINGS,
   STYLE_AXES
 } = require('./SearchConstants');
 
@@ -60,7 +59,8 @@ class QueryUtils {
       moves.push('f4');
     }
     
-    return moves;
+    // "e4" is found twice, as notation and as a named move.
+    return [...new Set(moves)];
   }
 
   /**
@@ -73,9 +73,11 @@ class QueryUtils {
     const words = text.toLowerCase().split(/\s+/);
     
     for (const word of words) {
-      // STYLE_AXES too: it is what matching reads, and words such as "sharp"
-      // have no SEMANTIC_MAPPINGS entry.
-      if (Object.hasOwn(SEMANTIC_MAPPINGS, word) || Object.hasOwn(STYLE_AXES, word)) {
+      // STYLE_AXES only: it is what matching reads, so a word missing from it
+      // matches nothing and would empty the results. "defense" is a
+      // SEMANTIC_MAPPINGS key, and "advanced sicilian defense" used to filter
+      // on it as a style.
+      if (Object.hasOwn(STYLE_AXES, word)) {
         styles.push(word);
       }
     }

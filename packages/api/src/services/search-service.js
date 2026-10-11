@@ -478,6 +478,7 @@ class SearchService {
           const named = this.filterByOpeningName(results, queryIntent.openingName);
           if (named.length > 0) results = named;
         }
+        results = this.filterByOpeningMove(results, queryIntent.targetMoves);
         if (queryIntent.style.length > 0) {
           results = this.filterBySemanticStyle(results, queryIntent.style);
         }
@@ -649,10 +650,10 @@ class SearchService {
         score += moveMatches.length * 0.25;
       }
       
-      // Boost for name matches in modified opening searches
+      // Boost for name matches in modified opening searches, normalised as
+      // filterByOpeningName is, or "defence" never earns it
       if (queryIntent.openingName) {
-        const name = opening.name?.toLowerCase() || '';
-        if (name.includes(queryIntent.openingName.toLowerCase())) {
+        if (normalise(opening.name || '').includes(normalise(queryIntent.openingName))) {
           score += 0.4;
         }
       }

@@ -1,0 +1,111 @@
+{
+  "slug": "queens-indian-defense-traditional-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Traditional Variation",
+    "eco": "E17",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7",
+    "fen": "rn1qk2r/pbppbppp/1p2pn2/8/2PP4/5NP1/PP2PPBP/RNBQK2R w KQkq - 3 6"
+  },
+  "parent": "queens-indian-defense-fianchetto-variation",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "After 1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.g3 Bb7 5.Bg2 Be7 Black has completed the standard Queen's Indian fianchetto and White continues 6.O-O O-O 7.Nc3 Ne4 8.Qc2 Nxc3 9.Qxc3 or 7.d5 and 7.Bf4. Both sides fianchetto and the game is a manoeuvring battle over e4 and the long diagonals. Play is solid and positional, with little in the way of early forcing play.",
+  "white_ideas": [
+    {
+      "idea": "Castle and play Nc3, Qc2 or Bf4 to stake a claim on e4"
+    },
+    {
+      "idea": "Fight for the long diagonal and the e4 square"
+    },
+    {
+      "idea": "Advance d5 or c5 to gain space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Control e4 with ...Ne4 and ...Bb7"
+    },
+    {
+      "idea": "Castle and play ...d5 or ...c5 at the right moment"
+    },
+    {
+      "idea": "Trade pieces and aim for a sound equal endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Both sides fianchetto, c4 and d4 against Black e6, d7 centre, flexible"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Strategic manoeuvring with a sound Black set-up, hard to lose quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Main-line theory, equal."
+    },
+    "structure": {
+      "notes": "Centre in tension with ...d5 or ...c5 possible; d-pawn and c-pawn flexible."
+    },
+    "approach": {
+      "notes": "A major mainstream defence."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans need positional understanding."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "control of e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Queen's Indian is hard to break down and steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Main-line theory."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Centre in tension with fianchetto bishops."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream defence."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans need positional understanding."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Both bishops are fianchettoed and the centre is contested by pieces."
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "pirc-defense-sveshnikov-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: Sveshnikov System",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. g3",
+    "fen": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N3P1/PPP2P1P/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White fianchettoes against the Pirc with 4.g3 and Bg2, followed by Nge2 or Nf3, O-O and a quiet build-up. Black replies with ...Bg7, ...c6 or ...O-O and counters with ...e5 or ...c5. The game is slow and strategic with White's centre cramping Black, but Black has solid, flexible counterplay.",
+  "white_ideas": [
+    {
+      "idea": "Play Bg2, Nge2 or Nf3, O-O and Be3"
+    },
+    {
+      "idea": "Keep the e4-d4 centre supported by the fianchetto"
+    },
+    {
+      "idea": "Push e5 or advance in the centre when Black commits"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Bg7, ...O-O and ...c6 or ...e5"
+    },
+    {
+      "idea": "Break with ...c5 or ...e5 to hit the centre"
+    },
+    {
+      "idea": "Trade pieces and use the fianchetto bishop on g7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4-d4 centre with g3 fianchetto against the Pirc g7 bishop"
+    },
+    {
+      "structure": "Black ...c6/...d6 structure with ...e5 break"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The fianchetto set-up is slow and avoids the forcing Austrian-type attacks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "A solid line for both sides."
+    },
+    "structure": {
+      "notes": "The centre stays in tension until Black breaks with ...e5 or ...c5."
+    },
+    "approach": {
+      "notes": "A recognised quiet line against the Pirc and Modern, played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are strategic and clear and there is little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Space advantage",
+    "Hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The fianchetto set-up is slow and avoids the forcing Austrian-type attacks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A solid line for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre stays in tension until Black breaks with ...e5 or ...c5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised quiet line against the Pirc and Modern, played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans are strategic and clear and there is little to memorise."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "White's g2 bishop and the e4-d4 centre give space against Black's hypermodern set-up."
+    }
+  }
+}

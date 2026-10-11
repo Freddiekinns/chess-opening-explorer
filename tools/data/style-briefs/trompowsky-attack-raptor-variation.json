@@ -1,0 +1,46 @@
+{
+  "slug": "trompowsky-attack-raptor-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Trompowsky Attack: Raptor Variation",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Bg5 Ne4 3. h4",
+    "fen": "rnbqkb1r/pppppppp/8/6B1/3Pn2P/8/PPP1PPP1/RN1QKBNR b KQkq - 0 3"
+  },
+  "parent": "trompowsky-attack",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White defends the bishop with 3.h4 instead of 3.Bf4 and keeps the bishop on g5, accepting that Black can take it. After 3...c5 4.d5 or 3...d5 White has the bishop pair idea and a quick h-file, while Black takes space in the centre. The main idea is that a trade on g5 opens the h-file and gives White long-term kingside play, and the position is unbalanced from move three.",
+  "white_ideas": [
+    { "idea": "Keep the bishop with h4 and retreat it to f4 or h4 after ...Nxg5 hxg5 with an open h-file." },
+    { "idea": "Develop with Nd2, e3 and Bd3 and attack on the kingside." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike in the centre with ...c5 and ...d5 and challenge d4 immediately." },
+    { "idea": "Take the bishop with ...Nxg5 and aim for ...e5 or ...Nc6 counterplay." }
+  ],
+  "typical_structures": [
+    { "structure": "Open h-file after hxg5, or d4 facing ...c5/...d5 with the Black knight active on e4." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Early unbalanced tactics around the h4 and g5 squares; both sides can go wrong fast." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered in the main replies 3...c5 and 3...d5." },
+    "soundness": { "notes": "A respected, sound attacking try." },
+    "structure": { "notes": "Depends on Black's reply; the centre is undecided early." },
+    "approach": { "notes": "A known attacking line played by strong players." },
+    "level": { "reason": "understanding", "notes": "Clear ideas but needs knowledge of tactics." }
+  },
+  "plan_phrases": ["kingside attack", "bishop pair"],
+  "sublines_that_differ": [
+    { "name": "Hergert Gambit", "moves": "1. d4 Nf6 2. Bg5 Ne4 3. h4 Nxg5 4. hxg5 e5", "how": "Black offers a pawn for quick development; a gambit branch." }
+  ],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "Early unbalanced play and an open h-file." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "The main replies involve no material offer." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.85, "reason": "A respected attacking try." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre depends on Black's reply and is undecided early." },
+    "approach": { "value": "standard", "confidence": 0.5, "reason": "Used by strong players as a recognised attacking line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Clear ideas with some tactics to know." },
+    "plans": { "value": ["kingside_attack"], "reason": "White uses the h-file and bishop for kingside play." }
+  }
+}

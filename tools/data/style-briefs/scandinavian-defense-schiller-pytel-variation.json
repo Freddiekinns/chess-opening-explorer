@@ -1,0 +1,92 @@
+{
+  "slug": "scandinavian-defense-schiller-pytel-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Schiller-Pytel Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6 4. d4 c6",
+    "fen": "rnb1kbnr/pp2pppp/2pq4/8/3P4/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "scandinavian-defense-gubinsky-melts-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black has played the queen to d6 and supports it with ...c6, then develops ...Nf6, ...Bf5 and ...e6 for a compact Caro-Kann-like set-up. The input's most played lines go 4...Nf6 5.Bc4 c6 6.Nge2 Bf5 7.Bf4 Qb4, with the queen hopping to b4 to hit b2. White has a lead in development and more space; Black aims for a solid structure and ...e6 and ...Nbd7 with equal chances.",
+  "white_ideas": [
+    { "idea": "Develop quickly with Bc4, Nge2 and Bf4 and keep the lead in development." },
+    { "idea": "Exploit the queen's position with Nb5 or tactics on the d-file." }
+  ],
+  "black_ideas": [
+    { "idea": "Build a Caro-Kann-like structure with ...c6, ...Bf5 and ...e6 and develop ...Nbd7." },
+    { "idea": "Harass b2 with the queen on b4 and gain time." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4 centre against Black c6 and e6 pawns with the queen and light bishop active on the queenside and the bishop out on f5." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black keeps a compact, hard-to-attack structure although the queen moves cost time and some tactics exist."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d5 pawn is recaptured by the queen at once."
+    },
+    "soundness": {
+      "notes": "A recognised, playable Scandinavian line."
+    },
+    "structure": {
+      "notes": "The Scandinavian asymmetry with a half-open d-file is semi-open."
+    },
+    "approach": {
+      "notes": "Played by a number of strong players as a branch of the Scandinavian, so standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear, the main risk is tempo loss with the queen, little memory needed."
+    }
+  },
+  "plan_phrases": [
+    "lead in development for White",
+    "Caro-Kann-style solid set-up"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.45,
+      "reason": "Black builds a Caro-Kann-like compact structure that is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "The pawn on d5 is recaptured at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Playable and tested."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "Asymmetric centre with a half-open d-file, as in all Scandinavian lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A respectable branch of the Scandinavian."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Clear plans, little theory."
+    },
+    "plans": {
+      "value": ["early_queen", "lead_in_development"],
+      "reason": "Black's queen moves early while White develops with tempo."
+    }
+  }
+}

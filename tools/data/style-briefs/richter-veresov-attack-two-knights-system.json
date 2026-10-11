@@ -1,0 +1,116 @@
+{
+  "slug": "richter-veresov-attack-two-knights-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Richter-Veresov Attack: Two Knights System",
+    "eco": "D01",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. Bg5 Nbd7 4. Nf3",
+    "fen": "r1bqkb1r/pppnpppp/5n2/3p2B1/3P4/2N2N2/PPP1PPPP/R2QKB1R b KQkq - 3 4"
+  },
+  "parent": "richter-veresov-attack",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "The Two Knights System of the Veresov continues 1.d4 Nf6 2.Nc3 d5 3.Bg5 Nbd7 4.Nf3. Black usually plays 4...h6 5.Bh4 g5 6.Bg3 Ne4 or 4...c6, challenging the bishop, while White aims for quick development with e3, Bd3 and Qe2. White plays a system with a pin and pressure on d5 and Black plays solid centre moves.",
+  "white_ideas": [
+    {
+      "idea": "Develop with e3, Bd3 and Qe2, keeping the bishop pair if possible"
+    },
+    {
+      "idea": "Pressure d5 and e5"
+    },
+    {
+      "idea": "Castle short and play for a kingside initiative"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the bishop with ...h6 and ...g5, or play ...g6 and ...Bg7"
+    },
+    {
+      "idea": "Play ...c5 or ...e5 to claim the centre"
+    },
+    {
+      "idea": "Complete development with ...e6 and ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's pawn structure with White d4 and e3 against Black d5, centre in tension"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has sound options and play is steady, with limited early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound though not ambitious."
+    },
+    "structure": {
+      "notes": "Pawn centres d4 against d5 with open choices for both."
+    },
+    "approach": {
+      "notes": "A standard sideline used by some strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear development plans, little theory, but the pin lines need judgement."
+    }
+  },
+  "plan_phrases": [
+    "pressure on d5",
+    "quick development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Grünfeld-type defence",
+      "moves": "4...g6",
+      "how": "Black fianchettos and plays ...Bg7, ...O-O and ...c5 with more dynamic play."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Steady development; neither side commits to an attack early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Ordinary development, roughly equal."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "d4 against d5 centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Used by a good number of club and some strong players, not a universal set-up."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are simple but the pin and ...h6 ...g5 lines need judgement."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White develops quickly with e3, Bd3 and Qe2."
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-ziegler-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Ziegler Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 c6",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 4.f3 exf3 5.Nxf3 c6 Black takes the pawn and prepares ...Bg4 or ...Bf5 and ...e6, aiming to hold the extra pawn with a solid pawn structure. White continues with Bc4, Bf4, O-O and Qe2, or Ne5 ideas, hoping for attack. Accurate defence gives Black the better game, but practical chances remain for White, especially at club level.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bc4, Bf4 or Be3 and castle"
+    },
+    {
+      "idea": "Use the open f-file and Ne5 or g4 attacks"
+    },
+    {
+      "idea": "Aim at h7 and f7 with the queen and bishops"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn with ...Bg4 or ...Bf5, ...e6 and ...Nbd7"
+    },
+    {
+      "idea": "Trade queens and neutralise the attack"
+    },
+    {
+      "idea": "Use ...c6 to prepare ...Qb6 and ...Bg4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White d4 against Black c6 and e6 pawns"
+    },
+    {
+      "structure": "Black extra pawn with White ahead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White attacks for a pawn with open lines and quick tactical chances."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White gives the e-pawn for development and an attack, and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Engines judge the compensation insufficient after accurate defence; it works through traps and ease of attack."
+    },
+    "structure": {
+      "notes": "The centre opens and the game turns on lines for pieces."
+    },
+    "approach": {
+      "notes": "The BDG is seldom chosen by strong players but remains popular below master level."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Attack patterns are simple but Black has to know defences; dubious so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack",
+    "Open f-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Bg4 and Bf5 set-ups",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 c6 6. Bc4 Bg4",
+      "how": "Black aims for ...e6 and ...Nbd7 with a solid hold on the pawn."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "White attacks for a pawn with open lines and quick tactical chances."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the e-pawn for development and an attack, and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Engines judge the compensation insufficient after accurate defence; it works through traps and ease of attack."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The centre opens and the game turns on lines for pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "The BDG is seldom chosen by strong players but remains popular below master level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Attack patterns are simple but Black has to know defences; dubious so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White uses the lead in development for an attack on the king."
+    }
+  }
+}

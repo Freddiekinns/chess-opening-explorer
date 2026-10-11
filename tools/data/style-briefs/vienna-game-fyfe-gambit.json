@@ -1,0 +1,111 @@
+{
+  "slug": "vienna-game-fyfe-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Fyfe Gambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. d4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "vienna-game-max-lange-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "The Fyfe Gambit answers 2...Nc6 with 3.d4, offering the d-pawn for open lines and development: 3...exd4 4.Nd5 or 4.Nf3 Bb4 5.Bd3. Black can keep the extra pawn, but must watch the e-file and f7. It is a rare surprise weapon that gives up central space for activity.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with Nf3, Bd3 and castle"
+    },
+    {
+      "idea": "Use the open e-file and pressure on f7"
+    },
+    {
+      "idea": "Regain the pawn through tactics or a lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on d4 and keep the extra pawn"
+    },
+    {
+      "idea": "Develop with ...Nf6, ...Bb4 or ...Bc5, and ...d5"
+    },
+    {
+      "idea": "Trade pieces to neutralise the initiative"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, White a pawn down with open e- and d-files"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices material for activity; the play is open and tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the d-pawn but must defend accurately."
+    },
+    "soundness": {
+      "notes": "Rare gambit, probably slightly worse for White but practical."
+    },
+    "structure": {
+      "notes": "Open centre from the start."
+    },
+    "approach": {
+      "notes": "A fairly rare sideline, played for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Requires tactics rather than memory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White gambits for open lines and quick development; tactical."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the d-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Playable gambit with compensation, not refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Centre pawns come off straight away, open e-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare gambit that strong players seldom choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear but tactical accuracy matters."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for development and f7 pressure."
+    }
+  }
+}

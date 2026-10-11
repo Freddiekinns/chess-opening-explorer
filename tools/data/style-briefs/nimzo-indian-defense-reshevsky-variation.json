@@ -1,0 +1,99 @@
+{
+  "slug": "nimzo-indian-defense-reshevsky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Reshevsky Variation",
+    "eco": "E46",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Ne2",
+    "fen": "rnbq1rk1/pppp1ppp/4pn2/8/1bPP4/2N1P3/PP2NPPP/R1BQKB1R b KQ - 2 5"
+  },
+  "parent": "nimzo-indian-defense-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White avoids doubled c-pawns by developing the king's knight to e2, so Bxc3 would give up the bishop pair for nothing. Black replies 5...d5 and after 6.a3 Be7 7.cxd5 exd5 the position becomes a QGD Exchange-like Carlsbad structure with a minority attack for White. 5...b6 and 5...Re8 are alternatives. White aims for a small edge with queenside play, Black for ...c5 or ...Nbd7-f5.",
+  "white_ideas": [
+    { "idea": "Retain the bishop pair, play cxd5 and a minority attack with b4-b5 or Ng3." },
+    { "idea": "Develop with a3, Ng3 and Bd3 and aim for e4 or a kingside play." }
+  ],
+  "black_ideas": [
+    { "idea": "Fight for the centre with ...d5 and ...c5, or exchange on c4 and play ...b6 and ...Bb7." },
+    { "idea": "Use the knight on f5 or ...Ne4 and trade pieces to neutralise the minority attack." }
+  ],
+  "typical_structures": [
+    { "structure": "Carlsbad pawn structure after cxd5 exd5: White minority attack against Black's d5 and the half-open e-file." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional play with a small White edge and no sharp tactics; Black is solid but must meet the minority attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Mainstream and fully sound."
+    },
+    "structure": {
+      "notes": "After cxd5 exd5 it is the Carlsbad structure, a symmetric exchange structure that is semi-open."
+    },
+    "approach": {
+      "notes": "A mainstream line of the Nimzo-Indian."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Strategic plans and the minority attack need understanding; theory is limited."
+    }
+  },
+  "plan_phrases": [
+    "minority attack",
+    "Carlsbad structure",
+    "bishop pair"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5...b6 or 5...Re8",
+      "moves": "5... b6 6. a3 Bxc3+ 7. Nxc3 Bb7",
+      "how": "Black trades the bishop and plays for a hypermodern set-up with ...Ne4 and ...d6."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Like the Rubinstein system, positional with a small White edge and neither side forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Mainstream line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "The main line reaches the Carlsbad exchange structure with a half-open file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A mainstream strong-player line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans take understanding but the theory is moderate."
+    },
+    "plans": {
+      "value": ["minority_attack", "carlsbad_structure"],
+      "reason": "The main line leads to a Carlsbad structure and the minority attack."
+    }
+  }
+}

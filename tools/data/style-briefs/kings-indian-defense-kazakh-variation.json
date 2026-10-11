@@ -1,0 +1,99 @@
+{
+  "slug": "kings-indian-defense-kazakh-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Kazakh Variation",
+    "eco": "E91",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 Na6",
+    "fen": "r1bq1rk1/ppp1ppbp/n2p1np1/8/2PPP3/2N2N2/PP2BPPP/R1BQK2R w KQ - 4 7"
+  },
+  "parent": "kings-indian-defense-orthodox-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black puts the queen's knight on a6 before committing the pawn break, from where it can go to c7 or b4 and supports ...e5 or ...c5. After 7.O-O Black plays ...e5, ...c6 or ...c5 depending on White's set-up; 7.Bg5 is the other White try. The structures range from Mar del Plata-like locked centres to Benoni-style ones. White expands on the queenside while Black attacks on the kingside.",
+  "white_ideas": [
+    { "idea": "Castle, play Be3 or Re1 and meet ...e5 with d5 or dxe5 to keep a central edge." },
+    { "idea": "Expand on the queenside with c5 or a5 against the knight on a6." }
+  ],
+  "black_ideas": [
+    { "idea": "Support ...e5 with ...c6 and ...Nc7 and then attack with ...Nd7 or ...exd4." },
+    { "idea": "Strike with ...c5 for a Benoni-style game with pressure on the d-file." }
+  ],
+  "typical_structures": [
+    { "structure": "King's Indian centre with c4/d4/e4 against d6/e5 or c5, often closing after d5." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "King's Indian play with the knight on a6 leads to unbalanced pawn structures and attacks on opposite wings."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Respectable main-line King's Indian."
+    },
+    "structure": {
+      "notes": "After ...e5 and d5 the centre locks, though ...c5 lines can stay fluid."
+    },
+    "approach": {
+      "notes": "A named Orthodox sideline; standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Choosing between ...e5, ...c5 and ...c6 and timing the attack takes understanding; theory is moderate."
+    }
+  },
+  "plan_phrases": [
+    "...f5 kingside pawn storm",
+    "space advantage for White",
+    "queenside expansion for White"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "7...c5",
+      "moves": "7. O-O c5",
+      "how": "A Benoni-style game with a half-open d-file."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "King's Indian structures lead to opposite-wing attacks where timing errors lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Main-line Orthodox sideline."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.5,
+      "reason": "Typical outcome is a locked centre after ...e5 and d5, with play on the wings."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream strong-player line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A sideline of the Orthodox with moderate theory but plans needing understanding."
+    },
+    "plans": {
+      "value": ["kingside_attack", "pawn_storm"],
+      "reason": "Black's typical plan is a kingside pawn storm."
+    }
+  }
+}

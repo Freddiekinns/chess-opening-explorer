@@ -1,0 +1,115 @@
+{
+  "slug": "polish-opening-baltic-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Baltic Defense",
+    "eco": "A00",
+    "moves": "1. b4 d5 2. Bb2 Bf5",
+    "fen": "rn1qkbnr/ppp1pppp/8/3p1b2/1P6/8/PBPPPPPP/RN1QKBNR w KQkq - 2 3"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White plays 1.b4 and 2.Bb2, a flank opening that lets the bishop work on the long diagonal; Black answers with 1...d5 2.Bb2 Bf5 to develop the bishop outside the pawn chain. White follows with e3, Nf3 and a3 or c4, aiming for queenside space. The game is quiet and strategic; White gets space, Black gets a solid centre.",
+  "white_ideas": [
+    {
+      "idea": "Develop e3, Nf3 and Be2, keep the b2 bishop pointing at e5 and g7"
+    },
+    {
+      "idea": "Gain queenside space with a3 and c4"
+    },
+    {
+      "idea": "Prepare Qb3 or Nh4 to hit the bishop on f5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop the bishop to f5 before playing ...e6"
+    },
+    {
+      "idea": "Hold the centre with ...Nf6, ...e6 and ...c5"
+    },
+    {
+      "idea": "Challenge b4 with ...a5 or ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White b4/b2 against a Black d5 centre"
+    },
+    {
+      "structure": "Flexible structure with queenside pawn breaks"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "No early tactics; both sides build slowly with small positional edges."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The b4 pawn is protected by Bb2 and no material is given."
+    },
+    "soundness": {
+      "notes": "A normal flank opening that is not refuted."
+    },
+    "structure": {
+      "notes": "The centre stays in tension and flank play decides."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players, used mostly as a surprise weapon."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are positional and need good piece placement; little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Queenside expansion",
+    "Long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "No early tactics; both sides build slowly with small positional edges."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The b4 pawn is protected by Bb2 and no material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A normal flank opening that is not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays in tension and flank play decides."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom played by strong players, used mostly as a surprise weapon."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are positional and need good piece placement; little to memorise."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "The b2 bishop and queenside space are the opening's core ideas."
+    }
+  }
+}

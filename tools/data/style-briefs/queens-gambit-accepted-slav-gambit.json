@@ -1,0 +1,108 @@
+{
+  "slug": "queens-gambit-accepted-slav-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Slav Gambit",
+    "eco": "D21",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 b5",
+    "fen": "rnbqkbnr/p1p1pppp/8/1p6/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.d4 d5 2.c4 dxc4 3.Nf3 Black defends the c4 pawn with 3...b5. White answers 4.a4 c6 5.e3 (or 5.axb5 cxb5 6.b3) and undermines the b5 pawn, usually regaining c4 with the better position. Black's plan is to hold the pawn with ...Bb7 and ...a6 or ...b4; if it fails, Black is just worse.",
+  "white_ideas": [
+    {
+      "idea": "Undermine b5 with a4 and axb5"
+    },
+    {
+      "idea": "Regain c4 with e3, Bxc4 or b3"
+    },
+    {
+      "idea": "Use the weak queenside to get a lasting edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold c4 with ...b5, ...c6, ...Bb7 or ...b4"
+    },
+    {
+      "idea": "Counter with ...e5 or ...Nf6 for activity"
+    },
+    {
+      "idea": "Return the pawn if needed and play for activity"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black queenside pawns on b5, c4 and a-file weakened, White centre pawn majority"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactics around a4 and b5 with Black stretched on the queenside."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black took the c4 pawn earlier and ...b5 tries to keep it, but White usually regains it by force, so not a gambit in the taxonomy sense."
+    },
+    "soundness": {
+      "notes": "Considered inferior for Black; White gets an easy edge."
+    },
+    "structure": {
+      "notes": "Open QGA-type with the c-file open."
+    },
+    "approach": {
+      "notes": "Rare, seldom used by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious for Black; not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "regain the pawn"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Tactical around the queenside but not a mutual attack; White usually gets a steady edge."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "The pawn taken on c4 is normally regained by force; Black does not give up material."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "White gets an easy advantage after a4."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "QGA-type structure with the centre pawns exchanged."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious so never Beginner; little to memorise."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No named plan fits clearly."
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "semi-slav-defense-semi-meran-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Semi-Meran Variation",
+    "eco": "D47",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 Nbd7 6. Bd3 dxc4 7. Bxc4",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/8/2BP4/2N1PN2/PP3PPP/R1BQK2R b KQkq - 0 7"
+  },
+  "parent": "semi-slav-defense-main-line",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 6.Bd3 dxc4 7.Bxc4, Black usually plays ...b5, then ...Bb7, ...a6 and ...c5 in the Meran fashion. White aims for e4 and e5, with Bd3, O-O and Qe2; Black's queenside expansion gives counterplay. Both sides have long theoretical lines and the central break e4-e5 or ...c5 leads to sharp tactics.",
+  "white_ideas": [
+    {
+      "idea": "Play Bd3, O-O and e4 to drive back the knights"
+    },
+    {
+      "idea": "Push e5 to attack the f6 knight"
+    },
+    {
+      "idea": "Attack the b5 pawn with a4 or Nxb5 tactics"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...b5, ...Bb7, ...a6 and ...c5"
+    },
+    {
+      "idea": "Release the tension with ...c5 and ...Bb7"
+    },
+    {
+      "idea": "Use the queenside majority and the bishops"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Meran structure with Black ...b5/...c5 queenside pawns against a White e4 centre"
+    },
+    {
+      "structure": "Open lines after ...c5 and exchanges in the centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The e4-e5 and ...c5 breaks lead to forcing lines where one wrong move can lose fast."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4 pawn is returned at once; nothing is sacrificed."
+    },
+    "soundness": {
+      "notes": "The Meran is one of the most respected Black systems."
+    },
+    "structure": {
+      "notes": "Black's ...c5 break leaves a half-open file, and the centre is partly open."
+    },
+    "approach": {
+      "notes": "A main-line system played by top players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines in the Meran must be known, as well as understanding the plans."
+    }
+  },
+  "plan_phrases": [
+    "Queenside expansion",
+    "Central pawn majority",
+    "Break with ...c5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The e4-e5 and ...c5 breaks lead to forcing lines where one wrong move can lose fast."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The c4 pawn is returned at once; nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The Meran is one of the most respected Black systems."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Black's ...c5 break leaves a half-open file, and the centre is partly open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A main-line system played by top players."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Long forcing lines in the Meran must be known, as well as understanding the plans."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "central_pawn_majority"
+      ],
+      "reason": "Black expands with ...b5 and ...c5 while White builds a central majority with e4."
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "kings-gambit-accepted-bonsch-osmolovsky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Bonsch-Osmolovsky Variation",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 Ne7",
+    "fen": "rnbqkb1r/ppppnppp/8/8/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 2 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black accepts the pawn and answers 3.Nf3 with 3...Ne7, a quiet sideline that avoids the sharp ...g5 and ...Bg7 lines. The knight supports a later ...d5 and ...Ng6, so Black can either hold the f4 pawn or return it to free the position. White usually plays 4.d4 and takes the centre, aiming to regain f4 with Bxf4 and to exploit the lead in development; Black aims for a comfortable game after ...d5.",
+  "white_ideas": [
+    { "idea": "Build the centre with d4 and Bc4 or Nc3, then regain f4 with Bxf4." },
+    { "idea": "Use the half-open f-file and the lead in development against the king in the centre." }
+  ],
+  "black_ideas": [
+    { "idea": "Strike back with ...d5 at once to open the centre and return the pawn on good terms." },
+    { "idea": "Play ...Ng6 to hold the f4 pawn, with ...Bg7 or ...d5 to follow." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after e4 is exchanged for ...d5, with White's f-pawn gone and the f-file half-open." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "King's Gambit lines have an open f-file and an exposed white king, but 3...Ne7 aims at a calm ...d5 break and avoids the main tactical lines; still Sharp in the King's Gambit sense."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "The f4 pawn is taken on move 2 and Black can hold it with ...Ng6 and ...Bg7, although most games see White regain it with Bxf4."
+    },
+    "soundness": {
+      "notes": "A recognised, playable Black defence; nothing suggests either side is taking an unsound risk."
+    },
+    "structure": {
+      "notes": "Centre pawns come off quickly after d4 and ...d5, leaving open lines for the pieces."
+    },
+    "approach": {
+      "notes": "A named sideline within a respectable gambit; strong players do meet the King's Gambit with it, so standard rather than offbeat."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "The King's Gambit reward knowing the concrete move orders, but this branch is less forcing than 3...g5; a club player can learn it."
+    }
+  },
+  "plan_phrases": [
+    "regain the f4 pawn with Bxf4",
+    "d4 centre and lead in development",
+    "...d5 freeing break"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black holds the pawn",
+      "moves": "4. d4 Ng6",
+      "how": "Black keeps the extra pawn with ...Ng6 and ...Bg7, and White has to prove compensation by attacking."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "King's Gambit play with an open f-file and a gambit pawn in the air, though this knight move is calmer than the main lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White's f-pawn is taken on move 2 and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Black's 3...Ne7 and White's 4.d4 are both normal moves with no unsound risk."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "d4 and ...d5 open the centre straight away and the game turns on open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A respectable named Black defence to the King's Gambit, not a surprise weapon."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A gambit line with some theory but modest forcing play compared with the main King's Gambit lines."
+    },
+    "plans": {
+      "value": ["lead_in_development"],
+      "reason": "White's gambit play centres on using development against Black's king before he consolidates."
+    }
+  }
+}

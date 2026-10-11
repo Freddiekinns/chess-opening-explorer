@@ -1,0 +1,98 @@
+{
+  "slug": "dutch-defense-blackmars-second-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Blackmar's Second Gambit",
+    "eco": "A82",
+    "moves": "1. d4 f5 2. e4 fxe4 3. Nc3 Nf6 4. f3",
+    "fen": "rnbqkb1r/ppppp1pp/5n2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "dutch-defense-staunton-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "The Staunton Gambit with 4.f3 instead of the main 4.Bg5. White offers a second pawn and wants to open the f-file and the centre with fxe4 or f3xe4. Black usually plays 4...exf3 5.Nxf3 e6 and has an extra pawn with a solid position, or 4...d5 5.fxe4 dxe4 and returns it. White gets open lines and a lead in development but Black can usually consolidate.",
+  "white_ideas": [
+    { "idea": "Open the f-file and the centre with fxe4 or Nxf3 and develop quickly with Bc4 or Bg5." },
+    { "idea": "Attack Black's king on the e8-h5 diagonal and the weak e6 square." }
+  ],
+  "black_ideas": [
+    { "idea": "Take on f3 and consolidate with ...e6 and ...Be7, keeping the extra pawn." },
+    { "idea": "Play ...d5 and ...e5 to hit the centre and return material for the initiative." }
+  ],
+  "typical_structures": [
+    { "structure": "Open centre after e4 is taken, with White's f-pawn gone and Black pawns on e6, d5 or d6." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White offers a second pawn for lines and tempo, so both sides take risks and tactics decide."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 2...fxe4 Black is a pawn up and 4...exf3 5.Nxf3 e6 keeps it, with White playing for development."
+    },
+    "soundness": {
+      "notes": "Black can keep the extra material with careful play; the 4.f3 branch is considered dubious for White."
+    },
+    "structure": {
+      "notes": "Open lines and pieces dominate after the pawns on e4 and f3 are exchanged."
+    },
+    "approach": {
+      "notes": "Strong players seldom play 4.f3; chosen mainly for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs knowledge of the forcing lines, but the gambit is dubious so never a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "open f-file and lead in development",
+    "attack on the e6 square"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4...d5 line",
+      "moves": "4... d5 5. fxe4 dxe4 6. Bg5",
+      "how": "Black returns a pawn for a calm position and White has an open f-file but no more than slight comfort."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Pawns are being exchanged and the f-file and e8-h5 diagonal lead to concrete tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White is a pawn down after 2...fxe4 and the pawn can be kept."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "4.f3 is less accurate than 4.Bg5 and Black can hold the extra pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Central pawns are traded and play turns on open files and diagonals."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "The 4.f3 sideline is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious gambit so not beginner, but sidelines are short."
+    },
+    "plans": {
+      "value": ["lead_in_development", "kingside_attack"],
+      "reason": "White plays for development and attack in return for the pawn."
+    }
+  }
+}

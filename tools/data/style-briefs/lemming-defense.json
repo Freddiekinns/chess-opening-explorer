@@ -1,0 +1,105 @@
+{
+  "slug": "lemming-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Lemming Defense",
+    "eco": "B00",
+    "moves": "1. e4 Na6",
+    "fen": "r1bqkbnr/pppppppp/n7/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "1.e4 Na6 is an unorthodox reply: the knight heads to the rim and Black plans ...e5 or ...c5 or ...Nf6 with Nc5 or Nb4 ideas later. White just builds a centre with d4, Nc3 and Nf3 and gets an easy advantage. Objectively dubious, played for surprise.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with d4 and Nf3"
+    },
+    {
+      "idea": "Develop Bxa6 or Bc4 and punish the knight's position"
+    },
+    {
+      "idea": "Gain space and develop normally"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reroute the knight with ...Nc5 or ...Nb4"
+    },
+    {
+      "idea": "Play ...e5, ...c5 or ...g6 for flexible set-ups"
+    },
+    {
+      "idea": "Hope for a surprise"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flexible; White gets a big centre while Black's knight is misplaced"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black can adopt solid or sharp set-ups, so it varies; White has an easy game."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Considered dubious; Black has lost time."
+    },
+    "structure": {
+      "notes": "Centre undecided, depends on reply."
+    },
+    "approach": {
+      "notes": "Rarely used by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Varies by set-up; White simply builds a centre."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Black loses time with the rim knight and White gets an easy edge."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre not determined by 1...Na6."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No named plan from the evidence."
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "sicilian-defense-nimzo-american-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Nimzo-American Variation",
+    "eco": "B32",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 d5",
+    "fen": "r1bqkbnr/pp2pppp/2n5/3p4/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5"
+  },
+  "parent": "sicilian-defense-open",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Black plays 4...d5, hitting the centre at once. White usually takes 5.exd5 Qxd5 6.Be3 or 6.Nxc6, and Black recovers freely with ...e5 or ...Qxd5. The result is an open position with Black ahead in development and little danger of a squeeze. It is rarely seen.",
+  "white_ideas": [
+    {
+      "idea": "Capture on d5 and play Nxc6 or Be3 to take space"
+    },
+    {
+      "idea": "Develop quickly with Nc3, Be2 and castle"
+    },
+    {
+      "idea": "Exploit Black's queen on d5 by tempo moves"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on d5 with the queen and reach quick activity"
+    },
+    {
+      "idea": "Break with ...e5 or ...Nf6"
+    },
+    {
+      "idea": "Trade down and equalise"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the d- and c-pawns exchanged; sometimes a Black isolated or weak queen's pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black strikes early, but play is tactical rather than a long-term squeeze."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Playable for Black with equality."
+    },
+    "structure": {
+      "notes": "The central pawns are exchanged quickly leaving pieces more active."
+    },
+    "approach": {
+      "notes": "Rare sideline, 4...d5 is seldom seen at strong level."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory but tactical awareness needed."
+    }
+  },
+  "plan_phrases": [
+    "central break",
+    "piece activity"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Open and active, but heads towards equality without a mutual attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Playable, roughly level."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns trade off at once and pieces get open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Light theory, plans are straightforward."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear named plan from the evidence."
+    }
+  }
+}

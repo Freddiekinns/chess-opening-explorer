@@ -1,0 +1,44 @@
+{
+  "slug": "polish-opening-schiffler-sokolsky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Schiffler-Sokolsky Variation",
+    "eco": "A00",
+    "moves": "1. b4 e6 2. Bb2 Nf6 3. b5 d5 4. e3",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/1P1p4/8/4P3/PBPP1PPP/RN1QKBNR b KQkq - 0 4"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White fianchettoes the queen's bishop and pushes the b-pawn to b5, gaining queenside space, then supports the centre with e3. Black builds a solid centre with ...d5 and ...c5 or ...Bd6 and aims to undermine the b5 pawn and exploit the lost time. Play is flank-oriented with unbalanced pawns and no early tactics.",
+  "white_ideas": [
+    { "idea": "Develop with Nf3, Be2 and c4 or d4, using the Bb2 on the long diagonal." },
+    { "idea": "Keep the b5 pawn as a space grab and expand with a4 or c4." }
+  ],
+  "black_ideas": [
+    { "idea": "Build a solid centre with ...c5, ...Bd6, ...O-O and attack the b5 pawn with ...a6." },
+    { "idea": "Fight for the dark squares and the e4 break." }
+  ],
+  "typical_structures": [
+    { "structure": "White pawn on b5 with e3 and d4 or c4; Black central pawns on d5 and e6, flexible." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Slow manoeuvring game with a shifted queenside; neither side takes early risks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Playable but Black gets a comfortable game; not refuted." },
+    "structure": { "notes": "The centre is undecided with flank pawns advanced." },
+    "approach": { "notes": "Played by strong players now and then as a surprise but seldom main choice." },
+    "level": { "reason": "understanding", "notes": "Needs sound positional judgment, little theory." }
+  },
+  "plan_phrases": ["fianchetto", "queenside space"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.55, "reason": "Slow flank-oriented manoeuvring with no early tactics." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Playable, if slightly committal." },
+    "structure": { "value": "flexible", "confidence": 0.6, "reason": "The centre is undecided and flank pawns are advanced." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Polish with 3.b5 is mainly a surprise weapon." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Plans are clear but need positional judgment." },
+    "plans": { "value": ["fianchetto", "queenside_expansion"], "reason": "White fianchettoes and expands on the queenside." }
+  }
+}

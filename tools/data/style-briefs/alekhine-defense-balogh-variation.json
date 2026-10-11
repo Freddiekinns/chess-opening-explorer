@@ -1,0 +1,44 @@
+{
+  "slug": "alekhine-defense-balogh-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Balogh Variation",
+    "eco": "B03",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Bc4",
+    "fen": "rnbqkb1r/ppp1pppp/3p4/3nP3/2BP4/8/PPP2PPP/RNBQK1NR b KQkq - 1 4"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White hits the d5 knight with 4.Bc4 and Black normally plays 4...Nb6 5.Bb3 dxe5 6.dxe5 or ...c6 to get a normal Alekhine position. White keeps a space edge and the bishop on b3 aims at f7 and the a2-g8 diagonal, while Black counterattacks the centre with ...Nc6 or ...Bf5. The game is balanced and manoeuvring rather than a forcing fight.",
+  "white_ideas": [
+    { "idea": "Retreat the bishop to b3 and keep the space edge with e5 and d4, aiming at f7." },
+    { "idea": "Develop with Nf3 and O-O and play against Black's overextended knight." }
+  ],
+  "black_ideas": [
+    { "idea": "Play ...Nb6 and attack the e5 pawn and the centre with ...dxe5, ...Bf5 or ...Nc6." },
+    { "idea": "Challenge d4 with ...c5 and use Black's counterplay on the dark squares." }
+  ],
+  "typical_structures": [
+    { "structure": "White e5/d4 pawn chain with space against Black's pieces pressing the centre, an Alekhine-style tension." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Alekhine's unbalanced pawns, though the quieter Bc4 retreat avoids forcing play." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Sound for both sides." },
+    "structure": { "notes": "White's centre is attacked by pieces and the tension is not resolved early." },
+    "approach": { "notes": "A less common branch but played by strong players now and then." },
+    "level": { "reason": "understanding", "notes": "Black must handle the space imbalance carefully." }
+  },
+  "plan_phrases": ["hypermodern centre", "space advantage"],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Unbalanced pawns but the Bc4 line avoids forced tactics." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.9, "reason": "A standard line." },
+    "structure": { "value": "flexible", "confidence": 0.4, "reason": "The centre is under tension and not resolved early." },
+    "approach": { "value": "standard", "confidence": 0.55, "reason": "A recognised sideline of the Alekhine, played now and then." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Needs positional judgment against a space edge." },
+    "plans": { "value": ["hypermodern_centre", "space_advantage"], "reason": "Black attacks White's space-gaining centre." }
+  }
+}

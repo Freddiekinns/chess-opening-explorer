@@ -1,0 +1,121 @@
+{
+  "slug": "st-george-defense-polish-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "St. George Defense: Polish Variation",
+    "eco": "B00",
+    "moves": "1. e4 a6 2. d4 b5 3. Nf3 Bb7 4. Bd3 e6",
+    "fen": "rn1qkbnr/1bpp1ppp/p3p3/1p6/3PP3/3B1N2/PPP2PPP/RNBQK2R w KQkq - 0 5"
+  },
+  "parent": "st-george-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White has a broad e4-d4 centre against Black's flank set-up (...a6, ...b5, ...Bb7, ...e6). White develops with Bd3, O-O, c4 or Nbd2/Nc3 and tries to use the extra space; Black hits the centre with ...Nf6 and ...c5. Play is flexible and strategic, and a tricky position for White to convert.",
+  "white_ideas": [
+    {
+      "idea": "Castle and support the centre with c4 or Nbd2 and Re1"
+    },
+    {
+      "idea": "Hold e4 and d4, then push e5 when Black has committed pieces"
+    },
+    {
+      "idea": "Attack b5 and the queenside with Bxb5 tricks once ...a6 is loosened"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...Nf6 and ...c5"
+    },
+    {
+      "idea": "Use the b7 bishop on the long diagonal against e4"
+    },
+    {
+      "idea": "Gain queenside space with ...b4 and ...Nd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on d4 and e4 against Black's ...a6/...b5/...e6 set-up"
+    },
+    {
+      "structure": "After ...c5, a Sicilian-like centre with an open c-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side commits to forcing play; White's space meets Black's flank counterplay."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose in 1.e4 a6 2.d4 b5 3.Nf3 Bb7 4.Bd3 e6."
+    },
+    "soundness": {
+      "notes": "Black's hypermodern set-up is playable though White is slightly better; neither side takes a real risk."
+    },
+    "structure": {
+      "notes": "The centre is undecided until Black plays ...c5 or ...d5 or White plays e5."
+    },
+    "approach": {
+      "notes": "The St George is seldom chosen by strong players and is played mainly for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black must know how to attack White's centre; White needs sound centre play rather than memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "Hypermodern centre",
+    "Space advantage",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Basman 4...Nf6",
+      "moves": "1. e4 a6 2. d4 b5 3. Nf3 Bb7 4. Bd3 Nf6",
+      "how": "Black plays more directly with ...Nf6 and White can tempt with e5 or Bxb5 axb5 Nxb5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Neither side commits to forcing play; White's space meets Black's flank counterplay."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up on purpose in 1.e4 a6 2.d4 b5 3.Nf3 Bb7 4.Bd3 e6."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Black's hypermodern set-up is playable though White is slightly better; neither side takes a real risk."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is undecided until Black plays ...c5 or ...d5 or White plays e5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "The St George is seldom chosen by strong players and is played mainly for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Black must know how to attack White's centre; White needs sound centre play rather than memorised lines."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "space_advantage"
+      ],
+      "reason": "Black lets White build the centre and attacks it later; White uses the space."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "sicilian-defense-wing-gambit-deferred",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Wing Gambit Deferred",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. b4",
+    "fen": "rnbqkbnr/pp1p1ppp/4p3/2p5/1P2P3/5N2/P1PP1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White offers the b-pawn with 3.b4 after 2...e6, hoping to deflect the c5 pawn and build a big d4/e4 centre. After 3...cxb4 4.a3 White gets the centre and open a-file, but Black can keep the pawn with ...d5 or ...Nf6 and have the better structure. White's compensation is considered insufficient at the top.",
+  "white_ideas": [
+    {
+      "idea": "Play a3, axb4 and d4 to build a strong centre"
+    },
+    {
+      "idea": "Use the open a-file and quick development"
+    },
+    {
+      "idea": "Aim for e5 and kingside play"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on b4 and hit the centre with ...d5 or ...Nf6"
+    },
+    {
+      "idea": "Return the pawn if needed for equal play"
+    },
+    {
+      "idea": "Develop ...Nc6, ...Bxb4 and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/d4 centre against ...e6 and open b-file"
+    },
+    {
+      "structure": "Open centre after ...d5 and exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early wing pawn sacrifice with an open centre and tactical play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White gives the b-pawn for centre control and development, and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Black can keep the pawn with ...d5, and engines prefer Black."
+    },
+    "structure": {
+      "notes": "Every Sicilian leaves a half-open file; White has the open a-file, Black the c-file."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose the Wing Gambit against the Sicilian."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are straightforward but dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Central pawn majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Early wing pawn sacrifice with an open centre and tactical play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the b-pawn for centre control and development, and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can keep the pawn with ...d5, and engines prefer Black."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Every Sicilian leaves a half-open file; White has the open a-file, Black the c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose the Wing Gambit against the Sicilian."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are straightforward but dubious, so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White uses the centre and development for the sacrificed wing pawn."
+    }
+  }
+}

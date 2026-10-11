@@ -1,0 +1,99 @@
+{
+  "slug": "catalan-opening-closed-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Catalan Opening: Closed Variation, Rabinovich Variation",
+    "eco": "E09",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Qc2 e6 5. Nbd2 Be7 6. g3 Nbd7 7. Bg2 O-O 8. O-O b5",
+    "fen": "r1bq1rk1/p2nbppp/2p1pn2/1p1p4/2PP4/5NP1/PPQNPPBP/R1B2RK1 w - - 0 9"
+  },
+  "parent": "catalan-opening-closed",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "A Slav-Catalan hybrid in which White fianchettoes the king's bishop and keeps the queen on c2, while Black uses ...c6 and ...e6 for a compact set-up. The input's most played lines under this root are the Closed Catalan main lines with ...b6 (9.e4 and 9.b3 Bb7 10.Bb2). White aims for the long diagonal pressure on d5 and the e4 break, Black for ...dxc4 and ...b5 or ...c5 and a solid, hard-to-attack position.",
+  "white_ideas": [
+    { "idea": "Break with e4 or cxd5 to open the centre and use the bishop on g2." },
+    { "idea": "Play b3 and Bb2 or Ne5 and pressure the queenside and d5." }
+  ],
+  "black_ideas": [
+    { "idea": "Hold the centre with ...c6, ...e6, ...Nbd7 and ...b5 or ...b6 and ...Bb7." },
+    { "idea": "Release the tension with ...dxc4 and ...c5 for activity." }
+  ],
+  "typical_structures": [
+    { "structure": "Central tension with White c4/d4 against Black c6/d5, long-diagonal bishop for White and a compact Black camp." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is solid and compact, with White pressing slowly; the play is positional and rarely decided quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4 pawn may be traded, but any pawn Black takes is returned by force."
+    },
+    "soundness": {
+      "notes": "Fully respectable mainstream positions for both sides."
+    },
+    "structure": {
+      "notes": "Centre pawns stay in tension and the fight is decided by the e4 or c5 break."
+    },
+    "approach": {
+      "notes": "Main-line Catalan, played by strong players at the top level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans and move orders (b5, b6, c5, e4 break) take understanding, but long forcing theory is limited."
+    }
+  },
+  "plan_phrases": [
+    "long-diagonal bishop pressure",
+    "e4 central break",
+    "...c5 counter-break"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Rabinovich 8...b5 itself",
+      "moves": "8... b5",
+      "how": "Black gains queenside space at once; the input's most played lines show 8...b6 instead, with 9.e4 or 9.b3."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Compact Black set-up that is hard to break down, with slow White pressure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No lasting material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Mainstream and fully playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Centre kept in tension like the QGD."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Mainstream line played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans take understanding but the theory is not especially forcing."
+    },
+    "plans": {
+      "value": ["fianchetto", "central_pawn_majority"],
+      "reason": "White's long-diagonal bishop and the planned e4 central break."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "queens-gambit-accepted-winawer-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Winawer Defense",
+    "eco": "D25",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 Be6",
+    "fen": "rn1qkb1r/ppp1pppp/4bn2/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 2...dxc4 3.Nf3 Nf6 4.e3, Black develops the light bishop to e6 before taking pressure on c4 and supports a quiet structure, with 5.Nc3 c6 the main line. White hopes to regain the pawn with Bxc4 or Ng5; Black holds the pawn on c4 with ...b5 or just returns it for a comfortable position. Play is calm and positional.",
+  "white_ideas": [
+    {
+      "idea": "Win back the pawn with Bxc4 or Ng5"
+    },
+    {
+      "idea": "Play Nc3, Be2 and O-O and push e4"
+    },
+    {
+      "idea": "Build a central pawn majority"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support the extra pawn with ...c6 and ...b5"
+    },
+    {
+      "idea": "Develop ...Nbd7 and ...Bd5 or ...Be7"
+    },
+    {
+      "idea": "Exchange pieces and equalise"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4/e3 centre against Black pawns on e7, c7 and the captured c-pawn"
+    },
+    {
+      "structure": "Open c-file after c4 is exchanged"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side takes real risks; positional play with small tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4 pawn returns by force or by sound play, so it is not a real gambit."
+    },
+    "soundness": {
+      "notes": "A normal, safe line of the QGA."
+    },
+    "structure": {
+      "notes": "The QGA exchange on c4 opens lines, as in the QGA anchor."
+    },
+    "approach": {
+      "notes": "A normal QGA line seen at all levels."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear and theory is modest."
+    }
+  },
+  "plan_phrases": [
+    "Central pawn majority",
+    "Regain the pawn"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither side takes real risks; positional play with small tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The c4 pawn returns by force or by sound play, so it is not a real gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A normal, safe line of the QGA."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The QGA exchange on c4 opens lines, as in the QGA anchor."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A normal QGA line seen at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear and theory is modest."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority"
+      ],
+      "reason": "White regains c4 and keeps a central pawn majority against Black's c6/b5."
+    }
+  }
+}

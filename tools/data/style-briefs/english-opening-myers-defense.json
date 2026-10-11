@@ -1,0 +1,99 @@
+{
+  "slug": "english-opening-myers-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Myers Defense",
+    "eco": "A10",
+    "moves": "1. c4 g5",
+    "fen": "rnbqkbnr/pppppp1p/8/6p1/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "english-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black meets 1.c4 with the Borg-style 1...g5, aiming for ...Bg7 to hit b2 and the long diagonal. The input's most played line is 2.d4, when White gets a big centre with Nc3 and e4 and can attack the weakened kingside, while Black plays ...Bg7 and ...c6 or ...d6 and hopes the g5 pawn does not become a target. It costs structure and king safety and is considered dubious.",
+  "white_ideas": [
+    { "idea": "Take the centre with d4, Nc3, e4 and exploit the advanced g5 pawn with h4." },
+    { "idea": "Attack the g5 pawn with Bxg5 or h4 and develop with tempo." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto Bg7 and hit b2, d4 with ...c5 or ...d6 and counter the centre." },
+    { "idea": "Use the g-file and ...h6 to support the pawn and play for surprise." }
+  ],
+  "typical_structures": [
+    { "structure": "White c4/d4/e4 centre against Black's fianchetto bishop on g7 and an advanced g5 pawn." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's king side is weakened and White's centre is large, so tactics arise quickly and mistakes lose fast."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The g5 pawn can be attacked but is usually defended or guarded tactically, so no pawn is given in the main line."
+    },
+    "soundness": {
+      "notes": "Strong players regard 1...g5 as dubious: it weakens the kingside for little."
+    },
+    "structure": {
+      "notes": "White builds a classical centre and Black's pawns are scattered, so the centre is undecided early."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever use 1...g5, chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious line, so never beginner; the plans need understanding."
+    }
+  },
+  "plan_phrases": [
+    "space advantage for White",
+    "fianchetto bishop on g7",
+    "kingside pawn advance g5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2.d4 Bg7 3.Nc3 c6 4.e4 d6",
+      "moves": "2. d4 Bg7 3. Nc3 c6 4. e4 d6",
+      "how": "White gets a large pawn centre and can attack the advanced g5 pawn."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "An early kingside weakening leads to concrete tactics and quick losses for Black."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.65,
+      "reason": "No pawn is given by force in the main line, though g5 can be a target."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "1...g5 weakens the kingside and strong players avoid it."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "White's centre is open to several set-ups and Black's is unresolved."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom use it; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious, so never beginner, and no long theory."
+    },
+    "plans": {
+      "value": ["fianchetto", "space_advantage"],
+      "reason": "Black aims for a bishop on g7 against White's centre space."
+    }
+  }
+}

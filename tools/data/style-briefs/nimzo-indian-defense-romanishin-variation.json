@@ -1,0 +1,121 @@
+{
+  "slug": "nimzo-indian-defense-romanishin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Romanishin Variation",
+    "eco": "E20",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. g3",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N3P1/PP2PP1P/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White fianchettoes the king's bishop against the Nimzo-Indian pin. In the main line Black strikes with ...c5, and after Nf3 cxd4 Nxd4 O-O Bg2 the position is an open-Sicilian-style fight against a Maroczy-like White set-up. White keeps the centre solid and presses with Bg2 and Qd3; Black develops with ...Nc6 and ...d5 or ...b6.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto on g2 and pressure d5 and the long diagonal"
+    },
+    {
+      "idea": "Recapture on d4 with a knight and play Qd3 or Bd2"
+    },
+    {
+      "idea": "Keep c4 and e2 to restrain ...d5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...c5 and trade on d4 for counterplay"
+    },
+    {
+      "idea": "Develop ...Nc6, ...O-O and strike with ...d5 or ...b6"
+    },
+    {
+      "idea": "Consider ...Bxc3 to damage White's structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical c4/e2 against ...e6/...d6-type Black set-up after ...cxd4 Nxd4"
+    },
+    {
+      "structure": "Doubled c-pawns if Black takes on c3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Play after 4...c5 5.Nf3 cxd4 6.Nxd4 O-O 7.Bg2 is equal and strategic without forced lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "A respected alternative to 4.e3 and 4.Qc2 with no real risk."
+    },
+    "structure": {
+      "notes": "The d-pawns trade on d4 and the c-file is half-open, as in an open Sicilian."
+    },
+    "approach": {
+      "notes": "A mainstream line in the Nimzo-Indian, played by Kasparov and Romanishin."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are positional and need good piece placement, with modest theory."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Pressure on d5",
+    "Doubled pawns"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Delayed fianchetto",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Nf3 c5 5. g3",
+      "how": "White first plays Nf3 and then g3, reaching the same ideas."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Play after 4...c5 5.Nf3 cxd4 6.Nxd4 O-O 7.Bg2 is equal and strategic without forced lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up on purpose."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respected alternative to 4.e3 and 4.Qc2 with no real risk."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The d-pawns trade on d4 and the c-file is half-open, as in an open Sicilian."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream line in the Nimzo-Indian, played by Kasparov and Romanishin."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans are positional and need good piece placement, with modest theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "doubled_pawns"
+      ],
+      "reason": "White's g2 bishop is central, and Bxc3 can double White's pawns."
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "slug": "queens-gambit-declined-austrian-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Austrian Attack, Salvio Countergambit",
+    "eco": "D06",
+    "moves": "1. d4 d5 2. c4 c5 3. dxc5 d4",
+    "fen": "rnbqkbnr/pp2pppp/8/2P5/2Pp4/8/PP2PPPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-declined-austrian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "The Salvio Countergambit arises after 1.d4 d5 2.c4 c5 3.dxc5 d4. Black pushes the d-pawn to cramp White and gain time, aiming to regain c5 and attack with ...e5, ...Nc6 and ...Bxc5. White can keep the extra pawn and often plays 4.e4 or 4.Nf3 and 5.e3 to challenge the d4 pawn. It is a rare gambit.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn and challenge d4 with e3 or e4"
+    },
+    {
+      "idea": "Develop Nf3, Nbd2 and Qa4+ ideas"
+    },
+    {
+      "idea": "Regroup to neutralise Black's queenside initiative"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the c5 pawn with ...e6 and ...Bxc5, or ...e5 and ...Bxc5"
+    },
+    {
+      "idea": "Use the d4 pawn to cramp White and gain space"
+    },
+    {
+      "idea": "Develop quickly with ...Nf6, ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like with Black pawn on d4 against White c-pawns; White holds an extra pawn on c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for activity and the initiative against a more material White."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black offers the c-pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "Considered dubious for Black but with real practical chances."
+    },
+    "structure": {
+      "notes": "The d4 pawn creates a cramped, tense centre rather than a settled one."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A dubious line is never Beginner; tactics matter."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black gambits and plays for the initiative, tactical."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.75,
+      "reason": "Black pushes d4 as a countergambit while White can hold c5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Considered dubious with White keeping the extra pawn."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Tense, cramped centre not yet resolved."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for development and the initiative."
+    }
+  }
+}

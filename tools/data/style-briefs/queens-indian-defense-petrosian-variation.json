@@ -1,0 +1,47 @@
+{
+  "slug": "queens-indian-defense-petrosian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Petrosian Variation",
+    "eco": "E12",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. a3",
+    "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/P4N2/1P2PPPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "queens-indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "high",
+  "overview": "White spends a move on a3 to stop ...Bb4 and prepare Nc3 and e4 or Qc2 and e4, building a big centre. Black fianchettoes with 4...Bb7 or challenges the c4 pawn with 4...Ba6, or strikes with 4...c5 5.d5 for a Benoni-like game. Play is a manoeuvring fight over e4 and the centre, with Black's pieces counterattacking rather than a quick tactical race.",
+  "white_ideas": [
+    { "idea": "Play Nc3 and e4 (or Qc2 first) to build a broad centre while Black's dark-squared bishop has no pin." },
+    { "idea": "After 4...Ba6 5.Qc2 Bb7 6.Nc3 Be7 7.e4, enjoy space." }
+  ],
+  "black_ideas": [
+    { "idea": "Fianchetto with ...Bb7 and ...d5 or fight for e4 with ...Ne4." },
+    { "idea": "With ...Ba6 target c4 and force concessions; or break with ...c5 and ...d6 or ...exd5." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e4 centre against Black's fianchettoed queen's bishop and ...d5 or ...c5 breaks." },
+    { "structure": "Benoni-like after 4...c5 5.d5 exd5 6.cxd5." }
+  ],
+  "axis_evidence": {
+    "character": { "notes": "Positional manoeuvring over centre control with few forcing tactics; neither side takes big risks." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "A respected main-line system for both sides." },
+    "structure": { "notes": "The centre stays in tension while White prepares e4; no fixed pawn structure." },
+    "approach": { "notes": "Standard for strong players, chosen by Petrosian and many later." },
+    "level": { "reason": "understanding", "notes": "Manoeuvring and strategic judgment matter more than memorised lines." }
+  },
+  "plan_phrases": ["fianchetto", "fight for e4", "space advantage"],
+  "sublines_that_differ": [
+    { "name": "4...c5 5.d5", "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. a3 c5 5. d5", "how": "Benoni-type play with unbalanced pawn structures." }
+  ],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.5, "reason": "Manoeuvring play, neither especially hard to break nor forcing." },
+    "gambit": { "value": "none", "confidence": 0.98, "reason": "No material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.95, "reason": "A standard main-line system." },
+    "structure": { "value": "flexible", "confidence": 0.7, "reason": "The centre stays in tension with e4 and ...d5 still to come." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played regularly by strong players but depends on Black's choice." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "Needs positional judgment more than memory." },
+    "plans": { "value": ["fianchetto", "space_advantage"], "reason": "Black fianchettoes while White builds space in the centre." }
+  }
+}

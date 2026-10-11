@@ -1,0 +1,119 @@
+{
+  "slug": "kings-gambit-declined-mafia-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Mafia Defense",
+    "eco": "C30",
+    "moves": "1. e4 c5 2. f4 e5",
+    "fen": "rnbqkbnr/pp1p1ppp/8/2p1p3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "sicilian-defense-mcdonnell-attack",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Against the McDonnell Attack 2.f4, Black strikes in the centre with 2...e5, a reversed King's Gambit Declined with Black already committed to ...c5. White usually plays 3.Nf3 and fxe5 or Bc4, developing normally and exploiting the loosened Black queenside. Black gets space and a solid centre, but the line is rare.",
+  "white_ideas": [
+    {
+      "idea": "Develop Nf3, Bc4 and castle, hitting the e5 pawn with fxe5"
+    },
+    {
+      "idea": "Use the f-file and attack on f7"
+    },
+    {
+      "idea": "Play Nc3 and d3 for a solid set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the centre with ...Nc6 and ...Nf6"
+    },
+    {
+      "idea": "Capture on f4 and use ...d5 to break"
+    },
+    {
+      "idea": "Keep the pawn structure and play ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Centre with White e4/f4 against Black c5/e5 pawns"
+    },
+    {
+      "structure": "Black can take on f4 for an open f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has a solid centre and White a normal development, with tactics on f4 and e5."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given up in the typical line; Black can exchange on f4 and White regains it."
+    },
+    "soundness": {
+      "notes": "Black's centre play is a reasonable answer to 2.f4."
+    },
+    "structure": {
+      "notes": "Pawn tension on e5 and f4 stays undecided for some moves."
+    },
+    "approach": {
+      "notes": "The Mafia move is a rare reply that strong players seldom pick."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Pawn structure and tactics around f4 need care, with little theory."
+    }
+  },
+  "plan_phrases": [
+    "Central space",
+    "Attack on f4"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Tal Gambit 2...d5",
+      "moves": "1. e4 c5 2. f4 d5",
+      "how": "Parent line's alternative; different structure with a pawn gambit."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Black has a solid centre and White a normal development, with tactics on f4 and e5."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No pawn is given up in the typical line; Black can exchange on f4 and White regains it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Black's centre play is a reasonable answer to 2.f4."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Pawn tension on e5 and f4 stays undecided for some moves."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "The Mafia move is a rare reply that strong players seldom pick."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Pawn structure and tactics around f4 need care, with little theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "Black claims central space with ...e5 against White's kingside f4 pawn."
+    }
+  }
+}

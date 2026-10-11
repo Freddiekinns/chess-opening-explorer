@@ -1,0 +1,92 @@
+{
+  "slug": "kings-gambit-declined-keene-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Keene Defense",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Qh4+ 3. g3 Qe7",
+    "fen": "rnb1kbnr/ppppqppp/8/4p3/4PP2/6P1/PPPP3P/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "kings-gambit-declined-keenes-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black checks with the queen and retreats it to e7 after 3.g3, having provoked the g-pawn move. White has a free hand: 4.fxe5 Qxe5 5.d4 gives a big centre and the lead in development, with Nf3, Bg2 or Bd3 to follow. Black has lost time with the queen and is usually worse. The line is rare and treated as inferior to the main 2...Bc5 and 2...d5 replies.",
+  "white_ideas": [
+    { "idea": "Take on e5 and build the centre with d4, Nf3 and Bg2 or Bd3 and exploit the lead in development." },
+    { "idea": "Use the half-open f-file and attack the queen with tempo." }
+  ],
+  "black_ideas": [
+    { "idea": "Recapture on e5 with the queen, develop ...Nf6 and ...d6 and try to hold the centre." },
+    { "idea": "Hope to exploit the weakened kingside light squares after g3." }
+  ],
+  "typical_structures": [
+    { "structure": "White d4/e4 centre with the f-pawn gone against Black's queen on e5/e7 and a lag in development." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The early queen and open f-file lead to forcing, open play in which Black is more exposed."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The gambit is declined; fxe5 takes a pawn but Black recaptures with the queen."
+    },
+    "soundness": {
+      "notes": "Strong players regard the Keene Defense as inferior; White gets an easy edge."
+    },
+    "structure": {
+      "notes": "Pawns in the centre are exchanged, leaving open lines for pieces."
+    },
+    "approach": {
+      "notes": "Strong players seldom play 2...Qh4+; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A dubious line, so never beginner; not much theory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development for White",
+    "early queen for Black"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The King's Gambit with an early queen and an open f-file leads to forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Declined: no lasting material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "The queen sortie loses time and White gets an easy edge."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The centre pawns come off and play turns on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious, never beginner, little theory."
+    },
+    "plans": {
+      "value": ["early_queen", "lead_in_development"],
+      "reason": "Black's queen comes out early and White develops with tempo."
+    }
+  }
+}

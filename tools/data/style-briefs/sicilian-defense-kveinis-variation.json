@@ -1,0 +1,110 @@
+{
+  "slug": "sicilian-defense-kveinis-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Kveinis Variation",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Qb6",
+    "fen": "rnb1kbnr/pp1p1ppp/1q2p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 Black plays 4...Qb6, hitting the knight and b2. White usually answers 5.Nb3 (or 5.Nc3) and Black develops with ...Nf6 and ...Bb4 or ...d6. Black's queen is exposed to tempo moves but the position is sound. It is a rare line within the Sicilian.",
+  "white_ideas": [
+    {
+      "idea": "Retreat 5.Nb3 and develop Nc3, Bd3 and castle"
+    },
+    {
+      "idea": "Gain tempi on the queen with Nb5, Be3 or Nd4-b5"
+    },
+    {
+      "idea": "Build a space edge with e5 or f4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure b2 and the d4 knight with the queen"
+    },
+    {
+      "idea": "Develop ...Nf6, ...Bb4, ...d6"
+    },
+    {
+      "idea": "Break with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian with a half-open c-file; Black e6 and d6 pawn chain, queen on b6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for activity but White has comfortable development; no forced sequences."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "b2 is guarded after Nb3, so no gambit."
+    },
+    "soundness": {
+      "notes": "Playable and sound."
+    },
+    "structure": {
+      "notes": "Typical Sicilian: half-open c-file for Black."
+    },
+    "approach": {
+      "notes": "Rarely seen at strong level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Moderate theory."
+    }
+  },
+  "plan_phrases": [
+    "half-open c-file",
+    "queen activity"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Black plays actively but the position is not forcing or a mutual attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Playable, roughly equal."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "Sicilian with an asymmetrical centre and half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare line that strong players seldom pick."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear, tactics around the queen need care."
+    },
+    "plans": {
+      "value": [
+        "half_open_c_file"
+      ],
+      "reason": "Black has the half-open c-file in a Sicilian structure."
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "zukertort-opening-the-walrus",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: The Walrus",
+    "eco": "A04",
+    "moves": "1. Nf3 e5 2. Nxe5 Nc6 3. Nxc6 dxc6",
+    "fen": "r1bqkbnr/ppp2ppp/2p5/8/8/8/PPPPPPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "zukertort-opening-ross-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black meets 1.Nf3 e5 2.Nxe5 with the counter 2...Nc6 3.Nxc6 dxc6 (the Walrus), giving the e-pawn for open lines. White is a pawn up with a healthy structure; Black has doubled c-pawns, but open d- and e-files, a lead in development and the two bishops. White aims to consolidate with d3 or e4 and develop; Black aims for ...Bd6, ...Qh4 or ...Bg4 pressure and ...Nf6.",
+  "white_ideas": [
+    { "idea": "Hold the extra pawn with d3, e3 or e4 and complete development calmly." },
+    { "idea": "Trade queens on the d-file to reach a better structure endgame." }
+  ],
+  "black_ideas": [
+    { "idea": "Use the open d-file and quick development with ...Bd6, ...Nf6, ...Bg4 or ...Qh4." },
+    { "idea": "Recover the pawn on e4 or by pressure on the e-file." }
+  ],
+  "typical_structures": [
+    { "structure": "White has full pawns against Black's doubled c-pawns, with the d- and e-files half-open." }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for activity against a pawn deficit, so the play is forcing and risky for Black."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White is a pawn up in the FEN after 3...dxc6 and can keep it if he develops accurately."
+    },
+    "soundness": {
+      "notes": "White can try to hold the extra pawn without much danger, so the Walrus is considered dubious for Black."
+    },
+    "structure": {
+      "notes": "Open d- and e-files and fast piece play, with doubled c-pawns."
+    },
+    "approach": {
+      "notes": "A rare gambit-style reply by Black that strong players seldom use."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Compensation is positional and hard to judge; a dubious line is never a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development for the pawn",
+    "open d-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black plays actively for a pawn with open lines and risk."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black is a pawn down in the FEN and plays for compensation."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "White can hold the pawn and the doubled c-pawns are a lasting structural cost."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Open d- and e-files and fast piece development drive the game."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players rarely allow or choose this line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious line, so never beginner, and no long theory."
+    },
+    "plans": {
+      "value": ["lead_in_development"],
+      "reason": "Black's compensation is the development lead for the missing pawn."
+    }
+  }
+}

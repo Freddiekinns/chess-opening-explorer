@@ -1,0 +1,103 @@
+{
+  "slug": "richter-veresov-attack-richter-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Richter-Veresov Attack: Richter Variation",
+    "eco": "D01",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. Bg5 Bf5 4. f3",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/3p1bB1/3P4/2N2P2/PPP1P1PP/R2QKBNR b KQkq - 0 4"
+  },
+  "parent": "richter-veresov-attack",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.d4 Nf6 2.Nc3 d5 3.Bg5 Bf5 White plays 4.f3 to prepare e4 and keep the Bg5 supported, with a pawn centre to follow. Black can reply 4...Nbd7, 4...Bg6 or 4...c6, and answers e4 with ...dxe4 fxe4 and ...Bxe4. It is a less common idea than 4.Bxf6 or 4.e3.",
+  "white_ideas": [
+    {
+      "idea": "Push e4 with f3 support and open the centre"
+    },
+    {
+      "idea": "Keep the Bg5 and pressure Black kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the centre with ...dxe4 and develop the Bf5"
+    },
+    {
+      "idea": "Strike with ...c5 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn centre d4/e4/f3 vs flexible Black development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "f3 supports e4 and keeps the Bg5, so play stays about the centre with no forced sacrifices."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound, a modest anti-Bf5 idea; Black equalises with ...Nbd7/...c6 or ...dxe4."
+    },
+    "structure": {
+      "notes": "The d4 and e-pawn tension after f3 and e4 leaves the centre undecided."
+    },
+    "approach": {
+      "notes": "A sideline within the Richter-Veresov, itself a respectable but secondary choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans and tactics around e4 and the Bg5 pin; little deep theory."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither clearly solid nor forcing; f3 is slightly loosening."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is sacrificed by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "f3 is a normal if slightly slow Veresov idea."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Tension around d4 and e4 with the centre not yet decided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A sideline of a respectable opening rather than an unused one."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Needs central plans, not heavy memory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White aims for e4 and a broad pawn centre."
+    }
+  }
+}

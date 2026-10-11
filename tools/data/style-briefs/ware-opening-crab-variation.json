@@ -1,0 +1,105 @@
+{
+  "slug": "ware-opening-crab-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ware Opening: Crab Variation",
+    "eco": "A00",
+    "moves": "1. a4 e5 2. h4",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/P6P/8/1PPPPPP1/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "ware-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White opens with two rook-pawn moves, 1.a4 e5 2.h4, and has no central presence at all. Black takes the centre with ...d5 and ...Nf6 and White develops with e3, Nf3 and d4 or d3 later. The line is a joke by master standards and only scores through surprise.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3, e3 and d4 or d3 and hope the wing pawns are not a liability"
+    },
+    {
+      "idea": "Use the h-file or a4 push to cramp Black later"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...d5 and ...Nf6"
+    },
+    {
+      "idea": "Develop quickly and exploit the lost tempi"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black central pawn majority against White's undeveloped centre"
+    },
+    {
+      "structure": "Open-game positions where White has spent two moves on the rim"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, quiet game where White has wasted tempi; nothing forcing, but no real danger either."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Objectively playable because Black has no direct punishment, but White is a clear tempo behind and Black is comfortably better."
+    },
+    "structure": {
+      "notes": "White has no centre pawns and Black builds one; the centre stays undecided for a while."
+    },
+    "approach": {
+      "notes": "Strong players essentially never choose 1.a4 e5 2.h4. Chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to study and a real risk of being worse; not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Wing pawn advances",
+    "Surprise value"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow, unforcing game where White is simply a tempo or two behind."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Black has no forced punishment but White is worse by a margin; not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is not decided and White has no central pawns yet."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "1.a4 and 2.h4 together are chosen only for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Nothing to memorise but not a sound first repertoire choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No recognisable plan from the list."
+    }
+  }
+}

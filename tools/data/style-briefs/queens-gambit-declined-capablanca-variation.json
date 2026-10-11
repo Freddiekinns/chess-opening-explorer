@@ -1,0 +1,105 @@
+{
+  "slug": "queens-gambit-declined-capablanca-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Capablanca Variation",
+    "eco": "D30",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Bg5 h6",
+    "fen": "rnbqkb1r/ppp2pp1/4pn1p/3p2B1/2PP4/5N2/PP2PPPP/RN1QKB1R w KQkq - 0 5"
+  },
+  "parent": "queens-gambit-declined-traditional-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White pins the knight with Bg5 against the Queen's Gambit Declined, and in the most played line Black plays ...Nbd7 and ...c6, with e3 and Nbd2 or Nc3 and a3 for White. Black keeps a solid pawn chain on e6, d5, c6 and prepares ...dxc4 and ...e5. The game is a manoeuvring one in which Black has the minor problem of the c8-bishop.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nbd2, e3, Bd3 and prepare castle and cxd5"
+    },
+    {
+      "idea": "Keep the pin on f6 and control e5 and e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the centre solid and play ...dxc4 and ...e5 to free the position"
+    },
+    {
+      "idea": "Solve the c8-bishop with ...b6 or ...b5 plans"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD pawn chain: White d4/c4/e3 against Black e6/d5/c6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Low-risk positional play with few chances of an early tactical loss."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "A well-established main line."
+    },
+    "structure": {
+      "notes": "Tension between c4 and d5 with exchanges possible; the centre is undecided."
+    },
+    "approach": {
+      "notes": "Standard QGD variation."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Takes standard understanding of QGD structures."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    {
+      "name": "Capablanca-Duras with 4...h6",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Bg5 h6",
+      "how": "Root move; 5.Bh4 or 5.Bxf6 is more orthodox"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "Compact QGD structure that is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Main line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays in tension, as in QGD generally."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A standard QGD line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Positional understanding more than memorisation."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single named plan dominates."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "sicilian-defense-quinteros-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Quinteros Variation",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 Qc7",
+    "fen": "rnb1kbnr/ppqppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black plays 2...Qc7 before ...Nc6 or ...e6, the Accelerated Paulsen set-up, keeping options like ...a6, ...Nf6, ...Nc6. After 3.d4 cxd4 4.Nxd4 the game transposes to Paulsen or Taimanov-type positions, and White can also go for Maroczy bind with c4. Black has a half-open c-file and flexible development.",
+  "white_ideas": [
+    {
+      "idea": "Play d4 and Nxd4, then Nc3 and Be3 with an open Sicilian"
+    },
+    {
+      "idea": "Build a bind with c4 where possible"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the queen on c7 for ...Nc6, ...a6 and ...e6"
+    },
+    {
+      "idea": "Pressure the c-file and meet e4 with ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian with asymmetrical centre, Black with the c-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Paulsen set-ups are flexible and not necessarily forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "A sound if slightly unusual move order."
+    },
+    "structure": {
+      "notes": "Sicilian: asymmetrical centre and a half-open c-file."
+    },
+    "approach": {
+      "notes": "A sideline that strong players do not often choose first; but a normal option."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Sicilian understanding needed, theory is moderate."
+    }
+  },
+  "plan_phrases": [
+    "Half-open c-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Maroczy Bind",
+      "moves": "1. e4 c5 2. Nf3 Qc7 3. c4",
+      "how": "White avoids the open Sicilian and gets a bind"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flexible Paulsen-type play, not clearly solid or sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Established Sicilian."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.9,
+      "reason": "A Sicilian with a half-open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Less common but a respectable move order."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Sicilian structures need understanding."
+    },
+    "plans": {
+      "value": [
+        "half_open_c_file"
+      ],
+      "reason": "Black uses the c-file."
+    }
+  }
+}

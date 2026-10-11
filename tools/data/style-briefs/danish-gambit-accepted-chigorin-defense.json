@@ -1,0 +1,105 @@
+{
+  "slug": "danish-gambit-accepted-chigorin-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Danish Gambit Accepted: Chigorin Defense",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 Qe7",
+    "fen": "rnb1kbnr/ppppqppp/8/8/2B1P3/8/PB3PPP/RN1QK1NR w KQkq - 1 6"
+  },
+  "parent": "danish-gambit-accepted",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 White has given two pawns for open lines and bishops aimed at f7 and g7. Black plays 5...Qe7, hitting e4 and the Bb2, and White goes 6.Nc3 and Nge2 or Nf3. Black can keep both pawns and return them to neutralise the attack.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly and hit f7 and g7 with Bc4, Bb2"
+    },
+    {
+      "idea": "Use Nc3, Nf3, O-O"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit e4 with the queen and return a pawn if needed"
+    },
+    {
+      "idea": "Develop ...Nf6, ...d6, ...Be6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, White bishops on open diagonals"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Two pawns down, White aims bishops at g7 and f7 and develops fast; forcing and risky for both."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Two pawns that Black may keep."
+    },
+    "soundness": {
+      "notes": "Black can keep material or return a pawn to defuse the attack; the gambit is regarded as insufficient."
+    },
+    "structure": {
+      "notes": "Both d-pawns and the c-pawn are gone, giving open files and diagonals."
+    },
+    "approach": {
+      "notes": "The Danish is a rare surprise weapon for strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious lines are not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Two pawns for open lines and attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.95,
+      "reason": "White has given two pawns that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Compensation is considered insufficient against best play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.9,
+      "reason": "Open centre and diagonals."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious, so not Beginner, and the attack is easy to play."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White plays speed against the king."
+    }
+  }
+}

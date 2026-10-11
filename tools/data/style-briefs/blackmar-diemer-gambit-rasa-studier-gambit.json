@@ -1,0 +1,111 @@
+{
+  "slug": "blackmar-diemer-gambit-rasa-studier-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit: Rasa-Studier Gambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. Be3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3Pp3/2N1B3/PPP2PPP/R2QKBNR b KQkq - 3 4"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "White offers the e-pawn with 1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 and develops 4.Be3 instead of the main 4.f3, aiming for Qd2, O-O-O and a quick Bd3 or Nge2 with f3 to follow. Black can keep the pawn with ...Nc6, ...Bf5 or ...e5 and hit d4, so White relies on development and open lines. The game is open and tactical, and objectively White gets less than in the main BDG.",
+  "white_ideas": [
+    {
+      "idea": "Win time with Be3 and Qd2, then O-O-O with a pawn storm on the kingside"
+    },
+    {
+      "idea": "Regain e4 or build on f3 and Bd3 with a lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...Nc6, ...Bf5 and ...e6"
+    },
+    {
+      "idea": "Counter in the centre with ...e5 or ...c5 to break up the d4 pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after e4 is taken, White with a development lead and open e- and f-files"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open, forcing play with a pawn down for White; known for tactics and attacks on the king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the e4 pawn and Black can keep it with ...Nc6/...Bf5."
+    },
+    "soundness": {
+      "notes": "Rated as unsound against accurate defence, like the BDG as a whole; scores through surprise at club level."
+    },
+    "structure": {
+      "notes": "Centre opens at once with exchanges on e4 and d4 pawn tension, open files for the pieces."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose it; the BDG is a surprise weapon and this move order is rarer still."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Attack is easy to play but the defences must be known and the line is not a good first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main BDG",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3",
+      "how": "Parent line with f3 and Bc4, much more theory"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Open tactical play with a pawn down for White."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White offers the e4 pawn which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "The BDG is considered insufficient for the pawn against best defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens immediately and the pieces fight for open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "A rare BDG sideline chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never Beginner, and the theory is modest."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "The gambit plan is development and attack."
+    }
+  }
+}

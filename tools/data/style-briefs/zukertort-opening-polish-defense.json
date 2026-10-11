@@ -1,0 +1,105 @@
+{
+  "slug": "zukertort-opening-polish-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Polish Defense",
+    "eco": "A04",
+    "moves": "1. Nf3 b5",
+    "fen": "rnbqkbnr/p1pppppp/8/1p6/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black answers 1.Nf3 with 1...b5, grabbing queenside space and aiming the bishop on b7 at the long diagonal and at e4. White can play 2.e4 Bb7 3.Bxb5, taking a pawn, or 2.e3 Bb7 3.Bxb5, as Black gets quick development for the pawn. It is a rare counter-gambit set-up and is dubious in practice.",
+  "white_ideas": [
+    {
+      "idea": "Take the b5 pawn with Bxb5 or a4 and develop sensibly"
+    },
+    {
+      "idea": "Take the centre with e4/d4 and challenge the Bb7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop the Bb7 on the long diagonal and play ...e6 and ...Nf6"
+    },
+    {
+      "idea": "Hit back at the white centre and play ...a6 and ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black queenside pawns advanced with a bishop on b7 against a normal White centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for activity at the cost of a pawn or structure, with unbalanced play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "The b5 pawn can be taken by Bxb5 and Black plays for development."
+    },
+    "soundness": {
+      "notes": "Considered dubious, with White entitled to an edge."
+    },
+    "structure": {
+      "notes": "Open diagonals more than a fixed centre."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious line, never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Black gives a pawn for activity."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.55,
+      "reason": "The b5 pawn can be captured with Bxb5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "White is better after the capture."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is not defined."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Black seeks a quick development and a long-diagonal bishop."
+    }
+  }
+}

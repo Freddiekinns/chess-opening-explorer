@@ -65844,5 +65844,3285 @@
         }
       }
     }
+  },
+  "alekhine-defense-hunt-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 0.93,
+          "white": 0.07,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0.15,
+          "dubious": 0.85
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.44,
+          "semi_open": 0.08,
+          "flexible": 0.4,
+          "closed": 0.08
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.2,
+          "advanced": 0.8
+        }
+      },
+      "plans": {
+        "choice": "space_advantage",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.01,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.98,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0.01,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "barnes-opening-hammerschlag": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.03,
+          "sharp": 0.97
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0.01,
+          "semi_open": 0.01,
+          "flexible": 0.98,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.24,
+          "intermediate": 0.13,
+          "advanced": 0.63
+        }
+      },
+      "plans": {
+        "choice": "space_advantage",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.42,
+          "central_pawn_majority": 0.08,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0.01,
+          "kingside_attack": 0.05,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.04,
+          "lead_in_development": 0.35,
+          "hypermodern_centre": 0.02,
+          "early_queen": 0.02,
+          "symmetrical_structure": 0.01
+        }
+      }
+    }
+  },
+  "benoni-defense-uhlmann-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.16,
+          "sharp": 0.84
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0.79,
+          "flexible": 0.02,
+          "closed": 0.19
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 1,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.43,
+          "advanced": 0.57
+        }
+      },
+      "plans": {
+        "choice": "space_advantage",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.02,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.01,
+          "space_advantage": 0.87,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0.09999999999999999,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "bishops-opening-stein-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.02,
+          "sharp": 0.98
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0.11,
+          "white": 0.89,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "open": 0.36,
+          "semi_open": 0.46,
+          "flexible": 0.17,
+          "closed": 0.01
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 1,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.95,
+          "advanced": 0.05
+        }
+      },
+      "plans": {
+        "choice": "pressure_on_f7",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.02,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.98,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "blackmar-diemer-gambit-accepted-pietrowsky-defense": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 1,
+          "semi_open": 0,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.01,
+          "intermediate": 0.06,
+          "advanced": 0.93
+        }
+      },
+      "plans": {
+        "choice": "lead_in_development",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.01,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.05,
+          "lead_in_development": 0.94,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "blackmar-diemer-gambit-diemer-rosenberg-attack": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.99,
+          "semi_open": 0.01,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.03,
+          "intermediate": 0.97,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "opposite_side_castling",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.28,
+          "pawn_storm": 0.16,
+          "opposite_side_castling": 0.45,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0.11,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "blackmar-diemer-gambit-rasa-studier-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.99,
+          "semi_open": 0.01,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.07,
+          "advanced": 0.93
+        }
+      },
+      "plans": {
+        "choice": "lead_in_development",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.02,
+          "pawn_storm": 0.02,
+          "opposite_side_castling": 0.06,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0.9,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "bogo-indian-defense-wade-smyslov-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 0.99,
+          "closed": 0.01
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 1,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.25,
+          "intermediate": 0.75,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "fianchetto",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0.04,
+          "maroczy_bind": 0,
+          "hedgehog": 0.01,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.79,
+          "space_advantage": 0.04,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0.08,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.03,
+          "early_queen": 0,
+          "symmetrical_structure": 0.01
+        }
+      }
+    }
+  },
+  "center-game-ross-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 1,
+          "semi_open": 0,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.03,
+          "intermediate": 0.31,
+          "advanced": 0.66
+        }
+      },
+      "plans": {
+        "choice": "lead_in_development",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.01,
+          "lead_in_development": 0.99,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "danish-gambit-accepted-chigorin-defense": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 1,
+          "semi_open": 0,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.17,
+          "advanced": 0.83
+        }
+      },
+      "plans": {
+        "choice": "pressure_on_f7",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0.01,
+          "bad_bishop": 0,
+          "kingside_attack": 0.01,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.81,
+          "lead_in_development": 0.17,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "danish-gambit-accepted-schlechter-defense": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 1,
+          "semi_open": 0,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.98,
+          "advanced": 0.02
+        }
+      },
+      "plans": {
+        "choice": "lead_in_development",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.02,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0.08,
+          "bad_bishop": 0,
+          "kingside_attack": 0.08,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.01,
+          "lead_in_development": 0.8,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "elephant-gambit-maroczy-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.01,
+          "sharp": 0.99
+        }
+      },
+      "gambit": {
+        "choice": "black",
+        "probabilities": {
+          "none": 0,
+          "white": 0,
+          "black": 1
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.74,
+          "semi_open": 0.25,
+          "flexible": 0.01,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.02,
+          "intermediate": 0.2,
+          "advanced": 0.78
+        }
+      },
+      "plans": {
+        "choice": "lead_in_development",
+        "probabilities": {
+          "isolated_queens_pawn": 0.18,
+          "hanging_pawns": 0.01,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0.01,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.17,
+          "central_pawn_majority": 0.02,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0.56,
+          "hypermodern_centre": 0.04,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "french-defense-franco-hiva-gambit-accepted": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.01,
+          "sharp": 0.99
+        }
+      },
+      "gambit": {
+        "choice": "black",
+        "probabilities": {
+          "none": 0,
+          "white": 0,
+          "black": 1
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.46,
+          "semi_open": 0.39,
+          "flexible": 0.13,
+          "closed": 0.02
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.06,
+          "intermediate": 0.13,
+          "advanced": 0.8099999999999999
+        }
+      },
+      "plans": {
+        "choice": "kingside_attack",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.01,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.01,
+          "central_pawn_majority": 0.01,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.66,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.02,
+          "lead_in_development": 0.27,
+          "hypermodern_centre": 0.01,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "fried-fox-defense": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0.03,
+          "semi_open": 0.03,
+          "flexible": 0.91,
+          "closed": 0.03
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.27,
+          "intermediate": 0.12,
+          "advanced": 0.61
+        }
+      },
+      "plans": {
+        "choice": "pressure_on_f7",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.02,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.23,
+          "central_pawn_majority": 0.15,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.06,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.52,
+          "lead_in_development": 0.02,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "indian-defense-maddigan-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.04,
+          "sharp": 0.96
+        }
+      },
+      "gambit": {
+        "choice": "black",
+        "probabilities": {
+          "none": 0,
+          "white": 0,
+          "black": 1
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.98,
+          "semi_open": 0.01,
+          "flexible": 0.01,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.01,
+          "intermediate": 0.94,
+          "advanced": 0.05
+        }
+      },
+      "plans": {
+        "choice": "lead_in_development",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.04,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0.01,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0.93,
+          "hypermodern_centre": 0.02,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "indian-defense-paleface-attack": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 1,
+          "semi_open": 0,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.05,
+          "intermediate": 0.19,
+          "advanced": 0.76
+        }
+      },
+      "plans": {
+        "choice": "kingside_attack",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.02,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0.02,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.79,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0.17,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "kings-gambit-accepted-allgaier-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 1,
+          "semi_open": 0,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0,
+          "advanced": 1
+        }
+      },
+      "plans": {
+        "choice": "kingside_attack",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.74,
+          "pawn_storm": 0.02,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.24,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "modern-defense-lizard-defense": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0.31,
+          "semi_open": 0.19,
+          "flexible": 0.5,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.13,
+          "intermediate": 0.07,
+          "advanced": 0.8
+        }
+      },
+      "plans": {
+        "choice": "kingside_attack",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.01,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.62,
+          "pawn_storm": 0.37,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "neo-grunfeld-defense-exchange-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "balanced",
+        "probabilities": {
+          "solid": 0.26,
+          "balanced": 0.74,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0.05,
+          "flexible": 0.95,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0.02,
+          "standard": 0.98,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.03,
+          "intermediate": 0.83,
+          "advanced": 0.14
+        }
+      },
+      "plans": {
+        "choice": "fianchetto",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.85,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.15,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "neo-grunfeld-defense-with-g3": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 0.99,
+          "balanced": 0.01,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0.01,
+          "flexible": 0.99,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0.01,
+          "standard": 0.99,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.01,
+          "intermediate": 0.96,
+          "advanced": 0.03
+        }
+      },
+      "plans": {
+        "choice": "fianchetto",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.99,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0.01
+        }
+      }
+    }
+  },
+  "nimzo-indian-defense-dilworth-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.99,
+          "semi_open": 0.01,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0.02,
+          "intermediate": 0.03,
+          "advanced": 0.95
+        }
+      },
+      "plans": {
+        "choice": "kingside_attack",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0.01,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.5700000000000001,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.01,
+          "lead_in_development": 0.36,
+          "hypermodern_centre": 0,
+          "early_queen": 0.04,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "nimzo-larsen-attack-graz-attack": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 0.56,
+          "dubious": 0.44
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 1,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "beginner",
+        "probabilities": {
+          "beginner": 0.89,
+          "intermediate": 0.11,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "hypermodern_centre",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.01,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.1,
+          "space_advantage": 0.01,
+          "central_pawn_majority": 0.27,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0.02,
+          "bad_bishop": 0.03,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0.02,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.45,
+          "early_queen": 0,
+          "symmetrical_structure": 0.09
+        }
+      }
+    }
+  },
+  "polish-opening-bugayev-advance-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 0.98,
+          "dubious": 0.02
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 0.59,
+          "closed": 0.41
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.16,
+          "intermediate": 0.84,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "queenside_expansion",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.09,
+          "space_advantage": 0.04,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0.87,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "polish-opening-dutch-defense": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 0.91,
+          "balanced": 0.09,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 1,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.12,
+          "intermediate": 0.88,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "fianchetto",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0.02,
+          "doubled_pawns": 0,
+          "fianchetto": 0.9400000000000001,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.03,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "polish-opening-symmetrical-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 0.97,
+          "balanced": 0.03,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 1,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "beginner",
+        "probabilities": {
+          "beginner": 0.73,
+          "intermediate": 0.26,
+          "advanced": 0.01
+        }
+      },
+      "plans": {
+        "choice": "symmetrical_structure",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.04,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0.96
+        }
+      }
+    }
+  },
+  "queens-gambit-declined-capablanca-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 1,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 1,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.03,
+          "intermediate": 0.97,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "bad_bishop",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0.13,
+          "maroczy_bind": 0,
+          "hedgehog": 0.01,
+          "stonewall": 0.01,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0.02,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0.66,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0.01,
+          "queenside_expansion": 0.02,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.01,
+          "early_queen": 0,
+          "symmetrical_structure": 0.13
+        }
+      }
+    }
+  },
+  "queens-gambit-declined-pseudo-tarrasch-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.43,
+          "sharp": 0.57
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.99,
+          "semi_open": 0.01,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 1,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.1,
+          "advanced": 0.9
+        }
+      },
+      "plans": {
+        "choice": "lead_in_development",
+        "probabilities": {
+          "isolated_queens_pawn": 0.01,
+          "hanging_pawns": 0.02,
+          "carlsbad_structure": 0.01,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0.04,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0.59,
+          "hypermodern_centre": 0.01,
+          "early_queen": 0.3,
+          "symmetrical_structure": 0.02
+        }
+      }
+    }
+  },
+  "queens-indian-defense-anti-queens-indian-system": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 1,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0.01,
+          "standard": 0.99,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 1,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "fianchetto",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 1,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "richter-veresov-attack-richter-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 0.87,
+          "balanced": 0.13,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0.01,
+          "semi_open": 0,
+          "flexible": 0.99,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0.01,
+          "standard": 0.96,
+          "offbeat": 0.03
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.46,
+          "intermediate": 0.54,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "central_pawn_majority",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.07,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0.08,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.05,
+          "central_pawn_majority": 0.71,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.04,
+          "pawn_storm": 0.01,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.03,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.01,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "ruy-lopez-lucena-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 0.97,
+          "dubious": 0.03
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 0.81,
+          "closed": 0.19
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 1,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.11,
+          "intermediate": 0.89,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "bishop_pair",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0.19,
+          "fianchetto": 0,
+          "space_advantage": 0.06,
+          "central_pawn_majority": 0.02,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0.46,
+          "bad_bishop": 0.01,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.01,
+          "early_queen": 0,
+          "symmetrical_structure": 0.25
+        }
+      }
+    }
+  },
+  "ruy-lopez-vinogradov-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 0.58,
+          "dubious": 0.42
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0.02,
+          "semi_open": 0.11,
+          "flexible": 0.85,
+          "closed": 0.02
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "beginner",
+        "probabilities": {
+          "beginner": 0.78,
+          "intermediate": 0.22,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "early_queen",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0.01,
+          "doubled_pawns": 0.09,
+          "fianchetto": 0,
+          "space_advantage": 0.1,
+          "central_pawn_majority": 0.16,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0.01,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0.01,
+          "hypermodern_centre": 0,
+          "early_queen": 0.59,
+          "symmetrical_structure": 0.03
+        }
+      }
+    }
+  },
+  "scandinavian-defense-kiel-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.06,
+          "sharp": 0.94
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 0.88,
+          "dubious": 0.12
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 1,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 0.83,
+          "offbeat": 0.17
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.81,
+          "advanced": 0.19
+        }
+      },
+      "plans": {
+        "choice": "space_advantage",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.11,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0.01,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.8,
+          "central_pawn_majority": 0.04,
+          "half_open_c_file": 0,
+          "knight_outpost": 0.03,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0.01,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "scotch-game-ghulam-kassim-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "open": 0.17,
+          "semi_open": 0.83,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 1,
+          "offbeat": 0
+        }
+      },
+      "level": {
+        "choice": "beginner",
+        "probabilities": {
+          "beginner": 0.85,
+          "intermediate": 0.15,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "early_queen",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0.01,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0.98,
+          "symmetrical_structure": 0.01
+        }
+      }
+    }
+  },
+  "sicilian-defense-myers-attack": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 0.94,
+          "balanced": 0.06,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0.19,
+          "dubious": 0.81
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "open": 0.05,
+          "semi_open": 0.94,
+          "flexible": 0.01,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "beginner",
+        "probabilities": {
+          "beginner": 0.69,
+          "intermediate": 0.23,
+          "advanced": 0.08
+        }
+      },
+      "plans": {
+        "choice": "half_open_c_file",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 1,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "sicilian-defense-quinteros-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 0.88,
+          "balanced": 0.12,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "open": 0.03,
+          "semi_open": 0.97,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0.01,
+          "standard": 0.92,
+          "offbeat": 0.07
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 1,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "half_open_c_file",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 1,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "van-geet-opening-battambang-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 0.94,
+          "dubious": 0.06
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0,
+          "semi_open": 0,
+          "flexible": 1,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "beginner",
+        "probabilities": {
+          "beginner": 0.98,
+          "intermediate": 0.02,
+          "advanced": 0
+        }
+      },
+      "plans": {
+        "choice": "queenside_expansion",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.01,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.02,
+          "space_advantage": 0.02,
+          "central_pawn_majority": 0.32,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0.44,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.11,
+          "early_queen": 0,
+          "symmetrical_structure": 0.08
+        }
+      }
+    }
+  },
+  "van-geet-opening-sicilian-two-knights": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "balanced",
+        "probabilities": {
+          "solid": 0.01,
+          "balanced": 0.99,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "sound",
+        "probabilities": {
+          "sound": 1,
+          "dubious": 0
+        }
+      },
+      "structure": {
+        "choice": "semi_open",
+        "probabilities": {
+          "open": 0.04,
+          "semi_open": 0.96,
+          "flexible": 0,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "standard",
+        "probabilities": {
+          "system": 0,
+          "standard": 0.99,
+          "offbeat": 0.01
+        }
+      },
+      "level": {
+        "choice": "intermediate",
+        "probabilities": {
+          "beginner": 0.01,
+          "intermediate": 0.97,
+          "advanced": 0.02
+        }
+      },
+      "plans": {
+        "choice": "half_open_c_file",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0.01,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0.99,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "vienna-gambit-with-max-lange-defense-steinitz-gambit": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0,
+          "sharp": 1
+        }
+      },
+      "gambit": {
+        "choice": "white",
+        "probabilities": {
+          "none": 0,
+          "white": 1,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.79,
+          "semi_open": 0.1,
+          "flexible": 0.11,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.01,
+          "advanced": 0.99
+        }
+      },
+      "plans": {
+        "choice": "central_pawn_majority",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0.23,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0.02,
+          "central_pawn_majority": 0.51,
+          "half_open_c_file": 0,
+          "knight_outpost": 0.02,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0.16,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0.01,
+          "lead_in_development": 0.05,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "ware-opening-crab-variation": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "solid",
+        "probabilities": {
+          "solid": 1,
+          "balanced": 0,
+          "sharp": 0
+        }
+      },
+      "gambit": {
+        "choice": "none",
+        "probabilities": {
+          "none": 1,
+          "white": 0,
+          "black": 0
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0.01,
+          "dubious": 0.99
+        }
+      },
+      "structure": {
+        "choice": "flexible",
+        "probabilities": {
+          "open": 0.05,
+          "semi_open": 0,
+          "flexible": 0.95,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "beginner",
+        "probabilities": {
+          "beginner": 0.53,
+          "intermediate": 0.18,
+          "advanced": 0.29
+        }
+      },
+      "plans": {
+        "choice": "central_pawn_majority",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0,
+          "space_advantage": 0,
+          "central_pawn_majority": 0.99,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0,
+          "hypermodern_centre": 0.01,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
+  },
+  "zukertort-opening-polish-defense": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "character": {
+        "choice": "sharp",
+        "probabilities": {
+          "solid": 0,
+          "balanced": 0.01,
+          "sharp": 0.99
+        }
+      },
+      "gambit": {
+        "choice": "black",
+        "probabilities": {
+          "none": 0,
+          "white": 0,
+          "black": 1
+        }
+      },
+      "soundness": {
+        "choice": "dubious",
+        "probabilities": {
+          "sound": 0,
+          "dubious": 1
+        }
+      },
+      "structure": {
+        "choice": "open",
+        "probabilities": {
+          "open": 0.57,
+          "semi_open": 0.01,
+          "flexible": 0.42,
+          "closed": 0
+        }
+      },
+      "approach": {
+        "choice": "offbeat",
+        "probabilities": {
+          "system": 0,
+          "standard": 0,
+          "offbeat": 1
+        }
+      },
+      "level": {
+        "choice": "advanced",
+        "probabilities": {
+          "beginner": 0,
+          "intermediate": 0.35,
+          "advanced": 0.65
+        }
+      },
+      "plans": {
+        "choice": "queenside_expansion",
+        "probabilities": {
+          "isolated_queens_pawn": 0,
+          "hanging_pawns": 0,
+          "carlsbad_structure": 0,
+          "maroczy_bind": 0,
+          "hedgehog": 0,
+          "stonewall": 0,
+          "doubled_pawns": 0,
+          "fianchetto": 0.46,
+          "space_advantage": 0,
+          "central_pawn_majority": 0,
+          "half_open_c_file": 0,
+          "knight_outpost": 0,
+          "bishop_pair": 0,
+          "bad_bishop": 0,
+          "kingside_attack": 0,
+          "pawn_storm": 0,
+          "opposite_side_castling": 0,
+          "minority_attack": 0,
+          "queenside_expansion": 0.53,
+          "pressure_on_f7": 0,
+          "lead_in_development": 0.01,
+          "hypermodern_centre": 0,
+          "early_queen": 0,
+          "symmetrical_structure": 0
+        }
+      }
+    }
   }
 }

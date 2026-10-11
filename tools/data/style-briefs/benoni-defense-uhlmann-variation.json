@@ -1,0 +1,105 @@
+{
+  "slug": "benoni-defense-uhlmann-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Uhlmann Variation",
+    "eco": "A61",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6 7. Bg5",
+    "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP2B1/8/2N2N2/PP2PPPP/R2QKB1R b KQkq - 1 7"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "In the Benoni, White develops 7.Bg5 and after 7...Bg7 plays 8.e4 h6 9.Bh4 g5 10.Bg3 Nh5, or 7...h6. White has a space edge and the d5 wedge, while Black plays for ...b5 and ...Nbd7 and counterplay on the e-file and queenside. The game is double-edged.",
+  "white_ideas": [
+    {
+      "idea": "Push e4 and e5 with space"
+    },
+    {
+      "idea": "Pin and attack Black knight with Bg5, Qd2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Counter with ...h6/...g5 or ...Nbd7"
+    },
+    {
+      "idea": "Use ...b5 and ...Re8 pressure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni pawn structure: White d5/e4, Black c5/d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "After 8.e4 h6 9.Bh4 g5 both sides take real risks: White pushes e5 or Nd2 with space, Black counters on the e-file and queenside."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "A respected main line where Black has an accepted way to equalise."
+    },
+    "structure": {
+      "notes": "Asymmetric Benoni centre, White d5/e4 against Black c5/d6, with Black half-open e- and b-files."
+    },
+    "approach": {
+      "notes": "A standard sideline against the Benoni, in the repertoire of strong players on both sides."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs concrete move-order knowledge and the e5 and ...b5 plans."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Double-edged play where one slip loses quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A recognised line for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Fixed asymmetric centre with files to press on, though it can read as closed."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A main sideline of the Benoni."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Forcing theory plus hard plans."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "queenside_expansion"
+      ],
+      "reason": "White space in the centre, Black queenside play."
+    }
+  }
+}

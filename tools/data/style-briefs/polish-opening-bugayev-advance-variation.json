@@ -1,0 +1,111 @@
+{
+  "slug": "polish-opening-bugayev-advance-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Bugayev Advance Variation",
+    "eco": "A00",
+    "moves": "1. b4 e5 2. Bb2 f6 3. b5",
+    "fen": "rnbqkbnr/pppp2pp/5p2/1P2p3/8/8/PBPPPPPP/RN1QKBNR b KQkq - 0 3"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.b4 e5 2.Bb2 f6 Black defends e5 solidly and White pushes 3.b5 to gain queenside space and fix the bishop on b2 aimed at e5. White follows with e3 and c4 and Black develops with ...Ne7 or ...Nc6 questions. The play is slow and positional, with the Bb2 blunted by the e5/f6 chain.",
+  "white_ideas": [
+    {
+      "idea": "Hold the space with b5 and a4, support with e3, c4"
+    },
+    {
+      "idea": "Open the diagonal later with f4 or c4-d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Build with ...d5, ...Ne7, ...Nd7"
+    },
+    {
+      "idea": "Challenge the b5 pawn with ...a6 and ...c6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black e5/f6 chain against White b5 wedge and the Bb2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring with no early forcing tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound for both, with Black's ...f6 a bit weakening."
+    },
+    "structure": {
+      "notes": "No central tension; White flank space."
+    },
+    "approach": {
+      "notes": "The Polish is a surprise weapon, seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few theories, but not a first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Exchange Variation",
+      "moves": "1. b4 e5 2. Bb2 Bxb4 3. Bxe5",
+      "how": "Main line of the Polish with 2...Bxb4"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow positional play, neither sharp nor especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is not settled."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Surprise weapon of few strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than lines."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "queenside_expansion"
+      ],
+      "reason": "White gains queenside space with b5."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "scandinavian-defense-kiel-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Kiel Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Nf6 3. d4 Nxd5 4. c4 Nb4",
+    "fen": "rnbqkb1r/ppp1pppp/8/8/1nPP4/8/PP3PPP/RNBQKBNR w KQkq - 1 5"
+  },
+  "parent": "scandinavian-defense-marshall-variation",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "After 1.e4 d5 2.exd5 Nf6 3.d4 Nxd5 4.c4 White gains a tempo on the knight, and Black plays 4...Nb4 attacking c2 and d3. White usually defends with 5.Nf3 or 5.Nc3 and keeps the space, while Black threatens ...Nc2+ forking. The play is concrete and unbalanced.",
+  "white_ideas": [
+    {
+      "idea": "Use c4 and d4 space and develop quickly with Nf3 and Nc3"
+    },
+    {
+      "idea": "Neutralise the Nb4 with Bd3 or a3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Harass with ...Nb4, ...Nc2+ and ...Bg4"
+    },
+    {
+      "idea": "Pressure d4 with ...e6 and ...Bb4+ lines"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White broad pawn centre c4/d4 against a Black knight raid on the queenside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early knight raid and the Nc2+ fork threats give concrete tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Probably better for White but not refuted."
+    },
+    "structure": {
+      "notes": "Scandinavian structure with White's centre vs Black piece play, semi-open."
+    },
+    "approach": {
+      "notes": "Rare sideline of a respectable opening."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Need to know the tactics."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Marshall Variation",
+      "moves": "1. e4 d5 2. exd5 Nf6 3. d4 Nxd5 4. c4 Nb6",
+      "how": "The usual retreat, solid and standard"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Knight raid and fork threats make play concrete."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Pawns are even after the recapture on d5."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Probably playable for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Scandinavian structure with a half-open d-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A sideline of the Scandinavian, which is respectable."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Needs a few concrete tactics and ideas."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "lead_in_development"
+      ],
+      "reason": "White space and development against a raiding knight."
+    }
+  }
+}

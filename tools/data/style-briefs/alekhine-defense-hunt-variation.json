@@ -1,0 +1,123 @@
+{
+  "slug": "alekhine-defense-hunt-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Hunt Variation",
+    "eco": "B03",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. c5",
+    "fen": "rnbqkb1r/ppp1pppp/1n1p4/2P1P3/3P4/8/PP3PPP/RNBQKBNR b KQkq - 0 5"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White pushes 5.c5 against the Alekhine knight on b6, and after ...Nd5 White continues Bc4 and Nc3 to hit the knight, with sharp gambit branches like Lasker Simul, Matsukevich and Mikenas where White gives a pawn. White has a space edge but overextends; Black attacks the e5 and c5 pawns with ...d6xe5 and ...b6.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with c5, e5 and d4 and harass the Black knight"
+    },
+    {
+      "idea": "Develop quickly with Bc4 and Nc3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Retreat and undermine the White chain with ...dxe5 or ...b6"
+    },
+    {
+      "idea": "Develop with ...e6 and ...Nc6 or ...Bg4 pins"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White chain e5/d4/c5 against Black d6 and e6"
+    },
+    {
+      "structure": "Open positions after ...dxe5 and ...dxc5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp theory-heavy lines with space versus counterattack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The main line has no material sacrificed; named gambits are side branches."
+    },
+    "soundness": {
+      "notes": "Considered an ambitious sideline that Black can meet comfortably."
+    },
+    "structure": {
+      "notes": "White's pawn chain is in tension with Black's attacks."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Theory and understanding of a space-versus-counterplay structure."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Overextended centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Lasker Simul Gambit",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. c5 Nd5 5. Bc4 e6 6. Nc3",
+      "how": "White offers material for rapid development."
+    },
+    {
+      "name": "Matsukevich Gambit",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. c5 Nd5 5. Nc3 Nxc3 6. dxc3 d6 7. Bg5",
+      "how": "Pawn sacrifice for quick play."
+    },
+    {
+      "name": "Mikenas Gambit",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. c5 Nd5 5. Bc4 e6 6. Nc3 d6 7. Nxd5 exd5 8. Bxd5",
+      "how": "White gives a pawn."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Space advantage against counterattack with named gambit branches."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "The main line sacrifices nothing; the named gambits are separate branches."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Speculative but not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "The chain is in tension and Black can strike with ...dxe5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rarely used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Needs theory and understanding of the pawn chain."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White grabs space with c5 and e5."
+    }
+  }
+}

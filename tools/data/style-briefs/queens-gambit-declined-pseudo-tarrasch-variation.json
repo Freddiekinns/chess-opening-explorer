@@ -1,0 +1,103 @@
+{
+  "slug": "queens-gambit-declined-pseudo-tarrasch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Pseudo-Tarrasch Variation",
+    "eco": "D50",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 c5 5. cxd5",
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pP2B1/3P4/2N5/PP2PPPP/R2QKBNR b KQkq - 0 5"
+  },
+  "parent": "queens-gambit-declined-been-koomen-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 4.Bg5 c5 5.cxd5 White takes on d5 and Black recaptures with ...cxd4 and the Prins 6.Qxd4 Be7 7.e4 Nc6, or ...Qb6. White has a central pawn and development lead, while Black has piece play against the centre. The play is open and tactical.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with e4 and use the lead"
+    },
+    {
+      "idea": "Develop with Nf3, Bb5, O-O-O"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the queen with ...Nc6 and recapture on d5"
+    },
+    {
+      "idea": "Aim for ...exd5 and equality"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, central pawn exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Prins and Canal lines (5.cxd5 cxd4 6.Qxd4 Be7 7.e4 Nc6) trade centre pawns early and leave tactical play against the king and the queen."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "A recognised line where Black equalises with accurate play."
+    },
+    "structure": {
+      "notes": "The c- and d-pawns are traded, leaving a fluid centre and an open d-file."
+    },
+    "approach": {
+      "notes": "A standard Pseudo-Tarrasch / Dutch-Peruvian line, played at strong level."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs the main line sequences plus the resulting middlegames."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Early exchanges and queen moves lead to tactical, forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The pawn on d5 is recaptured at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides are fine."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Centre pawns come off and the pieces take the open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Established Pseudo-Tarrasch line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Concrete theory and active piece play."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White tries to use a lead in development."
+    }
+  }
+}

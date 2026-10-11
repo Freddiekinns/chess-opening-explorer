@@ -1,0 +1,101 @@
+{
+  "slug": "barnes-opening-hammerschlag",
+  "tier": "unsourced",
+  "root": {
+    "name": "Barnes Opening: Hammerschlag",
+    "eco": "A00",
+    "moves": "1. f3 e5 2. Kf2",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPPKPP/RNBQ1BNR b kq - 1 2"
+  },
+  "parent": "barnes-opening",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "White plays 1.f3 e5 2.Kf2, moving the king to f2 on move two, a joke or surprise choice. Black simply develops with ...Nc6 and ...d5, or can harass the king with ...Qh4+ ideas, taking the centre while White lags in development. It is played for novelty and humour, not for objective merit.",
+  "white_ideas": [
+    {
+      "idea": "Accept a loss of castling and hope Black overreaches"
+    },
+    {
+      "idea": "Follow with e4, d4 or Nc3 and bring the king to safety later"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...d5 and ...Nc6"
+    },
+    {
+      "idea": "Attack the king with ...Qh4+ and ...Bc5+ when possible"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black holds e5 and the centre while White king sits on f2, f3 pawn blocks the knight"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early king move and an unfinished set-up give unbalanced, risky play, mostly for White."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Worse for White since the king loses castling and f3 blocks the knight."
+    },
+    "structure": {
+      "notes": "The centre depends on whether Black plays ...d5 and White follows with e4; unclear."
+    },
+    "approach": {
+      "notes": "Almost never seen outside blitz and humour."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A dubious line, not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The early king move leads to unbalanced play with tactical risk."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No pawn is sacrificed on purpose."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "King on f2 and f3 lose time and castling."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Black takes the centre and the lines open after ...d5 and e4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players seldom play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No named plan is characteristic."
+    }
+  }
+}

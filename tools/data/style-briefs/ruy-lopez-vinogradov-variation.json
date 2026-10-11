@@ -1,0 +1,107 @@
+{
+  "slug": "ruy-lopez-vinogradov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Vinogradov Variation",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Qe7",
+    "fen": "r1b1kbnr/ppppqppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-11",
+  "confidence": "low",
+  "overview": "Black answers 3.Bb5 with 3...Qe7, defending e5 with the queen instead of ...a6 or ...Nf6. White usually plays 4.O-O or 4.c3 and builds a centre with d4, or 4.Bxc6 dxc6 5.d4. The queen on e7 blocks the bishop and develops awkwardly, so White is comfortably better.",
+  "white_ideas": [
+    {
+      "idea": "Castle, play c3 and d4 and build a broad centre"
+    },
+    {
+      "idea": "Exchange on c6 and attack e5 when the queen is passive"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend e5 solidly and develop with ...Nf6 and ...d6"
+    },
+    {
+      "idea": "Aim to break with ...d5 once pieces are out"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Ruy Lopez centre with e4/d4 against e5/d6"
+    },
+    {
+      "structure": "Exchange structure after Bxc6 dxc6 with an open d-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, slow development; Black is passive but safe."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Playable but passive and a little worse; not refuted."
+    },
+    "structure": {
+      "notes": "The e5 pawn is held under tension against e4."
+    },
+    "approach": {
+      "notes": "A rare Black sideline that strong players seldom use."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Standard Ruy Lopez plans; low theory burden."
+    }
+  },
+  "plan_phrases": [
+    "Passive queen on e7",
+    "White builds the centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.45,
+      "reason": "Black keeps e5 protected and sits passively, with few ways to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Slightly worse for Black but not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "e4 against e5 stays in tension while White builds with c3 and d4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom play 3...Qe7; less used than other side lines."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Ordinary Ruy Lopez ideas, little theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White builds a bigger centre against a passive set-up."
+    }
+  }
+}

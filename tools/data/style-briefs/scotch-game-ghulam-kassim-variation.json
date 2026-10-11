@@ -1,0 +1,107 @@
+{
+  "slug": "scotch-game-ghulam-kassim-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Ghulam-Kassim Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nxd4 5. Qxd4 d6 6. Bd3",
+    "fen": "r1bqkbnr/ppp2ppp/3p4/8/3QP3/3B4/PPP2PPP/RNB1K2R b KQkq - 1 6"
+  },
+  "parent": "scotch-game-lolli-variation",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After the knight trades and Qxd4 White develops the bishop to d3 against Black's ...d6. White's queen is centralised but attacked by ...Nf6 and ...Be7 and Black has no weaknesses, giving a safe, slightly passive game. Play is positional, with White enjoying a small initiative and Black aiming for ...O-O and ...Re8.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, Be3 and castle while keeping the queen active on d4"
+    },
+    {
+      "idea": "Pressure e5 and the d-file with Rd1"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...Be7 and castle to a solid position"
+    },
+    {
+      "idea": "Break with ...d5 or ...Nd7-e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game where White has e4 against d6 and a half-open d-file"
+    },
+    {
+      "structure": "Queenless-like simplified middlegame after piece trades"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Safe Scotch endgame-style middlegame with few risks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "A fully respectable line."
+    },
+    "structure": {
+      "notes": "The d-pawn is traded so e4 meets d6 and the d-file is half-open."
+    },
+    "approach": {
+      "notes": "A standard respectable sideline within the Scotch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans and little theory, though White's queen needs care."
+    }
+  },
+  "plan_phrases": [
+    "Active queen",
+    "Safe development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.45,
+      "reason": "Black has no weaknesses and few ways to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A respectable line for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "e4 against d6 with a half-open d-file after the d-pawn trade."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal Scotch line played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Clear plans with low theory."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White's queen is centralised early and Black develops with tempo."
+    }
+  }
+}

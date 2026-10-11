@@ -1,0 +1,105 @@
+{
+  "slug": "vienna-gambit-with-max-lange-defense-steinitz-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Gambit, with Max Lange Defense: Steinitz Gambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. d4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/3PPp2/2N5/PPP3PP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 3.f4 exf4 4.d4 Qh4+ 5.Ke2 White sacrifices the f-pawn and walks the king to e2, aiming to build a big centre with Nf3 or Nd5 and use the open f-file. Black replies ...d6, ...d5, ...b6 or ...g5 and tries to keep the extra pawn. It is Steinitz's old idea with a king in the centre; it is very risky.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with Nf3, Nd5 and Qd3"
+    },
+    {
+      "idea": "Play for the open f-file and tactics around the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...d6, ...d5, ...g5"
+    },
+    {
+      "idea": "Exploit the king on e2 with ...Nf6 and ...Bg4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White big centre d4/e4 with an exposed king on e2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "4...Qh4+ 5.Ke2 forces the king into the centre; White plays for a big centre and an attack while Black can take material."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the f4 pawn, which can be kept."
+    },
+    "soundness": {
+      "notes": "Steinitz's idea is risky and engines prefer Black, but it has never been refuted outright."
+    },
+    "structure": {
+      "notes": "White d4/e4 pawns and an open f-file in an open centre."
+    },
+    "approach": {
+      "notes": "A rare Vienna Gambit sideline, chosen as a surprise."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Hard to handle with the king on e2; needs accurate play from both sides."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "White's king stays in the centre and the play is forcing."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "The f4 pawn is given and Black may keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Risky and engines favour Black, though not refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Central pawns clash and the lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Rarely seen from strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Dubious gambits are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White gambits for a centre and an attack."
+    }
+  }
+}

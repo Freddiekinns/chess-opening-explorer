@@ -1,0 +1,105 @@
+{
+  "slug": "van-geet-opening-sicilian-two-knights",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Sicilian Two Knights",
+    "eco": "A00",
+    "moves": "1. Nc3 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4",
+    "fen": "r1bqkbnr/pp1ppppp/2n5/8/3N4/2N5/PPP1PPPP/R1BQKB1R b KQkq - 0 4"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "1.Nc3 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 reaches an Open Sicilian with White's queen's knight already on c3. Black usually plays 4...Nf6 and White 5.e4 or 5.Ndb5, giving a Sicilian Four Knights or Taimanov-like game, or 4...e6 and ...Qc7. It plays like a mainstream Open Sicilian and lets White steer toward the Sicilian with the b1-knight developed.",
+  "white_ideas": [
+    {
+      "idea": "Play e4 and develop with Be3 or g3 in an Open Sicilian set-up"
+    },
+    {
+      "idea": "Use the knight on d4 and c3 to pressure d5 and c6"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...e6 or ...g6 as in a Sicilian"
+    },
+    {
+      "idea": "Use ...d5 or ...e5 breaks to challenge e4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian: White e4 against Black d6/e6, half-open c-file for Black"
+    },
+    {
+      "structure": "Maróczy-style centre if White plays e4 and c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open Sicilian middlegames; White can steer to sharp or positional paths, Black often has equal chances."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "A sound move order into the Open Sicilian."
+    },
+    "structure": {
+      "notes": "Sicilian asymmetry with a half-open c-file for Black."
+    },
+    "approach": {
+      "notes": "Mostly a Sicilian by transposition; the Van Geet move order is a respectable but uncommon route."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Standard Sicilian plans; the key is knowing the Open Sicilian ideas."
+    }
+  },
+  "plan_phrases": [
+    "Open Sicilian with Nc3",
+    "Half-open c-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Open Sicilian positions can go either way depending on White's set-up; not a forcing main line."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Reaches a normal Open Sicilian."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.8,
+      "reason": "Every Sicilian has an asymmetric centre with a half-open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A less common route into the Open Sicilian, not a surprise weapon."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Standard Sicilian knowledge; plans matter more than lines."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Plans depend on Black's set-up so none is clearly characteristic."
+    }
+  }
+}

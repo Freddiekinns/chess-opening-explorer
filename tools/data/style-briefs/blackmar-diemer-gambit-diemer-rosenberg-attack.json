@@ -1,0 +1,108 @@
+{
+  "slug": "blackmar-diemer-gambit-diemer-rosenberg-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit: Diemer-Rosenberg Attack",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Be3",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/3Pp3/4B3/PPP2PPP/RN1QKBNR b KQkq - 1 3"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 1.d4 d5 2.e4 dxe4 White plays 3.Be3 instead of 3.Nc3. White aims for Qd2, Nc3, O-O-O and a quick kingside attack with h4 and Bd3, offering the e4 pawn while keeping flexible. Black can keep the extra pawn and develop with ...Nf6 and ...e6. Engines favour Black, but the attack is easy to play.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, Qd2 and castle long, then push h4"
+    },
+    {
+      "idea": "Aim the bishop on d3 at h7 and the queen at the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn and develop with ...Nf6, ...e6 and ...Be7"
+    },
+    {
+      "idea": "Trade pieces to blunt the attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White ahead in development"
+    },
+    {
+      "structure": "Black pawn on e4 or exchanged, open d-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Gambit attack with long castling and a kingside pawn storm."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White gives the e4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "White's compensation is insufficient at engine level."
+    },
+    "structure": {
+      "notes": "The centre opens at once."
+    },
+    "approach": {
+      "notes": "Hardly played by strong players."
+    },
+    "level": {
+      "reason": "intermediate",
+      "notes": "Dubious but clear attacking plans."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A gambit with a kingside attack and exposed kings."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives the e4 pawn which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Insufficient compensation against best play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Central lines open and pieces fight on the files."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players hardly use the BDG."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Easy to play but dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White develops fast and attacks the king."
+    }
+  }
+}

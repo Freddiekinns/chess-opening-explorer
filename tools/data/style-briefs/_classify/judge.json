@@ -572,12 +572,54 @@
       "reason": "White keeps d- and e-pawns; Black has given the e-pawn and recaptured dxc6, leaving Black half-open d- and e-files to press on. That is the Semi-open glossary (one side gets half-open files), not a centre with both sides' central pawns gone.",
       "sources": [],
       "taxonomy_note": null
+    },
+    "gambit": {
+      "value": "black",
+      "reason": "1.Nf3 e5 2.Nxe5 Nc6 3.Nxc6 dxc6 leaves Black a pawn down by force for development and open files; White can keep it. Black gambit by definition, though the name does not say so.",
+      "sources": [],
+      "taxonomy_note": null
     }
   },
   "kings-indian-attack-omega-delta-gambit": {
     "structure": {
       "value": "semi_open",
       "reason": "After 3.Nxe5 White keeps d- and e-pawns against Black's d5, and Black has the half-open e-file: one side pressing along a file, Semi-open by the glossary.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "bishops-opening-stein-gambit": {
+    "structure": {
+      "value": "flexible",
+      "reason": "The same board as King's Gambit Declined: Classical Variation (1.e4 e5 2.f4 Bc5 3.Bc4), already tagged Flexible; in the declined lines the e4/f4 against e5 centre is not yet fixed or opened.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "character": {
+      "value": "balanced",
+      "reason": "The same board as King's Gambit Declined: Classical Variation (1.e4 e5 2.f4 Bc5 3.Bc4), already tagged Balanced; one position should not carry two characters.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "zukertort-opening-polish-defense": {
+    "gambit": {
+      "value": "none",
+      "reason": "1.Nf3 b5 offers nothing by force: the pawn falls only if Black lets e3/e4 and Bxb5 through, and ...a6 holds it. The reversed Polish Opening is tagged gambit none; the conservative value.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "structure": {
+      "value": "flexible",
+      "reason": "No central contact for several moves, as in the Polish Opening (Flexible); A's reading over Jev's Open, which follows from the gambit misreading.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "french-defense-franco-hiva-gambit-accepted": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 3.exf5 Nf6 White has lost the e-pawn and Black the f-pawn, leaving d4 against the French e6 with half-open files to press: Semi-open, not a centre with both sides' central pawns gone.",
       "sources": [],
       "taxonomy_note": null
     }

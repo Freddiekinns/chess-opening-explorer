@@ -1,0 +1,107 @@
+{
+  "slug": "bogo-indian-defense-wade-smyslov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: Wade-Smyslov Variation",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 a5",
+    "fen": "rnbqk2r/1ppp1ppp/4pn2/p7/1bPP4/5N2/PP1BPPPP/RN1QKB1R w KQkq - 0 5"
+  },
+  "parent": "bogo-indian-defense",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "After 4.Bd2 Black plays 4...a5, keeping the bishop on b4 so White cannot easily trade it, and White continues 5.g3 or 5.Nc3. Positions are solid and strategic: Black builds a solid set-up with ...O-O and ...d6 or ...d5 and White tries for a small space edge. If the bishop exchanges, White gets the bishop pair.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with g3 and Bg2 and play Nc3"
+    },
+    {
+      "idea": "Gain space with e4 or Qc2 if allowed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the bishop on b4 with ...a5 and play ...O-O, ...d6 or ...d5"
+    },
+    {
+      "idea": "Aim for ...c5 or ...b6 and ...Bb7 set-ups"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Gambit type centre with c4/d4 against e6/d5 or d6"
+    },
+    {
+      "structure": "Pins and bishop trades on c3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid, positional play with little risk for Black."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed."
+    },
+    "soundness": {
+      "notes": "A fully sound mainstream line."
+    },
+    "structure": {
+      "notes": "The d4/c4 centre against e6 stays flexible."
+    },
+    "approach": {
+      "notes": "A standard Indian-defence line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional understanding more than theory."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Solid set-up"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Black builds a hard-to-break set-up with few tactical risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A fully sound mainstream line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays undecided with c4/d4 against e6."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A normal Indian-defence system for strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Positional ideas rather than long lines."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White often plays g3 and Bg2 against the Bogo-Indian."
+    }
+  }
+}

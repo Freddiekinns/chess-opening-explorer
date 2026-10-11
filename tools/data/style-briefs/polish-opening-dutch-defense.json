@@ -1,0 +1,105 @@
+{
+  "slug": "polish-opening-dutch-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Dutch Defense",
+    "eco": "A00",
+    "moves": "1. b4 f5",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-11",
+  "confidence": "medium",
+  "overview": "Black answers 1.b4 with 1...f5, a Dutch set-up. White plays 2.Bb2 Nf6 3.e3 e6, with Black's e4 control and White pressure on the long diagonal. Both sides play flexible and the position is balanced.",
+  "white_ideas": [
+    {
+      "idea": "Bb2, e3, Nf3, c4"
+    },
+    {
+      "idea": "Pressure the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Control e4 with ...f5, ...Nf6, ...e6"
+    },
+    {
+      "idea": "Develop the bishop with ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch-like pawn set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "After 2.Bb2 Nf6 3.e3 e6 play is slow flank manoeuvring around e4, with no forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound for both; the Polish is not refuted and the Dutch set-up is acceptable."
+    },
+    "structure": {
+      "notes": "Flank opening: centre pawns have not committed, Black e4 control against the White long diagonal."
+    },
+    "approach": {
+      "notes": "The 1.b4 Polish is a surprise weapon rarely chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans over memorisation; moderate."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither sharp nor solid: slow flank play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre unsettled."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "The Polish is a surprise weapon."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding over memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Bb2 on the long diagonal and b-pawn space."
+    }
+  }
+}

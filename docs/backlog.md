@@ -19,6 +19,8 @@ is the ranked list that review produced.
   keeps its name.
 - **rev 4.3** (2026-10-10) — the 43 description claims the briefs marked wrong
   are fixed; the popularity refresh is parked; E2E specs are green and in CI.
+- **rev 4.4** (2026-10-11) — style tags tail: 280 more variations (#174), 568
+  left.
 
 ## The unifying principle
 
@@ -125,8 +127,9 @@ and drill for it.
 - **Shareable opening report card** — an acquisition experiment, gated on the
   Analyse statistics fix.
 - **Style tags tail** — style classification shipped in #160 (see **Archive**).
-  848 variations remain untagged: 16% of pages, 0.8% of games. Plan in
-  `.github/memory-bank/archive.md`, runbook in `tools/style-tags/README.md`.
+  848 variations were untagged (16% of pages, 0.8% of games); #174 tagged 280,
+  so 568 remain (tail-38 to tail-66). Plan in `.github/memory-bank/archive.md`,
+  runbook in `tools/style-tags/README.md`.
 
 ## Parked
 

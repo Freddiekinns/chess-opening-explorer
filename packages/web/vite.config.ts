@@ -53,6 +53,19 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'html', 'json-summary'],
       reportsDirectory: 'coverage',
+      // Without `include`, v8 reports only files some test imports, so a file
+      // with no test at all is invisible and the total flatters (#166).
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/**/__tests__/**', 'src/test/**', 'src/**/*.d.ts'],
+      // A ratchet, not a target: set a little under the measured figures
+      // (2026-10-11: lines 82, statements 81, functions 81, branches 74).
+      // Raise them as coverage rises; never lower them to get green.
+      thresholds: {
+        lines: 80,
+        statements: 80,
+        functions: 80,
+        branches: 72,
+      },
     },
   },
 });

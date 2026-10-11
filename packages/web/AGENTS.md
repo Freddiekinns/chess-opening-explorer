@@ -180,6 +180,14 @@ breaks them on purpose — they had sat at 8 of 9 failing for months on exactly
 that before they were wired into CI. First run on a machine:
 `npx playwright install chromium`.
 
+## Coverage
+
+CI's Test Frontend job runs `npm run test:coverage` (here, not the root), which
+fails below the thresholds in `vite.config.ts`. They are a ratchet set just
+under the measured figures (2026-10-11: lines 82%, branches 74%): raise them as
+coverage rises, never lower them to get green. `include` counts every source
+file, so a file with no test shows at 0% instead of vanishing from the total.
+
 ## Conventions
 
 - Functional components only

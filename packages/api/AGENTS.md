@@ -75,3 +75,5 @@ Read data from `api/data/` — it is canonical in every environment.
 youtube, chesscom, personal-games) and all of `api/`. The 90% figure therefore
 describes the covered subset, not the backend. Shrinking that exclusion list is
 tracked in #166 — when you add tests for an excluded service, remove its line.
+The frontend half of #166 is done: Vitest counts every file and gates in CI
+(`packages/web/AGENTS.md`, "Coverage").

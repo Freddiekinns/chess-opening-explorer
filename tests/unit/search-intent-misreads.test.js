@@ -62,6 +62,7 @@ beforeAll(() =>
       englund: tags({ gambit: 'black', soundness: 'dubious' }),
       london: tags({ character: 'solid', approach: 'system', level: 'beginner' }),
       sic: tags({ character: 'sharp', level: 'advanced' }),
+      italian: tags({ level: 'beginner' }),
     },
     positions: {
       'f-najdorf': 'najdorf',
@@ -73,6 +74,7 @@ beforeAll(() =>
       'f-sic': 'sic',
       'f-sic-nf3': 'sic',
       'f-caro-adv': 'caro',
+      'f-italian': 'italian',
     },
   })
 );
@@ -94,6 +96,12 @@ describe('a style word in front of "response to"', () => {
     expect(names(replies)).toContain('Caro-Kann Defense');
     expect(names(replies)).not.toContain("King's Pawn Game");
     expect(names(replies)).not.toContain("Queen's Pawn Game: Blackmar Gambit");
+  });
+
+  test('a word in front that is no style word adds no style', () => {
+    // "english" is a SEMANTIC_MAPPINGS key (the move c4) but no style, and as a
+    // modifier it matched nothing.
+    expect(parse('english defence against d4').modifiers).toEqual([]);
   });
 
   test('the style then narrows the replies', () => {
@@ -162,6 +170,32 @@ describe('a level word in front of an opening name', () => {
       expect(intent.openingName).toBe(query.replace('advanced ', ''));
     }
   );
+
+  test('a move after a level word is a move, not a name', () => {
+    const intent = parse('beginner e4 openings');
+    expect(intent.type).toBe('complexity_search');
+    expect(intent.targetMoves).toEqual(['e4']);
+    expect(intent.openingName).toBeUndefined();
+  });
+
+  test('and the move narrows the level', () => {
+    const corpus = searchService.openings;
+    searchService.openings = OPENINGS;
+    try {
+      expect(names(searchService.applySemanticFiltering(parse('beginner e4 openings')))).toEqual([
+        'Italian Game',
+      ]);
+    } finally {
+      searchService.openings = corpus;
+    }
+  });
+
+  test('a name match ranks the same in either spelling', () => {
+    const sicilian = [{ fen: 'f-sic', name: 'Sicilian Defense', moves: '1. e4 c5' }];
+    const score = (query) =>
+      searchService.scoreSemanticResults(sicilian, parse(query))[0].searchScore;
+    expect(score('advanced sicilian defence')).toBe(score('advanced sicilian defense'));
+  });
 
   test('the name filter treats Defence and Defense as one spelling', () => {
     expect(names(searchService.filterByOpeningName(OPENINGS, 'sicilian defence'))).toContain(

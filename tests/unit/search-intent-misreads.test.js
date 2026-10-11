@@ -104,6 +104,13 @@ describe('a style word in front of "response to"', () => {
     expect(parse('english defence against d4').modifiers).toEqual([]);
   });
 
+  test('a name in front is left to the name and typo passes', () => {
+    // Read as a response search, "pirc defence against e4" listed every reply
+    // to 1.e4 and never reached the fuzzy pass that finds the Pirc.
+    expect(parse('pirc defence against e4').type).not.toBe('response_search');
+    expect(parse('english defence against d4').type).not.toBe('response_search');
+  });
+
   test('the style then narrows the replies', () => {
     expect(names(searchService.filterByResponseToMoves(OPENINGS, ['e4'], ['solid']))).toEqual([
       'Caro-Kann Defense',

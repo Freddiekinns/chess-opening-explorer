@@ -1,6 +1,9 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useOpeningSearch } from '../useOpeningSearch';
+import { trackEvent } from '../../lib/analytics';
+
+vi.mock('../../lib/analytics', () => ({ trackEvent: vi.fn() }));
 
 /**
  * The hook owns the query for all three search surfaces, so the ordering
@@ -18,6 +21,7 @@ const result = (fen: string, name: string) => ({
 beforeEach(() => {
   localStorage.clear();
   vi.useFakeTimers();
+  vi.mocked(trackEvent).mockClear();
 });
 
 afterEach(() => {
@@ -60,7 +64,7 @@ describe('useOpeningSearch request ordering', () => {
       })
     );
 
-    const { result: hook } = renderHook(() => useOpeningSearch());
+    const { result: hook } = renderHook(() => useOpeningSearch('topbar'));
 
     act(() => hook.current.setQuery('kings ind'));
     await act(async () => {
@@ -100,7 +104,7 @@ describe('useOpeningSearch request ordering', () => {
       )
     );
 
-    const { result: hook } = renderHook(() => useOpeningSearch());
+    const { result: hook } = renderHook(() => useOpeningSearch('topbar'));
 
     act(() => hook.current.setQuery('sicilian'));
     await act(async () => {
@@ -115,5 +119,53 @@ describe('useOpeningSearch request ordering', () => {
 
     expect(hook.current.results).toEqual([]);
     expect(hook.current.searching).toBe(false);
+  });
+});
+
+/*
+ * search_select only counts searches that ended in a pick. These two give it a
+ * denominator: how many searches were started, and how many dead-ended. Neither
+ * may carry the query text.
+ */
+describe('useOpeningSearch analytics', () => {
+  const respondWith = (data: unknown[]) =>
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({ ok: true, json: async () => ({ success: true, data }) }))
+    );
+
+  const calls = (event: string) =>
+    vi.mocked(trackEvent).mock.calls.filter(([name]) => name === event);
+
+  it('reports search_start once per search, with the surface', async () => {
+    respondWith([result('fen-a', 'Sicilian Defence')]);
+    const { result: hook } = renderHook(() => useOpeningSearch('overlay'));
+
+    act(() => hook.current.setQuery('s'));
+    act(() => hook.current.setQuery('si'));
+    act(() => hook.current.setQuery('sic'));
+    await settle();
+    expect(calls('search_start')).toEqual([['search_start', { surface: 'overlay' }]]);
+
+    // A reset (what every surface does after a pick) ends the search.
+    act(() => hook.current.reset());
+    act(() => hook.current.setQuery('caro'));
+    await settle();
+    expect(calls('search_start')).toHaveLength(2);
+  });
+
+  it('reports search_no_results once per dead end, with the shape and not the text', async () => {
+    respondWith([]);
+    const { result: hook } = renderHook(() => useOpeningSearch('hero'));
+
+    act(() => hook.current.setQuery('zzqx'));
+    await settle();
+    act(() => hook.current.setQuery('zzqxy'));
+    await settle();
+
+    expect(hook.current.noResults).toBe(true);
+    expect(calls('search_no_results')).toEqual([
+      ['search_no_results', { surface: 'hero', query_shape: 'name' }],
+    ]);
   });
 });

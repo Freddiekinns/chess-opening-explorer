@@ -1,0 +1,105 @@
+{
+  "slug": "pirc-defense-bayonet-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: Bayonet Attack",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Be2 Bg7 5. h4",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/3PP2P/2N5/PPP1BPP1/R1BQK1NR b KQkq - 0 5"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 5.h4 with Be2 on, gaining kingside space and h5 ideas, without committing to the Austrian or 150 set-ups. Black has the usual Pirc set-up and strikes with ...c5 or ...Nc6 and ...e5 in the centre. Play is sharp, with pawn storms on the kingside while Black counters in the centre.",
+  "white_ideas": [
+    {
+      "idea": "Advance h4-h5 to open lines on the kingside"
+    },
+    {
+      "idea": "Maintain the e4-d4 centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...c5 or ...e5"
+    },
+    {
+      "idea": "Counter pawn storms with ...h5 or ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Pirc with e4/d4 centre against fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "h4 against the Pirc leads to a pawn storm and counter-attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound at club level; the parent line is respectable."
+    },
+    "structure": {
+      "notes": "The centre is under tension."
+    },
+    "approach": {
+      "notes": "A known Pirc attack line."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs prepared replies and sensible plans."
+    }
+  },
+  "plan_phrases": [
+    "h-pawn storm",
+    "space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "h4 against the Pirc leads to a pawn storm and counter-attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Sound at club level; the parent line is respectable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is under tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A known Pirc attack line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Needs prepared replies and sensible plans."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "space_advantage"
+      ],
+      "reason": "White pushes h4-h5 for space and attack."
+    }
+  }
+}

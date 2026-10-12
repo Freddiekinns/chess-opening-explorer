@@ -1,0 +1,108 @@
+{
+  "slug": "kings-indian-attack-spassky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Spassky Variation",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. g3 b5",
+    "fen": "rnbqkb1r/p1pppppp/5n2/1p6/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.Nf3 Nf6 2.g3 b5 Black grabs queenside space with the b-pawn, a Sokolsky-style idea; White replies 3.Bg2 Bb7 4.O-O e6 with a mirrored fianchetto set-up. White may attack b5 with a4 or d3/e4, and Black's pawn on b5 can become a target. A flank opening with a slow plan.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto, castle and play d3/e4"
+    },
+    {
+      "idea": "Target b5 with a4 and c4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Bb7 and ...e6 with ...c5"
+    },
+    {
+      "idea": "Use the b-pawn for queenside space"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Mutual fianchetto positions"
+    },
+    {
+      "structure": "Black queenside pawn advance, flexible centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow flank play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Playable but loosening."
+    },
+    "structure": {
+      "notes": "Undecided centre."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judgement."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow flank play with chances for both."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Flank opening."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Judgement."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Fianchetto and b5."
+    }
+  }
+}

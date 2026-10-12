@@ -1,0 +1,109 @@
+{
+  "slug": "montevideo-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Montevideo Defense",
+    "eco": "A40",
+    "moves": "1. d4 Nc6 2. d5 Nb8",
+    "fen": "rnbqkbnr/pppppppp/8/3P4/8/8/PPP1PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "mikenas-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 1...Nc6, and after 2.d5 retreats with 2...Nb8, losing two tempi and handing White a free space gain. It is more a curiosity than a real defence; after 2...Nb8 White just continues development with a comfortable edge.",
+  "white_ideas": [
+    {
+      "idea": "Take advantage of the extra tempi with quick development"
+    },
+    {
+      "idea": "Keep the d5 space gain and play c4 and Nc3"
+    },
+    {
+      "idea": "Build a normal centre with e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Start over with ...Nf6 and ...g6 or ...e6"
+    },
+    {
+      "idea": "Challenge the d5 pawn with ...c6 or ...e6"
+    },
+    {
+      "idea": "Find equality through solid development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn on d5 gaining space against a normal Black set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow; White is just ahead in space and time."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Not a serious defence; Black simply loses time."
+    },
+    "structure": {
+      "notes": "Centre undecided and pawn structure standard."
+    },
+    "approach": {
+      "notes": "Almost never chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to learn but a waste of tempi, not a repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A calm position where White simply leads in time."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material changes hands."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Black wastes two moves on the knight excursion."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White has the extra space from d5."
+    }
+  }
+}

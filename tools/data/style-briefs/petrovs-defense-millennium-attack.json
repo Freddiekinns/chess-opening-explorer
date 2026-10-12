@@ -1,0 +1,109 @@
+{
+  "slug": "petrovs-defense-millennium-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Millennium Attack",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. Bd3",
+    "fen": "rnbqkb1r/ppp2ppp/3p4/8/4n3/3B1N2/PPPP1PPP/RNBQK2R b KQkq - 1 5"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 4...Nxe4 White plays 5.Bd3 instead of the main 5.d4, aiming to follow with d4 and castling and often reaching Petrov main-line positions. Black plays ...d5, ...Be7 and ...Nc6 with a symmetrical structure and equality; the position is solid and drawish.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bd3 and castle"
+    },
+    {
+      "idea": "Play d4 and Re1 against the e4 knight"
+    },
+    {
+      "idea": "Use the e-file for pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...d5 and ...Be7"
+    },
+    {
+      "idea": "Trade the e4 knight and castle"
+    },
+    {
+      "idea": "Equalise with ...Nc6 and ...Bf5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical Petrov structure with the open e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Petrov, known for solid defence and a drawish reputation."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Symmetrical exchange structure with the e-file."
+    },
+    "approach": {
+      "notes": "A sideline in a main Petrov, standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Equalising plan clear."
+    }
+  },
+  "plan_phrases": [
+    "symmetrical structure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "Petrov lines are Solid and drawish."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "The e-pawn is recovered at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Normal Petrov theory."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Symmetrical exchange structure with the e-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A normal Petrov move order."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Standard plans."
+    },
+    "plans": {
+      "value": [
+        "symmetrical_structure"
+      ],
+      "reason": "The Petrov's mirrored pawns."
+    }
+  }
+}

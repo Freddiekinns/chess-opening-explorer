@@ -1,0 +1,110 @@
+{
+  "slug": "mikenas-defense-cannstatter-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Mikenas Defense: Cannstatter Variation",
+    "eco": "A40",
+    "moves": "1. d4 Nc6 2. c4 e5 3. d5 Nd4",
+    "fen": "r1bqkbnr/pppp1ppp/8/3Pp3/2Pn4/8/PP2PPPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "mikenas-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.d4 Nc6 2.c4 e5 3.d5 Nd4 Black plants a knight on d4 and aims for ...Nf5 or ...Bb4+; White takes space with e3 and Nc3 and gains time by chasing the knight. The line is rarely played and I am not sure of the best handling.",
+  "white_ideas": [
+    {
+      "idea": "Chase the d4 knight with e3"
+    },
+    {
+      "idea": "Develop with Nc3 and Nf3, keeping the space edge"
+    },
+    {
+      "idea": "Use the c4/d5 chain to restrict Black"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reroute the knight to f5 with ...Nf5"
+    },
+    {
+      "idea": "Develop with ...Bb4+ or ...Bc5"
+    },
+    {
+      "idea": "Hold the centre with ...d6 and ...g6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on c4 and d5 against a Black pawn on e5, with the d-pawn locked"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A quiet space-gain for White against awkward knight play; Black is passive rather than tactical."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Considered dubious for Black; White gains time and space."
+    },
+    "structure": {
+      "notes": "Pawns on d5/e5 lock the centre."
+    },
+    "approach": {
+      "notes": "Rare; strong players seldom choose 1...Nc6 against 1.d4."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory but not a recommended repertoire."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "locked centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "No forcing play, but Black is a little offside."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Black loses time with the knight on d4."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.55,
+      "reason": "d5/e5 pawns lock the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White gains space and time."
+    }
+  }
+}

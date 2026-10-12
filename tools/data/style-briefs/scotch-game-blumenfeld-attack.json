@@ -1,0 +1,110 @@
+{
+  "slug": "scotch-game-blumenfeld-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Blumenfeld Attack",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Be3 Qf6 6. Nb5",
+    "fen": "r1b1k1nr/pppp1ppp/2n2q2/1Nb5/4P3/4B3/PPP2PPP/RN1QKB1R b KQkq - 4 6"
+  },
+  "parent": "scotch-game-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 4...Bc5 5.Be3 Qf6 White jumps 6.Nb5, threatening Nxc7+ and Bxc5, and the game turns on tactics: Black can take the bishop pair on e3 or defend c7 with ...Kd8-style resources. Strong players rarely meet it, and reliable evidence on the best defence is thin.",
+  "white_ideas": [
+    {
+      "idea": "Threaten Nxc7+ with the knight on b5"
+    },
+    {
+      "idea": "Trade or win time against the c5 bishop with Be3"
+    },
+    {
+      "idea": "Open lines for the pieces quickly with c3 or Nc3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Capture ...Bxe3 and meet Nxc7+ with ...Kd8"
+    },
+    {
+      "idea": "Defend c7 and develop with ...Kd8 or ...Bb6 lines"
+    },
+    {
+      "idea": "Use the f6 queen against f2 and b2"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after the d-pawn exchange with the king stuck in the centre for one side"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing tactical skirmish around c7, f2 and the king in the centre."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Believed dubious for White but unsure; I do not recognise the details of the best defence."
+    },
+    "structure": {
+      "notes": "Open centre, pieces fighting for open lines immediately."
+    },
+    "approach": {
+      "notes": "A rare Scotch sideline that strong players hardly play."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Tactics must be known precisely; not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "knight raid on c7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Forcing tactics around c7 and f2 from move six."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "No clear pawn is given that cannot come straight back."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.45,
+      "reason": "Believed to be a trappy sideline, but I am unsure of the best defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Open centre and pieces racing for open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Forcing tactics but not a mainline repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The point is quick piece play and tactics."
+    }
+  }
+}

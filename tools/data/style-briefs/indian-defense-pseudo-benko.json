@@ -1,0 +1,111 @@
+{
+  "slug": "indian-defense-pseudo-benko",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Pseudo-Benko",
+    "eco": "A43",
+    "moves": "1. d4 Nf6 2. Nf3 c5 3. d5 b5",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "benoni-defense-benoni-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black offers a Benko-style pawn with ...b5 against the d5 advance, hoping for queenside files and pressure on the long diagonal. Most games continue 4.Bg5, ignoring the pawn, after which White develops comfortably and Black needs ...d6 or ...Ne4 to justify the idea. It is a rare sideline compared with the real Benko, which arrives after ...e6 or a different move order.",
+  "white_ideas": [
+    {
+      "idea": "Decline the pawn with 4.Bg5 and develop naturally"
+    },
+    {
+      "idea": "Take on b5 or play e4 to build a centre if Black overextends"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the a- and b-files against White's queenside"
+    },
+    {
+      "idea": "Fianchetto on g7 and pressure the long diagonal and c-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-type asymmetry: White pawn on d5, Black c5 and b5 pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is a pawn down for open queenside lines and White has natural development, so play is concrete with both sides taking risks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black plays ...b5 and White can keep the pawn after taking on b5 or ignoring it with 4.Bg5."
+    },
+    "soundness": {
+      "notes": "Premature compared with the Benko proper; White can decline and be comfortable, so strong players treat it as dubious."
+    },
+    "structure": {
+      "notes": "Fixed asymmetric Benoni-type centre with queenside half-open files for Black."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players; mainly a surprise against the Benoni move order."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious, so not a good first repertoire choice; the ideas are simple but need accurate handling."
+    }
+  },
+  "plan_phrases": [
+    "queenside files for the rooks",
+    "long diagonal pressure",
+    "declining the pawn with Bg5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Benko transposition",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5",
+      "how": "The real Benko Gambit, with better supported ideas."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black is a pawn down for open queenside lines and White has natural development, so play is concrete with both sides taking risks."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black plays ...b5 and White can keep the pawn after taking on b5 or ignoring it with 4.Bg5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Premature compared with the Benko proper; White can decline and be comfortable, so strong players treat it as dubious."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Fixed asymmetric Benoni-type centre with queenside half-open files for Black."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom chosen by strong players; mainly a surprise against the Benoni move order."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious, so not a good first repertoire choice; the ideas are simple but need accurate handling."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

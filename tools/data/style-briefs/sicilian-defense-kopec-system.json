@@ -1,0 +1,101 @@
+{
+  "slug": "sicilian-defense-kopec-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Kopec System",
+    "eco": "B50",
+    "moves": "1. e4 c5 2. Nf3 d6 3. Bd3",
+    "fen": "rnbqkbnr/pp2pppp/3p4/2p5/4P3/3B1N2/PPPP1PPP/RNBQK2R b KQkq - 1 3"
+  },
+  "parent": "sicilian-defense-modern-variations",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White develops the bishop to d3 against the 2...d6 Sicilian and aims for a set-up with c3 or Nc3 and Be3, avoiding the Open Sicilian. Black usually plays ...Nf6 and ...Nc6 with a flexible game. It is a quiet anti-Sicilian with little forcing theory; I am not certain of the exact set-up.",
+  "white_ideas": [
+    {
+      "idea": "Build a quiet set-up with Bd3, c3 or Nc3 and O-O"
+    },
+    {
+      "idea": "Control the centre with e4 and later d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Nf6, ...Nc6 and ...g6 or ...e6"
+    },
+    {
+      "idea": "Counter on the queenside and in the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian with e4 against d6/c5 pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet set-ups with no early forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Playable."
+    },
+    "structure": {
+      "notes": "Sicilian asymmetry with a half-open c-file for Black."
+    },
+    "approach": {
+      "notes": "Rare but not unusual."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans rather than long lines."
+    }
+  },
+  "plan_phrases": [
+    "quiet development with Bd3"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet set-ups with no early forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Playable."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Sicilian asymmetry with a half-open c-file for Black."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Rare but not unusual."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans rather than long lines."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan from the moves."
+    }
+  }
+}

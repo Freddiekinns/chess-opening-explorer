@@ -1,0 +1,105 @@
+{
+  "slug": "nimzowitsch-defense-pirc-connection",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Pirc Connection",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nc3 g6",
+    "fen": "r1bqkbnr/pppppp1p/2n3p1/8/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black develops a knight to c6 and fianchettoes the king's bishop, setting up a hybrid between the Nimzowitsch and the Pirc. White usually plays d4 and gets a big centre which Black attacks from the flanks. The game is flexible and positional.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with d4 and f4 or Be3"
+    },
+    {
+      "idea": "Develop with Nf3 and Be2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...d6 and ...e5 or ...Nf6"
+    },
+    {
+      "idea": "Fianchetto Bg7 and play ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White centre against Black fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "No forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "None."
+    },
+    "soundness": {
+      "notes": "Playable."
+    },
+    "structure": {
+      "notes": "The centre is undecided."
+    },
+    "approach": {
+      "notes": "A less common but respectable defence."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Hypermodern understanding."
+    }
+  },
+  "plan_phrases": [
+    "hypermodern play",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "No forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "None."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A less common but respectable defence."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Hypermodern understanding."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black fianchettoes and attacks the centre."
+    }
+  }
+}

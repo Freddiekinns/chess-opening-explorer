@@ -1,0 +1,114 @@
+{
+  "slug": "polish-opening-zukertort-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Zukertort System",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. b4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/1P6/5N2/P1PPPPPP/RNBQKB1R b KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.Nf3 Nf6 2.b4 White grabs queenside space and prepares Bb2, a sort of Sokolsky-Réti hybrid also called Santasiere's Folly. Black usually plays ...e6 and ...d5 or ...Bxb4 ideas, getting a normal centre while White tries to undermine it with a3, c4 and Bb2. The b4 pawn can be a target, so White has to be careful.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto on b2 and support b4 with a3"
+    },
+    {
+      "idea": "Play e3, c4 and Nc3 for a flexible centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take a centre with ...e6 and ...d5"
+    },
+    {
+      "idea": "Attack b4 with ...a5 or ...Bb7 and ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queenside pawns advanced early, flexible centre"
+    },
+    {
+      "structure": "Long diagonal clash on b2/g7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flank play, quiet unless Black grabs b4."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "b4 can be taken only with risk; no real gambit."
+    },
+    "soundness": {
+      "notes": "Playable but weakening."
+    },
+    "structure": {
+      "notes": "Centre left undecided with flank pawns advanced."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs judgement of pawn weaknesses."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Sokolsky-style transposition",
+      "moves": "1. b4 Nf6 2. Nf3",
+      "how": "Reaches the same position from the Polish."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flank play with moderate risk."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "No planned pawn sacrifice."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Offbeat but playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Flank opening, centre undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom play 2.b4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Judgement over theory."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "b4 and Bb2."
+    }
+  }
+}

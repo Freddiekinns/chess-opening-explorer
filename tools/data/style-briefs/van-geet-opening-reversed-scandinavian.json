@@ -1,0 +1,103 @@
+{
+  "slug": "van-geet-opening-reversed-scandinavian",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Reversed Scandinavian",
+    "eco": "A00",
+    "moves": "1. Nc3 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qa4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/Q7/2N5/PPP1PPPP/R1B1KBNR b KQkq - 2 4"
+  },
+  "parent": "van-geet-opening-reversed-nimzowitsch",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White opens the centre with d4, recaptures with the queen and moves it to a4 after ...Nc6, a reversed Scandinavian with an extra tempo. Black gets easy development with ...Nf6 and ...Be7. It is an offbeat way to avoid main-line theory.",
+  "white_ideas": [
+    {
+      "idea": "Move the queen to safety and develop"
+    },
+    {
+      "idea": "Use the e4 and d4 centre later"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain tempi on the queen with ...Nf6 and ...Bb4"
+    },
+    {
+      "idea": "Develop and play ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after exchanging the d-pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet development."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The queen recaptures."
+    },
+    "soundness": {
+      "notes": "Roughly equal."
+    },
+    "structure": {
+      "notes": "d-pawns gone."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Quiet development."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The queen recaptures."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Roughly equal."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "d-pawns gone."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "Queen out early."
+    }
+  }
+}

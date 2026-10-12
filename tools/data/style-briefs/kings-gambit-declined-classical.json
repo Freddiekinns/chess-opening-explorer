@@ -1,0 +1,111 @@
+{
+  "slug": "kings-gambit-declined-classical",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Classical, Soldatenkov Variation",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Bc5 3. Nf3 d6 4. fxe5",
+    "fen": "rnbqk1nr/ppp2ppp/3p4/2b1P3/4P3/5N2/PPPP2PP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "kings-gambit-declined-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 2.f4 Bc5 3.Nf3 d6 White can take 4.fxe5 dxe5 (Soldatenkov), opening the f-file and the d-file, with Black's bishop eyeing f2 and White's knight aiming at e5. I am unsure of the exact theory here; the most played continuations under it are Hanham-style set-ups with ...Nd7 and Nc3. Both sides develop quickly in an open centre with mutual chances.",
+  "white_ideas": [
+    {
+      "idea": "Exchange on e5 and use the half-open f-file with Nf3, Bc4 and castling"
+    },
+    {
+      "idea": "Hold e4 with Nc3 and d3, then play for a kingside initiative"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture ...dxe5 and develop with ...Nf6 and ...Nc6"
+    },
+    {
+      "idea": "Use the c5 bishop against f2 and the d-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after fxe5 dxe5 with open f- and d-files"
+    },
+    {
+      "structure": "Philidor-like pawn set-up with ...d6 and ...Nd7 in the Hanham"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open central play after fxe5 dxe5; tactics around f2 and e5 but neither side is forced into risks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given: the f-pawn is exchanged for the e-pawn."
+    },
+    "soundness": {
+      "notes": "Declined lines are sound for both sides."
+    },
+    "structure": {
+      "notes": "fxe5 dxe5 trades the d- and f-pawns and opens the centre."
+    },
+    "approach": {
+      "notes": "A rare side line of the King's Gambit Declined; strong players meet it with ordinary development."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but the move order is rarely seen."
+    }
+  },
+  "plan_phrases": [
+    "open centre",
+    "f-file pressure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Svenonius Variation",
+      "moves": "1. e4 e5 2. Bc4 Nc6 3. Nc3 Nf6 4. d3 Bc5 5. f4 d6 6. Nf3 Bg4 7. h3 Bxf3 8. Qxf3 exf4",
+      "how": "A move-order transposition where Black takes on f4 and White gets a gambit-like game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Open play after fxe5 dxe5 with chances for both and no forced sharpness."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "f-pawn is traded for the e-pawn, no material changes hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Declined line; both sides are fine."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "fxe5 dxe5 leaves open d- and f-files."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Rare but not an unplayed line for strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are straightforward; theory is thin."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Nothing clearly named."
+    }
+  }
+}

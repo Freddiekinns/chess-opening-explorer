@@ -1,0 +1,108 @@
+{
+  "slug": "nimzo-indian-defense-ragozin-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Ragozin Defense",
+    "eco": "E48",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Bd3 d5 6. Nf3 Nc6 7. O-O",
+    "fen": "r1bq1rk1/ppp2ppp/2n1pn2/3p4/1bPP4/2NBPN2/PP3PPP/R1BQ1RK1 b - - 3 7"
+  },
+  "parent": "nimzo-indian-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In this Nimzo-Indian Black has played ...O-O, ...d5 and ...Nc6 so the pawn centre is under tension: White has Bd3 and Nf3 with castling while Black's Bb4 pins Nc3. Black will usually take ...dxc4 and ...Bxc3 or ...e5 when White's centre is unclear. Both sides have normal development and a rich middlegame.",
+  "white_ideas": [
+    {
+      "idea": "Take on d5 or play cxd5 and keep the centre"
+    },
+    {
+      "idea": "Use the bishop pair and the e4 break"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade on c3 and play ...dxc4 with ...e5"
+    },
+    {
+      "idea": "Pressure d4 with ...Nc6 and ...Bxc3"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD-like centre with tension on c4/d5"
+    },
+    {
+      "structure": "Doubled c-pawns for White with the bishop pair"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Rich middlegames but nothing forced early."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Fully sound."
+    },
+    "structure": {
+      "notes": "Tension in the centre with c4, d4 against d5."
+    },
+    "approach": {
+      "notes": "Mainstream Nimzo-Indian."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans over memory."
+    }
+  },
+  "plan_phrases": [
+    "doubled pawns",
+    "bishop pair"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Mainstream Nimzo, even with real play for both."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Centre in tension, not locked or open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "Main-line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Understanding of structures."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "bishop_pair"
+      ],
+      "reason": "Bxc3 trade ideas."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "benoni-defense-knights-tour-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Knight's Tour Variation",
+    "eco": "A61",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6 7. Nd2",
+    "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP4/8/2N5/PP1NPPPP/R1BQKB1R b KQkq - 1 7"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays Nd2-c4 aiming for the d6 pawn and the e5 square, a quieter anti-Benoni plan than the Taimanov Attack. Black fianchettoes with ...Bg7, castles and prepares ...Nbd7 and ...b5 or ...Re8 for queenside counterplay. Both sides play for a long fight with asymmetrical pawns.",
+  "white_ideas": [
+    {
+      "idea": "Nc4 to pressure d6 and e5"
+    },
+    {
+      "idea": "Bf4 or Bg5 to control e5"
+    },
+    {
+      "idea": "Hold the e4-e5 break"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto with ...Bg7 and castle"
+    },
+    {
+      "idea": "Play ...Nbd7 and ...Re8 pressure on e4"
+    },
+    {
+      "idea": "Counterplay with ...b5 or ...a6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Modern Benoni structure with White pawns on d5/e4 and Black on c5/d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced Benoni positions; Black takes risks for counterplay on the queenside."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "A sound main-line sideline."
+    },
+    "structure": {
+      "notes": "Asymmetric Benoni centre with the e-file for Black and queenside play."
+    },
+    "approach": {
+      "notes": "A normal anti-Benoni plan, not a system."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Benoni plans are hard to get right."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "knight outpost on c4/e5",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Benoni structures are unbalanced with queenside counterplay."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "The c-pawn exchange recovers the material."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Normal theory."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Asymmetric centre with a half-open file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "Plans matter, but the line is less theoretical than the Taimanov Attack."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "knight_outpost",
+        "fianchetto"
+      ],
+      "reason": "Black's ...b5 expansion and the knight on c4."
+    }
+  }
+}

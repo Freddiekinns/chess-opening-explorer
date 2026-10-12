@@ -1,0 +1,103 @@
+{
+  "slug": "hungarian-opening-myers-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Myers Defense",
+    "eco": "A00",
+    "moves": "1. g3 g5",
+    "fen": "rnbqkbnr/pppppp1p/8/6p1/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black meets 1.g3 with an immediate ...g5, taking space and preparing ...Bg7. White fianchettoes and often hits the long diagonal with d4 or Bg2 to exploit the weakened kingside. It is an eccentric reply rather than a respectable defence.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with Bg2 and take the centre with d4"
+    },
+    {
+      "idea": "Exploit the weakened kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Bg7 and ...d6"
+    },
+    {
+      "idea": "Take space with ...g5 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flank opening with Black kingside pawn on g5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not especially sharp; I am unsure."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "g5 weakens the king for little."
+    },
+    "structure": {
+      "notes": "Centre undecided."
+    },
+    "approach": {
+      "notes": "Strong players seldom meet 1.g3 this way."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Not especially sharp; I am unsure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "g5 weakens the king for little."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Centre undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom meet 1.g3 this way."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Fianchetto on the long diagonal."
+    }
+  }
+}

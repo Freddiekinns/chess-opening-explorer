@@ -1,0 +1,108 @@
+{
+  "slug": "queens-gambit-declined-miles-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Miles Variation",
+    "eco": "D37",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Be7 5. Bg5 O-O 6. Qc2",
+    "fen": "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N2N2/PPQ1PPPP/R3KB1R b KQ - 5 6"
+  },
+  "parent": "queens-gambit-declined-three-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Orthodox QGD White plays 6.Qc2 after Bg5, Nf3 and Black castling, an alternative to 6.e3. Black usually answers ...Nbd7 or ...c5 and prepares to free the position, while White keeps a small space edge. The game is slow with no early tactics.",
+  "white_ideas": [
+    {
+      "idea": "Qc2 to support e4 and the c-file"
+    },
+    {
+      "idea": "Rd1 and e3 or e4 breaks"
+    },
+    {
+      "idea": "Hold a small space advantage"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete development with ...Nbd7 and ...c6"
+    },
+    {
+      "idea": "Break with ...c5 or ...dxc4"
+    },
+    {
+      "idea": "Trade pieces to relieve the cramp"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Orthodox QGD pawns on d5/e6 against c4/d4 with Black's c8 bishop passive"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Orthodox QGD, among Black's most reliable replies to 1.d4."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Main-line QGD, sound."
+    },
+    "structure": {
+      "notes": "Centre tension; QGD anchored as Flexible."
+    },
+    "approach": {
+      "notes": "Mainstream branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Slow manoeuvring play."
+    }
+  },
+  "plan_phrases": [
+    "free game with ...c5",
+    "trade pieces"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.8,
+      "reason": "Orthodox QGD is the model of a Solid defence."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "Main-line theory."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "QGD centre in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "Mainstream QGD."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "As the Orthodox Defense anchor."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single plan is characteristic."
+    }
+  }
+}

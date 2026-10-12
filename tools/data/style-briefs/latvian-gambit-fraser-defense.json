@@ -1,0 +1,112 @@
+{
+  "slug": "latvian-gambit-fraser-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Fraser Defense",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Nc6",
+    "fen": "r1bqkbnr/pppp2pp/2n5/4Np2/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.e4 e5 2.Nf3 f5 3.Nxe5 Nc6, Black counters the usual 3...Qf6 by attacking the knight, and White usually takes 4.Nxc6 dxc6 with a lead in development for Black a pawn down, followed by d3 or d4. The sound line for White is to return the pawn only when safe and consolidate. It is a trappy, rarely seen branch of the Latvian.",
+  "white_ideas": [
+    {
+      "idea": "Take on c6 and play d3/d4 with a solid extra pawn"
+    },
+    {
+      "idea": "Develop quickly and keep the king safe on the e1-h4 diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture ...dxc6 and open lines with ...fxe4"
+    },
+    {
+      "idea": "Use the bishop pair and open d-file for activity"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White a pawn up after Nxc6 dxc6"
+    },
+    {
+      "structure": "Black pawn on f5 and open e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for tactics and gambit pawns; White is better if safe, but traps abound."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black loses the e-pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "The Latvian is considered refuted or close to it by theory."
+    },
+    "structure": {
+      "notes": "Centre opens with exchanges on c6 and e4."
+    },
+    "approach": {
+      "notes": "The Latvian is one of the anchors for Offbeat."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious lines are not recommended; it needs surprise more than understanding."
+    }
+  },
+  "plan_phrases": [
+    "black gambit for lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Nxc6 main line",
+      "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Nc6 4. Nxc6 dxc6",
+      "how": "The usual practical choice with a clear plus for White."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Black gambits and White must avoid traps around f5, e4 and the king."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black loses a pawn on e5 which White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "The Latvian is considered close to refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Open e- and d-files after exchanges."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Latvian Gambit is an Offbeat anchor."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.7,
+      "reason": "Dubious so never Beginner; traps need to be memorised."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black seeks quick development for the pawn."
+    }
+  }
+}

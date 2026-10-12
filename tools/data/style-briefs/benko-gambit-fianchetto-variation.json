@@ -1,0 +1,113 @@
+{
+  "slug": "benko-gambit-fianchetto-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit: Fianchetto Variation",
+    "eco": "A58",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. Nf3 g6 8. g3",
+    "fen": "rn1qkb1r/4pp1p/b2p1np1/2pP4/8/2N2NP1/PP2PP1P/R1BQKB1R b KQkq - 0 8"
+  },
+  "parent": "benko-gambit-accepted-fully-accepted-variation",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "In the Benko Gambit Accepted White declines to defend the extra pawn directly with a fianchetto set-up (g3, Bg2, O-O) and keeps it. Black has castled on the g-file with a Bg7 and rooks on the half-open a- and b-files, trying for long-term pressure on White's queenside. White tries to consolidate and return the pawn when useful.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with g3, Bg2 and castle, hold the extra pawn"
+    },
+    {
+      "idea": "Play Nd2, a4 and Ra2 or return the pawn to trade pieces"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure on a- and b-files with rooks"
+    },
+    {
+      "idea": "Use the Bg7 on the long diagonal and ...Nbd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benko structure with d5, e2/e4 against Black c5/d6"
+    },
+    {
+      "structure": "Half-open a- and b-files for Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional pressure for a pawn, slower than the main lines; not forced."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black has given a pawn on b5 and White can keep it."
+    },
+    "soundness": {
+      "notes": "Benko is a sound gambit."
+    },
+    "structure": {
+      "notes": "Semi-open for Black's rooks on a- and b-files while White keeps a central wedge."
+    },
+    "approach": {
+      "notes": "The Fianchetto is a main line of the Benko."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Compensation is positional and needs good judgement."
+    }
+  },
+  "plan_phrases": [
+    "pressure on the a- and b-files",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "9.Bh3",
+      "moves": "9. Bh3",
+      "how": "White removes the dark bishop battery."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Positional pressure; sharper only when White returns the pawn badly."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.95,
+      "reason": "Black gives a pawn that White may keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Benko is an anchor Sound gambit."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Half-open a- and b-files against a fixed d5 pawn."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "Main-line Benko."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Understanding over memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both fianchetto bishops."
+    }
+  }
+}

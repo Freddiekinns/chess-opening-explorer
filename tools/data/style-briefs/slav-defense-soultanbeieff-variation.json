@@ -1,0 +1,101 @@
+{
+  "slug": "slav-defense-soultanbeieff-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Soultanbeieff Variation",
+    "eco": "D16",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 e6",
+    "fen": "rnbqkb1r/pp3ppp/2p1pn2/8/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "slav-defense-alapin-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Slav Alapin Black builds a Semi-Slav-like set-up with ...e6 while keeping the c4 pawn. White tries to regain it with e3 and Bxc4 or gain central space with e4. Play is a strategic fight over the c4 pawn and the e4 push; I am not sure of the exact main line.",
+  "white_ideas": [
+    {
+      "idea": "Regain c4 with e3 and Bxc4 or play e4"
+    },
+    {
+      "idea": "Keep a central space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold c4 with ...b5 or play ...c5"
+    },
+    {
+      "idea": "Develop with ...Bb4 and ...Nbd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav/Semi-Slav hybrid with pressure on c4 and d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither especially solid nor sharp as far as I know."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4 pawn is not a gambit."
+    },
+    "soundness": {
+      "notes": "Standard."
+    },
+    "structure": {
+      "notes": "Centre tension until e4 or ...c5."
+    },
+    "approach": {
+      "notes": "A named Slav line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Understanding of the c4 pawn matters."
+    }
+  },
+  "plan_phrases": [
+    "regain or hold c4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither especially solid nor sharp as far as I know."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The c4 pawn is not a gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Standard."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Centre tension until e4 or ...c5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A named Slav line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding of the c4 pawn matters."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear named plan."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "australian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Australian Defense",
+    "eco": "A40",
+    "moves": "1. d4 Na6",
+    "fen": "r1bqkbnr/pppppppp/n7/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "1.d4 Na6 is a rare sortie of the b8 knight to the rim, aiming for ...c5 and ...Nb4. White usually takes the centre with e4, c4 or c3, and Black's knight is out of play. It is basically a surprise tool with little theory.",
+  "white_ideas": [
+    {
+      "idea": "Occupy the centre with e4 and c4"
+    },
+    {
+      "idea": "Play Nc3 and Bf4 and punish the misplaced knight"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Prepare ...c5 and ...Nb4"
+    },
+    {
+      "idea": "Undermine d4 with ...e5 once developed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre if Black allows e4"
+    },
+    {
+      "structure": "Delayed knight development on a6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unusual but not especially sharp."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Na6 loses time and is considered dubious."
+    },
+    "structure": {
+      "notes": "Undecided at move 1."
+    },
+    "approach": {
+      "notes": "Strong players seldom play 1...Na6."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Quiet, offbeat play with an unsound-looking start."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Na6 on the rim; scores through surprise."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Centre not formed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Nothing named."
+    }
+  }
+}

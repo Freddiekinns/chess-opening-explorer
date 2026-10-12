@@ -623,5 +623,63 @@
       "sources": [],
       "taxonomy_note": null
     }
+  },
+  "indian-defense-pseudo-benko": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Benoni-type d5/c5 centre with Black playing on the queenside files, as in the Benko Gambit precedent (semi_open); no pawn chains lock both centres.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "gambit": {
+      "value": "none",
+      "reason": "Material is level at the root and nothing attacks b5 yet; the most played 4.Bg5 ignores the pawn, so in the main line no material changes hands. Evidence cannot settle whether this counts as an offer, so the conservative value.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "With no gambit in the main line there is nothing refuted; White is comfortable, which is not the same as the line being close to refuted. Conservative hidden value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "nimzowitsch-defense-el-columpio-defense": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 4.d4 d6 5.h3 Nh6 the e5 pawn is exchanged or advanced to e6 and Black recaptures with the f-pawn, giving half-open files rather than locked chains; closed does not fit.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "petrovs-defense-karklins-martinovsky-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Petrov exchange of e-pawns with ...d5 against d-pawn play, the same structure as the Classical Attack, which is semi_open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "petrovs-defense-millennium-attack": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "5.Bd3 usually transposes to Classical Attack structures after d4 and ...d5; matched to that precedent (semi_open).",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-vitzthum-attack": {
+    "gambit": {
+      "value": "white",
+      "reason": "Scotch Gambit branch: White leaves the d4 pawn and Black can keep it; the name omits gambit but the material is given.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "6.Qh5 is a premature queen attack that ...Qe7 or ...Qf6 meets comfortably; strong players consider it unsound, unlike the 5.Ng5 mainlines.",
+      "sources": [],
+      "taxonomy_note": null
+    }
   }
 }

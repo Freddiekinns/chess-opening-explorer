@@ -1,0 +1,113 @@
+{
+  "slug": "vienna-gambit-with-max-lange-defense-hamppe-muzio-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Gambit, with Max Lange Defense: Hamppe-Muzio Gambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 g5 5. Bc4 g4 6. O-O gxf3",
+    "fen": "r1bqkbnr/pppp1p1p/2n5/8/2B1Pp2/2N2p2/PPPP2PP/R1BQ1RK1 w kq - 0 7"
+  },
+  "parent": "vienna-game-hamppe-muzio-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White has sacrificed a knight on f3 after the Hamppe-Muzio: Black has pawns on f4 and a knight on f3 and White plays Qxf3 with a direct attack on f7 and the f-file. White gets a big lead in development and open lines at the cost of a full piece. Black can often keep the material and defend, but it is dangerous in practice.",
+  "white_ideas": [
+    {
+      "idea": "Recapture with Qxf3 and open lines against f7"
+    },
+    {
+      "idea": "Bring the pieces out with d3, Nd5 and Bxf4"
+    },
+    {
+      "idea": "Attack the king with Qf3, Bc4 and Rxf4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the piece and defend with ...Qe7 and ...Nf6"
+    },
+    {
+      "idea": "Return material at the right moment to untangle"
+    },
+    {
+      "idea": "Trade queens and use the extra piece in the endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre and open f-file, White a piece down"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A piece sacrificed for a direct attack leaves the game forcing."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the knight after ...gxf3 if defending accurately."
+    },
+    "soundness": {
+      "notes": "Theory regards the Muzio as unsound but practically dangerous."
+    },
+    "structure": {
+      "notes": "All central lines are open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players, who prefer other Vienna lines."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "White must know the attacking lines to get the compensation."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack",
+    "Pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "A piece is sacrificed for a direct attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White has given a knight that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "The Muzio is considered unsound but hard to refute over the board."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.9,
+      "reason": "The f-file, e-file and diagonals are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom play the Muzio idea in the Vienna."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "It is dubious so not Beginner, and relies on specific lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for the attack on f7 and the king."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "scotch-game-napoleon-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Napoleon Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 Nxd4 4. Nxd4 exd4 5. Bc4",
+    "fen": "r1bqkbnr/pppp1ppp/8/8/2BpP3/8/PPP2PPP/RNBQK2R b KQkq - 1 5"
+  },
+  "parent": "scotch-game-lolli-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3...Nxd4 4.Nxd4 exd4 White develops with 5.Bc4 instead of recapturing on d4, offering the pawn. White aims for quick development and pressure on f7. Black can play ...Nf6 or ...c5 and keep the extra pawn.",
+  "white_ideas": [
+    {
+      "idea": "Play Qxd4, Nc3 and castle while hitting f7"
+    },
+    {
+      "idea": "Use the open d-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend d4 with ...c5 or trade queens"
+    },
+    {
+      "idea": "Develop and consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a black pawn on d4"
+    },
+    {
+      "structure": "White lead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open tactical play where White tries to use development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can hold d4 with ...c5 and keep it."
+    },
+    "soundness": {
+      "notes": "Black is fine with accurate play."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Tactics need to be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Normal 5.Qxd4",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 Nxd4 4. Nxd4 exd4 5. Qxd4",
+      "how": "recapture, equal material"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "White sacrifices for the initiative."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White does not take back on d4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can keep the pawn and White's compensation is thin."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Open centre with lines for pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "Bc4 and fast development aim at f7."
+    }
+  }
+}

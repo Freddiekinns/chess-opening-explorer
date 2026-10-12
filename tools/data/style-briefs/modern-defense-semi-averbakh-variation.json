@@ -1,0 +1,122 @@
+{
+  "slug": "modern-defense-semi-averbakh-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Semi-Averbakh Variation, Polish Variation",
+    "eco": "A04",
+    "moves": "1. Nf3 c5 2. c4 g6 3. d4 Bg7 4. e4 Qb6",
+    "fen": "rnb1k1nr/pp1pppbp/1q4p1/2p5/2PPP3/5N2/PP3PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "english-opening-symmetrical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White builds the broad e4-d4-c4 centre against the Modern set-up, and Black hits it at once with ...Qb6 (or the Pterodactyl ...Qa5+) and the ...c5 break. Black wants to trade White's d-pawn and live on the dark squares around a fianchettoed bishop on g7. The game is a manoeuvring fight over the centre rather than a forced one, and Black's early queen gives White tempi to gain.",
+  "white_ideas": [
+    {
+      "idea": "Keep the e4-d4-c4 centre and gain tempi against the queen with Nc3, Be2 or Nbd2"
+    },
+    {
+      "idea": "Meet ...cxd4 with Nxd4 and play for a Maroczy-type bind"
+    },
+    {
+      "idea": "Castle and use the space to restrict Black's pieces"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Undermine d4 with ...c5 and trade it off"
+    },
+    {
+      "idea": "Use the queen on b6 or a5 to pressure d4 and b2"
+    },
+    {
+      "idea": "Complete the ...Nf6 and ...O-O set-up around the g7 bishop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Maroczy bind after ...cxd4 Nxd4 (pawns c4 and e4)"
+    },
+    {
+      "structure": "Open c-file with c5 traded for White's d-pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The early queen sortie makes the middlegame unbalanced, but nothing is forced and neither king is attacked early."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawns are level in the main lines; 4...Qb6 may allow 5.Nc3 and tension on d4 but no pawn is offered for good."
+    },
+    "soundness": {
+      "notes": "Sound but with a tempo cost for Black; White is usually described as slightly better."
+    },
+    "structure": {
+      "notes": "After ...cxd4 Nxd4 White has c4 and e4 against Black's d6 and e7 pawns, a semi-open game on the c-file."
+    },
+    "approach": {
+      "notes": "Played by strong players occasionally as a Modern/Pterodactyl choice, not a system."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forced lines, but handling the early queen and the Maroczy bind takes judgement."
+    }
+  },
+  "plan_phrases": [
+    "Hypermodern centre",
+    "Early queen",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Pterodactyl Declined/Accepted",
+      "moves": "1. e4 g6 2. d4 Bg7 3. c4 c5 4. Nf3 Qa5+",
+      "how": "The queen goes to a5 with check instead of b6 and the lines are more forcing."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "The early queen makes play unbalanced but not forcing, so neither Solid nor Sharp fits."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is given up on purpose in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "It is slightly worse for Black at most, not refuted."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "After ...cxd4 the Maroczy-style centre gives Black a half-open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Strong players pick it now and then, which is standard rather than offbeat."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "It asks for judgement about the centre rather than long memorised lines."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "early_queen",
+        "fianchetto"
+      ],
+      "reason": "Black lets White build the centre and attacks it with c5 and the queen."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "nimzowitsch-defense-wheeler-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Wheeler Gambit",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. b4",
+    "fen": "r1bqkbnr/pppppppp/2n5/8/1P2P3/8/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.e4 Nc6 White plays 2.b4, offering the b-pawn so Black's knight is pulled away. After 2...Nxb4 3.c3 Nc6 4.d4 White has a big centre for the pawn and Black's knight has lost two tempi. Black can also play 2...e5 3.b5 Nce7 and keep the pawn structure.",
+  "white_ideas": [
+    {
+      "idea": "Build a big centre with c3 and d4"
+    },
+    {
+      "idea": "Develop quickly with Nf3, Bd3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn and consolidate with ...d5 or ...e5"
+    },
+    {
+      "idea": "Return the pawn at the right moment"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on c3, d4, e4 against Black knight on c6"
+    },
+    {
+      "structure": "Open centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices a pawn for centre and tempo; both sides have chances."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 2...Nxb4 White is a pawn down and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Considered dubious; Black can keep the pawn with accurate play."
+    },
+    "structure": {
+      "notes": "Open centre with c3 and d4."
+    },
+    "approach": {
+      "notes": "Rare in strong play."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious so never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Central pawn majority",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2...e5",
+      "moves": "2...e5 3.b5 Nce7",
+      "how": "Black declines and keeps the structure"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White gambits a pawn for centre."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the b-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "White gets too little for the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "White centre opens up."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rare at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority",
+        "lead_in_development"
+      ],
+      "reason": "White builds a pawn centre."
+    }
+  }
+}

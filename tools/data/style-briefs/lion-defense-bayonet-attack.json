@@ -1,0 +1,116 @@
+{
+  "slug": "lion-defense-bayonet-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Lion Defense: Bayonet Attack",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 Nbd7 4. g4",
+    "fen": "r1bqkb1r/pppnpppp/3p1n2/8/3PP1P1/2N5/PPP2P1P/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 4.g4 against the Lion set-up with ...Nbd7, grabbing space on the kingside and threatening g5 to kick the f6 knight. Black normally replies ...e5 or ...c5 and aims to undermine the centre, often with ...h6 to blunt the g-pawn. Both sides castle in different places and the game becomes a race.",
+  "white_ideas": [
+    {
+      "idea": "Push g5 and h4 to cramp the kingside"
+    },
+    {
+      "idea": "Support with Be3, Qd2 and a possible long castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...e5 or ...c5"
+    },
+    {
+      "idea": "Use ...h6 and ...Nb6 to meet the pawn advance"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Tense e4/d4 centre against ...d6 with open flanks"
+    },
+    {
+      "structure": "Kingside pawn storm against a Black king that may castle either side"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Pawns are thrown forward and both kings can come under fire, so a slip loses quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material has been given; the g-pawn is protected."
+    },
+    "soundness": {
+      "notes": "Black is sound and the g4 advance weakens White, so both sides are playable."
+    },
+    "structure": {
+      "notes": "The centre stays in tension while pawns are advanced on the wing."
+    },
+    "approach": {
+      "notes": "An established way of meeting the Lion and the Pirc, if less common than 4.f4 or 4.Be3."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans and timing matter more than memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "kingside pawn storm",
+    "space advantage",
+    "undermine the centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Quiet 4.Nf3",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 Nbd7 4. Nf3",
+      "how": "the calm Philidor-type set-up"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "The g-pawn lunge makes both sides take risks on opposite wings."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn has been sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Neither side is considered losing by force."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is under tension rather than locked or opened."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "It is a recognised main-line branch against the Lion and Pirc."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans are clear enough but the timing needs experience."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "pawn_storm",
+        "space_advantage"
+      ],
+      "reason": "White pushes the g- and h-pawns to cramp and attack."
+    }
+  }
+}

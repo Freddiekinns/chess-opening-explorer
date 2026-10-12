@@ -1,0 +1,114 @@
+{
+  "slug": "kings-gambit-accepted-stamma-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Stamma Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. h4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp1P/8/PPPP2P1/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.h4 in the King's Gambit Accepted, preventing ...g5 and keeping the f4 pawn in doubt. White offers a second pawn for a lead in development and the open f-file and h-file. Black can accept or play ...Nf6 and ...d5 to counter.",
+  "white_ideas": [
+    {
+      "idea": "Play Nc3, Bc4 and d4 with a big centre"
+    },
+    {
+      "idea": "Open the h-file or f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn with ...Nf6 or ...Bd6"
+    },
+    {
+      "idea": "Counter with ...d5 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game with the f-pawn gone"
+    },
+    {
+      "structure": "White pawns on h4 and e4 against Black's extra f4 pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wide open and tactical, with the black pawn on f4 and White's king exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the f4 pawn with ...Nf6 and ...d5."
+    },
+    "soundness": {
+      "notes": "3.h4 is considered inferior to 3.Nf3."
+    },
+    "structure": {
+      "notes": "The f-file and centre are open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Tactical lines need to be known and the line is not first-choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Standard 3.Nf3",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3",
+      "how": "the main KGA with the usual g5 fight"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Gambit lines with exposed kings and open files."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "Black can keep the f4 pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The rare 3.h4 is thought inferior to the main line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose 3.h4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Not a first repertoire line."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White pushes the h-pawn and hits the kingside."
+    }
+  }
+}

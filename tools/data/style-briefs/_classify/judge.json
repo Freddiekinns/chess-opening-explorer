@@ -893,5 +893,103 @@
       "sources": [],
       "taxonomy_note": null
     }
+  },
+  "benoni-defense-snail-variation": {
+    "structure": {
+      "value": "flexible",
+      "reason": "d5/c5 Benoni centre with nothing exchanged and Black free to choose ...e5 (closed) or ...e6/...g6; the same call as the Vulture, flexible.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "caro-kann-defense-massachusetts-defense": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "2...f5 3.exf5 swaps White's e-pawn for Black's f-pawn, giving half-open files on each side with d4 and Black's c- and d-pawns still there, as in the Modern Fianchetto Gambit (semi_open).",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "latvian-gambit-accepted-nimzowitsch-attack": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 5...fxe4 6.Ne3 Black keeps pawns on e4 and d6 against d4; the f-file is half-open for White, not an open centre.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "nimzowitsch-defense-hornung-gambit": {
+    "character": {
+      "value": "balanced",
+      "reason": "3.Be3 offers e4 for development, but Black can decline with ...e6 or ...Nf6 lines; the evidence splits, so the middle value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "queens-gambit-declined-zilbermints-gambit": {
+    "character": {
+      "value": "balanced",
+      "reason": "2...b5 3.cxb5 leaves Black a pawn down with little to attack; neither forcing nor solid, and the classifiers split, so the middle value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-romanishin-variation": {
+    "structure": {
+      "value": "open",
+      "reason": "The Scotch exchange on d4 leaves e4 against an open d-file and diagonals; matched to the Scotch Game anchor, open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "philidor-defense-nimzowitsch": {
+    "gambit": {
+      "value": "white",
+      "reason": "4.Ng5 aims at the Locock sacrifice on f7 after ...h6; Black can keep the knight.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "The knight sacrifice is unsound against accurate defence.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-braune-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "Steinitz 4...Qh4 5.Be3 lets ...Qxe4 take the e-pawn and Black can keep it.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Unlike 5.Nb5 or 5.Nc3, 5.Be3 gives the pawn for too little; Black is comfortable.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-fraser-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "5.Nf3 Qxe4+ 6.Be2 gives the e-pawn for development; Black keeps it.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Theory gives White insufficient compensation.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "grob-opening-romford-countergambit": {
+    "gambit": {
+      "value": "black",
+      "reason": "3...d4 is Black's countergambit: 4.Bxb7 Nd7 5.Bxa8 Qxa8 gives the exchange for a crushing long diagonal, and countergambits count. The g4 pawn White gave is already Black's; the line's own sacrifice is Black's.",
+      "sources": [],
+      "taxonomy_note": null
+    }
   }
 }

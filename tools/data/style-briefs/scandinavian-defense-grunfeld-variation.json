@@ -1,0 +1,108 @@
+{
+  "slug": "scandinavian-defense-grunfeld-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Grünfeld Variation",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Nf3 Bf5 6. Ne5 c6 7. g4",
+    "fen": "rn2kb1r/pp2pppp/2p2n2/q3Nb2/3P2P1/2N5/PPP2P1P/R1BQKB1R b KQkq - 0 7"
+  },
+  "parent": "scandinavian-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Scandinavian Classical line White plays 6.Ne5 c6 7.g4, kicking the Bf5. Black usually retreats ...Bg6 and White plays Nxg6 hxg6 with a kingside pawn advance, or ...Bg6 and the knight stays on e5. White gets space and attacking chances; Black must be careful about the pawn storm and the Black queen on a5.",
+  "white_ideas": [
+    {
+      "idea": "Push g4 and gain kingside space"
+    },
+    {
+      "idea": "Develop Bg2, Bd2 and castle long"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Retreat the bishop and hit the centre with ...e6 and ...c5"
+    },
+    {
+      "idea": "Counter with the queen on a5 and ...Nbd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White kingside pawns advanced to g4"
+    },
+    {
+      "structure": "Semi-open d-file with Black queen on a5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A sharp line where White attacks the bishop and pushes pawns."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given up."
+    },
+    "soundness": {
+      "notes": "A principled and sound line for both."
+    },
+    "structure": {
+      "notes": "A fixed asymmetric Scandinavian centre."
+    },
+    "approach": {
+      "notes": "A recognised branch of the Scandinavian."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Sharp pawn storms and forced bishop retreats need prep."
+    }
+  },
+  "plan_phrases": [
+    "Pawn storm",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "White pawn storm and opposite plans make it double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "A mainstream line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Typical Scandinavian asymmetric centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.45,
+      "reason": "Some theory but not as deep as Advanced lines."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "space_advantage"
+      ],
+      "reason": "White advances the g-pawn at the bishop."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "marienbad-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Marienbad System",
+    "eco": "A47",
+    "moves": "1. d4 Nf6 2. Nf3 b6 3. g3 Bb7 4. Bg2 c5",
+    "fen": "rn1qkb1r/pb1ppppp/1p3n2/2p5/3P4/5NP1/PPP1PPBP/RNBQK2R w KQkq - 0 5"
+  },
+  "parent": "pseudo-queens-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black sets up a Queen's Indian-style fianchetto with ...b6 and ...Bb7, then strikes at the centre with ...c5 against White's g3/Bg2 set-up. The game usually goes into a Hedgehog or open Sicilian-style structure with ...e6, ...cxd4 and ...Be7, where both sides have long diagonals.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with g3, Bg2 and castle"
+    },
+    {
+      "idea": "Meet ...c5 with d5 or O-O and c4"
+    },
+    {
+      "idea": "Build pressure on the long diagonal and the d-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...c5 and ...cxd4"
+    },
+    {
+      "idea": "Use the b7 bishop on the long diagonal"
+    },
+    {
+      "idea": "Set up a hedgehog with ...e6, ...d6 and ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical fianchetto set-ups"
+    },
+    {
+      "structure": "Hedgehog-style pawns on a6, b6, d6, e6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A flexible fianchetto game with few forced lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "Normal Queen's Indian-style play, sound."
+    },
+    "structure": {
+      "notes": "The centre may open with ...cxd4 or remain flexible with d5."
+    },
+    "approach": {
+      "notes": "A Black set-up played against many White tries."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans over lines."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither side takes big risks and play is positional."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material change."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A normal set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is not fixed and may open or close."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Recognised in the Queen's Indian family, not a universal system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter, with little to memorise."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Both sides fianchetto and challenge the centre with pieces."
+    }
+  }
+}

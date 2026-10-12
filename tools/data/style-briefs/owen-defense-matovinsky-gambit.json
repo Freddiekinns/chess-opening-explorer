@@ -1,0 +1,109 @@
+{
+  "slug": "owen-defense-matovinsky-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Owen Defense: Matovinsky Gambit",
+    "eco": "B00",
+    "moves": "1. e4 b6 2. d4 Bb7 3. Bd3 f5 4. exf5 Bxg2 5. Qh5+ g6",
+    "fen": "rn1qkbnr/p1ppp2p/1p4p1/5P1Q/3P4/3B4/PPP2PbP/RNB1K1NR w KQkq - 0 6"
+  },
+  "parent": "owen-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black replies to Bd3 with 3...f5, and after 4.exf5 Bxg2 5.Qh5+ g6 the position is chaotic with Black's bishop on g2 and the king exposed. White has an extra pawn or more and Black's counterplay is thin. It is a speculative line that is rarely good against accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawns and keep the extra material with Qh5+ and fxg6"
+    },
+    {
+      "idea": "Trade queens or hit Black's king while it is exposed"
+    },
+    {
+      "idea": "Develop with Nf3 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pick off the g2 pawn and open lines to the rook"
+    },
+    {
+      "idea": "Attack White's king with ...Nf6 and ...Rg8"
+    },
+    {
+      "idea": "Hold the bishop and create mating chances"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, Black kingside in ruins"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings face tactics early and one error loses fast."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White keeps the extra pawns if it avoids the traps."
+    },
+    "soundness": {
+      "notes": "Bauer calls it suicidal; sound enough only against weak play."
+    },
+    "structure": {
+      "notes": "All centre pawns are gone and files are open."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific forcing lines but unsound, so not a repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Black's king is exposed and the play is tactical."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black offers pawns that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "The parent source calls it suicidal."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Pawns are traded early and the position is open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players almost never choose this."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "It is dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black hopes for development and counterplay against an exposed king."
+    }
+  }
+}

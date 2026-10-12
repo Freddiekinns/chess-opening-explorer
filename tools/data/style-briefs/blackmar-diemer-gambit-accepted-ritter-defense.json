@@ -1,0 +1,114 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-ritter-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Ritter Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 b6",
+    "fen": "rnbqkb1r/p1p1pppp/1p3n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Blackmar-Diemer after 4.f3 exf3 5.Nxf3 Black plays ...b6, heading for Bb7 and a quick fianchetto against the white centre. White is a pawn down for development and a half-open f-file, and goes for Bc4, Qe2 and Bg5 or a kingside attack with castling long. Black can keep the pawn, but must avoid the traps along the e-file and the f7 square.",
+  "white_ideas": [
+    {
+      "idea": "Develop fast with Bc4, Qe2 and Bg5 and aim at f7 and the e-file"
+    },
+    {
+      "idea": "Castle long and attack the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto with ...Bb7 and hit the white centre"
+    },
+    {
+      "idea": "Return material at the right moment and consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4 pawn against fianchettoed Black queen bishop"
+    },
+    {
+      "structure": "Open f-file and quick development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices for lead in development; tactics arise around f7 and the e-file."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White has given the e-pawn and the f-pawn comes back via Nxf3, leaving White one pawn down which Black can keep."
+    },
+    "soundness": {
+      "notes": "The Blackmar-Diemer is generally rated slightly unsound against best play, though 5...b6 is not the main refutation."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces from the start."
+    },
+    "approach": {
+      "notes": "Strong players seldom play the BDG; chosen for surprise."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs known tricks and traps, and a dubious line is not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Bg4 ideas",
+      "moves": "5...Bf5",
+      "how": "A different but related Black set-up, not this variation."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "White is a pawn down for attack and traps appear early."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gave a pawn in the main line and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "The BDG is generally thought unsound against correct play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The e- and f-files open early and pieces dominate."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players rarely meet 1.d4 d5 with e4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious gambit that depends on traps is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White compensates for the pawn with active pieces."
+    }
+  }
+}

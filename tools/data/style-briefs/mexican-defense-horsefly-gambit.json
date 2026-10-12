@@ -1,0 +1,114 @@
+{
+  "slug": "mexican-defense-horsefly-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Mexican Defense: Horsefly Gambit",
+    "eco": "A50",
+    "moves": "1. d4 Nf6 2. c4 Nc6 3. d5 Ne5 4. f4",
+    "fen": "r1bqkb1r/pppppppp/5n2/3Pn3/2P2P2/8/PP2P1PP/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "mexican-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White supports d5 with f4, kicking the e5 knight, and Black can take the c4 pawn. White gets a lead in development and centre space for the pawn. It is a rare gambit with unclear play.",
+  "white_ideas": [
+    {
+      "idea": "Develop Nf3, e3 and Bd3"
+    },
+    {
+      "idea": "Hit the knight on c4 with Qa4/Qd4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take c4 and keep the pawn"
+    },
+    {
+      "idea": "Retreat the knight to g6 or d7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d5 pawn with space"
+    },
+    {
+      "structure": "Open knight play"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unclear, knights jumping around."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black takes c4 and keeps it."
+    },
+    "soundness": {
+      "notes": "Black is fine."
+    },
+    "structure": {
+      "notes": "Centre unresolved."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Unusual."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main 4.Nf3",
+      "moves": "1. d4 Nf6 2. c4 Nc6 3. d5 Ne5 4. Nf3",
+      "how": "the normal Mexican, trading on e5"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "White gives a pawn for time."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "Black can take the c4 pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Compensation looks inadequate."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not beginner level."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "space_advantage"
+      ],
+      "reason": "White gets space and tempi."
+    }
+  }
+}

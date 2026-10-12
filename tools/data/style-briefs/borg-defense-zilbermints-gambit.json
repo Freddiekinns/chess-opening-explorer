@@ -1,0 +1,110 @@
+{
+  "slug": "borg-defense-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Borg Defense: Zilbermints Gambit",
+    "eco": "B00",
+    "moves": "1. e4 g5 2. d4 e5",
+    "fen": "rnbqkbnr/pppp1p1p/8/4p1p1/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "borg-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black answers 2.d4 with 2...e5, offering the g5 and e5 pawns for open lines and quick development. After 3.dxe5 Bg7 White is a pawn up with the g5 pawn also under attack from Bc1, and Black hopes for ...Qe7 and ...Nc6 pressure on e5. White simply develops and returns material only if it suits him.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and keep the extra pawn"
+    },
+    {
+      "idea": "Develop Nf3 and Bxg5 or Be3, then castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture e5 with pieces on ...Bg7, ...Nc6, ...Qe7"
+    },
+    {
+      "idea": "Use the g7 bishop against the long diagonal and c3/b2"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after dxe5 with White a pawn up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open lines at once, Black is a pawn down and trying to hit e5 and d4; White can get an easy game or be hit by tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.dxe5 White has the extra e5 pawn and Black has no forced way to win it back."
+    },
+    "soundness": {
+      "notes": "The 1...g5 set-up is weakening and strong players expect White to be better; the gambit adds a second pawn deficit."
+    },
+    "structure": {
+      "notes": "The d-pawn comes off and the e-file and long diagonal open early."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players at all, chosen for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Little theory, but a dubious line is not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open lines for the pieces"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Quiet 2...Bg7",
+      "moves": "1. e4 g5 2. d4 Bg7",
+      "how": "the normal Borg, with the g5 pawn defended and no gambit"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Black is a pawn down and plays for fast piece activity against an exposed centre."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black offers the e5 pawn after 3.dxe5 and has no clear way to get it back."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The g5 and e5 pawn offers leave Black worse against sound play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The d-pawn is exchanged and lines open at once."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "The Borg is seldom seen from strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never beginner and the theory is thin."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black is paying a pawn for faster development."
+    }
+  }
+}

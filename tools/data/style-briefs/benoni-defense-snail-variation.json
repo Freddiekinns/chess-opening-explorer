@@ -1,0 +1,108 @@
+{
+  "slug": "benoni-defense-snail-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Snail Variation",
+    "eco": "A43",
+    "moves": "1. d4 c5 2. d5 Na6",
+    "fen": "r1bqkbnr/pp1ppppp/n7/2pP4/8/8/PPP1PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "benoni-defense-old-benoni",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.d4 c5 2.d5 Black plays 2...Na6, heading for ...Nc7 to support ...b5 and ...e6. White gets space with e4 and Nc3 and is usually slightly better. The knight on the rim wastes time, so Black relies on a solid Benoni structure and the ...b5 break.",
+  "white_ideas": [
+    {
+      "idea": "Play e4 and Nc3 to take a big centre"
+    },
+    {
+      "idea": "Develop with Bd3 or Be2 and Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reroute the knight with ...Nc7 and play ...e6 or ...b5"
+    },
+    {
+      "idea": "Challenge the d5 pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d5 wedge against ...c5 pawn"
+    },
+    {
+      "structure": "Benoni structure after ...e6 and ...exd5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Strategic space-versus-counterplay with few forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is given up."
+    },
+    "soundness": {
+      "notes": "Playable but gives White the easier game."
+    },
+    "structure": {
+      "notes": "Fixed asymmetric centre with the d5 pawn."
+    },
+    "approach": {
+      "notes": "Rare at strong level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans matter more than lines."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A strategic fight with no direct attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Playable if passive."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Fixed asymmetric Benoni-type centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose the Snail."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Benoni plans take understanding."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "queenside_expansion"
+      ],
+      "reason": "White has space and Black plays on the queenside."
+    }
+  }
+}

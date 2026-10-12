@@ -1,0 +1,106 @@
+{
+  "slug": "zaire-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zaire Defense",
+    "eco": "A40",
+    "moves": "1. d4 Nc6 2. d5 Nb8 3. e4 Nf6 4. e5 Ng8",
+    "fen": "rnbqkbnr/pppppppp/8/3PP3/8/8/PPP2PPP/RNBQKBNR w KQkq - 1 5"
+  },
+  "parent": "montevideo-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 1...Nc6 2.d5 Nb8 3.e4 Nf6 4.e5 Ng8, shuffling the knights back while White builds a big central pawn wedge. White has gained space and two tempi, and Black has to find a way back with ...e6 or ...d6 and ...Nf6 again. It is a joke-like sideline that gives Black a worse position.",
+  "white_ideas": [
+    {
+      "idea": "Use the extra space with pawns on d5 and e5"
+    },
+    {
+      "idea": "Develop with Nf3, Bd3, and Nc3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break the centre with ...d6 or ...e6"
+    },
+    {
+      "idea": "Develop and aim for ...Nf6 once the e5 pawn is challenged"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns d5 and e5 against Black pawns on a7 to h7"
+    },
+    {
+      "structure": "Cramped Black position"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A line where Black has lost time and White simply has to develop."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level; no pawn is given up."
+    },
+    "soundness": {
+      "notes": "Black has wasted several tempi and White has an easy edge."
+    },
+    "structure": {
+      "notes": "White has an advanced pawn centre."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory; a dubious line is not a first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Neither forcing nor hard to break down; Black is simply worse."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material has changed hands."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Black has wasted time and handed White a free centre."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.4,
+      "reason": "White pawns on d5 and e5 cramp Black."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Not played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White has space from the advanced pawns."
+    }
+  }
+}

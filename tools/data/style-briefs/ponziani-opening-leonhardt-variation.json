@@ -1,0 +1,113 @@
+{
+  "slug": "ponziani-opening-leonhardt-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Leonhardt Variation",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 d5 4. Qa4 Nf6",
+    "fen": "r1bqkb1r/ppp2ppp/2n2n2/3pp3/Q3P3/2P2N2/PP1P1PPP/RNB1KB1R w KQkq - 2 5"
+  },
+  "parent": "ponziani-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Against the Ponziani 3.c3 Black strikes with 3...d5. After 4.Qa4 Nf6 White has pinned the c6 knight to the king in a loose way, and the play turns on 5.Nxe5, where White grabs the pawn and Black replies with ...Bd6 or ...Bd7 for activity. The centre opens quickly with exchanges on d5 and e5.",
+  "white_ideas": [
+    {
+      "idea": "Take the e5 pawn with 5.Nxe5 while the queen pins c6"
+    },
+    {
+      "idea": "Exchange on d5 or play d4 to open the centre"
+    },
+    {
+      "idea": "Bring out Bb5 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recover the pawn on c6 or e5 after Nxe5"
+    },
+    {
+      "idea": "Develop fast with ...Bd6, ...Bd7 and ...O-O"
+    },
+    {
+      "idea": "Use the pinned c6 knight as a tempo gain"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after exchanges on d5 and e5"
+    },
+    {
+      "structure": "Black pieces developed against White queen out on a4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactical in the opening with the queen on a4 and pins on c6, but often settles into a roughly equal open game."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "Both sides are sound; White gets some pull and Black has good counterplay."
+    },
+    "structure": {
+      "notes": "Pieces and open lines matter more than pawn chains after the centre exchanges."
+    },
+    "approach": {
+      "notes": "Less common than 3.d4 or 3.Bb5, but regular at club level and sometimes played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Short lines but the tactics around the pinned knight need care."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "open game"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "The early queen and pin give tactical chances, but both sides are sound and play is not especially forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Any pawn taken on e5 is regained by Black with ...Bd6 or ...Bd7 ideas."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Both sides are fine."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The centre opens up fast with exchanges on d5 and e5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A less common but respectable line in the Open Game."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The tactics are easy to lose track of, but there is little to memorise."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White queen comes out to a4 early and has to avoid being harassed."
+    }
+  }
+}

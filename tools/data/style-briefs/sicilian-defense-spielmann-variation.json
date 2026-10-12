@@ -1,0 +1,112 @@
+{
+  "slug": "sicilian-defense-spielmann-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Spielmann Variation",
+    "eco": "B56",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Nde2",
+    "fen": "r1bqkb1r/pp2pppp/2np1n2/8/4P3/2N5/PPP1NPPP/R1BQKB1R b KQkq - 1 6"
+  },
+  "parent": "sicilian-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays the unusual 6.Nde2 in the Classical Sicilian with ...Nc6, retreating the knight to prepare Be3, g3 and f4 or a slow squeeze. Black can play ...e5 or ...g6 and the game becomes a quiet Sicilian. The position is flexible and there is little forcing play.",
+  "white_ideas": [
+    {
+      "idea": "Regroup with Be3, g3, Bg2 and castle"
+    },
+    {
+      "idea": "Keep the knights flexible and e4 solid"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...e5 to gain central space"
+    },
+    {
+      "idea": "Develop with ...Be7 and ...O-O"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian structure with the c-pawn gone"
+    },
+    {
+      "structure": "Black d6 pawn with half-open c-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow Sicilian with no forced play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is sacrificed."
+    },
+    "soundness": {
+      "notes": "Safe for both sides."
+    },
+    "structure": {
+      "notes": "Half-open c-file for Black."
+    },
+    "approach": {
+      "notes": "A rare sixth move choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are subtle."
+    }
+  },
+  "plan_phrases": [
+    "half-open c-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main 6.Be2",
+      "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Be2",
+      "how": "a standard classical Sicilian"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither side takes a risk early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "No problem for either side."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.75,
+      "reason": "It is a Sicilian with a half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose 6.Nde2."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are standard Sicilian."
+    },
+    "plans": {
+      "value": [
+        "half_open_c_file"
+      ],
+      "reason": "Black uses the c-file after the c-pawn exchange."
+    }
+  }
+}

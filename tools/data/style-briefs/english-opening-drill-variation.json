@@ -1,0 +1,112 @@
+{
+  "slug": "english-opening-drill-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Drill Variation",
+    "eco": "A20",
+    "moves": "1. c4 e5 2. g3 h5",
+    "fen": "rnbqkbnr/pppp1pp1/8/4p2p/2P5/6P1/PP1PPP1P/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "english-opening-kings-english-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black pushes ...h5 on move two, aiming for ...h4 to open the h-file against White's g3 set-up. White can simply play h4 to stop it or ignore it and develop normally with Bg2 and Nc3. Black weakens the kingside and gets a slightly odd position for it.",
+  "white_ideas": [
+    {
+      "idea": "Stop it with 3.h4 or ignore it and play Bg2"
+    },
+    {
+      "idea": "Develop with Nc3 and Nf3 and use g5 square"
+    },
+    {
+      "idea": "Exploit the weak g5 and h5 squares"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the h-file with ...h4"
+    },
+    {
+      "idea": "Develop normally with ...Nc6 and ...Nf6"
+    },
+    {
+      "idea": "Hope for kingside play"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "English with g3 against Black e5 and h5"
+    },
+    {
+      "structure": "Black kingside weakened"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flank-pawn oddity with little forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "Black wastes time and has weaknesses; a doubtful idea."
+    },
+    "structure": {
+      "notes": "The centre is not locked."
+    },
+    "approach": {
+      "notes": "Played for surprise only."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not hard but unsound."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Nothing forcing happens early and White just develops."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material change."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Black spends a move on a weakening wing pawn push."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The English centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players do not play ...h5 here."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "A doubtful line is not a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White fianchettoes against the weakened wing."
+    }
+  }
+}

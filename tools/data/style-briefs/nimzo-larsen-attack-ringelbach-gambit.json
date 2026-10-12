@@ -1,0 +1,114 @@
+{
+  "slug": "nimzo-larsen-attack-ringelbach-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Ringelbach Gambit",
+    "eco": "A01",
+    "moves": "1. b3 f5 2. Bb2 e6 3. e4",
+    "fen": "rnbqkbnr/pppp2pp/4p3/5p2/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 0 3"
+  },
+  "parent": "nimzo-larsen-attack-dutch-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.b3 f5 2.Bb2 e6 White plays 3.e4, offering the pawn. If Black takes with 3...fxe4 White plays Nc3, Qh5+ g6 and Bxg7 or Nxe4, gaining a lead in development. Black can also decline with ...Nf6. The idea is to pull Black's structure apart and open the diagonal for the b2 bishop.",
+  "white_ideas": [
+    {
+      "idea": "Open the long diagonal and attack with Nc3, Qh5+"
+    },
+    {
+      "idea": "Win back the pawn on e4 and develop quickly"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and hold the pawn with ...Nf6"
+    },
+    {
+      "idea": "Neutralise the queen check and develop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after fxe4"
+    },
+    {
+      "structure": "Black weakened kingside around g7 and e6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp, with Black's king exposed and White sacrificing for activity."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 3...fxe4 White has not recaptured and Black can keep the pawn."
+    },
+    "soundness": {
+      "notes": "A speculative gambit; Black can probably hold the extra pawn."
+    },
+    "structure": {
+      "notes": "Open centre after fxe4."
+    },
+    "approach": {
+      "notes": "Rare at strong level."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs prepared tactics."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...Nf6",
+      "moves": "3...Nf6 4.exf5",
+      "how": "Declines and leads to a calmer line"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A pawn sacrifice with queen checks."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White gives the e-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can probably hold the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The centre opens with fxe4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Rare at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "White plays for the long diagonal and fast development."
+    }
+  }
+}

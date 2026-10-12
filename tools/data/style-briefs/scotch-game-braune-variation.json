@@ -1,0 +1,114 @@
+{
+  "slug": "scotch-game-braune-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Braune Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Be3",
+    "fen": "r1b1kbnr/pppp1ppp/2n5/8/3NP2q/4B3/PPP2PPP/RN1QKB1R b KQkq - 2 5"
+  },
+  "parent": "scotch-game-steinitz-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Steinitz Scotch, 5.Be3 develops the bishop and leaves e4 unprotected, so Black can grab it with the queen. White then gets a lead in development and hits the black queen and the c6 knight. The line is rare and risky for White.",
+  "white_ideas": [
+    {
+      "idea": "Win time attacking the queen with Nb5/Bd3/Nc3"
+    },
+    {
+      "idea": "Use the lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take e4 and bring the queen back to safety"
+    },
+    {
+      "idea": "Trade down and keep the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after the d-pawn trade"
+    },
+    {
+      "structure": "Exposed black queen against fast white pieces"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing and tactical: an early queen raid and a pawn offer."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "The e4 pawn is unprotected and Black can keep it with an accurate queen retreat."
+    },
+    "soundness": {
+      "notes": "Strong players think Black is doing well after taking the pawn."
+    },
+    "structure": {
+      "notes": "Open lines for pieces after the centre pawns come off."
+    },
+    "approach": {
+      "notes": "Rare, chosen mostly by club players for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Some tactics have to be known but it is not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main 5.Nc3",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nc3",
+      "how": "the main line against the early queen sortie"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Queen sorties and a pawn offer make play forcing."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.5,
+      "reason": "White allows ...Qxe4 for a lead in development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black seems fine after taking the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre pawns come off and pieces rule."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players avoid it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious, so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White gains time against the queen."
+    }
+  }
+}

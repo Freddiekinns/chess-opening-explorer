@@ -1,0 +1,112 @@
+{
+  "slug": "dutch-defense-omega-isis-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Omega-Isis Gambit",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. Nf3 e5",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.d4 f5 2.Nf3 Black plays 2...e5, offering a pawn. After 3.dxe5 Black plays ...Nc6 or ...d6 to regain material or build pressure, while White keeps the pawn with e4 or Nc3. Black gets quick development and open lines but not enough for the pawn against good play.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and defend with Nc3 and e3"
+    },
+    {
+      "idea": "Return the pawn if needed for a safe position"
+    },
+    {
+      "idea": "Develop and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nc6, ...d6 and ...Bc5"
+    },
+    {
+      "idea": "Attack the e5 pawn and the open d-file"
+    },
+    {
+      "idea": "Use the f-pawn to open lines"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White up a pawn with open d-file"
+    },
+    {
+      "structure": "Black f5 pawn weakening the king"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn-down open game where Black has to play for tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White keeps the e5 pawn after 3.dxe5 without being forced to give it back."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Open d-file and diagonals."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever play it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious so never a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Black is a pawn down in an open position and must play for activity."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black offers the e5 pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Black has too little for the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Pawns come off the centre and the d-file opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rare in strong play."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black seeks development for a pawn."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "tarrasch-defense-von-hennig-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: von Hennig Gambit",
+    "eco": "D32",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 cxd4 5. Qxd4 Nc6 6. Qd1 exd5 7. Qxd5 Be6",
+    "fen": "r2qkbnr/pp3ppp/2n1b3/3Q4/8/2N5/PP2PPPP/R1B1KBNR w KQkq - 1 8"
+  },
+  "parent": "tarrasch-defense-schara-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Von Hennig-Schara Gambit Black gives up the c-pawn and the d5 pawn for quick development, and after 7.Qxd5 Be6 White's queen is harassed. White is a pawn up with a lead in development for Black to attack through. Black is playing for activity at the cost of a pawn.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn and use the queen on d5 carefully"
+    },
+    {
+      "idea": "Develop with Nf3, Bg5 and castle"
+    },
+    {
+      "idea": "Trade queens if possible"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Chase the queen with ...Be6 and ...Nf6"
+    },
+    {
+      "idea": "Develop quickly with ...Bb4 and ...O-O"
+    },
+    {
+      "idea": "Use open lines against the king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White a pawn up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn is given and both sides face concrete tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can hold the extra pawn at the cost of the queen being chased."
+    },
+    "soundness": {
+      "notes": "Considered dubious for Black by theory."
+    },
+    "structure": {
+      "notes": "Centre pawns are gone and files are open."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs specific lines."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Black plays for tactics a pawn down."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black gives a pawn for development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The Von Hennig line is considered dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre pawns are traded and files are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom use this gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Black chases White's queen and develops fast."
+    }
+  }
+}

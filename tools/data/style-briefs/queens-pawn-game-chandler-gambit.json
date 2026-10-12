@@ -1,0 +1,114 @@
+{
+  "slug": "queens-pawn-game-chandler-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Chandler Gambit",
+    "eco": "D02",
+    "moves": "1. d4 d5 2. Nf3 c5 3. g3 cxd4 4. Bg2",
+    "fen": "rnbqkbnr/pp2pppp/8/3p4/3p4/5NP1/PPP1PPBP/RNBQK2R b KQkq - 1 4"
+  },
+  "parent": "queens-pawn-game-krause-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White gambits the d-pawn: 3.g3 cxd4 4.Bg2 aims at the d5 pawn and the long diagonal, with Nxd4 and 0-0 to follow. Black can keep the pawn with ...Nc6 and ...e5, and White has pressure on d5 and the open d-file. Evidence is thin.",
+  "white_ideas": [
+    {
+      "idea": "Regain the pawn with Nxd4 or play for Bg2 pressure on d5"
+    },
+    {
+      "idea": "Castle and play c4 against d5"
+    },
+    {
+      "idea": "Use the d-file and long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold d4 with ...Nc6 and ...e5"
+    },
+    {
+      "idea": "Meet pressure with ...Nf6, ...e6"
+    },
+    {
+      "idea": "Return the pawn when convenient"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black extra d4 pawn against White's fianchetto"
+    },
+    {
+      "structure": "Open d-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with pressure down the long diagonal and the d-file."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "In the FEN White has seven pawns to Black's eight and Black can protect d4 with ...Nc6 and ...e5."
+    },
+    "soundness": {
+      "notes": "Probably dubious for White."
+    },
+    "structure": {
+      "notes": "Partly open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a sound line."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White gives a pawn for activity down the long diagonal."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White gives the d-pawn and Black can try to keep it with ...Nc6 and ...e5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.5,
+      "reason": "Black can hold the extra pawn with natural moves.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The d-file is open and Black holds an asymmetric centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players rarely sacrifice the d-pawn this way."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "lead_in_development"
+      ],
+      "reason": "The bishop on g2 and quick development are the compensation."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "latvian-gambit-corkscrew-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Corkscrew Countergambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Bc4 fxe4 4. Nxe5 Nf6",
+    "fen": "rnbqkb1r/pppp2pp/5n2/4N3/2B1p3/8/PPPP1PPP/RNBQK2R w KQkq - 1 5"
+  },
+  "parent": "latvian-gambit-mayet-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 3.Bc4 fxe4 4.Nxe5 Nf6 material is level and White has Bxf7+ ideas, while Black has the half-open f-file. It is a countergambit with both sides setting traps around f7 and e4, and White usually gets the better game by sound development.",
+  "white_ideas": [
+    {
+      "idea": "Exploit the loose f7 with Bxf7+ or Nxf7 tactics"
+    },
+    {
+      "idea": "Develop with Nc3 and d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Counterattack on e5 and e4 with ...d6 and ...Qe7"
+    },
+    {
+      "idea": "Use the open f-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the e4 pawn on the board"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unsure of the main line; read from the move order only."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level here, with Black's capture on e4 matching the pawn lost on e5."
+    },
+    "soundness": {
+      "notes": "White has the easier game and the line is regarded as dubious for Black."
+    },
+    "structure": {
+      "notes": "Pawns traded early leave open files."
+    },
+    "approach": {
+      "notes": "A rare countergambit that strong players seldom choose."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Mostly knowing the tactics after Bxf7+."
+    }
+  },
+  "plan_phrases": [
+    "pressure_on_f7",
+    "lead_in_development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Mayet Attack",
+      "moves": "3.Bc4 fxe4 4.Nxe5 Qg5",
+      "how": "Different black reply."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Both kings are loose and the lines are tactical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material is level at the root, so nothing is on offer in the main line."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The Latvian family is generally thought to give White the better game."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens early with files and diagonals in play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Hardly used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner, and little theory is required."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "Both sides revolve around the weak f7 square."
+    }
+  }
+}

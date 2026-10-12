@@ -1,0 +1,103 @@
+{
+  "slug": "ponziani-opening-caro-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Caro Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 d5 4. Qa4 Bd7",
+    "fen": "r2qkbnr/pppb1ppp/2n5/3pp3/Q3P3/2P2N2/PP1P1PPP/RNB1KB1R w KQkq - 2 5"
+  },
+  "parent": "ponziani-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White's Qa4 pins Nc6 after 3...d5 and Black plays ...Bd7 to unpin and support the knight. The queen can be exposed on a4 and White uses tactics on e5 and d5. Black has several solid answers, so White hopes for mistakes.",
+  "white_ideas": [
+    {
+      "idea": "Use Qa4 and Nxe5 tricks"
+    },
+    {
+      "idea": "Challenge the centre with exd5 or d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Unpin with ...Bd7 and ...Nd4"
+    },
+    {
+      "idea": "Challenge the centre with ...exd4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not well known; reasoned from the moves."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level."
+    },
+    "soundness": {
+      "notes": "Black has an easy game."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "A rare Ponziani branch."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Tactical lines."
+    }
+  },
+  "plan_phrases": [
+    "early_queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Tactics around the pinned knight make it forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Black is fine."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The centre opens up."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.45,
+      "reason": "The Ponziani is a respectable if less common choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "The tactics need to be known."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White's queen comes out early."
+    }
+  }
+}

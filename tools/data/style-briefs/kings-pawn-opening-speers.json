@@ -1,0 +1,112 @@
+{
+  "slug": "kings-pawn-opening-speers",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Opening: Speers",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Qg4 Nf6 3. Qf5",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4pQ2/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 3 3"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White brings the queen out at once with Qg4 and Qf5, and Black can gain tempi with ...d5 and ...Nc6. The queen is exposed, and White has little to show for the early sortie.",
+  "white_ideas": [
+    {
+      "idea": "Hit e5 and f7 with the queen"
+    },
+    {
+      "idea": "Develop quickly with Nf3, d3"
+    },
+    {
+      "idea": "Retreat when attacked"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain tempi with ...d5 and ...Nc6"
+    },
+    {
+      "idea": "Develop and open the centre"
+    },
+    {
+      "idea": "Attack the queen with ...Bd6 or ...Bc5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game with an exposed white queen"
+    },
+    {
+      "structure": "Black has easy development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early queen sortie that offers little."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level."
+    },
+    "soundness": {
+      "notes": "Dubious for White."
+    },
+    "structure": {
+      "notes": "Open e-file."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not worth learning."
+    }
+  },
+  "plan_phrases": [
+    "Early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "An early queen sortie that Black can meet with natural development."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.6,
+      "reason": "The early queen loses time against simple development.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The e-file is likely to open as pieces develop."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players hardly ever play this."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The whole idea is the early queen."
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "sicilian-defense-magnus-smith-trap",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Magnus Smith Trap",
+    "eco": "B57",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bc4 g6 7. Nxc6 bxc6 8. e5",
+    "fen": "r1bqkb1r/p3pp1p/2pp1np1/4P3/2B5/2N5/PPP2PPP/R1BQK2R b KQkq - 0 8"
+  },
+  "parent": "sicilian-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "The Magnus Smith Trap arises in the 6.Bc4 g6 line where after 7.Nxc6 bxc6 8.e5 Black must not take on e5 carelessly. White gets a lead in development and Bxf7+ tricks, while Black has a good position with correct play. It is mostly a trap in a known Sicilian system.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with e5 and exploit the weak f7"
+    },
+    {
+      "idea": "Develop quickly with Bf4 or Qd4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Meet e5 correctly with ...Ng4 or ...Nd7"
+    },
+    {
+      "idea": "Use the c-file and the bishop on g7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian with a damaged black queenside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Treated as a branch trap in a Dragon-like Sozin set-up."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level."
+    },
+    "soundness": {
+      "notes": "Sound for Black with correct play."
+    },
+    "structure": {
+      "notes": "Open Sicilian with a half-open c-file."
+    },
+    "approach": {
+      "notes": "A trap in a standard line."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "The tactics need to be known."
+    }
+  },
+  "plan_phrases": [
+    "pressure_on_f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Open Sicilian tactics around f7 and e5."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "Material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "The trap only works if Black errs."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "Open Sicilian structure with a half-open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A standard Sicilian branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "The tactics need to be known."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7"
+      ],
+      "reason": "White targets f7 with the bishop on c4."
+    }
+  }
+}

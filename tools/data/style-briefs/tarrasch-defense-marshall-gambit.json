@@ -1,0 +1,110 @@
+{
+  "slug": "tarrasch-defense-marshall-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Marshall Gambit",
+    "eco": "D32",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. e4",
+    "fen": "rnbqkbnr/pp3ppp/8/2pp4/3PP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 5"
+  },
+  "parent": "queens-gambit-declined-tarrasch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White sacrifices a pawn with 5.e4 against the Tarrasch structure, and after 5...dxe4 plays 6.d5 or 6.Bc4 for quick development and pressure against e6 and the centre. Black can keep the pawn, but must be careful with the exposed king and weak d-pawn. The play is sharp and open with real attacking chances for White.",
+  "white_ideas": [
+    {
+      "idea": "Gain a lead in development with Bc4, Nge2 and castling"
+    },
+    {
+      "idea": "Open lines against the Black centre and king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e4 and consolidate with ...Nf6 and ...Be7"
+    },
+    {
+      "idea": "Return the pawn at the right moment to simplify"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...dxe4 with White pieces active"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn sacrifice and a direct attack on the centre lead to forcing lines."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 5...dxe4 Black is a pawn up and can keep it."
+    },
+    "soundness": {
+      "notes": "Considered a risky try that gives compensation but not full equality."
+    },
+    "structure": {
+      "notes": "Pawns on d4 and e4 are exchanged and the centre opens."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players against the Tarrasch."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "The theory is moderate, with a few forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6.d5 line",
+      "moves": "5. e4 dxe4 6. d5",
+      "how": "The most played branch, with a d-pawn advance."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "A pawn sacrifice into open lines leads to forcing tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the e-pawn and Black can keep it after 5...dxe4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "White gets compensation but strong players avoid it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Central pawns come off and open lines follow."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Some forcing theory and judgement about compensation; Dubious is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The gambit gives White faster development."
+    }
+  }
+}

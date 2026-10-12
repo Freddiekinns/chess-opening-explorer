@@ -1,0 +1,118 @@
+{
+  "slug": "bird-opening-myers-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Myers Defense",
+    "eco": "A02",
+    "moves": "1. f4 b5",
+    "fen": "rnbqkbnr/p1pppppp/8/1p6/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "bird-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "1...b5 is a hypermodern reply that aims ...Bb7 against the e4/g2 squares and ...a6 or ...e6. White usually answers e4 or Nf3 and has the easier centre, but Black's flank play is annoying rather than bad. Evidence is thin.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with e4 and Nf3"
+    },
+    {
+      "idea": "Hit the b5 pawn with Bxb5 or a4"
+    },
+    {
+      "idea": "Play Nf3 and g3 for a solid Bird set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop ...Bb7 to hit g2 and e4"
+    },
+    {
+      "idea": "Play ...e6 and ...Nf6"
+    },
+    {
+      "idea": "Use ...a6 to hold the b5 pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black has queenside space but no central pawns"
+    },
+    {
+      "structure": "White holds e4 and d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flank play with few forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "At the root material is level and nothing is attacked yet."
+    },
+    "soundness": {
+      "notes": "Sound but unambitious."
+    },
+    "structure": {
+      "notes": "The centre is undecided."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Simple ideas."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Immediate e4",
+      "moves": "1. f4 b5 2. e4 Bb7 3. Bxb5",
+      "how": "White grabs the pawn and Black regains with ...Bxe4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Flank play with the pieces slowly developing and no forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "At the root material is level and nothing is attacked yet."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.65,
+      "reason": "Black's ...b5 is odd but not refuted.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is undecided at move one."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever answer 1.f4 with ...b5."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "It has simple ideas but is not a standard repertoire choice.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "The ...Bb7 fianchetto is Black's main idea."
+    }
+  }
+}

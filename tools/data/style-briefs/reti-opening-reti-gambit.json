@@ -1,0 +1,112 @@
+{
+  "slug": "reti-opening-reti-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Réti Opening: Réti Gambit, Keres Variation",
+    "eco": "A09",
+    "moves": "1. Nf3 d5 2. c4 dxc4 3. e3 Be6",
+    "fen": "rn1qkbnr/ppp1pppp/4b3/8/2p5/4PN2/PP1P1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "reti-opening-reti-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Réti Accepted White aims to regain c4 with Na3, Qa4+ or Bxc4, while Black's ...Be6 tries to keep the pawn with ...b5 and ...Nd7. The pawn usually comes back and play is a quiet, flexible fight with e3, Nc3 and Be2. It is not a true gambit.",
+  "white_ideas": [
+    {
+      "idea": "Regain c4 with Na3, Qa4+ or Bxc4"
+    },
+    {
+      "idea": "Develop with Nc3, Be2, 0-0"
+    },
+    {
+      "idea": "Break with d4/e4 once the pawn is back"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold c4 with ...b5 or ...Nd7"
+    },
+    {
+      "idea": "Develop ...Nf6, ...c6"
+    },
+    {
+      "idea": "Meet Qa4+ with ...Nd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flexible centre where White often gets d4/e4"
+    },
+    {
+      "structure": "Black has queenside pawn majority"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A quiet fight where White usually regains the pawn."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The pawn usually returns, so no lasting material is given."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Undecided centre."
+    },
+    "approach": {
+      "notes": "A normal Réti branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Straightforward plans."
+    }
+  },
+  "plan_phrases": [
+    "Regain c4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Quiet development where White regains the pawn and play stays even."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The pawn on c4 normally comes back, so no lasting material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "A normal, respectable line.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is undecided and depends on whether White plays d4 or e4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A standard branch of the Réti."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Plans are simple but the move order needs care.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White's hypermodern set-ups often feature a fianchetto."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "vienna-game-giraffe-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Giraffe Attack",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Bc5 3. Qg4",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/4P1Q1/2N5/PPPP1PPP/R1B1KBNR b KQkq - 3 3"
+  },
+  "parent": "vienna-game-anderssen-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White brings the queen out with 3.Qg4, attacking g7 and e5 against the Anderssen set-up. Black can reply 3...Qf6 or 3...Nf6, after which Qxg7 Rg8 Qh6 Rxg2 gives sharp play with an unsafe White queen. The attack looks dangerous but Black has easy ways out, and White's development lags.",
+  "white_ideas": [
+    {
+      "idea": "Win g7 or force concessions with queen threats"
+    },
+    {
+      "idea": "Develop with Nf3 and Nxe5 if the queen is attacked"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend with ...Qf6 or ...Nf6 and develop quickly"
+    },
+    {
+      "idea": "Take the g2 pawn if White grabs on g7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the White queen out early"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early queen sortie and sacrifices on g7 lead to concrete play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawns on g7 and g2 are traded by force, so material is level."
+    },
+    "soundness": {
+      "notes": "The queen is exposed and White's development lags, so Black is better in the main lines."
+    },
+    "structure": {
+      "notes": "The e-pawns are not exchanged but the centre opens at once."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever choose it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs some tactical care."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "attack on g7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "The queen move at once leads to tactics against the g7 pawn."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Pawns on g2 and g7 are exchanged by force, so material is level."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The queen is exposed and Black is better in the main lines."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre opens quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom seen at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Tactical but not theory heavy; a Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White commits the queen early to attack g7."
+    }
+  }
+}

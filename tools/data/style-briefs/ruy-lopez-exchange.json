@@ -1,0 +1,115 @@
+{
+  "slug": "ruy-lopez-exchange",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Exchange, Alekhine Variation",
+    "eco": "C68",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. d4 exd4 6. Qxd4 Qxd4 7. Nxd4 Bd7",
+    "fen": "r3kbnr/1ppb1ppp/p1p5/8/3NP3/8/PPP2PPP/RNB1K2R w KQkq - 1 8"
+  },
+  "parent": "ruy-lopez-exchange-variation",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "A queenless endgame arrives after Bxc6, d4 and Nxd4 with 7...Bd7: White has a healthy 4-vs-3 kingside majority, Black has the bishop pair and doubled c-pawns. White tries to make the majority tell, while Black uses the bishop pair and tries to avoid being squeezed. The game is steady and technical.",
+  "white_ideas": [
+    {
+      "idea": "Advance the kingside majority and create a passed pawn"
+    },
+    {
+      "idea": "Trade the bishops or restrict them with Nc3/Be3"
+    },
+    {
+      "idea": "Castle long and use the d-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the bishop pair and activity"
+    },
+    {
+      "idea": "Play against the doubled c-pawn weakness"
+    },
+    {
+      "idea": "Trade rooks and head for a drawn endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White 4v3 kingside majority against Black's doubled c-pawns"
+    },
+    {
+      "structure": "Black bishop pair"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A technical endgame with no attacks where White squeezes slowly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level."
+    },
+    "soundness": {
+      "notes": "Fully sound."
+    },
+    "structure": {
+      "notes": "Asymmetrical pawns with the d-file open after the queen swap."
+    },
+    "approach": {
+      "notes": "A standard Ruy Lopez exchange line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Endgame technique rather than memorisation."
+    }
+  },
+  "plan_phrases": [
+    "Kingside majority",
+    "Bishop pair",
+    "Doubled pawns"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.8,
+      "reason": "Queens are off, there are no attacks and the position is hard to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.97,
+      "reason": "A fully respectable Ruy Lopez line.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "An asymmetric pawn structure with the d-file open after the queen swap."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal Ruy Lopez main branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Understanding of the endgame matters more than memorised theory.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "bishop_pair",
+        "doubled_pawns"
+      ],
+      "reason": "Black has the bishop pair and the doubled c-pawn is the structural talking point."
+    }
+  }
+}

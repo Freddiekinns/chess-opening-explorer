@@ -1,0 +1,105 @@
+{
+  "slug": "polish-opening-rooks-swap-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Rooks Swap Line",
+    "eco": "A00",
+    "moves": "1. b4 e6 2. Bb2 Nf6 3. b5 a6 4. a4 axb5 5. axb5 Rxa1 6. Bxa1",
+    "fen": "1nbqkb1r/1ppp1ppp/4pn2/1P6/8/8/2PPPPPP/BN1QKBNR b Kk - 0 6"
+  },
+  "parent": "polish-opening-queenside-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.b4 e6 2.Bb2 Nf6 3.b5 a6 4.a4 axb5 5.axb5 Rxa1 6.Bxa1 the a-file rooks are exchanged. White is left with a bishop on a1 and a cramping pawn on b5, while Black is a pawn structure down in development of the queen knight. The game is quiet and manoeuvring.",
+  "white_ideas": [
+    {
+      "idea": "Keep the pawn on b5 and develop with Nf3 and e3"
+    },
+    {
+      "idea": "Use the long diagonal with the bishop on a1"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...d5 and ...c5 and challenge b5 with ...c6"
+    },
+    {
+      "idea": "Use the vacant a-file squares"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queenside pawn on b5 with bishops on long diagonals"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The rook trade removes tension and the game is manoeuvring."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level after the rook swap."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "Flank structure with an undecided centre."
+    },
+    "approach": {
+      "notes": "The Polish is seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs only general understanding."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The rook swap leaves a quiet manoeuvring game."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Material is level after the exchanges."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "The line is playable for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "The Polish is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Understanding over memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "White uses the long diagonal and the queenside pawn."
+    }
+  }
+}

@@ -803,5 +803,73 @@
       "sources": [],
       "taxonomy_note": null
     }
+  },
+  "french-defense-baeuerle-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 2...b5 3.Bxb5 Black has a half-open b-file and no pawn chain is fixed yet; the French lock needs e5, which this line does not force.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "modern-defense-gurgenidze-defense": {
+    "character": {
+      "value": "solid",
+      "reason": "5.e5 h5 is a Caro-Kann-type blocked set-up: ...d5, ...c6 and ...h5 shut the kingside and Black aims for a fortress with play on the light squares, known as solid if passive.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "pterodactyl-defense-fianchetto": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Benoni-type d5/c5 centre with the long diagonal and the c- and b-files for Black; matched to the other Pterodactyl lines, all semi_open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "rat-defense-petruccioli-attack": {
+    "character": {
+      "value": "balanced",
+      "reason": "2.h4 is a flank lunge against a quiet set-up; neither forcing nor hard to break down, and the evidence does not decide, so the middle value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ruy-lopez-exchange": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "5.d4 exd4 6.Qxd4 gives the Exchange Variation structure, White's 4-3 kingside majority against Black's doubled c-pawns; matched to ruy-lopez-exchange-variation, semi_open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "london-system-poisoned-pawn-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "5.Nc3 leaves b2 to ...Qxb2, met by Nb5 ideas; Black can keep the pawn at a risk.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "The compensation is real and strong London players allow it.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ruy-lopez-halloween-attack": {
+    "gambit": {
+      "value": "white",
+      "reason": "4.Nxe5 gives a knight for two pawns and a centre; Black keeps the piece.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Considered unsound: Black returns nothing by force and stands better with accurate play.",
+      "sources": [],
+      "taxonomy_note": null
+    }
   }
 }

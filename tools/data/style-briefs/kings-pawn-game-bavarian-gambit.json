@@ -1,0 +1,107 @@
+{
+  "slug": "kings-pawn-game-bavarian-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Bavarian Gambit",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. c4 d5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/2P1P3/8/PP1P1PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "english-opening-the-whale",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 2.c4 against 1...e5 and after 2...d5 3.cxd5 (or 3.exd5) Black gets a centre while White targets e5 with Nc3 and Nf3. Black tends to recapture with ...Nf6 and aims for ...e4 or ...c6. The gambit name is mostly historical: material usually comes straight back.",
+  "white_ideas": [
+    {
+      "idea": "Hit the centre with cxd5 and Nc3"
+    },
+    {
+      "idea": "Fianchetto the king's bishop"
+    },
+    {
+      "idea": "Use space on the queenside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on d5 with ...Nf6 and ...Nxd5"
+    },
+    {
+      "idea": "Push ...e4 for space"
+    },
+    {
+      "idea": "Develop normally"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed-Sicilian-like English structure, or an open centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not forcing, as the pawn returns quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Any pawn taken on d5 is recaptured at once."
+    },
+    "soundness": {
+      "notes": "A sound but slightly inaccurate system for White."
+    },
+    "structure": {
+      "notes": "Centre tension with no pawns yet locked."
+    },
+    "approach": {
+      "notes": "2.c4 against 1...e5 is rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs English-type plans."
+    }
+  },
+  "plan_phrases": [
+    "Reversed Sicilian ideas"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Material returns at once and neither side is forced into risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "The d5 pawn is recaptured."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "White is not worse after a few moves."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is open to several structures."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Strong players seldom play 2.c4 against 1...e5."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Requires English-style understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear recognised plan."
+    }
+  }
+}

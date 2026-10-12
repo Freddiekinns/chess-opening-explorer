@@ -1,0 +1,105 @@
+{
+  "slug": "rubinstein-opening-bogoljubow-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rubinstein Opening: Bogoljubow Defense",
+    "eco": "D05",
+    "moves": "1. d4 Nf6 2. Nf3 e6 3. e3 c5 4. Bd3 d5 5. b3 Nc6 6. O-O Bd6 7. Bb2 O-O",
+    "fen": "r1bq1rk1/pp3ppp/2nbpn2/2pp4/3P4/1P1BPN2/PBP2PPP/RN1Q1RK1 w - - 5 8"
+  },
+  "parent": "rubinstein-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White builds the Colle-Zukertort set-up with e3, Bd3, b3, Bb2 and castling while Black replies ...c5, ...d5, ...Nc6 and ...Bd6. The centre stays in tension and White chooses between dxc5, c4 and a Ne5 plan. Neither side commits early, so the game turns on whether White can use e5 and the kingside pieces.",
+  "white_ideas": [
+    {
+      "idea": "Play c4, Ne5 or dxc5 to challenge the centre"
+    },
+    {
+      "idea": "Aim the pieces at the kingside with Ne5 and f4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the centre with ...Ne4 and ...Qe7"
+    },
+    {
+      "idea": "Break with ...dxc4 and ...e5 for central freedom"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Hanging pawns or an isolated queen's pawn after exchanges on c5 and c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A symmetrical-looking set-up where both sides develop and the centre is unsettled."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawns are given up."
+    },
+    "soundness": {
+      "notes": "Both sides are fully sound."
+    },
+    "structure": {
+      "notes": "Pawns on d4 and d5 stay in tension, so the structure is not fixed."
+    },
+    "approach": {
+      "notes": "White uses a set-up with Bd3, b3 and Bb2 that works against many defences."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The plans matter more than the move order."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "hanging_pawns"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither side has early forcing play, but the pawn tension keeps it from being fully solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Neither side is taking a risk."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre is in tension and can resolve either way."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.55,
+      "reason": "White's set-up with Bd3, b3 and Bb2 is a plan-based system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans and pawn-structure choices need understanding, but there is little theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hanging_pawns"
+      ],
+      "reason": "The Bb2 sits on the long diagonal and pawn exchanges can leave hanging pawns."
+    }
+  }
+}

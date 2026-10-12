@@ -1,0 +1,116 @@
+{
+  "slug": "rubinstein-opening-classical-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rubinstein Opening: Classical Defense",
+    "eco": "D05",
+    "moves": "1. d4 Nf6 2. Nf3 e6 3. e3 c5 4. Bd3 d5 5. b3 Nc6 6. O-O Be7 7. Bb2 O-O",
+    "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/1P1BPN2/PBP2PPP/RN1Q1RK1 w - - 5 8"
+  },
+  "parent": "rubinstein-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "A Colle-Zukertort style set-up against Black's ...c5/...d5/...Nc6 formation: White has e3, Bd3, b3, Bb2 and castled, Black mirrors with ...Be7 and ...O-O. The centre stays in tension (dxc5 or c4 later), and the game is a manoeuvring fight over d4/d5 and the e-file with no immediate tactics.",
+  "white_ideas": [
+    {
+      "idea": "Hold d4 and aim Bb2/Bd3 at the kingside"
+    },
+    {
+      "idea": "Play c4 or dxc5 at the right moment to open the position"
+    },
+    {
+      "idea": "Bring the knight to e5 via Nbd2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...cxd4 or ...dxc4"
+    },
+    {
+      "idea": "Develop ...b6/...Bb7 or ...Bd7 and play for ...e5"
+    },
+    {
+      "idea": "Keep a hanging-pawn or symmetrical centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical d4/e3 against d5/e6 with c5 pawn tension"
+    },
+    {
+      "structure": "Hanging pawns on c5/d5 after exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet development on both sides, tension in the centre but nothing forcing yet."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level, no pawn offered."
+    },
+    "soundness": {
+      "notes": "Fully sound, a long-established set-up."
+    },
+    "structure": {
+      "notes": "The d4/c5/d5 pawns are in contact but undecided, so the centre stays flexible."
+    },
+    "approach": {
+      "notes": "A specific set-up against ...Nf6, ...e6, ...c5, ...d5 rather than a universal system."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but choosing between dxc5, c4 and e4 breaks needs judgement."
+    }
+  },
+  "plan_phrases": [
+    "Hanging pawns",
+    "Bishop on b2 aimed at the kingside",
+    "Break with c4 or dxc5",
+    "Knight to e5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Quiet development with the centre in tension but no forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.95,
+      "reason": "A normal, well-trodden development scheme.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The c5, d4 and d5 pawns stay in tension and the centre is undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "It is a set-up against this particular Black formation rather than a universal system."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Plans are clear but the timing of the central breaks takes judgement.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "symmetrical_structure",
+        "fianchetto"
+      ],
+      "reason": "The pawn shapes mirror each other and White's bishop sits on the long diagonal."
+    }
+  }
+}

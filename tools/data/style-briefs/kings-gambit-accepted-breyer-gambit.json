@@ -1,0 +1,113 @@
+{
+  "slug": "kings-gambit-accepted-breyer-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Breyer Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Qf3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/5Q2/PPPP2PP/RNB1KBNR b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 2.f4 exf4 White develops the queen at once with 3.Qf3, hitting f4 and f7 and eyeing the Bc4 follow-up, instead of the standard 3.Nf3 or 3.Bc4. Black keeps the pawn with ...Nc6 and ...Nf6 or hits the queen with ...d5. White gets a lead in development and pressure on f7, but the queen is exposed and the position is considered inferior to the main King's Gambit lines.",
+  "white_ideas": [
+    {
+      "idea": "Recover f4 or play Bc4 and Nc3 with pressure on f7"
+    },
+    {
+      "idea": "Use the open f-file after castling"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...Nc6, ...Nf6 and ...d5"
+    },
+    {
+      "idea": "Hit the queen with tempo and develop with ...Qh4+ ideas"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the f4 pawn gone and White queen on f3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early queen and a pawn sacrifice give mutual attacking chances and quick tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White offers the f-pawn for development; Black can hold it with ...Nc6 or ...Nf6."
+    },
+    "soundness": {
+      "notes": "The early queen move leaves White slightly worse against accurate play, and strong players avoid it."
+    },
+    "structure": {
+      "notes": "The f-file and centre open, with e4 attacked early."
+    },
+    "approach": {
+      "notes": "A rare side line of the King's Gambit, not used by elite players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs some knowledge of the tactics, but no long forced theory."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "lead in development",
+    "early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black returns the pawn",
+      "moves": "1. e4 e5 2. f4 exf4 3. Qf3 d5 4. exd5",
+      "how": "Black hits the centre at once and the queen move can look a tempo lost."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "A gambit with an early queen leads to mutual attacks and tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the f-pawn and Black can keep it with ...Nc6 and ...Nf6."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The queen move wastes time compared with the main King's Gambit lines."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Central and f-file lines open up from the start."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "It needs judgement about the exposed queen; a Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White's idea is a lead in development and f7 pressure with the queen out early."
+    }
+  }
+}

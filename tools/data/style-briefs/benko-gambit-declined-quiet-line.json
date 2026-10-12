@@ -1,0 +1,104 @@
+{
+  "slug": "benko-gambit-declined-quiet-line",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Declined: Quiet Line",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. Nd2",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP1NPPPP/R1BQKBNR b KQkq - 1 4"
+  },
+  "parent": "benko-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White declines the Benko with 4.Nd2, aiming for e4 and a quiet development rather than taking b5. Black can play 4...Bb7 or 4...e6 and still has a Benoni-style position. The play is manoeuvring, with Black challenging on the queenside and White building a central pawn.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with e4, Ngf3 and g3"
+    },
+    {
+      "idea": "Keep an eye on the queenside and the b5 pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit c4 with ...b4 or ...bxc4 and use the queenside files"
+    },
+    {
+      "idea": "Fianchetto the king bishop and aim at the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-style asymmetric centre with queenside tension"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The pawn is not accepted, so the play is manoeuvring rather than forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is taken or sacrificed."
+    },
+    "soundness": {
+      "notes": "A sound, quiet answer."
+    },
+    "structure": {
+      "notes": "Queenside tension and an undecided centre."
+    },
+    "approach": {
+      "notes": "A normal declined line, seen sometimes."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional understanding rather than memorisation."
+    }
+  },
+  "plan_phrases": [
+    "central pawn e4",
+    "queenside play"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet declined lines lead to manoeuvring play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.75,
+      "reason": "The gambit is declined so no pawn is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A quiet sound option for White."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Queenside tension without a settled centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised, less common reply to the Benko."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White builds a centre and slowly gains space."
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "slug": "caro-kann-defense-labahn-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Labahn Attack",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. b4",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/1P2P3/8/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "2.b4 is a flank thrust that tries to gain space and open the long diagonal for Bb2. Black replies 2...d5 and after 3.exd5 cxd5 or 3.b5 gets an easy centre, or plays 2...e5 and meets 3.Bb2. White has few concrete threats and Black stands comfortably, so it works as a surprise weapon.",
+  "white_ideas": [
+    {
+      "idea": "Play Bb2 and b5 to harass the c6 pawn"
+    },
+    {
+      "idea": "Use the half-open b-file for a quick attack on the queenside"
+    },
+    {
+      "idea": "Exchange on d5 and develop the queenside early"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...d5"
+    },
+    {
+      "idea": "Target the b4 pawn with ...Qb6 and ...a5"
+    },
+    {
+      "idea": "Develop calmly with ...Nf6 and ...e6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black has a solid centre against White's advanced b-pawn"
+    },
+    {
+      "structure": "Long diagonal and queenside play for White"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unambitious flank play that is easy for Black to meet; neither side is under early pressure."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "At the root material is level and the b4 pawn is not attacked; the gambit branches (3.b5) are minor."
+    },
+    "soundness": {
+      "notes": "Probably worse for White: the advanced b-pawn and loose queenside offer little compensation."
+    },
+    "structure": {
+      "notes": "White has not committed the centre; Black's ...d5 takes it."
+    },
+    "approach": {
+      "notes": "Rare among strong players, chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easy for Black but a poor teaching line for White."
+    }
+  },
+  "plan_phrases": [
+    "Queenside expansion",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Double Gambit",
+      "moves": "1. e4 c6 2. b4 d5 3. b5",
+      "how": "White offers the e4 pawn too, in pure gambit style."
+    },
+    {
+      "name": "Polish Variation",
+      "moves": "1. e4 c6 2. b4 e5 3. Bb2",
+      "how": "Black takes the centre and White pivots to a Polish-style set-up."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Flank play with few early tactics, though Black is better placed."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "At the root material is level and nothing is attacked yet."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.5,
+      "reason": "Strong players regard White's b4 as loosening with little in return.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided at move two and depends on the reply."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever play 2.b4 against the Caro-Kann."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner and the ideas are modest.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "White advances the b-pawn and aims Bb2 down the long diagonal."
+    }
+  }
+}

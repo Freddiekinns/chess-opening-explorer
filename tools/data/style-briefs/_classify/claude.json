@@ -41392,5 +41392,3292 @@
       "value": [],
       "reason": "There is no clear named plan."
     }
+  },
+  "alekhine-defense-spielmann-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White gives a pawn for lines and tempi and both kings are exposed to tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "4.e6 offers a pawn that Black can capture and keep, though it is not obviously refuted."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.55,
+      "reason": "Black can accept with ...fxe6 and White has no clear compensation.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Black's d5 pawn stands against the open e- and f-files after the exchange."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "A sideline of the Alekhine that strong players seldom choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "It is dubious, so never Beginner, but the lines are short and tactical.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "The pawn is given for quick pieces aimed at f7."
+    }
+  },
+  "benko-gambit-declined-quiet-line": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet declined lines lead to manoeuvring play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.75,
+      "reason": "The gambit is declined so no pawn is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A quiet sound option for White."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Queenside tension without a settled centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised, less common reply to the Benko."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White builds a centre and slowly gains space."
+    }
+  },
+  "benko-gambit-declined-sosonko-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Without a gambit the play is a manoeuvring Benoni-type fight."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "The Benko is declined at move four, so no pawn is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A normal sound alternative for White."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The queenside tension and centre are undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised if less common line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The play is positional with moderate theory."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "space_advantage"
+      ],
+      "reason": "Both sides fight for queenside space."
+    }
+  },
+  "benoni-defense-kings-indian-system": {
+    "tier": "unsourced",
+    "character": {
+      "value": "solid",
+      "confidence": 0.4,
+      "reason": "Black is cramped but resilient and the locked centre gives few ways to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "Black's passive set-up is accepted as playable.",
+      "side": null
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.85,
+      "reason": "The d5/e4 and c5/d6/e5 pawns lock the centre and play moves to the wings."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised Benoni set-up that is played less often than the main lines."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "The plans are clear but need positional judgement rather than memorised lines.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "bad_bishop"
+      ],
+      "reason": "White holds the space and Black's bishops are hemmed in by their own pawns."
+    }
+  },
+  "benoni-defense-mikenas-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.92,
+      "reason": "White pushes in the centre and both sides face forcing tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Material is level in the main lines as the e5 pawn is recaptured."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.85,
+      "reason": "Heavily analysed, and both sides have a path.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "An asymmetric Benoni centre with the e-file opening."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream line."
+    },
+    "level": {
+      "value": "advanced",
+      "confidence": 0.85,
+      "reason": "The forcing lines must be known.",
+      "why": "memory"
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "kingside_attack"
+      ],
+      "reason": "White uses the pawn mass to attack f7 and the kingside."
+    }
+  },
+  "bird-opening-horsefly-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "No forcing lines and normal development."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "The line is playable though unusual."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom meet 1.f4 this way."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "It needs knowledge of how to handle the offside knight."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is clearly characteristic."
+    }
+  },
+  "bird-opening-mujannah": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A flexible flank set-up with no early forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No pawn is sacrificed in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A sound if slightly loosening set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.8,
+      "reason": "Flank opening with an undecided centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Occasionally played at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Requires understanding of reversed Dutch structures."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White fianchettoes and fights for e5."
+    }
+  },
+  "bird-opening-myers-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Flank play with the pieces slowly developing and no forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "At the root material is level and nothing is attacked yet."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.65,
+      "reason": "Black's ...b5 is odd but not refuted.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is undecided at move one."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever answer 1.f4 with ...b5."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "It has simple ideas but is not a standard repertoire choice.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "The ...Bb7 fianchetto is Black's main idea."
+    }
+  },
+  "bishops-opening-mcdonnell-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Open play with a pawn sacrificed for the centre."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White offers the b-pawn, which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Considered less sound than the Evans Gambit."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious gambit that needs known lines."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority",
+        "lead_in_development"
+      ],
+      "reason": "White plays for a big centre and development."
+    }
+  },
+  "caro-kann-defense-finnish-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "solid",
+      "confidence": 0.8,
+      "reason": "Typical Caro-Kann structure, hard to break."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respected Black defence."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "The d-pawn exchange leaves a half-open file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal Caro-Kann line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are clear, with subtlety in the move order."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Nothing from the table is clearly named."
+    }
+  },
+  "caro-kann-defense-hector-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "The early knight moves carry threats but the position quickly settles."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.65,
+      "reason": "The pawn on e4 is attacked twice and returns to White by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "White can recover the pawn with a playable game."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "The d-pawn is exchanged and the Caro-Kann structure remains."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Not much to learn but not a first repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7"
+      ],
+      "reason": "White aims the knight at f7 while regaining e4."
+    }
+  },
+  "caro-kann-defense-labahn-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Flank play with few early tactics, though Black is better placed."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "At the root material is level and nothing is attacked yet."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.5,
+      "reason": "Strong players regard White's b4 as loosening with little in return.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided at move two and depends on the reply."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever play 2.b4 against the Caro-Kann."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner and the ideas are modest.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "White advances the b-pawn and aims Bb2 down the long diagonal."
+    }
+  },
+  "dutch-defense-bellon-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "The pawn returns and the position is double-edged but not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "The e4 pawn comes straight back."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A sound if unspectacular White try."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The e-file opens after the exchange."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A recognised Dutch anti-line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs plans, not much theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan from the table."
+    }
+  },
+  "dutch-defense-krause-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The Dutch tends to give unbalanced positions and mutual risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A playable Dutch line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre tension is unresolved."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Played now and then at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding of Dutch plans over memorisation."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "The sides fight over central space and the ...e5 break."
+    }
+  },
+  "elephant-gambit-wasp-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Queen forays and tactics on f7 and g2 punish errors."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material is level at the root because Black's capture on e4 matches White's on e5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The Elephant Gambit family is considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre is open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "pressure_on_f7"
+      ],
+      "reason": "Black's queen comes out early and f7 is the target."
+    }
+  },
+  "englund-gambit-declined-diemer-counterattack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Queen and bishop aim at f2 and e4 early, so tactical errors punish both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material has changed hands because White declined the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Black spends moves on the queen and bishop for a few traps while White is simply better placed."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.45,
+      "reason": "The d5 and e4 pawns face e5, giving a fixed centre with space for White."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "The Englund family is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.65,
+      "reason": "A dubious line is never Beginner, though there is little theory to learn."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "The queen goes to h4 early and White must stay ahead in development."
+    }
+  },
+  "french-defense-baeuerle-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Black gives a pawn immediately for activity on the b-file and long diagonal."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black offers the b-pawn on move two."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.75,
+      "reason": "White can keep the pawn and Black has little compensation.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "A French-type centre with the b-file open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players virtually never play 2...b5."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan beyond the gambit."
+    }
+  },
+  "grob-opening-alessi-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Pawn tension and open files make the play forcing."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.5,
+      "reason": "Black offers the f-pawn after gxf5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The pawn offer probably gives too little."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Pawns come off and files open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "A Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black aims for quick development in return for the pawn."
+    }
+  },
+  "grob-opening-london-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Neither forcing nor safe: White's moves are slow while Black builds a centre."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No pawn is sacrificed in the main line."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The pawn advance weakens White and strong players consider the Grob inferior."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided at this stage."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "The Grob is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "A Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan characterises White here."
+    }
+  },
+  "hungarian-opening-van-kuijk-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Black gambits a pawn."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.55,
+      "reason": "Black allows Nxh4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Unsound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious."
+    },
+    "plans": {
+      "value": [],
+      "reason": "None."
+    }
+  },
+  "indian-defense-gedult-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Pawn advances in front of the king make the position double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.75,
+      "reason": "The g4 pawn is protected by f3 and nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The kingside is weakened and strong players consider it inferior."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is not locked at this stage."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players hardly use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "White aims to storm the kingside."
+    }
+  },
+  "indian-defense-medusa-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Pawn gambit."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black gives a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Unsound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "g-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious."
+    },
+    "plans": {
+      "value": [],
+      "reason": "None."
+    }
+  },
+  "kadas-opening-beginners-trap": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "No forcing play from either side and little to attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The early rook lift costs time and strong players do not respect it."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided after two moves."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever play 1.h4 and 2.Rh3."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "A dubious line is never beginner, and there is nothing to learn from it."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No recognised plan."
+    }
+  },
+  "kadas-opening-koola-koola-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither side commits and nothing forcing happens early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Both sides waste a tempo equally, so neither is worse."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre is undecided and may take any shape."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.45,
+      "reason": "There is nothing to learn but it is not a good first repertoire choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is characteristic of the line."
+    }
+  },
+  "kings-gambit-accepted-breyer-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "A gambit with an early queen leads to mutual attacks and tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the f-pawn and Black can keep it with ...Nc6 and ...Nf6."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The queen move wastes time compared with the main King's Gambit lines."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Central and f-file lines open up from the start."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "It needs judgement about the exposed queen; a Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White's idea is a lead in development and f7 pressure with the queen out early."
+    }
+  },
+  "kings-gambit-accepted-double-muzio-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "A piece sacrifice with both kings exposed."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives a piece and pawn that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The Double Muzio is considered unsound against best play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Files and diagonals are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose the Muzio."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Long forcing lines that must be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for the attack on f7."
+    }
+  },
+  "kings-gambit-accepted-gaga-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Two pawns down and a race for the attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White sacrifices pawns Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "The Gaga/Gama Gambit is considered dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Files and diagonals are opened for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players rarely choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so never beginner, and the lines need memory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White plays for development and an attack."
+    }
+  },
+  "kings-gambit-accepted-mayet-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "A gambit with an exposed kingside for both."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White is a pawn down for the centre."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Playable for White if not best."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.45,
+      "reason": "King's Gambit lines are played less often at the top but not offbeat."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs known lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for development."
+    }
+  },
+  "kings-gambit-accepted-philidor-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Both sides take risks with exposed kings and tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White has given the f-pawn which Black can keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Playable and not refuted, though Black is theoretically better."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Pawns are exchanged on f4 and the e-file opens."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A respectable if uncommon choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Theory matters but the lines are not very deep."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White must use development to attack as the pawn is down."
+    }
+  },
+  "kings-indian-attack-pachman-system": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Manoeuvring without forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre in tension."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.7,
+      "reason": "The King's Indian Attack is a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than moves."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both bishops are fianchettoed."
+    }
+  },
+  "kings-indian-attack-smyslov-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Manoeuvring play on both wings without forced lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The b4 pawn is not a planned sacrifice."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A sound hypermodern line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.75,
+      "reason": "Flank opening with the centre undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A named Reti plan, but it is aimed at the symmetrical g6 defence only."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans over theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion",
+        "hypermodern_centre"
+      ],
+      "reason": "White develops both bishops on the long diagonals and expands on the queenside."
+    }
+  },
+  "kings-pawn-game-bavarian-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Material returns at once and neither side is forced into risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "The d5 pawn is recaptured."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "White is not worse after a few moves."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is open to several structures."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Strong players seldom play 2.c4 against 1...e5."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Requires English-style understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear recognised plan."
+    }
+  },
+  "kings-pawn-game-pachman-wing-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Gambit play with a development lead."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the b-pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "The pawn is probably not fully compensated."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The centre opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White builds a centre and develops fast."
+    }
+  },
+  "kings-pawn-game-weber-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black plays a pawn down for activity and the open lines give tactical chances."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black has given a pawn that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.55,
+      "reason": "White can consolidate the extra pawn with natural development.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The central pawns have come off and the game is about open lines for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "A countergambit against 2.d3 that strong players hardly ever try."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner and White must still play accurately.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black is pawn-down and relies on quick development."
+    }
+  },
+  "kings-pawn-opening-speers": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "An early queen sortie that Black can meet with natural development."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.6,
+      "reason": "The early queen loses time against simple development.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The e-file is likely to open as pieces develop."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players hardly ever play this."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The whole idea is the early queen."
+    }
+  },
+  "latvian-gambit-accepted-bronstein-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "The black king is open and both sides have tactical chances early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "Material is level at the root, so by the rule it is not a gambit here."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The Latvian Gambit is considered dubious for Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre is open with the e-pawns gone."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "The Latvian is seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious line is never beginner, and the lines are specific."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White uses a lead in development against the exposed king."
+    }
+  },
+  "latvian-gambit-accepted-foltys-leonhardt-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Black attacks at once with queen and pawn breaks while the king is exposed, so one slip decides the game."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black has lost the e5 pawn and White can hold on to it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "Latvian Gambit lines are considered unsound by strong players."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The e- and f-files open quickly and the play is piece against piece."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner, and only a limited amount of theory is needed."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Black tries to use development and queen play to make up for the pawn."
+    }
+  },
+  "latvian-gambit-corkscrew-countergambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Both kings are loose and the lines are tactical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material is level at the root, so nothing is on offer in the main line."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The Latvian family is generally thought to give White the better game."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens early with files and diagonals in play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Hardly used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner, and little theory is required."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "Both sides revolve around the weak f7 square."
+    }
+  },
+  "london-system-poisoned-pawn-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The queen grab on b2 leads to forcing play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.5,
+      "reason": "White offers b2, but it is not clear Black can safely keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "The compensation is real."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is in tension."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.55,
+      "reason": "A London System branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Needs tactics and understanding."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for development."
+    }
+  },
+  "modern-defense-gurgenidze-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "White's big centre and Black's ...h5 lunge create mutual kingside risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.7,
+      "reason": "A rare but playable Black set-up.",
+      "side": null
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.75,
+      "reason": "The e5, d4 and f4 chain faces ...c6 and ...d5 in a locked centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Played by few strong players, mainly as a surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "Plans are fairly clear but Black must handle the cramped position with care.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "bad_bishop"
+      ],
+      "reason": "White holds a clear space advantage and Black's g7-bishop is blocked."
+    }
+  },
+  "nimzowitsch-defense-neo-mongoloid-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The weakened king and the ...e5 break make for early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.55,
+      "reason": "...f6 wastes time and weakens the king, giving White an easy edge.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "White's e4/d4 centre faces a ...e5 break."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Hardly any strong player uses 2...f6."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "A dubious defence is never Beginner and the ideas are simple.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White gets a big centre against a poorly placed Black set-up."
+    }
+  },
+  "petrovs-defense-kaufmann-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "The Petrov is solid and this branch is steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Fully sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Quiet play with tension in the centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A respectable Petrov line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Understanding matters more than memory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White enjoys extra space."
+    }
+  },
+  "philidor-defense-paulsen-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Queens are exposed early but there is no real forcing attack or tension."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Black is slightly worse but the line is not refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The central pawns are traded and the e-file is open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A respectable mainstream line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Simple, but the early queen needs careful handling."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "symmetrical_structure"
+      ],
+      "reason": "Black's queen comes out early and the pawns are mirrored."
+    }
+  },
+  "polish-defense-spassky-gambit-accepted": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Open lines and a development gap make for early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The b5 pawn White takes is answered by ...Bxe4, so material is level."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "The Polish Defence is considered dubious and this line leaves Black a little behind."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The e4 and b5 pawns disappear early, leaving open diagonals."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose 1...b5 here."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "It is a dubious line so never beginner, and the traps need memory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White's edge is the lead in development."
+    }
+  },
+  "polish-opening-german-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flank play without early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No gambit at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "White fianchettoes and expands on the queenside."
+    }
+  },
+  "polish-opening-rooks-swap-line": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The rook swap leaves a quiet manoeuvring game."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Material is level after the exchanges."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "The line is playable for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "The Polish is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Understanding over memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "White uses the long diagonal and the queenside pawn."
+    }
+  },
+  "ponziani-opening-caro-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Tactics around the pinned knight make it forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Black is fine."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The centre opens up."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.45,
+      "reason": "The Ponziani is a respectable if less common choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "The tactics need to be known."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White's queen comes out early."
+    }
+  },
+  "ponziani-opening-vukovic-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Early king exposure and active loose pieces make this tactical."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White has given the e4 pawn, which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "The Fraser Defence 5...Bc5 is considered good for Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre is open with the e-file and diagonals in play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players rarely choose this branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious line is not beginner and the lines need some memory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White's only compensation is development."
+    }
+  },
+  "pterodactyl-defense-central": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The Benoni-like structure and early queen sortie make it double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Playable but demanding."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.4,
+      "reason": "The d5 pawn locks the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely seen at the top."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Structure matters more than theory."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "fianchetto"
+      ],
+      "reason": "Black's queen comes out early and the bishop is fianchettoed."
+    }
+  },
+  "pterodactyl-defense-fianchetto": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "The early queen and unbalanced pawns give both sides tactical chances."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.55,
+      "reason": "Unusual but not refuted.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "A fixed asymmetric Benoni-type centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose this set-up."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "Needs judgement but little theory.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black lets White take the centre and attacks it from the flanks."
+    }
+  },
+  "queens-gambit-accepted-schwartz-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Counterattacking pawn moves open lines and lead to tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material comes back by force as the c4 pawn falls and e4/f5 are exchanged."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "3...f5 weakens the king and White gets the lead."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Pawns on e4 and f5 are exchanged and lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players hardly use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "It needs tactical care and is not a safe first choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White profits from a faster development and the exposed Black king."
+    }
+  },
+  "queens-gambit-declined-westphalian-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Dynamic play but no forcing risks beyond the normal."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The Ragozin is a respected defence."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is in tension and can resolve several ways."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal branch of the Ragozin."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "It rewards understanding of the pins and the isolated pawn."
+    },
+    "plans": {
+      "value": [
+        "isolated_queens_pawn",
+        "doubled_pawns"
+      ],
+      "reason": "The ...c5 break and ...Bxc3 lead to these structures."
+    }
+  },
+  "queens-indian-defense-euwe-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Hard to break down, with steady positional play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respected main line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre remains undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal main-line variation."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional understanding matters more than memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both sides fianchetto their bishops."
+    }
+  },
+  "queens-pawn-game-chandler-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White gives a pawn for activity down the long diagonal."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White gives the d-pawn and Black can try to keep it with ...Nc6 and ...e5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.5,
+      "reason": "Black can hold the extra pawn with natural moves.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The d-file is open and Black holds an asymmetric centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players rarely sacrifice the d-pawn this way."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "lead_in_development"
+      ],
+      "reason": "The bishop on g2 and quick development are the compensation."
+    }
+  },
+  "rat-defense-petruccioli-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The early flank pawn push creates imbalance."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The h-pawn push neglects development."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "White tries a kingside pawn storm."
+    }
+  },
+  "reti-opening-reti-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Quiet development where White regains the pawn and play stays even."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The pawn on c4 normally comes back, so no lasting material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "A normal, respectable line.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is undecided and depends on whether White plays d4 or e4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A standard branch of the Réti."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Plans are simple but the move order needs care.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White's hypermodern set-ups often feature a fianchetto."
+    }
+  },
+  "rubinstein-opening-bogoljubow-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither side has early forcing play, but the pawn tension keeps it from being fully solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Neither side is taking a risk."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre is in tension and can resolve either way."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.55,
+      "reason": "White's set-up with Bd3, b3 and Bb2 is a plan-based system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans and pawn-structure choices need understanding, but there is little theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hanging_pawns"
+      ],
+      "reason": "The Bb2 sits on the long diagonal and pawn exchanges can leave hanging pawns."
+    }
+  },
+  "rubinstein-opening-classical-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Quiet development with the centre in tension but no forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.95,
+      "reason": "A normal, well-trodden development scheme.",
+      "side": null
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The c5, d4 and d5 pawns stay in tension and the centre is undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "It is a set-up against this particular Black formation rather than a universal system."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Plans are clear but the timing of the central breaks takes judgement.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "symmetrical_structure",
+        "fianchetto"
+      ],
+      "reason": "The pawn shapes mirror each other and White's bishop sits on the long diagonal."
+    }
+  },
+  "ruy-lopez-birds-defense-deferred": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither forcing nor especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A known sound line with a small White edge."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "A fixed asymmetric centre with Black's pawn on d4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A less common but respectable Ruy Lopez branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans are clear but the pawn structure takes understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan from the table fits cleanly."
+    }
+  },
+  "ruy-lopez-bulgarian-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A normal Ruy Lopez set-up without forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Playable for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is in tension."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Ruy Lopez ideas rather than memorisation."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White plays for a normal centre."
+    }
+  },
+  "ruy-lopez-exchange": {
+    "tier": "unsourced",
+    "character": {
+      "value": "solid",
+      "confidence": 0.8,
+      "reason": "Queens are off, there are no attacks and the position is hard to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.97,
+      "reason": "A fully respectable Ruy Lopez line.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "An asymmetric pawn structure with the d-file open after the queen swap."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal Ruy Lopez main branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Understanding of the endgame matters more than memorised theory.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "bishop_pair",
+        "doubled_pawns"
+      ],
+      "reason": "Black has the bishop pair and the doubled c-pawn is the structural talking point."
+    }
+  },
+  "ruy-lopez-halloween-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "A piece sacrifice leads to wild play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers a piece."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.75,
+      "reason": "Considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White seeks tempo and a pawn centre."
+    }
+  },
+  "ruy-lopez-open-berlin-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black's Berlin set-up is resilient and queens tend to come off."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level and any pawn comes back by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.95,
+      "reason": "Established theory.",
+      "side": null
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns have been exchanged, leaving open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream Berlin branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "Some theory is needed but not extreme.",
+      "why": "memory"
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single plan stands out."
+    }
+  },
+  "ruy-lopez-pollock-defense": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The queen sortie and the loose e5 pawn make the early play concrete and risky for Black."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Material is level at the root and no sacrifice is planned by either side."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The rim knight and lag in development leave Black worse against sound play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The e5 pawn is likely to come off and the centre opens quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom meet the Ruy Lopez this way."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Black needs judgement about a misplaced knight; it is not a first repertoire line."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White's aim is to use the lead in development against the misplaced knight."
+    }
+  },
+  "scandinavian-defense-kadas-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Black gives two pawns for open lines, so it is tactical."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives pawns that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.75,
+      "reason": "The extra pawns tell and strong players avoid it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre opens early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black's only compensation is development."
+    }
+  },
+  "sicilian-defense-amazon-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "A one-off queen sortie that is easy for Black to meet."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level and g7 is defended."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.6,
+      "reason": "The early queen loses time against natural development.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "A Sicilian structure with the c-file half-open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players hardly ever play 2.Qg4."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The whole idea is the early queen sortie."
+    }
+  },
+  "sicilian-defense-brick-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A quiet sideline in which neither side faces early danger."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.8,
+      "reason": "The knight is awkward but there is no tactical flaw.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "Every Sicilian leaves Black a half-open c-file against the e4 pawn."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever choose 2.Nh3."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Not a good first repertoire choice since the knight is poorly placed.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [],
+      "reason": "No specific plan is typical of the line."
+    }
+  },
+  "sicilian-defense-magnus-smith-trap": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Open Sicilian tactics around f7 and e5."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "Material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "The trap only works if Black errs."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "Open Sicilian structure with a half-open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A standard Sicilian branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "The tactics need to be known."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7"
+      ],
+      "reason": "White targets f7 with the bishop on c4."
+    }
+  },
+  "sicilian-defense-venice-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Early checks, Nf5 and Bg5 ideas and a contested d5 square make it tactical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "A normal Sicilian sideline.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.8,
+      "reason": "A fixed asymmetric centre with the d-file and d5 square in dispute."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A less common but respectable White try."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "The ideas are positional and manageable without long forcing theory.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "knight_outpost"
+      ],
+      "reason": "The d5 hole is the strategic centre of the line."
+    }
+  },
+  "slav-defense-suchting-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "The queen sortie adds tactics but White can defend simply."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Black is not at clear risk."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Slav centre with a partly open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Played by strong players from time to time."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "No heavy theory to learn."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The queen comes to b6 early."
+    }
+  },
+  "tarrasch-defense-marshall-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "A pawn sacrifice into open lines leads to forcing tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the e-pawn and Black can keep it after 5...dxe4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "White gets compensation but strong players avoid it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Central pawns come off and open lines follow."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Some forcing theory and judgement about compensation; Dubious is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The gambit gives White faster development."
+    }
+  },
+  "tarrasch-defense-swedish-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Space and manoeuvring rather than forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides are sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is in tension with a locked queenside."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A respectable branch of the Tarrasch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Some theory and strategic understanding are needed."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "knight_outpost"
+      ],
+      "reason": "Black gets space with c4 and White uses the e5 outpost."
+    }
+  },
+  "torre-attack-wagner-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A pawn offer and open lines make the play forcing."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White offers a pawn that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Compensation for the pawn is questionable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Central pawns come off and lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The gambit aims for faster piece activity."
+    }
+  },
+  "van-geet-opening-kluever-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Gambit play with a development lead against material."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White gives a pawn which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "The compensation is probably insufficient."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Lines open quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players rarely use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White wants to use rapid development for the pawn."
+    }
+  },
+  "van-geet-opening-laroche-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black gives a pawn for activity and the position can turn tactical quickly."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black offers the b-pawn and White can simply take it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.65,
+      "reason": "Black has limited compensation for the pawn.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "The b-file opens for Black while the centre is not yet fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players seldom meet 1.Nc3 with ...b5."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "It is dubious, so not Beginner, and relies on a few ideas.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The pawn is given for faster development and the b7 bishop."
+    }
+  },
+  "vienna-gambit-with-max-lange-defense-hamppe-allgaier-gambit": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "Piece sacrifices and mutual attacks."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.95,
+      "reason": "White gives material for the attack."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "Considered unsound by strong players."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Pieces and lines open at once."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "White attacks f7 and the king."
+    }
+  },
+  "vienna-game-giraffe-attack": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "The queen move at once leads to tactics against the g7 pawn."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Pawns on g2 and g7 are exchanged by force, so material is level."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The queen is exposed and Black is better in the main lines."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre opens quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom seen at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Tactical but not theory heavy; a Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White commits the queen early to attack g7."
+    }
+  },
+  "zukertort-defense-kingside-variation": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "The set-up is quiet but passive."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Passive but not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre has not been resolved."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely seen at a high level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not complicated to play."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Black fianchettoes while White gains space."
+    }
+  },
+  "zukertort-opening-lisitsyn-gambit-deferred": {
+    "tier": "unsourced",
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A pawn sacrifice on move three leads to forcing, open play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White offers the e-pawn and Black can keep it after ...fxe4 and ...Nxe4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The deferred version probably gives full compensation only against inaccurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The e- and d-pawns are exchanged and lines open quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The compensation is hard to judge; a Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The gambit buys pieces activity at the cost of a pawn."
+    }
+  },
+  "zukertort-opening-the-potato": {
+    "tier": "unsourced",
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow flank play without forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "A slow move but playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "A flank opening with an undecided centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Easy to play but not a good first choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear named plan."
+    }
   }
 }

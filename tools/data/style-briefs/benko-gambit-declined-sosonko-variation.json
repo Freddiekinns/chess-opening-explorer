@@ -1,0 +1,111 @@
+{
+  "slug": "benko-gambit-declined-sosonko-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Declined: Sosonko Variation",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. a4",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/P1P5/8/1P2PPPP/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "benko-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White answers the Benko with 4.a4, hitting b5 immediately rather than accepting the pawn on b5. Black can reply 4...b4 to keep the queenside closed, or take on c4 or a4 to keep play open. The result is a Benoni-style centre with queenside space contested, and no pawn is offered in the main line.",
+  "white_ideas": [
+    {
+      "idea": "Open the a-file or cramp the queenside with a4 and Nc3 after ...b4"
+    },
+    {
+      "idea": "Build a centre with e4 and Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold queenside space with ...b4 and ...a6 or open lines with ...bxa4"
+    },
+    {
+      "idea": "Put a bishop on the long diagonal and use ...e6 or ...d6 breaks"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-style asymmetrical centre with a queenside pawn fight"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The gambit is declined, so neither side is committed to a forcing line and the play is more positional."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "White does not take b5, so no pawn changes hands in the main line."
+    },
+    "soundness": {
+      "notes": "A normal developing alternative that gives White a sound game."
+    },
+    "structure": {
+      "notes": "d5 against c5 with the queenside pawns locked or traded; the centre is not yet settled."
+    },
+    "approach": {
+      "notes": "A recognised, if less common, answer to the Benko, played at strong level now and then."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Requires understanding of Benoni-style queenside play but little memorised."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "Benoni structure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black accepts a4 push",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. a4 bxa4",
+      "how": "Black takes the pawn back into a more open fight."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Without a gambit the play is a manoeuvring Benoni-type fight."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "The Benko is declined at move four, so no pawn is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A normal sound alternative for White."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The queenside tension and centre are undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised if less common line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The play is positional with moderate theory."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "space_advantage"
+      ],
+      "reason": "Both sides fight for queenside space."
+    }
+  }
+}

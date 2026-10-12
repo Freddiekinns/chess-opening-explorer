@@ -1,0 +1,108 @@
+{
+  "slug": "kings-gambit-accepted-quaade-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Quaade Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Nc3",
+    "fen": "rnbqkbnr/pppp1p1p/8/6p1/4Pp2/2N2N2/PPPP2PP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 4.Nc3 against the ...g5 defence, planning 5.Ne5 or 5.d4 with a quick development and the e5 knight. Black's g5 pawn gives White a target, and White offers a second pawn for open lines. The line is rare but theory-tested, and modern analysis calls it playable but not better than the main 4.h4 or 4.Bc4 lines.",
+  "white_ideas": [
+    {
+      "idea": "Play d4, Nd5 or Ne5 and use the quick development"
+    },
+    {
+      "idea": "Attack the g-pawn with h4 and open the h-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn with ...g4 and ...Nf6"
+    },
+    {
+      "idea": "Return material when needed and consolidate with ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open f-file and kingside with exposed kings"
+    },
+    {
+      "structure": "Black pawns g4, f4 against White centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings are exposed with open files, so the game is concrete and sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "As in the King's Gambit Accepted, White has given the f-pawn and Black can keep the extra pawn."
+    },
+    "soundness": {
+      "notes": "Playable, though it is not considered better than the main lines."
+    },
+    "structure": {
+      "notes": "Open kingside and centre after the king's gambit pawn trades."
+    },
+    "approach": {
+      "notes": "Rare among strong players, who prefer 4.h4 or 4.Bc4."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp lines need to be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Open lines with exposed kings and forcing tactics for both sides."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White has given the f-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "It is playable and not clearly refuted, like the main King's Gambit lines."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The f-file and the centre are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose the Quaade over other 4th moves."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "The lines are forcing and must be known."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "White plays for an attack through quick development and the open f-file."
+    }
+  }
+}

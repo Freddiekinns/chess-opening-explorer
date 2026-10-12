@@ -1,0 +1,106 @@
+{
+  "slug": "vulture-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vulture Defense",
+    "eco": "A56",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 Ne4",
+    "fen": "rnbqkb1r/pp1ppppp/8/2pP4/2P1n3/8/PP2PPPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays ...c5 and then 3...Ne4 after 3.d5, a knight sortie out of Benoni territory. White usually plays 4.Qd3 or 4.Nbd2 hitting the knight, and Black retreats or plays ...f5. Play is odd and a little loosening for Black.",
+  "white_ideas": [
+    {
+      "idea": "Kick the knight with Qd3 or Nd2 and gain space"
+    },
+    {
+      "idea": "Develop with Nc3 and g3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Retreat with ...Nf6 or support with ...d6 and ...f5"
+    },
+    {
+      "idea": "Aim for a Benoni with the knight active"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like structure with White d5/c4 pawns"
+    },
+    {
+      "structure": "Black c5 pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tricky early knight move, but not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "None."
+    },
+    "soundness": {
+      "notes": "Black loses time kicking the knight back."
+    },
+    "structure": {
+      "notes": "Asymmetric Benoni centre."
+    },
+    "approach": {
+      "notes": "A surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "It is unusual and unclear but not a forcing attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "White kicks the knight with tempo and gains space."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "It is a Benoni-style asymmetric centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players rarely play 3...Ne4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "A dubious line is not Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White takes space on the queenside and centre."
+    }
+  }
+}

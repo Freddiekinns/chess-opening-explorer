@@ -1,0 +1,110 @@
+{
+  "slug": "french-defense-henneberger-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Henneberger Variation",
+    "eco": "C11",
+    "moves": "1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Be3",
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N1B3/PPP2PPP/R2QKBNR b KQkq - 3 4"
+  },
+  "parent": "french-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White develops 4.Be3 instead of the usual Bg5, Bd3 or e5, supporting d4 and keeping the options of Qd2 and long castling. Black can strike with ...dxe4, ...Bb4 or ...Bd6. It is a quiet, flexible line.",
+  "white_ideas": [
+    {
+      "idea": "Qd2 and long castling with a kingside pawn push"
+    },
+    {
+      "idea": "Support d4 and the e4 centre"
+    },
+    {
+      "idea": "Develop with Bd3 and Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade in the centre with ...dxe4"
+    },
+    {
+      "idea": "Pin with ...Bb4"
+    },
+    {
+      "idea": "Break with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French with White e4/d4 chain and Black e6/d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flexible and not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Fully respectable but gives Black easy equality."
+    },
+    "structure": {
+      "notes": "Black can resolve the centre with ...dxe4 for a semi-open position."
+    },
+    "approach": {
+      "notes": "A less common choice that is nonetheless played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Understanding more than memory."
+    }
+  },
+  "plan_phrases": [
+    "Qd2 and long castling",
+    "Centre support with Be3"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A flexible, quiet development rather than a forcing line."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.93,
+      "reason": "A normal developing line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "Black often trades with ...dxe4 for a French semi-open position."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Less common but not seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans matter more than theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White keeps a space edge in the centre."
+    }
+  }
+}

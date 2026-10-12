@@ -1,0 +1,109 @@
+{
+  "slug": "grunfeld-defense-lutikov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Lutikov Variation",
+    "eco": "D80",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. f3",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N2P2/PP2P1PP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "grunfeld-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 4.f3 against the Grünfeld to build a pawn centre with e4. Black replies ...c5 and ...Nxd5 or ...e5 and attacks the centre, aiming for ...Bg7 pressure on d4. The game is sharp and theoretical.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre with e4"
+    },
+    {
+      "idea": "Defend d4 and develop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...c5"
+    },
+    {
+      "idea": "Use the bishop on g7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Grünfeld structure with Black pieces against the centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp central fight."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material offered."
+    },
+    "soundness": {
+      "notes": "Mainstream."
+    },
+    "structure": {
+      "notes": "Centre opens."
+    },
+    "approach": {
+      "notes": "Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Grünfeld requires understanding."
+    }
+  },
+  "plan_phrases": [
+    "hypermodern centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Murrey Attack",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. f3 c5 5. cxd5 Nxd5 6. Na4",
+      "how": "White tries to disrupt Black's plan."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Central tension leads to concrete play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Mainstream line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Centre opens after exchanges."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "Regular line."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "Grünfeld demands understanding."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre"
+      ],
+      "reason": "Black attacks White's centre."
+    }
+  }
+}

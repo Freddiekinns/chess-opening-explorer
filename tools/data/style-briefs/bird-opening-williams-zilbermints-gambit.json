@@ -1,0 +1,113 @@
+{
+  "slug": "bird-opening-williams-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Williams-Zilbermints Gambit",
+    "eco": "A03",
+    "moves": "1. f4 d5 2. e4 dxe4 3. Nc3 Nf6 4. Nge2",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/4pP2/2N5/PPPPN1PP/R1BQKB1R b KQkq - 3 4"
+  },
+  "parent": "bird-opening-williams-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays the Williams Gambit with 2.e4 and 4.Nge2, giving the e4 pawn for a lead in development. Black can hold the pawn, but White gets quick development and a half-open f-file. Play is sharp and risky for White.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nxe4-type play, g3 and Bg2 or d4"
+    },
+    {
+      "idea": "Use f4 and Ng3 for pressure on the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...e5 or ...Nc6 and ...Bf5"
+    },
+    {
+      "idea": "Develop with ...e6 and ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...dxe4"
+    },
+    {
+      "structure": "White f4 pawn without a centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is a pawn down chasing an attack."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "The e4 pawn is given and Black can hold it."
+    },
+    "soundness": {
+      "notes": "Black has an easy game."
+    },
+    "structure": {
+      "notes": "The centre is open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Compensation understanding."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Declined 2...d4",
+      "moves": "1. f4 d5 2. e4 d4",
+      "how": "No pawn is given; Black gains space."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White gives a pawn for an attack, so the play is double-edged."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White gives the e4 pawn on purpose and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black keeps the pawn and White has little to show."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e-pawn trades off so the centre is open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players hardly play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "A dubious gambit cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "The pawn is the price of quick development and f-file pressure."
+    }
+  }
+}

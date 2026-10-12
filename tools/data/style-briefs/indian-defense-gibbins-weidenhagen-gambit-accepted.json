@@ -1,0 +1,113 @@
+{
+  "slug": "indian-defense-gibbins-weidenhagen-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Gibbins-Weidenhagen Gambit Accepted",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. g4 Nxg4",
+    "fen": "rnbqkb1r/pppppppp/8/8/3P2n1/8/PPP1PP1P/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense-gibbins-weidenhagen-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 2.g4 against the Indian and after 2...Nxg4 has given a pawn. Play continues 3.e4 or Nf3 with a lead in development, but Black can keep the extra pawn. It is a rare gambit with a dubious reputation.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with e4, Nf3 and Bf4"
+    },
+    {
+      "idea": "Hit the knight with Bf4/Nd2 to win time"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...d6 and ...Nf6"
+    },
+    {
+      "idea": "Retreat and complete development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White development lead"
+    },
+    {
+      "structure": "Black knight pulled to g4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A forcing line with a pawn deficit for White."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "The g4 pawn is taken by the knight and can be kept."
+    },
+    "soundness": {
+      "notes": "White has little for the pawn."
+    },
+    "structure": {
+      "notes": "The centre opens."
+    },
+    "approach": {
+      "notes": "A rare gambit."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little to learn."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Declined",
+      "moves": "1. d4 Nf6 2. g4 d5",
+      "how": "No pawn is taken and White weakens the king."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "White gives up a pawn for a lead in development."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "The g4 pawn is taken and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "Black stays a pawn up with a clean game."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns come off early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly play 2.g4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A dubious gambit is not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White hopes for development and an open g-file."
+    }
+  }
+}

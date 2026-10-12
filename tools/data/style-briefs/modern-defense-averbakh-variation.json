@@ -1,0 +1,106 @@
+{
+  "slug": "modern-defense-averbakh-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Averbakh Variation, Pseudo-Sämisch",
+    "eco": "A42",
+    "moves": "1. d4 g6 2. c4 Bg7 3. e4 d6 4. Be3 Nf6 5. f3",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/2PPP3/4BP2/PP4PP/RN1QKBNR b KQkq - 0 5"
+  },
+  "parent": "queens-pawn-game-modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White sets up a Sämisch-style centre with Be3 and f3 against the Modern Defence and Black plays like a King's Indian Sämisch with ...O-O, ...c5 or ...e5. White often castles long and attacks on the kingside, while Black counters in the centre and on the queenside. The game is double-edged.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre and castle long"
+    },
+    {
+      "idea": "Push g4 and h4 in a kingside attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Counterattack with ...c5 or ...e5"
+    },
+    {
+      "idea": "Play ...a6 and ...b5 on the queenside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "King's Indian Sämisch pawn centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Opposite-side castling and pawn storms."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "The centre closes after d5/e5."
+    },
+    "approach": {
+      "notes": "Mainstream systems."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are complex."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Opposite-side castling and pawn storms are typical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Mainstream line."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.4,
+      "reason": "The centre often locks after d5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "It is a regular line, not a system for all replies."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are clear."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "opposite_side_castling",
+        "pawn_storm"
+      ],
+      "reason": "Sämisch structure with opposite-side castling."
+    }
+  }
+}

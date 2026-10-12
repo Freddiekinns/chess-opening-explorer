@@ -1,0 +1,110 @@
+{
+  "slug": "blackmar-diemer-gambit-declined-elbert-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Declined: Elbert Countergambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 e5",
+    "fen": "rnbqkb1r/ppp2ppp/5n2/4p3/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 Black strikes back with 4...e5 instead of taking on f3. White answers 5.dxe5 or 5.fxe4, and the game opens at once, with queens possibly coming off after dxe5 Qxd1+. Black keeps the extra pawn for now but White has the lead in development.",
+  "white_ideas": [
+    {
+      "idea": "Open the centre with dxe5 and use the lead in development"
+    },
+    {
+      "idea": "Recapture on e4 and play Bc4 and Nge2 or Bf4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit d4 and the centre with ...e5 and ...exd4"
+    },
+    {
+      "idea": "Hold the extra pawn and trade queens when possible"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after dxe5 or fxe4 with pieces active"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides play concrete tactics and White is a pawn down for activity."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gave up the e4 pawn and Black can keep it, but 4...e5 hits the centre at once."
+    },
+    "soundness": {
+      "notes": "The countergambit is generally seen as dubious for Black because White regains the pawn with the better position."
+    },
+    "structure": {
+      "notes": "Pawns come off in the centre and the position opens."
+    },
+    "approach": {
+      "notes": "Rare sideline of a gambit that strong players seldom play."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific replies to 5.dxe5 and 5.fxe4 must be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "central tension"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main BDG with 4...exf3",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3",
+      "how": "Black accepts and the game is the Euwe/Ziegler/Teichmann attack, not this line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "The lines are forcing and White plays for lead in development."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.5,
+      "reason": "White is a pawn down for development in the position and Black can keep it for now."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.45,
+      "reason": "The countergambit is believed to leave White better after dxe5 or fxe4."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre pawns come off straight away and pieces get open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "The BDG declined lines are seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Move orders matter but the plans are clear."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for activity rather than material."
+    }
+  }
+}

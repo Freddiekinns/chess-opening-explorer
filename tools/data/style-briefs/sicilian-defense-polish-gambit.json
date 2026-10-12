@@ -1,0 +1,108 @@
+{
+  "slug": "sicilian-defense-polish-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Polish Gambit",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 b5",
+    "fen": "rnbqkbnr/p2ppppp/8/1pp5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 2...b5, offering the b-pawn to gain queenside space and a bishop on the long diagonal. After 3.Bxb5 or 3.d4 White can take material, and Black relies on ...Bb7 hitting e4 and on ...cxd4 for activity. It scores through surprise more than soundness.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with Bxb5 or play d4 and meet ...Bb7 with e5 or Nc3"
+    },
+    {
+      "idea": "Consolidate material and trade into an ending"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop the bishop to b7 against e4 and play ...e6"
+    },
+    {
+      "idea": "Open the c-file and play for the queenside initiative"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian asymmetry with Black pawn on c5 and b-file open"
+    },
+    {
+      "structure": "White extra pawn and a long diagonal fight"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gives a pawn for fast piece play and a long-diagonal bishop, so both sides take risks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take on b5 and Black has no forced return."
+    },
+    "soundness": {
+      "notes": "Considered dubious; Black has a modest initiative at best."
+    },
+    "structure": {
+      "notes": "A Sicilian-type asymmetric centre with half-open files, so semi-open."
+    },
+    "approach": {
+      "notes": "Rare, played for surprise only."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "A narrow, trappy line to learn, but unsound, so it is not a good first choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "queenside space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black a pawn down plays for activity and White must avoid tactics on the long diagonal."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black offers the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The pawn sacrifice is considered unsound against accurate play."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "It is a Sicilian-type asymmetric structure with half-open files."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never a beginner choice and the lines are narrow."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "queenside_expansion"
+      ],
+      "reason": "Black plays for activity on the long diagonal and queenside space."
+    }
+  }
+}

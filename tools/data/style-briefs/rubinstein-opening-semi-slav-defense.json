@@ -1,0 +1,104 @@
+{
+  "slug": "rubinstein-opening-semi-slav-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rubinstein Opening: Semi-Slav Defense",
+    "eco": "D05",
+    "moves": "1. d4 d5 2. Nf3 Nf6 3. e3 e6 4. Bd3 Bd6 5. O-O O-O 6. b3 Nbd7 7. Bb2",
+    "fen": "r1bq1rk1/pppn1ppp/3bpn2/3p4/3P4/1P1BPN2/PBP2PPP/RN1Q1RK1 b - - 2 7"
+  },
+  "parent": "queens-pawn-game-colle-system",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "White plays a Colle-Zukertort set-up with e3, Bd3, b3 and Bb2 while Black builds ...e6, ...Bd6, ...O-O, ...Nbd7 and ...c6, a Semi-Slav shape. Both sides castle and develop, then White prepares e4 with Nbd2 and Re1, and Black responds with ...e5. The game is solid and positional.",
+  "white_ideas": [
+    {
+      "idea": "Prepare e4 with Nbd2 and Re1"
+    },
+    {
+      "idea": "Use the long diagonal with Bb2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e5 with ...Nbd7 and ...c6"
+    },
+    {
+      "idea": "Play ...e5 or ...b6 to challenge the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Semi-Slav pawns on c6/d5/e6 against d4/e3/b3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Steady build-up, no forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "Centre tension is resolved later."
+    },
+    "approach": {
+      "notes": "The set-up works against many Black defences."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are simple with little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "e4 break"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.75,
+      "reason": "Neither side takes risks early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Entirely sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre stays flexible until e4 or ...e5."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.7,
+      "reason": "The Colle-Zukertort set-up can be used against many replies."
+    },
+    "level": {
+      "value": "beginner",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Clear plans and little theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Bb2 on the long diagonal and the e4 break."
+    }
+  }
+}

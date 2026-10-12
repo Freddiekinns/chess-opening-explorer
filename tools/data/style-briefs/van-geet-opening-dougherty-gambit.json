@@ -1,0 +1,115 @@
+{
+  "slug": "van-geet-opening-dougherty-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Dougherty Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 d5 2. e4 dxe4 3. f3",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/4p3/2N2P2/PPPP2PP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White offers the e-pawn with 3.f3, in the manner of a Blackmar-Diemer. After 3...exf3 4.Nxf3 or 4.Qxf3 White has a lead in development and an open f-file for a kingside attack. Black can keep the pawn and usually consolidates with ...e6 and ...Nf6, so White scores on activity and surprise rather than a proven edge.",
+  "white_ideas": [
+    {
+      "idea": "Recapture on f3 and develop quickly with Bc4, d4 and Bf4"
+    },
+    {
+      "idea": "Aim at f7 and the kingside with the f-file and the queen on f3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on f3 and return the pawn only if it brings a safe, developed position"
+    },
+    {
+      "idea": "Play ...Nf6, ...e6, ...Be7 and castle, then trade pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White d4 against Black ...e6 or ...c6"
+    },
+    {
+      "structure": "Black a pawn up while White pieces are active"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open position with White pieces developed fast and tactics against f7, but Black has a simple consolidating plan."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "3...exf3 wins the e-pawn and White has no forced way to regain it."
+    },
+    "soundness": {
+      "notes": "The pawn is not regained by force, so strong players consider White short of compensation, as in the Pseudo-Diemer."
+    },
+    "structure": {
+      "notes": "Pawns come off in the centre and the f-file opens, so play is about open lines."
+    },
+    "approach": {
+      "notes": "A rare sideline of an already rare 1.Nc3; strong players hardly choose it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Short gambit lines need some move-order knowledge, but it is unsound."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on f7",
+    "open f-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Pseudo-Diemer Gambit, Dunst",
+      "moves": "1. Nc3 d5 2. e4 dxe4 3. f3 exf3 4. Qxf3",
+      "how": "White recaptures with the queen rather than a knight, aiming for Bb5 and quick pressure on b7."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Open lines, a pawn down for development and a Black king that must be careful make this concrete and risky."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the e-pawn and Black can keep it after ...exf3."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The pawn is not regained and engines prefer Black, so it works mostly as a surprise."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The e-pawn trade and the f-file opening leave an open centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom choose 1.Nc3, and this gambit even less."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "The lines are short but a dubious gambit is never a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for fast development and pressure on f7 through the open f-file."
+    }
+  }
+}

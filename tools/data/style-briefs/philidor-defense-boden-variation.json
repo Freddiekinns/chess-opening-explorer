@@ -1,0 +1,108 @@
+{
+  "slug": "philidor-defense-boden-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Boden Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Qxd4 Bd7",
+    "fen": "rn1qkbnr/pppb1ppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R w KQkq - 1 5"
+  },
+  "parent": "philidor-defense-exchange-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White recaptures 4.Qxd4 and Black plays the quiet ...Bd7, avoiding ...Nc6 with tempo. White usually continues Bc4 and Nc3 with a space edge and Black develops with ...Nf6 and ...Nc6. The game is passive for Black and quiet for White.",
+  "white_ideas": [
+    {
+      "idea": "Play Bc4, Nc3 and a quick castle, using the central queen"
+    },
+    {
+      "idea": "Use extra space and the lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete development with ...Nf6, ...Be7 and ...Nc6"
+    },
+    {
+      "idea": "Break with ...d5 when ready"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4 pawn against Black d6 pawn"
+    },
+    {
+      "structure": "Open d-file with queens still on"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Passive for Black but with few tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "None."
+    },
+    "soundness": {
+      "notes": "Black is a little passive but playable."
+    },
+    "structure": {
+      "notes": "After exd4 the d-file is half open for both."
+    },
+    "approach": {
+      "notes": "A sideline of an uncommon defence."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "space",
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black is cramped but hard to break down and White has no forcing line."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Black is a bit passive but fine."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "The d-pawns trade, leaving a half-open d-file and an e4/d6 asymmetry."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Less common than the Philidor main line but respectable."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Clear plans but passive and little to learn."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "early_queen"
+      ],
+      "reason": "White keeps more space with the queen on d4."
+    }
+  }
+}

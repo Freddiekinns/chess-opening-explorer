@@ -1,0 +1,103 @@
+{
+  "slug": "bird-opening-lasker-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Lasker Gambit",
+    "eco": "A02",
+    "moves": "1. f4 e5 2. fxe5 f6",
+    "fen": "rnbqkbnr/pppp2pp/5p2/4P3/8/8/PPPPP1PP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "bird-opening-froms-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.f4 e5 2.fxe5 Black plays 2...f6, offering a countergambit to open lines against the white king. White usually grabs the pawn with exf6 and develops, ending up a pawn up. The line is rare and considered dubious.",
+  "white_ideas": [
+    {
+      "idea": "Capture with exf6 and develop"
+    },
+    {
+      "idea": "Stay solid and keep the extra pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the f-file and attack the king"
+    },
+    {
+      "idea": "Develop quickly"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with f-file open"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gambit for activity."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White keeps a pawn."
+    },
+    "soundness": {
+      "notes": "Black is down material without sufficient compensation."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black plays a gambit for activity."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.75,
+      "reason": "Black gives up a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Black is down material without sufficient compensation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for time."
+    }
+  }
+}

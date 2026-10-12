@@ -1,0 +1,111 @@
+{
+  "slug": "latvian-gambit-greco-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Greco Variation",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qe7",
+    "fen": "rnb1kbnr/ppppq1pp/8/4Np2/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "After 2...f5 White takes 3.Nxe5, and Black plays 3...Qe7 to attack the knight, hoping for Qxe4+ tricks. White's best is to defend with 4.Nf3 and 4...Qxe4+ 5.Be2, keeping the extra pawn and a good structure. It is a wild gambit that relies on traps.",
+  "white_ideas": [
+    {
+      "idea": "Defend accurately and keep the extra pawn"
+    },
+    {
+      "idea": "Develop with Nc3 and d4"
+    },
+    {
+      "idea": "Trade queens to simplify"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fast development and queen activity"
+    },
+    {
+      "idea": "Set traps with ...Qxe4+"
+    },
+    {
+      "idea": "Aim at the white king in the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White a pawn up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Traps and queen tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black's e5 pawn is lost and White can keep it."
+    },
+    "soundness": {
+      "notes": "Strong players consider the Latvian unsound."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Rarely seen at high level."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious, not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Queen tactics around e4",
+    "Black counterattack for the pawn"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "A gambit full of traps and queen tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives up the e5 pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "Strong players consider the Latvian unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens with active pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players seldom choose the Latvian."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black brings the queen out early for activity."
+    }
+  }
+}

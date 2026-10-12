@@ -681,5 +681,127 @@
       "sources": [],
       "taxonomy_note": null
     }
+  },
+  "benko-gambit-zaitsev-variation": {
+    "character": {
+      "value": "sharp",
+      "reason": "6.e4 b4 7.Nb5 is the forcing Zaitsev: the knight heads for d6 while Black hits e4 and the centre, with concrete tactics on both sides.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "latvian-gambit-clam-gambit": {
+    "character": {
+      "value": "sharp",
+      "reason": "Black gives the f-pawn for open lines against the king after 3...f5 4.exf5, the same kind of play as the Latvian proper, which is sharp.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "modern-defense-fianchetto-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "2...f5 3.exf5 swaps White's e-pawn for Black's f-pawn: half-open files on each side while d4 and Black's centre pawns stay.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "modern-defense-westermann-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "3.Bd2 lets ...Bxd4 take the d-pawn without an exchange; White gets a half-open d-file while e4 and Black's c, d and e pawns remain.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "queens-gambit-declined-semi-slav": {
+    "structure": {
+      "value": "flexible",
+      "reason": "This is the Noteboom line (4...dxc4 5.a4 Bb4 6.e3 b5 7.Bd2 a5); matched to the Noteboom variation's exported structure, flexible.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ruy-lopez-noahs-ark-trap": {
+    "structure": {
+      "value": "open",
+      "reason": "6.d4 Nxd4 7.Nxd4 exd4 8.Qxd4 trades d-pawn for e-pawn as in the Scotch Game anchor (open), with the queen centralised and lines open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "vulture-defense": {
+    "structure": {
+      "value": "flexible",
+      "reason": "Benoni-type d5/c5 centre with no exchange yet; Black can choose ...e5 (closed, Old Benoni) or ...e6/...g6 (semi-open), so the evidence does not decide and the middle value stands.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "english-orangutan": {
+    "gambit": {
+      "value": "none",
+      "reason": "Material is level and nothing attacks b4 at the root; the usual 2...e5 or ...e6 is met by a3 or b5, like the Polish Opening, which is none.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "With no gambit, a playable Polish-type flank opening; not close to refuted.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "grob-opening-double-grob": {
+    "gambit": {
+      "value": "none",
+      "reason": "Material is level after 1.g4 g5; 2.f4 is one option, not forced. Matches the other Grob roots (Spike, Keene), all none.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Every Grob root already tagged is dubious for White; the reply ...g5 does not change that.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-horwitz-attack": {
+    "gambit": {
+      "value": "white",
+      "reason": "Steinitz Variation 4...Qh4 5.Nb5: the usual 5...Bb4+ 6.Bd2 Qxe4+ leaves White a pawn down for development, and Black can keep it.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "5.Nb5 is a main reply to the Steinitz and is not considered refuted.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "sicilian-defense-grob-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "2.g4 drops the g-pawn to ...d5 or ...Nc6 and ...h5 ideas and Black can keep it; a wing gambit in all but name.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "trompowsky-attack-poisoned-pawn-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "4.Nc3 leaves b2 to 4...Qxb2 and White plays for development; Black can keep the pawn.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ware-opening-meadow-hay-trap": {
+    "gambit": {
+      "value": "white",
+      "reason": "2.Ra3 drops the rook to ...Bxa3, the exchange given for almost nothing; Black keeps it.",
+      "sources": [],
+      "taxonomy_note": null
+    }
   }
 }

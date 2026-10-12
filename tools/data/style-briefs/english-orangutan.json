@@ -1,0 +1,109 @@
+{
+  "slug": "english-orangutan",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Orangutan",
+    "eco": "A15",
+    "moves": "1. c4 Nf6 2. b4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/1PP5/8/P2PPPPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "english-opening-anglo-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.c4 Nf6 White plays 2.b4, grabbing queenside space and putting the bishop on b2. Black can take the b-pawn with ...e6 and ...Bxb4 or simply develop with ...e6 and ...d5. It is an irregular surprise weapon, and I am not sure of the exact theory.",
+  "white_ideas": [
+    {
+      "idea": "Bb2 on the long diagonal"
+    },
+    {
+      "idea": "b4-b5 space gain on the queenside"
+    },
+    {
+      "idea": "Meet ...Bxb4 with a lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...e6 and ...Bxb4 to take the pawn"
+    },
+    {
+      "idea": "...d5 and ...e6 for a solid centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flank pawn offer with c4 and b4 against a Nf6 set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced because White's b-pawn is loose, but little forced play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "b4 can be taken by ...Bxb4 once ...e6 is played."
+    },
+    "soundness": {
+      "notes": "Probably playable but not demanding; rarely tested at top level."
+    },
+    "structure": {
+      "notes": "Flank opening with the centre not committed."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players, mostly a surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forcing lines; knowing the b4 pawn idea is enough."
+    }
+  },
+  "plan_phrases": [
+    "Queenside space grab",
+    "Bishop on b2",
+    "Surprise weapon"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "A flank opening with an offered pawn but little forced tactical play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.5,
+      "reason": "The b4 pawn can be taken with ...Bxb4 once ...e6 is played."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Not clearly refuted, though White's early pawn offer gets little back."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Neither side commits the centre pawns early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom choose 2.b4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Few moves to learn, but a speculative line is not a first repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "White fianchettoes on b2 and expands with b4-b5."
+    }
+  }
+}

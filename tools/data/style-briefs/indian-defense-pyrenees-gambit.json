@@ -1,0 +1,108 @@
+{
+  "slug": "indian-defense-pyrenees-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Pyrenees Gambit",
+    "eco": "A50",
+    "moves": "1. d4 Nf6 2. c4 b5",
+    "fen": "rnbqkb1r/p1pppppp/5n2/1p6/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 2...b5 straight away, offering the b-pawn Benko-style. After 3.cxb5 Black gets a half-open b-file and a fianchetto, but without the ...c5 setup. It is a rare gambit and the pawn is hard to justify.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn and return it with a3, e3 and Nc3"
+    },
+    {
+      "idea": "Use the centre with d4 and e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...a6, ...e6 and ...Bb7 with queenside play"
+    },
+    {
+      "idea": "Use the half-open b-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benko-like queenside pawn play"
+    },
+    {
+      "structure": "White centre pawns on c4 and d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The gambit gives open play on the queenside."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "It lacks the ...c5 and ...d6 support of the Benko."
+    },
+    "structure": {
+      "notes": "White centre against a Black queenside attack."
+    },
+    "approach": {
+      "notes": "Chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little to learn."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black gives a pawn for queenside play, so both sides run risks."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black offers the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "White just takes and Black has less compensation than in the Benko."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Black gets a half-open b-file against a White centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom play 2...b5."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A dubious line is not a first choice."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "Black pushes on the queenside with the bishop on b7."
+    }
+  }
+}

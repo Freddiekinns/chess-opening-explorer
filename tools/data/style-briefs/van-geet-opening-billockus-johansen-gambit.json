@@ -1,0 +1,113 @@
+{
+  "slug": "van-geet-opening-billockus-johansen-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Billockus-Johansen Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 e5 2. Nf3 Bc5",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/8/2N2N2/PPPPPPPP/R1BQKB1R w KQkq - 2 3"
+  },
+  "parent": "van-geet-opening-reversed-nimzowitsch",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black replies to 1.Nc3 with 1...e5 2.Nf3 Bc5, eyeing f2. If White grabs 3.Nxe5, Black plays ...Bxf2+ and ...Qh4+ for a dangerous attack. I am unsure of the exact theory; White can also play 3.e3 or 3.e4 and reach a normal position.",
+  "white_ideas": [
+    {
+      "idea": "Play e3 and d4, trading off the bishop"
+    },
+    {
+      "idea": "Avoid the e5 pawn and develop with Nxe5 only if safe"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure f2 with ...Bc5 and ...Nf6, castling early"
+    },
+    {
+      "idea": "Sacrifice on f2 if White takes e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Bc5 against f2"
+    },
+    {
+      "structure": "Reversed Italian-style set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The ...Bxf2+ tricks give sharp play if White grabs."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black may give a bishop for pawns after 3.Nxe5."
+    },
+    "soundness": {
+      "notes": "White can decline and get a fine game."
+    },
+    "structure": {
+      "notes": "The centre is open."
+    },
+    "approach": {
+      "notes": "A pet line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f2"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "White declines",
+      "moves": "1. Nc3 e5 2. Nf3 Bc5 3. e3",
+      "how": "No material is given and the game is quiet."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black threatens ...Bxf2+ and queen checks if White takes e5."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.45,
+      "reason": "Black offers e5 for activity on f2."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.45,
+      "reason": "White can decline and keep an edge."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre opens quickly and bishops aim at f2."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Dubious lines cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "Black develops fast and aims at the weak f2 square."
+    }
+  }
+}

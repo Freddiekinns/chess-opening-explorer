@@ -1,0 +1,108 @@
+{
+  "slug": "sicilian-defense-big-clamp-formation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Big Clamp Formation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. d3 Nc6 3. c3 d6 4. f4",
+    "fen": "r1bqkbnr/pp2pppp/2np4/2p5/4PP2/2PP4/PP4PP/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White sets up d3, c3 and f4 against the Sicilian regardless of Black replies. The usual plan is Nf3, Be2, 0-0, then e5 or a kingside push, while Black strikes in the centre with ...e5 or ...g6 and ...Bg7. A flexible anti-Sicilian that avoids the Open Sicilian theory.",
+  "white_ideas": [
+    {
+      "idea": "Play Nf3, Be2, 0-0 and f4-f5 or e5 as Black commits"
+    },
+    {
+      "idea": "Keep a compact centre with c3, d3 and f4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike with ...e5 or ...g6 and ...Bg7"
+    },
+    {
+      "idea": "Use the c-file and queenside space"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White clamp pawns c3, d3, e4, f4"
+    },
+    {
+      "structure": "Black d6/c5 against the clamp"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A slow set-up with kingside pawn play but rarely forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "None."
+    },
+    "soundness": {
+      "notes": "Sound and respectable."
+    },
+    "structure": {
+      "notes": "White pawns c3/d3/e4/f4 and the centre is not yet resolved."
+    },
+    "approach": {
+      "notes": "A set-up that can be played against many Black set-ups."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A set-up needing understanding."
+    }
+  },
+  "plan_phrases": [
+    "f4 and kingside pawn play",
+    "space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "White builds a clamp and attacks slowly; it is neither hard to break nor fast."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material changes hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "It is a respectable anti-Sicilian."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is decided later and f4 can lead either to e5 or to a tension."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.5,
+      "reason": "The c3/d3/f4 formation can be played against most Black set-ups."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than concrete lines."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "kingside_attack"
+      ],
+      "reason": "The pawn clamp supports a later kingside push."
+    }
+  }
+}

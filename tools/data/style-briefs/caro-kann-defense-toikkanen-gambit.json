@@ -1,0 +1,114 @@
+{
+  "slug": "caro-kann-defense-toikkanen-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Toikkanen Gambit",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. c4 d5 3. e5",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3pP3/2P5/8/PP1P1PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "caro-kann-defense-accelerated-panov-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After the Accelerated Panov move order 2.c4 d5, White plays 3.e5 instead of exchanging on d5. Black can take on c4 and keep a pawn, while White hopes for space and quick development. It is a rare anti-Caro-Kann idea and I am unsure of the usual follow-up.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with e5 and develop with Nc3 and Bxc4-type recaptures"
+    },
+    {
+      "idea": "Seek a lead in development for the pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take 3...dxc4 and hold the extra pawn, then hit e5 with ...Nc6 and ...Bf5"
+    },
+    {
+      "idea": "Break with ...c5 or ...e6 once developed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e5/d4 wedge against Black c6/e6"
+    },
+    {
+      "structure": "Open c-file after ...dxc4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn-down space grab with open lines for both."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "3...dxc4 wins a pawn that Black can try to keep."
+    },
+    "soundness": {
+      "notes": "Black appears to be a clean pawn up with a solid structure, so White is risking more than Black."
+    },
+    "structure": {
+      "notes": "Advance-like pawn chain with the c-pawn gone from the centre."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs judgement of compensation, little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "space with e5",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black declines with 3...Bf5",
+      "moves": "1. e4 c6 2. c4 d5 3. e5 Bf5",
+      "how": "No pawn is given; transposes to Advance-like play."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "A rare gambit but not a forcing attack; the position is unclear without being sharply tactical."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "White offers the c4 pawn for space and development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can keep the pawn with a solid centre, so the gambit leans on surprise."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "White gets an e5 wedge while the c-file opens for Black."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "This anti-Caro-Kann gambit is seldom seen at higher levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "A dubious gambit is not a first repertoire line."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "lead_in_development"
+      ],
+      "reason": "White trades a pawn for space and speed."
+    }
+  }
+}

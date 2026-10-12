@@ -1,0 +1,115 @@
+{
+  "slug": "kings-gambit-accepted-lolli-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Lolli Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Bxf7+",
+    "fen": "rnbqkbnr/pppp1B1p/8/8/4Ppp1/5N2/PPPP2PP/RNBQK2R b KQkq - 0 5"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "White sacrifices a bishop with 5.Bxf7+ Kxf7 6.O-O and then a knight or queen move to open the f-file against the Black king, with ...gxf3 7.Qxf3 Qf6 8.d4 Qxd4+ 9.Be3 the main line. White gets some pawns and an attack for the piece, but with correct defence Black stays up material. Strong players consider it unsound, but it is a trappy attacking weapon at club level.",
+  "white_ideas": [
+    {
+      "idea": "Sacrifice a bishop on f7 to drag the king out, then castle and bring pieces with Nc3 and Qxf3"
+    },
+    {
+      "idea": "Open lines with d4 and aim at the exposed king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the bishop, then defend with ...Qf6 and ...Ke8 or ...Ke7 to untangle"
+    },
+    {
+      "idea": "Return material back at the right time and consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with both kings exposed"
+    },
+    {
+      "structure": "White piece down for two or three pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A piece sacrifice with the king exposed on both sides, so forcing and risky for both players."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After Bxf7+ Kxf7 White is a bishop for a pawn down and Black can keep the piece."
+    },
+    "soundness": {
+      "notes": "Engines see White as worse, so it is considered unsound or close to it."
+    },
+    "structure": {
+      "notes": "Open centre with exposed kings and open f- and d-files."
+    },
+    "approach": {
+      "notes": "Played for surprise, rarely by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forcing lines must be known, but being unsound it is not a good first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "piece sacrifice",
+    "attack on the king",
+    "open f-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Young Variation",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Bxf7+ Kxf7 6. O-O gxf3 7. Qxf3 Qf6 8. d4 Qxd4+ 9. Be3 Qf6 10. Nc3",
+      "how": "White develops with Nc3 for the attack."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "A bishop sacrifice against an exposed king makes the play forcing and risky."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives a bishop for pawns and Black can keep the material."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "Engines favour Black and strong players consider it unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The centre and f-file are open for both kings."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose the Lolli."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never beginner, and the forcing lines need to be known."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "White hopes to attack the exposed king with quick development."
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "slug": "scotch-game-horwitz-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Horwitz Attack",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nb5",
+    "fen": "r1b1kbnr/pppp1ppp/2n5/1N6/4P2q/8/PPP2PPP/RNBQKB1R b KQkq - 2 5"
+  },
+  "parent": "scotch-game-steinitz-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 4...Qh4 White hits the queen with 5.Nb5, threatening Nxc7+ while the e4 pawn hangs to tactics. Black grabs e4 with ...Qxe4+ or develops with ...Bc5 or ...Bb4+. The play is forcing and open with queens and kings in the centre.",
+  "white_ideas": [
+    {
+      "idea": "Threaten Nxc7+ and Black's king"
+    },
+    {
+      "idea": "Develop with tempo against the exposed queen"
+    },
+    {
+      "idea": "Win material back if Black takes on e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take e4 with ...Qxe4+ and run to d8"
+    },
+    {
+      "idea": "Develop with ...Bc5 or ...Bb4+"
+    },
+    {
+      "idea": "Counter with ...Kd8 and ...Bxd2"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after the d4 exchange, queens active early"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen moves, king walks and Nxc7+ threats."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "In the main Blackburne line Black takes e4 and White develops with tempo."
+    },
+    "soundness": {
+      "notes": "Considered playable for White with accurate play; theory is small."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces straight away."
+    },
+    "approach": {
+      "notes": "The Steinitz Qh4 and 5.Nb5 are off the beaten path at top level."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forcing lines with concrete tactics must be known."
+    }
+  },
+  "plan_phrases": [
+    "Nxc7+ threat",
+    "Queen sortie punished by tempo moves",
+    "Open centre with exposed kings"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Berger Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nb5 Bb4+ 6. Nd2 Qxe4+ 7. Be2 Qxg2",
+      "how": "Black grabs two pawns and a rook in a wild tactical melee."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Early queens, king hunts and forcing Nxc7+ tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "White offers the e4 pawn for tempo and the Nxc7+ threat, and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "The line is playable but the compensation is not clearly enough."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.9,
+      "reason": "Central pawns come off immediately and the pieces fight on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "The Steinitz queen sortie is seldom chosen at the top."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.45,
+      "reason": "Forcing lines like the Berger and Blackburne need to be known."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black's queen comes out early and White tries to use his development."
+    }
+  }
+}

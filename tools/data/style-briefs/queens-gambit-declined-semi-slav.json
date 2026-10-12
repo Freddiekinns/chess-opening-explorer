@@ -1,0 +1,118 @@
+{
+  "slug": "queens-gambit-declined-semi-slav",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Semi-Slav, Abrahams Variation",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. Nf3 dxc4 5. a4 Bb4 6. e3 b5 7. Bd2 a5",
+    "fen": "rnbqk1nr/5ppp/2p1p3/pp6/PbpP4/2N1PN2/1P1B1PPP/R2QKB1R w KQkq - 0 8"
+  },
+  "parent": "semi-slav-defense-noteboom-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "The Noteboom Abrahams main line 8.axb5 Bxc3 9.Bxc3 cxb5 10.b3 Bb7 11.bxc4 b4 leads to sharp play with Black's pawns on the queenside against White's centre. Black holds the c4 pawn for a time but White regains it. Both sides have long forcing theory.",
+  "white_ideas": [
+    {
+      "idea": "Regain c4 with bxc4 and use the bishop pair"
+    },
+    {
+      "idea": "Central play with e4 or O-O"
+    },
+    {
+      "idea": "Exploit Black's loose queenside pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...b4 gains space and ...Nf6"
+    },
+    {
+      "idea": "...Bb7 and ...Nbd7 development"
+    },
+    {
+      "idea": "Castle kingside and play ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black queenside pawns on b5/b4 and c4 contested; White bishop pair"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing, double-edged pawn grabs and counterplay."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound for both sides; theory is deep."
+    },
+    "structure": {
+      "notes": "Queenside pawn chain asymmetric with the centre pawns exchanged."
+    },
+    "approach": {
+      "notes": "Played by strong players, main Noteboom."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forced lines must be known."
+    }
+  },
+  "plan_phrases": [
+    "Pawn grab on c4",
+    "Queenside space with ...b4",
+    "Bishop pair for White"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Koomen Variation",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. Nf3 dxc4 5. a4 Bb4 6. e3 b5 7. Bd2 Qe7",
+      "how": "Black plays ...Qe7 instead of ...a5, a different pawn structure."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "The Noteboom main line is forcing and both sides take risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "The c4 pawn is usually regained."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The line is a main option at top level."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The centre is partly open with queenside pawn play."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A theoretical main line in the Semi-Slav."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.65,
+      "reason": "Long forcing lines need to be known."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "bishop_pair"
+      ],
+      "reason": "Black advances on the queenside against White's bishop pair."
+    }
+  }
+}

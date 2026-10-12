@@ -1,0 +1,102 @@
+{
+  "slug": "benoni-defense-benoni-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Benoni Gambit, Schlenker Defense",
+    "eco": "A43",
+    "moves": "1. d4 c5 2. dxc5 Na6",
+    "fen": "r1bqkbnr/pp1ppppp/n7/2P5/8/8/PPP1PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "benoni-defense-benoni-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black answers 2.dxc5 with 2...Na6, aiming to win the c5 pawn back with ...Nxc5. After 3.e4 Nxc5 or 3.a4 White gains a space advantage in the centre, while Black has ordinary development. It is a rare line, so the evaluation is unsure.",
+  "white_ideas": [
+    {
+      "idea": "Defend c5 with a4 or b4, or allow ...Nxc5 and take the centre with e4"
+    },
+    {
+      "idea": "Develop with Nc3, e4 and Bf4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on c5 with the knight or ...Qa5+ and develop"
+    },
+    {
+      "idea": "Put pressure on e4 with ...Nf6 and ...g6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White big centre against Black pieces"
+    },
+    {
+      "structure": "Open-Sicilian-like but with White pawn on c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White keeps a pawn centre while Black recovers material, so play is steady with a central tension."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black regains the pawn on c5 by force with ...Nxc5 or ...e6, so no lasting gambit."
+    },
+    "soundness": {
+      "notes": "Equal play after Black recovers the pawn."
+    },
+    "structure": {
+      "notes": "A semi-open centre after the c-pawn trade."
+    },
+    "approach": {
+      "notes": "Rare; strong players seldom use 2...Na6."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are simple, but it is a niche line."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "The pawn comes back by force and the game is level without a clear forcing character."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "Black regains the pawn on c5 almost by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "The line is playable with accurate play."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The c-file opens after the c-pawn trade and White gets a centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players hardly choose 2...Na6."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Simple plans but a niche line."
+    },
+    "plans": {
+      "value": [],
+      "reason": "There is no clear named plan."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "french-defense-banzai-leong-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Banzai-Leong Gambit",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. b4",
+    "fen": "rnbqkbnr/pppp1ppp/4p3/8/1P2P3/8/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 2.b4 against the French, offering the pawn to deflect the bishop and open the queenside. After 2...Bxb4 White can play 3.e5 (Pinova Gambit) or 3.Bb2 with a lead in development. Black can usually keep the pawn with accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Use Bb2 and d4 for a quick centre"
+    },
+    {
+      "idea": "Push e5 and develop with tempo"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn with ...Bxb4 and develop sensibly"
+    },
+    {
+      "idea": "Return it only when it helps neutralise the attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4/e5 centre against ...Bxb4"
+    },
+    {
+      "structure": "French-like pawns without a b-pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn offer by White at move two makes the game concrete."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "2.b4 Bxb4 leaves Black a pawn up that is hard to win back."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "After 3.e5 the centre is French-like and closed."
+    },
+    "approach": {
+      "notes": "Strong players do not play 2.b4 against the French."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Pinova Gambit",
+      "moves": "1. e4 e6 2. b4 Bxb4 3. e5",
+      "how": "White gains space and gives a pawn for kingside play."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "A queenside pawn offer with quick development leads to concrete play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the b-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Strong players consider 2.b4 an unsound surprise."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "The centre is undecided between open and French-closed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players hardly choose 2.b4 against the French."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "A dubious gambit is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "space_advantage"
+      ],
+      "reason": "White gives a pawn for time and space."
+    }
+  }
+}

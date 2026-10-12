@@ -1,0 +1,109 @@
+{
+  "slug": "nimzo-indian-defense-mikenas-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Mikenas Attack",
+    "eco": "E20",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qd3",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2NQ4/PP2PPPP/R1B1KBNR b KQkq - 3 4"
+  },
+  "parent": "nimzo-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 4.Qd3, an old line that guards c4 and the knight on c3 without allowing the doubled pawns of 4.Qc2 lines. Black usually replies 4...c5 or 4...d5 or 4...Nc6, challenging the centre at once. The queen on d3 is slightly awkward, so White gets a solid but modest edge at best.",
+  "white_ideas": [
+    {
+      "idea": "Keep the c3 knight protected without doubled pawns"
+    },
+    {
+      "idea": "Develop with a3 or e4 as needed"
+    },
+    {
+      "idea": "Use the queen on the d3-f5 diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...c5 or ...d5"
+    },
+    {
+      "idea": "Pin the knight with ...Bb4 and exchange on c3 if useful"
+    },
+    {
+      "idea": "Develop with ...O-O and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Nimzo-Indian centre with d4 and c4 pawns against Black's pin"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides play the usual Nimzo plans without forced lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level, no sacrifice."
+    },
+    "soundness": {
+      "notes": "Qd3 is playable and sound."
+    },
+    "structure": {
+      "notes": "The d4/c4 centre is under pressure and not yet fixed."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players against the Nimzo."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a lot of theory but still Nimzo structures."
+    }
+  },
+  "plan_phrases": [
+    "Bishop pair"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither forcing nor especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "There is no gambit at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Qd3 is an unambitious but accepted way to avoid doubled pawns."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre stays in tension while Black chooses between ...c5 and ...d5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom chosen by strong players against the Nimzo."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Nimzo ideas need understanding but not a heavy load of theory."
+    },
+    "plans": {
+      "value": [
+        "bishop_pair"
+      ],
+      "reason": "Black can give up the bishop for the knight or White can try to keep the bishop pair."
+    }
+  }
+}

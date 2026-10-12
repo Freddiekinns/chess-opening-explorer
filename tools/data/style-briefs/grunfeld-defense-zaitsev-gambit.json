@@ -1,0 +1,111 @@
+{
+  "slug": "grunfeld-defense-zaitsev-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Zaitsev Gambit",
+    "eco": "D80",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. h4",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP3P/2N5/PP2PPP1/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "grunfeld-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 4.h4 in the Grünfeld, planning h5 to attack the kingside. Black can take on c4 with 4...dxc4 or defend with 4...Bg7 and ...c6. The line is rare, risky for White and mostly a surprise.",
+  "white_ideas": [
+    {
+      "idea": "Push the h-pawn to h5 to open the h-file"
+    },
+    {
+      "idea": "Build a centre with e4"
+    },
+    {
+      "idea": "Attack the king with h5 and Bh6"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on c4 or hit d4 with ...c5"
+    },
+    {
+      "idea": "Use the g7 bishop"
+    },
+    {
+      "idea": "Counterattack in the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Grünfeld centre with a pushed h-pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White goes for a pawn-storm attack and both sides take risks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level, nothing attacked at the root."
+    },
+    "soundness": {
+      "notes": "The attack is unlikely to work against accurate play."
+    },
+    "structure": {
+      "notes": "The centre is in tension and can open quickly."
+    },
+    "approach": {
+      "notes": "Very rare among strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Requires care but not much theory."
+    }
+  },
+  "plan_phrases": [
+    "Pawn storm",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "White's h-pawn push invites a concrete fight on the kingside."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Material is level at the root and Black can take c4 only after more moves."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The h4 attack is considered optimistic against accurate defence."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is in tension and not yet decided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever play 4.h4 against the Grünfeld."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A dubious wing attack, so not Beginner, and the tactics are manageable."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "White advances the h-pawn at Black's king."
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "owen-defense-naselwaus-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Owen Defense: Naselwaus Gambit",
+    "eco": "B00",
+    "moves": "1. e4 b6 2. d4 Bb7 3. Bg5",
+    "fen": "rn1qkbnr/pbpppppp/1p6/6B1/3PP3/8/PPP2PPP/RN1QKBNR b KQkq - 2 3"
+  },
+  "parent": "owen-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.Bg5 against the Owen, hitting the e7 pawn and aiming at the queen, but leaves e4 undefended. After 3...Bxe4 Black wins a pawn and White has Nc3 and Bxe7 ideas only. The line is a rare surprise weapon.",
+  "white_ideas": [
+    {
+      "idea": "Use the g5 bishop to harass the queen side with Nc3 and Bxe7 tricks"
+    },
+    {
+      "idea": "Get a lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn with ...Bxe4 and return it only if needed"
+    },
+    {
+      "idea": "Develop ...f6 or ...h6 to kick the bishop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after Bxe4"
+    },
+    {
+      "structure": "White d4 centre against a b7 bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The e4 pawn is offered, so play is tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "3.Bg5 Bxe4 leaves Black a pawn up."
+    },
+    "soundness": {
+      "notes": "Considered dubious; Black has simple answers like ...Bxe4 and ...h6."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces."
+    },
+    "approach": {
+      "notes": "Strong players seldom play it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...f6",
+      "moves": "1. e4 b6 2. d4 Bb7 3. Bg5 f6",
+      "how": "Black kicks the bishop first."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A pawn offer and quick piece play lead to tactical positions."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White leaves e4 hanging and Black can keep the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black has simple ways to refute the idea."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre opens for the pieces after the e4 capture."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players seldom choose 3.Bg5 against the Owen."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "A dubious gambit is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White hopes to use time lost by Black."
+    }
+  }
+}

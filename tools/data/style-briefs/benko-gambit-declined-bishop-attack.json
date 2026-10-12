@@ -1,0 +1,104 @@
+{
+  "slug": "benko-gambit-declined-bishop-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Declined: Bishop Attack",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. Bg5",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP2B1/2P5/8/PP2PPPP/RN1QKBNR b KQkq - 1 4"
+  },
+  "parent": "benko-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White meets the Benko with 4.Bg5, pinning the f6 knight to prepare to ignore the pawn on b5. Black can play 4...Qb6 or 4...bxc4. White keeps a central grip and Black seeks queenside counterplay.",
+  "white_ideas": [
+    {
+      "idea": "Pin the knight and play e3 and Nf3"
+    },
+    {
+      "idea": "Take space and avoid the Benko"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Capture on c4 or play ...Qb6"
+    },
+    {
+      "idea": "Use the b-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like pawn structure with c5/d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides have chances."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "At this root material is level and no pawn is captured."
+    },
+    "soundness": {
+      "notes": "A normal line."
+    },
+    "structure": {
+      "notes": "The d5/c5 structure is fixed with open b-file."
+    },
+    "approach": {
+      "notes": "A mainline decline."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Normal."
+    }
+  },
+  "plan_phrases": [
+    "Queenside expansion",
+    "Half-open b-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The Benko structure leads to tactical play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Material is level at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A normal decline."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "Black's b-file and White's centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "Normal."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Not for beginners."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "Black seeks queenside play."
+    }
+  }
+}

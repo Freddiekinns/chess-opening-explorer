@@ -1,0 +1,110 @@
+{
+  "slug": "english-opening-wing-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Wing Gambit",
+    "eco": "A30",
+    "moves": "1. c4 c5 2. b4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/1PP5/8/P2PPPPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "english-opening-symmetrical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 2.b4 against the Symmetrical English, offering a pawn to open the b-file and a-file. After 2...cxb4 3.a3 bxa3 White recaptures with the knight and gets a lead in development and a half-open file on the queenside. Black can keep the pawn but White gets practical play.",
+  "white_ideas": [
+    {
+      "idea": "Open the queenside with a3 and Nxa3"
+    },
+    {
+      "idea": "Use the b2 bishop on the long diagonal"
+    },
+    {
+      "idea": "Attack on the open files"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...cxb4 or decline with ...e6"
+    },
+    {
+      "idea": "Develop quickly and return it if needed"
+    },
+    {
+      "idea": "Stay solid in the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open queenside after the b-pawn is traded"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White plays for the initiative."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White offers a pawn that Black can keep."
+    },
+    "soundness": {
+      "notes": "Playable but dubious by most assessments."
+    },
+    "structure": {
+      "notes": "Queenside files open."
+    },
+    "approach": {
+      "notes": "Rare, a surprise choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The gambit invites an open fight with White down a pawn."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the b-pawn with 2.b4 and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can keep the pawn and White's compensation is limited."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The queenside files open but the centre stays fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose the Wing Gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious means not Beginner, and the ideas are straightforward."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The gambit pawn buys White quick development and the b-file."
+    }
+  }
+}

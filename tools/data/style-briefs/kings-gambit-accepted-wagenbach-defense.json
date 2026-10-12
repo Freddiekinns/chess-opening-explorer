@@ -1,0 +1,111 @@
+{
+  "slug": "kings-gambit-accepted-wagenbach-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Wagenbach Defense",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 h5",
+    "fen": "rnbqkbnr/pppp1pp1/8/7p/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.e4 e5 2.f4 exf4 3.Nf3, Black plays 3...h5 to support ...g5 and ...g4 without allowing the usual Bc4/h4 tricks. White normally plays 4.Bc4 or 4.d4 and develops fast, with Black keeping an extra pawn for a time. The game is open and sharp, but it is a rare side line.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with Bc4 and d4"
+    },
+    {
+      "idea": "Attack the f7 square and the loose kingside"
+    },
+    {
+      "idea": "Regain the f4 pawn or open lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support ...g5 with ...h5"
+    },
+    {
+      "idea": "Keep the extra pawn and hold the kingside"
+    },
+    {
+      "idea": "Return the pawn only for activity"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black's pawns advanced on the kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Typical King's Gambit chaos where both sides take risks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White is a pawn down and may not recover it at once."
+    },
+    "soundness": {
+      "notes": "A rarer line that is not seen as refuted."
+    },
+    "structure": {
+      "notes": "Open e-file and f-file."
+    },
+    "approach": {
+      "notes": "Only a few strong players use it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs good tactical knowledge."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "The King's Gambit Accepted is sharp, with open lines and risk for both sides."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White has given up the f-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "The gambit is playable and 3...h5 is a risky side branch, not a refutation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The e- and f-files and diagonals open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "3...h5 is seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Tactics matter more than long theory in this branch."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White develops fast against Black's weakened kingside."
+    }
+  }
+}

@@ -143,9 +143,9 @@ describe('Opening detail page before it has loaded', () => {
   const path = `/opening/${encodeURIComponent(opening.fen)}`;
   const PRE = 'A classical opening the middleware described';
 
-  const prerenderAt = (at: string) => {
+  const prerenderAt = (at: string, root = `<main><h1>Italian Game</h1><p>${PRE}</p></main>`) => {
     window.history.replaceState({}, '', at);
-    document.body.innerHTML = `<div id="root"><main><h1>Italian Game</h1><p>${PRE}</p></main></div>`;
+    document.body.innerHTML = `<div id="root">${root}</div>`;
     capturePrerender();
     document.body.innerHTML = '';
   };
@@ -191,5 +191,22 @@ describe('Opening detail page before it has loaded', () => {
 
     expect(screen.getByText('Loading opening...')).toBeInTheDocument();
     expect(screen.queryByText(PRE)).not.toBeInTheDocument();
+  });
+
+  // Where the middleware drew nothing (no seo-lookup entry, a failed shard, or
+  // dev), #root still holds index.html's spinner. That is not content: kept,
+  // it sat at full height under the error message and never stopped.
+  test("does not mistake index.html's spinner for a pre-render", async () => {
+    prerenderAt(
+      path,
+      '<div style="display: flex; height: 100vh"><div class="loading-spinner"></div></div>'
+    );
+    withPageResponse(() => respond(500, { success: false }));
+    const { container } = await act(async () => renderPage());
+
+    expect(
+      await screen.findByRole('heading', { name: "This opening didn't load" })
+    ).toBeInTheDocument();
+    expect(container.querySelector('.loading-spinner')).toBeNull();
   });
 });

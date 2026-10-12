@@ -1,0 +1,103 @@
+{
+  "slug": "benoni-defense-hawk-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Hawk Variation",
+    "eco": "A43",
+    "moves": "1. d4 Nf6 2. Nf3 c5 3. d5 c4",
+    "fen": "rnbqkb1r/pp1ppppp/5n2/3P4/2p5/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "benoni-defense-benoni-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.d4 Nf6 2.Nf3 c5 3.d5 c4 Black grabs space on the queenside and prepares ...d6 and ...e5 or ...b5. White plays 4.e4 for a big centre and tries to undermine c4 with Nbd2 or Be2, so Black's advanced pawn can become a target.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with e4 and challenge c4"
+    },
+    {
+      "idea": "Attack the c4 pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold c4 with ...b5 and ...Bg4"
+    },
+    {
+      "idea": "Counter in the centre with ...e6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Advanced black c4 pawn against a White d5/e4 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Level material."
+    },
+    "soundness": {
+      "notes": "Playable."
+    },
+    "structure": {
+      "notes": "Fixed centre."
+    },
+    "approach": {
+      "notes": "Uncommon."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs judgement."
+    }
+  },
+  "plan_phrases": [
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Unbalanced pawns but not especially forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material stays level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "The line is considered playable though risky."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Fixed d5 centre with an advanced c4 pawn."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom choose this."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The plans are unclear and hard to get right."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "Black gains space on the queenside."
+    }
+  }
+}

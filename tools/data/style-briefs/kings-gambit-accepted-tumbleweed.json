@@ -1,0 +1,106 @@
+{
+  "slug": "kings-gambit-accepted-tumbleweed",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Tumbleweed",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Kf2",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPP1KPP/RNBQ1BNR b kq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.e4 e5 2.f4 exf4 White plays 3.Kf2, the Tumbleweed or Drunken King, avoiding Qh4+ by walking the king. Black keeps the pawn with ...d5 or ...Nf6 and White pursues Nf3, Bc4 and quick development. Mostly seen in blitz and surprise play.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3 and Bc4 hitting f7"
+    },
+    {
+      "idea": "Regain the f4 pawn and use the open f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...d5 or ...g5"
+    },
+    {
+      "idea": "Develop and use the exposed king on f2"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, White king on f2, Black pawn on f4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open play with exposed king; forcing tactics early."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "The f4 pawn is given and Black can keep it."
+    },
+    "soundness": {
+      "notes": "The king walk is regarded as too risky."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Rare for strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "gambit",
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "An exposed king and open lines make this fully tactical."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gave up f4 in the King's Gambit and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "The king walk is considered too risky."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The e-pawn is gone and the f-file is open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players rarely play the Tumbleweed."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White's compensation is quick development and pressure on f7."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "alekhine-defense-buckley-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Buckley Attack",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. Na3",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/8/N7/PPPP1PPP/R1BQKBNR b KQkq - 2 3"
+  },
+  "parent": "alekhine-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 Nf6 2.e5 Nd5 White plays 3.Na3, an unusual developing move that hopes for c4 or Nc4. Black has a free hand with ...d6, ...c5 or ...e6 and challenges the e5 pawn. White does not get a clear advantage and the knight on a3 is awkward.",
+  "white_ideas": [
+    {
+      "idea": "Bring the knight to c4 and play c4 or d4"
+    },
+    {
+      "idea": "Keep e5 supported with d4 and f4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge e5 with ...d6 and ...c5"
+    },
+    {
+      "idea": "Develop with ...Nc6 and ...g6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e5 pawn against Black fianchetto or d6 pawn structures"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet and manoeuvring; neither side forces matters early."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Safe but gives White no edge."
+    },
+    "structure": {
+      "notes": "The centre can transform and is not fixed."
+    },
+    "approach": {
+      "notes": "Rare for strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are easy to follow."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "It is neither sharp nor especially solid, just an unusual quiet line."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "A harmless but playable side line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre may stay undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are about the centre and space."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "hypermodern_centre"
+      ],
+      "reason": "White grabs space with e5 while Black attacks the advanced centre with pieces."
+    }
+  }
+}

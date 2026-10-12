@@ -1,0 +1,105 @@
+{
+  "slug": "polish-opening-karniewski-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Karniewski Variation",
+    "eco": "A00",
+    "moves": "1. b4 Nh6",
+    "fen": "rnbqkb1r/pppppppp/7n/8/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black replies to 1.b4 with 1...Nh6, putting the knight on the rim, hoping for ...Ng4 or ...Nf5. White can play Bxh6 and double Black's pawns, or develop with Bb2 and e3. The position is quiet and unusual.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bb2 and e3, or take on h6 to double pawns"
+    },
+    {
+      "idea": "Use space on the queenside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Re-route the knight to f5 or g4"
+    },
+    {
+      "idea": "Play ...e5 and ...d5 for the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flank-opening structures with b4 and Black's knight on h6; possible doubled h-pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, irregular manoeuvring with no early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Odd but not clearly bad."
+    },
+    "structure": {
+      "notes": "Flexible; the centre is undecided."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans simple but unusual."
+    }
+  },
+  "plan_phrases": [
+    "doubled pawns",
+    "queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Irregular and quiet rather than forcing or especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Odd, but not clearly refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is not yet defined."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding of flank structures is needed."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "queenside_expansion"
+      ],
+      "reason": "White can double the h-pawns with Bxh6 and gain queenside space."
+    }
+  }
+}

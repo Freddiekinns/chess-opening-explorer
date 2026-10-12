@@ -1,0 +1,105 @@
+{
+  "slug": "dutch-defense-bladel-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Bladel Variation",
+    "eco": "A84",
+    "moves": "1. d4 f5 2. c4 g6 3. Nc3 Nh6",
+    "fen": "rnbqkb1r/ppppp2p/6pn/5p2/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays a Leningrad-style 1...f5 and ...g6 but puts the knight on h6 (probably heading for f7) instead of g8-f6, keeping the f-pawn and e-pawn flexible. White develops with Nc3 and can take the bishop pair with Bxh6 or build the usual g3/Bg2 or e4 set-up. I am not certain of the theory, so this is read from the moves and the parent Dutch.",
+  "white_ideas": [
+    {
+      "idea": "Bxh6 to damage structure or take the bishop pair"
+    },
+    {
+      "idea": "Fianchetto with g3, Bg2 and Nf3, or strike with e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reroute the knight to f7 and play ...Bg7, ...O-O"
+    },
+    {
+      "idea": "Kingside play with ...e5 or ...d6 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Leningrad-type Dutch with Black pawns on f5, g6, d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Dutch Leningrad style, double-edged with a loosened kingside; the rim knight adds risk for Black."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered; 3...Nh6 is a developing move."
+    },
+    "soundness": {
+      "notes": "Playable but a slow, slightly awkward set-up; White gets Bxh6 options."
+    },
+    "structure": {
+      "notes": "Pawn centre not yet fixed; both sides keep options (…e5 or …d6/…e5, or e4 for White)."
+    },
+    "approach": {
+      "notes": "Rare Dutch sideline that strong players seldom pick."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are Leningrad-like and not heavy on theory but need understanding of Dutch weaknesses."
+    }
+  },
+  "plan_phrases": [
+    "Leningrad-style set-up",
+    "Knight to f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The Dutch Leningrad set-up gives unbalanced, double-edged play with a weakened kingside."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "The knight on h6 is slightly awkward but Black is not worse by force."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is not fixed after three moves and either e4 or ...e5 can follow."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "The Bladel is a rare Dutch sideline that strong players hardly choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "It asks for Dutch-type understanding but has little forcing theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Black fianchettoes and fights for e4 and e5 with pieces."
+    }
+  }
+}

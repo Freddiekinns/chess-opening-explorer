@@ -1,0 +1,105 @@
+{
+  "slug": "benoni-defense-benoni-staunton-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Benoni-Staunton Gambit",
+    "eco": "A43",
+    "moves": "1. d4 c5 2. d5 f5 3. e4",
+    "fen": "rnbqkbnr/pp1pp1pp/8/2pP1p2/4P3/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "benoni-defense-old-benoni",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.d4 c5 2.d5 f5 White immediately plays 3.e4, offering a pawn to open the centre and get a lead in development. If Black takes with 3...fxe4 White follows with Nc3 and Bg5, aiming at the weakened black kingside and the d-file; Black may keep the pawn or give it back. Black can instead play 3...d6 or 3...Nf6 to enter an Old Benoni structure.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, Bg5 and Qh5+ ideas"
+    },
+    {
+      "idea": "Use the d5 wedge and e-pawn to gain space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and defend with ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Decline with ...d6 and ...Nf6 for a Czech/Old Benoni"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Old Benoni centre with White pawn on d5 against Black c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices a pawn early for an attack against an exposed Black king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "In the main line 3...fxe4 White is a pawn down and Black can keep it if careful."
+    },
+    "soundness": {
+      "notes": "Black's ...f5 already weakens the king and White's compensation is reasonable; I treat it as sound for White."
+    },
+    "structure": {
+      "notes": "A semi-fixed asymmetric centre with White d5 and Black c5 and the f-pawn gone."
+    },
+    "approach": {
+      "notes": "Both the Old Benoni with ...f5 and this gambit are rarely used by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Intermediate; it needs concrete tactics rather than deep structure knowledge."
+    }
+  },
+  "plan_phrases": [
+    "Pawn sacrifice for development",
+    "Attack the exposed king"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "The pawn sacrifice and the weakened black king lead to concrete tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White plays e4 offering a pawn that Black can keep with ...fxe4."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "White gets real compensation against the loose kingside, so it is not clearly unsound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The centre is asymmetric with d5 against c5 and an open e-file after exchanges."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Concrete lines have to be known but the structure is simple."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "space_advantage"
+      ],
+      "reason": "White trades a pawn for time and space in the centre."
+    }
+  }
+}

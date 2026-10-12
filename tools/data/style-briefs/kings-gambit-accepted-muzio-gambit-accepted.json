@@ -1,0 +1,107 @@
+{
+  "slug": "kings-gambit-accepted-muzio-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Muzio Gambit Accepted, From's Defense",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. O-O gxf3 6. Qxf3 Qe7",
+    "fen": "rnb1kbnr/ppppqp1p/8/8/2B1Pp2/5Q2/PPPP2PP/RNB2RK1 w kq - 1 7"
+  },
+  "parent": "kings-gambit-accepted-muzio-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "In the Muzio White has played 5.O-O gxf3 6.Qxf3, giving a knight for attack along the f-file and against f7. Black replies 6...Qe7 (From's Defense), covering f7 and preparing to hold the extra piece; White continues with Bxf7+ ideas or Qxf4. Play is very forcing and White has to find a lot of accurate moves; the extra piece should tell if Black defends correctly.",
+  "white_ideas": [
+    {
+      "idea": "Attack on the f-file with Qxf4 and Bxf7+ ideas"
+    },
+    {
+      "idea": "Use development lead with d4, Nc3 and Bxf4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the piece with ...Qe7 and ...Nc6"
+    },
+    {
+      "idea": "Return material at the right moment and trade queens"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with Black king on e8 and White pieces aimed at f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A piece sacrifice with forcing play and mutual attack."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White has given the knight for a pawn and Black can keep the extra piece."
+    },
+    "soundness": {
+      "notes": "The Muzio is widely considered unsound against best defence."
+    },
+    "structure": {
+      "notes": "Open lines, with the f-file and e-file in play."
+    },
+    "approach": {
+      "notes": "Strong players hardly play it today."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines must be known."
+    }
+  },
+  "plan_phrases": [
+    "Piece for attack",
+    "Pressure on f7",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.97,
+      "reason": "A piece sacrifice and attack down the f-file make this forcing and double-edged."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.97,
+      "reason": "White has given a knight and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "The piece sacrifice is considered unsound with best play from Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Open lines and files for the pieces from the start."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "The Muzio is rarely played by strong players."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Long forcing theory has to be known by both sides."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7",
+        "kingside_attack"
+      ],
+      "reason": "White uses fast development to attack f7 and the black king."
+    }
+  }
+}

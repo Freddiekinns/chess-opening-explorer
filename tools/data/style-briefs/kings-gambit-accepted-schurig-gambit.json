@@ -1,0 +1,31 @@
+{
+  "slug": "kings-gambit-accepted-schurig-gambit",
+  "tier": "unsourced",
+  "root": { "name": "King's Gambit Accepted: Schurig Gambit, with Bb5", "eco": "C33", "moves": "1. e4 e5 2. f4 exf4 3. Bb5", "fen": "rnbqkbnr/pppp1ppp/8/1B6/4Pp2/8/PPPP2PP/RNBQK1NR b KQkq - 1 3" },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "The most played branch is the Schurig with 3.Bd3, which develops the bishop to d3 and aims for Nf3, h4 and e5 ideas while Black keeps the f4 pawn. The 3.Bb5 version here is a rarer cousin where the bishop pins the e8 king's defender on c6 after ...Nc6. White continues a typical King's Gambit with Nf3, h4 or O-O, hoping to use the open f-file and a lead in development. Black can keep the pawn with ...g5 or ...d6.",
+  "white_ideas": [{ "idea": "Nf3, h4 and d4 to attack f4 and open the f-file" }, { "idea": "Use the bishop on d3 or b5 to aim at the black kingside" }],
+  "black_ideas": [{ "idea": "Hold f4 with ...g5 and develop with ...Nc6 and ...d6" }, { "idea": "Hit the centre with ...d5 to return the pawn if needed" }],
+  "typical_structures": [{ "structure": "King's Gambit Accepted pawn structure: White without f-pawn, Black with advanced f4 pawn" }],
+  "axis_evidence": {
+    "character": { "notes": "King's Gambit lines are forcing with exposed kings." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black has taken f4 and can keep it with ...g5 or ...d6; White's compensation is development and the f-file." },
+    "soundness": { "notes": "Probably dubious; the early bishop move wastes time compared with 3.Nf3." },
+    "structure": { "notes": "Open e- and f-files with a central pawn exchange." },
+    "approach": { "notes": "Rare sidelines are played mostly for surprise." },
+    "level": { "reason": "memory", "notes": "Needs knowledge of the traps, no deep theory." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [{ "name": "Schurig with Bd3", "moves": "1. e4 e5 2. f4 exf4 3. Bd3", "how": "The more played branch of this gambit." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.75, "reason": "King's Gambit play with exposed kings and a pawn down is forcing and double-edged." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White gave the f-pawn and Black may keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.55, "reason": "The early bishop move wastes time compared with the main line." },
+    "structure": { "value": "open", "confidence": 0.75, "reason": "Open e- and f-files with pieces active." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Strong players rarely choose this sideline." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "A dubious line cannot be Beginner and it needs only moderate theory." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White's compensation is development and the kingside attack." }
+  }
+}

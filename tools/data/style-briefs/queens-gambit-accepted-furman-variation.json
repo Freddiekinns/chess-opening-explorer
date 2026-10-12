@@ -1,0 +1,103 @@
+{
+  "slug": "queens-gambit-accepted-furman-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Furman Variation",
+    "eco": "D27",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. dxc5 Bxc5",
+    "fen": "rnbqk2r/1p3ppp/p3pn2/2b5/2B5/4PN2/PP3PPP/RNBQ1RK1 w kq - 0 8"
+  },
+  "parent": "queens-gambit-accepted-classical-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black has accepted the pawn, played ...c5 and ...a6 and recaptured on c5. Both sides have developed in a roughly symmetrical position with open lines, and White usually plays Qe2, Nc3 and Rd1 for a small initiative.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Qe2, Nc3, Rd1 and Bb3"
+    },
+    {
+      "idea": "Use the lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete development with ...Nc6, ...b5, ...Bb7"
+    },
+    {
+      "idea": "Hold the extra space gained on the queenside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical structure with no d-pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open and calm, with chances for both."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4 pawn is regained at once; no real gambit."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Mainline QGA structure."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear."
+    }
+  },
+  "plan_phrases": [
+    "symmetrical structure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Open pieces for both sides without a forced attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "The pawn comes back by force in the QGA."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A standard sound line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The d-pawns are exchanged so lines are open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A standard QGA line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear without long theory."
+    },
+    "plans": {
+      "value": [
+        "symmetrical_structure"
+      ],
+      "reason": "Both sides have mirror-image pawns and play for small edges."
+    }
+  }
+}

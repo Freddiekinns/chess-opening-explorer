@@ -1,0 +1,111 @@
+{
+  "slug": "latvian-gambit-accepted-foltys-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit Accepted: Foltys Variation",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. Nc4 fxe4 5. d3",
+    "fen": "rnb1kbnr/pppp2pp/5q2/8/2N1p3/3P4/PPP2PPP/RNBQKB1R b KQkq - 0 5"
+  },
+  "parent": "latvian-gambit-accepted-foltys-leonhardt-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.Nxe5 Qf6 4.Nc4 fxe4 5.d3 White attacks the e4 pawn and Black can hold it with ...d5 or ...exd3, leaving a messy position with open f-file. Black keeps the queen on f6 and develops quickly, while White hopes the extra development and a safe king gives an edge.",
+  "white_ideas": [
+    {
+      "idea": "Recapture on e4 or d3 and develop with Nc3"
+    },
+    {
+      "idea": "Exploit Black's exposed queen"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e4 with ...d5 and ...Nc6"
+    },
+    {
+      "idea": "Use the open f-file and bishop to c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black pawn on e4 and White knight on c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen sortie and tactical open lines make for forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level at the root: each side has lost one pawn."
+    },
+    "soundness": {
+      "notes": "The Latvian is considered dubious."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious line."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Foltys-Leonhardt 4.Nc4",
+      "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. Nc4",
+      "how": "Parent position before Black decides about ...fxe4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Early queen move and open play, where one slip loses quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material is level at this position, so no pawn is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The Latvian is dubious as Black's king and queen are exposed."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e- and f-pawns have been exchanged, leaving open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly choose the Latvian."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black's queen comes out early and he uses fast development to compensate."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "center-game-lhermet-variation",
+  "tier": "unsourced",
+  "root": { "name": "Center Game: l'Hermet Variation", "eco": "C22", "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 f5", "fen": "r1bqkbnr/pppp2pp/2n5/5p2/4P3/4Q3/PPP2PPP/RNB1KBNR w KQkq - 0 5" },
+  "parent": "center-game-paulsen-attack-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 4.Qe3 Black attacks e4 at once with 4...f5 rather than the usual 4...Nf6. White can answer 5.Nc3 or 5.exf5, and Black's king is loosened on the e8-h5 diagonal and the e-file while White's queen is already placed in the centre. White generally gets the easier development; Black hopes to use the extra tempo from attacking the queen's pawn support. I am not certain of the details.",
+  "white_ideas": [{ "idea": "Nc3 and Bd3 to pile on e4 and the weakened e8-h5 diagonal" }, { "idea": "exf5 and Qe3 pressure on the e-file against the Black king" }],
+  "black_ideas": [{ "idea": "Keep the f5 pawn and develop with ...Nf6 and ...Bb4" }, { "idea": "Hit the white queen with ...Bb4 and ...Nf6 for tempo" }],
+  "typical_structures": [{ "structure": "Open centre, White queen on e3, Black pawns on f5 and d7" }],
+  "axis_evidence": {
+    "character": { "notes": "Black's ...f5 opens the king and the e-file, so tactics decide." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "The d4 pawn was exchanged and material is level; ...f5 offers no pawn that White can safely keep." },
+    "soundness": { "notes": "The pawn move weakens the king for little; White probably stands better." },
+    "structure": { "notes": "Open e-file and diagonals with pieces active." },
+    "approach": { "notes": "Strong players seldom meet the Paulsen with ...f5." },
+    "level": { "reason": "neither", "notes": "A rare sideline with thin theory." }
+  },
+  "plan_phrases": ["early queen", "lead in development"],
+  "sublines_that_differ": [{ "name": "Paulsen 4...Nf6", "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Nf6", "how": "The usual, sounder reply." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.55, "reason": "An early ...f5 opens the king and the e-file, so tactics decide quickly." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "Material is level and no pawn has been sacrificed." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.5, "reason": "The pawn move weakens Black's king for little and White probably stands better." },
+    "structure": { "value": "open", "confidence": 0.7, "reason": "The e-file and diagonals are open and pieces play on them." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players rarely choose 4...f5 in the Center Game." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Little theory and modest plans, but not a coach's first choice." },
+    "plans": { "value": ["early_queen"], "reason": "White's queen is already central and has to avoid tempo-losing attacks." }
+  }
+}

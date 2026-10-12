@@ -1,0 +1,31 @@
+{
+  "slug": "benoni-defense-zilbermints-benoni-gambit",
+  "tier": "unsourced",
+  "root": { "name": "Benoni Defense: Zilbermints-Benoni Gambit", "eco": "A43", "moves": "1. d4 c5 2. b4", "fen": "rnbqkbnr/pp1ppppp/8/2p5/1P1P4/8/P1P1PPPP/RNBQKBNR b KQkq - 0 2" },
+  "parent": "benoni-defense-old-benoni",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White offers the b-pawn at once with 2.b4, so that after 2...cxb4 White has a free hand in the centre with a3 or Nf3 and e3, and the c1-bishop and a1-rook get open lines. Black can keep the pawn with accurate play, return it at the right moment, or decline with ...cxd4 or ...e6. White plays for quick development and a wide centre; Black aims to consolidate with ...d5 and ...Nf6.",
+  "white_ideas": [{ "idea": "Build a broad centre with Nf3, e3 and c4 or a3 to open the a-file against the b4 pawn" }, { "idea": "Use the open queenside lines and the bishop on b2" }],
+  "black_ideas": [{ "idea": "Keep the extra pawn and develop with ...d5, ...Nf6 and ...Nc6" }, { "idea": "Strike in the centre before White has finished developing" }],
+  "typical_structures": [{ "structure": "Black with an extra c- or b-pawn, White with centre pawns on d4 and e3" }],
+  "axis_evidence": {
+    "character": { "notes": "Early pawn sacrifice and open queenside lines; play is concrete." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 2...cxb4 Black is a pawn up and White must show compensation; the pawn does not come back by force." },
+    "soundness": { "notes": "Considered dubious in theory; Black can keep the pawn and complete development, so White's compensation is not sufficient." },
+    "structure": { "notes": "A c-pawn swap opens the c-file for Black, so semi-open." },
+    "approach": { "notes": "Played by gambit enthusiasts, rarely by strong players." },
+    "level": { "reason": "understanding", "notes": "Needs sense of when to return the pawn, but little long theory." }
+  },
+  "plan_phrases": ["lead in development", "open queenside lines"],
+  "sublines_that_differ": [{ "name": "Move-order version", "moves": "1. d4 c5 2. Nf3 cxd4 3. b4", "how": "Most played in the database; the pawn is offered after Black has taken on d4." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "A pawn is given up for open lines and quick development, so inaccuracies show fast." },
+    "gambit": { "value": "white", "confidence": 0.8, "reason": "White offers the b-pawn and Black can keep it by taking on b4." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.6, "reason": "Black can hold the extra pawn without major difficulty." },
+    "structure": { "value": "semi_open", "confidence": 0.5, "reason": "The c-file opens for Black while White keeps a d4 and e3 centre." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Strong players seldom choose 2.b4 against the Old Benoni." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.6, "reason": "A dubious line cannot be Beginner and the theory is thin." },
+    "plans": { "value": ["lead_in_development"], "reason": "Compensation is development and open lines for the pawn." }
+  }
+}

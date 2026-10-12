@@ -1,0 +1,31 @@
+{
+  "slug": "borg-defense-troon-gambit",
+  "tier": "unsourced",
+  "root": { "name": "Borg Defense: Troon Gambit", "eco": "B00", "moves": "1. e4 g5 2. d4 h6 3. h4 g4", "fen": "rnbqkbnr/pppppp2/7p/8/3PP1pP/8/PPP2PP1/RNBQKBNR w KQkq - 0 4" },
+  "parent": "borg-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 g5 2.d4 h6 White hits the g5 pawn with 3.h4 and Black pushes 3...g4, cramping the kingside. White then develops with Nc3, Be3 and Qd2 and can break with f3 or h5, while Black's king has few safe squares and his pieces are slow. The pawn on g4 can become weak, and Black's weakened kingside lets White attack on both wings. I am unsure of the exact gambit idea.",
+  "white_ideas": [{ "idea": "Attack the g4 pawn with Nc3, Be2 or Nh3 and f3, opening the kingside" }, { "idea": "Use a large pawn centre and a lead in development" }],
+  "black_ideas": [{ "idea": "Hold g4 and play ...Bg7 and ...d6 with the fianchetto" }, { "idea": "Counter in the centre with ...c5 or ...e5 and ...Nc6" }],
+  "typical_structures": [{ "structure": "Black pawns on g4/h6 with a weakened kingside, White pawns on d4/e4/h4" }],
+  "axis_evidence": {
+    "character": { "notes": "Advanced flank pawns create a lopsided, risky position for Black." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "3...g4 only pushes a pawn; no material has been given so the 'gambit' name does not describe the main line." },
+    "soundness": { "notes": "Black's loosened kingside is generally considered inferior." },
+    "structure": { "notes": "White holds the centre with d4 and e4 while the g-file stays half-open." },
+    "approach": { "notes": "The Borg Defense is seldom played by strong players." },
+    "level": { "reason": "neither", "notes": "Few moves to know." }
+  },
+  "plan_phrases": ["space advantage", "kingside attack"],
+  "sublines_that_differ": [{ "name": "3...Bg7", "moves": "1. e4 g5 2. d4 h6 3. h4 Bg7", "how": "Black allows hxg5 hxg5 and an open h-file." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Flank pawns are advanced and Black's king is weakened, so errors are punished quickly." },
+    "gambit": { "value": "none", "confidence": 0.55, "reason": "No pawn is given on the main line; 3...g4 just advances." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.6, "reason": "Black loosens the kingside and falls behind in development." },
+    "structure": { "value": "semi_open", "confidence": 0.4, "reason": "White's d4/e4 centre faces a half-open g-file." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players seldom play 1...g5." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "A dubious line is never Beginner and the theory is thin." },
+    "plans": { "value": ["space_advantage", "kingside_attack"], "reason": "White's centre gives space and the weakened kingside invites attack." }
+  }
+}

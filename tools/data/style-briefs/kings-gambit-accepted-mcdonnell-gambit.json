@@ -1,0 +1,31 @@
+{
+  "slug": "kings-gambit-accepted-mcdonnell-gambit",
+  "tier": "unsourced",
+  "root": { "name": "King's Gambit Accepted: McDonnell Gambit", "eco": "C37", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Nc3", "fen": "rnbqkbnr/pppp1p1p/8/8/2B1Ppp1/2N2N2/PPPP2PP/R1BQK2R b KQkq - 1 5" },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 4.Bc4 g4 White leaves the knight on f3 en prise with 5.Nc3, in the style of the Muzio, offering a piece for an attack on f7 and the open f-file. If Black plays 5...gxf3 6.Qxf3 White has a piece less for a pawn and gets fast development against a king that has lost its g-pawn. Black has safer alternatives, such as holding the extra pawn with ...Bg7 or ...Bh6 ideas, and the objective verdict is that the attack is not enough. I am unsure of the exact sub-line theory.",
+  "white_ideas": [{ "idea": "Recapture on f3 with the queen and aim at f7 with Bc4, Qxf7 and castling" }, { "idea": "Open the f-file with O-O and use the lead in development against the king" }],
+  "black_ideas": [{ "idea": "Take the piece and return material at the right moment, e.g. ...Bg7 and ...d6" }, { "idea": "Keep the extra f4 pawn and develop with ...Nc6 and ...d6" }],
+  "typical_structures": [{ "structure": "Open position, Black pawn on f4 and broken kingside pawns, White pieces aimed at f7" }],
+  "axis_evidence": {
+    "character": { "notes": "Piece sacrifice for the attack and open f-file; forcing and risky for both sides." },
+    "gambit": { "material_given": "piece", "given_by": "white", "can_be_kept": "true", "notes": "White has already lost the f-pawn and now leaves the f3 knight en prise to ...gxf3; Black can keep the material." },
+    "soundness": { "notes": "Muzio-type sacrifices are considered unsound against accurate defence; the bishop on c4 and queen on f3 give practical chances only." },
+    "structure": { "notes": "Open lines and the f-file, no central pawn tension." },
+    "approach": { "notes": "Played by gambit specialists, seldom by strong players today." },
+    "level": { "reason": "memory", "notes": "Sharp theory-led attack; a risky line rather than a first repertoire choice." }
+  },
+  "plan_phrases": ["attack on f7", "lead in development", "open f-file"],
+  "sublines_that_differ": [{ "name": "Salvio Gambit", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Ne5", "how": "The main line, with a sound knight outpost; this root is the piece-sacrifice alternative." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "A piece sacrifice for a direct attack on f7 leaves both kings exposed." },
+    "gambit": { "value": "white", "confidence": 0.75, "reason": "White gives a pawn already and a piece after 5...gxf3, and Black may keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.6, "reason": "Muzio-style piece sacrifices are thought insufficient against correct defence." },
+    "structure": { "value": "open", "confidence": 0.85, "reason": "The f-file and diagonals open at once and the game turns on piece activity." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom choose this sideline of the King's Gambit." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "A theory-driven attack that is not a good first repertoire pick but not deep enough to be Advanced." },
+    "plans": { "value": ["pressure_on_f7", "lead_in_development"], "reason": "White's compensation is the attack on f7 and faster development." }
+  }
+}

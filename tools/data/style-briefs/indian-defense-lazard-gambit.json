@@ -1,0 +1,110 @@
+{
+  "slug": "indian-defense-lazard-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Lazard Gambit",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Nd2 e5",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/3P4/8/PPPNPPPP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.d4 Nf6 2.Nd2 Black plays 2...e5 at once. White can take with 3.dxe5 Ng4, and Black regains the pawn with ...Nxe5 or ...Nc6, giving up little. 2.Nd2 blocks the c1 bishop, so White has no clear gain and Black has a free development. A quirky line with little theory.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with dxe5 and defend against ...Ng4"
+    },
+    {
+      "idea": "Play e4 or gain space with Ngf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain e5 with ...Ng4 and ...Nc6/Nxe5"
+    },
+    {
+      "idea": "Develop quickly with ...Nc6 and ...Bc5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open d-file after dxe5 with Black piece activity"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet development after the pawn comes back; neither side is forced into sharp play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The e5 pawn is regained after dxe5 Ng4, so material is level; the countergambit label comes from the name."
+    },
+    "soundness": {
+      "notes": "A sound if unambitious line."
+    },
+    "structure": {
+      "notes": "After dxe5 the d-file is open and the centre is fluid."
+    },
+    "approach": {
+      "notes": "Rarely played."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "Regain the pawn with ...Ng4",
+    "Quick development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "White ignores",
+      "moves": "3.e4",
+      "how": "White keeps the centre and transposes to a Latvian-type structure."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Quiet development with level material, neither sharp nor especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "The pawn comes back by force with ...Ng4 and ...Nxe5, so by the rule it is not a gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Black regains the pawn and White's Nd2 blocks the bishop."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The d-file and centre open after dxe5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "The Lazard is seldom seen from strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Plans are simple and there is little theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black wins time with attacks on e5."
+    }
+  }
+}

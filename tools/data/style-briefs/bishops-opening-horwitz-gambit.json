@@ -1,0 +1,103 @@
+{
+  "slug": "bishops-opening-horwitz-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Horwitz Gambit",
+    "eco": "C26",
+    "moves": "1. e4 e5 2. Bc4 Nf6 3. Nc3 b5",
+    "fen": "rnbqkb1r/p1pp1ppp/5n2/1p2p3/2B1P3/2N5/PPPP1PPP/R1BQK1NR w KQkq - 0 4"
+  },
+  "parent": "vienna-game-stanley-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 3...b5 against the Bishop's Opening or Vienna, offering a pawn to deflect the c4 bishop. After 4.Bxb5 or 4.Nxb5 Nxe4 Black gets quick development but White can keep the pawn with accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn and then consolidate"
+    },
+    {
+      "idea": "Use development lead for attack on the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Deflect the bishop and play ...Nxe4"
+    },
+    {
+      "idea": "Develop quickly with ...Bb7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a displaced white bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black gambits a pawn for quick play and tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black offers the b-pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The 3...b5 gambit is considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The centre opens early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black hopes to use faster development."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "caro-kann-defense-edinburgh-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Edinburgh Variation",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 d5 3. Nd2 Qb6",
+    "fen": "rnb1kbnr/pp2pppp/1qp5/3p4/3PP3/8/PPPN1PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "caro-kann-defense-modern-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "The Edinburgh is 3.Nd2 Qb6 in the Caro-Kann Modern line: Black hits b2 and d4 with the queen early, and White usually defends with Ngf3 or Nb3, keeping a solid centre. The queen sortie costs time but gives Black some activity. Play is sound and manoeuvring, closer to the Caro-Kann than to the sharp variations.",
+  "white_ideas": [
+    {
+      "idea": "Defend with Ngf3 or Nb3 and build the centre"
+    },
+    {
+      "idea": "Exchange pawns on d5 and open lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure d4 and b2 with the queen"
+    },
+    {
+      "idea": "Support ...dxe4 and ...Bf5 for normal Caro-Kann play"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann with Black queen on b6 and exchanges on d5 or e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black stays flexible while the queen sortie adds some tactical edge."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "A sound sideline."
+    },
+    "structure": {
+      "notes": "Semi-open Caro-Kann centre."
+    },
+    "approach": {
+      "notes": "Less popular than the main lines but respectable."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "Early queen sortie",
+    "Caro-Kann centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "A quiet Caro-Kann sideline whose early queen sortie adds some activity but not forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respectable sideline."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "The Caro-Kann semi-open structure after exchanges on d5 or e4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Respectable choice, though uncommon."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Standard plans, little theory."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "Black's queen comes out early and has to avoid being harassed."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "van-geet-opening-damhaug-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Damhaug Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 d5 2. f4 e5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/5P2/2N5/PPPPP1PP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.Nc3 d5 White plays 2.f4, a Bird-like move, and Black hits it with 2...e5. White can play 3.fxe5 d4 4.Ne4 or 3.e4, with a messy open game. I am not sure of the theory so the notes are brief.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and meet ...d4 with Ne4"
+    },
+    {
+      "idea": "Develop quickly with Nf3 and e3/d3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain space with ...d4 and ...e5"
+    },
+    {
+      "idea": "Challenge the centre with ...Nc6, ...Bc5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with f-file exchanges and Black space pawn on d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early pawn tension and exchanges; unclear."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level at the root but nothing is yet taken."
+    },
+    "soundness": {
+      "notes": "Playable for both sides."
+    },
+    "structure": {
+      "notes": "Centre open and fluid."
+    },
+    "approach": {
+      "notes": "Rare for strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Hard to know theory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Central pawn clash and early pawn captures create tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "Material is level at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Not clearly refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "Pawns come off in the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A little theory and tactics."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Both sides aim for faster development after the pawn clash."
+    }
+  }
+}

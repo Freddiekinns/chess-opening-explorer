@@ -15,8 +15,13 @@ let captured: { path: string; html: string } | null = null;
 
 /** Call once, before createRoot. */
 export function capturePrerender(): void {
-  const html = document.getElementById('root')?.innerHTML.trim();
-  captured = html ? { path: window.location.pathname, html } : null;
+  const root = document.getElementById('root');
+  const html = root?.innerHTML.trim();
+  // The middleware swaps index.html's spinner out; where it drew nothing (no
+  // lookup entry, a failed shard, dev) the spinner is still there, and kept it
+  // spun at full height under the error message.
+  const drawn = html && !root?.querySelector('.loading-spinner');
+  captured = drawn ? { path: window.location.pathname, html } : null;
 }
 
 export function prerenderFor(path: string): string | null {

@@ -19,10 +19,10 @@ answer, and 86 real opening pages still soft 404 after #142.
 - **Revisit late Nov 2026** with six weeks of the new events. Search ranking and
   the video pipeline are paused until then.
 
-## Previous Task: Style tags tail waves 5–8, gambit search (this branch)
+## Previous Task: Style tags tail waves 5–10, gambit search (this branch)
 
-280 more tagged (tail-38 to tail-51): 1,123 variations, 11,510 positions, 0
-unresolved. Left: tail-52 to tail-66, 288 variations. A wave cost ~20–40% of a
+440 more tagged (tail-38 to tail-59): 1,283 variations, 11,725 positions, 0
+unresolved. Left: tail-60 to tail-66, 128 variations. A wave cost ~20–40% of a
 5-hour window; the judge ran inline, matched to exported precedents. If Jev's
 save hits a Windows file lock, re-run `jev-classify.js --new`.
 

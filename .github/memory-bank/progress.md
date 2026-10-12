@@ -73,8 +73,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **Style tags tail**: 288 variations left (tail-52 to tail-66; #174 did 280,
-  waves 5–8 280 more); plan in `archive.md`, runbook in
+- **Style tags tail**: 128 variations left (tail-60 to tail-66; #174 did 280,
+  waves 5–10 440 more); plan in `archive.md`, runbook in
   `tools/style-tags/README.md`.
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,

@@ -5,6 +5,7 @@ const { getOpenings } = require('./opening-data-service');
 const { 
   STYLE_CATEGORIES, 
   STYLE_AXES,
+  STYLE_NAMES,
   FUSE_OPTIONS 
 } = require('./search/SearchConstants');
 const styleTags = require('./style-tags-service');
@@ -14,9 +15,11 @@ const { NameIndex, normalise } = require('./search/NameIndex');
 
 /**
  * Whether an opening's style tags (api/data/style-tags.json) say what a style
- * word means, per STYLE_AXES. A position with no tags matches no style.
+ * word means, per STYLE_AXES. A position with no tags matches no style, unless
+ * its name answers the word (STYLE_NAMES: a named gambit is a gambit search hit).
  */
 function matchesStyle(opening, word) {
+  if (STYLE_NAMES[word] && STYLE_NAMES[word].test(opening.name || '')) return true;
   const spec = STYLE_AXES[word];
   const axes = spec && styleTags.axesFor(opening.fen);
   if (!axes) return false;

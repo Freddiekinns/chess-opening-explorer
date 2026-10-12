@@ -13,7 +13,8 @@ users will see. Plan:
 - **Tags use the most standard word; search accepts the rest.** See
   [Search words](#search-words).
 - **Describe the middlegame the line leads to,** not the first move and not the
-  name. The Queen's Gambit is not a gambit.
+  name. The Queen's Gambit is not a gambit, though searching for gambits still
+  finds it by name.
 - **A root's tags describe its main line.** Where a sub-line plays differently,
   it becomes its own root or overrides its parent with a stated reason. When a
   root splits evenly between branches, the main line is the one strong players
@@ -236,16 +237,16 @@ wrong fails. Names are as they appear in `api/data/eco/`.
 What players type is wider than what a page shows. Search maps these onto the
 axes; they are never shown as tags.
 
-| People say                                                  | Means                        |
-| ----------------------------------------------------------- | ---------------------------- |
-| solid, safe, reliable                                       | Solid                        |
-| sharp, aggressive, attacking, tactical, double-edged, risky | Sharp                        |
-| positional, strategic                                       | Solid or Balanced            |
-| gambit, sacrifice, countergambit                            | White gambit or Black gambit |
-| dubious, unsound, trappy, tricky                            | Dubious                      |
-| system, set-up, universal                                   | System                       |
-| offbeat, surprise, rare                                     | Offbeat                      |
-| beginner, easy, simple                                      | Beginner                     |
+| People say                                                  | Means                                                             |
+| ----------------------------------------------------------- | ----------------------------------------------------------------- |
+| solid, safe, reliable                                       | Solid                                                             |
+| sharp, aggressive, attacking, tactical, double-edged, risky | Sharp                                                             |
+| positional, strategic                                       | Solid or Balanced                                                 |
+| gambit, sacrifice, countergambit                            | White gambit or Black gambit; "gambit" also any opening named one |
+| dubious, unsound, trappy, tricky                            | Dubious                                                           |
+| system, set-up, universal                                   | System                                                            |
+| offbeat, surprise, rare                                     | Offbeat                                                           |
+| beginner, easy, simple                                      | Beginner                                                          |
 
 "Aggressive" depends on whose side you are on, which is why it is a search word
 and not a tag: "aggressive openings for Black" ranks Sharp lines and Black

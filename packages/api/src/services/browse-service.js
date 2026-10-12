@@ -41,11 +41,18 @@ class BrowseService {
    * each shown value holds well under half the corpus, so an opening can sit
    * under two styles (Sharp and Gambit) and every filter still filters. The old
    * LLM tags could not: their common tags were on 60%+ of everything, which is
-   * why this used to pick exactly one bucket per opening.
+   * why this used to pick exactly one bucket per opening. A style with a
+   * `name_pattern` also takes openings whose name matches it: the Queen's
+   * Gambit is tagged gambit "none", but a Gambit filter without it surprises.
    */
-  stylesOf(axes) {
-    if (!axes) return [];
-    return this.config.styles.filter((s) => s.values.includes(axes[s.axis])).map((s) => s.value);
+  stylesOf(axes, name = '') {
+    return this.config.styles
+      .filter(
+        (s) =>
+          (axes && s.values.includes(axes[s.axis])) ||
+          (s.name_pattern && new RegExp(s.name_pattern, 'i').test(name))
+      )
+      .map((s) => s.value);
   }
 
   loadFamilies() {
@@ -102,7 +109,7 @@ class BrowseService {
               // Stored values, middle included: Intermediate is never shown on
               // a page, but it is a real answer and a level a user can filter on.
               level: axes ? axes.level.charAt(0).toUpperCase() + axes.level.slice(1) : null,
-              styles: this.stylesOf(axes),
+              styles: this.stylesOf(axes, opening.name),
               // Real stats or null. Never a zero standing in for "unknown".
               games_analyzed: stats ? stats.games_analyzed || 0 : 0,
               white_win_rate: stats && stats.white_win_rate != null ? stats.white_win_rate : null,

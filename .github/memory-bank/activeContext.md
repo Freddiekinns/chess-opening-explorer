@@ -19,12 +19,14 @@ answer, and 86 real opening pages still soft 404 after #142.
 - **Revisit late Nov 2026** with six weeks of the new events. Search ranking and
   the video pipeline are paused until then.
 
-## Previous Task: Style tags tail waves 5–10, gambit search (this branch)
+## Previous Task: Style tags tail waves 5–12, gambit search (this branch)
 
-440 more tagged (tail-38 to tail-59): 1,283 variations, 11,725 positions, 0
-unresolved. Left: tail-60 to tail-66, 128 variations. A wave cost ~20–40% of a
-5-hour window; the judge ran inline, matched to exported precedents. If Jev's
-save hits a Windows file lock, re-run `jev-classify.js --new`.
+The tail is finished: 568 more tagged (tail-38 to tail-66), 1,411 variations,
+11,863 positions, every variation outside the 14 hubs; 0 unresolved. A wave cost
+~20–40% of a 5-hour window; the judge ran inline, matched to exported
+precedents. If Jev's save hits a Windows file lock, re-run
+`jev-classify.js --new`. Briefs from waves 11–12 carry thin evidence notes on
+the rarest gambits; rerun one if its page draws traffic.
 
 Gambit search: "gambit"/"gambits" and Discover's Gambit filter now also take
 openings _named_ gambits (`STYLE_NAMES`, `name_pattern`), so the Queen's Gambit

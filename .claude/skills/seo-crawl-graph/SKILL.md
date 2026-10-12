@@ -57,7 +57,9 @@ putting them back. The moving parts are `middleware.ts` (repo root),
   `capturePrerender()` (`lib/prerender.ts`) before `createRoot`, and
   `OpeningDetailPage` shows that HTML while loading and beneath a failed load —
   only for the URL it was drawn for, never after an SPA step to another opening.
-  **Do not render a bare loading or error state over the first page.**
+  Where the middleware drew nothing, #root still holds index.html's spinner, and
+  that is not captured: kept, it spun under the error message. **Do not render a
+  bare loading or error state over the first page.**
 
 - **`middleware.ts` and `OpeningDetailPage` must agree on the description.**
   React 19 hoists a component's `<meta>` into `<head>` **beside** the one the

@@ -4,6 +4,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **2026-10-12**: style tags tail finished (waves 5–12, 568 more); 1,411 tagged,
+  every variation outside the 14 hubs. Gambit search keeps named gambits.
 - **2026-10-11**: analytics read-out, four gap events, soft-404 pre-render fix.
 - **2026-10-10 (#171–#173)**: the 43 description claims the briefs marked wrong
   fixed; E2E 9/9 green and in CI (**Test E2E**); search intent misreads ("solid
@@ -73,9 +75,6 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **Style tags tail**: 128 variations left (tail-60 to tail-66; #174 did 280,
-  waves 5–10 440 more); plan in `archive.md`, runbook in
-  `tools/style-tags/README.md`.
 - **#86's remaining half** — flat config and eslint 10 landed (#97); the
   react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
   `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.

@@ -19,8 +19,10 @@ answer, and 86 real opening pages still soft 404 after #142.
 - **Revisit late Nov 2026** with six weeks of the new events. Search ranking and
   the video pipeline are paused until then.
 
-## Previous Task: Style tags tail, waves from tail-24 (#174)
+## Previous Task: Style tags tail, waves 5–6 (this branch)
 
-843 variations tagged; tail-38 to tail-66 (568) left, one 80-brief wave per
-5-hour window. Open for the owner: the gambit definition the wave-1 judge
-proposed, and B54's ECO name. Full text: `archive.md`.
+160 more tagged (tail-38 to tail-45): 1,003 variations, 11,328 positions, 0
+unresolved. Left: tail-46 to tail-66, 408 variations. An 80-brief wave cost
+~19–43% of a 5-hour window; the judge ran inline, with rulings matched to
+exported precedents (Noteboom, Grob roots, Scotch anchor). Still open for the
+owner: the gambit definition and B54's ECO name (`archive.md`).

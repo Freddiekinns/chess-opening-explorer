@@ -1,0 +1,105 @@
+{
+  "slug": "english-opening-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Zilbermints Gambit",
+    "eco": "A10",
+    "moves": "1. c4 g5 2. d4 e5",
+    "fen": "rnbqkbnr/pppp1p1p/8/4p1p1/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "english-opening-myers-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black has answered the English with ...g5 and after 2.d4 plays ...e5. White can take with dxe5 and Black recovers with ...Bg7 and ...Nc6 or ...Qe7, with quick development for the pawn.",
+  "white_ideas": [
+    {
+      "idea": "Keep the pawn and develop with Nf3 and Nc3"
+    },
+    {
+      "idea": "Use the long diagonal for the c1 bishop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the pawn with ...Bg7 and ...Nc6"
+    },
+    {
+      "idea": "Develop quickly and trade queens"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with weakened kingside for Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "White can keep the pawn."
+    },
+    "soundness": {
+      "notes": "Dubious."
+    },
+    "structure": {
+      "notes": "Centre opens."
+    },
+    "approach": {
+      "notes": "A rare surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "No deep plan."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black plays for quick development with ...g5."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black offers a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "White can take."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "d4 and e5 exchanged opens files."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Hardly seen at a high level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Black develops fast with the fianchetto."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "hungarian-opening-paris-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Paris Gambit",
+    "eco": "A00",
+    "moves": "1. g3 e5 2. Nh3 d5 3. f4 Bxh3 4. Bxh3 exf4 5. O-O",
+    "fen": "rn1qkbnr/ppp2ppp/8/3p4/5p2/6PB/PPPPP2P/RNBQ1RK1 b kq - 1 5"
+  },
+  "parent": "amar-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black has won the f-pawn and White has traded off the knight, keeping the h3 bishop and castling to aim at the kingside. White hopes for the bishop pair and open lines for the bishops, but must prove compensation for the pawn. Branch read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Use the bishop on h3 against Black's king, often with d3 and Nc3"
+    },
+    {
+      "idea": "Win back f4 with Qf3 or Bxf4 ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...Nf6 and ...Be7"
+    },
+    {
+      "idea": "Castle and develop, trading White's active pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawn on f4 and d5 against White's fianchetto set-up, open e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is a pawn down for activity and the kings are exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White has given the f4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Strong players doubt the compensation, though it is not clearly lost."
+    },
+    "structure": {
+      "notes": "The e-file is open and exchanges came early."
+    },
+    "approach": {
+      "notes": "Very seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Rare and unsound enough that it is not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "bishop pair for a pawn",
+    "open kingside lines"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "White is a pawn down for activity and the kings are exposed."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White has given the f4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Strong players doubt the compensation, though it is not clearly lost."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The e-file is open and exchanges came early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Very seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Rare and unsound enough that it is not Beginner."
+    },
+    "plans": {
+      "value": [
+        "bishop_pair",
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "White's hope is the bishop pair, faster development and a kingside attack."
+    }
+  }
+}

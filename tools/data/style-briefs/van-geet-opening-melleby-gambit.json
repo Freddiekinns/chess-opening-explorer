@@ -1,0 +1,104 @@
+{
+  "slug": "van-geet-opening-melleby-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Melleby Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 d5 2. f4 d4 3. Ne4 c5",
+    "fen": "rnbqkbnr/pp2pppp/8/2p5/3pNP2/8/PPPPP1PP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.Nc3 d5 2.f4 d4 3.Ne4 c5 Black offers the c5 pawn to the Ne4 and gains space. White can take Nxc5 and then spends time on the knight; Black has development and a central pawn on d4. The line is offbeat and unclear.",
+  "white_ideas": [
+    {
+      "idea": "Take on c5 or play Nf3 and g3 to develop"
+    },
+    {
+      "idea": "Use the e4 knight to harass"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Nc6, ...e5 and ...Qa5 for tempi"
+    },
+    {
+      "idea": "Gain space with d4 and ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black wedge on d4 and c5, White f4/Ne4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tempo play and pawn offer. Unclear."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take on c5."
+    },
+    "soundness": {
+      "notes": "Not clearly refuted, Black has space for the pawn."
+    },
+    "structure": {
+      "notes": "Unclear centre."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "knight harass"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Tempo play and pawn offer."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.6,
+      "reason": "Black gives a pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Not clearly refuted, Black has space for the pawn."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Unclear centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "lead_in_development"
+      ],
+      "reason": "Black gains space with ...d4 and ...c5."
+    }
+  }
+}

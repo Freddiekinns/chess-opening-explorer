@@ -1,0 +1,105 @@
+{
+  "slug": "sicilian-defense-acton-extension",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Acton Extension",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 g6 3. c4 Bh6",
+    "fen": "rnbqk1nr/pp1ppp1p/6pb/2p5/2P1P3/5N2/PP1P1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "sicilian-defense-hyperaccelerated-dragon",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black fianchettoes with ...g6 and, instead of the usual ...Bg7, plays 3...Bh6 against the Maroczy-style 3.c4, offering to trade the dark-squared bishop for White's. White keeps the e4/c4 clamp and usually answers Nc3 and d4-style central play; Black tries to rid itself of the cramped position by trading pieces. Unfamiliar line, read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Keep the c4/e4 pawns and play for a Maroczy-type bind"
+    },
+    {
+      "idea": "Trade or avoid the dark-squared bishop swap and develop with Nc3, d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Swap the bishop on h6 or after ...Bxc1 to ease the cramp"
+    },
+    {
+      "idea": "Break with ...d6 and ...Nc6/...Nf6 then ...d5 or ...b5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Maroczy bind with pawns on c4 and e4 against ...c5/...d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring, no forcing sequences evident."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Odd but harmless; Black is not in danger."
+    },
+    "structure": {
+      "notes": "Sicilian asymmetry with half-open d-file after d4."
+    },
+    "approach": {
+      "notes": "Rare sideline of the Hyperaccelerated Dragon."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory, plans are fairly clear."
+    }
+  },
+  "plan_phrases": [
+    "Maroczy bind",
+    "bishop trade on h6"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither forcing nor especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "The bishop trade is odd but not losing."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "A Sicilian with c4 and e4 and a half-open d-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "A rare sideline of 2...g6 that strong players seldom pick."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Not much theory, ordinary Maroczy plans."
+    },
+    "plans": {
+      "value": [
+        "maroczy_bind",
+        "space_advantage"
+      ],
+      "reason": "White clamps with c4 and e4."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "van-geet-opening-twyble-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Twyble Attack",
+    "eco": "A00",
+    "moves": "1. Nc3 c5 2. Rb1",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/8/2N5/PPPPPPPP/1RBQKBNR b Kkq - 1 2"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.Nc3 c5 2.Rb1 White prepares b4 to hit the Sicilian-style c5 pawn with an early queenside expansion. The rook move loses time and the b-pawn is not yet ready, so Black simply develops with ...Nc6 or ...e5 and ...d5. It is a rare surprise move with little theory.",
+  "white_ideas": [
+    {
+      "idea": "Play b4 to challenge c5 and gain space"
+    },
+    {
+      "idea": "Develop the king's knight and a g3 fianchetto behind the b-pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take central space with ...d5 and ...e5"
+    },
+    {
+      "idea": "Treat it as a reversed Sicilian and develop normally"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Closed Sicilian-style structures with an early b4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not forcing and not especially safe for White, and it neither wins nor loses by force."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Playable but loses time, so Black may get easy equality."
+    },
+    "structure": {
+      "notes": "The centre is undecided."
+    },
+    "approach": {
+      "notes": "Strong players seldom start with 1.Nc3 and 2.Rb1."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Neither much to remember nor hard to play."
+    }
+  },
+  "plan_phrases": [
+    "queenside pawn expansion",
+    "reversed Sicilian"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Not forcing and not especially safe for White, and it neither wins nor loses by force."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Playable but loses time, so Black may get easy equality."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom start with 1.Nc3 and 2.Rb1."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Neither much to remember nor hard to play."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "White advances the b-pawn on the queenside."
+    }
+  }
+}

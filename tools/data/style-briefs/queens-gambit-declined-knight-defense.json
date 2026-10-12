@@ -1,0 +1,104 @@
+{
+  "slug": "queens-gambit-declined-knight-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Knight Defense, Alekhine Gambit",
+    "eco": "D37",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Nbd7 5. Bg5 h6 6. Bh4 dxc4",
+    "fen": "r1bqkb1r/pppn1pp1/4pn1p/8/2pP3B/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 7"
+  },
+  "parent": "queens-gambit-declined-barmen-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 5.Bg5 h6 6.Bh4 dxc4 Black takes the pawn; the Alekhine Gambit continues 7.e4 g5 8.Bg3 b5 with a wild centre, Black clinging to c4 and White hunting with e5 and Be2. White has a lead in development and central pawns for the pawn.",
+  "white_ideas": [
+    {
+      "idea": "Play e4 and e5 with a central pawn majority"
+    },
+    {
+      "idea": "Win the pawn back via Be2 and a4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the c4 pawn with ...b5 and push ...g5"
+    },
+    {
+      "idea": "Counter in the centre with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, White e4 pawn against Black queenside pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Pawn races and forcing lines. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the c4 pawn with ...b5."
+    },
+    "soundness": {
+      "notes": "Played by Alekhine; the pawn is regained or compensated."
+    },
+    "structure": {
+      "notes": "Open centre after e4 and ...g5."
+    },
+    "approach": {
+      "notes": "Seldom chosen at the top today."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forcing lines need to be known."
+    }
+  },
+  "plan_phrases": [
+    "central majority for a pawn"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Pawn races and forcing lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White is a pawn down in the FEN."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Played by Alekhine; the pawn is regained or compensated."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "Open centre after e4 and ...g5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom chosen at the top today."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Forcing lines need to be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White gives a pawn for centre."
+    }
+  }
+}

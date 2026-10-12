@@ -1,0 +1,106 @@
+{
+  "slug": "english-defense-poli-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Defense: Poli Gambit",
+    "eco": "A40",
+    "moves": "1. d4 e6 2. c4 b6 3. e4 Bb7 4. f3 f5 5. exf5 Nh6",
+    "fen": "rn1qkb1r/pbpp2pp/1p2p2n/5P2/2PP4/5P2/PP4PP/RNBQKBNR w KQkq - 1 6"
+  },
+  "parent": "english-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White builds a big centre with 3.e4 and 4.f3, and Black strikes at once with ...f5 and 5...Nh6, offering the f-pawn for quick development and pressure on the centre. White can take on f5 and hold material, then must catch up in development without being hit by ...Bb4+ or ...Qh4+ checks on the weakened kingside. The play is double-edged and rare.",
+  "white_ideas": [
+    {
+      "idea": "Take f5, keep the extra pawn and consolidate with Nc3, Bd3, Ne2."
+    },
+    {
+      "idea": "Use the big e4-d4-c4 centre once Black's pieces have been dislodged."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Win time with ...Nxf5, ...Bb4+ and ...Qh4+ against the weakened e1-h4 diagonal."
+    },
+    {
+      "idea": "Undermine the centre with ...Bb7 and ...c5 or ...d5."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4/c4/f3 centre against Black pieces aimed at it from b7, h6 and the b4/h4 diagonals."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides run risks: White has loosened his king with f3 while Black is a pawn down for time."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black gives up the f5 pawn after 5.exf5 for development and attacking chances, and White can keep it."
+    },
+    "soundness": {
+      "notes": "A gambit that gives up a pawn for development against a solid centre; strong players tend to rate White's extra pawn."
+    },
+    "structure": {
+      "notes": "Central pawns trade off on e4 and f5, leaving an asymmetric semi-open centre with Black pieces eyeing d4 and e4."
+    },
+    "approach": {
+      "notes": "Rarely seen even among English Defence players; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Tactical but short; dubious lines are never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on the centre",
+    "checks on the e1-h4 diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Both sides run risks: White has loosened his king with f3 while Black is a pawn down for time."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black gives up the f5 pawn after 5.exf5 for development and attacking chances, and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "A gambit that gives up a pawn for development against a solid centre; strong players tend to rate White's extra pawn."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Central pawns trade off on e4 and f5, leaving an asymmetric semi-open centre with Black pieces eyeing d4 and e4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Rarely seen even among English Defence players; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Tactical but short; dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "hypermodern_centre"
+      ],
+      "reason": "Black gives a pawn for pieces and a counter-attack on the big centre."
+    }
+  }
+}

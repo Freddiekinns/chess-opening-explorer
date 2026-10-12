@@ -1,0 +1,111 @@
+{
+  "slug": "queens-gambit-accepted-classical",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Classical, Furman Variation",
+    "eco": "D26",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. Qe2 a6 7. dxc5 Bxc5 8. O-O Nc6 9. e4 b5 10. e5",
+    "fen": "r1bqk2r/5ppp/p1n1pn2/1pb1P3/2B5/5N2/PP2QPPP/RNB2RK1 b kq - 0 10"
+  },
+  "parent": "queens-gambit-accepted-classical-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black takes c4, plays ...c5 and ...a6 and ...b5 to hold the extra pawn and develop queenside. The most played line here is the Flohr with ...c4 and ...Nb4, where Black gains space and White gets central pushes with d5. The game is open with chances for both. The Furman branch with e4-e5 is rarer.",
+  "white_ideas": [
+    {
+      "idea": "Push d5 and e4 for central play"
+    },
+    {
+      "idea": "Pressure the c4 pawn and the queenside with Bc2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain space with ...c4 and ...b5"
+    },
+    {
+      "idea": "Develop the bishop to b7 and trade knights"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black queenside pawn advance on b5 and c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not forcing, with a balanced fight."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c-pawn is returned or kept without White needing compensation."
+    },
+    "soundness": {
+      "notes": "Both sound."
+    },
+    "structure": {
+      "notes": "Open or semi-open centre."
+    },
+    "approach": {
+      "notes": "Mainline of the QGA."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Moderate theory."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Furman Variation",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. Qe2 a6 7. dxc5 Bxc5 8. O-O Nc6 9. e4 b5 10. e5",
+      "how": "White hits the Nf6 with e5 and the game turns tactical"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Active but not strictly forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The c4 pawn comes back; this is a QGA, not a gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Standard theoretical line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "QGA centre with open lines, though Black's c4 pawn can close it."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A main-line QGA variation."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Moderate theory, clear plans."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "space_advantage"
+      ],
+      "reason": "Black pushes b5 and c4 to gain queenside space."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "hungarian-opening-reversed-brooklyn-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Reversed Brooklyn Defense, Brooklyn Benko Gambit",
+    "eco": "A00",
+    "moves": "1. g3 e5 2. Nf3 e4 3. Ng1 Nf6 4. b4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/8/1P2p3/6P1/P1PPPP1P/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "hungarian-opening-reversed-alekhine",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Reversed Alekhine move order: 1.g3 e5 2.Nf3 e4 3.Ng1 Nf6 4.b4 is White's attempt at a Benko-style pawn offer, where ...Bxb4 gives Black a pawn for little. Black has space and a pawn on e4, and White has lost time with the knight going back to g1. Unsure of the practical theory; the position is a rare irregular line.",
+  "white_ideas": [
+    {
+      "idea": "Offer the b-pawn to open lines for Bb2 and the a1-rook"
+    },
+    {
+      "idea": "Use the fianchetto bishop on the long diagonal against e5/e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on b4 and keep the pawn, with the e4 space gain"
+    },
+    {
+      "idea": "Develop smoothly and undermine the e4 pawn's support with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawn on e4 cramps White; White fianchetto on g2 and b2 against a centre of e4/d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Pawn offer on move 4 with Black ahead in space; unbalanced but quiet."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "4.b4 Bxb4 wins a pawn that Black can keep."
+    },
+    "soundness": {
+      "notes": "Strong players would consider 4.b4 close to unsound; White's compensation is thin after the knight retreat."
+    },
+    "structure": {
+      "notes": "e4 pawn cramps White, centre not locked; queenside lines may open after ...Bxb4."
+    },
+    "approach": {
+      "notes": "Irregular first move and a rare gambit; seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Hard to justify; a gambit line that is not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Queenside pawn offer"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A pawn offer with Black ahead in space leads to unbalanced play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "b4 is a pawn Black can take and keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The pawn offer has little compensation after the knight retreat."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Centre not yet decided, with Black's e4 pawn the only fixed element."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rare irregular gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner, little theory so not Advanced."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Bb2 and g2 fianchettos with queenside pawn play."
+    }
+  }
+}

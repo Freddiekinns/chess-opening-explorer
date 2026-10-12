@@ -1,0 +1,105 @@
+{
+  "slug": "colle-system-pterodactyl-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Colle System: Pterodactyl Variation",
+    "eco": "A40",
+    "moves": "1. d4 g6 2. Nf3 Bg7 3. e3 c5 4. Bd3 Qa5+",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1p5/3P4/3BPN2/PPP2PPP/RNBQK2R w KQkq - 2 5"
+  },
+  "parent": "queens-pawn-game-modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White has the Colle set-up with e3, Nf3 and Bd3 against a Modern/Pterodactyl defence, and Black's 4...Qa5+ forces a decision about the check. White usually answers with c3 or Nc3 or Nbd2, castles and prepares e4 or c4. Black aims to pressure d4 with the queen and the g7 bishop and to counter in the centre.",
+  "white_ideas": [
+    {
+      "idea": "Block the check with c3 or Bd2, then Nbd2 and e4"
+    },
+    {
+      "idea": "Castle and build a broad centre with a quick e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure d4 with ...cxd4 and ...Nc6, queen on a5"
+    },
+    {
+      "idea": "Use the long diagonal and ...Nf6 for counterplay"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on d4 and e3 against Black's c5 and g6 fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has real counterplay against d4 but there is no early forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Both sides play sensible developing moves."
+    },
+    "structure": {
+      "notes": "The centre is in tension after ...c5 and White can still choose e4 or dxc5."
+    },
+    "approach": {
+      "notes": "White plays the Colle set-up against a defence that avoids a standard reply."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear for White but the Qa5+ lines need care."
+    }
+  },
+  "plan_phrases": [
+    "Colle set-up against a hypermodern defence",
+    "central break with e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Black has real counterplay against d4 but there is no early forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides play sensible developing moves."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre is in tension after ...c5 and White can still choose e4 or dxc5."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.7,
+      "reason": "White plays the Colle set-up against a defence that avoids a standard reply."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are clear for White but the Qa5+ lines need care."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "central_pawn_majority"
+      ],
+      "reason": "Black fianchettoes while White builds the centre."
+    }
+  }
+}

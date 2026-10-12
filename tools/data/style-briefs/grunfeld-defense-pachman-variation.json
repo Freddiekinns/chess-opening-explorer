@@ -1,0 +1,107 @@
+{
+  "slug": "grunfeld-defense-pachman-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Pachman Variation",
+    "eco": "D95",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. e3 Bg7 5. Qb3 dxc4 6. Bxc4 O-O 7. Nf3 Nbd7 8. Ng5",
+    "fen": "r1bq1rk1/pppnppbp/5np1/6N1/2BP4/1QN1P3/PP3PPP/R1B1K2R b KQ - 4 8"
+  },
+  "parent": "grunfeld-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White has taken the c4 pawn with Qb3 and Bxc4 and now plays Ng5, aiming at f7 together with the queen and bishop. Black usually answers ...Nb6 to hit the bishop and ...e6 or ...c6, then breaks with ...c5 or ...e5.",
+  "white_ideas": [
+    {
+      "idea": "Put pressure on f7 with Ng5, Qb3 and Bc4"
+    },
+    {
+      "idea": "Complete development with O-O and e4 once the bishop is safe"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Kick the bishop with ...Nb6 and trade it"
+    },
+    {
+      "idea": "Break the centre with ...c5 or ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Grünfeld-style centre with White d4+e3 against Black g6 fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has to meet immediate threats against f7, then the position settles into a normal Grünfeld."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black took on c4 and White regained it."
+    },
+    "soundness": {
+      "notes": "Standard sidelines; Black equalises with ...Nb6."
+    },
+    "structure": {
+      "notes": "White has pawns on d4 and e3 while Black has c7 and e7; the centre is contested."
+    },
+    "approach": {
+      "notes": "A recognised anti-Grünfeld line, played now and then."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Need to know the ...Nb6/...e6 defences but little deep theory."
+    }
+  },
+  "plan_phrases": [
+    "Pressure on f7",
+    "Hypermodern centre",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Early threat on f7 but Black has simple defences."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The pawn is regained."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Equal for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is not locked."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A named anti-Grünfeld line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Moderate theory, clear ideas."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "hypermodern_centre",
+        "lead_in_development"
+      ],
+      "reason": "Ng5 and Qb3 target f7 while Black hits the centre."
+    }
+  }
+}

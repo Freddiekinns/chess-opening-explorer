@@ -1,0 +1,111 @@
+{
+  "slug": "latvian-gambit-lobster-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Lobster Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. g4",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P1P1/5N2/PPPP1P1P/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White answers the Latvian with 3.g4, attacking f5. The main idea is that after 3...fxg4 4.Nxe5 Qf6 White has a lead in development and threats. The position is unbalanced and dubious for the side that falls behind.",
+  "white_ideas": [
+    {
+      "idea": "Hit f5 with g4 and play Nxe5 in the follow-up"
+    },
+    {
+      "idea": "Use d4 and Bc4 against a loosened Black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on g4 and aim for ...Qf6 counter"
+    },
+    {
+      "idea": "Keep the extra pawn and rely on the exposed White king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, loosened kingside on both sides"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings are exposed and tactics decide."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": null,
+      "notes": "White's g-pawn is offered and Nxe5 follows."
+    },
+    "soundness": {
+      "notes": "Weakens White's own king; most analysts prefer Black."
+    },
+    "structure": {
+      "notes": "Quick centre opening."
+    },
+    "approach": {
+      "notes": "Latvian lines are rarely played."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs tactical knowledge."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Blackburne Shilling-style",
+      "moves": "3.Nxe5 Qf6",
+      "how": "The main reply to the Latvian, not this variation."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Both kings are exposed and tactics decide."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White's g-pawn is offered and Nxe5 follows."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Weakens White's own king; most analysts prefer Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Quick centre opening."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Latvian lines are rarely played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs tactical knowledge."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

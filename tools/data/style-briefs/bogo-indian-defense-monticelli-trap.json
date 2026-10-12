@@ -1,0 +1,103 @@
+{
+  "slug": "bogo-indian-defense-monticelli-trap",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: Monticelli Trap",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Bb4+ 6. Bd2 Bxd2+ 7. Qxd2 O-O 8. Nc3 Ne4 9. Qc2 Nxc3 10. Ng5",
+    "fen": "rn1q1rk1/pbpp1ppp/1p2p3/6N1/2PP4/2n3P1/PPQ1PPBP/R3K2R b KQ - 1 10"
+  },
+  "parent": "queens-indian-defense-capablanca-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Bogo-Indian-Queen's Indian mix, White plays Qc2 and Ng5 after Black's ...Nxc3, creating threats against the Black king. The Monticelli Trap punishes careless play by Black. With the right move order Black is fine.",
+  "white_ideas": [
+    {
+      "idea": "Use Ng5 and Bxb7 tactics"
+    },
+    {
+      "idea": "Recapture on c3 with the queen and keep the fianchetto"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Avoid the trap and regroup"
+    },
+    {
+      "idea": "Use the bishop pair and solid structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Indian pawn structure with Bg2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A tactical trap line."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material returns by force."
+    },
+    "soundness": {
+      "notes": "Correct play holds for Black."
+    },
+    "structure": {
+      "notes": "Centre not fixed."
+    },
+    "approach": {
+      "notes": "A recognised sideline."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Trap and tactics need knowledge."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "A tactical trap line."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Material returns by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Correct play holds for Black."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Centre not fixed."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised sideline."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.65,
+      "reason": "Trap and tactics need knowledge."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

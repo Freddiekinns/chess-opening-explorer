@@ -1,0 +1,105 @@
+{
+  "slug": "kings-gambit-declined-hobbs-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Hobbs-Zilbermints Gambit",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Nc6 3. Nf3 g5 4. fxg5 h6",
+    "fen": "r1bqkbnr/pppp1p2/2n4p/4p1P1/4P3/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 5"
+  },
+  "parent": "kings-gambit-declined-zilbermints-double-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black has declined with 2...Nc6 and then given a pawn with 3...g5, and after 4.fxg5 h6 offers a second pawn to open the h-file. Black wants the h-file and active pieces for the pawns, while White simply takes and can hold. Read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Keep the pawn with d4 or Bc4 and develop"
+    },
+    {
+      "idea": "Return material at the right time and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the h-file with ...hxg5 and bring the rook in"
+    },
+    {
+      "idea": "Use the f-pawn gap and ...Nf6 to hit the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open f- and h-files, White's king in the centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gives material for open lines and the play is tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the pawn on g5."
+    },
+    "soundness": {
+      "notes": "Strong players consider Black's compensation insufficient."
+    },
+    "structure": {
+      "notes": "The kingside files open early."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "countergambit for open files",
+    "h-file pressure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Black gives material for open lines and the play is tactical."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "White can keep the pawn on g5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "Strong players consider Black's compensation insufficient."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The kingside files open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black plays for open lines against the king."
+    }
+  }
+}

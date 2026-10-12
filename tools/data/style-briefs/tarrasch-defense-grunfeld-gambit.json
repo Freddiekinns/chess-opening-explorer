@@ -1,0 +1,105 @@
+{
+  "slug": "tarrasch-defense-grunfeld-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Grünfeld Gambit",
+    "eco": "D32",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. dxc5 d4 7. Na4 b5",
+    "fen": "r1bqkbnr/p4ppp/2n5/1pP5/N2p4/5N2/PP2PPPP/R1BQKB1R w KQkq b6 0 8"
+  },
+  "parent": "tarrasch-defense-two-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays ...d4 and ...b5 after dxc5 with Nf3 and Nc6 already played, giving the c5 pawn. White tries to hold with e3 and Nc3; Black seeks quick development and open lines.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn with e3 and Nc3"
+    },
+    {
+      "idea": "Trade queens"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the lead in development and b5"
+    },
+    {
+      "idea": "Open lines against the white king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black d4 pawn and b5 break"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gambit."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "White holds c5."
+    },
+    "soundness": {
+      "notes": "Dubious."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Rare gambit."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific lines."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Central pawn majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Black gambits a pawn for development."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black gives the c-pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "White can keep the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns off, open d- and c-files."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Played by few strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Gambit theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "Black plays for activity."
+    }
+  }
+}

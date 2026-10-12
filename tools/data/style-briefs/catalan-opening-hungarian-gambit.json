@@ -1,0 +1,110 @@
+{
+  "slug": "catalan-opening-hungarian-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Catalan Opening: Hungarian Gambit",
+    "eco": "E00",
+    "moves": "1. d4 Nf6 2. c4 e6 3. g3 e5",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "catalan-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black strikes at once in the centre with 3...e5 and wants to meet 4.dxe5 with 4...Ng4, attacking the e5 pawn and using quick development. White can take and try to hold the pawn, or play Nf3 and Bg2. Strong players treat the gambit as risky for Black.",
+  "white_ideas": [
+    {
+      "idea": "Win and keep the pawn with dxe5 and Bf4 or Nf3"
+    },
+    {
+      "idea": "Develop with Nc3 and Bg2 to cover the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Win the pawn back with ...Ng4 and ...Nc6"
+    },
+    {
+      "idea": "Develop quickly with ...Bb4+ and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after dxe5, Black with a lead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gives a pawn and attacks at once, so tactics decide."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take on e5 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "Strong players doubt Black's compensation."
+    },
+    "structure": {
+      "notes": "The centre opens after dxe5."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious, so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "pawn for development",
+    "early centre strike"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4.Nf3 and 4.Bg2",
+      "moves": "1. d4 Nf6 2. c4 e6 3. g3 e5 4. Nf3",
+      "how": "White ignores the gambit and plays a quiet developing move, which Black can answer in various ways."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black gives a pawn and attacks at once, so tactics decide."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "White can take on e5 and keep the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Strong players doubt Black's compensation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The centre opens after dxe5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black wants development and activity for the pawn."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "queens-indian-defense-averbakh-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Averbakh Variation",
+    "eco": "E14",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. e3 Bb7 5. Bd3 c5 6. O-O Be7 7. b3 O-O 8. Bb2 cxd4 9. Nxd4",
+    "fen": "rn1q1rk1/pb1pbppp/1p2pn2/8/2PN4/1P1BP3/PB3PPP/RN1Q1RK1 b - - 0 9"
+  },
+  "parent": "queens-indian-defense-spassky-system",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White has traded on d4 and recaptured with the knight, with the bishops on b2 and d3 aimed at the kingside. Black has ...c5 played, a half-open c-file and a solid ...d6 or ...Nc6 build-up. Play is balanced and manoeuvring.",
+  "white_ideas": [
+    {
+      "idea": "Rc1, Qe2 and Nd2, with f4 or e4 expansion"
+    },
+    {
+      "idea": "Bishop on b2 supports pressure along the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the knight with ...Nc6 or ...d6"
+    },
+    {
+      "idea": "Use the c-file and ...Rc8 for counterplay"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Asymmetric centre with a half-open c-file for Black, White pawns on e3 and b3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither sharp nor especially hard to break: a manoeuvring fight over the c-file."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "A normal main-line Queen's Indian set-up."
+    },
+    "structure": {
+      "notes": "The d-pawn is gone, so Black has a half-open c-file in an asymmetric centre."
+    },
+    "approach": {
+      "notes": "A respectable mainstream line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans matter more than long forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "half-open c-file",
+    "bishops aimed at the kingside"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Neither sharp nor especially hard to break: a manoeuvring fight over the c-file."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A normal main-line Queen's Indian set-up."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "The d-pawn is gone, so Black has a half-open c-file in an asymmetric centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A respectable mainstream line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans matter more than long forcing lines."
+    },
+    "plans": {
+      "value": [
+        "half_open_c_file",
+        "knight_outpost"
+      ],
+      "reason": "Black presses on the c-file while White looks for outposts on d4 and f5."
+    }
+  }
+}

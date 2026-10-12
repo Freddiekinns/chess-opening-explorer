@@ -1,0 +1,105 @@
+{
+  "slug": "kings-gambit-accepted-australian-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Australian Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. h4",
+    "fen": "rnbqkbnr/pppp1p1p/8/8/2B1PppP/5N2/PPPP2P1/RNBQK2R b KQkq h3 0 5"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the King's Knight's Gambit with 3...g5 4.Bc4 g4 White plays 5.h4 and the knight on f3 is under attack. Positions are very sharp with White sacrificing material for open files. I am unsure of exact theory.",
+  "white_ideas": [
+    {
+      "idea": "Open lines against the king with Qxf3 and Bxf7+ ideas"
+    },
+    {
+      "idea": "Take back pawns on f4 and g4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the knight and hold the extra material"
+    },
+    {
+      "idea": "Counter with ...d6 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open f-file and h-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "King's Gambit sacrificial play."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives a knight/pawn for open files."
+    },
+    "soundness": {
+      "notes": "I judge it risky."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Rare branch of the King's Gambit."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forcing lines need preparation."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "King's Gambit sacrificial play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White gives a knight/pawn for open files."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "I judge it risky."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rare branch of the King's Gambit."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Forcing lines need preparation."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

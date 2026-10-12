@@ -1,0 +1,108 @@
+{
+  "slug": "colle-system-siroccopteryx-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Colle System: Siroccopteryx Variation",
+    "eco": "A40",
+    "moves": "1. d4 g6 2. Nf3 Bg7 3. e3 c5 4. Bd3 cxd4 5. Nxd4 Qa5+",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q7/3N4/3BP3/PPP2PPP/RNBQK2R w KQkq - 1 6"
+  },
+  "parent": "queens-pawn-game-modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White builds a Colle-style set-up with e3 and Bd3 against the Modern Defence. After ...c5 and ...cxd4 Nxd4 Black checks with ...Qa5+. A quiet position where the Modern bishop is on the long diagonal.",
+  "white_ideas": [
+    {
+      "idea": "Develop and castle, then c3/e4 central expansion"
+    },
+    {
+      "idea": "Meet ...Qa5+ with Nc3 or c3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play the c-file against c2/c3"
+    },
+    {
+      "idea": "Use the g7 bishop against d4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian-like structure"
+    },
+    {
+      "structure": "Black fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A quiet but double-edged line without early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Both set-ups are sound."
+    },
+    "structure": {
+      "notes": "d-pawn exchanged; half-open c-file."
+    },
+    "approach": {
+      "notes": "Colle-style set-up against the Modern."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional ideas need judgement."
+    }
+  },
+  "plan_phrases": [
+    "half open c file",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A quiet but double-edged line without early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.65,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Both set-ups are sound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "d-pawn exchanged; half-open c-file."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.65,
+      "reason": "Colle-style set-up against the Modern."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Positional ideas need judgement."
+    },
+    "plans": {
+      "value": [
+        "half_open_c_file",
+        "fianchetto"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "blumenfeld-countergambit-spielmann-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blumenfeld Countergambit: Spielmann Variation",
+    "eco": "E10",
+    "moves": "1. d4 Nf6 2. Nf3 e6 3. c4 c5 4. d5 b5 5. Bg5 exd5 6. cxd5 h6",
+    "fen": "rnbqkb1r/p2p1pp1/5n1p/1ppP2B1/8/5N2/PP2PPPP/RN1QKB1R w KQkq - 0 7"
+  },
+  "parent": "blumenfeld-countergambit-duz-khotimirsky-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Blumenfeld declined with 5.Bg5, after 5...exd5 6.cxd5 White has a space advantage with d5 against Black's c5 and b5. Black plays 6...h6 7.Bh4 g5 8.Bg3 Nxe4 (or ...Nh5) to fight for e4 and the queenside pawn roller. White uses the e4 push and the tempo on the bishops. Sharp and theoretical.",
+  "white_ideas": [
+    {
+      "idea": "Play e3, Bd3 and Nbd2 to support e4 and the d5 pawn."
+    },
+    {
+      "idea": "Hit the b5 pawn with Bxb5 or a4 ideas."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Win e4 with ...Nxe4 or ...Nh5 and the bishop pair against Bg3."
+    },
+    {
+      "idea": "Roll with ...c4, ...b4 and ...a6 on the queenside."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d5 pawn against Black c5/b5 pawn chain with White Bg3 and Black ...g5."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black advances ...g5 and ...b5 against a White space grab, and the lines are tactical."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The declined line leaves material level: no pawn is given by force."
+    },
+    "soundness": {
+      "notes": "A recognised Blumenfeld line; Black is fine in theory."
+    },
+    "structure": {
+      "notes": "Centre is tense with d5 against c5 and neither side has settled the pawn structure."
+    },
+    "approach": {
+      "notes": "The Blumenfeld is a respectable but seldom played line in master play."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Requires knowing tactics with ...g5 but not a long forcing mainline."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "queenside majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black advances ...g5 and ...b5 against a White space grab, and the lines are tactical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The declined line leaves material level: no pawn is given by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "A recognised Blumenfeld line; Black is fine in theory."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Centre is tense with d5 against c5 and neither side has settled the pawn structure."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "The Blumenfeld is a respectable but seldom played line in master play."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Requires knowing tactics with ...g5 but not a long forcing mainline."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "queenside_expansion"
+      ],
+      "reason": "White has a space edge with d5 and Black rolls pawns on the queenside."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "kings-indian-defense-six-pawns-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Six Pawns Attack",
+    "eco": "E77",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 c5 7. d5 e6 8. dxe6 fxe6 9. g4 Nc6 10. h4",
+    "fen": "r1bq1rk1/pp4bp/2nppnp1/2p5/2P1PPPP/2N5/PP2B3/R1BQK1NR b KQ - 0 10"
+  },
+  "parent": "kings-indian-defense-four-pawns-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White builds an enormous pawn front with c4, e4, f4, g4 and h4 after opening the centre by d5 and dxe6. White hopes to roll the kingside pawns and crush Black's king, while Black counters with active piece play against the e4 and f4 pawns, often ...Nd4 and ...Ng4, and the f-file. Sharp, double-edged play where one slip decides.",
+  "white_ideas": [
+    {
+      "idea": "Push g4-g5 and h4-h5 to drive the Nf6 and attack the king"
+    },
+    {
+      "idea": "Hold e4/f4 and use the space to open files"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the over-extended pawns with ...Nd4, ...Ng4 and ...Rxf4 tactics"
+    },
+    {
+      "idea": "Use the half-open f-file and the g7 bishop's long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn mass on c4/e4/f4/g4/h4 against Black's e6/c5 pawns with open d-file and f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Pawn storm against a defender who counterattacks at once."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawns are exchanged on e6 and not given up."
+    },
+    "soundness": {
+      "notes": "Theoretically playable for both sides."
+    },
+    "structure": {
+      "notes": "d-file and f-file semi-open after dxe6 fxe6."
+    },
+    "approach": {
+      "notes": "Aggressive branch of the Four Pawns Attack."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs concrete knowledge of the tactical lines."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm",
+    "space advantage",
+    "pressure on e4 and f4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "White's pawn storm and Black's counter-hits make it forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Pawns are traded rather than sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A theoretical line that both sides can play."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Centre opened by dxe6, with half-open d and f files."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised branch of the Four Pawns."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Sharp tactics where moves must be known."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "space_advantage"
+      ],
+      "reason": "White advances g and h pawns at the Black king."
+    }
+  }
+}

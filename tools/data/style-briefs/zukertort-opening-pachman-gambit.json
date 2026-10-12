@@ -1,0 +1,105 @@
+{
+  "slug": "zukertort-opening-pachman-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Pachman Gambit",
+    "eco": "A06",
+    "moves": "1. Nf3 d5 2. e3 c5 3. c4 dxc4 4. b3",
+    "fen": "rnbqkbnr/pp2pppp/8/2p5/2p5/1P2PN2/P2P1PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays Nf3, e3, c4 against the Slav-type setup ...d5, ...c5, then answers ...dxc4 with b3. If Black takes bxc4 White opens the b-file and the a-file and fianchettoes the queen's bishop. The idea is to regain the pawn with a lead in development. Rare, so I am reasoning from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with b3 and Bb2 and regain the pawn"
+    },
+    {
+      "idea": "Lead in development and pressure on the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the c4 pawn with ...b5 or accept b3 by ...cxb3"
+    },
+    {
+      "idea": "Develop and aim for ...e6 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black has pawn on c4 and c5, White fianchetto on b2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn down for activity yields real risk."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the c-pawn."
+    },
+    "soundness": {
+      "notes": "Probably playable."
+    },
+    "structure": {
+      "notes": "Semi-open as queenside lines open."
+    },
+    "approach": {
+      "notes": "Seldom seen."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not much theory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A gambit with unclear compensation."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White gives the c4 pawn for development."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Not refuted but unconvincing."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "Queenside files open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Few lines to learn."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "lead_in_development"
+      ],
+      "reason": "White uses the b2 bishop and development to regain the pawn."
+    }
+  }
+}

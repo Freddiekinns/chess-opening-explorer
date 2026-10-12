@@ -1,0 +1,103 @@
+{
+  "slug": "reti-opening-penguin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Réti Opening: Penguin Variation",
+    "eco": "A09",
+    "moves": "1. Nf3 d5 2. c4 d4 3. Rg1",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2Pp4/5N2/PP1PPPPP/RNBQKBR1 b Qkq - 1 3"
+  },
+  "parent": "reti-opening-advance-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 2...d4 White plays 3.Rg1 aiming for g4-g5 and a quick kingside pawn push, giving up castling. Black can simply develop with ...c5 and ...Nc6, or hit g4 with ...h6 and ...Nc6. It is a rare joke-like variation and I read it only from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Advance g4, g5 and h4 against the king"
+    },
+    {
+      "idea": "Fianchetto the bishop and play e3 to challenge d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop sensibly with ...c5, ...Nc6 and ...e5"
+    },
+    {
+      "idea": "Use the space on d4 and counter on the queenside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like with Black pawn on d4 and White kingside pawn advance"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White gives up castling rights, rich in risk."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Unconvincing since Black develops freely."
+    },
+    "structure": {
+      "notes": "Centre undecided after d4."
+    },
+    "approach": {
+      "notes": "Rarely played."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not a good first choice."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "An early kingside pawn storm with an unsafe king."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Losing castling rights for a pawn storm is questionable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "The pawn on d4 is attacked and the centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Strong players seldom play 3.Rg1."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious so never beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm"
+      ],
+      "reason": "White pushes the g- and h-pawns."
+    }
+  }
+}

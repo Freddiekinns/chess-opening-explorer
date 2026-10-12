@@ -1,0 +1,105 @@
+{
+  "slug": "sicilian-defense-kotov-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Kotov Gambit",
+    "eco": "B50",
+    "moves": "1. e4 c5 2. Nf3 d6 3. g3 b5",
+    "fen": "rnbqkbnr/p3pppp/3p4/1pp5/4P3/5NP1/PPPP1P1P/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "sicilian-defense-modern-variations",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 c5 2.Nf3 d6 White plays 3.g3, a fianchetto anti-Sicilian, and Black answers with the flank thrust 3...b5, aiming for ...Bb7 against e4 and queenside space. White can answer with Bg2, d3 and O-O, or a4 to undermine the b5 pawn. Rare line; I am unsure how much material is really given.",
+  "white_ideas": [
+    {
+      "idea": "Complete the fianchetto with Bg2 and d3, castle and target the b5 pawn with a4."
+    },
+    {
+      "idea": "Control e4 with d3 and Nbd2 and avoid the long diagonal weaknesses."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop ...Bb7, ...Nf6 and ...e6 and attack e4."
+    },
+    {
+      "idea": "Use the a-pawn and queenside for space; ...b4 to gain squares."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Closed-Sicilian-like set-up with White g3 and Bg2 against Black b5/c5 pawn chain."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flank play with sensible development; the b5 thrust is committal but not explosive."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Despite the name, I do not see a pawn White can force away, so I tag no gambit with low confidence."
+    },
+    "soundness": {
+      "notes": "The ...b5 thrust is playable and not obviously refuted."
+    },
+    "structure": {
+      "notes": "Sicilian asymmetric centre with a half-open file."
+    },
+    "approach": {
+      "notes": "Strong players seldom play ...b5 here; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Rare and uncommon set-up; Black's plans are not obvious."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "pressure on e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flank play with sensible development; the b5 thrust is committal but not explosive."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.45,
+      "reason": "Despite the name, I do not see a pawn White can force away, so I tag no gambit with low confidence."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "The ...b5 thrust is playable and not obviously refuted."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Sicilian asymmetric centre with a half-open file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom play ...b5 here; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Rare and uncommon set-up; Black's plans are not obvious."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "Black expands with ...b5 against a White fianchetto."
+    }
+  }
+}

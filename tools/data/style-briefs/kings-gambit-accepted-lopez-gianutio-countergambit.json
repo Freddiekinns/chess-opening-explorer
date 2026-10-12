@@ -1,0 +1,104 @@
+{
+  "slug": "kings-gambit-accepted-lopez-gianutio-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Lopez-Gianutio Countergambit, Hein Variation",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Bc4 f5 4. Qe2 Qh4+ 5. Kd1 fxe4 6. Nc3 Kd8",
+    "fen": "rnbk1bnr/pppp2pp/8/8/2B1pp1q/2N5/PPPPQ1PP/R1BK2NR w - - 2 7"
+  },
+  "parent": "kings-gambit-accepted-bishops-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "A Bishop's Gambit line where 3...f5 4.Qe2 Qh4+ 5.Kd1 fxe4 6.Nc3 Kd8 has both kings displaced. Black has two extra pawns and White has a lead in development and an open f-file. The king walks make the position hair-raising and heavily theoretical.",
+  "white_ideas": [
+    {
+      "idea": "Use the lead in development with Nxe4 and Qxe4 to attack the exposed king"
+    },
+    {
+      "idea": "Rely on Bxg8 and the f-file to open Black"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawns and trade queens where possible"
+    },
+    {
+      "idea": "Play ...Nf6 and ...d5 to consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with both kings on d1/d8 and a Black pawn on f4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings stuck in the centre and Black two pawns up for White's lead in development."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black is two pawns up and can keep them if the attack is met."
+    },
+    "soundness": {
+      "notes": "The Black king walk is considered risky and the line is thought good for White."
+    },
+    "structure": {
+      "notes": "Open position, no central pawns."
+    },
+    "approach": {
+      "notes": "A deep, rare line, seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Concrete long lines must be remembered."
+    }
+  },
+  "plan_phrases": [
+    "Sacrifice for the attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "Both kings in the centre with material imbalance."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White has given pawns that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The Black king walk is considered risky."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.9,
+      "reason": "Central pawns have gone and lines are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A long forcing line that must be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "Fast development and early queen play."
+    }
+  }
+}

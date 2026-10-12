@@ -1,0 +1,104 @@
+{
+  "slug": "bird-opening-siegener-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Siegener Gambit",
+    "eco": "A02",
+    "moves": "1. f4 e5 2. d4 exd4 3. Nf3 c5 4. c3",
+    "fen": "rnbqkbnr/pp1p1ppp/8/2p5/3p1P2/2P2N2/PP2P1PP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "bird-opening-froms-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In From's Gambit move order White plays 2.d4 exd4 3.Nf3 c5 4.c3, offering the d-pawn to open lines and develop quickly. Black takes with 4...dxc3 and accepts a sharp fight or keeps the pawn with ...Nc6. White aims for fast development with Nxc3 and Bc4 or Qb3 against f7 and the weakened diagonals. Unclear theory; reasoned from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Recapture on c3 with Nxc3, develop Bc4 and Qb3 against f7."
+    },
+    {
+      "idea": "Use f4 and Nf3 to hit e5 and g7 with rapid development."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take cxd4 and hold the extra pawn with ...Nc6 and ...d6."
+    },
+    {
+      "idea": "Counterattack with ...Qb6 and ...Nf6."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black pawns on c5 and d4 and White pieces developing against them."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White gives material for development and both kings can come under fire."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White offers the d4 pawn after 3...c5 4.c3 and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Compensation is unclear and the line is rarely played by strong players."
+    },
+    "structure": {
+      "notes": "The centre pawn trade leaves White with only f-pawn and c-pawn against Black's c5."
+    },
+    "approach": {
+      "notes": "A rare Bird gambit; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Tactical but dubious, so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open lines"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "White gives material for development and both kings can come under fire."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White offers the d4 pawn after 3...c5 4.c3 and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Compensation is unclear and the line is rarely played by strong players."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The centre pawn trade leaves White with only f-pawn and c-pawn against Black's c5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "A rare Bird gambit; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Tactical but dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White gives a pawn for time and open lines."
+    }
+  }
+}

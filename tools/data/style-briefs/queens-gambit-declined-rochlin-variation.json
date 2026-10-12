@@ -1,0 +1,102 @@
+{
+  "slug": "queens-gambit-declined-rochlin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Rochlin Variation",
+    "eco": "D51",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. Nf3 c6 6. Rc1 Qa5 7. Bd2",
+    "fen": "r1b1kb1r/pp1n1ppp/2p1pn2/q2p4/2PP4/2N2N2/PP1BPPPP/2RQKB1R b Kkq - 3 7"
+  },
+  "parent": "queens-gambit-declined-modern-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White has avoided Cambridge Springs' sharpest lines by playing 6.Rc1 and 7.Bd2 against the Qa5 pin, which makes Black's pressure on c3 less sharp. Black has solid pieces and the pawn centre on d5 and c6 and looks for ...dxc4 or ...Ne4. Play is steady.",
+  "white_ideas": [
+    {
+      "idea": "Reinforce c3 and develop with e3 and Bd3"
+    },
+    {
+      "idea": "Use the c-file and play for e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit c3 with ...Ne4 and ...dxc4"
+    },
+    {
+      "idea": "Castle and trade pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD pawn structure with Black pawns on c6, d5, e6 and a queen on a5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's Slav-like centre is hard to break down."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "A normal QGD set-up."
+    },
+    "structure": {
+      "notes": "The centre is in tension."
+    },
+    "approach": {
+      "notes": "A mainstream QGD branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Moves are natural with a few known ideas."
+    }
+  },
+  "plan_phrases": [
+    "pin on c3",
+    "c-file for White"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black's Slav-like centre is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A normal QGD set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream QGD branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Moves are natural with a few known ideas."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single plan stands out."
+    }
+  }
+}

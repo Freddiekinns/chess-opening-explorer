@@ -1,0 +1,110 @@
+{
+  "slug": "scotch-game-sea-cadet-mate",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Sea-Cadet Mate",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. c3 dxc3 5. Nxc3 d6 6. Bc4 Bg4 7. O-O Ne5 8. Nxe5 Bxd1 9. Bxf7+ Ke7 10. Nd5#",
+    "fen": "r2q1bnr/ppp1kBpp/3p4/3NN3/4P3/8/PP3PPP/R1Bb1RK1 b - - 2 10"
+  },
+  "parent": "scotch-game-goring-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "A trap in the Göring Gambit: after 6.Bc4 Bg4 7.O-O Ne5 8.Nxe5 Bxd1 9.Bxf7+ Ke7 10.Nd5# White mates with the knights and bishop. Black's 6...Bg4 and 7...Ne5 are errors; the real Göring Gambit plays 5...d6 or 5...Nf6 with an open game. The root records the trap, not a main line.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with c3 and develop fast with Bc4 and Nxc3"
+    },
+    {
+      "idea": "Exploit Black's greed with Nxe5 and Bxf7+"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on c3 and consolidate with ...Nf6 and ...d6"
+    },
+    {
+      "idea": "Avoid ...Bg4/...Ne5 allowing the mating combination"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after the d-pawn exchange, White gambit pawn on c3 returned"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quick development against a Black king that gets mated on move 10."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "In the Göring Gambit Black takes on c3 and may keep the pawn; this line is the trap."
+    },
+    "soundness": {
+      "notes": "The Göring Gambit is sound; the trap line loses for Black."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "The Göring Gambit is a respectable choice; the trap is a side line."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "A short trap, but the Göring needs known theory."
+    }
+  },
+  "plan_phrases": [
+    "Gambit for a fast attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Göring Gambit main lines",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. c3 dxc3 5. Nxc3",
+      "how": "Black develops with ...Nf6 or ...d6 and avoids the mate; open and sharp but not a forced loss."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Gambit lines and a quick mating trap."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "c3 is a pawn Black can take and keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "The Göring Gambit is playable; the trap line itself loses for Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.9,
+      "reason": "The d-pawns are exchanged and lines are open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "The Göring Gambit is respectable although less common."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A gambit with tactical lines and some theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "Quick development and Bxf7+ ideas."
+    }
+  }
+}

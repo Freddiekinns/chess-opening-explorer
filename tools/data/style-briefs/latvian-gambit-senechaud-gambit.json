@@ -1,0 +1,105 @@
+{
+  "slug": "latvian-gambit-senechaud-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Senechaud Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. b4",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/1P2P3/5N2/P1PP1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Against the Latvian 2...f5, White plays 3.b4 as a gambit, hoping for Nxe5 after ...Bxb4 or ...fxe4. Black can accept with 3...Bxb4 or play 3...fxe4 4.Nxe5. White gets a lead in development but few strong players choose it. A rare side-line, read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 with the knight and aim at f7"
+    },
+    {
+      "idea": "Use b4 to deflect Black's bishop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take b4 or strike with ...fxe4 and ...Nf6"
+    },
+    {
+      "idea": "Keep the extra pawn and complete development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre; Black has f- and e-pawns for the b4 pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides take risks and tactics arrive early."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives b4."
+    },
+    "soundness": {
+      "notes": "Dubious for White."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not suited to beginners."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "An early gambit leads to tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White offers the b-pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.45,
+      "reason": "Black can take the pawn safely."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Centre opens through exchanges."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious so never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays Nxe5 and aims at f7."
+    }
+  }
+}

@@ -43,6 +43,8 @@ function axesFor(fen) {
 /**
  * What a page shows: the shown words in the taxonomy's order (gambit first,
  * level last) and up to two plans, each with its glossary line for a tooltip.
+ * A word its neighbour already says is left off (docs/style-taxonomy.md):
+ * Offbeat beside Dubious, Lead in development on a gambit.
  * @returns {{ words: {axis, value, label, glossary}[], plans: {key, label, glossary}[] } | null}
  */
 function profileFor(fen) {
@@ -52,11 +54,15 @@ function profileFor(fen) {
   const words = [];
   for (const [axis, values] of Object.entries(labels)) {
     const shown = values[axes[axis]];
+    if (axis === 'approach' && axes.approach === 'offbeat' && axes.soundness === 'dubious') continue;
     if (shown) words.push({ axis, value: axes[axis], ...shown });
   }
+  const shownPlans = axes.plans.filter(
+    (key) => !(key === 'lead_in_development' && axes.gambit !== 'none')
+  );
   return {
     words,
-    plans: axes.plans.slice(0, PLANS_SHOWN).map((key) => ({ key, ...plans[key] })),
+    plans: shownPlans.slice(0, PLANS_SHOWN).map((key) => ({ key, ...plans[key] })),
   };
 }
 

@@ -218,4 +218,5 @@ function main() {
     console.log(`${String(inp.rank).padStart(3)}  ${inp.slug.padEnd(52)} ${inp.root.moves}`);
 }
 
-main();
+if (require.main === module) main();
+module.exports = { plies, replay };

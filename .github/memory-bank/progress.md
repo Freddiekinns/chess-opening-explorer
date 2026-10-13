@@ -6,7 +6,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 - **2026-10-12**: style tags tail finished (waves 5–12, 568 more); 1,411 tagged,
   every variation outside the 14 hubs. Gambit search keeps named gambits.
-- **2026-10-11**: analytics read-out, four gap events, soft-404 pre-render fix.
+- **2026-10-11**: analytics read-out, four gap events, soft-404 pre-render fix;
+  frontend coverage gate (#166 half): Vitest counts every file, CI 80/80/80/72.
 - **2026-10-10 (#171–#173)**: the 43 description claims the briefs marked wrong
   fixed; E2E 9/9 green and in CI (**Test E2E**); search intent misreads ("solid
   response to e4", "for white", "advanced sicilian defence"); dead category
@@ -92,9 +93,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   then V4-V6. Unused: Jev's video families (`docs/backlog.md` → Enablers).
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.
-- **Search returns near-duplicate names**: four identical "najdorf" rows
-  separated only by ECO — a data problem.
-- **Toasts need one host** (two within 4s cover an Undo), and **#166 —
-  Coverage** wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
+- **Search near-duplicates**: four identical "najdorf" rows, ECO apart (data).
+- **Toasts need one host** (two within 4s cover an Undo), and **#166 — backend**
+  wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
 - **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
   dedupe. See `archive.md`.

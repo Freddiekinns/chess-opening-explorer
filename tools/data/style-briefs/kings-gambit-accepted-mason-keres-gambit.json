@@ -1,0 +1,119 @@
+{
+  "slug": "kings-gambit-accepted-mason-keres-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Mason-Keres Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nc3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/2N5/PPPP2PP/R1BQKBNR b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White offers a second pawn idea with 3.Nc3 instead of 3.Nf3, aiming for e5 and quick development. The most played reply is 3...Qh4+ (Requena Gambit) where White has to move the king or block with g3 after 4.Ke2, a line strong players distrust. Black can also play 3...Nf6 4.e5 and grab the f4 pawn. White gets open lines in exchange for a king exposed on e2 or a pawn deficit.",
+  "white_ideas": [
+    {
+      "idea": "Lead in development with Nc3, Nf3 and quick castling or Ke2 support"
+    },
+    {
+      "idea": "Recover the pawn via d4 and Bxf4 while keeping e5 pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take with ...Qh4+ and drive the king off the castling squares"
+    },
+    {
+      "idea": "Hold the extra pawn with ...g5 or ...Bd6 and return it if needed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game with f4 pawn won by Black"
+    },
+    {
+      "structure": "White king on e2 after 3...Qh4+ 4.Ke2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Qh4+ line forces White to find precise moves; both sides take real risks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the f-pawn in the usual King's Gambit manner and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Considered inferior to 3.Nf3; the king walk after Qh4+ is doubtful but not clearly refuted."
+    },
+    "structure": {
+      "notes": "Centre opens quickly with e4 pawn under pressure."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose 3.Nc3; it is mainly a surprise weapon."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs concrete knowledge after 3...Qh4+ and care with the exposed king."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack with open lines"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Nowokunski Gambit (Van Geet)",
+      "moves": "1. Nc3 e5 2. f4 exf4 3. e4",
+      "how": "Reaches the same position by a different move order."
+    },
+    {
+      "name": "Requena Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nc3 Qh4+",
+      "how": "Black checks at once; this is the sharpest reply and the most played."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Early Qh4+ and exposed kings; both sides risk a fast loss."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives the f-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Judged inferior to 3.Nf3 with a risky king walk, though not refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Open lines for the pieces from the start."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not for beginners; concrete tactics matter."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Gambit play for initiative and attack."
+    }
+  }
+}

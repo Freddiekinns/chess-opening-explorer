@@ -1,0 +1,117 @@
+{
+  "slug": "blumenfeld-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blumenfeld Countergambit",
+    "eco": "E10",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 b5",
+    "fen": "rnbqkb1r/p2p1ppp/4pn2/1ppP4/2P5/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 5"
+  },
+  "parent": "indian-defense-anti-nimzo-indian",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black answers 4.d5 with ...b5, offering a pawn to build a large pawn centre. After 5.dxe6 fxe6 6.cxb5 d5 Black has e6/d5 pawns and play on the f-file, while White tries to keep the extra pawn or the Rubinstein 5.e4 line. Black plays for the centre and development rather than quick material.",
+  "white_ideas": [
+    {
+      "idea": "Accept the pawn and consolidate with dxe6 and cxb5"
+    },
+    {
+      "idea": "Keep the extra pawn and aim for a quiet development with g3 and Bg2"
+    },
+    {
+      "idea": "Play the Rubinstein 5.e4 to keep d5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Build the e6/d5 centre after ...fxe6 and ...d5"
+    },
+    {
+      "idea": "Use the open f-file and bishop on b7 for pressure"
+    },
+    {
+      "idea": "Regain the pawn with ...a6 or ...Bb7 pressure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on e6 and d5 with White queenside pawn majority"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A countergambit that gives away a pawn for centre control and piece activity; both sides take risks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "A pawn is offered that the opponent can keep."
+    },
+    "soundness": {
+      "notes": "Reputable and sound in practice, played by strong players now and then."
+    },
+    "structure": {
+      "notes": "Black gets a central duo with the f-file open; asymmetrical centre."
+    },
+    "approach": {
+      "notes": "Respectable but not a main choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The pawn centre plans have to be handled well."
+    }
+  },
+  "plan_phrases": [
+    "central pawn centre",
+    "regain the pawn with piece pressure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Rubinstein Variation",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 b5 5. e4",
+      "how": "White keeps d5 and a centre instead of dxe6."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "A pawn-offering countergambit with unbalanced play."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black offers the b5 pawn for the centre and can be kept."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Playable at club and strong levels."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Asymmetric centre with the open f-file for Black."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Reputable if rare, not a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are clear but pawn-centre handling takes experience."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority",
+        "lead_in_development"
+      ],
+      "reason": "Black builds a centre and activity for the pawn."
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "slug": "dutch-defense-manhattan-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Manhattan Gambit, Anti-Classical Line",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. Qd3 e6 3. g4",
+    "fen": "rnbqkbnr/pppp2pp/4p3/5p2/3P2P1/3Q4/PPP1PP1P/RNB1KBNR b KQkq - 0 3"
+  },
+  "parent": "dutch-defense-alapin-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 2.Qd3 and meets the Dutch with 3.g4 whichever way Black replies. After 2...e6 3.g4 fxg4 Black has a pawn and White gets Qg3 and the open g-file, plus ideas around e5 and a quick Bg5. It is a trappy attacking idea that holds up poorly against calm play.",
+  "white_ideas": [
+    {
+      "idea": "Offer g4 and open the g-file"
+    },
+    {
+      "idea": "Bring the queen to g3 with Qg3 and Bg5"
+    },
+    {
+      "idea": "Attack the kingside with h3 and Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on g4 and return the pawn at a good moment"
+    },
+    {
+      "idea": "Challenge the queen and the centre with ...d5 or ...Nf6"
+    },
+    {
+      "idea": "Build a solid centre with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White queen on d3 with g-pawn thrown forward"
+    },
+    {
+      "structure": "Open g-file towards a castled king"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Manhattan is a trappy gambit that can win quickly if Black errs."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can take on g4 and keep the pawn with ...Nf6 and ...d5."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Pieces and open g-file matter."
+    },
+    "approach": {
+      "notes": "Rare among strong players; mainly a surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The attack is simple but it is a dubious line."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "pawn storm"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Anti-Stonewall",
+      "moves": "1. d4 f5 2. Qd3 d5 3. g4",
+      "how": "Same g4 idea against ...d5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "White throws the g-pawn forward early so one error can lose fast."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White offers the g4 pawn for attacking chances."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.75,
+      "reason": "The attack runs out of steam against sensible defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The g-file opens and the centre is fluid."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Dubious lines cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "pawn_storm"
+      ],
+      "reason": "The g4 break aims at the kingside."
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "scotch-game-romanishin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Romanishin Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Nb3 Bb4+",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/8/1b2P3/1N6/PPP2PPP/RNBQKB1R w KQkq - 3 6"
+  },
+  "parent": "scotch-game-potter-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Potter Scotch Black checks with 5...Bb4+ instead of the main 5...Bb6. White blocks with 6.c3 and Black retreats with ...Ba5 or ...Bd6 while White builds with Nc3, Bd3 and O-O. White has space and the centre, Black has played the bishop three times and relies on solid development. I am not sure of the main line.",
+  "white_ideas": [
+    {
+      "idea": "Block the check and keep the centre with c3, Bd3, O-O"
+    },
+    {
+      "idea": "Use space and the pawn on e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Retreat the bishop to a5 or d6 and play ...d6 or ...d5"
+    },
+    {
+      "idea": "Develop with ...Nf6 and ...O-O"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/c3 centre against bishop on a5 or d6"
+    },
+    {
+      "structure": "Open-ish Scotch lines with minor pieces"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring after the check with limited forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level and nothing is attacked yet."
+    },
+    "soundness": {
+      "notes": "A sound sideline for both."
+    },
+    "structure": {
+      "notes": "The centre is partly open after the d-pawn trade."
+    },
+    "approach": {
+      "notes": "A minor Scotch branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little forcing theory."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    {
+      "name": "Main Potter line",
+      "moves": "5...Bb6",
+      "how": "The usual move; this variation is a sideline"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet development with no forcing sequences."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "No refutation for either side."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The d-pawn trade leaves a partly open centre typical of the Scotch."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A minor but respectable branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "No heavy theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "The evidence does not name a clear plan."
+    }
+  }
+}

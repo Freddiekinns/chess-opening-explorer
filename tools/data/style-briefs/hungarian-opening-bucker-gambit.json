@@ -1,0 +1,105 @@
+{
+  "slug": "hungarian-opening-bucker-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Bücker Gambit",
+    "eco": "A00",
+    "moves": "1. g3 d5 2. Bg2 e5 3. b4",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/1P6/6P1/P1PPPPBP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White offers the b-pawn with 3.b4 after 1.g3 d5 2.Bg2 e5, aiming for Bb2 and pressure on e5 and d5 along the long diagonals. If Black takes with 3...Bxb4 White has a lead in development and diagonal pressure but is a pawn down; Black can also reply 3...e4 or 3...a5. A rare and risky surprise line.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bb2 and Nf3 to hit e5"
+    },
+    {
+      "idea": "Use Bg2 pressure on d5 and open lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn with ...Bxb4 and trade pieces"
+    },
+    {
+      "idea": "Support the centre with ...c6, ...Nf6 and ...e4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Pawn centre d5/e5 for Black against White queenside pawn thrust"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices a pawn for diagonal pressure, and the play gets tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the b4 pawn."
+    },
+    "soundness": {
+      "notes": "Considered an unsound surprise by most strong players."
+    },
+    "structure": {
+      "notes": "The centre is open on the long diagonals and central pawns stay in contact."
+    },
+    "approach": {
+      "notes": "Few strong players use it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "It is Dubious, so not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Pawn for diagonal pressure",
+    "Fianchetto battery"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "A pawn sacrifice early for long-diagonal pressure."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the b-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can take the pawn and hold it, so White has little to show."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.35,
+      "reason": "Long diagonals and an open centre dominate; the d5/e5 pawns are in contact."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom played at a high level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so never Beginner; some trap knowledge."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "White's fianchettoed bishops aim down both long diagonals."
+    }
+  }
+}

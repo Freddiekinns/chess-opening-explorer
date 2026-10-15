@@ -1,0 +1,110 @@
+{
+  "slug": "modern-defense-masur-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Masur Gambit",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Nh6 3. Nc3 f5 4. Bxh6 Bxh6 5. exf5 O-O",
+    "fen": "rnbq1rk1/ppppp2p/6pb/5P2/3P4/2N5/PPP2PPP/R2QKBNR w KQ - 1 6"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays ...Nh6 and ...f5 against 2.d4, and after Bxh6 Bxh6 exf5 O-O gives a pawn for quick development and the h6 bishop eyeing d2/c1. White has the extra pawn and the choice of d5 or Nf3/Qd2 to blunt the bishop. Black's compensation is thin and strong players do not rate the gambit.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn with Qd2 or Nge2 and neutralise the h6 bishop"
+    },
+    {
+      "idea": "Develop calmly and return the pawn only if needed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the lead in development and the open f-file for pressure"
+    },
+    {
+      "idea": "Trade the dark bishops and hit the d4 centre with ...d5 or ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White up a pawn with a healthy e-pawn gone from the centre; Black has open f-file and bishop on h6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black needs to create threats to justify the pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the f-pawn; White can keep it."
+    },
+    "soundness": {
+      "notes": "Considered dubious by strong players."
+    },
+    "structure": {
+      "notes": "Centre half open after exf5."
+    },
+    "approach": {
+      "notes": "Rarely played at strong level."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so never beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "gambit for the f-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Declined",
+      "moves": "1. e4 g6 2. d4 Nh6 3. Nc3 f5 4. Bxh6",
+      "how": "If White avoids exf5 the gambit is not accepted"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A gambit with early forcing play and risks for Black."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives the f-pawn for development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The pawn is not fully compensated."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "e-pawns gone, open f-file for Black."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose this gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious, so not beginner; little theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for quick development."
+    }
+  }
+}

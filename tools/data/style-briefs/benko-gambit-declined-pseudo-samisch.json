@@ -1,0 +1,111 @@
+{
+  "slug": "benko-gambit-declined-pseudo-samisch",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Declined: Pseudo-Sämisch",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. f3",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/5P2/PP2P1PP/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "benko-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White declines the Benko with 4.f3, a Samisch-style move that prepares e4 and supports the c4 pawn. Black can take with 4...bxc4 and meet 5.e4 with ...d6 or ...e6, or play 4...e6 first. White gets a big centre and Black counterplay on the queenside files.",
+  "white_ideas": [
+    {
+      "idea": "Build e4 with f3 and Nc3"
+    },
+    {
+      "idea": "Hold the d5 pawn and the centre"
+    },
+    {
+      "idea": "Meet ...bxc4 by recapturing or cramping Black"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the b-file with ...bxc4 or ...a6"
+    },
+    {
+      "idea": "Undermine the centre with ...e6 or ...d6"
+    },
+    {
+      "idea": "Use the fianchettoed bishop on b7 against d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like d5 pawn against Black's queenside majority"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides have clear plans: White's centre against Black's queenside play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing sacrificed at the root: White declines and 4.f3 only protects."
+    },
+    "soundness": {
+      "notes": "Natural moves for both; no known refutation."
+    },
+    "structure": {
+      "notes": "d5 pawn fixed and c5/b5 tension, a half-open b-file likely."
+    },
+    "approach": {
+      "notes": "Rare sideline; strong players seldom play 4.f3 against the Benko."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but the pawn structure takes understanding."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Central pawn majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither side is forced into sharp play, and neither is especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "White declines the pawn so no material changes hands at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "4.f3 is a playable if unambitious way to avoid the gambit."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The d5 pawn is fixed and Black presses on the half-open b-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.45,
+      "reason": "Uncommon but a normal decline, not a surprise-only choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans are readable but the Benoni-type structure needs some knowledge."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "central_pawn_majority"
+      ],
+      "reason": "White's e4 and d5 give space and a centre."
+    }
+  }
+}

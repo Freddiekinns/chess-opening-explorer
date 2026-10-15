@@ -1,0 +1,103 @@
+{
+  "slug": "queens-indian-defense-yates-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Yates Variation",
+    "eco": "E16",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 a5 5. g3 b6 6. Bg2 Bb7",
+    "fen": "rn1qk2r/1bpp1ppp/1p2pn2/p7/1bPP4/5NP1/PP1BPPBP/RN1QK2R w KQkq - 2 7"
+  },
+  "parent": "bogo-indian-defense-wade-smyslov-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "This is a Bogo-Indian move order with 3...Bb4+ 4.Bd2 a5, followed by ...b6 and ...Bb7, reaching a Queen's Indian set-up with White's fianchetto. White castles and develops with Nc3, while Black prepares ...Bxd2 or ...O-O. Play is positional and slow.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto on g2 and castle"
+    },
+    {
+      "idea": "Use the bishop pair if Black gives up the dark bishop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto on b7 and hold e4 with ...d6 or ...d5"
+    },
+    {
+      "idea": "Trade the dark bishop or retreat to e7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Indian with pawns on c4/d4 against ...e6/...b6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring with few forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Respected mainstream move order."
+    },
+    "structure": {
+      "notes": "Centre tension is maintained."
+    },
+    "approach": {
+      "notes": "Normal Indian set-up."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are positional."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Black's position is hard to break and play is steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Mainstream line for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "It is a normal Indian line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional plans need understanding."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both sides fianchetto."
+    }
+  }
+}

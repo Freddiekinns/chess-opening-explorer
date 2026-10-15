@@ -1,0 +1,105 @@
+{
+  "slug": "vienna-game-pierce-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Pierce Gambit, Rushmere Attack",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 g5 5. d4 g4 6. Bc4 gxf3 7. O-O d5 8. exd5 Bg4 9. dxc6",
+    "fen": "r2qkbnr/ppp2p1p/2P5/8/2BP1pb1/2N2p2/PPP3PP/R1BQ1RK1 b kq - 0 9"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense-pierce-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "The Pierce Gambit, Vienna f4 line with ...g5, 5.d4 g4 6.Bc4 gxf3 7.O-O d5 8.exd5 Bg4 9.dxc6. White has given a knight and pawns for an attack on the open king and Black has extra material but a scattered kingside. Black must defend accurately after 9.dxc6; the line is wildly tactical and heavy on memory.",
+  "white_ideas": [
+    {
+      "idea": "Play dxc6 and Qxd1/Qxf3 ideas to open Black's king"
+    },
+    {
+      "idea": "Use the bishop on c4 and the open f-file to attack f7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Return material, develop and take the king to safety"
+    },
+    {
+      "idea": "Trade queens to cut off White's initiative"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with Black king in the centre and a pawn on f3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A tactical melee with a piece and pawns sacrificed by White on open lines."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black is a knight and pawns up and can keep them if the attack is met."
+    },
+    "soundness": {
+      "notes": "Considered unsound at high level; White's attack is usually repelled with correct defence."
+    },
+    "structure": {
+      "notes": "Open files for both sides, a Black pawn on f3."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose the Pierce Gambit, though it scores in club play."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines must be known on both sides."
+    }
+  },
+  "plan_phrases": [
+    "Sacrifice for the attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "A piece and pawns sacrificed for a mating attack on open lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.95,
+      "reason": "White sacrifices material that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "The attack is thought to fail against accurate defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Central pawns have gone and lines are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A long forcing line on both sides."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "A speed attack against Black's king."
+    }
+  }
+}

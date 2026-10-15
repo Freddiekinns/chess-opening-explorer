@@ -1,0 +1,111 @@
+{
+  "slug": "sicilian-defense-grob-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Grob Variation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. g4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P1P1/8/PPPP1P1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "White plays 2.g4 on move two, offering a pawn for kingside space and a quick attack. Black usually plays 2...d5 3.exd5 Qxd5 and develops with ...Nf6 while keeping the extra pawn. It is a speculative surprise weapon that is unsound against accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Bg2 and quick development"
+    },
+    {
+      "idea": "g5 and h4 kingside advance"
+    },
+    {
+      "idea": "Attack the dark squares near Black's king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...d5 to punish the advance"
+    },
+    {
+      "idea": "Take the pawn with ...Qxg2 or ...Bxg4"
+    },
+    {
+      "idea": "Develop with ...Nc6 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian pawn structure with White's kingside weakened"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Aggressive pawn pushes and a weakened White king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "g4 can be taken after 2...d5 and Black keeps a pawn."
+    },
+    "soundness": {
+      "notes": "Considered unsound by strong players."
+    },
+    "structure": {
+      "notes": "Sicilian ...c5 against e4: asymmetric."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious, so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Kingside space grab",
+    "Pawn for initiative"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "An early wing pawn offer leads to open, double-edged play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "Black can win the g4 pawn and keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "Strong players consider 2.g4 unsound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "A Sicilian-type asymmetric structure, though the centre opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Almost never chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White tries to use development and kingside pawns."
+    }
+  }
+}

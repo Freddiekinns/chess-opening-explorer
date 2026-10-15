@@ -1,0 +1,116 @@
+{
+  "slug": "kings-gambit-accepted-double-muzio-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Double Muzio Gambit, Bello Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. O-O gxf3 6. Qxf3 Qf6 7. Nc3",
+    "fen": "rnb1kbnr/pppp1p1p/5q2/8/2B1Pp2/2N2Q2/PPPP2PP/R1B2RK1 b kq - 2 7"
+  },
+  "parent": "kings-gambit-accepted-muzio-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White sacrifices a knight and a pawn with 5.O-O gxf3 6.Qxf3 Qf6, then 7.e5 Qxe5 8.Bxf7+ in the Double Muzio proper, or 7.Nc3 in the Bello Gambit here, hoping for an attack down the open f- and e-files. Black has an extra piece and must defend accurately. The play is razor sharp with both kings exposed.",
+  "white_ideas": [
+    {
+      "idea": "Attack f7 with Bc4 and Qf3"
+    },
+    {
+      "idea": "Open lines with e5 and Nd5"
+    },
+    {
+      "idea": "Use the open f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the material and get the king safe"
+    },
+    {
+      "idea": "Trade queens with ...Qf6"
+    },
+    {
+      "idea": "Block with ...Ne7 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with White pieces massed against the black king"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Heavily forcing sacrifices."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the piece and pawn in the main line."
+    },
+    "soundness": {
+      "notes": "Considered unsound at a high level."
+    },
+    "structure": {
+      "notes": "Open files and diagonals."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines to know."
+    }
+  },
+  "plan_phrases": [
+    "Attack on f7 and the open files"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Double Muzio Gambit",
+      "moves": "7. e5 Qxe5 8. Bxf7+",
+      "how": "A different White idea where the attack comes immediately and is the more usual continuation."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "A piece sacrifice with both kings exposed."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives a piece and pawn that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The Double Muzio is considered unsound against best play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "Files and diagonals are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose the Muzio."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Long forcing lines that must be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays for the attack on f7."
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "sicilian-defense-amazon-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Amazon Attack",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. Qg4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P1Q1/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "2.Qg4 brings the queen out at once, eyeing g7 and the c8-h3 diagonal. Black plays ...Nf6 or ...d5 with tempo, developing quickly while White spends time defending the queen. White gets little for the early queen sortie.",
+  "white_ideas": [
+    {
+      "idea": "Hit g7 and prepare Nf3, d4"
+    },
+    {
+      "idea": "Harass with Qg4 and c3"
+    },
+    {
+      "idea": "Retreat to g3 or h4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with tempo with ...Nf6 and ...d5"
+    },
+    {
+      "idea": "Play ...g6 and ...Bg7"
+    },
+    {
+      "idea": "Open the position for the pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White queen exposed"
+    },
+    {
+      "structure": "Black has easy development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early queen sortie that gains little."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level; g7 is defended by the bishop."
+    },
+    "soundness": {
+      "notes": "Dubious for White."
+    },
+    "structure": {
+      "notes": "Standard Sicilian half-open c-file."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not worth learning."
+    }
+  },
+  "plan_phrases": [
+    "Early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "A one-off queen sortie that is easy for Black to meet."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level and g7 is defended."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.6,
+      "reason": "The early queen loses time against natural development.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "A Sicilian structure with the c-file half-open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players hardly ever play 2.Qg4."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The whole idea is the early queen sortie."
+    }
+  }
+}

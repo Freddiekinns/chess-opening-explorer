@@ -1,0 +1,107 @@
+{
+  "slug": "english-opening-achilles-omega-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Achilles-Omega Gambit",
+    "eco": "A10",
+    "moves": "1. c4 Nf6 2. e4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/2P1P3/8/PP1P1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "english-opening-anglo-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.c4 Nf6 White plays 2.e4, offering the e4 pawn to Black's knight with ...Nxe4. White hopes for a big centre with d3 and rapid development, but Black keeps an extra pawn. I am unsure of the details and of what the main line is.",
+  "white_ideas": [
+    {
+      "idea": "Regain the pawn with Qa4+ or Nc3"
+    },
+    {
+      "idea": "Quick development and central play with d3"
+    },
+    {
+      "idea": "Exploit the knight's exposed position on e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take with ...Nxe4 and hold the pawn"
+    },
+    {
+      "idea": "Develop with ...e6 and ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, White a pawn down with a development lead"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Gambit with open play and risk."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "e4 pawn can be taken by ...Nxe4."
+    },
+    "soundness": {
+      "notes": "Speculative, Black is probably fine."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Almost never seen at strong level."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Speculative and dubious, not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "Pawn offer for development",
+    "Big centre with d3"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A gambit with open play and unclear compensation."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "White offers e4 and Black can keep it with ...Nxe4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Probably gives White little for the pawn against accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Lines open after ...Nxe4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players seldom play an early 2.e4 gambit like this."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White gives a pawn for time."
+    }
+  }
+}

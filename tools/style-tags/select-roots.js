@@ -35,7 +35,12 @@ function arg(name, fallback) {
   return i > -1 ? process.argv[i + 1] : fallback;
 }
 
-const plies = (moves) => moves.split(' ').filter((t) => !/^\d+\.$/.test(t));
+/** SAN tokens of a move list, whichever source wrote it ("1. e4  e5", "1.e4", "3...Qf6"). */
+const plies = (moves) =>
+  moves
+    .split(/\s+/)
+    .map((t) => t.replace(/^\d+\.+/, ''))
+    .filter(Boolean);
 
 function variationKey(name) {
   const [family, rest = ''] = name.split(/:\s*/);
@@ -218,4 +223,5 @@ function main() {
     console.log(`${String(inp.rank).padStart(3)}  ${inp.slug.padEnd(52)} ${inp.root.moves}`);
 }
 
-main();
+if (require.main === module) main();
+module.exports = { plies, replay };

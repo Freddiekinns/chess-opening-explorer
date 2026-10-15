@@ -1,0 +1,113 @@
+{
+  "slug": "van-geet-opening-myers-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Myers Attack",
+    "eco": "A00",
+    "moves": "1. Nc3 g6 2. h4",
+    "fen": "rnbqkbnr/pppppp1p/6p1/8/7P/2N5/PPPPPPP1/R1BQKBNR b KQkq - 0 2"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 2.h4 against the fianchetto, planning h5 to open the h-file against ...g6. Black can meet it calmly with ...Bg7 and ...d6 or ...h5 to stop the pawn. No material is given and White keeps a flexible set-up.",
+  "white_ideas": [
+    {
+      "idea": "Push h5 to break the g6 pawn and open the h-file"
+    },
+    {
+      "idea": "Develop Nf3, e4 and Be3 while Black spends tempi"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Stop the h-pawn with ...h5 and then play ...Bg7"
+    },
+    {
+      "idea": "Counter in the centre with ...d5 or ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flank pawn storm against a fianchetto"
+    },
+    {
+      "structure": "Flexible centre with e4 or d4 still open"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A wing pawn lunge at move two, with both kings likely to face concrete threats."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered; 2.h4 is a pawn advance only."
+    },
+    "soundness": {
+      "notes": "The h-pawn push is committal and most strong players think Black is fine."
+    },
+    "structure": {
+      "notes": "The centre is undecided at this early stage."
+    },
+    "approach": {
+      "notes": "Strong players hardly choose 1.Nc3 and 2.h4 against ...g6."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a repertoire line players learn first."
+    }
+  },
+  "plan_phrases": [
+    "Pawn storm on the kingside"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2...h5",
+      "moves": "1. Nc3 g6 2. h4 h5",
+      "how": "Black blocks the h-pawn and White has to find a plan with Bg5 or e4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A wing pawn advance on move two commits both kings to risk."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The h4 push is considered over-ambitious but not clearly bad."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre has not been decided yet."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever choose 1.Nc3 and 2.h4 against ...g6."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.65,
+      "reason": "A dubious flank pawn push is not Beginner and has no heavy theory."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "The h-pawn is the whole idea of the line."
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "grunfeld-defense-botvinnik-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Botvinnik Variation",
+    "eco": "D95",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. e3 O-O 6. Qb3 e6",
+    "fen": "rnbq1rk1/ppp2pbp/4pnp1/3p4/2PP4/1QN1PN2/PP3PPP/R1B1KB1R w KQ - 0 7"
+  },
+  "parent": "grunfeld-defense-three-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "A Grünfeld move order where White plays e3 and Qb3, and Black avoids ...dxc4 with ...e6. The result is a QGD-like structure with Black's bishop on g7, and White usually plays Bd2 and Rc1 in a slow game.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bd2, Rc1 and Be2 and keep the c4/d4 centre"
+    },
+    {
+      "idea": "Look for queenside space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete development with ...Nbd7, ...c6 or ...c5"
+    },
+    {
+      "idea": "Break with ...c5 or ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD-like centre with fianchettoed bishop for Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, manoeuvring play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Tense c4/d4 centre vs d5/e6."
+    },
+    "approach": {
+      "notes": "Seldom seen but respectable."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black's ...e6 set-up is compact and steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A slow, sound set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A rarer Grünfeld sideline but played by strong players now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are positional with little to memorise."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Black's bishop sits on g7."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "three-knights-opening-steinitz-rosenthal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Three Knights Opening: Steinitz-Rosenthal Variation",
+    "eco": "C46",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 g6 4. d4 exd4 5. Nd5",
+    "fen": "r1bqkbnr/pppp1p1p/2n3p1/3N4/3pP3/5N2/PPP2PPP/R1BQKB1R b KQkq - 1 5"
+  },
+  "parent": "three-knights-opening-steinitz-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3...g6 4.d4 exd4 White plays 5.Nd5, putting the knight on the outpost and threatening Nxc7+. Black can play ...Bg7 and ...d6 or ...Nxe4, and White regains d4. The play is open and tactical but not heavily theoretical.",
+  "white_ideas": [
+    {
+      "idea": "Use the Nd5 outpost and regain d4 with Nxd4"
+    },
+    {
+      "idea": "Develop Bc4 and O-O"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto with ...Bg7 and ...d6"
+    },
+    {
+      "idea": "Counter with ...Nxe4 or ...Nxd5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4 exchanges, Black kingside fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open play with tactics around d5 and c7 but not extreme."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black's pawn on d4 is regained by Nxd4."
+    },
+    "soundness": {
+      "notes": "Playable for both sides."
+    },
+    "structure": {
+      "notes": "Central pawns are traded."
+    },
+    "approach": {
+      "notes": "Mainstream choice of Open Game."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Moderate theory."
+    }
+  },
+  "plan_phrases": [
+    "knight outpost",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Open tactical game that is neither especially solid nor forced."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "White regains d4 so no pawn is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A normal playable variation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e- and d-pawns come off and lines open for the pieces."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A respectable Three Knights line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Some tactics and plans to learn."
+    },
+    "plans": {
+      "value": [
+        "knight_outpost",
+        "fianchetto"
+      ],
+      "reason": "White's knight settles on d5 and Black develops a kingside fianchetto."
+    }
+  }
+}

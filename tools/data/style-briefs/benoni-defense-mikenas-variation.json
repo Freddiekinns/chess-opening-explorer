@@ -1,0 +1,114 @@
+{
+  "slug": "benoni-defense-mikenas-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Mikenas Variation",
+    "eco": "A66",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. f4 Bg7 8. e5",
+    "fen": "rnbqk2r/pp3pbp/3p1np1/2pPP3/5P2/2N5/PP4PP/R1BQKBNR b KQkq - 0 8"
+  },
+  "parent": "benoni-defense-pawn-storm-variation",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "In the Four Pawns Attack White plays 8.e5, charging the centre. Black meets it with 8...dxe5 9.fxe5 Nfd7 or 8...Nfd7 9.Nb5, and the position becomes sharp with big tactics on d6, e6 and f7. Both sides need to know the forcing lines.",
+  "white_ideas": [
+    {
+      "idea": "Break with e5 and e6 to attack f7"
+    },
+    {
+      "idea": "Use Nb5-d6+ to disrupt the position"
+    },
+    {
+      "idea": "Play for a direct attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e5 and win material or defend precisely"
+    },
+    {
+      "idea": "Counter on the long diagonal with ...Bg7"
+    },
+    {
+      "idea": "Exploit White's overextension"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Four Pawns centre with c4, d5, e5, f4"
+    },
+    {
+      "structure": "Black d-file and bishop g7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A highly forcing and theoretical line."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level in the main line since the e-pawn is recaptured."
+    },
+    "soundness": {
+      "notes": "Sound and heavily analysed."
+    },
+    "structure": {
+      "notes": "A sharp central break in an asymmetric centre."
+    },
+    "approach": {
+      "notes": "Standard main-line theory."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Heavily analysed forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "Kingside attack",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.92,
+      "reason": "White pushes in the centre and both sides face forcing tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Material is level in the main lines as the e5 pawn is recaptured."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.85,
+      "reason": "Heavily analysed, and both sides have a path.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "An asymmetric Benoni centre with the e-file opening."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream line."
+    },
+    "level": {
+      "value": "advanced",
+      "confidence": 0.85,
+      "reason": "The forcing lines must be known.",
+      "why": "memory"
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "kingside_attack"
+      ],
+      "reason": "White uses the pawn mass to attack f7 and the kingside."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "scotch-game-vitzthum-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Vitzthum Attack",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. Ng5 Nh6 6. Qh5",
+    "fen": "r1bqk2r/pppp1ppp/2n4n/2b3NQ/2BpP3/8/PPP2PPP/RNB1K2R b KQkq - 5 6"
+  },
+  "parent": "scotch-game-scotch-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White develops the queen to h5 with threats on f7 after Black has played ...Nh6. White is a pawn down and plays for a quick attack on f7, while Black needs accurate defence. It is a sharp open line that is considered dubious.",
+  "white_ideas": [
+    {
+      "idea": "Attack f7 with Bc4, Ng5 and Qh5"
+    },
+    {
+      "idea": "Develop quickly before Black consolidates"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend f7 and play ...Qe7 or ...O-O"
+    },
+    {
+      "idea": "Keep the extra pawn and trade attackers"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with White queen and pieces aimed at f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White queen attack."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White has not recaptured on d4."
+    },
+    "soundness": {
+      "notes": "White's early queen attack is unsound with best play."
+    },
+    "structure": {
+      "notes": "Open lines everywhere."
+    },
+    "approach": {
+      "notes": "Rarely seen."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Tactics need to be known."
+    }
+  },
+  "plan_phrases": [
+    "attack on f7",
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "White queen attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White has not recaptured on d4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "White's early queen attack is unsound with best play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Open lines everywhere."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Rarely seen."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Tactics need to be known."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Clear attack on f7."
+    }
+  }
+}

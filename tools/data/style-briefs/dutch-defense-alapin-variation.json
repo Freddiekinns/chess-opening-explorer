@@ -1,0 +1,109 @@
+{
+  "slug": "dutch-defense-alapin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Alapin Variation",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. Qd3",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/3Q4/PPP1PPPP/RNB1KBNR b KQkq - 1 2"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 2.Qd3 against the Dutch, intending Nf3, e4 and an early queen manoeuvre. Black responds with ...Nf6 and ...e6 or meets the Pretzel Gambit 3.g4. The line is an irregular surprise rather than a main answer.",
+  "white_ideas": [
+    {
+      "idea": "Prepare e4 or g4 with the queen on d3"
+    },
+    {
+      "idea": "Develop with Nc3 and Bf4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Take over e4 with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch pawns against d4/e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Irregular play with few forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Playable but unusual."
+    },
+    "structure": {
+      "notes": "Centre flexible."
+    },
+    "approach": {
+      "notes": "Surprise weapon."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are simple."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Pretzel Gambit",
+      "moves": "1. d4 f5 2. Qd3 Nf6 3. g4",
+      "how": "A gambit sideline, not the main line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Neither solid nor forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The main line gives no material."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Playable though unusual."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "Few theory demands."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The queen develops early."
+    }
+  }
+}

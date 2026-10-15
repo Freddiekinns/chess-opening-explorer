@@ -1,0 +1,107 @@
+{
+  "slug": "ruy-lopez-birds-defense-deferred",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Bird's Defense Deferred",
+    "eco": "C70",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nd4",
+    "fen": "r1bqkbnr/1ppp1ppp/p7/4p3/B2nP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5"
+  },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 4...Nd4 after the Morphy Defence, and after 5.Nxd4 exd4 6.O-O Bc5 gets a space-gaining pawn on d4 at the cost of a weakened centre. White usually plays c3 or d3, undermines d4 and keeps a small edge. The play is slow and manoeuvring, with Black's d4 pawn the target.",
+  "white_ideas": [
+    {
+      "idea": "Undermine d4 with c3 or d3"
+    },
+    {
+      "idea": "Use the bishop pair and the open e-file"
+    },
+    {
+      "idea": "Keep a small, safe edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold d4 with ...c5 and ...Bc5"
+    },
+    {
+      "idea": "Develop with ...Ne7 and ...d6"
+    },
+    {
+      "idea": "Aim for ...c6 and ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawn on d4 against White's e4, with the c3 lever"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow manoeuvring with few early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "A known sound but slightly inferior Black try."
+    },
+    "structure": {
+      "notes": "A fixed pawn on d4 against e4 with the c3 break."
+    },
+    "approach": {
+      "notes": "A respectable but uncommon branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs the c3 and d4 plans."
+    }
+  },
+  "plan_phrases": [
+    "Undermine d4 with c3"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither forcing nor especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A known sound line with a small White edge."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "A fixed asymmetric centre with Black's pawn on d4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A less common but respectable Ruy Lopez branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans are clear but the pawn structure takes understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan from the table fits cleanly."
+    }
+  }
+}

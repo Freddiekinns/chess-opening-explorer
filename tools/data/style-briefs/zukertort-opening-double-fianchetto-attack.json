@@ -1,0 +1,106 @@
+{
+  "slug": "zukertort-opening-double-fianchetto-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Double Fianchetto Attack",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. g3 g6 3. b3 Bg7 4. Bb2 O-O 5. Bg2 d6 6. O-O",
+    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/8/1P3NP1/PBPPPPBP/RN1Q1RK1 b - - 1 6"
+  },
+  "parent": "kings-indian-attack-symmetrical-defense",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "Both sides develop with g3/Bg2, b3/Bb2 and castle, with Black in a King's Indian-style fianchetto set-up. White keeps the centre flexible and plans d3/c4 and e4 or d4, aiming for a slow squeeze on the long diagonals. Play is quiet and manoeuvring, with few early tactics.",
+  "white_ideas": [
+    {
+      "idea": "Use the b2 and g2 bishops along the long diagonals"
+    },
+    {
+      "idea": "Prepare c4 and d4 or e4 for a central break"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Mirror with ...Bg7 and ...d6 and prepare ...e5 or ...c5"
+    },
+    {
+      "idea": "Fight for the centre with ...Nc6 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Hypermodern double fianchetto with an undecided centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet fianchetto play where neither side has an easy target, so it is hard to lose quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Fully sound and long established."
+    },
+    "structure": {
+      "notes": "The centre is left undecided for a long time."
+    },
+    "approach": {
+      "notes": "A set-up White can play against almost any reply, closely related to the King's Indian Attack."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear piece placement with little theory, but subtle plans."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "long diagonal pressure",
+    "flexible centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Quiet fianchetto play where neither side has an easy target, so it is hard to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Fully sound and long established."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.8,
+      "reason": "The centre is left undecided for a long time."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.65,
+      "reason": "A set-up White can play against almost any reply, closely related to the King's Indian Attack."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Clear piece placement with little theory, but subtle plans."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

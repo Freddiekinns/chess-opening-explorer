@@ -1,0 +1,31 @@
+{
+  "slug": "van-geet-opening-sleipnir-gambit",
+  "tier": "unsourced",
+  "root": { "name": "Van Geet Opening: Sleipnir Gambit", "eco": "A00", "moves": "1. Nc3 d5 2. e3 e5 3. d4 Bb4", "fen": "rnbqk1nr/ppp2ppp/8/3pp3/1b1P4/2N1P3/PPP2PPP/R1BQKBNR w KQkq - 1 4" },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black meets 3.d4 with the pin 3...Bb4, leaving the e5 pawn en prise to 4.dxe5, after which ...d4 hits the pinned knight. White can take on e5 or play 4.Bd3 and keep a solid centre. The point is quick development and play against the pinned knight, with Black prepared to give a pawn. I am unsure how this line is judged and the pawn may not truly be given.",
+  "white_ideas": [{ "idea": "Take on e5 and then unpin with a3 or Qd3" }, { "idea": "Solid development with Bd3, Nge2 and O-O" }],
+  "black_ideas": [{ "idea": "Push ...d4 to attack the pinned knight and fight for the dark squares" }, { "idea": "Develop quickly with ...Nc6 and ...Nf6 to use the lead in development" }],
+  "typical_structures": [{ "structure": "Open centre with White's centre pawns and Black's bishop pinning c3" }],
+  "axis_evidence": {
+    "character": { "notes": "Black offers the e5 pawn and the d4 push raises tactical possibilities." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "After 4.dxe5 White has an extra pawn, which Black tries to regain through the pin and ...d4." },
+    "soundness": { "notes": "Probably dubious if White declines to be drawn into complications." },
+    "structure": { "notes": "Centre pawns are exchanged or fixed, giving an open game." },
+    "approach": { "notes": "Played by Van Geet enthusiasts and seldom by strong players." },
+    "level": { "reason": "understanding", "notes": "Needs tactical judgement but not long theory." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [{ "name": "4.Bd3", "moves": "1. Nc3 d5 2. e3 e5 3. d4 Bb4 4. Bd3", "how": "White keeps the centre and avoids the pawn grab." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Tactics on the pinned knight and the offered e5 pawn make the position unbalanced." },
+    "gambit": { "value": "black", "confidence": 0.45, "reason": "Black offers the e5 pawn for the pin and development lead." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.45, "reason": "White can usually take the pawn and unpin without trouble." },
+    "structure": { "value": "open", "confidence": 0.45, "reason": "The central pawns trade and the pieces play on open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose this line." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "A dubious line cannot be Beginner and play is tactical rather than deeply theoretical." },
+    "plans": { "value": ["lead_in_development"], "reason": "Black's compensation is faster development and the pin." }
+  }
+}

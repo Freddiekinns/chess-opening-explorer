@@ -1,0 +1,114 @@
+{
+  "slug": "dutch-defense-leningrad",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Leningrad, Basman System",
+    "eco": "A81",
+    "moves": "1. d4 f5 2. g3 c6 3. Bg2 g6 4. Nf3 Bg7 5. O-O Nh6",
+    "fen": "rnbqk2r/pp1pp1bp/2p3pn/5p2/3P4/5NP1/PPP1PPBP/RNBQ1RK1 w kq - 4 6"
+  },
+  "parent": "dutch-defense-fianchetto-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays the Leningrad set-up with ...c6 and ...Nh6, aiming for ...d6 and ...e5 or ...Qb6 pressure. White fianchettoes and can seek a central break or c5 and Nh6-attacking ideas. The Basman move order is a rare, flexible version of the main Leningrad.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bg2, Nf3, O-O and aim for e4 or c5 expansion"
+    },
+    {
+      "idea": "Play against the Nh6 with Bxh6 or Ne5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Prepare ...d6/…e5 or ...Qb6"
+    },
+    {
+      "idea": "Control e4 and attack on the kingside with ...f4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Leningrad pawns f5, g6 with fianchetto"
+    },
+    {
+      "structure": "Central tension around e4/e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Dutch brings unbalanced play with both sides attacking."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "The Leningrad is fully playable."
+    },
+    "structure": {
+      "notes": "Neither side has committed the centre."
+    },
+    "approach": {
+      "notes": "Basman Variation is uncommon but the Leningrad is a standard choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but the Dutch punishes weak moves."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main Leningrad",
+      "moves": "1.d4 f5 2.g3 Nf6 3.Bg2 g6 4.Nf3 Bg7 5.O-O O-O",
+      "how": "Black castles before committing the knight; more common."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "The Dutch brings unbalanced play with both sides attacking."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "The Leningrad is fully playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Neither side has committed the centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Basman Variation is uncommon but the Leningrad is a standard choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans are clear but the Dutch punishes weak moves."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "kingside_attack"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

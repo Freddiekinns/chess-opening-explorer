@@ -1,0 +1,105 @@
+{
+  "slug": "benko-gambit-zaitsev-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit: Zaitsev Variation, Nescafe Frappe Attack",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. Nc3 axb5 6. e4 b4 7. Nb5",
+    "fen": "rnbqkb1r/3ppppp/5n2/1NpP4/1p2P3/8/PP3PPP/R1BQKBNR b KQkq - 1 7"
+  },
+  "parent": "benko-gambit-zaitsev-system",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "Black sacrifices the b-pawn for queenside pressure, and in this line White plays 6.e4 b4 7.Nb5 followed by Bf4 or Nf3. Black plays ...d6 and ...g6 and uses the open a- and b-files with a bishop on g7. White keeps the extra pawn and the centre, and Black goes for long-term compensation.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn and hold the centre"
+    },
+    {
+      "idea": "Attack with Bf4 and e5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the open a- and b-files with rooks"
+    },
+    {
+      "idea": "Fianchetto and put pressure on the long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benko structure with Black queenside pressure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has long-term compensation."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the pawn but Black gets long-term pressure."
+    },
+    "soundness": {
+      "notes": "Benko gambit is sound."
+    },
+    "structure": {
+      "notes": "Semi-open with half-open files."
+    },
+    "approach": {
+      "notes": "Regular defence."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Black must know theory and plans."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "queenside pressure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Black plays a gambit with concrete tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.95,
+      "reason": "Black gives up the b-pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Benko is a sound gambit."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "Black uses half-open files."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "Regular defence."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "both",
+      "confidence": 0.6,
+      "reason": "Theory and understanding both matter."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Black fianchettoes and presses on the queenside."
+    }
+  }
+}

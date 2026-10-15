@@ -1,0 +1,105 @@
+{
+  "slug": "slav-indian-kudischewitsch-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Indian: Kudischewitsch Gambit",
+    "eco": "A40",
+    "moves": "1. d4 c6 2. Nf3 Nf6 3. c4 b5",
+    "fen": "rnbqkb1r/p2ppppp/2p2n2/1p6/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "indian-defense-czech-indian",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 3...b5 against the English Slav-Indian set-up. After 4.cxb5 cxb5 pawns are traded and Black has queenside space, while White can attack with Qb3, a4 or e4. The advance weakens Black's queenside, and I am unsure of the theory.",
+  "white_ideas": [
+    {
+      "idea": "Take on b5 and challenge with a4 or Qb3"
+    },
+    {
+      "idea": "Develop Nc3 and e4 to punish the weakened queenside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on b5 and use the c-file"
+    },
+    {
+      "idea": "Fianchetto the bishop with ...Bb7 or ...g6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open c-file after cxb5 cxb5; Black b5 pawn can become a target"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early flank advance and open c-file give unbalanced play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "After 4.cxb5 cxb5 the pawns are traded, so material is level."
+    },
+    "soundness": {
+      "notes": "The b5 push weakens Black's queenside."
+    },
+    "structure": {
+      "notes": "Open c-file."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "half-open c-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The early b5 push leads to unbalanced play, but it is not heavily forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "The pawn comes straight back after cxb5 cxb5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The b5 move weakens the queenside early."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The c-file is half open for both sides."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "half_open_c_file",
+        "queenside_expansion"
+      ],
+      "reason": "The c-file is open after the exchange and Black has pushed his queenside pawns."
+    }
+  }
+}

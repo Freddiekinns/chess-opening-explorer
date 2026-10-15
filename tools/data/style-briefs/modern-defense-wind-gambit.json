@@ -1,0 +1,115 @@
+{
+  "slug": "modern-defense-wind-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Wind Gambit",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Bd3",
+    "fen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/3B4/PPP2PPP/RNBQK1NR b KQkq - 2 3"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White develops 3.Bd3, and if Black takes 3...Bxd4 White gets time with Nf3 and Qe2 or c3 for the pawn; other replies like ...d6 just transpose to a quiet Modern line. The gambit is rare and probably unsound, and I am unsure how often Black accepts.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly after Bd3 and Nf3"
+    },
+    {
+      "idea": "Use the bishop on d3 with Qe2 against the d4 bishop"
+    },
+    {
+      "idea": "Play c3 and e5 for a lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take d4 and retreat the bishop with ...Bg7"
+    },
+    {
+      "idea": "Decline with ...d6 and ...Nf6"
+    },
+    {
+      "idea": "Play ...c5 or ...e5 to challenge the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after the d4 capture; e4 pawn against Modern fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with quick development against the fianchettoed bishop."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "A pawn is offered that the opponent can keep."
+    },
+    "soundness": {
+      "notes": "Probably dubious for White."
+    },
+    "structure": {
+      "notes": "Centre in tension."
+    },
+    "approach": {
+      "notes": "A rare gambit sideline."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs trap knowledge and is not a first choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...d6",
+      "moves": "1. e4 g6 2. d4 Bg7 3. Bd3 d6",
+      "how": "Declined; no material changes hands."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A gambit with quick development for White."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.45,
+      "reason": "White offers the d4 pawn if Black accepts; declined lines are quiet."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Probably unsound against ...Bxd4."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The point is a lead for the pawn."
+    }
+  }
+}

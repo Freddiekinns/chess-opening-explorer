@@ -1,0 +1,110 @@
+{
+  "slug": "zukertort-opening-drunken-cavalry-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Drunken Cavalry Variation",
+    "eco": "A04",
+    "moves": "1. Nf3 Na6 2. e4 Nh6",
+    "fen": "r1bqkb1r/pppppppp/n6n/8/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 1 3"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black develops both knights to the rim with 1...Na6 and 2...Nh6, which White meets by simply occupying the centre with 2.e4. White then plays d4 or c4, builds a broad centre and develops freely while Black takes time to regroup. The line is mostly a surprise weapon with little forcing play.",
+  "white_ideas": [
+    {
+      "idea": "Build a big centre with d4 and c4"
+    },
+    {
+      "idea": "Develop Bd3 or Be2 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reroute the knights with ...c5 and ...Nc7"
+    },
+    {
+      "idea": "Hit the centre with ...d5 or ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White centre pawns on d4/e4 against rim knights"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, unforcing play where White has an easy game and Black hopes White overpresses."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Black is not refuted but the knights are misplaced and White develops freely."
+    },
+    "structure": {
+      "notes": "The centre is not yet defined and White takes it."
+    },
+    "approach": {
+      "notes": "Played for fun or surprise, seldom by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little to learn but the line is not a good first choice."
+    }
+  },
+  "plan_phrases": [
+    "central space for White",
+    "regroup the knights"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Other 2nd moves for White",
+      "moves": "1. Nf3 Na6 2. d4",
+      "how": "a different set-up with no e4 pawn"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Neither side is under tactical pressure and White just builds a centre."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material has changed hands."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "The two rim knights lose time and strong players expect White to be better."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided at move three."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "It is a joke-style response played for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious lines are not beginner choices."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White takes the centre while Black rearranges."
+    }
+  }
+}

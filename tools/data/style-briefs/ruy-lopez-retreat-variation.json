@@ -1,0 +1,114 @@
+{
+  "slug": "ruy-lopez-retreat-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Retreat Variation",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nb8",
+    "fen": "rnbqkbnr/pppp1ppp/8/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "After 3.Bb5 Black retreats the knight to b8, losing time. White takes the centre with 4.d4 or 4.c3 and enjoys an easy lead in development. The line is a poor attempt at avoiding theory, not a respected defence.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with d4"
+    },
+    {
+      "idea": "Develop quickly with Bxc6 ideas and castle"
+    },
+    {
+      "idea": "Use the free tempi"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop normally with ...Nf6 and ...d6"
+    },
+    {
+      "idea": "Hold e5 with ...d6"
+    },
+    {
+      "idea": "Try to catch up in development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4 exd4"
+    },
+    {
+      "structure": "White e4-d4 centre against ...d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White steadily takes the centre."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "Black has lost a tempo or two; considered poor."
+    },
+    "structure": {
+      "notes": "Open lines for White pieces."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easy for White but not recommended for Black."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "White simply takes the centre and the play is not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material change."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Black has lost time and White is just better."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "White opens the centre with d4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "A dubious line cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "space_advantage"
+      ],
+      "reason": "White profits from the lost tempo."
+    }
+  }
+}

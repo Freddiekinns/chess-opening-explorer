@@ -1,0 +1,111 @@
+{
+  "slug": "kings-gambit-accepted-philidor-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Philidor Gambit",
+    "eco": "C38",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 Bg7 5. h4",
+    "fen": "rnbqk1nr/pppp1pbp/8/6p1/2B1Pp1P/5N2/PPPP2P1/RNBQK2R b KQkq - 0 5"
+  },
+  "parent": "kings-gambit-accepted-traditional-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White continues 4.Bc4 Bg7 5.h4 h6 6.d4 d6 7.Qd3, building a pawn centre while Black has the extra pawn on f4. White aims to break with e5 or Nc3 and exploit Black's advanced kingside pawns, while Black tries to consolidate.",
+  "white_ideas": [
+    {
+      "idea": "Build a central pawn mass with d4, Qd3 and Nc3"
+    },
+    {
+      "idea": "Use the h-file and the bishop on c4 against the Black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...g5 and ...Bg7"
+    },
+    {
+      "idea": "Challenge the centre with ...c6 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn centre against Black's advanced kingside pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A classical King's Gambit line with mutual weaknesses."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White gave the f-pawn and Black can keep it by holding the kingside."
+    },
+    "soundness": {
+      "notes": "Theory prefers Black, but White gets real play and it is not refuted."
+    },
+    "structure": {
+      "notes": "Open centre with the e-file in play."
+    },
+    "approach": {
+      "notes": "A mainstream KGA branch."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Lines to know plus the plans."
+    }
+  },
+  "plan_phrases": [
+    "lead_in_development",
+    "kingside_attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Schultz Variation",
+      "moves": "5.h4 h6 6.d4 d6 7.Qd3",
+      "how": "The most played continuation."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Both sides take risks with exposed kings and tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White has given the f-pawn which Black can keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Playable and not refuted, though Black is theoretically better."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Pawns are exchanged on f4 and the e-file opens."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A respectable if uncommon choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Theory matters but the lines are not very deep."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White must use development to attack as the pawn is down."
+    }
+  }
+}

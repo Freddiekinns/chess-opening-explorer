@@ -1,0 +1,104 @@
+{
+  "slug": "queens-gambit-declined-uhlmann-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Uhlmann Variation",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Be7 4. Nf3 Nf6 5. Bg5 h6 6. Bh4 O-O 7. Rc1 dxc4",
+    "fen": "rnbq1rk1/ppp1bpp1/4pn1p/8/2pP3B/2N2N2/PP2PPPP/2RQKB1R w K - 0 8"
+  },
+  "parent": "queens-gambit-declined-charousek-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 7.Rc1 dxc4 Black takes the pawn at c4 in a Queen's Gambit Declined with ...h6 inserted, leaving White to recapture and build a central majority. White aims for e3, Bxc4 and a later e4, while Black looks for ...c5 or ...b5 and to trade pieces. Play is solid and strategic.",
+  "white_ideas": [
+    {
+      "idea": "Recapture with e3 and Bxc4, then e4 if possible"
+    },
+    {
+      "idea": "Use the rook on c1 to pressure the c-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...a6 or ...c5, trade bishops"
+    },
+    {
+      "idea": "Hold the extra c4 pawn briefly to keep space"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White centre pawns d4 and e-pawn, Black with symmetrical development after ...dxc4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's position is hard to break down and play is steady."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4 pawn is regained by force."
+    },
+    "soundness": {
+      "notes": "A normal QGD set-up."
+    },
+    "structure": {
+      "notes": "The centre is in tension and White may play e4 or e3."
+    },
+    "approach": {
+      "notes": "A mainstream QGD line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Strategic ideas matter more than forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "central pawn majority",
+    "c-file pressure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "Black's position is hard to break down and play is steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The c4 pawn is regained by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A normal QGD set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is in tension and White may play e4 or e3."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream QGD line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Strategic ideas matter more than forcing lines."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority"
+      ],
+      "reason": "White aims for a later e4 and a central majority."
+    }
+  }
+}

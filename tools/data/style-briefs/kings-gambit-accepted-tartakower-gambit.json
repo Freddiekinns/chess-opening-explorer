@@ -1,0 +1,114 @@
+{
+  "slug": "kings-gambit-accepted-tartakower-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Tartakower Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Be2",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPPB1PP/RNBQK1NR b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the King's Gambit Accepted White plays 3.Be2 (the Lesser Bishop's Gambit) rather than 3.Nf3 or 3.Bc4, planning Nf3, Bxf4, O-O and d4. Black can keep the pawn with ...Nf6, ...d5 or the sharper 3...f5 (Weiss Defence). White has a pawn deficit for central control and an open f-file.",
+  "white_ideas": [
+    {
+      "idea": "Win back f4 with Nf3, Bxf4"
+    },
+    {
+      "idea": "Castle and use the half-open f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn with ...d5 or ...Nf6"
+    },
+    {
+      "idea": "Counterattack in the centre with ...d5 or ...f5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White pawn deficit on f4"
+    },
+    {
+      "structure": "Half-open f-file for White"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The King's Gambit family: material tension and quick development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "The f-pawn is given up and Black can keep it with ...d5 or ...Nf6."
+    },
+    "soundness": {
+      "notes": "A sound and slightly slower gambit; not refuted."
+    },
+    "structure": {
+      "notes": "Open centre once exd5 or exf5 occurs."
+    },
+    "approach": {
+      "notes": "A side branch that strong players play occasionally; I treat it as standard."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs known lines and trap awareness."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Weiss Defence",
+      "moves": "3...f5 4.exf5 d6",
+      "how": "A sharper reply and a separate named line"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "King's Gambit positions are tactical with an exposed white king."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives up the f-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Playable gambit without a known refutation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens fast with exd5 or exf5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Played occasionally by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Needs preparation but not Advanced."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White compensates with open lines."
+    }
+  }
+}

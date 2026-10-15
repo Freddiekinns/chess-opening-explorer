@@ -1,0 +1,106 @@
+{
+  "slug": "kings-gambit-accepted-ghulam-kassim-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Ghulam-Kassim Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. d4",
+    "fen": "rnbqkbnr/pppp1p1p/8/8/2BPPpp1/5N2/PPP3PP/RNBQK2R b KQkq - 0 5"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White advances d4 while the f3 knight is attacked, offering a piece for a big centre and pressure on f7. Black can capture on f3 and take the material, then White plays Qxf3 with a strong attacking position. It is a sharp, rare gambit line.",
+  "white_ideas": [
+    {
+      "idea": "Use the d4 centre and Bc4 to attack f7"
+    },
+    {
+      "idea": "Recapture Qxf3 and develop with Nc3 and O-O"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Capture the f3 knight and return material when needed"
+    },
+    {
+      "idea": "Counter with ...Qh4+ or ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White attack on f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Piece sacrifice."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives a pawn then a piece for the attack."
+    },
+    "soundness": {
+      "notes": "Unclear compensation."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "A rare branch."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines; dubious."
+    }
+  },
+  "plan_phrases": [
+    "attack on f7",
+    "centre pawns"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "Piece sacrifice."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White gives a pawn then a piece for the attack."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Unclear compensation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Open centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "A rare branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Long forcing lines; dubious."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White sacrifices for attack on f7."
+    }
+  }
+}

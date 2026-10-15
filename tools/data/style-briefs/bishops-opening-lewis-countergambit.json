@@ -1,0 +1,110 @@
+{
+  "slug": "bishops-opening-lewis-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Lewis Countergambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. c3 d5",
+    "fen": "rnbqk1nr/ppp2ppp/8/2bpp3/2B1P3/2P5/PP1P1PPP/RNBQK1NR w KQkq - 0 4"
+  },
+  "parent": "bishops-opening-philidor-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black strikes with 3...d5 against the Bishop's Opening. After 4.Bxd5 Nf6 or 4.exd5 White grabs a pawn while Black gets development and the c3/d4 squares. Strong players consider White better with accurate play such as 4.exd5 Qxd5 5.Qf3.",
+  "white_ideas": [
+    {
+      "idea": "Take the d5 pawn and play Qf3, d4 or Nf3"
+    },
+    {
+      "idea": "Meet Black's pieces calmly and consolidate"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain tempi with ...Nf6 and ...O-O"
+    },
+    {
+      "idea": "Open lines against the king with ...e4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black pieces active, White pawn up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open tactics, queen moves and a race for development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black offers the d5 pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "The countergambit is widely considered unsound."
+    },
+    "structure": {
+      "notes": "Open lines after the central pawns trade."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious."
+    }
+  },
+  "plan_phrases": [
+    "countergambit",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Jaenisch and Walker lines",
+      "moves": "1. e4 e5 2. Bc4 Bc5 3. c3 d5 4. Bxd5 Nf6 5. d4",
+      "how": "Sharper branches inside the same gambit."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Black sacrifices a pawn for the initiative and open lines."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black plays the countergambit and White can keep the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "White can keep the pawn with accurate defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Central pawns are traded and lines open for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black's compensation is faster development for the pawn."
+    }
+  }
+}

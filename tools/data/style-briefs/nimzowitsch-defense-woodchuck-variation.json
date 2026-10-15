@@ -1,0 +1,108 @@
+{
+  "slug": "nimzowitsch-defense-woodchuck-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Woodchuck Variation",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. d4 a6",
+    "fen": "r1bqkbnr/1ppppppp/p1n5/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black answers 2.d4 with the waiting move 2...a6, perhaps planning ...e5 or ...d5 later, but White simply takes the centre. I am unsure of the mainline theory; reasoning from the moves, Black keeps a flexible, slightly passive set-up and White gets a free centre.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre with Nf3 and Nc3 or e5 ideas"
+    },
+    {
+      "idea": "Use the extra tempo for development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reach a French- or Scandinavian-like set-up with ...d5 or ...e6"
+    },
+    {
+      "idea": "Challenge the centre later with ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4/e4 centre against a flexible Black set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side takes early risks; Black waits and White develops, so play stays balanced rather than forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "The waiting ...a6 costs a tempo but Black remains solid enough to reach normal structures."
+    },
+    "structure": {
+      "notes": "The centre is not yet decided, so the structure depends on whether Black plays ...d5 or ...e5."
+    },
+    "approach": {
+      "notes": "Strong players seldom choose this move order, and it is mainly a surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A rare sideline with few fixed plans, played by intermediate players."
+    }
+  },
+  "plan_phrases": [
+    "waiting move",
+    "flexible centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "St. George order",
+      "moves": "1. e4 a6 2. d4 Nc6",
+      "how": "Same position by the St. George move order."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Neither side takes early risks; Black waits and White develops, so play stays balanced rather than forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "The waiting ...a6 costs a tempo but Black remains solid enough to reach normal structures."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is not yet decided, so the structure depends on whether Black plays ...d5 or ...e5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose this move order, and it is mainly a surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "A rare sideline with few fixed plans, played by intermediate players."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

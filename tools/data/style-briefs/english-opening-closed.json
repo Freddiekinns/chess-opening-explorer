@@ -1,0 +1,111 @@
+{
+  "slug": "english-opening-closed",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Closed, Taimanov Variation",
+    "eco": "A25",
+    "moves": "1. c4 e5 2. Nc3 Nc6 3. g3 g6 4. Rb1 Nh6 5. Bg2 Bg7",
+    "fen": "r1bqk2r/pppp1pbp/2n3pn/4p3/2P5/2N3P1/PP1PPPBP/1RBQK1NR w Kkq - 4 6"
+  },
+  "parent": "english-opening-kings-english-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays a Reversed Closed Sicilian with g3 and Bg2, while Black develops with ...Nc6, ...g6, ...Bg7 and a quirky ...Nh6 to aim at f5 or d4. The Taimanov Variation keeps pieces flexible; White usually plays d3 or e3, Nge2 and castles, with Rb1 and b4 as a queenside expansion. Slow manoeuvring play.",
+  "white_ideas": [
+    {
+      "idea": "Play Bg2, e3 or d3, Nge2 and O-O, preparing b4 with Rb1."
+    },
+    {
+      "idea": "Control d5 and keep options of d4."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop ...Nh6, ...d6, ...O-O and strike with ...f5 or ...Nf5."
+    },
+    {
+      "idea": "Maintain the e5 pawn and play ...Be6 or ...f5."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed Closed Sicilian with White c4/g3/e3 and Black e5/d6 with Nh6 and Bg7."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow manoeuvring game with fianchetto structures and little forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "English with a tense centre and no pawn contact; flexible."
+    },
+    "approach": {
+      "notes": "A mainstream English line used by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Positional plans over theory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "queenside expansion"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Rb1 line",
+      "moves": "1. c4 e5 2. Nc3 Nc6 3. g3 g6 4. Rb1 Nh6 5. Bg2 Bg7",
+      "how": "The listed root; 4.Rb1 prepares b4 early, while the commonly played line is 4.Bg2 Bg7 5.e3."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.65,
+      "reason": "Slow manoeuvring game with fianchetto structures and little forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Sound for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "English with a tense centre and no pawn contact; flexible."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A mainstream English line used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional plans over theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Both sides fianchetto and White expands on the queenside."
+    }
+  }
+}

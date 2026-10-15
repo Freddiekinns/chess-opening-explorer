@@ -1,0 +1,105 @@
+{
+  "slug": "kadas-opening-myers-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Kádas Opening: Myers Variation",
+    "eco": "A00",
+    "moves": "1. h4 d5 2. d4 c5 3. e4",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/3PP2P/8/PPP2PP1/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "kadas-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.h4 d5 2.d4 c5 3.e4 White builds a full centre and offers pawns against Black's Sicilian-style ...c5 break, with the h-pawn already advanced for a later kingside push. Black can take on e4 or d4 and keep the extra pawn, while White hopes for development and open lines. Little is known about the line, so this is read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Recapture or gain time with Nc3 and Nf3 against the centre pawns"
+    },
+    {
+      "idea": "Use the h4 pawn for a later h5 and rook-lift attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 or d4 and hold the pawn"
+    },
+    {
+      "idea": "Hit d4 with ...Nc6 and ...Bg4, then develop calmly"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open or semi-open centre after exchanges on e4 or d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White offers central pawns for development and both kings face real tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "3.e4 can be met by 3...dxe4 or 3...cxd4 and Black keeps the pawn."
+    },
+    "soundness": {
+      "notes": "The early h4 plus a pawn offer gives little compensation against accurate play."
+    },
+    "structure": {
+      "notes": "The c-pawn trades for a d-pawn, leaving a Sicilian-like asymmetric centre."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever start with 1.h4."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Unsound and rare, so not for beginners, but nothing deep to learn."
+    }
+  },
+  "plan_phrases": [
+    "pawn offered in the centre for development",
+    "h-pawn advance for a kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White offers central pawns for development and both kings face real tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "3.e4 can be met by 3...dxe4 or 3...cxd4 and Black keeps the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The early h4 plus a pawn offer gives little compensation against accurate play."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The c-pawn trades for a d-pawn, leaving a Sicilian-like asymmetric centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever start with 1.h4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Unsound and rare, so not for beginners, but nothing deep to learn."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Gambit logic is time for development, with h4 hinting at a kingside attack."
+    }
+  }
+}

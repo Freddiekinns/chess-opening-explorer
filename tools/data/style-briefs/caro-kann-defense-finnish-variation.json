@@ -1,0 +1,107 @@
+{
+  "slug": "caro-kann-defense-finnish-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Finnish Variation",
+    "eco": "B16",
+    "moves": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 h6",
+    "fen": "rnbqkbnr/pp2ppp1/2p4p/8/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "caro-kann-defense-main-line",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 4.Nxe4 h6 Black prepares ...Bf5 without allowing Ng5, and keeps the usual Caro-Kann structure. White usually plays 5.Nf3 Bf5 6.Ng3 Bg6 and Black gets a solid, slightly passive position. White has more space, Black the sound structure.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3 and Bd3"
+    },
+    {
+      "idea": "Use the space advantage"
+    },
+    {
+      "idea": "Trade the knight for the bishop to gain the pair"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop the bishop to f5 or g6 safely"
+    },
+    {
+      "idea": "Build with ...e6 and ...Nd7"
+    },
+    {
+      "idea": "Prepare ...c5 to challenge the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann structure with the c6 pawn and the bishop outside the chain"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid, steady play typical of the Caro-Kann."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "A sound Caro-Kann sub-line."
+    },
+    "structure": {
+      "notes": "Half-open d-file after the d-pawns come off."
+    },
+    "approach": {
+      "notes": "A normal Caro-Kann branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but need understanding."
+    }
+  },
+  "plan_phrases": [
+    "Solid Caro-Kann set-up"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.8,
+      "reason": "Typical Caro-Kann structure, hard to break."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respected Black defence."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "The d-pawn exchange leaves a half-open file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal Caro-Kann line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are clear, with subtlety in the move order."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Nothing from the table is clearly named."
+    }
+  }
+}

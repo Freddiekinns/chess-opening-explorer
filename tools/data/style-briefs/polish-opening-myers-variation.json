@@ -1,0 +1,109 @@
+{
+  "slug": "polish-opening-myers-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Myers Variation",
+    "eco": "A00",
+    "moves": "1. b4 d5 2. Bb2 c6 3. a4",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/PP6/8/1BPPPPPP/RN1QKBNR b KQkq - 0 3"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 1.b4, 2.Bb2 and 3.a4, supporting the b-pawn and gaining queenside space against a Slav-like set-up. Black usually answers with ...Nf6, ...e6 and ...Bd6 or ...a5 and develops at ease. The game is quiet and unbalanced pawn-wise.",
+  "white_ideas": [
+    {
+      "idea": "Support the b4 pawn and gain queenside space with a4 and b5"
+    },
+    {
+      "idea": "Fianchetto on b2 and play e3 and Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break with ...a5 or ...Bg4 and ...e6, placing pieces actively"
+    },
+    {
+      "idea": "Control the centre with ...d5 and ...c6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White queenside pawns a4/b4 and Bb2"
+    },
+    {
+      "structure": "Black d5/c6 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow flank play without early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "None."
+    },
+    "soundness": {
+      "notes": "Sound but not testing."
+    },
+    "structure": {
+      "notes": "Flank structure, the centre is undecided."
+    },
+    "approach": {
+      "notes": "Played for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans over theory."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Slow flank play that is neither especially hard to break nor forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "It gives Black no problems but is not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "A flank opening where the centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players use it only as a surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans need care but there is little theory."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "White gains queenside space with the pawns and the b2 bishop."
+    }
+  }
+}

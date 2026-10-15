@@ -1,0 +1,116 @@
+{
+  "slug": "kings-gambit-accepted-gaga-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Gaga Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. g3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/6P1/PPPP3P/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.g3 Black can take with 3...fxg3 4.Nf3 (the Gama Gambit) and White is two pawns down for development and open f- and h-files. White aims for Bc4, d4 and a rapid attack on the black king. Black's best is to give back material and consolidate.",
+  "white_ideas": [
+    {
+      "idea": "Open lines for Bc4 and Qe2"
+    },
+    {
+      "idea": "Use the open files against the king"
+    },
+    {
+      "idea": "Sacrifice more to open the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawns and keep them"
+    },
+    {
+      "idea": "Develop with ...d5 and ...Nf6"
+    },
+    {
+      "idea": "Return material to defuse the attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with a White pawn deficit and open files"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing sacrifices with both kings exposed."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep both the f4 and g3 pawns in the main line 3...fxg3 4.Nf3."
+    },
+    "soundness": {
+      "notes": "Considered dubious for White; Black can consolidate."
+    },
+    "structure": {
+      "notes": "Open lines and files."
+    },
+    "approach": {
+      "notes": "A rare branch strong players avoid."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp lines that must be known."
+    }
+  },
+  "plan_phrases": [
+    "Attack on the open files"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Gama Gambit",
+      "moves": "1. e4 e5 2. f4 exf4 3. g3 fxg3 4. Nf3",
+      "how": "The most played continuation, with a second pawn given."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Two pawns down and a race for the attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White sacrifices pawns Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "The Gaga/Gama Gambit is considered dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Files and diagonals are opened for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players rarely choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so never beginner, and the lines need memory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White plays for development and an attack."
+    }
+  }
+}

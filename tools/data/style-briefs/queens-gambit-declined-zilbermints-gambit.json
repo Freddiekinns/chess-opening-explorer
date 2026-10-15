@@ -1,0 +1,113 @@
+{
+  "slug": "queens-gambit-declined-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Zilbermints Gambit",
+    "eco": "D06",
+    "moves": "1. d4 d5 2. c4 b5",
+    "fen": "rnbqkbnr/p1p1pppp/8/1p1p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "queens-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.d4 d5 2.c4 Black plays 2...b5, offering a wing pawn. After 3.cxb5 White has an extra pawn; Black hopes for quick development with ...Nf6 and ...c6, opening lines against the White queenside. Against sensible play White keeps the pawn and a solid position.",
+  "white_ideas": [
+    {
+      "idea": "Take with cxb5 and keep the pawn"
+    },
+    {
+      "idea": "Develop with Nc3, Nf3 and e3"
+    },
+    {
+      "idea": "Secure a safe king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...c6, hitting the b5 pawn"
+    },
+    {
+      "idea": "Use the open b-file"
+    },
+    {
+      "idea": "Play ...e5 or ...Bb7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White extra pawn on b5 or a-file"
+    },
+    {
+      "structure": "Black queenside pressure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A dubious gambit where Black gets some pressure but little else."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take on b5 and keep the pawn with sensible play."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Semi-open with the c-file and b-file in play."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious; never a first choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Black is a pawn down and must play actively for the compensation."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black offers the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Black does not have enough for the pawn."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "The c-file and b-file open while the centre stays semi-open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Hardly ever chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "A dubious line cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black pays a pawn for time."
+    }
+  }
+}

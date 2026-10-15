@@ -1,0 +1,104 @@
+{
+  "slug": "sicilian-defense-king-davids-opening",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: King David's Opening",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. Ke2",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPPKPPP/RNBQ1BNR b kq - 1 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "After 1.e4 c5 White plays the king to e2 for no reason of development. It loses a tempo, blocks the f1 bishop and exposes the king in the centre. Black can develop freely with ...Nc6, ...e5 and ...d5, so it is a joke or surprise line.",
+  "white_ideas": [
+    {
+      "idea": "Follow with d4 or Nf3 and hope Black overreaches"
+    },
+    {
+      "idea": "Use the king step to avoid theory"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop quickly with ...Nc6, ...e5 and ...Nf6"
+    },
+    {
+      "idea": "Hit the exposed king with ...d5 and ...Qb6 ideas"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian-like set-up with White king on e2"
+    },
+    {
+      "structure": "Centre open for development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "No real fight; White simply has an awkward king."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "The king walk costs time and has no purpose."
+    },
+    "structure": {
+      "notes": "A c5 pawn against e4, no pawn trades yet."
+    },
+    "approach": {
+      "notes": "Chosen only as a joke or a surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "No theory."
+    }
+  },
+  "plan_phrases": [
+    "avoiding theory"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "It is neither known for tactics nor hard to break; the king move just wastes time."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.85,
+      "reason": "The king on e2 loses a tempo and blocks White development."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "It remains a Sicilian pawn structure with the c-file for Black."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players seldom play 2.Ke2."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "There is no recognisable plan."
+    }
+  }
+}

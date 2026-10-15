@@ -1,0 +1,106 @@
+{
+  "slug": "modern-defense-fianchetto-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Fianchetto Gambit",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 f5",
+    "fen": "rnbqkbnr/ppppp2p/6p1/5p2/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 2...f5 against the e4/d4 centre, offering a pawn to open lines against the king. After 3.exf5 Black plays ...Bg7 or ...Nf6 with some activity, but White is simply a pawn up. I am unsure of the details; it is a rare fringe line.",
+  "white_ideas": [
+    {
+      "idea": "Take on f5 and develop with Nc3 and Nf3"
+    },
+    {
+      "idea": "Use the extra pawn and centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Bg7, ...Nf6 and ...c5 for activity"
+    },
+    {
+      "idea": "Open the position with ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open f-file and diagonal for Black"
+    },
+    {
+      "structure": "White centre pawn plus f5 pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is a pawn down looking for activity."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the f-pawn which White can keep."
+    },
+    "soundness": {
+      "notes": "White can keep the pawn with a safe king."
+    },
+    "structure": {
+      "notes": "Mixed."
+    },
+    "approach": {
+      "notes": "A fringe line."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "No theory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black is pawn down for activity and weakens the king."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black offers the f-pawn which White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "White can capture and develop with a clean extra pawn."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The f-file and e-file open on one side only."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Rare at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.45,
+      "reason": "A dubious line is not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black tries to repay the pawn with piece play."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "benko-gambit-accepted-dlugy-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Accepted: Dlugy Variation",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. f3",
+    "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/5P2/PP2P1PP/RNBQKBNR b KQkq - 0 5"
+  },
+  "parent": "benko-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 4.cxb5 a6 White plays 5.f3, preparing e4 and a big centre while avoiding the main lines with Nc3 and Nf3. Black usually replies 5...axb5 or 5...e6 and gets the usual Benko compensation: open a- and b-files, a long-diagonal bishop on g7 and pressure on the queenside. White holds the pawn, so the game is a long-term fight between material and activity.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre with e4, Nc3 and Be3, keeping the extra pawn"
+    },
+    {
+      "idea": "Return the pawn at a good moment to neutralise Black's pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the a- and b-files with ...axb5 and put rooks on them"
+    },
+    {
+      "idea": "Fianchetto the king's bishop and pressure the long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benko structure with Black open a- and b-files"
+    },
+    {
+      "structure": "White d5/e4 centre against Black's queenside play"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gives a pawn for long-term pressure and White takes space in the centre, so both sides take risks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White keeps the b-pawn and Black has no forced recovery, only lasting pressure."
+    },
+    "soundness": {
+      "notes": "The Benko Gambit is considered sound at high level."
+    },
+    "structure": {
+      "notes": "Asymmetric pawn structure with half-open a- and b-files for Black."
+    },
+    "approach": {
+      "notes": "Strong players play the Benko regularly."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are hard to get right more than lines to remember."
+    }
+  },
+  "plan_phrases": [
+    "queenside pressure",
+    "half-open files",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black gives a pawn for lasting initiative while White builds a big centre."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "The Benko is sound at high level."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "Black gets half-open a- and b-files against a fixed White centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "Strong players play the Benko regularly."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are the challenge; the 5.f3 branch is less theoretical."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "Black pushes on the queenside along the open files with a fianchettoed bishop."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "caro-kann-defense-martian-gambit",
+  "tier": "unsourced",
+  "root": { "name": "Caro-Kann Defense: Martian Gambit", "eco": "B18", "moves": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bf5 5. Ng5 Bg6 6. N1f3 h6 7. Ne6", "fen": "rn1qkbnr/pp2ppp1/2p1N1bp/8/3P4/5N2/PPP2PPP/R1BQKB1R b KQkq - 1 7" },
+  "parent": "caro-kann-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Classical Caro-Kann White sacrifices a knight on e6 against the queen, hoping for an attack on f7 and a lead in development after ...fxe6 or ...Qd7. Black can simply take the piece and, with accurate play, keep it, since White's pieces are not placed to exploit the opened f-file. It is a trap line that scores through surprise.",
+  "white_ideas": [{ "idea": "Sacrifice on e6 and open the f-file for Bd3 and Qe2" }, { "idea": "Trade pieces and use the weakened pawn structure after ...fxe6" }],
+  "black_ideas": [{ "idea": "Capture the knight and give back material only for safety" }, { "idea": "Develop with ...Nf6, ...e6 and consolidate, then convert the extra piece" }],
+  "typical_structures": [{ "structure": "Black with an extra piece and a damaged pawn structure on e6/f7, White ahead in development" }],
+  "axis_evidence": {
+    "character": { "notes": "White sacrifices a piece for an attack; one side collapses quickly." },
+    "gambit": { "material_given": "piece", "given_by": "white", "can_be_kept": "true", "notes": "After 7...fxe6 White has given a knight for a pawn and Black can keep the extra material." },
+    "soundness": { "notes": "Considered unsound; the sacrifice does not produce enough compensation against accurate defence." },
+    "structure": { "notes": "Open d-file and f-file after the exchanges." },
+    "approach": { "notes": "Played mainly as a surprise; strong players rarely choose it." },
+    "level": { "reason": "memory", "notes": "A trap that depends on prepared lines." }
+  },
+  "plan_phrases": ["lead in development", "pressure on f7"],
+  "sublines_that_differ": [{ "name": "Classical main line", "moves": "1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6", "how": "The standard, quiet line." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.85, "reason": "A piece sacrifice for an attack is forcing and risky for both sides." },
+    "gambit": { "value": "white", "confidence": 0.9, "reason": "White gives a knight for a pawn on e6 and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.85, "reason": "Strong players think the sacrifice insufficient." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "The d- and f-files open and pieces play on open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.85, "reason": "Strong players seldom play the Martian Gambit." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.6, "reason": "A dubious line is never Beginner and it is trap-led rather than deep." },
+    "plans": { "value": ["lead_in_development", "pressure_on_f7"], "reason": "White's compensation is speed of development and pressure on f7." }
+  }
+}

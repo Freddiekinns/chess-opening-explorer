@@ -1,0 +1,110 @@
+{
+  "slug": "sicilian-defense-kronberger-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Kronberger Variation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. Na3",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/N7/PPPP1PPP/R1BQKBNR b KQkq - 1 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White develops the queen's knight to a3 against the Sicilian, planning Nc4, Nb5 or c3 and a flexible set-up. Black usually answers with ...Nc6 or ...a6 and ...d5 and has an easy game, because the knight on a3 is far from the centre. The line is mostly a surprise weapon, and the Nemeth Gambit (3.d4 cxd4 4.Bc4) is a trappy sideline.",
+  "white_ideas": [
+    {
+      "idea": "Reroute the knight to c4 or b5 and play c3 and d4"
+    },
+    {
+      "idea": "Develop with Nf3, Bc4 or Bb5 and aim for a quick centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...Nc6, ...e5 or ...d5"
+    },
+    {
+      "idea": "Complete development and use the queenside majority"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian asymmetric structure with an early ...d5"
+    },
+    {
+      "structure": "Open Sicilian-like play if d4 is played"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side is forced into risks; White's knight is misplaced and Black gets an easy game."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered at the root; the Nemeth Gambit is a sub-line."
+    },
+    "soundness": {
+      "notes": "Playable but slightly inferior for White, since the knight is far from the centre."
+    },
+    "structure": {
+      "notes": "A Sicilian-type asymmetric centre."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The ideas are simple, but this is a niche surprise line."
+    }
+  },
+  "plan_phrases": [
+    "knight reroute"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Nemeth Gambit",
+      "moves": "1. e4 c5 2. Na3 Nc6 3. d4 cxd4 4. Bc4",
+      "how": "White gives a pawn for rapid development."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The offbeat knight placement gives neither a forcing nor a steady game."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No material is offered in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Playable even if White is not better."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "It is a Sicilian-type asymmetric centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever choose 2.Na3."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The set-up is simple, but a surprise line is not a first repertoire choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "There is no clear named plan."
+    }
+  }
+}

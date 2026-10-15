@@ -1,0 +1,109 @@
+{
+  "slug": "mikenas-defense-pozarek-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Mikenas Defense: Pozarek Gambit",
+    "eco": "A40",
+    "moves": "1. d4 Nc6 2. c4 e5 3. dxe5 Nxe5 4. Nc3 Nxc4",
+    "fen": "r1bqkbnr/pppp1ppp/8/8/2n5/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "mikenas-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.d4 Nc6 2.c4 e5 3.dxe5 Nxe5 4.Nc3 Nxc4, Black grabs the c-pawn and White tries to catch the knight or gain time with e4 and Qd4 ideas. It is a rare gambit and Black's extra pawn is hard to take back. Strong players seldom enter it.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with e4 and Bxc4 ideas"
+    },
+    {
+      "idea": "Hit the c4 knight with Qa4 or Qd4"
+    },
+    {
+      "idea": "Use open lines on the e- and d-files"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the c4 pawn and retreat the knight safely"
+    },
+    {
+      "idea": "Develop with ...Nf6 and ...Bb4"
+    },
+    {
+      "idea": "Avoid tricks on the d-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White a pawn down"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White plays for lead in development and tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives a pawn, usually the c-pawn, and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Probably dubious as Black stays a clean pawn up."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Very rare, mostly played for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs tactical knowledge; not a beginner line."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White sacrifices a pawn for open lines and quick tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White is a pawn down at the root and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The compensation for the c-pawn looks inadequate."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The centre opens straight away with the pawn trades on e5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players seldom play either side of this."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "A dubious gambit cannot be Beginner and the plans are easy to read."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White's whole case is faster development for the pawn."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "queens-gambit-accepted-linares-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Linares Variation",
+    "eco": "D20",
+    "moves": "1. d4 d5 2. c4 dxc4 3. e4 c5 4. d5 Nf6 5. Nc3 b5",
+    "fen": "rnbqkb1r/p3pppp/5n2/1ppP4/2p1P3/2N5/PP3PPP/R1BQKBNR w KQkq - 0 6"
+  },
+  "parent": "queens-gambit-accepted-central-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White takes a big centre with e4 and d5, and Black grabs c4 and supports it with ...b5. White gets a space advantage for the pawn, with sharp play. Black has an extra pawn and the position is unbalanced.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre with Bxc4/Nxb5"
+    },
+    {
+      "idea": "Use e4-e5 breaks"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn with ...b5"
+    },
+    {
+      "idea": "Develop ...Nxe4 tricks"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Asymmetric centre with d5/e4 vs c5"
+    },
+    {
+      "structure": "Black pawns on b5 and c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp and double-edged."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black keeps the c4 pawn."
+    },
+    "soundness": {
+      "notes": "Playable."
+    },
+    "structure": {
+      "notes": "Asymmetric."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Theory."
+    }
+  },
+  "plan_phrases": [
+    "space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main QGA 3.Nf3",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3",
+      "how": "the standard QGA"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Unbalanced."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.5,
+      "reason": "Black keeps c4."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Playable."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Fixed centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.45,
+      "reason": "Theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "central_pawn_majority"
+      ],
+      "reason": "White centre."
+    }
+  }
+}

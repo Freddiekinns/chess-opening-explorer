@@ -1,0 +1,105 @@
+{
+  "slug": "bishops-opening-thorold-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Thorold Gambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 b5 3. Bxb5 f5",
+    "fen": "rnbqkbnr/p1pp2pp/8/1B2pp2/4P3/8/PPPP1PPP/RNBQK1NR w KQkq - 0 4"
+  },
+  "parent": "bishops-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black meets 2.Bc4 with 2...b5 and after 3.Bxb5 plays 3...f5 to strike at e4 while White has taken a pawn. Black aims for fast development and an attack on the e4 pawn and the white king, while White can keep the pawn and retreat. Read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn with Nf3, Bc4 or Be2"
+    },
+    {
+      "idea": "Exploit the weakened kingside diagonal with Qh5+ ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the f-file or exchange on e4 and develop quickly"
+    },
+    {
+      "idea": "Play ...fxe4, ...Nf6 and ...Bc5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...fxe4 or exf5, Black with a weakened kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black attacks at once with a weakened king and White can take material."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black has given the b-pawn and White can hold it."
+    },
+    "soundness": {
+      "notes": "Black's kingside is loosened and the compensation is thin."
+    },
+    "structure": {
+      "notes": "The f- and e-files open early."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A dubious line is never Beginner; there is little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "pawn down for development",
+    "open lines against e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black attacks at once with a weakened king and White can take material."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black has given the b-pawn and White can hold it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "Black's kingside is loosened and the compensation is thin."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The f- and e-files open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner; there is little to memorise."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black wants quick pieces and play against the e4 pawn."
+    }
+  }
+}

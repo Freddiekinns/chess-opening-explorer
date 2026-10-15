@@ -1,0 +1,101 @@
+{
+  "slug": "ruy-lopez-rotary-albany-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Rotary-Albany Gambit",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 b6",
+    "fen": "r1bqkbnr/p1pp1ppp/1pn5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 3...b6, preparing ...Bb7 to hit e4, without ...a6. White can take on c6 and e5 or play Nc3 and d4 with an edge. It is a rare off-line where Black's set-up is odd and slightly worse.",
+  "white_ideas": [
+    {
+      "idea": "Take on c6 or play Nc3 with a central edge"
+    },
+    {
+      "idea": "Win a pawn tempo by Nxe5 if possible"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto with ...Bb7 against e4"
+    },
+    {
+      "idea": "Counter with ...Qd4 or ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game after Bxc6 and Nxe5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not known for sharpness; uncertain."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The name says gambit but Black regains the pawn."
+    },
+    "soundness": {
+      "notes": "Black weakens his centre for little."
+    },
+    "structure": {
+      "notes": "Likely open after exchanges."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not beginner."
+    }
+  },
+  "plan_phrases": [
+    "...Bb7 pressure on e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Not known for sharpness; uncertain."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "The name says gambit but Black regains the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Black weakens his centre for little."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Likely open after exchanges."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan."
+    }
+  }
+}

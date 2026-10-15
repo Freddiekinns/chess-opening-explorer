@@ -1,0 +1,109 @@
+{
+  "slug": "ruy-lopez-central-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Central Countergambit",
+    "eco": "C78",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O d5",
+    "fen": "r1bqkb1r/1pp2ppp/p1n2n2/3pp3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 6"
+  },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Against the Morphy Defense Black plays 5...d5 instead of the usual ...Be7. After 6.exd5 e4 or 6.Nxe5 White wins a pawn and the play is sharp. Black hopes for activity but gets little return, and the line is regarded as unsound.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with exd5 or Nxe5"
+    },
+    {
+      "idea": "Defend accurately and consolidate"
+    },
+    {
+      "idea": "Open the centre with d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Attack with ...e4 and ...Bc5"
+    },
+    {
+      "idea": "Use open lines for development"
+    },
+    {
+      "idea": "Win back the pawn with tactics"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with pawns traded"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for activity at a cost of a pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the d-pawn and White keeps it."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Black sacrifices a pawn for activity in an open position."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.75,
+      "reason": "Black offers the d- or e-pawn with 5...d5 and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "White just takes a pawn and has no big risks."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The centre pawns come off straight away."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom play 5...d5."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious, so not Beginner, and the tactics are simple."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black's compensation is open lines and development."
+    }
+  }
+}

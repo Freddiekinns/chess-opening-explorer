@@ -1,0 +1,104 @@
+{
+  "slug": "french-defense-guimard-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Guimard Variation, Thunderbunny Variation",
+    "eco": "C03",
+    "moves": "1. e4 e6 2. d4 d5 3. Nd2 Nc6 4. c3 dxe4 5. Nxe4 e5",
+    "fen": "r1bqkbnr/ppp2ppp/2n5/4p3/3PN3/2P5/PP3PPP/R1BQKBNR w KQkq - 0 6"
+  },
+  "parent": "french-defense-tarrasch-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Guimard (3.Nd2 Nc6) Black prepares ...e5 and avoids the ordinary Tarrasch pawn structures. After 4.c3 dxe4 5.Nxe4 e5 (the Thunderbunny) Black hits the centre at once, aiming for equality; White can take on e5 or play Nf3 with an open game. The ideas are simple but the early ...e5 break leaves Black's king in the centre.",
+  "white_ideas": [
+    {
+      "idea": "Exchange or take on e5 and develop with Nf3 and Bd3"
+    },
+    {
+      "idea": "Use the lead in development and the open e-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break with ...e5 and develop with ...Bg4 and ...Nf6"
+    },
+    {
+      "idea": "Trade pieces and reach equal endings"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...e5 and dxe5 or dxe5/Nxe5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The early ...e5 break gives open, fairly tactical play but not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "A recognised line."
+    },
+    "structure": {
+      "notes": "Open centre after ...e5."
+    },
+    "approach": {
+      "notes": "Less common than the Rubinstein."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Understanding of piece activity."
+    }
+  },
+  "plan_phrases": [
+    "Early ...e5 break",
+    "Open centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "An open but not forcing French sideline."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A respectable sideline."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre opens after ...e5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Less common but a respectable line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are easy to follow."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White tries to use the lead in development after the e-file opens."
+    }
+  }
+}

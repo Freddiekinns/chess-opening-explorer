@@ -1,0 +1,104 @@
+{
+  "slug": "petrovs-defense-karklins-martinovsky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Karklins-Martinovsky Variation",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nd3",
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/8/4P3/3N4/PPPP1PPP/RNBQKB1R b KQkq - 1 4"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.Nxe5 d6 White retreats the knight to d3 and then seeks a quiet central advantage rather than the main lines with 4.Nf3. Black usually takes on e4 and plays ...d5 to reach a symmetrical structure, where equality is easy. It is a low-risk sideline with little theory.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3 or Qe2 and aim for a small edge"
+    },
+    {
+      "idea": "Use the central e-file and put the knight on f4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade pieces and equalise with ...Nxe4 and ...d5"
+    },
+    {
+      "idea": "Develop with ...Be7 and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Petrov symmetrical structure with the e-file open"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's position is hard to attack and the play is steady rather than forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given; any pawn on e4 is exchanged evenly."
+    },
+    "soundness": {
+      "notes": "Regarded as sound for both sides."
+    },
+    "structure": {
+      "notes": "The e-file opens as in the Petrov, giving a symmetrical exchange structure."
+    },
+    "approach": {
+      "notes": "A respectable sideline in a main defence, played by strong players now and then."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are straightforward and theory light, so Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "equalise",
+    "symmetrical structure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Black's position is hard to attack and the play is steady rather than forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given; any pawn on e4 is exchanged evenly."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Regarded as sound for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "The e-file opens as in the Petrov, giving a symmetrical exchange structure."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A respectable sideline in a main defence, played by strong players now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are straightforward and theory light, so Intermediate."
+    },
+    "plans": {
+      "value": [
+        "symmetrical_structure"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

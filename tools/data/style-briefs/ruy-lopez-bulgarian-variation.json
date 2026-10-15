@@ -1,0 +1,103 @@
+{
+  "slug": "ruy-lopez-bulgarian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Bulgarian Variation",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a5",
+    "fen": "r1bqkbnr/1ppp1ppp/2n5/pB2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 3...a5, preventing Bxc6 ideas and keeping the pin from being resolved on White's terms. White usually continues 4.Bxc6 dxc6 5.Nxe5 Qd4 or 4.c3 and the game goes on as a normal Ruy Lopez. The move is rare and I am not sure of the main continuation.",
+  "white_ideas": [
+    {
+      "idea": "Build the c3 and d4 centre with O-O and Re1"
+    },
+    {
+      "idea": "Exchange on c6 to damage Black's pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support b4 and the knight with ...Nf6 and ...Be7"
+    },
+    {
+      "idea": "Use ...a5 to hold the bishop from a4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Game structure with the bishop on b5 held"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Normal Ruy Lopez development with no forced tactics early."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Playable for both sides."
+    },
+    "structure": {
+      "notes": "Centre tension on e4 and e5."
+    },
+    "approach": {
+      "notes": "A rarely played alternative to 3...a6."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Standard Ruy Lopez understanding."
+    }
+  },
+  "plan_phrases": [
+    "centre c3 d4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A normal Ruy Lopez set-up without forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Playable for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is in tension."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Ruy Lopez ideas rather than memorisation."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White plays for a normal centre."
+    }
+  }
+}

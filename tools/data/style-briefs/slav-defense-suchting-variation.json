@@ -1,0 +1,103 @@
+{
+  "slug": "slav-defense-suchting-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Süchting Variation",
+    "eco": "D15",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 Qb6",
+    "fen": "rnb1kb1r/pp2pppp/1qp2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 4 5"
+  },
+  "parent": "slav-defense-three-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 4...Qb6 attacking d4 and b2, so White has to defend with Qd2 or Na4 or take a pawn with Nxd5. The early queen move breaks the usual Slav pattern and tries to take White out of theory. White normally gets a modest edge from space and development.",
+  "white_ideas": [
+    {
+      "idea": "Defend d4 and b2 with Na4 or Qd2 and keep the centre"
+    },
+    {
+      "idea": "Use the extra development against the queen"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit b2 and d4 with the queen"
+    },
+    {
+      "idea": "Play ...Bf5 and ...e6 to complete development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav structure with c6 and d5 against c4 and d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not well known to me; reasoned from the move order."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawns can be defended without material changing hands."
+    },
+    "soundness": {
+      "notes": "White is a little better but the line is not refuted."
+    },
+    "structure": {
+      "notes": "Slav centre with the c- and d-pawns and a partly open c-file."
+    },
+    "approach": {
+      "notes": "A sideline of the Slav that strong players play now and then."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few set lines."
+    }
+  },
+  "plan_phrases": [
+    "early_queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "The queen sortie adds tactics but White can defend simply."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Black is not at clear risk."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Slav centre with a partly open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Played by strong players from time to time."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "No heavy theory to learn."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The queen comes to b6 early."
+    }
+  }
+}

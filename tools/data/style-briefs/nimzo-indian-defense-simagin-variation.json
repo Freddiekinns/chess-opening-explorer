@@ -1,0 +1,102 @@
+{
+  "slug": "nimzo-indian-defense-simagin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Simagin Variation",
+    "eco": "E46",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Ne2 d5 6. a3 Bd6",
+    "fen": "rnbq1rk1/ppp2ppp/3bpn2/3p4/2PP4/P1N1P3/1P2NPPP/R1BQKB1R w KQ - 1 7"
+  },
+  "parent": "nimzo-indian-defense-reshevsky-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Reshevsky Nimzo-Indian 5.Ne2 d5 6.a3 Black retreats the bishop with 6...Bd6, avoiding the doubled pawns. White can play 7.cxd5 exd5 with Ng3 and a kingside plan, or hold the tension. Black has a solid position and White a slight space edge. The bishop on d6 eyes h2 and the kingside.",
+  "white_ideas": [
+    {
+      "idea": "Take on d5 and play Ng3 and Bd3"
+    },
+    {
+      "idea": "Use the c-file and queenside pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...dxc4 or ...c5"
+    },
+    {
+      "idea": "Use the d6 bishop towards h2"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD-like structure after cxd5 exd5"
+    },
+    {
+      "structure": "Tension on c4/d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring with small advantages."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Any pawn on c4 comes back."
+    },
+    "soundness": {
+      "notes": "A sound line for both."
+    },
+    "structure": {
+      "notes": "QGD-like centre."
+    },
+    "approach": {
+      "notes": "A mainstream branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plan-based."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither sharp nor especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Mainstream."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream Nimzo-Indian branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans over memory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan is named by the evidence."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "sicilian-defense-velimirovic-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Velimirovic Attack",
+    "eco": "B89",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bc4 e6 7. Be3 Be7 8. Qe2",
+    "fen": "r1bqk2r/pp2bppp/2nppn2/8/2BNP3/2N1B3/PPP1QPPP/R3K2R b KQkq - 3 8"
+  },
+  "parent": "sicilian-defense-sozin-attack",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "In the Sozin set-up White plays Be3, Qe2 and 0-0-0, then pushes g4-g5 or f4 and Rhg1 for a kingside attack. Black castles and counters on the queenside with ...Qc7, ...a6, ...Na5 and ...b5. It leads to opposite-side castling and sharp, theory-heavy play where one slip loses quickly.",
+  "white_ideas": [
+    {
+      "idea": "Castle long, then play Rhg1 and g4-g5 or f4-f5"
+    },
+    {
+      "idea": "Use Nd5 or Bb3 and Nxc6 to exploit the open d-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Castle short and play ...Qc7, ...a6, ...Na5 and ...b5"
+    },
+    {
+      "idea": "Strike with ...Nxd4 and ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian with opposite castling"
+    },
+    {
+      "structure": "Open d-file, White pawns e4/f2/g2/h2, Black pawns d6/e6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mutual attacks on opposite wings with a race."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "None."
+    },
+    "soundness": {
+      "notes": "Well tested and sound."
+    },
+    "structure": {
+      "notes": "Half-open c-file for Black, d-file after the exchange."
+    },
+    "approach": {
+      "notes": "A main Sozin line."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Long forcing theory."
+    }
+  },
+  "plan_phrases": [
+    "opposite-side castling",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Opposite-side castling and mutual attacks make it a race."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The line is well tested for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.8,
+      "reason": "Like every Sicilian the c-file is half open for Black."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A main-line anti-Najdorf set-up that strong players use."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "both",
+      "confidence": 0.6,
+      "reason": "Long forcing lines that must be known, with hard plans."
+    },
+    "plans": {
+      "value": [
+        "opposite_side_castling",
+        "kingside_attack",
+        "pawn_storm"
+      ],
+      "reason": "The two kings are on opposite sides and each camp attacks."
+    }
+  }
+}

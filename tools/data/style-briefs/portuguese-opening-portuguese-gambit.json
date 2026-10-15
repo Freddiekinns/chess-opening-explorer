@@ -1,0 +1,112 @@
+{
+  "slug": "portuguese-opening-portuguese-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Portuguese Opening: Portuguese Gambit",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Bb5 Nf6 3. d4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/1B2p3/3PP3/8/PPP2PPP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "portuguese-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 e5 2.Bb5 Nf6 White strikes with 3.d4 rather than the Ruy Lopez 3.Nf3 ideas. Black can take on e4 with 3...Nxe4 4.dxe5 or capture with 3...exd4 4.e5 Ne4. White gets open lines and an early lead in development but the bishop on b5 looks loose and the opening is rarely played at strong level. I am unsure of the exact main line.",
+  "white_ideas": [
+    {
+      "idea": "Open the centre early with d4 and use the b5 bishop and open lines"
+    },
+    {
+      "idea": "Win back any pawn with Qxd4 or dxe5 and develop quickly"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and keep the extra central pawn"
+    },
+    {
+      "idea": "Develop with ...Be7, ...c6 and challenge the b5 bishop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after dxe5 or Qxd4"
+    },
+    {
+      "structure": "Loose b5 bishop without the usual ...a6 harassment"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early open lines and queen moves; a position where one inaccuracy can lose."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d4 pawn or the e-pawn comes back by force in the main lines, so material is level."
+    },
+    "soundness": {
+      "notes": "Regarded as inferior to normal Ruy Lopez play; Black gets a comfortable game."
+    },
+    "structure": {
+      "notes": "Open centre with early piece activity."
+    },
+    "approach": {
+      "notes": "Strong players hardly choose it; used for surprise."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Theory is thin but a dubious line is not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...exd4",
+      "moves": "3...exd4 4.e5 Ne4",
+      "how": "Closes the e-file and leaves the white pieces awkward"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early open lines and tactics, but the evidence is thin."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material comes back by force in the main lines despite the name."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "White gets less than in the normal Ruy Lopez."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The d-pawn is exchanged and the centre opens straight away."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Seldom chosen at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White hopes to use the open centre before Black consolidates."
+    }
+  }
+}

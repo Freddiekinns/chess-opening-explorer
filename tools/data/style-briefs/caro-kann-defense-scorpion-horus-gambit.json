@@ -1,0 +1,110 @@
+{
+  "slug": "caro-kann-defense-scorpion-horus-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Scorpion-Horus Gambit",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. Nc3 d5 3. d3 dxe4 4. Bg5",
+    "fen": "rnbqkbnr/pp2pppp/2p5/6B1/4p3/2NP4/PPP2PPP/R2QKBNR b KQkq - 1 4"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Against the 2.Nc3 Caro-Kann White plays 3.d3 dxe4 4.Bg5, developing with a lead in development and a pin on the knight rather than recapturing the pawn at once. Black is a pawn up and can hold it with ...Qb6 or ...f6-type moves. It is a surprise line with little theory.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with Bg5, Nxe4 or dxe4 and Qd2"
+    },
+    {
+      "idea": "Look for tactics on f7 and the d-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with accurate defence and development"
+    },
+    {
+      "idea": "Exchange queens or neutralise Bg5 with ...Nf6 and ...Qb6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann with Black pawn on e4 and white d3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White's pawn sacrifice leads to early tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black has taken e4 and White has not yet regained it; Black can keep it."
+    },
+    "soundness": {
+      "notes": "Black can hold the pawn, so White's compensation is thin."
+    },
+    "structure": {
+      "notes": "Semi-open centre; the c6-d5 pawn pair has been traded."
+    },
+    "approach": {
+      "notes": "A seldom-played gambit."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious so not Beginner; concrete play but not much to learn."
+    }
+  },
+  "plan_phrases": [
+    "Pawn for development",
+    "Bg5 pin"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Normal recapture",
+      "moves": "3.d3 dxe4 4.dxe4",
+      "how": "Not a gambit; White gets a quiet position after queen exchange."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The gambit gives early tactics, though Black can steer towards a quiet position."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White offers e4 with 3.d3 and 4.Bg5 and Black can keep the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can keep the pawn with accurate development."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The centre opens with ...dxe4, giving the structure a Caro-Kann semi-open look."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Strong players rarely play this against the Caro-Kann."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner; Black must know the key defensive resources."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White hopes the lead in development outweighs the pawn."
+    }
+  }
+}

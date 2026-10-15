@@ -1,0 +1,114 @@
+{
+  "slug": "petrovs-defense-moody-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Petrov's Defense: Moody Gambit",
+    "eco": "C42",
+    "moves": "1. e4 e5 2. Nf3 Nf6 3. Qe2 Nc6 4. d4",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/3PP3/5N2/PPP1QPPP/RNB1KB1R b KQkq - 0 4"
+  },
+  "parent": "petrovs-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White defends e4 with 3.Qe2 and then pushes 4.d4 to open the centre with a lead in development, offering the e-pawn exchange. Black can take on d4 or play ...Nxe4 and often gets an acceptable game, but the white queen on the e-file makes the opening awkward for both. It is an unusual sideline, not a main line.",
+  "white_ideas": [
+    {
+      "idea": "Open the centre fast with d4"
+    },
+    {
+      "idea": "Use the e-file and the queen on e2 for pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on d4 and develop with ...Be7 and ...O-O"
+    },
+    {
+      "idea": "Hit e4 with ...Nxe4 when it works"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with pawns traded on d4"
+    },
+    {
+      "structure": "Queen on e2 against Black knights"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open and tactical, with the queen early and pins on the e-file."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d4 pawn is defended and material stays level or comes straight back."
+    },
+    "soundness": {
+      "notes": "Black has several simple answers, so White gets little."
+    },
+    "structure": {
+      "notes": "The d- and e-pawns are exchanged early, opening lines."
+    },
+    "approach": {
+      "notes": "Rare for strong players, who prefer 3.Nxe5 or 3.d4."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory and little payoff."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "e-file pressure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main Petrov 3.Nxe5",
+      "moves": "1. e4 e5 2. Nf3 Nf6 3. Nxe5",
+      "how": "the standard symmetrical line"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The early queen and open centre make moves forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "Despite the name no pawn is lost for good; the d4 push keeps material level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "It does no real harm to either side."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Pawns come off in the centre and the e-file opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose 3.Qe2."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "The play is easy to follow but not a first repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White tries to use the queen early and a lead in development."
+    }
+  }
+}

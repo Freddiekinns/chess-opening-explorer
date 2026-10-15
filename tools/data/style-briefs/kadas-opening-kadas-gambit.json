@@ -1,0 +1,111 @@
+{
+  "slug": "kadas-opening-kadas-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Kádas Opening: Kádas Gambit",
+    "eco": "A00",
+    "moves": "1. h4 c5 2. b4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/1P5P/8/P1PPPPP1/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "kadas-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.h4 c5 2.b4, White offers the b-pawn to open the long diagonal for a bishop on b2 and the b-file. Black can take on b4, play ...Qa5 or ...d5, and usually ends a pawn up with a sound position. Both kings are safe for now, so the gambit lives on White's queenside pressure.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bb2 and Nf3, hitting the long diagonal and b-file"
+    },
+    {
+      "idea": "Use h4 only as a waiting or flank-expansion move"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on b4 and develop with ...Nf6, ...d5 and ...Nc6"
+    },
+    {
+      "idea": "Keep the centre and the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open queenside after cxb4; Black centre pawns vs White flank pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An irregular flank gambit that is more strange than tactical; the extra pawn is easy to hold."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White offers b4, and ...cxb4 wins a pawn that can be kept."
+    },
+    "soundness": {
+      "notes": "Strong players do not rate 1.h4 and 2.b4 as sufficient compensation."
+    },
+    "structure": {
+      "notes": "Centre undecided, with pawns coming off on the queenside."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players, chosen for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit so never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "gambit",
+    "queenside expansion",
+    "surprise weapon"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "1.h4 e5 2.d4 exd4 3.c3",
+      "moves": "1. h4 e5 2. d4 exd4 3. c3",
+      "how": "A different reply with a central gambit; most database games begin this way."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Gambit with offbeat open lines, but little concrete tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White offers the b-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "An unproven pawn offer with h4 played for no developmental reason."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is not yet decided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "White's b4 push and Bb2 is a queenside space grab."
+    }
+  }
+}

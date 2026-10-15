@@ -1,0 +1,114 @@
+{
+  "slug": "kings-pawn-game-la-bourdonnais-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: La Bourdonnais Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 Qf6 3. Bc4 Qg6 4. O-O",
+    "fen": "rnb1kbnr/pppp1ppp/6q1/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4"
+  },
+  "parent": "kings-pawn-game-mcconnell-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After Black's odd 2...Qf6 White develops quickly with 3.Bc4 and castles on move four, leaving the e4 pawn en prise to ...Qxe4. White's idea is Re1 and d4, chasing the queen with tempo. The extra pawn is risky for Black.",
+  "white_ideas": [
+    {
+      "idea": "Castle and play Re1 to attack the queen on e4"
+    },
+    {
+      "idea": "Open the centre with d4 and Nxe5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 or retreat and develop ...Nf6"
+    },
+    {
+      "idea": "Return the pawn to survive the first attacks"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file with the Black queen out"
+    },
+    {
+      "structure": "Open game with White ahead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mutual threats around the queen and e-file; sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White leaves e4 hanging after 4.O-O and Black can keep the pawn for a while."
+    },
+    "soundness": {
+      "notes": "Black's early queen is the dubious element; White has chances."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4...Qxe4",
+      "moves": "1. e4 e5 2. Nf3 Qf6 3. Bc4 Qg6 4. O-O Qxe4",
+      "how": "The main accepting line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "An early queen and a pawn offer make the play forcing."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "White offers the e4 pawn, which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.45,
+      "reason": "Black's early queen is the risky element, though White's own pawn offer is also speculative."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The e-file and diagonals open at once."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom play either side of this."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "A dubious line is not Beginner and has no deep theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White gains time against the exposed queen."
+    }
+  }
+}

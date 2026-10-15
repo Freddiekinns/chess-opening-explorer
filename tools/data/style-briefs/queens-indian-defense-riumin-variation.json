@@ -1,0 +1,104 @@
+{
+  "slug": "queens-indian-defense-riumin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Riumin Variation",
+    "eco": "E16",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Bb4+ 6. Bd2 Be7",
+    "fen": "rn1qk2r/pbppbppp/1p2pn2/8/2PP4/5NP1/PP1BPPBP/RN1QK2R w KQkq - 5 7"
+  },
+  "parent": "queens-indian-defense-capablanca-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White fianchettoes against the Queen's Indian and Black pins the knight with ...Bb4+, then retreats to e7 after Bd2, so Black has gained little but White has the bishop on d2. After 7.Nc3 O-O 8.O-O Black usually plays ...d5 or ...Ne4. Both sides develop slowly and the game is positional.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto on g2 and castle, then push d5 or e4"
+    },
+    {
+      "idea": "Use the bishop pair and the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto on b7, hold e4 and play ...d5 or ...Ne4"
+    },
+    {
+      "idea": "Trade pieces and keep a sound centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Indian with ...e6/...b6 against c4/d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow manoeuvring with few forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "The line is a respected, safe set-up for both sides."
+    },
+    "structure": {
+      "notes": "The centre is tense with c4/d4 against ...e6/...d5 or ...Ne4 and can be resolved either way."
+    },
+    "approach": {
+      "notes": "Played by strong players against 1.d4 as a normal Indian line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are positional and the theory is moderate."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "bishop pair"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Black's set-up is hard to break and play is steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides play a mainstream line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Black keeps the centre in tension with ...d5 or ...Ne4 and White keeps c4/d4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "It is a normal Queen's Indian branch, not a set-up played against everything."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans are positional and need understanding."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both sides put bishops on the long diagonals."
+    }
+  }
+}

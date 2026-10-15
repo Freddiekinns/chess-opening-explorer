@@ -1,0 +1,105 @@
+{
+  "slug": "caro-kann-defense-alien-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Alien Gambit",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nf6 5. Ng5 h6 6. Nxf7",
+    "fen": "rnbqkb1r/pp2pNp1/2p2n1p/8/3P4/8/PPP2PPP/R1BQKBNR b KQkq - 0 6"
+  },
+  "parent": "caro-kann-defense-main-line",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "White sacrifices a knight on f7 after 5.Ng5 h6, hoping to expose the black king. After 6...Kxf7 White has only a pawn and some tempi for the piece, and Black can usually consolidate. The idea is a rare trap for Caro-Kann players that is considered unsound.",
+  "white_ideas": [
+    {
+      "idea": "Use Qh5+ and the open king for an attack"
+    },
+    {
+      "idea": "Develop quickly with Bc4+ and Nc3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the knight and bring the king to safety on g8"
+    },
+    {
+      "idea": "Return the piece if needed to neutralise the attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black king on f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is a piece down for an attack on the king, so one wrong move loses quickly for either side."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White sacrifices a knight for a pawn and Black can keep the piece."
+    },
+    "soundness": {
+      "notes": "Strong players consider it unsound; it scores through surprise."
+    },
+    "structure": {
+      "notes": "The e- and d-files are open and the king is exposed."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players at all."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "attack the king",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "White is a piece down for an attack on the king, so one wrong move loses quickly for either side."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White sacrifices a knight for a pawn and Black can keep the piece."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.85,
+      "reason": "Strong players consider it unsound; it scores through surprise."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e- and d-files are open and the king is exposed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom chosen by strong players at all."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious, so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

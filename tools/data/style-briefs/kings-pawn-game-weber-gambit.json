@@ -1,0 +1,112 @@
+{
+  "slug": "kings-pawn-game-weber-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Weber Gambit",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. d3 d5 3. exd5 c6 4. dxc6 Nxc6",
+    "fen": "r1bqkbnr/pp3ppp/2n5/4p3/8/3P4/PPP2PPP/RNBQKBNR w KQkq - 0 5"
+  },
+  "parent": "kings-pawn-game-leonardis-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "A counter-gambit against the quiet 2.d3: Black plays ...d5, ...c6 and recaptures on c6 with the knight, leaving White a pawn up (White pawns 7, Black 6 in the FEN). Black has an active knight, an open d-file and a lead in development, and hopes to harass the king in the centre. White can simply consolidate with Nf3, Be2/Be3 and castle.",
+  "white_ideas": [
+    {
+      "idea": "Consolidate with Nf3 and Be2/Be3, castle and keep the extra pawn"
+    },
+    {
+      "idea": "Trade queens on the d-file when it favours the extra pawn"
+    },
+    {
+      "idea": "Use the half-open e-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain tempi with ...Bc5 and ...Nf6, ...Qd4 ideas"
+    },
+    {
+      "idea": "Open the d-file and target the king in the centre"
+    },
+    {
+      "idea": "Seek to regain the pawn with ...Bc5 and ...Nd4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game after the exchanges"
+    },
+    {
+      "structure": "Black has a lead in development for a pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black sacrifices a pawn for rapid development in an open position."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "In the FEN Black has six pawns to White's seven, and White can hold the extra one."
+    },
+    "soundness": {
+      "notes": "Probably dubious for Black, since White's d3 set-up is solid."
+    },
+    "structure": {
+      "notes": "Central pawns have come off, so the game is mostly open lines."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easy to learn but not a sound repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black plays a pawn down for activity and the open lines give tactical chances."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black has given a pawn that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.55,
+      "reason": "White can consolidate the extra pawn with natural development.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The central pawns have come off and the game is about open lines for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "A countergambit against 2.d3 that strong players hardly ever try."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner and White must still play accurately.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black is pawn-down and relies on quick development."
+    }
+  }
+}

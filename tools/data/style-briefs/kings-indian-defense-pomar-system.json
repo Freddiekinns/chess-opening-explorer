@@ -1,0 +1,110 @@
+{
+  "slug": "kings-indian-defense-pomar-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Pomar System",
+    "eco": "E72",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. g3 O-O 6. Bg2 e5 7. Nge2",
+    "fen": "rnbq1rk1/ppp2pbp/3p1np1/4p3/2PPP3/2N3P1/PP2NPBP/R1BQK2R b KQ - 1 7"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White combines the g3 fianchetto with the e4-d4-c4 centre, Nge2 and Bg2, then castles. Black plays ...e5 and ...Nc6, aiming at a closed centre after d5 with ...Ne7 and ...f5 kingside play. The game is a manoeuvring King's Indian with less forcing theory.",
+  "white_ideas": [
+    {
+      "idea": "Close the centre with d5 and expand on the queenside"
+    },
+    {
+      "idea": "Castle kingside and play f4 or b4"
+    },
+    {
+      "idea": "Use the Bg2 on the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...Ne7 and ...f5 kingside play"
+    },
+    {
+      "idea": "Trade in the centre with ...exd4 and ...Nc6 pressure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "King's Indian locked centre after d5 with Black pawn on e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quieter than the main KID but with real chances for both; neither forces matters early."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "A respectable system for White and sound for Black."
+    },
+    "structure": {
+      "notes": "Centre locks after d5 with ...Ne7 (or is exchanged on d4); I read it as closed."
+    },
+    "approach": {
+      "notes": "A normal King's Indian line played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Understanding of plans (f5, c5) matters more than forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "Locked centre",
+    "...f5 kingside play",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "A fianchetto line with less forcing theory than the main KID."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.92,
+      "reason": "A normal sound King's Indian line."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.5,
+      "reason": "After d5 the centre locks, though d4 exchanges are possible."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Played by strong players as a normal King's Indian line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans matter more than memorised lines."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "White uses the extra space and a Bg2 fianchetto, with queenside expansion."
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "pterodactyl-defense-fianchetto",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pterodactyl Defense: Fianchetto, Queen Benoni Pterodactyl",
+    "eco": "A40",
+    "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 c5 4. d5 Qa5",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1pP4/2P5/2N5/PP2PPPP/R1BQKBNR w KQkq - 1 5"
+  },
+  "parent": "queens-pawn-game-modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black fianchettoes, plays ...c5 and sends the queen to a5 early, targeting c3 and e4. White gets space with d5 and then must handle ...Bxc3 or ...b5 breaks. Black's play is hypermodern and awkward to meet, but the early queen can be exposed.",
+  "white_ideas": [
+    {
+      "idea": "Build the centre with e4 and Nf3"
+    },
+    {
+      "idea": "Develop Bd2 and kick the queen"
+    },
+    {
+      "idea": "Use space to attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin or trade Nc3 with ...Bxc3+"
+    },
+    {
+      "idea": "Play ...b5 or ...d6 breaks"
+    },
+    {
+      "idea": "Exploit the queen on a5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like pawn structure with queen on a5"
+    },
+    {
+      "structure": "White has a space advantage"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An uneven hypermodern fight with the black queen sortie."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level."
+    },
+    "soundness": {
+      "notes": "Sound but risky."
+    },
+    "structure": {
+      "notes": "Asymmetric Benoni-like centre."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs good judgement."
+    }
+  },
+  "plan_phrases": [
+    "Hypermodern centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Pteranodon",
+      "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 c5 4. d5 Bxc3+ 5. bxc3 Qa5",
+      "how": "Black doubles White's pawns at the cost of the bishop pair."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "The early queen and unbalanced pawns give both sides tactical chances."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.55,
+      "reason": "Unusual but not refuted.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "A fixed asymmetric Benoni-type centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose this set-up."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "Needs judgement but little theory.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black lets White take the centre and attacks it from the flanks."
+    }
+  }
+}

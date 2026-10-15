@@ -1,0 +1,120 @@
+{
+  "slug": "kings-gambit-accepted-dodo-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Dodo Variation",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Qg4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4PpQ1/8/PPPP2PP/RNB1KBNR b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 2...exf4 White brings the queen to g4 at once, attacking g7 and the f4 pawn. Black replies with ...Nf6 or ...d5, hitting the queen with tempo, and after Qxf4 White has regained the pawn but has spent time with the queen. Black usually gets a comfortable game with a lead in development.",
+  "white_ideas": [
+    {
+      "idea": "Regain f4 with the queen after Qg4 and Qxf4"
+    },
+    {
+      "idea": "Threaten g7 and use the open f-file"
+    },
+    {
+      "idea": "Develop quickly and castle before the queen is harassed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the queen with ...Nf6 and ...d5"
+    },
+    {
+      "idea": "Develop with tempo and take the centre"
+    },
+    {
+      "idea": "Avoid pawn grabs that cost time"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White queen exposed on f4 or g4, Black pieces developed with tempo"
+    },
+    {
+      "structure": "Open e-file and centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is happy to develop with tempo against an early queen; a tactical but one-sided opening."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "On the main line 3...Nf6 4.Qxf4 White wins the pawn straight back, so nothing is given up."
+    },
+    "soundness": {
+      "notes": "White loses time with the queen and Black gets the better of the opening; poorly regarded."
+    },
+    "structure": {
+      "notes": "Open e- and d-files with queens and minor pieces active."
+    },
+    "approach": {
+      "notes": "A rare sideline that strong players avoid."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Easy to learn but dubious, so it is not a safe repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black grabs g7 or ...d5 lines",
+      "moves": "1. e4 e5 2. f4 exf4 3. Qg4 d5",
+      "how": "Black hits the queen at once and takes the centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Black develops with tempo and White regains the pawn, so the game is not especially forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "White regains the f4 pawn by force with Qxf4 after ...Nf6, so nothing is given up in the main line."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Strong players think the early queen loses time against sensible replies."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Open centre with queens and pieces active on the e-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players do not choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "A dubious line cannot be Beginner, though it needs little theory."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "White queen is out early; Black develops with tempo."
+    }
+  }
+}

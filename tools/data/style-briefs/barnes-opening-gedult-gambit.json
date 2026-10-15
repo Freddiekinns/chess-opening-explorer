@@ -1,0 +1,109 @@
+{
+  "slug": "barnes-opening-gedult-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Barnes Opening: Gedult Gambit",
+    "eco": "A00",
+    "moves": "1. f3 f5 2. e4 fxe4 3. Nc3",
+    "fen": "rnbqkbnr/ppppp1pp/8/8/4p3/2N2P2/PPPP2PP/R1BQKBNR b KQkq - 1 3"
+  },
+  "parent": "barnes-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 1.f3 and 2.e4, offering the e-pawn for central space and development. Black can keep the pawn but White gets compensation through Nc3 and d4.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with Nc3, d4"
+    },
+    {
+      "idea": "Attack the exposed black pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn"
+    },
+    {
+      "idea": "Trade pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White offers a pawn."
+    },
+    "soundness": {
+      "notes": "Dubious."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "1...d5 2.e4 g6",
+      "moves": "1.f3 d5 2.e4 g6 3.d4 dxe4 4.c3",
+      "how": "The most played order; White gambits a pawn."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White offers a pawn and the king is weakened."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White offers a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The centre opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly use 1.f3."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White seeks a lead in development."
+    }
+  }
+}

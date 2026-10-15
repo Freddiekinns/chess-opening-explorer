@@ -1,0 +1,114 @@
+{
+  "slug": "ponziani-opening-spanish-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Spanish Variation",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 d5 4. Bb5",
+    "fen": "r1bqkbnr/ppp2ppp/2n5/1B1pp3/4P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 1 4"
+  },
+  "parent": "ponziani-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Against the Ponziani, Black plays 3...d5 and White pins the knight with 4.Bb5. The main branch continues 4...dxe4 5.Nxe5 Qd5 6.Qa4 (the Nikitin Gambit), where Black has the extra e-pawn for a moment and White gets a lead in development and pressure on c6. Play is sharp and open, and Black has to know the tactics.",
+  "white_ideas": [
+    {
+      "idea": "Pin the knight with Bb5 and take back on e5 with Nxe5"
+    },
+    {
+      "idea": "Use Qa4 to threaten the Nc6 and develop quickly"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Win the e-pawn and defend with ...Qd5 and ...Bd7"
+    },
+    {
+      "idea": "Return material at the right time and simplify"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the e-file and early queen moves"
+    },
+    {
+      "structure": "Pinned Nc6 against a White queen on a4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen moves and tactics against the pinned knight make the game forcing for both sides."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "After 5.Nxe5 the e-pawn is regained, so material is level and no gambit is on the board."
+    },
+    "soundness": {
+      "notes": "Playable for both sides; White does not gain a clear edge."
+    },
+    "structure": {
+      "notes": "The e-file opens early and pieces fight for central squares."
+    },
+    "approach": {
+      "notes": "The Ponziani is seldom chosen by strong players, and this branch even less."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "The forcing lines must be known."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "pin on the c6 knight"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Quiet Ponziani",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 d5 4. Qa4",
+      "how": "White avoids the exchange complications."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Early queen moves and the pin on c6 lead to concrete tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "The e-pawn is regained by 5.Nxe5, so no material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Both sides can play it without being worse by force."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The e-file opens early and pieces fight on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose this Ponziani branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "The forcing tactics must be known."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "The queen comes out early and both sides race to develop."
+    }
+  }
+}

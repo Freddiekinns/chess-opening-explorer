@@ -1,0 +1,102 @@
+{
+  "slug": "sicilian-defense-frederico-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Frederico Variation",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 g6 3. d4 f5",
+    "fen": "rnbqkbnr/pp1pp2p/6p1/2p2p2/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "sicilian-defense-hyperaccelerated-fianchetto",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays ...g6 and ...f5 against the hyperaccelerated set-up. White usually takes with exf5 gxf5 and enjoys the central space, while Black hopes for a Dutch-style attack. Black's king gets exposed.",
+  "white_ideas": [
+    {
+      "idea": "Exchange on f5 and build with Nc3, Bc4"
+    },
+    {
+      "idea": "Use dxc5 and the weak dark squares"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Build a kingside attack with ...f4 and ...Nf6"
+    },
+    {
+      "idea": "Use the semi-open c-file after ...cxd4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian semi-open structure"
+    },
+    {
+      "structure": "Black king exposed on the kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's kingside is loosened and White has tactical chances."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material stays level."
+    },
+    "soundness": {
+      "notes": "The early ...f5 is weakening."
+    },
+    "structure": {
+      "notes": "A Sicilian pawn structure."
+    },
+    "approach": {
+      "notes": "Rarely used by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs care to avoid being overrun."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black's kingside is loosened and White has tactical chances."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.65,
+      "reason": "Material stays level."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The early ...f5 is weakening."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "A Sicilian pawn structure."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs care to avoid being overrun."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

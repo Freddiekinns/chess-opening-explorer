@@ -1,0 +1,103 @@
+{
+  "slug": "dutch-defense-blackburne-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Blackburne Variation",
+    "eco": "A81",
+    "moves": "1. d4 f5 2. g3 Nf6 3. Bg2 e6 4. Nh3",
+    "fen": "rnbqkb1r/pppp2pp/4pn2/5p2/3P4/6PN/PPP1PPBP/RNBQK2R b KQkq - 1 4"
+  },
+  "parent": "dutch-defense-fianchetto-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White fianchettoes against the Dutch and plays Nh3 to reach f4, controlling e6 and d5. Black continues ...Be7, ...O-O and ...d6 or ...d5. A slow strategic fight.",
+  "white_ideas": [
+    {
+      "idea": "Play Nf4, O-O and c4"
+    },
+    {
+      "idea": "Fianchetto bishop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...Be7, ...O-O, ...d6"
+    },
+    {
+      "idea": "Stonewall with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch structures"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Strategic."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material."
+    },
+    "soundness": {
+      "notes": "Normal."
+    },
+    "structure": {
+      "notes": "Flexible."
+    },
+    "approach": {
+      "notes": "Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Normal."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Normal."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "Normal."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Moderate."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Fianchetto."
+    }
+  }
+}

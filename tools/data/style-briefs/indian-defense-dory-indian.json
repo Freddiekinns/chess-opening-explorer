@@ -1,0 +1,114 @@
+{
+  "slug": "indian-defense-dory-indian",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Döry Indian",
+    "eco": "E10",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Ne4",
+    "fen": "rnbqkb1r/pppp1ppp/4p3/8/2PPn3/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4"
+  },
+  "parent": "indian-defense-anti-nimzo-indian",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 3...Ne4 immediately, hitting c3 and f2 and preparing ...Bb4+ and ...Qf6 or ...d5. White usually plays 4.Qc2 or 4.Nbd2, and Black tries for active piece play and the e4 knight's outpost. The game is flexible and manoeuvring, and the knight on e4 can be harassed by d5.",
+  "white_ideas": [
+    {
+      "idea": "Challenge the knight with Qc2 and Nbd2"
+    },
+    {
+      "idea": "Grab central space with e3 or g3"
+    },
+    {
+      "idea": "Exploit Black's lost tempi"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support the e4 knight with ...d5 or ...f5"
+    },
+    {
+      "idea": "Develop the bishop with ...Bb4+ and ...Qf6"
+    },
+    {
+      "idea": "Trade White's centre bishop and aim for a set-up with ...b6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Gambit-style centre with c4/d4 against ...d5"
+    },
+    {
+      "structure": "Knight on e4 supported by pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early piece activity but positions stay flexible rather than forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound but a tempo is spent on the knight."
+    },
+    "structure": {
+      "notes": "Centre pawns not locked; White decides between e3 and g3."
+    },
+    "approach": {
+      "notes": "A rare but known Indian defence, played by strong players occasionally."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Ideas are clear but handling the early knight takes some judgement."
+    }
+  },
+  "plan_phrases": [
+    "Knight outpost",
+    "Hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Black plays actively but the early middlegame is not forcing or especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No pawn is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "It is a playable if slightly passive line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre is not yet fixed."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Rare but played by strong players, so not offbeat."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "It is a plan-based line with modest theory."
+    },
+    "plans": {
+      "value": [
+        "knight_outpost",
+        "hypermodern_centre"
+      ],
+      "reason": "Black uses the e4 knight and lets White build the centre."
+    }
+  }
+}

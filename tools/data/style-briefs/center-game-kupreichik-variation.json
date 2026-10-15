@@ -1,0 +1,105 @@
+{
+  "slug": "center-game-kupreichik-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Kupreichik Variation",
+    "eco": "C22",
+    "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Nf6 5. Nc3 Bb4 6. Bd2 O-O 7. O-O-O Re8 8. Bc4 d6 9. Nh3",
+    "fen": "r1bqr1k1/ppp2ppp/2np1n2/8/1bB1P3/2N1Q2N/PPPB1PPP/2KR3R b - - 1 9"
+  },
+  "parent": "center-game-berger-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Center Game Berger line White develops quickly with 4.Qe3, then Nc3, Bd2 and long castling, against Black's ...Bb4 pin and kingside castling. The game is open and based on development rather than structure; White tries Bc4 and Nh3-g5 or f4 against the king, Black uses the e-file and ...Re8. Middle-length theory line.",
+  "white_ideas": [
+    {
+      "idea": "Castle queenside and bring pieces with Bc4 and Nh3-g5 against f7."
+    },
+    {
+      "idea": "Use the centre and open d-file for rooks."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin the knight with ...Bb4, castle and use ...Re8 and ...d6."
+    },
+    {
+      "idea": "Hit e4 with ...Ng4 or ...Nxe4 and challenge the queen on e3."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the d- and e-pawns exchanged and kings on opposite sides."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Opposite-side castling invites attacks but the position is roughly level."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level after the pawns are exchanged."
+    },
+    "soundness": {
+      "notes": "A playable but slightly passive set-up for White."
+    },
+    "structure": {
+      "notes": "Open e-file and d-file with the central pawns traded."
+    },
+    "approach": {
+      "notes": "The Center Game is a respectable choice though seldom played."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Move-order care but few long forced lines."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "opposite-side castling"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Opposite-side castling invites attacks but the position is roughly level."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Material is level after the pawns are exchanged."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "A playable but slightly passive set-up for White."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Open e-file and d-file with the central pawns traded."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "The Center Game is a respectable choice though seldom played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Move-order care but few long forced lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White's queen came out early and development counts."
+    }
+  }
+}

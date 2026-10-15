@@ -1,0 +1,112 @@
+{
+  "slug": "kadas-opening-schneider-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Kádas Opening: Schneider Gambit",
+    "eco": "A00",
+    "moves": "1. h4 g5",
+    "fen": "rnbqkbnr/pppppp1p/8/6p1/7P/8/PPPPPPP1/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "kadas-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black replies 1...g5 to 1.h4, offering the pawn. White takes with hxg5 and Black gets an open h-file with development. It is a rare gambit with unclear value.",
+  "white_ideas": [
+    {
+      "idea": "Take g5 and develop"
+    },
+    {
+      "idea": "Use the h-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open lines with ...Bg7"
+    },
+    {
+      "idea": "Play ...d5 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open flanks"
+    },
+    {
+      "structure": "No central pawns yet"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wild and unclear."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White takes g5 and may keep it."
+    },
+    "soundness": {
+      "notes": "Probably unsound."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "No theory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Quiet 1...e5",
+      "moves": "1. h4 e5",
+      "how": "a standard reply"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black plays for tempo."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.55,
+      "reason": "Black offers g5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "The offer is not well supported."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "No centre exists yet."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Very rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black wants quick development."
+    }
+  }
+}

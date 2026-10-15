@@ -1,0 +1,105 @@
+{
+  "slug": "dutch-defense-hort-antoshin-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Hort-Antoshin System",
+    "eco": "A86",
+    "moves": "1. d4 f5 2. c4 Nf6 3. g3 d6 4. Bg2 c6 5. Nc3 Qc7",
+    "fen": "rnb1kb1r/ppq1p1pp/2pp1n2/5p2/2PP4/2N3P1/PP2PPBP/R1BQK1NR w KQkq - 2 6"
+  },
+  "parent": "dutch-defense-fianchetto-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "A Dutch Leningrad-style fianchetto set-up with ...d6, ...c6 and ...Qc7 preparing ...e5. White builds with Nc3, d4 (or d3 and e4) and castles; Black meets it with ...e5 and sometimes ...Na6 and ...Nc5. The structure is closed-ish and the game is a manoeuvring fight with a kingside initiative for Black.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto Bg2, Nc3, d4 and then e4 or Qb3"
+    },
+    {
+      "idea": "Control the centre and restrain ...e5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Prepare ...e5 with ...Qc7 and ...c6"
+    },
+    {
+      "idea": "Kingside space and ...f5-f4 ideas"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch with d6/c6 against a fianchettoed White bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Dutch is known for unbalanced play with a weakened Black king and kingside attacks. Dutch keeps a kingside race."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "Established Dutch system."
+    },
+    "structure": {
+      "notes": "Centre tension with ...e5 not yet played."
+    },
+    "approach": {
+      "notes": "A recognised, if less common, branch of the Dutch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The plans are understood rather than memorised."
+    }
+  },
+  "plan_phrases": [
+    "prepare ...e5",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The Dutch is known for unbalanced play with a weakened Black king and kingside attacks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Established Dutch system."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre tension with ...e5 not yet played."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A recognised, if less common, branch of the Dutch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans are understood rather than memorised."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "kingside_attack"
+      ],
+      "reason": "White’s Bg2 and Black’s kingside play."
+    }
+  }
+}

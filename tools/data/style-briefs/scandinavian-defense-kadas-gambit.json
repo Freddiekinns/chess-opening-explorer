@@ -1,0 +1,109 @@
+{
+  "slug": "scandinavian-defense-kadas-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Kádas Gambit",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. exd5 Nf6 3. d4 c6 4. dxc6 e5",
+    "fen": "rnbqkb1r/pp3ppp/2P2n2/4p3/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 5"
+  },
+  "parent": "scandinavian-defense-modern-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black gambits further with 3...c6 4.dxc6 e5, going two pawns down for open lines and a lead in development. White can give the material back and simply develop. The play is open and tactical, with Black's compensation doubtful.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawns and develop with Nf3"
+    },
+    {
+      "idea": "Exchange queens to reach an endgame up material"
+    },
+    {
+      "idea": "Return the material for safety if needed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use ...e5 to open lines"
+    },
+    {
+      "idea": "Develop with ...Nxc6 and ...Bb4+"
+    },
+    {
+      "idea": "Aim for the open centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White ahead in material"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing lines and tactics where Black is behind."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the c6 and d5 pawns in the main line."
+    },
+    "soundness": {
+      "notes": "The Kadas Gambit is considered unsound for Black."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Rarely played at a high level."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Trap-based lines."
+    }
+  },
+  "plan_phrases": [
+    "Quick development for the pawns"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Black gives two pawns for open lines, so it is tactical."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives pawns that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.75,
+      "reason": "The extra pawns tell and strong players avoid it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre opens early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black's only compensation is development."
+    }
+  }
+}

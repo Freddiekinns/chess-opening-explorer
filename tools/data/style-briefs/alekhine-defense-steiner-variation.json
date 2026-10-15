@@ -1,0 +1,109 @@
+{
+  "slug": "alekhine-defense-steiner-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Steiner Variation",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. b3",
+    "fen": "rnbqkb1r/pppppppp/1n6/4P3/2P5/1P6/P2P1PPP/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "alekhine-defense-two-pawns-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 4.b3 in the Two Pawns Attack, planning a fianchetto with Bb2 and a quiet development instead of the pawn chase with d4. Black keeps the knight on b6 and plays ...d6 or ...Nc6 and ...d5, attacking the e5 pawn from the usual Alekhine set-up. It is a rare, positional way to meet the Alekhine.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with Bb2, play Nf3 and d4"
+    },
+    {
+      "idea": "Hold the advanced pawn on e5 and keep space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Attack e5 with ...d6 or ...Nc6, and aim for ...d5"
+    },
+    {
+      "idea": "Use the hypermodern idea of a White overextended centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White space on e5/c4 against Black piece play"
+    },
+    {
+      "structure": "Fianchetto set-up for White"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White picks a quiet fianchetto set-up and the game is slower than the other Alekhine lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Fully playable for White."
+    },
+    "structure": {
+      "notes": "White space with pawns on e5 and c4 and an undecided centre."
+    },
+    "approach": {
+      "notes": "A rare sideline seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A sideline with plan-based ideas."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "fianchetto",
+    "hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The quiet fianchetto avoids sharp lines while Black attacks the e5 pawn."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Fully playable for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is not yet resolved and Black can attack e5 in several ways."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "A sideline of the Two Pawns Attack seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans over memorisation."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "fianchetto"
+      ],
+      "reason": "White holds space with the e5 pawn and fianchettoes the queen's bishop."
+    }
+  }
+}

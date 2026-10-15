@@ -1,0 +1,116 @@
+{
+  "slug": "kings-gambit-accepted-allgaier",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Allgaier, Schlechter Defense",
+    "eco": "C39",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ng5 Nf6",
+    "fen": "rnbqkb1r/pppp1p1p/5n2/6N1/4PppP/8/PPPP2P1/RNBQKB1R w KQkq - 2 6"
+  },
+  "parent": "kings-gambit-accepted-allgaier-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Allgaier after 3.Nf3 g5 4.h4 g4 5.Ng5, White has given the f-pawn and is ready to sacrifice the knight on f7. With 5...Nf6 (the Schlechter defence) Black develops and leaves the knight on g5 attacked; White follows with Bc4 or d4 and a fierce fight with Black extra pawns. It is highly theoretical and double-edged.",
+  "white_ideas": [
+    {
+      "idea": "Attack f7 with Ng5 and Bc4"
+    },
+    {
+      "idea": "Sacrifice Nxf7 when it opens the king"
+    },
+    {
+      "idea": "Open the centre with d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...d5"
+    },
+    {
+      "idea": "Hold the pawns and block with ...h6"
+    },
+    {
+      "idea": "Return material for safety"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on g4 and f4, advanced"
+    },
+    {
+      "structure": "Open centre and f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp tactical chaos with kings exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black has the f4 and g4 pawns and can keep material with accurate defence."
+    },
+    "soundness": {
+      "notes": "Theory favours Black."
+    },
+    "structure": {
+      "notes": "Open files for attack."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players now."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines that must be known."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "pressure on f7",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "Mutual attacks with exposed kings, where one error loses."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White has given the f-pawn and offers more."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Theory thinks Black can hold the material, and White is the side taking the risk."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Open lines and files drive the play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose the Allgaier now."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.45,
+      "reason": "Long forcing theory has to be known."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "White throws pieces at f7 and the king."
+    }
+  }
+}

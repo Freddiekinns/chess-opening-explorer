@@ -1,0 +1,112 @@
+{
+  "slug": "queens-gambit-declined-manhattan-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Manhattan Variation",
+    "eco": "D51",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. e3 Bb4",
+    "fen": "r1bqk2r/pppn1ppp/4pn2/3p2B1/1bPP4/2N1P3/PP3PPP/R2QKBNR w KQkq - 1 6"
+  },
+  "parent": "queens-gambit-declined-modern-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black pins the c3 knight with ...Bb4 against the Bg5 and ...Nbd7. White usually answers with Bxf6 or Qb3, taking the bishop pair if Black recaptures, and play heads toward ...c5 or ...dxc4. Black keeps a sound structure with queenside play.",
+  "white_ideas": [
+    {
+      "idea": "Bxf6 and Nge2 to gain the bishop pair"
+    },
+    {
+      "idea": "Qb3 or Qa4 hitting the c-pawn"
+    },
+    {
+      "idea": "Central play with e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...Bxc3+ doubles pawns for the bishop pair"
+    },
+    {
+      "idea": "...c5 break"
+    },
+    {
+      "idea": "...dxc4 to free the game"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD structure with d5 and e6 against d4 and e3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tension in the centre and doubled pawns but not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound with correct play."
+    },
+    "structure": {
+      "notes": "QGD centre with tension, flexible."
+    },
+    "approach": {
+      "notes": "Standard QGD sub-line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans around the pin and the bishop pair."
+    }
+  },
+  "plan_phrases": [
+    "Pin the c3 knight",
+    "Doubled pawns for bishop pair",
+    "...c5 break"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "A pin and some tension but nothing forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.92,
+      "reason": "A normal developing line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A usual QGD line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Needs positional understanding of the pin."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "bishop_pair"
+      ],
+      "reason": "The pin on c3 can lead to doubled pawns and the bishop pair."
+    }
+  }
+}

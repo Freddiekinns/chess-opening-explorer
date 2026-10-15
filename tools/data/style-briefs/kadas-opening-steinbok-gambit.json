@@ -1,0 +1,105 @@
+{
+  "slug": "kadas-opening-steinbok-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Kádas Opening: Steinbok Gambit",
+    "eco": "A00",
+    "moves": "1. h4 f5 2. e4 fxe4 3. d3",
+    "fen": "rnbqkbnr/ppppp1pp/8/8/4p2P/3P4/PPP2PP1/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "kadas-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 1.h4 f5 2.e4 and offers the e4 pawn for development. Black can capture and try to hold the pawn, while White plays d3 and Nc3 hoping for compensation. A very rare gambit that scores through surprise.",
+  "white_ideas": [
+    {
+      "idea": "Regain e4 with Nc3/Qh5+ or d3 and open lines"
+    },
+    {
+      "idea": "Use the h-pawn as a lever against Black's king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn and develop sensibly"
+    },
+    {
+      "idea": "Counterattack against the loosened White king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices for an attack."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the e4 pawn."
+    },
+    "soundness": {
+      "notes": "Considered dubious for White."
+    },
+    "structure": {
+      "notes": "e-file opens quickly."
+    },
+    "approach": {
+      "notes": "Hardly ever used by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White sacrifices for an attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "Black can keep the e4 pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Considered dubious for White."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "e-file opens quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Hardly ever used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

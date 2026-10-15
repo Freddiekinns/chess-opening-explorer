@@ -1,0 +1,110 @@
+{
+  "slug": "bird-opening-mujannah",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Mujannah",
+    "eco": "A02",
+    "moves": "1. f4 Nf6 2. c4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/2P2P2/8/PP1PP1PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "bird-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White adds 2.c4 to the Bird, building a Dutch-reversed or English-style structure with f4 and c4 and a later Nc3 and g3. Black usually plays 2...e6 or 2...g6, or hits e5 with 2...e5 3.fxe5 Ng4. The game is manoeuvring and flexible, with White trying to control e5.",
+  "white_ideas": [
+    {
+      "idea": "Control e5 with f4 and Nf3 and fianchetto the king bishop"
+    },
+    {
+      "idea": "Expand with c4, Nc3 and d3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...e6 and ...d5 or fianchetto with ...g6"
+    },
+    {
+      "idea": "Strike with ...e5 to open the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed Dutch / English-style structure with c4 and f4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides develop normally with no forcing sacrifices."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Sound if slightly weakening to the kingside."
+    },
+    "structure": {
+      "notes": "Flank opening where the centre is not fixed."
+    },
+    "approach": {
+      "notes": "A Bird line used occasionally; the Bird is a respectable surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Some knowledge of Dutch-style structures helps."
+    }
+  },
+  "plan_phrases": [
+    "control e5",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black strikes with ...e5",
+      "moves": "1. f4 Nf6 2. c4 e5 3. fxe5 Ng4",
+      "how": "Black gives a pawn for quick development."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A flexible flank set-up with no early forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No pawn is sacrificed in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A sound if slightly loosening set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.8,
+      "reason": "Flank opening with an undecided centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Occasionally played at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Requires understanding of reversed Dutch structures."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White fianchettoes and fights for e5."
+    }
+  }
+}

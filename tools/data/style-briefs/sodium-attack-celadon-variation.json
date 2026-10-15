@@ -1,0 +1,105 @@
+{
+  "slug": "sodium-attack-celadon-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sodium Attack: Celadon Variation",
+    "eco": "A00",
+    "moves": "1. Na3 e5 2. d3 Bxa3 3. bxa3 d5 4. e3 c5 5. Rb1",
+    "fen": "rnbqk1nr/pp3ppp/8/2ppp3/8/P2PP3/P1P2PPP/1RBQKBNR b Kkq - 1 5"
+  },
+  "parent": "sodium-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.Na3 e5 2.d3 Bxa3 3.bxa3 White accepts doubled a-pawns and an open b-file for the Rb1. Black gets the bishop for a knight, easy development and a central majority. White has an open b-file and the bishop pair, but pawns are poor. I judge from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Use the open b-file with Rb1 and develop with e3"
+    },
+    {
+      "idea": "Play for the bishop pair"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Build a centre with ...d5, ...c5 and ...Nc6"
+    },
+    {
+      "idea": "Exploit White's weakened pawns"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White doubled a-pawns against a Black centre of d5, e5 and c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, nothing forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Harmless."
+    },
+    "structure": {
+      "notes": "Black has a strong centre."
+    },
+    "approach": {
+      "notes": "Very rare joke opening."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few plans."
+    }
+  },
+  "plan_phrases": [
+    "doubled pawns",
+    "bishop pair"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Slow play with doubled pawns for White."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Looks bad for White but not losing."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Black holds a big centre; unsure."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "1.Na3 is hardly ever played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not a recommended first choice."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "bishop_pair"
+      ],
+      "reason": "White accepts doubled pawns for the b-file and bishop pair."
+    }
+  }
+}

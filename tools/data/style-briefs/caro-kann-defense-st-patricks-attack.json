@@ -1,0 +1,105 @@
+{
+  "slug": "caro-kann-defense-st-patricks-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: St. Patrick's Attack",
+    "eco": "B10",
+    "moves": "1. Nc3 d5 2. e4 c6 3. h3",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/4P3/2N4P/PPPP1PP1/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.Nc3 d5 2.e4 c6 3.h3 White stops ...Bg4 and prepares quiet development with Nf3 and d4 against the Caro-Kann set-up. Black keeps the usual Caro-Kann structure and plays ...e6 or ...dxe4. The result is a solid, manoeuvring game with small differences from normal Caro-Kann lines.",
+  "white_ideas": [
+    {
+      "idea": "Stop ...Bg4 and develop Nf3, d4"
+    },
+    {
+      "idea": "Exchange or advance in the centre with e5"
+    },
+    {
+      "idea": "Keep a flexible set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Capture dxe4 and develop ...Nf6, ...Bf5"
+    },
+    {
+      "idea": "Solid structure with ...e6"
+    },
+    {
+      "idea": "Challenge the centre with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann pawn structure with the half-open c- or d-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Caro-Kann structure is hard to break down."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound; h3 is a slow move."
+    },
+    "structure": {
+      "notes": "Caro-Kann centre with exchanges on e4 or d5 leaves a half-open file."
+    },
+    "approach": {
+      "notes": "A rare sideline that strong players seldom use."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Simple development, little theory."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "The Caro-Kann structure is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A slow but playable sideline."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Caro-Kann exchanges leave a half-open file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose it as White."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Little theory but not a mainstream first choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No standard plan is clearly named."
+    }
+  }
+}

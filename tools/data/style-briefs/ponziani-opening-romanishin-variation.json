@@ -1,0 +1,103 @@
+{
+  "slug": "ponziani-opening-romanishin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Romanishin Variation",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 Be7",
+    "fen": "r1bqk1nr/ppppbppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "ponziani-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black defends the e5 pawn with 3...Be7, keeping flexible instead of playing 3...d5 or 3...Nf6. White usually plays d4 and gets a good centre, with Black relying on solid development and ...d6. The game is a normal Open Game with a slight White space edge and little forcing theory.",
+  "white_ideas": [
+    {
+      "idea": "Build the c3-d4 centre"
+    },
+    {
+      "idea": "Develop with Bb5 or Be2 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e5 with ...d6 and ...Nf6"
+    },
+    {
+      "idea": "Break with ...exd4 and ...d5 later"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on c3 and d4 against Black's e5/d6 chain"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, no early forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Fine for both sides."
+    },
+    "structure": {
+      "notes": "The centre tension on e5/d4 is unresolved."
+    },
+    "approach": {
+      "notes": "The Ponziani is a respectable if uncommon choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear and theory is light."
+    }
+  },
+  "plan_phrases": [
+    "build a pawn centre with d4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet, no early forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Fine for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre tension on e5/d4 is unresolved."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "The Ponziani is a respectable if uncommon choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear and theory is light."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority"
+      ],
+      "reason": "White aims to establish d4 and a pawn centre."
+    }
+  }
+}

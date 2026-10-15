@@ -1,0 +1,104 @@
+{
+  "slug": "formation-hippopotamus-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Formation: Hippopotamus Attack",
+    "eco": "A00",
+    "moves": "1. a3 e5 2. b3 d5 3. c3 Nf6 4. d3 Nc6 5. e3 Bd6 6. f3 O-O 7. g3",
+    "fen": "r1bq1rk1/ppp2ppp/2nb1n2/3pp3/8/PPPPPPP1/7P/RNBQKBNR b KQ - 0 7"
+  },
+  "parent": "anderssens-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White sets up a hippopotamus formation with all pawns on the third rank, a3, b3, c3, d3, e3, f3 and g3, against Black’s classical e5/d5 centre. White waits and strikes at the centre with a later e4 or f4. Black has space and an easy game.",
+  "white_ideas": [
+    {
+      "idea": "Keep the pawn wall and wait for Black to overextend"
+    },
+    {
+      "idea": "Break with e4 or f4 later"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take space in the centre and attack on the kingside"
+    },
+    {
+      "idea": "Play ...Re8 and ...e4 ideas"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on the third rank, Black e5/d5 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Hard to break down but passive. Passive."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material."
+    },
+    "soundness": {
+      "notes": "Playable but passive."
+    },
+    "structure": {
+      "notes": "Pawn structure undecided."
+    },
+    "approach": {
+      "notes": "A pawn set-up played whatever Black does."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a first choice."
+    }
+  },
+  "plan_phrases": [
+    "pawn wall",
+    "hypermodern waiting"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Hard to break down but passive."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "None."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Playable but passive."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Pawn structure undecided."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.55,
+      "reason": "A pawn set-up played whatever Black does."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Not a first choice."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre"
+      ],
+      "reason": "White lets Black occupy the centre."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "semi-slav-defense-accelerated-meran-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Accelerated Meran Variation",
+    "eco": "D45",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 e6 5. Nf3 a6",
+    "fen": "rnbqkb1r/1p3ppp/p1p1pn2/3p4/2PP4/2N1PN2/PP3PPP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "semi-slav-defense-main-line",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays ...a6 before White commits the bishop, which prepares ...dxc4 and ...b5 with a faster Meran-style queenside expansion. White may play 6.Bd3 or 6.b3, or push c5. Black aims for ...c5 and an active bishop on b7 against a solid White centre.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bd3 and e4 or play b3 against the Meran set-up"
+    },
+    {
+      "idea": "Take space with c5 and attack on the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Expand with ...dxc4, ...b5 and ...Bb7"
+    },
+    {
+      "idea": "Break the centre with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Semi-Slav centre with tension on c4 and d5, Meran-type queenside play"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Meran is a well-mapped theory battle but both sides are sound, so it is balanced rather than sharp or solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black's ...dxc4 pawn is usually regained by White."
+    },
+    "soundness": {
+      "notes": "Considered sound for Black."
+    },
+    "structure": {
+      "notes": "Centre tension on c4, d4 and d5 with an undecided pawn structure."
+    },
+    "approach": {
+      "notes": "A normal Semi-Slav move order played at club and master level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The plans are understandable though the theory is deep, so Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "c5 break",
+    "bishop on b7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "The Meran is a well-mapped theory battle but both sides are sound, so it is balanced rather than sharp or solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Black's ...dxc4 pawn is usually regained by White."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Considered sound for Black."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Centre tension on c4, d4 and d5 with an undecided pawn structure."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal Semi-Slav move order played at club and master level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans are understandable though the theory is deep, so Intermediate."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

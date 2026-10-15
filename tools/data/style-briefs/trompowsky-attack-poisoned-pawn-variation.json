@@ -1,0 +1,118 @@
+{
+  "slug": "trompowsky-attack-poisoned-pawn-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Trompowsky Attack: Poisoned Pawn Variation",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Bg5 c5 3. d5 Qb6 4. Nc3",
+    "fen": "rnb1kb1r/pp1ppppp/1q3n2/2pP2B1/8/2N5/PPP1PPPP/R2QKBNR b KQkq - 2 4"
+  },
+  "parent": "trompowsky-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 2...c5 3.d5 Qb6 4.Nc3 Black can take the b2 pawn. White plays 5.Bd2 and tries to use the open b-file and development lead, while Black returns to b6 or defends. The Chepukaitis Gambit is the most played branch.",
+  "white_ideas": [
+    {
+      "idea": "Develop with e4 and Rb1 after the queen grabs b2"
+    },
+    {
+      "idea": "Use the b-file and lead in development"
+    },
+    {
+      "idea": "Big centre with e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take b2 and retreat to b6"
+    },
+    {
+      "idea": "Develop and consolidate with ...e6 or ...d6"
+    },
+    {
+      "idea": "Keep the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like pawn structure with d5 against c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Gambit tactics around the queen and b-file."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "b2 pawn can be taken with the queen; Black can keep it."
+    },
+    "soundness": {
+      "notes": "Compensation is real in lines, close to sound."
+    },
+    "structure": {
+      "notes": "Benoni structure, with d5 and c5 in a tense centre."
+    },
+    "approach": {
+      "notes": "The Trompowsky is standard."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs concrete lines."
+    }
+  },
+  "plan_phrases": [
+    "Pawn sacrifice for the b-file",
+    "Lead in development",
+    "Benoni structure"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Chepukaitis Gambit",
+      "moves": "1. d4 Nf6 2. Bg5 c5 3. d5 Qb6 4. Nc3 Qxb2 5. Bd2 Qb6",
+      "how": "White gives a pawn for development."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Queen grabs a pawn and White plays for development."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White offers b2 and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "White's compensation is real but not clearly enough."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "A Benoni-like centre where the queen sortie decides the nature of the game."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "The Trompowsky is standard, though this line is less common."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "The gambit needs some concrete knowledge and understanding."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White gives a pawn for time, and Black's queen is exposed."
+    }
+  }
+}

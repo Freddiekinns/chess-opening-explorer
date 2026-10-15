@@ -1,0 +1,107 @@
+{
+  "slug": "benko-gambit-nescafe-frappe-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit: Nescafe Frappe Attack",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. Nc3 axb5 6. e4 b4 7. Nb5 d6 8. Bc4",
+    "fen": "rnbqkb1r/4pppp/3p1n2/1NpP4/1pB1P3/8/PP3PPP/R1BQK1NR b KQkq - 1 8"
+  },
+  "parent": "benko-gambit-zaitsev-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Zaitsev Benko, White has taken the b-pawn, played e4 and put a knight on b5, here followed by Bc4 with ideas of Nxd6+ tricks and pressure on f7. Black is a pawn down for open a- and b-files and play against the queenside, and must meet the knight's threats on d6 and c7. I am not sure of the exact theory of this named line.",
+  "white_ideas": [
+    {
+      "idea": "Use the active Nb5 and Bc4 to pressure d6 and f7"
+    },
+    {
+      "idea": "Complete development with Nf3, O-O and Bf4 or Bg5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Stay a pawn down for queenside pressure on the a- and b-files"
+    },
+    {
+      "idea": "Neutralise the knight with ...Bb7, ...g6, ...Bg7 and ...O-O"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benko queenside structure with open a- and b-files"
+    },
+    {
+      "structure": "White central pawns on d5 and e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Benko lines trade a pawn for long queenside pressure, and this line adds early tactics around d6 and f7."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gave the b-pawn and White can keep it, though Black has long compensation."
+    },
+    "soundness": {
+      "notes": "The Benko is sound; this side line is not known to be a refutation."
+    },
+    "structure": {
+      "notes": "Open a- and b-files for Black with a fixed d5 pawn; half-open files."
+    },
+    "approach": {
+      "notes": "A normal Benko line, standard for those who play the gambit."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Concrete tactics around Nb5 must be known and the compensation is positional."
+    }
+  },
+  "plan_phrases": [
+    "Queenside pressure for a pawn",
+    "Half-open a- and b-files"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "A pawn gambit with concrete tactics around d6 and f7."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black has given the b-pawn and White can hold it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "The Benko is a sound gambit and this line is not a known refutation."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Black presses on half-open a- and b-files against a fixed d5/e4 centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A Benko sub-line of a respected gambit."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "The Benko needs known tactics and long-term pawn-down understanding."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Both sides depend on activity rather than material."
+    }
+  }
+}

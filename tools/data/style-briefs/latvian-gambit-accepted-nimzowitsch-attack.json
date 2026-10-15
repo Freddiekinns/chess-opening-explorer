@@ -1,0 +1,111 @@
+{
+  "slug": "latvian-gambit-accepted-nimzowitsch-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit Accepted: Nimzowitsch Attack",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. d4 d6 5. Nc4 fxe4 6. Ne3",
+    "fen": "rnb1kbnr/ppp3pp/3p1q2/8/3Pp3/4N3/PPP2PPP/RNBQKB1R b KQkq - 1 6"
+  },
+  "parent": "latvian-gambit-accepted-bilguer-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4 6.Ne3 material is level, with Black's queen on f6 and White's knight eyeing d5 and g4. White has a strong centre and a lead in space, and Black must develop against the queen being chased. Black has an open f-file and some play, but the position is easier for White.",
+  "white_ideas": [
+    {
+      "idea": "Build a strong centre with Nc3 and Be2"
+    },
+    {
+      "idea": "Chase the queen with Nd5 or Ng4"
+    },
+    {
+      "idea": "Castle safely and use the extra space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nc6, ...Be6 and castle"
+    },
+    {
+      "idea": "Use the open f-file and the queen's activity"
+    },
+    {
+      "idea": "Break the centre with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4 centre against Black's d6 and open f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's early queen sortie and White's centre make tactics likely."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black took e4 with fxe4 so the material is level at the root, and the pawn is not given."
+    },
+    "soundness": {
+      "notes": "The Latvian is considered dubious for Black."
+    },
+    "structure": {
+      "notes": "The f-file is open and White has a d4 pawn; pieces are active."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs the specific Latvian lines."
+    }
+  },
+  "plan_phrases": [
+    "Early queen",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Black's queen is exposed and the Latvian is tactical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "At the root position the material is level since Black took back on e4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The Latvian is considered dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The f-file and e-file are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "The Latvian is an anchor example of an offbeat opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black's queen is out early and development matters."
+    }
+  }
+}

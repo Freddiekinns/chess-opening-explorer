@@ -1,0 +1,105 @@
+{
+  "slug": "zukertort-opening-myers-polish-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Myers Polish Attack",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. a4 g6 3. b4",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/PP6/5N2/2PPPPPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays the flank moves a4 and b4 against a King's Indian set-up, aiming for queenside space and a Polish-style queenside expansion. Black develops with ...Bg7 and ...d6 or ...c5, and fights back in the centre. The line is rare and read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with a4 and b4, then Bb2"
+    },
+    {
+      "idea": "Develop with e3 or g3 and keep a flexible centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike in the centre with ...c5 or ...d5"
+    },
+    {
+      "idea": "Build a fianchetto and a pawn centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White queenside pawns on a4 and b4 against Black's fianchetto set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flank expansion rather than forcing play, but it is not hard to break."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Playable, with Black able to hit the advanced pawns."
+    },
+    "structure": {
+      "notes": "The centre is not fixed."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few forcing lines to learn and plans are straightforward."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "flank opening"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flank expansion rather than forcing play, but it is not hard to break."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Playable, with Black able to hit the advanced pawns."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is not fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Few forcing lines to learn and plans are straightforward."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "space_advantage"
+      ],
+      "reason": "White pushes the a- and b-pawns for space."
+    }
+  }
+}

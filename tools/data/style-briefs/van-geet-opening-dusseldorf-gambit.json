@@ -1,0 +1,105 @@
+{
+  "slug": "van-geet-opening-dusseldorf-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Düsseldorf Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 c5 2. b4",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/1P6/2N5/P1PPPPPP/R1BQKBNR b KQkq - 0 2"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.Nc3 c5 2.b4 White offers a pawn on b4 as in the Sicilian Wing Gambit. If Black takes 2...cxb4, White gets time with 3.Nd5 or 3.Nb5 and usually follows with e4 and d4 for development. Rare and unpromising for White against sound play.",
+  "white_ideas": [
+    {
+      "idea": "Win time with Nd5 or Nb5 and then e4, d4"
+    },
+    {
+      "idea": "Open lines on the queenside with a3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn and hold it with ...e6 and ...Nc6"
+    },
+    {
+      "idea": "Develop calmly and return material if needed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open queenside after cxb4 with White using the central lead"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced: White sacrifices a pawn early but Black can simplify."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "2.b4 offers a wing pawn that Black can keep after 2...cxb4."
+    },
+    "soundness": {
+      "notes": "Likely unsound if Black keeps the pawn; strong players seldom play it."
+    },
+    "structure": {
+      "notes": "Queenside opens after the b-pawn exchange; the centre is undecided."
+    },
+    "approach": {
+      "notes": "A rare surprise move order."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory and no deep plan; not a first-repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A pawn is offered early on the wing."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the b-pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can keep the pawn and neutralise the compensation."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The b-file opens after cxb4 while the centre is unclear."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly play 1.Nc3 c5 2.b4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "queenside_expansion"
+      ],
+      "reason": "White uses b4 to gain time and open the wing."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "kings-pawn-game-schulze-muller-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Schulze-Müller Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nxe5 Nxe5 4. d4",
+    "fen": "r1bqkbnr/pppp1ppp/8/4n3/3PP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "irish-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White sacrifices a knight for a pawn with 3.Nxe5 Nxe5 4.d4, forking the knight and opening the centre, then follows with e5 or Qh5 against the king. After 4...Ng6 5.e5 White has two pawns and the initiative for a piece, but most sources think Black can defend with accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Win time with d4 and e5 against the knight"
+    },
+    {
+      "idea": "Attack the king with Qh5, Bc4 and f4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra piece and return it for safety if needed"
+    },
+    {
+      "idea": "Challenge the centre with ...d6 and ...Bb4+"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White's d- and e-pawns for a piece"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is a piece down for pawns, so every move is tactical and a slip loses quickly."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives a knight for a pawn, and Black can keep the piece."
+    },
+    "soundness": {
+      "notes": "Strong players consider it unsound, and it scores through traps at club level."
+    },
+    "structure": {
+      "notes": "Central pawns come off early, leaving open lines for the pieces."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players at all."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious, so never Beginner despite simple ideas."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4...Nxf3+",
+      "moves": "4... Nxf3+ 5. Qxf3",
+      "how": "Black gives White the queen's activity and the compensation shrinks."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "White is a piece down for pawns, so every move is tactical and a slip loses quickly."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives a knight for a pawn, and Black can keep the piece."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "Strong players consider it unsound, and it scores through traps at club level."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Central pawns come off early, leaving open lines for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom chosen by strong players at all."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious, so never Beginner despite simple ideas."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

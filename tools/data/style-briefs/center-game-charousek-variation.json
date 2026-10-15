@@ -1,0 +1,103 @@
+{
+  "slug": "center-game-charousek-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Center Game: Charousek Variation",
+    "eco": "C22",
+    "moves": "1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Bb4+ 5. c3 Be7",
+    "fen": "r1bqk1nr/ppppbppp/2n5/8/4P3/2P1Q3/PP3PPP/RNB1KBNR w KQkq - 1 6"
+  },
+  "parent": "center-game-paulsen-attack-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White's queen is out on e3 after the Paulsen attack and Black has gained time with ...Bb4+ and ...Be7. White usually follows with Nf3 and Be2, and Black has a comfortable game.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3, Be2"
+    },
+    {
+      "idea": "Use the open d-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Castle and develop"
+    },
+    {
+      "idea": "Counter in the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Calm."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Simple."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "The queen is out but there is no forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The pawn is regained."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A playable line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Central pawns are exchanged."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "The Centre Game is played by strong players occasionally."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are clear."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White's queen is on e3 early."
+    }
+  }
+}

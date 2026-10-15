@@ -1,0 +1,105 @@
+{
+  "slug": "vienna-gambit-with-max-lange-defense-cunningham-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Gambit, with Max Lange Defense: Cunningham Defense",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 Be7",
+    "fen": "r1bqk1nr/ppppbppp/2n5/8/4Pp2/2N2N2/PPPP2PP/R1BQKB1R w KQkq - 2 5"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense-knight-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "The Vienna Gambit reaches 3.f4 exf4 4.Nf3 Be7, the Cunningham-style move which blocks the e-file and threatens ...Bh4+. White usually develops with Bc4 and castles, then pushes d4 and e5. Black keeps the pawn and counters in the centre. Play is open and tactical.",
+  "white_ideas": [
+    {
+      "idea": "Play Bc4 and castle, then d4 and e5"
+    },
+    {
+      "idea": "Hit f7 with Bc4 and Ng5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the f4 pawn and play ...Bh4+ or ...d5"
+    },
+    {
+      "idea": "Develop with ...Nf6 and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4 with e4/f4 against ...e7/c6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open game with attacking chances for White and counterplay for Black."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gave up f4 and Black can hold on to it."
+    },
+    "soundness": {
+      "notes": "The gambit is considered playable and the Cunningham line is sound for both sides."
+    },
+    "structure": {
+      "notes": "Both sides open the centre."
+    },
+    "approach": {
+      "notes": "The Vienna Gambit is a respectable choice."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific responses to ...Bh4+ and ...d5 must be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "f7 pressure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "White gives a pawn for an attack and Black can punish slips."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gave up f4 and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "The gambit is a respected line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens early and pieces get lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "It is a respectable choice at every level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Moderate theory and clear plans."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White develops fast and aims at f7."
+    }
+  }
+}

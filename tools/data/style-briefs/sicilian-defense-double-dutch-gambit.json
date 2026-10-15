@@ -1,0 +1,104 @@
+{
+  "slug": "sicilian-defense-double-dutch-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Double-Dutch Gambit",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 f5 3. exf5 Nh6",
+    "fen": "rnbqkb1r/pp1pp1pp/7n/2p2P2/8/5N2/PPPP1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "sicilian-defense-brussels-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "Black answers 2.Nf3 with the Dutch-style 2...f5 and, after 3.exf5, plays 3...Nh6 to recapture on f5 and develop. White keeps an extra pawn and a sound centre if he develops carefully, so Black is playing for time and kingside pressure. It is a rare surprise rather than a theory line.",
+  "white_ideas": [
+    {
+      "idea": "Take f5 and play d4 or Nc3 and Be2 with an extra pawn and a lead in the centre."
+    },
+    {
+      "idea": "Avoid early queen outings and wait for Black to over-extend."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on f5 with the knight or ...d6 and ...Nxf5."
+    },
+    {
+      "idea": "Use the e8-h5 diagonal and ...Qb6 or ...c4 ideas for activity."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e-pawn gone, Black f-pawn gone: an open f-file with an asymmetric centre."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is a pawn down in a double-edged position where one inaccurate move loses quickly."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black's f-pawn is offered after 3.exf5 and White can simply keep it."
+    },
+    "soundness": {
+      "notes": "Considered unsound; Black's compensation is thin against careful development."
+    },
+    "structure": {
+      "notes": "Sicilian c5 against e4 with the f-file semi-open after the exchange."
+    },
+    "approach": {
+      "notes": "A Black surprise weapon that strong players seldom choose."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few moves to learn but dubious, so never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on the centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Black is a pawn down in a double-edged position where one inaccurate move loses quickly."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black's f-pawn is offered after 3.exf5 and White can simply keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Considered unsound; Black's compensation is thin against careful development."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Sicilian c5 against e4 with the f-file semi-open after the exchange."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "A Black surprise weapon that strong players seldom choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "Few moves to learn but dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for a lead in development for the pawn."
+    }
+  }
+}

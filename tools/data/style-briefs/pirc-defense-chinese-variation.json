@@ -1,0 +1,108 @@
+{
+  "slug": "pirc-defense-chinese-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: Chinese Variation",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Be2 Bg7 5. g4",
+    "fen": "rnbqk2r/ppp1ppbp/3p1np1/8/3PP1P1/2N5/PPP1BP1P/R1BQK1NR b KQkq - 0 5"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 4.Be2 Bg7 White plays 5.g4, grabbing kingside space and threatening g5 to kick the f6 knight. Black can strike back with ...h6, ...c5 or ...Nxg4 ideas, and often both sides castle opposite. The line is double-edged and not a pure attack.",
+  "white_ideas": [
+    {
+      "idea": "Push g5, play h4 and Be3 and Qd2, aiming at the king"
+    },
+    {
+      "idea": "Gain space on the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...h6 or ...c5 to attack the centre and stop g5"
+    },
+    {
+      "idea": "Counter with ...Nc6 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/d4/g4 broad centre"
+    },
+    {
+      "structure": "Black fianchetto and d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The g4 pawn storm risks overextending."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound but committal."
+    },
+    "structure": {
+      "notes": "The centre stays under tension."
+    },
+    "approach": {
+      "notes": "A sub-line within the Pirc."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Care needed."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White pushes the kingside pawns at once and Black counterattacks in the centre."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No material changes hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "White can overextend but the line is playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Both sides leave the centre in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A known Pirc sub-line, less common than the main ones."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans need judgement but the theory is modest."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "space_advantage"
+      ],
+      "reason": "White gains space with g4 and advances on the kingside."
+    }
+  }
+}

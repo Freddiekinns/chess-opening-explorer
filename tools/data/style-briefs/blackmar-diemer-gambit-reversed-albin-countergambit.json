@@ -1,0 +1,102 @@
+{
+  "slug": "blackmar-diemer-gambit-reversed-albin-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit: Reversed Albin Countergambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 c5",
+    "fen": "rnbqkbnr/pp2pppp/8/2p5/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 3.Nc3 Black plays ...c5, counterattacking d4 rather than defending the e4 pawn. White can regain the pawn with 4.Nxe4 or 4.dxc5, leading to open positions where Black has weakened d5 slightly. I am unsure of exact mainlines, so tags are cautious.",
+  "white_ideas": [
+    {
+      "idea": "Recover the pawn with Nxe4 and keep the initiative"
+    },
+    {
+      "idea": "Use the d4 break and development lead"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the d4 centre with ...cxd4"
+    },
+    {
+      "idea": "Use the half-open c-file and develop with ...Nc6 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian-like structure after ...cxd4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early open lines and rapid development, but the material comes back quickly, so it is not purely forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is returned by Nxe4 and the position equalises, so it is not a lasting gambit."
+    },
+    "soundness": {
+      "notes": "Black's counter is playable but gives White a comfortable game."
+    },
+    "structure": {
+      "notes": "The centre opens up after ...cxd4 with a half-open c-file."
+    },
+    "approach": {
+      "notes": "A sideline in an already rare gambit, seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs knowledge of tactics but plans are straightforward."
+    }
+  },
+  "plan_phrases": [
+    "open lines",
+    "recovering the pawn"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Early open lines and rapid development, but the material comes back quickly, so it is not purely forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "Material is returned by Nxe4 and the position equalises, so it is not a lasting gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Black's counter is playable but gives White a comfortable game."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The centre opens up after ...cxd4 with a half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "A sideline in an already rare gambit, seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Needs knowledge of tactics but plans are straightforward."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

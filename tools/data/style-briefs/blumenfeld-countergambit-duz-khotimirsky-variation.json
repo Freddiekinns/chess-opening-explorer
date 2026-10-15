@@ -1,0 +1,120 @@
+{
+  "slug": "blumenfeld-countergambit-duz-khotimirsky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blumenfeld Countergambit: Duz-Khotimirsky Variation",
+    "eco": "E10",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 b5 5. Bg5",
+    "fen": "rnbqkb1r/p2p1ppp/4pn2/1ppP2B1/2P5/5N2/PP2PPPP/RN1QKB1R b KQkq - 1 5"
+  },
+  "parent": "blumenfeld-countergambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White declines to take the e6 pawn and plays 5.Bg5, pinning the f6 knight. The common replies are 5...exd5, 5...h6 and 5...Qa5+. In the exd5 line (6.cxd5 h6 7.Bxf6 Qxf6 8.e4) White has a space and centre edge and Black plays for the pawn majority on the queenside and the b-file with ...d6, ...g6 and ...Bb7.",
+  "white_ideas": [
+    {
+      "idea": "Pin and trade the f6 knight with Bg5 and Bxf6"
+    },
+    {
+      "idea": "Keep the d5 pawn and build the centre with e4"
+    },
+    {
+      "idea": "Open the queenside lines for the rooks"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on d5 and play ...h6 to question the bishop"
+    },
+    {
+      "idea": "Develop ...Bb7, ...d6 and ...g6"
+    },
+    {
+      "idea": "Use the queenside pawns and the b-file for counterplay"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d5 and e4 centre against Black queenside pawn majority"
+    },
+    {
+      "structure": "Blumenfeld structure with Black pawns on b5 and c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for activity against a space advantage; tactics around the b5 and c5 pawns."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "In the most played 5...exd5 6.cxd5 line material is level, though other branches (5...h6 6.Bxf6 Qxf6 7.dxe6) do give a pawn."
+    },
+    "soundness": {
+      "notes": "Both sides are sound."
+    },
+    "structure": {
+      "notes": "White pawn on d5 and e4 against Black c5 and b5 with the e-file open: semi-open character."
+    },
+    "approach": {
+      "notes": "A respectable but uncommon gambit line used by strong players on occasion."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Move orders matter and the structure takes understanding."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "central pawn majority"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Blumenfeld: 5.Bg5 h6",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 b5 5. Bg5 h6",
+      "how": "After 6.Bxf6 Qxf6 7.dxe6 fxe6 8.cxb5 Black is a pawn down in the classical gambit style."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black plays against the centre with tactics on the b5 and c5 pawns and both sides take risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "The most played 5...exd5 6.cxd5 line leaves material level, so no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Both sides can play it without being refuted."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "White gets a pawn on d5 and e4 while Black presses on the queenside and e-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A known but uncommon line that strong players use now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Needs some theory for the replies, and the plans are not hard."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "central_pawn_majority"
+      ],
+      "reason": "Black pushes queenside pawns and White builds the centre."
+    }
+  }
+}

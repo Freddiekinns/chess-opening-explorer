@@ -1,0 +1,103 @@
+{
+  "slug": "grob-opening-alessi-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: Alessi Gambit",
+    "eco": "A00",
+    "moves": "1. g4 f5",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "grob-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black meets 1.g4 with 1...f5, challenging the g-pawn at once. If White takes with 2.gxf5, Black gets open lines and quick development at the cost of a pawn. If White ignores it, Black can take on g4 or fight for the centre. I am unsure which side the name refers to, and reason from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn on f5 and consolidate"
+    },
+    {
+      "idea": "Develop with Bg2 and d3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the open lines and develop quickly"
+    },
+    {
+      "idea": "Hit the centre with ...e6 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open lines after the pawn exchange on f5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Immediate pawn tension and open lines make for sharp play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "If White captures on f5, Black is a pawn down and can leave it that way for development."
+    },
+    "soundness": {
+      "notes": "Strong players consider the pawn offer insufficient."
+    },
+    "structure": {
+      "notes": "The f- and g-files open."
+    },
+    "approach": {
+      "notes": "Rarely played."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a first repertoire line."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Pawn tension and open files make the play forcing."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.5,
+      "reason": "Black offers the f-pawn after gxf5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The pawn offer probably gives too little."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Pawns come off and files open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "A Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black aims for quick development in return for the pawn."
+    }
+  }
+}

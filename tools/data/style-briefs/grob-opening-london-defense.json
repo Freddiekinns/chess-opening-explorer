@@ -1,0 +1,101 @@
+{
+  "slug": "grob-opening-london-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: London Defense",
+    "eco": "A00",
+    "moves": "1. g4 e5 2. h3 Nc6",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/6P1/7P/PPPPPP2/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "grob-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.g4 e5 2.h3 White defends the advanced pawn rather than fianchettoing, and Black builds with 2...Nc6. White usually continues Bg2-style development with d3 or c3, while Black takes the centre. The setup is slow and odd, and Black can easily get a pleasant game.",
+  "white_ideas": [
+    {
+      "idea": "Keep the g4 pawn protected and develop with Bg2, d3 and Nf3"
+    },
+    {
+      "idea": "Wait for Black to commit then hit the centre with c4 or d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Occupy the centre with ...d5 or ...Nf6 and develop quickly"
+    },
+    {
+      "idea": "Use the weakened kingside light squares"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open or semi-open centre where Black has the stronger pawn structure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow flank play on White's side, with Black grabbing the centre and little forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given; h3 supports g4."
+    },
+    "soundness": {
+      "notes": "The weakened kingside and lost time make White a bit worse against good play."
+    },
+    "structure": {
+      "notes": "Black holds e5 and the centre is not locked."
+    },
+    "approach": {
+      "notes": "The Grob is rarely seen at strong level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a recommended first choice."
+    }
+  },
+  "plan_phrases": [
+    "solid defence of g4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Neither forcing nor safe: White's moves are slow while Black builds a centre."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No pawn is sacrificed in the main line."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The pawn advance weakens White and strong players consider the Grob inferior."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided at this stage."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "The Grob is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "A Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan characterises White here."
+    }
+  }
+}

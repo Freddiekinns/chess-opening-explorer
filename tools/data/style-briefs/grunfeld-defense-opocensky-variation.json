@@ -1,0 +1,105 @@
+{
+  "slug": "grunfeld-defense-opocensky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Opocensky Variation",
+    "eco": "D94",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. e3 O-O 6. Bd2",
+    "fen": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP4/2N1PN2/PP1B1PPP/R2QKB1R b KQ - 2 6"
+  },
+  "parent": "grunfeld-defense-three-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White builds a quiet Three Knights centre with e3 and Bd2, aiming for Be2 and castling rather than a big pawn centre. Black strikes at d4 with ...c5 or ...Bg4 and ...Nc6, keeping the g7 bishop on the long diagonal. The game is a positional fight over the d4/d5 pawns, with little early forcing play.",
+  "white_ideas": [
+    {
+      "idea": "Complete development with Bd2, Be2 and O-O"
+    },
+    {
+      "idea": "Keep d4 supported with the solid e3-d4 centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break with ...c5 against d4"
+    },
+    {
+      "idea": "Pressure d4 along the long diagonal with ...Bg7 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Grünfeld with White pawns on c4, d4, e3 and Black pressure on d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet for both: White avoids the Exchange centre and Black has easy counterplay."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Standard theory."
+    },
+    "structure": {
+      "notes": "The d5/c4/d4 tension is unresolved and the centre stays fluid."
+    },
+    "approach": {
+      "notes": "A named Grünfeld line used at club and master level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black needs to understand the ...c5 break rather than memorise long lines."
+    }
+  },
+  "plan_phrases": [
+    "attack d4 with ...c5",
+    "fianchetto Bg7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Quiet for both: White avoids the Exchange centre and Black has easy counterplay."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Standard theory."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The d5/c4/d4 tension is unresolved and the centre stays fluid."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A named Grünfeld line used at club and master level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Black needs to understand the ...c5 break rather than memorise long lines."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black's fianchetto and counter-attack on the centre are typical Grünfeld ideas."
+    }
+  }
+}

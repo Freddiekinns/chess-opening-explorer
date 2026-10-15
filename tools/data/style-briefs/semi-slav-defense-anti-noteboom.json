@@ -1,0 +1,111 @@
+{
+  "slug": "semi-slav-defense-anti-noteboom",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Anti-Noteboom, Stonewall Variation, Portisch Gambit",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. e3 f5 5. g4",
+    "fen": "rnbqkbnr/pp4pp/2p1p3/3p1p2/2PP2P1/2N1P3/PP3P1P/R1BQKBNR b KQkq - 0 5"
+  },
+  "parent": "semi-slav-defense-accelerated-move-order",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In a Stonewall-flavoured Semi-Slav move order Black plays 4...f5, and White offers a pawn with 5.g4, aiming to open the g-file and h-file against Black's king. If Black accepts with 5...fxg4 White has a lead in development and kingside play but is a pawn down; Black can also decline with ...Nf6. The Portisch Gambit is a rare and risky weapon.",
+  "white_ideas": [
+    {
+      "idea": "Open the kingside with g4 and h3"
+    },
+    {
+      "idea": "Develop quickly with Nf3, Bd3 and castle long or short as needed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Accept with ...fxg4 and defend, returning the pawn at the right moment"
+    },
+    {
+      "idea": "Challenge the centre with ...Nf6 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Stonewall-type pawns with an open g-file after fxg4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White's g4 pawn offer makes the position unbalanced and tactical; both kings can be exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 5.g4 fxg4 White is a pawn down for open lines; Black can keep it."
+    },
+    "soundness": {
+      "notes": "Most strong players regard the sacrifice as unconvincing because Black can hold the pawn and develop."
+    },
+    "structure": {
+      "notes": "The f-file and g-file open, the centre stays fluid."
+    },
+    "approach": {
+      "notes": "Rarely seen from strong White players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious line needs concrete knowledge but not much theory."
+    }
+  },
+  "plan_phrases": [
+    "Pawn for kingside attack",
+    "Open g-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Declined",
+      "moves": "5...Nf6 6.gxf5",
+      "how": "If Black declines or White captures first, no gambit and a normal Stonewall-type centre results."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A flank pawn offer opens the kingside early and gives unbalanced tactical play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White plays g4 offering a pawn that Black can keep with ...fxg4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can accept and develop, and the compensation is hard to prove."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "The g and f files open while the centre stays semi-fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose the Portisch Gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner; the attacking ideas are simple but trap-heavy."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "pawn_storm"
+      ],
+      "reason": "White's g4 and h-pawn aim directly at the Black king."
+    }
+  }
+}

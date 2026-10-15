@@ -1,0 +1,111 @@
+{
+  "slug": "benoni-defense-cormorant-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Cormorant Gambit",
+    "eco": "A43",
+    "moves": "1. d4 c5 2. dxc5 b6",
+    "fen": "rnbqkbnr/p2ppppp/1p6/2P5/8/8/PPP1PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "benoni-defense-benoni-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.d4 c5 2.dxc5 Black plays 2...b6, offering the c5 pawn to regain it with ...Bb7 and ...Bxc5 while building a lead in development. White can hold the extra pawn with e4 and Nc3, but Black gets a fianchetto and some activity. The gambit is rare and probably unsound.",
+  "white_ideas": [
+    {
+      "idea": "Keep the pawn with e4 and Nc3"
+    },
+    {
+      "idea": "Develop with Nf3 and Bf4"
+    },
+    {
+      "idea": "Hold the extra material and consolidate"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the pawn with ...Bb7 and ...Bxc5"
+    },
+    {
+      "idea": "Fianchetto the queen's bishop for long-diagonal pressure"
+    },
+    {
+      "idea": "Develop quickly with ...e6 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black queenside fianchetto with open c- and d-files and the extra white pawn on c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with Black seeking compensation through fast development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "A pawn is offered that the opponent can keep."
+    },
+    "soundness": {
+      "notes": "Likely dubious for Black."
+    },
+    "structure": {
+      "notes": "Open d-file and flexible."
+    },
+    "approach": {
+      "notes": "Rare, played for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Precise play is needed to regain the pawn."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "A gambit with Black playing for activity."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black gives the c5 pawn for development; it can be kept."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Probably unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.35,
+      "reason": "Lines open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Black fianchettoes and regains the pawn by development."
+    }
+  }
+}

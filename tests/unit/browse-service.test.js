@@ -242,6 +242,18 @@ describe('BrowseService.stylesOf', () => {
   test('a position with no style tags is under none, not a default', () => {
     expect(service.stylesOf(null)).toEqual([]);
   });
+
+  test('an opening named a gambit is under Gambit even when its tags say none', () => {
+    // The Queen's Gambit gets its pawn back, so its tag is "none"; a user
+    // filtering on Gambit still expects it there.
+    expect(service.stylesOf(tags({ character: 'solid' }), "Queen's Gambit")).toEqual([
+      'solid',
+      'gambit',
+    ]);
+    expect(service.stylesOf(null, "King's Gambit Declined")).toEqual(['gambit']);
+    expect(service.stylesOf(null, 'Albin Countergambit')).toEqual(['gambit']);
+    expect(service.stylesOf(tags({}), 'Italian Game')).toEqual([]);
+  });
 });
 
 describe('BrowseService.buildIndex', () => {

@@ -1,0 +1,102 @@
+{
+  "slug": "bird-opening-horsefly-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Horsefly Defense",
+    "eco": "A02",
+    "moves": "1. f4 Nh6",
+    "fen": "rnbqkb1r/pppppppp/7n/8/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "bird-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black answers 1.f4 with 1...Nh6, planning ...d5 and ...g6 or ...Nf5 with the knight eyeing g4 and f5. White can play 2.e4 or 2.Nf3 and take the centre while the knight is on the edge. It is rare and the position is roughly balanced.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with e4 and Nf3"
+    },
+    {
+      "idea": "Develop the king bishop and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...d5 and ...g6 and use the knight on f5"
+    },
+    {
+      "idea": "Hit the f4 pawn with ...Nf5-d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch-reversed centre with Black knight on h6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side commits to a forcing line."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Playable for both sides."
+    },
+    "structure": {
+      "notes": "The centre is not defined."
+    },
+    "approach": {
+      "notes": "Seldom chosen at strong level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs general understanding."
+    }
+  },
+  "plan_phrases": [
+    "central e4",
+    "knight to f5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "No forcing lines and normal development."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "The line is playable though unusual."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom meet 1.f4 this way."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "It needs knowledge of how to handle the offside knight."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is clearly characteristic."
+    }
+  }
+}

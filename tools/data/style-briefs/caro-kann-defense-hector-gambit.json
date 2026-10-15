@@ -1,0 +1,104 @@
+{
+  "slug": "caro-kann-defense-hector-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Hector Gambit",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. Nc3 d5 3. Nf3 dxe4 4. Ng5",
+    "fen": "rnbqkbnr/pp2pppp/2p5/6N1/4p3/2N5/PPPP1PPP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "caro-kann-defense-two-knights-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 3.Nf3 dxe4 White plays 4.Ng5, attacking the e4 pawn a second time and aiming at f7 and h7. Black can hold the pawn briefly but White recovers it with Ngxe4 or Ncxe4 with development. The name says gambit but the pawn comes back, and the position is close to equal.",
+  "white_ideas": [
+    {
+      "idea": "Regain e4 with Nxe4 and develop with tempo"
+    },
+    {
+      "idea": "Use the knight on g5 to hit f7 and h7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend e4 with ...f5 or ...Nf6, or return the pawn for development"
+    },
+    {
+      "idea": "Reach a normal Caro-Kann structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann structure with c6 and e-file open"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The early Ng5 creates threats but Black has easy ways to calm the play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The e4 pawn is attacked twice and returns by force with Nxe4."
+    },
+    "soundness": {
+      "notes": "Fine for both sides; White has little more than equality."
+    },
+    "structure": {
+      "notes": "The d-pawn is exchanged so the e-file is semi-open."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Some tactical awareness needed."
+    }
+  },
+  "plan_phrases": [
+    "regain the pawn",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "The early knight moves carry threats but the position quickly settles."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.65,
+      "reason": "The pawn on e4 is attacked twice and returns to White by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "White can recover the pawn with a playable game."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "The d-pawn is exchanged and the Caro-Kann structure remains."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Not much to learn but not a first repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7"
+      ],
+      "reason": "White aims the knight at f7 while regaining e4."
+    }
+  }
+}

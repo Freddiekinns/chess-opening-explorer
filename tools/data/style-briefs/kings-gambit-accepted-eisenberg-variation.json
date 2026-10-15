@@ -1,0 +1,112 @@
+{
+  "slug": "kings-gambit-accepted-eisenberg-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Eisenberg Variation",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nh3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/7N/PPPP2PP/RNBQKB1R b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White aims to regain the f4 pawn at once with Nh3 and Nxf4, a quieter way to play the gambit. Black can keep the pawn with ...g5 or ...d5 at the cost of weakening, so the play is less forcing than the main KGA. White usually gets open lines for the pieces.",
+  "white_ideas": [
+    {
+      "idea": "Regain f4 with Nxf4 or Bxf4"
+    },
+    {
+      "idea": "Play d4 and Bc4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold f4 with ...g5 or hit the centre with ...d5"
+    },
+    {
+      "idea": "Develop ...Nf6 and ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game with f-pawn gone"
+    },
+    {
+      "structure": "White tempo for development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Less forcing than the main lines, with open files."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can hold the pawn with ...g5."
+    },
+    "soundness": {
+      "notes": "Sound if rarely played."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Not first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main 3.Nf3",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3",
+      "how": "the standard King's Gambit"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "The knight on h3 keeps the play calmer than other gambit lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "Black can keep the f4 pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "White's compensation is reasonable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The e- and f-files open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Rare at strong levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Fairly easy but not a first choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White gets pieces out fast."
+    }
+  }
+}

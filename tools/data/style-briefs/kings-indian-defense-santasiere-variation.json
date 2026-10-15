@@ -1,0 +1,113 @@
+{
+  "slug": "kings-indian-defense-santasiere-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Defense: Santasiere Variation",
+    "eco": "E60",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nf3 Bg7 4. b4",
+    "fen": "rnbqk2r/ppppppbp/5np1/8/1PPP4/5N2/P3PPPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "kings-indian-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 4.b4 against the King's Indian, aiming for Bb2 and queenside space. Black can take the long diagonal with ...c5 or play ...d6 and ...O-O. The line is unusual and keeps the structure flexible.",
+  "white_ideas": [
+    {
+      "idea": "Bb2 and queenside expansion"
+    },
+    {
+      "idea": "Play e3, Be2 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...c5 to hit b4"
+    },
+    {
+      "idea": "Castle and aim for ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flexible with pawns on b4 and c4"
+    },
+    {
+      "structure": "Black fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet but unusual."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The b-pawn is protected or exchanged."
+    },
+    "soundness": {
+      "notes": "Safe."
+    },
+    "structure": {
+      "notes": "Centre open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main 4.Nc3",
+      "moves": "1. d4 Nf6 2. c4 g6 3. Nf3 Bg7 4. Nc3",
+      "how": "the normal King's Indian"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither side is forced."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "It is playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Tension in the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare at top level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are straightforward."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "space_advantage"
+      ],
+      "reason": "White gains space with b4."
+    }
+  }
+}

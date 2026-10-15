@@ -1,0 +1,105 @@
+{
+  "slug": "scotch-game-rosenthal-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Rosenthal Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nb5 Bb4+ 6. Bd2 Qxe4+ 7. Be2 Kd8 8. O-O Bxd2 9. Nxd2 Qg6",
+    "fen": "r1bk2nr/pppp1ppp/2n3q1/1N6/8/8/PPPNBPPP/R2Q1RK1 w - - 1 10"
+  },
+  "parent": "scotch-game",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 4...Qh4 and takes e4 with check, leaving the king on d8. White has a pawn less, but a lead in development and threats like Nxc7 and Nd2. Black's king and queen are exposed, so the game is tactical and White gets compensation.",
+  "white_ideas": [
+    {
+      "idea": "Use the lead in development to harass the king"
+    },
+    {
+      "idea": "Target c7 and the e-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn and bring the king to safety"
+    },
+    {
+      "idea": "Trade pieces with ...Bxd2 and ...Qg6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with Black king on d8, Black pawn up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactical with kings exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White is down a pawn and can try to win it back."
+    },
+    "soundness": {
+      "notes": "Reasonable for White."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Sideline of the Scotch."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Theory heavy."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Exposed kings and forcing lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "White is a pawn down for development."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "White has compensation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Open lines for the pieces."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A named Scotch sideline."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.45,
+      "reason": "Forcing lines to know."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White's compensation is development against the king."
+    }
+  }
+}

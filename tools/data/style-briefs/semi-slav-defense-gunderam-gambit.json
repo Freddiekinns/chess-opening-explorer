@@ -1,0 +1,120 @@
+{
+  "slug": "semi-slav-defense-gunderam-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Gunderam Gambit",
+    "eco": "D31",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. e4 dxe4 5. f3",
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/8/2PPp3/2N2P2/PP4PP/R1BQKBNR b KQkq - 0 5"
+  },
+  "parent": "semi-slav-defense-marshall-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Against the Semi-Slav White plays the Marshall Gambit 4.e4 and, after 4...dxe4, the Gunderam idea 5.f3 to rebuild the pawn centre. If Black takes on f3 White regains time with Nxf3 and Bd3. It is a sharp, rare try that relies on development and the centre.",
+  "white_ideas": [
+    {
+      "idea": "Offer the e4 pawn with f3 for a lead in development"
+    },
+    {
+      "idea": "Recapture on f3 with Nxf3 or gxf3 and play Bd3, O-O"
+    },
+    {
+      "idea": "Open the centre with e4-e5 or d5 breaks"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...exf3 and ...Bb4, or return it for development"
+    },
+    {
+      "idea": "Hit d4 with ...c5 and develop ...Nf6"
+    },
+    {
+      "idea": "Avoid the pins on the e-file and castle safely"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White a pawn down"
+    },
+    {
+      "structure": "Isolated or advanced d-pawn after ...c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn is offered early and both sides face concrete tactics in the centre."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can hold the e4 pawn after 5.f3 exf3 with accurate play."
+    },
+    "soundness": {
+      "notes": "The Marshall Gambit is regarded as unsound by strong players."
+    },
+    "structure": {
+      "notes": "Central pawns are exchanged and the lines open."
+    },
+    "approach": {
+      "notes": "A rare gambit in the Semi-Slav that strong players seldom pick."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "White needs to know specific lines to get compensation."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Central pawn majority"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Marshall Gambit main line",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. e4 dxe4 5. Nxe4",
+      "how": "White develops normally with a level game rather than gambiting further."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "White gambits a pawn for quick development."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the e4 pawn and 5.f3 keeps the material down."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "The gambit is considered unsound by strong players."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The centre pawns come off and pieces play along open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose this against the Semi-Slav."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious, so never Beginner, and relies on specific lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White plays for development and the central pawn break."
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "latvian-gambit-diepstraten-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Diepstraten Countergambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. c4",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/2P1P3/5N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "latvian-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 e5 2.Nf3 f5 3.c4 White does not take on e5 and prepares d4 and Nc3 instead, while Black must decide between ...fxe4 and ...Nf6. It is a quieter way to meet the Latvian. Black’s ...f5 gambit idea then lives or dies on activity against a solid White centre.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with c4, d4 and Nc3"
+    },
+    {
+      "idea": "Capture on e5 when useful"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...fxe4 and ...d5 to hit the centre"
+    },
+    {
+      "idea": "Develop with ...Nf6 and ...Bd6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a weakened Black king"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black’s f5 invites tactics, but 3.c4 keeps things calmer. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black’s counter-gambit plan lets White keep a pawn."
+    },
+    "soundness": {
+      "notes": "Dubious."
+    },
+    "structure": {
+      "notes": "Open lines after exchanges."
+    },
+    "approach": {
+      "notes": "The Latvian is rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not a Beginner line."
+    }
+  },
+  "plan_phrases": [
+    "counter-gambit"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black’s f5 invites tactics, but 3.c4 keeps things calmer."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.5,
+      "reason": "Material is level in the FEN."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "Open lines after exchanges."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "The Latvian is rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not a Beginner line."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for time."
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "caro-kann-defense-gurgenidze-counterattack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Gurgenidze Counterattack",
+    "eco": "B15",
+    "moves": "1. e4 c6 2. d4 d5 3. Nc3 b5",
+    "fen": "rnbqkbnr/p3pppp/2p5/1p1p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 3...b5 in the Caro-Kann, trying to disrupt White's centre and gain queenside space. White can meet it with 4.Nf3 or 4.Nxb5 and the position quickly becomes concrete. I am unsure of the details; the move is rare and considered risky.",
+  "white_ideas": [
+    {
+      "idea": "Punish ...b5 with Nf3 and Bd3"
+    },
+    {
+      "idea": "Take space in the centre with e5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain queenside space with ...b5"
+    },
+    {
+      "idea": "Strike with ...dxe4 and ...Bb7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann with ...b5 advanced"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The early b5 push invites tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No clear material offer."
+    },
+    "soundness": {
+      "notes": "Likely dubious for Black."
+    },
+    "structure": {
+      "notes": "Centre semi-open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are not clear."
+    }
+  },
+  "plan_phrases": [
+    "queenside space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The early b5 push loosens Black's position."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.45,
+      "reason": "No clear pawn offer."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The b5 move is generally seen as weakening."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Caro-Kann centre with ...c6 against e4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.4,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Nothing here plainly matches a listed plan."
+    }
+  }
+}

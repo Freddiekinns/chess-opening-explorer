@@ -1,0 +1,104 @@
+{
+  "slug": "kings-gambit-declined-zilbermints-double-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Zilbermints Double Gambit",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Nc6 3. Nf3 g5",
+    "fen": "r1bqkbnr/pppp1p1p/2n5/4p1p1/4PP2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-gambit-declined-queens-knight-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In this variation Black declines the pawn with 2...Nc6 and counters with 3...g5, offering a second pawn. White can take with 4.fxg5 or 4.h4 and play for the f-file, while Black seeks activity and quick development. The line is sharp and likely unsound.",
+  "white_ideas": [
+    {
+      "idea": "Accept with fxg5 or h4 and aim at the f-file and Black king"
+    },
+    {
+      "idea": "Use the extra pawn and develop with d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...g5, ...Bg7 or ...Nf6 and open lines for the king’s bishop"
+    },
+    {
+      "idea": "Counterattack in the centre with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position, doubled gambit pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mutual attack and pawns hanging. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the g5 pawn after fxg5."
+    },
+    "soundness": {
+      "notes": "Probably unsound."
+    },
+    "structure": {
+      "notes": "Central pawns off and open lines."
+    },
+    "approach": {
+      "notes": "Hardly played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious."
+    }
+  },
+  "plan_phrases": [
+    "double gambit"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Mutual attack and pawns hanging."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black’s ...g5 is the gambit."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Probably unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns off and open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Hardly played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black’s compensation is activity."
+    }
+  }
+}

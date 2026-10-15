@@ -1,0 +1,111 @@
+{
+  "slug": "slav-defense-steiner-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Steiner Variation",
+    "eco": "D16",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bg4",
+    "fen": "rn1qkb1r/pp2pppp/2p2n2/8/P1pP2b1/2N2N2/1P2PPPP/R1BQKB1R w KQkq - 1 6"
+  },
+  "parent": "slav-defense-alapin-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the a4 Slav Black takes on c4 and develops the bishop outside the pawn chain with ...Bg4. After 6.Ne5 Bh5 White chooses between 7.f3, 7.g3 and 7.h3 to harass the bishop, while Black looks for ...Nfd7 and ...e6 with a solid structure. It is theory-heavy but Black is generally fine.",
+  "white_ideas": [
+    {
+      "idea": "Use Ne5 and Qb3 ideas to harass the bishop"
+    },
+    {
+      "idea": "Win back c4 with e3 and Bxc4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the c4 pawn or return it for a comfortable position"
+    },
+    {
+      "idea": "Break with ...e5 or ...e6 and neutralise White's tactics"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav structure with the c6 and d5 pawns traded or recaptured, tension at c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Ne5 tactics and Qb3 pins are concrete, but Black's structure is sound and the line is well known, so it is not sharp."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black takes on c4 and can hold it, but White usually regains it, so this is a normal pawn recapture rather than a gambit."
+    },
+    "soundness": {
+      "notes": "Regarded as sound for both sides."
+    },
+    "structure": {
+      "notes": "A centre in tension with a half-open c-file as pawns are exchanged."
+    },
+    "approach": {
+      "notes": "A well-known Slav main line played at all levels."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Requires knowing the 6.Ne5 lines but the plans are clear, so Intermediate by memory."
+    }
+  },
+  "plan_phrases": [
+    "harassing the bishop on g4",
+    "Ne5 outpost",
+    "regaining c4"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6.e3",
+      "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bg4 6. e3",
+      "how": "The quieter line, with a different structure."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "The Ne5 tactics and Qb3 pins are concrete, but Black's structure is sound and the line is well known, so it is not sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Black takes on c4 and can hold it, but White usually regains it, so this is a normal pawn recapture rather than a gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Regarded as sound for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "A centre in tension with a half-open c-file as pawns are exchanged."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A well-known Slav main line played at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Requires knowing the 6.Ne5 lines but the plans are clear, so Intermediate by memory."
+    },
+    "plans": {
+      "value": [
+        "knight_outpost"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

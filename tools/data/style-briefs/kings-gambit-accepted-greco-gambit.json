@@ -1,0 +1,111 @@
+{
+  "slug": "kings-gambit-accepted-greco-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Greco Gambit",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d6 4. Bc4 h6 5. d4 g5 6. h4 Bg7",
+    "fen": "rnbqk1nr/ppp2pb1/3p3p/6p1/2BPPp1P/5N2/PPP3P1/RNBQK2R w KQkq - 1 7"
+  },
+  "parent": "kings-gambit-accepted-fischer-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "The root is 3...d6 4.Bc4 h6 5.d4 g5 6.h4 Bg7, a Fischer Defence mixed with the h4 lines of the Kieseritzky-style attack. Black has kept the f4 pawn and fights for the g-pawn while White attacks on the kingside with hxg5 and open h-file play. The game is sharp and theory-driven.",
+  "white_ideas": [
+    {
+      "idea": "Break the g5 pawn with h4 and hxg5, then use the h-file"
+    },
+    {
+      "idea": "Develop quickly with Nc3 and Bc4 and aim at f7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the g5 pawn and trade the h-pawns"
+    },
+    {
+      "idea": "Keep the f4 pawn and counter in the centre with ...c6 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside after hxg5, d4/e4 centre against ...d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open attack and defence, with sacrifices and rooks on open files."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black took f4 and can keep the pawn, with White playing for attack."
+    },
+    "soundness": {
+      "notes": "The King's Gambit lines are playable, if risky for White."
+    },
+    "structure": {
+      "notes": "The centre is open with e4/d4 against ...d6 and kingside lines open."
+    },
+    "approach": {
+      "notes": "Gambit lines are still used by strong players now and then."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines with h4 and hxg5 must be known."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "open h-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Philidor Gambit main line",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 Bg7 5. h4 h6 6. d4 d6",
+      "how": "The most played lines go 3...g5 and are a separate variation."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "Both sides attack and a single slip loses quickly."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White offers the f-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Strong players regard the gambit as playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Kingside files open early and the centre is open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "King's Gambit lines are played at all levels."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Long forcing lines must be known."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "White attacks on the kingside and plays for time."
+    }
+  }
+}

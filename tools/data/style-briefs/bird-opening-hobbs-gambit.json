@@ -1,0 +1,103 @@
+{
+  "slug": "bird-opening-hobbs-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Hobbs Gambit",
+    "eco": "A02",
+    "moves": "1. f4 g5",
+    "fen": "rnbqkbnr/pppppp1p/8/6p1/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "bird-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 1...g5, offering a pawn to attack f4. White can take 2.fxg5 h6, when Black has open h- and g-files and rapid development. It is a surprise weapon that is considered dubious.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with fxg5 and consolidate"
+    },
+    {
+      "idea": "Develop Nf3 and d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open lines with ...h6 and ...d5"
+    },
+    {
+      "idea": "Develop quickly for activity"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside with pawns missing on the g and h files"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wild, open play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black offers the g-pawn for activity."
+    },
+    "soundness": {
+      "notes": "Black's gambit is unsound."
+    },
+    "structure": {
+      "notes": "Kingside lines open."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Wild, open play."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black offers the g-pawn for activity."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Black's gambit is unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Kingside lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Very rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black seeks quick development."
+    }
+  }
+}

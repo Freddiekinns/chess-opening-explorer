@@ -1,0 +1,107 @@
+{
+  "slug": "three-knights-opening-schlechter-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Three Knights Opening: Schlechter Variation",
+    "eco": "C46",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Bb4 4. Nd5 Nf6",
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/3Np3/1b2P3/5N2/PPPP1PPP/R1BQKB1R w KQkq - 6 5"
+  },
+  "parent": "three-knights-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 3...Bb4 White plays 4.Nd5 and Black replies 4...Nf6, usually followed by 5.Nxb4 Nxb4 6.d4 or 5.Nxe5 tactics. The play is quiet and slightly equal with a sharp tactical possibility on e5, and few strong players choose this line today.",
+  "white_ideas": [
+    {
+      "idea": "Trade the b4 bishop with Nxb4"
+    },
+    {
+      "idea": "Play d4 to open the centre"
+    },
+    {
+      "idea": "Use tactics on e5 with Nxe5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit e4 with ...Nf6 and ...Nxe4"
+    },
+    {
+      "idea": "Play ...d5 after the trades"
+    },
+    {
+      "idea": "Bring pieces out with ...Nxd5 ideas"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4 exd4 or symmetrical e-pawn structure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Even and open, with some tactics on e5."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Sound and equal."
+    },
+    "structure": {
+      "notes": "Centre can open after d4."
+    },
+    "approach": {
+      "notes": "Sidestep of the Four Knights, played occasionally."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not memory heavy."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Equal positions with some tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A normal line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The centre often opens after d4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Occasionally played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Moderate demands."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan from memory."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "modern-defense-neo-modern-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Neo-Modern Defense",
+    "eco": "A41",
+    "moves": "1. d4 g6 2. c4 Bg7 3. e4 e5",
+    "fen": "rnbqk1nr/pppp1pbp/6p1/4p3/2PPP3/8/PP3PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "queens-pawn-game-modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays ...e5 at once after 3.e4, contesting the centre immediately. White usually answers 4.dxe5 Bxe5 or 4.Nf3 exd4 5.Nxd4, leading to open play where Black's Bg7 hits the long diagonal. It is a flexible Modern with a clearer central fight.",
+  "white_ideas": [
+    {
+      "idea": "Play dxe5 and keep a central majority"
+    },
+    {
+      "idea": "Develop Nf3 and Nc3"
+    },
+    {
+      "idea": "Use the extra space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...exd4 and active pieces"
+    },
+    {
+      "idea": "Challenge with ...Nc6"
+    },
+    {
+      "idea": "Fianchettoed bishop on the long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after exchanges on e5 or d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unclear positions that can be risky for Black but are not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "The centre opens early."
+    },
+    "approach": {
+      "notes": "A standard Modern line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans matter more than theory."
+    }
+  },
+  "plan_phrases": [
+    "Immediate ...e5 strike",
+    "Long diagonal Bg7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Early central tension but with no forced lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A sound set-up."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The centre opens after the early exchanges on e5 or d4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "Played by strong players as a normal Modern line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Hypermodern handling is plan-based."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black challenges the White centre with a Bg7 fianchetto."
+    }
+  }
+}

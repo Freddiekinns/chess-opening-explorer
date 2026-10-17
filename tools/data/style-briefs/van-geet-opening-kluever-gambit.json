@@ -1,0 +1,103 @@
+{
+  "slug": "van-geet-opening-kluever-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Kluever Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 f5 2. e4 fxe4 3. d3",
+    "fen": "rnbqkbnr/ppppp1pp/8/8/4p3/2NP4/PPP2PPP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White offers the e-pawn with 2.e4 fxe4 3.d3, aiming to open lines for the bishop and knights. Black can keep the pawn and White has to prove compensation by rapid development. Strong players would treat it as a dubious club-level surprise.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with d3 and Bxd3"
+    },
+    {
+      "idea": "Develop quickly with Nge2, Bf4 and Qd2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn and play ...e5"
+    },
+    {
+      "idea": "Return the pawn when needed and develop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open play with a White lead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not a well known line; reasoned from the moves."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White is giving the e-pawn and Black can keep it, for example by taking on d3."
+    },
+    "soundness": {
+      "notes": "Compensation looks thin and Black is simply a pawn up."
+    },
+    "structure": {
+      "notes": "Open lines after exchanges on e4 and d3."
+    },
+    "approach": {
+      "notes": "A surprise weapon."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Short tactical lines."
+    }
+  },
+  "plan_phrases": [
+    "lead_in_development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Gambit play with a development lead against material."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White gives a pawn which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "The compensation is probably insufficient."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Lines open quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players rarely use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White wants to use rapid development for the pawn."
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "queens-pawn-game-zurich-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn Game: Zurich Gambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. g4",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P2P1/8/PPP1PP1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "queens-pawn-game",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "After 1.d4 d5 White plays 2.g4, offering a pawn for a kingside space grab. Black can take with ...Bxg4 and enjoys a healthy extra pawn, while White hopes for quick development and attacking chances against an exposed Black king.",
+  "white_ideas": [
+    {
+      "idea": "Bishop on g2 and rapid development"
+    },
+    {
+      "idea": "Harry the king with h4 and g5"
+    },
+    {
+      "idea": "Win back the pawn with Nf3 and Qd3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take with ...Bxg4 and trade down"
+    },
+    {
+      "idea": "Develop with ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Counter in the centre with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre; White kingside pawns advanced early"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wild attacking attempts, but the extra pawn gives Black an easy game."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "g4 can be taken by ...Bxg4 and White gets modest compensation."
+    },
+    "soundness": {
+      "notes": "Strong players consider it unsound, a surprise weapon."
+    },
+    "structure": {
+      "notes": "Open lines for pieces."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so not beginner; a cheap trap line."
+    }
+  },
+  "plan_phrases": [
+    "Pawn offered for development",
+    "Kingside attack with h-pawn",
+    "Surprise weapon"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "An early pawn offer leads to open lines and mutual risk."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White offers the g4 pawn and Black can keep it with ...Bxg4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "Strong players consider the g4 push unsound and refuted by accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Pieces fight on open lines after Black takes the pawn."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Hardly ever chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "Dubious lines are never Beginner and there is little to learn."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White gives a pawn for development and attack."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "grunfeld-defense-lundin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Lundin Variation",
+    "eco": "D80",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Bg5 Ne4 5. Nxe4 dxe4 6. Qd2 c5",
+    "fen": "rnbqkb1r/pp2pp1p/6p1/2p3B1/2PPp3/8/PP1QPPPP/R3KBNR w KQkq - 0 7"
+  },
+  "parent": "grunfeld-defense-stockholm-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Grunfeld Stockholm (4.Bg5) Black trades knights, recaptures on e4 and lets White play Qd2 with Bh6 ideas. Black counters at once with ...c5 so that the e4 pawn is not simply weak. White usually develops with Nf3 or e3 and Black fianchettoes with ...Bg7. I do not know the theory well, so confidence is low.",
+  "white_ideas": [
+    {
+      "idea": "Play Qd2 then Bh6 or Nf3 and exchange the e4 pawn."
+    },
+    {
+      "idea": "Keep e3 and Bc4 flexible to meet ...c5."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge d4 with ...c5 and ...Bg7, using the c-file."
+    },
+    {
+      "idea": "Hold the extra central pawn at e4 or give it back with ...e5."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on e4 and c5 against d4 with a g7 fianchetto and White Bg5/Qd2."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Reasoned from the moves: central tension with the Bg5/Qd2 battery, not a forcing sharp line."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed on purpose."
+    },
+    "soundness": {
+      "notes": "Established Grunfeld sidelines; neither side is considered worse."
+    },
+    "structure": {
+      "notes": "The centre is in tension with c5 against d4 and the e4 pawn still undecided."
+    },
+    "approach": {
+      "notes": "A named Grunfeld sideline that strong players have used."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs central understanding rather than memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "central pressure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Reasoned from the moves: central tension with the Bg5/Qd2 battery, not a forcing sharp line."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No material is sacrificed on purpose."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Established Grunfeld sidelines; neither side is considered worse."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is in tension with c5 against d4 and the e4 pawn still undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A named Grunfeld sideline that strong players have used."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs central understanding rather than memorised lines."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Black fianchettoes against the d4 centre."
+    }
+  }
+}

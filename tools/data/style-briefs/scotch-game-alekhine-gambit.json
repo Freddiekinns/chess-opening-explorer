@@ -1,0 +1,113 @@
+{
+  "slug": "scotch-game-alekhine-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Alekhine Gambit",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. e5",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4P3/3N4/8/PPP2PPP/RNBQKB1R b KQkq - 0 5"
+  },
+  "parent": "scotch-game-schmidt-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 5.e5 against the Scotch knight on f6, attacking it and aiming to gain time. After 5...Qe7 6.Qe2 Nd5 7.c4 Nb6 White has space and tempi, but Black gets counterplay against the advanced e5 pawn and the exposed d4 knight. It is a rare line, so the details are uncertain.",
+  "white_ideas": [
+    {
+      "idea": "Kick the f6 knight with e5 and c4 to gain time"
+    },
+    {
+      "idea": "Use the space on e5 and the d4 knight for a kingside initiative"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend with ...Qe7 and ...Nd5, then retreat the knight to b6"
+    },
+    {
+      "idea": "Undermine the e5 pawn with ...d6 and ...Nxd4 ideas"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e5 spearhead against Black pieces pushed back"
+    },
+    {
+      "structure": "Open centre with queens on the e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early e5 with queen moves on the e-file leads to tactics around the e-pawn and the d4 knight."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level at 5.e5 because the d4 pawn was regained by 4.Nxd4, so despite the name no pawn is given up."
+    },
+    "soundness": {
+      "notes": "Black has good counterplay against e5, so White is not better by force, but nothing is clearly refuted."
+    },
+    "structure": {
+      "notes": "The e5 spearhead and the e-file queens give open lines rather than a locked centre."
+    },
+    "approach": {
+      "notes": "A rare sub-line of the Schmidt Variation; strong players seldom pick it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "The move order and tactics around e5 have to be known."
+    }
+  },
+  "plan_phrases": [
+    "space with e5",
+    "gain tempi on the knight"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Scotch Mieses-type play",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nxc6 bxc6 6. e5",
+      "how": "White trades on c6 first, which gives a different structure with doubled Black c-pawns."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The advanced e5 pawn and queen moves on the e-file create forcing tactics for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "No pawn has been given up at the root, so the name is historical."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "White gets an acceptable game and Black is not clearly better."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Pawns trade in the centre early and the pieces fight on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "It is seldom chosen by strong players compared with the main Scotch lines."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A narrow line that rewards knowing the tactics around e5."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "The e5 pawn gains space and drives the Black knight back."
+    }
+  }
+}

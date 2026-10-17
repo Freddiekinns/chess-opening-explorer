@@ -1,0 +1,116 @@
+{
+  "slug": "bishops-opening-mcdonnell-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: McDonnell Gambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. b4",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/1PB1P3/8/P1PP1PPP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "bishops-opening-boi-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.b4 to deflect the bishop and then builds a centre with c3 and d4 after 3...Bxb4 4.c3 Ba5 5.d4, or the Double Gambit 4.f4. White has a pawn less but a strong centre and a lead in development. Black can return the pawn or decline.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with c3 and d4"
+    },
+    {
+      "idea": "Gain tempi against the bishop"
+    },
+    {
+      "idea": "Use the open lines for Qb3 and Ba3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on b4 and return the pawn"
+    },
+    {
+      "idea": "Keep development simple with ...Nf6"
+    },
+    {
+      "idea": "Challenge the centre with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4 exd4 cxd4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open tactical fights with both sides taking risks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the b4 pawn."
+    },
+    "soundness": {
+      "notes": "Considered inferior to the Evans Gambit, so dubious."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Seldom played now."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs known lines."
+    }
+  },
+  "plan_phrases": [
+    "Centre for the pawn"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "McDonnell Double Gambit",
+      "moves": "1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4",
+      "how": "Adds a second gambit and is sharper."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Open play with a pawn sacrificed for the centre."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White offers the b-pawn, which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Considered less sound than the Evans Gambit."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious gambit that needs known lines."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority",
+        "lead_in_development"
+      ],
+      "reason": "White plays for a big centre and development."
+    }
+  }
+}

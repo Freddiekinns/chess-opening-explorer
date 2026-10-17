@@ -1,0 +1,113 @@
+{
+  "slug": "grob-opening-spike-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: Spike Attack",
+    "eco": "A00",
+    "moves": "1. g4 d5 2. Bg2 c6 3. g5",
+    "fen": "rnbqkbnr/pp2pppp/2p5/3p2P1/8/8/PPPPPPBP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "grob-opening-grob-gambit-declined",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White grabs space on the kingside with g4-g5, Bg2 on the long diagonal and h4-h5 to follow, ignoring the centre. Black answers 2...c6 and simply builds the d5/c6 centre and develops, usually with ...Bf5 or ...Bg4 and ...e6, aiming to punish the loosened kingside.",
+  "white_ideas": [
+    {
+      "idea": "g4-g5 gains space and kicks the f6 square"
+    },
+    {
+      "idea": "Bg2 on the long diagonal against b7 and d5"
+    },
+    {
+      "idea": "h4-h5 pawn advance to attack on the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...d5/c6 and ...e5 later"
+    },
+    {
+      "idea": "Develop the bishop outside the pawn chain with ...Bf5 or ...Bg4"
+    },
+    {
+      "idea": "Hit the advanced g5 pawn with ...h6 or ...Qd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on g5 and h-file with a fianchettoed bishop against a Black d5/c6 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White pushes flank pawns early and leaves his own king exposed; Black has a clear central game. Unbalanced and risky for White."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "The Grob is generally considered dubious; Black simply develops and gets a comfortable centre."
+    },
+    "structure": {
+      "notes": "Black holds d5/c6 against a white flank advance; the centre is undecided."
+    },
+    "approach": {
+      "notes": "Played for surprise; strong players almost never choose it."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Few moves to learn but an unsound idea; not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "space gain on the kingside",
+    "long diagonal bishop",
+    "pawn storm with h4-h5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Flank pawn pushes leave White exposed and the game becomes unbalanced and risky."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No pawn is on offer after 2...c6; g5 simply advances."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "The Grob is regarded as unsound; Black gets a free centre."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is undecided while White plays on the flank."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players seldom choose the Grob."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never Beginner and nothing here is deep."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Flank pawns advance with Bg2 on the long diagonal."
+    }
+  }
+}

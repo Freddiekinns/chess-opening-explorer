@@ -1,0 +1,116 @@
+{
+  "slug": "english-opening-symmetrical",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Symmetrical, Hedgehog, Flexible Formation",
+    "eco": "A30",
+    "moves": "1. Nf3 c5 2. c4 Nf6 3. Nc3 e6 4. g3 b6 5. Bg2 Bb7 6. O-O Be7 7. d4 cxd4 8. Qxd4 d6 9. Rd1 a6 10. b3 Nbd7",
+    "fen": "r2qk2r/1b1nbppp/pp1ppn2/8/2PQ4/1PN2NP1/P3PPBP/R1BR2K1 w kq - 1 11"
+  },
+  "parent": "english-opening-symmetrical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "The Hedgehog: Black keeps pawns on a6, b6, d6 and e6 and pieces behind them, accepting less space, and waits to break with ...b5 or ...d5. White has a Maroczy-type bind with c4 and e4 and a space advantage, and tries to restrain both breaks while avoiding overextension. Positions are slow, manoeuvring and rich in strategic detail.",
+  "white_ideas": [
+    {
+      "idea": "Hold the Maroczy bind with c4 and e4 and restrict ...b5 and ...d5"
+    },
+    {
+      "idea": "Use the space for a kingside attack or queenside pressure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the Hedgehog compact and wait"
+    },
+    {
+      "idea": "Prepare the ...d5 or ...b5 break with ...Qc7 and ...Rac8"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Hedgehog with Black pawns on a6, b6, d6, e6"
+    },
+    {
+      "structure": "White c4/e4 bind"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A resilient, hard-to-break structure with slow manoeuvring."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "A well-established main line."
+    },
+    "structure": {
+      "notes": "Tension in the centre, a breaks pending for Black."
+    },
+    "approach": {
+      "notes": "Black can adopt the Hedgehog against many White set-ups."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are subtle and hard to get right."
+    }
+  },
+  "plan_phrases": [
+    "Hedgehog",
+    "Maróczy bind",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "11.e4 Qc7 or 11...O-O",
+      "moves": "1. c4 c5 ... 11. e4 Qc7",
+      "how": "Only different ways to set up the Hedgehog, same character."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "A Hedgehog is built to be hard to break down, with few ways to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.99,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A mainstream opening."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre stays in tension with breaks pending, neither locked nor open."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.45,
+      "reason": "The Hedgehog is a set-up Black can play against several White move orders."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The timing of the ...b5 and ...d5 breaks is hard to master."
+    },
+    "plans": {
+      "value": [
+        "hedgehog",
+        "maroczy_bind",
+        "space_advantage"
+      ],
+      "reason": "Black sits in a Hedgehog while White holds a Maroczy-type bind."
+    }
+  }
+}

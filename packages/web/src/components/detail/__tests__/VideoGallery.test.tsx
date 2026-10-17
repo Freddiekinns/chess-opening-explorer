@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import VideoGallery from '../VideoGallery';
+import { trackEvent } from '../../../lib/analytics';
 import { Video } from '../../../../../shared/src/types/video';
 
 const mockVideos: Video[] = [
@@ -28,9 +29,31 @@ const mockVideos: Video[] = [
   },
 ];
 
+vi.mock('../../../lib/analytics', () => ({ trackEvent: vi.fn() }));
+
 describe('VideoGallery', () => {
   beforeEach(() => {
     localStorage.clear();
+    vi.mocked(trackEvent).mockClear();
+  });
+
+  // Nobody clicking a video means nothing until we know whether anyone saw one.
+  // The test IntersectionObserver reports every element as in view.
+  it('reports the gallery once per set of videos when it comes into view', () => {
+    const views = () =>
+      vi.mocked(trackEvent).mock.calls.filter(([name]) => name === 'video_gallery_view');
+    const { rerender } = render(<VideoGallery videos={mockVideos} />);
+    expect(views()).toEqual([['video_gallery_view', { videos: 2 }]]);
+
+    rerender(<VideoGallery videos={[...mockVideos]} />);
+    expect(views()).toHaveLength(1);
+
+    // The detail page keeps the gallery mounted when it moves to another opening.
+    rerender(<VideoGallery videos={mockVideos.slice(0, 1)} />);
+    expect(views()).toEqual([
+      ['video_gallery_view', { videos: 2 }],
+      ['video_gallery_view', { videos: 1 }],
+    ]);
   });
 
   it('should render nothing when no videos provided', () => {

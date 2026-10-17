@@ -1,0 +1,109 @@
+{
+  "slug": "carr-defense-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Carr Defense: Zilbermints Gambit",
+    "eco": "B00",
+    "moves": "1. e4 h6 2. d4 e5",
+    "fen": "rnbqkbnr/pppp1pp1/7p/4p3/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "carr-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 h6 2.d4 Black strikes with 2...e5, offering the e5 pawn. White can take with 3.dxe5 and hold the extra pawn, with Black hoping for development and the open d-file. It is a rare, speculative gambit built on a very odd 1...h6.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and defend the extra pawn with Nf3 or Bd3"
+    },
+    {
+      "idea": "Develop normally and trade queens if Black plays ...Qe7 ideas"
+    },
+    {
+      "idea": "Use the central space and the tempo lost on h6"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture or harass e5 with ...Nc6, ...Qe7 and ...Bc5"
+    },
+    {
+      "idea": "Open the d-file and develop quickly"
+    },
+    {
+      "idea": "Take advantage of White's misplaced pieces for a quick attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White a pawn up on e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black offers a pawn on move two after a wasted move, so forcing and risky."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.dxe5 White is a pawn up and the pawn is not clearly regained."
+    },
+    "soundness": {
+      "notes": "Black has used a tempo on h6 and a pawn for little, so it is dubious."
+    },
+    "structure": {
+      "notes": "The d- and e-pawns come off, leaving open lines."
+    },
+    "approach": {
+      "notes": "Almost never chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few lines to learn, but it is not sound enough to be a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "A pawn is offered at move two, so play is risky for the side that goes wrong."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black offers the e5 pawn that White can take with 3.dxe5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "Black spends a tempo on h6 and loses a pawn with little to show for it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The central pawns trade or fall, leaving open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players hardly ever play the Carr Defence or this gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "It is dubious, so not Beginner, and not complex enough to be Advanced."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black hopes development makes up for the pawn."
+    }
+  }
+}

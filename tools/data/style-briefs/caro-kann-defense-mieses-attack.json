@@ -1,0 +1,110 @@
+{
+  "slug": "caro-kann-defense-mieses-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Mieses Attack, Landau Gambit",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 d5 3. Bd3 Nf6 4. e5 Nfd7 5. e6",
+    "fen": "rnbqkb1r/pp1npppp/2p1P3/3p4/3P4/3B4/PPP2PPP/RNBQK1NR b KQkq - 0 5"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Landau Gambit White plays 3.Bd3 Nf6 4.e5 Nfd7 5.e6, sacrificing a pawn to break up Black’s kingside. Black takes 5...fxe6 or 5...Nb6 and generally stands better, with White seeking pressure on the dark squares and Black’s king. The main branches are risky and generally considered unsound.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with Qg4, Bxh7 ideas and quick development"
+    },
+    {
+      "idea": "Hit e6 and f7 pieces"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e6 and consolidate, then play ...Nb6 or ...e5"
+    },
+    {
+      "idea": "Trade down the attack and use the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black’s e6 pawn removed from f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices a pawn and plays for an attack. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the pawn after 5...fxe6."
+    },
+    "soundness": {
+      "notes": "Strong players consider it unsound."
+    },
+    "structure": {
+      "notes": "Pawn structure of d4/d5 and an open e- and f-file."
+    },
+    "approach": {
+      "notes": "Very rare among strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious lines are not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "sacrifice on e6"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Mieses Attack",
+      "moves": "1. e4 c6 2. d4 d5 3. Bd3",
+      "how": "Without the e6 sacrifice White just plays e5 or exd5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White sacrifices a pawn and plays for an attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White sacrifices on e6."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Strong players consider it unsound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Pawn structure of d4/d5 and an open e- and f-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Very rare among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White hopes to use time and e6."
+    }
+  }
+}

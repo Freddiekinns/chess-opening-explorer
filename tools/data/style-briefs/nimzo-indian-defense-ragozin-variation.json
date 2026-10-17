@@ -1,0 +1,102 @@
+{
+  "slug": "nimzo-indian-defense-ragozin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Indian Defense: Ragozin Variation",
+    "eco": "E51",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Bd3 d5 6. Nf3 Nc6 7. O-O dxc4",
+    "fen": "r1bq1rk1/ppp2ppp/2n1pn2/8/1bpP4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 8"
+  },
+  "parent": "nimzo-indian-defense-ragozin-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "This is the Nimzo-Indian reached by 4.e3 O-O 5.Bd3 d5 6.Nf3 Nc6 7.O-O dxc4, Black taking the pawn, with 8.Bxc4 Bd6 as the normal follow-up. White has the centre and bishop pair chances, Black has solid development and pressure on e4 and d4 with ...e5 breaks. The structure is classical and positional, with an IQP only if the centre is traded.",
+  "white_ideas": [
+    {
+      "idea": "Recapture with Bxc4 and play e4 or Qe2 with a strong centre"
+    },
+    {
+      "idea": "Aim for central breaks and a kingside initiative"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Bd6 and prepare ...e5"
+    },
+    {
+      "idea": "Trade pieces and equalise with ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Classical d4/e3 centre with Black pressure on the d-pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional play in a balanced Nimzo line; neither side is forced into sharp play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black's ...dxc4 pawn comes back with Bxc4, so it is not a gambit."
+    },
+    "soundness": {
+      "notes": "A normal mainstream system."
+    },
+    "structure": {
+      "notes": "Tension in the centre that can resolve to open or IQP structures."
+    },
+    "approach": {
+      "notes": "A main line of the Nimzo, standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Understanding of central breaks and piece placement, with modest theory."
+    }
+  },
+  "plan_phrases": [
+    "Central tension",
+    "Piece play against the centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "A classical Nimzo line comparable to the Rubinstein anchor, neither especially solid nor sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "The c4 pawn comes straight back with Bxc4."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A mainstream main-line system."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is in tension and can open or transform into IQP structures."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A main line of a standard defence."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The ideas are classical and the theory is moderate."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single named plan from the list dominates this line."
+    }
+  }
+}

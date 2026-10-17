@@ -1,0 +1,105 @@
+{
+  "slug": "van-geet-opening-warsteiner-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Warsteiner Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 d5 2. f4 g5",
+    "fen": "rnbqkbnr/ppp1pp1p/8/3p2p1/5P2/2N5/PPPPP1PP/R1BQKBNR w KQkq - 0 3"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.Nc3 d5 2.f4 White sets up a Bird-like structure and Black replies 2...g5, a Leningrad-style counter that offers a pawn. If 3.fxg5 Black gets the f-file and quick development, while White's knight on c3 and extra pawn give a safe edge. Black's gambit is risky and few strong players try it.",
+  "white_ideas": [
+    {
+      "idea": "Take on g5 and then play d4 and e4 to build the centre"
+    },
+    {
+      "idea": "Return the pawn when needed to keep the king safe"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the f-file after fxg5 and develop quickly with ...Nf6, ...e5"
+    },
+    {
+      "idea": "Attack the weakened kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White's f-pawn gone with the centre opened; Black has d5/e-pawn and f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black counterattacks at once, both sides take risk."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black's g-pawn is offered on g5 and can be taken."
+    },
+    "soundness": {
+      "notes": "The counter-gambit looks dubious."
+    },
+    "structure": {
+      "notes": "Open lines on the f-file."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not beginner as dubious."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "An early counter-gambit leaves king safety in question."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black offers the g-pawn with ...g5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "The countergambit is hard to justify."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The f-file and kingside open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Both White's Nc3 and Black's reply are rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "A dubious line is never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black's compensation is activity against the king."
+    }
+  }
+}

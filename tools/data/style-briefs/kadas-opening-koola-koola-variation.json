@@ -1,0 +1,101 @@
+{
+  "slug": "kadas-opening-koola-koola-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Kádas Opening: Koola-Koola Variation",
+    "eco": "A00",
+    "moves": "1.h4 a5",
+    "fen": "rnbqkbnr/1ppppppp/8/p7/7P/8/PPPPPPP1/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": null,
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "1.h4 a5 is a flank-pawn joke line: both sides push a rook pawn and neither has claimed the centre. The game transposes into a normal opening after d4 or e4 with a slightly wasted tempo for each side. Nothing is forced, and play is decided by ordinary development.",
+  "white_ideas": [
+    {
+      "idea": "Play d4 and e4 and treat the h-pawn as a spare tempo"
+    },
+    {
+      "idea": "Develop the kingside bishop on the long diagonal and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Occupy the centre with ...d5 or ...e5 and ignore the a-pawn"
+    },
+    {
+      "idea": "Use the a-file only if White commits to queenside castling"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Transposition into a Queen's or King's pawn structure with spare rook-pawn moves"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side commits anywhere, so the position stays level and quiet until one player builds a centre."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given; both sides just move a rook pawn."
+    },
+    "soundness": {
+      "notes": "Harmless for both sides; the lost tempi are symmetrical."
+    },
+    "structure": {
+      "notes": "Centre is unclaimed, so it is undecided."
+    },
+    "approach": {
+      "notes": "Practically never played by strong players in serious games."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "No real theory; the only skill is standard development."
+    }
+  },
+  "plan_phrases": [
+    "claim the centre later"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither side commits and nothing forcing happens early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Both sides waste a tempo equally, so neither is worse."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre is undecided and may take any shape."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly ever choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.45,
+      "reason": "There is nothing to learn but it is not a good first repertoire choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan is characteristic of the line."
+    }
+  }
+}

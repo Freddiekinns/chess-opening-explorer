@@ -1,0 +1,114 @@
+{
+  "slug": "ruy-lopez-open-berlin-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Open Berlin Defense, l'Hermet Variation",
+    "eco": "C67",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 Nd6 6. dxe5",
+    "fen": "r1bqkb1r/pppp1ppp/2nn4/1B2P3/8/5N2/PPP2PPP/RNBQ1RK1 b kq - 0 6"
+  },
+  "parent": "ruy-lopez-berlin-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 6.dxe5 Black takes the bishop with ...Nxb5 7.a4 Nbd4 8.Nxd4 Nxd4 9.Qxd4 d5 10.exd6 Qxd6, leading to open play with accurate defence. Black's pieces are active but White has a slight edge; the line is theory-heavy but less played than the Showalter.",
+  "white_ideas": [
+    {
+      "idea": "Win the bishop pair or a lead in development"
+    },
+    {
+      "idea": "Break with a4 to harass the knight"
+    },
+    {
+      "idea": "Trade queens and play for a small endgame edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Win the e5 pawn back"
+    },
+    {
+      "idea": "Use active pieces and a central pawn"
+    },
+    {
+      "idea": "Trade down to a safe endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with isolated e5 or queenless"
+    },
+    {
+      "structure": "White lead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open play where both sides must know their moves but Black is solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material comes back by force."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Open lines after pawn exchanges."
+    },
+    "approach": {
+      "notes": "A standard Berlin line."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Some theory needed."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    {
+      "name": "Showalter Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 Nd6 6. Ba4",
+      "how": "White retreats the bishop; a different, more flexible line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black's Berlin set-up is resilient and queens tend to come off."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level and any pawn comes back by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.95,
+      "reason": "Established theory.",
+      "side": null
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns have been exchanged, leaving open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream Berlin branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "Some theory is needed but not extreme.",
+      "why": "memory"
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single plan stands out."
+    }
+  }
+}

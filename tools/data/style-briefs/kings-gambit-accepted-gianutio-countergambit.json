@@ -1,0 +1,107 @@
+{
+  "slug": "kings-gambit-accepted-gianutio-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Gianutio Countergambit",
+    "eco": "C34",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 f5",
+    "fen": "rnbqkbnr/pppp2pp/8/5p2/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black answers the Knight's Gambit with 3...f5, challenging the e4 pawn at once. White usually plays 4.exf5 or 4.d4, and the game often opens up with ...Nf6, ...d5 and tactics on the e-file. White holds a modest edge with accurate play, and Black's king is the one at risk, so the line is rare.",
+  "white_ideas": [
+    {
+      "idea": "Take on f5 or play d4 and develop quickly"
+    },
+    {
+      "idea": "Use the e-file and the weak Black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fight for e4 with ...Nf6 and ...d5"
+    },
+    {
+      "idea": "Recapture the f5 pawn and activate pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre and e-file with both kings exposed"
+    },
+    {
+      "structure": "Black pawn on f4 against White centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early counter-strikes on both wings lead to open, forcing play with both kings exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "false",
+      "notes": "The countergambit offers the f5 or e-pawn, but material can be regained quickly, so the pawn count is uncertain."
+    },
+    "soundness": {
+      "notes": "Considered inferior or dubious for Black, and rarely played by strong players."
+    },
+    "structure": {
+      "notes": "The centre opens quickly with pawn trades on e4 and f5."
+    },
+    "approach": {
+      "notes": "Rare and played for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp lines with tactics that need to be known."
+    }
+  },
+  "plan_phrases": [
+    "countergambit",
+    "open e-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "The countergambit leaves both kings exposed with forcing tactics along the e-file."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.45,
+      "reason": "It is a countergambit offering a pawn, though the material at the root is level."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "The countergambit is considered inferior to the main defences."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Pawn trades on e4 and f5 open the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose the Gianutio."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A dubious line is never beginner and the tactics need to be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black seeks counterplay through quick development against the White king."
+    }
+  }
+}

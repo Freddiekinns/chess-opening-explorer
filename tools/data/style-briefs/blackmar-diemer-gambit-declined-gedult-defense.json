@@ -1,0 +1,31 @@
+{
+  "slug": "blackmar-diemer-gambit-declined-gedult-defense",
+  "tier": "unsourced",
+  "root": { "name": "Blackmar-Diemer Gambit Declined: Gedult Defense", "eco": "D00", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 a6", "fen": "rnbqkb1r/1pp1pppp/p4n2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 0 5" },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black declines to take on f3 and plays a waiting 4...a6, which prepares ...b5 and a quick queenside advance. White can regain the pawn with 5.fxe4 Nxe4 6.Nxe4 and then plays for development and the centre, or keep the gambit spirit with Bf4 and Qd2. The queenside expansion costs Black time, so White usually has a pleasant lead in development with little risk.",
+  "white_ideas": [{ "idea": "Take back on e4 and use the central space and development lead" }, { "idea": "Bf4, Qd2 and long castling for a kingside attack" }],
+  "black_ideas": [{ "idea": "...b5 and ...Bb7 queenside expansion" }, { "idea": "Trade pieces after the pawn recapture and aim for a solid game" }],
+  "typical_structures": [{ "structure": "White d4 pawn with open f-file after fxe4, Black a6/b5 queenside play" }],
+  "axis_evidence": {
+    "character": { "notes": "Open tactical play, but Black has declined the main attack so forcing lines are fewer." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "Black has declined 4.f3, and 5.fxe4 Nxe4 6.Nxe4 returns the pawn at once, so no material stays given up." },
+    "soundness": { "notes": "Playable for both sides; Black's loss of time on a6 is not punished heavily." },
+    "structure": { "notes": "Open centre after the exchange on e4." },
+    "approach": { "notes": "Rare waiting move; strong players do not choose it often." },
+    "level": { "reason": "neither", "notes": "Simple plans for White, little theory." }
+  },
+  "plan_phrases": ["lead in development", "queenside expansion"],
+  "sublines_that_differ": [{ "name": "Accepted BDG", "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3", "how": "Black takes and the real gambit begins." }],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.45, "reason": "Black has sidestepped the main attack, leaving an open but not especially forcing game." },
+    "gambit": { "value": "none", "confidence": 0.75, "reason": "Black declines the f3 pawn and the e4 pawn comes straight back by 5.fxe4." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.7, "reason": "Neither side takes a refuted risk." },
+    "structure": { "value": "open", "confidence": 0.6, "reason": "After fxe4 the centre opens and the pieces play on open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "The waiting a6 reply is seldom chosen by strong players." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.55, "reason": "Few forced lines to memorise and plans are direct." },
+    "plans": { "value": ["lead_in_development", "queenside_expansion"], "reason": "White hopes to exploit development while Black spends time on ...a6/...b5." }
+  }
+}

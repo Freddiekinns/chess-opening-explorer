@@ -1,0 +1,112 @@
+{
+  "slug": "ruy-lopez-closed-berlin-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Closed Berlin Defense, Chigorin Variation",
+    "eco": "C66",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O d6 5. d4 Nd7",
+    "fen": "r1bqkb1r/pppn1ppp/2np4/1B2p3/3PP3/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 6"
+  },
+  "parent": "ruy-lopez-berlin-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black meets 5.d4 with 5...Nd7, keeping the e5 pawn and avoiding the Berlin endgame. White usually exchanges 6.Bxc6 bxc6 and builds with Nc3 and Re1, while Black has doubled c-pawns, the bishop pair chances and a very compact position. Play is slow and manoeuvring, with Black hard to break down.",
+  "white_ideas": [
+    {
+      "idea": "Exchange on c6 to ruin Black's pawns, then Nc3 and Re1 to pressure e5"
+    },
+    {
+      "idea": "Open the centre with dxe5 at the right moment"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e5 with ...Be7 and ...O-O"
+    },
+    {
+      "idea": "Use the doubled c-pawns for central control and ...Nb6/...Nf6 regrouping"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black doubled c-pawns against White's healthy queenside majority"
+    },
+    {
+      "structure": "Tension on e5/d4 that White can resolve with dxe5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's position is compact and hard to crack; no forcing tactics early."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "Mainstream Berlin sideline, fully sound."
+    },
+    "structure": {
+      "notes": "The e5/d4 tension stays unresolved for some time."
+    },
+    "approach": {
+      "notes": "A recognised Ruy Lopez branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Slow plans around e5 and the c-pawns need judgement more than memory."
+    }
+  },
+  "plan_phrases": [
+    "doubled pawns"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Berlin Wall endgame",
+      "moves": "4...Nxe4 5.d4 Nd6",
+      "how": "Parent's main line; a different structure with queens traded."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "Black's position is compact and hard to crack; no forcing tactics early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Mainstream Berlin sideline, fully sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The e5/d4 tension stays unresolved for some time."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised Ruy Lopez branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Slow plans around e5 and the c-pawns need judgement more than memory."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

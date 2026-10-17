@@ -1,0 +1,112 @@
+{
+  "slug": "danish-gambit-accepted-svenonius-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Danish Gambit Accepted: Svenonius Defense",
+    "eco": "C21",
+    "moves": "1. e4 e5 2. d4 exd4 3. c3 Ne7",
+    "fen": "rnbqkb1r/ppppnppp/8/8/3pP3/2P5/PP3PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "danish-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.c3 Black declines to take on c3 and plays 3...Ne7, preparing ...d5 and recapturing on d4. White can play 4.cxd4 d5 5.exd5 Nxd5 6.Nf3 getting a central d4 pawn against Black piece activity, or Bc4 lines. Black reaches a comfortable game and the gambit is effectively declined.",
+  "white_ideas": [
+    {
+      "idea": "Recapture on d4 and build a centre with Nf3, Bc4"
+    },
+    {
+      "idea": "Use open lines against the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike with ...d5 to gain central space"
+    },
+    {
+      "idea": "Develop quickly with ...Nbc6, ...Be7 and ...O-O"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4/e4 centre against Black ...d5 pawn"
+    },
+    {
+      "structure": "Open centre after exd5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A sideline in which Black declines the gambit and the game becomes ordinary."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "4.cxd4 d5 5.exd5 Nxd5 leaves material level."
+    },
+    "soundness": {
+      "notes": "A comfortable defence for Black, with White getting a normal open game."
+    },
+    "structure": {
+      "notes": "Open central lines after ...d5."
+    },
+    "approach": {
+      "notes": "The Danish is played now and then by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans of piece activity versus central presence."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Accepted 3...dxc3",
+      "moves": "3...dxc3 4.Bc4 cxb2 5.Bxb2",
+      "how": "The real Danish Gambit, not this variation"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Black declines and the play is an ordinary open game."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Material comes straight back after 4.cxd4."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Both sides are fine."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The d- and e-pawn exchanges open the centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A sideline in an uncommon opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Moderate theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White tries to use open lines."
+    }
+  }
+}

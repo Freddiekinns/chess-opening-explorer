@@ -1,0 +1,101 @@
+{
+  "slug": "queens-pawn-mengarini-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Pawn, Mengarini Attack",
+    "eco": "E60",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Qc2",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PPQ1PPPP/RNB1KBNR b KQkq - 1 3"
+  },
+  "parent": "indian-defense-west-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White develops the queen to c2 against the King's Indian set-up, a quiet line to support e4 and meet ...d5 with Qxd5 ideas. Black normally plays ...Bg7, ...O-O and ...d6 or ...d5.",
+  "white_ideas": [
+    {
+      "idea": "Support e4 with Nc3, e4"
+    },
+    {
+      "idea": "Avoid theory"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto the bishop and castle"
+    },
+    {
+      "idea": "Play ...d6 and ...e5 or ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "KID/Grünfeld-type structures"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Centre undecided."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Simple."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Neither side commits early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A sound sideline."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "3.Qc2 is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are positional."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Black fianchettoes on g7."
+    }
+  }
+}

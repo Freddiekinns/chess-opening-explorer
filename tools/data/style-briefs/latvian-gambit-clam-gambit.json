@@ -1,0 +1,107 @@
+{
+  "slug": "latvian-gambit-clam-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Clam Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d3 f5 4. exf5",
+    "fen": "r1bqkbnr/pppp2pp/2n5/4pP2/8/3P1N2/PPP2PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "kings-knight-opening-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White avoids the main Latvian with 3.d3, and after 3...f5 4.exf5 has taken the pawn. Black has given the f-pawn and aims for ...e4 or ...d5 with quick development. White has a healthy extra pawn and a solid set-up, so this is a poor version of an already dubious opening for Black.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn, then consolidate with Nc3, Be2 and castling"
+    },
+    {
+      "idea": "Return the pawn at a good moment to stay safe"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the e-file with ...e4 or ...d5 and play for development"
+    },
+    {
+      "idea": "Target f5 and use pins against the f3 knight"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...e4 trades"
+    },
+    {
+      "structure": "Black open f- and e-files against a solid White set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for tactics a pawn down, while the White king is not under direct fire."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White keeps the pawn after 4.exf5 if he consolidates; ...e4 only gives Black development."
+    },
+    "soundness": {
+      "notes": "The Latvian Gambit is on the dubious list, and this is an easier version for White."
+    },
+    "structure": {
+      "notes": "Both ...e4 and ...d5 open the centre quickly."
+    },
+    "approach": {
+      "notes": "Part of the Latvian, which strong players hardly ever use."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not a good repertoire choice, and White simply develops."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open e-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black is a pawn down and plays for forcing tactics down the open files."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black gives the f-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "The Latvian family is considered unsound and this move order adds no extra justification."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Trades on e4 or d5 open the position."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players hardly ever play the Latvian."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.65,
+      "reason": "A dubious line cannot be beginner, and the plan is clear but unsound."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black hopes faster development justifies the pawn."
+    }
+  }
+}

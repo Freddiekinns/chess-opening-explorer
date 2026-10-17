@@ -1,0 +1,108 @@
+{
+  "slug": "bishops-opening-pachman-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Pachman Gambit",
+    "eco": "C24",
+    "moves": "1. e4 e5 2. Bc4 Nf6 3. Ne2 Nxe4 4. Nec3",
+    "fen": "rnbqkb1r/pppp1ppp/8/4p3/2B1n3/2N5/PPPP1PPP/RNBQK2R b KQkq - 1 4"
+  },
+  "parent": "bishops-opening-berlin-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White offers the e4 pawn with 3.Ne2 Nxe4 4.Nec3, looking for development and pressure on f7. Black can keep the pawn but White gets active pieces and ideas like Nxe4 or d4. Probably a surprise weapon rather than a theoretical one.",
+  "white_ideas": [
+    {
+      "idea": "Regain e4 and build with d4 or O-O"
+    },
+    {
+      "idea": "Use the bishop on c4 and knight on c3 for pressure on f7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Return the pawn at the right moment for a lead in development"
+    },
+    {
+      "idea": "Exchange knights and reach a sound, slightly better game"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after pawn exchanges"
+    },
+    {
+      "structure": "White has c3/Nc3 knights and Bc4 active"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is a pawn up and White has direct threats."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black keeps the e4 pawn if it wants to."
+    },
+    "soundness": {
+      "notes": "Probably slightly dubious; Black can exchange knights and be a clean pawn up."
+    },
+    "structure": {
+      "notes": "Central lines open early."
+    },
+    "approach": {
+      "notes": "Very rarely played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit; not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black is a pawn up and White has direct threats."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "Black keeps the e4 pawn if it wants to."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Probably slightly dubious; Black can exchange knights and be a clean pawn up."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central lines open early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Very rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious gambit; not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

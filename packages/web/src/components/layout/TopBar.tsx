@@ -74,7 +74,8 @@ function TopBarSearch() {
   // Same hook as the hero and the mobile overlay: same expansion, same
   // debounce, same ranking. This component decides only how a dropdown pinned
   // to a 240px field behaves.
-  const { query, setQuery, results, searching, noResults, hasQuery, reset } = useOpeningSearch();
+  const { query, setQuery, results, searching, noResults, hasQuery, reset } =
+    useOpeningSearch('topbar');
   const [showDropdown, setShowDropdown] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [mobileOpen, setMobileOpen] = useState(false);

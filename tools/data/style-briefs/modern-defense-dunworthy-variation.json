@@ -1,0 +1,108 @@
+{
+  "slug": "modern-defense-dunworthy-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Dunworthy Variation",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. c4 d5 4. exd5 c6 5. dxc6 Bxd4",
+    "fen": "rnbqk1nr/pp2pp1p/2P3p1/8/2Pb4/8/PP3PPP/RNBQKBNR w KQkq - 0 6"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black sacrifices material with 4...c6 and 5...Bxd4, grabbing the d4 pawn after White captures twice. Black gets lines against the king in return. Probably a surprise weapon.",
+  "white_ideas": [
+    {
+      "idea": "Capture the pawns and develop with Nf3/Nc3"
+    },
+    {
+      "idea": "Return material if needed for a safe king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the bishop and open lines for pressure on c6/f2"
+    },
+    {
+      "idea": "Win back c6 with ...Nxc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre"
+    },
+    {
+      "structure": "Black bishop active on d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gives up material for activity."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the extra pawn."
+    },
+    "soundness": {
+      "notes": "Black gets limited compensation."
+    },
+    "structure": {
+      "notes": "Centre pawns exchange early."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black gives up material for activity."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "White can keep the extra pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Black gets limited compensation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Centre pawns exchange early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

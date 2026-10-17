@@ -1,0 +1,105 @@
+{
+  "slug": "french-defense-hoffmann-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Hoffmann Gambit",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. d4 d5 3. Qe2 e5 4. f4 exf4",
+    "fen": "rnbqkbnr/ppp2ppp/8/3p4/3PPp2/8/PPP1Q1PP/RNB1KBNR w KQkq - 0 5"
+  },
+  "parent": "french-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.Qe2 and 4.f4 hoping to blunt ...e5 and keep the centre, offering the f-pawn after ...exf4. White can regain the pawn with Nf3 and dxe5, but Black can keep it with careful play. The gambit is seldom seen and considered dubious.",
+  "white_ideas": [
+    {
+      "idea": "Recapture on f4 and open the f-file with Nf3, Bxf4"
+    },
+    {
+      "idea": "Use the e-file and the queen on e2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn and develop with ...Nf6 and ...Be7"
+    },
+    {
+      "idea": "Play ...c5 or ...Bd6 against White's centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with e-pawns exchanged and Black ahead a pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White takes risks and Black is solid with the extra pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the f-pawn."
+    },
+    "soundness": {
+      "notes": "Dubious for White."
+    },
+    "structure": {
+      "notes": "Open e-file."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "An early gambit with the queen on e2."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White gives the f4 pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Black can keep the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "e-file and centre open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious so never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White plays for tempo with the queen on e2."
+    }
+  }
+}

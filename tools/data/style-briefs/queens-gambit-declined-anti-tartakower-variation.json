@@ -1,0 +1,117 @@
+{
+  "slug": "queens-gambit-declined-anti-tartakower-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Anti-Tartakower Variation",
+    "eco": "D55",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Be7 5. Bg5 O-O 6. e3 h6 7. Bxf6",
+    "fen": "rnbq1rk1/ppp1bpp1/4pB1p/3p4/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ - 0 7"
+  },
+  "parent": "queens-gambit-declined-neo-orthodox-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White trades the g5 bishop for the f6 knight (7.Bxf6) and keeps the c4/d4 pressure; after ...Bxf6 Black plays ...c6 and ...Nd7 or ...dxc4 and White uses Rc1 or Qb3 for a small space edge. Black has the bishop pair-like activity of the f6 bishop and solid defences, and the game is slow and manoeuvring.",
+  "white_ideas": [
+    {
+      "idea": "Rc1 and Qb3 pressure against c6/d5"
+    },
+    {
+      "idea": "Bd3 and castling, then cxd5 or Bxc4 after ...dxc4"
+    },
+    {
+      "idea": "Hold a small space advantage with the c4/d4 centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture ...Bxf6 and play ...c6 and ...Nd7"
+    },
+    {
+      "idea": "Free the position with ...dxc4 and ...e5 or ...c5"
+    },
+    {
+      "idea": "Keep the pawn chain compact and avoid weaknesses"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD d5/e6 chain with White c4/d4 and e3"
+    },
+    {
+      "structure": "After ...dxc4 Bxc4 a symmetrical-looking centre with ...e5 or ...c5 breaks"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Known as a safe QGD set-up with an early piece trade; few ways for either side to go wrong quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "A main-line QGD set-up, fully sound."
+    },
+    "structure": {
+      "notes": "Centre in tension; Black ...dxc4 or ...c6 and e-pawn breaks decide it. Standard QGD flexibility."
+    },
+    "approach": {
+      "notes": "Mainstream QGD branch, not a system."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Slow manoeuvring play where plans matter more than theory."
+    }
+  },
+  "plan_phrases": [
+    "Rc1 and Qb3",
+    "free game with ...c5 or ...e5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Gligoric Variation",
+      "moves": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bxf6 Bxf6 8. Rc1",
+      "how": "Rc1 pressure on c6 and a quicker c-file build-up."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.7,
+      "reason": "Orthodox QGD set-up with early trades and no forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material changes hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "A main-line QGD branch."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "QGD centre in tension, as in the anchors."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A normal QGD move order, not a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans matter more than lines to memorise."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No single plan stands out from memory."
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "slug": "ruy-lopez-steinitz-defense-deferred",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Steinitz Defense Deferred, Lipnitsky Variation",
+    "eco": "C79",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O d6 6. Bxc6+ bxc6 7. d4 Bg4",
+    "fen": "r2qkb1r/2p2ppp/p1pp1n2/4p3/3PP1b1/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 8"
+  },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White has traded Bxc6 and played d4, and Black’s doubled c-pawns give the bishop pair and the e4 pressure. The most played branch is the Boleslavsky 7...Nxe4 8.Re1 f5 9.dxe5 d5, where Black holds e4 with ...f5 and the knight. The Lipnitsky 7...Bg4 pins the knight instead.",
+  "white_ideas": [
+    {
+      "idea": "Exploit the doubled c-pawns by pressing e5 and e4 with Re1 and Nc3"
+    },
+    {
+      "idea": "Seek an endgame with a better structure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e4 with ...f5 and ...d5, using the bishop pair"
+    },
+    {
+      "idea": "Seek piece activity on the open lines"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black doubled c-pawns, open centre with e5 exchanged"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Boleslavsky line is forcing and tactical. Tactical."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawns are won back through Re1 or dxe5."
+    },
+    "soundness": {
+      "notes": "A recognised line."
+    },
+    "structure": {
+      "notes": "Central pawns exchange."
+    },
+    "approach": {
+      "notes": "A recognised Ruy Lopez branch."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs some forcing lines and understanding."
+    }
+  },
+  "plan_phrases": [
+    "doubled c-pawns",
+    "hold e4"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Lipnitsky Variation",
+      "moves": "7... Bg4",
+      "how": "A quieter pin than the Boleslavsky 7...Nxe4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The Boleslavsky line is forcing and tactical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No lasting material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A recognised line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "Central pawns exchange."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised Ruy Lopez branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Needs some forcing lines and understanding."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "bishop_pair"
+      ],
+      "reason": "The doubled c-pawns decide the structure."
+    }
+  }
+}

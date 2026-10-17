@@ -1,0 +1,120 @@
+{
+  "slug": "philidor-defense-nimzowitsch",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Nimzowitsch, Locock Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Ng5",
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p1N1/3PP3/8/PPP2PPP/RNBQKB1R b KQkq - 2 4"
+  },
+  "parent": "philidor-defense-nimzowitsch-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Nimzowitsch Philidor White tries 4.Ng5, aiming at f7 in the Locock style. The knight sac on f7 gives White a couple of pawns and a king in the open for Black, but with correct play Black comes out ahead. Black can also meet 4.Ng5 with ...d5 or ...Qe7 and a quiet game.",
+  "white_ideas": [
+    {
+      "idea": "Strike at f7 with Ng5"
+    },
+    {
+      "idea": "Sacrifice Nxf7 for pawns and an exposed king"
+    },
+    {
+      "idea": "Break open the centre with dxe5 and Bc4+"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...h6 and answer Nxf7 with ...Kxf7"
+    },
+    {
+      "idea": "Meet the knight with ...d5 and develop"
+    },
+    {
+      "idea": "Keep the extra piece safe"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White knight on g5 and Black f7 pawn under attack"
+    },
+    {
+      "structure": "Open centre after dxe5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tricky tactics with White hoping for a quick attack against the Black king."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "In the Locock line Black takes the knight on f7 and can keep the extra piece."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Open lines after pieces trade."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs care; dubious."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Locock Variation",
+      "moves": "4. Ng5 h6 5. Nxf7",
+      "how": "White gives the knight for two pawns."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "White tries a sacrifice on f7 and a mistake by either side decides quickly."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.5,
+      "reason": "The Locock line gives a knight for pawns that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "The sacrifice is thought to be unsound against correct defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Pieces and open lines after exchanges in the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players hardly use this."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "White aims everything at f7."
+    }
+  }
+}

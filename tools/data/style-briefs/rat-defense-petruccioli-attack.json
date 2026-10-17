@@ -1,0 +1,105 @@
+{
+  "slug": "rat-defense-petruccioli-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rat Defense: Petruccioli Attack",
+    "eco": "B00",
+    "moves": "1. e4 d6 2. h4",
+    "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P2P/8/PPPP1PP1/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 2.h4 against the Rat, aiming for h5 and a kingside space grab. Black replies ...Nf6 and ...e5 or ...g6, and the h-pawn push costs White development time. It is a surprise weapon that rarely troubles Black.",
+  "white_ideas": [
+    {
+      "idea": "Gain kingside space with h4-h5"
+    },
+    {
+      "idea": "Develop with Nc3 and Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop calmly and hit the centre"
+    },
+    {
+      "idea": "Exploit the loosened kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre for Black with ...e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not well known; reasoned from the moves."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is given up."
+    },
+    "soundness": {
+      "notes": "The wing pawn move wastes time."
+    },
+    "structure": {
+      "notes": "Black often plays ...e5."
+    },
+    "approach": {
+      "notes": "An obscure surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "pawn_storm",
+    "kingside_attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The early flank pawn push creates imbalance."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The h-pawn push neglects development."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "White tries a kingside pawn storm."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "portuguese-opening-miguel-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Portuguese Opening: Miguel Gambit",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Bb5 Bc5 3. b4",
+    "fen": "rnbqk1nr/pppp1ppp/8/1Bb1p3/1P2P3/8/P1PP1PPP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "portuguese-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 e5 2.Bb5 Bc5 3.b4 White offers the b-pawn in an Evans-like idea. If Black takes with ...Bxb4, White plays c3 and d4 to gain central space and open lines. Black can also decline, and theory sees the gambit as unsound. Read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Gain tempi with c3 and d4 against the bishop"
+    },
+    {
+      "idea": "Build a centre and develop quickly for the pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take with ...Bxb4 and keep the pawn"
+    },
+    {
+      "idea": "Decline with ...Bb6 or ...Bd6 and develop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White pawns on e4 and d4 after c3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White offers a pawn for a lead in development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can take b4 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "Without the Italian bishop and with the bishop on b5 the compensation is thin."
+    },
+    "structure": {
+      "notes": "White opens the centre quickly with c3 and d4."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious and rare, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "pawn for development",
+    "central pawn centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "White offers a pawn for a lead in development."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "Black can take b4 and keep the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Without the Italian bishop and with the bishop on b5 the compensation is thin."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "White opens the centre quickly with c3 and d4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious and rare, so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White wants development and a big centre."
+    }
+  }
+}

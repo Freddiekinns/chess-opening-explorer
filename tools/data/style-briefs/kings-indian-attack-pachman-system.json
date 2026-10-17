@@ -1,0 +1,109 @@
+{
+  "slug": "kings-indian-attack-pachman-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Pachman System",
+    "eco": "A07",
+    "moves": "1. Nf3 d5 2. g3 g6 3. Bg2 Bg7 4. O-O e5 5. d3 Ne7",
+    "fen": "rnbqk2r/ppp1npbp/6p1/3pp3/8/3P1NP1/PPP1PPBP/RNBQ1RK1 w kq - 1 6"
+  },
+  "parent": "kings-indian-attack-double-fianchetto",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White sets up the King's Indian Attack against Black's ...g6, ...Bg7 and ...e5 plan. White then plays e4 with c3 or c4 and a central tension. Both sides fianchetto and manoeuvre.",
+  "white_ideas": [
+    {
+      "idea": "Play e4 and maintain tension"
+    },
+    {
+      "idea": "Support with Nbd2 and c3"
+    },
+    {
+      "idea": "Use the fianchetto bishop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Build ...e5 and ...Ne7"
+    },
+    {
+      "idea": "Castle and play ...Nbc6"
+    },
+    {
+      "idea": "Break with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "King's Indian style with fianchettoed bishops"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Manoeuvring without forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Centre in tension."
+    },
+    "approach": {
+      "notes": "A set-up that works against many replies."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans over moves."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto and e4 push"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Manoeuvring without forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre in tension."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.7,
+      "reason": "The King's Indian Attack is a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than moves."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both bishops are fianchettoed."
+    }
+  }
+}

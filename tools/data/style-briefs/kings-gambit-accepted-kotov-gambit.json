@@ -1,0 +1,106 @@
+{
+  "slug": "kings-gambit-accepted-kotov-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Kotov Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. d4 gxf3 6. Bxf4",
+    "fen": "rnbqkbnr/pppp1p1p/8/8/2BPPB2/5p2/PPP3PP/RN1QK2R b KQkq - 0 6"
+  },
+  "parent": "kings-gambit-accepted-ghulam-kassim-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White has given a knight on f3 for pawns in a Ghulam-Kassim-style King's Gambit line, and Black's g-pawn has captured it. White aims to use the open f- and g-files, the bishops on c4 and f4 and the pressure on f7 to attack the uncastled king. Black is a piece up and tries to consolidate; read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Pressure f7 with Bc4 and bring the queen and knight into the attack"
+    },
+    {
+      "idea": "Open the kingside with Qd2, O-O, and Nc3 and e5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Return material when needed and castle queenside"
+    },
+    {
+      "idea": "Trade queens and keep the extra piece"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside with a pawn on f3 and exposed kings"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White has sacrificed a piece and the play is forcing."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gave the knight and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Strong players consider the sacrifice insufficient."
+    },
+    "structure": {
+      "notes": "Files are open on the kingside."
+    },
+    "approach": {
+      "notes": "The King's Gambit is occasionally played, but this sacrifice is seldom chosen."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious so not Beginner, and the tactics need to be known."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "piece sacrificed for an attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "White has sacrificed a piece and the play is forcing."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gave the knight and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "Strong players consider the sacrifice insufficient."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Files are open on the kingside."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "The King's Gambit is occasionally played, but this sacrifice is seldom chosen."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious so not Beginner, and the tactics need to be known."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White hits f7 and attacks the king with a development lead."
+    }
+  }
+}

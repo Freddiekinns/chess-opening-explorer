@@ -1,0 +1,109 @@
+{
+  "slug": "ruy-lopez-noahs-ark-trap",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Noah's Ark Trap",
+    "eco": "C71",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 b5 5. Bb3 d6 6. d4 Nxd4 7. Nxd4 exd4 8. Qxd4 c5",
+    "fen": "r1bqkbnr/5ppp/p2p4/1pp5/3QP3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 9"
+  },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Morphy Defence with ...d6 and ...b5, White trades on d4 and recaptures with the queen, then Black plays ...c5 and ...c4 to trap the bishop on b3 behind the pawns. White avoids the trap with a timely retreat such as Qd3 or Qd1, after which the game is a normal open Ruy. The root is the trap itself.",
+  "white_ideas": [
+    {
+      "idea": "Retreat the queen and bishop in time"
+    },
+    {
+      "idea": "Develop with Nc3 and Bd2 then castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trap the Bb3 with ...c5 and ...c4"
+    },
+    {
+      "idea": "Develop with ...Bd7 and ...Nf6 and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4 exchanges, with Black queenside pawns on a6/b5/c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A trap line: tactics decide if White falls in, otherwise normal play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given by design."
+    },
+    "soundness": {
+      "notes": "White loses a piece if they walk into the trap, so the Qxd4 line is dubious for White."
+    },
+    "structure": {
+      "notes": "The d-file is open after the exchanges on d4."
+    },
+    "approach": {
+      "notes": "Appears as a trap in standard Ruy lines."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific moves avoid the trap."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Closed Ruy trap order",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 8. d4 Nxd4",
+      "how": "Same trap reached from the main Closed Ruy."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The queen exposed on d4 leads to forcing tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "White loses a bishop if they follow the line to the end."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The d-file is open and the centre is asymmetrical."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "The trap arises from a mainstream Ruy line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Knowing the trap is the main requirement."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White's queen must dodge attacks."
+    }
+  }
+}

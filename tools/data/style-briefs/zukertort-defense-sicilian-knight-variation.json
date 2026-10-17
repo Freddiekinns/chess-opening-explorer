@@ -1,0 +1,105 @@
+{
+  "slug": "zukertort-defense-sicilian-knight-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Defense: Sicilian Knight Variation",
+    "eco": "A04",
+    "moves": "1. Nf3 Na6 2. e4 c5",
+    "fen": "r1bqkbnr/pp1ppppp/n7/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black replies to 1.Nf3 with 1...Na6 and after 2.e4 c5 reaches a Sicilian with the knight misplaced on a6. White can develop normally, for example d4, and Black plays ...Nc7 to bring the knight into play. The line is rare and Black gains nothing from the odd knight placement.",
+  "white_ideas": [
+    {
+      "idea": "Play d4 and open the centre"
+    },
+    {
+      "idea": "Develop naturally and exploit the a6 knight"
+    },
+    {
+      "idea": "Gain space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reroute the knight with ...Nc7"
+    },
+    {
+      "idea": "Develop like a normal Sicilian with ...d6 and ...g6"
+    },
+    {
+      "idea": "Counterattack on the queenside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian pawn structure with the knight on a6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, relaxed play where Black is slightly worse."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing given."
+    },
+    "soundness": {
+      "notes": "Playable if a little passive."
+    },
+    "structure": {
+      "notes": "A Sicilian fixed centre with a half-open c-file."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are easy to learn."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "The play is calm and neither side is under particular pressure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "The knight on a6 is awkward but not a real weakness."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "Black has a Sicilian structure with a half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom play 1...Na6 and this reply is rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The ideas are straightforward but Black needs to know how to reroute the knight."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan from the list is clearly characteristic."
+    }
+  }
+}

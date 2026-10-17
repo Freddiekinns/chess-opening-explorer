@@ -1,0 +1,108 @@
+{
+  "slug": "reti-opening-reversed-blumenfeld-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Réti Opening: Reversed Blumenfeld Gambit",
+    "eco": "A09",
+    "moves": "1. Nf3 d5 2. c4 d4 3. e3 c5 4. b4",
+    "fen": "rnbqkbnr/pp2pppp/8/2p5/1PPp4/4PN2/P2P1PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "reti-opening-advance-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.Nf3 d5 2.c4 d4 3.e3 c5 White offers the b-pawn with 4.b4, a reversed Blumenfeld-style undermining of Black's centre. If Black takes 4...cxb4, White opens the c-file and gets time for development with exd4 or a3. I know the idea but not all the theory.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with exd4 and a3"
+    },
+    {
+      "idea": "Develop Bb2 and Nc3 quickly"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn and hold it with ...cxb4"
+    },
+    {
+      "idea": "Support d4 with ...e5 or ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black d4/c5 centre against White undermining"
+    },
+    {
+      "structure": "Queenside pawns traded"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Dynamic and risky for both."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the b-pawn which Black can keep."
+    },
+    "soundness": {
+      "notes": "Playable but risky."
+    },
+    "structure": {
+      "notes": "Central tension and open c-file."
+    },
+    "approach": {
+      "notes": "Rare and seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs concrete knowledge."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Gambit and open lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White offers a pawn on b4 which Black can keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Reversed Blumenfeld ideas are playable."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "Tension with c-file open after cxb4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rarely played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Concrete lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "queenside_expansion"
+      ],
+      "reason": "Gambit aims."
+    }
+  }
+}

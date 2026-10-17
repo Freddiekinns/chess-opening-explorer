@@ -1,0 +1,112 @@
+{
+  "slug": "nimzowitsch-defense-hornung-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Hornung Gambit",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. d4 d5 3. Be3",
+    "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/3PP3/4B3/PPP2PPP/RN1QKBNR b KQkq - 1 3"
+  },
+  "parent": "nimzowitsch-defense-scandinavian-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 Nc6 2.d4 d5 White plays 3.Be3, offering the e-pawn. If Black takes on e4 White develops with Nc3 and Qd2 for a lead in development and a pull on the d-file. Black can instead play ...dxe4 and ...Nf6 safely or challenge the centre with ...e5.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, Qd2 and O-O-O"
+    },
+    {
+      "idea": "Win the pawn back with tempo"
+    },
+    {
+      "idea": "Use the Be3 to pressure the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and develop with ...Nf6 and ...e5"
+    },
+    {
+      "idea": "Return the pawn for a safe game"
+    },
+    {
+      "idea": "Challenge d4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Scandinavian-like centre with open e4"
+    },
+    {
+      "structure": "White pieces ahead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A quiet gambit with a pawn offered for development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can take on e4 and keep the pawn with sensible development."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Scandinavian-style semi-open centre."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not hard but unsound."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "A pawn is down for development, which can swing quickly."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White offers the e4 pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "White does not have enough for the pawn."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "It leads to a Scandinavian-style centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "A seldom chosen gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Dubious lines cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White aims for quicker pieces."
+    }
+  }
+}

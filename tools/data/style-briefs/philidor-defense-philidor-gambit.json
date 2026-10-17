@@ -1,0 +1,108 @@
+{
+  "slug": "philidor-defense-philidor-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Philidor Gambit",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 Bd7",
+    "fen": "rn1qkbnr/pppb1ppp/3p4/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "philidor-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black meets 3.d4 with the quiet 3...Bd7, developing the bishop and keeping e5 supported by the d6 pawn rather than trading. White takes space with dxe5 or Nc3 and Bc4, and Black aims for a compact, passive Philidor set-up. The name suggests a gambit, but nothing is offered by force; I am unsure of the usual follow-up.",
+  "white_ideas": [
+    {
+      "idea": "Take space with Nc3, Bc4 and a pawn on d4"
+    },
+    {
+      "idea": "Open lines with dxe5 dxe5 and Qxd8+ to reach a small endgame edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support e5 with ...Nf6 and ...Be7 and castle"
+    },
+    {
+      "idea": "Break with ...exd4 or ...Nc6 once developed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Philidor-style pawns on d6/e5 against d4/e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black avoids exchanges and keeps a compact, passive set-up; few forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered; the name is historical."
+    },
+    "soundness": {
+      "notes": "Bd7 is awkward but not refuted, so no clear fault."
+    },
+    "structure": {
+      "notes": "Centre is in tension after 3...Bd7 and is resolved either way."
+    },
+    "approach": {
+      "notes": "Rare sidestep from the main Philidor move orders."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are simple but Black must avoid cramped positions."
+    }
+  },
+  "plan_phrases": [
+    "compact centre",
+    "passive but solid"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "dxe5 lines",
+      "moves": "1. e4 e5 2. Nf3 d6 3. d4 Bd7 4. dxe5 dxe5 5. Qxd8+",
+      "how": "Queens come off at once and the game is a quiet endgame."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "Black accepts a passive set-up and the lines are quiet."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No pawn is given up for compensation."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Bd7 is clumsy rather than refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided and may be resolved by exchanges on d4 or e5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players almost never choose this over the main Philidor lines."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans are modest and the pitfalls are few."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Nothing here plainly matches a listed plan."
+    }
+  }
+}

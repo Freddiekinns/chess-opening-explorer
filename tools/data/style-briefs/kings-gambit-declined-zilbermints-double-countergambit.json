@@ -1,0 +1,105 @@
+{
+  "slug": "kings-gambit-declined-zilbermints-double-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Zilbermints Double Countergambit",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 g5",
+    "fen": "rnbqkbnr/pppp1p1p/8/4p1p1/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black replies 2...g5 to the King's Gambit, a double countergambit with pawns on e5 and g5 both attacked by White. White can take 3.fxg5 or 3.fxe5, and Black tries to use the open lines and ...Qh4+ or ...Qxe4+; I am not sure of the theory. Material is likely to be unclear at first but Black is probably worse with best play.",
+  "white_ideas": [
+    {
+      "idea": "Take on g5 or e5 and consolidate with d4 and Nf3"
+    },
+    {
+      "idea": "Develop quickly and punish Black's loosened kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use ...Qh4+ and ...Bg7 for activity"
+    },
+    {
+      "idea": "Regain material and open lines"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open King's Gambit structure with advanced g and e pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings are exposed and play is forcing."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black offers pawns in a countergambit and White can keep them."
+    },
+    "soundness": {
+      "notes": "It is a rare line thought to be unsound."
+    },
+    "structure": {
+      "notes": "Open lines, e- and f-files open early."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious so not Beginner; some theory."
+    }
+  },
+  "plan_phrases": [
+    "Countergambit for activity",
+    "Open kingside"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "A countergambit with both kings exposed."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.55,
+      "reason": "Black plays 2...g5 offering a pawn that White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "Black's early pawn offer weakens the kingside with little in return."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "Open lines in the centre and on the kingside."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner, but the line has little depth."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "Black seeks activity and open lines against the White king."
+    }
+  }
+}

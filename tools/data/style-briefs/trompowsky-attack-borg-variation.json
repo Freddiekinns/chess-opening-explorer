@@ -1,0 +1,113 @@
+{
+  "slug": "trompowsky-attack-borg-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Trompowsky Attack: Borg Variation",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. Bg5 Ne4 3. Bf4 g5",
+    "fen": "rnbqkb1r/pppppp1p/8/6p1/3PnB2/8/PPP1PPPP/RN1QKBNR w KQkq - 0 4"
+  },
+  "parent": "trompowsky-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 2...Ne4 3.Bf4 Black plays ...g5, hitting the bishop and gaining kingside space. White usually answers 4.Bc1 or 4.Bg3, then challenges the e4 knight with e3, f3 and Nd2, and Black tries to hold it with ...Bg7, ...h5 or ...d6. Black's pawn moves weaken the kingside, so both sides have targets and the play is unbalanced.",
+  "white_ideas": [
+    {
+      "idea": "Hit the e4 knight with f3, e3 and Nd2 or Nf3"
+    },
+    {
+      "idea": "Aim at the weakened Black kingside with h4 or pawn breaks"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the e4 knight and play ...Bg7 and ...h5-h4 to win space with the g-pawn"
+    },
+    {
+      "idea": "Trade the dark-squared bishop and use the long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black g- and h-pawns advanced against a flexible White centre"
+    },
+    {
+      "structure": "White d4 and e3 against Black's ...d6 and ...c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black advances the g- and h-pawns early and both sides have clear targets, so the position is unbalanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material stays level; ...g5 is a pawn push White does not win material from by force."
+    },
+    "soundness": {
+      "notes": "The ...g5 idea has been played at high level without refutation."
+    },
+    "structure": {
+      "notes": "The centre stays undecided while Black fights for e4."
+    },
+    "approach": {
+      "notes": "The Trompowsky is an accepted choice against Indian set-ups; this branch is less common."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Judging when the kingside pawns help or hurt takes understanding more than memory."
+    }
+  },
+  "plan_phrases": [
+    "pawn moves on the kingside",
+    "challenge the e4 knight"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Quiet retreat",
+      "moves": "1. d4 Nf6 2. Bg5 Ne4 3. Bf4 g5 4. Bc1 d5",
+      "how": "Black can reach a more standard queen-pawn structure."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black's early g-pawn advance weakens his king and both sides have tactical targets."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "The line has been played at high level without being refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided and White can choose between e3 and c4 set-ups."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "The Trompowsky is an accepted choice, though this branch is less common."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The plans around the kingside pawns need judgement."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm"
+      ],
+      "reason": "Black's g- and h-pawns advance to gain space on the kingside."
+    }
+  }
+}

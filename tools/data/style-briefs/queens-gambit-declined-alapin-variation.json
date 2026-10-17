@@ -1,0 +1,104 @@
+{
+  "slug": "queens-gambit-declined-alapin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Alapin Variation",
+    "eco": "D31",
+    "moves": "1. d4 e6 2. c4 b6 3. Nc3 d5",
+    "fen": "rnbqkbnr/p1p2ppp/1p2p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "english-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black reaches a QGD with the queenside bishop developed on b7 after ...b6 and ...d5. White often plays 4.cxd5 exd5 5.Bg5 or 4.Bg5, and Black has a solid centre and a fianchetto bishop. It is an English Defence sideline that has been tried by strong players.",
+  "white_ideas": [
+    {
+      "idea": "Pressure d5 with cxd5 and Bg5"
+    },
+    {
+      "idea": "Develop with e3 and Nf3 and keep a small space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support d5 and play ...Bb7, ...Be7, ...O-O"
+    },
+    {
+      "idea": "Free the position with ...c5 or ...Nbd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QGD structure with the bishop on b7 and tension on c4 and d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's position is compact and hard to break down, with few early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Considered sound for both sides."
+    },
+    "structure": {
+      "notes": "The centre has tension on d5 and c4 and is undecided."
+    },
+    "approach": {
+      "notes": "A respectable but less common transposition played at all levels."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The plans are clear but it needs understanding of QGD structures."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on b7",
+    "solid centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black's position is compact and hard to break down, with few early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Considered sound for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre has tension on d5 and c4 and is undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A respectable but less common transposition played at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "The plans are clear but it needs understanding of QGD structures."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

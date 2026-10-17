@@ -1,0 +1,105 @@
+{
+  "slug": "polish-opening-grigorian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Grigorian Variation",
+    "eco": "A00",
+    "moves": "1. b4 Nc6",
+    "fen": "r1bqkbnr/pppppppp/2n5/8/1P6/8/P1PPPPPP/RNBQKBNR w KQkq - 1 2"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 1.b4 and Black develops the knight to c6, challenging b4 immediately. White can push 2.b5 or play 2.Bb2 and aim for long-diagonal pressure. I am unsure of the mainline; tags follow the Polish Opening parent, which is sound but rare.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto the bishop on b2"
+    },
+    {
+      "idea": "Gain queenside space with b5 or a3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Attack b4 with ...a6 and ...e5"
+    },
+    {
+      "idea": "Build a classical centre with ...d5 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flank structure with an advanced b-pawn; flexible centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flank play with no early forced tactics, so it is steady and unbalanced only in structure."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound but gives Black comfortable play."
+    },
+    "structure": {
+      "notes": "The centre is undecided and the play is on the flanks."
+    },
+    "approach": {
+      "notes": "Strong players use the Polish only as a surprise weapon."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Unusual structures need understanding, so Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "b2 fianchetto",
+    "queenside space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flank play with no early forced tactics, so it is steady and unbalanced only in structure."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Sound but gives Black comfortable play."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre is undecided and the play is on the flanks."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players use the Polish only as a surprise weapon."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Unusual structures need understanding, so Intermediate."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

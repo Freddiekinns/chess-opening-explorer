@@ -1,0 +1,104 @@
+{
+  "slug": "bird-opening-thomas-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Thomas Gambit",
+    "eco": "A03",
+    "moves": "1. f4 d5 2. b3 Nf6 3. Bb2 d4 4. Nf3 c5 5. e3",
+    "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3p1P2/1P2PN2/PBPP2PP/RN1QKB1R b KQkq - 0 5"
+  },
+  "parent": "bird-opening-dutch-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black has answered 1.f4 with ...d5 and ...d4, grabbing space, and White undermines the d4 pawn with e3 while the Bb2 aims at the long diagonal. Material is level in the main continuations (5...dxe3 6.Bxe3), so the gambit name overstates it. The game is a reversed-Benoni type with a weakened White kingside.",
+  "white_ideas": [
+    {
+      "idea": "Break with e3 to remove the d4 wedge and open the b2 bishop"
+    },
+    {
+      "idea": "Develop Nf3, Be2, O-O and use the e5 square"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the space pawn on d4 or take on e3 and develop quickly"
+    },
+    {
+      "idea": "Use ...c5, ...Nc6 and ...e6 to build a queenside and central majority"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed Benoni with Black pawns on c5 and d4 against White e3/f4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Level material and a mutual fight for the centre, but no forcing sacrifices. Centre fight with level material; the f4 weakness gives Black chances too."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material stays level after 5...dxe3 6.Bxe3, so nothing is really offered."
+    },
+    "soundness": {
+      "notes": "Black has no refutation; White gets normal development."
+    },
+    "structure": {
+      "notes": "The d4 pawn is challenged by e3 and the centre is not yet settled."
+    },
+    "approach": {
+      "notes": "The 1.f4 d5 2.b3 line is rarely chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear, but the weakened kingside needs care."
+    }
+  },
+  "plan_phrases": [
+    "undermine d4 with e3",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Level material and a mutual fight for the centre, but no forcing sacrifices."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Pawn comes back at once on e3."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Black has no refutation; White gets normal development."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The d4 pawn is challenged by e3 and the centre is not yet settled."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "The 1.f4 d5 2.b3 line is rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are clear, but the weakened kingside needs care."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Bb2 on the long diagonal is the defining piece."
+    }
+  }
+}

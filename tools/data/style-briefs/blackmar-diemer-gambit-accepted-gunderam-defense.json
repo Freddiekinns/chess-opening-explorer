@@ -1,0 +1,111 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-gunderam-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Gunderam Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Bf5",
+    "fen": "rn1qkb1r/ppp1pppp/5n2/5b2/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After the BDG pawn grabs, Black develops the bishop to f5 before ...e6. White gets rapid development and attacking chances on the kingside, often with Ne5 and g4 ideas. Black is a pawn up and tries to return it on good terms; the line is sharp and relies on White knowing the tactics.",
+  "white_ideas": [
+    {
+      "idea": "Use the lead in development with Ne5 and Bd3"
+    },
+    {
+      "idea": "Push g4 and Qe2 against the f5 bishop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn by trading off attacking pieces"
+    },
+    {
+      "idea": "Develop quickly with ...e6 and ...Nbd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White pieces aimed at the kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices a pawn for the attack."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives a pawn for development; Black can keep it."
+    },
+    "soundness": {
+      "notes": "Strong players consider the BDG unsound against best defence."
+    },
+    "structure": {
+      "notes": "The centre opens quickly."
+    },
+    "approach": {
+      "notes": "The BDG is seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs prepared tactics but is dubious so not beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "Ne5 and g4"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Stader Variation",
+      "moves": "6.Ne5 e6 7.g4 Be4",
+      "how": "The most played continuation, with White pushing g4 at once."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "White sacrifices a pawn for the attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives a pawn for development; Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Strong players consider the BDG unsound against best defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre opens quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "The BDG is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs prepared tactics but is dubious so not beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White trades a pawn for a lead in development and a kingside attack."
+    }
+  }
+}

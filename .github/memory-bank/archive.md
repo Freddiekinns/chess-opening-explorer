@@ -5,6 +5,43 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Analytics baseline — PostHog, Vercel, Search Console (2026-10-11)
+
+PostHog live since 2026-09-24. Vercel 30d: 102 visitors, 220 views, 69% bounce.
+PostHog: ~69 real people, 85 sessions, 62 single-page; 66 of 69 came once.
+Google lands visitors on obscure named lines (O'Neill, Papa-Ticulat, Linder,
+Wikstrom); of 31 Google-to-detail sessions 7 went further, 7 used level tabs, 4
+practised, 2 searched. In-site search: 7 sessions, 13 picks, 11 at the top
+result. `video_click`: no real user, though most landing pages have videos.
+Search Console weekly: July ~1,000 impressions / 10–17 clicks; crash w/c 3 Aug;
+flat to 21 Sep; since then ~500 / ~14 (CTR ~2.7%, position ~7.6). 7.31k indexed.
+Soft 404 validation started 22/09, failed 05/10, 86 pages, crawled after #142.
+Functions ran ~50% cold starts at this traffic.
+
+## Style tags tail — full activeContext text (2026-10-11, #174)
+
+Branch `style/tail-wave-1` (#174), stacked on #173. The tail plan is in
+`archive.md` ("Style tags tail — plan"); each wave is 4 Sonnet agents × 20
+unsourced briefs, then `jev-classify.js --new`, `collect-unsourced.js`,
+`validate.js`, an Opus judge over what it lists, and `export.js`.
+
+- **Done:** tail-24 to tail-37 (280 variations); `style-tags.json` now covers
+  843 variations, 11,036 positions. 0 unresolved.
+- **Left:** tail-38 to tail-66, 568 variations. 80 briefs cost 44% of a 5-hour
+  window and 40 cost 30% (2026-10-11), so one 80-brief wave per window.
+- **Read tags from the variation's own pages.** Semi-Slav Accepted was tagged
+  Sharp/Advanced from the 6.e4 Botvinnik, but the Botvinnik is its own
+  variation; this one's pages are the 6.a4 lines. `UNSOURCED.md` now says so.
+- **Never let the judge call `/api/explorer`** — the shared Lichess token (25 a
+  minute). Wave 1's judge did; later prompts forbid it.
+
+Open, for the owner:
+
+- **Gambit definition.** The wave-1 judge proposed that material the giver can
+  win back at will (e.g. ...Qxe5+) is not a gambit unless the main line declines
+  to recapture. The taxonomy is unchanged.
+- **B54** is still named "Dragon Variation, Accelerated Dragon" in the ECO data.
+
 ## Search intent-parser misreads — full activeContext text (2026-10-10, #173)
 
 Branch `fix/search-intent-misreads`, stacked on #172 (itself on #171). The four

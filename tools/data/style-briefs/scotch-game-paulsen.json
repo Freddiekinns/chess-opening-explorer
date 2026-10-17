@@ -1,0 +1,105 @@
+{
+  "slug": "scotch-game-paulsen",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Paulsen, Gunsberg Defense",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Be3 Qf6 6. c3 Nge7 7. Bb5 Nd8",
+    "fen": "r1bnk2r/ppppnppp/5q2/1Bb5/3NP3/2P1B3/PP3PPP/RN1QK2R w KQkq - 3 8"
+  },
+  "parent": "scotch-game-paulsen-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Paulsen Attack Black has played ...Qf6 and ...Nge7, and the Gunsberg Defence retreats the knight to d8 after Bb5, planning ...c6 to expel the bishop. White keeps the centre and a lead in development. Black is cramped but solid. I judge from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Keep the d4 knight and develop with O-O and f4"
+    },
+    {
+      "idea": "Aim at Black's slow development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...c6 and ...d5 to free the position"
+    },
+    {
+      "idea": "Rebuild with ...Ne6 or ...Nb7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White knight on d4 and Black queen on f6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Cramped but not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "None."
+    },
+    "soundness": {
+      "notes": "Black is slightly worse."
+    },
+    "structure": {
+      "notes": "Open Scotch centre."
+    },
+    "approach": {
+      "notes": "Standard Scotch sideline."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Moderate theory."
+    }
+  },
+  "plan_phrases": [
+    "knight outpost",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Neither especially solid nor forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Passive but playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Scotch-type open centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Rare variation of a main opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Moderate theory."
+    },
+    "plans": {
+      "value": [
+        "knight_outpost",
+        "lead_in_development"
+      ],
+      "reason": "White keeps the strong d4 knight and development."
+    }
+  }
+}

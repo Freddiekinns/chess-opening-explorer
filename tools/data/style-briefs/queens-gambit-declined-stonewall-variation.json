@@ -1,0 +1,105 @@
+{
+  "slug": "queens-gambit-declined-stonewall-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Stonewall Variation",
+    "eco": "D30",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. e3 e6 5. Nbd2 Ne4 6. Bd3 f5",
+    "fen": "rnbqkb1r/pp4pp/2p1p3/3p1p2/2PPn3/3BPN2/PP1N1PPP/R1BQK2R w KQkq - 0 7"
+  },
+  "parent": "semi-slav-defense-quiet-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black builds a Stonewall pawn chain with ...c6, ...d5, ...e6 and ...f5 and puts a knight on e4, a Semi-Slav hybrid. White reacts with Bd3, O-O and a pawn break at c5 or f3. The e4 knight controls the centre and the structure favours kingside play for Black and queenside play for White.",
+  "white_ideas": [
+    {
+      "idea": "Challenge the e4 knight with f3 or Nxe4, then play for c5 and queenside space"
+    },
+    {
+      "idea": "Trade the e4 knight and use the e5 hole"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the e4 knight and play for ...Nd7/...Qf6 and kingside play"
+    },
+    {
+      "idea": "Control e4 with a Stonewall formation"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Stonewall for Black with pawns on c6, d5, e6, f5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Stonewall is hard to break down even if Black has a kingside plan. Positional, slow."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Long used at high level."
+    },
+    "structure": {
+      "notes": "A locked Stonewall centre, play moves to the wings."
+    },
+    "approach": {
+      "notes": "A branch of the QGD/Semi-Slav rather than a set-up against all."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans around e4 and e5 matter more than memory."
+    }
+  },
+  "plan_phrases": [
+    "Stonewall chain",
+    "outpost on e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "The Stonewall is hard to break down even if Black has a kingside plan."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "None."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Long used at high level."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.6,
+      "reason": "A locked Stonewall centre, play moves to the wings."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A branch of the QGD/Semi-Slav rather than a set-up against all."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans around e4 and e5 matter more than memory."
+    },
+    "plans": {
+      "value": [
+        "stonewall",
+        "knight_outpost"
+      ],
+      "reason": "Black’s e4 knight and the f5-e6-d5 chain."
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "english-defense-eastbourne-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Defense: Eastbourne Gambit",
+    "eco": "A40",
+    "moves": "1. d4 b6 2. c4 Bb7 3. Nc3 e5",
+    "fen": "rn1qkbnr/pbpp1ppp/1p6/4p3/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "english-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 3...e5 against the Queen's Pawn, gambiting a pawn after 4.dxe5. Black gets a lead in development with ...Bb4 and ...Nc6 but White can keep the pawn. The English Defence is a surprise weapon.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn and consolidate"
+    },
+    {
+      "idea": "Develop quickly"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use ...Bb4 and ...Nc6"
+    },
+    {
+      "idea": "Pressure g2 with the b7 bishop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "4.dxe5 wins a pawn."
+    },
+    "soundness": {
+      "notes": "Probably unsound."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "A pawn sacrifice."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black gives a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "White can keep it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.65,
+      "reason": "Not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black's compensation."
+    }
+  }
+}

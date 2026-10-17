@@ -1,0 +1,103 @@
+{
+  "slug": "philidor-defense-albin-blackburne-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Albin-Blackburne Gambit",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 Bg4 4. dxe5 Nd7",
+    "fen": "r2qkbnr/pppn1ppp/3p4/4P3/4P1b1/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "philidor-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black meets 3.d4 with 3...Bg4 and after 4.dxe5 Nd7 offers the e5 pawn for quick development, in the manner of the Blackburne Gambit. White can take 5.exd6 and Black recaptures on d6 or plays ...Bxf3, getting open lines but a pawn down. It is a rare try for activity.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn and trade queens or a bishop"
+    },
+    {
+      "idea": "Develop with Bc4 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take back on d6 or play ...Bxf3 and ...Bxd6"
+    },
+    {
+      "idea": "Use the lead in development against the White king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White pawns on e4 and e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays a gambit for activity so the position is tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the extra pawn on e5/d6."
+    },
+    "soundness": {
+      "notes": "The gambit is seen as dubious for Black because White consolidates."
+    },
+    "structure": {
+      "notes": "Pawns are exchanged in the centre."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Black needs exact move orders."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black risks a pawn for quick development."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black offers the e5 pawn, which White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "The gambit lacks full compensation."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Central pawns trade and lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for time and piece activity."
+    }
+  }
+}

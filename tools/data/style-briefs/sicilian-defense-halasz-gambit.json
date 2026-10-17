@@ -1,0 +1,106 @@
+{
+  "slug": "sicilian-defense-halasz-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Halasz Gambit",
+    "eco": "B21",
+    "moves": "1. e4 c5 2. d4 cxd4 3. f4",
+    "fen": "rnbqkbnr/pp1ppppp/8/8/3pPP2/8/PPP3PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "sicilian-defense-smith-morra-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.e4 c5 2.d4 cxd4 White plays 3.f4, a King's Gambit-style pawn offer aiming at a big centre with e5 and quick development. Black can keep the pawn with 3...e5 or 3...Nc6 and White rarely has enough for it. It is far less respected than the Smith-Morra.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with e5 and Nf3"
+    },
+    {
+      "idea": "Develop quickly and attack the king with f4-f5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the d4 pawn with ...e5 or ...Nc6"
+    },
+    {
+      "idea": "Hit back at the centre with ...d5 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian structure with an extra black pawn and White f4/e4 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides castle on different timelines and tactics on the e-file and f-file are likely, so it is sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the d4 pawn, which Black can keep."
+    },
+    "soundness": {
+      "notes": "Strong players consider it insufficient, a surprise weapon more than a sound line."
+    },
+    "structure": {
+      "notes": "A Sicilian with c-file half-open for Black."
+    },
+    "approach": {
+      "notes": "Almost never chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious gambit, never a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack",
+    "e5 push"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Both sides castle on different timelines and tactics on the e-file and f-file are likely, so it is sharp."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the d4 pawn, which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Strong players consider it insufficient, a surprise weapon more than a sound line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "A Sicilian with c-file half-open for Black."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Almost never chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "A dubious gambit, never a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "ponziani-opening-vukovic-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Vukovic Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 Nf6 4. d4 Nxe4 5. d5 Bc5",
+    "fen": "r1bqk2r/pppp1ppp/2n5/2bPp3/4n3/2P2N2/PP3PPP/RNBQKB1R w KQkq - 1 6"
+  },
+  "parent": "ponziani-opening-jaenisch-counterattack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White gives up the e4 pawn with 5.d5 Bc5 and tries to punish Black's loose pieces with 6.dxc6 Bxf2+ 7.Ke2 and a hunt for the exposed king, while Black's knight on e4 and bishop on c5 are active. Black keeps the extra pawn, develops with ...Nxc6 or ...dxc6 and often finds that White's king is the one in trouble.",
+  "white_ideas": [
+    {
+      "idea": "Win time with d5 and dxc6"
+    },
+    {
+      "idea": "Use the open e-file against the black king"
+    },
+    {
+      "idea": "Recover the e4 pawn with queen tactics"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the e4 knight and the extra pawn"
+    },
+    {
+      "idea": "Take on f2 when it is safe"
+    },
+    {
+      "idea": "Return the pawn only for safety"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White's king stuck in the middle after ...Bxf2+"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides can lose quickly: White's king can be exposed and Black's pieces are active but loose."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black has taken on e4 and can keep the pawn."
+    },
+    "soundness": {
+      "notes": "The Fraser Defence 5...Bc5 is considered good for Black, so White's gambit is dubious."
+    },
+    "structure": {
+      "notes": "Open centre with the e-file the key."
+    },
+    "approach": {
+      "notes": "The Ponziani is respectable but this gambit branch is rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forcing lines with many traps."
+    }
+  },
+  "plan_phrases": [
+    "Open e-file against the exposed king"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Early king exposure and active loose pieces make this tactical."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White has given the e4 pawn, which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "The Fraser Defence 5...Bc5 is considered good for Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre is open with the e-file and diagonals in play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players rarely choose this branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious line is not beginner and the lines need some memory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White's only compensation is development."
+    }
+  }
+}

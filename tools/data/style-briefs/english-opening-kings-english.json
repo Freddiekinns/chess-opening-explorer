@@ -1,0 +1,112 @@
+{
+  "slug": "english-opening-kings-english",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: King's English, Mazedonisch",
+    "eco": "A22",
+    "moves": "1. c4 e5 2. Nc3 Nf6 3. f4",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2P2P2/2N5/PP1PP1PP/R1BQKBNR b KQkq - 0 3"
+  },
+  "parent": "english-opening-kings-english-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 3.f4 in the English against ...e5 and ...Nf6, seizing space and discouraging ...e4. Black usually replies ...d5 or ...exf4. Play is double-edged and White's king is slightly loosened.",
+  "white_ideas": [
+    {
+      "idea": "Take space with f4 and e3"
+    },
+    {
+      "idea": "Play Nf3 and d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike with ...d5 or ...exf4"
+    },
+    {
+      "idea": "Develop ...Nc6 and ...Bb4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...d5 and cxd5"
+    },
+    {
+      "structure": "f4 pawn against e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn push that loosens the king, making play double-edged."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The main line keeps material level."
+    },
+    "soundness": {
+      "notes": "Playable but loosening."
+    },
+    "structure": {
+      "notes": "The centre is open after exchanges on d5."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs some care."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Erbenheimer",
+      "moves": "1. c4 e5 2. Nc3 Nf6 3. Nf3 e4 4. Ng5 Ng4",
+      "how": "A separate, sharper gambit line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "It is double-edged but not as forcing as true sharp lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No pawn is given in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Playable even if loosening."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The centre opens after ...d5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rare among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Not for beginners."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White takes space on the kingside."
+    }
+  }
+}

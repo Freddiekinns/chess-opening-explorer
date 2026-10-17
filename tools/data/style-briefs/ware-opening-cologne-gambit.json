@@ -1,0 +1,103 @@
+{
+  "slug": "ware-opening-cologne-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ware Opening: Cologne Gambit",
+    "eco": "A00",
+    "moves": "1. a4 b6 2. d4 d5 3. Nc3 Nd7",
+    "fen": "r1bqkbnr/p1pnpppp/1p6/3p4/P2P4/2N5/1PP1PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  "parent": "ware-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "A Ware Opening line where after 1.a4 b6 2.d4 d5 3.Nc3 Nd7 White typically plays 4.e4, offering a pawn for development. Black has a solid set-up with the knight on d7 and can take on e4. I am unsure of the theory; this is an obscure irregular line.",
+  "white_ideas": [
+    {
+      "idea": "Play e4 to open the centre with a lead in development"
+    },
+    {
+      "idea": "Use the Nc3 and Bf4 for central play"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and hold the pawn"
+    },
+    {
+      "idea": "Develop the bishop to b7 and use the long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black queenside fianchetto with d5 and Nd7; White a-pawn pushed"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn offer in an irregular line leads to unbalanced play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "The e4 pawn can be taken and kept."
+    },
+    "soundness": {
+      "notes": "White's a4 and pawn offer are thought to give too little."
+    },
+    "structure": {
+      "notes": "Open centre after exchanges on e4."
+    },
+    "approach": {
+      "notes": "1.a4 and this gambit are very rare among strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Obscure and dubious, not a good repertoire base."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "A gambit leads to unbalanced play, though the root position itself is quiet."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "The line is named a gambit and the e4 pawn can be kept."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "1.a4 and the pawn offer give little."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Centre still undecided at the root position."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "1.a4 is seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner, with little theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Pieces out for the pawn."
+    }
+  }
+}

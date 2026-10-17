@@ -1,0 +1,117 @@
+{
+  "slug": "indian-defense-gibbins-weidenhagen-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Gibbins-Weidenhagen Gambit",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. g4",
+    "fen": "rnbqkb1r/pppppppp/5n2/8/3P2P1/8/PPP1PP1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White throws the g-pawn forward with 2.g4 against Black's knight, offering a pawn for rapid development and the h-file. After 2...Nxg4 White plays 3.e4 or 3.f3 to harass the knight and take the centre; Black can keep the pawn but has to survive tricks. The gambit is rare and generally considered unsound.",
+  "white_ideas": [
+    {
+      "idea": "Gain time against the g4 knight with e4 or f3"
+    },
+    {
+      "idea": "Take the centre with e4"
+    },
+    {
+      "idea": "Open lines with Bg2 or h3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn and retreat with ...Nf6"
+    },
+    {
+      "idea": "Decline with ...e5 (Oshima) or ...d5"
+    },
+    {
+      "idea": "Counter in the centre with ...d6 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White centre pawns on d4/e4 against a Black king-pawn defence with the g-file open"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A speculative gambit with tactics and traps."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "A pawn is offered that the opponent can keep."
+    },
+    "soundness": {
+      "notes": "Dubious for White; Black keeps the pawn with accurate play."
+    },
+    "structure": {
+      "notes": "Open lines after the capture."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Traps to know, but unsound."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Oshima Defense",
+      "moves": "1. d4 Nf6 2. g4 e5",
+      "how": "Black declines with a counter-strike in the centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A pawn gambit with tactics and traps."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives the g4 pawn for development and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.75,
+      "reason": "Considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Lines open quickly after the capture."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White seeks quick pieces for the pawn."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "mieses-opening-venezolana-variation",
+  "tier": "unsourced",
+  "root": { "name": "Mieses Opening: Venezolana Variation", "eco": "A00", "moves": "1. d3 c5 2. Nc3 Nc6 3. g3", "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/8/2NP2P1/PPP1PP1P/R1BQKBNR b KQkq - 0 3" },
+  "parent": "mieses-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White heads for a King's Indian Attack or colour-reversed Closed Sicilian set-up with d3, Nc3, g3, Bg2 and Nf3. Black can occupy the centre with ...g6, ...d6 and ...e5, or play ...e5 and ...Nf6, so White usually has to be content with a slow, manoeuvring game. It transposes to a Closed Sicilian with colours reversed and rarely offers more than equality.",
+  "white_ideas": [{ "idea": "Fianchetto the bishop and play e4 and f4 for a kingside advance" }, { "idea": "Keep options of Nf3, O-O and e4, aiming at a reversed Closed Sicilian" }],
+  "black_ideas": [{ "idea": "Take the centre with ...e5 and ...d5, using the extra tempo" }, { "idea": "Fianchetto with ...g6 and ...Bg7 and meet White's play on the wings" }],
+  "typical_structures": [{ "structure": "Closed Sicilian type with colours reversed: White fianchetto, d3/e4 pawns, Black c5/e5 centre" }],
+  "axis_evidence": {
+    "character": { "notes": "Slow, hard to lose, and few forcing lines." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is given." },
+    "soundness": { "notes": "Sound but passive; Black equalises easily." },
+    "structure": { "notes": "The centre stays unresolved with pieces manoeuvring around fixed pawns." },
+    "approach": { "notes": "Seldom chosen by strong players apart from surprise use." },
+    "level": { "reason": "neither", "notes": "Simple plans, little theory." }
+  },
+  "plan_phrases": ["fianchetto", "kingside attack"],
+  "sublines_that_differ": [{ "name": "1...e5 lines", "moves": "1. d3 e5 2. Nf3", "how": "Black takes the centre at once and the game becomes a reversed Philidor." }],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.55, "reason": "Slow manoeuvring play in which neither king is under early attack." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is offered." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Passive but perfectly playable." },
+    "structure": { "value": "flexible", "confidence": 0.65, "reason": "The centre is undecided and flank pieces manoeuvre." },
+    "approach": { "value": "offbeat", "confidence": 0.5, "reason": "Strong players mostly use it as a surprise weapon." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.6, "reason": "Plans are clear but need understanding to get an edge." },
+    "plans": { "value": ["fianchetto", "kingside_attack"], "reason": "White fianchettoes and aims for a kingside advance." }
+  }
+}

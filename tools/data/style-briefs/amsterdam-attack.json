@@ -1,0 +1,105 @@
+{
+  "slug": "amsterdam-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Amsterdam Attack",
+    "eco": "A00",
+    "moves": "1. e3 e5 2. c4 d6 3. Nc3 Nc6 4. b3 Nf6",
+    "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2P5/1PN1P3/P2P1PPP/R1BQKBNR w KQkq - 1 5"
+  },
+  "parent": "vant-kruijs-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White meets ...e5 with a slow English-type set-up: e3, c4, Nc3 and b3, aiming for Bb2 and Nf3 rather than occupying the centre. Black has a free central position with ...e5, ...d6 and ...Nc6. It is a quiet Van't Kruijs line that depends on piece play and later d4 or f4 breaks.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with b3 and Bb2 against e5"
+    },
+    {
+      "idea": "Develop Nf3 and Be2, then break with d4 or f4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the centre with ...e5, ...d6 and ...Nc6"
+    },
+    {
+      "idea": "Develop smoothly and aim for ...g6, ...Bg7 or ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed Philidor/Hippo-like set-up for White"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A slow set-up with no early forcing play, though Black has more central space."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "It is playable if passive; Black has a comfortable game."
+    },
+    "structure": {
+      "notes": "Neither side commits the centre; White may later play d4 or f4."
+    },
+    "approach": {
+      "notes": "Part of the rare 1.e3 repertoire; strong players use it seldom."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are easy but there is little theory and a tendency to drift."
+    }
+  },
+  "plan_phrases": [
+    "Queenside fianchetto",
+    "Flexible central breaks"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet development from both sides with no clear tilt to solid or sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material changes hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "White's slow set-up is passive but fine."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays undecided and flank openings can transpose."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "The 1.e3 approach is rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The plans are plain but need good judgement about when to break the centre."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "White fianchettoes and attacks e5 and d4 later."
+    }
+  }
+}

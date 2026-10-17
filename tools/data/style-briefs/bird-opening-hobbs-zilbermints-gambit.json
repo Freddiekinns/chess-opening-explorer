@@ -1,0 +1,111 @@
+{
+  "slug": "bird-opening-hobbs-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Hobbs-Zilbermints Gambit",
+    "eco": "A02",
+    "moves": "1. f4 h6 2. Nf3 g5",
+    "fen": "rnbqkbnr/pppppp2/7p/6p1/5P2/5N2/PPPPP1PP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "bird-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black answers 1.f4 with 1...h6 and 2...g5, challenging the f4 pawn at once. After 3.fxg5 hxg5 4.Nxg5 White has won a pawn and Black gets the open h-file against h2 for a rook; Black relies on development and the file rather than material. White has the extra pawn and a sound game if it avoids the early tricks.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with fxg5 and Nxg5, then consolidate with d4 and e4"
+    },
+    {
+      "idea": "Cover h2 and return material only if needed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the half-open h-file with ...Rh8 and ...Bg7"
+    },
+    {
+      "idea": "Fast development with ...d6, ...e5 and ...Bg7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open h-file after hxg5 with Black pawn down"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early pawn offer and an open file produce unbalanced play where one side is a pawn down."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black allows 3.fxg5 hxg5 4.Nxg5 and does not get the pawn back by force; White can keep it."
+    },
+    "soundness": {
+      "notes": "White simply takes the pawn; most players consider the Black idea dubious, with little more than the h-file."
+    },
+    "structure": {
+      "notes": "The h-file is half-open for Black and the centre is fluid."
+    },
+    "approach": {
+      "notes": "A rare reply to the Bird; strong players hardly use it."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious, so not for beginners, but ideas are simple; I would not call it Advanced."
+    }
+  },
+  "plan_phrases": [
+    "Open h-file for compensation",
+    "Development lead for Black"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "White declines",
+      "moves": "1. f4 h6 2. Nf3 g5 3. e4",
+      "how": "No capture, the position stays tense and no material changes hands."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black plays on the h-file at the cost of a pawn, with early forcing exchanges."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black offers the g-pawn and White can keep the pawn after fxg5 hxg5 Nxg5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The pawn is hard to justify with only the h-file for compensation."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The h-file opens for Black while the centre is not yet fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Few strong players answer the Bird this way."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "It is Dubious so never Beginner, and the ideas are not deep."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black aims to use the open h-file and quick development against the White king side."
+    }
+  }
+}

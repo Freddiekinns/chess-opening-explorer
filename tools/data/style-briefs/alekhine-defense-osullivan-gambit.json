@@ -1,0 +1,111 @@
+{
+  "slug": "alekhine-defense-osullivan-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: O'Sullivan Gambit",
+    "eco": "B03",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. d4 b5",
+    "fen": "rnbqkb1r/p1pppppp/8/1p1nP3/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "alekhine-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.d4 Black plays 3...b5, offering a pawn so that after Bxb5 Black gets time and play against the advanced centre. White can accept with Bxb5 and meet ...c6 and ...d6 breaks with a space edge; most strong players would take the pawn and be happy. Black gets some piece activity but the offer is regarded as speculative.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with Bxb5 and consolidate"
+    },
+    {
+      "idea": "Hold the e5/d4 space edge"
+    },
+    {
+      "idea": "Meet ...d6 with exd6 or Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the tempi for ...c6 and ...d6 to break up the centre"
+    },
+    {
+      "idea": "Develop pieces with ...Bb7 and ...Nb6"
+    },
+    {
+      "idea": "Attack e5 and d4 with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e5/d4 space edge against Black pieces aimed at it, with the b-pawn gone from home"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gambits a pawn for activity; unbalanced."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "A pawn is offered that the opponent can keep."
+    },
+    "soundness": {
+      "notes": "Dubious for Black; White's extra pawn is hard to challenge."
+    },
+    "structure": {
+      "notes": "White's advanced centre is under attack by pieces; tense."
+    },
+    "approach": {
+      "notes": "Rare sideline of an offbeat defence; strong players seldom play it."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious and needs precise play."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack the advanced centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A pawn is offered for activity and both sides take risks."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black gives the b5 pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Strong players regard the pawn as simply lost."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "Tension around the advanced e5 pawn."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players hardly choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.6,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "space_advantage"
+      ],
+      "reason": "Black seeks activity against White's space."
+    }
+  }
+}

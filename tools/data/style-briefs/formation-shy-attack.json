@@ -1,0 +1,104 @@
+{
+  "slug": "formation-shy-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Formation: Shy Attack",
+    "eco": "A00",
+    "moves": "1. a3 e5 2. g3 d5 3. Bg2 Nf6 4. d3 Nc6 5. Nd2 Bd6 6. e3 O-O 7. h3",
+    "fen": "r1bq1rk1/ppp2ppp/2nb1n2/3pp3/8/P2PP1PP/1PPN1PB1/R1BQK1NR b KQ - 0 7"
+  },
+  "parent": "anderssens-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White builds a fianchetto and e3-d3 set-up with 1.a3 as a waiting move, with g3, Bg2, d3, e3, Nd2 and h3, ready against almost any Black set-up. Black has taken the centre with ...e5 and ...d5 and develops with ...Nc6, ...Bd6 and ...O-O. The play is slow and manoeuvring, close to a reversed Hippopotamus or King's Indian structure.",
+  "white_ideas": [
+    {
+      "idea": "Play Bg2, d3, e3, Nd2 and h3, then expand with e4 or b4/c4."
+    },
+    {
+      "idea": "Keep a flexible King's Indian Attack style set-up."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the centre with ...e5/...d5 and develop ...Nc6, ...Bd6, ...O-O."
+    },
+    {
+      "idea": "Break with ...e4 or ...f5 depending on White's set-up."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on a3/d3/e3/g3/h3 with Bg2 against a Black e5/d5 centre."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A slow, safe set-up with few ways to lose quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound, though White concedes the centre."
+    },
+    "structure": {
+      "notes": "Centre pawns not in contact, pieces fianchettoed."
+    },
+    "approach": {
+      "notes": "A set-up played the same way against many Black replies."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans but unusual; not a coach's first choice."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "flexible centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "A slow, safe set-up with few ways to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Sound, though White concedes the centre."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "Centre pawns not in contact, pieces fianchettoed."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.6,
+      "reason": "A set-up played the same way against many Black replies."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Clear plans but unusual; not a coach's first choice."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "White fianchettoes and builds a flexible centre."
+    }
+  }
+}

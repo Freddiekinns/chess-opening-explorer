@@ -1,0 +1,106 @@
+{
+  "slug": "kings-gambit-accepted-middleton-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Middleton Countergambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 d6 5. O-O Bg4 6. h3 h5 7. hxg4 hxg4",
+    "fen": "rn1qkbnr/ppp2p2/3p4/6p1/2B1Ppp1/5N2/PPPP2P1/RNBQ1RK1 w kq - 0 8"
+  },
+  "parent": "kings-gambit-accepted-kings-knights-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the King's Knight's Gambit Black plays 4...d6 and ...Bg4 followed by ...h5, sacrificing the bishop for open lines. White is a piece up for pawns but has to deal with threats. Theory is unclear to me.",
+  "white_ideas": [
+    {
+      "idea": "Grab material and consolidate with Nxg4"
+    },
+    {
+      "idea": "Avoid the attack on the h-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the h-file and attack the White king"
+    },
+    {
+      "idea": "Win back material with ...hxg4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open h-file"
+    },
+    {
+      "structure": "Black pawn on g4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides sacrifice."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives a piece White can keep."
+    },
+    "soundness": {
+      "notes": "I judge it unsound."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Both sides sacrifice."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black gives a piece White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "I judge it unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

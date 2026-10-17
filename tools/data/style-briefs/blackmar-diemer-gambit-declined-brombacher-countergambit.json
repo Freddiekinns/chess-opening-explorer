@@ -1,0 +1,111 @@
+{
+  "slug": "blackmar-diemer-gambit-declined-brombacher-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Declined: Brombacher Countergambit",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 c5",
+    "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 4.f3 Black counters with 4...c5, striking at d4 instead of defending e4. White can push d5 or play fxe4 and take on c5 with an open game. It is a sharp, tactical line for both sides.",
+  "white_ideas": [
+    {
+      "idea": "Take on e4 and recapture quickly"
+    },
+    {
+      "idea": "Use the lead in development with Bc4 and Nge2"
+    },
+    {
+      "idea": "Central play with d5 or dxc5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Counter in the centre with ...c5"
+    },
+    {
+      "idea": "Trade queens with ...cxd4 and Qxd4"
+    },
+    {
+      "idea": "Keep the extra pawn if possible"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre; Black pawn on c5 against d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactical counterattack and open lines."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White is a pawn down after 3...dxe4 unless he regains it."
+    },
+    "soundness": {
+      "notes": "White's compensation is considered insufficient."
+    },
+    "structure": {
+      "notes": "Centre opens."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious, not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Pawn for lead in development",
+    "Black counters in the centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "The countergambit leads to open, tactical play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "White is a pawn down and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "White's compensation is generally considered insufficient."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre opens immediately."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players hardly ever choose the BDG."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White plays for development and attack."
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, CSSProperties } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useLocation, Link } from 'react-router-dom';
 import { Chess, Move, Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import { ChessOpening, ResourceContext, Video } from '../../../shared/src';
@@ -33,6 +33,7 @@ import { useExplorerQuery, useExplorerResult } from '../hooks/useExplorerResult'
 import { useIsMobile } from '../hooks/useMediaQuery';
 import { getMyLevel } from '../lib/myLevel';
 import { recordRecentOpening } from '../lib/recentOpenings';
+import { prerenderFor } from '../lib/prerender';
 import type { BandId } from '../lib/lichessExplorer';
 import { StarButton } from '../components/shared/StarButton';
 import { StyleTags } from '../components/shared/StyleTags';
@@ -113,6 +114,8 @@ type OpeningPageData = {
 
 const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>();
+  // The middleware's content for this URL, if this is the visit's first page.
+  const prerender = prerenderFor(useLocation().pathname);
   const [opening, setOpening] = useState<Opening | null>(null);
   const [videos, setVideos] = useState<Video[]>([]);
   const [game, setGame] = useState(new Chess());
@@ -812,7 +815,11 @@ const OpeningDetailPage: React.FC = () => {
     prevFenRef.current = fen;
   }, [fen, practiceMode, exitPractice]);
 
+  // Our own middleware's escaped HTML, from this same response.
+  const prerendered = prerender && <div dangerouslySetInnerHTML={{ __html: prerender }} />;
+
   if (loading) {
+    if (prerendered) return <div className="detail-page-body">{prerendered}</div>;
     return (
       <div className="detail-page-body">
         <div className="loading-state">
@@ -835,6 +842,7 @@ const OpeningDetailPage: React.FC = () => {
             Try again
           </button>
         </div>
+        {prerendered}
       </div>
     );
   }

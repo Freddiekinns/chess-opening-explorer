@@ -1,0 +1,105 @@
+{
+  "slug": "ware-opening-wing-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ware Opening: Wing Gambit",
+    "eco": "A00",
+    "moves": "1. a4 b5 2. axb5 Bb7",
+    "fen": "rn1qkbnr/pbpppppp/8/1P6/8/8/1PPPPPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "ware-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.a4 b5 2.axb5 Bb7 Black has given a pawn for quick development and pressure on e4 and the long diagonal, with the a-file open for rooks. White can keep the pawn with e3 or Nf3 and Nc3, but must avoid falling behind in development and ...Bxg2 style tactics. Rarely played, with little theory.",
+  "white_ideas": [
+    {
+      "idea": "Keep the b5 pawn with Nf3, e3 and Nc3 and complete development."
+    },
+    {
+      "idea": "Use the open a-file for the rook if possible."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...Bb7, ...e6, ...Nf6."
+    },
+    {
+      "idea": "Use the open a-file for a rook against a7."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black bishop on b7 on the long diagonal against White pawn on b5 and open a-file."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is a pawn down, relying on quick development and tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black's b-pawn is offered after 2.axb5 and White can keep it."
+    },
+    "soundness": {
+      "notes": "Seldom played at a high level and generally thought to give up a pawn too cheaply."
+    },
+    "structure": {
+      "notes": "Asymmetric pawns with an open a-file and central tension."
+    },
+    "approach": {
+      "notes": "Strong players hardly play this; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory but dubious, so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open a-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black is a pawn down, relying on quick development and tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black's b-pawn is offered after 2.axb5 and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Seldom played at a high level and generally thought to give up a pawn too cheaply."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Asymmetric pawns with an open a-file and central tension."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly play this; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Little theory but dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Black plays for the long diagonal and development."
+    }
+  }
+}

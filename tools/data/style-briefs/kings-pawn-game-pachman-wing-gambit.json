@@ -1,0 +1,105 @@
+{
+  "slug": "kings-pawn-game-pachman-wing-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Pachman Wing Gambit",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. b4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/1P2P3/5N2/P1PP1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "kings-knight-opening-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.b4, offering the b-pawn to deflect Black's bishop and build the centre with c3 and d4. After 3...Bxb4 4.c3 Ba5 5.d4 White has an open centre and quick development. Strong players generally judge the compensation insufficient.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with c3 and d4"
+    },
+    {
+      "idea": "Use the lead in development and the open b-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn with ...Bxb4 and retreat ...Ba5"
+    },
+    {
+      "idea": "Keep material and consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A rare wing gambit."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White gives the b-pawn which Black can keep."
+    },
+    "soundness": {
+      "notes": "Considered unsound at a high level."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Rarely used by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs specific lines."
+    }
+  },
+  "plan_phrases": [
+    "lead_in_development",
+    "central_pawn_majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Gambit play with a development lead."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the b-pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "The pawn is probably not fully compensated."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The centre opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "White builds a centre and develops fast."
+    }
+  }
+}

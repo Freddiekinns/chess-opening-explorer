@@ -1,0 +1,110 @@
+{
+  "slug": "bird-opening-sturm-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Sturm Gambit",
+    "eco": "A03",
+    "moves": "1. f4 d5 2. c4",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P2P2/8/PP1PP1PP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "bird-opening-dutch-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White offers the c-pawn with 2.c4 against the Dutch-reversed set-up, hoping for fast development and f4/c4 play against Black's centre. After 2...dxc4 Black can keep the pawn but must be careful about the e-file and the exposed king. It is a rare gambit and not considered fully sound.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with Nf3, e3 and Bxc4"
+    },
+    {
+      "idea": "Use the f-pawn and open d- and e-files against the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn and trade pieces"
+    },
+    {
+      "idea": "Return the pawn for solid development when needed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open or semi-open centre after cxd5 or ...dxc4 lines"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices a pawn and the f4 move weakens the king, so both sides must calculate and a slip loses fast."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White offers c4 and Black can keep it with ...dxc4."
+    },
+    "soundness": {
+      "notes": "Strong players consider the compensation insufficient, but it is a mild one."
+    },
+    "structure": {
+      "notes": "After ...dxc4 and e3 the centre is open with the d- and e-files and bishops in play."
+    },
+    "approach": {
+      "notes": "Chosen mostly for surprise and rarely seen among strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious gambit is not a first repertoire choice, so Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on e-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2...e6",
+      "moves": "1. f4 d5 2. c4 e6",
+      "how": "Declining; the gambit is gone and play is normal."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White sacrifices a pawn and the f4 move weakens the king, so both sides must calculate and a slip loses fast."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers c4 and Black can keep it with ...dxc4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Strong players consider the compensation insufficient, but it is a mild one."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "After ...dxc4 and e3 the centre is open with the d- and e-files and bishops in play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Chosen mostly for surprise and rarely seen among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is not a first repertoire choice, so Intermediate."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "english-opening-myers-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Myers Gambit",
+    "eco": "A10",
+    "moves": "1. c4 g5 2. d4 Bg7",
+    "fen": "rnbqk1nr/ppppppbp/8/6p1/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "english-opening-myers-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.c4 g5 Black offers the g-pawn and White answers 2.d4 Bg7, the Myers Defence with the bishop hitting d4 and b2. White can take with 3.dxg5 or 3.Bxg5 and play for a space edge, while Black seeks development and pressure on the long diagonal. It is a rare, offbeat line.",
+  "white_ideas": [
+    {
+      "idea": "Take the g5 pawn and develop quickly with Nc3 and e3"
+    },
+    {
+      "idea": "Hold the d4 pawn and keep the extra pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the long diagonal against b2 and d4"
+    },
+    {
+      "idea": "Develop fast and attack the White centre with ...d6 and ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black fianchetto against c4/d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black risks a pawn for activity, so the game is concrete."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take on g5 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "The line is considered inferior for Black."
+    },
+    "structure": {
+      "notes": "The centre is undefined but pieces get open diagonals."
+    },
+    "approach": {
+      "notes": "Few strong players choose it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are loose and there is little main theory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black plays a gambit and the position becomes concrete."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black gives up the g-pawn, which White can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "The early g5 push is generally seen as inferior for Black."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided as White chooses between d4 and c4 set-ups."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom seen among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A dubious line cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Black's bishop on g7 is the main idea."
+    }
+  }
+}

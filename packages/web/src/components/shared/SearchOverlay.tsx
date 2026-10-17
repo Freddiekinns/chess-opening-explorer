@@ -23,7 +23,8 @@ interface SearchOverlayProps {
 }
 
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
-  const { query, setQuery, results, searching, noResults, hasQuery, reset } = useOpeningSearch();
+  const { query, setQuery, results, searching, noResults, hasQuery, reset } =
+    useOpeningSearch('overlay');
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { pathname } = useLocation();

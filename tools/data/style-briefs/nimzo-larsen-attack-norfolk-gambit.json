@@ -1,0 +1,117 @@
+{
+  "slug": "nimzo-larsen-attack-norfolk-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Norfolk Gambit",
+    "eco": "A06",
+    "moves": "1. Nf3 d5 2. b3 c5 3. e4",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/4P3/1P3N2/P1PP1PPP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "nimzo-larsen-attack-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.e4 against ...d5, ...c5 in the Nimzo-Larsen set-up, offering a pawn. After 3...dxe4 4.Ne5, White develops with Bb2 and Nxc6 ideas and hopes for a quick attack. Black can keep the pawn but must avoid tricks, so the gambit is rare and considered unsound.",
+  "white_ideas": [
+    {
+      "idea": "Use the b2 bishop on the long diagonal"
+    },
+    {
+      "idea": "Develop with Ne5 and Bb2"
+    },
+    {
+      "idea": "Attack the queenside with ideas such as Qh5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...Nf6 and ...Nc6"
+    },
+    {
+      "idea": "Trade queens or return the pawn if needed"
+    },
+    {
+      "idea": "Reach a safe middlegame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after dxe4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp tactics with White playing for lead in development."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White's pawn can be kept by Black with accurate play."
+    },
+    "soundness": {
+      "notes": "Considered unsound by strong players."
+    },
+    "structure": {
+      "notes": "Open centre after the pawn trade."
+    },
+    "approach": {
+      "notes": "A rare surprise weapon."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a good first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Bloodgood Gambit",
+      "moves": "1. Nf3 d5 2. b3 c5 3. e4 dxe4 4. Ne5",
+      "how": "The knight lands on e5 and White plays for quick development."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "White gambits a pawn for initiative and the play is concrete."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the e-pawn and Black can keep it after 3...dxe4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can keep the pawn and White has little more than a few traps in return."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The pawn exchange opens the centre and the long diagonal."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Strong players hardly ever play the Norfolk Gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious, so not Beginner, and the ideas are straightforward."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "White gets the bishop on b2 and faster development for the pawn."
+    }
+  }
+}

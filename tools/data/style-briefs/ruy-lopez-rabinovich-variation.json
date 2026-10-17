@@ -1,0 +1,103 @@
+{
+  "slug": "ruy-lopez-rabinovich-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Rabinovich Variation",
+    "eco": "C78",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O b5 6. Bb3 d6 7. Ng5 d5 8. exd5 Nd4 9. Re1 Bc5 10. Rxe5+ Kf8",
+    "fen": "r1bq1k1r/2p2ppp/p4n2/1pbPR1N1/3n4/1B6/PPPP1PPP/RNBQ2K1 w - - 1 11"
+  },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black counters with ...d5 and ...Nd4, allowing Rxe5+ and Kf8, giving pawns for an attack on the exposed White king and the b3 bishop. White can keep the material but must defend against the pins and checks. This is an old, rare line and the details are uncertain to me.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawns and trade off the attackers"
+    },
+    {
+      "idea": "Play Nf3 and defend against Nxb3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the pin and ...Nxb3 to attack the king"
+    },
+    {
+      "idea": "Exploit the open lines on the e-file and d-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White ahead two pawns, Black king on f8"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides risk a lot early."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives pawns for activity."
+    },
+    "soundness": {
+      "notes": "Probably dubious."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rarely played."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Memory heavy."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Tactical lines with exposed kings."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black gives pawns for activity."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "White should be able to keep the material."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Centre opened by exd5 and Rxe5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so not beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for development and the exposed king."
+    }
+  }
+}

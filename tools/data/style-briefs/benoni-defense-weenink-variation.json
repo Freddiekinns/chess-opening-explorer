@@ -1,0 +1,102 @@
+{
+  "slug": "benoni-defense-weenink-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Weenink Variation",
+    "eco": "A56",
+    "moves": "1. d4 Nf6 2. c4 c5 3. dxc5 e6",
+    "fen": "rnbqkb1r/pp1p1ppp/4pn2/2P5/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "benoni-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black meets 3.dxc5 with 3...e6, offering the pawn to regain it with ...Bxc5 and open lines for the pieces. White can develop with Nc3 and e4 while Black recovers the c5 pawn. Play is a normal open queen-pawn game with an even balance; I am unsure of the exact main line.",
+  "white_ideas": [
+    {
+      "idea": "Develop Nc3 and e4 while Black recovers the c5 pawn"
+    },
+    {
+      "idea": "Use the centre space gained as Black's bishop comes to c5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain c5 with ...Bxc5"
+    },
+    {
+      "idea": "Develop quickly and strike with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black bishop on c5 and White holding c4/e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "No known forcing theory; both sides develop normally after the pawn comes back."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black regains c5 at once with ...Bxc5, so no lasting material is given."
+    },
+    "soundness": {
+      "notes": "Equalising for Black; nothing dubious."
+    },
+    "structure": {
+      "notes": "Tension remains around c4/d4 and the structure is not fixed."
+    },
+    "approach": {
+      "notes": "A rare sideline but not one strong players avoid entirely."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Ordinary development with no heavy theory."
+    }
+  },
+  "plan_phrases": [
+    "regain the pawn on c5",
+    "develop with tempo"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "No known forcing theory; both sides develop normally after the pawn comes back."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.65,
+      "reason": "Black regains c5 at once with ...Bxc5, so no lasting material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Equalising for Black; nothing dubious."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Tension remains around c4/d4 and the structure is not fixed."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A rare sideline but not one strong players avoid entirely."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Ordinary development with no heavy theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear named plan from the moves."
+    }
+  }
+}

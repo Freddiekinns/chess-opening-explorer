@@ -1,10 +1,13 @@
-import { describe, expect, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, expect, test, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { OpeningNavigator } from '../OpeningNavigator';
 import type { TreeContext, TreeNode, AncestorNode } from '../../../hooks/useOpeningTree';
 import type { ExplorerResult } from '../../../lib/lichessExplorer';
+import { trackEvent } from '../../../lib/analytics';
+
+vi.mock('../../../lib/analytics', () => ({ trackEvent: vi.fn() }));
 
 function makeNode(overrides: Partial<TreeNode> = {}): TreeNode {
   return {
@@ -287,5 +290,19 @@ describe('OpeningNavigator', () => {
         '1M games'
       );
     });
+  });
+
+  // How a visitor who landed on one opening moves on to the next.
+  test('reports which link a visitor followed to another opening', () => {
+    vi.mocked(trackEvent).mockClear();
+    renderNavigator(simpleTree());
+
+    fireEvent.click(screen.getByRole('link', { name: /advance variation/i }));
+    fireEvent.click(screen.getByRole('link', { name: "King's Pawn Game" }));
+
+    expect(vi.mocked(trackEvent).mock.calls).toEqual([
+      ['opening_nav', { via: 'explorer' }],
+      ['opening_nav', { via: 'breadcrumb' }],
+    ]);
   });
 });

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { trackEvent } from '../../../lib/analytics';
 import { ChevronDown } from 'lucide-react';
 import LevelLens from '../LevelLens';
 import type { TreeContext } from '../../../hooks/useOpeningTree';
@@ -121,6 +122,7 @@ const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }>
     <Link
       to={`/opening/${encodeURIComponent(row.fen)}`}
       state={EXPLORER_STEP}
+      onClick={() => trackEvent('opening_nav', { via: 'explorer' })}
       className={styles.moveRow}
       title={rowStatsTitle(row)}
       aria-label={
@@ -341,6 +343,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
                         to={`/opening/${encodeURIComponent(ancestor.fen)}`}
                         className={styles.crumbLink}
                         state={EXPLORER_STEP}
+                        onClick={() => trackEvent('opening_nav', { via: 'breadcrumb' })}
                       >
                         {ancestor.name}
                       </Link>

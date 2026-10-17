@@ -1,0 +1,104 @@
+{
+  "slug": "ruy-lopez-pollock-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Pollock Defense",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Na5",
+    "fen": "r1bqkbnr/pppp1ppp/8/nB2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black meets 3.Bb5 with 3...Na5, aiming to trade off the bishop and keep the bishop pair, but the knight sits on the rim and Black is behind in development. White usually plays 4.Nxe5 and Black tries ...Qg5 for activity against e5 and g2. Strong players rarely allow this, and I am unsure of the exact main line.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and keep the extra central pawn"
+    },
+    {
+      "idea": "Develop quickly while the knight on a5 is out of play"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit e5 and g2 with the queen for counterplay"
+    },
+    {
+      "idea": "Trade White's bishop to compensate for the lost pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black knight misplaced on a5 and uncastled pieces"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early forcing play: Nxe5 and a queen sortie make this tactical for both sides, and a slip loses quickly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level at the root and nothing is attacked yet; whatever pawn changes hands later is a refutation, not a planned sacrifice."
+    },
+    "soundness": {
+      "notes": "The knight on a5 is badly placed and White wins or keeps a pawn with sound development; strong players regard 3...Na5 as inferior."
+    },
+    "structure": {
+      "notes": "e-pawn exchange opens the centre, though the line is unclear to me."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players against the Ruy Lopez; played for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a line to build a repertoire on; the White side needs only basic development and tactics."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on e5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The queen sortie and the loose e5 pawn make the early play concrete and risky for Black."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Material is level at the root and no sacrifice is planned by either side."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The rim knight and lag in development leave Black worse against sound play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The e5 pawn is likely to come off and the centre opens quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom meet the Ruy Lopez this way."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Black needs judgement about a misplaced knight; it is not a first repertoire line."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White's aim is to use the lead in development against the misplaced knight."
+    }
+  }
+}

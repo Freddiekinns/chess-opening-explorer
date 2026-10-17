@@ -1,0 +1,104 @@
+{
+  "slug": "kings-gambit-accepted-basman-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Basman Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Qe2",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPPQ1PP/RNB1KBNR b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White answers 2...exf4 with 3.Qe2, an unusual alternative to 3.Nf3; Black can check on h4 and take material with ...Qh4+. White intends Nf3 and d4 with a lead in development, but the early queen and the exposed king are risks.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3, d4 and Bxf4"
+    },
+    {
+      "idea": "Use the pin on the e-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Check with ...Qh4+ and hold the f4 pawn"
+    },
+    {
+      "idea": "Play ...d5 and ...Nf6 to equalise"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, White f-pawn gone"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Pawn down and an exposed king. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the f4 pawn."
+    },
+    "soundness": {
+      "notes": "The early Qe2 is poor."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Pawn down and an exposed king."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "King’s Gambit Accepted: White is a pawn down."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The early Qe2 is poor."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rare among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Qe2 comes out early."
+    }
+  }
+}

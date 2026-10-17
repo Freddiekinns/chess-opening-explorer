@@ -1,0 +1,105 @@
+{
+  "slug": "zukertort-opening-shabalov-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Shabalov Gambit",
+    "eco": "A04",
+    "moves": "1. Nf3 e6 2. c4 a6 3. Nc3 c5 4. g3 b5",
+    "fen": "rnbqkbnr/3p1ppp/p3p3/1pp5/2P5/2N2NP1/PP1PPP1P/R1BQKB1R w KQkq - 0 5"
+  },
+  "parent": "english-opening-agincourt-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays an Agincourt-style ...e6, ...a6 and ...c5, then 4.g3 b5, offering a queenside pawn to open lines against White's king and win time with ...Bb7. White can take with cxb5 axb5 Nxb5 and Black has a half-open a-file and an open diagonal. Reasoned from the moves; I do not know the theory well.",
+  "white_ideas": [
+    {
+      "idea": "Capture on b5 and develop Bg2 and O-O, keeping the extra pawn."
+    },
+    {
+      "idea": "Maintain the centre with d4 or Nxb5 and Qa4 hits."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture axb5 and use the open a-file with ...Rxa2 ideas and ...Bb7 on the long diagonal."
+    },
+    {
+      "idea": "Push ...c4 and ...Bb7 hitting the white king."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian-like asymmetric centre with open a-file after cxb5 axb5."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gives a pawn for open lines and development, so it is double-edged."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black's b5 pawn is offered with the open a-file and Bb7 as compensation, and White can keep it."
+    },
+    "soundness": {
+      "notes": "Played by strong players such as Shabalov; compensation is believed to be enough, but I am unsure."
+    },
+    "structure": {
+      "notes": "Sicilian-style asymmetric centre with an open a-file."
+    },
+    "approach": {
+      "notes": "Seldom played even by strong players; chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are subtle and move order is tricky."
+    }
+  },
+  "plan_phrases": [
+    "open a-file",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Black gives a pawn for open lines and development, so it is double-edged."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.6,
+      "reason": "Black's b5 pawn is offered with the open a-file and Bb7 as compensation, and White can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": "black",
+      "confidence": 0.45,
+      "reason": "Played by strong players such as Shabalov; compensation is believed to be enough, but I am unsure."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Sicilian-style asymmetric centre with an open a-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played even by strong players; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.45,
+      "reason": "Plans are subtle and move order is tricky."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Black plays for open lines against White's g3 fianchetto."
+    }
+  }
+}

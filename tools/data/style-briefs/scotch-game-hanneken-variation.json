@@ -1,0 +1,105 @@
+{
+  "slug": "scotch-game-hanneken-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Hanneken Variation",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bb4+ 5. c3 dxc3 6. O-O cxb2 7. Bxb2 Nf6 8. Ng5 O-O 9. e5 Nxe5",
+    "fen": "r1bq1rk1/pppp1ppp/5n2/4n1N1/1bB5/8/PB3PPP/RN1Q1RK1 w - - 0 10"
+  },
+  "parent": "scotch-game-scotch-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White gambits several pawns in the Scotch Gambit with b2 and c3 pawns captured, then plays e5 and Ng5 for a kingside attack. After 9...Nxe5 White can take on f7. Black can usually get through with accurate defence.",
+  "white_ideas": [
+    {
+      "idea": "Attack f7 with Bxf7+ and Ng5"
+    },
+    {
+      "idea": "Use the open b-file and the lead in development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Return material at the right moment and consolidate"
+    },
+    {
+      "idea": "Exchange queens or trade down"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White's queenside pawns gone"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing lines with White sacrificing material."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White sacrifices several pawns for development."
+    },
+    "soundness": {
+      "notes": "Known as risky for White."
+    },
+    "structure": {
+      "notes": "The centre is open."
+    },
+    "approach": {
+      "notes": "Rarely chosen at a high level."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines must be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Forcing lines with White sacrificing material."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White sacrifices several pawns for development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Known as risky for White."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre is open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely chosen at a high level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Long forcing lines must be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

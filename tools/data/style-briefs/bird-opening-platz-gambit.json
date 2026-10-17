@@ -1,0 +1,110 @@
+{
+  "slug": "bird-opening-platz-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Platz Gambit",
+    "eco": "A02",
+    "moves": "1. f4 e5 2. fxe5 Ne7",
+    "fen": "rnbqkb1r/ppppnppp/8/4P3/8/8/PPPPP1PP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "bird-opening-froms-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In From's Gambit move order Black replies 2...Ne7 instead of 2...d6, planning ...Ng6 to regain the pawn on e5. White can protect e5 with Nf3 or d4 and hold the extra pawn. I am unsure of the details; the position is a rare Black gambit side line.",
+  "white_ideas": [
+    {
+      "idea": "Keep the pawn with Nf3 and d4"
+    },
+    {
+      "idea": "Develop and use the open f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain e5 with ...Ng6"
+    },
+    {
+      "idea": "Play ...d6 and open lines for the pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White e5 pawn and Black f-pawn gone"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An unusual gambit with open lines and early tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black offers the e5 pawn which White can hold by Nf3."
+    },
+    "soundness": {
+      "notes": "Considered inferior to the main From's Gambit."
+    },
+    "structure": {
+      "notes": "Central pawns have come off."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious line."
+    }
+  },
+  "plan_phrases": [
+    "gambit",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "From's Gambit 2...d6",
+      "moves": "1. f4 e5 2. fxe5 d6",
+      "how": "Normal From's with more tactical play."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early gambit play with open lines and weak king positions."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.6,
+      "reason": "Black offers the e-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Slow compensation compared with the main From line."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns come off, leaving open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players do not play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black sacrifices the pawn for faster development."
+    }
+  }
+}

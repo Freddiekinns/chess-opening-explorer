@@ -1,0 +1,111 @@
+{
+  "slug": "bird-opening-double-duck-formation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Double Duck Formation",
+    "eco": "A02",
+    "moves": "1. f4 f5 2. d4 d5",
+    "fen": "rnbqkbnr/ppp1p1pp/8/3p1p2/3P1P2/8/PPP1P1PP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "bird-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White and Black mirror each other with f-pawns and d-pawns on f4/d4 and f5/d5, a symmetrical Stonewall-like structure. Play continues with Nf3, e3, Bd3 and c4 or c3 with a slow fight over e5/e4 and a possible kingside attack after the pieces come out.",
+  "white_ideas": [
+    {
+      "idea": "Nf3, e3, Bd3 and castling with a Stonewall set-up"
+    },
+    {
+      "idea": "Hold the e5 square"
+    },
+    {
+      "idea": "Attack on the kingside after Ne5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Mirror with ...e6, ...Nf6 and ...Bd6"
+    },
+    {
+      "idea": "Fight for e4 with ...Ne4"
+    },
+    {
+      "idea": "Break with ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical Stonewall structure with pawns on d4/f4 versus d5/f5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A mirrored position with a slow fight for small edges; little forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Sound and symmetrical."
+    },
+    "structure": {
+      "notes": "Locked Stonewall chains."
+    },
+    "approach": {
+      "notes": "A rare formation, but a respectable choice for players who know the structure."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Structure-based plans."
+    }
+  },
+  "plan_phrases": [
+    "Stonewall pawn chain",
+    "control of e5/e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Symmetrical and slow without being especially Solid or Sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Symmetrical and fine."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.5,
+      "reason": "Stonewall chains lock the centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.4,
+      "reason": "Rare but respectable; not a system for use against everything."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans over memorisation."
+    },
+    "plans": {
+      "value": [
+        "stonewall",
+        "symmetrical_structure"
+      ],
+      "reason": "Mirrored Stonewall pawns on d4/f4 and d5/f5."
+    }
+  }
+}

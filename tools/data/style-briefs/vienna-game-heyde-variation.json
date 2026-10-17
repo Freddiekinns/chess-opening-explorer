@@ -1,0 +1,114 @@
+{
+  "slug": "vienna-game-heyde-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Heyde Variation",
+    "eco": "C29",
+    "moves": "1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. fxe5 Nxe4 5. Qf3 f5 6. d4",
+    "fen": "rnbqkb1r/ppp3pp/8/3pPp2/3Pn3/2N2Q2/PPP3PP/R1B1KBNR b KQkq - 0 6"
+  },
+  "parent": "vienna-game-vienna-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White answers the Vienna Gambit line 4.fxe5 Nxe4 with 5.Qf3 f5 6.d4, building a big centre and aiming at the e4-knight and the f5/d5 pawns. Black keeps the extra central tension with ...Nc6 or ...Qe7 and ...Bb4 ideas and tries to hold the e4-knight. The game is sharp and tactical with queen and knight tricks on the e-file and d5 square.",
+  "white_ideas": [
+    {
+      "idea": "Support e5 with d4 and hit the e4-knight with Bd3 or Nxe4 at the right moment"
+    },
+    {
+      "idea": "Use the f-file and the queen on f3 against f5 and the black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Meet 6.d4 with ...Nc6 and ...Be7 or ...Bb4 to pressure e5 and d4"
+    },
+    {
+      "idea": "Keep the e4-knight supported with ...f5 and ...d5, and castle quickly"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns e5/d4 against Black pawns d5/f5, with Black knight on e4"
+    },
+    {
+      "structure": "Locked centre with piece play around e4 and e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen on f3, a knight on e4 and pawns on e5/f5/d5 give forcing tactics where a slip loses a piece."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "After 4.fxe5 Nxe4 the pawns are level (f-pawn for e-pawn); nothing is given up at the root."
+    },
+    "soundness": {
+      "notes": "Playable for White; the line is a known try and is not refuted."
+    },
+    "structure": {
+      "notes": "White e5/d4 against Black d5/f5 is a mutually blocked centre."
+    },
+    "approach": {
+      "notes": "A named Vienna Gambit branch that strong players meet now and then; standard."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs concrete knowledge of the Qf3 tactics and plans for the e4 knight."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "locked centre",
+    "attack on the e4-knight"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Spielmann 5.Qf3 Nc6",
+      "moves": "1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. fxe5 Nxe4 5. Qf3 Nc6",
+      "how": "Black develops instead of ...f5 and the game changes character."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "Early queen sortie and an exposed e4-knight make this concrete and forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "The f- and e-pawns have been traded, so material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "Heyde is a known, playable try and not considered refuted."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.45,
+      "reason": "White e5/d4 faces Black d5/f5 in a mutually blocked centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "The Vienna Gambit is a respectable choice at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "It needs concrete tactics but is not a deep theoretical branch."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "White develops the queen early to f3 and has to keep her safe on that square."
+    }
+  }
+}

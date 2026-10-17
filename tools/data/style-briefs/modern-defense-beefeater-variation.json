@@ -1,0 +1,105 @@
+{
+  "slug": "modern-defense-beefeater-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Beefeater Variation",
+    "eco": "A40",
+    "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 c5 4. d5 Bxc3+ 5. bxc3 f5",
+    "fen": "rnbqk1nr/pp1pp2p/6p1/2pP1p2/2P5/2P5/P3PPPP/R1BQKBNR w KQkq - 0 6"
+  },
+  "parent": "queens-pawn-game-modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black trades the g7 bishop for the c3 knight and plays ...f5, giving White the bishop pair and a big pawn centre in exchange for control of e4 and the dark squares. White has doubled c-pawns but a space advantage, and the d5 pawn clamps the position. It is a rare, unbalanced line that Black plays for surprise.",
+  "white_ideas": [
+    {
+      "idea": "Use the bishop pair and the d5/c4 space"
+    },
+    {
+      "idea": "Play e3 and Nf3, then open the position with e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Control e4 and e5 with ...f5 and ...Nf6"
+    },
+    {
+      "idea": "Aim at the c3 weaknesses and the dark squares"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Doubled c-pawns for White, locked c4/d5 against ...c5/...d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gives up his fianchetto bishop and weakens his king; play is unbalanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Only the bishop pair changes, no pawn is given."
+    },
+    "soundness": {
+      "notes": "Black gives up the bishop pair and weakens e6; I think engines favour White."
+    },
+    "structure": {
+      "notes": "The c4/d5 pawns lock the centre against ...c5."
+    },
+    "approach": {
+      "notes": "Rarely seen from strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A risky surprise line, never a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "bishop pair",
+    "doubled pawns for activity"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black gives up his fianchetto bishop and weakens his king; play is unbalanced."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Only the bishop pair changes, no pawn is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Black gives up the bishop pair and weakens e6; I think engines favour White."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.4,
+      "reason": "The c4/d5 pawns lock the centre against ...c5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Rarely seen from strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A risky surprise line, never a first repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "bishop_pair"
+      ],
+      "reason": "White holds the bishop pair and has doubled c-pawns."
+    }
+  }
+}

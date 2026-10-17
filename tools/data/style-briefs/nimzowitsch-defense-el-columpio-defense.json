@@ -1,0 +1,111 @@
+{
+  "slug": "nimzowitsch-defense-el-columpio-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: El Columpio Defense",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. Nf3 Nf6 3. e5 Ng4",
+    "fen": "r1bqkb1r/pppppppp/2n5/4P3/6n1/5N2/PPPP1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "nimzowitsch-defense-declined-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black attacks e5 with the knight on g4, inviting d4 d6 and then h3 Nh6. White gets a big centre and tempi, while Black relies on pinning and exchanging on e5 or d6. It is an offbeat line where Black gambles on surprise.",
+  "white_ideas": [
+    {
+      "idea": "Push d4 and h3 to chase the knight"
+    },
+    {
+      "idea": "Use the space with exd6 or Bb5 pins"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Exchange on e5 or d6 to ease the position"
+    },
+    {
+      "idea": "Counter with ...Nh6 and ...Bf5 or ...g6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e5 and d4 centre against Black knights"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black loses time chasing a pawn; play is double-edged."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given by force."
+    },
+    "soundness": {
+      "notes": "Black wastes tempi and is reputed worse."
+    },
+    "structure": {
+      "notes": "e5 clamp and then open lines."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs traps; dubious so not beginner."
+    }
+  },
+  "plan_phrases": [
+    "space with e5",
+    "extra tempi"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "El Columpio Gambit",
+      "moves": "6.e6",
+      "how": "A pawn sacrifice that unbalances matters."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black loses time chasing a pawn; play is double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material given by force."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Black wastes tempi and is reputed worse."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "e5 clamp and then open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs traps; dubious so not beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "lead_in_development"
+      ],
+      "reason": "White gains space and development against Black's tempo loss."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "alekhine-defense-the-squirrel",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: The Squirrel",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. c4 Nf4",
+    "fen": "rnbqkb1r/pppppppp/8/4P3/2P2n2/8/PP1P1PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "alekhine-defense-two-pawns-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 Nf6 2.e5 Nd5 3.c4 Black's knight jumps to f4, hitting g2 and d3 at the cost of time. White normally replies 4.d4 and later d4 d6 ideas, keeping a space edge. I am not sure of the precise lines; the knight tends to be harassed with d4, Bxf4 and similar.",
+  "white_ideas": [
+    {
+      "idea": "Build a centre with d4 and Nc3"
+    },
+    {
+      "idea": "Trap or chase the knight on f4 with Bxf4 or Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the knight to harass g2 and d3"
+    },
+    {
+      "idea": "Open lines with ...d6 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Alekhine centre with White pawns on e5, d4, c4"
+    },
+    {
+      "structure": "Black knight misplaced on f4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Concrete tactics around g2 and the knight."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is given deliberately."
+    },
+    "soundness": {
+      "notes": "The Squirrel is not considered fully sound."
+    },
+    "structure": {
+      "notes": "White space and centre against Black piece play."
+    },
+    "approach": {
+      "notes": "Rare sub-line, almost unplayed at the top."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs specific tactical knowledge."
+    }
+  },
+  "plan_phrases": [
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The knight raid creates concrete tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The knight loses time and strong players avoid it."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "Alekhine structure with White centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rare and little played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.4,
+      "reason": "Dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White gains space."
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "slug": "philidor-defense-hanham",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Hanham, Kmoch Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nd7 4. Bc4 c6 5. Ng5",
+    "fen": "r1bqkbnr/pp1n1ppp/2pp4/4p1N1/2BPP3/8/PPP2PPP/RNBQK2R b KQkq - 1 5"
+  },
+  "parent": "philidor-defense-hanham-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Hanham with ...Nd7 and ...c6 White plays 5.Ng5, threatening Nxf7 and aiming at the weak f7 square. Black usually replies 5...Nh6 and 6.f4 Be7 with ...O-O and a solid centre with ...d5. White holds a lead in space, Black a compact camp and counter blows with ...exd4 or ...d5.",
+  "white_ideas": [
+    {
+      "idea": "Hit f7 with Ng5 and Bc4"
+    },
+    {
+      "idea": "Support the centre with f4 and c3"
+    },
+    {
+      "idea": "Castle and push e5 or dxe5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend f7 with ...Nh6 and ...Be7"
+    },
+    {
+      "idea": "Challenge the centre with ...exd4 or ...d5"
+    },
+    {
+      "idea": "Castle and keep a compact position"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Philidor pawns on d6 and e5 against White e4 and d4"
+    },
+    {
+      "structure": "Black pawn on c6 supporting ...d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is compact and a little passive; White presses with a tricky f7 target."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "Considered fine for both sides."
+    },
+    "structure": {
+      "notes": "The e5-d6 and e4-d4 tension can resolve either way."
+    },
+    "approach": {
+      "notes": "Less usual than main Philidor lines but a known set-up."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs some theory on f7 traps and a feel for when to play ...d5."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7",
+    "space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Berger Variation",
+      "moves": "5. Ng5 Nh6 6. f4 Be7 7. O-O O-O 8. c3 d5",
+      "how": "Black gets ...d5 in with a good game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Black is compact but White pressure on f7 gives some bite, and neither is clearly the main theme."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is given up in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Nothing is refuted for either side."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The e4-d4 centre is in tension with Black e5-d6."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A known line in the Philidor."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.55,
+      "reason": "Moderate theory and understanding of the tension in the centre."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "space_advantage"
+      ],
+      "reason": "White aims at f7 and holds more space."
+    }
+  }
+}

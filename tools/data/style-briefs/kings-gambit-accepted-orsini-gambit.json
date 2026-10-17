@@ -1,0 +1,111 @@
+{
+  "slug": "kings-gambit-accepted-orsini-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Orsini Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. b3",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/1P6/P1PP2PP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.b3 instead of the normal 3.Nf3, accepting that Black keeps the f4 pawn and aiming to open the long diagonal with Bb2 against e5 and g7. Black replies with 3...Nf6, the check 3...Qh4+ 4.g3, or 3...d5 to return the pawn and take the centre. White has little concrete compensation and the line is rare.",
+  "white_ideas": [
+    {
+      "idea": "Develop the bishop to b2 and hit e5 and g7, then play Nf3 or Nc3."
+    },
+    {
+      "idea": "Recapture f4 later with Bc4, Nf3 or g3 as circumstances allow."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn with ...g5 or ...Nf6."
+    },
+    {
+      "idea": "Take the centre with ...d5, giving the pawn back but equalising."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file after exf4 with White b3 and a Black pawn on f4 extending the king's gambit wings."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "King's Gambit family, open kingside with checks and quick attacks available to both sides."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White offers the f-pawn with 2.f4 and does not win it back at once, and Black can keep it."
+    },
+    "soundness": {
+      "notes": "3.b3 does not fight for the pawn and is rarely used; strong players think Black is comfortable."
+    },
+    "structure": {
+      "notes": "Open e-file and diagonals with the f-pawn gone and quick piece play."
+    },
+    "approach": {
+      "notes": "A rare sideline of an already uncommon opening; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory but dubious, so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "long diagonal",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Qh4+ lines",
+      "moves": "1. e4 e5 2. f4 exf4 3. b3 Qh4+",
+      "how": "Black's queen check forces g3 and weakens White further."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "King's Gambit family, open kingside with checks and quick attacks available to both sides."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the f-pawn with 2.f4 and does not win it back at once, and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "3.b3 does not fight for the pawn and is rarely used; strong players think Black is comfortable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Open e-file and diagonals with the f-pawn gone and quick piece play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "A rare sideline of an already uncommon opening; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Little theory but dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Orsini aims at the long diagonal and development for the lost pawn."
+    }
+  }
+}

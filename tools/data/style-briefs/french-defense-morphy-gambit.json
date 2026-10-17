@@ -1,0 +1,31 @@
+{
+  "slug": "french-defense-morphy-gambit",
+  "tier": "unsourced",
+  "root": { "name": "French Defense: Morphy Gambit", "eco": "C00", "moves": "1. e4 e6 2. d4 d5 3. Nh3", "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/7N/PPP2PPP/RNBQKB1R b KQkq - 1 3" },
+  "parent": "french-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White develops the knight to the rim with 3.Nh3, planning Nf4 to hit the d5 pawn and possibly the c5 square. The idea is to avoid theory, and Black can take 3...dxe4 and keep an extra pawn, or play ...c5 and ...Nf6 with an easy game. White gets no real compensation and the knight on h3 is badly placed. It is an unusual line used mostly for surprise.",
+  "white_ideas": [{ "idea": "Nf4 to attack d5 and e6, then c4 or Bd3" }, { "idea": "Develop with Nc3, Bd3 and Qh5 to harass the Black king side" }],
+  "black_ideas": [{ "idea": "Take on e4 and keep the pawn, developing with ...Nf6 and ...Bd6" }, { "idea": "Play ...c5 and ...Nc6 hitting d4, taking advantage of the poor knight" }],
+  "typical_structures": [{ "structure": "French pawn structure with White's knight offside on h3 or f4 and Black ahead on development" }],
+  "axis_evidence": {
+    "character": { "notes": "Nothing is forced and both kings are safe, though the knight placement creates oddities." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "After 3...dxe4 White has no immediate way to regain the e4 pawn and Black can hold it." },
+    "soundness": { "notes": "Dubious: Black gets an easy extra pawn or a comfortable game." },
+    "structure": { "notes": "A French centre with an exchange on e4 giving a semi-open d-file." },
+    "approach": { "notes": "Strong players basically never play it." },
+    "level": { "reason": "neither", "notes": "Little to learn, and a poor repertoire choice." }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [{ "name": "3...Nf6", "moves": "1. e4 e6 2. d4 d5 3. Nh3 Nf6", "how": "Black develops and attacks e4 without taking a pawn." }],
+  "tags": {
+    "character": { "value": "balanced", "confidence": 0.4, "reason": "The knight on h3 keeps things quiet, not forcing and not especially hard to break down." },
+    "gambit": { "value": "white", "confidence": 0.6, "reason": "White offers the e4 pawn and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.7, "reason": "The knight on h3 is badly placed and White gets little for the pawn." },
+    "structure": { "value": "semi_open", "confidence": 0.45, "reason": "A French centre where the d-file may open after ...dxe4." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players seldom play 3.Nh3." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.65, "reason": "A dubious line is never Beginner and nothing here is deep." },
+    "plans": { "value": [], "reason": "No recognisable plan from the table is characteristic." }
+  }
+}

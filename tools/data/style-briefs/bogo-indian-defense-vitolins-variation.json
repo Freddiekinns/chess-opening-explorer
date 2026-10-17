@@ -1,0 +1,108 @@
+{
+  "slug": "bogo-indian-defense-vitolins-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: Vitolins Variation",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 c5",
+    "fen": "rnbqk2r/pp1p1ppp/4pn2/2p5/1bPP4/5N2/PP1BPPPP/RN1QKB1R w KQkq - 0 5"
+  },
+  "parent": "bogo-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black meets 4.Bd2 with 4...c5, so after 5.Bxb4 cxb4 White usually continues with 6.g3 and a kingside fianchetto. White has more space in the centre with c4 and d4, and Black has an advanced b4 pawn and play against the c- and e-pawns. It is balanced and slightly unusual, and Black can choose between ...Bb7 and ...Qb6.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with g3 and Bg2, then castle and play for the centre"
+    },
+    {
+      "idea": "Use the c- and d-pawns for a space advantage"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Bb7 and ...O-O, with pressure against the long diagonal"
+    },
+    {
+      "idea": "Attack the centre with ...d6 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White c4/d4 pawns against Black b4/e6 pawns"
+    },
+    {
+      "structure": "Flexible pawn tension in the centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A positional struggle over the centre and the b4 pawn, neither solid nor sharp."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pieces are traded and no material is offered."
+    },
+    "soundness": {
+      "notes": "Fully playable at high level for both sides."
+    },
+    "structure": {
+      "notes": "The tension between c4/d4 and the ...c5 pawn leaves the centre undecided."
+    },
+    "approach": {
+      "notes": "Respectable and played by strong players, though not the main line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans over memory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "The game is a positional fight without forcing lines or an especially safe set-up."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Fully playable for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The c4/d4 centre faces ...c5 and ...d6 breaks and is not locked."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A respectable choice for strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans matter more than memorisation."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "White fianchettoes and holds more space in the centre."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "latvian-gambit-accepted-bronstein-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit Accepted: Bronstein Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. d4 d6 5. Nc4 fxe4 6. Qh5+ g6 7. Qe2",
+    "fen": "rnb1kbnr/ppp4p/3p1qp1/8/2NPp3/8/PPP1QPPP/RNB1KB1R b KQkq - 1 7"
+  },
+  "parent": "latvian-gambit-accepted-bilguer-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White has taken on e5 and Black has taken back on e4 in a wild Latvian line, with the queens out and the white king in the centre. Black has given the f-pawn and gets some activity, while White aims to exploit the loose kingside after Qh5+ and Qe2. The position is close to level in material but chaotic, and read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Take the e4 pawn with Qxe4 or play Nc3 and Be3"
+    },
+    {
+      "idea": "Use the light-square weaknesses around f7 and g6"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the knight and centre with ...Nf6 and ...Bg7"
+    },
+    {
+      "idea": "Use the open f-file and the queen on f6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, Black with a weakened kingside and White's king still uncastled"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings are exposed and the queens are out early."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "The Latvian is a Black gambit and the pawn count here is level only because of recaptures."
+    },
+    "soundness": {
+      "notes": "The Latvian lines are considered unsound by strong players."
+    },
+    "structure": {
+      "notes": "Open centre and open f-file."
+    },
+    "approach": {
+      "notes": "The Latvian is rarely played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "A dubious line is not Beginner and the tactics must be known."
+    }
+  },
+  "plan_phrases": [
+    "open lines against both kings",
+    "development lead"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Both kings are exposed and the queens are out early."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.6,
+      "reason": "The Latvian is a Black gambit and the pawn count here is level only because of recaptures."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The Latvian lines are considered unsound by strong players."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Open centre and open f-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "The Latvian is rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A dubious line is not Beginner and the tactics must be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black plays for quick development and an attack on the king."
+    }
+  }
+}

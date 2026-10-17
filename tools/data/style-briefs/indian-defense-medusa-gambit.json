@@ -1,0 +1,107 @@
+{
+  "slug": "indian-defense-medusa-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Medusa Gambit",
+    "eco": "A50",
+    "moves": "1. d4 Nf6 2. c4 g5",
+    "fen": "rnbqkb1r/pppppp1p/5n2/6p1/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 2...g5 3.Bxg5 Black plays 3...Ne4 or ...Bg7 and tries to get activity for the pawn. White keeps the pawn and a space advantage.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn"
+    },
+    {
+      "idea": "Develop with Nc3"
+    },
+    {
+      "idea": "Keep the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the bishop with ...Ne4"
+    },
+    {
+      "idea": "Fianchetto with ...Bg7"
+    },
+    {
+      "idea": "Open the g-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open g-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White keeps the pawn."
+    },
+    "soundness": {
+      "notes": "Dubious."
+    },
+    "structure": {
+      "notes": "Fluid."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Rare."
+    }
+  },
+  "plan_phrases": [
+    "Compensation"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Pawn gambit."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black gives a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Unsound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "g-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious."
+    },
+    "plans": {
+      "value": [],
+      "reason": "None."
+    }
+  }
+}

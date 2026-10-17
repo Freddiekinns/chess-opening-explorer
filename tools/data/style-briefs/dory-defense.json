@@ -1,0 +1,101 @@
+{
+  "slug": "dory-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Döry Defense",
+    "eco": "A46",
+    "moves": "1. d4 Nf6 2. Nf3 Ne4",
+    "fen": "rnbqkb1r/pppppppp/8/8/3Pn3/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 3"
+  },
+  "parent": "indian-defense-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black answers 2.Nf3 with the early knight jump 2...Ne4. White usually gets a comfortable position by chasing the knight with Nd2 or by playing c4 and Nbd2, while Black goes for exchanges to relieve the position. Little is known about this rare line and I am reasoning mostly from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Challenge the e4 knight with Nd2 or Nfd2"
+    },
+    {
+      "idea": "Build a centre with c4 and e3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the active knight for a White piece"
+    },
+    {
+      "idea": "Complete development with ...d5 and ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's pawn structure with an early knight sortie"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early knight move invites exchanges and a flexible, balanced game."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "The knight sortie is not refuted but loses time."
+    },
+    "structure": {
+      "notes": "The centre is undecided at move 3."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The line is simple but the plans are loose."
+    }
+  },
+  "plan_phrases": [
+    "early knight sortie"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "The line is neither solid nor sharp and leads to exchanges."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "The knight sortie costs time but is not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre is still undecided at move 3."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.4,
+      "reason": "Plans are simple but little theory exists."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Nothing here plainly matches a listed plan."
+    }
+  }
+}

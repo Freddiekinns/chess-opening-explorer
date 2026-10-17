@@ -1,0 +1,109 @@
+{
+  "slug": "queens-indian-defense-euwe-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Euwe Variation",
+    "eco": "E17",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. b3",
+    "fen": "rn1q1rk1/pbppbppp/1p2pn2/8/2PP4/1P3NP1/P3PPBP/RNBQ1RK1 b - - 0 7"
+  },
+  "parent": "queens-indian-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 7.b3 to fianchetto both bishops and Black chooses 7...d5 or 7...c5. Both sides play on the long diagonals and fight for e4 and e5. The play is positional and manoeuvring, with Black fine but White keeping a small edge.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto both bishops"
+    },
+    {
+      "idea": "Control e5 and the long diagonal"
+    },
+    {
+      "idea": "Play for Nbd2 and a possible e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...d5 or ...c5"
+    },
+    {
+      "idea": "Control e4 with ...Bb7"
+    },
+    {
+      "idea": "Trade pieces to ease the position"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Hypermodern fianchetto set-up with a flexible centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Steady positional play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "Centre pawns on c4/d4 against ...b6/...e6 and neither side commits."
+    },
+    "approach": {
+      "notes": "A normal Queen's Indian branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs the positional plans."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto and control of e4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Hard to break down, with steady positional play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respected main line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre remains undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal main-line variation."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional understanding matters more than memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Both sides fianchetto their bishops."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "owen-defense-unicorn-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Owen Defense: Unicorn Variation",
+    "eco": "B00",
+    "moves": "1. e4 f6 2. d4 b6 3. c4 Bb7",
+    "fen": "rn1qkbnr/pbppp1pp/1p3p2/8/2PPP3/8/PP3PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "barnes-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black replies to 1.e4 with 1...f6 and then 2...b6 and 3...Bb7, an odd mix of Barnes and Owen ideas. White takes space with d4 and c4 and develops naturally with Nc3 and Nf3. Black wants to challenge the centre with ...e6 and ...d5 but the f6 move blocks the knight and weakens the king.",
+  "white_ideas": [
+    {
+      "idea": "Build a broad centre with e4, d4, c4 and develop Nc3, Nf3, Bd3"
+    },
+    {
+      "idea": "Use space and Black's awkward knight on g8"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Prepare ...e6 and ...d5 to challenge the centre"
+    },
+    {
+      "idea": "Complete development with ...Ne7 and ...Nbc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/d4/c4 centre against Black f6/b6 pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A passive Black setup where White has an easy space edge and little forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material has been given up."
+    },
+    "soundness": {
+      "notes": "Black's 1...f6 and slow ...b6 are generally considered inferior."
+    },
+    "structure": {
+      "notes": "Flexible as the centre is not locked, but White has more space."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not for beginners as it is dubious."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "hypermodern"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "It is neither forcing nor especially hard to break, just slow."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "1...f6 and 2...b6 are strategically inferior."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "White has a broad centre but it is not locked."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Hardly used by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "A dubious defence cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "central_pawn_majority"
+      ],
+      "reason": "White gets e4, d4 and c4 centre pawns against a slow Black set-up."
+    }
+  }
+}

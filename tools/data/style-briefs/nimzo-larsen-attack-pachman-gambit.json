@@ -1,0 +1,114 @@
+{
+  "slug": "nimzo-larsen-attack-pachman-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Pachman Gambit",
+    "eco": "A01",
+    "moves": "1. b3 e5 2. Bb2 Nc6 3. f4",
+    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/5P2/1P6/PBPPP1PP/RN1QKBNR b KQkq - 0 3"
+  },
+  "parent": "nimzo-larsen-attack-modern-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.f4 against the ...Nc6 set-up, offering the e5 pawn to open the f-file and the b2 bishop. After 3...exf4 4.Nf3 Black can keep the pawn with ...g5, so White plays on development and the long diagonal. It is a speculative extension of the Larsen with little theory behind it.",
+  "white_ideas": [
+    {
+      "idea": "Win back f4 with Nf3 and Bxf4 or Nh4 while the b2 bishop looks down the long diagonal"
+    },
+    {
+      "idea": "Use the half-open f-file and quick development against the Black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...exf4 and ...g5"
+    },
+    {
+      "idea": "Challenge the centre with ...d5 and finish development before White gets going"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn on f4 gone, Black pawn on f4/g5 chain with open e-file"
+    },
+    {
+      "structure": "Open centre with Bb2 aimed at g7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "After 3...exf4 the e-file opens and White is a pawn down chasing activity; both kings are exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White offers the e5 pawn with 3.f4; Black can keep it by ...g5."
+    },
+    "soundness": {
+      "notes": "Black can simply take and hold the pawn, so White relies on surprise; engines favour Black."
+    },
+    "structure": {
+      "notes": "The e- and f-pawns come off, leaving an open centre."
+    },
+    "approach": {
+      "notes": "Rare even among 1.b3 players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs understanding of compensation rather than a long theory file."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "attack on the Black king via the f-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Declined with 3...Nf6",
+      "moves": "1. b3 e5 2. Bb2 Nc6 3. f4 Nf6",
+      "how": "No material changes hands and Black stands well."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "The f-file and an exposed king make a pawn-down attack with real risk for both."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White gives the e5 pawn on purpose and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Engines prefer Black and the line scores mostly through surprise."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The e- and f-pawns trade off, so the game turns on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players hardly choose 3.f4 in this line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious lines are not beginner choices and the theory is thin."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White pays a pawn for time and pressure on the kingside."
+    }
+  }
+}

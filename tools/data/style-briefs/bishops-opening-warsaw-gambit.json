@@ -1,0 +1,105 @@
+{
+  "slug": "bishops-opening-warsaw-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Warsaw Gambit",
+    "eco": "C24",
+    "moves": "1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. c3",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/8/2BpP3/2P5/PP3PPP/RNBQK1NR b KQkq - 0 4"
+  },
+  "parent": "bishops-opening-ponziani-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White offers the d-pawn with 3.d4 exd4 4.c3 as in the Ponziani/Center Gambit family, aiming for a big centre and quick development. Black can take 4...dxc3 5.Nxc3 or hit e4 with 4...Nxe4, and the gambit is not regarded as fully sound. I am unsure of the main line.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nxc3, Bc4 and Nf3 against the king"
+    },
+    {
+      "idea": "Build a pawn centre after cxd4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Capture on c3 and return the pawn for development"
+    },
+    {
+      "idea": "Take on e4 and play ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White's bishops aimed at f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is a pawn down for open lines and a lead in development, so play is forcing."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the d-pawn and Black can keep it with accurate defence."
+    },
+    "soundness": {
+      "notes": "The compensation is thin; strong players tend to treat it as slightly dubious."
+    },
+    "structure": {
+      "notes": "Central pawns come off early leaving open lines for the pieces."
+    },
+    "approach": {
+      "notes": "Rarely chosen by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "A gambit needing knowledge of tactics."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White is a pawn down for open lines and a lead in development, so play is forcing."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White gives the d-pawn and Black can keep it with accurate defence."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The compensation is thin; strong players tend to treat it as slightly dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Central pawns come off early leaving open lines for the pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A gambit needing knowledge of tactics."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

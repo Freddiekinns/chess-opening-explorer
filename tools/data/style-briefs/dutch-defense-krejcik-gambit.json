@@ -1,0 +1,111 @@
+{
+  "slug": "dutch-defense-krejcik-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Krejcik Gambit",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. g4",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P2P1/8/PPP1PP1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 2.g4 against the Dutch, offering a pawn to open the g-file and gain the centre. After 2...fxg4 3.e4 d5 the Tate Gambit continues with Nc3, and Black can keep the pawn but must be careful about the open king. It is a rare gambit that most players think is unsound.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with e4 and open lines with h3"
+    },
+    {
+      "idea": "Use the g-file and pieces against the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Accept and hold the extra pawn with ...d5"
+    },
+    {
+      "idea": "Neutralise the centre with ...Nf6 and ...e6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with an extra black g-pawn and exposed kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White gives a pawn for an attack, so play is forcing and both kings can be exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the g-pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Strong players consider the compensation insufficient."
+    },
+    "structure": {
+      "notes": "The centre opens after e4 and ...d5 with active piece play."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "A dubious gambit, not a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "g-file attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2...d5",
+      "moves": "1. d4 f5 2. g4 d5",
+      "how": "Declines the gambit; quiet and no material has changed hands."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "White gives a pawn for an attack, so play is forcing and both kings can be exposed."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives the g-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Strong players consider the compensation insufficient."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The centre opens after e4 and ...d5 with active piece play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Almost never played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious gambit, not a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "ruy-lopez-halloween-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Halloween Attack",
+    "eco": "C65",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. Nxe5",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2N3/4P3/8/PPPP1PPP/RNBQK2R b KQkq - 0 4"
+  },
+  "parent": "ruy-lopez-berlin-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White sacrifices the knight with 4.Nxe5 Nxe5 5.d4, hoping to regain material and gain a strong centre with tempo on the black pieces. Black can keep the piece with 5...Ng6 or ...Nxe4 and has the better game with correct play. It is a rare surprise on the Berlin move order.",
+  "white_ideas": [
+    {
+      "idea": "Regain material with d4 and e5"
+    },
+    {
+      "idea": "Use the central pawn mass and development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra piece and return it cleanly"
+    },
+    {
+      "idea": "Develop and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The name suggests the Halloween Gambit idea on the Berlin move order."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White offers a knight for a pawn and Black can keep it by retreating."
+    },
+    "soundness": {
+      "notes": "Considered unsound."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Obscure."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp tactics."
+    }
+  },
+  "plan_phrases": [
+    "lead_in_development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "A piece sacrifice leads to wild play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers a piece."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.75,
+      "reason": "Considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White seeks tempo and a pawn centre."
+    }
+  }
+}

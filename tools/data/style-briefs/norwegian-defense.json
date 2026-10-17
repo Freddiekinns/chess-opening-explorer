@@ -1,0 +1,114 @@
+{
+  "slug": "norwegian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Norwegian Defense",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Nf6 3. e5 Nh5 4. g4 Ng7",
+    "fen": "rnbqkb1r/ppppppnp/6p1/4P3/3P2P1/8/PPP2P1P/RNBQKBNR w KQkq - 1 5"
+  },
+  "parent": "modern-defense-norwegian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.e4 g6 2.d4 Nf6 3.e5 Nh5 4.g4 Ng7 White has gained space with e5 and g4 and Black has a retreated knight. Black plans ...d6 to undermine e5, with ...c5 or ...Nc6, and the knight on g7 comes back to f5 or c6. White tries to hold the centre and use his extra space.",
+  "white_ideas": [
+    {
+      "idea": "Hold e5 with f4 or Nf3 and Be3"
+    },
+    {
+      "idea": "Develop and use the space"
+    },
+    {
+      "idea": "Attack the kingside with g5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Undermine the centre with ...d6 and ...c5"
+    },
+    {
+      "idea": "Develop the knight to c6 or f5"
+    },
+    {
+      "idea": "Fianchetto with ...Bg7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on e5, d4 and g4 against Black g6 and fianchetto"
+    },
+    {
+      "structure": "Locked e5 pawn before ...d6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced, with Black counterattacking White's space."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "Considered playable."
+    },
+    "structure": {
+      "notes": "Centre tension with e5 and ...d6."
+    },
+    "approach": {
+      "notes": "A rare option for strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans matter more than lines."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Unbalanced position with White's g4 weakening the king and Black counterattacking."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material change."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "It is seen as playable for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The e5 pawn tension decides later."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom picked by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding the counterplay is needed."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "hypermodern_centre"
+      ],
+      "reason": "White has space and Black attacks the centre."
+    }
+  }
+}

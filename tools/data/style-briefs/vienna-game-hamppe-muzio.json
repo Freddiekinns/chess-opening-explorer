@@ -1,0 +1,108 @@
+{
+  "slug": "vienna-game-hamppe-muzio",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Hamppe-Muzio, Dubois Variation",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 g5 5. Bc4 g4 6. O-O gxf3 7. Qxf3 Ne5 8. Qxf4 Qf6",
+    "fen": "r1b1kbnr/pppp1p1p/5q2/4n3/2B1PQ2/2N5/PPPP2PP/R1B2RK1 w kq - 1 9"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense-hamppe-muzio-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White has sacrificed a knight in the Hamppe-Muzio for the initiative. Black has the extra piece but has to find accurate defence. Known as the sharpest and riskiest Vienna gambit.",
+  "white_ideas": [
+    {
+      "idea": "Open lines against f7 and Black's king"
+    },
+    {
+      "idea": "Regain material through Qxf4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Return material to neutralise the attack"
+    },
+    {
+      "idea": "Develop pieces and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e/f-files"
+    },
+    {
+      "structure": "Black has extra piece"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A knight sacrifice and forcing play."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the piece."
+    },
+    "soundness": {
+      "notes": "The sacrifice is considered unsound at a high level."
+    },
+    "structure": {
+      "notes": "Wide open centre."
+    },
+    "approach": {
+      "notes": "Rarely used by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines to know."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A knight sacrifice and forcing play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "Black can keep the piece."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The sacrifice is considered unsound at a high level."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Wide open centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely used by strong players."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Long forcing lines to know."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

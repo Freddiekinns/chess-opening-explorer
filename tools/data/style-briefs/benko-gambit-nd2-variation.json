@@ -1,0 +1,113 @@
+{
+  "slug": "benko-gambit-nd2-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit: Nd2 Variation",
+    "eco": "A58",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. Nf3 g6 8. Nd2",
+    "fen": "rn1qkb1r/4pp1p/b2p1np1/2pP4/8/2N5/PP1NPPPP/R1BQKB1R b KQkq - 1 8"
+  },
+  "parent": "benko-gambit-accepted-fully-accepted-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black has sacrificed the b-pawn for pressure on the a- and b-files, and White's 8.Nd2 aims for Nc4 and a quick g3 or e4 set-up while guarding against ...Bxf1. Black develops with ...Bg7, ...Qa5 or ...Nbd7 and keeps the queenside pressure.",
+  "white_ideas": [
+    {
+      "idea": "Hold the extra pawn by consolidating with Nd2-c4 and g3/Bg2"
+    },
+    {
+      "idea": "Trade off Black's active pieces and neutralise the open files"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure the a- and b-files with rooks and queen"
+    },
+    {
+      "idea": "Fianchetto the dark-squared bishop and aim at White's queenside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benko pawn structure with White d5 pawn and Black c5/d6"
+    },
+    {
+      "structure": "Open a- and b-files for Black rooks"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional, long-term compensation rather than forcing tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black has given the b-pawn and White can keep it, as in the Benko generally."
+    },
+    "soundness": {
+      "notes": "The Benko is sound; Nd2 is a quiet attempt to keep the pawn."
+    },
+    "structure": {
+      "notes": "Half-open a- and b-files and a locked d5/c5 centre."
+    },
+    "approach": {
+      "notes": "Standard well-known gambit defence."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Compensation is positional and takes judgement more than theory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "queenside pressure on open files"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Qa5 line",
+      "moves": "8...Qa5",
+      "how": "Black aims at c3 and Nd2, a more active version than ...Bg7."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Black's compensation is positional pressure, not an immediate attack, and White has a calm plan."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "The Benko is a sound gambit and this line is a quiet way to meet it."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Half-open queenside files and a fixed centre give a semi-open character."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A respected gambit defence at all levels."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Compensation is judged positionally rather than learned as a forcing line."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Black's g7 bishop aims along the long diagonal at White's queenside."
+    }
+  }
+}

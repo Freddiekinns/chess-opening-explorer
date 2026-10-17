@@ -1,0 +1,113 @@
+{
+  "slug": "latvian-gambit-accepted-leonhardt-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit Accepted: Leonhardt Variation",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. Nc4 fxe4 5. Nc3",
+    "fen": "rnb1kbnr/pppp2pp/5q2/8/2N1p3/2N5/PPPP1PPP/R1BQKB1R b KQkq - 1 5"
+  },
+  "parent": "latvian-gambit-accepted-foltys-leonhardt-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.Nxe5 Qf6 4.Nc4 fxe4 Black has regained the pawn and White plays 5.Nc3 hitting e4. Black must defend with ...d5 or ...Qg6 while the queen stays exposed. White is solid and slightly better while Black hopes for tricks.",
+  "white_ideas": [
+    {
+      "idea": "Hit e4 and trade queenside pieces"
+    },
+    {
+      "idea": "Develop Ne3/d3 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn with ...d5"
+    },
+    {
+      "idea": "Use the f-file and queen for counterplay"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the e-file open"
+    },
+    {
+      "structure": "Black queen on f6 exposed to knight moves"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen sorties and forcing tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level at this point: each side has lost a pawn."
+    },
+    "soundness": {
+      "notes": "Strong players think White is better."
+    },
+    "structure": {
+      "notes": "Open lines, with the f- and e-files active."
+    },
+    "approach": {
+      "notes": "Latvian lines are seldom seen from strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific tricks matter and it is dubious."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main 4.Nc4 fxe4 5.d3",
+      "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. Nc4 fxe4 5. d3",
+      "how": "White challenges e4 directly"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Early queen and an exposed king."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "The e4 pawn has been traded for e5, so material is level."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.75,
+      "reason": "The Latvian is considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The centre pawns have been exchanged."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Anchor offbeat opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious lines are not beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black's queen is out early on f6."
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "scotch-game-gottschall-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Gottschall Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Be3 Qf6 6. c3 Nge7 7. Qd2 d5 8. Nb5 Bxe3 9. Qxe3 O-O 10. Nxc7 Rb8 11. Nxd5 Nxd5 12. exd5 Nb4",
+    "fen": "1rb2rk1/pp3ppp/5q2/3P4/1n6/2P1Q3/PP3PPP/RN2KB1R w KQ - 1 13"
+  },
+  "parent": "scotch-game-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 7.Qd2 Black plays 7...d5, and White can win a pawn or two with Nb5, Nxc7 and Nxd5. Black gets active pieces and the Nb4 knight. I read this as a sharp Black gambit that White can often keep.",
+  "white_ideas": [
+    {
+      "idea": "Collect the c7 and d5 pawns and retreat safely"
+    },
+    {
+      "idea": "Consolidate and play O-O-O or Be2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use Nb4 and the f6 queen for threats"
+    },
+    {
+      "idea": "Aim for the queenside with ...Qxb2"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with White up a pawn or two, Black pieces active"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Concrete forcing play and sacrificed pawns."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives c7 and d5."
+    },
+    "soundness": {
+      "notes": "Probably dubious."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs exact calculation."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "Pawns sacrificed for tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black gives the c7 and d5 pawns."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "White can keep the material."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Open Scotch centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for activity."
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "slug": "bishops-opening-lopez-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Lopez Variation",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. Qe2",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/2B1P3/8/PPPPQPPP/RNB1K1NR b KQkq - 3 3"
+  },
+  "parent": "bishops-opening-boi-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White puts the queen on e2 to support f4 and d4 while keeping the bishop on c4 eyeing f7. The most played idea is 3...Nf6 4.f4, the Lopez Gambit, though White can also play quietly with c3 and d3. Play is open, and White aims for a quick centre.",
+  "white_ideas": [
+    {
+      "idea": "Prepare f4 and d3 with the queen on e2"
+    },
+    {
+      "idea": "Pressure f7 from c4"
+    },
+    {
+      "idea": "Build a centre with c3 and d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...Nc6"
+    },
+    {
+      "idea": "Challenge the centre with ...d5 or ...d6"
+    },
+    {
+      "idea": "Answer f4 with ...exf4 or ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file play with f4 tension"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides develop naturally; White's f4 pushes the play toward sharper territory."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "At the root material is level and nothing is attacked yet."
+    },
+    "soundness": {
+      "notes": "Qe2 is slightly clumsy but sound."
+    },
+    "structure": {
+      "notes": "e4/e5 centre that opens after d4 or f4."
+    },
+    "approach": {
+      "notes": "A respectable but uncommon line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Quiet development with a few tactical traps."
+    }
+  },
+  "plan_phrases": [
+    "Pressure on f7",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Lopez Gambit",
+      "moves": "1. e4 e5 2. Bc4 Bc5 3. Qe2 Nf6 4. f4",
+      "how": "White offers a pawn for the centre and an attack."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The line can stay quiet or turn tactical and does not lean either way."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Material is level and nothing is attacked at the root position."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Qe2 is a harmless but playable developing move."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is not yet decided and can open with f4 or d4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "A normal if less common branch of the Bishop's Opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans are easy to grasp but Black's options need care."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "The bishop on c4 and quick development target f7."
+    }
+  }
+}

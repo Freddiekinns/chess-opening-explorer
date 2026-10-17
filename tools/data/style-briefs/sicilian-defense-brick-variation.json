@@ -1,0 +1,108 @@
+{
+  "slug": "sicilian-defense-brick-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Brick Variation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. Nh3",
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/7N/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "2.Nh3 is an odd anti-Sicilian: the knight aims for f4 and keeps the f-pawn free, but it is awkward on h3. Black normally replies ...d5 or ...Nc6/...g6 and has a comfortable Sicilian set-up. The line is a surprise weapon with little theory.",
+  "white_ideas": [
+    {
+      "idea": "Play Nf4 and f4 ideas on the kingside"
+    },
+    {
+      "idea": "Develop with d3/g3 and Bg2"
+    },
+    {
+      "idea": "Keep the structure flexible"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...d5"
+    },
+    {
+      "idea": "Develop normally with ...Nc6, ...g6, ...Bg7"
+    },
+    {
+      "idea": "Exploit the poorly placed knight"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian-type structure with a half-open c-file for Black"
+    },
+    {
+      "structure": "White knight misplaced on h3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A quiet sideline in which Black has easy development."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level."
+    },
+    "soundness": {
+      "notes": "Sound but inferior to 2.Nf3."
+    },
+    "structure": {
+      "notes": "A Sicilian structure with the c-file half-open."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Simple, but offers little to learn."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A quiet sideline in which neither side faces early danger."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.8,
+      "reason": "The knight is awkward but there is no tactical flaw.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.7,
+      "reason": "Every Sicilian leaves Black a half-open c-file against the e4 pawn."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever choose 2.Nh3."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "Not a good first repertoire choice since the knight is poorly placed.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [],
+      "reason": "No specific plan is typical of the line."
+    }
+  }
+}

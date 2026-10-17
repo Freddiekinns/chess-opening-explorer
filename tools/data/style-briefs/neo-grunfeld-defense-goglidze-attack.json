@@ -1,0 +1,107 @@
+{
+  "slug": "neo-grunfeld-defense-goglidze-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Neo-Grünfeld Defense: Goglidze Attack",
+    "eco": "D70",
+    "moves": "1. d4 Nf6 2. c4 g6 3. f3 d5",
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/5P2/PP2P1PP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "indian-defense-anti-grunfeld",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.f3 against the Grünfeld set-up, then after 3...d5 4.cxd5 Nxd5 5.e4 Nb6 builds a large pawn centre of d4, e4 and f3. Black attacks it with ...Bg7, ...O-O and ...c5 or ...e5 breaks. Play is a classic hypermodern battle between centre and pieces.",
+  "white_ideas": [
+    {
+      "idea": "Hold the big centre with Nc3, Be3 and Qd2"
+    },
+    {
+      "idea": "Castle queenside for a possible kingside pawn storm"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Undermine d4 with ...c5 and ...Bg7"
+    },
+    {
+      "idea": "Challenge e4 with ...Nc6 or ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d4/e4/f3 pawn trio against Black piece pressure"
+    },
+    {
+      "structure": "Opposite-side castling tendencies"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black counterattacks a large centre; tension but not forced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawn is exchanged on d5."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "White centre against hypermodern pieces; tension in the centre."
+    },
+    "approach": {
+      "notes": "The Neo-Grünfeld Goglidze is a rare anti-Grünfeld."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Both centre handling and some theory."
+    }
+  },
+  "plan_phrases": [
+    "hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Centre vs pieces, chances for both."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "Pawn comes back on d5."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Fully playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Centre contested rather than locked or open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Rare but respectable anti-Grünfeld."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Centre handling over memory."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "space_advantage"
+      ],
+      "reason": "White big centre, Black hypermodern counterplay."
+    }
+  }
+}

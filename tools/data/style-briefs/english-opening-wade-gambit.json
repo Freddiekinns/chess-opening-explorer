@@ -1,0 +1,105 @@
+{
+  "slug": "english-opening-wade-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Wade Gambit",
+    "eco": "A10",
+    "moves": "1. c4 f5 2. g4",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/2P3P1/8/PP1PPP1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "english-opening-anglo-dutch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Against the Anglo-Dutch 1...f5, White plays 2.g4 as a gambit, wanting to open the g-file and the long diagonal after ...fxg4. Black can take and hold the pawn with ...Nf6 and ...e5, and White has a lead in development but weakened kingside. It is a risky, rarely played surprise.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with Nc3, Bg2 and Qb3"
+    },
+    {
+      "idea": "Harass Black with Qb3 and Bg2 on the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on g4 and return the pawn if needed"
+    },
+    {
+      "idea": "Develop smoothly with ...Nf6, ...e5 and ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch-like f-file with Black pawn on g4 and a loosened White kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early flank pawn sacrifice gives forcing but double-edged positions."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 2.g4 fxg4 Black has an extra pawn and can keep it."
+    },
+    "soundness": {
+      "notes": "Considered dubious by most strong players."
+    },
+    "structure": {
+      "notes": "The f-file and g-file open early."
+    },
+    "approach": {
+      "notes": "Strong players hardly play it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Pawn for development",
+    "Open kingside files"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A wing pawn sacrifice gives double-edged tactical play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White plays 2.g4 and Black can keep the pawn after fxg4."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can accept and play ...Nf6 with an extra pawn."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "The f-file and g-file open while the centre is still undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner; tactical lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White plays for time and attack against the loosened black king."
+    }
+  }
+}

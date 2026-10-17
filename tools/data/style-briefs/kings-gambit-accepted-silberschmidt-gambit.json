@@ -1,0 +1,31 @@
+{
+  "slug": "kings-gambit-accepted-silberschmidt-gambit",
+  "tier": "unsourced",
+  "root": { "name": "King's Gambit Accepted: Silberschmidt Gambit", "eco": "C37", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Ne5 Qh4+ 6. Kf1 Nh6 7. d4 f3", "fen": "rnb1kb1r/pppp1p1p/7n/4N3/2BPP1pq/5p2/PPP3PP/RNBQ1K1R w kq - 0 8" },
+  "parent": "kings-gambit-accepted-salvio-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Salvio, White's king has lost castling after the check on h4, and Black pushes ...f3 to rip open the g2 and f1 area. White recaptures with gxf3 or Nxf3 hoping to attack the black queen and king, while Black keeps extra pawns and an exposed White king to play against. It is a sharp, forcing line where White's compensation is the lead in development and tempo gains against Black's loose pieces.",
+  "white_ideas": [{ "idea": "Win time against the queen and knight with Nxf3, Bxf7+ or Qd3" }, { "idea": "Open the f-file and h-file with Rxh... lines to hunt the Black king" }],
+  "black_ideas": [{ "idea": "Keep the extra pawns and use the exposed white king" }, { "idea": "Trade queens or retreat the queen and consolidate" }],
+  "typical_structures": [{ "structure": "Open kingside with White king on f1, Black pawns on f3/g4 and active queen on h4" }],
+  "axis_evidence": {
+    "character": { "notes": "Forcing sacrificial lines with kings exposed on both sides." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "White is at least a pawn down and Black can keep it with correct play." },
+    "soundness": { "notes": "Considered dubious: White's king is stranded and Black consolidates." },
+    "structure": { "notes": "Open kingside with pieces on open lines." },
+    "approach": { "notes": "Seldom played by strong players." },
+    "level": { "reason": "memory", "notes": "Forcing theory but rarely met." }
+  },
+  "plan_phrases": ["lead in development", "kingside attack"],
+  "sublines_that_differ": [{ "name": "Salvio 7.d4 d6", "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. Ne5 Qh4+ 6. Kf1 Nh6 7. d4 d6", "how": "Black first challenges the knight instead of pushing f3." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.9, "reason": "Exposed kings and sacrificial tactics make the game forcing." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White is a pawn or more down and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.6, "reason": "White's king is stuck on f1 and Black can consolidate." },
+    "structure": { "value": "open", "confidence": 0.8, "reason": "The kingside is wide open and the game turns on piece activity." },
+    "approach": { "value": "offbeat", "confidence": 0.65, "reason": "Strong players seldom enter the Salvio today." },
+    "level": { "value": "intermediate", "why": "memory", "confidence": 0.5, "reason": "A dubious sharp line, forced but rarely met." },
+    "plans": { "value": ["lead_in_development", "kingside_attack"], "reason": "White hopes to use development and the open lines against the Black king." }
+  }
+}

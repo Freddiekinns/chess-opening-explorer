@@ -1,0 +1,106 @@
+{
+  "slug": "ruy-lopez-brentano-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Brentano Gambit",
+    "eco": "C60",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 g5",
+    "fen": "r1bqkbnr/pppp1p1p/2n5/1B2p1p1/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  "parent": "ruy-lopez",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.Bb5 Black plays 3...g5, a wild counter hitting nothing but opening the kingside. White can take with 4.Nxg5 and has an extra pawn, with Black hoping for ...Qxg5 tricks and development. Strong players regard the move as bad, a surprise weapon only.",
+  "white_ideas": [
+    {
+      "idea": "Take the g5 pawn and develop sensibly"
+    },
+    {
+      "idea": "Hit the centre with d4 or a Bxc6 trade"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the open g-file and rapid development"
+    },
+    {
+      "idea": "Hope for tricks around f2 and the king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open game with a weakened black kingside"
+    },
+    {
+      "structure": "White extra pawn on g5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A risky Black gambit that rarely works."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 4.Nxg5 White keeps the pawn with little compensation for Black."
+    },
+    "soundness": {
+      "notes": "Dubious: White simply takes the pawn and has the better game."
+    },
+    "structure": {
+      "notes": "Open game."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious so never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black takes a big risk for activity."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black gives the g-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.85,
+      "reason": "White simply takes the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Open e4/e5 game."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Not played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black hopes to use development for the pawn."
+    }
+  }
+}

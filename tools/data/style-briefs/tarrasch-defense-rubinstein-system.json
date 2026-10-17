@@ -1,0 +1,113 @@
+{
+  "slug": "tarrasch-defense-rubinstein-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Rubinstein System",
+    "eco": "D33",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3",
+    "fen": "r1bqkbnr/pp3ppp/2n5/2pp4/3P4/2N2NP1/PP2PP1P/R1BQKB1R b KQkq - 0 6"
+  },
+  "parent": "tarrasch-defense-two-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "White fianchettoes with 6.g3 against the Tarrasch Defense and after 6...cxd4 7.Nxd4 Nf6 8.Bg2 Be7 9.O-O O-O Black has an isolated queen's pawn against active White pieces. Black gets piece play and the bishop pair-like activity while White aims at the isolani with pressure on d5 and blockades.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with g3 and Bg2 aiming at d5"
+    },
+    {
+      "idea": "Blockade and attack the isolated d5 pawn"
+    },
+    {
+      "idea": "Trade pieces to emphasise the IQP weakness"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Active piece play for the isolated d-pawn"
+    },
+    {
+      "idea": "Use ...Bg4 and ...Be6 against the knights"
+    },
+    {
+      "idea": "Advance ...d4 or ...Re8 and ...Bf5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Isolated queen's pawn for Black on d5 with open c- and e-files"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Tarrasch is Balanced, where Black has activity at the cost of structure."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "A respected main line."
+    },
+    "structure": {
+      "notes": "IQP structure with half-open files."
+    },
+    "approach": {
+      "notes": "Mainstream."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "IQP handling for Black."
+    }
+  },
+  "plan_phrases": [
+    "IQP play",
+    "fianchetto",
+    "blockade"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "IQP positions with dynamic compensation, neither Solid nor forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A main-line system."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "IQP structure with half-open files."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A mainstream branch of the Tarrasch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "IQP play needs understanding."
+    },
+    "plans": {
+      "value": [
+        "isolated_queens_pawn",
+        "fianchetto",
+        "knight_outpost"
+      ],
+      "reason": "Black's IQP and White's fianchetto and blockade."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "queens-gambit-declined-semmering-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Semmering Variation",
+    "eco": "D30",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. e3 e6 5. Nbd2 Nbd7 6. Bd3 c5",
+    "fen": "r1bqkb1r/pp1n1ppp/4pn2/2pp4/2PP4/3BPN2/PP1N1PPP/R1BQK2R w KQkq - 0 7"
+  },
+  "parent": "semi-slav-defense-quiet-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Semi-Slav Quiet Variation White has Bd3 and Nbd2 and Black strikes at the centre with 6...c5, challenging d4. White usually plays O-O and either exchanges on c5 or d4 or lets Black take on d4, leading to IQP or open structures. Black takes the pawn on c4 with ...dxc4 Bxc4 and ...a6 at suitable times. Solid but flexible.",
+  "white_ideas": [
+    {
+      "idea": "Castle, play b3 and Bb2 or e4 to claim the centre."
+    },
+    {
+      "idea": "Capture dxc5 or exchange on d5 to keep the structure."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure d4 with ...c5, then ...cxd4 and ...dxc4 for hanging or isolated pawns."
+    },
+    {
+      "idea": "Develop ...b6 and ...Bb7 or ...a6 with queenside play."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Semi-Slav centre with the c5 break leading to an isolated queen's pawn or hanging pawns."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Quiet Semi-Slav is steady, with Black's structure sound despite some tension."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit; any pawn comes back at once."
+    },
+    "soundness": {
+      "notes": "A sound main-line type system."
+    },
+    "structure": {
+      "notes": "The centre is in tension with c5 against d4 and neither side has committed."
+    },
+    "approach": {
+      "notes": "A respectable sideline within the Semi-Slav."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Typical IQP and hanging pawn play requires understanding more than memory."
+    }
+  },
+  "plan_phrases": [
+    "isolated queen's pawn",
+    "hanging pawns"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "The Quiet Semi-Slav is steady, with Black's structure sound despite some tension."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No gambit; any pawn comes back at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A sound main-line type system."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is in tension with c5 against d4 and neither side has committed."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A respectable sideline within the Semi-Slav."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Typical IQP and hanging pawn play requires understanding more than memory."
+    },
+    "plans": {
+      "value": [
+        "isolated_queens_pawn",
+        "hanging_pawns"
+      ],
+      "reason": "The ...c5 break leads to IQP or hanging pawns."
+    }
+  }
+}

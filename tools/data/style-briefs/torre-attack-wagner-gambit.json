@@ -1,0 +1,103 @@
+{
+  "slug": "torre-attack-wagner-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Torre Attack: Wagner Gambit",
+    "eco": "A46",
+    "moves": "1. d4 Nf6 2. Nf3 e6 3. Bg5 c5 4. e4",
+    "fen": "rnbqkb1r/pp1p1ppp/4pn2/2p3B1/3PP3/5N2/PPP2PPP/RN1QKB1R b KQkq - 0 4"
+  },
+  "parent": "torre-attack-classical-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 4.e4 against the Torre set-up, offering the central pawn to open lines. Black can take on d4 or e4 and keep a pawn, while White hopes for a lead in development and pressure on the Black king. The play is open and forcing, and the line is a rare side road from the usual Torre structure.",
+  "white_ideas": [
+    {
+      "idea": "Open the centre with e4 for piece play"
+    },
+    {
+      "idea": "Use Bg5 and the d-file to pressure the Black position"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on d4 or e4 and keep the pawn"
+    },
+    {
+      "idea": "Consolidate with ...Be7 and ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...cxd4 or ...Nxe4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn offered for activity opens the position at once."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can take on d4 or e4 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "Compensation looks doubtful."
+    },
+    "structure": {
+      "notes": "The d- and e-pawns are exchanged, opening the centre."
+    },
+    "approach": {
+      "notes": "A gambit that strong players seldom choose."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Some tactical knowledge helps."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A pawn offer and open lines make the play forcing."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White offers a pawn that Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Compensation for the pawn is questionable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Central pawns come off and lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The gambit aims for faster piece activity."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "sicilian-defense-gloria-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Gloria Variation",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. c4 d6 3. Nc3 Nc6 4. g3 h5",
+    "fen": "r1bqkbnr/pp2ppp1/2np4/2p4p/2P1P3/2N3P1/PP1P1P1P/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "sicilian-defense-staunton-cochrane-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black meets the 2.c4 Sicilian with a Closed-Sicilian-style set-up (...d6, ...Nc6) and then throws the h-pawn forward with ...h5, hoping to cramp a kingside fianchetto and later hook g4. White simply develops with Bg2, d3 and Nge2 or Nf3 and can answer ...h5 with h4 or ignore it. Rare with little theory, so reasoned from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Complete the fianchetto with Bg2, d3, Nge2 and castle, keeping the centre flexible."
+    },
+    {
+      "idea": "Use the loosened g5 and g6 squares if Black's h-pawn advance overreaches."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain space on the kingside with ...h5-h4 to undermine g3."
+    },
+    {
+      "idea": "Develop with ...g6 or ...e5 and ...Nf6 behind the h-pawn."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Closed-Sicilian-like set-up with White pawns on c4, e4 and g3 and Black pawns on c5, d6 and h5."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, non-forcing set-up in which the ...h5 thrust is a side idea rather than a real attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "...h5 is odd but costs nothing concrete, and White has no forcing way to punish it."
+    },
+    "structure": {
+      "notes": "Sicilian-type asymmetric centre with a c5 pawn against e4 and an eventual half-open file."
+    },
+    "approach": {
+      "notes": "The 2.c4 move order with an early ...h5 is something strong players almost never choose."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few forcing lines, but a rare idea that is hard to judge, so not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "early h-pawn thrust",
+    "kingside fianchetto",
+    "space on the wing"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Slow, non-forcing set-up in which the ...h5 thrust is a side idea rather than a real attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given up on purpose."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "...h5 is odd but costs nothing concrete, and White has no forcing way to punish it."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "Sicilian-type asymmetric centre with a c5 pawn against e4 and an eventual half-open file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "The 2.c4 move order with an early ...h5 is something strong players almost never choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Few forcing lines, but a rare idea that is hard to judge, so not a first repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "fianchetto"
+      ],
+      "reason": "White fianchetto against Black's flank pawn push; read from the moves."
+    }
+  }
+}

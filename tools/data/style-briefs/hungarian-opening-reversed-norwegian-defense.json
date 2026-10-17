@@ -1,0 +1,111 @@
+{
+  "slug": "hungarian-opening-reversed-norwegian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Reversed Norwegian Defense",
+    "eco": "A00",
+    "moves": "1. g3 e5 2. Nf3 e4 3. Nh4",
+    "fen": "rnbqkbnr/pppp1ppp/8/8/4p2N/6P1/PPPPPP1P/RNBQKB1R b KQkq - 1 3"
+  },
+  "parent": "hungarian-opening-reversed-alekhine",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black pushes 2...e4 against the fianchetto and White's knight goes to the rim on h4, aiming at f5 and g6 but offside. Black gains space with the e4 pawn and White hopes to undermine it with d3. The position is unclear and the knight on h4 may be harassed with ...g5.",
+  "white_ideas": [
+    {
+      "idea": "Undermine e4 with d3 and bring the knight back with Ng2 or Nf5"
+    },
+    {
+      "idea": "Use the long diagonal with Bg2"
+    },
+    {
+      "idea": "Aim to exploit the advanced e4 pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support e4 with ...d5 and ...Nf6"
+    },
+    {
+      "idea": "Harass the h4 knight with ...g5 or ...Qxh4"
+    },
+    {
+      "idea": "Use the space to attack on the kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black e4/d5 centre against White's fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The knight on h4 and Black's advanced pawn make the game unbalanced but not necessarily forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Not clearly bad for White."
+    },
+    "structure": {
+      "notes": "Black has advanced the e-pawn, White hits it with d3; the centre is undecided."
+    },
+    "approach": {
+      "notes": "Rare and eccentric."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "No long theory, but the knight on the rim needs care."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "It is unusual but not especially solid or forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Nothing is refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is not yet settled."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom choose a knight on h4 here."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "No heavy theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "White fianchettoes and Black gains space with e4."
+    }
+  }
+}

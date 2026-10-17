@@ -1,0 +1,105 @@
+{
+  "slug": "van-geet-opening-gladbacher-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Gladbacher Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 e5 2. b3 d5 3. e4 dxe4 4. d3",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p3/4p3/1PNP4/P1P2PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "van-geet-opening-reversed-nimzowitsch",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White has played b3 and e4 and now offers the e-pawn with 4.d3, hoping for the bishop pair, a fianchetto on b2 and pressure on e5. Black can take on d3 or hold the pawn with ...f5, usually staying a pawn up. Read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Recapture on d3 with Bxd3 and fianchetto with Bb2"
+    },
+    {
+      "idea": "Attack e5 with Nge2 and Nf3 using the b2 bishop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take with ...exd3 and develop quickly"
+    },
+    {
+      "idea": "Support the extra pawn with ...f5 or ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on e5 and e4 or d3 against White's b3 fianchetto set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White gives a pawn and Black has choices that lead to tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "The e-pawn is lost and Black can keep it."
+    },
+    "soundness": {
+      "notes": "The compensation is slight against accurate defence."
+    },
+    "structure": {
+      "notes": "Pawn exchanges in the centre open lines."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so not Beginner, and little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "pawn for development",
+    "long diagonal pressure on e5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "White gives a pawn and Black has choices that lead to tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "The e-pawn is lost and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "The compensation is slight against accurate defence."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "Pawn exchanges in the centre open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious so not Beginner, and little to memorise."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "White gives a pawn for development and the long diagonal."
+    }
+  }
+}

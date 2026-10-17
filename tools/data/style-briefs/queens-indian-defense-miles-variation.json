@@ -1,0 +1,116 @@
+{
+  "slug": "queens-indian-defense-miles-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Miles Variation",
+    "eco": "E12",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. Bf4",
+    "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP1B2/5N2/PP2PPPP/RN1QKB1R b KQkq - 1 4"
+  },
+  "parent": "queens-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White develops the bishop to f4 against the Queen's Indian (4.Bf4), aiming for e3, h3 and Nbd2 in a London-style set-up rather than the usual g3 fianchetto. Black replies ...Bb7 and ...Bb4+ or ...Be7, fighting for e4, and play is quiet and manoeuvring with a slight edge for White at best.",
+  "white_ideas": [
+    {
+      "idea": "Develop the bishop to f4 before e3"
+    },
+    {
+      "idea": "Play e3, h3, Nbd2 and Bd3 or Be2"
+    },
+    {
+      "idea": "Hold e4 and aim for a small space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto with ...Bb7 and fight for e4"
+    },
+    {
+      "idea": "Pin with ...Bb4+ and ...Ne4 ideas"
+    },
+    {
+      "idea": "Free the game with ...c5 or ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "QID structure with e6/b6/d6 pawns against a c4/d4/e3 White set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Steady development with few early tactics; Black has a sound set-up."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "A respectable sideline against the QID."
+    },
+    "structure": {
+      "notes": "Pawn tension in the centre; both sides keep options."
+    },
+    "approach": {
+      "notes": "A sideline against the QID, not a system for use against everything."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans about e4 and piece placement matter."
+    }
+  },
+  "plan_phrases": [
+    "fight for e4",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5.e3 Bb4+",
+      "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. Bf4 Bb7 5. e3 Bb4+",
+      "how": "Black pins early and White chooses Nbd2 or Nfd2."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Quiet development with few forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "A normal sideline."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A sideline of the QID, not a universal system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans rather than memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Black's ...Bb7 fianchetto shapes the position."
+    }
+  }
+}

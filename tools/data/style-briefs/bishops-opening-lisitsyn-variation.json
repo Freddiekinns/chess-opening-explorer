@@ -1,0 +1,105 @@
+{
+  "slug": "bishops-opening-lisitsyn-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Lisitsyn Variation",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 c6 3. d4 d5 4. exd5 cxd5 5. Bb5+ Bd7 6. Bxd7+ Nxd7 7. dxe5 Nxe5 8. Ne2",
+    "fen": "r2qkbnr/pp3ppp/8/3pn3/8/8/PPP1NPPP/RNBQK2R b KQkq - 1 8"
+  },
+  "parent": "bishops-opening-philidor-counterattack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "The Philidor Counterattack leads to open exchanges: after 5.Bb5+ Bd7 6.Bxd7+ Nxd7 7.dxe5 Nxe5 8.Ne2 Black has an isolated d5 pawn but active pieces and open lines. Black plays ...Nf6 and ...Bd6 or ...Qb6 with active pieces; White completes development with Nbc3 and O-O. Level play with simple plans.",
+  "white_ideas": [
+    {
+      "idea": "Develop Nbc3 and castle, then attack the d5 pawn with Nf4 or Nbc3."
+    },
+    {
+      "idea": "Exploit the half-open d-file against Black's isolated d5 pawn."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop quickly with ...Nf6, ...Bd6, ...O-O; use the knight on e5."
+    },
+    {
+      "idea": "Push ...d4 if the knight on c3 can be driven away."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black isolated pawn on d5 against White's lack of a d- and e-pawn; open e-file."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Simple development with a mildly weak d5 pawn for Black and open lines but nothing forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "All trades are equal."
+    },
+    "soundness": {
+      "notes": "Reasonable equal position for both sides."
+    },
+    "structure": {
+      "notes": "Exchange structure with the e-file open and an isolated d5 pawn."
+    },
+    "approach": {
+      "notes": "A respectable line of the Bishop's Opening, not rare at the top level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans around the isolated pawn, little to memorise but not a first-repertoire line."
+    }
+  },
+  "plan_phrases": [
+    "isolated pawn on d5",
+    "open e-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Simple development with a mildly weak d5 pawn for Black and open lines but nothing forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "All trades are equal."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Reasonable equal position for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Exchange structure with the e-file open and an isolated d5 pawn."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A respectable line of the Bishop's Opening, not rare at the top level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Clear plans around the isolated pawn, little to memorise but not a first-repertoire line."
+    },
+    "plans": {
+      "value": [
+        "isolated_queens_pawn",
+        "knight_outpost"
+      ],
+      "reason": "Black's d5 pawn and a knight on e5 define the play."
+    }
+  }
+}

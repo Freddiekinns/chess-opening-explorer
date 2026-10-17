@@ -1,0 +1,112 @@
+{
+  "slug": "kings-pawn-game-philidor-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Pawn Game: Philidor Gambit",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. d4 d6 3. dxe5 Bd7",
+    "fen": "rn1qkbnr/pppb1ppp/3p4/4P3/4P3/8/PPP2PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "kings-pawn-game-maroczy-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black declines to recapture on e5 after 3.dxe5 and plays 3...Bd7, planning to meet exd6 with ...Bxd6 or ...Bxd6 and fast development. White is a pawn up and can keep it with accurate play. The line is rare and of doubtful value.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn and defend e5"
+    },
+    {
+      "idea": "Develop Nf3, Bc4 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture the pawn with ...Bxd6/...dxe5 later"
+    },
+    {
+      "idea": "Play ...Nc6 and ...Nf6 with active pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White centre pawn on e5 attacked by d6 and Nc6"
+    },
+    {
+      "structure": "Open lines on both wings"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for activity down a pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White keeps the pawn with exd6 Bxd6 or f4."
+    },
+    "soundness": {
+      "notes": "Black has little compensation against careful play."
+    },
+    "structure": {
+      "notes": "Tension around e5 and open lines."
+    },
+    "approach": {
+      "notes": "Rare and speculative."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory, but dubious."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Philidor with 3...dxe5",
+      "moves": "1. e4 e5 2. d4 d6 3. dxe5 dxe5",
+      "how": "queen trade, a calm and standard Philidor line"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black risks a pawn for quick development."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.55,
+      "reason": "Black avoids the recapture on e5 and plays on a pawn down."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Strong players think the compensation is thin."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Lines open in the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Hardly played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not for beginners."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black wants quick development in return for the pawn."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "dutch-defense-senechaud-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Senechaud Gambit",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. Bf4 e6 3. g4",
+    "fen": "rnbqkbnr/pppp2pp/4p3/5p2/3P1BP1/8/PPP1PP1P/RN1QKBNR b KQkq - 0 3"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 3.g4 after 2.Bf4 e6, offering the g-pawn to open the g-file and chase the f5 pawn. Black can take with ...fxg4 and has a safe extra pawn, while White hopes for Qd2, Nc3 and h3 plus rapid development. The theory is thin, so the evidence is kept short.",
+  "white_ideas": [
+    {
+      "idea": "Open the h- and g-files with h3 and develop with Nc3 and Qd2"
+    },
+    {
+      "idea": "Use the f4 bishop and the weak e5 square"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Capture ...fxg4 and consolidate with ...Nf6, ...d5"
+    },
+    {
+      "idea": "Challenge the bishop with ...Nf6 and ...Nh5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside files after g-pawn trade; central pawns undecided"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early kingside pawn offer, concrete and double-edged."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White's g4 pawn can be taken with ...fxg4."
+    },
+    "soundness": {
+      "notes": "Probably unsound against good play."
+    },
+    "structure": {
+      "notes": "Flexible as the centre is not fixed."
+    },
+    "approach": {
+      "notes": "Strong players rarely try it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "gambit",
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Early pawn offer and open lines against the king."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White gives the g-pawn, Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Kingside pawn offer with little development behind it."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre remains undecided while the g-file opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Strong players hardly choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White offers the pawn for open lines and quicker development against Black's king."
+    }
+  }
+}

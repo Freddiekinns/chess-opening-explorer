@@ -1,0 +1,105 @@
+{
+  "slug": "latvian-gambit-behting-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Behting Variation",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Bc4 fxe4 4. Nxe5 Qg5 5. Nf7 Qxg2 6. Rf1 d5 7. Nxh8 Nf6",
+    "fen": "rnb1kb1N/ppp3pp/5n2/3p4/2B1p3/8/PPPP1PqP/RNBQKR2 w Qq - 1 8"
+  },
+  "parent": "latvian-gambit-mayet-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Both sides play an almost forced tactical sequence: ...Qg5, Nf7 Qxg2, Rf1 d5 and Nxh8 Nf6. White has two pawns plus a rook for them, while Black has the queen on g2 and pieces ready. The game goes on to a messy attack and counter-attack.",
+  "white_ideas": [
+    {
+      "idea": "Keep the material and consolidate, then play Bxd5 and Qh5"
+    },
+    {
+      "idea": "Use Nxh8 and the open f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the queen and initiative on g2 to attack the king"
+    },
+    {
+      "idea": "Develop with ...Bg4 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with wide king exposure on both sides"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing tactics from move three. Highly forcing."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep a pawn."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Wide open."
+    },
+    "approach": {
+      "notes": "The Latvian is seldom played at all."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious lines are not Beginner; forcing theory is needed."
+    }
+  },
+  "plan_phrases": [
+    "early queen raid"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "Forcing tactics from move three."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black sacrifices material."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "Considered dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Wide open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "The Latvian is seldom played at all."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious lines are not Beginner; forcing theory is needed."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen",
+        "kingside_attack"
+      ],
+      "reason": "Black’s queen goes to g5 and g2."
+    }
+  }
+}

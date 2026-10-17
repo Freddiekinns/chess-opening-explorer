@@ -1,0 +1,105 @@
+{
+  "slug": "zukertort-defense-kingside-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Defense: Kingside Variation",
+    "eco": "A04",
+    "moves": "1. Nf3 Nh6 2. d4 g6",
+    "fen": "rnbqkb1r/pppppp1p/6pn/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black answers 1.Nf3 with the odd ...Nh6, aiming for ...g6 and ...Nf5 and then ...Bg7. White develops in the centre with d4 and gets a comfortable space advantage. It is a rarely seen defence that gives Black a clumsy but solid set-up.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with d4, c4 and Nc3"
+    },
+    {
+      "idea": "Play for space and ignore the knight on h6"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto the bishop and reroute the knight to f5"
+    },
+    {
+      "idea": "Aim for a slow set-up"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Pawn centre for White against a fianchetto set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "I do not know this defence well and reason from the moves."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "The knight is badly placed, but White cannot force a win."
+    },
+    "structure": {
+      "notes": "White occupies the centre and Black fianchettoes."
+    },
+    "approach": {
+      "notes": "Black's ...Nh6 is seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few theory demands."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "space_advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "The set-up is quiet but passive."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Passive but not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre has not been resolved."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rarely seen at a high level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not complicated to play."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Black fianchettoes while White gains space."
+    }
+  }
+}

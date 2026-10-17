@@ -1,0 +1,104 @@
+{
+  "slug": "dutch-defense-krause-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Krause Variation",
+    "eco": "A84",
+    "moves": "1. d4 f5 2. c4 Nf6 3. Nc3 d6 4. Nf3 Nc6",
+    "fen": "r1bqkb1r/ppp1p1pp/2np1n2/5p2/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 2 5"
+  },
+  "parent": "dutch-defense-queens-knight-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays the Dutch with 4...Nc6, planning ...e5 in the Staunton style while keeping the f5 pawn. White replies with d5 or e3 and a normal development. The position has unbalanced Dutch features: White has central space, Black the kingside initiative and e5 break. The main-line order I'm unsure of.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with d5 or e4"
+    },
+    {
+      "idea": "Develop with e3, Be2 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike with ...e5 and use the f-pawn"
+    },
+    {
+      "idea": "Put pieces on the kingside and aim at e4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch structure with ...f5 and ...d6 and the ...e5 break"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Dutch lines lead to unbalanced play where both players take risks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed."
+    },
+    "soundness": {
+      "notes": "A sound if less common Dutch line."
+    },
+    "structure": {
+      "notes": "The centre is undecided at this point."
+    },
+    "approach": {
+      "notes": "Played at times by strong players, though not the main Dutch set-up."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Requires understanding of Dutch structures."
+    }
+  },
+  "plan_phrases": [
+    "...e5 break",
+    "kingside initiative"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "The Dutch tends to give unbalanced positions and mutual risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A playable Dutch line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre tension is unresolved."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Played now and then at strong level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding of Dutch plans over memorisation."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "The sides fight over central space and the ...e5 break."
+    }
+  }
+}

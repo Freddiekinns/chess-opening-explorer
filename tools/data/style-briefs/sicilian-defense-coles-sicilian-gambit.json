@@ -1,0 +1,114 @@
+{
+  "slug": "sicilian-defense-coles-sicilian-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Coles Sicilian Gambit",
+    "eco": "B21",
+    "moves": "1. e4 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qd1 Nf6 5. Bc4",
+    "fen": "r1bqkb1r/pp1ppppp/2n2n2/8/2B1P3/8/PPP2PPP/RNBQK1NR b KQkq - 4 5"
+  },
+  "parent": "sicilian-defense-smith-morra-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White recaptures on d4 with the queen, retreats it, and plays Bc4 aiming at f7 while the e4 pawn is loose. Black can take e4 with the knight and White gets a lead in development for the pawn. It is a rare, tricky sideline of the Sicilian.",
+  "white_ideas": [
+    {
+      "idea": "Hit f7 with Bc4 and Qd5-type ideas"
+    },
+    {
+      "idea": "Develop quickly with Nc3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take e4 and then trade pieces"
+    },
+    {
+      "idea": "Play ...e6 and ...d5 to consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the c-pawn gone"
+    },
+    {
+      "structure": "Black loose e4 pressure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactical with a loose e4 and Bxf7 tricks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black wins the e4 pawn with ...Nxe4."
+    },
+    "soundness": {
+      "notes": "Black holds with accurate play."
+    },
+    "structure": {
+      "notes": "Semi-open Sicilian."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Tricky tactics."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Smith-Morra",
+      "moves": "1. e4 c5 2. d4 cxd4 3. c3",
+      "how": "the main gambit with pawn on c3"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "White plays on the initiative."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.45,
+      "reason": "White leaves e4 attacked for tempo."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The compensation is thin against accurate play."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.6,
+      "reason": "The c-pawn is gone, typical for a Sicilian."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious so not beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "Bc4 and quick development point at f7."
+    }
+  }
+}

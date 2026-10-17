@@ -1,0 +1,107 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-holwell-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Holwell Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Qd6",
+    "fen": "rnb1kb1r/ppp1pppp/3q1n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Blackmar-Diemer Gambit Accepted Black has taken two pawns and plays ...Qd6 to hit Nf3 and Nc3 early. White develops with tempo, typically Bf4 or Bd3 and Bg5, and castles long for an attack while Black tries to consolidate the extra material.",
+  "white_ideas": [
+    {
+      "idea": "Gain tempo on the queen with Bf4 or Bb5+ and Bg5"
+    },
+    {
+      "idea": "Develop fast and aim at the king with Qd2, O-O-O and Ne5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Return the pawn at the right moment and trade queens"
+    },
+    {
+      "idea": "Get the king safe with ...Bd7 or ...e6 and develop ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White has a big lead in development and open centre files"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen and tempo play; White attacks, Black must find precise defence."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "BDG: White is a pawn down and Black can hold the extra pawn."
+    },
+    "soundness": {
+      "notes": "The BDG is regarded as playable but slightly dubious at the top; the Holwell queen sortie is a respectable defence."
+    },
+    "structure": {
+      "notes": "Open centre after the d- and e-pawns are exchanged."
+    },
+    "approach": {
+      "notes": "The BDG is a gambit seldom played at elite level, mainly used for surprise."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp move-order traps and long theory; White needs to know the lines."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack",
+    "Early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "White sacrifices for fast development and an attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White is a pawn down for development."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.45,
+      "reason": "Playable gambit in practice though not objectively best."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The centre has opened and the queen is exposed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "The BDG is seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A theory-heavy but not top-level line."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack",
+        "early_queen"
+      ],
+      "reason": "White develops with tempo against the exposed queen."
+    }
+  }
+}

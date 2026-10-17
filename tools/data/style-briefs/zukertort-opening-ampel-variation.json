@@ -1,0 +1,105 @@
+{
+  "slug": "zukertort-opening-ampel-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Ampel Variation",
+    "eco": "A06",
+    "moves": "1. Nf3 d5 2. Rg1",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/5N2/PPPPPPPP/RNBQKBR1 b Qkq - 1 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "1.Nf3 d5 2.Rg1 is a joke-flavoured idea: White plans g4 and g5 on the cheap, giving up castling rights on the kingside. Black simply develops with ...Nf6, ...c5 or ...e6 and takes the centre. If White follows through with g4 it is a pawn storm race; otherwise the rook is simply misplaced.",
+  "white_ideas": [
+    {
+      "idea": "Push g4 and g5 to harass Black's kingside"
+    },
+    {
+      "idea": "Castle queenside or keep the king in the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Occupy the centre with ...d5, ...Nf6 and ...c5"
+    },
+    {
+      "idea": "Punish the loss of tempo with active development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White flank pawn storm against a free Black centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Kingside pawn storm ideas make it risky for White, though Black can also play quietly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Losing time and castling rights with Rg1 for no clear gain is widely thought poor."
+    },
+    "structure": {
+      "notes": "No centre is fixed after two moves."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious so not Beginner; there is little to learn."
+    }
+  },
+  "plan_phrases": [
+    "Pawn storm with g4",
+    "Kingside space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "A pawn storm from White gives risky play, although Black can calm things quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No pawn is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Rg1 costs time and castling rights on move two."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided after 1.Nf3 d5 2.Rg1."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Practically never chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner, but there is little theory or deep strategy."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "The only point of Rg1 is the g4-g5 advance."
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "slug": "vienna-gambit-with-max-lange-defense-hamppe-allgaier-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Gambit, with Max Lange Defense: Hamppe-Allgaier Gambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 g5 5. h4 g4 6. Ng5",
+    "fen": "r1bqkbnr/pppp1p1p/2n5/6N1/4PppP/2N5/PPPP2P1/R1BQKB1R b KQkq - 1 6"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense-knight-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White prepares to sacrifice a piece for an attack on f7 with Ng5 and Nxf7, and has already played h4. Black can accept with ...d6 or ...h6 and keep the extra material. Strong players consider it unsound but it sets many traps.",
+  "white_ideas": [
+    {
+      "idea": "Attack f7 with Ng5 and Nxf7"
+    },
+    {
+      "idea": "Open lines with d4 and Bc4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take material and repel with ...d6 and ...h6"
+    },
+    {
+      "idea": "Return material to consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with exposed kings"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An old romantic gambit."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White gives a pawn now and a piece for the attack, and Black can keep the material."
+    },
+    "soundness": {
+      "notes": "Considered unsound."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "An obscure gambit."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Sharp known lines."
+    }
+  },
+  "plan_phrases": [
+    "pressure_on_f7",
+    "kingside_attack",
+    "lead_in_development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Alapin Variation",
+      "moves": "6...d6",
+      "how": "Black's calmer reply."
+    },
+    {
+      "name": "Thorold Variation",
+      "moves": "2.f4 exf4 3.Nf3 Nc6 4.Nc3 g5 5.h4 g4 6.Ng5 h6",
+      "how": "Different move order with ...h6."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.95,
+      "reason": "Piece sacrifices and mutual attacks."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.95,
+      "reason": "White gives material for the attack."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "Considered unsound by strong players."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Pieces and lines open at once."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "White attacks f7 and the king."
+    }
+  }
+}

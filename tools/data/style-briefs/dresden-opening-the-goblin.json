@@ -1,0 +1,103 @@
+{
+  "slug": "dresden-opening-the-goblin",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dresden Opening: The Goblin",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c4 Nf6 4. Nxe5",
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4N3/2P1P3/8/PP1P1PPP/RNBQKB1R b KQkq - 0 4"
+  },
+  "parent": "kings-pawn-game-dresden-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 3.c4 Nf6 White plays Nxe5, taking a central pawn. Black can recapture ...Nxe5 and the d-pawn gets pushed, but the line is little tested.",
+  "white_ideas": [
+    {
+      "idea": "Win the e5 pawn and hold it with d4"
+    },
+    {
+      "idea": "Use c4 and the pieces for space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain with ...Nxe5 or ...Bb4"
+    },
+    {
+      "idea": "Use development lead against the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file after exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unclear."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pieces traded."
+    },
+    "soundness": {
+      "notes": "Probably dubious."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Unbalanced tactical play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Not a deliberate gambit."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.4,
+      "reason": "Little tested."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Open e-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Rarely played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Not a beginner line."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black develops quickly."
+    }
+  }
+}

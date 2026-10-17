@@ -623,5 +623,577 @@
       "sources": [],
       "taxonomy_note": null
     }
+  },
+  "indian-defense-pseudo-benko": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Benoni-type d5/c5 centre with Black playing on the queenside files, as in the Benko Gambit precedent (semi_open); no pawn chains lock both centres.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "gambit": {
+      "value": "none",
+      "reason": "Material is level at the root and nothing attacks b5 yet; the most played 4.Bg5 ignores the pawn, so in the main line no material changes hands. Evidence cannot settle whether this counts as an offer, so the conservative value.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "With no gambit in the main line there is nothing refuted; White is comfortable, which is not the same as the line being close to refuted. Conservative hidden value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "nimzowitsch-defense-el-columpio-defense": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 4.d4 d6 5.h3 Nh6 the e5 pawn is exchanged or advanced to e6 and Black recaptures with the f-pawn, giving half-open files rather than locked chains; closed does not fit.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "petrovs-defense-karklins-martinovsky-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Petrov exchange of e-pawns with ...d5 against d-pawn play, the same structure as the Classical Attack, which is semi_open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "petrovs-defense-millennium-attack": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "5.Bd3 usually transposes to Classical Attack structures after d4 and ...d5; matched to that precedent (semi_open).",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-vitzthum-attack": {
+    "gambit": {
+      "value": "white",
+      "reason": "Scotch Gambit branch: White leaves the d4 pawn and Black can keep it; the name omits gambit but the material is given.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "6.Qh5 is a premature queen attack that ...Qe7 or ...Qf6 meets comfortably; strong players consider it unsound, unlike the 5.Ng5 mainlines.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "benko-gambit-zaitsev-variation": {
+    "character": {
+      "value": "sharp",
+      "reason": "6.e4 b4 7.Nb5 is the forcing Zaitsev: the knight heads for d6 while Black hits e4 and the centre, with concrete tactics on both sides.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "latvian-gambit-clam-gambit": {
+    "character": {
+      "value": "sharp",
+      "reason": "Black gives the f-pawn for open lines against the king after 3...f5 4.exf5, the same kind of play as the Latvian proper, which is sharp.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "modern-defense-fianchetto-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "2...f5 3.exf5 swaps White's e-pawn for Black's f-pawn: half-open files on each side while d4 and Black's centre pawns stay.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "modern-defense-westermann-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "3.Bd2 lets ...Bxd4 take the d-pawn without an exchange; White gets a half-open d-file while e4 and Black's c, d and e pawns remain.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "queens-gambit-declined-semi-slav": {
+    "structure": {
+      "value": "flexible",
+      "reason": "This is the Noteboom line (4...dxc4 5.a4 Bb4 6.e3 b5 7.Bd2 a5); matched to the Noteboom variation's exported structure, flexible.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ruy-lopez-noahs-ark-trap": {
+    "structure": {
+      "value": "open",
+      "reason": "6.d4 Nxd4 7.Nxd4 exd4 8.Qxd4 trades d-pawn for e-pawn as in the Scotch Game anchor (open), with the queen centralised and lines open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "vulture-defense": {
+    "structure": {
+      "value": "flexible",
+      "reason": "Benoni-type d5/c5 centre with no exchange yet; Black can choose ...e5 (closed, Old Benoni) or ...e6/...g6 (semi-open), so the evidence does not decide and the middle value stands.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "english-orangutan": {
+    "gambit": {
+      "value": "none",
+      "reason": "Material is level and nothing attacks b4 at the root; the usual 2...e5 or ...e6 is met by a3 or b5, like the Polish Opening, which is none.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "With no gambit, a playable Polish-type flank opening; not close to refuted.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "grob-opening-double-grob": {
+    "gambit": {
+      "value": "none",
+      "reason": "Material is level after 1.g4 g5; 2.f4 is one option, not forced. Matches the other Grob roots (Spike, Keene), all none.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Every Grob root already tagged is dubious for White; the reply ...g5 does not change that.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-horwitz-attack": {
+    "gambit": {
+      "value": "white",
+      "reason": "Steinitz Variation 4...Qh4 5.Nb5: the usual 5...Bb4+ 6.Bd2 Qxe4+ leaves White a pawn down for development, and Black can keep it.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "5.Nb5 is a main reply to the Steinitz and is not considered refuted.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "sicilian-defense-grob-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "2.g4 drops the g-pawn to ...d5 or ...Nc6 and ...h5 ideas and Black can keep it; a wing gambit in all but name.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "trompowsky-attack-poisoned-pawn-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "4.Nc3 leaves b2 to 4...Qxb2 and White plays for development; Black can keep the pawn.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ware-opening-meadow-hay-trap": {
+    "gambit": {
+      "value": "white",
+      "reason": "2.Ra3 drops the rook to ...Bxa3, the exchange given for almost nothing; Black keeps it.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "french-defense-baeuerle-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 2...b5 3.Bxb5 Black has a half-open b-file and no pawn chain is fixed yet; the French lock needs e5, which this line does not force.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "modern-defense-gurgenidze-defense": {
+    "character": {
+      "value": "solid",
+      "reason": "5.e5 h5 is a Caro-Kann-type blocked set-up: ...d5, ...c6 and ...h5 shut the kingside and Black aims for a fortress with play on the light squares, known as solid if passive.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "pterodactyl-defense-fianchetto": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Benoni-type d5/c5 centre with the long diagonal and the c- and b-files for Black; matched to the other Pterodactyl lines, all semi_open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "rat-defense-petruccioli-attack": {
+    "character": {
+      "value": "balanced",
+      "reason": "2.h4 is a flank lunge against a quiet set-up; neither forcing nor hard to break down, and the evidence does not decide, so the middle value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ruy-lopez-exchange": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "5.d4 exd4 6.Qxd4 gives the Exchange Variation structure, White's 4-3 kingside majority against Black's doubled c-pawns; matched to ruy-lopez-exchange-variation, semi_open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "london-system-poisoned-pawn-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "5.Nc3 leaves b2 to ...Qxb2, met by Nb5 ideas; Black can keep the pawn at a risk.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "The compensation is real and strong London players allow it.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ruy-lopez-halloween-attack": {
+    "gambit": {
+      "value": "white",
+      "reason": "4.Nxe5 gives a knight for two pawns and a centre; Black keeps the piece.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Considered unsound: Black returns nothing by force and stands better with accurate play.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "benko-gambit-declined-bishop-attack": {
+    "structure": {
+      "value": "flexible",
+      "reason": "4.Bg5 declines and the centre stays fluid: 4...Ne4, 4...Qb6 and 4...bxc4 each lead somewhere different, so the evidence does not decide; matched to the other declined lines (quiet line, Sosonko), flexible.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "caro-kann-defense-spike-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 2...d5 and ...dxe4 the e-pawn goes for the d-pawn as in the Caro-Kann main lines (semi_open); the c6 pawn stays and only one central pair is gone.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "gambit": {
+      "value": "white",
+      "reason": "The most played 3.Nc3 dxe4 4.d3 hands over the e-pawn and Black can keep it.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "benoni-defense-snail-variation": {
+    "structure": {
+      "value": "flexible",
+      "reason": "d5/c5 Benoni centre with nothing exchanged and Black free to choose ...e5 (closed) or ...e6/...g6; the same call as the Vulture, flexible.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "caro-kann-defense-massachusetts-defense": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "2...f5 3.exf5 swaps White's e-pawn for Black's f-pawn, giving half-open files on each side with d4 and Black's c- and d-pawns still there, as in the Modern Fianchetto Gambit (semi_open).",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "latvian-gambit-accepted-nimzowitsch-attack": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 5...fxe4 6.Ne3 Black keeps pawns on e4 and d6 against d4; the f-file is half-open for White, not an open centre.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "nimzowitsch-defense-hornung-gambit": {
+    "character": {
+      "value": "balanced",
+      "reason": "3.Be3 offers e4 for development, but Black can decline with ...e6 or ...Nf6 lines; the evidence splits, so the middle value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "queens-gambit-declined-zilbermints-gambit": {
+    "character": {
+      "value": "balanced",
+      "reason": "2...b5 3.cxb5 leaves Black a pawn down with little to attack; neither forcing nor solid, and the classifiers split, so the middle value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-romanishin-variation": {
+    "structure": {
+      "value": "open",
+      "reason": "The Scotch exchange on d4 leaves e4 against an open d-file and diagonals; matched to the Scotch Game anchor, open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "philidor-defense-nimzowitsch": {
+    "gambit": {
+      "value": "white",
+      "reason": "4.Ng5 aims at the Locock sacrifice on f7 after ...h6; Black can keep the knight.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "The knight sacrifice is unsound against accurate defence.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-braune-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "Steinitz 4...Qh4 5.Be3 lets ...Qxe4 take the e-pawn and Black can keep it.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Unlike 5.Nb5 or 5.Nc3, 5.Be3 gives the pawn for too little; Black is comfortable.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-fraser-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "5.Nf3 Qxe4+ 6.Be2 gives the e-pawn for development; Black keeps it.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Theory gives White insufficient compensation.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "grob-opening-romford-countergambit": {
+    "gambit": {
+      "value": "black",
+      "reason": "3...d4 is Black's countergambit: 4.Bxb7 Nd7 5.Bxa8 Qxa8 gives the exchange for a crushing long diagonal, and countergambits count. The g4 pawn White gave is already Black's; the line's own sacrifice is Black's.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "benko-gambit-accepted-central-storming-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Half-open a- and b-files against the d5 wedge, the Benko structure; matched to every accepted Benko line exported, all semi_open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "benko-gambit-nd2-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "The standard accepted Benko structure with Black's play down the a- and b-files; matched to the Benko precedents, semi_open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "benoni-defense-hawk-variation": {
+    "structure": {
+      "value": "flexible",
+      "reason": "3...c4 leaves the d5/c-pawn centre unexchanged and Black's set-up open to ...e6 or ...g6 lines; the same call as the Vulture and the Snail, flexible.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "english-opening-wade-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "2.g4 fxg4 trades a wing pawn for the f-pawn: half-open f- and g-files, with every central pawn still on the board, so not open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "kadas-opening-kadas-gambit": {
+    "character": {
+      "value": "balanced",
+      "reason": "1.h4 c5 2.b4 offers a wing pawn with little follow-up; neither forcing nor solid, and the classifiers split, so the middle value.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-cochrane-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "Scotch Gambit line where White gives the c-pawn as well (5.c3 dxc3 6.bxc3); Black keeps material.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "sound",
+      "reason": "A known Scotch Gambit branch with real development compensation; not refuted.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-paulsen-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "Steinitz 4...Qh4 5.Nf5 leaves e4 to ...Qxe4+; Black can keep the pawn.",
+      "sources": [],
+      "taxonomy_note": null
+    },
+    "soundness": {
+      "value": "dubious",
+      "reason": "Inferior to 5.Nb5 and 5.Nc3; Black takes on e4 with check and is comfortable.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "bird-opening-siegener-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 2...exd4 White keeps the e-pawn and Black the d-pawn, so each side gets one half-open file rather than an open centre.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "bishops-opening-lisitsyn-variation": {
+    "structure": {
+      "value": "open",
+      "reason": "By move 8 White has no d- or e-pawn and Black only an isolated d5 pawn, so the centre is open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "caro-kann-defense-mieses-attack": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "The e6 sacrifice leaves d4 and d5 standing and opens only the f-file; matches the Caro-Kann precedent (semi-open).",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "english-opening-zilbermints-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After dxe5 both sides keep a central pawn (e2 and d7); one capture does not open the centre. The open evidence is a single line.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "grunfeld-defense-gibbon-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "The wing pawn offer leaves a Grünfeld centre, with ...dxc4 giving a half-open file, as in the Grünfeld Exchange precedent (semi-open).",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "hungarian-opening-asten-gambit": {
+    "structure": {
+      "value": "flexible",
+      "reason": "Neither the brief (\"centre unclear\") nor either classifier gives a case; with ...d4 and e5 unlocked, the hidden middle value stands.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "marienbad-system-berg-variation": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "After 5...cxd4 6.Qxd4 White has a half-open d-file and Black a half-open c-file, the Hedgehog-like pattern, not an open centre.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "rat-defense-fuller-gambit": {
+    "structure": {
+      "value": "semi_open",
+      "reason": "Black gives the d-pawn for development as in the Scandinavian, whose precedent is semi-open.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ware-opening-ware-gambit": {
+    "character": {
+      "value": "balanced",
+      "reason": "A slow wing pawn offer against a broad centre is neither forcing nor hard to lose; matches the Ware Opening precedent (balanced).",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "english-opening-porcupine-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "Checked against the moves at the root: the named line itself gives the pawn(s), so the gambit is the main line here, not a rare branch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "kadas-opening-myers-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "Checked against the moves at the root: the named line itself gives the pawn(s), so the gambit is the main line here, not a rare branch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "modern-defense-dunworthy-variation": {
+    "gambit": {
+      "value": "black",
+      "reason": "Checked against the moves at the root: the named line itself gives the pawn(s), so the gambit is the main line here, not a rare branch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "ruy-lopez-rabinovich-variation": {
+    "gambit": {
+      "value": "black",
+      "reason": "Checked against the moves at the root: the named line itself gives the pawn(s), so the gambit is the main line here, not a rare branch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-gottschall-variation": {
+    "gambit": {
+      "value": "black",
+      "reason": "Checked against the moves at the root: the named line itself gives the pawn(s), so the gambit is the main line here, not a rare branch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-hanneken-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "Checked against the moves at the root: the named line itself gives the pawn(s), so the gambit is the main line here, not a rare branch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-rosenthal-variation": {
+    "gambit": {
+      "value": "white",
+      "reason": "Checked against the moves at the root: the named line itself gives the pawn(s), so the gambit is the main line here, not a rare branch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
+  },
+  "scotch-game-sea-cadet-mate": {
+    "gambit": {
+      "value": "white",
+      "reason": "Checked against the moves at the root: the named line itself gives the pawn(s), so the gambit is the main line here, not a rare branch.",
+      "sources": [],
+      "taxonomy_note": null
+    }
   }
 }

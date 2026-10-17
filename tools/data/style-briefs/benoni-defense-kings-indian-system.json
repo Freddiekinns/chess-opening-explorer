@@ -1,0 +1,121 @@
+{
+  "slug": "benoni-defense-kings-indian-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: King's Indian System",
+    "eco": "A56",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 e5 4. Nc3 d6 5. e4 g6",
+    "fen": "rnbqkb1r/pp3p1p/3p1np1/2pPp3/2P1P3/2N5/PP3PPP/R1BQKBNR w KQkq - 0 6"
+  },
+  "parent": "benoni-defense-czech-benoni-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "The Czech Benoni move order with a King's Indian bishop: White has c4, d5, e4 and Nc3 against ...c5, ...e5, ...d6 and ...g6/...Bg7. The centre is locked, White has more space and Black plays ...O-O, ...Nbd7 and the ...f5 break; Black is cramped but resilient.",
+  "white_ideas": [
+    {
+      "idea": "Keep the centre closed and use the extra space"
+    },
+    {
+      "idea": "Develop Nge2/g3 or Be2 and Bg5, castle kingside"
+    },
+    {
+      "idea": "Prepare f4 or a queenside break with b4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete development with ...O-O, ...Nbd7"
+    },
+    {
+      "idea": "Prepare the ...f5 break against e4"
+    },
+    {
+      "idea": "Reroute the knight to c5 or e8-f6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Locked chain d5/c4/e4 against c5/d6/e5"
+    },
+    {
+      "structure": "Black bishop g7 hemmed in by e5, White dark squares weak after f4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A closed, manoeuvring middlegame where Black is cramped but short of weaknesses; sharper only once ...f5 is played."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level."
+    },
+    "soundness": {
+      "notes": "Sound, though Black has the passive side."
+    },
+    "structure": {
+      "notes": "Pawns on c4/d5/e4 against c5/d6/e5 are locked."
+    },
+    "approach": {
+      "notes": "A regular, if less common, Benoni set-up."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Both sides need to find plans in a locked position; little forcing theory."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Prepare ...f5",
+    "Bishop g7 buried"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Four Pawns / f4 setups",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 e5 4. Nc3 d6 5. e4 g6 6. f4",
+      "how": "White plays f4 at once and the game turns sharper and more tactical."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.4,
+      "reason": "Black is cramped but resilient and the locked centre gives few ways to lose quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "Black's passive set-up is accepted as playable.",
+      "side": null
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.85,
+      "reason": "The d5/e4 and c5/d6/e5 pawns lock the centre and play moves to the wings."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised Benoni set-up that is played less often than the main lines."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "The plans are clear but need positional judgement rather than memorised lines.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "bad_bishop"
+      ],
+      "reason": "White holds the space and Black's bishops are hemmed in by their own pawns."
+    }
+  }
+}

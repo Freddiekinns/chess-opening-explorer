@@ -1,0 +1,31 @@
+{
+  "slug": "clemenz-opening-spike-lee-gambit",
+  "tier": "unsourced",
+  "root": { "name": "Clemenz Opening: Spike Lee Gambit", "eco": "A00", "moves": "1. h3 h5 2. g4", "fen": "rnbqkbnr/ppppppp1/8/7p/6P1/7P/PPPPPP2/RNBQKBNR b KQkq - 0 2" },
+  "parent": "clemenz-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White answers the mirrored 1...h5 with 2.g4, striking at the h5 pawn and opening the h-file. The usual reply 2...hxg4 3.hxg4 Rxh1 4.Bxh1 trades rooks and leaves White with a loose g4 pawn and a bishop on h1, so the material is level but White's kingside is wrecked. Black can instead ignore the pawn and play ...e5 and ...Nf6 with a healthy centre. It is a joke-grade line seen almost only in blitz.",
+  "white_ideas": [{ "idea": "Trade on g4 and h1, then use the bishop on h1 down the long diagonal" }, { "idea": "Hit the g4 pawn with Black's own advance g5-based tricks is not available, so build with d4, Nc3 and Nf3" }],
+  "black_ideas": [{ "idea": "Take on g4, trade rooks, then target the weak g4 pawn with ...Nf6 and ...Bg4" }, { "idea": "Decline with ...e5 and develop normally against a weakened kingside" }],
+  "typical_structures": [{ "structure": "White with an isolated g4 pawn and no h-pawn, king uncomfortable on either wing" }],
+  "axis_evidence": {
+    "character": { "notes": "Kingside pawns are advanced on both flanks and the h-file opens at once, so the king safety of both sides is in question early." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "2...hxg4 3.hxg4 returns the pawn immediately and Rxh1 Bxh1 is an even rook trade, so no material is lost on the main line despite the name." },
+    "soundness": { "notes": "2.g4 weakens White's own king for no gain; Black simply develops and has the easier game." },
+    "structure": { "notes": "Flank pawns move first and the centre is untouched, so it stays undecided." },
+    "approach": { "notes": "Strong players essentially never choose it; it is a blitz curiosity." },
+    "level": { "reason": "neither", "notes": "No theory, but White is the side studying it and it is not a good repertoire choice." }
+  },
+  "plan_phrases": ["open h-file", "weakened kingside"],
+  "sublines_that_differ": [{ "name": "Decline", "moves": "1. h3 h5 2. g4 e5", "how": "Black develops and leaves White to deal with the loosened pawns." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "Both kingsides are loosened and the h-file opens immediately, so errors are punished fast." },
+    "gambit": { "value": "none", "confidence": 0.6, "reason": "The pawn on g4 comes straight back after 2...hxg4 3.hxg4, so no material is truly given despite the name." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.65, "reason": "White weakens their own king with 2.g4 and gains nothing concrete for it." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "Only flank pawns have moved and the centre stays undecided." },
+    "approach": { "value": "offbeat", "confidence": 0.9, "reason": "Strong players essentially never play 1.h3 h5 2.g4." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.7, "reason": "A dubious line is never Beginner and there is no theory to demand Advanced." },
+    "plans": { "value": [], "reason": "No recognisable plan from the table is characteristic of this line." }
+  }
+}

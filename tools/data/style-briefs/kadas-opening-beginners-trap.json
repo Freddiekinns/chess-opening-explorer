@@ -1,0 +1,101 @@
+{
+  "slug": "kadas-opening-beginners-trap",
+  "tier": "unsourced",
+  "root": {
+    "name": "Kádas Opening: Beginner's Trap",
+    "eco": "A00",
+    "moves": "1. h4 d5 2. Rh3",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/7P/7R/PPPPPPP1/RNBQKBN1 b Qkq - 1 2"
+  },
+  "parent": "kadas-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.h4 d5 2.Rh3 White lifts the rook to the third rank, hoping to swing it to the centre or the queenside. Black simply develops with ...Nf6, ...e5 or ...Bf5 and White has lost time. The trap is that a careless rook lift can be punished, and a careless Black can fall for a cheap tactic.",
+  "white_ideas": [
+    {
+      "idea": "Swing the rook along the third rank"
+    },
+    {
+      "idea": "Play for a quick surprise attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop normally and take the centre"
+    },
+    {
+      "idea": "Exploit the misplaced rook with ...Bf5 or ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Undefined: White is undeveloped and Black builds a centre with ...d5 and ...e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not forcing; White's rook lift is slow and Black just develops."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material has changed hands."
+    },
+    "soundness": {
+      "notes": "The rook on h3 loses time and is easily harassed, so White's play is dubious."
+    },
+    "structure": {
+      "notes": "Nothing is fixed yet, with an open centre likely after ...e5."
+    },
+    "approach": {
+      "notes": "Seldom if ever chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A rarity with little real theory."
+    }
+  },
+  "plan_phrases": [
+    "Rook lift along the third rank"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "No forcing play from either side and little to attack."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "Nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The early rook lift costs time and strong players do not respect it."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided after two moves."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever play 1.h4 and 2.Rh3."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "A dubious line is never beginner, and there is nothing to learn from it."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No recognised plan."
+    }
+  }
+}

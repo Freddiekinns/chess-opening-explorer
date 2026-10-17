@@ -1,0 +1,113 @@
+{
+  "slug": "sicilian-defense-venice-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Venice Attack",
+    "eco": "B56",
+    "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Bb5+",
+    "fen": "rnbqkb1r/pp3ppp/3p1n2/1B2p3/3NP3/2N5/PPP2PPP/R1BQK2R b KQkq - 1 6"
+  },
+  "parent": "sicilian-defense-modern-variations",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Sveshnikov-like structure after ...e5 White plays Bb5+, then typically Nf5 and Bg5 or Bxd7+ to exploit the d5 hole. Black replies ...Nbd7 or ...Bd7 and tries to challenge d5 with ...d5 or ...a6. The game is tactical but a recognised sideline.",
+  "white_ideas": [
+    {
+      "idea": "Exploit d5 with Nf5 and Bg5 ideas"
+    },
+    {
+      "idea": "Trade the light-squared bishop with Bb5+ to take the d5 square"
+    },
+    {
+      "idea": "Castle and push f3/Qd2 for a quiet edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...d5"
+    },
+    {
+      "idea": "Play ...a6 to remove the bishop and ...Be7"
+    },
+    {
+      "idea": "Kick the knight with ...g6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sveshnikov-type structure with a hole on d5"
+    },
+    {
+      "structure": "e4 and ...e5 pawns facing each other"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A forcing line with early checks and the d5 hole, but it normally settles into a normal Sicilian middlegame."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "An asymmetric centre with the d5 square contested; Black pressed on the d-file."
+    },
+    "approach": {
+      "notes": "A recognised, less common anti-Najdorf try."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A manageable sideline; the plans are positional."
+    }
+  },
+  "plan_phrases": [
+    "Knight outpost",
+    "Early Bb5+"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Early checks, Nf5 and Bg5 ideas and a contested d5 square make it tactical."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.9,
+      "reason": "A normal Sicilian sideline.",
+      "side": null
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.8,
+      "reason": "A fixed asymmetric centre with the d-file and d5 square in dispute."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A less common but respectable White try."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.6,
+      "reason": "The ideas are positional and manageable without long forcing theory.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "knight_outpost"
+      ],
+      "reason": "The d5 hole is the strategic centre of the line."
+    }
+  }
+}

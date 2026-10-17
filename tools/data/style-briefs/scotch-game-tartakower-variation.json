@@ -1,0 +1,113 @@
+{
+  "slug": "scotch-game-tartakower-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Tartakower Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nxc6 bxc6 6. Nd2",
+    "fen": "r1bqkb1r/p1pp1ppp/2p2n2/8/4P3/8/PPPN1PPP/R1BQKB1R b KQkq - 1 6"
+  },
+  "parent": "scotch-game-schmidt-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Schmidt Scotch after 5.Nxc6 bxc6 White plays 6.Nd2, a quieter move than 6.e5, covering e4 and heading for Nc4 or Bd3 and O-O. Black has doubled c-pawns but a broad centre and easy piece play with ...d5 or ...d6. White keeps a slight lead in space while Black relies on the bishop pair and the b-file.",
+  "white_ideas": [
+    {
+      "idea": "Keep e4 defended with Nd2 and reroute to c4 or f3"
+    },
+    {
+      "idea": "Develop Bd3 and castle, then play e5 at the right moment"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge e4 with ...d5 or ...d6 and ...Be7"
+    },
+    {
+      "idea": "Use the half-open b-file and keep the c-pawns flexible"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4 against Black doubled c-pawns"
+    },
+    {
+      "structure": "Centre with ...d5 break"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet middlegame with small edges rather than direct attacks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level after the knight trade on c6."
+    },
+    "soundness": {
+      "notes": "A sound sideline with no refutation."
+    },
+    "structure": {
+      "notes": "White e4 pawn against a Black centre that can open with ...d5."
+    },
+    "approach": {
+      "notes": "A sideline of the Scotch that strong players choose now and then."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little forcing theory; the plan depends on handling the doubled pawns."
+    }
+  },
+  "plan_phrases": [
+    "Doubled c-pawns",
+    "Break with ...d5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6.e5 main Schmidt",
+      "moves": "6.e5 Qe7 7.Qe2 Nd5",
+      "how": "A sharper separate line, not the Tartakower"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Quiet development with doubled pawns for Black and no forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides are fine."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is tense with ...d5 still to come."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "Within the Scotch but a respectable sideline."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than memorised lines."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns"
+      ],
+      "reason": "Black has doubled c-pawns for central control."
+    }
+  }
+}

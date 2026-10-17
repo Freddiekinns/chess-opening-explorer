@@ -1,0 +1,109 @@
+{
+  "slug": "polish-defense-spassky-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Defense: Spassky Gambit Accepted",
+    "eco": "A40",
+    "moves": "1. d4 b5 2. e4 Bb7 3. Bxb5",
+    "fen": "rn1qkbnr/pbpppppp/8/1B6/3PP3/8/PPP2PPP/RNBQK1NR b KQkq - 0 3"
+  },
+  "parent": "polish-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White grabs the b5 pawn with the bishop, and after 3...Bxe4 4.Nc3 the pawns are level but White is clearly ahead in development while Black's 1...b5 has loosened the queenside. White aims to use the lead with Nf3, O-O and Re1 before Black untangles. Black hopes to survive with ...c6, ...e6 and ...Nf6 and to exploit White's exposed bishop.",
+  "white_ideas": [
+    {
+      "idea": "Develop quickly with Nc3, Nf3 and castling"
+    },
+    {
+      "idea": "Harass the bishop on e4/b7 and use the e-file"
+    },
+    {
+      "idea": "Keep d4 and the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 to level the material"
+    },
+    {
+      "idea": "Block the long diagonal with ...c6 and ...e6"
+    },
+    {
+      "idea": "Trade off White's active bishop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after the e-pawn is traded for the b-pawn, bishops active on the long diagonals"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open lines and a development gap make it concrete early, but Black mainly defends."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "3...Bxe4 wins back a pawn at once, so material is level in the main line; the name refers to White accepting Black's b-pawn."
+    },
+    "soundness": {
+      "notes": "1...b5 is generally considered dubious for Black; White keeps an edge from the lead in development."
+    },
+    "structure": {
+      "notes": "The e4 and b5 pawns come off, leaving open lines for the bishops."
+    },
+    "approach": {
+      "notes": "A rare Black defence, so this branch is not a normal choice at the top."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Short, tactical theory with traps."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development against Black's loosened queenside"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Open lines and a development gap make for early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The b5 pawn White takes is answered by ...Bxe4, so material is level."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "The Polish Defence is considered dubious and this line leaves Black a little behind."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The e4 and b5 pawns disappear early, leaving open diagonals."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose 1...b5 here."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "It is a dubious line so never beginner, and the traps need memory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White's edge is the lead in development."
+    }
+  }
+}

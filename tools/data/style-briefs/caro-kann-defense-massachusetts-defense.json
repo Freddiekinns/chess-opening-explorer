@@ -1,0 +1,112 @@
+{
+  "slug": "caro-kann-defense-massachusetts-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Massachusetts Defense",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 f5",
+    "fen": "rnbqkbnr/pp1pp1pp/2p5/5p2/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 2...f5 against the centre, a Dutch-like try that weakens e6 and the kingside. White usually replies 3.exf5 d5 or 3.e5 and has an easy edge with Bd3, Nf3 and Ne2. It is rare and regarded as inferior; Black scores through unfamiliarity.",
+  "white_ideas": [
+    {
+      "idea": "Take on f5 and keep the extra pawn or gain space with e5"
+    },
+    {
+      "idea": "Develop sensibly with Nf3, Bd3 and g4 or Bg5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Get the pieces out with ...d5, ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Hope to win back f5 or exploit an overextended centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/d4 centre against ...f5 and ...c6 pawns"
+    },
+    {
+      "structure": "Weakened e6 and kingside for Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black takes a risk on move two and White has the safer, clearer position."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is sacrificed at the root; the f5 pawn only falls if White takes it, and Black is aiming at ...d5 and ...Nf6 development."
+    },
+    "soundness": {
+      "notes": "Considered inferior to the main Caro-Kann lines; White gets a clear plus."
+    },
+    "structure": {
+      "notes": "e4 against f5 and c6, with the centre opening after exf5."
+    },
+    "approach": {
+      "notes": "Strong players hardly choose 2...f5."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory but not a line to build a repertoire around."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3.exf5 d5",
+      "moves": "3.exf5 d5 4.Nc3",
+      "how": "White keeps the pawn; Black has some development"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Black opens with an uncomfortable pawn move and White can attack the loosened kingside."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The root is level in material and no real pawn offer is made; the f5 pawn can be taken but Black is not aiming at a gambit."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "The early ...f5 weakens e6 and the king and is judged inferior."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "White e4 against ...f5 and ...c6 leaves an asymmetrical centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White has more room and a safer king."
+    }
+  }
+}

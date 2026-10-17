@@ -1,0 +1,31 @@
+{
+  "slug": "ruy-lopez-brix-variation",
+  "tier": "unsourced",
+  "root": { "name": "Ruy Lopez: Brix Variation", "eco": "C78", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O g6", "fen": "r1bqkb1r/1ppp1p1p/p1n2np1/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 6" },
+  "parent": "ruy-lopez-morphy-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black meets the Morphy with a fianchetto instead of the main ...Be7 or ...b5, planning ...Bg7 and ...d6. White usually plays 6.d4 exd4 7.Nxd4 Bg7 or 6.Re1 and 7.c3, reaching an open Sicilian-like or slow Ruy centre, with the bishop pair of the Ruy pressing on c6. The line is solid for Black but gives White easy development and a slight space edge, which is why it is a rarely seen sideline.",
+  "white_ideas": [{ "idea": "d4 and Nxd4 to open the centre and attack with Bxc6 and Nxc6 ideas" }, { "idea": "Re1, c3 and d4 with a typical Ruy centre" }],
+  "black_ideas": [{ "idea": "Fianchetto the bishop and play ...d6, ...O-O and ...Re8" }, { "idea": "Trade the knights and bishop to ease the cramped position" }],
+  "typical_structures": [{ "structure": "Open Sicilian-like structure after d4 exd4, or Ruy centre with a Black kingside fianchetto" }],
+  "axis_evidence": {
+    "character": { "notes": "Black takes a safe, modern set-up where it is hard for White to land a quick blow." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered." },
+    "soundness": { "notes": "Playable; White keeps a slight edge but nothing decisive." },
+    "structure": { "notes": "After d4 exd4 Nxd4 the e-pawn has been exchanged for the d-pawn and the d-file is half-open for White." },
+    "approach": { "notes": "Strong players seldom choose it, preferring the main Ruy lines." },
+    "level": { "reason": "neither", "notes": "Clear set-up, modest theory." }
+  },
+  "plan_phrases": ["fianchetto", "knight outpost"],
+  "sublines_that_differ": [{ "name": "Closed Ruy", "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7", "how": "The main line; this root is a different Black set-up." }],
+  "tags": {
+    "character": { "value": "solid", "confidence": 0.5, "reason": "Black fianchettoes into a compact set-up that is hard to break down but passive." },
+    "gambit": { "value": "none", "confidence": 0.95, "reason": "No material is given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "Fully playable, with White holding only a small edge." },
+    "structure": { "value": "flexible", "confidence": 0.45, "reason": "The centre is unresolved; White chooses between d4 and a slower build-up." },
+    "approach": { "value": "offbeat", "confidence": 0.45, "reason": "Strong players seldom choose 5...g6 against the Ruy." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.65, "reason": "Plans are clear and there is little forced theory." },
+    "plans": { "value": ["fianchetto"], "reason": "Black plays ...g6 and ...Bg7 as the central idea." }
+  }
+}

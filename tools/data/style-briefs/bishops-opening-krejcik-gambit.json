@@ -1,0 +1,105 @@
+{
+  "slug": "bishops-opening-krejcik-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Krejcik Gambit",
+    "eco": "C24",
+    "moves": "1. e4 e5 2. Bc4 Nf6 3. f3 Bc5 4. Ne2 Nc6 5. b4",
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/1PB1P3/5P2/P1PPN1PP/RNBQK2R b KQkq - 0 5"
+  },
+  "parent": "barnes-opening-walkerling",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays an Evans-style b4 against ...Bc5 and supports with f3 and Ne2. If Black takes on b4 White obtains development and a centre. A rare gambit.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with c3/d4 after Bxb4"
+    },
+    {
+      "idea": "Open the b-file and develop"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Accept and give the pawn back when needed"
+    },
+    {
+      "idea": "Strike in the centre with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after c3/d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Gambit with open lines."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can capture on b4 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "The f3 and Ne2 set-up is slower than the Evans."
+    },
+    "structure": {
+      "notes": "Central lines open."
+    },
+    "approach": {
+      "notes": "Rarely chosen."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "central pawn majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Gambit with open lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "Black can capture on b4 and keep the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The f3 and Ne2 set-up is slower than the Evans."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely chosen."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

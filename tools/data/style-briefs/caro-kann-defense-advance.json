@@ -1,0 +1,113 @@
+{
+  "slug": "caro-kann-defense-advance",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Advance, Short Variation",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. c3 e6 5. Be2",
+    "fen": "rn1qkbnr/pp3ppp/2p1p3/3pPb2/3P4/2P5/PP2BPPP/RNBQK1NR b KQkq - 1 5"
+  },
+  "parent": "caro-kann-defense-advance-variation",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "After 3.e5 Bf5 White builds a space-gaining chain with c3 and Be2 and Black prepares ...c5 against the d4 pawn. The pawn chain is French-like but Black's bishop is outside it. Play is slow, with Black counterplay on the queenside.",
+  "white_ideas": [
+    {
+      "idea": "Hold the chain with c3 and Nf3"
+    },
+    {
+      "idea": "Castle and meet ...c5 with dxc5 or Be3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break with ...c5"
+    },
+    {
+      "idea": "Develop ...Nc6, ...Qb6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Locked pawn chain on d4/e5"
+    },
+    {
+      "structure": "Black light bishop outside the chain"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid for Black; White has space but few tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Chain locked."
+    },
+    "approach": {
+      "notes": "Main line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "undermine the chain with ...c5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Tal 4.h4",
+      "moves": "1. e4 c6 2. d4 d5 3. e5 Bf5 4. h4",
+      "how": "a sharper kingside attack"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.7,
+      "reason": "Black has a sound structure and a good bishop."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Safe."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.7,
+      "reason": "The chain is locked."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "Main line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White's chain gives space."
+    }
+  }
+}

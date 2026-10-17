@@ -1,0 +1,111 @@
+{
+  "slug": "queens-gambit-declined-spielmann-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Spielmann Variation",
+    "eco": "D30",
+    "moves": "1. d4 d5 2. c4 e6 3. Nf3 Nf6 4. e3 c6 5. Nbd2 g6",
+    "fen": "rnbqkb1r/pp3p1p/2p1pnp1/3p4/2PP4/4PN2/PP1N1PPP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "semi-slav-defense-quiet-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays a Semi-Slav Quiet set-up with ...c6, ...e6 and ...g6, mixing a Slav centre with a Catalan-style fianchetto. White continues with Bd3, O-O and e4, or e4 with a small space plus. Black wants ...dxc4 and ...b5 or ...Bg7 and a solid position.",
+  "white_ideas": [
+    {
+      "idea": "Play e4 after Bd3 and O-O for central space"
+    },
+    {
+      "idea": "Keep pieces coordinated with Nbd2 and Qc2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto with ...Bg7 and ...O-O"
+    },
+    {
+      "idea": "Prepare ...dxc4 and ...c5 or ...e5 breaks"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav-QGD pawn structure with ...c6/...d5/...e6 and a fianchettoed bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Closed-ish pawn centre and slow manoeuvring; Black's position is hard to attack."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "A reasonable Black set-up."
+    },
+    "structure": {
+      "notes": "The centre stays in tension with d5 and d4 facing each other."
+    },
+    "approach": {
+      "notes": "An accepted but less common branch of the Semi-Slav."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans matter more than lines."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "solid centre"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5...Bd6 main Quiet Variation",
+      "moves": "1. d4 d5 2. c4 e6 3. Nf3 Nf6 4. e3 c6 5. Nbd2 Bd6",
+      "how": "More central than the g6 set-up."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "Slav-type pawn wall with a fianchetto, few early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A reasonable and playable Black structure."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre tension with d5/d4 remains undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "Respectable but not a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are mostly positional."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "bad_bishop"
+      ],
+      "reason": "Black fianchettoes and has to find a role for the c8-bishop behind the pawns."
+    }
+  }
+}

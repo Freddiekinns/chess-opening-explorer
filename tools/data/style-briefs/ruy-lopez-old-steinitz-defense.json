@@ -1,0 +1,113 @@
+{
+  "slug": "ruy-lopez-old-steinitz-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Old Steinitz Defense, Semi-Duras Variation",
+    "eco": "C62",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6 4. d4 Bd7 5. c4",
+    "fen": "r2qkbnr/pppb1ppp/2np4/1B2p3/2PPP3/5N2/PP3PPP/RNBQK2R b KQkq - 0 5"
+  },
+  "parent": "ruy-lopez-steinitz-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White takes space with c4 and d4 against Black's compact ...d6/...Bd7 set-up, so the Semi-Duras is a cramped but sound defence. Black usually plays ...Nf6, ...Be7 and ...exd4 at the right moment, while White presses with the centre pawns and Nc3.",
+  "white_ideas": [
+    {
+      "idea": "Keep e4, d4 and c4 pawns in the centre and squeeze Black"
+    },
+    {
+      "idea": "Develop Nc3, O-O, Re1 and force ...exd4 on White's terms"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete development with ...Nf6, ...Be7, ...O-O"
+    },
+    {
+      "idea": "Challenge the centre with ...exd4 when the timing is right"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Maroczy-like bind after ...exd4 Nxd4"
+    },
+    {
+      "structure": "Tense e4/e5 centre with Black's bishop on d7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow manoeuvring game; Black is passive but hard to hurt."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Level material, no pawn offered."
+    },
+    "soundness": {
+      "notes": "Old Steinitz is considered sound though passive."
+    },
+    "structure": {
+      "notes": "c4/d4/e4 against d6/e5: centre in tension, usually resolved with ...exd4."
+    },
+    "approach": {
+      "notes": "Standard Ruy Lopez sideline; not a system."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black must time the ...exd4 break; little forced theory."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "slow squeeze"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main line with exd4",
+      "moves": "5...Nf6 6.Nc3 Be7 7.O-O O-O 8.Re1 exd4 9.Nxd4",
+      "how": "Black concedes the centre and White gets a Maroczy-style grip."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "Black's cramped, compact set-up is hard to break down and play is steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "The Old Steinitz is passive but accepted as sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre stays in tension until ...exd4, and the Semi-Duras c4 set-up is undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A Ruy Lopez sideline that stronger players use now and then, not a system."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear for White but Black must time ...exd4 correctly."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White's c4/d4/e4 pawns take space against the cramped Black position."
+    }
+  }
+}

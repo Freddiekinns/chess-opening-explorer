@@ -1,0 +1,113 @@
+{
+  "slug": "semi-slav-defense-stonewall-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Stonewall Defense",
+    "eco": "D45",
+    "moves": "1. d4 d5 2. Nf3 Nf6 3. c4 c6 4. Nc3 e6 5. e3 Ne4 6. Bd3 f5",
+    "fen": "rnbqkb1r/pp4pp/2p1p3/3p1p2/2PPn3/2NBPN2/PP3PPP/R1BQK2R w KQkq - 0 7"
+  },
+  "parent": "semi-slav-defense-main-line",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black sets up a Stonewall structure with pawns on c6, d5, e6 and f5 and a knight on e4, against the Semi-Slav move order. White plays Bd3 and trades the e4 knight or plays Qc2, and Black keeps a solid wall with a hole on e5. Black plays for a kingside attack or the e4 outpost, while White targets e5 and the bad c8 bishop.",
+  "white_ideas": [
+    {
+      "idea": "Trade the e4 knight with Nxe4 or Bxe4"
+    },
+    {
+      "idea": "Control e5 with Ne5 and Qc2"
+    },
+    {
+      "idea": "Break with cxd5 or b4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the knight on e4 and the Stonewall wall"
+    },
+    {
+      "idea": "Plan ...Bd6 and ...Qf6 for the kingside"
+    },
+    {
+      "idea": "Free the c8 bishop with ...b6 or ...Bd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Stonewall: pawns c6, d5, e6, f5 with a knight on e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Stonewall structure is hard to break but has long-term weaknesses."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound, if passive."
+    },
+    "structure": {
+      "notes": "Locked central pawns with play on the wings."
+    },
+    "approach": {
+      "notes": "A set-up Black can play against several White openings."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans around e5 and the c8 bishop need understanding, not memorisation."
+    }
+  },
+  "plan_phrases": [
+    "Stonewall",
+    "Knight outpost",
+    "Bad bishop"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "The Stonewall wall is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The Stonewall is a respected set-up."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.8,
+      "reason": "The central pawns lock together and play moves to the wings."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.5,
+      "reason": "Black can play the Stonewall against several White set-ups."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "It is plan-based with modest theory."
+    },
+    "plans": {
+      "value": [
+        "stonewall",
+        "knight_outpost",
+        "bad_bishop"
+      ],
+      "reason": "The Stonewall wall, the e4 knight and the c8 bishop define the play."
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "blackmar-diemer-gambit-declined-langeheinicke-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Declined: Langeheinicke Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 e3",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N1pP2/PPP3PP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "blackmar-diemer-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black answers 4.f3 with the counter-thrust 4...e3, attacking the bishop on c1 and offering to give the pawn back. After 5.Bxe3 White has a free development and a big centre, and Black has kept ...Nf6 and a sound but passive game. It is a rare Blackmar-Diemer reply, so the details are unsure.",
+  "white_ideas": [
+    {
+      "idea": "Recapture with Bxe3 and develop quickly with Qd2, O-O-O or Bd3"
+    },
+    {
+      "idea": "Use the central pawns d4 and f3 to attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete development with ...e6, ...c5 and ...Nc6"
+    },
+    {
+      "idea": "Use the d5 knight outpost and trade pieces"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White d4 against Black ...c5"
+    },
+    {
+      "structure": "White pawns on d4 and f3 against a Black d-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black returns the pawn, but the game stays tactical with open lines and mutual piece play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black takes e4 and returns the pawn on e3 with 5.Bxe3, so material is level and White is not a pawn down."
+    },
+    "soundness": {
+      "notes": "Black is fine and White is not worse, so both sides play a sound game."
+    },
+    "structure": {
+      "notes": "White d4 and f3 against open files, so mostly open."
+    },
+    "approach": {
+      "notes": "The Blackmar-Diemer is seldom played by strong players, and this reply is rare too."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Rare lines that need to be known."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main Blackmar-Diemer",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3",
+      "how": "Black takes on f3 instead and keeps the pawn, the real gambit."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Open lines and a quick White development lead to tactical play for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The pawn comes back with 5.Bxe3, so no material has been given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Black returns the pawn and White gets an ordinary game."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e-pawn trades open the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "The Blackmar-Diemer is rare among strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Narrow theory with tactics to know."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White gains time through the recapture and develops freely."
+    }
+  }
+}

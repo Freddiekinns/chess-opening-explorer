@@ -1,0 +1,31 @@
+{
+  "slug": "english-defense-hartlaub-gambit-declined",
+  "tier": "unsourced",
+  "root": { "name": "English Defense: Hartlaub Gambit Declined", "eco": "A40", "moves": "1. c4 e6 2. d4 b6 3. Nc3 Bb7 4. e4 f5 5. d5", "fen": "rn1qkbnr/pbpp2pp/1p2p3/3P1p2/2P1P3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 5" },
+  "parent": "english-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After Black's 4...f5 challenge to the big centre, White declines to take on f5 and plays 5.d5 gaining space and cutting the b7 bishop's diagonal. Black replies with ...exd5 or ...Bb4 and ...fxe4, aiming to exploit the loosened White centre, while White uses the space and the pressure on e6 to attack. It is double-edged: Black's king is a little exposed and White's centre is also a target.",
+  "white_ideas": [{ "idea": "Use the space gained with d5, then Bd3 and Nge2 to build a kingside attack" }, { "idea": "Hit the e6 weakness with exf5 and Qh5+ ideas" }],
+  "black_ideas": [{ "idea": "Open the position with ...exd5 or ...fxe4 to free the b7 bishop" }, { "idea": "Pin the knight with ...Bb4 and attack the centre" }],
+  "typical_structures": [{ "structure": "White pawns on c4, d5, e4 against Black pawns on b6, e6 and f5, with an unstable centre" }],
+  "axis_evidence": {
+    "character": { "notes": "Both sides have weaknesses around the king and centre, so play is double-edged and forcing." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "5.d5 declines the pawn offer on f5 and no material has changed hands." },
+    "soundness": { "notes": "Both sides are playable; the position is unbalanced but not refuted." },
+    "structure": { "notes": "The centre is tense with d5 wedge and e6/f5 pawns; one side will break it open." },
+    "approach": { "notes": "The English Defence is a surprise weapon and rarely played by strong players." },
+    "level": { "reason": "understanding", "notes": "Needs judgement in an unbalanced centre." }
+  },
+  "plan_phrases": ["space advantage", "hypermodern centre"],
+  "sublines_that_differ": [{ "name": "5.exf5", "moves": "1. c4 e6 2. d4 b6 3. Nc3 Bb7 4. e4 f5 5. exf5 Bb4", "how": "The accepted line, where Black has given a pawn for pressure." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "Black's ...f5 against a big white centre leaves both kings exposed and invites tactics." },
+    "gambit": { "value": "none", "confidence": 0.8, "reason": "5.d5 declines the offer so no material is given." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.6, "reason": "Both sides have playable ideas." },
+    "structure": { "value": "semi_open", "confidence": 0.4, "reason": "Centre tension resolves into a fixed asymmetric centre with half-open files." },
+    "approach": { "value": "offbeat", "confidence": 0.55, "reason": "Strong players seldom choose the English Defence." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Understanding of the unbalanced centre matters more than memorising." },
+    "plans": { "value": ["space_advantage", "hypermodern_centre"], "reason": "White gains space with d5 while Black plays against the centre from the flank." }
+  }
+}

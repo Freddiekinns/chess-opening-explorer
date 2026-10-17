@@ -1,0 +1,108 @@
+{
+  "slug": "philidor-defense-berger-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Berger Variation",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 Be7 6. Be2 O-O 7. O-O c5 8. Nf3 Nc6 9. Bg5 Be6 10. Re1",
+    "fen": "r2q1rk1/pp2bppp/2npbn2/2p3B1/4P3/2N2N2/PPP1BPPP/R2QR1K1 b - - 5 10"
+  },
+  "parent": "philidor-defense-exchange-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black has castled and set up ...c5 against the Philidor structure, with ...Nc6 and ...Be6 developing sensibly. White has space and a lead in activity and usually plays Re1, Bg5 and Nd5 ideas. Black accepts a slightly passive game for a solid, undamaged position.",
+  "white_ideas": [
+    {
+      "idea": "Use the space advantage with Bg5, Re1 and Nd5"
+    },
+    {
+      "idea": "Pressure d6 and the d-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Neutralise with ...h6 and ...Bxf3 or ...d5 at the right time"
+    },
+    {
+      "idea": "Keep the pawn structure intact and wait for a freeing ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on d6 and c5 against White's e4"
+    },
+    {
+      "structure": "Knight on d5 outpost fought over"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's setup is compact with few tactical weaknesses."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "The Philidor is respectable for Black."
+    },
+    "structure": {
+      "notes": "Pawn tension with d6/c5 against e4; centre not locked."
+    },
+    "approach": {
+      "notes": "A usual Philidor branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Straightforward development plans with some middlegame subtlety."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "knight outpost"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.65,
+      "reason": "Black's setup is compact with few tactical weaknesses."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "The Philidor is respectable for Black."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Pawn tension with d6/c5 against e4; centre not locked."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A usual Philidor branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Straightforward development plans with some middlegame subtlety."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "knight_outpost"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

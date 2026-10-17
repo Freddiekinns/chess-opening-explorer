@@ -1,0 +1,99 @@
+{
+  "slug": "zukertort-opening-the-potato",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: The Potato",
+    "eco": "A06",
+    "moves": "1. Nf3 d5 2. a4",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/P7/5N2/1PPPPPPP/RNBQKB1R b KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 2.a4 after 1...d5, grabbing queenside space and discouraging ...b5 ideas. It is slow and not very ambitious, and Black develops normally with ...Nf6 and ...e6. The game is a quiet, Reti-like manoeuvring struggle.",
+  "white_ideas": [
+    {
+      "idea": "Gain queenside space with a4"
+    },
+    {
+      "idea": "Develop with g3 and Bg2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...e6 and ...c5"
+    },
+    {
+      "idea": "Develop normally"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flexible Reti-style centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not well known; reasoned from the moves."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Slow but not refuted."
+    },
+    "structure": {
+      "notes": "Flexible centre."
+    },
+    "approach": {
+      "notes": "A rare move."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "No theory."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow flank play without forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "A slow move but playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "A flank opening with an undecided centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Easy to play but not a good first choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear named plan."
+    }
+  }
+}

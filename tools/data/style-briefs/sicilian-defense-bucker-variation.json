@@ -1,0 +1,104 @@
+{
+  "slug": "sicilian-defense-bucker-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Bücker Variation",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 h6",
+    "fen": "rnbqkbnr/pp1pppp1/7p/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays the waiting move 2...h6, perhaps to stop Bg5 or Ng5, before choosing a Sicilian set-up. White normally plays 3.d4 cxd4 4.Nxd4 into an Open Sicilian a tempo up. I am unsure of the main line; tags follow the move order.",
+  "white_ideas": [
+    {
+      "idea": "Play 3.d4 cxd4 4.Nxd4 and use the extra tempo"
+    },
+    {
+      "idea": "Go for a Maroczy-style bind or quick development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Transpose to a Scheveningen or Najdorf-type set-up"
+    },
+    {
+      "idea": "Use ...h6 to take g5 away from White"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian with the half-open c-file for Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Normal Sicilian tension with a spare Black move, so neither side is forced into extremes."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "...h6 is a wasted tempo but not a real flaw."
+    },
+    "structure": {
+      "notes": "After d4 cxd4 Nxd4 it is a standard Sicilian with a half-open c-file."
+    },
+    "approach": {
+      "notes": "Strong players seldom play ...h6 here and it is chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The plans are Sicilian ones, so Intermediate."
+    }
+  },
+  "plan_phrases": [
+    "open Sicilian",
+    "half-open c-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Normal Sicilian tension with a spare Black move, so neither side is forced into extremes."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "...h6 is a wasted tempo but not a real flaw."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.75,
+      "reason": "After d4 cxd4 Nxd4 it is a standard Sicilian with a half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom play ...h6 here and it is chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans are Sicilian ones, so Intermediate."
+    },
+    "plans": {
+      "value": [
+        "half_open_c_file"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

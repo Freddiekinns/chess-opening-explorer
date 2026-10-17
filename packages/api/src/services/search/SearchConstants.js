@@ -81,6 +81,14 @@ const STYLE_AXES = {
   complex: { level: ['advanced'] },
 };
 
+// Style words that an opening's name also answers. The gambit axis records
+// whether material really changes hands, so the Queen's Gambit and every
+// "Gambit Declined" are "none"; a user who types gambit still means them.
+// Only the word itself: a gambit name does not make an opening aggressive.
+const STYLE_NAMES = {
+  gambit: /gambit/i,
+};
+
 // Legacy category mappings (kept for backward compatibility)
 const STYLE_CATEGORIES = {
   'attacking': ['aggressive', 'attacking', 'tactical', 'sharp', 'gambit', 'sacrifice'],
@@ -153,6 +161,7 @@ const CHESS_MOVE_PATTERNS = [
 module.exports = {
   SEMANTIC_MAPPINGS,
   STYLE_AXES,
+  STYLE_NAMES,
   STYLE_CATEGORIES,
   QUERY_PATTERNS,
   FUSE_OPTIONS,

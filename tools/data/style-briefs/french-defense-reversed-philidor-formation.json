@@ -1,0 +1,108 @@
+{
+  "slug": "french-defense-reversed-philidor-formation",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Reversed Philidor Formation",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. d3 d5 3. Nd2 Nf6 4. Ngf3 Nc6 5. Be2",
+    "fen": "r1bqkb1r/ppp2ppp/2n1pn2/3p4/4P3/3P1N2/PPPNBPPP/R1BQK2R b KQkq - 5 5"
+  },
+  "parent": "french-defense-kings-indian-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays a King's Indian Attack-style set-up with d3, Nd2, Ngf3, Be2 and O-O against the French, and Black plays ...d5, ...Nf6, ...Nc6. Neither side commits early and the game revolves around White's e5 advance versus Black's ...e5 or ...Be7.",
+  "white_ideas": [
+    {
+      "idea": "Castle, play Re1 and e5, then g3 or a kingside attack"
+    },
+    {
+      "idea": "Keep a compact centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop ...Be7, ...O-O and break with ...e5"
+    },
+    {
+      "idea": "Control e4 and e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Closed centre with e4-d3 vs e6-d5"
+    },
+    {
+      "structure": "Reversed Philidor-style pawn structure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, plan-based."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Centre undecided."
+    },
+    "approach": {
+      "notes": "A set-up White can use against many defences."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Clear plans."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "The set-up is compact and neither side takes early risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A well-established sound system."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre stays undecided with e4/d3 against e6/d5."
+    },
+    "approach": {
+      "value": "system",
+      "confidence": 0.65,
+      "reason": "The King's Indian Attack-style set-up is played against many defences."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are clear but need handling."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "space_advantage"
+      ],
+      "reason": "White plays for e5 and a kingside attack."
+    }
+  }
+}

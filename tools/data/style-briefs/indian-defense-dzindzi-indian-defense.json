@@ -1,0 +1,106 @@
+{
+  "slug": "indian-defense-dzindzi-indian-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Dzindzi-Indian Defense",
+    "eco": "E10",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 a6",
+    "fen": "rnbqkb1r/1ppp1ppp/p3pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "indian-defense-anti-nimzo-indian",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 3...a6 after 1.d4 Nf6 2.c4 e6 3.Nf3, a waiting move that keeps the choice between ...d5, ...c5, ...b5 and a Queen's Indian-like set-up. After 4.Nc3 Black often plays 4...c5 reaching Benoni-style structures. I am less sure of the exact theory; it is a flexible, rarely seen line.",
+  "white_ideas": [
+    {
+      "idea": "Play Nc3, e4 and d5 for a central grip"
+    },
+    {
+      "idea": "Keep pieces flexible and wait for Black's structure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Prepare ...b5 or ...c5 with ...a6 as a useful waiting move"
+    },
+    {
+      "idea": "Reach a Benoni or Queen's Gambit set-up favourably"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like pawn structure after ...c5 and d5"
+    },
+    {
+      "structure": "QGD-like centre if ...d5 follows"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flexible set-up; neither side is forced into sharp play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "3...a6 is sound, just slow."
+    },
+    "structure": {
+      "notes": "Centre remains undetermined."
+    },
+    "approach": {
+      "notes": "A rare side line by Dzindzichashvili; strong players seldom choose it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs to know which structure to head for."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion with ...b5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Waiting move leads to flexible, even positions."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Slow but sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre stays undecided at move 3."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Played seldom by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs structural understanding rather than memory."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion"
+      ],
+      "reason": "The ...a6 and ...b5 idea."
+    }
+  }
+}

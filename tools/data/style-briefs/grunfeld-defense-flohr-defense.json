@@ -1,0 +1,106 @@
+{
+  "slug": "grunfeld-defense-flohr-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Flohr Defense",
+    "eco": "D94",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 g6 5. Nf3 Bg7 6. Bd3 O-O 7. O-O Bf5",
+    "fen": "rn1q1rk1/pp2ppbp/2p2np1/3p1b2/2PP4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 6 8"
+  },
+  "parent": "slav-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "A Slav-like set-up with ...c6, ...Nf6, ...g6 and ...Bg7 where White develops with e3, Bd3, O-O. Black's ...Bf5 offers a bishop trade on d3 and the game develops slowly with c4/d4 against c6/d5.",
+  "white_ideas": [
+    {
+      "idea": "Complete development and trade the light bishops"
+    },
+    {
+      "idea": "Expand with e4 or queenside play"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto the king's bishop, trade bishops with ...Bf5"
+    },
+    {
+      "idea": "Hold d5 and challenge with ...dxc4 or ...Nbd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav/Grünfeld hybrid with c6, d5, g6 pawns"
+    },
+    {
+      "structure": "Tense c4/d4 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow, steady game with few early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed."
+    },
+    "soundness": {
+      "notes": "Sound hybrid set-up."
+    },
+    "structure": {
+      "notes": "Tense centre with c6-d5 against c4-d4."
+    },
+    "approach": {
+      "notes": "Uncommon hybrid but respectable."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans and move-order are subtle but little forcing theory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.6,
+      "reason": "Black's Slav-style set-up is compact and hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A sound hybrid that strong players have tried."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The c4/d4 versus c6/d5 centre stays in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A Slav-Grünfeld hybrid that is less common but not a trick opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans are clear with little memorising."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Black's bishop fianchettoes on g7."
+    }
+  }
+}

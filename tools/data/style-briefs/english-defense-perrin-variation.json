@@ -1,0 +1,111 @@
+{
+  "slug": "english-defense-perrin-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Defense: Perrin Variation",
+    "eco": "A40",
+    "moves": "1. d4 e6 2. c4 b6 3. e4 Bb7 4. Bd3 Nc6",
+    "fen": "r2qkbnr/pbpp1ppp/1pn1p3/8/2PPP3/3B4/PP3PPP/RNBQK1NR w KQkq - 3 5"
+  },
+  "parent": "english-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.d4 e6 2.c4 b6 3.e4 Bb7 4.Bd3, Black plays 4...Nc6 and aims to attack the large White centre with ...Nb4, ...Bb4+ and ...f5. White builds with Ne2, Nc3 and f3 or tries to punish the loosely placed pieces. The game is double-edged: White has the space, Black has the counterplay.",
+  "white_ideas": [
+    {
+      "idea": "Keep the e4/d4 centre protected"
+    },
+    {
+      "idea": "Develop with Ne2, Nc3 and O-O"
+    },
+    {
+      "idea": "Meet ...Nb4 by Be2 or Bxb4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure d4 and e4 with ...Nb4, ...Bb4+ and ...Bb7"
+    },
+    {
+      "idea": "Break with ...f5 or ...Qh4"
+    },
+    {
+      "idea": "Make use of the long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Big White centre under hypermodern attack"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's setup is double-edged, with tactics around the White centre."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given at the root."
+    },
+    "soundness": {
+      "notes": "Playable but gives White the space and centre; theory rates it as fine for both."
+    },
+    "structure": {
+      "notes": "The White pawn centre is attacked by pieces and pawn breaks, so it is not locked."
+    },
+    "approach": {
+      "notes": "Strong players do play the English Defence now and then."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black must understand the hypermodern counterplay."
+    }
+  },
+  "plan_phrases": [
+    "Hypermodern centre",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "The parent English Defence is double-edged and 4...Nc6 gives both sides real attacking chances."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No material has been offered at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "Black's counter-pressure is respectable and not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is in tension, with White's pawns attacked by pieces."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "The English Defence is an occasional choice of strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Black needs to know the typical breaks but there is not a lot of forced theory."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black lets White build a centre and attacks it from the flank."
+    }
+  }
+}

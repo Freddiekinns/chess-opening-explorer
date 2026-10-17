@@ -1,0 +1,108 @@
+{
+  "slug": "grob-opening-double-grob",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: Double Grob",
+    "eco": "A00",
+    "moves": "1. g4 g5",
+    "fen": "rnbqkbnr/pppppp1p/8/6p1/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "grob-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black answers 1.g4 with 1...g5, mirroring White. The most played continuation is 2.f4, the Coca-Cola Gambit, where White opens lines at the cost of a pawn, while quieter 2.Bg2 and 2.h3 simply fianchetto. Strong players hardly ever play it, so the picture is uncertain.",
+  "white_ideas": [
+    {
+      "idea": "Offer a pawn with f4 to open lines and attack g5"
+    },
+    {
+      "idea": "Fianchetto with Bg2 and aim at the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Capture on f4 and keep the extra pawn"
+    },
+    {
+      "idea": "Mirror the set-up with ...Bg7 and ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open lines on the kingside after fxg5"
+    },
+    {
+      "structure": "Mirror fianchetto set-ups"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings are weakened and 2.f4 opens the f-file at once, so play is unbalanced."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "2.f4 gxf4 leaves White a pawn down for development and Black can keep it with care."
+    },
+    "soundness": {
+      "notes": "The Grob is considered dubious for White, and the Coca-Cola Gambit is no exception."
+    },
+    "structure": {
+      "notes": "The wings are active and the centre is undecided."
+    },
+    "approach": {
+      "notes": "The Grob family is the standard example of an offbeat opening."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not a good choice for study."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [
+    {
+      "name": "Quiet Double Grob",
+      "moves": "1. g4 g5 2. Bg2",
+      "how": "White fianchettoes and plays a slow game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Both kings are weakened and the Coca-Cola Gambit opens the f-file at once."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White gives a pawn with 2.f4 and Black can take it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "Engines prefer Black and strong players avoid it."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided and the play is on the wings."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "The Grob family is the textbook offbeat opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "A dubious line is never beginner, and it holds little to study."
+    },
+    "plans": {
+      "value": [],
+      "reason": "There is no clear named plan."
+    }
+  }
+}

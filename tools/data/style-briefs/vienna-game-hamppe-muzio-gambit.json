@@ -1,0 +1,113 @@
+{
+  "slug": "vienna-game-hamppe-muzio-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Hamppe-Muzio Gambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 g5 5. Bc4 g4 6. O-O",
+    "fen": "r1bqkbnr/pppp1p1p/2n5/8/2B1Ppp1/2N2N2/PPPP2PP/R1BQ1RK1 b kq - 1 6"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense-knight-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Vienna Gambit White plays 3.f4 exf4 4.Nf3 g5 5.Bc4 g4 6.O-O, offering a knight for a ferocious attack. After 6...gxf3 7.Qxf3 White has two pawns' worth of compensation against the f7 square, but Black can survive. The line is a rare Muzio-style sacrifice.",
+  "white_ideas": [
+    {
+      "idea": "Sacrifice the knight for a strong attack"
+    },
+    {
+      "idea": "Attack f7 with the queen and bishop"
+    },
+    {
+      "idea": "Open lines with Nd5 and d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the piece with ...gxf3 and defend f7"
+    },
+    {
+      "idea": "Return material when needed"
+    },
+    {
+      "idea": "Bring the queen back to the kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside with White a piece down"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp, with White sacrificing for the attack."
+    },
+    "gambit": {
+      "material_given": "piece",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives a piece and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Probably dubious in best play."
+    },
+    "structure": {
+      "notes": "Open lines everywhere."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs knowledge of the tactics."
+    }
+  },
+  "plan_phrases": [
+    "Kingside attack",
+    "Pressure on f7",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "A piece sacrifice for the attack in an open position."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives up a knight and pawns for the attack and Black can keep the piece."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "With accurate defence the attack is thought to fall short."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The centre and kingside open with the f-file in play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom play the Muzio structures."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious gambit is never Beginner and success depends on knowing the attack."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "White sacrifices material to aim everything at f7 and the king."
+    }
+  }
+}

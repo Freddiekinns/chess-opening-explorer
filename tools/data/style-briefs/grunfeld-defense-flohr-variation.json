@@ -1,0 +1,105 @@
+{
+  "slug": "grunfeld-defense-flohr-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Flohr Variation",
+    "eco": "D90",
+    "moves": "1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Qa4+",
+    "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/Q1PP4/2N2N2/PP2PPPP/R1B1KB1R b KQkq - 3 5"
+  },
+  "parent": "grunfeld-defense-three-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "5.Qa4+ is a sidestep in the Three Knights Grünfeld: White checks to take the sting out of ...dxc4 and keeps the centre. After 5...Bd7 6.Qb3 dxc4 7.Qxc4 O-O (or 5...c6) Black has given up the centre but has an easy game with ...Nc6 or ...c5 breaks. White gets a space advantage but the queen can be harassed.",
+  "white_ideas": [
+    {
+      "idea": "Build a central pawn pair with e4 and keep the queen safe"
+    },
+    {
+      "idea": "Complete development with Bg5 or e3 and O-O"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...c5 or ...e5"
+    },
+    {
+      "idea": "Develop with ...Bd7, ...O-O and a fianchetto"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Grünfeld with White centre pawns on d4/e4 and the Black fianchetto bishop on g7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A queen check and a quiet continuation make it less forcing than the main Grünfeld."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Any pawn on c4 is regained by the queen, so no gambit."
+    },
+    "soundness": {
+      "notes": "A reputable sidestep."
+    },
+    "structure": {
+      "notes": "Centre under tension, with d4 attacked by ...c5."
+    },
+    "approach": {
+      "notes": "Less common than 4.Bf4 or the Exchange but respected."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear for both sides, though Grünfeld middlegames need understanding."
+    }
+  },
+  "plan_phrases": [
+    "Hypermodern centre",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A quieter Grünfeld sideline with no early forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Any pawn taken on c4 comes back by force."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A respected line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is under tension and could go several ways."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised sideline."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "It asks for understanding of Grünfeld plans more than long theory."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black lets White build a centre and attacks it with the g7 bishop and ...c5."
+    }
+  }
+}

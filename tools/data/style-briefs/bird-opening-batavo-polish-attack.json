@@ -1,0 +1,105 @@
+{
+  "slug": "bird-opening-batavo-polish-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bird Opening: Batavo-Polish Attack",
+    "eco": "A02",
+    "moves": "1. f4 Nf6 2. Nf3 g6 3. b4",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/1P3P2/5N2/P1PPP1PP/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "bird-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.f4 Nf6 2.Nf3 g6 White plays 3.b4, grabbing queenside space and planning Bb2 against the long diagonal, a Polish and Bird hybrid. Black develops with ...Bg7, ...d6 and ...O-O and often hits b4 with ...a5 or ...Bg4. Slow manoeuvring game with little theory.",
+  "white_ideas": [
+    {
+      "idea": "Play Bb2 and e3 and build a queenside space gain with a3 and c4."
+    },
+    {
+      "idea": "Castle and keep f4 solid against ...d5 or ...c5."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto with ...Bg7, ...d6, ...O-O and strike with ...c5 or ...a5."
+    },
+    {
+      "idea": "Use ...Ne4 and ...d5 to take space in the centre."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reversed Dutch and Polish hybrid with White pawns on b4 and f4 and a Black fianchetto."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Flank-pawn opening with flexible pieces and slow plans, neither particularly safe nor risky."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given: b4 is protected by Bb2 and not easily taken."
+    },
+    "soundness": {
+      "notes": "Playable though slightly loosening; no refutation."
+    },
+    "structure": {
+      "notes": "Centre left undecided; both sides build from the flanks."
+    },
+    "approach": {
+      "notes": "A rare Bird branch: playable but seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Clear but unusual plans, not a coach's first choice."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Flank-pawn opening with flexible pieces and slow plans, neither particularly safe nor risky."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No material given: b4 is protected by Bb2 and not easily taken."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Playable though slightly loosening; no refutation."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "Centre left undecided; both sides build from the flanks."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "A rare Bird branch: playable but seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Clear but unusual plans, not a coach's first choice."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "White expands with b4 and fianchettoes the queen's bishop."
+    }
+  }
+}

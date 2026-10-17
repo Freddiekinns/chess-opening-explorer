@@ -683,43 +683,6 @@ class SearchService {
   }
 
   /**
-   * Get autocomplete suggestions
-   * @param {string} query - Partial query
-   * @param {number} limit - Maximum suggestions
-   * @returns {Array} Array of suggestions
-   */
-  async getSuggestions(query, limit = 10) {
-    await this.initialize();
-    
-    if (!query || query.length < 2) {
-      return [];
-    }
-    
-    const normalizedQuery = query.toLowerCase();
-    const suggestions = new Set();
-    
-    // Add opening name suggestions
-    this.openings.forEach(opening => {
-      const name = opening.name.toLowerCase();
-      if (name.includes(normalizedQuery)) {
-        suggestions.add(opening.name);
-      }
-    });
-    
-    // Add move suggestions (first few moves)
-    this.openings.forEach(opening => {
-      const moves = opening.moves.toLowerCase();
-      if (moves.includes(normalizedQuery)) {
-        // Extract first few moves as suggestion
-        const moveSequence = opening.moves.split(' ').slice(0, 4).join(' ');
-        suggestions.add(moveSequence);
-      }
-    });
-    
-    return Array.from(suggestions).slice(0, limit);
-  }
-
-  /**
    * Apply multi-pass filtering to enhance search results
    * @private
    */

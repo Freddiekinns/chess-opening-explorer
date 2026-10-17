@@ -188,20 +188,6 @@ describe('ECOService Final Working Tests', () => {
       expect(result).toHaveProperty('count');
       expect(result).toHaveProperty('total_analyzed');
     });
-
-    it('should get ECO categories', () => {
-      const result = ecoService.getECOCategories();
-
-      expect(Array.isArray(result)).toBe(true);
-    });
-
-    it('should get statistics', () => {
-      const result = ecoService.getStatistics();
-
-      expect(result).toHaveProperty('total');
-      expect(result).toHaveProperty('byClassification');
-      expect(result).toHaveProperty('bySource');
-    });
   });
 
   describe('isEcoRoot Field Handling', () => {

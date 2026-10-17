@@ -334,10 +334,6 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
       return fulfillJson(route, { success: true, data: opening });
     }
 
-    if (path.startsWith('/api/openings/videos/')) {
-      return fulfillJson(route, { success: true, data: testVideos });
-    }
-
     if (path.startsWith('/api/courses/')) {
       return fulfillJson(route, {
         success: true,

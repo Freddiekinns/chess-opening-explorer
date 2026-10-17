@@ -142,94 +142,7 @@ class ECOService {
   // are coarse buckets (C20 alone holds 30+ named openings), and a bucket
   // lookup served the wrong opening's plans on 96% of detail pages — see
   // docs/proposals/2026-06-12-common-plans-provenance.md. Analysis must be
-  // fetched per FEN (getECOAnalysisByFEN / formatOpeningData).
-
-  /**
-   * Get ECO analysis data for a specific FEN position
-   * This ensures we get the exact position's analysis, not just any position with the same ECO code
-   */
-  getECOAnalysisByFEN(fen) {
-    const ecoData = this.loadECOData();
-    
-    const opening = ecoData[fen];
-    
-    if (!opening) {
-      // If FEN is not a direct key, search through all openings
-      for (const [, openingData] of Object.entries(ecoData)) {
-        if (openingData.fen === fen) {
-          return this.parseAnalysisData(openingData, fen);
-        }
-      }
-      return null;
-    }
-    
-    if (!opening.analysis_json) {
-      return null;
-    }
-
-    return this.parseAnalysisData(opening, fen);
-  }
-
-  /**
-   * Helper method to parse analysis data consistently
-   */
-  parseAnalysisData(opening, fen) {
-    const analysis = opening.analysis_json;
-    
-    // Parse common_plans to separate white and black plans
-    const commonPlans = analysis.common_plans || [];
-    const whitePlans = [];
-    const blackPlans = [];
-    
-    // Split plans based on content - plans mentioning "White" go to white_plans, "Black" to black_plans
-    commonPlans.forEach(plan => {
-      const planLower = plan.toLowerCase();
-      if (planLower.includes("white's plan") || planLower.startsWith("white ")) {
-        whitePlans.push(plan);
-      } else if (planLower.includes("black's plan") || planLower.startsWith("black ")) {
-        blackPlans.push(plan);
-      } else {
-        // If unclear, add to both (generic plan)
-        whitePlans.push(plan);
-        blackPlans.push(plan);
-      }
-    });
-
-    // Extract aliases consistently
-    const aliasesArray = [];
-    if (opening.aliases) {
-      if (typeof opening.aliases === 'object') {
-        Object.values(opening.aliases).forEach(alias => {
-          if (typeof alias === 'string') {
-            aliasesArray.push(alias);
-          }
-        });
-      } else if (Array.isArray(opening.aliases)) {
-        aliasesArray.push(...opening.aliases);
-      } else if (typeof opening.aliases === 'string') {
-        aliasesArray.push(opening.aliases);
-      }
-    }
-    
-    return {
-      eco: opening.eco,
-      fen: fen,
-      name: opening.name,
-      moves: opening.moves || '',
-      aliases: aliasesArray,
-      description: analysis.description,
-      style_tags: analysis.style_tags || [],
-      tactical_tags: analysis.tactical_tags || [],
-      positional_tags: analysis.positional_tags || [],
-      strategic_themes: analysis.strategic_themes || [],
-      complexity: analysis.complexity || 'Unknown',
-      white_plans: analysis.white_plans || whitePlans,
-      black_plans: analysis.black_plans || blackPlans,
-      common_plans: commonPlans,
-      mainline_moves: analysis.mainline_moves,
-      last_enriched_at: analysis.last_enriched_at
-    };
-  }
+  // fetched per FEN (formatOpeningData).
 
   /**
    * Get opening data by FEN position
@@ -598,20 +511,6 @@ class ECOService {
   }
 
   /**
-   * Get all ECO categories (A00-E99)
-   */
-  getECOCategories() {
-    const ecoData = this.loadECOData();
-    const categories = new Set();
-    
-    for (const opening of Object.values(ecoData)) {
-      categories.add(opening.eco);
-    }
-    
-    return Array.from(categories).sort();
-  }
-
-  /**
    * Get random opening for training
    */
   getRandomOpening() {
@@ -620,88 +519,6 @@ class ECOService {
     const randomFen = fens[Math.floor(Math.random() * fens.length)];
     
     return { fen: randomFen, ...ecoData[randomFen] };
-  }
-
-  /**
-   * Get openings by classification (A, B, C, D, E)
-   */
-  getOpeningsByClassification(classification) {
-    const ecoData = this.loadECOData();
-    const results = [];
-    
-    for (const [fen, opening] of Object.entries(ecoData)) {
-      if (opening.eco.startsWith(classification)) {
-        results.push({ fen, ...opening });
-      }
-    }
-    
-    return results;
-  }
-
-  /**
-   * Get opening statistics
-   */
-  getStatistics() {
-    const ecoData = this.loadECOData();
-    const stats = {
-      total: Object.keys(ecoData).length,
-      byClassification: {},
-      bySource: {},
-      withInterpolation: 0
-    };
-    
-    for (const opening of Object.values(ecoData)) {
-      const classification = opening.eco.charAt(0);
-      stats.byClassification[classification] = (stats.byClassification[classification] || 0) + 1;
-      
-      stats.bySource[opening.src] = (stats.bySource[opening.src] || 0) + 1;
-      
-      if (opening.src === 'interpolated') {
-        stats.withInterpolation++;
-      }
-    }
-    
-    return stats;
-  }
-
-  /**
-   * Get openings by ECO family (A, B, C, D, E)
-   * @param {string} family - ECO family letter (A, B, C, D, E)
-   * @returns {Array} Array of opening objects for the family
-   */
-  getOpeningsByFamily(family) {
-    try {
-      if (!['A', 'B', 'C', 'D', 'E'].includes(family)) {
-        throw new Error('Invalid family code. Must be A, B, C, D, or E');
-      }
-
-      const familyFilePath = path.join(this.dataDir, `eco${family}.json`);
-      
-      if (!fs.existsSync(familyFilePath)) {
-        console.log(`ECO family file not found: ${familyFilePath}`);
-        return [];
-      }
-
-      const familyData = JSON.parse(fs.readFileSync(familyFilePath, 'utf8'));
-      
-      // Transform data to match expected format
-      const openings = familyData.map(opening => ({
-        fen: opening.f || '',
-        name: opening.n || '',
-        eco: opening.c || '',
-        moves: opening.m || '',
-        popularity: Math.floor(Math.random() * 100) // Placeholder popularity
-      }));
-
-      // Sort by ECO code and return top results
-      return openings
-        .sort((a, b) => a.eco.localeCompare(b.eco))
-        .slice(0, 50); // Limit results
-        
-    } catch (error) {
-      console.error(`Error loading family ${family}:`, error);
-      return [];
-    }
   }
 
   /**

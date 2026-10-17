@@ -1,8 +1,8 @@
 /**
  * TDD Test: Opening Data Consistency Integration Tests
  *
- * This test suite verifies that all 8 key opening attributes are consistent
- * when retrieved from different API endpoints and components:
+ * This test suite verifies that all 8 key opening attributes are returned
+ * intact by the FEN lookup endpoint:
  * 1. Description
  * 2. Name
  * 3. FEN
@@ -103,30 +103,6 @@ describe('Opening Data Consistency Integration Tests', () => {
           scid: opening.scid,
         };
       }),
-      getECOAnalysisByFEN: jest.fn((fen) => {
-        const opening = mockECOData[fen];
-        if (!opening?.analysis_json) return null;
-
-        const analysis = opening.analysis_json;
-        return {
-          eco: opening.eco,
-          fen: fen,
-          name: opening.name,
-          moves: opening.moves || '',
-          aliases: [], // No aliases in our test data
-          description: analysis.description,
-          style_tags: analysis.style_tags || [],
-          tactical_tags: analysis.tactical_tags || [],
-          positional_tags: analysis.positional_tags || [],
-          strategic_themes: analysis.strategic_themes || [],
-          complexity: analysis.complexity || 'Unknown',
-          white_plans: analysis.white_plans || [],
-          black_plans: analysis.black_plans || [],
-          common_plans: analysis.common_plans || [],
-          mainline_moves: analysis.mainline_moves,
-          last_enriched_at: analysis.last_enriched_at,
-        };
-      }),
     };
 
     // Mock the ECOService constructor to return our mock instance
@@ -163,83 +139,6 @@ describe('Opening Data Consistency Integration Tests', () => {
       expect(opening.style_tags).toEqual(expectedOpening.analysis_json.style_tags);
       expect(opening.common_plans).toEqual(expectedOpening.analysis_json.common_plans);
     });
-
-    test('should return consistent analysis data from FEN analysis endpoint', async () => {
-      const response = await request(app)
-        .post('/api/openings/fen-analysis')
-        .send({ fen: testFEN })
-        .expect(200);
-
-      expect(response.body.success).toBe(true);
-      const analysis = response.body.data;
-
-      // Verify analysis attributes match the same opening
-      expect(analysis.name).toBe(expectedOpening.name);
-      expect(analysis.eco).toBe(expectedOpening.eco);
-      expect(analysis.fen).toBe(testFEN); // FEN should match the test FEN
-      expect(analysis.description).toBe(expectedOpening.analysis_json.description);
-      expect(analysis.style_tags).toEqual(expectedOpening.analysis_json.style_tags);
-      expect(analysis.complexity).toBe(expectedOpening.analysis_json.complexity);
-    });
-  });
-
-  describe('Cross-Endpoint Data Consistency', () => {
-    test('should return the same opening name across all endpoints', async () => {
-      const encodedFEN = encodeURIComponent(testFEN);
-
-      // Get opening data
-      const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
-
-      // Get analysis data
-      const analysisResponse = await request(app)
-        .post('/api/openings/fen-analysis')
-        .send({ fen: testFEN })
-        .expect(200);
-
-      const openingName = openingResponse.body.data.name;
-      const analysisName = analysisResponse.body.data.name;
-
-      expect(openingName).toBe(analysisName);
-      expect(openingName).toBe(expectedOpening.name);
-    });
-
-    test('should return the same ECO code across all endpoints', async () => {
-      const encodedFEN = encodeURIComponent(testFEN);
-
-      // Get opening data
-      const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
-
-      // Get analysis data
-      const analysisResponse = await request(app)
-        .post('/api/openings/fen-analysis')
-        .send({ fen: testFEN })
-        .expect(200);
-
-      const openingEco = openingResponse.body.data.eco;
-      const analysisEco = analysisResponse.body.data.eco;
-
-      expect(openingEco).toBe(analysisEco);
-      expect(openingEco).toBe(expectedOpening.eco);
-    });
-
-    test('should return the same FEN across all endpoints', async () => {
-      const encodedFEN = encodeURIComponent(testFEN);
-
-      // Get opening data
-      const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
-
-      // Get analysis data
-      const analysisResponse = await request(app)
-        .post('/api/openings/fen-analysis')
-        .send({ fen: testFEN })
-        .expect(200);
-
-      const openingFen = openingResponse.body.data.fen;
-      const analysisFen = analysisResponse.body.data.fen;
-
-      expect(openingFen).toBe(analysisFen);
-      expect(openingFen).toBe(testFEN); // Both should match the test FEN
-    });
   });
 
   describe('Data Completeness Validation', () => {
@@ -264,58 +163,23 @@ describe('Opening Data Consistency Integration Tests', () => {
       expect(opening.moves).toBeTruthy();
       expect(Array.isArray(opening.aliases)).toBe(true);
     });
-
-    test('should include all required attributes in analysis response', async () => {
-      const response = await request(app)
-        .post('/api/openings/fen-analysis')
-        .send({ fen: testFEN })
-        .expect(200);
-
-      const analysis = response.body.data;
-
-      // Verify analysis-specific attributes
-      expect(analysis).toHaveProperty('description');
-      expect(analysis).toHaveProperty('common_plans');
-      expect(analysis).toHaveProperty('style_tags');
-      expect(analysis).toHaveProperty('complexity');
-      expect(analysis).toHaveProperty('strategic_themes');
-
-      // Verify they contain meaningful data
-      expect(analysis.description).toBeTruthy();
-      expect(Array.isArray(analysis.common_plans)).toBe(true);
-      expect(Array.isArray(analysis.style_tags)).toBe(true);
-      expect(analysis.complexity).toBeTruthy();
-    });
   });
 
-  describe('Error Handling Consistency', () => {
-    test('should handle non-existent FEN consistently across endpoints', async () => {
+  describe('Error Handling', () => {
+    test('should return 404 for a non-existent FEN', async () => {
       const nonExistentFEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
       const encodedFEN = encodeURIComponent(nonExistentFEN);
 
-      // Both endpoints should return 404 for non-existent FEN
       await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(404);
-
-      await request(app)
-        .post('/api/openings/fen-analysis')
-        .send({ fen: nonExistentFEN })
-        .expect(404);
     });
 
-    test('should handle malformed FEN consistently', async () => {
+    test('should handle malformed FEN gracefully', async () => {
       const malformedFEN = 'invalid-fen-string';
       const encodedFEN = encodeURIComponent(malformedFEN);
 
-      // Both endpoints should handle malformed FEN gracefully
       const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(404);
 
-      const analysisResponse = await request(app)
-        .post('/api/openings/fen-analysis')
-        .send({ fen: malformedFEN })
-        .expect(404);
-
       expect(openingResponse.body.success).toBe(false);
-      expect(analysisResponse.body.success).toBe(false);
     });
   });
 });

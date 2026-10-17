@@ -120,68 +120,6 @@ const CACHE_MAX_SIZE = 100;
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
 /**
- * @route POST /api/openings/fen-analysis
- * @desc Get ECO analysis data for a specific FEN position
- * @body {string} fen - FEN string of the position
- */
-router.post('/fen-analysis', (req, res) => {
-  try {
-    const { fen } = req.body;
-
-    if (!fen) {
-      return res.status(400).json({
-        success: false,
-        error: 'FEN string is required in request body',
-      });
-    }
-
-    // Get analysis data from ECO service by FEN
-    const analysisData = ecoService.getECOAnalysisByFEN(fen);
-
-    if (!analysisData) {
-      return res.status(404).json({
-        success: false,
-        error: `No analysis data found for FEN position`,
-      });
-    }
-
-    res.json({
-      success: true,
-      data: analysisData,
-    });
-  } catch (error) {
-    console.log('ERROR in FEN-analysis endpoint:', error.message);
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
-/**
- * @route GET /api/openings/eco/:code
- * @desc Get openings by ECO code
- * @param {string} code - ECO code (e.g., "A00", "B01")
- */
-router.get('/eco/:code', (req, res) => {
-  try {
-    const { code } = req.params;
-    const openings = ecoService.getOpeningsByECO(code.toUpperCase());
-
-    res.json({
-      success: true,
-      data: openings,
-      count: openings.length,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
-/**
  * @route GET /api/openings/search
  * @desc Search openings by name with caching and performance optimizations
  * @param {string} q - Search query
@@ -485,38 +423,6 @@ function sanitize(opening) {
 }
 
 /**
- * @route GET /api/openings/classification/:classification
- * @desc Get openings by classification (A, B, C, D, E)
- * @param {string} classification - Classification letter (A, B, C, D, E)
- */
-router.get('/classification/:classification', (req, res) => {
-  try {
-    const { classification } = req.params;
-    const upperClass = classification.toUpperCase();
-
-    if (!['A', 'B', 'C', 'D', 'E'].includes(upperClass)) {
-      return res.status(400).json({
-        success: false,
-        error: 'Classification must be A, B, C, D, or E',
-      });
-    }
-
-    const openings = ecoService.getOpeningsByClassification(upperClass);
-
-    res.json({
-      success: true,
-      data: openings,
-      count: openings.length,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
-/**
  * @route GET /api/openings/random
  * @desc Get random opening for training
  */
@@ -536,77 +442,10 @@ router.get('/random', (req, res) => {
   }
 });
 
-/**
- * @route GET /api/openings/categories
- * @desc Get all ECO categories
- */
-router.get('/categories', (req, res) => {
-  try {
-    const categories = ecoService.getECOCategories();
-
-    res.json({
-      success: true,
-      data: categories,
-      count: categories.length,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
-/**
- * @route GET /api/openings/stats
- * @desc Get opening database statistics
- */
-router.get('/stats', (req, res) => {
-  try {
-    const stats = ecoService.getStatistics();
-
-    res.json({
-      success: true,
-      data: stats,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
 // Cache for search results
 let searchIndexCache = null;
 let searchIndexCacheTime = null;
 const SEARCH_INDEX_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
-
-/**
- * @route GET /api/openings/popular
- * @desc Get popular openings sorted by absolute game count (games_analyzed)
- * @param {number} limit - Max results to return (default: 12, max: 50)
- */
-router.get('/popular', (req, res) => {
-  try {
-    const { limit = 12, complexity } = req.query;
-
-    const result = ecoService.getPopularOpenings(limit, complexity);
-
-    res.json({
-      success: true,
-      data: result.data,
-      count: result.count,
-      total_analyzed: result.total_analyzed,
-      source: result.source,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
 
 /**
  * @route GET /api/openings/popular-by-eco
@@ -798,78 +637,6 @@ router.get('/all', (req, res) => {
 });
 
 /**
- * @route GET /api/openings/family/:familyCode
- * @desc Get openings by ECO family (A, B, C, D, E)
- * @param {string} familyCode - ECO family letter (A, B, C, D, E)
- */
-router.get('/family/:familyCode', (req, res) => {
-  try {
-    const { familyCode } = req.params;
-    const family = familyCode.toUpperCase();
-
-    // Validate family code
-    if (!['A', 'B', 'C', 'D', 'E'].includes(family)) {
-      return res.status(400).json({
-        success: false,
-        error: 'Invalid family code. Must be A, B, C, D, or E',
-      });
-    }
-
-    // Get openings for this family
-    const familyOpenings = ecoService.getOpeningsByFamily(family);
-
-    if (!familyOpenings || familyOpenings.length === 0) {
-      return res.status(404).json({
-        success: false,
-        error: `No openings found for family ${family}`,
-      });
-    }
-
-    res.json({
-      success: true,
-      data: familyOpenings,
-      family: family,
-      count: familyOpenings.length,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
-/**
- * @route GET /api/openings/videos/:fen
- * @desc Get videos for a specific chess position
- * @param {string} fen - FEN string (URL encoded)
- */
-router.get('/videos/:fen', async (req, res) => {
-  try {
-    const { fen } = req.params;
-    const decodedFen = decodeURIComponent(fen);
-
-    const opening = ecoService.getOpeningByFEN(decodedFen);
-    const result = await getVideosWithFallback(decodedFen, opening ? opening.name : '');
-
-    res.json({
-      success: true,
-      data: result.videos,
-      count: result.videos.length,
-      fen: decodedFen,
-      source: result.source,
-      family: result.family,
-    });
-  } catch (error) {
-    console.error('Error fetching videos:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Failed to load videos',
-    });
-  }
-});
-
-/**
  * @route GET /api/openings/semantic-search
  * @desc Enhanced semantic search with natural language understanding
  * @param {string} q - Search query (natural language)
@@ -912,74 +679,6 @@ router.get('/semantic-search', async (req, res) => {
     });
   } catch (error) {
     console.error('Semantic search error:', error);
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
-/**
- * @route GET /api/openings/search-suggestions
- * @desc Get intelligent search suggestions based on partial query
- * @param {string} q - Partial search query
- * @param {number} limit - Max suggestions to return (default: 8, max: 15)
- */
-router.get('/search-suggestions', async (req, res) => {
-  try {
-    const { q, limit = 8 } = req.query;
-
-    if (!q || q.length < 2) {
-      return res.json({
-        success: true,
-        data: [],
-        count: 0,
-        note: 'Query too short for suggestions',
-      });
-    }
-
-    const startTime = Date.now();
-    const maxResults = Math.min(parseInt(limit) || 8, 15);
-
-    // Get basic suggestions from search service
-    const suggestions = await searchService.getSuggestions(q, maxResults);
-
-    // Add semantic suggestions for common patterns
-    const semanticSuggestions = [];
-    const queryLower = q.toLowerCase();
-
-    // Add common natural language patterns
-    if (queryLower.includes('aggr') || queryLower.includes('attack')) {
-      semanticSuggestions.push('aggressive openings', 'attacking options for black');
-    }
-    if (queryLower.includes('solid') || queryLower.includes('def')) {
-      semanticSuggestions.push('solid response to d4', 'solid defense against e4');
-    }
-    if (queryLower.includes('begin') || queryLower.includes('easy')) {
-      semanticSuggestions.push('beginner queens pawn openings', 'beginner french defense');
-    }
-    if (queryLower.includes('d4')) {
-      semanticSuggestions.push('response to d4', 'solid response to d4');
-    }
-    if (queryLower.includes('e4')) {
-      semanticSuggestions.push('response to e4', 'attacking options for black');
-    }
-
-    // Combine and deduplicate
-    const allSuggestions = [...new Set([...suggestions, ...semanticSuggestions])];
-    const finalSuggestions = allSuggestions.slice(0, maxResults);
-
-    const searchTime = Date.now() - startTime;
-
-    res.json({
-      success: true,
-      data: finalSuggestions,
-      count: finalSuggestions.length,
-      searchTime: `${searchTime}ms`,
-      query: q,
-    });
-  } catch (error) {
-    console.error('Search suggestions error:', error);
     res.status(500).json({
       success: false,
       error: error.message,

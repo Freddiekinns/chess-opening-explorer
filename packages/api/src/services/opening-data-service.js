@@ -82,31 +82,8 @@ async function searchOpeningsByName(query, limit = 20) {
   }
 }
 
-/**
- * Get statistics about the openings database
- * @returns {Object} Statistics object
- */
-async function getOpeningsStats() {
-  try {
-    if (!ecoServiceInstance) {
-      ecoServiceInstance = new ECOService();
-    }
-    
-    return ecoServiceInstance.getStatistics();
-  } catch (error) {
-    console.error('Error getting openings stats:', error);
-    return {
-      total: 0,
-      byClassification: {},
-      bySource: {},
-      withInterpolation: 0
-    };
-  }
-}
-
 module.exports = {
   getOpenings,
   getOpeningByFEN,
-  searchOpeningsByName,
-  getOpeningsStats
+  searchOpeningsByName
 };

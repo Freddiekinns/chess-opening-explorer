@@ -5,6 +5,15 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Analytics read-out, gap events, soft 404s — full activeContext text (2026-10-11, #179)
+
+Shipped in #179. A read of PostHog, Vercel and Search Console (baseline:
+`archive.md`) added `search_start`, `search_no_results`, `video_gallery_view`
+and `opening_nav`. `lib/prerender.ts` keeps the middleware's pre-render on
+screen until the aggregate fetch lands, which fixes 86 soft 404s; revalidate in
+Search Console. **Revisit late Nov 2026** with six weeks of the new events.
+Search ranking and the video pipeline are paused until then.
+
 ## Style tags tail waves 5–12, gambit search — full activeContext text (2026-10-12, #179)
 
 The tail is finished: 568 more tagged (tail-38 to tail-66), 1,411 variations,

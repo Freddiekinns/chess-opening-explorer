@@ -156,38 +156,39 @@ describe('family fallback for videos and studies (review V1/V2)', () => {
     consoleSpies.forEach((spy) => spy.mockRestore());
   });
 
-  describe('GET /api/openings/videos/:fen', () => {
+  describe('GET /api/openings/page/:fen', () => {
     it('serves exact-position videos with source "position"', async () => {
-      const res = await request(app).get(`/api/openings/videos/${encodeURIComponent(ROOT_FEN)}`);
+      const res = await request(app).get(`/api/openings/page/${encodeURIComponent(ROOT_FEN)}`);
       expect(res.status).toBe(200);
-      expect(res.body.source).toBe('position');
-      expect(res.body.family).toBeNull();
-      expect(res.body.data.map((v) => v.id)).toEqual(['root-1']);
+      const { videos, videoContext } = res.body.data;
+      expect(videoContext.source).toBe('position');
+      expect(videoContext.family).toBeNull();
+      expect(videos.map((v) => v.id)).toEqual(['root-1']);
       // Family-root page: no variation to cover, so no badges
-      expect(res.body.data[0].matchReason).toBeUndefined();
+      expect(videos[0].matchReason).toBeUndefined();
     });
 
     it('annotates match reasons on sub-variation pages (V2)', async () => {
-      const res = await request(app).get(`/api/openings/videos/${encodeURIComponent(VAR_FEN)}`);
+      const res = await request(app).get(`/api/openings/page/${encodeURIComponent(VAR_FEN)}`);
       expect(res.status).toBe(200);
-      expect(res.body.source).toBe('position');
-      const reasons = Object.fromEntries(res.body.data.map((v) => [v.id, v.matchReason]));
+      const { videos, videoContext } = res.body.data;
+      expect(videoContext.source).toBe('position');
+      const reasons = Object.fromEntries(videos.map((v) => [v.id, v.matchReason]));
       expect(reasons['var-specific']).toBe('variation');
       expect(reasons['var-generic']).toBe('family');
     });
 
     it('falls back to the family shelf when the position has no videos (V1)', async () => {
-      const res = await request(app).get(`/api/openings/videos/${encodeURIComponent(EMPTY_FEN)}`);
+      const res = await request(app).get(`/api/openings/page/${encodeURIComponent(EMPTY_FEN)}`);
       expect(res.status).toBe(200);
-      expect(res.body.source).toBe('family');
-      expect(res.body.family).toEqual({ id: 'sicilian', name: 'Sicilian Defense' });
+      const { videos, videoContext } = res.body.data;
+      expect(videoContext.source).toBe('family');
+      expect(videoContext.family).toEqual({ id: 'sicilian', name: 'Sicilian Defense' });
       // Family's videos, deduped and ranked by score
-      expect(res.body.data.map((v) => v.id)).toEqual(['root-1', 'var-specific', 'var-generic']);
-      expect(res.body.data.every((v) => v.matchReason === 'family')).toBe(true);
+      expect(videos.map((v) => v.id)).toEqual(['root-1', 'var-specific', 'var-generic']);
+      expect(videos.every((v) => v.matchReason === 'family')).toBe(true);
     });
-  });
 
-  describe('GET /api/openings/page/:fen', () => {
     it('carries videoContext and course fallback in the aggregate payload', async () => {
       const res = await request(app).get(`/api/openings/page/${encodeURIComponent(EMPTY_FEN)}`);
       expect(res.status).toBe(200);

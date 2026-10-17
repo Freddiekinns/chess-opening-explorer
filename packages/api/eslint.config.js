@@ -21,7 +21,8 @@ module.exports = [
       // Both are new to `eslint:recommended` in ESLint 10 and both find real
       // things, but fixing them is a code change rather than a config one, so
       // they land as warnings first — the way no-console already does here.
-      // preserve-caught-error fires 19 times, mostly in youtube-service.js.
+      // preserve-caught-error fires 12 times, mostly in the LLM enrichment
+      // services (llm-service.js, database-service.js).
       // no-useless-assignment fires twice, both in search-service.js, which
       // AGENTS.md gates behind the search-ranking skill.
       'preserve-caught-error': 'warn',

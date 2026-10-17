@@ -70,10 +70,14 @@ Read data from `api/data/` — it is canonical in every environment.
 
 ## Coverage
 
-`npm run test:coverage` enforces 90% globally, but `collectCoverageFrom` in
-`package.json` excludes most services (search, eco, llm, opening-data, database,
-youtube, chesscom, personal-games) and all of `api/`. The 90% figure therefore
-describes the covered subset, not the backend. Shrinking that exclusion list is
-tracked in #166 — when you add tests for an excluded service, remove its line.
-The frontend half of #166 is done: Vitest counts every file and gates in CI
-(`packages/web/AGENTS.md`, "Coverage").
+`npm run test:coverage` counts every file under `packages/api/` except the
+server bootstrap, config, the test helper, `download-eco.js` and the thin Vercel
+adapters in `api/`. Don't add a live service to that list to get green: until
+#166, eleven were excluded so a 90% gate could pass on 847 of 2,108 lines.
+
+The `coverageThreshold` in `package.json` is a ratchet, not a target: set a
+little under the measured figures (2026-10-17: lines 74, statements 74,
+functions 78, branches 64). Raise it as coverage rises; never lower it to get
+green. It is the only place the floor is set — `coverage.yml` relies on Jest
+failing the run. The frontend works the same way (`packages/web/AGENTS.md`,
+"Coverage").

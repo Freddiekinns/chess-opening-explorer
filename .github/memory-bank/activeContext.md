@@ -2,20 +2,20 @@
 
 **Date:** 2026-10-17
 
-## Current Task: #181 — delete the dead `/api/openings` endpoints
+## Current Task: #181 — delete the uncalled API endpoints
 
-Thirteen handlers nothing calls are gone: the issue's nine
-(`POST /fen-analysis`, `/eco/:code`, `/classification/:c`, `/categories`,
-`/stats`, `/popular`, `/family/:code`, `/videos/:fen`, `/search-suggestions`)
-plus four the review found (`/search`, `/fen/:fen`, `/fen/:fen/related`,
-`/popular-by-eco`). Bar agreed with the owner: nothing in the codebase calls it
-(checked every file type, runtime-built URLs, sitemaps and the pre-render). Also
-gone: six `vercel.json` cache rules (`/fen/(.*)` stays, it covers `/tree`), the
-service functions left with no caller, the unused `StatisticsShowcase` and the
-"Site Statistics" journey. Tests of live logic were ported, not dropped: video
-fallback and the opening record now hit `/page/:fen`, and the projection test
-hits `/semantic-search`, its first route test. Coverage gate 72/72/76/62 →
-76/76/79/66.
+Gone, on the agreed bar (nothing in the codebase calls it; checked every file
+type, runtime-built URLs, sitemaps and the pre-render): thirteen `/api/openings`
+handlers (the issue's nine, plus `/search`, `/fen/:fen`, `/fen/:fen/related`,
+`/popular-by-eco`), and the whole `/api/stats` and `/api/courses` functions —
+the detail page gets both through `/page/:fen`. Six Vercel functions remain.
+Also gone: their `vercel.json` rules (`/fen/(.*)` stays for `/tree`), the
+service functions left with no caller, `scripts/optimize-for-vercel.js` (its
+output was never read), `StatisticsShowcase` and the "Site Statistics" journey.
+Tests of live logic were ported, not dropped: video fallback and the opening
+record hit `/page/:fen`, the projection test hits `/semantic-search`, and the
+stats loading paths test `popularity-stats-service` directly. Gate 72/72/76/62 →
+76/68/80/77.
 
 **Next:** #182 (route tests for the four live handlers still untested;
 `/semantic-search` now has its projection test), then #183 (mobile card board

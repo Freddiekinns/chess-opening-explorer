@@ -4,8 +4,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **2026-10-17**: #181 — thirteen dead `/api/openings` routes deleted, gate
-  76/76/79/66; #166 — backend gate on 2,108 lines, not 847; #86 closed.
+- **2026-10-17**: #181 — 13 uncalled `/api/openings` routes, `/api/stats` and
+  `/api/courses` deleted; #166 — backend gate counts 2,108 lines; #86 closed.
 - **2026-10-12**: style tags tail finished (waves 5–12, 568 more); 1,411 tagged,
   every variation outside the 14 hubs. Gambit search keeps named gambits.
 - **2026-10-11**: analytics read-out, four gap events, soft-404 pre-render fix;

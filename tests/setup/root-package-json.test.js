@@ -82,9 +82,9 @@ describe('Root Package.json Configuration', () => {
     expect(packageJson.jest.testMatch).toContain('<rootDir>/tests/**/*.test.js');
 
     // Coverage thresholds: a ratchet set under the measured figures (#166, #181)
-    expect(packageJson.jest.coverageThreshold.global.branches).toBe(66);
-    expect(packageJson.jest.coverageThreshold.global.functions).toBe(79);
-    expect(packageJson.jest.coverageThreshold.global.lines).toBe(76);
+    expect(packageJson.jest.coverageThreshold.global.branches).toBe(68);
+    expect(packageJson.jest.coverageThreshold.global.functions).toBe(80);
+    expect(packageJson.jest.coverageThreshold.global.lines).toBe(77);
     expect(packageJson.jest.coverageThreshold.global.statements).toBe(76);
   });
 

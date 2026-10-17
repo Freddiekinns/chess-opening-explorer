@@ -1,8 +1,8 @@
 /**
  * Popularity Stats Service
  * Loads and serves the Lichess-derived popularity statistics, falling back to
- * the mock dataset when the real file is missing or empty. Extracted from
- * stats.routes.js so the aggregate page endpoint can reuse it in-process.
+ * the mock dataset when the real file is missing or empty. Read in-process by
+ * the aggregate page endpoint (`/api/openings/page/:fen`).
  */
 
 const fs = require('fs');

@@ -164,15 +164,6 @@ describe('ECOService Final Working Tests', () => {
 
       expect(ecoService.mergedData).toBeNull();
     });
-
-    it('should get popular openings', () => {
-      const result = ecoService.getPopularOpenings(5);
-
-      expect(result).toHaveProperty('data');
-      expect(Array.isArray(result.data)).toBe(true);
-      expect(result).toHaveProperty('count');
-      expect(result).toHaveProperty('total_analyzed');
-    });
   });
 
   describe('isEcoRoot Field Handling', () => {

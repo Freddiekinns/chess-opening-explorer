@@ -76,8 +76,8 @@ adapters in `api/`. Don't add a live service to that list to get green: until
 #166, eleven were excluded so a 90% gate could pass on 847 of 2,108 lines.
 
 The `coverageThreshold` in `package.json` is a ratchet, not a target: set a
-little under the measured figures (2026-10-17, after #181: lines 78,
-statements 78, functions 80, branches 68). Raise it as coverage rises; never
+little under the measured figures (2026-10-17, after #181: lines 79,
+statements 79, functions 82, branches 70). Raise it as coverage rises; never
 lower it to get green. It is the only place the floor is set — `coverage.yml`
 relies on Jest failing the run. The frontend works the same way
 (`packages/web/AGENTS.md`, "Coverage").

@@ -55,25 +55,6 @@ class CourseService {
   }
 
   /**
-   * Get all courses from all FEN positions
-   * @returns {Promise<Array>} Array of all course objects
-   */
-  async getAllCourses() {
-    if (!this.courseData) {
-      await this.loadCourseData();
-    }
-
-    const allCourses = [];
-    if (this.courseData) {
-      for (const courses of Object.values(this.courseData)) {
-        allCourses.push(...courses);
-      }
-    }
-
-    return allCourses;
-  }
-
-  /**
    * Get search links for an opening name
    * @param {string} openingName - Name of the opening
    * @returns {{lichess: string, chessable: string}|null} Search URLs or null
@@ -97,27 +78,6 @@ class CourseService {
     return {
       lichess: `https://lichess.org/study/search?q=${lichessEncoded}`,
       chessable: `https://www.chessable.com/courses/s/${chessableEncoded}`
-    };
-  }
-
-  /**
-   * Get statistics about the course database
-   * @returns {Promise<Object>} Statistics object
-   */
-  async getStatistics() {
-    if (!this.courseData) {
-      await this.loadCourseData();
-    }
-
-    const fens = Object.keys(this.courseData);
-    const allCourses = await this.getAllCourses();
-    const platforms = [...new Set(allCourses.map(course => course.platform))];
-
-    return {
-      totalFens: fens.length,
-      totalCourses: allCourses.length,
-      averageCoursesPerFen: fens.length > 0 ? allCourses.length / fens.length : 0,
-      platforms: platforms
     };
   }
 }

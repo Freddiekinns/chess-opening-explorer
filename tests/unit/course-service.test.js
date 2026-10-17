@@ -164,58 +164,6 @@ describe('CourseService', () => {
     });
   });
 
-  describe('getAllCourses', () => {
-    test('should return all courses from all FENs', async () => {
-      fs.existsSync.mockReturnValue(true);
-      fs.readFileSync.mockReturnValue(JSON.stringify(mockCourseData));
-
-      const allCourses = await courseService.getAllCourses();
-
-      expect(allCourses).toHaveLength(2);
-      expect(allCourses.map((c) => c.course_title)).toContain("King's Pawn Opening Masterclass");
-      expect(allCourses.map((c) => c.course_title)).toContain('Open Game Fundamentals');
-    });
-
-    test('should return empty array when no course data', async () => {
-      fs.existsSync.mockReturnValue(false);
-
-      const allCourses = await courseService.getAllCourses();
-
-      expect(allCourses).toEqual([]);
-    });
-  });
-
-  describe('getStatistics', () => {
-    beforeEach(async () => {
-      fs.existsSync.mockReturnValue(true);
-      fs.readFileSync.mockReturnValue(JSON.stringify(mockCourseData));
-      await courseService.loadCourseData();
-    });
-
-    test('should return correct statistics', async () => {
-      const stats = await courseService.getStatistics();
-
-      expect(stats.totalFens).toBe(2);
-      expect(stats.totalCourses).toBe(2);
-      expect(stats.averageCoursesPerFen).toBe(1);
-      expect(stats.platforms).toEqual(['ChessGym', 'Chess.com']);
-    });
-
-    test('should handle empty data', async () => {
-      fs.existsSync.mockReturnValue(true);
-      fs.readFileSync.mockReturnValue('{}');
-      const emptyService = new CourseService();
-      await emptyService.loadCourseData();
-
-      const stats = await emptyService.getStatistics();
-
-      expect(stats.totalFens).toBe(0);
-      expect(stats.totalCourses).toBe(0);
-      expect(stats.averageCoursesPerFen).toBe(0);
-      expect(stats.platforms).toEqual([]);
-    });
-  });
-
   describe('getSearchLinks', () => {
     test('should return search URLs for valid opening name', () => {
       const links = courseService.getSearchLinks('French Defense');

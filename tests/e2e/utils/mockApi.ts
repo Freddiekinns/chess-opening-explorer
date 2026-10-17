@@ -62,7 +62,7 @@ const testVideos = [
   },
 ];
 
-// Schema v2, as /api/courses/:fen and the page payload return it.
+// Schema v2, as the page payload returns it.
 const testStudies = [
   {
     study_title: 'Sicilian Defense Essentials',
@@ -301,21 +301,6 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
           tree: treeContext,
         },
       });
-    }
-
-    if (path.startsWith('/api/courses/')) {
-      return fulfillJson(route, {
-        success: true,
-        courses: testStudies,
-        searchLinks: {
-          lichess: 'https://lichess.org/study',
-          chessable: 'https://www.chessable.com',
-        },
-      });
-    }
-
-    if (path.startsWith('/api/stats/')) {
-      return fulfillJson(route, { success: true, data: testStats });
     }
 
     if (path === '/api/personal/games') {

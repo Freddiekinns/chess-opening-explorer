@@ -4,6 +4,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **2026-10-17**: #166 — backend gate on 2,108 lines, not 847; #86 closed.
 - **2026-10-12**: style tags tail finished (waves 5–12, 568 more); 1,411 tagged,
   every variation outside the 14 hubs. Gambit search keeps named gambits.
 - **2026-10-11**: analytics read-out, four gap events, soft-404 pre-render fix;
@@ -94,7 +95,6 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.
 - **Search near-duplicates**: four identical "najdorf" rows, ECO apart (data).
-- **Toasts need one host** (two within 4s cover an Undo), and **#166 — backend**
-  wants `collectCoverageFrom` shrunk; it gates 90% on a subset.
+- **Toasts need one host** (two within 4s cover an Undo).
 - **Mobile Discover facet chips**, win-rate filtering, ARIA tooltips, name
   dedupe. See `archive.md`.

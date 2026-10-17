@@ -1,14 +1,13 @@
 /**
- * Unit Tests for Stats API Routes
- * Tests the /api/stats/:fen endpoint and its internal data-loading helpers.
+ * Unit Tests for the popularity stats service
+ * Tests getStatsForFen's data-loading paths and validatePopularityStats. The
+ * aggregate page endpoint reads both in-process; until #181 these ran through
+ * the uncalled /api/stats/:fen route.
  *
  * Each describe block calls jest.resetModules() in beforeAll so that the
- * module-level `popularityStats` cache in stats.routes.js is reset to null,
- * allowing each group to exercise a different loading path.
+ * module-level `popularityStats` cache is reset to null, allowing each group
+ * to exercise a different loading path.
  */
-
-const request = require('supertest');
-const express = require('express');
 
 // Mock path-resolver so no real filesystem paths are used.
 jest.mock('../../packages/api/src/utils/path-resolver', () => ({
@@ -24,19 +23,13 @@ const VALID_STATS = {
   analysis_date: '2024-06-01',
 };
 
-/** Build a fresh Express app around a newly-required stats router. */
-function buildApp(statsRouter) {
-  const app = express();
-  app.use(express.json());
-  app.use('/api/stats', statsRouter);
-  return app;
-}
+const SERVICE = '../../packages/api/src/services/popularity-stats-service';
 
 // ---------------------------------------------------------------------------
 // Scenario 1: mock data path (real stats file does not exist)
 // ---------------------------------------------------------------------------
-describe('Stats Routes – mock data path (existsSync = false)', () => {
-  let app;
+describe('popularity stats – mock data path (existsSync = false)', () => {
+  let service;
   let fs;
 
   beforeAll(() => {
@@ -54,43 +47,35 @@ describe('Stats Routes – mock data path (existsSync = false)', () => {
       })
     );
 
-    const statsRouter = require('../../packages/api/src/routes/stats.routes');
-    app = buildApp(statsRouter);
+    service = require(SERVICE);
   });
 
   afterAll(() => {
     jest.restoreAllMocks();
   });
 
-  test('GET /:fen returns 200 with valid stats', async () => {
-    const fen = encodeURIComponent('valid-fen w - - 0 1');
-    const res = await request(app).get(`/api/stats/${fen}`);
-    expect(res.status).toBe(200);
-    expect(res.body.success).toBe(true);
-    expect(res.body.data).toEqual(VALID_STATS);
+  test('returns valid stats for a known FEN', () => {
+    const stats = service.getStatsForFen('valid-fen w - - 0 1');
+    expect(stats).toEqual(VALID_STATS);
+    expect(service.validatePopularityStats(stats)).toBe(true);
   });
 
-  test('GET /:fen returns 404 when FEN not in data', async () => {
-    const fen = encodeURIComponent('missing-fen w - - 0 1');
-    const res = await request(app).get(`/api/stats/${fen}`);
-    expect(res.status).toBe(404);
-    expect(res.body.success).toBe(false);
-    expect(res.body.error).toMatch(/not found/i);
+  test('returns null when FEN not in data', () => {
+    expect(service.getStatsForFen('missing-fen w - - 0 1')).toBeNull();
   });
 
-  test('GET /:fen returns 500 when stats structure is invalid', async () => {
-    const fen = encodeURIComponent('bad-structure-fen');
-    const res = await request(app).get(`/api/stats/${fen}`);
-    expect(res.status).toBe(500);
-    expect(res.body.success).toBe(false);
+  test('rejects an entry with an invalid structure', () => {
+    const stats = service.getStatsForFen('bad-structure-fen');
+    expect(stats).toEqual({ only: 'bad' });
+    expect(service.validatePopularityStats(stats)).toBe(false);
   });
 });
 
 // ---------------------------------------------------------------------------
 // Scenario 2: real stats available and valid (direct key structure)
 // ---------------------------------------------------------------------------
-describe('Stats Routes – real stats available (direct key structure)', () => {
-  let app;
+describe('popularity stats – real stats available (direct key structure)', () => {
+  let service;
   let fs;
 
   beforeAll(() => {
@@ -103,28 +88,23 @@ describe('Stats Routes – real stats available (direct key structure)', () => {
       .spyOn(fs, 'readFileSync')
       .mockReturnValue(JSON.stringify({ 'real-fen w - - 0 1': VALID_STATS }));
 
-    const statsRouter = require('../../packages/api/src/routes/stats.routes');
-    app = buildApp(statsRouter);
+    service = require(SERVICE);
   });
 
   afterAll(() => {
     jest.restoreAllMocks();
   });
 
-  test('GET /:fen returns 200 using real stats', async () => {
-    const fen = encodeURIComponent('real-fen w - - 0 1');
-    const res = await request(app).get(`/api/stats/${fen}`);
-    expect(res.status).toBe(200);
-    expect(res.body.success).toBe(true);
-    expect(res.body.data).toEqual(VALID_STATS);
+  test('returns stats from the real file', () => {
+    expect(service.getStatsForFen('real-fen w - - 0 1')).toEqual(VALID_STATS);
   });
 });
 
 // ---------------------------------------------------------------------------
 // Scenario 3: nested `.positions` data structure (real Lichess-style data)
 // ---------------------------------------------------------------------------
-describe('Stats Routes – nested positions structure', () => {
-  let app;
+describe('popularity stats – nested positions structure', () => {
+  let service;
   let fs;
 
   beforeAll(() => {
@@ -136,28 +116,23 @@ describe('Stats Routes – nested positions structure', () => {
       .spyOn(fs, 'readFileSync')
       .mockReturnValue(JSON.stringify({ positions: { 'nested-fen w - - 0 1': VALID_STATS } }));
 
-    const statsRouter = require('../../packages/api/src/routes/stats.routes');
-    app = buildApp(statsRouter);
+    service = require(SERVICE);
   });
 
   afterAll(() => {
     jest.restoreAllMocks();
   });
 
-  test('GET /:fen returns 200 when stats are under positions key', async () => {
-    const fen = encodeURIComponent('nested-fen w - - 0 1');
-    const res = await request(app).get(`/api/stats/${fen}`);
-    expect(res.status).toBe(200);
-    expect(res.body.success).toBe(true);
-    expect(res.body.data).toEqual(VALID_STATS);
+  test('returns stats stored under the positions key', () => {
+    expect(service.getStatsForFen('nested-fen w - - 0 1')).toEqual(VALID_STATS);
   });
 });
 
 // ---------------------------------------------------------------------------
 // Scenario 4: real stats file exists but contains invalid JSON → fallback
 // ---------------------------------------------------------------------------
-describe('Stats Routes – real stats file contains invalid JSON (fallback)', () => {
-  let app;
+describe('popularity stats – real stats file contains invalid JSON (fallback)', () => {
+  let service;
   let fs;
 
   beforeAll(() => {
@@ -172,27 +147,23 @@ describe('Stats Routes – real stats file contains invalid JSON (fallback)', ()
       .mockReturnValueOnce('NOT VALID JSON }{')
       .mockReturnValue(JSON.stringify({ 'mock-fen w - - 0 1': VALID_STATS }));
 
-    const statsRouter = require('../../packages/api/src/routes/stats.routes');
-    app = buildApp(statsRouter);
+    service = require(SERVICE);
   });
 
   afterAll(() => {
     jest.restoreAllMocks();
   });
 
-  test('GET /:fen returns 200 falling back to mock data', async () => {
-    const fen = encodeURIComponent('mock-fen w - - 0 1');
-    const res = await request(app).get(`/api/stats/${fen}`);
-    expect(res.status).toBe(200);
-    expect(res.body.success).toBe(true);
+  test('falls back to the mock data', () => {
+    expect(service.getStatsForFen('mock-fen w - - 0 1')).toEqual(VALID_STATS);
   });
 });
 
 // ---------------------------------------------------------------------------
 // Scenario 5: real stats file exists but is an empty object → fallback
 // ---------------------------------------------------------------------------
-describe('Stats Routes – real stats file is empty object (fallback)', () => {
-  let app;
+describe('popularity stats – real stats file is empty object (fallback)', () => {
+  let service;
   let fs;
 
   beforeAll(() => {
@@ -207,27 +178,23 @@ describe('Stats Routes – real stats file is empty object (fallback)', () => {
       .mockReturnValueOnce(JSON.stringify({}))
       .mockReturnValue(JSON.stringify({ 'mock-fen w - - 0 1': VALID_STATS }));
 
-    const statsRouter = require('../../packages/api/src/routes/stats.routes');
-    app = buildApp(statsRouter);
+    service = require(SERVICE);
   });
 
   afterAll(() => {
     jest.restoreAllMocks();
   });
 
-  test('GET /:fen returns 200 using mock fallback when real stats empty', async () => {
-    const fen = encodeURIComponent('mock-fen w - - 0 1');
-    const res = await request(app).get(`/api/stats/${fen}`);
-    expect(res.status).toBe(200);
-    expect(res.body.success).toBe(true);
+  test('falls back to the mock data when real stats are empty', () => {
+    expect(service.getStatsForFen('mock-fen w - - 0 1')).toEqual(VALID_STATS);
   });
 });
 
 // ---------------------------------------------------------------------------
 // Scenario 6: all file reads fail → catch block sets popularityStats = {}
 // ---------------------------------------------------------------------------
-describe('Stats Routes – file read throws (empty stats fallback)', () => {
-  let app;
+describe('popularity stats – file read throws (empty stats fallback)', () => {
+  let service;
   let fs;
   let consoleErrorSpy;
 
@@ -241,8 +208,7 @@ describe('Stats Routes – file read throws (empty stats fallback)', () => {
       throw new Error('ENOENT: file not found');
     });
 
-    const statsRouter = require('../../packages/api/src/routes/stats.routes');
-    app = buildApp(statsRouter);
+    service = require(SERVICE);
   });
 
   afterAll(() => {
@@ -250,11 +216,7 @@ describe('Stats Routes – file read throws (empty stats fallback)', () => {
     consoleErrorSpy.mockRestore();
   });
 
-  test('GET /:fen returns 404 when all reads fail (stats is empty {})', async () => {
-    const fen = encodeURIComponent('any-fen w - - 0 1');
-    const res = await request(app).get(`/api/stats/${fen}`);
-    // popularityStats = {} so FEN not found → 404
-    expect(res.status).toBe(404);
-    expect(res.body.success).toBe(false);
+  test('returns null for any FEN when all reads fail (stats is empty {})', () => {
+    expect(service.getStatsForFen('any-fen w - - 0 1')).toBeNull();
   });
 });

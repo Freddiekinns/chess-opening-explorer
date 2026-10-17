@@ -19,7 +19,7 @@ const request = require('supertest');
 
 const API_DIR = path.join(__dirname, '..', '..', 'api');
 
-// Nine Vercel functions, not one. Each builds its own app at module load, so
+// Six Vercel functions, not one. Each builds its own app at module load, so
 // requiring the file is the whole test: a route pattern the router refuses is
 // thrown before any request arrives.
 describe.each(fs.readdirSync(API_DIR).filter((f) => f.endsWith('.js')))('api/%s', (file) => {

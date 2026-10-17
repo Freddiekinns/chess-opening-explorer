@@ -81,11 +81,11 @@ describe('Root Package.json Configuration', () => {
     expect(packageJson.jest.collectCoverageFrom).toContain('packages/api/**/*.js');
     expect(packageJson.jest.testMatch).toContain('<rootDir>/tests/**/*.test.js');
 
-    // Coverage thresholds: a ratchet set under the measured figures (#166)
-    expect(packageJson.jest.coverageThreshold.global.branches).toBe(62);
-    expect(packageJson.jest.coverageThreshold.global.functions).toBe(76);
-    expect(packageJson.jest.coverageThreshold.global.lines).toBe(72);
-    expect(packageJson.jest.coverageThreshold.global.statements).toBe(72);
+    // Coverage thresholds: a ratchet set under the measured figures (#166, #181)
+    expect(packageJson.jest.coverageThreshold.global.branches).toBe(68);
+    expect(packageJson.jest.coverageThreshold.global.functions).toBe(80);
+    expect(packageJson.jest.coverageThreshold.global.lines).toBe(77);
+    expect(packageJson.jest.coverageThreshold.global.statements).toBe(76);
   });
 
   test('should have engines specification', () => {

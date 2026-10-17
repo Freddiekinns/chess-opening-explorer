@@ -4,8 +4,6 @@ const helmet = require('helmet');
 
 // Import routes
 const openingRoutes = require('../packages/api/src/routes/openings.routes');
-const statsRoutes = require('../packages/api/src/routes/stats.routes');
-const courseRoutes = require('../packages/api/src/routes/courses.routes');
 
 const app = express();
 
@@ -36,8 +34,6 @@ app.get('/api/health', (req, res) => {
 
 // API routes
 app.use('/api/openings', openingRoutes);
-app.use('/api/stats', statsRoutes);
-app.use('/api/courses', courseRoutes());
 
 app.get('/api/status', (req, res) => {
   res.json({

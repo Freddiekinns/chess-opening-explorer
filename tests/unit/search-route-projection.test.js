@@ -6,9 +6,9 @@
  * lines of name and ECO code, on every keystroke, mostly on phones. The
  * projection took it to 4.4 KB.
  *
- * `/semantic-search` was projected when that was fixed; `/search` was not, and
- * this test is why it is now. (`/search-by-category`, also unprojected then,
- * was removed on 2026-10-10: nothing called it, and it read the old LLM tags.)
+ * `/semantic-search` is the one search route left. `/search` (projected late,
+ * and why this test exists) went in #181 and `/search-by-category` on
+ * 2026-10-10: nothing called either.
  */
 const request = require('supertest');
 const express = require('express');
@@ -75,26 +75,28 @@ describe('search routes return the projected shape', () => {
 
   afterEach(() => spies.forEach((s) => s.mockRestore()));
 
-  test('GET /search drops the fields nothing renders', async () => {
-    const res = await request(app).get('/api/openings/search?q=sicilian');
+  test('GET /semantic-search drops the fields nothing renders', async () => {
+    const searchService = require('../../packages/api/src/services/search-service');
+    searchService.search.mockResolvedValue({
+      results: [
+        {
+          fen: 'rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2',
+          ...OPENING,
+          searchScore: 3.6,
+        },
+      ],
+      totalResults: 1,
+      hasMore: false,
+    });
+
+    const res = await request(app).get('/api/openings/semantic-search?q=sicilian');
 
     expect(res.status).toBe(200);
-    expect(res.body.data.length).toBeGreaterThan(0);
+    expect(res.body.data).toHaveLength(1);
     for (const row of res.body.data) {
-      // `searchScore` is absent here rather than extra: only the semantic path
-      // scores, and JSON drops the undefined key. Every key present must still
-      // be one the projection allows.
-      expect(row).toMatchObject({ name: 'Sicilian Defense', eco: 'B20' });
-      expect(Object.keys(row).every((k) => PROJECTED.includes(k))).toBe(true);
+      expect(row).toMatchObject({ name: 'Sicilian Defense', eco: 'B20', searchScore: 3.6 });
+      expect(Object.keys(row).sort()).toEqual([...PROJECTED].sort());
       FAT_FIELDS.forEach((field) => expect(row).not.toHaveProperty(field));
     }
-  });
-
-  test('GET /search returns the same shape from cache as fresh', async () => {
-    const fresh = await request(app).get('/api/openings/search?q=sicilian');
-    const cached = await request(app).get('/api/openings/search?q=sicilian');
-
-    expect(cached.body.cached).toBe(true);
-    expect(Object.keys(cached.body.data[0]).sort()).toEqual(Object.keys(fresh.body.data[0]).sort());
   });
 });

@@ -46,20 +46,6 @@ describe('LandingPage Component', () => {
             }),
         });
       }
-      if (url.includes('/api/openings/popular-by-eco')) {
-        return Promise.resolve({
-          ok: true,
-          json: () =>
-            Promise.resolve({
-              success: true,
-              data: mockOpeningsList,
-              metadata: {
-                response_time_ms: 150,
-                total_count: mockOpeningsList.length,
-              },
-            }),
-        });
-      }
       return Promise.resolve({
         ok: true,
         json: () =>

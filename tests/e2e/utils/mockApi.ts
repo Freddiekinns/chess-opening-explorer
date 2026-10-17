@@ -62,7 +62,7 @@ const testVideos = [
   },
 ];
 
-// Schema v2, as /api/courses/:fen and the page payload return it.
+// Schema v2, as the page payload returns it.
 const testStudies = [
   {
     study_title: 'Sicilian Defense Essentials',
@@ -91,16 +91,6 @@ const personalGamesByPlatform: Record<string, string[]> = {
   'chess.com': ['1. e4 c5 2. Nf3 d6', '1. e4 e6 2. d4 d5'],
   lichess: ['1. d4 d5 2. c4', '1. e4 c5 2. Nf3 d6'],
 };
-
-function buildPopularByEco(openings: TestOpening[]) {
-  const data: Record<string, TestOpening[]> = { A: [], B: [], C: [], D: [], E: [] };
-  for (const opening of openings) {
-    const key = opening.eco?.charAt(0) || 'A';
-    if (!data[key]) data[key] = [];
-    data[key].push(opening);
-  }
-  return data;
-}
 
 const FAMILIES: Record<string, string> = {
   'Sicilian Defense': 'sicilian',
@@ -266,7 +256,7 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
       return fulfillJson(route, { success: true, data: testOpenings });
     }
 
-    if (path === '/api/openings/semantic-search' || path === '/api/openings/search') {
+    if (path === '/api/openings/semantic-search') {
       const query = (url.searchParams.get('q') || '').toLowerCase();
       const results = testOpenings.filter((opening) => opening.name.toLowerCase().includes(query));
       return fulfillJson(route, {
@@ -286,14 +276,6 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
 
     if (path === '/api/openings/random') {
       return fulfillJson(route, { success: true, data: testOpenings[1] });
-    }
-
-    if (path === '/api/openings/popular-by-eco') {
-      const complexity = url.searchParams.get('complexity');
-      const openings = complexity
-        ? testOpenings.filter((opening) => opening.analysis_json?.complexity === complexity)
-        : testOpenings;
-      return fulfillJson(route, { success: true, data: buildPopularByEco(openings) });
     }
 
     // Aggregate detail-page payload (the page's single fetch since P9)
@@ -319,38 +301,6 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
           tree: treeContext,
         },
       });
-    }
-
-    if (path.startsWith('/api/openings/fen/') && path.endsWith('/related')) {
-      return fulfillJson(route, { success: true, data: relatedData });
-    }
-
-    if (path.startsWith('/api/openings/fen/')) {
-      const fen = decodeURIComponent(path.replace('/api/openings/fen/', ''));
-      const opening = testOpenings.find((entry) => entry.fen === fen);
-      if (!opening) {
-        return fulfillJson(route, { success: false, error: 'Opening not found' }, 404);
-      }
-      return fulfillJson(route, { success: true, data: opening });
-    }
-
-    if (path.startsWith('/api/openings/videos/')) {
-      return fulfillJson(route, { success: true, data: testVideos });
-    }
-
-    if (path.startsWith('/api/courses/')) {
-      return fulfillJson(route, {
-        success: true,
-        courses: testStudies,
-        searchLinks: {
-          lichess: 'https://lichess.org/study',
-          chessable: 'https://www.chessable.com',
-        },
-      });
-    }
-
-    if (path.startsWith('/api/stats/')) {
-      return fulfillJson(route, { success: true, data: testStats });
     }
 
     if (path === '/api/personal/games') {

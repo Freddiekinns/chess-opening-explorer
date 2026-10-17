@@ -25,8 +25,6 @@ The entry point for finding new openings and managing personal repertoire.
   database.
 - **Popularity Showcase**: View the "Most played" openings, ranked by games in
   the Lichess rated-games database (all rated players, not masters).
-- **Site Statistics**: Visibility into database coverage and total analyzed
-  positions.
 
 ### Repertoire Management
 

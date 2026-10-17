@@ -5,6 +5,25 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Style tags tail waves 5–12, gambit search — full activeContext text (2026-10-12, #179)
+
+The tail is finished: 568 more tagged (tail-38 to tail-66), 1,411 variations,
+11,863 positions, every variation outside the 14 hubs; 0 unresolved. A wave cost
+~20–40% of a 5-hour window; the judge ran inline, matched to exported
+precedents. If Jev's save hits a Windows file lock, re-run
+`jev-classify.js --new`. Briefs from waves 11–12 carry thin evidence notes on
+the rarest gambits; rerun one if its page draws traffic.
+
+Gambit search: "gambit"/"gambits" and Discover's Gambit filter now also take
+openings _named_ gambits (`STYLE_NAMES`, `name_pattern`), so the Queen's Gambit
+and "Gambit Declined" lines stay findable though tagged none; 982 → 1,921. Open:
+QGD sub-lines crowd the top of that list; B54's ECO name.
+
+Naming review (2026-10-13): labels kept as they are. A page hides Offbeat beside
+Dubious (440/441 overlap) and Lead in development on a gambit (338/402); data
+and search unchanged. Parked: plans don't say which side benefits (French
+Advance shows White's "Space advantage" to Black players).
+
 ## Analytics baseline — PostHog, Vercel, Search Console (2026-10-11)
 
 PostHog live since 2026-09-24. Vercel 30d: 102 visitors, 220 views, 69% bounce.

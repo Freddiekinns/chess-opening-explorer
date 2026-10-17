@@ -1,39 +1,35 @@
 # Active Context
 
-**Date:** 2026-10-11
+**Date:** 2026-10-17
 
-## Current Task: Analytics read-out, gap events, soft 404s
+## Current Task: Issue triage, honest backend coverage — next #181
 
-Branch `feat/analytics-gap-events`. A read of PostHog, Vercel and Search Console
-(baseline numbers: `archive.md`) found three questions the events could not
-answer, and 86 real opening pages still soft 404 after #142.
+Both open issues reviewed. #86 closed: flat config and eslint 10 had landed in
+#97, and the react-hooks 7 compiler preset (38 sites) is not planned because the
+React Compiler isn't being adopted. #166 done in #180: the backend gate counts
+2,108 lines, not 847, as a ratchet (72/72/76/62); the dead `youtube-service`,
+`video-processor` and `video_quality_filters.json` were deleted.
 
-- **New events:** `search_start` and `search_no_results` (from
-  `useOpeningSearch`, which now takes its surface; no query text),
-  `video_gallery_view` (once per set of videos, on screen), `opening_nav`
-  (`via: explorer | breadcrumb`, desktop and mobile).
-- **Soft 404s:** createRoot discarded the middleware's pre-render, so a slow (3s
-  cold) or failed aggregate fetch left the crawler "Loading opening..." or an
-  error message. `lib/prerender.ts` keeps the first page's pre-render on screen
-  until the data arrives. Revalidate in Search Console after deploy.
-- **Revisit late Nov 2026** with six weeks of the new events. Search ranking and
-  the video pipeline are paused until then.
+**Next, in order**, each a fresh session:
 
-## Previous Task: Style tags tail waves 5–12, gambit search (this branch)
+1. **#181**: delete the nine `/api/openings` endpoints nothing calls. The issue
+   and its comment trace why each lost its caller; all were deliberate. Open
+   decision for the owner: is "nothing in the codebase calls it" enough, given
+   Vercel keeps 12h of logs? `/stats` is **database counts, not popularity
+   stats**, and `user-journeys.md` still promises "Site Statistics", which no UI
+   draws. Settle that journey line in the same PR.
+2. **#182**: route-level tests for the five live handlers that have none.
+3. **#183**: the mini board sits flush against the card's left edge on mobile
+   (≤768px). A design call between two fixes.
 
-The tail is finished: 568 more tagged (tail-38 to tail-66), 1,411 variations,
-11,863 positions, every variation outside the 14 hubs; 0 unresolved. A wave cost
-~20–40% of a 5-hour window; the judge ran inline, matched to exported
-precedents. If Jev's save hits a Windows file lock, re-run
-`jev-classify.js --new`. Briefs from waves 11–12 carry thin evidence notes on
-the rarest gambits; rerun one if its page draws traffic.
+Checked and fine on `main`: home cards draw the W/D/L bar at 390px and 1280px;
+mobile hides only the "N games" count (deliberate, `861fe4687`).
 
-Gambit search: "gambit"/"gambits" and Discover's Gambit filter now also take
-openings _named_ gambits (`STYLE_NAMES`, `name_pattern`), so the Queen's Gambit
-and "Gambit Declined" lines stay findable though tagged none; 982 → 1,921. Open:
-QGD sub-lines crowd the top of that list; B54's ECO name.
+## Previous Task: Analytics read-out, gap events, soft 404s
 
-Naming review (2026-10-13): labels kept as they are. A page hides Offbeat beside
-Dubious (440/441 overlap) and Lead in development on a gambit (338/402); data
-and search unchanged. Parked: plans don't say which side benefits (French
-Advance shows White's "Space advantage" to Black players).
+Shipped in #179. A read of PostHog, Vercel and Search Console (baseline:
+`archive.md`) added `search_start`, `search_no_results`, `video_gallery_view`
+and `opening_nav`. `lib/prerender.ts` keeps the middleware's pre-render on
+screen until the aggregate fetch lands, which fixes 86 soft 404s; revalidate in
+Search Console. **Revisit late Nov 2026** with six weeks of the new events.
+Search ranking and the video pipeline are paused until then.

@@ -77,9 +77,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **#86's remaining half** — flat config and eslint 10 landed (#97); the
-  react-hooks 7 `recommended` preset did not. Its compiler rules flag ~20 sites,
-  `useOpeningSearch` among them. Land them at `warn`, clear in batches, promote.
+- **#181 → #182 → #183**: delete the `/api/openings` endpoints nothing calls,
+  then route tests for the live ones (raise the ratchet after each), then the
+  mobile card's flush-left mini board. Handover in `activeContext.md`.
 - **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
   `typescript <6.1.0`. `tools/analysis` still has no CI at all.
 - **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-

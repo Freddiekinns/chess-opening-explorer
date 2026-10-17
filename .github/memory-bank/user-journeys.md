@@ -23,8 +23,8 @@ The entry point for finding new openings and managing personal repertoire.
   deepest matching opening in the database.
 - **"Surprise Me"**: Navigate to a random, high-quality opening from the
   database.
-- **Popularity Showcase**: View the "Most Popular" openings based on real-time
-  Lichess master game statistics.
+- **Popularity Showcase**: View the "Most played" openings, ranked by games in
+  the Lichess rated-games database (all rated players, not masters).
 - **Site Statistics**: Visibility into database coverage and total analyzed
   positions.
 

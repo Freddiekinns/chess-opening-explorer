@@ -58,13 +58,13 @@ install — run `npm ci` before committing, or rely on CI, which runs lint and
   unreadable for months — `module.exports` under `"type": "module"` — because CI
   linted only api and web. It lints all three now; keep it that way.
 
-- **react-hooks 7 is installed but its `recommended` preset is not.** The
-  package enables the React Compiler rules through that preset, and the codebase
-  violates them in ~20 places. `packages/web` enables `rules-of-hooks` and
-  `exhaustive-deps` explicitly instead, which is what it has always enforced.
-  Adopting the preset is #86's remaining half: land the rules at `warn`, clear
-  the sites in batches, then promote to `error`. Do not add the preset without
-  doing that work.
+- **react-hooks 7 is installed but its `recommended` preset is not, by
+  decision.** The preset enables the React Compiler rules, which check code is
+  safe for a compiler this project isn't adopting; they flag 38 sites
+  (2026-10-17), including the search hook and detail page. `packages/web`
+  enables `rules-of-hooks` and `exhaustive-deps` explicitly instead, which is
+  what it has always enforced. #86 closed with the preset not planned: don't add
+  it unless the React Compiler is adopted, and then open a new issue.
 
 ## The dependency gate
 
@@ -159,10 +159,10 @@ install — run `npm ci` before committing, or rely on CI, which runs lint and
   package blocked on tracked work returns on its next release — #76 came back as
   #89 twenty-two minutes later. Worse, a `0.x` minor is grouped rather than
   filed as a major, so it rides along with every future batch and takes the
-  group red. That is why `.github/dependabot.yml` carries exactly one `ignore`
-  entry (`eslint-plugin-react-refresh >=0.5.0`, removed when #86 lands). Like
-  the `security:audit` allowlist, every entry states its reason and the
-  condition that deletes it.
+  group red. That is why `.github/dependabot.yml` once carried an `ignore` entry
+  for `eslint-plugin-react-refresh >=0.5.0`, removed when flat config landed
+  (#97). The list is empty now; like the `security:audit` allowlist, any new
+  entry states its reason and the condition that deletes it.
 
 - **Dependabot branches do not deploy to Vercel.** `vercel.json` sets
   `git.deploymentEnabled` to `false` for `dependabot/**` (minimatch, so the `**`

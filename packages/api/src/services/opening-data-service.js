@@ -63,27 +63,7 @@ async function getOpeningByFEN(fen) {
   }
 }
 
-/**
- * Search openings by name (basic search)
- * @param {string} query - Search query
- * @param {number} limit - Maximum results
- * @returns {Array} Array of matching openings
- */
-async function searchOpeningsByName(query, limit = 20) {
-  try {
-    if (!ecoServiceInstance) {
-      ecoServiceInstance = new ECOService();
-    }
-    
-    return ecoServiceInstance.searchOpeningsByName(query, limit);
-  } catch (error) {
-    console.error('Error searching openings by name:', error);
-    return [];
-  }
-}
-
 module.exports = {
   getOpenings,
-  getOpeningByFEN,
-  searchOpeningsByName
+  getOpeningByFEN
 };

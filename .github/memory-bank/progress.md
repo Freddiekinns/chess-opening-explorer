@@ -4,7 +4,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **2026-10-17**: #181 — nine dead `/api/openings` routes deleted, gate
+- **2026-10-17**: #181 — thirteen dead `/api/openings` routes deleted, gate
   76/76/79/66; #166 — backend gate on 2,108 lines, not 847; #86 closed.
 - **2026-10-12**: style tags tail finished (waves 5–12, 568 more); 1,411 tagged,
   every variation outside the 14 hubs. Gambit search keeps named gambits.
@@ -78,7 +78,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **#182 → #183**: route tests for the five untested live handlers, then the
+- **#182 → #183**: route tests for the four untested live handlers, then the
   mobile card's flush-left mini board. Handover in `activeContext.md`.
 - **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
   `typescript <6.1.0`. `tools/analysis` still has no CI at all.

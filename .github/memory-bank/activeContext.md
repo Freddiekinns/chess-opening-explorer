@@ -4,18 +4,22 @@
 
 ## Current Task: #181 — delete the dead `/api/openings` endpoints
 
-Nine handlers nothing calls are gone: `POST /fen-analysis`, `/eco/:code`,
-`/classification/:c`, `/categories`, `/stats`, `/popular`, `/family/:code`,
-`/videos/:fen`, `/search-suggestions`. Bar agreed with the owner: nothing in the
-codebase calls it (checked every file type, runtime-built URLs, sitemaps and the
-pre-render). Also gone: their four `vercel.json` cache rules, the `eco-service`
-/ `search-service` / `opening-data-service` functions left with no caller, and
-the "Site Statistics" journey (`/stats` was database counts; no UI since July
-2025). The `/videos` family-fallback tests now hit `/page/:fen`, which shares
-the logic. Coverage gate 72/72/76/62 → 76/76/79/66.
+Thirteen handlers nothing calls are gone: the issue's nine
+(`POST /fen-analysis`, `/eco/:code`, `/classification/:c`, `/categories`,
+`/stats`, `/popular`, `/family/:code`, `/videos/:fen`, `/search-suggestions`)
+plus four the review found (`/search`, `/fen/:fen`, `/fen/:fen/related`,
+`/popular-by-eco`). Bar agreed with the owner: nothing in the codebase calls it
+(checked every file type, runtime-built URLs, sitemaps and the pre-render). Also
+gone: six `vercel.json` cache rules (`/fen/(.*)` stays, it covers `/tree`), the
+service functions left with no caller, the unused `StatisticsShowcase` and the
+"Site Statistics" journey. Tests of live logic were ported, not dropped: video
+fallback and the opening record now hit `/page/:fen`, and the projection test
+hits `/semantic-search`, its first route test. Coverage gate 72/72/76/62 →
+76/76/79/66.
 
-**Next:** #182 (route tests for the five untested live handlers), then #183
-(mobile card board flush left, a design call).
+**Next:** #182 (route tests for the four live handlers still untested;
+`/semantic-search` now has its projection test), then #183 (mobile card board
+flush left, a design call).
 
 ## Previous Task: Issue triage, honest backend coverage (#180)
 

@@ -114,80 +114,6 @@ async function getCoursesWithFallback(fen) {
   };
 }
 
-// Simple in-memory cache for search results
-const searchCache = new Map();
-const CACHE_MAX_SIZE = 100;
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
-
-/**
- * @route GET /api/openings/search
- * @desc Search openings by name with caching and performance optimizations
- * @param {string} q - Search query
- * @param {number} limit - Max results to return (default: 10, max: 50)
- */
-router.get('/search', (req, res) => {
-  try {
-    const { q, limit = 10 } = req.query;
-
-    if (!q || q.length < 2) {
-      return res.status(400).json({
-        success: false,
-        error: 'Search query must be at least 2 characters long',
-      });
-    }
-
-    // Limit results to prevent performance issues
-    const maxResults = Math.min(parseInt(limit) || 10, 50);
-    const cacheKey = `${q.toLowerCase()}_${maxResults}`;
-
-    // Check cache first
-    if (searchCache.has(cacheKey)) {
-      const cached = searchCache.get(cacheKey);
-      if (Date.now() - cached.timestamp < CACHE_TTL) {
-        return res.json({
-          success: true,
-          data: cached.data,
-          count: cached.data.length,
-          cached: true,
-        });
-      } else {
-        searchCache.delete(cacheKey);
-      }
-    }
-
-    const startTime = Date.now();
-    // Projected before caching so the cached and fresh paths return the same
-    // shape. The service hands back whole records, `analysis_json` and all.
-    const openings = ecoService.searchOpeningsByName(q, maxResults).map(toSearchResult);
-    const searchTime = Date.now() - startTime;
-
-    // Cache the result
-    if (searchCache.size >= CACHE_MAX_SIZE) {
-      // Remove oldest entry
-      const firstKey = searchCache.keys().next().value;
-      searchCache.delete(firstKey);
-    }
-
-    searchCache.set(cacheKey, {
-      data: openings,
-      timestamp: Date.now(),
-    });
-
-    res.json({
-      success: true,
-      data: openings,
-      count: openings.length,
-      searchTime: `${searchTime}ms`,
-      cached: false,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
-
 /**
  * @route GET /api/openings/fen/:fen/tree
  * @desc Get full tree context (ancestors, siblings, children) for an opening
@@ -229,36 +155,6 @@ router.get('/fen/:fen/tree/children', (req, res) => {
   } catch (error) {
     console.error('Tree children error:', error);
     res.status(500).json({ success: false, error: 'Failed to load tree children' });
-  }
-});
-
-/**
- * @route GET /api/openings/fen/:fen
- * @desc Get opening by FEN position
- * @param {string} fen - FEN string (URL encoded)
- */
-router.get('/fen/:fen', (req, res) => {
-  try {
-    const { fen } = req.params;
-    const decodedFen = decodeURIComponent(fen);
-    const opening = ecoService.getOpeningByFEN(decodedFen);
-
-    if (!opening) {
-      return res.status(404).json({
-        success: false,
-        error: 'Opening not found for this position',
-      });
-    }
-
-    res.json({
-      success: true,
-      data: opening,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
   }
 });
 
@@ -339,90 +235,6 @@ router.get('/page/:fen', async (req, res) => {
 });
 
 /**
- * @route GET /api/openings/fen/:fen/related
- * @desc Get related openings (same ECO code) including mainline + siblings
- * @param {string} fen - FEN string (URL encoded)
- */
-router.get('/fen/:fen/related', (req, res) => {
-  try {
-    const { fen } = req.params;
-    const decodedFen = decodeURIComponent(fen);
-
-    if (!decodedFen || typeof decodedFen !== 'string') {
-      return res.status(400).json({ success: false, error: 'Invalid FEN parameter' });
-    }
-
-    const current = ecoService.getOpeningByFEN(decodedFen);
-    if (!current) {
-      return res.status(404).json({ success: false, error: 'Opening not found for this position' });
-    }
-
-    const ecoCode = current.eco;
-    if (!ecoCode) {
-      return res.status(200).json({
-        success: true,
-        data: {
-          current: sanitize(current),
-          ecoCode: null,
-          mainline: null,
-          siblings: [],
-          counts: { siblings: 0 },
-        },
-      });
-    }
-
-    // Fetch all by ECO
-    const group = ecoService.getOpeningsByECO(ecoCode) || [];
-
-    // Identify mainline (isEcoRoot) or fallback highest games_analyzed
-    let mainline = group.find((o) => o.isEcoRoot === true);
-    if (!mainline && group.length > 0) {
-      mainline = [...group].sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))[0];
-    }
-
-    const siblings = group
-      .filter((o) => o.fen !== decodedFen) // exclude current
-      .sort((a, b) => {
-        // mainline priority handled separately; here just games_analyzed desc then name
-        const diff = (b.games_analyzed || 0) - (a.games_analyzed || 0);
-        if (diff !== 0) return diff;
-        return (a.name || '').localeCompare(b.name || '');
-      });
-
-    const payload = {
-      current: sanitize(current),
-      ecoCode,
-      mainline: mainline ? sanitize(mainline) : null,
-      siblings: siblings.map(sanitize),
-      counts: { siblings: siblings.length },
-    };
-
-    return res.json({ success: true, data: payload });
-  } catch (error) {
-    console.error('Related openings error:', error);
-    return res.status(500).json({ success: false, error: 'Failed to load related openings' });
-  }
-});
-
-// Helper to minimize payload surface
-function sanitize(opening) {
-  if (!opening) return null;
-  return {
-    fen: opening.fen,
-    name: opening.name,
-    eco: opening.eco,
-    moves: opening.moves || '',
-    isEcoRoot: opening.isEcoRoot === true,
-    games_analyzed: opening.games_analyzed || 0,
-    // Pass through complexity if present from analysis_json (used in teaser tag)
-    complexity:
-      opening.analysis_json && opening.analysis_json.complexity
-        ? opening.analysis_json.complexity
-        : opening.complexity || null,
-  };
-}
-
-/**
  * @route GET /api/openings/random
  * @desc Get random opening for training
  */
@@ -446,30 +258,6 @@ router.get('/random', (req, res) => {
 let searchIndexCache = null;
 let searchIndexCacheTime = null;
 const SEARCH_INDEX_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
-
-/**
- * @route GET /api/openings/popular-by-eco
- * @desc Get top openings by ECO category for optimized grid display
- * @param {number} limit - Max results per category (default: 6, max: 20)
- */
-router.get('/popular-by-eco', (req, res) => {
-  try {
-    const { limit = 6, complexity, category } = req.query;
-
-    const result = ecoService.getPopularOpeningsByECO(category, limit, complexity);
-
-    res.json({
-      success: true,
-      data: result.data,
-      metadata: result.metadata,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-    });
-  }
-});
 
 /**
  * @route GET /api/openings/browse

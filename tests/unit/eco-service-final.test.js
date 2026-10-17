@@ -109,15 +109,6 @@ describe('ECOService Final Working Tests', () => {
       expect(result[0]).toHaveProperty('name');
     });
 
-    it('should return openings for valid ECO code', () => {
-      const result = ecoService.getOpeningsByECO('B20');
-
-      expect(Array.isArray(result)).toBe(true);
-      if (result.length > 0) {
-        expect(result[0]).toHaveProperty('eco', 'B20');
-      }
-    });
-
     it('should return a random opening', () => {
       const result = ecoService.getRandomOpening();
 
@@ -125,12 +116,6 @@ describe('ECOService Final Working Tests', () => {
         expect(result).toHaveProperty('eco');
         expect(result).toHaveProperty('name');
       }
-    });
-
-    it('should search openings by name', () => {
-      const result = ecoService.searchOpeningsByName('Sicilian');
-
-      expect(Array.isArray(result)).toBe(true);
     });
 
     it('should handle empty data gracefully', () => {

@@ -455,62 +455,6 @@ class ECOService {
   }
 
   /**
-   * Search openings by ECO code
-   */
-  getOpeningsByECO(ecoCode) {
-    const ecoData = this.loadECOData();
-    const results = [];
-    
-    for (const [fen, opening] of Object.entries(ecoData)) {
-      if (opening.eco === ecoCode) {
-        results.push({ fen, ...opening });
-      }
-    }
-    
-    return results;
-  }
-
-  /**
-   * Search openings by name (fuzzy search with performance optimizations)
-   */
-  searchOpeningsByName(searchTerm, limit = 20) {
-    const ecoData = this.loadECOData();
-    const results = [];
-    const searchLower = searchTerm.toLowerCase();
-    
-    // Early exit if we have enough results
-    for (const [fen, opening] of Object.entries(ecoData)) {
-      if (results.length >= limit) break;
-      
-      const nameMatch = opening.name.toLowerCase().includes(searchLower);
-      const aliasMatch = opening.aliases && Object.values(opening.aliases).some(alias => 
-        alias.toLowerCase().includes(searchLower)
-      );
-      
-      if (nameMatch || aliasMatch) {
-        results.push({ fen, ...opening });
-      }
-    }
-    
-    // Sort by relevance - exact matches first, then partial matches
-    return results.sort((a, b) => {
-      const aName = a.name.toLowerCase();
-      const bName = b.name.toLowerCase();
-      
-      // Exact matches at start of name get highest priority
-      const aStartsWithQuery = aName.startsWith(searchLower) ? 0 : 1;
-      const bStartsWithQuery = bName.startsWith(searchLower) ? 0 : 1;
-      
-      if (aStartsWithQuery !== bStartsWithQuery) {
-        return aStartsWithQuery - bStartsWithQuery;
-      }
-      
-      // Then shorter names (more specific) get priority
-      return aName.length - bName.length;
-    });
-  }
-
-  /**
    * Get random opening for training
    */
   getRandomOpening() {

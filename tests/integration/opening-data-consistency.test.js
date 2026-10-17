@@ -2,7 +2,7 @@
  * TDD Test: Opening Data Consistency Integration Tests
  *
  * This test suite verifies that all 8 key opening attributes are returned
- * intact by the FEN lookup endpoint:
+ * intact in the detail page's aggregate payload (`/page/:fen`):
  * 1. Description
  * 2. Name
  * 3. FEN
@@ -123,13 +123,13 @@ describe('Opening Data Consistency Integration Tests', () => {
   });
 
   describe('Core Opening Data Retrieval', () => {
-    test('should return consistent opening data from FEN lookup endpoint', async () => {
+    test('should return consistent opening data from the page endpoint', async () => {
       const encodedFEN = encodeURIComponent(testFEN);
 
-      const response = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
+      const response = await request(app).get(`/api/openings/page/${encodedFEN}`).expect(200);
 
       expect(response.body.success).toBe(true);
-      const opening = response.body.data;
+      const opening = response.body.data.opening;
 
       // Verify all 8 key attributes
       expect(opening.name).toBe(expectedOpening.name);
@@ -145,9 +145,9 @@ describe('Opening Data Consistency Integration Tests', () => {
     test('should include all required attributes in opening response', async () => {
       const encodedFEN = encodeURIComponent(testFEN);
 
-      const response = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(200);
+      const response = await request(app).get(`/api/openings/page/${encodedFEN}`).expect(200);
 
-      const opening = response.body.data;
+      const opening = response.body.data.opening;
 
       // Verify all 8 key attributes are present
       expect(opening).toHaveProperty('name');
@@ -170,14 +170,16 @@ describe('Opening Data Consistency Integration Tests', () => {
       const nonExistentFEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
       const encodedFEN = encodeURIComponent(nonExistentFEN);
 
-      await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(404);
+      await request(app).get(`/api/openings/page/${encodedFEN}`).expect(404);
     });
 
     test('should handle malformed FEN gracefully', async () => {
       const malformedFEN = 'invalid-fen-string';
       const encodedFEN = encodeURIComponent(malformedFEN);
 
-      const openingResponse = await request(app).get(`/api/openings/fen/${encodedFEN}`).expect(404);
+      const openingResponse = await request(app)
+        .get(`/api/openings/page/${encodedFEN}`)
+        .expect(404);
 
       expect(openingResponse.body.success).toBe(false);
     });

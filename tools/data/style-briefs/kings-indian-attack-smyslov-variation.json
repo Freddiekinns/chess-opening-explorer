@@ -1,0 +1,106 @@
+{
+  "slug": "kings-indian-attack-smyslov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Indian Attack: Smyslov Variation",
+    "eco": "A05",
+    "moves": "1. Nf3 Nf6 2. g3 g6 3. b4",
+    "fen": "rnbqkb1r/pppppp1p/5np1/8/1P6/5NP1/P1PPPP1P/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "kings-indian-attack-symmetrical-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.b4 against the fianchettoed Black set-up, aiming for a Reti-style double fianchetto with Bb2 and Bg2 and queenside expansion with a4 and b5. Black usually plays 3...Bg7 4.Bb2 O-O and counters in the centre with ...d6 and ...e5 or ...c5. The game is manoeuvring, with White trying to use the long diagonal.",
+  "white_ideas": [
+    {
+      "idea": "Double fianchetto with Bb2 and Bg2 and aim at the long diagonal"
+    },
+    {
+      "idea": "Expand on the queenside with a4, b5 and c4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Mirror with ...Bg7 and ...O-O, then play ...d6 and ...e5"
+    },
+    {
+      "idea": "Strike with ...c5 to challenge the b4 pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Reti-style fianchetto set-up with queenside space for White"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The play is mostly manoeuvring around the long diagonal and the b4 pawn, not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The b4 pawn can be challenged by ...c5, but ...Nxb... does not win it by force and nothing is offered at the root."
+    },
+    "soundness": {
+      "notes": "A well-known sound set-up with the b4 advance."
+    },
+    "structure": {
+      "notes": "Pawn centres are undecided and both players keep options open."
+    },
+    "approach": {
+      "notes": "A named, respectable Reti idea, but it is a specific plan rather than a set-up you can play against everything."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The plans are positional, with limited memorisation."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Manoeuvring play on both wings without forced lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The b4 pawn is not a planned sacrifice."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A sound hypermodern line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.75,
+      "reason": "Flank opening with the centre undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A named Reti plan, but it is aimed at the symmetrical g6 defence only."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans over theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion",
+        "hypermodern_centre"
+      ],
+      "reason": "White develops both bishops on the long diagonals and expands on the queenside."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "english-opening-adorjan-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Opening: Adorjan Defense",
+    "eco": "A10",
+    "moves": "1. c4 g6 2. e4 e5",
+    "fen": "rnbqkbnr/pppp1p1p/6p1/4p3/2P1P3/8/PP1P1PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "english-opening-great-snake-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black answers 1.c4 with ...g6 and, after 2.e4, strikes back with ...e5. The position resembles a reversed Sicilian-style Maroczy with a fianchetto bishop. White usually continues Nc3 and g3 or d4 with a lead in space.",
+  "white_ideas": [
+    {
+      "idea": "Develop Nc3, g3 and Bg2 and keep the centre under control"
+    },
+    {
+      "idea": "Take space with d3/f4 or play d4 to open lines"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Fianchetto with ...Bg7 and ...Nc6"
+    },
+    {
+      "idea": "Hit the centre with ...f5 or ...d6/...Nge7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical e4/e5 with c4 against g6"
+    },
+    {
+      "structure": "Open centre if White plays d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not forcing; both sides develop with chances."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No pawn is sacrificed."
+    },
+    "soundness": {
+      "notes": "Adorjan's idea is accepted as playable; neither side stands badly."
+    },
+    "structure": {
+      "notes": "Flexible; 3.d4 exd4 opens the centre but quieter lines keep it tense."
+    },
+    "approach": {
+      "notes": "Named after Adorjan but not seriously rare, so standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans of a mixed structure but not demanding."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto bishop",
+    "Control of d5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3.d4",
+      "moves": "1. c4 g6 2. e4 e5 3. d4 exd4 4. Qxd4 Nf6",
+      "how": "White opens the centre for an Open Sicilian-like game."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "The play is positional with chances for both and little forcing theory."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides have sensible set-ups."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre stays tense between e4/e5 and the c4 pawn."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "It is a normal if uncommon way to meet 1.c4 played by good players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Positional plans are needed but there is little to memorise."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "knight_outpost"
+      ],
+      "reason": "The g7 and g2 bishops and the d5 square set the character."
+    }
+  }
+}

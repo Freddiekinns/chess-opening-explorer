@@ -1,0 +1,107 @@
+{
+  "slug": "semi-slav-defense-rubinstein-system",
+  "tier": "unsourced",
+  "root": {
+    "name": "Semi-Slav Defense: Rubinstein System",
+    "eco": "D45",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c6 4. Nf3 Nf6 5. e3 Nbd7 6. Ne5",
+    "fen": "r1bqkb1r/pp1n1ppp/2p1pn2/3pN3/2PP4/2N1P3/PP3PPP/R1BQKB1R b KQkq - 2 6"
+  },
+  "parent": "semi-slav-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 5...Nbd7 White plays 6.Ne5, an early central knight aimed at the Black knight and f7, instead of the Meran 6.Bd3. Black usually plays ...Bd6 and ...O-O or trades on e5, while White follows with f4 and a kingside build-up. It is a combative anti-Meran with a strategic flavour. I am not fully sure of this name and move order.",
+  "white_ideas": [
+    {
+      "idea": "Plant the knight on e5 and support it with f4"
+    },
+    {
+      "idea": "Develop Bd3, Qf3 or Qc2, and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the knight with ...Nxe5 or hit it with ...Bd6"
+    },
+    {
+      "idea": "Break with ...dxc4 or ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White knight on e5 supported by f4"
+    },
+    {
+      "structure": "Semi-Slav centre with pawns on c6, d5, e6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White has an early plan; Black has a solid structure but the play is combative."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is given up."
+    },
+    "soundness": {
+      "notes": "A sound anti-Meran try."
+    },
+    "structure": {
+      "notes": "The d4/c4 and d5/e6 pawns are in tension."
+    },
+    "approach": {
+      "notes": "A respected branch of the Semi-Slav."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs both theory and plan understanding."
+    }
+  },
+  "plan_phrases": [
+    "Knight outpost on e5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Combative but not as forcing as the Botvinnik."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Nothing is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Mainstream."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A mainstream branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Some theory."
+    },
+    "plans": {
+      "value": [
+        "knight_outpost",
+        "space_advantage"
+      ],
+      "reason": "White places a knight on e5."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "owen-defense-hekili-loa-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Owen Defense: Hekili-Loa Gambit",
+    "eco": "B00",
+    "moves": "1. e4 b6 2. d4 c5 3. dxc5 Nc6",
+    "fen": "r1bqkbnr/p2ppppp/1pn5/2P5/4P3/8/PPP2PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "owen-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black strikes at the d4 centre with 2...c5 and after 3.dxc5 plays Nc6, offering the pawn for quick development. White can hold the pawn with b4 or Nf3, and Black plays for ...Bxc5 or ...Qc7 or ...e6. It is an uncommon speculative gambit with a tempo spent on b6.",
+  "white_ideas": [
+    {
+      "idea": "Keep the c5 pawn with b4 or Nf3 and develop"
+    },
+    {
+      "idea": "Maintain the central space"
+    },
+    {
+      "idea": "Return the pawn if needed to complete development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain c5 with ...Bxc5 or ...Qc7"
+    },
+    {
+      "idea": "Develop quickly with ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Use the b7 bishop on the long diagonal"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White a pawn up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn gambit early; the game is open and risky."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the pawn with accurate play, though Black may recoup it."
+    },
+    "soundness": {
+      "notes": "Probably dubious since Black has spent tempi."
+    },
+    "structure": {
+      "notes": "The d-pawn is traded and lines open."
+    },
+    "approach": {
+      "notes": "Rarely used by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory, but dubious."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "A pawn is offered for development early."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.5,
+      "reason": "Black offers the c5 pawn, though it may come back quickly."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Black loses time and a pawn with little in return."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The d-pawn is traded early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black wants development for the pawn."
+    }
+  }
+}

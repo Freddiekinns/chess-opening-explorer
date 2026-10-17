@@ -1,0 +1,111 @@
+{
+  "slug": "blumenfeld-countergambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blumenfeld Countergambit Accepted",
+    "eco": "E10",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 c5 4. d5 b5 5. dxe6 fxe6 6. cxb5 d5",
+    "fen": "rnbqkb1r/p5pp/4pn2/1Ppp4/8/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 7"
+  },
+  "parent": "blumenfeld-countergambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 6.cxb5 d5 Black has a strong pawn centre of e6, d5 and c5 for the b-pawn, and White is a pawn up. Black plays ...Bb7 or ...a6, opens the b-file and attacks with active pieces. White must return the pawn or complete development to avoid a central collapse.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, e3 and Be2 and keep the extra pawn"
+    },
+    {
+      "idea": "Return the pawn at the right moment for a safe position"
+    },
+    {
+      "idea": "Attack the e6/d5 centre with pieces"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the central pawn mass and open files"
+    },
+    {
+      "idea": "Play ...a6 to open the a-file and b-file"
+    },
+    {
+      "idea": "Develop with ...Bb7 and ...Bd6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black e6/d5/c5 pawns against White's extra queenside pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is a pawn down for a big centre and open files; both sides must be accurate."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can keep the b5 pawn if it develops carefully."
+    },
+    "soundness": {
+      "notes": "Considered sound; it has been used by strong players."
+    },
+    "structure": {
+      "notes": "Black's centre is mobile with a half-open b-file."
+    },
+    "approach": {
+      "notes": "Rare but played by strong players at times."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans around the centre and the b-file are subtle."
+    }
+  },
+  "plan_phrases": [
+    "Central pawn majority",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Black is a pawn down for a strong centre and active pieces."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black gave the b-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "The Blumenfeld is regarded as playable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is mobile and not yet locked or open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Played by strong players now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "It is a plan-based gambit with moderate theory."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority",
+        "lead_in_development"
+      ],
+      "reason": "Black's big centre and development are the compensation."
+    }
+  }
+}

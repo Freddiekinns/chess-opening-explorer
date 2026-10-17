@@ -1,0 +1,106 @@
+{
+  "slug": "scotch-game-cochrane-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Cochrane Variation",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bb4+ 5. c3 dxc3 6. bxc3 Ba5 7. e5",
+    "fen": "r1bqk1nr/pppp1ppp/2n5/b3P3/2B5/2P2N2/P4PPP/RNBQK2R b KQkq - 0 7"
+  },
+  "parent": "scotch-game-scotch-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Scotch Gambit White has played 5.c3 dxc3 6.bxc3 Ba5 7.e5, pawn down but with a strong centre and attacking chances against Black's king. White pushes e5 to gain space and kick the knight, with Ba3 and Qb3 ideas. Black can hold the pawn.",
+  "white_ideas": [
+    {
+      "idea": "Use e5 and quick development to attack f7"
+    },
+    {
+      "idea": "Play Ba3, Qb3 and Ng5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...d5 and ...Nge7"
+    },
+    {
+      "idea": "Counter with ...Bb6 and develop quickly"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White pawn on e5 and c3; Black bishop on a5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open attack versus extra material with forcing tactics."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White is a pawn down and Black can keep it."
+    },
+    "soundness": {
+      "notes": "A known gambit line, considered playable."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces."
+    },
+    "approach": {
+      "notes": "Played by strong players occasionally."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs concrete tactics and theory."
+    }
+  },
+  "plan_phrases": [
+    "gambit",
+    "lead in development",
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "White sacrifices a pawn for an attack and Black must find the defence."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White is a pawn down and Black can keep it."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "A known gambit that is playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The centre opens for the pieces."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Respectable gambit used occasionally by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Tactics need preparation but it is not heavy theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "White's compensation is development and pressure on f7."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "bogo-indian-defense-new-england-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: New England Variation",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Nfd2",
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/8/PP1NPPPP/RNBQKB1R b KQkq - 3 4"
+  },
+  "parent": "bogo-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White answers the check with Nfd2 and keeps the pawn structure intact, avoiding doubled pawns. Black can take on d2 and give White the bishop pair or play ...d5 to reach a Queen's Gambit type set-up.",
+  "white_ideas": [
+    {
+      "idea": "Keep the bishop pair after Bxd2 Bxd2"
+    },
+    {
+      "idea": "Build e4 and a big centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade the bishop or play ...d5 and ...O-O"
+    },
+    {
+      "idea": "Use ...c5 or ...b6 to fight the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Gambit type pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Tense centre."
+    },
+    "approach": {
+      "notes": "Rare sidestep."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Moderate."
+    }
+  },
+  "plan_phrases": [
+    "Bishop pair",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Quiet but slightly passive for White."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Fine."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "Centre undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Played now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Moderate."
+    },
+    "plans": {
+      "value": [
+        "bishop_pair",
+        "space_advantage"
+      ],
+      "reason": "White keeps the bishop pair and builds a centre."
+    }
+  }
+}

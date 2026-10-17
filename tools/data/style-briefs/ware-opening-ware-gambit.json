@@ -1,0 +1,104 @@
+{
+  "slug": "ware-opening-ware-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ware Opening: Ware Gambit",
+    "eco": "A00",
+    "moves": "1. a4 e5 2. a5 d5 3. e3 f5 4. a6",
+    "fen": "rnbqkbnr/ppp3pp/P7/3ppp2/8/4P3/1PPP1PPP/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "ware-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White pushes the a-pawn to a6 against Black's pawn centre on d5, e5 and f5, offering the pawn with 4.a6. Black can take with ...bxa6 and hold a pawn or ignore the pawn and develop. White tries to use the open a-file and the weakened queenside, but the pawn push is slow. Read from the moves.",
+  "white_ideas": [
+    {
+      "idea": "Open the a-file with axb7 or Bxa6"
+    },
+    {
+      "idea": "Develop with Nf3 and Bb5 or Bd3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take with ...bxa6 or ...Nxa6 and develop"
+    },
+    {
+      "idea": "Use the big centre with ...e4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black centre pawns on d5, e5 and f5 against White's a6 spearhead"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn offered for activity, but few forcing lines."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can take on a6 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "Black's centre is stronger and White's compensation is thin."
+    },
+    "structure": {
+      "notes": "The centre pawns are not locked or traded early."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious and rare, so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "open a-file",
+    "pawn offered for activity"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A pawn offered for activity, but few forcing lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "Black can take on a6 and keep the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "Black's centre is stronger and White's compensation is thin."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre pawns are not locked or traded early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Dubious and rare, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White hopes for speed and the a-file."
+    }
+  }
+}

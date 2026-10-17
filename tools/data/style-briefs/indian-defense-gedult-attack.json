@@ -1,0 +1,105 @@
+{
+  "slug": "indian-defense-gedult-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Gedult Attack",
+    "eco": "A45",
+    "moves": "1. d4 Nf6 2. f3 d5 3. g4",
+    "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P2P1/5P2/PPP1P2P/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "paleface-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 2.f3 and 3.g4 against the Indian set-up, grabbing space on the kingside and hoping for a pawn storm. The f3 pawn defends g4, so ...Nxg4 loses a piece, but the king is weakened. Black usually plays ...Nfd7 or ...e5 and takes the centre.",
+  "white_ideas": [
+    {
+      "idea": "Gain kingside space with g4 and g5"
+    },
+    {
+      "idea": "Attack with the h-pawn and queen"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...e5 or ...c5"
+    },
+    {
+      "idea": "Exploit the weakened diagonal with ...Qd6 or ...Bd6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Kingside advanced pawns, Black with central play"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings are weakened and the play is concrete."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands; f3 defends g4."
+    },
+    "soundness": {
+      "notes": "Strong players consider the weakening unjustified."
+    },
+    "structure": {
+      "notes": "Undecided centre."
+    },
+    "approach": {
+      "notes": "Rarely played."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a good first choice."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Pawn advances in front of the king make the position double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.75,
+      "reason": "The g4 pawn is protected by f3 and nothing is sacrificed."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "The kingside is weakened and strong players consider it inferior."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is not locked at this stage."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players hardly use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "A Dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "White aims to storm the kingside."
+    }
+  }
+}

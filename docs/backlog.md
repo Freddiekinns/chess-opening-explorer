@@ -21,6 +21,8 @@ is the ranked list that review produced.
   are fixed; the popularity refresh is parked; E2E specs are green and in CI.
 - **rev 4.4** (2026-10-11) — style tags tail: 280 more variations (#174), 568
   left.
+- **rev 4.5** (2026-10-13) — style tags tail finished (#179): every variation
+  outside the 14 hubs is tagged. Out of **Later**.
 
 ## The unifying principle
 
@@ -126,10 +128,6 @@ and drill for it.
   board" metric can be measured.
 - **Shareable opening report card** — an acquisition experiment, gated on the
   Analyse statistics fix.
-- **Style tags tail** — style classification shipped in #160 (see **Archive**).
-  848 variations were untagged (16% of pages, 0.8% of games); #174 tagged 280,
-  so 568 remain (tail-38 to tail-66). Plan in `.github/memory-bank/archive.md`,
-  runbook in `tools/style-tags/README.md`.
 
 ## Parked
 
@@ -137,6 +135,10 @@ and drill for it.
   2026-07-11, unchanged). Practice memory is the stateless interim.
 - **J7 — PWA with offline practice** — only once there is a daily reason to open
   the app.
+- **Side-aware style plans** — a plan chip does not say who it favours, so the
+  French Advance shows White's "Space advantage" to Black players. Needs a side
+  per plan, which means reclassifying (owner decision 2026-10-13: too costly
+  now).
 
 ---
 
@@ -203,8 +205,8 @@ Next:     personal strip + ?practice= · practice memory · divergence callout
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress
 Platform: position graph → detail page on it · position facts → J2 → sparring
-Later:    J1 · family hubs · /board · report card · style tags tail
-Parked:   slice 3 SRS · J7
+Later:    J1 · family hubs · /board · report card
+Parked:   slice 3 SRS · J7 · side-aware plans
 ```
 
 ---
@@ -223,7 +225,7 @@ Agreed by the owner on 2026-09-24. The reasoning is in the feature review §3.
 | J8 — Stockfish deviation analysis (client WASM)         | Archived | The mobile CPU and Vercel cost objections go away when the engine runs offline (position facts).                                                    |
 | 3.6 — middlegame bridge                                 | Archived | Cut in rev 3; still holds.                                                                                                                          |
 | J6 — side-by-side comparison                            | Archived | Cut in rev 3; still a chatbot question.                                                                                                             |
-| Opening style classification                            | Shipped  | 2026-10-05, PR #160. A fixed taxonomy (`docs/style-taxonomy.md`) replaces the LLM tags; the tail is in **Later**.                                   |
+| Opening style classification                            | Shipped  | 2026-10-05, PR #160. A fixed taxonomy (`docs/style-taxonomy.md`) replaces the LLM tags; the tail finished in #174 and #179.                         |
 
 **Merged, not archived:** the level-check strip → divergence callout · #4 My
 openings v2 → repertoire from your games · TASK013 → position facts · audit #8

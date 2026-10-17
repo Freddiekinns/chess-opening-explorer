@@ -1,0 +1,105 @@
+{
+  "slug": "pterodactyl-defense-central",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pterodactyl Defense: Central, Benoni Pterodactyl",
+    "eco": "A40",
+    "moves": "1. d4 g6 2. c4 Bg7 3. e4 c5 4. d5 Qa5+",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1pP4/2P1P3/8/PP3PPP/RNBQKBNR w KQkq - 1 5"
+  },
+  "parent": "queens-pawn-game-modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black fianchettoes, strikes with ...c5 and ...Qa5+, and attacks White's centre from the flanks. White has big central pawns on d5, e4 and c4 and develops with Bd2 or Nc3, aiming for kingside space. Black counterattacks on the queenside and with ...Nf6 and ...d6.",
+  "white_ideas": [
+    {
+      "idea": "Keep the big centre with Bd2 and Nc3"
+    },
+    {
+      "idea": "Push with f4 or Nge2 and a kingside advance"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre with ...d6 and ...e6"
+    },
+    {
+      "idea": "Use the queen to harass the queenside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like structure with pawns on d5 and c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not a well known line and played by few strong players."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Playable but risky."
+    },
+    "structure": {
+      "notes": "Benoni-like structure with a pawn on d5."
+    },
+    "approach": {
+      "notes": "A rare hypermodern line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs an understanding of Benoni structures."
+    }
+  },
+  "plan_phrases": [
+    "early_queen",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The Benoni-like structure and early queen sortie make it double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Playable but demanding."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.4,
+      "reason": "The d5 pawn locks the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely seen at the top."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Structure matters more than theory."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "fianchetto"
+      ],
+      "reason": "Black's queen comes out early and the bishop is fianchettoed."
+    }
+  }
+}

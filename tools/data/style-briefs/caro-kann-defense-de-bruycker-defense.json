@@ -1,0 +1,105 @@
+{
+  "slug": "caro-kann-defense-de-bruycker-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: De Bruycker Defense",
+    "eco": "B12",
+    "moves": "1. e4 c6 2. d4 Na6",
+    "fen": "r1bqkbnr/pp1ppppp/n1p5/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 2...Na6 against the Caro-Kann main set-up, heading for c7 to support ...e5 or ...d5. The main line goes 3.Nc3 Nc7 4.Nf3 d5 and Black reaches a Caro-Kann structure with an oddly placed knight. It is solid but passive and seldom played, and White can take space with an early e5.",
+  "white_ideas": [
+    {
+      "idea": "Take space with e5 or Bd3 and develop naturally"
+    },
+    {
+      "idea": "Exploit the placement of the Black knight"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reroute the knight to c7 and play ...d5 or ...e5"
+    },
+    {
+      "idea": "Keep the solid Caro-Kann pawn structure"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Caro-Kann structure with Black c6 and d5 pawns"
+    },
+    {
+      "structure": "Advance-type pawn chain after e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black keeps a compact Caro-Kann pawn structure with few weaknesses, and play is steady rather than forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Passive but playable; strong players do not consider it refuted."
+    },
+    "structure": {
+      "notes": "The d5 and c6 pawns against e4 usually leave a semi-open centre."
+    },
+    "approach": {
+      "notes": "A rare reply that strong players seldom use."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear enough but the knight route needs thought."
+    }
+  },
+  "plan_phrases": [
+    "knight reroute",
+    "solid structure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "The compact pawn structure and slow knight manoeuvre give a steady game that is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "It is a passive but sound setup."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "Black c6 and d5 against e4 give half-open files in most lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players rarely choose 2...Na6."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The set-up is simple but it needs judgement about the knight and e5."
+    },
+    "plans": {
+      "value": [],
+      "reason": "There is no clear named plan."
+    }
+  }
+}

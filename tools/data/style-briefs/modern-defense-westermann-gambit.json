@@ -1,0 +1,106 @@
+{
+  "slug": "modern-defense-westermann-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Westermann Gambit",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Bd2",
+    "fen": "rnbqk1nr/ppppppbp/6p1/8/3PP3/8/PPPB1PPP/RN1QKBNR b KQkq - 2 3"
+  },
+  "parent": "modern-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 3.Bd2, which leaves the d4 pawn only defended by the queen behind the bishop. Black can take 3...Bxd4 and give White time, while White aims for development. I am unsure of the exact follow-up and treat it as a rare trick line.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3 and Nf3 for the pawn"
+    },
+    {
+      "idea": "Open the position with c3 and Bc3-type ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take d4 with the bishop and hold it"
+    },
+    {
+      "idea": "Develop with ...Nf6 and ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...Bxd4"
+    },
+    {
+      "structure": "White bishop on d2 in the way"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unclear but White pays a pawn for little."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can take d4 and keep it."
+    },
+    "soundness": {
+      "notes": "White seems to have little for the pawn."
+    },
+    "structure": {
+      "notes": "The d-pawn comes off."
+    },
+    "approach": {
+      "notes": "A rare gambit."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "A pawn-down tricky line with forcing tries for White."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "The d4 pawn is given and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "White gets little for the pawn."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The d-pawn goes and the d-file is partly open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Strong players seldom play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "A dubious line is not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The pawn is meant to be repaid with time."
+    }
+  }
+}

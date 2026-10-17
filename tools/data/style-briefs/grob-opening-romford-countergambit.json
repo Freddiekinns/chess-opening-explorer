@@ -1,0 +1,111 @@
+{
+  "slug": "grob-opening-romford-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: Romford Countergambit",
+    "eco": "A00",
+    "moves": "1. g4 d5 2. Bg2 Bxg4 3. c4 d4",
+    "fen": "rn1qkbnr/ppp1pppp/8/8/2Pp2b1/8/PP1PPPBP/RNBQK1NR w KQkq - 0 4"
+  },
+  "parent": "grob-opening-grob-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 1.g4 and Black takes the pawn with ...Bxg4 and then pushes 3...d4 to gain space, answering the long diagonal. Black has an extra pawn and strong centre; White has the bishop pair prospects and queenside play with Qb3 or d3. White's compensation is thin.",
+  "white_ideas": [
+    {
+      "idea": "Use the long diagonal with Bg2 and Qb3"
+    },
+    {
+      "idea": "Attack the d4 pawn with Nf3 and d3"
+    },
+    {
+      "idea": "Open lines with b4 or e3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra g4 bishop pawn gain and the d4 space"
+    },
+    {
+      "idea": "Develop with ...Nc6, ...Nf6 and ...e5"
+    },
+    {
+      "idea": "Maintain the central pawn chain"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black d4 pawn space advantage against White fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White gambits a pawn and Black gets a space grab."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the g4 pawn."
+    },
+    "soundness": {
+      "notes": "Grob gambit is considered unsound."
+    },
+    "structure": {
+      "notes": "Black's d4 pawn restricts White's position; the centre is closed-ish."
+    },
+    "approach": {
+      "notes": "The Grob is an anchor for offbeat."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Simple ideas but the line is unsound."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White has gambited a pawn and play is concrete."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White offered the g4 pawn and Black has taken it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.8,
+      "reason": "The Grob Gambit is considered unsound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre pawns are not yet fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "The Grob is an offbeat anchor."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "lead_in_development"
+      ],
+      "reason": "White hopes for development and the long diagonal."
+    }
+  }
+}

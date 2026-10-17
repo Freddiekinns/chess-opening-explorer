@@ -1,0 +1,102 @@
+{
+  "slug": "zukertort-opening-ware-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Ware Defense",
+    "eco": "A04",
+    "moves": "1. Nf3 a5",
+    "fen": "rnbqkbnr/1ppppppp/8/p7/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+  },
+  "parent": "zukertort-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black replies 1.Nf3 with ...a5, a Ware-style flank move that gains queenside space but does little for the centre. White can usually play d4 or c4 and aim for a comfortable advantage. I am unsure of the mainline, so tags follow the move.",
+  "white_ideas": [
+    {
+      "idea": "Occupy the centre with d4 or c4 and develop freely"
+    },
+    {
+      "idea": "Exploit the weakened b5 square"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain queenside space and prepare ...Ra6 or ...b6 ideas"
+    },
+    {
+      "idea": "Fianchetto and aim at the centre from the flank"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flexible flank structure, usually transposing to a Queen's Pawn or English set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow first moves from both sides lead to quiet manoeuvring without forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "The ...a5 move is a minor loss of time, not a real flaw."
+    },
+    "structure": {
+      "notes": "The centre is undecided at move one, so the structure stays flexible."
+    },
+    "approach": {
+      "notes": "Played by strong players hardly at all; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory and unclear plans, rated intermediate."
+    }
+  },
+  "plan_phrases": [
+    "queenside space",
+    "flank move"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow first moves from both sides lead to quiet manoeuvring without forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "The ...a5 move is a minor loss of time, not a real flaw."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre is undecided at move one, so the structure stays flexible."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Played by strong players hardly at all; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Little theory and unclear plans, rated intermediate."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

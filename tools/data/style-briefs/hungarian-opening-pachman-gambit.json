@@ -1,0 +1,105 @@
+{
+  "slug": "hungarian-opening-pachman-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Pachman Gambit",
+    "eco": "A00",
+    "moves": "1. g3 f5 2. e4 fxe4 3. Qh5+ g6",
+    "fen": "rnbqkbnr/ppppp2p/6p1/7Q/4p3/6P1/PPPP1P1P/RNB1KBNR w KQkq - 0 4"
+  },
+  "parent": "hungarian-opening-dutch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White offers e4 and tries Qh5+, with 3...g6 4.Qe5 hitting h8. Black gets the extra pawn and White gets quick play. It is a speculative line.",
+  "white_ideas": [
+    {
+      "idea": "Win the pawn back with Qe5 or Qxe4"
+    },
+    {
+      "idea": "Take advantage of the weakened kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and keep the pawn"
+    },
+    {
+      "idea": "Challenge the queen"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file and long diagonals"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen sortie and gambit."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the e4 pawn."
+    },
+    "soundness": {
+      "notes": "The queen's early outing loses time."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Hardly ever played."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early queen sortie and gambit."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "Black can keep the e4 pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The queen's early outing loses time."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Open centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Hardly ever played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

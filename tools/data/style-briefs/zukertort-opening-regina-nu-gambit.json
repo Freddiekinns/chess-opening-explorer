@@ -1,0 +1,111 @@
+{
+  "slug": "zukertort-opening-regina-nu-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Zukertort Opening: Regina-Nu Gambit",
+    "eco": "A06",
+    "moves": "1. Nf3 d5 2. b3 c5 3. c4 dxc4 4. Nc3",
+    "fen": "rnbqkbnr/pp2pppp/8/2p5/2p5/1PN2N2/P2PPPPP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "nimzo-larsen-attack-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "A similar queenside gambit to the Pachman: White plays b3, c4 against ...d5 and ...c5, then after ...dxc4 Nc3 develops with the idea of Bb2 and Nb5 or Ne5. Black can keep the pawn but must develop carefully. Little experience, so I judge by the moves.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3 and Bb2, then regain c4 or Qa4+"
+    },
+    {
+      "idea": "Aim at the long diagonal and Nb5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep c4 with ...b5 or ...Nc6 and ...e5"
+    },
+    {
+      "idea": "Develop quickly and return the pawn if needed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queenside gambit with White bishop on b2 and Black pawns c4, c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with a development edge for White."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the c-pawn."
+    },
+    "soundness": {
+      "notes": "Probably fine for White."
+    },
+    "structure": {
+      "notes": "Semi-open on the queenside."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Nimzo-Larsen main line",
+      "moves": "1. Nf3 d5 2. b3",
+      "how": "Parent plays quieter development without the c4 gambit"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "A gambit, though the tactics seem limited."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White gives up the c-pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.55,
+      "reason": "Compensation unclear but not refuted."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The queenside opens."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "No simple plan to learn."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "lead_in_development"
+      ],
+      "reason": "The b2 bishop and development give compensation."
+    }
+  }
+}

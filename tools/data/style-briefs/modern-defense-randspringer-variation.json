@@ -1,0 +1,110 @@
+{
+  "slug": "modern-defense-randspringer-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Randspringer Variation",
+    "eco": "A42",
+    "moves": "1. d4 g6 2. c4 Bg7 3. Nc3 d6 4. e4 f5",
+    "fen": "rnbqk1nr/ppp1p1bp/3p2p1/5p2/2PPP3/2N5/PP3PPP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "modern-defense-averbakh-system",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Against the Averbakh set-up Black plays ...f5 at once, challenging e4 and trying to unbalance the position. White usually continues Nf3 and Be2 with a space advantage, while Black gets Dutch-like counterplay but with a weakened e6 and king. It is rare and double-edged.",
+  "white_ideas": [
+    {
+      "idea": "Keep the big c4-d4-e4 centre with Nf3 and Be2"
+    },
+    {
+      "idea": "Exchange on f5 or play e5 to exploit the weak e6 square"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge e4 with ...f5 and ...Nf6"
+    },
+    {
+      "idea": "Counter in the centre with ...c5 or ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White c4/d4/e4 centre against Black ...f5 and fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "...f5 against a big centre is a risky unbalancing choice."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Playable but with a doubtful reputation; I am unsure."
+    },
+    "structure": {
+      "notes": "The e4/f5 tension tends to open the centre."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs care but little long theory."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "counter on ...f5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5.Nf3",
+      "moves": "5.Nf3",
+      "how": "The most played continuation."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "...f5 against a big centre is a risky unbalancing choice."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Playable but with a doubtful reputation; I am unsure."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "The e4/f5 tension tends to open the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs care but little long theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White has more space."
+    }
+  }
+}

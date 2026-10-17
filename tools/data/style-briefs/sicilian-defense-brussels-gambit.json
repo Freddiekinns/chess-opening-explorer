@@ -1,0 +1,106 @@
+{
+  "slug": "sicilian-defense-brussels-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Brussels Gambit",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 f5",
+    "fen": "rnbqkbnr/pp1pp1pp/8/2p2p2/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 2...f5 against 1.e4 c5 2.Nf3, challenging the e4 pawn at once. White usually takes with 3.exf5, and Black has given a pawn for development and the open centre. It is a surprise weapon in the style of the Latvian and is considered unsound.",
+  "white_ideas": [
+    {
+      "idea": "Take on f5 and consolidate with d4 or Nc3"
+    },
+    {
+      "idea": "Return the pawn if needed to stay safe"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open lines with ...Nf6 and ...d5 for development"
+    },
+    {
+      "idea": "Play ...cxd4 and use the c-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...d5"
+    },
+    {
+      "structure": "Asymmetric Sicilian structure with Black f-pawn gone"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black risks a pawn to open the game, with the Black king also exposed."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.exf5 White keeps the extra pawn and Black has no forced recovery."
+    },
+    "soundness": {
+      "notes": "Considered unsound."
+    },
+    "structure": {
+      "notes": "The Sicilian c-pawn trade gives an asymmetric half-open structure."
+    },
+    "approach": {
+      "notes": "Very rare among strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "A narrow line that is unsound."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black plays a risky pawn offer with forcing tactics around the centre."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black gives the f-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "It is considered unsound against sensible play."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "It is a Sicilian-type asymmetric structure with half-open files."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players hardly ever play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black plays for activity in return for the pawn."
+    }
+  }
+}

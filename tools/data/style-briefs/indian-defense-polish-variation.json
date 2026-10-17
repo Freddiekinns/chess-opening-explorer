@@ -1,0 +1,108 @@
+{
+  "slug": "indian-defense-polish-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Polish Variation",
+    "eco": "A46",
+    "moves": "1. d4 Nf6 2. Nf3 b5",
+    "fen": "rnbqkb1r/p1pppppp/5n2/1p6/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "indian-defense-knights-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 2.Nf3 Black plays 2...b5 and usually follows with ...Bb7. White can play 3.g3 and Bg2 or 3.e4 and Bd3 to challenge the odd structure. It is a rare provocation, and the b5 pawn is not easy to attack at once.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto with g3 and Bg2 against the ...Bb7"
+    },
+    {
+      "idea": "e4 and Bd3 to take the centre"
+    },
+    {
+      "idea": "Exploit the weakened c6 and a6 squares"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...Bb7 and ...e6 with a hypermodern set-up"
+    },
+    {
+      "idea": "Queenside space with ...b5 and ...a6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black queenside pawns advanced early, White centre pawns free"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unusual but quiet; neither side forces matters."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Strong players think White gets a comfortable edge, so dubious for Black."
+    },
+    "structure": {
+      "notes": "Centre not yet fixed."
+    },
+    "approach": {
+      "notes": "Played by almost no strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forced lines; a provocative line is not a first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "Early ...b5 provocation",
+    "Bg2 against Bb7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Neither forcing nor especially solid; White simply develops against an odd set-up."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The b5 pawn is not attacked at once and no pawn is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.45,
+      "reason": "Black spends time on ...b5 and White gets a comfortable edge."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Neither side has committed the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Almost never chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Simple ideas, but a dubious line is not for beginners."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Black fianchettoes on b7 behind advanced queenside pawns."
+    }
+  }
+}

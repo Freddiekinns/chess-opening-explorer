@@ -1,0 +1,106 @@
+{
+  "slug": "polish-opening-queenside-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Queenside Defense",
+    "eco": "A00",
+    "moves": "1. b4 e6 2. Bb2 Nf6 3. b5 a6",
+    "fen": "rnbqkb1r/1ppp1ppp/p3pn2/1P6/8/8/PBPPPPPP/RN1QKBNR w KQkq - 0 4"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.b4 e6 2.Bb2 Nf6 3.b5 White gains space on the queenside and Black plays 3...a6 to challenge the b5 pawn. White usually trades with bxa6 or a4 and plays Nf3, e3 and c4, while Black aims for ...d5 and ...c5. The game is flank-oriented and not forcing.",
+  "white_ideas": [
+    {
+      "idea": "Push b5 to gain space and hit the queenside"
+    },
+    {
+      "idea": "Develop with Nf3 and e3 and use the Bb2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge b5 with ...a6 and ...c5"
+    },
+    {
+      "idea": "Take central space with ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Asymmetrical pawns after b5 and ...a6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow manoeuvring around queenside pawns."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Playable for both sides."
+    },
+    "structure": {
+      "notes": "The centre is flexible."
+    },
+    "approach": {
+      "notes": "Polish is chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are positional but unusual."
+    }
+  },
+  "plan_phrases": [
+    "space",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither solid nor forcing; slow flank play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Playable for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre is open to either side."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom choose the Polish."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Unusual structures require understanding."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion",
+        "space_advantage"
+      ],
+      "reason": "White gains queenside space with b5 and the fianchetto."
+    }
+  }
+}

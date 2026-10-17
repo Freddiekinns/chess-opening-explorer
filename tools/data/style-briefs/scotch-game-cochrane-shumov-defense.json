@@ -1,0 +1,104 @@
+{
+  "slug": "scotch-game-cochrane-shumov-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Cochrane-Shumov Defense",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. Ng5 Nh6 6. Nxf7 Nxf7 7. Bxf7+ Kxf7 8. Qh5+ g6 9. Qxc5 d5",
+    "fen": "r1bq3r/ppp2k1p/2n3p1/2Qp4/3pP3/8/PPP2PPP/RNB1K2R w KQ - 0 10"
+  },
+  "parent": "scotch-game-scotch-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black sacrifices material with 5...Nh6, and after the forced sequence 6.Nxf7 to 9.Qxc5 d5 material is level but Black's king is exposed on f7. White has Qxc5 and the lead in development, and Black has d4/d5 pawns.",
+  "white_ideas": [
+    {
+      "idea": "Use the exposed black king"
+    },
+    {
+      "idea": "Develop quickly"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the centre pawns"
+    },
+    {
+      "idea": "Attack the queen"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with exposed kings"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Very forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level at the root position."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Standard."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forced lines."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Forcing play with the black king on f7."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Material is level after the forced sequence."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Both sides have playable positions."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The centre is open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A sharp line that stronger players do play."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.7,
+      "reason": "Long forcing lines must be known."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White has the lead in development and Black's king is exposed."
+    }
+  }
+}

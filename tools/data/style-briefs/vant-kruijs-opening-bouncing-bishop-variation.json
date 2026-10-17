@@ -1,0 +1,104 @@
+{
+  "slug": "vant-kruijs-opening-bouncing-bishop-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van't Kruijs Opening: Bouncing Bishop Variation",
+    "eco": "A00",
+    "moves": "1. e3 e5 2. Bc4 b5 3. Bb3",
+    "fen": "rnbqkbnr/p1pp1ppp/8/1p2p3/8/1B2P3/PPPP1PPP/RNBQK1NR b KQkq - 1 3"
+  },
+  "parent": "vant-kruijs-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White retreats the bishop with 3.Bb3 after the b5 hit, keeping the bishop on the diagonal against f7. Black has gained queenside space and a big centre, while White has lost time but is still fine. The game becomes a slow Open Game structure, with d4 or Nf3 coming next.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nf3 and Nc3, then d4 or d3"
+    },
+    {
+      "idea": "Keep the bishop on the a2-g8 diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Expand with ...a5 and ...Nf6 and ...d5"
+    },
+    {
+      "idea": "Build a centre with ...Nc6 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on b5 and e5, White pawn on e3 with a retreated bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side is forcing and the position is not especially hard to break."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound but passive for White."
+    },
+    "structure": {
+      "notes": "The centre is not decided."
+    },
+    "approach": {
+      "notes": "Strong players rarely reach this."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Simple moves with little theory."
+    }
+  },
+  "plan_phrases": [
+    "queenside space for Black",
+    "bishop on b3 aimed at f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "Neither side is forcing and the position is not especially hard to break."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Sound but passive for White."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The centre is not decided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players rarely reach this."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Simple moves with little theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "Black has gained space on the queenside."
+    }
+  }
+}

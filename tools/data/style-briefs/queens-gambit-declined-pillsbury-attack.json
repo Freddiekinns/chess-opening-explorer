@@ -1,0 +1,108 @@
+{
+  "slug": "queens-gambit-declined-pillsbury-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Pillsbury Attack",
+    "eco": "D55",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. Nc3 d5 5. cxd5 exd5 6. Bg5 Be7 7. e3 O-O 8. Bd3 Bb7 9. Ne5",
+    "fen": "rn1q1rk1/pbp1bppp/1p3n2/3pN1B1/3P4/2NBP3/PP3PPP/R2QK2R b KQ - 4 9"
+  },
+  "parent": "queens-indian-defense-kasparov-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "This is a QGD/Queen's Indian hybrid in which White plays Bg5, Bd3 and the jump Ne5, aiming at Black's kingside with Bxf6 and Qh5. Black usually answers with ...Nbd7 or ...c5 to challenge the knight and free the position.",
+  "white_ideas": [
+    {
+      "idea": "Put a knight on e5 and attack the kingside with Bxf6, Qh5 or f4"
+    },
+    {
+      "idea": "Keep the centre solid with e3 and Bd3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge Ne5 with ...Nbd7 and trade pieces"
+    },
+    {
+      "idea": "Break with ...c5 once developed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Carlsbad-like QGD exchange structure with ...b6"
+    },
+    {
+      "structure": "Knight on e5 against Black's Bb7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Classical, with White attacking chances and Black defending soundly."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is sacrificed."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "Exchange-style structure with d5 vs d4, semi-open c-file."
+    },
+    "approach": {
+      "notes": "A standard classical line."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Attack plans plus some established theory."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "knight outpost on e5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "White can attack on the kingside but Black has solid ways to defend."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides keep standard classical set-ups."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.55,
+      "reason": "The QGD exchange pawn structure leaves a half-open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised classical line of the QGD and Queen's Indian."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans such as the Ne5 attack are clear but need handling."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "knight_outpost"
+      ],
+      "reason": "White's Ne5 and Bg5 point at the kingside."
+    }
+  }
+}

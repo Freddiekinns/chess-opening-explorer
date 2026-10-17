@@ -1,0 +1,110 @@
+{
+  "slug": "kings-gambit-accepted-kieseritzky",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Kieseritzky, Polerio Defense",
+    "eco": "C39",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5 Be7",
+    "fen": "rnbqk1nr/ppppbp1p/8/4N3/4PppP/8/PPPP2P1/RNBQKB1R w KQkq - 2 6"
+  },
+  "parent": "kings-gambit-accepted-kieseritzky-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White sacrifices a pawn on f4 for the open f-file and kingside play. Black has pushed ...g5-g4 and White's knight lands on e5; here Black defends with ...Be7, and play goes on with Bc4, d4 and Nxg4.",
+  "white_ideas": [
+    {
+      "idea": "Use the open f-file and the e5 knight"
+    },
+    {
+      "idea": "Attack with Bc4, d4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawns with ...g5, ...g4"
+    },
+    {
+      "idea": "Develop with ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside with h-pawns advanced"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the f-pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Standard."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long theory."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Long Whip, Rice, Salvio",
+      "moves": "5...h5 / 5...Nf6 / 5...Qe7",
+      "how": "More played Black replies."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "The King's Gambit Kieseritzky is a mutual attack."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives a pawn Black can keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Strong players consider it playable."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The f-file and centre are open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A recognised King's Gambit line."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.65,
+      "reason": "Long forcing theory must be known."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "White attacks on the kingside."
+    }
+  }
+}

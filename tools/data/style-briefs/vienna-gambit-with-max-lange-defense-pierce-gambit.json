@@ -1,0 +1,107 @@
+{
+  "slug": "vienna-gambit-with-max-lange-defense-pierce-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Gambit, with Max Lange Defense: Pierce Gambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 g5 5. d4",
+    "fen": "r1bqkbnr/pppp1p1p/2n5/6p1/3PPp2/2N2N2/PPP3PP/R1BQKB1R b KQkq - 0 5"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense-knight-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Vienna Gambit Max Lange line (3.f4 exf4 4.Nf3 g5), White plays 5.d4 in the Pierce Gambit. White gives pawns for rapid development and attacking chances against Black's weakened kingside, but strong players consider it dubious. Fuller theory is beyond my memory; I judge it as an unsound gambit.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with d4 and Bc4"
+    },
+    {
+      "idea": "Attack f7 and the g-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawns with ...g4 and ...Bg7"
+    },
+    {
+      "idea": "Return material to consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White development lead"
+    },
+    {
+      "structure": "Black advanced g- and f-pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "All tactics, forcing."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White is a pawn down, perhaps more in lines like 5...g4 6.Ne5."
+    },
+    "soundness": {
+      "notes": "Doubtful per theory."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Seldom played."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Gambit with forcing play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White gives a pawn which Black can keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "Gambit."
+    }
+  }
+}

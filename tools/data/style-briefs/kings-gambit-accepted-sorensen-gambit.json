@@ -1,0 +1,107 @@
+{
+  "slug": "kings-gambit-accepted-sorensen-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Sörensen Gambit",
+    "eco": "C37",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. d4 g4 5. Ne5",
+    "fen": "rnbqkbnr/pppp1p1p/8/4N3/3PPpp1/8/PPP3PP/RNBQKB1R b KQkq - 1 5"
+  },
+  "parent": "kings-gambit-accepted-rosentreter-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 3.Nf3 g5 4.d4 g4 White plays 5.Ne5 (the Sörensen) instead of the more usual Bxf4 or Ne5 variations; the knight hits f7 and g4 while Black has the f4 pawn. The result is a wild unbalanced position with White down a pawn. I am not sure of the theory; it is a rare side line.",
+  "white_ideas": [
+    {
+      "idea": "Attack g4 and f7 with Ne5 and Bc4"
+    },
+    {
+      "idea": "Regain the pawn on f4 with Bxf4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold f4 with ...Bg7 and ...d6"
+    },
+    {
+      "idea": "Attack the e5 knight with ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with pawns on f4 and g4"
+    },
+    {
+      "structure": "Black kingside advanced"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Highly unbalanced."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the f-pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Dubious."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rarely played."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Gambit with mutual attacks."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White is a pawn down and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Rare and considered doubtful."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious, not Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Gambit."
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "richter-veresov-attack-malich-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Richter-Veresov Attack: Malich Gambit",
+    "eco": "D01",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. Bg5 c5 4. Bxf6 gxf6 5. e4 dxe4 6. d5",
+    "fen": "rnbqkb1r/pp2pp1p/5p2/2pP4/4p3/2N5/PPP2PPP/R2QKBNR b KQkq - 0 6"
+  },
+  "parent": "richter-veresov-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White trades bishop for knight to ruin Black's pawns, then offers the d-pawn with e4 and d5 for space and development. Black can keep the e4 pawn but has doubled f-pawns and a lag in development; White follows with Qd2, O-O-O or Bb5+.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with d5 and develop Qd2, O-O-O"
+    },
+    {
+      "idea": "Pressure the weak Black pawns on f6 and h7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn and support with ...Bg7 and ...Bd7"
+    },
+    {
+      "idea": "Develop ...Nd7 and ...Qb6 to harass White"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black has doubled f-pawns; White has a d5 pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced; White has a pawn deficit but Black has a damaged structure."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "After 5...dxe4 6.d5 Black is a pawn up and can keep it."
+    },
+    "soundness": {
+      "notes": "Dubious for White; strong players prefer the main lines."
+    },
+    "structure": {
+      "notes": "Semi-open: White d5 pawn and the open d- and e-files."
+    },
+    "approach": {
+      "notes": "A sideline gambit rarely played at the top."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs to know the specific lines."
+    }
+  },
+  "plan_phrases": [
+    "Doubled pawns",
+    "Space advantage",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "White gives a pawn for play against Black structure."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White offers the e-pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Black can keep the pawn and the structure is not fatal."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The d5 pawn and d-file are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose the Malich."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Gambit with theory."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns",
+        "space_advantage",
+        "lead_in_development"
+      ],
+      "reason": "White targets doubled pawns with space and development."
+    }
+  }
+}

@@ -49,6 +49,18 @@ putting them back. The moving parts are `middleware.ts` (repo root),
   fetching and live-testing fine. A failed load says "This opening didn't load"
   with a retry; `detail-load-failure.test.tsx` pins the split.
 
+- **The first page keeps the pre-render until its data arrives.** The wording
+  fix was not enough: 86 real pages were still soft 404s after it shipped,
+  recrawled since. `createRoot` discards #root on mount, so until the aggregate
+  fetch answered (3s on a cold start) the rendered DOM held "Loading opening..."
+  alone, and a failed fetch left only the error message. `main.tsx` calls
+  `capturePrerender()` (`lib/prerender.ts`) before `createRoot`, and
+  `OpeningDetailPage` shows that HTML while loading and beneath a failed load —
+  only for the URL it was drawn for, never after an SPA step to another opening.
+  Where the middleware drew nothing, #root still holds index.html's spinner, and
+  that is not captured: kept, it spun under the error message. **Do not render a
+  bare loading or error state over the first page.**
+
 - **`middleware.ts` and `OpeningDetailPage` must agree on the description.**
   React 19 hoists a component's `<meta>` into `<head>` **beside** the one the
   middleware already wrote rather than replacing it, so any divergence leaves

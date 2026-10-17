@@ -1,0 +1,114 @@
+{
+  "slug": "bishops-opening-anderssen-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Anderssen Gambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 b5 3. Bxb5 c6",
+    "fen": "rnbqkbnr/p2p1ppp/2p5/1B2p3/4P3/8/PPPP1PPP/RNBQK1NR w KQkq - 0 4"
+  },
+  "parent": "bishops-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black counters 2.Bc4 with 2...b5, offering a pawn to deflect the bishop, and after 3.Bxb5 plays c6 to gain tempo and a centre with ...d5. White can retreat the bishop with 4.Be2 or 4.Bd3 and keep the extra pawn while Black has a lead in development. Strong players think White is better if careful.",
+  "white_ideas": [
+    {
+      "idea": "Retreat the bishop to e2 or a4 and keep the extra pawn"
+    },
+    {
+      "idea": "Develop and castle, then return the pawn if needed"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Gain tempi on the bishop with ...c6 and ...d5"
+    },
+    {
+      "idea": "Use the open lines for fast development and ...Qb6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawn centre e5/d5 against a displaced bishop"
+    },
+    {
+      "structure": "Open centre with Black ahead in development"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays a gambit that makes the game forcing and tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 2...b5 3.Bxb5 White holds a pawn that Black has no immediate way to win back."
+    },
+    "soundness": {
+      "notes": "Considered dubious for Black since White can simply take and retreat."
+    },
+    "structure": {
+      "notes": "Open with e5/d5 and open files soon after ...d5."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious so not a good choice for a first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Central pawn majority"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3.Bxb5 c6 4.Bxc6?",
+      "moves": "1. e4 e5 2. Bc4 b5 3. Bxb5 c6 4. Bxc6",
+      "how": "Gives back the pawn quickly and is not what players choose."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "A Black gambit with a lead in development makes for concrete play."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black gives the b-pawn on move two and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "Strong players think White simply keeps the pawn after the bishop retreats."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The centre opens quickly with ...d5 for piece play."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom play 2...b5 against the Bishop's Opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "A dubious gambit is never Beginner and there is no heavy theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "central_pawn_majority"
+      ],
+      "reason": "Black's compensation is time and a centre."
+    }
+  }
+}

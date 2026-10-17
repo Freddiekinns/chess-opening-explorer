@@ -1,0 +1,107 @@
+{
+  "slug": "modern-defense-anti-modern",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Anti-Modern",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c6 4. Bc4 d6 5. Qe2",
+    "fen": "rnbqk1nr/pp2ppbp/2pp2p1/8/2BPP3/2N5/PPP1QPPP/R1B1K1NR b KQkq - 1 5"
+  },
+  "parent": "modern-defense-standard-line",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White sets up Bc4 and Qe2 against the Modern with e4+d4 and Nc3, eyeing f7 and keeping Nf3 and Be3 in reserve. Black has ...c6 and ...d6 behind a fianchettoed bishop and usually plays ...Nf6 or ...b5 to challenge the bishop, accepting less space for later counterplay.",
+  "white_ideas": [
+    {
+      "idea": "Build e4+d4 with Nf3, Be3 and castling, using Qe2 to cover e4"
+    },
+    {
+      "idea": "Meet ...b5 with Bb3 and keep the bishop on the a2-g8 diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Undermine the centre with ...Nf6 and ...e5 or ...c5"
+    },
+    {
+      "idea": "Gain time against Bc4 with ...b5 or ...Nf6 then ...Nbd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4+d4 centre against Black c6, d6, Bg7 set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black is passive but safe and White has no immediate tactics; play is manoeuvring around the e4+d4 centre."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands."
+    },
+    "soundness": {
+      "notes": "Normal developing moves for both sides; neither is under threat."
+    },
+    "structure": {
+      "notes": "Tension in the centre: White holds e4+d4, Black will challenge with ...e5 or ...c5, so it is not locked or open."
+    },
+    "approach": {
+      "notes": "An anti-Modern line within the Modern complex, a standard sideline rather than a universal set-up."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but the Modern needs good timing of the ...e5 or ...c5 break; little forced theory."
+    }
+  },
+  "plan_phrases": [
+    "Hypermodern centre",
+    "Fianchetto",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Slow set-up with a clear centre for White but no forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No pawn is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Normal developing moves."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.55,
+      "reason": "The e4+d4 centre is challenged later by ...e5 or ...c5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A named anti-Modern line, respectable but not universal."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Needs centre-break timing, not memorisation."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "Black attacks the white centre from the wings with a fianchetto."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "latvian-gambit-accepted-bronstein-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit Accepted: Bronstein Attack",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Qf6 4. d4 d6 5. Nc4 fxe4 6. Be2",
+    "fen": "rnb1kbnr/ppp3pp/3p1q2/8/2NPp3/8/PPP1BPPP/RNBQK2R b KQkq - 1 6"
+  },
+  "parent": "latvian-gambit-accepted-bilguer-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4 6.Be2 the material is level for now, but Black's king is open and White has the better development and the space. White aims for Nc3, O-O and play on the f-file and against the e4 pawn, which is likely to fall. Black tries ...Nc6, ...Bf5 and ...Nf6 to hold e4 and use the f-file.",
+  "white_ideas": [
+    {
+      "idea": "Support the knight on c4 with d4"
+    },
+    {
+      "idea": "Develop with Nc3, Be3 and O-O"
+    },
+    {
+      "idea": "Pick off the e4 pawn and open the f-file against the king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e4 with ...Bf5 or ...Nf6"
+    },
+    {
+      "idea": "Develop quickly with ...Nc6"
+    },
+    {
+      "idea": "Use the f-file and the queen on f6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White has a pawn on d4 and a knight on c4; Black has an e4 pawn that is hard to keep"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The open black king and the exposed queen on f6 make play concrete from the start."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawns are level at the root (seven each) and nothing is attacked yet; the Latvian is a gambit in spirit, but material has come back here."
+    },
+    "soundness": {
+      "notes": "Latvian Gambit lines are considered dubious for Black."
+    },
+    "structure": {
+      "notes": "Open central lines after the e-pawns disappear."
+    },
+    "approach": {
+      "notes": "The Latvian is seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "The Bronstein line has specific traps."
+    }
+  },
+  "plan_phrases": [
+    "Win e4 and use the lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "The black king is open and both sides have tactical chances early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "Material is level at the root, so by the rule it is not a gambit here."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The Latvian Gambit is considered dubious for Black."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The centre is open with the e-pawns gone."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "The Latvian is seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious line is never beginner, and the lines are specific."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White uses a lead in development against the exposed king."
+    }
+  }
+}

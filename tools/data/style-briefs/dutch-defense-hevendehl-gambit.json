@@ -1,0 +1,106 @@
+{
+  "slug": "dutch-defense-hevendehl-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Hevendehl Gambit",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. g4 e5",
+    "fen": "rnbqkbnr/pppp2pp/8/4pp2/3P2P1/8/PPP1PP1P/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "dutch-defense-krejcik-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After the Krejcik 2.g4, Black counters with 2...e5 and gives a pawn for rapid development. White can take with 3.dxe5 or 3.gxf5, and Black tries to use open lines against the weakened kingside. Rarely seen.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawns and consolidate with Nc3 and Bg2"
+    },
+    {
+      "idea": "Keep the king safe after g4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open lines with ...fxg4 and ...Nc6"
+    },
+    {
+      "idea": "Attack against d4 and the weakened kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after exchanges"
+    },
+    {
+      "structure": "White's kingside pawns advanced"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced from move two."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black offers e5; White can accept."
+    },
+    "soundness": {
+      "notes": "Playable; engines do not refute it."
+    },
+    "structure": {
+      "notes": "Central pawns come off quickly."
+    },
+    "approach": {
+      "notes": "Seldom played at a high level."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs concrete knowledge."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Unbalanced from move two."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black offers e5; White can accept."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Playable; engines do not refute it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns come off quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played at a high level."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs concrete knowledge."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

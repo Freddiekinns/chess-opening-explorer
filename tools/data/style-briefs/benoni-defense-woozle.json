@@ -1,0 +1,114 @@
+{
+  "slug": "benoni-defense-woozle",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Woozle",
+    "eco": "A43",
+    "moves": "1. d4 c5 2. d5 Nf6 3. Nc3 Qa5",
+    "fen": "rnb1kb1r/pp1ppppp/5n2/q1pP4/8/2N5/PPP1PPPP/R1BQKBNR w KQkq - 3 4"
+  },
+  "parent": "benoni-defense-benoni-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black answers 2.d5 Nf6 3.Nc3 with 3...Qa5, an early queen sortie that pins or eyes the c3 knight and the e1 square. White has a space edge with d5 and can drive the queen back with Bd2 or e4. Neither side has any forcing theory.",
+  "white_ideas": [
+    {
+      "idea": "Gain time against the queen with Bd2 and Nf3"
+    },
+    {
+      "idea": "Build a centre with e4 and use the space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Harass the knight on c3 and prepare ...b5 or ...e6"
+    },
+    {
+      "idea": "Use the queen to put pressure on c3 and a2"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni-like pawn chain with d5 against c5"
+    },
+    {
+      "structure": "Closed centre with the Black queen on a5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, offbeat play with the queen out early; nothing is forced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Black loses time with the queen but there is no immediate refutation."
+    },
+    "structure": {
+      "notes": "Pawn chain d5/c5 with a tense centre."
+    },
+    "approach": {
+      "notes": "Strong players hardly play this queen sortie."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory to learn, mostly a surprise."
+    }
+  },
+  "plan_phrases": [
+    "Early queen",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4.Bd2",
+      "moves": "1. d4 c5 2. d5 Nf6 3. Nc3 Qa5 4. Bd2",
+      "how": "Quiet reply that gains a tempo on the queen."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "The line has no sharp theory but is not especially solid either."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material changes hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "The early queen loses time but White has no forced punishment."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is undecided with d5 and c5 in contact."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.75,
+      "reason": "Strong players seldom play this queen move."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "There is little to memorise and the plans are not hard."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "space_advantage"
+      ],
+      "reason": "The queen comes out early and White has more space."
+    }
+  }
+}

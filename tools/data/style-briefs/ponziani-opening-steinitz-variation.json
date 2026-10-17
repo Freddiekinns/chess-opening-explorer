@@ -1,0 +1,109 @@
+{
+  "slug": "ponziani-opening-steinitz-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Steinitz Variation",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 d5 4. Qa4 f6",
+    "fen": "r1bqkbnr/ppp3pp/2n2p2/3pp3/Q3P3/2P2N2/PP1P1PPP/RNB1KB1R w KQkq - 0 5"
+  },
+  "parent": "ponziani-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black meets 3.c3 with 3...d5 and, after 4.Qa4, defends the e5 pawn and the knight with 4...f6. This keeps the pawn centre but weakens the king's diagonal, so White often plays 5.Bb5 or 5.d4. Play is open and about whether Black's centre holds.",
+  "white_ideas": [
+    {
+      "idea": "Pin or pressure the c6 knight with Bb5"
+    },
+    {
+      "idea": "Break with d4 or exd5"
+    },
+    {
+      "idea": "Use the weakened e8-h5 diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold e5 and d5 with pawns"
+    },
+    {
+      "idea": "Develop with ...Bd6 and ...Nge7"
+    },
+    {
+      "idea": "Hit the centre with ...dxe4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black's e5/d5/f6 pawn chain against White's e4/c3 pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black's f6 weakens the king, but the position stays tense rather than racing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is given at the root; both sides keep material."
+    },
+    "soundness": {
+      "notes": "Black's setup is playable but a little loosening."
+    },
+    "structure": {
+      "notes": "Central tension on d5/e4 can open quickly."
+    },
+    "approach": {
+      "notes": "Played by club players and the occasional specialist."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black needs to understand where the weaknesses are."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Black has a loosened king but the game is not forced, so it is neither fully solid nor sharp."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.85,
+      "reason": "No material has changed hands at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.75,
+      "reason": "The f6 defence holds the centre and is considered acceptable."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is in tension and can open or lock depending on 5.exd5 or 5.Bb5."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "A normal Ponziani response, not a surprise-only choice."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The structure is clear but the f6 weaknesses call for care."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White tries to use quicker development against the loosened king."
+    }
+  }
+}

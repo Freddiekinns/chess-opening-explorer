@@ -1,0 +1,105 @@
+{
+  "slug": "reti-opening-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Réti Opening: Zilbermints Gambit",
+    "eco": "A09",
+    "moves": "1. Nf3 d5 2. c4 b5",
+    "fen": "rnbqkbnr/p1p1pppp/8/1p1p4/2P5/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3"
+  },
+  "parent": "reti-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black plays 2...b5 offering a pawn for queenside play, similar in spirit to the Benko. White can accept with cxb5, and Black aims for ...Bb7 and ...e5 pressure. It is a rare gambit.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn and hold it or return it for a clean advantage"
+    },
+    {
+      "idea": "Develop with g3/Bg2 and pressure d5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open files on the queenside with ...c6 and ...a6"
+    },
+    {
+      "idea": "Lead in development with ...Bb7/…e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn on b5 isolated; Black d5 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn sacrifice for play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the b-pawn; White can keep it."
+    },
+    "soundness": {
+      "notes": "Considered not quite sound."
+    },
+    "structure": {
+      "notes": "Centre not decided."
+    },
+    "approach": {
+      "notes": "Rarely played."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious gambit."
+    }
+  },
+  "plan_phrases": [
+    "queenside expansion",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "A pawn sacrifice for play."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black gives the b-pawn; White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Considered not quite sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Centre not decided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Rarely played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Dubious gambit."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "lead_in_development"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

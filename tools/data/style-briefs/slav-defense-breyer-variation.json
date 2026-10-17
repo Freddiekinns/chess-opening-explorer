@@ -1,0 +1,109 @@
+{
+  "slug": "slav-defense-breyer-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Breyer Variation",
+    "eco": "D11",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nbd2",
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/5N2/PP1NPPPP/R1BQKB1R b KQkq - 3 4"
+  },
+  "parent": "slav-defense-modern-line",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White develops the b1 knight to d2 (4.Nbd2) keeping the c-pawn ready and preparing e4, instead of 4.Nc3. Black usually plays ...e6 or ...Bf5 and ...dxc4 and White establishes a central pawn majority with e4. Play is steady with a small space edge for White.",
+  "white_ideas": [
+    {
+      "idea": "Prepare e4 with Nbd2"
+    },
+    {
+      "idea": "Recapture on c4 with the knight"
+    },
+    {
+      "idea": "Hold a small central space edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold d5 with ...e6 and ...Bd6"
+    },
+    {
+      "idea": "Play ...dxc4 and ...b5"
+    },
+    {
+      "idea": "Develop the bishop with ...Bf5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Slav pawn chain c6/d5 against c4/d4 with a possible e4 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A Slav, which is Solid."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Slav centre in tension, flexible."
+    },
+    "approach": {
+      "notes": "A mainstream branch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans matter."
+    }
+  },
+  "plan_phrases": [
+    "central pawn majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.7,
+      "reason": "A Slav set-up is hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.97,
+      "reason": "Main-line theory."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The centre is in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "A mainstream branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans over memory."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority"
+      ],
+      "reason": "White aims at the e4 break."
+    }
+  }
+}

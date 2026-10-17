@@ -1,0 +1,105 @@
+{
+  "slug": "queens-indian-defense-opocensky-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Opocensky Variation",
+    "eco": "E17",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. Nc3 Ne4 7. Bd2",
+    "fen": "rn1qk2r/pbppbppp/1p2p3/8/2PPn3/2N2NP1/PP1BPPBP/R2QK2R b KQkq - 6 7"
+  },
+  "parent": "queens-indian-defense-anti-queens-indian-system",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "White develops with g3, Bg2 and Nc3 and plays Bd2 against ...Ne4, preparing to trade the active knight. Black usually castles, plays ...f5 or ...Bf6 and aims for ...Nxd2 and ...d6 followed by ...c5 or ...e5.",
+  "white_ideas": [
+    {
+      "idea": "Trade the e4 knight and keep the bishop pair"
+    },
+    {
+      "idea": "Set up e4 and d5 for central space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Trade pieces with ...Nxd2 and ...Bf6"
+    },
+    {
+      "idea": "Break with ...c5 or ...d6 and ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Indian with fianchettoed bishops on both sides"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material."
+    },
+    "soundness": {
+      "notes": "Equal."
+    },
+    "structure": {
+      "notes": "Centre unresolved."
+    },
+    "approach": {
+      "notes": "A standard Queen's Indian line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Typical plans."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Hypermodern centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.55,
+      "reason": "Hard to break down, steady play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Equal."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.8,
+      "reason": "Centre in tension."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Mainstream."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "Moderate."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Both sides fianchetto and fight for e4/d5."
+    }
+  }
+}

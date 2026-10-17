@@ -1,0 +1,101 @@
+{
+  "slug": "sicilian-defense-kupreichik-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Kupreichik Variation",
+    "eco": "B56",
+    "moves": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Bd7",
+    "fen": "rn1qkb1r/pp1bpppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+  },
+  "parent": "sicilian-defense-modern-variations",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In a Najdorf-type position Black plays 5...Bd7 instead of ...a6, preparing ...Nc6 and ...e6 and keeping a solid Scheveningen-like set-up. White often plays 6.Bg5 or 6.Be3. It is a rare sideline of the Open Sicilian with ordinary play.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Be3 or Bg5 and Qd2"
+    },
+    {
+      "idea": "Play for f3 or f4 and a kingside attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nc6, ...e6 and ...Be7"
+    },
+    {
+      "idea": "Counterattack on the c- and d-files"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian with d6/e6 set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet Black approach but still an Open Sicilian."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound sideline."
+    },
+    "structure": {
+      "notes": "Open Sicilian with half-open c-file."
+    },
+    "approach": {
+      "notes": "Rare but respectable."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs Sicilian understanding."
+    }
+  },
+  "plan_phrases": [
+    "develop solidly"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Quiet Black approach but still an Open Sicilian."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Sound sideline."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.8,
+      "reason": "Open Sicilian with half-open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "Rare but respectable."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs Sicilian understanding."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No unique plan."
+    }
+  }
+}

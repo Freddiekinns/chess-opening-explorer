@@ -1,0 +1,103 @@
+{
+  "slug": "van-geet-opening-hergert-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Hergert Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 d6 2. f4 e5 3. fxe5 Nc6",
+    "fen": "r1bqkbnr/ppp2ppp/2np4/4P3/8/2N5/PPPPP1PP/R1BQKBNR w KQkq - 1 4"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.Nc3 d6 2.f4 e5 3.fxe5 Nc6 Black offers the e5 pawn for development, hitting it with the knight. White usually keeps it with 4.exd6 Bxd6 or 4.Nf3, and Black plays on rapid development and the open e-file and f-file.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn and finish development with Nf3, e4 or d4"
+    },
+    {
+      "idea": "Meet piece play with exd6 and solid Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the pawn with ...dxe5 or ...Bxd6 and ...Nf6"
+    },
+    {
+      "idea": "Use the open lines and White’s weakened king-side"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White a pawn up and a loosened kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn is down at move three and play is about quick development. Fast, open play."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White holds the pawn with exd6 or Nf3."
+    },
+    "soundness": {
+      "notes": "Probably gives Black too little for the pawn."
+    },
+    "structure": {
+      "notes": "Central pawns come off quickly."
+    },
+    "approach": {
+      "notes": "Very rare for strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A dubious line is not a Beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "A pawn is down at move three and play is about quick development."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black seems a pawn down after 3...Nc6."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Probably gives Black too little for the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns come off quickly."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Very rare for strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "A dubious line is not a Beginner choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black’s compensation is time."
+    }
+  }
+}

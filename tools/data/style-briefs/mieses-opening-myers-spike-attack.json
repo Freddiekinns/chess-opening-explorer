@@ -1,0 +1,105 @@
+{
+  "slug": "mieses-opening-myers-spike-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Mieses Opening: Myers Spike Attack",
+    "eco": "A00",
+    "moves": "1. d3 g6 2. g4",
+    "fen": "rnbqkbnr/pppppp1p/6p1/8/6P1/3P4/PPP1PP1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "mieses-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White follows 1.d3 g6 with 2.g4, the Spike idea: expand on the kingside and use the g-pawn to gain space. Black develops with ...Bg7 and ...d5, challenging the weakened kingside, often with ...h5 to strike at g4. White hopes for a quick Bg2 and e4 centre and an attack, but his king is exposed.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with g4, Bg2, e4 and Nf3"
+    },
+    {
+      "idea": "Keep the bishop on g2 to hit the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge g4 with ...h5 and ...d5"
+    },
+    {
+      "idea": "Attack the centre with ...e5 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Pawn on g4 and d3 for White, fianchetto and central pawns for Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The advanced g-pawn creates a weakened king and unbalanced play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up."
+    },
+    "soundness": {
+      "notes": "The early g4 is viewed as inferior and risky."
+    },
+    "structure": {
+      "notes": "Flexible as the centre is not yet set."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A dubious wing attack; not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm",
+    "space advantage",
+    "surprise weapon"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Early g4 leaves both sides chances to attack the exposed king."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The g-pawn is not attacked so no material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "2.g4 weakens the kingside with little compensation."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly try the Spike."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm"
+      ],
+      "reason": "White advances flank pawns on the kingside from move two."
+    }
+  }
+}

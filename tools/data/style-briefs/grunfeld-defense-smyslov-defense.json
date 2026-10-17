@@ -1,0 +1,104 @@
+{
+  "slug": "grunfeld-defense-smyslov-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grünfeld Defense: Smyslov Defense",
+    "eco": "D94",
+    "moves": "1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. e3 g6 5. Nf3 Bg7 6. Bd3 O-O 7. O-O Bg4",
+    "fen": "rn1q1rk1/pp2ppbp/2p2np1/3p4/2PP2b1/2NBPN2/PP3PPP/R1BQ1RK1 w - - 6 8"
+  },
+  "parent": "slav-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "A Slav-Grunfeld hybrid in which Black fianchettoes the kingside bishop and pins the f3 knight with ...Bg4 after White's e3 set-up. White usually plays h3 and Qb3 or Ne5, and Black prepares ...Nbd7 and ...e5 or ...dxc4. The play is steady, with Black aiming to challenge the centre with ...c5 or ...e5.",
+  "white_ideas": [
+    {
+      "idea": "Challenge the bishop with h3 and Qb3"
+    },
+    {
+      "idea": "Develop with Qe2 and aim for e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pin the knight and prepare ...Nbd7"
+    },
+    {
+      "idea": "Break with ...c5 or ...e5 after development"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Centre in tension with c4, d4 and d5, Black fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has a compact position that is hard to break down and play is not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound and slightly passive for both sides."
+    },
+    "structure": {
+      "notes": "Tension in the centre with a mix of pawn breaks coming."
+    },
+    "approach": {
+      "notes": "A recognised, respectable set-up though not a main line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear but Black has to understand when to break."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto on g7",
+    "pin on f3"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Black has a compact position that is hard to break down and play is not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Sound and slightly passive for both sides."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "Tension in the centre with a mix of pawn breaks coming."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A recognised, respectable set-up though not a main line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Plans are clear but Black has to understand when to break."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { trackEvent } from '../../lib/analytics';
 import type { TreeContext } from '../../hooks/useOpeningTree';
 import type { ExplorerResult } from '../../lib/lichessExplorer';
 import { mergeExplorerMoves, type MergedMoveRow } from '../../lib/bookExplorerMerge';
@@ -154,6 +155,7 @@ const MoveRows: React.FC<MoveRowsProps> = ({
           key={row.key}
           to={`/opening/${encodeURIComponent(row.fen)}`}
           state={EXPLORER_STEP}
+          onClick={() => trackEvent('opening_nav', { via: 'explorer' })}
           className={`${styles.contRow} ${alternatives ? styles.altRow : ''}`}
           style={{ animationDelay: `${i * 30}ms` }}
           title={statsTitle(row)}
@@ -287,6 +289,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                   to={`/opening/${encodeURIComponent(ancestor.fen)}`}
                   className={styles.breadcrumbLink}
                   state={EXPLORER_STEP}
+                  onClick={() => trackEvent('opening_nav', { via: 'breadcrumb' })}
                 >
                   {ancestor.name}
                 </Link>

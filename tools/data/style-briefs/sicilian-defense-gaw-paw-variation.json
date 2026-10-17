@@ -1,0 +1,112 @@
+{
+  "slug": "sicilian-defense-gaw-paw-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Gaw-Paw Variation",
+    "eco": "B40",
+    "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Qb6",
+    "fen": "rnb1kb1r/pp1p1ppp/1q2pn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6"
+  },
+  "parent": "sicilian-defense-french-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 5...Qb6 in the Open Sicilian after ...e6 and ...Nf6, hitting the d4 knight and the b2 pawn. White usually answers 6.Nb3 or 6.Ndb5 and Black develops ...Nc6 or ...Bb4. Black's queen is out early and White gets a lead in space.",
+  "white_ideas": [
+    {
+      "idea": "Chase the queen with Nb3 or Ndb5"
+    },
+    {
+      "idea": "Develop with Be3 or Bd3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure b2 and d4 and develop ...Nc6, ...Bb4"
+    },
+    {
+      "idea": "Use the queen on b6 to prepare ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian with e6/c5 structure"
+    },
+    {
+      "structure": "Hedgehog-like pawn structure"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Concrete play around the b2 pawn and queen sortie."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands in the main line."
+    },
+    "soundness": {
+      "notes": "Rare and slightly inaccurate but not refuted."
+    },
+    "structure": {
+      "notes": "Typical Sicilian asymmetric semi-open."
+    },
+    "approach": {
+      "notes": "Rare but in the Sicilian family, so standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs careful move orders."
+    }
+  },
+  "plan_phrases": [
+    "Early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6.Ndb5",
+      "moves": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Qb6 6. Ndb5",
+      "how": "The sharper White try."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The early queen and b2 pressure make for tactical Sicilian play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No pawn is given up in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Black's queen move is playable."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.8,
+      "reason": "Every Sicilian is semi-open with the c-file and d-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "It is rare but a Sicilian branch strong players know."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The move orders need some care."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The queen on b6 is the line's defining feature."
+    }
+  }
+}

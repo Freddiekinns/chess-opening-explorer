@@ -1,0 +1,105 @@
+{
+  "slug": "sicilian-defense-heidenfeld-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Heidenfeld Variation",
+    "eco": "B22",
+    "moves": "1. e4 c5 2. c3 Nf6 3. e5 Nd5 4. Nf3 Nc6 5. Na3",
+    "fen": "r1bqkb1r/pp1ppppp/2n5/2pnP3/8/N1P2N2/PP1P1PPP/R1BQKB1R b KQkq - 4 5"
+  },
+  "parent": "sicilian-defense-alapin-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Alapin with 2...Nf6 3.e5 Nd5 White plays 4.Nf3 Nc6 5.Na3, aiming for c4 to hit d5 and keep the space edge. Black responds with ...d6 or ...e6 to break the e5 pawn.",
+  "white_ideas": [
+    {
+      "idea": "Reroute the knight with Na3-c4"
+    },
+    {
+      "idea": "Support e5 with d4 and keep space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge e5 with ...d6"
+    },
+    {
+      "idea": "Complete development with ...e6 or ...g6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e5 spearhead against Black c5, d5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Calm: space for White, counterplay for Black."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material change."
+    },
+    "soundness": {
+      "notes": "Standard."
+    },
+    "structure": {
+      "notes": "Sicilian semi-open with c3 and e5 pawns."
+    },
+    "approach": {
+      "notes": "Alapin sideline."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans clear but must be handled well."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Knight outpost"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Space for White, counterplay for Black."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Equal."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "Sicilian asymmetric centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "Part of the Alapin."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Moderate theory."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "knight_outpost"
+      ],
+      "reason": "White uses e5 space and a knight on c4."
+    }
+  }
+}

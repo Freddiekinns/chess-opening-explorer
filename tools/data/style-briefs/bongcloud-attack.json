@@ -1,0 +1,101 @@
+{
+  "slug": "bongcloud-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bongcloud Attack",
+    "eco": "C20",
+    "moves": "1. e4 e5 2. Ke2",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPPKPPP/RNBQ1BNR b kq - 1 2"
+  },
+  "parent": "kings-pawn-game",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White moves the king on move two, giving up castling for nothing. Black can reach a comfortable position with ...Nf6, ...d5 or ...Ke7, and White's exposed king gives little compensation. It is a meme opening, popular with top players in blitz and joke games.",
+  "white_ideas": [
+    {
+      "idea": "Move the king to e2 and play normal development after"
+    },
+    {
+      "idea": "Aim for blitz tricks against an unprepared opponent"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the centre with ...Nf6 and ...d5"
+    },
+    {
+      "idea": "Exploit the exposed king with early ...Bc5 or ...Qh4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Game with a misplaced white king on e2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither side is committed to a plan, and the loss of castling rights makes the game unstable but not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Strong players consider it a clear concession, although it is not refuted in fast games."
+    },
+    "structure": {
+      "notes": "The e-pawn tension is undecided, so the structure depends on Black's reply."
+    },
+    "approach": {
+      "notes": "Played by strong players mainly as a joke."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious, so never a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "joke opening"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Neither side is committed to a plan, and the loss of castling rights makes the game unstable but not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Strong players consider it a clear concession, although it is not refuted in fast games."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The e-pawn tension is undecided, so the structure depends on Black's reply."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Played by strong players mainly as a joke."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "Dubious, so never a beginner choice."
+    },
+    "plans": {
+      "value": [],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

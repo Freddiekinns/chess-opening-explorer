@@ -1,0 +1,109 @@
+{
+  "slug": "st-george-defense-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "St. George Defense: Zilbermints Gambit",
+    "eco": "B00",
+    "moves": "1. e4 a6 2. d4 e5",
+    "fen": "rnbqkbnr/1ppp1ppp/p7/4p3/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "st-george-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Against the St George 1.e4 a6, White plays 2.d4 and Black replies 2...e5, offering the e-pawn. After 3.dxe5 Black develops quickly with ...Nc6, ...Bc5 or ...Qh4, while 3.Nf3 transposes to calmer play. Few strong players try it as the pawn is hard to regain.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 and keep the pawn"
+    },
+    {
+      "idea": "Develop with Nf3 and Bd3"
+    },
+    {
+      "idea": "Avoid early queen tricks"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the centre quickly with ...Nc6 and ...Bc5"
+    },
+    {
+      "idea": "Use the lead in development"
+    },
+    {
+      "idea": "Win the pawn back with piece play"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after dxe5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black plays for rapid development against an extra White pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "At the main line 3.dxe5 Black is a pawn down and can recover it only by development play."
+    },
+    "soundness": {
+      "notes": "Considered dubious; White can keep the pawn with accurate play."
+    },
+    "structure": {
+      "notes": "The centre opens at once after dxe5."
+    },
+    "approach": {
+      "notes": "Extremely rare at strong level, chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black gives a pawn for quick piece play and both sides face concrete tactics."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black offers the e-pawn with 2...e5 and White can simply keep it with 3.dxe5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "Black has little to show for the pawn against sensible development."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "The e-pawn trade opens the centre and the e- and d-files."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever choose this gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never Beginner and the tactics are not deep."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black's compensation is faster development."
+    }
+  }
+}

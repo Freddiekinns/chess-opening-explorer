@@ -7,6 +7,7 @@ import MobileDataSurface from '../MobileDataSurface';
 import type { ExplorerQuery } from '../../../../hooks/useExplorerResult';
 import type { TreeContext, TreeNode, AncestorNode } from '../../../../hooks/useOpeningTree';
 import type { ExplorerResult } from '../../../../lib/lichessExplorer';
+import { trackEvent } from '../../../../lib/analytics';
 
 vi.mock('../../../../lib/analytics', () => ({
   trackEvent: vi.fn(),
@@ -231,5 +232,20 @@ describe('MobileDataSurface', () => {
       treeData: null,
     });
     expect(container.firstChild).toBeNull();
+  });
+
+  test('reports which link a visitor followed to another opening', async () => {
+    const user = userEvent.setup();
+    renderSurface();
+    vi.mocked(trackEvent).mockClear();
+
+    await user.click(screen.getByRole('link', { name: /4\.\.\.Qxd5/ }));
+    await user.click(screen.getByRole('button', { name: 'Show opening hierarchy' }));
+    await user.click(screen.getByRole('link', { name: 'Alekhine Defense' }));
+
+    expect(vi.mocked(trackEvent).mock.calls).toEqual([
+      ['opening_nav', { via: 'explorer' }],
+      ['opening_nav', { via: 'breadcrumb' }],
+    ]);
   });
 });

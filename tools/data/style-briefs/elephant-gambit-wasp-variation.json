@@ -1,0 +1,111 @@
+{
+  "slug": "elephant-gambit-wasp-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Elephant Gambit: Wasp Variation",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 d5 3. Nxe5 dxe4 4. Bc4 Qg5",
+    "fen": "rnb1kbnr/ppp2ppp/8/4N1q1/2B1p3/8/PPPP1PPP/RNBQK2R w KQkq - 2 5"
+  },
+  "parent": "elephant-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 3.Nxe5 dxe4 4.Bc4 Qg5 Black attacks the knight and g2 with the queen, and White usually answers with Nxf7 or d4 hitting the queen. The queen is exposed on g5 and White's natural development gives an edge. Black's activity is real but strong players expect White to come out on top.",
+  "white_ideas": [
+    {
+      "idea": "Drive the queen with d4 or Nxf7"
+    },
+    {
+      "idea": "Develop with Nc3 and Qh5 tricks"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit g2 and e5 with the queen"
+    },
+    {
+      "idea": "Pick up the e4 pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with queens out early"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Not well known; reasoned from the move order."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level after ...dxe4, with the pawns traded."
+    },
+    "soundness": {
+      "notes": "White is better against the early queen sortie."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "A rare family."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Concrete tactics."
+    }
+  },
+  "plan_phrases": [
+    "early_queen",
+    "pressure_on_f7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Elephant Gambit parent",
+      "moves": "1.e4 e5 2.Nf3 d5",
+      "how": "Black's countergambit continuations with 3.exd5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Queen forays and tactics on f7 and g2 punish errors."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material is level at the root because Black's capture on e4 matches White's on e5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The Elephant Gambit family is considered unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "The centre is open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Rarely played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "pressure_on_f7"
+      ],
+      "reason": "Black's queen comes out early and f7 is the target."
+    }
+  }
+}

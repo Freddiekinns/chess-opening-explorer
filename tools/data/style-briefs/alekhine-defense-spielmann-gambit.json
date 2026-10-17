@@ -1,0 +1,120 @@
+{
+  "slug": "alekhine-defense-spielmann-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Spielmann Gambit",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. Nc3 d5 3. e5 Nfd7 4. e6",
+    "fen": "rnbqkb1r/pppnpppp/4P3/3p4/8/2N5/PPPP1PPP/R1BQKBNR b KQkq - 0 4"
+  },
+  "parent": "alekhine-defense-scandinavian-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 Nf6 2.Nc3 d5 3.e5 Nfd7 White pushes 4.e6, offering a pawn to open lines towards f7 and the black king. Black can take with 4...fxe6 or 4...Nb6, and White hopes the lead in development and the weakened e6/f7 squares make up for the pawn. Evidence is thin; this is a rare sideline.",
+  "white_ideas": [
+    {
+      "idea": "Open the f- and e-files with e6 and play Qh5/Qg4 ideas"
+    },
+    {
+      "idea": "Develop quickly with d4, Nf3, Bd3"
+    },
+    {
+      "idea": "Target the weak e6 pawn after ...fxe6"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn with ...fxe6 and consolidate with ...c5/...Nf6"
+    },
+    {
+      "idea": "Meet d4 with ...Nb6 and ...c5"
+    },
+    {
+      "idea": "Use the extra pawn in the endgame"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on e6, d5 against White d4/Nc3"
+    },
+    {
+      "structure": "Open f-file for Black after ...fxe6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White gives a pawn for rapid development and Black has to navigate tactics around e6 and f7."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 4.e6 Black can simply capture and keep the pawn; White needs a lead in development to regain it."
+    },
+    "soundness": {
+      "notes": "Probably dubious for White; Black can hold the pawn with accurate play."
+    },
+    "structure": {
+      "notes": "Black's d5 pawn and open f-file give a partly open centre."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A sideline that is more about tactics than theory."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Pressure on f7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Declined with 4...Nb6",
+      "moves": "1. e4 Nf6 2. Nc3 d5 3. e5 Nfd7 4. e6 Nb6",
+      "how": "Black ignores the pawn and keeps the structure; White is then pawn-down for nothing concrete."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White gives a pawn for lines and tempi and both kings are exposed to tactics."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "4.e6 offers a pawn that Black can capture and keep, though it is not obviously refuted."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.55,
+      "reason": "Black can accept with ...fxe6 and White has no clear compensation.",
+      "side": "white"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "Black's d5 pawn stands against the open e- and f-files after the exchange."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "A sideline of the Alekhine that strong players seldom choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "It is dubious, so never Beginner, but the lines are short and tactical.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7"
+      ],
+      "reason": "The pawn is given for quick pieces aimed at f7."
+    }
+  }
+}

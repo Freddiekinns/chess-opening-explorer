@@ -1,0 +1,113 @@
+{
+  "slug": "van-geet-opening-laroche-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Laroche Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 b5",
+    "fen": "rnbqkbnr/p1pppppp/8/1p6/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 2"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.Nc3 b5 Black offers the b-pawn, and 2.Nxb5 Bb7 then ...e6/...Nf6 gives Black a lead in development and pressure on e4/g2. White can keep the pawn but must return the knight to c3 and avoid ...Bxg2 tricks; compensation is limited.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with Nxb5 and retreat Nc3"
+    },
+    {
+      "idea": "Play e4 and d4 for a big centre"
+    },
+    {
+      "idea": "Develop quickly and castle safely"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the b7 bishop on the long diagonal"
+    },
+    {
+      "idea": "Play ...e6 and ...Nf6 for quick development"
+    },
+    {
+      "idea": "Attack with ...Qb6 or ...a6 and open the b-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open b-file for Black after the exchange"
+    },
+    {
+      "structure": "White has a healthy extra pawn and the centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A gambit with a quick bishop on b7 and open lines in exchange for a pawn."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take on b5 and keep the pawn."
+    },
+    "soundness": {
+      "notes": "Dubious for Black: the compensation is mostly a lead in development."
+    },
+    "structure": {
+      "notes": "Mostly undecided centre; the b-file is open after the pawn is taken."
+    },
+    "approach": {
+      "notes": "Very rare among strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A short line but a dubious one."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Bishop on the long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Black gives a pawn for activity and the position can turn tactical quickly."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black offers the b-pawn and White can simply take it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.65,
+      "reason": "Black has limited compensation for the pawn.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.35,
+      "reason": "The b-file opens for Black while the centre is not yet fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players seldom meet 1.Nc3 with ...b5."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "It is dubious, so not Beginner, and relies on a few ideas.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "The pawn is given for faster development and the b7 bishop."
+    }
+  }
+}

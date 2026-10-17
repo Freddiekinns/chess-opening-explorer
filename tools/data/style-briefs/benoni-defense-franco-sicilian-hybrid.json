@@ -1,0 +1,116 @@
+{
+  "slug": "benoni-defense-franco-sicilian-hybrid",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benoni Defense: Franco-Sicilian Hybrid",
+    "eco": "A40",
+    "moves": "1. d4 e6 2. c4 c5 3. d5 exd5 4. cxd5 d6 5. Nc3 g6 6. e4 Bg7 7. Nf3 Ne7",
+    "fen": "rnbqk2r/pp2npbp/3p2p1/2pP4/4P3/2N2N2/PP3PPP/R1BQKB1R w KQkq - 3 8"
+  },
+  "parent": "horwitz-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "The Franco-Sicilian move order reaches a Modern Benoni-style structure after 3.d5 exd5 4.cxd5 d6 and the fianchetto on g7. White takes the centre with e4 and Nf3, and Black develops with ...Ne7 and prepares ...O-O and ...b5 or ...f5. White has space; Black counterattacks on the queenside and the e-file.",
+  "white_ideas": [
+    {
+      "idea": "Build the e4-d5 centre and play Be2, O-O"
+    },
+    {
+      "idea": "Attack with e5 or play for a kingside space advantage"
+    },
+    {
+      "idea": "Restrain ...b5 and keep d5 supported"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...O-O and ...a6, ...b5 queenside expansion"
+    },
+    {
+      "idea": "Use the half-open e-file and g7 bishop"
+    },
+    {
+      "idea": "Break with ...f5 or ...b5 at the right moment"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Benoni pawn structure: White d5/e4 against Black c5/d6"
+    },
+    {
+      "structure": "Half-open e-file for Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Benoni structure gives unbalanced positions with chances for both sides."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound; it is a Benoni by transposition."
+    },
+    "structure": {
+      "notes": "The d5/c5 centre is locked or semi-locked, with play on the wings."
+    },
+    "approach": {
+      "notes": "A transposition into a standard Benoni set-up."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans must be understood but the move order is easier than the Modern Benoni."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Queenside expansion",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "The Benoni structure gives unbalanced play with risks for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The d5 pawn is exchanged, nothing is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "It is a respectable Benoni structure."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.5,
+      "reason": "The d5 and c5 pawns lock the centre and play moves to the wings."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "It reaches a normal Benoni."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans matter more than memorised lines."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "queenside_expansion",
+        "fianchetto"
+      ],
+      "reason": "White has space and Black expands on the queenside."
+    }
+  }
+}

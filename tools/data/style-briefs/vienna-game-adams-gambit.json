@@ -1,0 +1,107 @@
+{
+  "slug": "vienna-game-adams-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Adams' Gambit",
+    "eco": "C27",
+    "moves": "1. e4 e5 2. Nc3 Nf6 3. Bc4 Nxe4 4. Qh5 Nd6 5. Bb3 Nc6 6. d4",
+    "fen": "r1bqkb1r/pppp1ppp/2nn4/4p2Q/3P4/1BN5/PPP2PPP/R1B1K1NR b KQkq - 0 6"
+  },
+  "parent": "vienna-game-frankenstein-dracula-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Frankenstein-Dracula, Black grabs the e4 pawn and White hits with Qh5 and Bb3, then 6.d4 offers the centre pawn while Nc6 attacks. Both sides have chances: White gets a lead in development and pressure on e5/f7, Black must find the right defence. The usual game is tactical.",
+  "white_ideas": [
+    {
+      "idea": "Use the lead in development with Nxe4, d4 and Bb3 to attack"
+    },
+    {
+      "idea": "Hit the e5 pawn and f7 with Qh5 and Bb3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn by ...Nd6 and ...Nc6 and then ...exd4"
+    },
+    {
+      "idea": "Trade queens or find a safe king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after exd4, White pieces aimed at f7 and e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp theoretical play, tactics from move four."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gave the e4 pawn; Black can keep it."
+    },
+    "soundness": {
+      "notes": "Considered playable for both."
+    },
+    "structure": {
+      "notes": "Open lines after d4."
+    },
+    "approach": {
+      "notes": "A standard Vienna sub-line."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Requires a lot of memory."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "pressure on f7",
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Early tactics and an exposed queen."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White is a pawn down for development."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Treated as playable though risky."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Centre opens by d4 and exd4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.65,
+      "reason": "A named line of the Vienna."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Sharp lines with theory to know."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pressure_on_f7",
+        "early_queen"
+      ],
+      "reason": "White's queen and bishop aim at f7."
+    }
+  }
+}

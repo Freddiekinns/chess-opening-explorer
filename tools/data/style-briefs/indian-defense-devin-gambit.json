@@ -1,0 +1,114 @@
+{
+  "slug": "indian-defense-devin-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Indian Defense: Devin Gambit",
+    "eco": "E00",
+    "moves": "1. d4 Nf6 2. c4 e6 3. g4",
+    "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP2P1/8/PP2PP1P/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "indian-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.d4 Nf6 2.c4 e6 White plays 3.g4, a wild pawn thrust. If Black takes 3...Nxg4 White has e4 and Qxg4 type ideas for compensation; more soundly Black meets it with ...d5 or ...h6. The attack leaves White's kingside open.",
+  "white_ideas": [
+    {
+      "idea": "Push g4 and g5 to harass the knight"
+    },
+    {
+      "idea": "Develop with Nc3 and Bg2"
+    },
+    {
+      "idea": "Build the centre with e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on g4 or hit the centre with ...d5"
+    },
+    {
+      "idea": "Play ...h6 to slow g5"
+    },
+    {
+      "idea": "Use the weakened kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White g-pawn advanced with open kingside"
+    },
+    {
+      "structure": "Black centre ...d5 or ...c5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A wild gambit with risks for White's king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can take on g4 with the knight and keep the pawn if able to meet the follow-up."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Hard to say; the centre is fluid."
+    },
+    "approach": {
+      "notes": "Almost never used by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious, not a good repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "kingside attack",
+    "pawn storm"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "White weakens the king at once and one error can lose fast."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White offers the g4 pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.75,
+      "reason": "The attack is thought to fail against calm play."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.35,
+      "reason": "The centre is undecided and the kingside is fluid."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "A dubious line cannot be Beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "White pushes the g-pawn at the king."
+    }
+  }
+}

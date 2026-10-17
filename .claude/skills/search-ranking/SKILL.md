@@ -52,8 +52,13 @@ replaces that list a moment later. They must agree — see
   tags, where "defensive" passed 99% of openings because its list held
   "counterattack". A word missing from the table matches nothing, so a new style
   word needs a row there and, if users type it as "X openings", a place in
-  `QUERY_PATTERNS.STYLE_OPENINGS`. Style search is server-only: the client's
-  index slice carries no tags.
+  `QUERY_PATTERNS.STYLE_OPENINGS`. One exception reads the name: "gambit" (and
+  Discover's Gambit filter, via `name_pattern` in `config/browse_facets.json`)
+  also takes any opening named a gambit, from `STYLE_NAMES`, because the tag
+  says the Queen's Gambit and every "Gambit Declined" are not gambits and a user
+  typing gambit still expects them. Only the word itself: "aggressive" stays
+  tags-only. Style search is server-only: the client's index slice carries no
+  tags.
 
 - **Both halves of the search rank by the same bands, and a test says so.**
   `lib/localSearch.ts` (client, paints on the keystroke from the shared index

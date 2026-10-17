@@ -1,0 +1,111 @@
+{
+  "slug": "englund-gambit-declined-diemer-counterattack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit Declined: Diemer Counterattack",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. d5 Bc5 3. e4 Qh4",
+    "fen": "rnb1k1nr/pppp1ppp/8/2bPp3/4P2q/8/PPP2PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "englund-gambit-declined",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White declines the Englund pawn offer with 2.d5, grabbing space, and Black answers with the queen sortie ...Bc5 and ...Qh4 hitting e4 and f2. White has to meet the threats with Nc3 or Qd3 and then use the extra space and central control, while Black hopes for tricks around f2.",
+  "white_ideas": [
+    {
+      "idea": "Defend e4 and f2 with Nc3, Nf3 or Qd3, then develop calmly"
+    },
+    {
+      "idea": "Use the d5 space and the better pawn centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep queen and bishop active against f2 and e4"
+    },
+    {
+      "idea": "Hope for a slip in the opening"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Centre with pawns on d5 and e4 against e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gives up central control for early piece activity; the queen on h4 is the key to the line."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is given up: White declined with 2.d5 and no pawn has been captured."
+    },
+    "soundness": {
+      "notes": "White simply develops and is better; the queen sortie is a trap-hunting attempt that does not hold up."
+    },
+    "structure": {
+      "notes": "d5 and e4 against e5 form a fixed-looking centre with space for White."
+    },
+    "approach": {
+      "notes": "Black plays an odd gambit-style set-up that strong players rarely choose."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Few lines; mainly know the traps and then develop."
+    }
+  },
+  "plan_phrases": [
+    "early_queen",
+    "pressure_on_f7"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Englund Gambit Declined",
+      "moves": "1.d4 e5 2.d5",
+      "how": "Parent; same space grab but Black has not yet committed the queen."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Queen and bishop aim at f2 and e4 early, so tactical errors punish both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material has changed hands because White declined the pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Black spends moves on the queen and bishop for a few traps while White is simply better placed."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.45,
+      "reason": "The d5 and e4 pawns face e5, giving a fixed centre with space for White."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "The Englund family is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.65,
+      "reason": "A dubious line is never Beginner, though there is little theory to learn."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "The queen goes to h4 early and White must stay ahead in development."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "owen-defense-wind-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Owen Defense: Wind Gambit",
+    "eco": "B00",
+    "moves": "1. e4 b6 2. d4 Bb7 3. f3 e5",
+    "fen": "rn1qkbnr/pbpp1ppp/1p6/4p3/3PP3/5P2/PPP3PP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "owen-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.e4 b6 2.d4 Bb7 White plays 3.f3 to hold the e4 pawn and Black hits the centre with 3...e5. White can take with 4.dxe5, when 4...Qh4+ gives Black counterplay, or play 4.Bd3. The positions are messy and the line is rarely played; Black gets active play for the wasted tempo.",
+  "white_ideas": [
+    {
+      "idea": "Defend e4 with f3 and build the centre with Nc3, Bd3"
+    },
+    {
+      "idea": "Take on e5 and weather Qh4+"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike with ...e5 and develop quickly"
+    },
+    {
+      "idea": "Use ...Qh4+ to harass the king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after dxe5 with the f3 pawn weakening the king"
+    },
+    {
+      "structure": "Black bishop on b7 hitting e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Forcing play with early queen checks and a loosened white king."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawns are level at the root and 4.dxe5 can be answered by regaining material."
+    },
+    "soundness": {
+      "notes": "The Owen is slightly dubious and this move order is double-edged for both."
+    },
+    "structure": {
+      "notes": "Open centre after dxe5."
+    },
+    "approach": {
+      "notes": "Rare at strong level."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious and trappy."
+    }
+  },
+  "plan_phrases": [
+    "Early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early queen checks and a weakened kingside make for risky play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "Level material at the root; White takes e5 only at risk."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The Owen is rated slightly unsound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The centre opens after dxe5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly use the Owen."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The Black queen comes out early with ...Qh4+."
+    }
+  }
+}

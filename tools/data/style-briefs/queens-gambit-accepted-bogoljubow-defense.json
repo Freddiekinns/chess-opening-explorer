@@ -1,0 +1,108 @@
+{
+  "slug": "queens-gambit-accepted-bogoljubow-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Bogoljubow Defense",
+    "eco": "D24",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. e4",
+    "fen": "rnbqkb1r/1pp1pppp/p4n2/8/2pPP3/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 5"
+  },
+  "parent": "queens-gambit-accepted-showalter-variation",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "Black plays 4...a6 and after 5.e4 b5 6.e5 Nd5 7.a4 the game turns on tactics against White's queenside and the advanced e5 pawn. Black has the c4 pawn and plans ...e6, ...Bb7 and ...Nxc3, while White fights with a4, Ng5 and Be2 for the initiative. Theory is deep and the lines are forcing.",
+  "white_ideas": [
+    {
+      "idea": "Hit the b5 pawn with a4 and open lines on the queenside"
+    },
+    {
+      "idea": "Use the e5 pawn to restrict Black and attack with Ng5 and Qg4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Support the b5 pawn with ...c6 or ...Bb7, and trade the central knights with ...Nxc3"
+    },
+    {
+      "idea": "Develop with ...e6 and ...Be7, keeping the pawn on c4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e5 spearhead and open queenside"
+    },
+    {
+      "structure": "Black c4/b5 pawns against White a4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides take risks, with the extra pawn on c4 and attacks on the queenside and the e5 pawn."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The c4 pawn is the normal QGA pawn, which White can regain, so it is not a deliberate gambit."
+    },
+    "soundness": {
+      "notes": "Sound for both sides; the main line is well studied."
+    },
+    "structure": {
+      "notes": "The e-pawn spearhead and open files give an open centre."
+    },
+    "approach": {
+      "notes": "Played by strong players in the QGA."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Long forcing lines need to be known."
+    }
+  },
+  "plan_phrases": [
+    "space with e5",
+    "queenside play"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.75,
+      "reason": "Forcing lines with e5, a4 and ...b5 give both sides real risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The c4 pawn is the QGA pawn, which White can regain."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Well studied and fully sound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The e5 spearhead and open queenside make an open centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised, well-studied QGA line."
+    },
+    "level": {
+      "value": "advanced",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "The forcing theory around 7.a4 has to be learned."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "queenside_expansion"
+      ],
+      "reason": "White gains space with e5 and both sides fight on the queenside with a4 and ...b5."
+    }
+  }
+}

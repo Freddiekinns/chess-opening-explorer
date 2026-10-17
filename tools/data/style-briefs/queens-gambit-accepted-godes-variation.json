@@ -1,0 +1,113 @@
+{
+  "slug": "queens-gambit-accepted-godes-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Godes Variation",
+    "eco": "D21",
+    "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nd7",
+    "fen": "r1bqkbnr/pppnpppp/8/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4"
+  },
+  "parent": "queens-gambit-accepted-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black captures on c4 and then develops the knight to d7, intending ...Ngf6 and a quick ...e6 or ...b5 hold. The knight blocks the c8 bishop for a while but keeps c5 and e5 control. White regains the pawn with e3 and Bxc4 and plays for a centre.",
+  "white_ideas": [
+    {
+      "idea": "Regain the pawn with e3 and Bxc4"
+    },
+    {
+      "idea": "Build a centre with e4 or Qe2 and Rd1"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop ...Ngf6 and ...e6"
+    },
+    {
+      "idea": "Try ...b5 or ...c5 to hold or break the centre"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open d-file QGA structure"
+    },
+    {
+      "structure": "White pawn centre against ...c5 break"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black accepts a passive knight placement, so the position is solid rather than double-edged."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "false",
+      "notes": "The c4 pawn is taken but White regains it by force with e3 and Bxc4."
+    },
+    "soundness": {
+      "notes": "A low-theory QGA that is playable, since Black can transpose to normal lines."
+    },
+    "structure": {
+      "notes": "QGA structures are open; the d-file and diagonals open early."
+    },
+    "approach": {
+      "notes": "A QGA sub-line, not an unusual opening."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Straightforward but not a coach's first line."
+    }
+  },
+  "plan_phrases": [
+    "Regain the c4 pawn",
+    "Central pawn majority"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "4.e3 Ngf6",
+      "moves": "1. d4 d5 2. c4 dxc4 3. Nf3 Nd7 4. e3 Ngf6",
+      "how": "Black reaches a normal QGA after Bxc4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.45,
+      "reason": "Black's passive set-up is hard to attack and play is unforcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "The c4 pawn comes back at once, as in all QGA lines."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Black's set-up gives no concrete problem."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "QGA lines open the d-file and diagonals for the pieces."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "It is a minor branch of a mainstream defence."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans are clear but the knight on d7 asks for some care."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority"
+      ],
+      "reason": "White regains the pawn and holds the centre."
+    }
+  }
+}

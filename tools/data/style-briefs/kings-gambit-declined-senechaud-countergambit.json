@@ -1,0 +1,105 @@
+{
+  "slug": "kings-gambit-declined-senechaud-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Senechaud Countergambit",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 Bc5 3. Nf3 g5",
+    "fen": "rnbqk1nr/pppp1p1p/8/2b1p1p1/4PP2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  },
+  "parent": "kings-gambit-declined-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black declines the King's Gambit with 2...Bc5 and then plays 3...g5 against Nf3, offering a pawn for activity. White captures on g5 or plays d4 and Nxg5, getting a pawn but facing counterplay on the kingside and against f7.",
+  "white_ideas": [
+    {
+      "idea": "Grab the g-pawn with Nxg5 and strike with d4"
+    },
+    {
+      "idea": "Use the open f-file after fxg5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Undermine with ...Qe7 and ...d6"
+    },
+    {
+      "idea": "Develop pieces towards the king"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside after pawn exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both kings exposed; tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black offers the g-pawn."
+    },
+    "soundness": {
+      "notes": "Risky for Black; White can keep the pawn."
+    },
+    "structure": {
+      "notes": "Open lines on the kingside."
+    },
+    "approach": {
+      "notes": "A rarely seen sideline."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Need to know specific lines."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Mutual attacking chances."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black offers the g-pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "White can keep the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Central and kingside files open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Rarely played."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Tactical lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black uses activity for the pawn."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "modern-defense-pterodactyl-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Pterodactyl Variation",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 g6 3. d4 Bg7 4. Nc3 Qa5",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1p5/3PP3/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 3 5"
+  },
+  "parent": "sicilian-defense-hyperaccelerated-pterodactyl",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays ...Qa5 early against the Open Sicilian-style Nc3 set-up, with the g7 bishop on the long diagonal and ...Qxc3-style tricks against the d4 pawn. White usually answers with Bd2 or Bb5+, or plays Nxc5-style captures and builds a centre. Play is tricky and manoeuvring with Black counter-punching against the e4 and c3 squares.",
+  "white_ideas": [
+    {
+      "idea": "Build the e4/d4 centre with Bd2 or Bb5+ and chase the queen"
+    },
+    {
+      "idea": "Castle and push with f4 or Bg5 against a loose Black set-up"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure e4 and c3 with the queen and bishop, then play ...cxd4 and ...Nf6"
+    },
+    {
+      "idea": "Use the long diagonal to hit d4 and c3"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian-like asymmetry with Black c-pawn trade and fianchettoed bishop"
+    },
+    {
+      "structure": "White centre against Black queen on a5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tricky but not forcing; the queen sortie gives tactical chances."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given if White plays accurately."
+    },
+    "soundness": {
+      "notes": "Considered sound but a little loosening; White can get an edge."
+    },
+    "structure": {
+      "notes": "The d-pawn trades for the c-pawn, leaving a half-open c-file."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Tricks need care but little to memorise."
+    }
+  },
+  "plan_phrases": [
+    "counter-pressure on e4 and c3",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Modern Pterodactyl move order",
+      "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c5 4. Nf3 Qa5",
+      "how": "Same idea via the Modern; the most played route to this position."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "It is tricky rather than forcing and White can steer toward calm development."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is offered; the early queen raid is positional."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "White can get a small edge but the line is playable."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "The c-pawn trades for the d-pawn as in the Sicilian, giving a half-open file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players rarely meet 4.Nc3 with ...Qa5."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans need care but there is little long theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "hypermodern_centre"
+      ],
+      "reason": "Black lets White occupy the centre and strikes from the g7 bishop and queen."
+    }
+  }
+}

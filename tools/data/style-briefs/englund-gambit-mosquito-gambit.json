@@ -1,0 +1,104 @@
+{
+  "slug": "englund-gambit-mosquito-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Englund Gambit: Mosquito Gambit",
+    "eco": "A40",
+    "moves": "1. d4 e5 2. dxe5 Qh4",
+    "fen": "rnb1kbnr/pppp1ppp/8/4P3/7q/8/PPP1PPPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "englund-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "Black sacrifices a pawn immediately with 2...Qh4, hoping for a quick attack on f2 and traps. White can simply play 3.g3 Qxe5 and keeps an extra pawn with a comfortable position. It is a joke-level line that scores only through surprise.",
+  "white_ideas": [
+    {
+      "idea": "Keep the pawn and develop with g3, Nf3 and Bg2"
+    },
+    {
+      "idea": "Avoid early traps on f2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Win the pawn back with ...Qxe5 and ...Nc6"
+    },
+    {
+      "idea": "Hope for tactics against f2 or the e-pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White extra pawn on e5, Black queen out early"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black risks everything on an early queen sortie, so one wrong move loses quickly."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gives the e-pawn and White can keep it."
+    },
+    "soundness": {
+      "notes": "Strong players consider it unsound, like the main Englund Gambit."
+    },
+    "structure": {
+      "notes": "The e-pawn exchange opens the centre immediately."
+    },
+    "approach": {
+      "notes": "Almost never played by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "traps"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Black risks everything on an early queen sortie, so one wrong move loses quickly."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.95,
+      "reason": "Black gives the e-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.9,
+      "reason": "Strong players consider it unsound, like the main Englund Gambit."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "The e-pawn exchange opens the centre immediately."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Almost never played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "Dubious, so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "Plans taken from the main-line ideas above."
+    }
+  }
+}

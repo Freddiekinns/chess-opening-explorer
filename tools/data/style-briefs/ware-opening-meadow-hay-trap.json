@@ -1,0 +1,102 @@
+{
+  "slug": "ware-opening-meadow-hay-trap",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ware Opening: Meadow Hay Trap",
+    "eco": "A00",
+    "moves": "1. a4 e5 2. Ra3",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/P7/R7/1PPPPPPP/1NBQKBNR b Kkq - 1 2"
+  },
+  "parent": "ware-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.a4 e5 White plays 2.Ra3, offering the rook to a bishop capture on a3. If Black takes with 2...Bxa3 3.Nxa3 (or bxa3) White has lost the exchange for no compensation beyond some lead in development, and the game is better for Black. It is a joke trap that works only against an unprepared opponent.",
+  "white_ideas": [
+    {
+      "idea": "Hope Black takes the rook and then develop with Nxa3"
+    },
+    {
+      "idea": "Play d4 and e3 and aim for quick development"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the rook with the bishop or simply develop with ...Nf6 and ...d5"
+    },
+    {
+      "idea": "Use the extra exchange"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with ...e5 against an undeveloped White queenside"
+    },
+    {
+      "structure": "Black up the exchange"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White gives up an exchange for little, giving a lopsided material balance with concrete play."
+    },
+    "gambit": {
+      "material_given": "exchange",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "2...Bxa3 wins the exchange and White has no forced recovery."
+    },
+    "soundness": {
+      "notes": "White is simply worse, a rook for a bishop down, so the trap is dubious."
+    },
+    "structure": {
+      "notes": "The centre is undecided at first and then opens."
+    },
+    "approach": {
+      "notes": "Strong players do not play it."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A gimmick with nothing to study."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The exchange offer makes the material unbalanced and the play concrete."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White gives the exchange and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.9,
+      "reason": "It gives away an exchange for almost nothing."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided after 1.a4 e5."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "No strong player chooses it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "A dubious line is never beginner and there is little to learn."
+    },
+    "plans": {
+      "value": [],
+      "reason": "There is no clear named plan."
+    }
+  }
+}

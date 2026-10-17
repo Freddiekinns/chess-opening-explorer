@@ -1,0 +1,119 @@
+{
+  "slug": "polish-opening-tartakower-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Tartakower Gambit",
+    "eco": "A00",
+    "moves": "1. b4 e5 2. Bb2 f6 3. e4",
+    "fen": "rnbqkbnr/pppp2pp/5p2/4p3/1P2P3/8/PBPP1PPP/RN1QKBNR b KQkq - 0 3"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.b4 e5 2.Bb2 f6 White plays 3.e4, leaving b4 en prise to ...Bxb4. Black takes the pawn and White follows with Bc4, f4 and f5 to attack the weakened kingside, as in the Brinckmann line 4.Bc4 Nc6 5.f4 Qe7 6.f5 g6.",
+  "white_ideas": [
+    {
+      "idea": "Bc4, f4 and f5 on the kingside"
+    },
+    {
+      "idea": "Develop quickly with Qh5+ ideas"
+    },
+    {
+      "idea": "Use the Bb2 against the weak long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take b4 and consolidate"
+    },
+    {
+      "idea": "Block the f-file with ...g6"
+    },
+    {
+      "idea": "Aim for ...Ne7 and ...d5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black f6 pawn weakens e6 and g6; White pawns on e4 and f4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open lines and a weakened Black king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "b4 can be taken with ...Bxb4 and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Compensation is real but not clearly enough; playable."
+    },
+    "structure": {
+      "notes": "Open lines for the pieces."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs concrete knowledge of the attack."
+    }
+  },
+  "plan_phrases": [
+    "f4-f5 attack",
+    "Bc4 vs weakened f7",
+    "Pawn for initiative"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Brinckmann Variation",
+      "moves": "1. b4 e5 2. Bb2 f6 3. e4 Bxb4 4. Bc4 Nc6 5. f4 Qe7 6. f5 g6",
+      "how": "White pushes f5 immediately to open lines against the king."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A gambit with early attack and open lines."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White offers b4, and ...Bxb4 wins a pawn that Black can keep."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Compensation is real but Black's extra pawn makes it a close call."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.7,
+      "reason": "Central pawns come off and the pieces play on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom choose the Tartakower Gambit."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs concrete play, but not heavy theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack",
+        "pressure_on_f7"
+      ],
+      "reason": "White plays Bc4, f4 and f5 against the kingside."
+    }
+  }
+}

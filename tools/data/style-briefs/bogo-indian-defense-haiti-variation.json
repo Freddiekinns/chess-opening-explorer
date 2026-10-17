@@ -1,0 +1,114 @@
+{
+  "slug": "bogo-indian-defense-haiti-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bogo-Indian Defense: Haiti Variation",
+    "eco": "E11",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 Nc6",
+    "fen": "r1bqk2r/pppp1ppp/2n1pn2/8/1bPP4/5N2/PP1BPPPP/RN1QKB1R w KQkq - 4 5"
+  },
+  "parent": "bogo-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Bogo-Indian after 4.Bd2 Black plays the unusual 4...Nc6 instead of the usual ...Qe7 or ...a5. White can trade bishops on d2 or keep the pin with 5.e3 and a quiet build-up. Play is positional and manoeuvring, with Black aiming for ...d5 or ...Bxd2 and ...Ne4.",
+  "white_ideas": [
+    {
+      "idea": "Trade on d2 and play e3, Be2, 0-0 for a small space edge"
+    },
+    {
+      "idea": "Fianchetto with g3 and Bg2 to pressure the centre"
+    },
+    {
+      "idea": "Prepare e4 or d5 to gain space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the bishop on d2 and play ...d5 or ...Ne4 to reach a solid structure"
+    },
+    {
+      "idea": "Use Nc6 to pressure d4 and play ...e5"
+    },
+    {
+      "idea": "Keep a compact centre with ...O-O and ...d6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Gambit-style centre with c4 and d4 against ...d5 or ...d6"
+    },
+    {
+      "structure": "Possible pawn doubling on d2 recaptures"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The Bogo-Indian is known for solid positions without early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Sound; 4...Nc6 is a rare way to meet the check but not a mistake."
+    },
+    "structure": {
+      "notes": "Pawns on c4/d4 against e6 leave the centre in tension; both sides can still choose their set-up."
+    },
+    "approach": {
+      "notes": "An off-move-order of the Bogo-Indian, played rarely but by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear, with no long memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "Bishop pair",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "The Bogo-Indian structure is hard to break down and play is steady."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The move is a rare but acceptable reply to Bd2."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "The centre stays in tension and Black has not committed to d5 or d6."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Rare, but it is a respectable Bogo-Indian branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans are straightforward and little needs memorising."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "bishop_pair"
+      ],
+      "reason": "The fight is over centre space and who keeps the bishops."
+    }
+  }
+}

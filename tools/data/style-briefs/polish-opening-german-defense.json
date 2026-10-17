@@ -1,0 +1,116 @@
+{
+  "slug": "polish-opening-german-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: German Defense",
+    "eco": "A00",
+    "moves": "1. b4 d5 2. Bb2 Qd6",
+    "fen": "rnb1kbnr/ppp1pppp/3q4/3p4/1P6/8/PBPPPPPP/RN1QKBNR w KQkq - 2 3"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.b4 d5 2.Bb2 Qd6 Black develops the queen early to stop e4 and prepare ...e5. White continues with e3, a3 and the bishop on b2. Play is flexible and not forcing.",
+  "white_ideas": [
+    {
+      "idea": "Fianchetto on b2"
+    },
+    {
+      "idea": "Gain queenside space"
+    },
+    {
+      "idea": "Play e3 and a3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Prevent e4 with the queen"
+    },
+    {
+      "idea": "Play ...e5 and ...Nf6"
+    },
+    {
+      "idea": "Challenge b4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Flexible centre with White playing on the flank"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "No forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material sacrifice at the root."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "The centre is undecided."
+    },
+    "approach": {
+      "notes": "The Polish is rare at the top."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans need understanding."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto and queenside space"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Orangutan-Diemer Gambit",
+      "moves": "3. a3 e5 4. e4 dxe4 5. f3",
+      "how": "A pawn gambit for the centre that Black can take."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Flank play without early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No gambit at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans matter more than memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "White fianchettoes and expands on the queenside."
+    }
+  }
+}

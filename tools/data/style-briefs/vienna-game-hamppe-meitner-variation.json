@@ -1,0 +1,109 @@
+{
+  "slug": "vienna-game-hamppe-meitner-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Hamppe-Meitner Variation",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Bc5 3. Na4",
+    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/N3P3/8/PPPP1PPP/R1BQKBNR b KQkq - 3 3"
+  },
+  "parent": "vienna-game-anderssen-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White answers 2...Bc5 with 3.Na4, hitting the bishop to win the bishop pair or force it to retreat. After 3...Bb6 4.Nxb6 axb6 Black has doubled b-pawns but an open a-file, and 3...Be7 is also playable. The game is a quiet open centre game where White hopes for small positional edges.",
+  "white_ideas": [
+    {
+      "idea": "Trade the knight for the bishop and damage Black's pawns"
+    },
+    {
+      "idea": "Play d3 and Nf3 with a calm centre"
+    },
+    {
+      "idea": "Keep f4 as a later break"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the open a-file after ...axb6"
+    },
+    {
+      "idea": "Hit the centre with ...d5 or ...Nf6"
+    },
+    {
+      "idea": "Develop quickly with ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black with doubled b-pawns and the a-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet positional play, not forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is given at the root."
+    },
+    "soundness": {
+      "notes": "The Na4 idea is sound but harmless."
+    },
+    "structure": {
+      "notes": "e4/e5 pawns, the centre not yet fixed."
+    },
+    "approach": {
+      "notes": "Rare and rather old-fashioned."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are simple."
+    }
+  },
+  "plan_phrases": [
+    "Doubled pawns"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Quiet play where neither side takes big risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No pawn is offered at the root."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "The knight trade damages Black's pawns without risk to White."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The e4/e5 centre is level and not yet decided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Strong players seldom choose 3.Na4 in the Vienna."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans are readable and little theory is needed."
+    },
+    "plans": {
+      "value": [
+        "doubled_pawns"
+      ],
+      "reason": "The main point of the line is the damaged b-pawns."
+    }
+  }
+}

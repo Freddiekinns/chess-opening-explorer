@@ -1,0 +1,114 @@
+{
+  "slug": "rat-defense-spike-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Rat Defense: Spike Attack",
+    "eco": "B00",
+    "moves": "1. e4 d6 2. g4",
+    "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P1P1/8/PPPP1P1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.e4 d6 White plays 2.g4 aiming to gain space on the kingside and push g5 and d4. Black can answer with ...Bd7, ...e5 or ...h6 and aim at the weakened kingside. White's king position is loosened and the game is imbalanced.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with g5 and d4"
+    },
+    {
+      "idea": "Develop with Bg2, Nc3 and build the centre"
+    },
+    {
+      "idea": "Attack Black's kingside with the pawn storm"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...e5 or ...c5"
+    },
+    {
+      "idea": "Exploit the weakened kingside with ...h5 or ...Bxg4"
+    },
+    {
+      "idea": "Hit d4 with ...Nf6 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Space-gaining kingside pawn chain with g4/e4"
+    },
+    {
+      "structure": "Weakened White kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White weakens its own king early so both sides have risks."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The g4 pawn is protected by the queen so no material is given."
+    },
+    "soundness": {
+      "notes": "Risky and unsound-ish for White."
+    },
+    "structure": {
+      "notes": "The centre is undecided, with White pawns on e4 and g4."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "A risky idea, but few moves to know."
+    }
+  },
+  "plan_phrases": [
+    "Pawn storm",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "White's early pawn storm weakens the king and invites counterplay."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The g4 pawn is defended and no material is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "The early g4 loosens White's kingside for little gain."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is not settled."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly use the Spike."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "space_advantage"
+      ],
+      "reason": "White advances the kingside pawns for space."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "philidor-defense-paulsen-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Philidor Defense: Paulsen Attack",
+    "eco": "C41",
+    "moves": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Nxd4 d5 5. exd5",
+    "fen": "rnbqkbnr/ppp2ppp/8/3P4/3N4/8/PPP2PPP/RNBQKB1R b KQkq - 0 5"
+  },
+  "parent": "philidor-defense-exchange-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 4.Nxd4 d5 5.exd5 Black recaptures with the queen and White develops with tempo through Nc3 and Bb5+ or Nb5 ideas. The pawn structure is symmetrical and open in the centre, and Black's queen has to be careful. It is an easy-to-play open game with small chances for both.",
+  "white_ideas": [
+    {
+      "idea": "Gain tempi on the Black queen with Nc3 and Bb5+"
+    },
+    {
+      "idea": "Develop and aim for an open-centre advantage"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on d5 and trade pieces"
+    },
+    {
+      "idea": "Complete development and castle"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Symmetrical pawns with the d-pawns exchanged"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black accepts a slightly passive game after the early queen move."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawns are exchanged and material is level."
+    },
+    "soundness": {
+      "notes": "Black is slightly worse but not in danger."
+    },
+    "structure": {
+      "notes": "Central pawns come off, leaving an open e-file."
+    },
+    "approach": {
+      "notes": "A respectable mainstream line."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Simple development and little theory."
+    }
+  },
+  "plan_phrases": [
+    "early_queen",
+    "symmetrical_structure"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Queens are exposed early but there is no real forcing attack or tension."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Black is slightly worse but the line is not refuted."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "The central pawns are traded and the e-file is open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A respectable mainstream line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Simple, but the early queen needs careful handling."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "symmetrical_structure"
+      ],
+      "reason": "Black's queen comes out early and the pawns are mirrored."
+    }
+  }
+}

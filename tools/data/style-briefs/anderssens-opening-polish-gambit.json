@@ -1,0 +1,113 @@
+{
+  "slug": "anderssens-opening-polish-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Anderssen's Opening: Polish Gambit",
+    "eco": "A00",
+    "moves": "1. a3 a5 2. b4",
+    "fen": "rnbqkbnr/1ppppppp/8/p7/1P6/P7/2PPPPPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "anderssens-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White answers 1.a3 a5 with 2.b4, offering the b-pawn to open the a-file and the b2 diagonal. After 2...axb4 3.axb4 Rxa1 4.Qxa1 material is level and White has the long diagonal for Bb2 against a loosened queenside. Few strong players choose it, so the play is quirky rather than theoretical.",
+  "white_ideas": [
+    {
+      "idea": "Open the a-file and trade rooks, then use Qa1 and Bb2 against g7"
+    },
+    {
+      "idea": "Recapture on b4 and build a centre with e3, Nf3, c4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on b4, trade on a1 and develop quickly"
+    },
+    {
+      "idea": "Decline with ...e6 or ...d5 and keep a solid set-up"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open a-file traded off, White queen on a1 and bishop on b2"
+    },
+    {
+      "structure": "Flank structure with White pawns on b4, c2, d2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early flank play with few forcing lines; positions are unusual but not especially sharp."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "2...axb4 3.axb4 Rxa1 4.Qxa1 leaves material level, so nothing is kept; the root is not a gambit despite the name."
+    },
+    "soundness": {
+      "notes": "A playable oddity; Black has easy equality but nothing is refuted."
+    },
+    "structure": {
+      "notes": "Flank pawn moves with no fixed centre; the centre is settled later."
+    },
+    "approach": {
+      "notes": "A rare sideline that strong players seldom pick, chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory and plain plans, but not a repertoire line for White."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto on b2",
+    "Open a-file"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2...axb4 main capture",
+      "moves": "1. a3 a5 2. b4 axb4 3. axb4 Rxa1 4. Qxa1",
+      "how": "Rooks trade at once and the queen takes the long diagonal"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither side forces matters early, and the trade of rooks leaves a quiet position."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "The b-pawn comes back after ...axb4 axb4 Rxa1 Qxa1 so material is level."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.6,
+      "reason": "Black equalises easily but White has no real concession."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "The centre is undecided and both sides develop around flank pawns."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players hardly choose 1.a3 a5 2.b4."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Not hard to play, but not a line a coach recommends."
+    },
+    "plans": {
+      "value": [
+        "fianchetto"
+      ],
+      "reason": "The b2 bishop on the long diagonal is the point of 2.b4."
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "slug": "alekhine-defense-kmoch-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Kmoch Variation",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. Bc4 Nb6 4. Bb3 c5 5. d3",
+    "fen": "rnbqkb1r/pp1ppppp/1n6/2p1P3/8/1B1P4/PPP2PPP/RNBQK1NR b KQkq - 0 5"
+  },
+  "parent": "alekhine-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White attacks the b6 knight with Bc4-b3 and, after ...c5, plays the quiet 5.d3 rather than e6. Black continues ...N8c6 or ...d6 and White keeps the e5 pawn. A space-gaining structure with Black counterplay on the e5 pawn.",
+  "white_ideas": [
+    {
+      "idea": "Keep the e5 pawn with d3 and Nf3"
+    },
+    {
+      "idea": "Develop and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Undermine e5 with ...Nc6 and ...d6"
+    },
+    {
+      "idea": "Use ...c4 or ...Nd7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e5 pawn against Black's hypermodern centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet manoeuvring against an advanced pawn."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "A normal sound line."
+    },
+    "structure": {
+      "notes": "The e5 pawn is attacked and can be exchanged, so it stays tense."
+    },
+    "approach": {
+      "notes": "A standard line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "No forcing theory."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "5.e6",
+      "moves": "1. e4 Nf6 2. e5 Nd5 3. Bc4 Nb6 4. Bb3 c5 5. e6",
+      "how": "The sharper alternative."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The play is positional with no forcing lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Neither side is in trouble."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The e5 pawn is attacked and the centre is not fixed."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.75,
+      "reason": "A normal line of the Alekhine."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Understanding the advanced pawn matters."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "hypermodern_centre"
+      ],
+      "reason": "White has space and Black undermines."
+    }
+  }
+}

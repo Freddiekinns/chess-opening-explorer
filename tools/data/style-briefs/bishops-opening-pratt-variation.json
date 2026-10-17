@@ -1,0 +1,104 @@
+{
+  "slug": "bishops-opening-pratt-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Pratt Variation",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. c3 Nf6 4. d4 exd4 5. e5 d5 6. exf6 dxc4 7. Qh5 O-O",
+    "fen": "rnbq1rk1/ppp2ppp/5P2/2b4Q/2pp4/2P5/PP3PPP/RNB1K1NR w KQ - 2 8"
+  },
+  "parent": "bishops-opening-philidor-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "A forcing Philidor-style line where White grabs space with e5, Black counters with ...d5, and after 6.exf6 dxc4 7.Qh5 O-O both sides have taken a minor piece. White's queen eyes c5 and h7; Black's pawn on d4 and bishop on c5 give counterplay. Sharp and tactical; unsure of the theory beyond move 8.",
+  "white_ideas": [
+    {
+      "idea": "Use the f6 pawn and Qh5 to harass Black's king and the c5 bishop"
+    },
+    {
+      "idea": "Win back material and break open Black's kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Castle, then take on c3 or play ...Qxf6 to open lines for the pieces"
+    },
+    {
+      "idea": "Use the d4/c4 pawn mass and the bishop on c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a White pawn on f6 and Black passed pawns on c4 and d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides took pieces on moves 6 and 7 and the position is full of tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pieces were exchanged on move 6; no one gives material that cannot be taken back."
+    },
+    "soundness": {
+      "notes": "Believed playable for both; I do not recall a refutation."
+    },
+    "structure": {
+      "notes": "Central pawns come off, lines are open for the queen and bishops."
+    },
+    "approach": {
+      "notes": "A deep, rare line; strong players seldom reach it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forcing line with concrete tactics that must be remembered."
+    }
+  },
+  "plan_phrases": [
+    "Forcing tactics against the king"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Forcing exchanges and a queen raid on h5 make the position double-edged."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "Material comes back in the exchanges rather than being offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "No clear refutation known for either side."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "Central pawns have been traded and lines are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "A very rare deep line of the Bishop's Opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.4,
+      "reason": "Needs some forcing-line recall but is not main-line theory."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "early_queen"
+      ],
+      "reason": "Qh5 raid on the king and the early queen."
+    }
+  }
+}

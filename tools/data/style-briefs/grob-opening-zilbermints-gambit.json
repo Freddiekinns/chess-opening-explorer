@@ -1,0 +1,31 @@
+{
+  "slug": "grob-opening-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": { "name": "Grob Opening: Zilbermints Gambit", "eco": "A00", "moves": "1. g4 d5 2. e4 dxe4 3. Nc3", "fen": "rnbqkbnr/ppp1pppp/8/8/4p1P1/2N5/PPPP1P1P/R1BQKBNR b KQkq - 1 3" },
+  "parent": "grob-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White adds a second pawn offer to the Grob, playing 2.e4 dxe4 3.Nc3 in the hope of regaining on e4 with d3 or Nxe4 and using the g4 pawn to open lines. Black can keep the pawn with ...e5 and ...Nc6, or play ...h5 to challenge g4. White's king-side is weakened and the compensation is mainly quick development. The line is rare and not well regarded.",
+  "white_ideas": [{ "idea": "Regain the pawn with d3 or Nxe4 and use the open centre" }, { "idea": "Play g5 or h3 to harass Black's pieces and use the bishop on g2 later" }],
+  "black_ideas": [{ "idea": "Hold the extra pawn with ...e5 and ...Nc6" }, { "idea": "Challenge g4 with ...h5 and neutralise the flank attack" }],
+  "typical_structures": [{ "structure": "Open centre with Black pawn on e4 and White's loosened kingside" }],
+  "axis_evidence": {
+    "character": { "notes": "Pawn sacrifices and open lines make play tactical." },
+    "gambit": { "material_given": "pawn", "given_by": "white", "can_be_kept": "true", "notes": "Black can keep the e4 pawn with ...e5 and ...Nc6 and White does not recover it by force." },
+    "soundness": { "notes": "The Grob is not objectively sound and this extra gambit adds to the risk." },
+    "structure": { "notes": "The centre opens quickly; both sides play on open lines." },
+    "approach": { "notes": "Played mainly for surprise." },
+    "level": { "reason": "neither", "notes": "A rarely played gambit with little theory." }
+  },
+  "plan_phrases": ["lead in development"],
+  "sublines_that_differ": [{ "name": "Zilbermints-Hartlaub Gambit", "moves": "1. g4 d5 2. e4 dxe4 3. Nc3 e5 4. d3", "how": "The most played branch." }, { "name": "Schiller Defense", "moves": "1. g4 d5 2. e4 dxe4 3. Nc3 h5", "how": "Black attacks g4 straight away." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.65, "reason": "Pawn sacrifices and an open centre produce tactical play." },
+    "gambit": { "value": "white", "confidence": 0.85, "reason": "White is a pawn down and Black can keep it." },
+    "soundness": { "value": "dubious", "side": "white", "confidence": 0.8, "reason": "White's compensation is considered insufficient." },
+    "structure": { "value": "open", "confidence": 0.55, "reason": "The centre opens early and pieces play on open lines." },
+    "approach": { "value": "offbeat", "confidence": 0.95, "reason": "The Grob is a classic offbeat opening." },
+    "level": { "value": "intermediate", "why": "neither", "confidence": 0.65, "reason": "A dubious line is never Beginner and the theory is small." },
+    "plans": { "value": ["lead_in_development"], "reason": "White's compensation is in development and open lines." }
+  }
+}

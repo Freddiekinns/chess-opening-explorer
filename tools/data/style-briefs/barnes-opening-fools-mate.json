@@ -1,0 +1,93 @@
+{
+  "slug": "barnes-opening-fools-mate",
+  "tier": "unsourced",
+  "root": {
+    "name": "Barnes Opening: Fool's Mate",
+    "eco": "A00",
+    "moves": "1. f3 e5 2. g4 Qh4#",
+    "fen": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "barnes-opening",
+  "written_at": "2026-10-12",
+  "confidence": "high",
+  "overview": "1.f3 e5 2.g4 Qh4# is the Fool's Mate, the shortest possible checkmate; White weakens the king's diagonal and is mated on move two. No one plays 2.g4 voluntarily; the line records White's blunder.",
+  "white_ideas": [
+    {
+      "idea": "None; 2.g4 is a blunder"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...Qh4 mate after 2.g4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Checkmate; open e1-h4 diagonal"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The game ends in mate on move 2."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Nothing is gambited; the game ends."
+    },
+    "soundness": {
+      "notes": "2.g4 loses immediately."
+    },
+    "structure": {
+      "notes": "Game is over."
+    },
+    "approach": {
+      "notes": "Nobody plays it by choice."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Not a line to study beyond the warning."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "One wrong move loses at once."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No material is offered; the game ends in mate."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.9,
+      "reason": "2.g4 loses by force."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The e5 pawn and the open diagonal decide it."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "A blunder, never chosen deliberately."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner; nothing to learn."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No plan, the game ends."
+    }
+  }
+}

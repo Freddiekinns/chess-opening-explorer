@@ -1,0 +1,105 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-schlutter-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Schlutter Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Nbd7",
+    "fen": "r1bqkb1r/pppnpppp/5n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White has played the BDG pawn sacrifice (e4, f3) and recaptured on f3, and Black answers 5...Nbd7, a Schlutter-type development guarding e5 and f6. White is a pawn down but ahead in development with Bf4, Qe2 or Bc4 and Ne5 or kingside attack ideas. Black needs to develop without walking into the quick attacks.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bf4, Qe2, Bc4 and Ne5"
+    },
+    {
+      "idea": "Attack the king with g4-g5 or Bc4 and Qe2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete development with ...g6, ...Bg7 and O-O"
+    },
+    {
+      "idea": "Trade pieces and keep the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with White d4 against Black pawn majority on the kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White sacrifices a pawn and plays for fast attack, giving open, tactical positions."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White is a pawn down and Black can keep it with accurate play."
+    },
+    "soundness": {
+      "notes": "Engines favour Black, though the gambit is a practical weapon."
+    },
+    "structure": {
+      "notes": "Open lines and files, a free-flowing centre."
+    },
+    "approach": {
+      "notes": "Strong players seldom play the BDG."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Many opening traps to learn; it is not a beginner choice."
+    }
+  },
+  "plan_phrases": [
+    "Pawn for development",
+    "Attack with Bf4 and Qe2"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "A gambit giving open and tactical play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gave the e-pawn and Black can keep the material."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Engines prefer Black, and strong players avoid it."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Open lines and quick piece play are the point."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players rarely play the BDG."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "A pile of tactics to learn, but not Beginner because it is Dubious."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White gives a pawn for time to attack."
+    }
+  }
+}

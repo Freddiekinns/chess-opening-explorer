@@ -1,0 +1,104 @@
+{
+  "slug": "marienbad-system-berg-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Marienbad System: Berg Variation",
+    "eco": "A47",
+    "moves": "1. d4 Nf6 2. Nf3 b6 3. g3 Bb7 4. Bg2 c5 5. c4 cxd4 6. Qxd4",
+    "fen": "rn1qkb1r/pb1ppppp/1p3n2/8/2PQ4/5NP1/PP2PPBP/RNB1K2R b KQkq - 0 6"
+  },
+  "parent": "marienbad-system",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White has traded in the centre with Qxd4 against the queenside fianchetto set-up; White fianchettoes with Bg2 and plays Nc3 and Qd3 with a small space edge, while Black plays ...Nc6, ...e6 and ...Be7 and aims for ...d5 or ...d6. It is a positional Queen’s Indian-style game.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, Qd3 and O-O"
+    },
+    {
+      "idea": "Use the c4 pawn and centre for a small edge"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the queen with ...Nc6 and ...Bxf3 ideas"
+    },
+    {
+      "idea": "Play ...d5 or ...d6 and ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open d-file, fianchettos on both sides"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Neither sharp nor especially solid. Balanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Pawn recaptured on d4."
+    },
+    "soundness": {
+      "notes": "Normal development."
+    },
+    "structure": {
+      "notes": "Open d-file after exchange."
+    },
+    "approach": {
+      "notes": "Standard in the Queen’s Indian tradition."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans over memory."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "Neither sharp nor especially solid."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "None."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Normal development."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "Open d-file after exchange."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Standard in the Queen’s Indian tradition."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans over memory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "half_open_c_file"
+      ],
+      "reason": "Both sides fianchetto."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "queens-gambit-accepted-schwartz-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Accepted: Schwartz Defense",
+    "eco": "D20",
+    "moves": "1. d4 d5 2. c4 dxc4 3. e4 f5",
+    "fen": "rnbqkbnr/ppp1p1pp/8/5p2/2pPP3/8/PP3PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  "parent": "queens-gambit-accepted-saduleto-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 3.e4 Black strikes back at once with 3...f5, a counter-attack on the e4 pawn. White can take with 4.exf5 or play 4.Bxc4 fxe4 with open lines. Black's king is weakened and White is ahead in development, so the line is regarded as inferior for Black.",
+  "white_ideas": [
+    {
+      "idea": "Take on f5 or e4 and use the lead in development"
+    },
+    {
+      "idea": "Hit the weakened kingside diagonal and the e-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open the f-file and exchange e4"
+    },
+    {
+      "idea": "Hold the c4 pawn and counter with ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with Black king weakened by the f-pawn advance"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An immediate counterattack and open lines make early tactics likely."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black has the c4 pawn, but White recovers it and the f5 pawn comes off, so material returns; I judge it as not a planned gambit."
+    },
+    "soundness": {
+      "notes": "The f5 advance weakens the king and gives White the initiative."
+    },
+    "structure": {
+      "notes": "The centre opens quickly once e4 and f5 are exchanged."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Black needs accurate tactical handling."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "king weakened"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Counterattacking pawn moves open lines and lead to tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "Material comes back by force as the c4 pawn falls and e4/f5 are exchanged."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "3...f5 weakens the king and White gets the lead."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Pawns on e4 and f5 are exchanged and lines open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players hardly use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "It needs tactical care and is not a safe first choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White profits from a faster development and the exposed Black king."
+    }
+  }
+}

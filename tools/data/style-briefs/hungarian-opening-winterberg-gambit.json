@@ -1,0 +1,104 @@
+{
+  "slug": "hungarian-opening-winterberg-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Hungarian Opening: Winterberg Gambit",
+    "eco": "A00",
+    "moves": "1. g3 d5 2. Bg2 e5 3. c4 dxc4 4. b3",
+    "fen": "rnbqkbnr/ppp2ppp/8/4p3/2p5/1P4P1/P2PPPBP/RNBQK1NR b KQkq - 0 4"
+  },
+  "parent": "hungarian-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.g3 d5 2.Bg2 e5 3.c4 dxc4 4.b3 White offers a pawn for the long diagonal and quick development, usually recapturing with bxc4 or axb3. Black can hold the pawn with ...Be6 or ...cxb3, and the game depends on the open b- and a-files and the bishop on g2.",
+  "white_ideas": [
+    {
+      "idea": "Open lines with b3 and Bb2, aiming at e5"
+    },
+    {
+      "idea": "Regain the pawn with Qa4+ or bxc4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the pawn with ...Be6 or ...b5"
+    },
+    {
+      "idea": "Hold the centre with ...e5 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open queenside, White fianchetto against Black centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Pawn offered for activity. Mix."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black can keep the c4 pawn for a time."
+    },
+    "soundness": {
+      "notes": "Pawn buys a real long-diagonal initiative."
+    },
+    "structure": {
+      "notes": "Open queenside, centre not settled."
+    },
+    "approach": {
+      "notes": "Very rare for strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans around the long diagonal."
+    }
+  },
+  "plan_phrases": [
+    "long diagonal"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Pawn offered for activity."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White offers a pawn."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Pawn buys a real long-diagonal initiative."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Open queenside, centre not settled."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Very rare for strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Plans around the long diagonal."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "lead_in_development"
+      ],
+      "reason": "Bg2 and Bb2 on long diagonals."
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "richter-veresov-attack-veresov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Richter-Veresov Attack: Veresov Variation",
+    "eco": "D01",
+    "moves": "1. d4 Nf6 2. Nc3 d5 3. Bg5 Bf5 4. Bxf6",
+    "fen": "rn1qkb1r/ppp1pppp/5B2/3p1b2/3P4/2N5/PPP1PPPP/R2QKBNR b KQkq - 0 4"
+  },
+  "parent": "richter-veresov-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.d4 Nf6 2.Nc3 d5 3.Bg5 Bf5 White plays 4.Bxf6 exf6 (Black gets the bishop pair and doubled f-pawns) and goes for e3 and Bd3 or Qf3 development. White usually plays e3, Bd3 and Qf3 to challenge Black's bishop. The play is positional with a small bishop-pair compensation for Black.",
+  "white_ideas": [
+    {
+      "idea": "Play e3, Bd3 and Qf3 to trade bishops and attack b7"
+    },
+    {
+      "idea": "Pressure d5 and Black's structure"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the bishop pair and play ...c6 and ...Bd6"
+    },
+    {
+      "idea": "Keep the doubled f-pawns for central control"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black doubled f-pawns with bishop pair"
+    },
+    {
+      "structure": "Closed QGD-like centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, positional."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Fully sound."
+    },
+    "structure": {
+      "notes": "Central tension without open lines."
+    },
+    "approach": {
+      "notes": "Respected but not a main line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs understanding of the doubled pawns."
+    }
+  },
+  "plan_phrases": [
+    "bishop pair",
+    "doubled pawns"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Positional, even."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "e-file semi-open after exf6."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "Veresov is a recognised set-up."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding."
+    },
+    "plans": {
+      "value": [
+        "bishop_pair",
+        "doubled_pawns"
+      ],
+      "reason": "Bxf6 exf6."
+    }
+  }
+}

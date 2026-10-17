@@ -1,0 +1,105 @@
+{
+  "slug": "tarrasch-defense-swedish-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Swedish Variation",
+    "eco": "D33",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3 c4",
+    "fen": "r1bqkbnr/pp3ppp/2n5/3p4/2pP4/2N2NP1/PP2PP1P/R1BQKB1R w KQkq - 0 7"
+  },
+  "parent": "tarrasch-defense-rubinstein-system",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black pushes ...c4 to gain space and fix the queenside, and White fianchettoes with Bg2 then chooses between e4, Ne5 and a3. Black's ...Bb4 and ...Nge7 reroute the pieces while the c4 pawn cramps White. It is a manoeuvring struggle in which White undermines with b3 or e4.",
+  "white_ideas": [
+    {
+      "idea": "Undermine c4 with b3 and e4"
+    },
+    {
+      "idea": "Use the Ne5 outpost and the long diagonal"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the c4 space and develop with ...Bb4 and ...Nge7"
+    },
+    {
+      "idea": "Prepare ...Bf5 and ...O-O"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on c4 and d5 against a White d4 centre"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black gains queenside space but must keep c4 supported."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit; all captures are recaptured."
+    },
+    "soundness": {
+      "notes": "Both sides are within normal limits."
+    },
+    "structure": {
+      "notes": "Tension on d4 and e4 with a fixed queenside."
+    },
+    "approach": {
+      "notes": "A standard Tarrasch sub-line."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Concrete lines at move nine plus strategic understanding."
+    }
+  },
+  "plan_phrases": [
+    "space_advantage",
+    "knight_outpost"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Space and manoeuvring rather than forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Both sides are sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is in tension with a locked queenside."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A respectable branch of the Tarrasch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Some theory and strategic understanding are needed."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "knight_outpost"
+      ],
+      "reason": "Black gets space with c4 and White uses the e5 outpost."
+    }
+  }
+}

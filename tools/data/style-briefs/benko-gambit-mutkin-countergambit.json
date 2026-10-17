@@ -1,0 +1,105 @@
+{
+  "slug": "benko-gambit-mutkin-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit: Mutkin Countergambit",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. g4",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P3P1/8/PP2PP1P/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "benko-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.d4 Nf6 2.c4 c5 3.d5 b5 White does not accept with cxb5 but plays the aggressive 4.g4, attacking the knight and threatening g5. Black can take ...Nxg4 and win a pawn, or play ...bxc4 first. White plays for rapid attack and development in return. A rare anti-Benko, aggressive but risky.",
+  "white_ideas": [
+    {
+      "idea": "Push g5 and h4 to chase the knight and attack the kingside."
+    },
+    {
+      "idea": "Use Bg2 and Rg1 and the open g-file to attack."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on g4 or play ...bxc4 first to keep the extra material."
+    },
+    {
+      "idea": "Counter in the centre with ...e6 or ...d6 and ...Bb7 on the long diagonal."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White space with d5 and g4 against Black's ...c5/...b5 wing play, and kings possibly castling opposite."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White throws the g-pawn forward and both sides take risks."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White offers the g4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "An anti-Benko sideline that is not considered to give enough for the material."
+    },
+    "structure": {
+      "notes": "Black's c5/b5 pawns against White's d5 and g4 with an unsettled centre."
+    },
+    "approach": {
+      "notes": "Very seldom played by strong players; chosen for surprise."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Aggressive but dubious, so never Beginner."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "White throws the g-pawn forward and both sides take risks."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White offers the g4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "An anti-Benko sideline that is not considered to give enough for the material."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "Black's c5/b5 pawns against White's d5 and g4 with an unsettled centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Very seldom played by strong players; chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Aggressive but dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "White storms the kingside with g4 and g5."
+    }
+  }
+}

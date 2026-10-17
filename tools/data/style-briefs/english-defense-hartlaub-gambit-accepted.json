@@ -1,0 +1,105 @@
+{
+  "slug": "english-defense-hartlaub-gambit-accepted",
+  "tier": "unsourced",
+  "root": {
+    "name": "English Defense: Hartlaub Gambit Accepted",
+    "eco": "A40",
+    "moves": "1. c4 e6 2. d4 b6 3. Nc3 Bb7 4. e4 f5 5. exf5 Nf6",
+    "fen": "rn1qkb1r/pbpp2pp/1p2pn2/5P2/2PP4/2N5/PP3PPP/R1BQKBNR w KQkq - 1 6"
+  },
+  "parent": "english-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays ...f5 to meet the white centre, and after exf5 has a pawn deficit but White's pieces are loose. White develops Bd3 and Nf3 and Black tries ...Bb4, ...Qh4 and ...Nf6 to exploit the light squares.",
+  "white_ideas": [
+    {
+      "idea": "Keep the extra pawn and develop safely with Bd3, Nf3"
+    },
+    {
+      "idea": "Meet ...Bb4 with Bd2 or a3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the long diagonal and ...Bb4 for pressure"
+    },
+    {
+      "idea": "Attack the king with ...Qh4 and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White has a pawn on f5, Black has a b6 fianchetto"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp and double-edged."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "White can keep the f5 pawn."
+    },
+    "soundness": {
+      "notes": "Dubious; White can consolidate."
+    },
+    "structure": {
+      "notes": "Open lines on the e-file and diagonals."
+    },
+    "approach": {
+      "notes": "A rare gambit."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Theory in the gambit."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "Black gambits for a lead in development."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.85,
+      "reason": "Black has given a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.6,
+      "reason": "Rare because White can keep the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central files open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Gambit theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "Black aims at the centre with the b7 bishop."
+    }
+  }
+}

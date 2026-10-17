@@ -1,0 +1,111 @@
+{
+  "slug": "vant-kruijs-opening-keoni-hiva-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van't Kruijs Opening: Keoni-Hiva Gambit, Akahi Variation",
+    "eco": "A00",
+    "moves": "1. e3 e5 2. Nc3 Nf6 3. f4 exf4 4. Nf3",
+    "fen": "rnbqkb1r/pppp1ppp/5n2/8/5p2/2N1PN2/PPPP2PP/R1BQKB1R b KQkq - 1 4"
+  },
+  "parent": "vant-kruijs-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays an f4 gambit after 1.e3 e5 2.Nc3 Nf6 3.f4 exf4 4.Nf3, a King's Gambit structure a tempo behind because e3 blocks the bishop. Black can keep the f4-pawn with ...g5 or ...d5 and develop freely while White hopes for d4 and piece activity. I am not sure of the theory here, so the evidence is kept short.",
+  "white_ideas": [
+    {
+      "idea": "Regain f4 with d4 and Bxf4, or build pressure with Nd5 and d4"
+    },
+    {
+      "idea": "Develop quickly and open lines against the black king"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra pawn with ...g5, ...d6 or ...d5"
+    },
+    {
+      "idea": "Develop calmly and return the pawn only for safety"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after e5 and f4 exchanges, Black pawn on f4 against White e3/d2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early pawn sacrifice with open lines and a weakened white king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White has played f4 and is a pawn down after ...exf4; Black can keep it."
+    },
+    "soundness": {
+      "notes": "White's e3 move wastes a tempo compared with the King's Gambit, so the gambit is probably unsound."
+    },
+    "structure": {
+      "notes": "Black e-pawn has gone and f-pawn is on f4, leaving open central lines."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players, a surprise weapon."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Dubious gambit; a poor first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "gambit",
+    "lead in development",
+    "surprise weapon"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Ekolu and Alua Variations",
+      "moves": "1. e3 e5 2. Nc3 d5 3. f4 exf4 4. Nf3",
+      "how": "Black chooses ...d5 or ...Nc6 instead of ...Nf6."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early f4 gambit gives open lines and a loose white king."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the f-pawn after ...exf4 and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "A King's Gambit with an extra wasted tempo is hard to justify."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The e-pawn is traded and lines open towards both kings."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players hardly choose 1.e3 and a gambit of this kind."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White's compensation is faster development for the pawn."
+    }
+  }
+}

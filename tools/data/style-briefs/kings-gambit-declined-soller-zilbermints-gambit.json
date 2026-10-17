@@ -1,0 +1,99 @@
+{
+  "slug": "kings-gambit-declined-soller-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Declined: Soller-Zilbermints Gambit",
+    "eco": "C30",
+    "moves": "1. e4 e5 2. f4 f6 3. fxe5 Nc6",
+    "fen": "r1bqkbnr/pppp2pp/2n2p2/4P3/4P3/8/PPPP2PP/RNBQKBNR w KQkq - 1 4"
+  },
+  "parent": "kings-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black meets the King's Gambit with the odd 2...f6, and after 3.fxe5 Nc6 aims to regain the pawn with ...fxe5 or ...Nxe5. White usually plays 4.Nf3 or 4.exf6 and keeps a lead in development, while Black's king is weakened.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn on e5 and develop with Nf3"
+    },
+    {
+      "idea": "Use the weakened e8-h5 diagonal and Qh5+ ideas"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain the pawn with ...fxe5 or ...Nxe5"
+    },
+    {
+      "idea": "Develop quickly and fight for e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open f-file and e-file with the black king slightly exposed"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open, tactical, and risky for Black's king."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material comes back by force with ...fxe5 or ...Nxe5, so there is no real gambit."
+    },
+    "soundness": {
+      "notes": "2...f6 weakens the king and is considered dubious."
+    },
+    "structure": {
+      "notes": "Open lines after the e-pawns come off."
+    },
+    "approach": {
+      "notes": "Strong players seldom pick 2...f6."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Little theory but Black must avoid early tactics."
+    }
+  },
+  "plan_phrases": [],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Opened lines and a weakened black king mean one slip can be fatal."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.7,
+      "reason": "The pawn comes back by force, so no material is truly given up."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "2...f6 weakens the king and is considered inferior by strong players."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e-pawns leave the board and the pieces get open files."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "2...f6 against the King's Gambit is seldom chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Few moves to learn but Black must find the safe plan."
+    },
+    "plans": {
+      "value": [],
+      "reason": "The evidence does not name a clear plan."
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "dutch-defense-bellon-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Bellon Gambit",
+    "eco": "A84",
+    "moves": "1. d4 f5 2. c4 e6 3. e4",
+    "fen": "rnbqkbnr/pppp2pp/4p3/5p2/2PPP3/8/PP3PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "dutch-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White offers a centre pawn with 3.e4 fxe4 4.Nc3 Nf6 5.Bg5 Be7 6.Bxf6 Bxf6 7.Nxe4 and the pawn comes straight back with a space advantage. Black can try alternatives such as 4...Bb4. White gets space and Black has the weakness on e6.",
+  "white_ideas": [
+    {
+      "idea": "Win the pawn back with Nxe4"
+    },
+    {
+      "idea": "Take the centre and space"
+    },
+    {
+      "idea": "Pressure e6 and the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn or return it for safety"
+    },
+    {
+      "idea": "Develop ...Nf6 and ...Be7"
+    },
+    {
+      "idea": "Use the f-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Semi-open e-file after the exchange, with White's space"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Lopsided, but the pawn returns and there is no race."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The e4 pawn returns by force in the main line."
+    },
+    "soundness": {
+      "notes": "Sound for both."
+    },
+    "structure": {
+      "notes": "Semi-open with the e-file."
+    },
+    "approach": {
+      "notes": "Reached by transposition from the Staunton Gambit Deferred."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs plans more than theory."
+    }
+  },
+  "plan_phrases": [
+    "Win e4 back and use the space"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "The pawn returns and the position is double-edged but not forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.55,
+      "reason": "The e4 pawn comes straight back."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "A sound if unspectacular White try."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "The e-file opens after the exchange."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A recognised Dutch anti-line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Needs plans, not much theory."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan from the table."
+    }
+  }
+}

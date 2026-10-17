@@ -1,0 +1,111 @@
+{
+  "slug": "latvian-gambit-corkscrew-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Latvian Gambit: Corkscrew Gambit",
+    "eco": "C40",
+    "moves": "1. e4 e5 2. Nf3 f5 3. Nxe5 Nf6 4. Bc4 fxe4 5. Nf7 Qe7 6. Nxh8 d5",
+    "fen": "rnb1kb1N/ppp1q1pp/5n2/3p4/2B1p3/8/PPPP1PPP/RNBQK2R w KQq - 0 7"
+  },
+  "parent": "latvian-gambit-corkscrew-countergambit",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Corkscrew Gambit White grabs the rook on h8 with the knight, while Black gets the knight trapped and develops with tempo. Black has given the exchange and more for the trapped knight and quick development. White can try to extract the knight with Bxd5 while Black attacks with ...Qh4 and ...c6.",
+  "white_ideas": [
+    {
+      "idea": "Free the h8 knight with Nf7 ideas or Bxd5"
+    },
+    {
+      "idea": "Develop with O-O and Re1"
+    },
+    {
+      "idea": "Return material to neutralise the attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Win the trapped knight with ...Qh4 or ...Bg4"
+    },
+    {
+      "idea": "Develop with ...Nc6 and ...Bd6"
+    },
+    {
+      "idea": "Use the open lines for the attack"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a White knight stuck on h8"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wild tactical play with trapped pieces and mates."
+    },
+    "gambit": {
+      "material_given": "exchange",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black gave the rook and can regain the knight."
+    },
+    "soundness": {
+      "notes": "Considered dubious for Black."
+    },
+    "structure": {
+      "notes": "The centre is open."
+    },
+    "approach": {
+      "notes": "The Latvian is an anchor for offbeat."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forced lines to know."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "Trapped pieces and open lines make play forcing."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.7,
+      "reason": "Black has given the exchange for a trapped knight and development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.7,
+      "reason": "The Latvian and its Corkscrew lines are considered dubious."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.85,
+      "reason": "The centre is wide open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "The Latvian is an anchor for offbeat."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious, so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Black plays for development and the attack."
+    }
+  }
+}

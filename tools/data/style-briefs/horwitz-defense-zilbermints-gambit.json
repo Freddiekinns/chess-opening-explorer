@@ -1,0 +1,113 @@
+{
+  "slug": "horwitz-defense-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Horwitz Defense: Zilbermints Gambit",
+    "eco": "A40",
+    "moves": "1. d4 e6 2. c4 e5",
+    "fen": "rnbqkbnr/pppp1ppp/8/4p3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "horwitz-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.d4 e6 2.c4 Black plays 2...e5, offering the e-pawn. After 3.dxe5 White has an extra pawn and a lead in the centre, and Black hopes for quick piece play with ...Nc6, ...Bb4+ and ...Qh4, or ...Bb4+ and ...Nc6 to win the pawn back. The idea rarely works against accurate play.",
+  "white_ideas": [
+    {
+      "idea": "Take the pawn with 3.dxe5 and keep it with Nc3, Nf3 and e3"
+    },
+    {
+      "idea": "Return it only if that gives a clear development lead"
+    },
+    {
+      "idea": "Complete development and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop at speed with ...Nc6, ...Bb4+ and ...Qh4"
+    },
+    {
+      "idea": "Regain e5 by attacking it with ...Nc6 and ...Qe7"
+    },
+    {
+      "idea": "Use the open d-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn up on e5 with doubled or isolated centre pawns for Black"
+    },
+    {
+      "structure": "Open centre and play for lines"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black takes a pawn-down open position hoping for tactics; both sides can lose quickly."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "After 3.dxe5 White keeps the extra pawn, and ...Nc6 / ...Bb4+ do not win it back by force."
+    },
+    "soundness": {
+      "notes": "Considered dubious; Black has little compensation against sensible development."
+    },
+    "structure": {
+      "notes": "After dxe5 the centre opens, with the d-file and diagonals available to the pieces."
+    },
+    "approach": {
+      "notes": "Rarely played by strong players; chosen for surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Unsound gambit that gets by on tricks."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "open d-file"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Black is a pawn down in an open centre and has to play actively, so mistakes cost quickly."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black gives the e-pawn and White can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.8,
+      "reason": "Black has too little for the pawn against accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "The centre opens after dxe5 and play runs on the d-file and diagonals."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players hardly ever play it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.7,
+      "reason": "A dubious gambit is never a good first choice, though it asks little theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Black pays a pawn for quicker pieces."
+    }
+  }
+}

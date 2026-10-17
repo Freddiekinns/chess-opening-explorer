@@ -1,0 +1,103 @@
+{
+  "slug": "sicilian-defense-mongoose-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Mongoose Variation",
+    "eco": "B27",
+    "moves": "1. e4 c5 2. Nf3 Qa5",
+    "fen": "rnb1kbnr/pp1ppppp/8/q1p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+  },
+  "parent": "sicilian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black meets 2.Nf3 with 2...Qa5, an early queen sortie that pins e4 pressure and eyes e5. White usually answers with 3.c3 or 3.Bb5 and gains time chasing the queen. The line is rare and I am not sure how it is usually played.",
+  "white_ideas": [
+    {
+      "idea": "Gain time with c3, d4"
+    },
+    {
+      "idea": "Develop with Nc3 and Bb5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nc6 and ...e6"
+    },
+    {
+      "idea": "Pressure the e4 pawn with the queen"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Sicilian structure with an early queen on a5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen moves lead to tactics but few forcing lines."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is offered."
+    },
+    "soundness": {
+      "notes": "Playable but loses time."
+    },
+    "structure": {
+      "notes": "Sicilian centre."
+    },
+    "approach": {
+      "notes": "Rarely used."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Neither solid nor forcing."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "The queen sortie costs time but is not refuted."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.65,
+      "reason": "Sicilian asymmetry with a half-open c-file."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.4,
+      "reason": "Few theoretical demands."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "The queen comes out early."
+    }
+  }
+}

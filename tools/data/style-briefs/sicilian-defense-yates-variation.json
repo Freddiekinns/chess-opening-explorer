@@ -1,0 +1,111 @@
+{
+  "slug": "sicilian-defense-yates-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Yates Variation",
+    "eco": "B56",
+    "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Bd3",
+    "fen": "r1bqkb1r/pp2pppp/2np1n2/8/3NP3/2NB4/PPP2PPP/R1BQK2R b KQkq - 1 6"
+  },
+  "parent": "sicilian-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In this Classical Sicilian line White develops the bishop to d3 against ...Nc6, ...Nf6 and ...d6, aiming at castling and f4 or Kh1. Black chooses between ...g6, ...e6 and ...e5 set-ups. I am unsure of the exact Yates move order and its distinctions from the Scheveningen.",
+  "white_ideas": [
+    {
+      "idea": "Castle kingside and play f4 and Kh1"
+    },
+    {
+      "idea": "Qe2 and Be3"
+    },
+    {
+      "idea": "Pressure e5 and the d-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...g6 or ...e6 as a Dragon or Scheveningen-style set-up"
+    },
+    {
+      "idea": "Counter with ...Nxd4 and ...e5"
+    },
+    {
+      "idea": "Use the c-file with ...Rc8"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Sicilian with half-open c-file for Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Standard double-edged Sicilian but White's plan is fairly slow."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Asymmetric Sicilian structure."
+    },
+    "approach": {
+      "notes": "A main-line Sicilian choice."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Understanding of Sicilian plans."
+    }
+  },
+  "plan_phrases": [
+    "Open Sicilian with Bd3",
+    "Castle then f4"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "A standard Open Sicilian line where neither side forces matters early."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A normal Open Sicilian line."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.85,
+      "reason": "Every Sicilian has an asymmetric centre and a half-open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.9,
+      "reason": "A standard Sicilian line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The usual Sicilian plans matter more than a long forced sequence."
+    },
+    "plans": {
+      "value": [
+        "half_open_c_file",
+        "knight_outpost"
+      ],
+      "reason": "Black plays on the half-open c-file."
+    }
+  }
+}

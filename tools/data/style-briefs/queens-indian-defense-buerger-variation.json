@@ -1,0 +1,105 @@
+{
+  "slug": "queens-indian-defense-buerger-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Indian Defense: Buerger Variation",
+    "eco": "E15",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 c5 6. d5 exd5 7. Ng5",
+    "fen": "rn1qkb1r/pb1p1ppp/1p3n2/2pp2N1/2P5/6P1/PP2PPBP/RNBQK2R b KQkq - 1 7"
+  },
+  "parent": "queens-indian-defense-fianchetto-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 6.d5 exd5 White plays 7.Ng5, going for pressure on the d5 pawn and h7 and aiming at the quick queen and bishop tactics. Black can answer with ...h6 and ...Nc6 or ...d4, and usually ends with hanging pawns on c5 and d5 or an open centre. Read from the moves, as it is a rare variation.",
+  "white_ideas": [
+    {
+      "idea": "Hit d5 with Qb3 or Nf3 retreat and Bxd5"
+    },
+    {
+      "idea": "Use the g2 bishop and the knight on g5 against the centre pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Kick the knight with ...h6 and develop ...Nc6"
+    },
+    {
+      "idea": "Keep c5 and d5 as hanging pawns or push ...d4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Hanging pawns on c5 and d5 against a fianchettoed bishop"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactical early on, but both sides have clear, sound ways to play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "The d5 pawn can be recaptured at once."
+    },
+    "soundness": {
+      "notes": "Both sides have standard developing moves."
+    },
+    "structure": {
+      "notes": "The c5 and d5 pawns are in tension and the centre is not settled."
+    },
+    "approach": {
+      "notes": "A rare but respectable side line of the fianchetto QID."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Hanging pawns demand good judgement."
+    }
+  },
+  "plan_phrases": [
+    "hanging pawns",
+    "pressure on d5"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Tactical early on, but both sides have clear, sound ways to play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The d5 pawn can be recaptured at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Both sides have standard developing moves."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "The c5 and d5 pawns are in tension and the centre is not settled."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "A rare but respectable side line of the fianchetto QID."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Hanging pawns demand good judgement."
+    },
+    "plans": {
+      "value": [
+        "hanging_pawns",
+        "fianchetto"
+      ],
+      "reason": "Black has c5 and d5 hanging pawns while White has the g2 bishop."
+    }
+  }
+}

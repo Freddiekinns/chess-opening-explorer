@@ -1,0 +1,121 @@
+{
+  "slug": "dutch-defense-alekhine-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Alekhine Variation",
+    "eco": "A92",
+    "moves": "1. d4 f5 2. c4 Nf6 3. g3 e6 4. Bg2 Be7 5. Nf3 O-O 6. O-O Ne4",
+    "fen": "rnbq1rk1/ppppb1pp/4p3/5p2/2PPn3/5NP1/PP2PPBP/RNBQ1RK1 w - - 6 7"
+  },
+  "parent": "dutch-defense-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the fianchetto Classical Dutch Black plays 6...Ne4, placing a knight on the strong e4 outpost. White replies with 7.Nbd2 or 7.d5, challenging the knight and fighting for the centre. Black prepares ...d6, ...Qe8 and ...Bf6 or ...Nc6, with kingside chances based on the f5 pawn.",
+  "white_ideas": [
+    {
+      "idea": "Challenge e4 with Nbd2 and Qc2"
+    },
+    {
+      "idea": "Gain space with d5 or e3 and Qc2"
+    },
+    {
+      "idea": "Pressure the c-file and exchange the e4 knight"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the e4 knight and play ...d6, ...Qe8"
+    },
+    {
+      "idea": "Play ...Bf6 and ...Nc6 or ...c6 and ...Qe8-h5"
+    },
+    {
+      "idea": "Prepare ...Ng5 or ...f4 pawn play"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Classical Dutch with e6, f5 and d6 against d4 and c4"
+    },
+    {
+      "structure": "Knight outpost on e4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Both sides have clear plans but the f5 move leaves weaknesses and the game is double-edged."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "A mainline Dutch set-up and sound."
+    },
+    "structure": {
+      "notes": "The centre stays tense with chances to open either side."
+    },
+    "approach": {
+      "notes": "A main line of the Dutch, played now and then by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "The Dutch needs a deep sense of when to push f4 or ...d5."
+    }
+  },
+  "plan_phrases": [
+    "knight outpost",
+    "fianchetto",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Alekhine, 7.d5",
+      "moves": "1. d4 f5 2. c4 Nf6 3. g3 e6 4. Bg2 Be7 5. Nf3 O-O 6. O-O Ne4 7. d5",
+      "how": "White gains space instead of challenging the knight."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "The Dutch is known for unbalanced, double-edged positions with attacking chances for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material has changed hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "A well-established line."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre has not locked and either side can open it."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A recognised Classical Dutch line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The plans matter more than lines, and the middlegame takes judgement."
+    },
+    "plans": {
+      "value": [
+        "knight_outpost",
+        "fianchetto"
+      ],
+      "reason": "The knight on e4 and the g2 bishop give both sides targets."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "goldsmith-defense-picklepuss-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Goldsmith Defense: Picklepuss Defense",
+    "eco": "B00",
+    "moves": "1. e4 h5 2. d4 Nf6",
+    "fen": "rnbqkb1r/ppppppp1/5n2/7p/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 1 3"
+  },
+  "parent": "goldsmith-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 1...h5 against 1.e4 and after 2.d4 develops with 2...Nf6, which White meets with 3.e5 or 3.Nc3. White gets a space advantage and a lead in the centre. It is a joke-like rare defence which strong players avoid.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with e5 and Nc3"
+    },
+    {
+      "idea": "Develop normally"
+    },
+    {
+      "idea": "Open the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit e4 or the centre with ...Nf6"
+    },
+    {
+      "idea": "Use the h-pawn for a later kingside push"
+    },
+    {
+      "idea": "Reach a playable position"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White's pawn centre against an unnatural h5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet but unnatural play, Black is behind."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "Black has made a pointless move and is worse."
+    },
+    "structure": {
+      "notes": "White's centre is established."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "No deep theory."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Neither fully forcing nor solid and the main point is Black's unusual move."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.65,
+      "reason": "1...h5 loses time and gives White an easy edge."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "White has a big centre against Black's compact set-up."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players do not play this."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious, so not Beginner, and nothing is hard to follow."
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White's easy plan is to take space in the centre."
+    }
+  }
+}

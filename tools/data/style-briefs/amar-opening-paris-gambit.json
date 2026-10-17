@@ -1,0 +1,114 @@
+{
+  "slug": "amar-opening-paris-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Amar Opening: Paris Gambit",
+    "eco": "A00",
+    "moves": "1. Nh3 d5 2. g3 e5 3. f4",
+    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/5P2/6PN/PPPPP2P/RNBQKB1R b KQkq - 0 3"
+  },
+  "parent": "amar-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.Nh3 d5 2.g3 e5 White plays 3.f4, challenging the e5 pawn. If Black takes with 3...exf4 White regains with Nxf4, but in the most played line 3...Bxh3 4.Bxh3 exf4 5.O-O fxg3 6.hxg3 White is a pawn down for the bishop pair and open h-file (the Gent Gambit). The lines are unusual and little studied.",
+  "white_ideas": [
+    {
+      "idea": "Open lines on the kingside after f4"
+    },
+    {
+      "idea": "Use the h-file and bishop pair for attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on f4 and keep the extra pawn"
+    },
+    {
+      "idea": "Trade bishops and consolidate"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside after fxg3 hxg3"
+    },
+    {
+      "structure": "Black centre pawns on d5 and e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Wild flank play with an exposed white king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 4.Bxh3 exf4 5.O-O fxg3 6.hxg3 White is a pawn down; Black can keep it."
+    },
+    "soundness": {
+      "notes": "The gambit is thought unsound."
+    },
+    "structure": {
+      "notes": "Open kingside files."
+    },
+    "approach": {
+      "notes": "Almost never chosen by strong players."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Dubious and unusual."
+    }
+  },
+  "plan_phrases": [
+    "Kingside attack",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "3...exf4 4.Nxf4",
+      "moves": "3...exf4 4.Nxf4",
+      "how": "White regains the pawn at once and material is level"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "An exposed king and open files after the pawn sacrifice."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.6,
+      "reason": "The most played line leaves White a pawn down."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "White gets too little for the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Pawn trades open the kingside."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Not played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Dubious so never Beginner."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "lead_in_development"
+      ],
+      "reason": "White tries to use the open h-file."
+    }
+  }
+}

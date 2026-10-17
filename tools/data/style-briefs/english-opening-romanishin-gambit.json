@@ -1,0 +1,31 @@
+{
+  "slug": "english-opening-romanishin-gambit",
+  "tier": "unsourced",
+  "root": { "name": "English Opening: Romanishin Gambit", "eco": "A13", "moves": "1. Nf3 Nf6 2. c4 e6 3. g3 a6 4. Bg2 b5", "fen": "rnbqkb1r/2pp1ppp/p3pn2/1p6/2P5/5NP1/PP1PPPBP/RNBQK2R w KQkq - 0 5" },
+  "parent": "english-opening-anglo-indian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black pushes ...b5 right away in the Catalan-style English, inviting 5.cxb5 axb5 so the a-file opens and Black's pieces become active. White can try to keep the extra b5 pawn with Nc3 and d4, while Black's rook on the a-file and bishop on b7 pressure the long diagonal. The idea is to use open lines on the queenside; White often returns the pawn for safety. I am unsure of how often the pawn truly stays given.",
+  "white_ideas": [{ "idea": "Take on b5 and aim for Nc3, d4 and a solid extra pawn" }, { "idea": "Decline with a4 or b3 and keep a sound structure" }],
+  "black_ideas": [{ "idea": "Open the a-file and play ...Bb7, ...Qb6 and ...Be7 for queenside pressure" }, { "idea": "Strike in the centre with ...c5 or ...d5 once White's pieces are uncoordinated" }],
+  "typical_structures": [{ "structure": "Open a-file with Black bishop on the long diagonal and White fianchettoed bishop on g2" }],
+  "axis_evidence": {
+    "character": { "notes": "Opens the queenside early with the pawn offer; sharper than the usual quiet English." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "After 5.cxb5 axb5 Black is offering the b5 pawn for open lines; White can keep it with accurate play." },
+    "soundness": { "notes": "Probably dubious since White can pick up material, but the compensation is not trivial." },
+    "structure": { "notes": "Flank pawn play and the centre is still undecided." },
+    "approach": { "notes": "Strong players rarely play it." },
+    "level": { "reason": "understanding", "notes": "Needs judgement about when to regain material." }
+  },
+  "plan_phrases": ["half-open files", "fianchetto"],
+  "sublines_that_differ": [{ "name": "5.cxb5 axb5 6.Nc3", "moves": "1. Nf3 Nf6 2. c4 e6 3. g3 a6 4. Bg2 b5 5. cxb5 axb5 6. Nc3", "how": "The testing reply, attacking the b5 pawn." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.45, "reason": "Early ...b5 opens the queenside and creates concrete tactical problems." },
+    "gambit": { "value": "black", "confidence": 0.5, "reason": "Black offers the b-pawn for open lines and White may keep it." },
+    "soundness": { "value": "dubious", "side": "black", "confidence": 0.45, "reason": "The compensation is probably not enough against accurate play." },
+    "structure": { "value": "flexible", "confidence": 0.5, "reason": "The centre stays undecided while the fight is on the flank." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players rarely choose the Romanishin Gambit." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "A dubious line is never Beginner and play is judgement-led." },
+    "plans": { "value": ["half_open_c_file"], "reason": "Black aims at open queenside files, closest to the half-open file plan." }
+  }
+}

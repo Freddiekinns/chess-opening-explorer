@@ -27,6 +27,10 @@ const OPENINGS = [
   { fen: 'f-englund', name: 'Englund', analysis_json: { style_tags: [] } },
   { fen: 'f-london', name: 'London', analysis_json: { style_tags: [] } },
   { fen: 'f-hub', name: "King's Pawn", analysis_json: { style_tags: ['Aggressive', 'Solid'] } },
+  // Named gambits the taxonomy says are not: the pawn comes back, or is never
+  // taken. One tagged, one not yet classified.
+  { fen: 'f-qg', name: "Queen's Gambit", analysis_json: { style_tags: [] } },
+  { fen: 'f-kgd', name: "King's Gambit Declined", analysis_json: { style_tags: [] } },
 ];
 
 beforeAll(() =>
@@ -39,6 +43,7 @@ beforeAll(() =>
       evans: tags({ gambit: 'white' }),
       englund: tags({ gambit: 'black', soundness: 'dubious', approach: 'offbeat' }),
       london: tags({ character: 'solid', approach: 'system', level: 'beginner' }),
+      qg: tags({ character: 'solid' }),
     },
     positions: {
       'f-najdorf': 'najdorf',
@@ -46,6 +51,7 @@ beforeAll(() =>
       'f-evans': 'evans',
       'f-englund': 'englund',
       'f-london': 'london',
+      'f-qg': 'qg',
     },
   })
 );
@@ -55,15 +61,32 @@ const names = (styles) => searchService.filterBySemanticStyle(OPENINGS, styles).
 
 describe('style search over the style tags', () => {
   test('solid means Solid, whatever the old tags said', () => {
-    expect(names(['solid'])).toEqual(['Caro-Kann', 'London']);
+    expect(names(['solid'])).toEqual(['Caro-Kann', 'London', "Queen's Gambit"]);
   });
 
   test('aggressive takes Sharp lines and gambits from either side', () => {
     expect(names(['aggressive'])).toEqual(['Najdorf', 'Evans Gambit', 'Englund']);
   });
 
+  test('a search for gambits keeps every opening named one, tagged or not', () => {
+    // The tag says whether material really changes hands; the name is what a
+    // user types "gambit" looking for. The Queen's Gambit must not vanish.
+    expect(names(['gambit'])).toEqual(
+      expect.arrayContaining(["Queen's Gambit", "King's Gambit Declined"])
+    );
+  });
+
+  test('a gambit name does not make an opening aggressive', () => {
+    expect(names(['aggressive'])).not.toContain("Queen's Gambit");
+  });
+
   test('the taxonomy words reach their own axes', () => {
-    expect(names(['gambit'])).toEqual(['Evans Gambit', 'Englund']);
+    expect(names(['gambit'])).toEqual([
+      'Evans Gambit',
+      'Englund',
+      "Queen's Gambit",
+      "King's Gambit Declined",
+    ]);
     expect(names(['dubious'])).toEqual(['Englund']);
     expect(names(['system'])).toEqual(['London']);
     expect(names(['offbeat'])).toEqual(['Englund']);

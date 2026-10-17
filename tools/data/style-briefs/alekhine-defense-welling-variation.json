@@ -1,0 +1,111 @@
+{
+  "slug": "alekhine-defense-welling-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Alekhine Defense: Welling Variation",
+    "eco": "B02",
+    "moves": "1. e4 Nf6 2. e5 Nd5 3. b3",
+    "fen": "rnbqkb1r/pppppppp/8/3nP3/8/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "alekhine-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 1.e4 Nf6 2.e5 Nd5 White plays 3.b3, aiming to fianchetto the queen's bishop and hit the d5 knight and the long diagonal quietly. Black usually answers 3...d6 or 3...Nc6 and gets a normal Alekhine position. White gives up the quick c4 or Nc3 pressure for flexibility.",
+  "white_ideas": [
+    {
+      "idea": "Develop the bishop to b2"
+    },
+    {
+      "idea": "Keep e5 supported with d3 or f4 later"
+    },
+    {
+      "idea": "Play quietly for space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge e5 with ...d6 or ...Nc6"
+    },
+    {
+      "idea": "Develop with ...g6 or ...Bf5"
+    },
+    {
+      "idea": "Keep the d5 knight active"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Advanced e5 pawn with a fianchettoed bishop on b2"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet development without forcing play for either side."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level, no sacrifice."
+    },
+    "soundness": {
+      "notes": "3.b3 is slow but sound."
+    },
+    "structure": {
+      "notes": "White has a space advantage, but the centre is not locked."
+    },
+    "approach": {
+      "notes": "Rare, chosen to avoid theory."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are easy to understand."
+    }
+  },
+  "plan_phrases": [
+    "Fianchetto",
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "A quiet line that neither side forces into sharp play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "3.b3 is slow but a reasonable way to develop."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The e5 pawn gains space but the centre is not decided."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom choose 3.b3 against the Alekhine."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans are simple but exploiting the space needs some understanding."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "space_advantage"
+      ],
+      "reason": "The bishop goes to b2 and the e5 pawn gains space."
+    }
+  }
+}

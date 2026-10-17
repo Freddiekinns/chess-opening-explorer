@@ -1,0 +1,114 @@
+{
+  "slug": "caro-kann-defense-spike-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Spike Variation",
+    "eco": "B10",
+    "moves": "1. e4 c6 2. g4",
+    "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P1P1/8/PPPP1P1P/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "caro-kann-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 2.g4 to gain space on the kingside and prepare Bg2 or g5, aiming at a quick kingside initiative against the Caro-Kann. After 2...d5 White either plays 3.e5 for a space gambit or 3.Nc3 dxe4 4.d3, the Scorpion-Grob Gambit, handing over the e-pawn. Black normally meets it by capturing and keeping solid.",
+  "white_ideas": [
+    {
+      "idea": "Gain space with g4-g5 and Bg2"
+    },
+    {
+      "idea": "Use the h-file or the g-pawn for an early attack"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on e4 and return material only if it helps development"
+    },
+    {
+      "idea": "Play ...Bxg4 or ...h5 to punish the weakening"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file after dxe4 and exd3"
+    },
+    {
+      "structure": "White pawns advanced on g4 against ...c6/...d5 set-up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The extra pawn pushes lead to a risky position where White loosened the king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "In the main subtree 3.Nc3 dxe4 4.d3 offers the e-pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Spike is regarded as a risky surprise weapon that Black meets without difficulty."
+    },
+    "structure": {
+      "notes": "Ends up with exchanged central pawns and an open e-file in the gambit lines."
+    },
+    "approach": {
+      "notes": "Strong players rarely meet the Caro-Kann with 2.g4."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious, so a poor choice for a first repertoire."
+    }
+  },
+  "plan_phrases": [
+    "Kingside space",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Quiet 3.e5",
+      "moves": "1. e4 c6 2. g4 d5 3. e5",
+      "how": "White tries a space-gaining line without giving a pawn, and Black attacks g4 with ...h5 or ...Bg4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "An early g4 loosens White's king and the play becomes concrete and double-edged."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "The most played subtree line 3.Nc3 dxe4 4.d3 gives a pawn that Black may keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.7,
+      "reason": "Strong players regard the Spike as a loosening surprise that Black can meet comfortably."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The e-file opens after the exchanges but the Caro-Kann c6 pawn structure stays."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.8,
+      "reason": "Strong players seldom play 2.g4 against the Caro-Kann."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.7,
+      "reason": "A dubious line is not Beginner and it asks for no deep theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "pawn_storm"
+      ],
+      "reason": "White hopes to use fast development and a g-pawn advance for an attack."
+    }
+  }
+}

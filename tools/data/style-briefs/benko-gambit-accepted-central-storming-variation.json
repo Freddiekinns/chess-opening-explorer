@@ -1,0 +1,31 @@
+{
+  "slug": "benko-gambit-accepted-central-storming-variation",
+  "tier": "unsourced",
+  "root": { "name": "Benko Gambit Accepted: Central Storming Variation", "eco": "A58", "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6 6. Nc3 Bxa6 7. f4", "fen": "rn1qkb1r/3ppp1p/b4np1/2pP4/5P2/2N5/PP2P1PP/R1BQKBNR b KQkq - 0 7" },
+  "parent": "benko-gambit-accepted-fully-accepted-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White accepts the gambit pawn and plays 7.f4 to take the whole centre with e4 and a later e5 or f5 push, giving up the quiet development of the main lines. Black has the usual Benko compensation: open a- and b-files, the long diagonal with ...Bg7 and pressure on the queenside. Black normally plays ...d6 and ...Bg7 and watches for a central break, while White castles and tries to get e4-e5 in before Black's pieces are active.",
+  "white_ideas": [{ "idea": "Build a pawn centre with e4 and f4, then push e5 or f5" }, { "idea": "Use the extra pawn but meet ...Bxf1 and ...Qa5 with Nf3 and Be2" }],
+  "black_ideas": [{ "idea": "Long-term pressure on the a- and b-files with ...Rb8 and ...Qa5" }, { "idea": "Fianchetto the bishop and strike the centre with ...d6 and ...Nbd7" }],
+  "typical_structures": [{ "structure": "White pawns on d5, e4, f4 against a Black fianchetto and half-open a- and b-files" }],
+  "axis_evidence": {
+    "character": { "notes": "White's centre storm and Black's counter play on the queenside are both concrete; this is an unbalanced fight rather than a slow manoeuvring one." },
+    "gambit": { "material_given": "pawn", "given_by": "black", "can_be_kept": "true", "notes": "Black is a pawn down after 6...Bxa6 and gets compensation instead of regaining the pawn directly." },
+    "soundness": { "notes": "The Benko is accepted as sound; the compensation is real even against the f4 set-up." },
+    "structure": { "notes": "The d5 wedge, a-file and b-file are half-open, and the centre is fixed asymmetrically." },
+    "approach": { "notes": "A mainstream, respected Black weapon." },
+    "level": { "reason": "understanding", "notes": "Compensation is positional and hard to judge but the line itself has modest theory." }
+  },
+  "plan_phrases": ["half-open files", "central pawn storm"],
+  "sublines_that_differ": [{ "name": "Fianchetto Variation", "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 g6 7. g3", "how": "Slow, quieter White setup." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.5, "reason": "White's f4 central expansion against Black's open queenside lines leads to concrete play." },
+    "gambit": { "value": "black", "confidence": 0.9, "reason": "Black is a pawn down for open lines and has not regained it." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.8, "reason": "The Benko is considered fully sound and the compensation holds against f4." },
+    "structure": { "value": "semi_open", "confidence": 0.6, "reason": "Half-open a- and b-files with the d5 wedge give a fixed asymmetric centre." },
+    "approach": { "value": "standard", "confidence": 0.8, "reason": "Played by strong players as a mainstream Black weapon." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.5, "reason": "Compensation is positional but the f4 line has limited forced theory." },
+    "plans": { "value": ["half_open_c_file", "queenside_expansion"], "reason": "Black pressures along the queenside files; the c-file is a loose approximation of the half-open files." }
+  }
+}

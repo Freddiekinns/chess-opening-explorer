@@ -1,0 +1,114 @@
+{
+  "slug": "slav-defense-smyslov-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Slav Defense: Smyslov Variation",
+    "eco": "D16",
+    "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Na6",
+    "fen": "r1bqkb1r/pp2pppp/n1p2n2/8/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq - 1 6"
+  },
+  "parent": "slav-defense-alapin-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In this Alapin Slav Black develops the knight to a6 instead of the usual ...Bf5 or ...e6, eyeing ...Nb4 and ...Bg4, and aims to win back the c4 pawn. White chooses between 6.e4, taking space, and the quieter 6.e3. Black usually develops ...Bg4 and ...e6 and recovers the pawn with ...Nb4 or ...Bxf3.",
+  "white_ideas": [
+    {
+      "idea": "Take space with e4 and recover the c4 pawn with Bxc4"
+    },
+    {
+      "idea": "Use the a4 pawn to keep a Black knight off b4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit e4 and c4 with ...Bg4 and ...e6 and regain the pawn"
+    },
+    {
+      "idea": "Play ...Nb4 or ...c5 for activity"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/d4 centre against pieces"
+    },
+    {
+      "structure": "Open c-file after White regains the pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Positional but with real tactical points around the e4 centre and the pawn on c4."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "false",
+      "notes": "Black has taken on c4 but White recovers it with Bxc4 and the pawn comes back."
+    },
+    "soundness": {
+      "notes": "A reputable line that has been used by strong players as a Slav sideline."
+    },
+    "structure": {
+      "notes": "White gets a centre with e4 against ...Bg4 pressure, so the centre stays semi-open."
+    },
+    "approach": {
+      "notes": "A normal Slav branch played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Knight placement on a6 and the e4 fight ask for some understanding but not a heavy memory load."
+    }
+  },
+  "plan_phrases": [
+    "Regain the pawn on c4",
+    "Control e4"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "6.e3",
+      "moves": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Na6 6. e3",
+      "how": "White plays a quieter set-up instead of the big e4 centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.6,
+      "reason": "The line mixes a clear centre with tactical points but is neither forcing nor unusually safe."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The c4 pawn comes straight back with Bxc4 so no gambit is played."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The variation is a standard reputable Slav branch."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "The c-file opens once the c4 pawn is regained and the e4 centre is tense."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "It is a mainstream Slav sub-variation."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "Understanding the centre fight matters more than forcing lines."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority",
+        "half_open_c_file"
+      ],
+      "reason": "White builds a centre while the c-file opens after the c4 pawn is recovered."
+    }
+  }
+}

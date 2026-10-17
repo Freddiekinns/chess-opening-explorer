@@ -1,0 +1,114 @@
+{
+  "slug": "sicilian-defense-euwe-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sicilian Defense: Euwe Attack, Prins Gambit",
+    "eco": "B20",
+    "moves": "1. e4 c5 2. b3 d5 3. Bb2",
+    "fen": "rnbqkbnr/pp2pppp/8/2pp4/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 1 3"
+  },
+  "parent": "sicilian-defense-snyder-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White answers 2...d5 with 3.Bb2, leaving the e4 pawn en prise to ...dxe4. White hopes for a lead in development and long-diagonal pressure along the b2 bishop for the pawn. Black can take and hold the pawn, so the line is an offbeat gambit.",
+  "white_ideas": [
+    {
+      "idea": "Regain e4 with Nc3 and Bxe4-type play, using the Bb2 diagonal"
+    },
+    {
+      "idea": "Develop quickly with Nf3, Bb5+ and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take with 3...dxe4 and hold the pawn with ...Nf6 or ...Nc6"
+    },
+    {
+      "idea": "Develop and use the c5/d4 break"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...dxe4"
+    },
+    {
+      "structure": "White Bb2 on the long diagonal against e5/g7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open lines and a pawn deficit give White practical tricks but also danger."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "3...dxe4 grabs a pawn Black can keep."
+    },
+    "soundness": {
+      "notes": "Compensation is doubtful because Black has an easy development."
+    },
+    "structure": {
+      "notes": "The e- and d-pawns trade, opening the centre."
+    },
+    "approach": {
+      "notes": "Rare, a pet line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Compensation needs judgement."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "long diagonal"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black plays 3...d4",
+      "moves": "1. e4 c5 2. b3 d5 3. Bb2 d4",
+      "how": "No material is offered and the centre closes."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "White is a pawn down for development, which asks for sharp play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.65,
+      "reason": "White leaves e4 to be taken in return for time."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can accept with a clean structure, so the gambit scores on surprise."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "Pawn trades in the centre open the lines for the bishops."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "It is seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Dubious lines cannot be Beginner and there is little to memorise."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "The gambit is paid for with time and the b2 bishop."
+    }
+  }
+}

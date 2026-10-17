@@ -1,0 +1,112 @@
+{
+  "slug": "nimzowitsch-defense-neo-mongoloid-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzowitsch Defense: Neo-Mongoloid Defense",
+    "eco": "B00",
+    "moves": "1. e4 Nc6 2. d4 f6",
+    "fen": "r1bqkbnr/ppppp1pp/2n2p2/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "nimzowitsch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "2...f6 prepares ...e5 and ...Nge7 but weakens the king's diagonal and wastes time. White usually grabs the centre with Nf3 or Nc3 and d5 push, and Black's awkward set-up gives White a comfortable edge. Strong players avoid it.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with Nf3, Nc3 and push d5"
+    },
+    {
+      "idea": "Exploit the weak a2-g8 diagonal with Qh5+ ideas"
+    },
+    {
+      "idea": "Play Bd3/Qd2 and castle long"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...e5"
+    },
+    {
+      "idea": "Use ...Nge7 and ...d5 to equalise"
+    },
+    {
+      "idea": "Keep the king safe with ...Kf7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawns on e4 and d4 against ...f6"
+    },
+    {
+      "structure": "A weakened Black kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has weakened the king and relies on the ...e5 break, so tactics around e5 and h5 can arise."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material is level."
+    },
+    "soundness": {
+      "notes": "Dubious for Black."
+    },
+    "structure": {
+      "notes": "Black will break with ...e5, leaving a semi-open centre."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a sound choice to learn."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "The weakened king and the ...e5 break make for early tactics."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.55,
+      "reason": "...f6 wastes time and weakens the king, giving White an easy edge.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "White's e4/d4 centre faces a ...e5 break."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Hardly any strong player uses 2...f6."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "A dubious defence is never Beginner and the ideas are simple.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "space_advantage"
+      ],
+      "reason": "White gets a big centre against a poorly placed Black set-up."
+    }
+  }
+}

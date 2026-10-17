@@ -1,0 +1,111 @@
+{
+  "slug": "polish-opening-queens-indian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Polish Opening: Queen's Indian Variation",
+    "eco": "A00",
+    "moves": "1. b4 e6 2. Bb2 Nf6 3. b5 b6",
+    "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/1P6/8/8/PBPPPPPP/RN1QKBNR w KQkq - 0 4"
+  },
+  "parent": "polish-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.b4 e6 2.Bb2 Nf6 3.b5 b6 White gains queenside space with b5 and keeps the Bb2 on the long diagonal. Black fianchettoes ...Bb7 and plays ...c5 or ...d5 in the centre. It is a quiet, slightly irregular set-up.",
+  "white_ideas": [
+    {
+      "idea": "Space with b4-b5"
+    },
+    {
+      "idea": "Bb2 on the long diagonal"
+    },
+    {
+      "idea": "Centre with e3 and Nf3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...Bb7 on the long diagonal"
+    },
+    {
+      "idea": "Central break with ...c5 or ...d5"
+    },
+    {
+      "idea": "Develop quickly with ...Be7"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Queen's Indian-like with White's b-pawn on b5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow manoeuvring."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound; neither side takes big risks."
+    },
+    "structure": {
+      "notes": "Flank opening, centre undecided."
+    },
+    "approach": {
+      "notes": "Seldom chosen by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few forcing lines."
+    }
+  },
+  "plan_phrases": [
+    "Bb2 on long diagonal",
+    "b5 space gain"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Quiet manoeuvring on both flanks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "A harmless, sound set-up."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.65,
+      "reason": "A flank opening where the centre is not fixed."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom choose 1.b4 lines."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are simple but not an established beginner choice."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "fianchetto"
+      ],
+      "reason": "White gains queenside space and uses the b2 bishop."
+    }
+  }
+}

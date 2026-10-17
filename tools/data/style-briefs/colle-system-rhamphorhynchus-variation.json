@@ -1,0 +1,114 @@
+{
+  "slug": "colle-system-rhamphorhynchus-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Colle System: Rhamphorhynchus Variation",
+    "eco": "A04",
+    "moves": "1. Nf3 c5 2. e3 g6 3. d4 Bg7 4. dxc5 Qa5+",
+    "fen": "rnb1k1nr/pp1pppbp/6p1/q1P5/8/4PN2/PPP2PPP/RNBQKB1R w KQkq - 1 5"
+  },
+  "parent": "zukertort-opening-sicilian-invitation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White uses a Colle-style set-up against a Sicilian-style Black. After 3.d4 Bg7 4.dxc5 Qa5+ Black regains the c5 pawn with the queen check, then develops the g7 bishop and knights. The result is a quiet game with a fianchetto for Black and an e3 structure for White.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Nc3, Bd2 or Nbd2 and take back c5"
+    },
+    {
+      "idea": "Play e3 and Bd3 to develop"
+    },
+    {
+      "idea": "Aim for a space edge with e4"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Regain c5 with ...Qxc5"
+    },
+    {
+      "idea": "Fianchetto with ...Bg7 and ...Nf6"
+    },
+    {
+      "idea": "Play for ...d5 or ...b6 depending on set-up"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e3 pawn structure against Black fianchetto"
+    },
+    {
+      "structure": "Open c-file after c5 pawn trade"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A calm opening with little forcing play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "Black regains the pawn at once; White is comfortable."
+    },
+    "structure": {
+      "notes": "After pawns come off the centre it is mostly pieces, and the structure stays open to change."
+    },
+    "approach": {
+      "notes": "A rare line whose name is more famous than play; used by some for variety."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Few lines, but placement of pieces takes sense."
+    }
+  },
+  "plan_phrases": [
+    "fianchetto",
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither side takes on much risk and play is calm."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The c5 pawn is regained at once."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.85,
+      "reason": "Nothing is refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The centre is still undecided after dxc5 and pieces decide."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.4,
+      "reason": "A rarer sideline but not a surprise weapon only."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Plans are straightforward but need judgement."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "early_queen"
+      ],
+      "reason": "Black fianchettoes and the queen comes out early with check."
+    }
+  }
+}

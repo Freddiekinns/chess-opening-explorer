@@ -1,0 +1,122 @@
+{
+  "slug": "pirc-defense-150-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pirc Defense: 150 Attack",
+    "eco": "B07",
+    "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Be3 c6 5. Qd2",
+    "fen": "rnbqkb1r/pp2pp1p/2pp1np1/8/3PP3/2N1B3/PPPQ1PPP/R3KBNR b KQkq - 1 5"
+  },
+  "parent": "pirc-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays Be3 and Qd2 with Bh6, h3 and often g4 or h4-h5 to attack the fianchettoed king, while Black answers with ...b5, ...Nbd7 and a queenside or central counter (...e5, ...Qa5). Most games show either 5.h3 (the Sveshnikov-Jansa set-up) or 5...Bg4. It is imbalanced and tactical, but Black's structure is sound.",
+  "white_ideas": [
+    {
+      "idea": "Qd2 and Bh6 to trade Black's fianchettoed bishop"
+    },
+    {
+      "idea": "h3, g4 and h4-h5 pawn storm on the kingside"
+    },
+    {
+      "idea": "Castle long and keep the big e4-d4 centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "...b5 and ...Nbd7 with queenside space"
+    },
+    {
+      "idea": "...e5 or ...Qa5 strike at the centre"
+    },
+    {
+      "idea": "...Bg4 (Inner Doll) to pin and trade a defender"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "e4-d4 White centre against ...c6/...d6 with a fianchettoed Bg7"
+    },
+    {
+      "structure": "Opposite-side castling with pawn storms"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Reputation for opposite-side castling and fast kingside attacks; Black needs counterplay in time."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up on purpose."
+    },
+    "soundness": {
+      "notes": "Sound for Black; White's attack is dangerous but not refuting."
+    },
+    "structure": {
+      "notes": "White keeps e4-d4 while Black prepares ...e5 or ...b5; centre undecided."
+    },
+    "approach": {
+      "notes": "Mainstream branch of the Pirc against Be3, played by strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans and timing matter more than memorised lines."
+    }
+  },
+  "plan_phrases": [
+    "Bh6 to trade the fianchetto bishop",
+    "h-pawn storm",
+    "Opposite-side castling",
+    "Black counters with ...b5 and ...e5"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Inner Doll Defense",
+      "moves": "1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Be3 c6 5. Qd2 Bg4",
+      "how": "Black pins early and trades a defender rather than starting with ...b5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Opposite-side castling and a Bh6/h4-h5 attack make both sides race."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material is given up."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Black's set-up is respectable and used at elite level."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The big centre is neither locked nor traded; Black chooses between ...e5 and ...b5 breaks."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A main anti-Pirc set-up that strong players choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.65,
+      "reason": "Plans and timing of the pawn storms and counters matter more than long forced lines."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "hypermodern_centre"
+      ],
+      "reason": "White aims at the kingside with Bh6 and pawn storms while Black hits the large centre."
+    }
+  }
+}

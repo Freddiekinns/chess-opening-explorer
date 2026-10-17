@@ -1,0 +1,117 @@
+{
+  "slug": "dutch-defense-korchnoi-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Korchnoi Attack",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. h3",
+    "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/7P/PPP1PPP1/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "dutch-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 2.h3 preparing g4 against the Dutch f5 pawn, usually followed by Nf3 and e3 or g4 at once. Black replies with the usual Dutch set-ups, often ...Nf6 and ...e6, and the game is Dutch-like with a possible kingside pawn race. Details of the best handling are thin from memory.",
+  "white_ideas": [
+    {
+      "idea": "Prepare g4 to attack the f5 pawn"
+    },
+    {
+      "idea": "Nf3 and e3 with a flexible set-up"
+    },
+    {
+      "idea": "Kingside pawn advance"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Respond with ...Nf6 and ...e6"
+    },
+    {
+      "idea": "Meet g4 with ...fxg4 hxg4 and ...Nxg4 ideas"
+    },
+    {
+      "idea": "Play ...d5 or ...d6 and a Dutch plan"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Dutch f5 pawn structure against h3/g4 advances"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A Dutch-type game with weakened kingsides and counterplay for both sides."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "A sound sideline."
+    },
+    "structure": {
+      "notes": "Tension on the kingside, centre undecided."
+    },
+    "approach": {
+      "notes": "A sidestep of main theory that strong players use occasionally."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dutch handling."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm with g4",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "g4 push",
+      "moves": "1. d4 f5 2. h3 Nf6 3. g4",
+      "how": "White offers a pawn on g4 for an attack."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Dutch with g4 ideas, unbalanced for both sides."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.5,
+      "reason": "No pawn is given with 2.h3 itself; g4 ideas arise later."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "A sound sidestep."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is undecided."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.5,
+      "reason": "A sideline played now and then."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Dutch handling needs understanding."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm",
+        "kingside_attack"
+      ],
+      "reason": "g4 attack on the f5 pawn."
+    }
+  }
+}

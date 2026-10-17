@@ -1,0 +1,112 @@
+{
+  "slug": "vienna-gambit-with-max-lange-defense-quelle-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Gambit, with Max Lange Defense: Quelle Gambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 Bc5 4. fxe5 d6",
+    "fen": "r1bqk1nr/ppp2ppp/2np4/2b1P3/4P3/2N5/PPPP2PP/R1BQKBNR w KQkq - 0 5"
+  },
+  "parent": "vienna-gambit-with-max-lange-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White has captured on e5 and Black plays 4...d6 to challenge it at once. White can defend with Nf3 and Black recaptures on e5, reaching open play with the Black bishop on c5. The game is open and tactical with chances for both.",
+  "white_ideas": [
+    {
+      "idea": "Defend e5 with Nf3 or exd6"
+    },
+    {
+      "idea": "Develop Bc4 or Qe2 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Recapture on e5 and develop quickly"
+    },
+    {
+      "idea": "Hit f2 with Bc5 and queen"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the f-file open"
+    },
+    {
+      "structure": "Pieces active on both sides"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open and forcing."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black regains e5 with dxe5 so material comes back."
+    },
+    "soundness": {
+      "notes": "Playable for both."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "Respectable if rare."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Theory heavy."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Main Vienna Gambit",
+      "moves": "1. e4 e5 2. Nc3 Nc6 3. f4 exf4",
+      "how": "the usual Vienna Gambit accepted"
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Open tactical play with exposed kings."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.6,
+      "reason": "The e5 pawn is regained straight away."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "Neither side is clearly worse."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Pawns come off in the centre."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.55,
+      "reason": "The Vienna Gambit is respectable."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Theory is moderate."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Both sides develop quickly."
+    }
+  }
+}

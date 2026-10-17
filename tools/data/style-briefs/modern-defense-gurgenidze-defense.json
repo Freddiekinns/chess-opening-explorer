@@ -1,0 +1,121 @@
+{
+  "slug": "modern-defense-gurgenidze-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Modern Defense: Gurgenidze Defense",
+    "eco": "B06",
+    "moves": "1. e4 g6 2. d4 Bg7 3. Nc3 c6 4. f4 d5 5. e5 h5",
+    "fen": "rnbqk1nr/pp2ppb1/2p3p1/3pP2p/3P1P2/2N5/PPP3PP/R1BQKBNR w KQkq - 0 6"
+  },
+  "parent": "modern-defense-standard-line",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black adopts a Caro-Kann/Modern hybrid: ...g6, ...Bg7, ...c6 and ...d5 against White's big centre of e4, d4, f4. After 5.e5 Black plays ...h5, hitting g4 and preparing ...Bg4, ...Nh6 and ...Nf5. White gets space and a Pirc-like attack set-up, but must care for the e5 pawn and the d4 point.",
+  "white_ideas": [
+    {
+      "idea": "Keep the space with e5/f4 and develop Nf3, Be2 or Bd3"
+    },
+    {
+      "idea": "Play Be3, Qd2 and h3 to restrict Black's pieces"
+    },
+    {
+      "idea": "Aim for a kingside attack or a Nb5 jump"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Prepare ...Bg4 and trade pieces to relieve the space deficit"
+    },
+    {
+      "idea": "Hit the chain base with ...f6 or ...Nh6-f5"
+    },
+    {
+      "idea": "Use the ...h5-h4 pawn to unsettle White's kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French Advance-like chain e5/d4 with an extra f4 pawn"
+    },
+    {
+      "structure": "Black bishop on g7 hemmed in until ...f6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A cramped but resilient Black set-up against a big White centre, with both sides ready to push on the kingside."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level."
+    },
+    "soundness": {
+      "notes": "Sound, if rarely played."
+    },
+    "structure": {
+      "notes": "The e5/d4/f4 chain against ...c6/...d5 locks the centre."
+    },
+    "approach": {
+      "notes": "A rare move-order trick, used by few strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs to understand how to meet the space advantage rather than memorise."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Pawn storm on the kingside",
+    "Bad bishop"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Caro-Kann transposition",
+      "moves": "1. e4 c6 2. d4 d5 3. Nc3 g6 4. e5 Bg7 5. f4 h5 6. Nf3",
+      "how": "The most played route; same position reached via Caro-Kann."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "White's big centre and Black's ...h5 lunge create mutual kingside risks."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "Material is level and no pawn is offered."
+    },
+    "soundness": {
+      "value": "sound",
+      "confidence": 0.7,
+      "reason": "A rare but playable Black set-up.",
+      "side": null
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.75,
+      "reason": "The e5, d4 and f4 chain faces ...c6 and ...d5 in a locked centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Played by few strong players, mainly as a surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.55,
+      "reason": "Plans are fairly clear but Black must handle the cramped position with care.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "bad_bishop"
+      ],
+      "reason": "White holds a clear space advantage and Black's g7-bishop is blocked."
+    }
+  }
+}

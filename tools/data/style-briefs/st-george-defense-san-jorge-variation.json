@@ -1,0 +1,116 @@
+{
+  "slug": "st-george-defense-san-jorge-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "St. George Defense: San Jorge Variation",
+    "eco": "B00",
+    "moves": "1. e4 a6 2. d4 b5 3. Nf3 Bb7 4. Bd3 d6 5. O-O g6 6. c3 Bg7",
+    "fen": "rn1qk1nr/1bp1ppbp/p2p2p1/1p6/3PP3/2PB1N2/PP3PPP/RNBQ1RK1 w kq - 1 7"
+  },
+  "parent": "st-george-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White builds a broad pawn centre with e4, d4 and c3 and castles, while Black keeps the pieces back in a Modern-style set-up with a6, b5, Bb7, d6, g6 and Bg7. Black plans to hit the centre later with ...Nf6, ...e5 or ...c5, and White tries to use the space and the d3 bishop to keep Black cramped.",
+  "white_ideas": [
+    {
+      "idea": "Hold the e4-d4-c3 centre and develop Nbd2 and Re1"
+    },
+    {
+      "idea": "Push e5 or play a4 to disturb the queenside pawns"
+    },
+    {
+      "idea": "Aim the Bd3 and queen at the kingside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break the centre with ...Nf6 and ...e5, or ...c5"
+    },
+    {
+      "idea": "Use the b7 and g7 bishops on the long diagonals"
+    },
+    {
+      "idea": "Counter on the queenside with ...b4 or ...c5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White pawn centre on e4, d4 and c3 against Black pawns on d6 and a6-b5"
+    },
+    {
+      "structure": "Modern set-up with fianchettoed g7 and b7 bishops"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White has a space edge but the centre is not yet fixed; Black can attack it in several ways. No forced tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given up in the main line."
+    },
+    "soundness": {
+      "notes": "Played as a surprise weapon; Black is a little passive but sound enough for club play."
+    },
+    "structure": {
+      "notes": "Centre stays tense with pawns on e4, d4 against d6, so it can go either way."
+    },
+    "approach": {
+      "notes": "St. George is seldom chosen by strong players, mainly as a surprise."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs knowledge of when to hit the centre, not long lines."
+    }
+  },
+  "plan_phrases": [
+    "space advantage",
+    "hypermodern centre",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Neither side is forced into sharp play, and Black is not especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.97,
+      "reason": "No material has changed hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Black is cramped but there is nothing close to a refutation."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "The big white centre is still under construction and open to attack by pieces or pawns."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "The St. George is a rare surprise weapon that strong players seldom choose."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "The plans matter more than memorised lines."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "space_advantage",
+        "fianchetto"
+      ],
+      "reason": "Black allows a big centre and plans to undermine it, with fianchettoed bishops."
+    }
+  }
+}

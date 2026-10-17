@@ -1,0 +1,105 @@
+{
+  "slug": "van-geet-opening-hulsemann-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Hulsemann Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 e5 2. e3 d5 3. Qh5 Be6",
+    "fen": "rn1qkbnr/ppp2ppp/4b3/3pp2Q/8/2N1P3/PPPP1PPP/R1B1KBNR w KQkq - 2 4"
+  },
+  "parent": "van-geet-opening-reversed-nimzowitsch",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After 1.Nc3 e5 2.e3 d5 White plays the early 3.Qh5 hitting e5 and d5, and 3...Be6 lets White take on e5 while Black develops with tempo. The queen sortie is risky: White may win the e5 pawn but Black gains time with ...Nc6, ...Bd6 and ...Nf6. Rare and not well known to me, so low confidence.",
+  "white_ideas": [
+    {
+      "idea": "Win the e5 pawn with Qxe5 and keep an extra pawn if the queen survives."
+    },
+    {
+      "idea": "Develop behind the queen with Nf3 and Bb5."
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit the queen with ...Nc6, ...Nf6 and ...Bd6 to gain tempi."
+    },
+    {
+      "idea": "Use the open lines for pieces and attack f2."
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file and lines with White queen far out on e5 or h5."
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "An early queen sortie and a hanging e5 pawn make the game tactical for both sides."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": true,
+      "notes": "Black leaves e5 en prise to the queen for development, though I am unsure which side the name assigns the gambit to."
+    },
+    "soundness": {
+      "notes": "Black is a pawn down for uncertain compensation, as far as I can tell."
+    },
+    "structure": {
+      "notes": "Central pawns are traded or left loose and the pieces fight on open lines."
+    },
+    "approach": {
+      "notes": "Van Geet with an early Qh5 is something strong players hardly play."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few moves but risky and dubious, so not Beginner."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "An early queen sortie and a hanging e5 pawn make the game tactical for both sides."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.4,
+      "reason": "Black leaves e5 en prise to the queen for development, though I am unsure which side the name assigns the gambit to."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.45,
+      "reason": "Black is a pawn down for uncertain compensation, as far as I can tell."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Central pawns are traded or left loose and the pieces fight on open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Van Geet with an early Qh5 is something strong players hardly play."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Few moves but risky and dubious, so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "White queen out early, Black playing for tempi."
+    }
+  }
+}

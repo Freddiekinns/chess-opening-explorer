@@ -1,0 +1,113 @@
+{
+  "slug": "queens-gambit-declined-westphalian-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Queen's Gambit Declined: Westphalian Variation",
+    "eco": "D38",
+    "moves": "1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Bb4 5. Bg5 Nbd7 6. e3 c5",
+    "fen": "r1bqk2r/pp1n1ppp/4pn2/2pp2B1/1bPP4/2N1PN2/PP3PPP/R2QKB1R w KQkq - 0 7"
+  },
+  "parent": "queens-gambit-declined-ragozin-defense",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In this Ragozin line Black pins the knight with ...Bb4, develops ...Nbd7 and strikes with ...c5. Play often continues 7.Bd3 dxc4 8.Bxc4 cxd4 9.exd4, giving White an isolated queen's pawn, or Black takes on c3 and doubles White's pawns. Both sides get active pieces and a dynamic balance.",
+  "white_ideas": [
+    {
+      "idea": "Use the centre with exd4 and Bd3"
+    },
+    {
+      "idea": "Pin the f6 knight with Bg5"
+    },
+    {
+      "idea": "Aim for the bishop pair"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Break with ...c5 and trade centre pawns"
+    },
+    {
+      "idea": "Pin the knight with ...Bb4 and perhaps take on c3"
+    },
+    {
+      "idea": "Use ...Qa5 and ...dxc4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Isolated queen's pawn for White after cxd4 exd4"
+    },
+    {
+      "structure": "Doubled c-pawns after ...Bxc3"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "The ...c5 break gives some tactics but the line is not known as risky."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Any pawn on c4 returns at once."
+    },
+    "soundness": {
+      "notes": "The Ragozin and its variations are sound."
+    },
+    "structure": {
+      "notes": "The centre has tension and several pawn structures can arise."
+    },
+    "approach": {
+      "notes": "A normal Ragozin choice for Black."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs understanding of the isolated pawn and the pins."
+    }
+  },
+  "plan_phrases": [
+    "Break with ...c5 and trade the centre"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Dynamic play but no forcing risks beyond the normal."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The Ragozin is a respected defence."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is in tension and can resolve several ways."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "A normal branch of the Ragozin."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "It rewards understanding of the pins and the isolated pawn."
+    },
+    "plans": {
+      "value": [
+        "isolated_queens_pawn",
+        "doubled_pawns"
+      ],
+      "reason": "The ...c5 break and ...Bxc3 lead to these structures."
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "ruy-lopez-classical-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ruy Lopez: Classical Defense, Boden Variation",
+    "eco": "C64",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5 4. c3 Qe7",
+    "fen": "r1b1k1nr/ppppqppp/2n5/1Bb1p3/4P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5"
+  },
+  "parent": "ruy-lopez-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black plays 3...Bc5 and after 4.c3 the Boden idea 4...Qe7 prepares ...Nf6 and ...Bb6 with a flexible centre. White builds with 0-0, d4 or d3, and the bishop on b5 keeps the pin on Nc6 in play. Play is normal, open-ish and positional.",
+  "white_ideas": [
+    {
+      "idea": "Castle and play d4 to challenge the centre"
+    },
+    {
+      "idea": "Keep the bishop pair and the Bb5 pin"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Develop with ...Nf6 and ...Bb6"
+    },
+    {
+      "idea": "Hold e5 and avoid getting pinned"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open Spanish with pawn on e4 and e5"
+    },
+    {
+      "structure": "White c3-d4 centre against Black's e5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Solid, with normal development and positional play."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Fully sound."
+    },
+    "structure": {
+      "notes": "Tension on e5/d4 centre; not locked."
+    },
+    "approach": {
+      "notes": "Respectable but rarer than the Berlin or the Closed."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear."
+    }
+  },
+  "plan_phrases": [
+    "central pawn majority"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Zaitsev Variation",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5 4. O-O Nd4 5. b4",
+      "how": "Sharper line where White grabs space with b4."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Normal Spanish play, neither side forced."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No gambit."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.45,
+      "reason": "Centre in tension after d4."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "Standard Spanish line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority"
+      ],
+      "reason": "c3-d4 centre."
+    }
+  }
+}

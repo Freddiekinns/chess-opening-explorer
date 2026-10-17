@@ -1,0 +1,104 @@
+{
+  "slug": "kings-gambit-accepted-carrera-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Carrera Gambit",
+    "eco": "C33",
+    "moves": "1. e4 e5 2. f4 exf4 3. Qh5",
+    "fen": "rnbqkbnr/pppp1ppp/8/7Q/4Pp2/8/PPPP2PP/RNB1KBNR b KQkq - 1 3"
+  },
+  "parent": "kings-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 3.Qh5 immediately, hitting e5 and f7. Black can defend with ...Qe7 or ...g6 and keep the pawn, and White's queen is exposed.",
+  "white_ideas": [
+    {
+      "idea": "Attack e5 and f7"
+    },
+    {
+      "idea": "Develop with Nc3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the pawn"
+    },
+    {
+      "idea": "Develop and chase the queen"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open f-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the f-pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "Dubious."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Little theory."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "An early queen sortie in the King's Gambit means mutual risk."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "The King's Gambit Accepted offers a pawn."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "3.Qh5 is considered inferior."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.55,
+      "reason": "Strong players seldom use it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Dubious so not Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "pressure_on_f7"
+      ],
+      "reason": "The queen comes out early and eyes f7."
+    }
+  }
+}

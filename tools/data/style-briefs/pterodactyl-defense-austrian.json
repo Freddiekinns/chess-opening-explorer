@@ -1,0 +1,31 @@
+{
+  "slug": "pterodactyl-defense-austrian",
+  "tier": "unsourced",
+  "root": { "name": "Pterodactyl Defense: Austrian, Austriadactylus Western", "eco": "B06", "moves": "1. e4 g6 2. d4 Bg7 3. f4 c5 4. Nf3 Qa5+", "fen": "rnb1k1nr/pp1pppbp/6p1/q1p5/3PPP2/5N2/PPP3PP/RNBQKB1R w KQkq - 2 5" },
+  "parent": "modern-defense-three-pawns-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Against the Austrian Attack set-up with pawns on d4, e4 and f4, Black strikes with ...c5 and ...Qa5+ to harass the centre and keep White from consolidating. After 5.Bd2 or 5.c3 White tries to hold the centre with a big pawn mass, while Black's queen on a5 and bishop on g7 pressure e5, d4 and c3. Play is double-edged, and Black's early queen can end up offside if White coordinates the minor pieces.",
+  "white_ideas": [{ "idea": "Hold the broad centre with c3, Bd3, O-O and meet ...cxd4 with Nxd4 or cxd4" }, { "idea": "Push e5 to gain space and cramp the Black bishop" }],
+  "black_ideas": [{ "idea": "Undermine d4 with ...cxd4 and ...Qb6, then use the long diagonal" }, { "idea": "Use ...Qa5+ and ...Nc6 to harass the pawn centre before castling" }],
+  "typical_structures": [{ "structure": "White pawn mass on d4, e4, f4 against a Black fianchettoed bishop and early queen activity" }],
+  "axis_evidence": {
+    "character": { "notes": "Big White centre against early queen sorties; unbalanced and tactical." },
+    "gambit": { "material_given": "none", "given_by": null, "can_be_kept": null, "notes": "No material is offered; ...cxd4 simply exchanges pawns." },
+    "soundness": { "notes": "Generally regarded as playable for Black, but the early queen carries risk." },
+    "structure": { "notes": "Black attacks the centre with a c-pawn exchange, giving a half-open c-file; White keeps the centre pawns." },
+    "approach": { "notes": "Rarely played by strong players, chosen mainly for surprise." },
+    "level": { "reason": "understanding", "notes": "Needs good judgment about when to play ...cxd4 and how to place the queen." }
+  },
+  "plan_phrases": ["hypermodern centre", "early queen"],
+  "sublines_that_differ": [{ "name": "Pteranodon", "moves": "1. e4 g6 2. d4 Bg7 3. f4 c5 4. c3 Qa5", "how": "Queen sortie after White supports the centre with c3." }, { "name": "Grand Prix Pterodactyl", "moves": "1. e4 g6 2. Nc3 Bg7 3. f4 c5 4. Nf3 Qa5", "how": "Reached from the Grand Prix move order." }],
+  "tags": {
+    "character": { "value": "sharp", "confidence": 0.6, "reason": "White's broad centre against Black's early queen sorties leaves little margin for error." },
+    "gambit": { "value": "none", "confidence": 0.9, "reason": "No material has been given up." },
+    "soundness": { "value": "sound", "side": null, "confidence": 0.55, "reason": "Black's set-up is playable even if the queen is exposed." },
+    "structure": { "value": "semi_open", "confidence": 0.55, "reason": "The c-pawn exchange leaves a half-open c-file for Black against White's centre." },
+    "approach": { "value": "offbeat", "confidence": 0.7, "reason": "Strong players seldom choose the Pterodactyl." },
+    "level": { "value": "intermediate", "why": "understanding", "confidence": 0.55, "reason": "Judgement-based play without long forced theory." },
+    "plans": { "value": ["hypermodern_centre", "early_queen"], "reason": "Black lets White build a centre and attacks it with queen and bishop." }
+  }
+}

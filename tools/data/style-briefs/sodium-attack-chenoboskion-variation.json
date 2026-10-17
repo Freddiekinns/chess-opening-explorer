@@ -1,0 +1,103 @@
+{
+  "slug": "sodium-attack-chenoboskion-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sodium Attack: Chenoboskion Variation",
+    "eco": "A00",
+    "moves": "1. Na3 g6 2. g4",
+    "fen": "rnbqkbnr/pppppp1p/6p1/8/6P1/N7/PPPPPP1P/R1BQKBNR b KQkq - 0 2"
+  },
+  "parent": "sodium-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White plays 1.Na3 and 2.g4, an irregular and aggressive sequence. It aims for space and a kingside advance but weakens the king. Very rare.",
+  "white_ideas": [
+    {
+      "idea": "Advance the kingside pawns"
+    },
+    {
+      "idea": "Develop the pieces behind the pawns"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...d5 and ...Bg7"
+    },
+    {
+      "idea": "Punish the weakened kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black fianchetto vs White advanced g-pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Weakening pawn advance; unbalanced."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "g4 early is risky and rarely played."
+    },
+    "structure": {
+      "notes": "No fixed centre yet."
+    },
+    "approach": {
+      "notes": "Hardly ever used."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Dubious, so not for beginners."
+    }
+  },
+  "plan_phrases": [
+    "pawn storm"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Weakening pawn advance; unbalanced."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.65,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "g4 early is risky and rarely played."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.5,
+      "reason": "No fixed centre yet."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Hardly ever used."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Dubious, so not for beginners."
+    },
+    "plans": {
+      "value": [
+        "pawn_storm"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

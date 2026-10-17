@@ -1,0 +1,114 @@
+{
+  "slug": "tarrasch-defense-wagner-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Tarrasch Defense: Wagner Variation",
+    "eco": "D33",
+    "moves": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3 Nf6 7. Bg2 Bg4",
+    "fen": "r2qkb1r/pp3ppp/2n2n2/2pp4/3P2b1/2N2NP1/PP2PPBP/R1BQK2R w KQkq - 3 8"
+  },
+  "parent": "tarrasch-defense-prague-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays the quiet g3 and Bg2 against the Tarrasch and Black develops with ...Nc6, ...Nf6 and ...Bg4. After castling the centre usually dissolves into an isolated queen's pawn structure for Black, with active pieces for the pawn. Black aims for activity and the d4 break; White aims to blockade d4 and exploit the weak pawn.",
+  "white_ideas": [
+    {
+      "idea": "Blockade the isolated pawn and trade pieces"
+    },
+    {
+      "idea": "Play dxc5 and Bg5 to press d5"
+    },
+    {
+      "idea": "Use the fianchetto bishop against the d5 pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the active pieces and open lines for the isolated pawn"
+    },
+    {
+      "idea": "Play ...Be7 and ...O-O, then ...d4 break"
+    },
+    {
+      "idea": "Avoid simplification with queenside play"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Isolated queen's pawn on d5"
+    },
+    {
+      "structure": "Open c-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Active pieces against a long-term weakness, with real tactics but a flexible plan on both sides."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given."
+    },
+    "soundness": {
+      "notes": "A mainstream and sound Tarrasch branch."
+    },
+    "structure": {
+      "notes": "Black has an IQP, with half-open c-file and e-file."
+    },
+    "approach": {
+      "notes": "A standard Tarrasch line."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans around the IQP matter more than concrete memorisation."
+    }
+  },
+  "plan_phrases": [
+    "Isolated queen's pawn",
+    "Fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The IQP gives both activity and a long-term weakness without forcing play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.98,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "The Tarrasch is a respected defence."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "The IQP leaves the c-file and e-file half-open."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.8,
+      "reason": "It is a normal Tarrasch line."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "IQP plans are understood, not memorised."
+    },
+    "plans": {
+      "value": [
+        "isolated_queens_pawn",
+        "fianchetto"
+      ],
+      "reason": "Black gets an IQP while White fianchettoes against it."
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "dutch-defense-janzen-korchnoi-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Dutch Defense: Janzen-Korchnoi Gambit",
+    "eco": "A80",
+    "moves": "1. d4 f5 2. h3 Nf6 3. g4",
+    "fen": "rnbqkb1r/ppppp1pp/5n2/5p2/3P2P1/7P/PPP1PP2/RNBQKBNR b KQkq - 0 3"
+  },
+  "parent": "dutch-defense-korchnoi-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 2.h3 and 3.g4 against the Dutch, offering a pawn to open the g- and h-files. After ...fxg4 hxg4 Nxg4 Black has an extra pawn and White tries for kingside pressure. Play is sharp and risky for White with little at stake for Black.",
+  "white_ideas": [
+    {
+      "idea": "Open the h-file with hxg4 and attack with Rh1 and Bf4/Bg5"
+    },
+    {
+      "idea": "Develop quickly with Nc3 and e3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the pawn with ...fxg4 and ...Nxg4 and hold it"
+    },
+    {
+      "idea": "Hit the centre with ...d5 or ...e5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open g- and h-files"
+    },
+    {
+      "structure": "Black pawn up with a broken f-pawn"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White is pawn down chasing the king along open files."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the g4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "notes": "It looks over-ambitious; Black has little to fear."
+    },
+    "structure": {
+      "notes": "The h-file half-opens for White."
+    },
+    "approach": {
+      "notes": "A pet line, rarely met."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Compensation understanding."
+    }
+  },
+  "plan_phrases": [
+    "h-file attack",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Black declines",
+      "moves": "1. d4 f5 2. h3 Nf6 3. g4 d5",
+      "how": "No pawn is taken and White weakens the king."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.65,
+      "reason": "A flank pawn sacrifice with both kings exposed."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "White offers the g4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Black can accept and consolidate."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "The h-file half-opens for White while the centre stays fluid."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "A dubious line is not a beginner choice."
+    },
+    "plans": {
+      "value": [
+        "kingside_attack",
+        "pawn_storm"
+      ],
+      "reason": "White uses the pawn sacrifice to open lines to the king."
+    }
+  }
+}

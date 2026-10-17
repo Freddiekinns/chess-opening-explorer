@@ -1,0 +1,105 @@
+{
+  "slug": "vienna-game-zhuravlev-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Vienna Game: Zhuravlev Countergambit",
+    "eco": "C25",
+    "moves": "1. e4 e5 2. Nc3 Bb4 3. Qg4 Nf6",
+    "fen": "rnbqk2r/pppp1ppp/5n2/4p3/1b2P1Q1/2N5/PPPP1PPP/R1B1KBNR w KQkq - 4 4"
+  },
+  "parent": "vienna-game",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 3.Qg4 Nf6 White may take 4.Qxg7 Rg8 5.Qh6 Rxg2, when Black has the g-file and rapid development for a pawn or two, or retreat. It is an uncommon, forcing countergambit that gives Black practical chances.",
+  "white_ideas": [
+    {
+      "idea": "Take the g7 pawn and retreat the queen to h6 or h4"
+    },
+    {
+      "idea": "Return material to untangle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Use the open g-file with ...Rg8 and ...Rxg2"
+    },
+    {
+      "idea": "Develop with ...d5 and ...Nc6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open kingside, Black rooks on the g-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen sorties and sacrifices. Sharp."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take on g7."
+    },
+    "soundness": {
+      "notes": "Probably dubious against best play."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Seldom played by strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Forcing lines need to be known."
+    }
+  },
+  "plan_phrases": [
+    "g-file attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "Early queen sorties and sacrifices."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.8,
+      "reason": "Black allows Qxg7."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.55,
+      "reason": "Probably dubious against best play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.7,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Forcing lines need to be known."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "Queen moves out early."
+    }
+  }
+}

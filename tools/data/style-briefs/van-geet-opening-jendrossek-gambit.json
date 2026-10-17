@@ -1,0 +1,104 @@
+{
+  "slug": "van-geet-opening-jendrossek-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Jendrossek Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 d5 2. f4 d4 3. Ne4 f5 4. Nf2 Nf6 5. Nf3 c5 6. b4",
+    "fen": "rnbqkb1r/pp2p1pp/5n2/2p2p2/1P1p1P2/5N2/P1PPPNPP/R1BQKB1R b KQkq - 0 6"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "A Van Geet reply to 1...d5 with f4, where after 2...d4 3.Ne4 f5 4.Nf2 White has retreated the knight and Black has space. 6.b4 offers a pawn to open the queenside, and ...cxb4 leaves White behind in material with some development. Rare and speculative; the details are not well known to me.",
+  "white_ideas": [
+    {
+      "idea": "Offer b4 to open lines against Black's queenside and gain tempo on c5"
+    },
+    {
+      "idea": "Bring pieces out quickly and use the e5/d4 squares"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take on b4 and keep the extra pawn"
+    },
+    {
+      "idea": "Hold the space gained with the d4 and f5 pawns"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawns on d4, f5 and c5 against White's f4; the centre is semi-closed"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pawn is offered with White already behind in space; unbalanced."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "6.b4 cxb4 keeps the pawn for Black."
+    },
+    "soundness": {
+      "notes": "White has lost time with the knight and the pawn offer looks hard to justify."
+    },
+    "structure": {
+      "notes": "d4/f5/c5 centre fixed, semi-open b-file after ...cxb4."
+    },
+    "approach": {
+      "notes": "A rare gambit within an irregular opening."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Dubious and obscure, not a good first repertoire choice."
+    }
+  },
+  "plan_phrases": [
+    "Queenside pawn offer"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "A gambit in a locked-up centre leads to unbalanced play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.8,
+      "reason": "6.b4 is a pawn Black can take and keep."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "White is behind in space and the pawn offer lacks sound support."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "Centre fixed on d4 but the queenside is still open to change."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Rare gambit of an already irregular opening."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Dubious so not Beginner; little to learn."
+    },
+    "plans": {
+      "value": [
+        "queenside_expansion",
+        "lead_in_development"
+      ],
+      "reason": "b4 push and quick development."
+    }
+  }
+}

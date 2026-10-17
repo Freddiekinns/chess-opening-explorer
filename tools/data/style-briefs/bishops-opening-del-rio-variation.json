@@ -1,0 +1,105 @@
+{
+  "slug": "bishops-opening-del-rio-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: del Rio Variation",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. c3 Qg5",
+    "fen": "rnb1k1nr/pppp1ppp/8/2b1p1q1/2B1P3/2P5/PP1P1PPP/RNBQK1NR w KQkq - 1 4"
+  },
+  "parent": "bishops-opening-philidor-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black brings the queen to g5 early, hitting g2 and the pressure on the centre. White can play d4 or Qf3 to develop with tempo or allow the g2 pawn to be taken. The line is rarely seen.",
+  "white_ideas": [
+    {
+      "idea": "Use d4 to open the centre with tempo"
+    },
+    {
+      "idea": "Develop with Nf3 or Qf3 and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the queen active and hit g2"
+    },
+    {
+      "idea": "Trade the dark-squared bishop"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after d4 exchanges"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen moves create tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "Black queen is exposed, probably worse."
+    },
+    "structure": {
+      "notes": "Open centre after d4."
+    },
+    "approach": {
+      "notes": "A rare sideline."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few plans to learn."
+    }
+  },
+  "plan_phrases": [
+    "Early queen",
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early queen sorties lead to tactical play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "No pawn given up."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "Black queen exposed early."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "d4 opens the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Seldom played by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.6,
+      "reason": "Not a beginner line."
+    },
+    "plans": {
+      "value": [
+        "early_queen",
+        "lead_in_development"
+      ],
+      "reason": "Black queen out early; White develops with tempo."
+    }
+  }
+}

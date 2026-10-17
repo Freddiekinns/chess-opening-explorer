@@ -1,0 +1,117 @@
+{
+  "slug": "scotch-game-fraser-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Fraser Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nf3",
+    "fen": "r1b1kbnr/pppp1ppp/2n5/8/4P2q/5N2/PPP2PPP/RNBQKB1R b KQkq - 2 5"
+  },
+  "parent": "scotch-game-steinitz-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the Steinitz Scotch White develops with 5.Nf3, hitting the queen on h4, and allows 5...Qxe4+ 6.Be2 for a lead in development. Black has taken a pawn with the queen on the open e-file, while White gets quick development and a pin on the e-file. It is an uncommon gambit-like choice that relies on that initiative.",
+  "white_ideas": [
+    {
+      "idea": "Hit the queen with Nf3 and gain time"
+    },
+    {
+      "idea": "Develop with Be2, O-O and Nc3 against the queen on e4"
+    },
+    {
+      "idea": "Open the e-file against the Black king in the centre"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take the e4 pawn and keep the queen centralised"
+    },
+    {
+      "idea": "Break the pin with ...Bb4+ or ...Qe7"
+    },
+    {
+      "idea": "Trade queens or get the king safe and keep the extra pawn"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with the e-file open and Black a pawn up"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White has given a pawn for development and the queen on e4 is exposed, so forcing and double-edged."
+    },
+    "gambit": {
+      "material_given": "white",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "After 5...Qxe4+ 6.Be2 Black has won the e4 pawn and can keep it if the queen avoids the pins."
+    },
+    "soundness": {
+      "notes": "White is a pawn down for development and the compensation is not accepted as full by theory."
+    },
+    "structure": {
+      "notes": "The e-file is open and pieces fight along it, so open lines rather than pawn chains."
+    },
+    "approach": {
+      "notes": "A sideline of the Steinitz Scotch that strong players seldom use."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "White needs to know the lines after 6.Be2 to avoid being simply a pawn down."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Steinitz main line",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nc3",
+      "how": "White develops with Nc3 instead and keeps the material level."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.7,
+      "reason": "A pawn sacrificed for development against an exposed queen is forcing and double-edged."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.55,
+      "reason": "The main line 5...Qxe4+ 6.Be2 is White offering the e4 pawn for development."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Theory gives White insufficient compensation for the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.8,
+      "reason": "The central pawns are off and the e-file and diagonals are open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players seldom choose this over the main Scotch lines."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "It needs specific knowledge and is not a first-repertoire choice."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "early_queen"
+      ],
+      "reason": "White wants development and tempi against Black's queen."
+    }
+  }
+}

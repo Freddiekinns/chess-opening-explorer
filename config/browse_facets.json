@@ -1,5 +1,5 @@
 {
-  "_comment": "Facet vocabulary for GET /api/openings/browse. Single source of truth — the browse service reads it, nothing hardcodes these lists. Levels and styles read the style tags in api/data/style-tags.json (docs/style-taxonomy.md): a style matches when its axis holds one of its values, so an opening can be under more than one (Sharp and Gambit). Positions with no tags are under none.",
+  "_comment": "Facet vocabulary for GET /api/openings/browse. Single source of truth — the browse service reads it, nothing hardcodes these lists. Levels and styles read the style tags in api/data/style-tags.json (docs/style-taxonomy.md): a style matches when its axis holds one of its values, so an opening can be under more than one (Sharp and Gambit). Positions with no tags are under none. A style's optional name_pattern also admits openings whose name matches it, so the Gambit filter keeps the Queen's Gambit and the Gambit Declined lines, which are tagged gambit none.",
   "pageSize": {
     "default": 24,
     "max": 48
@@ -26,7 +26,8 @@
       "value": "gambit",
       "label": "Gambit",
       "axis": "gambit",
-      "values": ["white", "black"]
+      "values": ["white", "black"],
+      "name_pattern": "gambit"
     },
     {
       "value": "dubious",

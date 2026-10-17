@@ -1,0 +1,108 @@
+{
+  "slug": "nimzo-larsen-attack-polish-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Nimzo-Larsen Attack: Polish Variation",
+    "eco": "A01",
+    "moves": "1. b3 b5",
+    "fen": "rnbqkbnr/p1pppppp/8/1p6/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2"
+  },
+  "parent": "nimzo-larsen-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "1.b3 b5 mirrors White's queenside flank play. White usually continues 2.Bb2 (or 2.e4) with the bishop hitting the long diagonal and e5 central control. The extra b5 by Black weakens c6 and the queenside, and White can strike with e4 or a3. It is rarely played by strong players.",
+  "white_ideas": [
+    {
+      "idea": "Develop Bb2 and e3/e4 with central control"
+    },
+    {
+      "idea": "Play a3 and c4 to open lines against the b5 advance"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Complete ...Bb7 and ...e6 with ...a6"
+    },
+    {
+      "idea": "Challenge the diagonal with ...f6 or ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Mutual fianchetto on the long diagonals"
+    },
+    {
+      "structure": "White centre pawns e4/d4 against Black flank play"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Slow flank play; tactics only after the centre opens."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given."
+    },
+    "soundness": {
+      "notes": "1...b5 is slightly weakening but not refuted."
+    },
+    "structure": {
+      "notes": "Fianchetto bishops with central pawns undecided."
+    },
+    "approach": {
+      "notes": "Black rarely plays 1...b5 against 1.b3 at a high level."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs sound flank-opening judgement."
+    }
+  },
+  "plan_phrases": [
+    "control of the long diagonal",
+    "queenside expansion"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.45,
+      "reason": "Slow flank play with chances for both and no forced lines."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.65,
+      "reason": "1...b5 is weakening but not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.6,
+      "reason": "Centre is undecided as in all flank openings."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom meet 1.b3 with 1...b5."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Judgement-driven, no heavy theory."
+    },
+    "plans": {
+      "value": [
+        "fianchetto",
+        "queenside_expansion"
+      ],
+      "reason": "Bb2 on the long diagonal and queenside pawns."
+    }
+  }
+}

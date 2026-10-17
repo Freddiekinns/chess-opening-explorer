@@ -1,0 +1,105 @@
+{
+  "slug": "bishops-opening-four-pawns-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Four Pawns Gambit",
+    "eco": "C23",
+    "moves": "1. e4 e5 2. Bc4 Bc5 3. b4 Bxb4 4. f4 exf4 5. Nf3 Be7 6. d4 Bh4+ 7. g3 fxg3 8. O-O gxh2+ 9. Kh1",
+    "fen": "rnbqk1nr/pppp1ppp/8/8/2BPP2b/5N2/P1P4p/RNBQ1R1K b kq - 1 9"
+  },
+  "parent": "bishops-opening-mcdonnell-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "In the McDonnell Gambit White gives b4 and f4 pawns and after ...Bh4+ g3 fxg3 the h2 pawn is lost too, leaving the king exposed on h1. White hopes to attack with the open f-file and pieces, but Black can keep the material. Sharp, double-edged, and probably dubious for White.",
+  "white_ideas": [
+    {
+      "idea": "Use the open f-file and the central d4/e4 pawns"
+    },
+    {
+      "idea": "Open lines with Bxf7 or Qd3"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Keep the extra material and hold the king"
+    },
+    {
+      "idea": "Trade queens or counterattack on the kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open position with White pawn count much lower than Black"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mutual attacks with an exposed king."
+    },
+    "gambit": {
+      "material_given": "two pawns",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives several pawns."
+    },
+    "soundness": {
+      "notes": "Likely dubious for White."
+    },
+    "structure": {
+      "notes": "Open."
+    },
+    "approach": {
+      "notes": "Rare gambit."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Not beginner."
+    }
+  },
+  "plan_phrases": [
+    "lead in development",
+    "kingside attack"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.9,
+      "reason": "Several pawns given and an exposed king."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives several pawns."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.6,
+      "reason": "Black should be able to keep the extra material."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.75,
+      "reason": "Centre and files open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.55,
+      "reason": "Dubious so never beginner."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White plays for an attack on the open f-file."
+    }
+  }
+}

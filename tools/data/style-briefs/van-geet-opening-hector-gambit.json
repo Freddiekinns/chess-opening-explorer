@@ -1,0 +1,107 @@
+{
+  "slug": "van-geet-opening-hector-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Van Geet Opening: Hector Gambit",
+    "eco": "A00",
+    "moves": "1. Nc3 d5 2. e4 dxe4 3. Bc4",
+    "fen": "rnbqkbnr/ppp1pppp/8/8/2B1p3/2N5/PPPP1PPP/R1BQK1NR b KQkq - 1 3"
+  },
+  "parent": "van-geet-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White plays 1.Nc3 d5 2.e4 dxe4 3.Bc4, attacking f7 and offering the e4 pawn Scandinavian-style. Black can keep the pawn if careful, but must watch Bxf7+ and Qh5 tricks. It is a rare gambit based on quick development.",
+  "white_ideas": [
+    {
+      "idea": "Play Qh5, Nxe4 and Nf3 against f7"
+    },
+    {
+      "idea": "Develop quickly and castle"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend f7 with ...Nf6 or ...e6 and keep the pawn"
+    },
+    {
+      "idea": "Develop ...Nc6, ...Bg4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...dxe4"
+    },
+    {
+      "structure": "White Bc4 aiming at f7"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quick tactics around f7 with White a pawn down."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the e4 pawn and Black can hold it."
+    },
+    "soundness": {
+      "notes": "Black has safe ways to defend."
+    },
+    "structure": {
+      "notes": "Centre open."
+    },
+    "approach": {
+      "notes": "A trap line."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Some memory of traps."
+    }
+  },
+  "plan_phrases": [
+    "pressure on f7"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.55,
+      "reason": "Pawn down with threats against f7, which asks for precise defence."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.75,
+      "reason": "White gives the e4 pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.5,
+      "reason": "Black can defend accurately and keep the pawn."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e-pawn trades and bishops aim at f7."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Strong players seldom choose it."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "both",
+      "confidence": 0.5,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "pressure_on_f7",
+        "lead_in_development"
+      ],
+      "reason": "White offers a pawn for time and attack on f7."
+    }
+  }
+}

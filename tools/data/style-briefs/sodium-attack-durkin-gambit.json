@@ -1,0 +1,103 @@
+{
+  "slug": "sodium-attack-durkin-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Sodium Attack: Durkin Gambit",
+    "eco": "A00",
+    "moves": "1. Na3 e5 2. Nc4 Nc6 3. e4 f5",
+    "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/2N1P3/8/PPPP1PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  "parent": "sodium-attack",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White opens with 1.Na3 and plays Nc4 and e4. Black replies ...f5 as a countergambit in Latvian style. Positions can become sharp. Extremely rare.",
+  "white_ideas": [
+    {
+      "idea": "Take on e5 or f5 and develop quickly"
+    },
+    {
+      "idea": "Use the Nc4 knight to pressure e5"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Play ...fxe4 and ...Nf6 for activity"
+    },
+    {
+      "idea": "Use the space and open f-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, loose pawns"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Unbalanced, with ...f5 weakening the king."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "Black can lose a pawn on e4/f5."
+    },
+    "soundness": {
+      "notes": "The ...f5 advance loosens the king."
+    },
+    "structure": {
+      "notes": "Central pawns exchange early."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Sharp lines need careful play."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Unbalanced, with ...f5 weakening the king."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.65,
+      "reason": "Black can lose a pawn on e4/f5."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "black",
+      "confidence": 0.5,
+      "reason": "The ...f5 advance loosens the king."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.5,
+      "reason": "Central pawns exchange early."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.65,
+      "reason": "Very rare."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Sharp lines need careful play."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "Plans read from the main line."
+    }
+  }
+}

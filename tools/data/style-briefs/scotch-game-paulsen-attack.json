@@ -1,0 +1,106 @@
+{
+  "slug": "scotch-game-paulsen-attack",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Paulsen Attack",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Be3 Qf6 6. c3 Nge7 7. Bb5",
+    "fen": "r1b1k2r/ppppnppp/2n2q2/1Bb5/3NP3/2P1B3/PP3PPP/RN1QK2R b KQkq - 2 7"
+  },
+  "parent": "scotch-game-classical-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Scotch Classical with 4...Bc5 5.Be3 Qf6 6.c3 Nge7 White plays 7.Bb5, pinning Nc6 and hitting d4 with tempo. Black's early queen on f6 and the knight on e7 are ready to castle; White has a lead in space and an active knight on d4. Both sides develop rapidly in an open centre.",
+  "white_ideas": [
+    {
+      "idea": "Use Bb5 and O-O with the central knight on d4"
+    },
+    {
+      "idea": "Break with Nb3 or f4/c4 depending on Black's moves"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Castle and play ...Nxd4 to trade pieces"
+    },
+    {
+      "idea": "Use the queen on f6 for pressure on d4"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with pawn on e4 vs missing e5"
+    },
+    {
+      "structure": "White knight on d4 vs Black Bc5/Qf6"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open but with sensible development."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No gambit."
+    },
+    "soundness": {
+      "notes": "Sound."
+    },
+    "structure": {
+      "notes": "Open Scotch."
+    },
+    "approach": {
+      "notes": "Standard main-line Scotch."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are clear."
+    }
+  },
+  "plan_phrases": [
+    "early queen"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.5,
+      "reason": "Open Scotch lines with chances for both."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "Pawn comes back."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.95,
+      "reason": "Sound."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.65,
+      "reason": "Scotch is an Open anchor."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.85,
+      "reason": "Standard."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.55,
+      "reason": "Understanding."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "Qf6 early."
+    }
+  }
+}

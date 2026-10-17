@@ -1,0 +1,114 @@
+{
+  "slug": "blackmar-diemer-gambit-accepted-kaulich-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Blackmar-Diemer Gambit Accepted: Kaulich Defense",
+    "eco": "D00",
+    "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 c5",
+    "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "blackmar-diemer-gambit-accepted",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the accepted BDG Black strikes at the d4 pawn with 5...c5, giving back the extra pawn at times, and aims for a healthy centre. White has two pawns' worth of play for the missing e- and f-pawns and normally plays 6.Bc4 or Bg5 with quick development. Theory judges Black fine if accurate.",
+  "white_ideas": [
+    {
+      "idea": "Use the open e- and f-files with Bc4, Bg5 and Qe2"
+    },
+    {
+      "idea": "Attack on the kingside before Black consolidates"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Strike at d4 with ...c5, develop ...e6 and ...Nc6"
+    },
+    {
+      "idea": "Return the pawn for safety if needed"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open e-file with White ahead in development"
+    },
+    {
+      "structure": "Black pawn on c5 against d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "White offers a pawn and Black can hit the centre, so the play is forcing and tactical."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White is a pawn down after 4...exf3 5.Nxf3 and Black can keep it with careful play."
+    },
+    "soundness": {
+      "notes": "Often viewed as dubious at top level because Black can consolidate; club results are better."
+    },
+    "structure": {
+      "notes": "Open with active pieces and files."
+    },
+    "approach": {
+      "notes": "The BDG is played by few strong players, so offbeat."
+    },
+    "level": {
+      "reason": "both",
+      "notes": "Needs known tactics and also understanding of the open lines."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development",
+    "Kingside attack"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Other 5th",
+      "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Bg4",
+      "how": "A different Black try with no c5."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.85,
+      "reason": "A pawn down for a lead in development, with open lines and mutual threats."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.9,
+      "reason": "White gives the e-pawn and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.55,
+      "reason": "Most strong players consider the BDG unsound at the top."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "The e-file and diagonals open after the exchanges."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.6,
+      "reason": "Strong players hardly ever play the BDG."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.6,
+      "reason": "A dubious gambit is never Beginner and Black's reply wants known lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "kingside_attack"
+      ],
+      "reason": "White's compensation is time and pressure on the kingside."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "scandinavian-defense-zilbermints-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scandinavian Defense: Zilbermints Gambit",
+    "eco": "B01",
+    "moves": "1. e4 d5 2. b4",
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/1P2P3/8/P1PP1PPP/RNBQKBNR b KQkq - 0 2"
+  },
+  "parent": "scandinavian-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "White ignores the Scandinavian pawn on d5 and plays 2.b4, offering a pawn for rapid development with Bb2 and queenside space. After 2...dxe4 White will aim for Bb2 and quick piece play, but Black can simply keep the extra pawn.",
+  "white_ideas": [
+    {
+      "idea": "Develop with Bb2 and Nc3 and attack the extra pawn"
+    },
+    {
+      "idea": "Use the queenside advance for space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take e4 and develop with ...Nf6, ...e6"
+    },
+    {
+      "idea": "Return the pawn at a convenient moment"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after ...dxe4"
+    },
+    {
+      "structure": "White queenside pawn advanced on b4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Sharp, unusual play with White a pawn down."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "White gives the e4 pawn and can fall behind if Black plays carefully."
+    },
+    "soundness": {
+      "notes": "Considered dubious."
+    },
+    "structure": {
+      "notes": "Open centre after pawn exchanges."
+    },
+    "approach": {
+      "notes": "Strong players hardly ever play it."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not a good first choice because dubious."
+    }
+  },
+  "plan_phrases": [
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "2...e5",
+      "moves": "2...e5",
+      "how": "Black can also decline and hold the centre."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "White plays for quick development a pawn down and Black must find the right replies."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.7,
+      "reason": "White offers the e4 pawn for development and Black can keep it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.75,
+      "reason": "2.b4 is considered unsound against accurate play."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.4,
+      "reason": "The centre opens after ...dxe4."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.85,
+      "reason": "Strong players seldom play 2.b4 here, and it is chosen for surprise."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "A dubious line is never Beginner, and it needs little theory."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development",
+        "fianchetto"
+      ],
+      "reason": "White hopes for a lead in development with Bb2."
+    }
+  }
+}

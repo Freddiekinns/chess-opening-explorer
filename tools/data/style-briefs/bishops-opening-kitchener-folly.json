@@ -1,0 +1,105 @@
+{
+  "slug": "bishops-opening-kitchener-folly",
+  "tier": "unsourced",
+  "root": {
+    "name": "Bishop's Opening: Kitchener Folly",
+    "eco": "C24",
+    "moves": "1. e4 e5 2. Bc4 Nf6 3. d3 Be7 4. Nf3 O-O",
+    "fen": "rnbq1rk1/ppppbppp/5n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 3 5"
+  },
+  "parent": "bishops-opening-berlin-defense",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "A quiet Italian-style set-up: White keeps the bishop on c4, plays d3 and Nf3, and Black castles with ...Be7. The usual plan is c3, Nbd2 and a later d4 or a slow build-up. It is unforced and low in theory, an easy line to play at club level.",
+  "white_ideas": [
+    {
+      "idea": "Play c3, Nbd2 and castle, preparing d4 or Re1 and Nf1-g3"
+    },
+    {
+      "idea": "Keep the c4 bishop aimed at f7"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Reach ...d6, ...Nc6 and ...Bg4 or ...Re8 with a solid centre"
+    },
+    {
+      "idea": "Strike with ...d5 when the bishop leaves"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Giuoco Pianissimo-type centre with d3 and e4 against e5 and d6"
+    },
+    {
+      "structure": "Tension that is not resolved early"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet, slow manoeuvring with no early tactics."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "None."
+    },
+    "soundness": {
+      "notes": "Sound for both sides."
+    },
+    "structure": {
+      "notes": "The centre stays in tension with no pawn trades."
+    },
+    "approach": {
+      "notes": "A normal quiet development scheme."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "A clear plan and almost no theory."
+    }
+  },
+  "plan_phrases": [
+    "slow build-up with c3 and d4",
+    "solid development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "solid",
+      "confidence": 0.5,
+      "reason": "Both sides develop slowly and neither can be hit quickly."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material changes hands."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "Nothing here is considered dubious."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.7,
+      "reason": "The e4/e5 centre stays in tension, like the Giuoco Pianissimo."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "It is a respectable Italian-type set-up but depends on the opponent."
+    },
+    "level": {
+      "value": "beginner",
+      "why": "neither",
+      "confidence": 0.5,
+      "reason": "Clear plans and little to memorise, like the Pianissimo."
+    },
+    "plans": {
+      "value": [],
+      "reason": "No distinctive plan beyond normal Italian development."
+    }
+  }
+}

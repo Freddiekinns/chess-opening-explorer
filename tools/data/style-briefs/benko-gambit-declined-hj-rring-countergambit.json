@@ -1,0 +1,110 @@
+{
+  "slug": "benko-gambit-declined-hj-rring-countergambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "Benko Gambit Declined: Hjørring Countergambit",
+    "eco": "A57",
+    "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. e4",
+    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P1P3/8/PP3PPP/RNBQKBNR b KQkq - 0 4"
+  },
+  "parent": "benko-gambit",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "White meets the Benko with 4.e4, taking the centre rather than accepting the pawn. Black can respond 4...bxc4 5.Bxc4 or 4...cxd5 or 4...Nxe4 tricks, so the play is double-edged and the exact line depends on Black. Strong players rarely meet the Benko this way.",
+  "white_ideas": [
+    {
+      "idea": "Take the centre with e4"
+    },
+    {
+      "idea": "Develop with Nc3 and Bxc4"
+    },
+    {
+      "idea": "Keep the extra space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Open lines with ...bxc4"
+    },
+    {
+      "idea": "Counter in the centre with ...Nxe4 tricks"
+    },
+    {
+      "idea": "Use the b-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre after bxc4 and Bxc4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Mixed; the tactics depend on the move order."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Material level at the root, no pawn offered."
+    },
+    "soundness": {
+      "notes": "Playable for both."
+    },
+    "structure": {
+      "notes": "The centre is not locked."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Needs understanding of Benko ideas."
+    }
+  },
+  "plan_phrases": [
+    "Central pawn majority"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.4,
+      "reason": "Black has options so the line can turn tactical or stay calm."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.8,
+      "reason": "Material is level at the root and no pawn has been taken."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "4.e4 is playable and not refuted."
+    },
+    "structure": {
+      "value": "flexible",
+      "confidence": 0.4,
+      "reason": "The centre is open to different structures."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Strong players hardly ever choose 4.e4 against the Benko."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "The ideas are not heavy on theory."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority",
+        "space_advantage"
+      ],
+      "reason": "White gains a big pawn centre."
+    }
+  }
+}

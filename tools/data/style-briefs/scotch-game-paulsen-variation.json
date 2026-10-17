@@ -1,0 +1,110 @@
+{
+  "slug": "scotch-game-paulsen-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Scotch Game: Paulsen Variation",
+    "eco": "C45",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nf5",
+    "fen": "r1b1kbnr/pppp1ppp/2n5/5N2/4P2q/8/PPP2PPP/RNBQKB1R b KQkq - 2 5"
+  },
+  "parent": "scotch-game-steinitz-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "After the Steinitz 4...Qh4, White plays 5.Nf5 attacking the queen and threatening Nxg7+. Black usually captures e4 with check or retreats the queen, leading to tactical complications. I am not sure of the main continuation, so the evidence is limited.",
+  "white_ideas": [
+    {
+      "idea": "Use the knight on f5 and quick development to attack g7 and the queen"
+    },
+    {
+      "idea": "Regain e4 with piece activity"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Take e4 with check and trade queens or retreat the queen"
+    },
+    {
+      "idea": "Develop ...Bb4+ and ...Nf6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre, knight on f5 and exposed queens"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Early queen play and tactics on g7 and e4."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": true,
+      "notes": "White may lose the e4 pawn, but compensation is rapid development."
+    },
+    "soundness": {
+      "notes": "Considered inferior to 5.Nc3 and 5.Nb5."
+    },
+    "structure": {
+      "notes": "Open lines."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Needs concrete tactics."
+    }
+  },
+  "plan_phrases": [
+    "early queen",
+    "lead in development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Steinitz 5.Nb5",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4 5. Nb5",
+      "how": "The more usual and calmer main line."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.6,
+      "reason": "Early queen attacks and threats on g7 lead to forcing play."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.4,
+      "reason": "Black can take e4 with check and keep it if White does not regain it."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.45,
+      "reason": "Probably inferior to the main Steinitz lines."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.6,
+      "reason": "Central pawns are exchanged and lines open for pieces."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.45,
+      "reason": "Strong players seldom choose 5.Nf5."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Dubious lines are not Beginner."
+    },
+    "plans": {
+      "value": [
+        "early_queen"
+      ],
+      "reason": "Both queens appear early and one has to avoid attack."
+    }
+  }
+}

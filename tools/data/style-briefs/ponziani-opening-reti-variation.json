@@ -1,0 +1,113 @@
+{
+  "slug": "ponziani-opening-reti-variation",
+  "tier": "unsourced",
+  "root": {
+    "name": "Ponziani Opening: Réti Variation",
+    "eco": "C44",
+    "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 Nge7",
+    "fen": "r1bqkb1r/ppppnppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 1 4"
+  },
+  "parent": "ponziani-opening",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "A Ponziani where Black develops the king's knight to e7 instead of f6, keeping the f-pawn free and the c6 knight supported. White usually plays 4.d4 and takes the centre, or sometimes 4.Bc4 or 4.d4 exd4 5.cxd4 d5. Play is normal open-centre development with no sharp forcing theory.",
+  "white_ideas": [
+    {
+      "idea": "Build a broad centre with d4 supported by c3"
+    },
+    {
+      "idea": "Develop Bc4 and castle quickly"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Challenge the centre with ...d5 or ...exd4"
+    },
+    {
+      "idea": "Develop ...g6 and ...Bg7 or ...d6 and ...Ng6"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White e4/d4 centre against ...d5 break"
+    },
+    {
+      "structure": "Exchanged centre with open e-file"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Quiet development; neither side forces matters and the structure is normal."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material changes hands in the main line."
+    },
+    "soundness": {
+      "notes": "Ponziani is sound and this Nge7 line is a respectable if slightly passive set-up for Black."
+    },
+    "structure": {
+      "notes": "4.d4 exd4 5.cxd4 d5 6.exd5 Nxd5 gives an open centre with pieces active."
+    },
+    "approach": {
+      "notes": "Ponziani is a recognised sideline played by strong players now and then, so standard."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Plans are simple development and centre play, no long forcing line to learn."
+    }
+  },
+  "plan_phrases": [
+    "Central pawn majority",
+    "Quick development"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Other 4th moves",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. c3 Nge7 4. Bc4",
+      "how": "White can delay d4 and play a quieter Italian-like set-up."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "balanced",
+      "confidence": 0.55,
+      "reason": "The play is neither forcing nor especially hard to break down."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.95,
+      "reason": "No material is given up in the main line."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.9,
+      "reason": "The ...Nge7 development is slightly passive but gives no concrete problem."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.45,
+      "reason": "The main line 4.d4 exd4 5.cxd4 opens the centre for the pieces."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.7,
+      "reason": "The Ponziani is a respectable sideline rather than an obscure one."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.6,
+      "reason": "The plans are clear but not a first-repertoire choice and need some centre technique."
+    },
+    "plans": {
+      "value": [
+        "central_pawn_majority"
+      ],
+      "reason": "White aims at a strong d4/e4 centre."
+    }
+  }
+}

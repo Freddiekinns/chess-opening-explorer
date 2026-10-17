@@ -1,0 +1,110 @@
+{
+  "slug": "french-defense-baeuerle-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "French Defense: Baeuerle Gambit",
+    "eco": "C00",
+    "moves": "1. e4 e6 2. d4 b5",
+    "fen": "rnbqkbnr/p1pp1ppp/4p3/1p6/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3"
+  },
+  "parent": "french-defense-normal-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "2...b5 offers the b-pawn immediately, with the idea of ...Bb7 hitting e4. White can take with Bxb5 or just play e5/Nf3 and get a big centre. Black has little compensation.",
+  "white_ideas": [
+    {
+      "idea": "Take b5 with the bishop or simply build the centre"
+    },
+    {
+      "idea": "Play Nf3, Nc3"
+    },
+    {
+      "idea": "Use the extra pawn"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hit e4 with ...Bb7"
+    },
+    {
+      "idea": "Develop ...Nf6, ...c5"
+    },
+    {
+      "idea": "Open the b-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "French-type structure after e5 or exchanges"
+    },
+    {
+      "structure": "Black has a pawn less"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "A pure gambit for little."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "black",
+      "can_be_kept": "true",
+      "notes": "White can take b5 and keep it."
+    },
+    "soundness": {
+      "notes": "Dubious for Black."
+    },
+    "structure": {
+      "notes": "French centre."
+    },
+    "approach": {
+      "notes": "Very rare."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Not worth learning."
+    }
+  },
+  "plan_phrases": [
+    "Lead in development"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.4,
+      "reason": "Black gives a pawn immediately for activity on the b-file and long diagonal."
+    },
+    "gambit": {
+      "value": "black",
+      "confidence": 0.9,
+      "reason": "Black offers the b-pawn on move two."
+    },
+    "soundness": {
+      "value": "dubious",
+      "confidence": 0.75,
+      "reason": "White can keep the pawn and Black has little compensation.",
+      "side": "black"
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.4,
+      "reason": "A French-type centre with the b-file open."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.95,
+      "reason": "Strong players virtually never play 2...b5."
+    },
+    "level": {
+      "value": "intermediate",
+      "confidence": 0.5,
+      "reason": "A dubious line is never Beginner.",
+      "why": "understanding"
+    },
+    "plans": {
+      "value": [],
+      "reason": "No clear plan beyond the gambit."
+    }
+  }
+}

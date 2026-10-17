@@ -1,0 +1,105 @@
+{
+  "slug": "caro-kann-defense-panov-botvinnik",
+  "tier": "unsourced",
+  "root": {
+    "name": "Caro-Kann Defense: Panov-Botvinnik, Herzog Defense",
+    "eco": "B13",
+    "moves": "1. e4 c6 2. d4 d5 3. exd5 cxd5 4. c4 Nf6 5. Nc3 Nc6 6. Bg5 dxc4 7. d5 Na5",
+    "fen": "r1bqkb1r/pp2pppp/5n2/n2P2B1/2p5/2N5/PP3PPP/R2QKBNR w KQkq - 1 8"
+  },
+  "parent": "caro-kann-defense-panov-attack",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "In the Herzog Defence Black plays ...Na5 after White pushes d5, attacking the c4 pawn it holds with an eye on White's queenside. White usually responds with Qa4+ and takes back on c4 with a space advantage, while Black has to be careful with its king and queenside.",
+  "white_ideas": [
+    {
+      "idea": "Win back c4 with Qa4+ and Bxc4"
+    },
+    {
+      "idea": "Use the d5 pawn and the Bg5 pin for space"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Defend the c4 pawn and trade pieces with ...Bd7 and ...b5"
+    },
+    {
+      "idea": "Challenge d5 with ...e6 or ...Nxd5"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "White d5 advance pawn against Black on c4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Concrete tactics after Qa4+; Black can go wrong."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "Black holds c4 briefly but White regains it."
+    },
+    "soundness": {
+      "notes": "Sidelines that are playable for both."
+    },
+    "structure": {
+      "notes": "White has d5 pawn space; the c-file is open."
+    },
+    "approach": {
+      "notes": "A rare sideline of the Panov, standard for those who use it."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Specific lines after 7...Na5 8.Qa4+ must be known."
+    }
+  },
+  "plan_phrases": [
+    "Space advantage",
+    "Knight outpost"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Forcing moves after Qa4+ and open play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "The pawn is regained by White."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.8,
+      "reason": "Playable for both sides."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.45,
+      "reason": "White has the d5 advance and an open c-file."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.6,
+      "reason": "Rare but respectable Panov branch."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs specific knowledge."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "knight_outpost"
+      ],
+      "reason": "White gets space with d5; Black uses c4 and the b-file."
+    }
+  }
+}

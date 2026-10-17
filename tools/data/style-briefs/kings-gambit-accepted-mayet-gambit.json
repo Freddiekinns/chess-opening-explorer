@@ -1,0 +1,109 @@
+{
+  "slug": "kings-gambit-accepted-mayet-gambit",
+  "tier": "unsourced",
+  "root": {
+    "name": "King's Gambit Accepted: Mayet Gambit",
+    "eco": "C38",
+    "moves": "1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 Bg7 5. d4 d6 6. c3",
+    "fen": "rnbqk1nr/ppp2pbp/3p4/6p1/2BPPp2/2P2N2/PP4PP/RNBQK2R b KQkq - 0 6"
+  },
+  "parent": "kings-gambit-accepted-traditional-variation",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "After 5.d4 d6 6.c3 White builds a centre and aims to open the f-file and attack down the h-file. Black's g5 and f4 pawns give space but a weakened kingside. White aims for Qb3 and Bxf4, while Black holds the extra pawn.",
+  "white_ideas": [
+    {
+      "idea": "Win back the f4 pawn"
+    },
+    {
+      "idea": "Build with c3 and d4"
+    },
+    {
+      "idea": "Open the f-file"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Hold the extra pawn with ...g5 and ...Bg7"
+    },
+    {
+      "idea": "Develop with ...Nc6"
+    },
+    {
+      "idea": "Use the h-file"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Open centre with a loosened black kingside"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Open fighting position."
+    },
+    "gambit": {
+      "material_given": "pawn",
+      "given_by": "white",
+      "can_be_kept": "true",
+      "notes": "Black keeps the f4 pawn."
+    },
+    "soundness": {
+      "notes": "A line considered playable for White."
+    },
+    "structure": {
+      "notes": "Open centre."
+    },
+    "approach": {
+      "notes": "King's Gambit lines are played less at the top."
+    },
+    "level": {
+      "reason": "memory",
+      "notes": "Known lines."
+    }
+  },
+  "plan_phrases": [
+    "Win the f4 pawn back"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.8,
+      "reason": "A gambit with an exposed kingside for both."
+    },
+    "gambit": {
+      "value": "white",
+      "confidence": 0.85,
+      "reason": "White is a pawn down for the centre."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.5,
+      "reason": "Playable for White if not best."
+    },
+    "structure": {
+      "value": "open",
+      "confidence": 0.55,
+      "reason": "Open lines."
+    },
+    "approach": {
+      "value": "standard",
+      "confidence": 0.45,
+      "reason": "King's Gambit lines are played less often at the top but not offbeat."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "memory",
+      "confidence": 0.5,
+      "reason": "Needs known lines."
+    },
+    "plans": {
+      "value": [
+        "lead_in_development"
+      ],
+      "reason": "White plays for development."
+    }
+  }
+}

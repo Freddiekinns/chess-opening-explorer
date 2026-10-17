@@ -1,0 +1,113 @@
+{
+  "slug": "grob-opening-keene-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Grob Opening: Keene Defense",
+    "eco": "A00",
+    "moves": "1. g4 d5 2. h3 e5 3. Bg2 c6",
+    "fen": "rnbqkbnr/pp3ppp/2p5/3pp3/6P1/7P/PPPPPPB1/RNBQK1NR w KQkq - 0 4"
+  },
+  "parent": "grob-opening",
+  "written_at": "2026-10-12",
+  "confidence": "medium",
+  "overview": "Black meets 2.h3 with ...e5 and ...c6, then after 4.d4 e4 5.c4 Bd6 6.Nc3 Ne7 builds a big pawn centre cramping White. White tries to undermine it with c4, Nc3 and Bg2 pressure while Black has space and a lead in development.",
+  "white_ideas": [
+    {
+      "idea": "Undermine the Black centre with d4 and c4"
+    },
+    {
+      "idea": "Use the long diagonal Bg2 against d5"
+    },
+    {
+      "idea": "Develop with Nc3 and Nge2"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Build a big centre with ...e5, ...d5, ...e4 and ...c6"
+    },
+    {
+      "idea": "Develop with ...Bd6 and ...Ne7"
+    },
+    {
+      "idea": "Keep the space edge and push the kingside"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Black pawn chain on c6, d5, e4 against White c4/d4"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Black has a space edge; unbalanced, with White the more at risk."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material is given on purpose in the main line."
+    },
+    "soundness": {
+      "notes": "Considered dubious for White; Black gets a comfortable centre."
+    },
+    "structure": {
+      "notes": "Locked chain on d5/e4 with Black space."
+    },
+    "approach": {
+      "notes": "The Grob is rarely chosen by strong players."
+    },
+    "level": {
+      "reason": "neither",
+      "notes": "Few theory demands but unsound."
+    }
+  },
+  "plan_phrases": [
+    "space gain",
+    "central pawn majority",
+    "fianchetto"
+  ],
+  "sublines_that_differ": [],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.45,
+      "reason": "Unbalanced with White's flank pawn moves risky."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material changes hands."
+    },
+    "soundness": {
+      "value": "dubious",
+      "side": "white",
+      "confidence": 0.65,
+      "reason": "Black has a free centre."
+    },
+    "structure": {
+      "value": "closed",
+      "confidence": 0.5,
+      "reason": "Black's chain locks the centre."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.9,
+      "reason": "Strong players seldom play the Grob."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "neither",
+      "confidence": 0.55,
+      "reason": "Dubious lines are never Beginner."
+    },
+    "plans": {
+      "value": [
+        "space_advantage",
+        "central_pawn_majority",
+        "fianchetto"
+      ],
+      "reason": "Black's centre and White's Bg2."
+    }
+  }
+}

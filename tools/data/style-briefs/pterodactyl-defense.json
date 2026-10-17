@@ -1,0 +1,112 @@
+{
+  "slug": "pterodactyl-defense",
+  "tier": "unsourced",
+  "root": {
+    "name": "Pterodactyl Defense",
+    "eco": "A42",
+    "moves": "1. Nf3 c5 2. c4 g6 3. d4 Bg7 4. e4 Qa5+ 5. Nc3 d6",
+    "fen": "rnb1k1nr/pp2ppbp/3p2p1/q1p5/2PPP3/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 6"
+  },
+  "parent": "modern-defense-semi-averbakh-variation",
+  "written_at": "2026-10-12",
+  "confidence": "low",
+  "overview": "Black delays ...cxd4 and fianchettos, then plays ...Qa5+ against the White centre of c4, d4 and e4. The queen eyes the e1-a5 diagonal and the c3 knight, pressuring the centre and the e4 pawn. White usually keeps the Maróczy-type centre, while Black aims for ...cxd4 or ...Nf6 and counterplay.",
+  "white_ideas": [
+    {
+      "idea": "Hold the centre with Nc3, Be2 and O-O"
+    },
+    {
+      "idea": "Exchange on c5 or d4 when the queen is offside"
+    }
+  ],
+  "black_ideas": [
+    {
+      "idea": "Pressure the centre with ...Qa5, ...Nf6 and ...cxd4"
+    },
+    {
+      "idea": "Hit e4 and c3 with the queen and bishops"
+    }
+  ],
+  "typical_structures": [
+    {
+      "structure": "Maróczy-like c4/e4 against c5/d6 with the queen on a5"
+    }
+  ],
+  "axis_evidence": {
+    "character": {
+      "notes": "Hypermodern and double-edged, with the queen out early and a fluid centre."
+    },
+    "gambit": {
+      "material_given": "none",
+      "given_by": null,
+      "can_be_kept": null,
+      "notes": "No material given up."
+    },
+    "soundness": {
+      "notes": "Sound but surprising; considered playable."
+    },
+    "structure": {
+      "notes": "An asymmetric centre in the Sicilian style."
+    },
+    "approach": {
+      "notes": "Rare among strong players."
+    },
+    "level": {
+      "reason": "understanding",
+      "notes": "Requires judgement over the centre."
+    }
+  },
+  "plan_phrases": [
+    "hypermodern centre",
+    "fianchetto",
+    "early queen"
+  ],
+  "sublines_that_differ": [
+    {
+      "name": "Modern c4 Pterodactyl",
+      "moves": "1. d4 d6 2. c4 g6 3. Nc3 Bg7 4. e4 c5 5. Nf3 Qa5",
+      "how": "Reached by a different move order from the Modern Defense."
+    }
+  ],
+  "tags": {
+    "character": {
+      "value": "sharp",
+      "confidence": 0.5,
+      "reason": "Early queen and a mobile centre lead to unbalanced, tricky play."
+    },
+    "gambit": {
+      "value": "none",
+      "confidence": 0.9,
+      "reason": "No material is given."
+    },
+    "soundness": {
+      "value": "sound",
+      "side": null,
+      "confidence": 0.7,
+      "reason": "A recognised, playable defence."
+    },
+    "structure": {
+      "value": "semi_open",
+      "confidence": 0.5,
+      "reason": "Asymmetric Sicilian-like centre with c-file and d-file tension."
+    },
+    "approach": {
+      "value": "offbeat",
+      "confidence": 0.5,
+      "reason": "Rarely chosen by strong players."
+    },
+    "level": {
+      "value": "intermediate",
+      "why": "understanding",
+      "confidence": 0.5,
+      "reason": "Understanding the centre matters more than memory."
+    },
+    "plans": {
+      "value": [
+        "hypermodern_centre",
+        "fianchetto"
+      ],
+      "reason": "Black lets White take the centre and strikes from the fianchetto and queen."
+    }
+  }
+}

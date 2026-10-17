@@ -1,16 +1,11 @@
 /**
  * TDD Test: Opening Data Consistency Integration Tests
  *
- * This test suite verifies that all 8 key opening attributes are returned
- * intact in the detail page's aggregate payload (`/page/:fen`):
- * 1. Description
- * 2. Name
- * 3. FEN
- * 4. Common Plans
- * 5. Stats
- * 6. Tags
- * 7. Aliases
- * 8. ECO Code
+ * This test suite verifies that the opening record's key attributes are
+ * returned intact in the detail page's aggregate payload (`/page/:fen`):
+ * description, name, FEN, common plans, moves, aliases and ECO code, plus the
+ * `style_profile` the page adds. Stats in that payload are pinned by
+ * openings-page-endpoint.test.js.
  *
  * Following CLAUDE.md TDD methodology with comprehensive mocking
  */
@@ -57,19 +52,6 @@ const mockECOData = {
         "Black: Aims to equalize by neutralizing White's fianchettoed bishop and proving that White's setup is too passive.",
       ],
     },
-  },
-};
-
-const mockPopularityStats = {
-  'rnbqkbnr/pp1ppppp/8/2p5/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2': {
-    popularity_score: 6.5,
-    frequency_count: 1250,
-    games_analyzed: 5000,
-    white_win_rate: 52.3,
-    black_win_rate: 32.1,
-    draw_rate: 15.6,
-    confidence_score: 8.2,
-    analysis_date: '2024-01-15',
   },
 };
 
@@ -136,7 +118,9 @@ describe('Opening Data Consistency Integration Tests', () => {
       expect(opening.eco).toBe(expectedOpening.eco);
       expect(opening.fen).toBe(testFEN); // FEN should match the test FEN
       expect(opening.description).toBe(expectedOpening.analysis_json.description);
-      expect(opening.style_tags).toEqual(expectedOpening.analysis_json.style_tags);
+      // Tags come from style-tags.json as `style_profile`, not the old LLM
+      // `style_tags` (AGENTS.md); null when a position is unclassified.
+      expect(opening).toHaveProperty('style_profile');
       expect(opening.common_plans).toEqual(expectedOpening.analysis_json.common_plans);
     });
   });

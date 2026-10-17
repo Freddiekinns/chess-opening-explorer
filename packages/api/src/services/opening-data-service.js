@@ -45,25 +45,6 @@ async function getOpenings() {
   }
 }
 
-/**
- * Get a specific opening by FEN
- * @param {string} fen - FEN position string
- * @returns {Object|null} Opening object or null if not found
- */
-async function getOpeningByFEN(fen) {
-  try {
-    if (!ecoServiceInstance) {
-      ecoServiceInstance = new ECOService();
-    }
-    
-    return ecoServiceInstance.getOpeningByFEN(fen);
-  } catch (error) {
-    console.error('Error getting opening by FEN:', error);
-    return null;
-  }
-}
-
 module.exports = {
-  getOpenings,
-  getOpeningByFEN
+  getOpenings
 };

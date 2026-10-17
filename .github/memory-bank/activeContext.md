@@ -15,7 +15,7 @@ output was never read), `StatisticsShowcase` and the "Site Statistics" journey.
 Tests of live logic were ported, not dropped: video fallback and the opening
 record hit `/page/:fen`, the projection test hits `/semantic-search`, and the
 stats loading paths test `popularity-stats-service` directly. Gate 72/72/76/62 →
-76/68/80/77.
+77/76/80/68 (lines/statements/functions/branches).
 
 **Next:** #182 (route tests for the four live handlers still untested;
 `/semantic-search` now has its projection test), then #183 (mobile card board

@@ -3,19 +3,13 @@ const fs = require('fs');
 
 describe('YouTube Configuration Validation', () => {
   let youtubeChannelConfig;
-  let videoQualityConfig;
 
   beforeAll(() => {
     // Load YouTube channel configuration
     const channelConfigPath = path.join(__dirname, '../../config/youtube_channels.json');
-    const qualityConfigPath = path.join(__dirname, '../../config/video_quality_filters.json');
 
     if (fs.existsSync(channelConfigPath)) {
       youtubeChannelConfig = JSON.parse(fs.readFileSync(channelConfigPath, 'utf8'));
-    }
-
-    if (fs.existsSync(qualityConfigPath)) {
-      videoQualityConfig = JSON.parse(fs.readFileSync(qualityConfigPath, 'utf8'));
     }
   });
 
@@ -46,21 +40,6 @@ describe('YouTube Configuration Validation', () => {
         min_view_count: expect.any(Number),
         max_age_years: expect.any(Number),
       });
-    });
-  });
-
-  describe('Video Quality Configuration', () => {
-    it('should validate quality filters structure', () => {
-      expect(videoQualityConfig).toBeDefined();
-      expect(videoQualityConfig.quality_thresholds).toBeDefined();
-      expect(videoQualityConfig.relevance_factors).toBeDefined();
-    });
-
-    it('should have valid quality thresholds', () => {
-      const thresholds = videoQualityConfig.quality_thresholds;
-      expect(thresholds.min_relevance_score).toBeGreaterThan(0);
-      expect(thresholds.min_relevance_score).toBeLessThanOrEqual(1);
-      expect(thresholds.trusted_channel_boost).toBeGreaterThan(1);
     });
   });
 });

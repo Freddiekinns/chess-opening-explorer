@@ -6,12 +6,17 @@
 
 `tests/unit/openings-routes.test.js` drives `/search-index`, `/fen/:fen/tree`,
 `/fen/:fen/tree/children`, `/random` and `/semantic-search` through supertest on
-a five-opening fixture: status codes (404 for an unknown or malformed FEN, 400
-for a query under two characters), the fields the client reads, the `?limit` and
-`?fields=lookup` index variants and their cache keys, and the semantic-search
-limit cap (50) and offset floor. None sets Cache-Control — `vercel.json` owns
-those headers. Every `openings.routes.js` handler now has a route test. Gate
+a five-opening fixture: status codes (404 for an unknown FEN or a non-FEN
+string, 400 for a query under two characters), the fields the client reads, the
+`?limit` and `?fields=lookup` index variants, and the semantic-search limit cap
+(50) and offset floor. None sets Cache-Control — `vercel.json` owns those
+headers. Every `openings.routes.js` handler now has a route test. Gate
 77/76/80/68 → 81/80/83/72 (measured 82/81/84/73).
+
+Review fix, test first: `/search-index` 400s a `?limit` that is not a positive
+whole number (`-5` had returned all but five openings), and builds the index
+once and slices it per request — the cache had been keyed on the raw `?limit`
+string, one copy per value, never evicted, on one shared TTL clock.
 
 Open: a FEN param containing a literal `%` is decoded twice (Express, then the
 route's `decodeURIComponent`), so `/fen/100%25/tree` 500s instead of 404ing; not

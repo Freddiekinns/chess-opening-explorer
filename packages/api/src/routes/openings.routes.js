@@ -254,7 +254,7 @@ router.get('/random', (req, res) => {
   }
 });
 
-// Cache for search results
+// The search index, built once per process and sliced per request
 let searchIndexCache = null;
 let searchIndexCacheTime = null;
 const SEARCH_INDEX_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
@@ -341,68 +341,64 @@ router.get('/search-index', (req, res) => {
     const { limit, fields } = req.query;
     const isLookupOnly = fields === 'lookup';
 
-    // Check cache first (fields variant must not collide with the full payload)
-    const baseKey = limit ? `limited_${limit}` : 'full';
-    const cacheKey = isLookupOnly ? `${baseKey}_lookup` : baseKey;
-    const now = Date.now();
-
-    if (
-      searchIndexCache &&
-      searchIndexCache[cacheKey] &&
-      searchIndexCacheTime &&
-      now - searchIndexCacheTime < SEARCH_INDEX_CACHE_TTL
-    ) {
-      const cached = searchIndexCache[cacheKey];
-      res.json({
-        ...cached,
-        searchTime: `${Date.now() - startTime}ms (cached)`,
-        cached: true,
+    // A positive whole number or nothing. `-5` used to slice to all but five
+    // openings, and `0` or `lots` to the whole index.
+    const maxResults = limit === undefined ? null : Number(limit);
+    if (maxResults !== null && !(Number.isInteger(maxResults) && maxResults > 0)) {
+      return res.status(400).json({
+        success: false,
+        error: 'limit must be a positive whole number',
       });
-      return;
     }
 
-    const allOpenings = ecoService.getAllOpenings();
+    // Built once and sliced per request. The cache used to be keyed on the raw
+    // `?limit` string and never evicted, so every distinct value held its own
+    // copy of the index, and its one timestamp, reset by each new key, kept
+    // older entries alive past their TTL.
+    const now = Date.now();
+    const cached =
+      searchIndexCache !== null && now - searchIndexCacheTime < SEARCH_INDEX_CACHE_TTL;
 
-    // Create lightweight index with only essential search fields
-    let searchIndex = allOpenings.map((opening) => ({
-      fen: opening.fen,
-      name: opening.name,
-      eco: opening.eco,
-      ...(isLookupOnly ? {} : { moves: opening.moves || '' }),
-      // Only include games_analyzed if available for sorting
-      ...(isLookupOnly ? {} : opening.games_analyzed && { games_analyzed: opening.games_analyzed }),
-      // family_id only on full search-index (lookup branch is FEN→name only)
-      ...(isLookupOnly ? {} : { family_id: opening.family_id }),
-    }));
-
-    // If limit specified, prioritize by games_analyzed and take top N
-    if (limit) {
-      const maxResults = Math.min(parseInt(limit) || searchIndex.length, searchIndex.length);
-      searchIndex = searchIndex
-        .sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0))
-        .slice(0, maxResults);
+    if (!cached) {
+      // Create lightweight index with only essential search fields
+      const rows = ecoService.getAllOpenings().map((opening) => ({
+        fen: opening.fen,
+        name: opening.name,
+        eco: opening.eco,
+        moves: opening.moves || '',
+        // Only include games_analyzed if available for sorting
+        ...(opening.games_analyzed && { games_analyzed: opening.games_analyzed }),
+        family_id: opening.family_id,
+      }));
+      searchIndexCache = {
+        rows,
+        byPopularity: [...rows].sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0)),
+      };
+      searchIndexCacheTime = now;
     }
 
-    const searchTime = Date.now() - startTime;
+    const { rows, byPopularity } = searchIndexCache;
 
-    const response = {
+    // If limit specified, take the top N by games_analyzed
+    let searchIndex = maxResults ? byPopularity.slice(0, maxResults) : rows;
+    if (isLookupOnly) {
+      // The lookup variant is FEN → name only
+      searchIndex = searchIndex.map(({ fen, name, eco }) => ({ fen, name, eco }));
+    }
+
+    const searchTime = `${Date.now() - startTime}ms`;
+
+    res.json({
       success: true,
       data: searchIndex,
       count: searchIndex.length,
-      total_available: allOpenings.length,
-      searchTime: `${searchTime}ms`,
-      note: limit
+      total_available: rows.length,
+      searchTime: cached ? `${searchTime} (cached)` : searchTime,
+      note: maxResults
         ? `Top ${searchIndex.length} popular openings for search`
         : 'Complete search index',
-      cached: false,
-    };
-
-    // Cache the result
-    if (!searchIndexCache) searchIndexCache = {};
-    searchIndexCache[cacheKey] = response;
-    searchIndexCacheTime = now;
-
-    res.json(response);
+      cached,
+    });
   } catch (error) {
     res.status(500).json({
       success: false,

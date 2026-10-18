@@ -4,9 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **2026-10-18**: #182 — every live `/api/openings` handler route-tested, gate
-  81/80/83/72; #181 — 13 dead API routes and two functions deleted; #183 —
-  mobile card board inset. **2026-10-17**: #166, backend gate on 2,108 lines.
+- **2026-10-18**: #182 — live `/api/openings` handlers route-tested, gate
+  81/80/83/72, `/search-index` limit and cache fixed; #181 — dead API routes
+  deleted; #183 — mobile card board inset. **10-17**: #166, backend gate.
 - **2026-10-12**: style tags tail finished (waves 5–12, 568 more); 1,411 tagged,
   every variation outside the 14 hubs. Gambit search keeps named gambits.
 - **2026-10-11**: analytics read-out, four gap events, soft-404 pre-render fix;

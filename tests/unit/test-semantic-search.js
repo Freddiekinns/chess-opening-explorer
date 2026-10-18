@@ -71,25 +71,6 @@ async function testSemanticSearch() {
       }
     }
 
-    // Test suggestions
-    console.log('💡 Testing search suggestions...');
-    try {
-      const suggestionQueries = ['aggr', 'solid', 'd4', 'french'];
-
-      for (const partialQuery of suggestionQueries) {
-        const suggestions = await searchService.getSuggestions(partialQuery, 5);
-        if (suggestions.length > 0) {
-          console.log(
-            `✅ Suggestions for "${partialQuery}": ${suggestions.slice(0, 3).join(', ')}`
-          );
-        } else {
-          console.log(`❌ No suggestions for "${partialQuery}"`);
-        }
-      }
-    } catch (error) {
-      console.error('❌ Error testing suggestions:', error.message);
-    }
-
     console.log('\n🎉 Semantic search testing completed!');
   } catch (error) {
     console.error('❌ Failed to initialize search service:', error);

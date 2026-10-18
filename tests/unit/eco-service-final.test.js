@@ -109,15 +109,6 @@ describe('ECOService Final Working Tests', () => {
       expect(result[0]).toHaveProperty('name');
     });
 
-    it('should return openings for valid ECO code', () => {
-      const result = ecoService.getOpeningsByECO('B20');
-
-      expect(Array.isArray(result)).toBe(true);
-      if (result.length > 0) {
-        expect(result[0]).toHaveProperty('eco', 'B20');
-      }
-    });
-
     it('should return a random opening', () => {
       const result = ecoService.getRandomOpening();
 
@@ -125,12 +116,6 @@ describe('ECOService Final Working Tests', () => {
         expect(result).toHaveProperty('eco');
         expect(result).toHaveProperty('name');
       }
-    });
-
-    it('should search openings by name', () => {
-      const result = ecoService.searchOpeningsByName('Sicilian');
-
-      expect(Array.isArray(result)).toBe(true);
     });
 
     it('should handle empty data gracefully', () => {
@@ -178,29 +163,6 @@ describe('ECOService Final Working Tests', () => {
       ecoService.clearCache();
 
       expect(ecoService.mergedData).toBeNull();
-    });
-
-    it('should get popular openings', () => {
-      const result = ecoService.getPopularOpenings(5);
-
-      expect(result).toHaveProperty('data');
-      expect(Array.isArray(result.data)).toBe(true);
-      expect(result).toHaveProperty('count');
-      expect(result).toHaveProperty('total_analyzed');
-    });
-
-    it('should get ECO categories', () => {
-      const result = ecoService.getECOCategories();
-
-      expect(Array.isArray(result)).toBe(true);
-    });
-
-    it('should get statistics', () => {
-      const result = ecoService.getStatistics();
-
-      expect(result).toHaveProperty('total');
-      expect(result).toHaveProperty('byClassification');
-      expect(result).toHaveProperty('bySource');
     });
   });
 

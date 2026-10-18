@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './StudiesGallery.module.css';
 
-// Types matching the API response from /api/courses/:fen (schema v2)
+// Types matching `courses` in the /api/openings/page/:fen payload (schema v2)
 export interface Study {
   study_title: string;
   chapter_title: string;

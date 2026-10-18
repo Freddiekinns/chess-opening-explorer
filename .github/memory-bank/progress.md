@@ -4,7 +4,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **2026-10-18**: #183 — mobile card board inset, 72px under 360px.
+- **2026-10-18**: #181 — 13 uncalled `/api/openings` routes, `/api/stats` and
+  `/api/courses` deleted; #183 — mobile card board inset, 72px under 360px.
 - **2026-10-17**: #166 — backend gate on 2,108 lines, not 847; #86 closed.
 - **2026-10-12**: style tags tail finished (waves 5–12, 568 more); 1,411 tagged,
   every variation outside the 14 hubs. Gambit search keeps named gambits.
@@ -78,8 +79,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **#181 → #182**: delete the `/api/openings` endpoints nothing calls (PR #185),
-  then route tests for the live ones. Handover in `activeContext.md`.
+- **#182**: route tests for the four live handlers that have none.
 - **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
   `typescript <6.1.0`. `tools/analysis` still has no CI at all.
 - **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-

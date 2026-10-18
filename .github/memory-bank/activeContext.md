@@ -2,27 +2,30 @@
 
 **Date:** 2026-10-18
 
-## Current Task: #183 — mobile card board inset
+## Current Task: #181 — delete the uncalled API endpoints
 
-Below 769px the opening card's mini board now sits 12px in from the top and
-left, rounded on all four corners, top-aligned so cards made taller by style
-tags don't leave it floating. Under 360px it shrinks to 72px with an 8px inset,
-because the nowrap White/Draw/Black labels need about 165px; at 320px they were
-already clipping on one card on `main`. Checked at 320, 344, 360, 375, 390, 412,
-430 and 768px against real data. `landing-mobile-layout.spec.ts` pins the inset
-and that no card content crosses the card's right edge. Not done: moving the
-card's styles to a CSS Module (the e2e specs select its global class names), and
-deleting the unused `variant="list-item"` branch.
+Gone, on the agreed bar (nothing in the codebase calls it; checked every file
+type, runtime-built URLs, sitemaps and the pre-render): thirteen `/api/openings`
+handlers (the issue's nine, plus `/search`, `/fen/:fen`, `/fen/:fen/related`,
+`/popular-by-eco`), and the whole `/api/stats` and `/api/courses` functions —
+the detail page gets both through `/page/:fen`. Six Vercel functions remain.
+Also gone: their `vercel.json` rules (`/fen/(.*)` stays for `/tree`), the
+service functions left with no caller, `scripts/optimize-for-vercel.js` (its
+output was never read), `StatisticsShowcase` and the "Site Statistics" journey.
+Tests of live logic were ported, not dropped: video fallback and the opening
+record hit `/page/:fen`, the projection test hits `/semantic-search`, and the
+stats loading paths test `popularity-stats-service` directly. Gate 72/72/76/62 →
+77/76/80/68 (lines/statements/functions/branches).
 
-**Next:** #181 is in PR #185, awaiting merge; then #182.
+**Next:** #182 (route tests for the four live handlers still untested;
+`/semantic-search` now has its projection test).
 
-## Previous Task: Issue triage, honest backend coverage (#180)
+## Previous Task: #183 — mobile card board inset (#186)
 
-Both open issues reviewed. #86 closed: flat config and eslint 10 had landed in
-#97, and the react-hooks 7 compiler preset (38 sites) is not planned because the
-React Compiler isn't being adopted. #166 done in #180: the backend gate counts
-2,108 lines, not 847, as a ratchet (72/72/76/62); the dead `youtube-service`,
-`video-processor` and `video_quality_filters.json` were deleted.
+Below 769px the mini board sits 12px in from the top and left, rounded on all
+four corners and top-aligned; under 360px it shrinks to 72px with an 8px inset
+so the nowrap W/D/L labels fit. `landing-mobile-layout.spec.ts` pins both. Not
+done: the card's CSS Module move and the unused `variant="list-item"` branch.
 
 Standing: revisit analytics late Nov 2026 with six weeks of the new events;
 search ranking and the video pipeline are paused until then (`archive.md`).

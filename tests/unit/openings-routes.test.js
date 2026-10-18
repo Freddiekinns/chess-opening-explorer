@@ -297,10 +297,55 @@ describe('/api/openings routes', () => {
       const lookup = await request(app).get('/api/openings/search-index?limit=2&fields=lookup');
       const repeat = await request(app).get('/api/openings/search-index?limit=2');
 
-      expect(lookup.body.cached).toBe(false);
       expect(Object.keys(lookup.body.data[0]).sort()).toEqual(['eco', 'fen', 'name']);
       expect(repeat.body.cached).toBe(true);
       expect(repeat.body.data[0]).toHaveProperty('moves');
+    });
+
+    // `?limit=-5` sliced to `slice(0, -5)` — all but five openings, ~3 MB in
+    // production — and `0` or `lots` fell through to the whole index.
+    test.each([
+      ['negative', '-5'],
+      ['zero', '0'],
+      ['non-numeric', 'lots'],
+    ])('400s a %s limit rather than guessing a size', async (_label, limit) => {
+      const res = await request(app).get(`/api/openings/search-index?limit=${limit}`);
+
+      expect(res.status).toBe(400);
+      expect(res.body.success).toBe(false);
+    });
+
+    // The cache was keyed on the raw `?limit` string and never evicted, so
+    // every distinct value held its own copy of the index in memory.
+    test('builds the index once and slices it for every limit', async () => {
+      const ECOService = require('../../packages/api/src/services/eco-service');
+      const build = jest.spyOn(ECOService.prototype, 'getAllOpenings');
+
+      for (const limit of [1, 2, 3, 4]) {
+        await request(app).get(`/api/openings/search-index?limit=${limit}`);
+      }
+      await request(app).get('/api/openings/search-index?fields=lookup');
+
+      expect(build).toHaveBeenCalledTimes(1);
+    });
+
+    // One timestamp was shared by every key, and each new key's write reset
+    // it, so older entries were served past their five minutes.
+    test('expires the index on one clock', async () => {
+      const BASE = 1_000_000_000;
+      const now = jest.spyOn(Date, 'now');
+      try {
+        now.mockReturnValue(BASE);
+        await request(app).get('/api/openings/search-index');
+        now.mockReturnValue(BASE + 4 * 60 * 1000);
+        await request(app).get('/api/openings/search-index?limit=2');
+        now.mockReturnValue(BASE + 6 * 60 * 1000);
+        const res = await request(app).get('/api/openings/search-index');
+
+        expect(res.body.cached).toBe(false);
+      } finally {
+        now.mockRestore();
+      }
     });
   });
 

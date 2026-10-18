@@ -2485,9 +2485,10 @@ body {
   .opening-card.has-board .card-board-wrapper {
     width: clamp(88px, 24vw, 104px);
     flex-shrink: 0;
-    align-self: center;
+    align-self: flex-start;
     aspect-ratio: 1 / 1;
-    border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+    margin: var(--space-3);
+    border-radius: var(--radius-sm);
     overflow: hidden;
   }
 
@@ -2497,7 +2498,7 @@ body {
   }
 
   .opening-card.has-board .card-info-column {
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-2) var(--space-3) var(--space-2) 0;
     justify-content: center;
     gap: 2px;
   }
@@ -2585,6 +2586,19 @@ body {
   }
   .hero-title {
     font-size: 1.5rem;
+  }
+}
+
+/* Narrowest phones (under 360px): the White/Draw/Black labels don't wrap and
+   need about 165px, so the board and its inset give up the room. */
+@media (max-width: 359px) {
+  .opening-card.has-board .card-board-wrapper {
+    width: 72px;
+    margin: var(--space-2);
+  }
+
+  .opening-card.has-board .card-info-column {
+    padding-right: var(--space-2);
   }
 }
 

@@ -60,3 +60,64 @@ test.describe('landing page mobile layout', () => {
     expect(footerBox.y + footerBox.height).toBeLessThanOrEqual(navBox.y + 1);
   });
 });
+
+for (const width of [320, 360, 390, 430, 768]) {
+  test.describe(`opening card board inset at ${width}px`, () => {
+    test.use({ viewport: { width, height: 812 } });
+
+    test.beforeEach(async ({ page }) => {
+      await mockApiRoutes(page);
+    });
+
+    test('insets the mini board from every edge of the card', async ({ page }) => {
+      await page.goto('/');
+
+      const firstCard = page.locator('.openings-grid .opening-card.has-board').first();
+      await expect(firstCard).toBeVisible();
+
+      const inset = await firstCard.evaluate((card) => {
+        const wrapper = card.querySelector('.card-board-wrapper') as HTMLElement;
+        const cardBox = card.getBoundingClientRect();
+        const boardBox = wrapper.getBoundingClientRect();
+        const style = getComputedStyle(wrapper);
+
+        return {
+          left: boardBox.left - cardBox.left,
+          top: boardBox.top - cardBox.top,
+          bottom: cardBox.bottom - boardBox.bottom,
+          radii: [
+            style.borderTopLeftRadius,
+            style.borderTopRightRadius,
+            style.borderBottomRightRadius,
+            style.borderBottomLeftRadius,
+          ].map((radius) => parseFloat(radius)),
+        };
+      });
+
+      expect(inset.left).toBeGreaterThanOrEqual(8);
+      expect(inset.top).toBeGreaterThanOrEqual(8);
+      expect(inset.bottom).toBeGreaterThanOrEqual(8);
+      for (const radius of inset.radii) {
+        expect(radius).toBeGreaterThan(0);
+      }
+    });
+
+    test("keeps every card's content inside the card", async ({ page }) => {
+      await page.goto('/');
+
+      const cards = page.locator('.openings-grid .opening-card.has-board');
+      await expect(cards.first()).toBeVisible();
+
+      const overflowing = await cards.evaluateAll((elements) =>
+        elements.flatMap((card) => {
+          const cardRight = card.getBoundingClientRect().right;
+          return [...card.querySelectorAll('*')]
+            .filter((child) => child.getBoundingClientRect().right > cardRight + 0.5)
+            .map((child) => child.textContent?.trim() ?? child.tagName);
+        })
+      );
+
+      expect(overflowing).toEqual([]);
+    });
+  });
+}

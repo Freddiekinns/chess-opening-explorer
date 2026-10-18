@@ -13,6 +13,12 @@ body{padding:24px;background:var(--surface-base)}
 .bar .w{flex:31;background:#d4cfc7}.bar .d{flex:39;background:#5a554e}.bar .b{flex:30;background:#c08840}
 .lab{display:flex;justify-content:space-between;font-size:10px;color:var(--color-text-muted);margin-top:5px;font-family:var(--font-family-mono)}
 .cap{font-family:var(--font-family-mono);font-size:10px;color:var(--color-text-muted);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:8px}
+.card.mobile{display:flex;align-items:stretch;padding:0;width:344px}
+.card.mobile .board{width:88px;flex-shrink:0;align-self:flex-start;aspect-ratio:1/1;margin:12px;border-radius:4px;overflow:hidden}
+.card.mobile .board svg{display:block;width:100%;height:100%}
+.card.mobile .info{flex:1;min-width:0;padding:8px 12px 8px 0;display:flex;flex-direction:column;justify-content:center}
+.card.mobile h3{font-size:14px;font-weight:600;margin-bottom:4px}
+.card.mobile .meta,.card.mobile .moves{margin-bottom:4px}
 </style></head><body>
 <div class="row" style="gap:24px">
   <div><span class="cap">Resting</span>
@@ -20,6 +26,9 @@ body{padding:24px;background:var(--surface-base)}
   </div>
   <div><span class="cap">Hover</span>
     <div class="card hover"><h3>Caro–Kann Defence</h3><div class="moves">1.e4 c6 2.d4 d5</div><div class="meta"><span class="eco">B12</span><span class="cx">Intermediate</span></div><div class="bar"><div class="w"></div><div class="d"></div><div class="b"></div></div><div class="lab"><span>31%</span><span>39%</span><span>30%</span></div></div>
+  </div>
+  <div><span class="cap">Mobile, ≤768px · board inset 12px, top-aligned</span>
+    <div class="card mobile"><div class="board"><svg viewBox="0 0 8 8" aria-hidden="true"><defs><pattern id="sq" width="2" height="2" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#f0d9b5"/><rect x="1" width="1" height="1" fill="#b58863"/><rect y="1" width="1" height="1" fill="#b58863"/></pattern></defs><rect width="8" height="8" fill="url(#sq)"/></svg></div><div class="info"><h3>Caro–Kann Defence</h3><div class="meta"><span class="eco">B12</span></div><div class="moves">1.e4 c6 2.d4 d5</div><div class="bar"><div class="w"></div><div class="d"></div><div class="b"></div></div><div class="lab"><span>31%</span><span>39%</span><span>30%</span></div></div></div>
   </div>
 </div>
 </body></html>

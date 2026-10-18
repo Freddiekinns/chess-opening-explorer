@@ -61,7 +61,7 @@ test.describe('landing page mobile layout', () => {
   });
 });
 
-for (const width of [360, 390, 768]) {
+for (const width of [320, 360, 390, 430, 768]) {
   test.describe(`opening card board inset at ${width}px`, () => {
     test.use({ viewport: { width, height: 812 } });
 
@@ -100,6 +100,24 @@ for (const width of [360, 390, 768]) {
       for (const radius of inset.radii) {
         expect(radius).toBeGreaterThan(0);
       }
+    });
+
+    test("keeps every card's content inside the card", async ({ page }) => {
+      await page.goto('/');
+
+      const cards = page.locator('.openings-grid .opening-card.has-board');
+      await expect(cards.first()).toBeVisible();
+
+      const overflowing = await cards.evaluateAll((elements) =>
+        elements.flatMap((card) => {
+          const cardRight = card.getBoundingClientRect().right;
+          return [...card.querySelectorAll('*')]
+            .filter((child) => child.getBoundingClientRect().right > cardRight + 0.5)
+            .map((child) => child.textContent?.trim() ?? child.tagName);
+        })
+      );
+
+      expect(overflowing).toEqual([]);
     });
   });
 }

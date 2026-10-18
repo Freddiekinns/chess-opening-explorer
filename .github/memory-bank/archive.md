@@ -5,6 +5,14 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Mobile card board inset — full activeContext text (2026-10-18, #183)
+
+Shipped in #186. Below 769px the mini board sits 12px in from the top and left,
+rounded on all four corners and top-aligned; under 360px it shrinks to 72px with
+an 8px inset so the nowrap W/D/L labels fit. `landing-mobile-layout.spec.ts`
+pins both. Not done: the card's CSS Module move and the unused
+`variant="list-item"` branch.
+
 ## Analytics read-out, gap events, soft 404s — full activeContext text (2026-10-11, #179)
 
 Shipped in #179. A read of PostHog, Vercel and Search Console (baseline:

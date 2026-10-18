@@ -1,6 +1,6 @@
 # Active Context
 
-**Date:** 2026-10-17
+**Date:** 2026-10-18
 
 ## Current Task: #181 — delete the uncalled API endpoints
 
@@ -18,19 +18,14 @@ stats loading paths test `popularity-stats-service` directly. Gate 72/72/76/62 �
 77/76/80/68 (lines/statements/functions/branches).
 
 **Next:** #182 (route tests for the four live handlers still untested;
-`/semantic-search` now has its projection test), then #183 (mobile card board
-flush left, a design call).
+`/semantic-search` now has its projection test).
 
-## Previous Task: Issue triage, honest backend coverage (#180)
+## Previous Task: #183 — mobile card board inset (#186)
 
-Both open issues reviewed. #86 closed: flat config and eslint 10 had landed in
-#97, and the react-hooks 7 compiler preset (38 sites) is not planned because the
-React Compiler isn't being adopted. #166 done in #180: the backend gate counts
-2,108 lines, not 847, as a ratchet (72/72/76/62); the dead `youtube-service`,
-`video-processor` and `video_quality_filters.json` were deleted.
-
-Checked and fine on `main`: home cards draw the W/D/L bar at 390px and 1280px;
-mobile hides only the "N games" count (deliberate, `861fe4687`).
+Below 769px the mini board sits 12px in from the top and left, rounded on all
+four corners and top-aligned; under 360px it shrinks to 72px with an 8px inset
+so the nowrap W/D/L labels fit. `landing-mobile-layout.spec.ts` pins both. Not
+done: the card's CSS Module move and the unused `variant="list-item"` branch.
 
 Standing: revisit analytics late Nov 2026 with six weeks of the new events;
 search ranking and the video pipeline are paused until then (`archive.md`).

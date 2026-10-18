@@ -215,7 +215,11 @@ A defined elevation system — never hardcode `box-shadow`:
   edge (the only place "decorative" colour appears).
 - Cards with embedded mini chessboards (`.opening-card.has-board`) zero their
   padding and put the board in a `card-board-wrapper` with
-  `--radius-md --radius-md 0 0`.
+  `--radius-md --radius-md 0 0`. At 768px and below the card becomes a row: the
+  board sits on the left, inset `--space-3` from the top and left with
+  `--radius-sm` on all four corners, and top-aligned so a tall card doesn't
+  leave it floating. Under 360px it shrinks to 72px with a `--space-2` inset so
+  the result labels still fit.
 
 ### Pills, badges, tags
 

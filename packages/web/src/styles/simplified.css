@@ -2487,7 +2487,8 @@ body {
     flex-shrink: 0;
     align-self: center;
     aspect-ratio: 1 / 1;
-    border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+    margin: var(--space-3);
+    border-radius: var(--radius-sm);
     overflow: hidden;
   }
 
@@ -2497,7 +2498,7 @@ body {
   }
 
   .opening-card.has-board .card-info-column {
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-2) var(--space-3) var(--space-2) 0;
     justify-content: center;
     gap: 2px;
   }

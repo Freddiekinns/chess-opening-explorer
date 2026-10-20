@@ -165,11 +165,11 @@ Google de-indexed 5,010 pages once already, after a change that looked safe.
 
 ### Pipelines
 
-Read the pipeline's skill before changing or running it — `video-pipeline`,
-`course-discovery`, `popularity-stats` — and `tools/*/README.md` for the deep
-detail. The video skill carries the scorer's regressions (the corpus ratchet,
-description and alias traps, the order decided twice, the Jev filter). Two rules
-that reach beyond any one pipeline:
+Read the pipeline's documentation before changing or running it — the
+`video-pipeline` skill, and `tools/*/README.md` for the deep detail and for the
+study and popularity-stats pipelines. The video skill carries the scorer's
+regressions (the corpus ratchet, description and alias traps, the order decided
+twice, the Jev filter). Two rules that reach beyond any one pipeline:
 
 - **Never guess YouTube channel IDs.** Verify with the user or test via the RSS
   feed (`https://www.youtube.com/feeds/videos.xml?channel_id={ID}`).
@@ -209,6 +209,10 @@ session can trip:
 When a change affects commands, modes, config, or architecture, update the
 related docs in the same PR: this file, the scoped `AGENTS.md` files,
 `.claude/skills/`, `.github/memory-bank/`, and the relevant `tools/*/README.md`.
+
+Write a new skill or agent only once the same instructions have been needed
+three times, not as the default way to wrap up a session. One that never loads
+stops being checked, and is wrong the one time it does (#187 removed five).
 
 Memory bank size caps (enforced by hand, so respect them):
 

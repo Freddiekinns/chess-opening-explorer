@@ -52,6 +52,11 @@ Because raw study PGN + metadata are cached (one JSON per study, gitignored),
 `npm run course:rematch` rebuilds the entire index offline in seconds — the same
 fetch-once / re-score-freely model as the video pipeline's `pipeline:rematch`.
 
+Rematch makes **zero Lichess API calls**, so `likes` counts go stale and newly
+curated studies are missing until a `course:import` run fetches them. Import
+skips cache hits; `--refetch` forces a re-fetch. `courses.json` is a **full
+rebuild** on every run — never hand-edit it.
+
 ### 1. Discover Popular Studies
 
 Searches Lichess with ~46 opening-related terms, sorted by popularity. Filters

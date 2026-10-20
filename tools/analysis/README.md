@@ -39,6 +39,27 @@ opening positions:
 }
 ```
 
+### The shipped data did not come from this pipeline
+
+Check `metadata` in `api/data/popularity_stats.json` before assuming a rerun
+reproduces what's live. The current file was generated **2025-07-15** and
+records `"analysis_method": "API-based (not PGN processing)"` against
+`explorer.lichess.ovh/lichess` — a script that no longer exists in this repo.
+`run_pipeline.py` is the maintained path and writes a compatible schema
+(`positions` keyed by FEN, consumed by `eco-service.js` and
+`popularity-stats-service.js`), but it derives the numbers differently.
+
+So don't expect a rerun to match the current values, and don't try to reproduce
+the original API method — the Lichess explorer has required authentication since
+2026-03 and would 401.
+
+### The caveat that reaches users
+
+This data covers **all rated Lichess players, not master games** — the shipped
+sample carries `avg_rating` around 2016. Every label, caption and column header
+derived from it must say so. Calling it master data is a factual error visible
+to users; it has shipped before.
+
 ## Installation
 
 ### Prerequisites

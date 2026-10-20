@@ -2,11 +2,12 @@
 
 ## Claude Code
 
-Skills cover the pipelines, the design system, dependencies and tooling, and the
-two subsystems whose invariants are too deep for `AGENTS.md` —
-`openingbook-design`, `video-pipeline`, `course-discovery`, `popularity-stats`,
-`seo-crawl-graph`, `search-ranking`, `dependencies-tooling`. Prefer them over
-re-deriving a runbook from the READMEs.
+Skills cover the video pipeline, the design system, dependencies and tooling,
+and the two subsystems whose invariants are too deep for `AGENTS.md` —
+`openingbook-design`, `video-pipeline`, `seo-crawl-graph`, `search-ranking`,
+`dependencies-tooling`. Prefer them over re-deriving a runbook from the READMEs.
+The study and popularity-stats pipelines are documented in their
+`tools/*/README.md` only.
 
 Auto-memory is machine-local and is not shared between the desktop, web, and
 remote sessions used on this project. Anything that needs to survive across them
@@ -24,13 +25,17 @@ Delegate only when all three hold: the task is self-contained, a command can
 verify it, and its output would otherwise flood this context. Otherwise do it
 here — a subagent starts cold and re-reads `AGENTS.md` and the files it needs.
 
-| Agent / skill       | Model          | Use for                                              |
-| ------------------- | -------------- | ---------------------------------------------------- |
-| `scout`             | Haiku, low     | Lookups; use it instead of Explore (session's model) |
-| `verifier`          | Haiku, low     | `test:all`, `build`, `build:vercel`; failures only   |
-| `implementer`       | Sonnet, medium | A written file-by-file plan; stops on mismatch       |
-| `pipeline-reviewer` | Sonnet, high   | Pipeline changes before a run or commit              |
-| `/docs-sync`        | Sonnet, medium | "Keeping docs current", from the branch diff         |
+| Agent               | Model        | Use for                                            |
+| ------------------- | ------------ | -------------------------------------------------- |
+| `verifier`          | Haiku, low   | `test:all`, `build`, `build:vercel`; failures only |
+| `pipeline-reviewer` | Sonnet, high | Pipeline changes before a run or commit            |
 
-Review a subagent's diff before committing it. Batch data work (style-tag
-research, classification) follows its own README's model choices.
+**Run `npm run test:all`, `npm run build` and `npm run build:vercel` through the
+`verifier` agent, not in this session's shell.** Their output is long, and
+reading it here costs Opus tokens for what Haiku reports in a few lines. Run a
+single test file inline when iterating on it.
+
+Lookups stay in this session; plans are carried out here with
+`superpowers:executing-plans`. Review a subagent's diff before committing it.
+Batch data work (style-tag research, classification) follows its own README's
+model choices.

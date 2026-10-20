@@ -1,14 +1,14 @@
 # Tools
 
-Four data pipelines. Each has its own README with full documentation; the
-`.claude/skills/` entries carry the runbooks.
+Four data pipelines. Each has its own README with full documentation; the video
+pipeline also has a `.claude/skills/` runbook.
 
-| Directory           | Purpose                                            | Language | Skill              |
-| ------------------- | -------------------------------------------------- | -------- | ------------------ |
-| `video-pipeline/`   | YouTube discovery and matching to openings         | Node     | `video-pipeline`   |
-| `course-discovery/` | Lichess study import, matched to openings by FEN   | Node     | `course-discovery` |
-| `llm-enrichment/`   | Opening descriptions via Google Vertex AI          | Node     | —                  |
-| `analysis/`         | Opening statistics from the Lichess rated database | Python   | `popularity-stats` |
+| Directory           | Purpose                                            | Language | Skill            |
+| ------------------- | -------------------------------------------------- | -------- | ---------------- |
+| `video-pipeline/`   | YouTube discovery and matching to openings         | Node     | `video-pipeline` |
+| `course-discovery/` | Lichess study import, matched to openings by FEN   | Node     | —                |
+| `llm-enrichment/`   | Opening descriptions via Google Vertex AI          | Node     | —                |
+| `analysis/`         | Opening statistics from the Lichess rated database | Python   | —                |
 
 `data/` holds the persistent stores: `videos.sqlite` (video database),
 `study-cache/` (gitignored Lichess study cache), and API response caches.

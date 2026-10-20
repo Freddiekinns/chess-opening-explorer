@@ -13,6 +13,9 @@ never loaded because nothing touched their pipelines; their unique content
 new skills on the third repeat. Untracked `.agents/` and `.codex/` copies of the
 skills (16 Sep) had drifted; not tracked, left alone.
 
+`.claude/settings.json` disables the vercel, frontend-design and ralph-loop
+plugins here: none loaded once. Re-enable vercel if its MCP is wanted (#188).
+
 ## Previous Task: #182 — route tests for the live `/api/openings` handlers
 
 `tests/unit/openings-routes.test.js` drives `/search-index`, `/fen/:fen/tree`,

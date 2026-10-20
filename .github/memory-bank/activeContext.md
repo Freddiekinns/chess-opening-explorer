@@ -1,8 +1,22 @@
 # Active Context
 
-**Date:** 2026-10-18
+**Date:** 2026-10-20
 
-## Current Task: #182 — route tests for the live `/api/openings` handlers
+## Current Task: #187 — clean up unused Claude skills and agents
+
+Transcripts from 11 Jul to 20 Oct showed `scout`, `implementer` and `/docs-sync`
+never chosen, so they are deleted. `course-discovery` and `popularity-stats`
+never loaded because nothing touched their pipelines; their unique content
+(rematch staleness, the shipped stats' provenance) moved into
+`tools/*/README.md`. `CLAUDE.md` now routes `test:all` and builds to `verifier`
+(the main session had run them inline ~25 times to its 3), and `AGENTS.md` gates
+new skills on the third repeat. Untracked `.agents/` and `.codex/` copies of the
+skills (16 Sep) had drifted; not tracked, left alone.
+
+`.claude/settings.json` disables the vercel and ralph-loop plugins here: none
+loaded once. Re-enable vercel if its MCP is wanted (#188).
+
+## Previous Task: #182 — route tests for the live `/api/openings` handlers
 
 `tests/unit/openings-routes.test.js` drives `/search-index`, `/fen/:fen/tree`,
 `/fen/:fen/tree/children`, `/random` and `/semantic-search` through supertest on
@@ -21,21 +35,6 @@ string, one copy per value, never evicted, on one shared TTL clock.
 Open: a FEN param containing a literal `%` is decoded twice (Express, then the
 route's `decodeURIComponent`), so `/fen/100%25/tree` 500s instead of 404ing; not
 pinned, since a test would freeze the bug.
-
-## Previous Task: #181 (#185) — delete the uncalled API endpoints
-
-Gone, on the agreed bar (nothing in the codebase calls it; checked every file
-type, runtime-built URLs, sitemaps and the pre-render): thirteen `/api/openings`
-handlers (the issue's nine, plus `/search`, `/fen/:fen`, `/fen/:fen/related`,
-`/popular-by-eco`), and the whole `/api/stats` and `/api/courses` functions —
-the detail page gets both through `/page/:fen`. Six Vercel functions remain.
-Also gone: their `vercel.json` rules (`/fen/(.*)` stays for `/tree`), the
-service functions left with no caller, `scripts/optimize-for-vercel.js` (its
-output was never read), `StatisticsShowcase` and the "Site Statistics" journey.
-Tests of live logic were ported, not dropped: video fallback and the opening
-record hit `/page/:fen`, the projection test hits `/semantic-search`, and the
-stats loading paths test `popularity-stats-service` directly. Gate 72/72/76/62 →
-77/76/80/68 (lines/statements/functions/branches).
 
 Standing: revisit analytics late Nov 2026 with six weeks of the new events;
 search ranking and the video pipeline are paused until then (`archive.md`).

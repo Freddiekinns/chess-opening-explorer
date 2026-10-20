@@ -4,6 +4,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **2026-10-20**: #187 — `scout`, `implementer`, `/docs-sync` removed; study and
+  stats skills folded into READMEs; vercel, ralph-loop plugins off here.
 - **2026-10-18**: #182 — live `/api/openings` handlers route-tested, gate
   81/80/83/72, `/search-index` limit and cache fixed; #181 — dead API routes
   deleted; #183 — mobile card board inset. **10-17**: #166, backend gate.
@@ -53,11 +55,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   ~100 Dependabot deployments filled Functions Storage to 7.98/10 GB, so
   `dependabot/**` no longer deploys. 81 soft 404s were "Opening not found"
   painted on any failed fetch; the 568 KB site icon is 46 KB. **`archive.md`.**
-- **Fifth Dependabot pass: all but typescript 7** (2026-08-31, #99-#129): jest
-  30, vite 8 / vitest 4, jsdom 30; CI on Node 24 (20 was EOL). Detail in
-  `archive.md`.
-- **Fourth Dependabot pass and the backlog to empty** (2026-08-29/31, #71-#114):
-  green checks lied repeatedly. **`archive.md`**, `docs/reviews/2026-08-29-*`.
+- **Fourth and fifth Dependabot passes** (2026-08-29/31, #71-#129): jest 30,
+  vite 8 / vitest 4, jsdom 30, CI on Node 24; green checks lied repeatedly.
+  **`archive.md`**, `docs/reviews/2026-08-29-*`.
 - **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
   indexed pages earned 4,810 impressions in 90 days because nothing linked into
   the corpus. Ancestor and related-opening links now render before hydration;

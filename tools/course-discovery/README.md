@@ -57,6 +57,10 @@ curated studies are missing until a `course:import` run fetches them. Import
 skips cache hits; `--refetch` forces a re-fetch. `courses.json` is a **full
 rebuild** on every run — never hand-edit it.
 
+`tools/video-pipeline/lib/opening-families.js` is shared with the video matcher:
+after changing it, run both `scripts/audit-study-matches.js` and
+`scripts/audit-video-matches.js`.
+
 ### 1. Discover Popular Studies
 
 Searches Lichess with ~46 opening-related terms, sorted by popularity. Filters

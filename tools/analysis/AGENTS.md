@@ -23,7 +23,7 @@ processes them locally. The **shipped** `api/data/popularity_stats.json` did not
 come from it: its metadata records an API-based generation against
 `explorer.lichess.ovh` dated 2025-07-15. Schemas are compatible, but a rerun
 will not reproduce the current numbers, and the original API method would now
-401 (Lichess gated the explorer behind auth in 2026-03). See `README.md` here.
+401 (Lichess gated the explorer behind auth in 2026-03).
 
 Full pipeline documentation, including the incremental mode and disk
 requirements, is in `README.md` here.

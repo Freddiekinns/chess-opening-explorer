@@ -44,8 +44,8 @@ opening positions:
 Check `metadata` in `api/data/popularity_stats.json` before assuming a rerun
 reproduces what's live. The current file was generated **2025-07-15** and
 records `"analysis_method": "API-based (not PGN processing)"` against
-`explorer.lichess.ovh/lichess` — a script that no longer exists in this repo.
-`run_pipeline.py` is the maintained path and writes a compatible schema
+`explorer.lichess.ovh/lichess`, made by a script that no longer exists in this
+repo. `run_pipeline.py` is the maintained path and writes a compatible schema
 (`positions` keyed by FEN, consumed by `eco-service.js` and
 `popularity-stats-service.js`), but it derives the numbers differently.
 

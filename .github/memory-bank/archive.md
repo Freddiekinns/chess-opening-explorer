@@ -5,6 +5,28 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## Route tests for the live `/api/openings` handlers — full activeContext text (2026-10-18, #182)
+
+`tests/unit/openings-routes.test.js` drives `/search-index`, `/fen/:fen/tree`,
+`/fen/:fen/tree/children`, `/random` and `/semantic-search` through supertest on
+a five-opening fixture: status codes (404 for an unknown FEN or a non-FEN
+string, 400 for a query under two characters), the fields the client reads, the
+`?limit` and `?fields=lookup` index variants, and the semantic-search limit cap
+(50) and offset floor. None sets Cache-Control — `vercel.json` owns those
+headers. Every `openings.routes.js` handler now has a route test. Gate
+77/76/80/68 → 81/80/83/72 (measured 82/81/84/73).
+
+Review fix, test first: `/search-index` 400s a `?limit` that is not a positive
+whole number (`-5` had returned all but five openings), and builds the index
+once and slices it per request — the cache had been keyed on the raw `?limit`
+string, one copy per value, never evicted, on one shared TTL clock.
+
+Open: a FEN param containing a literal `%` is decoded twice (Express, then the
+route's `decodeURIComponent`), so `/fen/100%25/tree` 500s instead of 404ing; not
+pinned, since a test would freeze the bug.
+
+---
+
 ## Delete the uncalled API endpoints — full activeContext text (2026-10-18, #181)
 
 Gone, on the agreed bar (nothing in the codebase calls it; checked every file

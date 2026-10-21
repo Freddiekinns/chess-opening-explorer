@@ -1,8 +1,17 @@
 # Active Context
 
-**Date:** 2026-10-20
+**Date:** 2026-10-21
 
-## Current Task: #187 — clean up unused Claude skills and agents
+## Current Task: backlog split into issues and an idea pool
+
+`docs/backlog.md` is now the ranking, the decisions and the ideas not yet ready.
+An item becomes a GitHub issue once it has a clear problem, a "done when" and a
+link to its review or PRD; its bullet becomes `→ #N`. The five **Next** items
+are #195–199. **Now** was done apart from the popularity refresh, which was
+already parked and moved to **Parked**. `AGENTS.md` points here. Owner's call: a
+trial on Now/Next first; move the rest only if issues get used.
+
+## Previous Task: #187 — clean up unused Claude skills and agents
 
 Transcripts from 11 Jul to 20 Oct showed `scout`, `implementer` and `/docs-sync`
 never chosen, so they are deleted. `course-discovery` and `popularity-stats`
@@ -15,26 +24,6 @@ skills (16 Sep) had drifted; not tracked, left alone.
 
 `.claude/settings.json` disables the vercel and ralph-loop plugins here: none
 loaded once. Re-enable vercel if its MCP is wanted (#188).
-
-## Previous Task: #182 — route tests for the live `/api/openings` handlers
-
-`tests/unit/openings-routes.test.js` drives `/search-index`, `/fen/:fen/tree`,
-`/fen/:fen/tree/children`, `/random` and `/semantic-search` through supertest on
-a five-opening fixture: status codes (404 for an unknown FEN or a non-FEN
-string, 400 for a query under two characters), the fields the client reads, the
-`?limit` and `?fields=lookup` index variants, and the semantic-search limit cap
-(50) and offset floor. None sets Cache-Control — `vercel.json` owns those
-headers. Every `openings.routes.js` handler now has a route test. Gate
-77/76/80/68 → 81/80/83/72 (measured 82/81/84/73).
-
-Review fix, test first: `/search-index` 400s a `?limit` that is not a positive
-whole number (`-5` had returned all but five openings), and builds the index
-once and slices it per request — the cache had been keyed on the raw `?limit`
-string, one copy per value, never evicted, on one shared TTL clock.
-
-Open: a FEN param containing a literal `%` is decoded twice (Express, then the
-route's `decodeURIComponent`), so `/fen/100%25/tree` 500s instead of 404ing; not
-pinned, since a test would freeze the bug.
 
 Standing: revisit analytics late Nov 2026 with six weeks of the new events;
 search ranking and the video pipeline are paused until then (`archive.md`).

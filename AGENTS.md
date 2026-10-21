@@ -9,7 +9,8 @@ Commands live in `package.json`; the ones that verify your work are under
 `.github/memory-bank/` — read `activeContext.md` first; `progress.md` and
 `archive.md` are history, read on demand. `REVIEW.md` is the review policy: what
 a pass over a diff looks for here, and what to leave alone because CI already
-covers it.
+covers it. Work ready to build is a GitHub issue; `docs/backlog.md` holds the
+ranking, the decisions and the ideas not yet ready, and says when one moves.
 
 Scoped rules load automatically when you work in these directories:
 

@@ -5,6 +5,16 @@ has not. The full reasoning, per-surface assessment and the viability note
 behind every item is in `docs/reviews/2026-09-24-feature-review.md`. This file
 is the ranked list that review produced.
 
+## How this file works
+
+This file is the **idea pool and the order**: the reasoning, the decisions, and
+items not yet defined well enough to build. An item becomes a **GitHub issue**
+once it is ready to start: the problem is clear, there is a "done when", and it
+links to the review or PRD behind it. When it moves, its bullet here becomes a
+one-line link (`→ #123`); the issue is then the only place it is described.
+Shipped items are deleted, not struck through; closed issues and git history
+keep the record.
+
 - **rev 1–3** (2026-07-11) — ranked the 2026-07-02 project review's candidates
   through the substitution, duplication, behavioural-realism, funnel, evidence
   and risk-laddering lenses. They produced the deviation-trainer PRD
@@ -23,6 +33,9 @@ is the ranked list that review produced.
   left.
 - **rev 4.5** (2026-10-13) — style tags tail finished (#179): every variation
   outside the 14 hubs is tagged. Out of **Later**.
+- **rev 5** (2026-10-21) — the **Next** items moved to GitHub issues #195–199;
+  **Now** is done apart from the parked popularity refresh, which moved to
+  **Parked**. Shipped **Now** and **Next** items deleted.
 
 ## The unifying principle
 
@@ -52,42 +65,13 @@ and drill for it.
 
 ---
 
-## Now — credibility and sight `days`
-
-- ~~**Analyse statistics**~~ — done 2026-10-09: no `list[0]` fallback, a floor
-  of **3** games (10/20 would empty the cards for nearly everyone), "won X of Y"
-  on the cards, "needs work" ranked by games lost. _(audit #2)_
-- ~~**Copy and formatting**~~ — done 2026-10-09: billions as `B`, Discover's
-  facet is **Difficulty**, move rows carry a White/Black wins legend. "off-book"
-  stays — the site is an opening book. _(audit #4, #6, #10)_
-- ~~**Explorer scroll**~~ — done 2026-10-09: explorer steps keep the offset.
-  _(audit E1)_
-- ~~**Measurement**~~ — done 2026-09-24; see Enablers. The funnels and the
-  `analyse_run` retention insight are saved in PostHog; what remains is reading
-  them once real traffic has accrued.
-- **Popularity stats refresh:** run the pipeline, and date both game counts on
-  screen. _(audit #5)_
-
 ## Next — close the loop cheaply `1–2 weeks`
 
-- **Personal strip + "Drill this line"** — read `?ref=personal` on the detail
-  page ("You: 8 games as Black, 2 wins, 5 losses"), and add a public
-  `?practice=white|black` that arms practice mode. Slice 2's CTA needs the same
-  parameter. _(review §4.2, audit #1)_
-- **Practice memory** — persist attempts in localStorage
-  (`{fen, colour, attempts, misses, missedAtPly, lastSeen}`) and surface a
-  "Lines to review" shelf. No due dates and no streaks: this is not the parked
-  SRS. _(review §4.1)_
-- **Divergence callout** — one line when a move's _share_ differs sharply
-  between the selected band and masters. Both bands are fetched already, so it
-  costs no extra Lichess requests. Replaces the cut level-check strip. _(review
-  §4.3, audit E4)_
-- **Analyse bridge, rebuilt small** — one line near Practice: "How do you score
-  in this line? Check your games." Replaces the card cut on 2026-07-13.
-- **"Start here" shelf** — 20–30 hand-picked learnable openings leading
-  Discover, split by colour. The cheap half of J5. _(review §4.8, audit #3)_
-- ~~**E2E specs green and in CI**~~ — done 2026-10-10: all 9 pass against
-  `mockApi.ts`, and CI runs them as **Test E2E**.
+- **Personal strip + "Drill this line"** → #195
+- **Practice memory** → #196
+- **Divergence callout** → #197
+- **Analyse bridge, rebuilt small** → #198
+- **"Start here" shelf** → #199
 
 ## Then — the differentiator `M each`
 
@@ -131,6 +115,8 @@ and drill for it.
 
 ## Parked
 
+- **Popularity stats refresh** — run the pipeline, and date both game counts on
+  screen. _(audit #5; parked 2026-10-10)_
 - **Slice 3 — "drill your leaks" SRS** — pending accounts (owner decision
   2026-07-11, unchanged). Practice memory is the stateless interim.
 - **J7 — PWA with offline practice** — only once there is a daily reason to open
@@ -157,9 +143,9 @@ and drill for it.
   `explorer_error` `{status:429}` event, is now readable in PostHog. If it shows
   429s, add a structured log line per upstream fetch and per 429. Solve ladder:
   request a higher limit, rotate tokens, then self-host a games DB.
-- **Popularity stats refresh** — in **Now**, and the source for position facts'
-  club-move shares. Check the pipeline's mode first: the current snapshot's
-  metadata says it was built "API-based".
+- **Popularity stats refresh** — in **Parked**, and the source for position
+  facts' club-move shares. Check the pipeline's mode first: the current
+  snapshot's metadata says it was built "API-based".
 - **Variation-level video classification** — carried over unassessed from rev 3:
   an endorsed pipeline project that also builds validation tooling for J1/J2.
   - ~~**Jev video experiment**~~ — shipped 2026-10-02 as a rejection filter plus
@@ -199,14 +185,13 @@ and drill for it.
 ## Build order
 
 ```
-Now:      stats refresh
-Next:     personal strip + ?practice= · practice memory · divergence callout
-          · bridge line · Start here shelf · E2E in CI
+Next:     personal strip + ?practice= (#195) · practice memory (#196)
+          · divergence callout (#197) · bridge line (#198) · Start here (#199)
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress
 Platform: position graph → detail page on it · position facts → J2 → sparring
 Later:    J1 · family hubs · /board · report card
-Parked:   slice 3 SRS · J7 · side-aware plans
+Parked:   stats refresh · slice 3 SRS · J7 · side-aware plans
 ```
 
 ---

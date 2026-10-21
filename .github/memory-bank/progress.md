@@ -4,8 +4,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
-- **2026-10-20**: #187 — `scout`, `implementer`, `/docs-sync` removed; study and
-  stats skills folded into READMEs; vercel, ralph-loop plugins off here.
+- **2026-10-21**: backlog split — ready items are issues (#195–199),
+  `docs/backlog.md` the order and idea pool. **10-20**: #187 — `scout`,
+  `implementer`, `/docs-sync` removed; skills folded into READMEs; plugins off.
 - **2026-10-18**: #182 — live `/api/openings` handlers route-tested, gate
   81/80/83/72, `/search-index` limit and cache fixed; #181 — dead API routes
   deleted; #183 — mobile card board inset. **10-17**: #166, backend gate.

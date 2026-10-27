@@ -45,6 +45,10 @@ keep the record.
   band data answers on every landing page. Added **Soon** (sparring v0,
   description claim audit, opponent scout), moved "your style" to **Later**,
   re-aimed the deviation trainer at the recurring leak, and added decisions A–F.
+- **rev 6.1** (2026-10-27) — owner agreed decisions A–F. New issues: #204
+  per-band popularity refresh, #205 set your level, #206 replace the difficulty
+  labels, #207 sparring v0, #208 progressive content review. #198 folded into
+  #195; #197 and #188 widened.
 
 ## The unifying principle
 
@@ -87,33 +91,27 @@ a single-game post-mortem.
 
 ## Next — close the loop cheaply `1–2 weeks`
 
-- **Personal strip + "Drill this line"** → #195
+- **Personal strip + "Drill this line"**, with the bridge line as its fallback →
+  #195
 - **Practice memory** → #196
 - **Divergence callout** → #197
-- **Analyse bridge, rebuilt small** → #198
 - **"Start here" shelf** → #199
 
-Rev 6 also evolves two **Next** items: #197 should add "you can stop here at
-your level" where band play scatters (ranked first of 22), and #198 should fold
-into #195 (decision B).
+#197 now includes "you can stop here at your level" (ranked first of 22).
 
 ## Soon — realistic practice and credibility _(rev 6)_
 
 Scores and reasoning: `docs/reviews/2026-10-27-competitive-review.md`, "A scored
 backlog".
 
-- **Sparring v0** _(pending decision A)_ — practice where the opponent's reply
-  is sampled from the selected band's move shares, on the CDN-cached explorer,
-  capped per session, falling back to the named line on the cap or a 429. Order
-  extensions by band share (Chessable's Priority Lines idea). Switches its data
-  source to position facts when they land. Realistic replies are offered by a
-  subset of trainers (LiChess Tools, openingtrainer.com, Chessreps, Chessboard
-  Magic, Chessly's Maia bot), none of them on free mobile web.
-- **Description claim audit** _(new; decision E)_ — check the LLM descriptions
-  on the pages Google actually lands on: lines replay legally, piece-and-square
-  claims hold, Jev as a first pass, human-reviewed fixes. The briefs found wrong
-  claims in 32 of 105; a 2026 benchmark found 22% of an untooled frontier
-  model's chess claims wrong. Extends the Enabler below.
+- **Sparring v0** → #207
+- **Progressive content review** of the pages people visit, 50–100 per batch,
+  with a review ledger → #208
+- **Popularity refresh, per rating band and dated** → #204
+- **Set your level on the landing page and search** → #205 (needs #204 for
+  ranking)
+- **Replace Beginner/Intermediate/Advanced with measures from real games** →
+  #206 (needs #204)
 - **Opponent scout** — Analyse framed for "who am I playing on Thursday?": what
   they play per colour, linked to pages and to "Drill this line" in your colour.
   OpeningTree, the old favourite, is discontinued. **Gate:** schedule only if
@@ -154,9 +152,10 @@ backlog".
   joined to `style-tags.json`. Unique data, but a crowded concept (Chessiverse,
   Chess DNA, Chessigma) with no demand signal, and the level axis is 92%
   "intermediate".
-- **Maia-2 fallback for sparring** _(rev 6; decision F)_ — a small in-browser
-  rating-conditioned move model, lazy-loaded on the practice board only when the
-  explorer runs thin, labelled as a model's prediction. Never writes text.
+- **Maia-2 fallback for sparring** _(rev 6; decision F: Maia-2)_ — a small
+  in-browser rating-conditioned move model, lazy-loaded on the practice board
+  only when the explorer runs thin, labelled as a model's prediction. Never
+  writes text.
 - **Model games** _(rev 6)_ — guess the move through the explorer's notable
   games, as Chessbook does; PGNs need the Lichess game-export API. After
   sparring v0, which shares the board.
@@ -175,11 +174,6 @@ backlog".
 
 ## Parked
 
-- **Popularity stats refresh** — run the pipeline, and date both game counts on
-  screen. _(audit #5; parked 2026-10-10)_ Rev 6 recommends un-parking it
-  (decision D): counts are 15 months old, undated and inconsistent between
-  surfaces, beside competitors advertising September 2026 data. One pass costs
-  at least eight hours of the shared token, so run it off-peak.
 - **Slice 3 — "drill your leaks" SRS** — pending accounts (owner decision
   2026-07-11, unchanged). Practice memory is the stateless interim.
 - **J7 — PWA with offline practice** — only once there is a daily reason to open
@@ -206,9 +200,9 @@ backlog".
   `explorer_error` `{status:429}` event, is now readable in PostHog. If it shows
   429s, add a structured log line per upstream fetch and per 429. Solve ladder:
   request a higher limit, rotate tokens, then self-host a games DB.
-- **Popularity stats refresh** — in **Parked**, and the source for position
-  facts' club-move shares. Check the pipeline's mode first: the current
-  snapshot's metadata says it was built "API-based".
+- **Popularity stats refresh** — now #204, and the source for position facts'
+  club-move shares. Check the pipeline's mode first: the current snapshot's
+  metadata says it was built "API-based".
 - **Variation-level video classification** — carried over unassessed from rev 3:
   an endorsed pipeline project that also builds validation tooling for J1/J2.
   - ~~**Jev video experiment**~~ — shipped 2026-10-02 as a rejection filter plus
@@ -244,31 +238,32 @@ backlog".
    per-position store.
 5. ~~Measurement~~ — **decided 2026-09-24**: Vercel page views plus PostHog
    events.
-6. **A. Sparring v0** _(rev 6)_: allow capped, CDN-cached explorer calls in
-   practice now (recommended), or keep sparring behind position facts.
-7. **B. Bridge line** _(rev 6)_: fold #198 into #195 as the strip's fallback
-   state (recommended), or keep it separate.
-8. **C. Strategy** _(rev 6)_: first-visit value on the detail page
-   (recommended), or the Analyse-led loop. Re-check after the November analytics
+6. ~~**A. Sparring v0**~~ — **decided 2026-10-27**: capped, CDN-cached explorer
+   calls now → #207.
+7. ~~**B. Bridge line**~~ — **decided 2026-10-27**: folded into #195.
+8. ~~**C. Strategy**~~ — **decided 2026-10-27**: first-visit value on the detail
+   page ahead of the Analyse-led loop; re-check after the November analytics
    revisit.
-9. **D. Popularity refresh** _(rev 6)_: un-park and date the counts
-   (recommended), or keep parked.
-10. **E. Description audit** _(rev 6)_: spend usage auditing published prose on
-    the most-landed pages (recommended) before generating anything new.
-11. **F. Maia licence** _(rev 6)_: Maia-2 (MIT code; confirm the weights'
-    licence, recommended) or Maia-3 (AGPL-3.0 per its repo).
+9. ~~**D. Popularity refresh**~~ — **decided 2026-10-27**: un-parked, per band
+   and dated → #204.
+10. ~~**E. Description audit**~~ — **decided 2026-10-27**: progressive review of
+    visited pages → #208.
+11. ~~**F. Maia licence**~~ — **decided 2026-10-27**: Maia-2, after confirming
+    the weights' licence; Later, behind #207.
 
 ## Build order
 
 ```
-Next:     personal strip + ?practice= (#195) · practice memory (#196)
-          · divergence callout (#197) · bridge line (#198) · Start here (#199)
-Soon:     sparring v0 · description claim audit · opponent scout (gated)
+Next:     personal strip + ?practice= + bridge (#195) · practice memory (#196)
+          · divergence callout (#197) · Start here (#199)
+Soon:     sparring v0 (#207) · content review (#208) · per-band stats (#204)
+          → your level (#205) → difficulty replaced (#206) · opponent scout
+          (gated)
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress
 Platform: position graph → detail page on it · position facts → J2 → sparring
 Later:    your style · Maia fallback · model games · grounded why · J1 · family hubs · /board · report card
-Parked:   stats refresh · slice 3 SRS · J7 · side-aware plans
+Parked:   slice 3 SRS · J7 · side-aware plans
 ```
 
 ---

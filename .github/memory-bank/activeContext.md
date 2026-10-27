@@ -9,9 +9,11 @@
 flags prep deviations, so the "your games" moat is weak; players' top complaint
 is drilling lines they never meet at their level, which our band data answers on
 every landing page. Top of 22 scored: #197 (+ "you can stop here"), sparring v0,
-aggregate-led deviation trainer, #196, #195 (+ #198). Backlog rev 6 adds Soon
-(sparring v0, description claim audit, opponent scout gated on `analyse_run`)
-and decisions A–F. Web fetches were blocked; evidence is search snippets.
+aggregate-led deviation trainer, #196, #195 (+ #198). Backlog rev 6 adds Soon;
+the owner agreed decisions A–F the same day: issues #204 (per-band popularity),
+#205 (set your level), #206 (replace difficulty labels), #207 (sparring v0),
+#208 (progressive content review of visited pages); #198 folded into #195. Web
+fetches were blocked; evidence is search snippets.
 
 ## Previous Task: backlog split into issues and an idea pool
 

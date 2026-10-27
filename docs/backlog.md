@@ -37,11 +37,14 @@ keep the record.
 - **rev 5** (2026-10-21) — the **Next** items moved to GitHub issues #195–199;
   **Now** is done apart from the parked popularity refresh, which moved to
   **Parked**. Shipped **Now** and **Next** items deleted.
-- **rev 6** (2026-10-27) — a fresh competitive review
-  (`docs/reviews/2026-10-27-competitive-review.md`) scored every candidate. Paid
-  apps (ChessAtlas, Chessbook) now flag where your games left your prep, so the
-  moat is narrower than the principle below says. Added sparring v0, opponent
-  scout and "your style" under **Soon**; decisions A and B.
+- **rev 6** (2026-10-27) — a deep competitive review
+  (`docs/reviews/2026-10-27-competitive-review.md`, notes alongside) scored 22
+  candidates. Chess.com Game Review now flags where a game left your prep, so
+  the "your games" moat is weaker than the principle below says; the strongest
+  player complaint is drilling lines they never meet at their level, which our
+  band data answers on every landing page. Added **Soon** (sparring v0,
+  description claim audit, opponent scout), moved "your style" to **Later**,
+  re-aimed the deviation trainer at the recurring leak, and added decisions A–F.
 
 ## The unifying principle
 
@@ -51,10 +54,16 @@ drilling, and YouTube has better explanations, each one click away. No free tool
 walks _your_ games, finds _your_ recurring leak, and hands you the page, video
 and drill for it.
 
-_Rev 6 qualification:_ paid apps now do the "walks your games" half (ChessAtlas
-and Chessbook flag the move you left your repertoire). What stays ours is
-**free, no account, no repertoire to build first, and a full page for every
-finding**. Build to those four, or the trainer is a weaker copy.
+_Rev 6 qualification:_ the "walks your games" half is no longer rare. ChessAtlas
+and Chessbook flag where imported games left a repertoire, and since September
+2026 Chess.com Game Review does it too; its free tier already marks the last
+book move of one game a day. "Free, no account" does not set a trainer apart
+either (Chess Prep Pro, Listudy, Chessdriller). What stays ours is the **landing
+page**: any named opening, including the obscure ones Google sends people to,
+with what players at your rating actually play from it. Rev 6 therefore puts
+first-visit value on that page ahead of the Analyse-led loop (decision C), and
+the deviation trainer must lead with the leak that recurs across many games, not
+a single-game post-mortem.
 
 ## Rev 4 findings
 
@@ -84,28 +93,38 @@ finding**. Build to those four, or the trainer is a weaker copy.
 - **Analyse bridge, rebuilt small** → #198
 - **"Start here" shelf** → #199
 
-## Soon — realistic practice and cheap hooks _(rev 6)_
+Rev 6 also evolves two **Next** items: #197 should add "you can stop here at
+your level" where band play scatters (ranked first of 22), and #198 should fold
+into #195 (decision B).
 
-Scores and reasoning: `docs/reviews/2026-10-27-competitive-review.md` §5.
+## Soon — realistic practice and credibility _(rev 6)_
+
+Scores and reasoning: `docs/reviews/2026-10-27-competitive-review.md`, "A scored
+backlog".
 
 - **Sparring v0** _(pending decision A)_ — practice where the opponent's reply
   is sampled from the selected band's move shares, on the CDN-cached explorer,
-  capped per session, falling back to the named line on the cap or a 429.
-  Switches its data source to position facts when they land. Every competitor
-  that does practice already plays realistic replies; ours plays one fixed line.
+  capped per session, falling back to the named line on the cap or a 429. Order
+  extensions by band share (Chessable's Priority Lines idea). Switches its data
+  source to position facts when they land. Realistic replies are offered by a
+  subset of trainers (LiChess Tools, openingtrainer.com, Chessreps, Chessboard
+  Magic, Chessly's Maia bot), none of them on free mobile web.
+- **Description claim audit** _(new; decision E)_ — check the LLM descriptions
+  on the pages Google actually lands on: lines replay legally, piece-and-square
+  claims hold, Jev as a first pass, human-reviewed fixes. The briefs found wrong
+  claims in 32 of 105; a 2026 benchmark found 22% of an untooled frontier
+  model's chess claims wrong. Extends the Enabler below.
 - **Opponent scout** — Analyse framed for "who am I playing on Thursday?": what
   they play per colour, linked to pages and to "Drill this line" in your colour.
-  Analyse already takes any username.
-- **Your style, from your games** — Analyse counts joined to `style-tags.json`
-  ("the openings you choose as Black are mostly solid"), with two or three
-  suggestions from the "Start here" list. Built on the one asset no competitor
-  has.
+  OpeningTree, the old favourite, is discontinued. **Gate:** schedule only if
+  the late-November analytics revisit shows real `analyse_run` volume.
 
 ## Then — the differentiator `M each`
 
-- **Slice 2 — deviation trainer v1**, as specified in the PRD §6. **J3,
-  paste-a-game post-mortem, ships as its public face**: the same book-walk code,
-  no username needed, and it lives where "Paste a game" already is.
+- **Slice 2 — deviation trainer v1**, as specified in the PRD §6, **led by the
+  recurring leak across many games** (rev 6: a single-game "where did I leave
+  book" is now close to a free Chess.com feature). J3, paste-a-game, is a
+  secondary entry point rather than the public face.
 - **Repertoire from your games** _(pending decision 3)_ — a move tree of what
   you actually play, which fills Repertoire by colour, flags inconsistent move
   orders, shows coverage gaps against what opponents really play, and exports
@@ -131,6 +150,13 @@ Scores and reasoning: `docs/reviews/2026-10-27-competitive-review.md` §5.
 
 ## Later
 
+- **Your style, from your games** _(rev 6, demoted from Soon)_ — Analyse counts
+  joined to `style-tags.json`. Unique data, but a crowded concept (Chessiverse,
+  Chess DNA, Chessigma) with no demand signal, and the level axis is 92%
+  "intermediate".
+- **Maia-2 fallback for sparring** _(rev 6; decision F)_ — a small in-browser
+  rating-conditioned move model, lazy-loaded on the practice board only when the
+  explorer runs thin, labelled as a model's prediction. Never writes text.
 - **Model games** _(rev 6)_ — guess the move through the explorer's notable
   games, as Chessbook does; PGNs need the Lichess game-export API. After
   sparring v0, which shares the board.
@@ -150,7 +176,10 @@ Scores and reasoning: `docs/reviews/2026-10-27-competitive-review.md` §5.
 ## Parked
 
 - **Popularity stats refresh** — run the pipeline, and date both game counts on
-  screen. _(audit #5; parked 2026-10-10)_
+  screen. _(audit #5; parked 2026-10-10)_ Rev 6 recommends un-parking it
+  (decision D): counts are 15 months old, undated and inconsistent between
+  surfaces, beside competitors advertising September 2026 data. One pass costs
+  at least eight hours of the shared token, so run it off-peak.
 - **Slice 3 — "drill your leaks" SRS** — pending accounts (owner decision
   2026-07-11, unchanged). Practice memory is the stateless interim.
 - **J7 — PWA with offline practice** — only once there is a daily reason to open
@@ -219,17 +248,26 @@ Scores and reasoning: `docs/reviews/2026-10-27-competitive-review.md` §5.
    practice now (recommended), or keep sparring behind position facts.
 7. **B. Bridge line** _(rev 6)_: fold #198 into #195 as the strip's fallback
    state (recommended), or keep it separate.
+8. **C. Strategy** _(rev 6)_: first-visit value on the detail page
+   (recommended), or the Analyse-led loop. Re-check after the November analytics
+   revisit.
+9. **D. Popularity refresh** _(rev 6)_: un-park and date the counts
+   (recommended), or keep parked.
+10. **E. Description audit** _(rev 6)_: spend usage auditing published prose on
+    the most-landed pages (recommended) before generating anything new.
+11. **F. Maia licence** _(rev 6)_: Maia-2 (MIT code; confirm the weights'
+    licence, recommended) or Maia-3 (AGPL-3.0 per its repo).
 
 ## Build order
 
 ```
 Next:     personal strip + ?practice= (#195) · practice memory (#196)
           · divergence callout (#197) · bridge line (#198) · Start here (#199)
-Soon:     sparring v0 · opponent scout · your style
+Soon:     sparring v0 · description claim audit · opponent scout (gated)
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress
 Platform: position graph → detail page on it · position facts → J2 → sparring
-Later:    model games · grounded why · J1 · family hubs · /board · report card
+Later:    your style · Maia fallback · model games · grounded why · J1 · family hubs · /board · report card
 Parked:   stats refresh · slice 3 SRS · J7 · side-aware plans
 ```
 

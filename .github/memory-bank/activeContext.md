@@ -2,17 +2,16 @@
 
 **Date:** 2026-10-27
 
-## Current Task: fresh competitive review, scored
+## Current Task: deep competitive review, scored
 
-`docs/reviews/2026-10-27-competitive-review.md`: our USPs, the October 2026
-market (Chessbook, ChessAtlas, Chessreps, Chessable, Lichess + extensions,
-chess.com, Take Take Take, Chessiverse) and 19 scored candidates. Headline: paid
-apps now flag where your games left your prep, so our edge is free, no account,
-no repertoire needed, and a page per finding. Practice (one fixed line, no
-memory) is furthest behind the market. Backlog rev 6 adds **Soon**: sparring v0,
-opponent scout, "your style". Comments on #195–199 and #188. Decisions A
-(sparring on capped cached explorer calls) and B (fold #198 into #195) await the
-owner.
+`docs/reviews/2026-10-27-competitive-review.md` (six research strands, notes in
+`…-notes/`) replaced a same-day first pass. Findings: Chess.com Game Review now
+flags prep deviations, so the "your games" moat is weak; players' top complaint
+is drilling lines they never meet at their level, which our band data answers on
+every landing page. Top of 22 scored: #197 (+ "you can stop here"), sparring v0,
+aggregate-led deviation trainer, #196, #195 (+ #198). Backlog rev 6 adds Soon
+(sparring v0, description claim audit, opponent scout gated on `analyse_run`)
+and decisions A–F. Web fetches were blocked; evidence is search snippets.
 
 ## Previous Task: backlog split into issues and an idea pool
 

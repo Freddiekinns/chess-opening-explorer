@@ -112,6 +112,10 @@ backlog".
   ranking)
 - **Replace Beginner/Intermediate/Advanced with measures from real games** →
   #206 (needs #204)
+- **Make unnamed continuations clickable** (the "continuation links first" step
+  of decision 2) → #209
+- **Search: tell apart openings that share a name** (five "Najdorf Variation"
+  rows) → #210
 - **Opponent scout** — Analyse framed for "who am I playing on Thursday?": what
   they play per colour, linked to pages and to "Drill this line" in your colour.
   OpeningTree, the old favourite, is discontinued. **Gate:** schedule only if
@@ -257,7 +261,8 @@ backlog".
 Next:     personal strip + ?practice= + bridge (#195) · practice memory (#196)
           · divergence callout (#197) · Start here (#199)
 Soon:     sparring v0 (#207) · content review (#208) · per-band stats (#204)
-          → your level (#205) → difficulty replaced (#206) · opponent scout
+          → your level (#205) → difficulty replaced (#206) · continuation
+          links (#209) · same-name search results (#210) · opponent scout
           (gated)
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress

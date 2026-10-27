@@ -1,9 +1,10 @@
-# Feature Backlog — assessed and ranked (2026-09-24, rev 4)
+# Feature Backlog — assessed and ranked (2026-10-27, rev 6)
 
 Rev 4 re-assesses rev 3 against what has actually shipped since July, and what
 has not. The full reasoning, per-surface assessment and the viability note
 behind every item is in `docs/reviews/2026-09-24-feature-review.md`. This file
-is the ranked list that review produced.
+is the ranked list that review produced. Rev 6 adds the market view and the
+scores from `docs/reviews/2026-10-27-competitive-review.md`.
 
 ## How this file works
 
@@ -36,6 +37,11 @@ keep the record.
 - **rev 5** (2026-10-21) — the **Next** items moved to GitHub issues #195–199;
   **Now** is done apart from the parked popularity refresh, which moved to
   **Parked**. Shipped **Now** and **Next** items deleted.
+- **rev 6** (2026-10-27) — a fresh competitive review
+  (`docs/reviews/2026-10-27-competitive-review.md`) scored every candidate. Paid
+  apps (ChessAtlas, Chessbook) now flag where your games left your prep, so the
+  moat is narrower than the principle below says. Added sparring v0, opponent
+  scout and "your style" under **Soon**; decisions A and B.
 
 ## The unifying principle
 
@@ -44,6 +50,11 @@ to learning content.** Lichess has better raw stats, Chessable has better
 drilling, and YouTube has better explanations, each one click away. No free tool
 walks _your_ games, finds _your_ recurring leak, and hands you the page, video
 and drill for it.
+
+_Rev 6 qualification:_ paid apps now do the "walks your games" half (ChessAtlas
+and Chessbook flag the move you left your repertoire). What stays ours is
+**free, no account, no repertoire to build first, and a full page for every
+finding**. Build to those four, or the trainer is a weaker copy.
 
 ## Rev 4 findings
 
@@ -72,6 +83,23 @@ and drill for it.
 - **Divergence callout** → #197
 - **Analyse bridge, rebuilt small** → #198
 - **"Start here" shelf** → #199
+
+## Soon — realistic practice and cheap hooks _(rev 6)_
+
+Scores and reasoning: `docs/reviews/2026-10-27-competitive-review.md` §5.
+
+- **Sparring v0** _(pending decision A)_ — practice where the opponent's reply
+  is sampled from the selected band's move shares, on the CDN-cached explorer,
+  capped per session, falling back to the named line on the cap or a 429.
+  Switches its data source to position facts when they land. Every competitor
+  that does practice already plays realistic replies; ours plays one fixed line.
+- **Opponent scout** — Analyse framed for "who am I playing on Thursday?": what
+  they play per colour, linked to pages and to "Drill this line" in your colour.
+  Analyse already takes any username.
+- **Your style, from your games** — Analyse counts joined to `style-tags.json`
+  ("the openings you choose as Black are mostly solid"), with two or three
+  suggestions from the "Start here" list. Built on the one asset no competitor
+  has.
 
 ## Then — the differentiator `M each`
 
@@ -103,6 +131,12 @@ and drill for it.
 
 ## Later
 
+- **Model games** _(rev 6)_ — guess the move through the explorer's notable
+  games, as Chessbook does; PGNs need the Lichess game-export API. After
+  sparring v0, which shares the board.
+- **Grounded "why" from position facts** _(rev 6)_ — engine facts in, an LLM
+  only words them, every line replays legally. The architecture the credible AI
+  coaches use. After position facts.
 - **J1 — per-move "why" annotations.** `courses.json` holds study links only, so
   mining study comments needs a pipeline change plus a licence and attribution
   check.
@@ -181,16 +215,21 @@ and drill for it.
    per-position store.
 5. ~~Measurement~~ — **decided 2026-09-24**: Vercel page views plus PostHog
    events.
+6. **A. Sparring v0** _(rev 6)_: allow capped, CDN-cached explorer calls in
+   practice now (recommended), or keep sparring behind position facts.
+7. **B. Bridge line** _(rev 6)_: fold #198 into #195 as the strip's fallback
+   state (recommended), or keep it separate.
 
 ## Build order
 
 ```
 Next:     personal strip + ?practice= (#195) · practice memory (#196)
           · divergence callout (#197) · bridge line (#198) · Start here (#199)
+Soon:     sparring v0 · opponent scout · your style
 Then:     deviation trainer v1 (+ J3 public face) · repertoire from your games
           · run-over-run progress
 Platform: position graph → detail page on it · position facts → J2 → sparring
-Later:    J1 · family hubs · /board · report card
+Later:    model games · grounded why · J1 · family hubs · /board · report card
 Parked:   stats refresh · slice 3 SRS · J7 · side-aware plans
 ```
 

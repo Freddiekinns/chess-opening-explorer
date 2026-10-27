@@ -1387,3 +1387,17 @@ misreads "solid response to e4", "solid e4 openings", "… for white" and
 `search-categories` still read the old tags and have no caller; saved repertoire
 entries keep their old level. A protected preview shows Vercel's login on a
 direct `/opening/` load (middleware fetches `/index.html`).
+
+## Clean up unused Claude skills and agents (2026-10-21, #187)
+
+Transcripts from 11 Jul to 20 Oct showed `scout`, `implementer` and `/docs-sync`
+never chosen, so they are deleted. `course-discovery` and `popularity-stats`
+never loaded because nothing touched their pipelines; their unique content
+(rematch staleness, the shipped stats' provenance) moved into
+`tools/*/README.md`. `CLAUDE.md` now routes `test:all` and builds to `verifier`
+(the main session had run them inline ~25 times to its 3), and `AGENTS.md` gates
+new skills on the third repeat. Untracked `.agents/` and `.codex/` copies of the
+skills (16 Sep) had drifted; not tracked, left alone.
+
+`.claude/settings.json` disables the vercel and ralph-loop plugins here: none
+loaded once. Re-enable vercel if its MCP is wanted (#188).

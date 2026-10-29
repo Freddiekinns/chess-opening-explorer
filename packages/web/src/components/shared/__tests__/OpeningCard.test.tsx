@@ -97,6 +97,19 @@ describe('OpeningCard name qualifier', () => {
     }
   );
 
+  it.each(['card', 'list-item'] as const)(
+    'leaves it off the %s variant when the moves line already shows the whole line',
+    (variant) => {
+      // "King's Pawn Game · 1.e4" above a moves line reading "1. e4" says it twice.
+      renderCard({
+        opening: { ...opening, name: "King's Pawn Game", moves: '1. e4', name_qualifier: '1.e4' },
+        variant,
+      });
+
+      expect(screen.getByRole('heading')).toHaveTextContent(/^King's Pawn Game$/);
+    }
+  );
+
   it('adds nothing to a name that is its own', () => {
     renderCard();
 

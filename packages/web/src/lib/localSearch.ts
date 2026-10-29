@@ -42,6 +42,8 @@ export interface Opening {
   white_win_rate?: number;
   black_win_rate?: number;
   draw_rate?: number;
+  /** Set by the server only when other openings share this name: the move that reaches this one. */
+  name_qualifier?: string;
   /** Attached by the server so the caller can tell a tie from a clear winner. */
   searchScore?: number;
 }

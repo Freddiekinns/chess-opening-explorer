@@ -37,6 +37,8 @@ export interface BrowseFilters {
 export interface BrowseItem {
   fen: string;
   name: string;
+  /** Set only when other openings share this name: the move that reaches this one. */
+  name_qualifier?: string;
   eco: string;
   moves: string;
   family_id: string;

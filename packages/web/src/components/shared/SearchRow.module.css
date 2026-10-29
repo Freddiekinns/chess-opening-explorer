@@ -54,7 +54,30 @@
   gap: var(--space-0-5);
 }
 
+/* Name and qualifier on one line. The name gives way, never the qualifier: on
+   the long names that share a name ("Sicilian Defense: Najdorf Variation") the
+   qualifier is the only part that tells the rows apart. */
+.rowTitle {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1-5);
+  min-width: 0;
+}
+
+.rowQualifier {
+  flex-shrink: 0;
+  font-size: var(--text-xs);
+  font-family: var(--font-family-mono);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.rowQualifier::before {
+  content: '· ';
+}
+
 .rowName {
+  min-width: 0;
   font-size: var(--text-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);

@@ -78,3 +78,28 @@ describe('OpeningCard result bars', () => {
     expect(screen.queryByText('White 0%')).not.toBeInTheDocument();
   });
 });
+
+describe('OpeningCard name qualifier', () => {
+  const najdorf = {
+    ...opening,
+    name: 'Sicilian Defense: Najdorf Variation',
+    eco: 'B96',
+    moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4',
+    name_qualifier: '7.f4',
+  };
+
+  it.each(['card', 'list-item'] as const)(
+    'tells a shared name apart on the %s variant',
+    (variant) => {
+      renderCard({ opening: najdorf, variant });
+
+      expect(screen.getByRole('heading')).toHaveTextContent(/Najdorf Variation.*7\.f4/);
+    }
+  );
+
+  it('adds nothing to a name that is its own', () => {
+    renderCard();
+
+    expect(screen.getByRole('heading')).toHaveTextContent(/^Sicilian Defence$/);
+  });
+});

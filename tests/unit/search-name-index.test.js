@@ -89,6 +89,35 @@ describe('NameIndex — ranking', () => {
     expect(sicilians.indexOf('Sicilian Defense')).toBeLessThan(sicilians.indexOf('Sicilian'));
   });
 
+  it('leads the Najdorfs with the line itself, because it is the most played', () => {
+    // Five positions, one name. Each step down the line is played less than
+    // the one before it, so popularity alone already puts the shallowest
+    // first. Pinned rather than enforced: in 192 of the corpus's shared-name
+    // groups a deeper transposition is the more played, and that one leads.
+    const line = '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6';
+    const najdorf = 'Sicilian Defense: Najdorf Variation';
+    const najdorfs = new NameIndex([
+      {
+        fen: 'b98',
+        name: najdorf,
+        moves: `${line} 6. Bg5 e6 7. f4 Be7`,
+        games_analyzed: 1_247_877,
+      },
+      { fen: 'b94', name: najdorf, moves: `${line} 6. Bg5`, games_analyzed: 6_011_780 },
+      { fen: 'b96', name: najdorf, moves: `${line} 6. Bg5 e6 7. f4`, games_analyzed: 1_992_132 },
+      { fen: 'b90', name: najdorf, moves: line, games_analyzed: 24_382_735 },
+      { fen: 'b95', name: najdorf, moves: `${line} 6. Bg5 e6`, games_analyzed: 4_085_939 },
+    ]);
+
+    expect(najdorfs.search('najdorf').map((opening) => opening.fen)).toEqual([
+      'b90',
+      'b94',
+      'b95',
+      'b96',
+      'b98',
+    ]);
+  });
+
   it('says nothing rather than guessing, so the caller can try meaning and spelling', () => {
     expect(index.search('zzzz')).toEqual([]);
     expect(index.search('aggressive openings')).toEqual([]);

@@ -3,6 +3,7 @@ const path = require('path');
 const pathResolver = require('../utils/path-resolver');
 const { getGlobalCache } = require('./cache-service');
 const styleTags = require('./style-tags-service');
+const { nameQualifiers } = require('./name-qualifiers');
 
 // A literal require, never a computed path: this is the first runtime API code
 // to read from config/, and Vercel's file tracer cannot follow a path built at
@@ -118,6 +119,11 @@ class BrowseService {
               avg_rating: stats && stats.avg_rating != null ? stats.avg_rating : null,
             });
           }
+        }
+
+        const qualifiers = nameQualifiers(index);
+        for (const entry of index) {
+          if (qualifiers.has(entry.fen)) entry.name_qualifier = qualifiers.get(entry.fen);
         }
 
         console.warn(`[cold-start] browse index built in ${Date.now() - start}ms (${index.length})`);
@@ -279,6 +285,7 @@ class BrowseService {
     return {
       fen: entry.fen,
       name: entry.name,
+      ...(entry.name_qualifier && { name_qualifier: entry.name_qualifier }),
       eco: entry.eco,
       moves: entry.moves,
       family_id: entry.family_id,

@@ -58,10 +58,13 @@ the token the route 503s and the Win Rate panel falls back to snapshot stats.
 
 Search responses are projected down to the fields a row draws by
 `toSearchResult` in `openings.routes.js` — fen, name, eco, moves,
-games_analyzed, searchScore. Twenty whole opening records was 55 KB, mostly
-`analysis_json` descriptions, to draw twenty lines of name and ECO code — on
-every keystroke, mostly on phones. It is now 4.4 KB. **Do not return raw
-service results from a search route.**
+games_analyzed, name_qualifier, searchScore. `name_qualifier` is set only on
+openings whose name another shares (`services/name-qualifiers.js`); the search
+index and Discover items carry it too, so the client never derives it.
+
+Twenty whole opening records was 55 KB, mostly `analysis_json` descriptions, to
+draw twenty lines of name and ECO code — on every keystroke, mostly on phones.
+It is now 4.4 KB. **Do not return raw service results from a search route.**
 
 ## Data
 

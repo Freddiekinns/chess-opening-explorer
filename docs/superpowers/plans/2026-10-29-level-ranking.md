@@ -59,9 +59,9 @@ closes #204, since #204 needs both surfaces on the same numbers), then Phase 3
 
 ## Decisions (made, flag if you disagree)
 
-- **Window: 3 months recommended** (owner to confirm), from Phase 0's coverage
-  numbers below. One file in, one summary out; adding a month never redownloads
-  old ones.
+- **Window: the 3 most recent published months** (owner confirmed 2026-10-30),
+  from Phase 0's coverage numbers below; each new month drops the oldest. One
+  file in, one summary out; adding a month never redownloads old ones.
 - **The detail page moves off the explorer for Lichess bands.** Phase 0 found
   the explorer has no monthly data after spring 2026 (1.e4 reads 0 from 2026-06;
   2026-03 has 34.9M), so pinning it to our window would blank the detail page.

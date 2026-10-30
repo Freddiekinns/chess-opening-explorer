@@ -31,10 +31,20 @@ def game(
 
 
 def run(pgn: str, targets: List[str]) -> List[Call]:
+    """The callback's (key, band, result, next_san); the rating has its own test."""
     calls: List[Call] = []
-    processor = BandGameProcessor(set(targets), lambda *args: calls.append(args))
+    processor = BandGameProcessor(set(targets), lambda *args: calls.append(args[:4]))
     processor.process_game(pgn)
     return calls
+
+
+def test_callback_receives_average_rating() -> None:
+    ratings: List[float] = []
+    processor = BandGameProcessor(
+        {AFTER_E4_E5_NF3}, lambda *args: ratings.append(args[4])
+    )
+    processor.process_game(game("1. e4 e5 2. Nf3", white=1601, black=1500))
+    assert ratings == [1550.5]
 
 
 def test_position_key_ignores_move_counters() -> None:

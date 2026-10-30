@@ -8,9 +8,9 @@ KEY = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -"
 
 def test_results_tallied() -> None:
     summary = MonthlySummary("2026-09")
-    summary.add(KEY, "1400", "1-0", "e4")
-    summary.add(KEY, "1400", "1/2-1/2", "e4")
-    summary.add(KEY, "1400", "0-1", "d4")
+    summary.add(KEY, "1400", "1-0", "e4", 1500)
+    summary.add(KEY, "1400", "1/2-1/2", "e4", 1500)
+    summary.add(KEY, "1400", "0-1", "d4", 1500)
     band = summary.to_dict()["positions"][KEY]["1400"]
     assert (band["g"], band["w"], band["d"], band["b"]) == (3, 1, 1, 1)
     assert band["moves"]["e4"] == {"g": 2, "w": 1, "d": 1, "b": 0}
@@ -19,7 +19,7 @@ def test_results_tallied() -> None:
 
 def test_game_ending_on_position_counts_without_a_move() -> None:
     summary = MonthlySummary("2026-09")
-    summary.add(KEY, "1400", "1-0", None)
+    summary.add(KEY, "1400", "1-0", None, 1500)
     band = summary.to_dict()["positions"][KEY]["1400"]
     assert band["g"] == 1 and band["moves"] == {}
 
@@ -29,7 +29,7 @@ def test_moves_trimmed_to_most_played() -> None:
     sans = [f"m{i}" for i in range(MAX_MOVES + 3)]
     for count, san in enumerate(sans, start=1):
         for _ in range(count):
-            summary.add(KEY, "1800", "1-0", san)
+            summary.add(KEY, "1800", "1-0", san, 1500)
     moves = summary.to_dict()["positions"][KEY]["1800"]["moves"]
     assert MAX_MOVES == 12
     assert set(moves) == set(sans[-MAX_MOVES:])
@@ -39,16 +39,27 @@ def test_moves_trimmed_to_most_played() -> None:
     )
 
 
+def test_rating_total_recorded_and_merged() -> None:
+    left, right = MonthlySummary("2026-09"), MonthlySummary("2026-09")
+    left.add(KEY, "1400", "1-0", "e4", 1500.5)
+    right.add(KEY, "1400", "0-1", "d4", 1600.0)
+    left.merge(right)
+    band = left.to_dict()["positions"][KEY]["1400"]
+    # The total, so averages stay exact across months: r / g.
+    assert band["r"] == 3100 and band["g"] == 2
+    assert "r" not in band["moves"]["e4"]
+
+
 def test_empty_band_omitted() -> None:
     summary = MonthlySummary("2026-09")
-    summary.add(KEY, "2200", "1-0", "e4")
+    summary.add(KEY, "2200", "1-0", "e4", 1500)
     assert list(summary.to_dict()["positions"][KEY]) == ["2200"]
 
 
 def test_merge_adds_counts() -> None:
     left, right = MonthlySummary("2026-09"), MonthlySummary("2026-09")
-    left.add(KEY, "1400", "1-0", "e4")
-    right.add(KEY, "1400", "0-1", "e4")
+    left.add(KEY, "1400", "1-0", "e4", 1500)
+    right.add(KEY, "1400", "0-1", "e4", 1500)
     right.games_read = 5
     left.merge(right)
     assert left.to_dict()["positions"][KEY]["1400"]["moves"]["e4"] == {
@@ -62,7 +73,7 @@ def test_merge_adds_counts() -> None:
 
 def test_write_records_month_and_speeds(tmp_path: Path) -> None:
     summary = MonthlySummary("2026-09")
-    summary.add(KEY, "1400", "1-0", "e4")
+    summary.add(KEY, "1400", "1-0", "e4", 1500)
     path = tmp_path / "2026-09.json"
     summary.write(path)
     data = json.loads(path.read_text(encoding="utf-8"))

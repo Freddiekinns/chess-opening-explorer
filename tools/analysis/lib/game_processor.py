@@ -275,13 +275,14 @@ class BandGameProcessor(GameProcessor):
     Matches positions by position_key, so transpositions count, and keeps
     only blitz, rapid and classical games. Each position counts once per game
     even if the game repeats it. The callback receives
-    (key, band, result, next_san); next_san is None when the game ends there.
+    (key, band, result, next_san, avg_rating); next_san is None when the game
+    ends there.
     """
 
     def __init__(
         self,
         target_fens: Set[str],
-        stats_update_callback: Callable[[str, str, str, Optional[str]], None],
+        stats_update_callback: Callable[[str, str, str, Optional[str], float], None],
         max_plies: int = MAX_BOOK_PLIES,
     ):
         super().__init__(set(), stats_update_callback)
@@ -305,7 +306,8 @@ class BandGameProcessor(GameProcessor):
         black_elo = self._safe_int(headers.get('BlackElo', ''))
         if not white_elo or not black_elo:
             return
-        band = band_of((white_elo + black_elo) / 2)
+        avg_rating = (white_elo + black_elo) / 2
+        band = band_of(avg_rating)
 
         board = chess.Board()
         seen: Dict[str, Optional[str]] = {}
@@ -329,7 +331,7 @@ class BandGameProcessor(GameProcessor):
             pass
 
         for key in order:
-            self.stats_update_callback(key, band, result, seen[key])
+            self.stats_update_callback(key, band, result, seen[key], avg_rating)
 
     @staticmethod
     def _sans(game_text: str) -> List[str]:

@@ -48,7 +48,16 @@ class Tally:
 
 @dataclass
 class BandTally(Tally):
+    # Total of each game's average rating; the band's average is r / g.
+    r: float = 0.0
     moves: Dict[str, Tally] = field(default_factory=dict)
+
+    def merge(self, other: "BandTally") -> None:
+        super().merge(other)
+        self.r += other.r
+
+    def to_dict(self) -> Dict[str, int]:
+        return {**super().to_dict(), "r": round(self.r)}
 
 
 @dataclass
@@ -57,9 +66,17 @@ class MonthlySummary:
     positions: Dict[str, Dict[str, BandTally]] = field(default_factory=dict)
     games_read: int = 0
 
-    def add(self, key: str, band: str, result: str, next_san: Optional[str]) -> None:
+    def add(
+        self,
+        key: str,
+        band: str,
+        result: str,
+        next_san: Optional[str],
+        rating: float,
+    ) -> None:
         tally = self.positions.setdefault(key, {}).setdefault(band, BandTally())
         tally.add(result)
+        tally.r += rating
         if next_san is not None:
             tally.moves.setdefault(next_san, Tally()).add(result)
 

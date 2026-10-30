@@ -76,7 +76,8 @@ closes #204, since #204 needs both surfaces on the same numbers), then Phase 3
   mismatch.
 - **Bands bucket by the average of the two players' ratings**, the same bucket
   edges as `BAND_RATINGS` in `explorer.routes.js`. Phase 0's cross-check against
-  a month the explorer has indexed confirms it.
+  2026-03 confirms it, once bot and abandoned games are left out as the explorer
+  does.
 - **Positions match on the first four FEN fields** (board, side, castling, en
   passant), so transpositions count as the explorer counts them. 12,377 book
   FENs are 12,106 positions.
@@ -145,9 +146,13 @@ be cross-checked). Outcome recorded in `tools/analysis/README.md` in Task 3.
 
 - [x] `--probe`: the explorer has no monthly data after spring 2026, so the
       cross-check runs against 2026-03.
-- [ ] Summarise 2026-03 and run the cross-check (owner, personal token).
-      Expected: within 2% per cell. A larger gap means the bucket or speed rule
-      is wrong; stop and fix before Phase 1 continues.
+- [x] Summarise 2026-03 and run the cross-check (owner, personal token). First
+      run: under 2200 within 0.5%, but 2200+ 4% over at 1.e4 and 82% over on a
+      Marshall position. Cause: bot games (3% of 2200+ at 1.e4, replaying book
+      lines) and abandoned games, which the explorer leaves out. With both
+      excluded (`0bb3741f2`): every cell where the explorer has 1,000+ games is
+      within 0.63%, most exact. Band edges and speed rule confirmed.
+- [ ] Reprocess 2026-09 with the fix (the earlier summary counts bots).
 
 ## Phase 1: pipeline (#204, data half). One PR.
 

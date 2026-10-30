@@ -17,6 +17,7 @@ def game(
     white: int = 1500,
     black: int = 1500,
     result: str = "1-0",
+    extra_headers: str = "",
 ) -> str:
     """A game in the Lichess monthly-dump format, clock comments included."""
     return (
@@ -25,6 +26,7 @@ def game(
         f'[WhiteElo "{white}"]\n'
         f'[BlackElo "{black}"]\n'
         f'[TimeControl "{time_control}"]\n'
+        f"{extra_headers}"
         "\n"
         f"{moves} {result}\n"
     )
@@ -134,6 +136,22 @@ def test_correspondence_skipped() -> None:
 
 def test_unfinished_game_skipped() -> None:
     assert run(game("1. e4 e5 2. Nf3", result="*"), [AFTER_E4_E5_NF3]) == []
+
+
+def test_bot_game_skipped() -> None:
+    # The explorer leaves bots out; they were 3% of 2200+ games at 1.e4 in 2026-03.
+    pgn = game("1. e4 e5 2. Nf3", extra_headers='[BlackTitle "BOT"]\n')
+    assert run(pgn, [AFTER_E4_E5_NF3]) == []
+
+
+def test_titled_human_counted() -> None:
+    pgn = game("1. e4 e5 2. Nf3", extra_headers='[WhiteTitle "GM"]\n')
+    assert len(run(pgn, [AFTER_E4_E5_NF3])) == 1
+
+
+def test_abandoned_game_skipped() -> None:
+    pgn = game("1. e4 e5 2. Nf3", extra_headers='[Termination "Abandoned"]\n')
+    assert run(pgn, [AFTER_E4_E5_NF3]) == []
 
 
 def test_band_from_average_rating() -> None:

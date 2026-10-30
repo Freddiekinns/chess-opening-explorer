@@ -302,6 +302,12 @@ class BandGameProcessor(GameProcessor):
         result = headers.get('Result')
         if result not in RESULTS or speed_of(headers.get('TimeControl', '-')) is None:
             return
+        # The explorer leaves out bot and abandoned games; counting them put
+        # 2200+ 4% over it at 1.e4, and 82% over on a Marshall position.
+        if 'BOT' in (headers.get('WhiteTitle'), headers.get('BlackTitle')):
+            return
+        if headers.get('Termination') == 'Abandoned':
+            return
         white_elo = self._safe_int(headers.get('WhiteElo', ''))
         black_elo = self._safe_int(headers.get('BlackElo', ''))
         if not white_elo or not black_elo:

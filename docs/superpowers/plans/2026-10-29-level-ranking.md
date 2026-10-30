@@ -33,34 +33,53 @@ like me actually play?", instead of "what does everyone play?".
    another.
 5. **No level set → nothing changes**, except the numbers are newer and dated.
 
-Out of scope here, follow-up issues: setting the level from Analyse (#205 step
-2), the optional rating input, and serving the detail page's move stats from our
-own data instead of the explorer (Phase 4 below, optional).
+6. **A faster detail page.** Its win rates, average rating and Opening book move
+   rows (off-book rows included) arrive in the page response itself, for all
+   four bands at once, instead of a second request to Lichess after the page
+   paints. Switching level is instant. Masters still comes from the explorer.
+
+Out of scope here, follow-up issues: setting the level from Analyse (#205
+step 2) and the optional rating input.
+
+**PR order:** Phases 1+2 (data and Discover dating), then Phase 4 (detail page;
+closes #204, since #204 needs both surfaces on the same numbers), then Phase 3
+(#205).
 
 ## What it means for the stack
 
-| Layer                             | Today                                                                                                                                                 | After                                                                                                                                                                                                                                                                                                                                                         |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Data pipeline (`tools/analysis/`) | Last real run was a deleted API script (2025-07-15). `GameProcessor` matches full FENs including move counters, ignores time control, keeps no bands. | Streams one Lichess monthly file at a time, buckets games by band and speed, writes a small **monthly summary**. A combiner sums a window of months into the served files. Raw games are never kept.                                                                                                                                                          |
-| Stored data                       | `api/data/popularity_stats.json`, 4.9 MB, one all-time figure per position.                                                                           | `api/data/popularity_stats.json` keeps its shape (all-band figures, so existing readers work) plus metadata `window: {since, until}`. New `api/data/popularity-bands.json`: per position, per band `{g, w, d, b}` or `null`. Monthly summaries in `tools/analysis/data/monthly/`, committed (small; lets any machine rebuild a window without redownloading). |
-| API                               | Browse and search rank by all-ratings `games_analyzed`. Explorer proxy asks Lichess for all history.                                                  | `/browse?band=` and `/search-index?band=` and `/semantic-search?band=` rank and report by that band. `/page/:fen` returns `stats.window`. The explorer proxy adds `since`/`until` from the snapshot metadata, so live detail-page numbers cover the same months.                                                                                              |
-| Web                               | `myLevel` read once on the detail page; Discover and search ignore it.                                                                                | `useMyLevel()` hook shared by LevelLens, FilterBar, FilterSheet and SearchBar. `useBrowse` and `useOpeningSearch` pass `band`.                                                                                                                                                                                                                                |
-| Lichess token                     | Detail page only.                                                                                                                                     | Unchanged; the pipeline never uses it. Validation in Phase 0 uses ~80 calls with the owner's personal token.                                                                                                                                                                                                                                                  |
-| Masters                           | Detail page via explorer, all years.                                                                                                                  | Unchanged. Not offered on Discover or search (no batch data).                                                                                                                                                                                                                                                                                                 |
-| SEO                               | Crawlers see all-ratings snapshot stats.                                                                                                              | Unchanged. The band lives in localStorage, never the URL (`?level=` is Difficulty).                                                                                                                                                                                                                                                                           |
+| Layer                             | Today                                                                                                                                                 | After                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Data pipeline (`tools/analysis/`) | Last real run was a deleted API script (2025-07-15). `GameProcessor` matches full FENs including move counters, ignores time control, keeps no bands. | Streams one Lichess monthly file at a time, buckets games by band and speed, writes a small **monthly summary**. A combiner sums a window of months into the served files. Raw games are never kept.                                                                                                                                                                                                                   |
+| Stored data                       | `api/data/popularity_stats.json`, 4.9 MB, one all-time figure per position.                                                                           | `api/data/popularity_stats.json` keeps its shape (all-band figures, so existing readers work) plus metadata `window: {since, until}`. New `api/data/popularity-bands.json`: per position, per band `{g, w, d, b}` or `null`, no moves (browse and search). New `api/data/position-stats/NN.json`, 96 shards with moves (detail page only). Monthly summaries in `tools/analysis/data/monthly/`, gzipped and committed. |
+| API                               | Browse and search rank by all-ratings `games_analyzed`. The detail page's live stats are a second client request through the explorer proxy.          | `/browse?band=` and `/search-index?band=` and `/semantic-search?band=` rank and report by that band. `/page/:fen` returns `stats.window` and `stats.bands` (four bands with moves) from one shard. The explorer proxy serves Masters only.                                                                                                                                                                             |
+| Web                               | `myLevel` read once on the detail page; Discover and search ignore it. Book rows fill in after an explorer fetch per band.                            | `useMyLevel()` hook shared by LevelLens, FilterBar, FilterSheet and SearchBar. `useBrowse` and `useOpeningSearch` pass `band`. The detail page reads band stats from the page response; only Masters fetches.                                                                                                                                                                                                          |
+| Lichess token                     | Every detail-page view on a cache miss, any band.                                                                                                     | Masters only. The pipeline never uses it.                                                                                                                                                                                                                                                                                                                                                                              |
+| Masters                           | Detail page via explorer, all years.                                                                                                                  | Unchanged. Not offered on Discover or search (no batch data).                                                                                                                                                                                                                                                                                                                                                          |
+| SEO                               | Crawlers see all-ratings snapshot stats.                                                                                                              | Unchanged. The band lives in localStorage, never the URL (`?level=` is Difficulty).                                                                                                                                                                                                                                                                                                                                    |
 
 ## Decisions (made, flag if you disagree)
 
-- **Window size comes from Phase 0's measurements**, not upfront. Expect 3–12
-  months. One file in, one summary out; adding a month never redownloads old
-  ones.
+- **Window: 3 months recommended** (owner to confirm), from Phase 0's coverage
+  numbers below. One file in, one summary out; adding a month never redownloads
+  old ones.
+- **The detail page moves off the explorer for Lichess bands.** Phase 0 found
+  the explorer has no monthly data after spring 2026 (1.e4 reads 0 from 2026-06;
+  2026-03 has 34.9M), so pinning it to our window would blank the detail page.
+  Serving our own data is the only way all three surfaces show the same numbers.
+- **Performance budget for the detail page:** `/page/:fen` no slower than today
+  (measured before and after in Task 10), one shard of at most ~250 KB read per
+  request and cached per warm instance, no full-dataset load on cold start, no
+  extra client request for Lichess bands.
 - **Speeds `blitz,rapid,classical`** everywhere, matching the explorer proxy's
-  `SPEEDS`.
+  `SPEEDS`. Confirmed relevant: all-time 1.e4 at these speeds is 3.09B, while
+  the old snapshot says 3.78B, so it included bullet. That is the 693M vs 542M
+  mismatch.
 - **Bands bucket by the average of the two players' ratings**, the same bucket
-  edges as `BAND_RATINGS` in `explorer.routes.js`. Phase 0 confirms this matches
-  the explorer before anything else is built on it.
+  edges as `BAND_RATINGS` in `explorer.routes.js`. Phase 0's cross-check against
+  a month the explorer has indexed confirms it.
 - **Positions match on the first four FEN fields** (board, side, castling, en
-  passant), so transpositions count as the explorer counts them.
+  passant), so transpositions count as the explorer counts them. 12,377 book
+  FENs are 12,106 positions.
 - **Search index takes `?band=`** and returns that band's count as
   `games_analyzed`, rather than a per-band array per row. Five cached variants;
   the first-keystroke payload stays the size it is today.
@@ -103,21 +122,32 @@ own data instead of the explorer (Phase 4 below, optional).
 
 ### Task 0: One-month spike and explorer cross-check
 
-**Files:** scratch only. Outcome recorded in `tools/analysis/README.md` in
-Task 3.
+**Files:** `tools/analysis/crosscheck_explorer.py` (kept: every refresh should
+be cross-checked). Outcome recorded in `tools/analysis/README.md` in Task 3.
 
-- [ ] Write the Task 1–2 processor first (it is the spike), then run it on the
-      latest complete month, streaming from
-      `https://database.lichess.org/standard/lichess_db_standard_rated_YYYY-MM.pgn.zst`.
-- [ ] Record: wall-clock time, games processed per second, and per band the
-      number of the 12,377 positions with ≥ 20 games and ≥ 100 games.
-- [ ] Cross-check 20 positions × 4 bands against
-      `explorer.lichess.org/lichess?since=M&until=M&speeds=blitz,rapid,classical&ratings=…`
-      with the owner's personal token. Expected: within 2% per cell. A larger
-      gap means the bucket or speed rule is wrong; stop and fix before Phase 1
-      continues.
-- [ ] Pick the window: the smallest number of months where 2200+ has ≥ 20 games
-      for 80% of positions. Bring the numbers to the owner.
+- [x] Write the Task 1–2 processor first (it is the spike) and run it on
+      2026-09: 89,616,462 games (matches Lichess's `counts.txt`) in 2 h 28 m at
+      ~10,000 games/s on 11 workers, from a downloaded file (streaming over HTTP
+      dropped after 83 MB). 14 MB summary.
+- [x] Coverage, positions (of 12,106) with ≥ 20 games, one month measured and
+      longer windows projected:
+
+      | Window | Under 1400 | 1400–1800 | 1800–2200 | 2200+ |
+      | ------ | ---------- | --------- | --------- | ----- |
+      | 1      | 50%        | 67%       | 82%       | 80%   |
+      | 3      | 60%        | 76%       | 90%       | 89%   |
+      | 6      | 64%        | 81%       | 93%       | 92%   |
+      | 12     | 71%        | 86%       | 95%       | 94%   |
+
+      Under 1400 is low because beginners leave theory early, not for lack of
+      games; more months barely move it. Choose the window on diminishing
+      returns: 3 months.
+
+- [x] `--probe`: the explorer has no monthly data after spring 2026, so the
+      cross-check runs against 2026-03.
+- [ ] Summarise 2026-03 and run the cross-check (owner, personal token).
+      Expected: within 2% per cell. A larger gap means the bucket or speed rule
+      is wrong; stop and fix before Phase 1 continues.
 
 ## Phase 1: pipeline (#204, data half). One PR.
 
@@ -125,54 +155,30 @@ Task 3.
 
 **Files:**
 
-- Modify: `tools/analysis/lib/game_processor.py:141-196`
-- Test: `tools/analysis/tests/test_game_processor.py` (new; add `pytest` to
-  `requirements.txt`)
+Done (`0b7d741ea`, `7dc39811e`).
 
-**Interfaces:**
-
-- Produces: `position_key(fen: str) -> str` (first four FEN fields);
-  `band_of(avg_rating: float) -> str | None` returning
-  `'u1400' | '1400' | '1800' | '2200'`; `speed_of(headers) -> str | None` from
-  the `Event` header (`Rated Blitz game` → `'blitz'`); callback
-  `stats_update_callback(key: str, band: str, result: str, next_san: str | None)`.
-
-- [ ] Write failing tests: `test_transposition_counts` (two move orders reaching
-      the same position both call back with the same key),
-      `test_bullet_skipped`, `test_correspondence_skipped`, `test_band_edges`
-      (1399.5 → `u1400`, 1400 → `1400`, 2200 → `2200`),
-      `test_next_move_recorded` (callback carries the SAN played from the
-      matched position; `None` when the game ends there),
-      `test_final_position_checked` (a target reached on the last ply still
-      counts).
-- [ ] Run `python -I -m pytest tools/analysis/tests -v`. Expected: FAIL.
-- [ ] Implement in `game_processor.py`. Keep `target_fens` but convert it to
-      keys once in `__init__`.
-- [ ] Run the tests. Expected: PASS. Commit
-      `feat(analysis): bucket games by band and speed, match positions by key`.
+- `BandGameProcessor(GameProcessor)` in `tools/analysis/lib/game_processor.py`,
+  a subclass so `run_pipeline.py` is unchanged. `position_key`, `band_of`,
+  `speed_of(time_control)` (Lichess's base + 40 × increment rule, from the
+  `TimeControl` header), callback `(key, band, result, next_san, avg_rating)`.
+  Matches on python-chess's transposition key; building an EPD per ply was 75%
+  of the run time.
+- Tests: `tools/analysis/tests/test_game_processor.py`. Add `pytest` to
+  `requirements.txt` in Task 3.
 
 ### Task 2: Monthly summary writer
 
-**Files:**
+Done (`0b7d741ea`, `7dc39811e`).
 
-- Create: `tools/analysis/lib/monthly_summary.py`
-- Modify: `tools/analysis/run_pipeline.py` (new `--month YYYY-MM` mode that
-  streams, summarises, deletes)
-- Test: `tools/analysis/tests/test_monthly_summary.py`
-
-**Interfaces:**
-
-- Produces: `tools/analysis/data/monthly/YYYY-MM.json` shaped
-  `{"month": "YYYY-MM", "speeds": [...], "positions": {key: {band: {"g": int, "w": int, "d": int, "b": int, "moves": {san: {"g","w","d","b"}}}}}}`.
-  Moves trimmed to the top 12 by games, matching the proxy's `MAX_MOVES`. Bands
-  with zero games are omitted.
-- `MonthlySummary.add(key, band, result, next_san)`,
-  `MonthlySummary.write(path)`.
-
-- [ ] Failing tests: `test_results_tallied` (`1-0`/`½`/`0-1` land in w/d/b),
-      `test_moves_trimmed_to_12`, `test_empty_band_omitted`.
-- [ ] Implement, then run. Expected: PASS.
-- [ ] Commit `feat(analysis): write per-month band summaries`.
+- `tools/analysis/lib/monthly_summary.py` and
+  `tools/analysis/summarise_month.py`
+  (`--month YYYY-MM --file path.pgn.zst [--limit N]`), not a `run_pipeline.py`
+  mode. Writes `tools/analysis/data/monthly/YYYY-MM.json`:
+  `{"month", "speeds", "games_read", "positions": {key: {band: {"g","w","d","b","r","moves": {san: {"g","w","d","b"}}}}}}`.
+  `r` is the total of each game's average rating (band average = `r / g`). Moves
+  trimmed to the top 12. Bands with no games omitted.
+- Remaining for Task 3: write summaries gzipped (`.json.gz`, ~3 MB instead of 14
+  MB), since they are committed every month.
 
 ### Task 3: Window combiner and served files
 
@@ -193,12 +199,18 @@ Task 3.
   `api/data/popularity-bands.json`:
   `{"window": {...}, "positions": {fen: {"u1400": {"g","w","d","b"} | null, "1400": ..., "1800": ..., "2200": ...}}}`,
   keyed by the dataset's full FENs.
+- Also writes `api/data/position-stats/NN.json` (`NN` = djb2(full FEN) % 96,
+  zero-padded, the hash `middleware.ts` uses):
+  `{fen: {"window", "bands": {band: {"g","w","d","b","avg_rating","moves": [{"san","g","w","d","b"}]} | null}}}`,
+  moves sorted by games. This is what Task 10 serves.
 - A band under `MIN_MOVE_SAMPLE` (20) games is `null`. Win rates are fractions,
   matching today's fields.
 
 - [ ] Failing tests: `test_sums_months`, `test_missing_month_fails` (a gap in
       the window aborts, never silently shrinks it), `test_thin_band_is_null`,
-      `test_all_band_is_sum_of_bands`, `test_keys_map_back_to_dataset_fens`.
+      `test_all_band_is_sum_of_bands`, `test_keys_map_back_to_dataset_fens`,
+      `test_shard_hash_matches_middleware` (golden values from
+      `tests/unit/seo-lookup-shards.test.js`), `test_largest_shard_under_250kb`.
 - [ ] Implement, run tests. Expected: PASS.
 - [ ] `pipeline-reviewer` agent on the branch.
 - [ ] Run the real window (Phase 0's choice). Check `popularity-bands.json`
@@ -207,24 +219,54 @@ Task 3.
       `feat(analysis): combine monthly summaries into a dated window`, then
       `chore(data): refresh popularity stats to <since>–<until>`.
 
-## Phase 2: serve and date it (#204, site half). One PR.
+### Task 3b: Monthly refresh on a schedule
 
-### Task 4: Explorer proxy uses the same window
+Owner request (2026-10-30): the refresh runs itself when the PC is on, in the
+right part of the month, so the data never goes stale for want of someone
+remembering.
 
 **Files:**
 
-- Modify: `packages/api/src/routes/explorer.routes.js:53-63`
-- Test: `tests/unit/explorer-proxy.test.js` (existing; add cases)
+- Create: `tools/analysis/refresh.py` (the whole job, idempotent),
+  `tools/analysis/schedule/register-task.ps1` (registers the Windows task;
+  `-Unregister` removes it)
+- Modify: `tools/analysis/README.md` (runbook: what it does, where it logs, how
+  to stop it)
+- Test: `tools/analysis/tests/test_refresh.py`
 
-**Interfaces:** Consumes `metadata.window` from Task 3 via
-`popularity-stats-service.js`'s loader. Produces upstream URLs with
-`&since=<since>&until=<until>` for Lichess bands; masters URLs unchanged.
+**Behaviour:**
 
-- [ ] Failing tests: `adds since and until for lichess bands`,
-      `masters url has no window`, `no window in metadata → no since/until` (old
-      snapshot keeps working).
-- [ ] Implement, run the single test file, commit
-      `feat(api): pin explorer requests to the snapshot window`.
+- Trigger: at logon and daily at 09:00, both with "run as soon as possible after
+  a missed start". Every run first checks whether there is work; most runs exit
+  in a second.
+- There is work when last month's summary is missing **and** Lichess lists its
+  file in `sha256sums.txt` (published anywhere from the 3rd to the 10th).
+- Steps: download with resume to `%LOCALAPPDATA%\openingbook\lichess\` (outside
+  the repo), verify SHA-256, summarise at below-normal priority so the PC stays
+  usable, gzip the summary, delete the raw file, run the combiner for the window
+  ending that month, write a log to `%LOCALAPPDATA%\openingbook\refresh.log`.
+- It stops there: commits the data to a local branch `data/popularity-YYYY-MM`
+  and shows a Windows notification. **It never pushes, opens a PR or deploys.**
+  The owner reviews the diff and opens the PR.
+- Interrupted by shutdown or sleep: the download resumes; summarising restarts
+  (2½ hours), never half-written (written to a temp file, renamed when done).
+- Python: a venv at `%LOCALAPPDATA%\openingbook\venv` built from
+  `requirements.txt` by `register-task.ps1`.
+
+- [ ] Failing tests: `no work when summary exists`,
+      `no work when month not yet published`,
+      `checksum mismatch aborts and     deletes the file`,
+      `summary written atomically`, `never calls git push` (the git step is a
+      list of commands asserted against).
+- [ ] Implement, run tests, `pipeline-reviewer`.
+- [ ] Register the task (owner approves the exact task definition first). Dry
+      run with `refresh.py --check` to show what it would do.
+- [ ] Commit `feat(analysis): refresh popularity stats monthly on a schedule`.
+
+## Phase 2: serve and date it (#204, site half). One PR.
+
+Task 4 (pin the explorer proxy to our window) was dropped: the explorer has no
+recent monthly data. Task 10 replaces it.
 
 ### Task 5: Band stats in browse and the page endpoint
 
@@ -275,7 +317,7 @@ Task 3.
       Discover needs no extra request.
 - [ ] `verifier`: `test:all`, `build`, `build:vercel`. Commit
       `feat(web): date popularity stats on detail and Discover`. Open the Phase
-      1+2 PR, closes #204.
+      1+2 PR (refs #204; Phase 4 closes it).
 
 ## Phase 3: Your level (#205). One PR, after #204 merges.
 
@@ -359,10 +401,45 @@ must keep passing.
       `feat(search): rank by your level`. Open the PR, closes #205 steps 1
       and 3.
 
-## Phase 4 (optional, separate issue): detail page off the explorer
+## Phase 4: detail page from our data. One PR, after Phases 1+2; closes #204.
 
-The monthly summaries already hold the top 12 next moves per band (Task 2), so
-the Opening book's live stats and off-book rows can be served from our data for
-the four Lichess bands. Masters stays on the explorer. Needs per-FEN shards for
-the move lists (tens of MB in total), served through `/api/openings/page/:fen`.
-Decide after Phase 3 ships.
+### Task 10: Band stats in the page response
+
+**Files:**
+
+- Create: `packages/api/src/services/position-stats-service.js` (reads one shard
+  on demand, caches it at module scope)
+- Modify: `packages/api/src/routes/openings.routes.js:169-235` (`/page/:fen`),
+  `packages/web/src/hooks/useExplorerResult.ts` (Lichess bands resolve from the
+  page data; only `masters` fetches),
+  `packages/web/src/pages/OpeningDetailPage.tsx:142-147` (parent position's
+  stats: add `stats.parent_bands` to the page response, from the same lookup, so
+  the book needs no second request)
+- Test: `tests/unit/position-stats-service.test.js` (new),
+  `tests/unit/openings-page-endpoint.test.js`, `useExplorerResult` and
+  `bookExplorerMerge` tests
+
+**Interfaces:**
+
+- `positionStats.forFen(fen: string) -> {window, bands} | null`.
+- `/page/:fen` adds `data.stats.bands` and `data.stats.parent_bands`, each
+  `{u1400|1400|1800|2200|all: {games, whitePct, drawPct, blackPct, averageRating, moves: ExplorerMove[]} | null}`,
+  already in `ExplorerResult` shape so `bookExplorerMerge` and `explorerStats`
+  are unchanged.
+
+- [ ] Failing tests: `page response carries all bands with moves`,
+      `missing band is null`, `shard read once per instance`,
+      `unknown fen reads no shard`,
+      `useExplorerResult makes no request for     lichess bands`,
+      `masters still fetches`, `off-book rows come from page data`.
+- [ ] Measure `/page/:fen` before the change on 20 FENs (local, warm and cold),
+      record in the PR.
+- [ ] Implement. Remove the bot 403 path only for bands that no longer reach
+      Lichess; Masters keeps it.
+- [ ] Measure again. Expected: no slower warm, cold start within 10% of before.
+      If it isn't, stop and fix before opening the PR.
+- [ ] Confirm the function bundle includes `api/data/position-stats/` and stays
+      under Vercel's limit (`build:vercel` via `verifier`).
+- [ ] `npm run test:e2e`. Commit
+      `feat(detail): serve band stats from our own     data`. Open the PR,
+      closes #204.

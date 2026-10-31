@@ -299,6 +299,23 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
             },
           },
           tree: treeContext,
+          // Every Lichess band comes in the page response; the thin ones are null.
+          bands: {
+            all: {
+              totalGames: 5000,
+              white: 2500,
+              draws: 500,
+              black: 2000,
+              averageRating: 1650,
+              topGames: [],
+              moves: [{ san: 'Nf3', games: 3000, whitePct: 50, drawPct: 10, blackPct: 40 }],
+            },
+            u1400: null,
+            1400: null,
+            1800: null,
+            2200: null,
+          },
+          parentBands: null,
         },
       });
     }

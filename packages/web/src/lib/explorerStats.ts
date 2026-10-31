@@ -54,7 +54,11 @@ export function explorerSourceLine(
   analysisDate?: string,
   window?: StatsWindow | null
 ): string {
-  if (band && live) return `Lichess · ${levelEcho(band)}`;
+  if (band && live) {
+    // Lichess levels come from the page's own window; Masters from the explorer.
+    const dated = band !== 'masters' && window ? ` · ${formatWindow(window)}` : '';
+    return `Lichess · ${levelEcho(band)}${dated}`;
+  }
   if (window) return `Lichess games, ${formatWindow(window)}`;
   return `Saved snapshot · ${analysisDate ? `updated ${analysisDate}` : 'all rated games'}`;
 }

@@ -29,7 +29,7 @@ import {
 import { useAudio } from '../hooks/useAudio';
 import { useRepertoireToast } from '../hooks/useRepertoireToast';
 import { Toast } from '../components/shared/Toast';
-import { useExplorerQuery, useExplorerResult } from '../hooks/useExplorerResult';
+import { useExplorerQuery, useExplorerResult, type PageBands } from '../hooks/useExplorerResult';
 import { useIsMobile } from '../hooks/useMediaQuery';
 import { getMyLevel } from '../lib/myLevel';
 import { recordRecentOpening } from '../lib/recentOpenings';
@@ -110,6 +110,9 @@ type OpeningPageData = {
   courses:
     ({ courses: Study[]; searchLinks: SearchLinks | null } & Partial<ResourceContext>) | null;
   tree: TreeContext | null;
+  /** Every Lichess band here and one move back; null if unreadable. */
+  bands?: PageBands | null;
+  parentBands?: PageBands | null;
 };
 
 const OpeningDetailPage: React.FC = () => {
@@ -140,12 +143,17 @@ const OpeningDetailPage: React.FC = () => {
   // Default to the "All" level so the book shows live win rates + off-book
   // moves on first load, without waiting for an explicit level choice.
   const [band, setBand] = useState<BandId | null>(() => getMyLevel() ?? 'all');
-  const explorerQuery = useExplorerQuery(opening?.fen ?? null, band);
+  // undefined until the page response arrives; see useExplorerQuery.
+  const [pageBands, setPageBands] = useState<{
+    bands: PageBands | null;
+    parentBands: PageBands | null;
+  }>();
+  const explorerQuery = useExplorerQuery(opening?.fen ?? null, band, pageBands?.bands);
   const parentFen =
     treeData?.ancestors && treeData.ancestors.length > 0
       ? treeData.ancestors[treeData.ancestors.length - 1].fen
       : null;
-  const parentExplorer = useExplorerResult(parentFen, band);
+  const parentExplorer = useExplorerResult(parentFen, band, pageBands?.parentBands);
 
   // Mobile overhaul (Opening Details Mobile 2a): ≤767px renders a
   // single-column layout with its own board controls, position sheet and
@@ -263,6 +271,7 @@ const OpeningDetailPage: React.FC = () => {
               : null
           );
           setTreeData(page.tree || null);
+          setPageBands({ bands: page.bands ?? null, parentBands: page.parentBands ?? null });
         } else {
           setLoadFailure('failed');
         }

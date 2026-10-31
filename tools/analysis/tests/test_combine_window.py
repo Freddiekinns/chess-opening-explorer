@@ -229,3 +229,23 @@ def test_failed_write_replaces_nothing(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.undo()
     assert (out / "popularity_stats.json").read_text(encoding="utf-8") == "old"
     assert not list(out.rglob("*.tmp"))
+
+
+def test_failed_swap_leaves_no_temporary_files(tmp_path: Path, monkeypatch) -> None:
+    # Windows refuses a replace while another process has the file open.
+    stats, bands, shards = outputs(tmp_path / "in", {"1400": 10}, [E4])
+    out = tmp_path / "out"
+    real_replace = Path.replace
+    calls = []
+
+    def locked(self, target):
+        calls.append(self)
+        if len(calls) == 3:
+            raise PermissionError("in use")
+        return real_replace(self, target)
+
+    monkeypatch.setattr(Path, "replace", locked)
+    with pytest.raises(PermissionError):
+        combine_window.write_outputs(out, stats, bands, shards)
+    monkeypatch.undo()
+    assert not list(out.rglob("*.tmp"))

@@ -152,7 +152,7 @@ be cross-checked). Outcome recorded in `tools/analysis/README.md` in Task 3.
       lines) and abandoned games, which the explorer leaves out. With both
       excluded (`0bb3741f2`): every cell where the explorer has 1,000+ games is
       within 0.63%, most exact. Band edges and speed rule confirmed.
-- [ ] Reprocess 2026-09 with the fix (the earlier summary counts bots).
+- [x] Reprocess 2026-09 with the fix (the earlier summary counts bots).
 
 ## Phase 1: pipeline (#204, data half). One PR.
 
@@ -214,18 +214,18 @@ Done (`0b7d741ea`, `7dc39811e`).
   lines whose all-time median is 287 games. A 6-month window would leave ~387,
   12 months ~252; not worth older numbers everywhere. Win rates are fractions.
 
-- [ ] Failing tests: `test_sums_months`, `test_missing_month_fails` (a gap in
+- [x] Failing tests: `test_sums_months`, `test_missing_month_fails` (a gap in
       the window aborts, never silently shrinks it), `test_thin_band_is_null`,
       `test_all_band_is_sum_of_bands`, `test_keys_map_back_to_dataset_fens`,
       `test_shard_hash_matches_middleware` (golden values from
       `tests/unit/seo-lookup-shards.test.js`),
       `test_oversized_shard_writes_nothing` (250 KB; 96 shards measured 398 KB
       at the largest, so 256).
-- [ ] Implement, run tests. Expected: PASS.
-- [ ] `pipeline-reviewer` agent on the branch.
-- [ ] Run the real window (Phase 0's choice). Check `popularity-bands.json`
+- [x] Implement, run tests. Expected: PASS.
+- [x] `pipeline-reviewer` agent on the branch.
+- [x] Run the real window (Phase 0's choice). Check `popularity-bands.json`
       size; if over 5 MB, shorten keys before going further.
-- [ ] Commit the code, the monthly summaries and both data files separately:
+- [x] Commit the code, the monthly summaries and both data files separately:
       `feat(analysis): combine monthly summaries into a dated window`, then
       `chore(data): refresh popularity stats to <since>–<until>`.
 

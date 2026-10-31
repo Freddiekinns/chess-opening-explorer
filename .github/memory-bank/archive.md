@@ -5,6 +5,20 @@ loaded into context automatically** — read on demand only.
 
 ---
 
+## #187 — clean up unused Claude skills and agents — full activeContext text (2026-10-21)
+
+Transcripts from 11 Jul to 20 Oct showed `scout`, `implementer` and `/docs-sync`
+never chosen, so they are deleted. `course-discovery` and `popularity-stats`
+never loaded because nothing touched their pipelines; their unique content
+(rematch staleness, the shipped stats' provenance) moved into
+`tools/*/README.md`. `CLAUDE.md` now routes `test:all` and builds to `verifier`
+(the main session had run them inline ~25 times to its 3), and `AGENTS.md` gates
+new skills on the third repeat. Untracked `.agents/` and `.codex/` copies of the
+skills (16 Sep) had drifted; not tracked, left alone.
+
+`.claude/settings.json` disables the vercel and ralph-loop plugins here: none
+loaded once. Re-enable vercel if its MCP is wanted (#188).
+
 ## Route tests for the live `/api/openings` handlers — full activeContext text (2026-10-18, #182)
 
 `tests/unit/openings-routes.test.js` drives `/search-index`, `/fen/:fen/tree`,

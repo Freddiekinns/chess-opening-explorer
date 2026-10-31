@@ -2,7 +2,7 @@
 """
 Check a monthly summary against the Lichess explorer for the same month.
 
-    LICHESS_TOKEN=... python crosscheck_explorer.py data/monthly/2026-09.json
+    LICHESS_TOKEN=... python crosscheck_explorer.py data/monthly/2026-03.json.gz
 
 Takes 20 positions spread across the popularity range and asks the explorer
 for each band with the same speeds and month: 80 requests, paced under the

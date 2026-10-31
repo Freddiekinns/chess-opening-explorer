@@ -263,12 +263,16 @@ remembering.
 - Python: a venv at `%LOCALAPPDATA%\openingbook\venv` built from
   `requirements.txt` by `register-task.ps1`.
 
-- [ ] Failing tests: `no work when summary exists`,
+- [x] Failing tests: `no work when summary exists`,
       `no work when month not yet published`,
       `checksum mismatch aborts and     deletes the file`,
       `summary written atomically`, `never calls git push` (the git step is a
       list of commands asserted against).
-- [ ] Implement, run tests, `pipeline-reviewer`.
+- [x] Implement, run tests, `pipeline-reviewer`. Review changed the design: the
+      task runs `refresh.py` from its worktree (reset to `origin/main`), not the
+      owner's checkout; the branch is made only at commit time, so a failed run
+      doesn't look done; a whole `.part` (416) and a cut-short stream both
+      resume; no `--no-verify` (the worktree has no `.husky/_`, so no hooks).
 - [ ] Register the task (owner approves the exact task definition first). Dry
       run with `refresh.py --check` to show what it would do.
 - [ ] Commit `feat(analysis): refresh popularity stats monthly on a schedule`.

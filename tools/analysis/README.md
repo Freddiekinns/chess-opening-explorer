@@ -52,6 +52,28 @@ token (never the production one). The explorer has no monthly data after
 2026-03, so March is the reference month. On 2026-03 every cell with 1,000+
 explorer games agreed within 0.63%, most exactly.
 
+### Monthly refresh
+
+`refresh.py` does both steps for the window ending last month, on a schedule
+(`schedule\register-task.ps1`: at logon and daily at 09:00, Windows only;
+`-Unregister` removes it). Most runs find the window already on `origin/main`,
+or Lichess not yet published (the 3rd to the 10th), and exit at once.
+
+When there is work, it downloads each missing month to
+`%LOCALAPPDATA%\openingbook\lichess\` (resuming after a shutdown), checks the
+SHA-256 and, once summarised, the game count against `counts.txt`, then combines
+and commits to a local branch `data/popularity-YYYY-MM`. A Windows notification
+says when it is ready, or that it failed. **It never pushes**: review the
+branch, push it and open the PR yourself. While that branch holds the month's
+summary it does not redo the month.
+
+The task runs `refresh.py` from its own worktree
+(`%LOCALAPPDATA%\openingbook\worktree`), reset to `origin/main` each run, so it
+only runs merged code and never touches your checkout; a full run anywhere else
+refuses. `python refresh.py --check` says what it would do, from any checkout.
+The log is `%LOCALAPPDATA%\openingbook\refresh.log`. Register the task only once
+these scripts are on `main`; `register-task.ps1` checks.
+
 Tests: `python -I -m pytest tests -q` from this directory.
 
 The rest of this README describes the original pipeline (`run_pipeline.py`),

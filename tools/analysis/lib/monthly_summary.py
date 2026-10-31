@@ -114,8 +114,12 @@ class MonthlySummary:
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_name(path.name + ".tmp")
         opener = gzip.open if path.suffix == ".gz" else open
-        with opener(tmp, "wt", encoding="utf-8") as handle:
-            json.dump(self.to_dict(), handle, separators=(",", ":"), sort_keys=True)
+        try:
+            with opener(tmp, "wt", encoding="utf-8") as handle:
+                json.dump(self.to_dict(), handle, separators=(",", ":"), sort_keys=True)
+        except BaseException:
+            tmp.unlink(missing_ok=True)
+            raise
         tmp.replace(path)
 
     @classmethod

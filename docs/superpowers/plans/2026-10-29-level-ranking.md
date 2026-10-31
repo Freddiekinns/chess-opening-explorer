@@ -458,17 +458,23 @@ must keep passing.
   already in `ExplorerResult` shape so `bookExplorerMerge` and `explorerStats`
   are unchanged.
 
-- [ ] Failing tests: `page response carries all bands with moves`,
+- [x] Failing tests: `page response carries all bands with moves`,
       `missing band is null`, `shard read once per instance`,
       `unknown fen reads no shard`,
       `useExplorerResult makes no request for     lichess bands`,
       `masters still fetches`, `off-book rows come from page data`.
-- [ ] Measure `/page/:fen` before the change on 20 FENs (local, warm and cold),
+- [x] Measure `/page/:fen` before the change on 20 FENs (local, warm and cold),
       record in the PR.
-- [ ] Implement. Remove the bot 403 path only for bands that no longer reach
-      Lichess; Masters keeps it.
-- [ ] Measure again. Expected: no slower warm, cold start within 10% of before.
-      If it isn't, stop and fix before opening the PR.
+- [x] Implement. Bands go at `data.bands` / `data.parentBands`, not inside
+      `stats` (which is null when the snapshot row fails validation). The proxy
+      is unchanged: the client no longer asks it for Lichess bands. Remove the
+      bot 403 path only for bands that no longer reach Lichess; Masters keeps
+      it.
+- [x] Measure again (2026-10-31, 20 FENs, in-process): cold 1,015–1,039 ms
+      against 1,015–1,031; warm median 2.9 ms against 2.6 (+10 KB JSON per
+      response); first touch of a shard 5 ms against 2.7. The client's explorer
+      request after paint is gone. Expected: no slower warm, cold start within
+      10% of before. If it isn't, stop and fix before opening the PR.
 - [ ] Confirm the function bundle includes `api/data/position-stats/` and stays
       under Vercel's limit (`build:vercel` via `verifier`).
 - [ ] `npm run test:e2e`. Commit

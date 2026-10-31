@@ -7,6 +7,7 @@ const CourseService = require('../services/course-service');
 const BrowseService = require('../services/browse-service');
 const styleTags = require('../services/style-tags-service');
 const bandStats = require('../services/band-stats-service');
+const positionStats = require('../services/position-stats-service');
 const { nameQualifiers } = require('../services/name-qualifiers');
 const {
   getStatsForFen,
@@ -218,6 +219,12 @@ router.get('/page/:fen', async (req, res) => {
       safe(() => treeService.getTreeContext(decodedFen), null),
     ]);
 
+    // Every Lichess band, here and one move back (the book's "Instead of"
+    // rows), so the page needs no explorer request and a level switch is
+    // instant. Masters still comes from the explorer.
+    const ancestors = (tree && tree.ancestors) || [];
+    const parentFen = ancestors.length > 0 ? ancestors[ancestors.length - 1].fen : null;
+
     res.json({
       success: true,
       data: {
@@ -227,6 +234,8 @@ router.get('/page/:fen', async (req, res) => {
         videoContext: { source: videoResult.source, family: videoResult.family },
         courses,
         tree,
+        bands: positionStats.bandsFor(decodedFen),
+        parentBands: parentFen ? positionStats.bandsFor(parentFen) : null,
       },
     });
   } catch (error) {

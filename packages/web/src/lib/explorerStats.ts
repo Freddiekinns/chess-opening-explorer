@@ -27,10 +27,10 @@ export interface StatsView {
 
 export interface PopularityStats {
   games_analyzed?: number;
-  white_win_rate?: number;
-  black_win_rate?: number;
-  draw_rate?: number;
-  avg_rating?: number;
+  white_win_rate?: number | null;
+  black_win_rate?: number | null;
+  draw_rate?: number | null;
+  avg_rating?: number | null;
   analysis_date?: string;
 }
 
@@ -88,11 +88,14 @@ export function liveStatsView(result: ExplorerResult): StatsView | null {
 
 export function snapshotStatsView(stats: PopularityStats | null): StatsView | null {
   if (!stats?.games_analyzed) return null;
+  // Missing rates are null, never 0: a thin position keeps its count but has no bar.
+  const { white_win_rate: white, draw_rate: draw, black_win_rate: black } = stats;
+  if (white == null || draw == null || black == null) return null;
   return {
     games: formatCount(stats.games_analyzed),
     elo: stats.avg_rating ? Math.round(stats.avg_rating).toLocaleString() : null,
-    whitePct: Math.round((stats.white_win_rate || 0) * 100),
-    drawPct: Math.round((stats.draw_rate || 0) * 100),
-    blackPct: Math.round((stats.black_win_rate || 0) * 100),
+    whitePct: Math.round(white * 100),
+    drawPct: Math.round(draw * 100),
+    blackPct: Math.round(black * 100),
   };
 }

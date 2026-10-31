@@ -191,7 +191,8 @@ def write_outputs(
     """Serialises and checks everything, writes every .tmp, then swaps them in.
 
     A failure before the swap leaves the old files untouched and no .tmp
-    behind, so files from two windows are never served together.
+    behind. A failure during it (Windows refuses to replace a file another
+    process has open) can leave files from two windows: rerun the combiner.
     """
     files = {
         out_dir / "popularity_stats.json": _dump(stats),
@@ -212,12 +213,12 @@ def write_outputs(
             tmp = path.with_name(path.name + ".tmp")
             staged.append((tmp, path))
             tmp.write_text(text, encoding="utf-8")
+        for tmp, path in staged:
+            tmp.replace(path)
     except OSError:
         for tmp, _ in staged:
             tmp.unlink(missing_ok=True)
         raise
-    for tmp, path in staged:
-        tmp.replace(path)
 
 
 def load_dataset_fens() -> List[str]:

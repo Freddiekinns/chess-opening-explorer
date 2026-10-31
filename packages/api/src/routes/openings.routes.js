@@ -6,6 +6,7 @@ const searchService = require('../services/search-service');
 const CourseService = require('../services/course-service');
 const BrowseService = require('../services/browse-service');
 const styleTags = require('../services/style-tags-service');
+const bandStats = require('../services/band-stats-service');
 const {
   getStatsForFen,
   validatePopularityStats,
@@ -194,7 +195,7 @@ router.get('/page/:fen', async (req, res) => {
     const [stats, videoResult, courses, tree] = await Promise.all([
       safe(() => {
         const s = getStatsForFen(decodedFen);
-        return s && validatePopularityStats(s) ? s : null;
+        return s && validatePopularityStats(s) ? { ...s, window: bandStats.window() } : null;
       }, null),
       safe(
         () => getVideosWithFallback(decodedFen, opening.name),
@@ -276,7 +277,7 @@ const SEARCH_INDEX_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 router.get('/browse', (req, res) => {
   try {
     const config = browseService.getConfig();
-    const { level, style, family, sort, page, pageSize } = req.query;
+    const { level, style, family, sort, page, pageSize, band } = req.query;
 
     // Unknown values are rejected rather than ignored: a silent empty result is
     // indistinguishable from a genuine empty filter and sends the client
@@ -318,6 +319,9 @@ router.get('/browse', (req, res) => {
       sort: sortValue || config.defaultSort,
       page,
       pageSize,
+      // Unlike the facets, an unknown band is ignored: Masters is a level the
+      // detail page saves, but browse has no data for it, so it ranks as All.
+      band: bandStats.isBand(band) ? band : null,
     });
 
     res.json({ success: true, ...result });

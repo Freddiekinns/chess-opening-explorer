@@ -191,6 +191,17 @@ const POPULARITY_FIXTURE = {
   },
 };
 
+// At 1800–2200 the order flips: FEN(8), last but one overall, is the most
+// played; FEN(1) is too thin there to have a count at all.
+const BANDS_FIXTURE = {
+  window: { since: '2026-07', until: '2026-09' },
+  positions: {
+    [FEN(1)]: { u1400: { g: 900, w: 450, d: 90, b: 360 }, 1400: null, 1800: null, 2200: null },
+    [FEN(2)]: { u1400: null, 1400: null, 1800: { g: 300, w: 150, d: 30, b: 120 }, 2200: null },
+    [FEN(8)]: { u1400: null, 1400: null, 1800: { g: 500, w: 200, d: 100, b: 200 }, 2200: null },
+  },
+};
+
 const FAMILIES_FIXTURE = {
   sicilian: { id: 'sicilian', display_name: 'Sicilian Defense' },
   london: { id: 'london', display_name: 'London System' },
@@ -211,6 +222,7 @@ beforeEach(() => {
     if (/eco[BCDE]\.json/.test(file)) return JSON.stringify({});
     if (file.includes('popularity_stats.json')) return JSON.stringify(POPULARITY_FIXTURE);
     if (file.includes('families.json')) return JSON.stringify(FAMILIES_FIXTURE);
+    if (file.includes('popularity-bands.json')) return JSON.stringify(BANDS_FIXTURE);
     if (file.includes('style-tags.json')) return JSON.stringify(STYLE_FIXTURE);
     throw new Error(`unexpected read: ${file}`);
   });
@@ -521,6 +533,52 @@ describe('BrowseService.browse — clamping', () => {
       style: null,
       family: 'sicilian',
       sort: 'popular',
+      band: null,
     });
+  });
+});
+
+describe('BrowseService.browse — by band', () => {
+  test('band reorders popular sort', () => {
+    const { items } = service.browse({ sort: 'popular', band: '1800', pageSize: 48 });
+    expect(items.slice(0, 2).map((o) => o.fen)).toEqual([FEN(8), FEN(2)]);
+    expect(items[0]).toMatchObject({
+      games_analyzed: 500,
+      white_win_rate: 0.4,
+      draw_rate: 0.2,
+      black_win_rate: 0.4,
+    });
+  });
+
+  test('null band item has null rates and sorts last', () => {
+    const { items } = service.browse({ sort: 'popular', band: '1800', pageSize: 48 });
+    const alpha = items.find((o) => o.fen === FEN(1));
+    // FEN(1) is the most played overall, but has no 1800–2200 count.
+    expect(alpha).toMatchObject({
+      games_analyzed: null,
+      white_win_rate: null,
+      draw_rate: null,
+      black_win_rate: null,
+      avg_rating: null,
+    });
+    expect(items.indexOf(alpha)).toBeGreaterThan(1);
+  });
+
+  test('unknown band is ignored', () => {
+    const plain = service.browse({ sort: 'popular', pageSize: 48 });
+    const masters = service.browse({ sort: 'popular', band: 'masters', pageSize: 48 });
+    expect(masters.items).toEqual(plain.items);
+    expect(masters.applied.band).toBeNull();
+  });
+
+  test('name sort ignores band but reports band counts', () => {
+    const { items, applied } = service.browse({ sort: 'name', band: '1800', pageSize: 48 });
+    expect(items.map((o) => o.name)).toEqual([...items.map((o) => o.name)].sort());
+    expect(items.find((o) => o.fen === FEN(2)).games_analyzed).toBe(300);
+    expect(applied.band).toBe('1800');
+  });
+
+  test('the response carries the window its counts cover', () => {
+    expect(service.browse({}).window).toEqual({ since: '2026-07', until: '2026-09' });
   });
 });

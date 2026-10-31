@@ -1,4 +1,5 @@
 const ECOService = require('./eco-service');
+const { nameQualifiers } = require('./name-qualifiers');
 
 // Singleton instance
 let ecoServiceInstance = null;
@@ -17,6 +18,7 @@ async function getOpenings() {
     
     // Get all openings from ECO service
     const openings = ecoServiceInstance.getAllOpenings();
+    const qualifiers = nameQualifiers(openings);
     
     // Ensure openings have the expected structure for search
     return openings.map(opening => ({
@@ -27,6 +29,7 @@ async function getOpenings() {
       src: opening.src || '',
       scid: opening.scid,
       aliases: opening.aliases || {},
+      name_qualifier: qualifiers.get(opening.fen),
       
       // Analysis JSON data (the rich semantic data)
       analysis_json: opening.analysis_json || {},

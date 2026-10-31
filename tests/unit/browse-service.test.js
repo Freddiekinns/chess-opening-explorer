@@ -582,3 +582,34 @@ describe('BrowseService.browse — by band', () => {
     expect(service.browse({}).window).toEqual({ since: '2026-07', until: '2026-09' });
   });
 });
+
+describe('openings that share a name', () => {
+  test('carry what tells them apart, and an opening with its own name carries nothing', () => {
+    const fs = require('fs');
+    const read = fs.readFileSync.getMockImplementation();
+    fs.readFileSync = jest.fn((p) =>
+      String(p).includes('ecoB.json')
+        ? JSON.stringify({
+            'najdorf-1': {
+              name: 'Sicilian Defense: Najdorf Variation',
+              eco: 'B90',
+              moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6',
+            },
+            'najdorf-2': {
+              name: 'Sicilian Defense: Najdorf Variation',
+              eco: 'B94',
+              moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5',
+            },
+          })
+        : read(p)
+    );
+    service.clearCache();
+
+    const { items } = service.browse({ sort: 'name', pageSize: 48 });
+    const byFen = Object.fromEntries(items.map((item) => [item.fen, item]));
+
+    expect(byFen['najdorf-1'].name_qualifier).toBe('5...a6');
+    expect(byFen['najdorf-2'].name_qualifier).toBe('6.Bg5');
+    expect(byFen[FEN(1)]).not.toHaveProperty('name_qualifier');
+  });
+});

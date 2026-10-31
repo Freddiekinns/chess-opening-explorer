@@ -7,6 +7,7 @@ const CourseService = require('../services/course-service');
 const BrowseService = require('../services/browse-service');
 const styleTags = require('../services/style-tags-service');
 const bandStats = require('../services/band-stats-service');
+const { nameQualifiers } = require('../services/name-qualifiers');
 const {
   getStatsForFen,
   validatePopularityStats,
@@ -43,6 +44,7 @@ function toSearchResult(opening) {
     eco: opening.eco,
     moves: opening.moves || '',
     games_analyzed: opening.games_analyzed,
+    name_qualifier: opening.name_qualifier,
     searchScore: opening.searchScore,
   };
 }
@@ -365,7 +367,9 @@ router.get('/search-index', (req, res) => {
 
     if (!cached) {
       // Create lightweight index with only essential search fields
-      const rows = ecoService.getAllOpenings().map((opening) => ({
+      const openings = ecoService.getAllOpenings();
+      const qualifiers = nameQualifiers(openings);
+      const rows = openings.map((opening) => ({
         fen: opening.fen,
         name: opening.name,
         eco: opening.eco,
@@ -373,6 +377,7 @@ router.get('/search-index', (req, res) => {
         // Only include games_analyzed if available for sorting
         ...(opening.games_analyzed && { games_analyzed: opening.games_analyzed }),
         family_id: opening.family_id,
+        ...(qualifiers.has(opening.fen) && { name_qualifier: qualifiers.get(opening.fen) }),
       }));
       searchIndexCache = {
         rows,

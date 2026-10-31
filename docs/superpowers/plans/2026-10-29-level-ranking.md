@@ -318,10 +318,10 @@ recent monthly data. Task 10 replaces it.
   `applied.band` echoes it.
 - `GET /api/openings/page/:fen` adds `data.stats.window`.
 
-- [ ] Failing tests: `band reorders popular sort`,
+- [x] Failing tests: `band reorders popular sort`,
       `null band item has null rates and sorts last`, `unknown band is ignored`,
       `name sort ignores band but reports band counts`, `page includes window`.
-- [ ] Implement; the browse index stores the four bands per entry so `browse()`
+- [x] Implement; the browse index stores the four bands per entry so `browse()`
       never reloads. Run the files, commit
       `feat(api): rank and report browse by band`.
 
@@ -338,12 +338,15 @@ recent monthly data. Task 10 replaces it.
 - Test: `packages/web/src/lib/__tests__/statsWindow.test.ts`, the three
   components' existing tests
 
-- [ ] Failing tests: `formatWindow` same-year and cross-year; each surface
+- [x] Failing tests: `formatWindow` same-year and cross-year; each surface
       renders `Lichess games, <window>` when a window exists and nothing extra
       when it doesn't.
-- [ ] Implement. Browse responses carry `window` (add to the Task 5 payload) so
-      Discover needs no extra request.
-- [ ] `verifier`: `test:all`, `build`, `build:vercel`. Commit
+- [x] Implement. Browse responses carry `window` (add to the Task 5 payload) so
+      Discover needs no extra request. On the detail page the date is in
+      `explorerSourceLine`, which both shells (ExplorerCard and
+      MobileDataSurface) draw, not WinRatePanel; it shows when the card serves
+      the snapshot. Live explorer lines are unchanged until Task 10.
+- [x] `verifier`: `test:all`, `build`, `build:vercel`. Commit
       `feat(web): date popularity stats on detail and Discover`. Open the Phase
       1+2 PR (refs #204; Phase 4 closes it).
 

@@ -46,6 +46,16 @@ describe('explorerSourceLine', () => {
     );
     expect(explorerSourceLine(null, false)).toBe('Saved snapshot · all rated games');
   });
+
+  test('dates the snapshot by the window its games cover', () => {
+    expect(
+      explorerSourceLine('1400', false, '2026-10-31', { since: '2026-07', until: '2026-09' })
+    ).toBe('Lichess games, Jul–Sep 2026');
+    // Live explorer data is not the window's, so the live line is unchanged.
+    expect(
+      explorerSourceLine('1400', true, '2026-10-31', { since: '2026-07', until: '2026-09' })
+    ).toBe('Lichess · 1400–1800');
+  });
 });
 
 describe('labels', () => {

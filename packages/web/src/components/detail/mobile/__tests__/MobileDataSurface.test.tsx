@@ -142,6 +142,14 @@ describe('MobileDataSurface', () => {
     expect(screen.getByText('Saved snapshot · updated 2025-07-15')).toBeInTheDocument();
   });
 
+  test('the snapshot source line dates the Lichess games it covers', () => {
+    renderSurface({
+      explorer: query({ failed: true }),
+      popularityStats: { ...SNAPSHOT, window: { since: '2026-07', until: '2026-09' } },
+    });
+    expect(screen.getByText('Lichess games, Jul–Sep 2026')).toBeInTheDocument();
+  });
+
   test('says so when the level has too few games for reliable numbers', () => {
     renderSurface({ explorer: query({ result: explorerResult({ totalGames: 40 }) }) });
     expect(screen.getByText(/Not enough games at this level/)).toBeInTheDocument();

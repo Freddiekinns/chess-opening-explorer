@@ -273,7 +273,12 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
         <div className={styles.headerTop}>
           <h2 className={styles.headerTitle}>Opening explorer</h2>
           <span className={styles.headerSource}>
-            {explorerSourceLine(band, live, popularityStats?.analysis_date)}
+            {explorerSourceLine(
+              band,
+              live,
+              popularityStats?.analysis_date,
+              popularityStats?.window
+            )}
           </span>
         </div>
         <LevelLens band={band} onChange={onBandChange} scrollable />

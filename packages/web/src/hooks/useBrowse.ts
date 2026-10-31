@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { StyleProfile } from '../lib/styleProfile';
+import type { StatsWindow } from '../lib/statsWindow';
 
 /**
  * Everything the Discover grid knows about browsing. Filter state lives in the
@@ -93,6 +94,7 @@ export function useBrowse() {
   const [facets, setFacets] = useState<BrowseFacets>(EMPTY_FACETS);
   const [total, setTotal] = useState(0);
   const [remaining, setRemaining] = useState(0);
+  const [statsWindow, setStatsWindow] = useState<StatsWindow | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(false);
@@ -134,6 +136,7 @@ export function useBrowse() {
         setFacets(data.facets);
         setTotal(data.total);
         setRemaining(data.remaining);
+        setStatsWindow(data.window ?? null);
         pageRef.current = page;
       } catch {
         // An empty grid and a broken grid look identical; say which it is.
@@ -185,6 +188,8 @@ export function useBrowse() {
     facets,
     total,
     remaining,
+    /** The months the counts cover, or null when the API doesn't say. */
+    statsWindow,
     loading,
     loadingMore,
     error,

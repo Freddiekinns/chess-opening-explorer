@@ -1,5 +1,6 @@
 import { getBand, type BandId, type ExplorerResult } from './lichessExplorer';
 import { formatCount } from './openingBook';
+import { formatWindow, type StatsWindow } from './statsWindow';
 
 /**
  * One source for every level-dependent label and stat figure on the opening
@@ -32,6 +33,8 @@ export interface PopularityStats {
   draw_rate?: number | null;
   avg_rating?: number | null;
   analysis_date?: string;
+  /** The months the counts cover; absent from snapshots older than 2026-10. */
+  window?: StatsWindow | null;
 }
 
 /**
@@ -48,9 +51,11 @@ export function levelEcho(band: BandId): string {
 export function explorerSourceLine(
   band: BandId | null,
   live: boolean,
-  analysisDate?: string
+  analysisDate?: string,
+  window?: StatsWindow | null
 ): string {
   if (band && live) return `Lichess · ${levelEcho(band)}`;
+  if (window) return `Lichess games, ${formatWindow(window)}`;
   return `Saved snapshot · ${analysisDate ? `updated ${analysisDate}` : 'all rated games'}`;
 }
 

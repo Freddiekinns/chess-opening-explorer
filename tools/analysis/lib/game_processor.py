@@ -9,15 +9,73 @@ extracts position statistics.
 import logging
 import io
 import os
+import re
 import chess
 import chess.pgn
 import zstandard as zstd
 from pathlib import Path
 from tqdm import tqdm
 import sys
-from typing import Set, Callable
+from typing import Set, Callable, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
+
+# Speeds the explorer proxy asks for (SPEEDS in explorer.routes.js).
+COUNTED_SPEEDS = {'blitz', 'rapid', 'classical'}
+
+# The deepest book position is 36 plies in; nothing past it can match.
+MAX_BOOK_PLIES = 36
+
+RESULTS = {'1-0', '0-1', '1/2-1/2'}
+
+_COMMENT = re.compile(r'\{[^}]*\}')
+_HEADER = re.compile(r'^\[(\w+) "([^"]*)"\]$', re.MULTILINE)
+_MOVE_NUMBER = re.compile(r'^\d+\.+$')
+_ANNOTATION = re.compile(r'[?!]+$')
+
+
+def position_key(fen: str) -> str:
+    """A position without its move counters, en passant only when legal.
+
+    The explorer counts games by position, whatever the move order, so two
+    book FENs that differ only in move counters are the same position.
+    """
+    return chess.Board(fen).epd()
+
+
+def band_of(avg_rating: float) -> str:
+    """Band id for the average of both players' ratings.
+
+    Edges follow BAND_RATINGS in explorer.routes.js, which groups the
+    explorer's rating buckets (0, 1000, ... 2500) into these four.
+    """
+    if avg_rating < 1400:
+        return 'u1400'
+    if avg_rating < 1800:
+        return '1400'
+    if avg_rating < 2200:
+        return '1800'
+    return '2200'
+
+
+def speed_of(time_control: str) -> Optional[str]:
+    """Lichess speed from a TimeControl header ("180+2"), or None.
+
+    Lichess estimates a game at base + 40 x increment seconds. Bullet and
+    ultrabullet return None, as does correspondence ("-").
+    """
+    try:
+        base, increment = (int(part) for part in time_control.split('+'))
+    except ValueError:
+        return None
+    estimate = base + 40 * increment
+    if estimate < 180:
+        return None
+    if estimate < 480:
+        return 'blitz'
+    if estimate < 1500:
+        return 'rapid'
+    return 'classical'
 
 
 class GameProcessor:
@@ -209,3 +267,84 @@ class GameProcessor:
             return int(value)
         except (ValueError, TypeError):
             return 0
+
+
+class BandGameProcessor(GameProcessor):
+    """Counts games per position by rating band, with the move played next.
+
+    Matches positions by position_key, so transpositions count, and keeps
+    only blitz, rapid and classical games. Each position counts once per game
+    even if the game repeats it. The callback receives
+    (key, band, result, next_san, avg_rating); next_san is None when the game
+    ends there.
+    """
+
+    def __init__(
+        self,
+        target_fens: Set[str],
+        stats_update_callback: Callable[[str, str, str, Optional[str], float], None],
+        max_plies: int = MAX_BOOK_PLIES,
+    ):
+        super().__init__(set(), stats_update_callback)
+        # Matched on python-chess's transposition key (bitboards, side,
+        # castling, legal en passant): the same rule as position_key, without
+        # building an EPD string on every ply, which was 75% of the run time.
+        self.target_keys = {}
+        for fen in target_fens:
+            board = chess.Board(fen)
+            self.target_keys[board._transposition_key()] = board.epd()
+        self.max_plies = max_plies
+
+    def process_game(self, game_text: str) -> None:
+        # Headers are checked before any move is replayed: most games are
+        # bullet or otherwise skipped, and replaying is the expensive part.
+        headers = dict(_HEADER.findall(game_text))
+        result = headers.get('Result')
+        if result not in RESULTS or speed_of(headers.get('TimeControl', '-')) is None:
+            return
+        # The explorer leaves out bot and abandoned games; counting them put
+        # 2200+ 4% over it at 1.e4, and 82% over on a Marshall position.
+        if 'BOT' in (headers.get('WhiteTitle'), headers.get('BlackTitle')):
+            return
+        if headers.get('Termination') == 'Abandoned':
+            return
+        white_elo = self._safe_int(headers.get('WhiteElo', ''))
+        black_elo = self._safe_int(headers.get('BlackElo', ''))
+        if not white_elo or not black_elo:
+            return
+        avg_rating = (white_elo + black_elo) / 2
+        band = band_of(avg_rating)
+
+        board = chess.Board()
+        seen: Dict[str, Optional[str]] = {}
+        order: List[str] = []
+        try:
+            for san in self._sans(game_text):
+                key = self.target_keys.get(board._transposition_key())
+                if key is not None and key not in seen:
+                    seen[key] = san
+                    order.append(key)
+                if board.ply() >= self.max_plies:
+                    break
+                board.push_san(san)
+            else:
+                key = self.target_keys.get(board._transposition_key())
+                if board.ply() <= self.max_plies and key is not None and key not in seen:
+                    seen[key] = None
+                    order.append(key)
+        except ValueError:
+            # An unparseable move: keep what was matched before it.
+            pass
+
+        for key in order:
+            self.stats_update_callback(key, band, result, seen[key], avg_rating)
+
+    @staticmethod
+    def _sans(game_text: str) -> List[str]:
+        _, _, movetext = game_text.partition('\n\n')
+        sans = []
+        for token in _COMMENT.sub(' ', movetext).split():
+            if _MOVE_NUMBER.match(token) or token.startswith('$') or token in RESULTS or token == '*':
+                continue
+            sans.append(_ANNOTATION.sub('', token))
+        return sans

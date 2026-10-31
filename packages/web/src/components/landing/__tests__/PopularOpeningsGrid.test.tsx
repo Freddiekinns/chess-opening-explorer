@@ -42,6 +42,24 @@ describe('PopularOpeningsGrid', () => {
     expect(screen.getByText('Ruy Lopez')).toBeInTheDocument();
   });
 
+  it('dates the counts by the window the browse response covers', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => browseResponse({ window: { since: '2026-07', until: '2026-09' } }),
+      })
+    );
+    renderGrid();
+    expect(await screen.findByText('Lichess games, Jul–Sep 2026')).toBeInTheDocument();
+  });
+
+  it('says nothing about dates when the response has no window', async () => {
+    renderGrid();
+    await screen.findByText('Sicilian Defence');
+    expect(screen.queryByText(/Lichess games,/)).toBeNull();
+  });
+
   it('the count on screen is the filtered total from the same request', async () => {
     renderGrid();
 

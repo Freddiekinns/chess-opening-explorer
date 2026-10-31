@@ -7,6 +7,7 @@ import { Toast } from '../shared/Toast';
 import { useBrowse } from '../../hooks/useBrowse';
 import { useIsMobile } from '../../hooks/useMediaQuery';
 import { useRepertoireToast } from '../../hooks/useRepertoireToast';
+import { formatWindow } from '../../lib/statsWindow';
 
 interface PopularOpeningsGridProps {
   className?: string;
@@ -27,6 +28,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     facets,
     total,
     remaining,
+    statsWindow,
     loading,
     loadingMore,
     error,
@@ -58,6 +60,9 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
         <p className="section-subtitle">
           The most popular openings for every style of play, from classic variations to hypermodern
         </p>
+        {statsWindow && (
+          <p className="section-subtitle">Lichess games, {formatWindow(statsWindow)}</p>
+        )}
       </div>
 
       <div className="filters-container">

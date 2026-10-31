@@ -47,15 +47,15 @@ closes #204, since #204 needs both surfaces on the same numbers), then Phase 3
 
 ## What it means for the stack
 
-| Layer                             | Today                                                                                                                                                 | After                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Data pipeline (`tools/analysis/`) | Last real run was a deleted API script (2025-07-15). `GameProcessor` matches full FENs including move counters, ignores time control, keeps no bands. | Streams one Lichess monthly file at a time, buckets games by band and speed, writes a small **monthly summary**. A combiner sums a window of months into the served files. Raw games are never kept.                                                                                                                                                                                                                   |
-| Stored data                       | `api/data/popularity_stats.json`, 4.9 MB, one all-time figure per position.                                                                           | `api/data/popularity_stats.json` keeps its shape (all-band figures, so existing readers work) plus metadata `window: {since, until}`. New `api/data/popularity-bands.json`: per position, per band `{g, w, d, b}` or `null`, no moves (browse and search). New `api/data/position-stats/NN.json`, 96 shards with moves (detail page only). Monthly summaries in `tools/analysis/data/monthly/`, gzipped and committed. |
-| API                               | Browse and search rank by all-ratings `games_analyzed`. The detail page's live stats are a second client request through the explorer proxy.          | `/browse?band=` and `/search-index?band=` and `/semantic-search?band=` rank and report by that band. `/page/:fen` returns `stats.window` and `stats.bands` (four bands with moves) from one shard. The explorer proxy serves Masters only.                                                                                                                                                                             |
-| Web                               | `myLevel` read once on the detail page; Discover and search ignore it. Book rows fill in after an explorer fetch per band.                            | `useMyLevel()` hook shared by LevelLens, FilterBar, FilterSheet and SearchBar. `useBrowse` and `useOpeningSearch` pass `band`. The detail page reads band stats from the page response; only Masters fetches.                                                                                                                                                                                                          |
-| Lichess token                     | Every detail-page view on a cache miss, any band.                                                                                                     | Masters only. The pipeline never uses it.                                                                                                                                                                                                                                                                                                                                                                              |
-| Masters                           | Detail page via explorer, all years.                                                                                                                  | Unchanged. Not offered on Discover or search (no batch data).                                                                                                                                                                                                                                                                                                                                                          |
-| SEO                               | Crawlers see all-ratings snapshot stats.                                                                                                              | Unchanged. The band lives in localStorage, never the URL (`?level=` is Difficulty).                                                                                                                                                                                                                                                                                                                                    |
+| Layer                             | Today                                                                                                                                                 | After                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Data pipeline (`tools/analysis/`) | Last real run was a deleted API script (2025-07-15). `GameProcessor` matches full FENs including move counters, ignores time control, keeps no bands. | Streams one Lichess monthly file at a time, buckets games by band and speed, writes a small **monthly summary**. A combiner sums a window of months into the served files. Raw games are never kept.                                                                                                                                                                                                                    |
+| Stored data                       | `api/data/popularity_stats.json`, 4.9 MB, one all-time figure per position.                                                                           | `api/data/popularity_stats.json` keeps its shape (all-band figures, so existing readers work) plus metadata `window: {since, until}`. New `api/data/popularity-bands.json`: per position, per band `{g, w, d, b}` or `null`, no moves (browse and search). New `api/data/position-stats/NN.json`, 256 shards with moves (detail page only). Monthly summaries in `tools/analysis/data/monthly/`, gzipped and committed. |
+| API                               | Browse and search rank by all-ratings `games_analyzed`. The detail page's live stats are a second client request through the explorer proxy.          | `/browse?band=` and `/search-index?band=` and `/semantic-search?band=` rank and report by that band. `/page/:fen` returns `stats.window` and `stats.bands` (four bands with moves) from one shard. The explorer proxy serves Masters only.                                                                                                                                                                              |
+| Web                               | `myLevel` read once on the detail page; Discover and search ignore it. Book rows fill in after an explorer fetch per band.                            | `useMyLevel()` hook shared by LevelLens, FilterBar, FilterSheet and SearchBar. `useBrowse` and `useOpeningSearch` pass `band`. The detail page reads band stats from the page response; only Masters fetches.                                                                                                                                                                                                           |
+| Lichess token                     | Every detail-page view on a cache miss, any band.                                                                                                     | Masters only. The pipeline never uses it.                                                                                                                                                                                                                                                                                                                                                                               |
+| Masters                           | Detail page via explorer, all years.                                                                                                                  | Unchanged. Not offered on Discover or search (no batch data).                                                                                                                                                                                                                                                                                                                                                           |
+| SEO                               | Crawlers see all-ratings snapshot stats.                                                                                                              | Unchanged. The band lives in localStorage, never the URL (`?level=` is Difficulty).                                                                                                                                                                                                                                                                                                                                     |
 
 ## Decisions (made, flag if you disagree)
 
@@ -204,18 +204,23 @@ Done (`0b7d741ea`, `7dc39811e`).
   `api/data/popularity-bands.json`:
   `{"window": {...}, "positions": {fen: {"u1400": {"g","w","d","b"} | null, "1400": ..., "1800": ..., "2200": ...}}}`,
   keyed by the dataset's full FENs.
-- Also writes `api/data/position-stats/NN.json` (`NN` = djb2(full FEN) % 96,
+- Also writes `api/data/position-stats/NN.json` (`NN` = djb2(full FEN) % 256,
   zero-padded, the hash `middleware.ts` uses):
   `{fen: {"window", "bands": {band: {"g","w","d","b","avg_rating","moves": [{"san","g","w","d","b"}]} | null}}}`,
   moves sorted by games. This is what Task 10 serves.
-- A band under `MIN_MOVE_SAMPLE` (20) games is `null`. Win rates are fractions,
-  matching today's fields.
+- A band under `MIN_MOVE_SAMPLE` (20) games is `null`. In
+  `popularity_stats.json` a position under 20 keeps its real count with `null`
+  rates and `avg_rating` (owner, 2026-10-31): 601 of 12,377 in 2026-07..09, deep
+  lines whose all-time median is 287 games. A 6-month window would leave ~387,
+  12 months ~252; not worth older numbers everywhere. Win rates are fractions.
 
 - [ ] Failing tests: `test_sums_months`, `test_missing_month_fails` (a gap in
       the window aborts, never silently shrinks it), `test_thin_band_is_null`,
       `test_all_band_is_sum_of_bands`, `test_keys_map_back_to_dataset_fens`,
       `test_shard_hash_matches_middleware` (golden values from
-      `tests/unit/seo-lookup-shards.test.js`), `test_largest_shard_under_250kb`.
+      `tests/unit/seo-lookup-shards.test.js`),
+      `test_oversized_shard_writes_nothing` (250 KB; 96 shards measured 398 KB
+      at the largest, so 256).
 - [ ] Implement, run tests. Expected: PASS.
 - [ ] `pipeline-reviewer` agent on the branch.
 - [ ] Run the real window (Phase 0's choice). Check `popularity-bands.json`
@@ -267,6 +272,20 @@ remembering.
 - [ ] Register the task (owner approves the exact task definition first). Dry
       run with `refresh.py --check` to show what it would do.
 - [ ] Commit `feat(analysis): refresh popularity stats monthly on a schedule`.
+
+### Task 3c: Retire the original pipeline (own PR, after the first scheduled refresh)
+
+Owner request (2026-10-31). Nothing runs it and its counting rules are wrong.
+
+- [ ] Give `BandGameProcessor` its own `__init__` and `_safe_int` (drop the
+      `GameProcessor` base) and empty `lib/__init__.py`, which imports every old
+      module whenever a new one loads. Tests still pass.
+- [ ] Delete `run_pipeline.py`, `run_pipeline.bat`, `run_pipeline.sh`,
+      `analyze_lichess_popularity.py`, `config.py`, `config.example.json`,
+      `lib/data_fetcher.py`, `lib/state_manager.py`, `lib/stats_calculator.py`,
+      `lib/output_handler.py` and the legacy `GameProcessor`; the README's
+      "Original pipeline" half. Check `check_enrichment_status.py` and the two
+      `.js` scripts for callers first; they may belong elsewhere.
 
 ## Phase 2: serve and date it (#204, site half). One PR.
 

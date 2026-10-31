@@ -80,3 +80,30 @@ def test_write_records_month_and_speeds(tmp_path: Path) -> None:
     assert data["month"] == "2026-09"
     assert data["speeds"] == ["blitz", "rapid", "classical"]
     assert data["positions"][KEY]["1400"]["g"] == 1
+
+
+def test_gzipped_summary_round_trips(tmp_path: Path) -> None:
+    summary = MonthlySummary("2026-09", games_read=7)
+    summary.add(KEY, "1400", "1-0", "e4", 1500)
+    summary.add(KEY, "1400", "0-1", None, 1700)
+    path = tmp_path / "2026-09.json.gz"
+    summary.write(path)
+    assert path.read_bytes()[:2] == b"\x1f\x8b"
+    again = MonthlySummary.read(path)
+    assert again.to_dict() == summary.to_dict()
+
+
+def test_summary_counted_at_other_speeds_rejected(tmp_path: Path) -> None:
+    import gzip
+
+    import pytest
+
+    path = tmp_path / "2026-09.json.gz"
+    MonthlySummary("2026-09").write(path)
+    with gzip.open(path, "rt", encoding="utf-8") as handle:
+        data = json.load(handle)
+    data["speeds"] = ["bullet", "blitz", "rapid", "classical"]
+    with gzip.open(path, "wt", encoding="utf-8") as handle:
+        json.dump(data, handle)
+    with pytest.raises(ValueError, match="speeds"):
+        MonthlySummary.read(path)

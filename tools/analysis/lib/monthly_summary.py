@@ -7,6 +7,7 @@ month, so a window of months can be re-summed without downloading anything
 again (see combine_window.py).
 """
 
+import gzip
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -109,6 +110,28 @@ class MonthlySummary:
         }
 
     def write(self, path: Path) -> None:
+        """Writes JSON, gzipped when the path ends .gz, via a temporary file."""
         path.parent.mkdir(parents=True, exist_ok=True)
-        with path.open("w", encoding="utf-8") as handle:
+        tmp = path.with_name(path.name + ".tmp")
+        opener = gzip.open if path.suffix == ".gz" else open
+        with opener(tmp, "wt", encoding="utf-8") as handle:
             json.dump(self.to_dict(), handle, separators=(",", ":"), sort_keys=True)
+        tmp.replace(path)
+
+    @classmethod
+    def read(cls, path: Path) -> "MonthlySummary":
+        opener = gzip.open if path.suffix == ".gz" else open
+        with opener(path, "rt", encoding="utf-8") as handle:
+            data = json.load(handle)
+        speeds = [speed for speed in SPEED_ORDER if speed in COUNTED_SPEEDS]
+        if data["speeds"] != speeds:
+            raise ValueError(f"{path} counts speeds {data['speeds']}, not {speeds}")
+        summary = cls(data["month"], games_read=data["games_read"])
+        for key, bands in data["positions"].items():
+            for band, tally in bands.items():
+                ours = BandTally(tally["g"], tally["w"], tally["d"], tally["b"])
+                ours.r = tally["r"]
+                for san, move in tally["moves"].items():
+                    ours.moves[san] = Tally(move["g"], move["w"], move["d"], move["b"])
+                summary.positions.setdefault(key, {})[band] = ours
+        return summary

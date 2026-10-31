@@ -1,5 +1,64 @@
 # Lichess Chess Opening Popularity Analysis Pipeline
 
+## Current pipeline: monthly summaries and a 3-month window
+
+The served stats come from the last 3 published months of the Lichess database
+(rated blitz, rapid and classical games; bots and abandoned games excluded, as
+the explorer excludes them). Two steps:
+
+1. **Summarise a month** (~29 GB download, ~2 h on 11 workers):
+
+   ```bash
+   python summarise_month.py --month 2026-09 --file lichess_db_standard_rated_2026-09.pgn.zst
+   ```
+
+   Check the download against Lichess's `sha256sums.txt` first, and the printed
+   game count against `counts.txt`. Writes `data/monthly/2026-09.json.gz` (~2.7
+   MB): per position, per band, games, results, rating total and the top 12 next
+   moves. Commit it; delete the raw file. Run without `-I`, so `lib` imports.
+
+2. **Combine the window**:
+
+   ```bash
+   python combine_window.py --since 2026-07 --until 2026-09
+   ```
+
+   A missing month aborts. Writes into `api/data/`:
+   - `popularity_stats.json`: the all-ratings figures in the shape the API
+     already reads, with `metadata.window`.
+   - `popularity-bands.json`: per FEN, per band `{g, w, d, b}`.
+   - `position-stats/NN.json`: 256 shards (djb2 of the FEN, the hash in
+     `middleware.ts`), each FEN with every band's counts, average rating and
+     next moves. No shard may exceed 250 KB, or nothing is written.
+
+   Under 20 games, a band is `null` and `popularity_stats.json` keeps the real
+   count with `null` rates: the page shows "no stats" rather than a win rate
+   over three games. In the 2026-07..09 window that is 601 of 12,377 positions,
+   all deep lines.
+
+   Game and result totals are exact. Move lists are summed from each month's top
+   12, so a move outside one month's top 12 is undercounted for that month; it
+   only affects the last few rows. `analysis_date` is the run date, so rerunning
+   the same window on another day rewrites `popularity_stats.json` with no
+   change to the numbers.
+
+Bands are the average of both players' ratings: under 1400, 1400–1800,
+1800–2200, 2200+ (`BAND_RATINGS` in `explorer.routes.js`). Positions match on
+board, side, castling and legal en passant, so transpositions count.
+
+**Cross-check every change to the counting rules** with
+`crosscheck_explorer.py data/monthly/2026-03.json.gz`, using your own Lichess
+token (never the production one). The explorer has no monthly data after
+2026-03, so March is the reference month. On 2026-03 every cell with 1,000+
+explorer games agreed within 0.63%, most exactly.
+
+Tests: `python -I -m pytest tests -q` from this directory.
+
+The rest of this README describes the original pipeline (`run_pipeline.py`),
+which nothing runs any more and which is due to be removed.
+
+## Original pipeline
+
 A production-ready data pipeline for analyzing chess opening popularity from
 Lichess game database. This pipeline downloads, processes, and analyzes millions
 of chess games to generate comprehensive opening statistics.
@@ -39,19 +98,12 @@ opening positions:
 }
 ```
 
-### The shipped data did not come from this pipeline
+### Its numbers never shipped
 
-Check `metadata` in `api/data/popularity_stats.json` before assuming a rerun
-reproduces what's live. The current file was generated **2025-07-15** and
-records `"analysis_method": "API-based (not PGN processing)"` against
-`explorer.lichess.ovh/lichess`, made by a script that no longer exists in this
-repo. `run_pipeline.py` is the maintained path and writes a compatible schema
-(`positions` keyed by FEN, consumed by `eco-service.js` and
-`popularity-stats-service.js`), but it derives the numbers differently.
-
-So don't expect a rerun to match the current values, and don't try to reproduce
-the original API method — the Lichess explorer has required authentication since
-2026-03 and would 401.
+The all-time file that shipped until 2026-10 came from a deleted API script
+(2025-07-15), not from this pipeline. This pipeline splits games on a blank line
+Lichess does not use, matches FENs including move counters (missing
+transpositions) and counts bullet, so its output disagrees with both.
 
 ### The caveat that reaches users
 

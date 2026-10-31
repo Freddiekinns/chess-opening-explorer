@@ -15,7 +15,6 @@ Prints the explorer's 1.e4 count for each recent month, and for all time,
 to show which months it has indexed (a month it hasn't reads 0). 8 requests.
 """
 
-import json
 import os
 import sys
 import time
@@ -24,7 +23,7 @@ from typing import Dict, Optional
 
 import requests
 
-from lib.monthly_summary import SPEED_ORDER
+from lib.monthly_summary import SPEED_ORDER, MonthlySummary
 
 EXPLORER = "https://explorer.lichess.org/lichess"
 # Same rating buckets per band as BAND_RATINGS in explorer.routes.js.
@@ -88,7 +87,7 @@ def main() -> int:
     if sys.argv[1] == "--probe":
         return probe(session)
 
-    summary = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+    summary = MonthlySummary.read(Path(sys.argv[1])).to_dict()
     month = summary["month"]
     positions = summary["positions"]
 

@@ -6,7 +6,7 @@ Summarise one Lichess monthly database file into per-position band counts.
 
 Streams the file (from disk with --file, otherwise straight from
 database.lichess.org), keeps blitz, rapid and classical games, and writes
-data/monthly/<month>.json. The games themselves are never stored.
+data/monthly/<month>.json.gz. The games themselves are never stored.
 """
 
 import argparse
@@ -123,11 +123,14 @@ def main() -> int:
     )
     parser.add_argument("--workers", type=int, default=11)
     parser.add_argument(
-        "--out", type=Path, help="output path; default data/monthly/<month>.json"
+        "--out", type=Path, help="output path; default data/monthly/<month>.json.gz"
     )
     args = parser.parse_args()
+    if args.limit and not args.out:
+        # A sample written to the default path would be summed as a real month.
+        parser.error("--limit needs --out, away from data/monthly/")
 
-    out = args.out or OUT_DIR / f"{args.month}.json"
+    out = args.out or OUT_DIR / f"{args.month}.json.gz"
     if args.file:
         with args.file.open("rb") as raw:
             summary = summarise(raw, args.month, args.limit, args.workers)

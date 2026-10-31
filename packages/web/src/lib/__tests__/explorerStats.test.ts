@@ -95,4 +95,18 @@ describe('stat views', () => {
     expect(snapshotStatsView(null)).toBeNull();
     expect(snapshotStatsView({ games_analyzed: 0 })).toBeNull();
   });
+
+  test('draws no bar when the rates are null, whatever the game count', () => {
+    // Under 20 games the stats file keeps the real count with null rates;
+    // "White 0% · Draw 0% · Black 0%" would be invented.
+    expect(
+      snapshotStatsView({
+        games_analyzed: 18,
+        white_win_rate: null,
+        draw_rate: null,
+        black_win_rate: null,
+        avg_rating: null,
+      })
+    ).toBeNull();
+  });
 });

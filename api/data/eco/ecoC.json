@@ -1018,7 +1018,7 @@
       "icsbot": "Papa-Ticulat Gambit, French "
     },
     "analysis_json": {
-      "description": "The Papa-Ticulat Gambit is a sharp and unorthodox response to the French Defense, where White sacrifices the central e-pawn to accelerate development and seize the initiative. By fianchettoing the light-squared bishop, White aims to control the long diagonal and create immediate attacking chances, leading to a dynamic and tactical game. This opening is perfect for creative and aggressive players who enjoy gambits and are comfortable playing for compensation rather than material.",
+      "description": "The Papa-Ticulat Gambit is a sharp and unorthodox response to the French Defence, where White offers the e4-pawn to speed up development and seize the initiative. With the dark-squared bishop on b2, White aims down the long diagonal at the black kingside, leading to a dynamic and tactical game. This opening is perfect for creative and aggressive players who enjoy gambits and are comfortable playing for compensation rather than material.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -4482,7 +4482,7 @@
     "name": "French: Exchange, 4.Bf4",
     "scid": "C01g",
     "analysis_json": {
-      "description": "The Exchange French with 4.Bf4 is a subtle and ambitious approach for White, sidestepping the main theoretical battles of the French Defense. By developing the light-squared bishop outside the pawn chain before playing e3, White aims for a small but persistent edge, focusing on controlling key squares and harmonious development. This opening is perfect for strategic players who enjoy clear plans and accumulating small advantages in a seemingly symmetrical position.",
+      "description": "The Exchange French with 4.Bf4 is a subtle and ambitious approach for White, sidestepping the main theoretical battles of the French Defence. By developing the dark-squared bishop early, White aims for a small but persistent edge, focusing on control of the e5-square and harmonious development. This opening is perfect for strategic players who enjoy clear plans and accumulating small advantages in a seemingly symmetrical position.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -4524,7 +4524,7 @@
       "common_plans": [
         "White: Control the e5-square, develop harmoniously with Nf3, Bd3, c3, and prepare a potential queenside minority attack with Rb1 and b4.",
         "Black: Neutralize White's active Bf4, often with ...Bd6, and break the central symmetry with the ...c5 pawn lever to create counterplay.",
-        "White: Use the Bf4 to pressure Black's position, sometimes rerouting it via e3 to d2 to support the center and prepare for a kingside buildup.",
+        "White: Keep the bishop on the b8-h2 diagonal to contest e5, and meet ...Bd6 by exchanging on d6 or retreating to g3.",
         "Black: Complete development with ...Nf6, ...0-0, and ...Nc6, aiming to exploit any overextension by White."
       ],
       "version": "1.0",
@@ -85512,7 +85512,7 @@
       "common_plans": [
         "White aims to use the central space and active pieces to build an attack, often targeting the f7 square.",
         "White may castle queenside in some variations to launch a kingside pawn storm.",
-        "Black seeks to neutralize White's initiative by challenging the d4-knight, often with ...Bb4, and creating counterplay.",
+        "Black: After 5.Nxd4, neutralise White's initiative by pinning the c3-knight with ...Bb4 and striking back in the centre with ...d5.",
         "Black aims for harmonious development, looking to equalize and exploit any overextension by White."
       ],
       "version": "1.0",
@@ -160040,7 +160040,7 @@
     "eco": "C24",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "This is a rare and somewhat dubious sideline where White's passive 3. f3 is immediately challenged by Black's principled 3...d5. By recapturing with the queen, Black seizes the initiative, develops a key piece to an active square, and poses immediate questions to White. This opening is not recommended for White at higher levels but offers Black a very comfortable and straightforward path to a pleasant middlegame.",
+      "description": "In this line Black has blundered the queen. After 3.f3 d5 4.exd5, the recapture 4...Qxd5 puts the queen on a square the c4-bishop attacks, and 5.Bxd5 Nxd5 leaves White with a queen for a bishop. The sound recapture was 4...Nxd5. For White, the lesson is to look for loose pieces; for Black, to check what attacks a square before putting the queen on it.",
       "style_tags": [
         "Unorthodox",
         "Offbeat",
@@ -160078,10 +160078,10 @@
         "Exploiting developmental leads"
       ],
       "common_plans": [
-        "White typically plays 5. Bxd5 Nxd5, aiming to consolidate with moves like Nc3 and d3, accepting a slightly passive but solid position.",
-        "Black will develop pieces harmoniously, often playing ...c5 to challenge White's central control and expand on the queenside.",
-        "White may try to challenge the active black queen with Nc3, hoping to gain time for development.",
-        "Black focuses on maintaining the initiative, using active pieces to restrict White and create threats."
+        "White: Take the queen with 5.Bxd5 and, after 5...Nxd5, complete development and trade pieces to convert the material advantage.",
+        "Black: With the queen gone, develop fast (...Nc6, ...Bc5) and look for tactics against White's weakened kingside; normal play will not win the material back.",
+        "Black, a move earlier: 4...Nxd5 recaptures safely and keeps a comfortable game against White's loosened king.",
+        "White, earlier: 3.f3 weakens the e1-h4 diagonal and takes f3 from the knight, so treat the opening as a surprise rather than a source of advantage."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:36:33.071Z"
@@ -161398,7 +161398,7 @@
       "eco_js": "Italian Game: Schilling-Kostic Gambit"
     },
     "analysis_json": {
-      "description": "The Blackburne-Shilling Gambit is a notoriously sharp and dubious line where Black intentionally sacrifices material for a ferocious, all-or-nothing attack against the white king. After White captures on f7, the position explodes into tactical chaos, with Black's queen threatening to wreak havoc on the kingside. This opening is perfect for aggressive, tricky players who thrive on initiative and are willing to gamble for a quick knockout, especially against unprepared opponents.",
+      "description": "The Blackburne-Shilling Gambit is a trap more than a sound gambit: 3...Nd4 invites 4.Nxe5, and this is the position Black is hoping for. After 5.Nxf7 the queen takes on g2, and the classic finish 5...Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3 is checkmate. It suits tricky players who like setting traps, especially in fast games, but White can avoid it with calm moves such as 4.Nxd4 or 4.O-O.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -161441,10 +161441,10 @@
         "Attack vs. Defense"
       ],
       "common_plans": [
-        "Black aims to continue the attack with ...Qxg2, targeting the h1 rook and forcing the white king into the open, creating decisive mating threats.",
-        "White's primary plan is to survive the initial onslaught by defending key squares like f2 and g2, often with moves like Qf3 or Ke2.",
-        "If White weathers the storm, the goal is to complete development, consolidate the extra material, and convert the winning advantage in the middlegame or endgame.",
-        "Black must use the initiative to prevent White from consolidating, bringing more pieces into the attack if possible."
+        "Black: Take on g2 at once with 5...Qxg2, hitting the h1-rook; after 6.Rf1 Qxe4+ 7.Be2, Nf3 is mate.",
+        "White: 5.Nxf7 is the mistake the trap is built on. After 5...Qxg2 6.Rf1 Qxe4+, only 7.Qe2 avoids an immediate mate.",
+        "White, a move earlier: 4.Nxd4 exd4 or 4.O-O sidesteps the trap and gives a comfortable game.",
+        "Black, against careful play: the knight jump costs time, so the gambit is a surprise weapon for fast games rather than a repertoire mainstay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:43:07.011Z"

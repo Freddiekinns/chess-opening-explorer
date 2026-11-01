@@ -1,6 +1,6 @@
 import React from 'react';
 import { FacetOptionList } from './FacetSelect';
-import { RANKABLE_BANDS, rangeLabel, type BandId } from '../../lib/lichessExplorer';
+import { LEVEL_OPTIONS, type BandId } from '../../lib/lichessExplorer';
 import styles from './LevelOptionList.module.css';
 
 /**
@@ -9,11 +9,6 @@ import styles from './LevelOptionList.module.css';
  * uses to mean something else. The heading says whose ratings they are, so a
  * chess.com player needs no footnote. Masters has no batch data to rank by.
  */
-export const LEVEL_OPTIONS = RANKABLE_BANDS.map((band) => ({
-  value: band.id,
-  label: rangeLabel(band.id),
-}));
-
 interface LevelOptionListProps {
   /** The band ranked by, or null for all levels. */
   value: BandId | null;

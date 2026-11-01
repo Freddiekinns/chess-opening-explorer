@@ -66,6 +66,12 @@ export function rangeLabel(id: BandId): string {
   return RANGE_LABELS[id];
 }
 
+/** The level menu's rows, on Discover and in search: ranges, never names. */
+export const LEVEL_OPTIONS = RANKABLE_BANDS.map((band) => ({
+  value: band.id,
+  label: rangeLabel(band.id),
+}));
+
 /** The range mid-sentence: "Ranked for under 1400", not "for Under 1400". */
 export function rangeInText(id: BandId): string {
   return id === 'u1400' ? 'under 1400' : RANGE_LABELS[id];

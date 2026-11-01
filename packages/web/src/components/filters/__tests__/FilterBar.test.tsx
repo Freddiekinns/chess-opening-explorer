@@ -33,24 +33,24 @@ describe('FilterBar', () => {
   it('level is first in the bar with a divider', () => {
     setup();
     const buttons = screen.getAllByRole('button');
-    expect(buttons[0]).toHaveAccessibleName('Your level All levels');
+    expect(buttons[0]).toHaveAccessibleName('Player rating Any');
     expect(document.querySelector('[data-testid="level-divider"]')).toBeInTheDocument();
   });
 
   it('names a saved level by its name', () => {
     setup({ band: '1400' });
-    expect(screen.getByRole('button', { name: 'Your level Intermediate' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Player rating Intermediate' })).toBeInTheDocument();
   });
 
   it('offers every level by name, with its Lichess rating beside it', async () => {
     const user = userEvent.setup();
     const { onBandChange } = setup();
-    await user.click(screen.getByRole('button', { name: 'Your level All levels' }));
+    await user.click(screen.getByRole('button', { name: 'Player rating Any' }));
 
-    const menu = screen.getByRole('dialog', { name: 'Rank by your level' });
+    const menu = screen.getByRole('dialog', { name: 'Rank by player rating' });
     expect(menu).toHaveTextContent('Lichess rating');
     expect(screen.getAllByRole('option').map((o) => o.textContent)).toEqual([
-      'All levels',
+      'Any rating',
       'Beginner Under 1400',
       'Intermediate 1400–1800',
       'Advanced 1800–2200',

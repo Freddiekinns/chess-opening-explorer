@@ -487,16 +487,20 @@ router.get('/semantic-search', async (req, res) => {
     });
 
     const searchTime = Date.now() - startTime;
+    // A level word in the query ranks by its own band (#206), and the counts
+    // shown must be that band's.
+    const rankedBand = searchResults.band || band;
 
     res.json({
       success: true,
-      data: searchResults.results.map((opening) => toSearchResult(opening, band)),
+      data: searchResults.results.map((opening) => toSearchResult(opening, rankedBand)),
       count: searchResults.results.length,
       totalResults: searchResults.totalResults,
       hasMore: searchResults.hasMore,
       searchTime: `${searchTime}ms`,
       searchType: searchResults.searchType || 'semantic',
       queryIntent: searchResults.queryIntent,
+      band: rankedBand,
       query: q,
     });
   } catch (error) {

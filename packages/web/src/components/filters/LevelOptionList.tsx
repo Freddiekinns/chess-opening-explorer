@@ -4,7 +4,7 @@ import { LEVEL_OPTIONS, type BandId } from '../../lib/lichessExplorer';
 import styles from './LevelOptionList.module.css';
 
 /**
- * The band menu behind "Your level" on Discover and "Change" in search. Rows
+ * The band menu behind "Player rating" on Discover and "Change" in search. Rows
  * are the level's name with its range beside it: players pick by the name,
  * and the heading says whose ratings the ranges are. Masters has no batch
  * data to rank by.

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import styles from './LevelLens.module.css';
 import { BANDS, bandTooltip, type BandId } from '../../lib/lichessExplorer';
 
@@ -19,8 +19,12 @@ interface LevelLensProps {
 }
 
 export const LevelLens: React.FC<LevelLensProps> = ({ band, onChange, scrollable = false }) => {
+  const labelId = useId();
   return (
-    <div className={styles.lens} role="group" aria-label="Level">
+    <div className={styles.lens} role="group" aria-labelledby={labelId}>
+      <span id={labelId} className="label-meta">
+        Player rating
+      </span>
       <div className={`${styles.pills} ${scrollable ? styles.pillsScroll : ''}`}>
         {BANDS.map((def) => (
           <button

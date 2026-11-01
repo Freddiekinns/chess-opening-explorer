@@ -7,6 +7,7 @@ import {
   MIN_QUERY_LENGTH,
   SEARCH_DEBOUNCE_MS,
   expandAbbreviations,
+  levelInQuery,
   queryShape,
 } from '../lib/searchQuery';
 import { trackEvent } from '../lib/analytics';
@@ -56,14 +57,21 @@ export type SearchSurface = 'hero' | 'topbar' | 'overlay';
  * across 389 sampled queries the plain search found nothing the search route
  * missed, so the second trip is gone.
  */
-async function search(query: string, band: BandId | null): Promise<Partial<Opening>[]> {
+interface Served {
+  openings: Partial<Opening>[];
+  /** The band the server ranked by, when it says: a level word wins (#206). */
+  band?: BandId | null;
+}
+
+async function search(query: string, band: BandId | null): Promise<Served> {
   const response = await fetch(
     `/api/openings/semantic-search?q=${encodeURIComponent(query)}&limit=${RESULT_LIMIT}` +
       (band ? `&band=${band}` : '')
   );
-  if (!response.ok) return [];
+  if (!response.ok) return { openings: [] };
   const data = await response.json();
-  return data?.success && Array.isArray(data.data) ? data.data : [];
+  if (!data?.success || !Array.isArray(data.data)) return { openings: [] };
+  return 'band' in data ? { openings: data.data, band: data.band } : { openings: data.data };
 }
 
 export function useOpeningSearch(surface: SearchSurface) {
@@ -71,6 +79,8 @@ export function useOpeningSearch(surface: SearchSurface) {
   const [served, setServed] = useState<Partial<Opening>[]>([]);
   const [searching, setSearching] = useState(false);
   const [cameBackEmpty, setCameBackEmpty] = useState(false);
+  // The band the server ranked the current query by, keyed to that query.
+  const [answered, setAnswered] = useState<{ query: string; band: BandId | null } | null>(null);
   const { isSaved } = useRepertoire();
   // Ranked by your level (#205). Both halves ask for the same band, so the
   // server's list still replaces the local one with itself.
@@ -117,8 +127,9 @@ export function useOpeningSearch(surface: SearchSurface) {
 
     const timer = setTimeout(async () => {
       try {
-        const fromServer = await search(expanded, band);
+        const { openings: fromServer, band: rankedBand } = await search(expanded, band);
         if (!isCurrent()) return;
+        if (rankedBand !== undefined) setAnswered({ query: expanded, band: rankedBand });
 
         if (fromServer.length > 0) {
           // The server's list wins even where the local one had something. It
@@ -187,6 +198,18 @@ export function useOpeningSearch(surface: SearchSurface) {
     [served, isSaved]
   );
 
+  // "Ranked for beginners" on the keystroke for "openings for beginners",
+  // whatever the saved level: the server ranks by a level the query names.
+  // Once it answers, its band is the last word, since a name outranks a level
+  // word ("Beginner's Trap") and only the server knows it found one.
+  const expandedQuery = expandAbbreviations(query);
+  const scopeBand =
+    answered?.query === expandedQuery ? answered.band : (levelInQuery(expandedQuery) ?? band);
+  const scope = useMemo(
+    () => ({ band: scopeBand, fromQuery: scopeBand !== band }),
+    [scopeBand, band]
+  );
+
   const reset = useCallback(() => {
     setQuery('');
     setServed([]);
@@ -204,10 +227,16 @@ export function useOpeningSearch(surface: SearchSurface) {
       noResults,
       hasQuery,
       reset,
-      /** The Lichess band results are ranked for, or null for all players. */
+      /** The saved Lichess band, or null for all players. */
       band,
       setBand,
+      /**
+       * What the scope line says: the band this query is ranked for, and
+       * whether the query chose it ("beginner openings") rather than the
+       * saved level.
+       */
+      scope,
     }),
-    [query, results, searching, noResults, hasQuery, reset, band, setBand]
+    [query, results, searching, noResults, hasQuery, reset, band, setBand, scope]
   );
 }

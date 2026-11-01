@@ -5,8 +5,13 @@
 const {
   CHESS_MOVE_PATTERNS,
   ECO_CODE_PATTERN,
-  STYLE_AXES
+  STYLE_AXES,
+  LEVEL_WORDS
 } = require('./SearchConstants');
+
+// Words around a level word that say nothing once it is gone: "openings for
+// beginners", "e4 lines for intermediate players".
+const LEVEL_FILLER = new Set(['opening', 'openings', 'line', 'lines', 'option', 'options']);
 
 class QueryUtils {
   /**
@@ -112,6 +117,28 @@ class QueryUtils {
     };
 
     return { query: sanitizedQuery, options: sanitizedOptions };
+  }
+
+  /**
+   * The player level a query names, and what it asks for at that level:
+   * "advanced sicilian defense" is { band: '1800', rest: 'sicilian defense' },
+   * "openings for beginners" is { band: 'u1400', rest: '' }.
+   * @param {string} query - Normalized query
+   * @returns {{band: string, rest: string}|null}
+   */
+  static levelInQuery(query) {
+    const words = query.split(/\s+/).filter(Boolean);
+    const at = words.findIndex((word) => Object.hasOwn(LEVEL_WORDS, word));
+    if (at === -1) return null;
+
+    let from = at;
+    let to = at + 1;
+    if (['player', 'players'].includes(words[to])) to += 1;
+    if (words[from - 1] === 'for') from -= 1;
+    const rest = [...words.slice(0, from), ...words.slice(to)].filter(
+      (word) => !LEVEL_FILLER.has(word)
+    );
+    return { band: LEVEL_WORDS[words[at]], rest: rest.join(' ') };
   }
 }
 

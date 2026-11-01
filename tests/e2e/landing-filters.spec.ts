@@ -12,7 +12,7 @@ test.describe('landing page filters', () => {
     await expect(page.getByRole('heading', { name: 'Popular openings' })).toBeVisible();
 
     const ranked = page.waitForRequest((request) => request.url().includes('band=1400'));
-    await page.getByRole('button', { name: 'Your level All levels' }).click();
+    await page.getByRole('button', { name: 'Player rating Any' }).click();
     await page.getByRole('option', { name: /^Intermediate/ }).click();
     await ranked;
     await expect(

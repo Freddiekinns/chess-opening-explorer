@@ -33,13 +33,13 @@ afterEach(() => {
 });
 
 describe('FilterSheet', () => {
-  it('puts your level first in the sheet, by name with its range', async () => {
+  it('puts player rating first in the sheet, by name with its range', async () => {
     const user = userEvent.setup();
     const { onBandChange } = setup({ band: '1400' });
     await user.click(screen.getByRole('button', { name: /Filters/ }));
 
     const groups = screen.getAllByRole('group');
-    expect(groups[0]).toHaveAccessibleName('Your level · Lichess rating');
+    expect(groups[0]).toHaveAccessibleName('Player rating · Lichess');
     expect(screen.getByRole('button', { name: 'Intermediate 1400–1800' })).toHaveAttribute(
       'aria-pressed',
       'true'

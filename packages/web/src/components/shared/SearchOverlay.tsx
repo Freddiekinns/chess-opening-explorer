@@ -24,7 +24,7 @@ interface SearchOverlayProps {
 }
 
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
-  const { query, setQuery, results, searching, noResults, hasQuery, reset, band, setBand } =
+  const { query, setQuery, results, searching, noResults, hasQuery, reset, setBand, scope } =
     useOpeningSearch('overlay');
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -113,7 +113,9 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
 
         {/* No count line: the openings appearing are the feedback, the same
             reason there is no "did you mean". */}
-        {showResults && <SearchScope band={band} onChange={setBand} />}
+        {showResults && (
+          <SearchScope band={scope.band} fromQuery={scope.fromQuery} onChange={setBand} />
+        )}
         {showResults && (
           <ul className={styles.rowList}>
             {results.map((opening, i) => (

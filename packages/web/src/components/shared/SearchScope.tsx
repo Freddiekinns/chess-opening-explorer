@@ -14,24 +14,31 @@ interface SearchScopeProps {
   /** The band results are ranked for, or null for all players. */
   band: BandId | null;
   onChange: (band: BandId) => void;
+  /**
+   * The query named the level ("openings for beginners", #206). It ranks by
+   * that whatever the saved level, so there is nothing to Change.
+   */
+  fromQuery?: boolean;
 }
 
-export const SearchScope: React.FC<SearchScopeProps> = ({ band, onChange }) => {
+export const SearchScope: React.FC<SearchScopeProps> = ({ band, onChange, fromQuery = false }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div className={styles.scope} onMouseDown={(e) => e.preventDefault()}>
       <span className="label-meta">{`Ranked for ${levelPlayers(band ?? 'all')}`}</span>
-      <button
-        type="button"
-        className={styles.change}
-        aria-expanded={open}
-        onClick={() => setOpen((prev) => !prev)}
-      >
-        Change
-      </button>
-      {open && (
-        <div className={styles.menu} role="dialog" aria-label="Rank by your level">
+      {!fromQuery && (
+        <button
+          type="button"
+          className={styles.change}
+          aria-expanded={open}
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          Change
+        </button>
+      )}
+      {open && !fromQuery && (
+        <div className={styles.menu} role="dialog" aria-label="Rank by player rating">
           <LevelOptionList
             value={band}
             onSelect={(next) => {

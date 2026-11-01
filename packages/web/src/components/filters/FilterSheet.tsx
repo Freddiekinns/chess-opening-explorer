@@ -329,7 +329,7 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
 
               <div className={styles.body} ref={bodyRef}>
                 <PillRow
-                  legend="Your level · Lichess rating"
+                  legend="Player rating · Lichess"
                   options={LEVEL_OPTIONS}
                   value={band ?? 'all'}
                   anyLabel={null}

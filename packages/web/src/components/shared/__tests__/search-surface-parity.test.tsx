@@ -58,20 +58,20 @@ const SERVED = [
   },
 ];
 
-const createFetchMock = (data: unknown[], onSearch?: () => void) =>
+const createFetchMock = (data: unknown[], onSearch?: () => void, extra = {}) =>
   vi.fn(async (url: string) => {
     if (String(url).includes('/api/openings/search-index')) {
       return { ok: true, json: async () => ({ success: true, data: LOCAL_INDEX }) };
     }
     onSearch?.();
-    return { ok: true, json: async () => ({ success: true, data }) };
+    return { ok: true, json: async () => ({ success: true, data, ...extra }) };
   });
 
 let fetchMock: ReturnType<typeof createFetchMock>;
 
-function stubSearch(data: unknown[], onSearch?: () => void) {
+function stubSearch(data: unknown[], onSearch?: () => void, extra = {}) {
   resetSearchIndex();
-  fetchMock = createFetchMock(data, onSearch);
+  fetchMock = createFetchMock(data, onSearch, extra);
   vi.stubGlobal('fetch', fetchMock);
 }
 
@@ -175,6 +175,35 @@ describe('search surface parity', () => {
         expect(searchRequests()[searchRequests().length - 1]).toContain('band=1800')
       );
       expect(trackEvent).toHaveBeenCalledWith('band_select', { band: '1800', surface: 'search' });
+    });
+
+    // "openings for beginners" ranks for beginners whatever the saved level
+    // (#206). The query states the level, so there is nothing to Change.
+    it('a level word in the query names the level, with no Change', async () => {
+      const user = userEvent.setup();
+      localStorage.setItem('openingbook:my-level', '1400');
+      stubSearch(SERVED, undefined, { band: 'u1400' });
+      surface.render();
+
+      await user.type(surface.field(), 'beginner openings');
+
+      expect(await screen.findByText('Ranked for beginners')).toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: 'Change' })).not.toBeInTheDocument();
+      expect(localStorage.getItem('openingbook:my-level')).toBe('1400');
+    });
+
+    // A name wins over a level word ("Beginner's Trap"), and only the server
+    // knows it found one, so its band is the last word.
+    it('takes the band the server ranked by', async () => {
+      const user = userEvent.setup();
+      localStorage.setItem('openingbook:my-level', '1400');
+      stubSearch(SERVED, undefined, { band: '1400' });
+      surface.render();
+
+      await user.type(surface.field(), 'beginners trap');
+
+      expect(await screen.findByText('Ranked for intermediate players')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Change' })).toBeInTheDocument();
     });
 
     it('expands "qgd" before asking the server', async () => {

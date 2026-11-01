@@ -136,7 +136,7 @@ describe('search surface parity', () => {
       expect(searchRequests()[0]).not.toContain('band=');
     });
 
-    it('scope line reads Ranked for 1400–1800, and both halves ask for it', async () => {
+    it('scope line reads Ranked for intermediate players, and both halves ask for it', async () => {
       const user = userEvent.setup();
       localStorage.setItem('openingbook:my-level', '1400');
       stubSearch(SERVED);
@@ -144,7 +144,7 @@ describe('search surface parity', () => {
 
       await user.type(surface.field(), 'qgd');
 
-      expect(await screen.findByText('Ranked for 1400–1800')).toBeInTheDocument();
+      expect(await screen.findByText('Ranked for intermediate players')).toBeInTheDocument();
       await waitFor(() => expect(searchRequests().length).toBeGreaterThan(0));
       expect(searchRequests()[0]).toContain('band=1400');
       const indexRequests = fetchMock.mock.calls
@@ -163,10 +163,10 @@ describe('search surface parity', () => {
 
       await user.click(screen.getByRole('button', { name: 'Change' }));
       expect(screen.getByText('Lichess rating')).toBeInTheDocument();
-      await user.click(screen.getByRole('option', { name: '1800–2200' }));
+      await user.click(screen.getByRole('option', { name: /^Advanced/ }));
 
       // Re-ranked in place: the list is repainted for the new level, not closed.
-      expect(await screen.findByText('Ranked for 1800–2200')).toBeInTheDocument();
+      expect(await screen.findByText('Ranked for advanced players')).toBeInTheDocument();
       expect(
         await screen.findByText("Queen's Gambit Declined: Normal Defense")
       ).toBeInTheDocument();

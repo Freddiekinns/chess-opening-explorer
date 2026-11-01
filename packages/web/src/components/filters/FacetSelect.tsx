@@ -16,6 +16,8 @@ export interface FacetOption {
   value: string;
   label: string;
   count?: number;
+  /** Muted text in the count's place, such as a level's rating range. */
+  detail?: string;
 }
 
 interface FacetSelectProps {
@@ -125,6 +127,12 @@ export const FacetOptionList: React.FC<FacetOptionListProps> = ({
           <span>{option.label}</span>
           {option.count !== undefined && (
             <span className={styles.optionCount}>{option.count.toLocaleString()}</span>
+          )}
+          {option.detail && (
+            <>
+              {' '}
+              <span className={styles.optionCount}>{option.detail}</span>
+            </>
           )}
           {value === option.value && (
             <Check size={15} className={styles.check} aria-hidden="true" />

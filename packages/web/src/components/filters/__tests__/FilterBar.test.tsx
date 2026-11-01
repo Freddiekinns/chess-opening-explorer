@@ -6,7 +6,7 @@ import { resultCountLabel } from '../resultCount';
 import { browseResponse } from '../../../test/fixtures/browseResponse';
 
 const facets = browseResponse().facets;
-const noFilters = { level: null, style: null, family: null, sort: 'popular' };
+const noFilters = { style: null, family: null, sort: 'popular' };
 
 const setup = (props = {}) => {
   const onFacetChange = vi.fn();
@@ -37,12 +37,12 @@ describe('FilterBar', () => {
     expect(document.querySelector('[data-testid="level-divider"]')).toBeInTheDocument();
   });
 
-  it('names a saved level by its rating range', () => {
+  it('names a saved level by its name', () => {
     setup({ band: '1400' });
-    expect(screen.getByRole('button', { name: 'Your level 1400–1800' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Your level Intermediate' })).toBeInTheDocument();
   });
 
-  it('offers every Lichess band under a Lichess rating heading', async () => {
+  it('offers every level by name, with its Lichess rating beside it', async () => {
     const user = userEvent.setup();
     const { onBandChange } = setup();
     await user.click(screen.getByRole('button', { name: 'Your level All levels' }));
@@ -51,13 +51,13 @@ describe('FilterBar', () => {
     expect(menu).toHaveTextContent('Lichess rating');
     expect(screen.getAllByRole('option').map((o) => o.textContent)).toEqual([
       'All levels',
-      'Under 1400',
-      '1400–1800',
-      '1800–2200',
-      '2200+',
+      'Beginner Under 1400',
+      'Intermediate 1400–1800',
+      'Advanced 1800–2200',
+      'Expert 2200+',
     ]);
 
-    await user.click(screen.getByRole('option', { name: '1800–2200' }));
+    await user.click(screen.getByRole('option', { name: /^Advanced/ }));
     expect(onBandChange).toHaveBeenCalledWith('1800');
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
@@ -65,10 +65,14 @@ describe('FilterBar', () => {
   it('every facet button states what it filters and what it is set to', () => {
     setup();
 
-    expect(screen.getByRole('button', { name: 'Difficulty Any' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Style Any' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Family Any' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Sort Most played' })).toBeInTheDocument();
+  });
+
+  it('has no Difficulty facet: level words name players, not openings (#206)', () => {
+    setup();
+    expect(screen.queryByRole('button', { name: /Difficulty/ })).not.toBeInTheDocument();
   });
 
   it('shows the active value on the trigger, not a generic label', () => {
@@ -79,61 +83,61 @@ describe('FilterBar', () => {
 
   it('still labels a selection whose count has fallen to zero', () => {
     // The API keeps the applied value in its own facet list at count 0 exactly
-    // so the trigger can name it; without that this would read "Difficulty Any"
-    // while the grid was filtered to Beginner.
+    // so the trigger can name it; without that this would read "Style Any"
+    // while the grid was filtered to Gambit.
     const zeroed = {
       ...facets,
-      level: [{ value: 'Beginner', label: 'Beginner', count: 0 }],
+      style: [{ value: 'gambit', label: 'Gambit', count: 0 }],
     };
     setup({
       facets: zeroed,
-      filters: { ...noFilters, level: 'Beginner' },
+      filters: { ...noFilters, style: 'gambit' },
       activeCount: 1,
       total: 0,
     });
 
-    expect(screen.getByRole('button', { name: 'Difficulty Beginner' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Style Gambit' })).toBeInTheDocument();
   });
 
   it('opens a menu of options with their counts and reports the choice', async () => {
     const { onFacetChange } = setup();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Difficulty Any' }));
-    const option = screen.getByRole('option', { name: /Intermediate/ });
-    expect(option).toHaveTextContent('10');
+    await userEvent.click(screen.getByRole('button', { name: 'Style Any' }));
+    const option = screen.getByRole('option', { name: /Sharp/ });
+    expect(option).toHaveTextContent('18');
 
     await userEvent.click(option);
-    expect(onFacetChange).toHaveBeenCalledWith('level', 'Intermediate');
+    expect(onFacetChange).toHaveBeenCalledWith('style', 'sharp');
   });
 
   it('closes the menu after a choice', async () => {
     setup();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Difficulty Any' }));
-    await userEvent.click(screen.getByRole('option', { name: /Intermediate/ }));
+    await userEvent.click(screen.getByRole('button', { name: 'Style Any' }));
+    await userEvent.click(screen.getByRole('option', { name: /Sharp/ }));
 
-    expect(screen.queryByRole('option', { name: /Intermediate/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: /Sharp/ })).not.toBeInTheDocument();
   });
 
   it('lets a user reset one facet from its own menu', async () => {
     const { onFacetChange } = setup({
-      filters: { ...noFilters, level: 'Beginner' },
+      filters: { ...noFilters, style: 'gambit' },
       activeCount: 1,
     });
 
-    await userEvent.click(screen.getByRole('button', { name: 'Difficulty Beginner' }));
-    await userEvent.click(screen.getByRole('option', { name: 'Any difficulty' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Style Gambit' }));
+    await userEvent.click(screen.getByRole('option', { name: 'Any style' }));
 
-    expect(onFacetChange).toHaveBeenCalledWith('level', null);
+    expect(onFacetChange).toHaveBeenCalledWith('style', null);
   });
 
   it('closes the menu on Escape', async () => {
     setup();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Difficulty Any' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Style Any' }));
     await userEvent.keyboard('{Escape}');
 
-    expect(screen.queryByRole('option', { name: /Intermediate/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: /Sharp/ })).not.toBeInTheDocument();
   });
 
   it('announces the result count to screen readers', () => {

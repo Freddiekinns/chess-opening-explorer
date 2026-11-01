@@ -5,7 +5,7 @@ import { FilterSheet } from '../FilterSheet';
 import { browseResponse } from '../../../test/fixtures/browseResponse';
 
 const facets = browseResponse().facets;
-const noFilters = { level: null, style: null, family: null, sort: 'popular' };
+const noFilters = { style: null, family: null, sort: 'popular' };
 
 const setup = (props = {}) => {
   const onFacetChange = vi.fn();
@@ -33,19 +33,19 @@ afterEach(() => {
 });
 
 describe('FilterSheet', () => {
-  it('puts your level first in the sheet, by rating range', async () => {
+  it('puts your level first in the sheet, by name with its range', async () => {
     const user = userEvent.setup();
     const { onBandChange } = setup({ band: '1400' });
     await user.click(screen.getByRole('button', { name: /Filters/ }));
 
     const groups = screen.getAllByRole('group');
     expect(groups[0]).toHaveAccessibleName('Your level · Lichess rating');
-    expect(screen.getByRole('button', { name: '1400–1800' })).toHaveAttribute(
+    expect(screen.getByRole('button', { name: 'Intermediate 1400–1800' })).toHaveAttribute(
       'aria-pressed',
       'true'
     );
 
-    await user.click(screen.getByRole('button', { name: 'Under 1400' }));
+    await user.click(screen.getByRole('button', { name: 'Beginner Under 1400' }));
     expect(onBandChange).toHaveBeenCalledWith('u1400');
   });
 
@@ -57,7 +57,7 @@ describe('FilterSheet', () => {
   });
 
   it('badges how many facets are active', () => {
-    setup({ filters: { ...noFilters, level: 'Beginner', family: 'london' }, activeCount: 2 });
+    setup({ filters: { ...noFilters, style: 'gambit', family: 'london' }, activeCount: 2 });
 
     expect(screen.getByRole('button', { name: 'Filters 2 active' })).toBeInTheDocument();
   });
@@ -74,7 +74,7 @@ describe('FilterSheet', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Filters' }));
 
     expect(screen.getByRole('dialog', { name: 'Filters' })).toBeInTheDocument();
-    expect(screen.getByRole('group', { name: 'Difficulty' })).toBeInTheDocument();
+    expect(screen.queryByRole('group', { name: 'Difficulty' })).not.toBeInTheDocument();
     expect(screen.getByRole('group', { name: 'Style' })).toBeInTheDocument();
     expect(screen.getByRole('group', { name: 'Sort' })).toBeInTheDocument();
     expect(screen.getByRole('button', { expanded: false, name: /family/i })).toBeInTheDocument();
@@ -84,9 +84,9 @@ describe('FilterSheet', () => {
     const { onFacetChange } = setup();
 
     await userEvent.click(screen.getByRole('button', { name: 'Filters' }));
-    await userEvent.click(screen.getByRole('button', { name: /^Advanced/ }));
+    await userEvent.click(screen.getByRole('button', { name: /^Sharp/ }));
 
-    expect(onFacetChange).toHaveBeenCalledWith('level', 'Advanced');
+    expect(onFacetChange).toHaveBeenCalledWith('style', 'sharp');
     // Still open: the sheet is for setting several facets in one visit.
     expect(screen.getByRole('dialog', { name: 'Filters' })).toBeInTheDocument();
   });
@@ -154,7 +154,7 @@ describe('FilterSheet', () => {
   });
 
   it('clears every facet from inside the sheet', async () => {
-    const { onClear } = setup({ filters: { ...noFilters, level: 'Beginner' }, activeCount: 1 });
+    const { onClear } = setup({ filters: { ...noFilters, style: 'gambit' }, activeCount: 1 });
 
     await userEvent.click(screen.getByRole('button', { name: 'Filters 1 active' }));
     await userEvent.click(screen.getByRole('button', { name: 'Clear' }));
@@ -174,7 +174,7 @@ describe('FilterSheet - the family list is opt-in', () => {
     // Every level/style/sort option is on screen; the families are behind a
     // row that states the current one. Expanded by default, the sheet opened
     // at ~2,000px of scroll for a facet most visits never touch.
-    expect(screen.getByRole('button', { name: 'Any difficulty' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Any style' })).toBeInTheDocument();
     expect(screen.queryByLabelText('Search families')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /^Any family/ })).toHaveAttribute(
       'aria-expanded',
@@ -319,7 +319,7 @@ describe('FilterSheet - the grabber is not decoration', () => {
     render(
       <FilterSheet
         facets={facets}
-        filters={{ ...noFilters, level: 'Beginner' }}
+        filters={{ ...noFilters, style: 'gambit' }}
         total={30}
         activeCount={1}
         loading={false}

@@ -3,8 +3,9 @@ import {
   BANDS,
   RANKABLE_BANDS,
   rangeLabel,
-  atRange,
-  rangeInText,
+  levelName,
+  levelPlayers,
+  LEVEL_OPTIONS,
   buildExplorerUrl,
   fetchExplorer,
   sideScorePct,
@@ -81,11 +82,32 @@ describe('BANDS', () => {
     ]);
   });
 
-  it('puts a range inside a sentence in sentence case', () => {
-    expect(atRange('u1400')).toBe('under 1400');
-    expect(atRange('1400')).toBe('at 1400–1800');
-    expect(rangeInText('u1400')).toBe('under 1400');
-    expect(rangeInText('2200')).toBe('2200+');
+  it('names each level the way a player names themselves', () => {
+    expect(BANDS.map((b) => levelName(b.id))).toEqual([
+      'All levels',
+      'Beginner',
+      'Intermediate',
+      'Advanced',
+      'Expert',
+      'Masters',
+    ]);
+  });
+
+  it('names the players at a level inside a sentence, in lower case', () => {
+    expect(levelPlayers('u1400')).toBe('beginners');
+    expect(levelPlayers('1400')).toBe('intermediate players');
+    expect(levelPlayers('1800')).toBe('advanced players');
+    expect(levelPlayers('2200')).toBe('experts');
+  });
+
+  it('lists the level menu by name, each with its Lichess range beside it', () => {
+    expect(LEVEL_OPTIONS).toEqual([
+      { value: 'all', label: 'All levels' },
+      { value: 'u1400', label: 'Beginner', detail: 'Under 1400' },
+      { value: '1400', label: 'Intermediate', detail: '1400–1800' },
+      { value: '1800', label: 'Advanced', detail: '1800–2200' },
+      { value: '2200', label: 'Expert', detail: '2200+' },
+    ]);
   });
 
   it('ranks Discover and search by every band but Masters', () => {

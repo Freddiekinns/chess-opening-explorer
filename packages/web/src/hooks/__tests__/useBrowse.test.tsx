@@ -36,35 +36,45 @@ describe('useBrowse', () => {
 
   it('reads its filters from the URL, so a restored URL restores the facets', async () => {
     const { result } = renderHook(() => useBrowse(), {
-      wrapper: wrapper('/?level=Beginner&family=london'),
+      wrapper: wrapper('/?style=gambit&family=london'),
     });
 
     await waitFor(() => expect(result.current.loading).toBe(false));
     expect(result.current.filters).toEqual({
-      level: 'Beginner',
-      style: null,
+      style: 'gambit',
       family: 'london',
       sort: 'popular',
     });
     expect(result.current.activeCount).toBe(2);
 
     const url = fetchCalls()[0][0] as string;
-    expect(url).toContain('level=Beginner');
+    expect(url).toContain('style=gambit');
     expect(url).toContain('family=london');
   });
 
+  // #206 retired the Difficulty facet: an old ?level= link still loads, but
+  // filters nothing and counts as no active filter.
+  it('ignores the retired ?level= parameter', async () => {
+    const { result } = renderHook(() => useBrowse(), {
+      wrapper: wrapper('/?level=Beginner'),
+    });
+
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.activeCount).toBe(0);
+    expect(fetchCalls()[0][0] as string).not.toContain('level=');
+  });
+
   // The URL is the shareable copy of this state, and the casing the corpus
-  // uses differs per facet ("Beginner", but "sharp"). A lowercased link
+  // uses differs per facet ("London", but "sharp"). A lowercased link
   // still filters correctly server-side, so the buttons must not go on
   // showing the raw slug where a label belongs.
   it('reports filters in the corpus casing, whatever the URL was written in', async () => {
     const { result } = renderHook(() => useBrowse(), {
-      wrapper: wrapper('/?level=beginner&style=SHARP&family=London'),
+      wrapper: wrapper('/?style=SHARP&family=London'),
     });
 
     await waitFor(() => expect(result.current.loading).toBe(false));
     expect(result.current.filters).toEqual({
-      level: 'Beginner',
       style: 'sharp',
       family: 'london',
       sort: 'popular',
@@ -93,13 +103,13 @@ describe('useBrowse', () => {
   });
 
   it('setFacet with null removes the param rather than sending an empty one', async () => {
-    const { result } = renderHook(() => useBrowse(), { wrapper: wrapper('/?level=Beginner') });
+    const { result } = renderHook(() => useBrowse(), { wrapper: wrapper('/?style=gambit') });
     await waitFor(() => expect(result.current.loading).toBe(false));
 
-    act(() => result.current.setFacet('level', null));
+    act(() => result.current.setFacet('style', null));
 
-    await waitFor(() => expect(result.current.filters.level).toBeNull());
-    expect(fetchCalls()[fetchCalls().length - 1][0] as string).not.toContain('level=');
+    await waitFor(() => expect(result.current.filters.style).toBeNull());
+    expect(fetchCalls()[fetchCalls().length - 1][0] as string).not.toContain('style=');
   });
 
   it('loadMore appends the next page instead of replacing it', async () => {
@@ -127,7 +137,7 @@ describe('useBrowse', () => {
 
   it('clear removes every facet param at once', async () => {
     const { result } = renderHook(() => useBrowse(), {
-      wrapper: wrapper('/?level=Beginner&style=gambit&family=london&sort=name'),
+      wrapper: wrapper('/?style=gambit&family=london&sort=name'),
     });
     await waitFor(() => expect(result.current.loading).toBe(false));
 
@@ -135,7 +145,6 @@ describe('useBrowse', () => {
 
     await waitFor(() => expect(result.current.activeCount).toBe(0));
     expect(result.current.filters).toEqual({
-      level: null,
       style: null,
       family: null,
       sort: 'popular',

@@ -5,9 +5,9 @@ import styles from './LevelOptionList.module.css';
 
 /**
  * The band menu behind "Your level" on Discover and "Change" in search. Rows
- * are rating ranges, never Beginner/Intermediate, which the Difficulty facet
- * uses to mean something else. The heading says whose ratings they are, so a
- * chess.com player needs no footnote. Masters has no batch data to rank by.
+ * are the level's name with its range beside it: players pick by the name,
+ * and the heading says whose ratings the ranges are. Masters has no batch
+ * data to rank by.
  */
 interface LevelOptionListProps {
   /** The band ranked by, or null for all levels. */

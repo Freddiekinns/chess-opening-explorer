@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { LevelOptionList } from '../filters/LevelOptionList';
-import { rangeInText, type BandId } from '../../lib/lichessExplorer';
+import { levelPlayers, type BandId } from '../../lib/lichessExplorer';
 import styles from './SearchScope.module.css';
 
 /**
- * "Ranked for 1400–1800 · Change", above every search surface's results
+ * "Ranked for intermediate players · Change", above every search surface's results
  * (#205). The menu is Discover's band menu, opened in place: choosing a level
  * re-ranks the list the user is reading rather than closing it, so mousedown
  * is swallowed the way each dropdown already swallows it to keep the field
@@ -21,9 +21,7 @@ export const SearchScope: React.FC<SearchScopeProps> = ({ band, onChange }) => {
 
   return (
     <div className={styles.scope} onMouseDown={(e) => e.preventDefault()}>
-      <span className="label-meta">
-        {band ? `Ranked for ${rangeInText(band)}` : 'Ranked for all players'}
-      </span>
+      <span className="label-meta">{`Ranked for ${levelPlayers(band ?? 'all')}`}</span>
       <button
         type="button"
         className={styles.change}

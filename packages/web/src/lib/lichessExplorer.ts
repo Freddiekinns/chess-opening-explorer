@@ -60,27 +60,41 @@ const RANGE_LABELS: Record<BandId, string> = {
   masters: 'Masters',
 };
 
-/** A band named by its rating range, for surfaces where "Intermediate" would
- * read as how hard an opening is (Discover, search). */
+/** A band's Lichess rating range, shown beside its name in the level menu. */
 export function rangeLabel(id: BandId): string {
   return RANGE_LABELS[id];
 }
 
-/** The level menu's rows, on Discover and in search: ranges, never names. */
-export const LEVEL_OPTIONS = RANKABLE_BANDS.map((band) => ({
-  value: band.id,
-  label: rangeLabel(band.id),
-}));
-
-/** The range mid-sentence: "Ranked for under 1400", not "for Under 1400". */
-export function rangeInText(id: BandId): string {
-  return id === 'u1400' ? 'under 1400' : RANGE_LABELS[id];
+/**
+ * A band by the name a player gives themselves: "Intermediate". The words
+ * name players only, never openings (#206 retired the Difficulty facet that
+ * used them for how hard an opening is), so a chess.com player can pick by
+ * name and read the Lichess range as a guide.
+ */
+export function levelName(id: BandId): string {
+  return id === 'all' ? RANGE_LABELS.all : getBand(id).label;
 }
 
-/** The range with its preposition: "games at 1400–1800", "games under 1400". */
-export function atRange(id: BandId): string {
-  return id === 'u1400' ? 'under 1400' : `at ${RANGE_LABELS[id]}`;
+const PLAYERS: Record<BandId, string> = {
+  all: 'all players',
+  u1400: 'beginners',
+  '1400': 'intermediate players',
+  '1800': 'advanced players',
+  '2200': 'experts',
+  masters: 'masters',
+};
+
+/** The players at a level, mid-sentence: "Popular with intermediate players". */
+export function levelPlayers(id: BandId): string {
+  return PLAYERS[id];
 }
+
+/** The level menu's rows, on Discover and in search: the name, with the range beside it. */
+export const LEVEL_OPTIONS = RANKABLE_BANDS.map((band) =>
+  band.id === 'all'
+    ? { value: band.id, label: levelName(band.id) }
+    : { value: band.id, label: levelName(band.id), detail: rangeLabel(band.id) }
+);
 
 export function getBand(id: BandId): Band {
   return BANDS.find((band) => band.id === id) ?? BANDS[0];

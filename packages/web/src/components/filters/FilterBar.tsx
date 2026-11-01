@@ -2,7 +2,7 @@ import React from 'react';
 import { FacetSelect, FacetOptionList } from './FacetSelect';
 import { FamilyPicker } from './FamilyPicker';
 import { LevelOptionList } from './LevelOptionList';
-import { rangeLabel, type BandId } from '../../lib/lichessExplorer';
+import { levelName, type BandId } from '../../lib/lichessExplorer';
 import { facetDisplay, resultCountLabel } from './resultCount';
 import { SORT_OPTIONS } from '../../hooks/useBrowse';
 import type { BrowseFacets, BrowseFilters, FacetKey } from '../../hooks/useBrowse';
@@ -53,7 +53,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
       <div className={styles.bar}>
         <FacetSelect
           label="Your level"
-          display={rangeLabel(band ?? 'all')}
+          display={levelName(band ?? 'all')}
           active={band !== null}
           menuLabel="Rank by your level"
         >
@@ -69,25 +69,6 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         </FacetSelect>
         {/* "How it's ranked" on the left, "what it's filtered to" on the right. */}
         <span className={styles.divider} aria-hidden="true" data-testid="level-divider" />
-
-        <FacetSelect
-          label="Difficulty"
-          display={facetDisplay(facets.level, filters.level, 'Any')}
-          active={Boolean(filters.level)}
-          menuLabel="Filter by difficulty"
-        >
-          {(close) => (
-            <FacetOptionList
-              options={facets.level}
-              value={filters.level}
-              anyLabel="Any difficulty"
-              onSelect={(value) => {
-                onFacetChange('level', value);
-                close();
-              }}
-            />
-          )}
-        </FacetSelect>
 
         <FacetSelect
           label="Style"

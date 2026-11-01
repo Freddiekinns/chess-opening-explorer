@@ -8,14 +8,17 @@ Plan: `docs/superpowers/plans/2026-10-29-level-ranking.md`, Phase 3, on
 `feat/your-level`. `hooks/useMyLevel.ts` is the saved band, live across
 components and tabs; its setter tracks `band_select` with a surface. Discover
 gets a "Your level" facet (first, divided off, outside Clear filters and the
-URL), "Popular at 1400–1800" and "212K games at 1400–1800" on cards. Search
-takes `?band=` on both halves (`searchService.gamesFor`,
-`NameIndex.search(q, gamesOf)`, a slice per band) with a "Ranked for … · Change"
-line on all three surfaces. Owner's call: the menu is headed "Lichess rating",
-no chess.com note or conversion. Saved Masters ranks as All. Not built: setting
-the level from Analyse (#205 step 2), the rating input. Next: #206 (retire
-Difficulty, label bands by range everywhere), then review the
-`data/popularity-2026-10` branch when October's file lands, then Task 3c.
+URL) and "Popular with intermediate players". Search takes `?band=` on both
+halves (`searchService.gamesFor`, `NameIndex.search(q, gamesOf)`, a slice per
+band) with a "Ranked for intermediate players · Change" line on all three
+surfaces. Saved Masters ranks as All. Owner's call (2026-11-01, reversing
+ranges-only): levels are named Beginner/Intermediate/Advanced/Expert everywhere,
+the Lichess range beside the name in the menu (heading "Lichess rating") and in
+the note by the count, so chess.com players pick by name. The words name players
+only: the Difficulty facet is retired (#206), `?level=` is ignored. Not built:
+setting the level from Analyse (#205 step 2), the rating input, the rest of #206
+(Theory: Light/Moderate/Heavy; scores well at your level). Next: review
+`data/popularity-2026-10` when October lands, then Task 3c.
 
 ## Previous Task: #204, dated per-band stats (merged #213, #214)
 

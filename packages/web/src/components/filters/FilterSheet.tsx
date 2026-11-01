@@ -29,7 +29,7 @@ import styles from './FilterSheet.module.css';
  *    and Escape, which a phone does not have. It now drags and it taps.
  * 2. Twenty-nine families were expanded by default, so opening the sheet cost
  *    2,000px of scroll and every visit began full-height. The family list is
- *    the precision tool; the thirteen level/style/sort pills are the common
+ *    the precision tool; the level/style/sort pills are the common
  *    case. Collapsed behind a row that states the current family, the whole
  *    common case fits on one screen with nothing to scroll.
  */
@@ -44,7 +44,7 @@ const DRAG_SLOP = 6;
 /** Matches --sheet-close-ms in the stylesheet. */
 const CLOSE_MS = 200;
 
-type PillOption = FacetValue | { value: string; label: string };
+type PillOption = FacetValue | { value: string; label: string; detail?: string };
 
 interface PillRowProps {
   legend: string;
@@ -79,6 +79,12 @@ const PillRow: React.FC<PillRowProps> = ({ legend, options, value, anyLabel, onS
           {option.label}
           {'count' in option && (
             <span className={styles.pillCount}>{option.count.toLocaleString()}</span>
+          )}
+          {'detail' in option && option.detail && (
+            <>
+              {' '}
+              <span className={styles.pillCount}>{option.detail}</span>
+            </>
           )}
         </button>
       ))}
@@ -328,13 +334,6 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
                   value={band ?? 'all'}
                   anyLabel={null}
                   onSelect={(value) => onBandChange((value ?? 'all') as BandId)}
-                />
-                <PillRow
-                  legend="Difficulty"
-                  options={facets.level}
-                  value={filters.level}
-                  anyLabel="Any difficulty"
-                  onSelect={(value) => onFacetChange('level', value)}
                 />
                 <PillRow
                   legend="Style"

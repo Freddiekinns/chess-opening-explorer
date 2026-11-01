@@ -231,3 +231,24 @@ def test_a_bare_branch_from_a_failed_run_does_not_count_as_done() -> None:
 
 def test_setup_never_makes_the_review_branch(tmp_path: Path) -> None:
     assert not any("-B" in command for command in refresh.setup_commands(tmp_path))
+
+
+def test_notifies_before_the_download_starts(tmp_path: Path, monkeypatch) -> None:
+    # The owner needs to know to leave the PC on for the next few hours.
+    calls = []
+    monkeypatch.setattr(refresh, "WORKTREE", refresh.REPO)
+    monkeypatch.setattr(refresh, "DOWNLOADS", tmp_path / "downloads")
+    monkeypatch.setattr(refresh, "SUMMARIES", tmp_path / "summaries")
+    monkeypatch.setattr(refresh, "git", lambda args, check=True: None)
+    monkeypatch.setattr(refresh, "listing", lambda name: "")
+    monkeypatch.setattr(refresh, "find_work", lambda *args, **kwargs: ["2026-10"])
+    monkeypatch.setattr(refresh, "notify", lambda message: calls.append(message))
+
+    def run(commands) -> None:
+        calls.append("setup")
+        raise refresh.RefreshError("stop here")
+
+    monkeypatch.setattr(refresh, "run", run)
+    assert refresh.refresh(check=False) == 1
+    assert "2026-10" in calls[0] and "leave the PC on" in calls[0]
+    assert calls[1] == "setup"

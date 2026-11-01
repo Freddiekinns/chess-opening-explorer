@@ -10,6 +10,8 @@ import {
   queryShape,
 } from '../lib/searchQuery';
 import { trackEvent } from '../lib/analytics';
+import { rankingBand, type BandId } from '../lib/lichessExplorer';
+import { useMyLevel } from './useMyLevel';
 
 /**
  * One query behaviour, for all three search surfaces.
@@ -54,9 +56,10 @@ export type SearchSurface = 'hero' | 'topbar' | 'overlay';
  * across 389 sampled queries the plain search found nothing the search route
  * missed, so the second trip is gone.
  */
-async function search(query: string): Promise<Partial<Opening>[]> {
+async function search(query: string, band: BandId | null): Promise<Partial<Opening>[]> {
   const response = await fetch(
-    `/api/openings/semantic-search?q=${encodeURIComponent(query)}&limit=${RESULT_LIMIT}`
+    `/api/openings/semantic-search?q=${encodeURIComponent(query)}&limit=${RESULT_LIMIT}` +
+      (band ? `&band=${band}` : '')
   );
   if (!response.ok) return [];
   const data = await response.json();
@@ -69,13 +72,18 @@ export function useOpeningSearch(surface: SearchSurface) {
   const [searching, setSearching] = useState(false);
   const [cameBackEmpty, setCameBackEmpty] = useState(false);
   const { isSaved } = useRepertoire();
+  // Ranked by your level (#205). Both halves ask for the same band, so the
+  // server's list still replaces the local one with itself.
+  const [myLevel, saveMyLevel] = useMyLevel();
+  const band = rankingBand(myLevel);
+  const setBand = useCallback((next: BandId) => saveMyLevel(next, 'search'), [saveMyLevel]);
 
   const hasQuery = query.trim().length >= MIN_QUERY_LENGTH;
 
   // Loaded on the first character rather than on mount, so a page nobody
   // searches from never pays for it — and it is in hand by the second, which is
   // the first that draws anything.
-  const localIndex = useSearchIndex(query.trim().length > 0);
+  const localIndex = useSearchIndex(query.trim().length > 0, band);
 
   // Monotonic request id. Clearing the debounce timer only cancels a request
   // that has not left yet; one already in flight still resolves, and without
@@ -109,7 +117,7 @@ export function useOpeningSearch(surface: SearchSurface) {
 
     const timer = setTimeout(async () => {
       try {
-        const fromServer = await search(expanded);
+        const fromServer = await search(expanded, band);
         if (!isCurrent()) return;
 
         if (fromServer.length > 0) {
@@ -144,7 +152,7 @@ export function useOpeningSearch(surface: SearchSurface) {
     return () => clearTimeout(timer);
     // Deliberately not keyed on repertoire membership: saving an opening must
     // not re-issue the request. It re-ranks the list we already have, below.
-  }, [query, hasQuery, localIndex]);
+  }, [query, hasQuery, localIndex, band]);
 
   // A search starts when the field first holds a real query, and ends when it
   // is emptied — which is also what every surface's reset does after a pick.
@@ -196,7 +204,10 @@ export function useOpeningSearch(surface: SearchSurface) {
       noResults,
       hasQuery,
       reset,
+      /** The Lichess band results are ranked for, or null for all players. */
+      band,
+      setBand,
     }),
-    [query, results, searching, noResults, hasQuery, reset]
+    [query, results, searching, noResults, hasQuery, reset, band, setBand]
   );
 }

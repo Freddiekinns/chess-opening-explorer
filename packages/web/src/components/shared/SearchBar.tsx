@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { SearchHub } from './SearchHub';
 import { SearchRow, SurpriseRow } from './SearchRow';
 import { SearchNoResults } from './SearchNoResults';
+import { SearchScope } from './SearchScope';
 import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearch';
 import { useSearchIndex } from '../../lib/searchIndex';
 import type { Opening } from '../../lib/localSearch';
@@ -57,11 +58,13 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   // The query itself belongs to the hook every surface shares. This component
   // owns only the parts a dropdown under a hero field needs: focus, the
   // keyboard cursor, and what happens to a chosen result.
-  const { query, setQuery, results, noResults, hasQuery, reset } = useOpeningSearch('hero');
+  const { query, setQuery, results, noResults, hasQuery, reset, band, setBand } =
+    useOpeningSearch('hero');
 
   // Only to name a hub row's opening on the way out — see the select handler.
-  // The hook loads the same slice for searching; this is the one copy of it.
-  const openingsData = useSearchIndex(isFocused);
+  // The hook loads the same slice for searching; this is the one copy of it,
+  // so it asks for the same level.
+  const openingsData = useSearchIndex(isFocused, band);
 
   const showSuggestions = !dismissed && hasQuery && results.length > 0;
 
@@ -210,6 +213,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 would only invite the question of what it counted — the search
                 scores every record above zero, which is 4,269 for "sicilian"
                 against a family of roughly 1,710. */}
+            <SearchScope band={band} onChange={setBand} />
             {/* A real <ul>: twenty ranked results are a list, and assistive
                 technology should be told how many there are. */}
             <ul className="search-suggestions">

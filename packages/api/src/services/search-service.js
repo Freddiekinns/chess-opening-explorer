@@ -12,6 +12,7 @@ const styleTags = require('./style-tags-service');
 const QueryUtils = require('./search/QueryUtils');
 const QueryIntentParser = require('./search/QueryIntentParser');
 const { NameIndex, normalise } = require('./search/NameIndex');
+const bandStats = require('./band-stats-service');
 
 /**
  * Whether an opening's style tags (api/data/style-tags.json) say what a style
@@ -161,6 +162,9 @@ class SearchService {
       // Validate and sanitize inputs
       const { query: sanitizedQuery, options: sanitizedOptions } = 
         QueryUtils.validateAndSanitize(query, options);
+      // Ranked by your level (#205): a band swaps the popularity term for that
+      // band's games. Masters and anything unknown rank as all players.
+      sanitizedOptions.band = bandStats.isBand(options.band) ? options.band : null;
       
       if (!sanitizedQuery || sanitizedQuery === '') {
         return this.getAllOpenings(sanitizedOptions);
@@ -261,7 +265,7 @@ class SearchService {
     
     // Apply semantic filtering based on detected intent
     if (queryIntent.type !== 'unknown') {
-      results = this.applySemanticFiltering(queryIntent);
+      results = this.applySemanticFiltering(queryIntent, options.band);
       searchType = `semantic_${queryIntent.type}`;
     } else {
       // If no specific intent detected, fall back to enhanced fuzzy search
@@ -288,6 +292,18 @@ class SearchService {
   }
 
   /**
+   * How often an opening is played, by everyone or at one Lichess band.
+   *
+   * The popularity term of every ranked path reads this, so a band reorders
+   * results inside their relevance band and nothing more. A band too thin to
+   * count is 0, which sorts the opening last among its equals.
+   */
+  gamesFor(opening, band) {
+    if (band) return bandStats.forFen(opening.fen, band)?.g || 0;
+    return opening.games_analyzed || opening.analysis_json?.popularity_score || 0;
+  }
+
+  /**
    * Specialized search for ECO codes
    *
    * A code is an exact label, not a fuzzy one, so there is no scoring to do —
@@ -304,10 +320,12 @@ class SearchService {
     await this.initialize();
 
     const target = code.toUpperCase();
+    const games = (opening) =>
+      options.band ? this.gamesFor(opening, options.band) : opening.games_analyzed || 0;
     const results = this.openings
       .filter(opening => (opening.eco || '').trim().toUpperCase() === target)
       .map(opening => ({ ...opening, searchScore: 1 }))
-      .sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0));
+      .sort((a, b) => games(b) - games(a));
 
     const { limit = 50, offset = 0 } = options;
     const totalResults = results.length;
@@ -333,7 +351,8 @@ class SearchService {
    * @returns {Object} Search results with metadata
    */
   searchByName(query, options = {}) {
-    const results = this.nameIndex ? this.nameIndex.search(query) : [];
+    const gamesOf = options.band ? (opening) => this.gamesFor(opening, options.band) : undefined;
+    const results = this.nameIndex ? this.nameIndex.search(query, gamesOf) : [];
     const { limit = 50, offset = 0 } = options;
     const totalResults = results.length;
 
@@ -391,7 +410,7 @@ class SearchService {
         band = 1;
       }
 
-      const popularity = opening.games_analyzed || opening.analysis_json?.popularity_score || 0;
+      const popularity = this.gamesFor(opening, options.band);
 
       return {
         ...opening,
@@ -451,7 +470,7 @@ class SearchService {
    * @param {Object} queryIntent - Parsed query intent
    * @returns {Array} Filtered and scored results
    */
-  applySemanticFiltering(queryIntent) {
+  applySemanticFiltering(queryIntent, band = null) {
     let results = [...this.openings];
     
     // Apply filters based on intent type
@@ -500,7 +519,7 @@ class SearchService {
     }
 
     // Score and sort results
-    return this.scoreSemanticResults(results, queryIntent);
+    return this.scoreSemanticResults(results, queryIntent, band);
   }
 
   /**
@@ -629,7 +648,7 @@ class SearchService {
    * @param {Object} queryIntent - Original query intent
    * @returns {Array} Scored and sorted results
    */
-  scoreSemanticResults(results, queryIntent) {
+  scoreSemanticResults(results, queryIntent, band = null) {
     return results.map(opening => {
       let score = 0.5; // Base semantic score
       
@@ -670,7 +689,7 @@ class SearchService {
       // people actually play aggressively were thousands of rows down. The
       // divisor keeps the whole spread under 0.2, which is what one style match
       // is worth, so popularity orders equals without outranking a better match.
-      const popularity = opening.games_analyzed || opening.analysis_json?.popularity_score || 0;
+      const popularity = this.gamesFor(opening, band);
       score += Math.log10(Math.max(popularity, 0) + 1) / 50;
       
       // Not capped at 1: a style and a move match already reach 0.95, and the

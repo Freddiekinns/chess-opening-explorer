@@ -21,6 +21,7 @@ jest.mock('../../packages/api/src/utils/path-resolver', () => ({
   getPopularityStatsPath: jest.fn(() => '/mock/data/popularity_stats.json'),
   getVideosDataPath: jest.fn(() => '/mock/data/videos'),
   getAPIDataPath: jest.fn((file) => `/mock/api/${file || ''}`),
+  getDataPath: jest.fn((file) => `/mock/api/${file || ''}`),
 }));
 
 // A small book: 1.e4, two replies to it, and one move deeper on the Sicilian.
@@ -82,6 +83,16 @@ const POPULARITY = {
   },
 };
 
+// At 1800–2200 the French outplays the Sicilian; 1.e4 itself is too thin to count.
+const BAND_DATA = {
+  positions: {
+    [E4]: { 1800: null },
+    [SICILIAN]: { 1800: { g: 3000, w: 1200, d: 300, b: 1500 } },
+    [FRENCH]: { 1800: { g: 9000, w: 4000, d: 1000, b: 4000 } },
+    [SICILIAN_NF3]: { 1800: { g: 1000, w: 400, d: 100, b: 500 } },
+  },
+};
+
 const TREE_NODE_FIELDS = [
   'fen',
   'name',
@@ -118,6 +129,7 @@ describe('/api/openings routes', () => {
     fs.existsSync = jest.fn(() => true);
     fs.readFileSync = jest.fn((p) => {
       if (String(p).includes('popularity_stats.json')) return JSON.stringify(POPULARITY);
+      if (String(p).includes('popularity-bands.json')) return JSON.stringify(BAND_DATA);
       return JSON.stringify(ECO_DATA);
     });
     path.join = jest.fn((...parts) => parts.join('/'));
@@ -347,6 +359,34 @@ describe('/api/openings routes', () => {
       expect(build).toHaveBeenCalledTimes(1);
     });
 
+    test('?band= ranks the slice by that band and reports its games', async () => {
+      const res = await request(app).get('/api/openings/search-index?limit=3&band=1800');
+
+      expect(res.body.data.map((row) => row.fen)).toEqual([FRENCH, SICILIAN, SICILIAN_NF3]);
+      expect(res.body.data[0].games_analyzed).toBe(9000);
+    });
+
+    test('a band too thin to count leaves games_analyzed out, never 0', async () => {
+      const res = await request(app).get('/api/openings/search-index?band=1800');
+      const e4 = res.body.data.find((row) => row.fen === E4);
+
+      expect(e4).not.toHaveProperty('games_analyzed');
+    });
+
+    test('band variants share one build without colliding', async () => {
+      await request(app).get('/api/openings/search-index?limit=2&band=1800');
+      const all = await request(app).get('/api/openings/search-index?limit=2');
+
+      expect(all.body.data.map((row) => row.fen)).toEqual([E4, SICILIAN]);
+      expect(all.body.cached).toBe(true);
+    });
+
+    test('an unknown band ranks as all players', async () => {
+      const res = await request(app).get('/api/openings/search-index?limit=2&band=masters');
+
+      expect(res.body.data.map((row) => row.fen)).toEqual([E4, SICILIAN]);
+    });
+
     // One timestamp was shared by every key, and each new key's write reset
     // it, so older entries were served past their five minutes.
     test('expires the index on one clock', async () => {
@@ -419,6 +459,28 @@ describe('/api/openings routes', () => {
       await request(app).get(`/api/openings/semantic-search?q=sicilian${params}`);
 
       expect(searchService.search).toHaveBeenCalledWith('sicilian', expected);
+    });
+
+    test('?band= ranks by that band and reports its games', async () => {
+      searchService.search.mockResolvedValue(RESULT);
+
+      const res = await request(app).get('/api/openings/semantic-search?q=sicilian&band=1800');
+
+      expect(searchService.search).toHaveBeenCalledWith('sicilian', {
+        limit: 20,
+        offset: 0,
+        band: '1800',
+      });
+      expect(res.body.data[0].games_analyzed).toBe(3000);
+    });
+
+    test('an unknown band is not passed on', async () => {
+      searchService.search.mockResolvedValue(RESULT);
+
+      const res = await request(app).get('/api/openings/semantic-search?q=sicilian&band=masters');
+
+      expect(searchService.search).toHaveBeenCalledWith('sicilian', { limit: 20, offset: 0 });
+      expect(res.body.data[0].games_analyzed).toBe(500000);
     });
 
     test('500s when the search service throws', async () => {

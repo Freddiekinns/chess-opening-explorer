@@ -6,7 +6,13 @@
 
 import { BANDS, type BandId } from './lichessExplorer';
 
-const STORAGE_KEY = 'openingbook:my-level';
+export const STORAGE_KEY = 'openingbook:my-level';
+/** Fired on window after every in-tab write, so mounted readers update. */
+export const MY_LEVEL_CHANGE = 'my-level-change';
+
+function broadcast(): void {
+  window.dispatchEvent(new Event(MY_LEVEL_CHANGE));
+}
 
 export function getMyLevel(): BandId | null {
   try {
@@ -23,6 +29,7 @@ export function setMyLevel(band: BandId): void {
   } catch {
     // Preference is best-effort.
   }
+  broadcast();
 }
 
 export function clearMyLevel(): void {
@@ -31,4 +38,5 @@ export function clearMyLevel(): void {
   } catch {
     // ignore
   }
+  broadcast();
 }

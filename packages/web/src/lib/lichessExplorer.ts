@@ -37,6 +37,24 @@ export const BANDS = [
 export type BandId = (typeof BANDS)[number]['id'];
 export type Band = (typeof BANDS)[number];
 
+/** Bands Discover and search can rank by: Masters has no batch data. */
+export const RANKABLE_BANDS = BANDS.filter((band) => band.id !== 'masters');
+
+const RANGE_LABELS: Record<BandId, string> = {
+  all: 'All levels',
+  u1400: 'Under 1400',
+  '1400': '1400–1800',
+  '1800': '1800–2200',
+  '2200': '2200+',
+  masters: 'Masters',
+};
+
+/** A band named by its rating range, for surfaces where "Intermediate" would
+ * read as how hard an opening is (Discover, search). */
+export function rangeLabel(id: BandId): string {
+  return RANGE_LABELS[id];
+}
+
 export function getBand(id: BandId): Band {
   return BANDS.find((band) => band.id === id) ?? BANDS[0];
 }

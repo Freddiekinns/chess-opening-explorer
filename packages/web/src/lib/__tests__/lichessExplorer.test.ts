@@ -1,6 +1,8 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
   BANDS,
+  RANKABLE_BANDS,
+  rangeLabel,
   buildExplorerUrl,
   fetchExplorer,
   sideScorePct,
@@ -64,6 +66,21 @@ describe('buildExplorerUrl', () => {
 describe('BANDS', () => {
   it('exposes All plus the PRD bands lowest-to-highest', () => {
     expect(BANDS.map((b) => b.id)).toEqual(['all', 'u1400', '1400', '1800', '2200', 'masters']);
+  });
+
+  it('labels each band by its rating range', () => {
+    expect(BANDS.map((b) => rangeLabel(b.id))).toEqual([
+      'All levels',
+      'Under 1400',
+      '1400–1800',
+      '1800–2200',
+      '2200+',
+      'Masters',
+    ]);
+  });
+
+  it('ranks Discover and search by every band but Masters', () => {
+    expect(RANKABLE_BANDS.map((b) => b.id)).toEqual(['all', 'u1400', '1400', '1800', '2200']);
   });
 });
 

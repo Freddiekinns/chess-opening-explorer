@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { PopularOpeningsGrid } from '../PopularOpeningsGrid';
+import { MOBILE_QUERY } from '../../../hooks/useMediaQuery';
 import { browseResponse, browseItem } from '../../../test/fixtures/browseResponse';
 
 // Every test here renders the whole grid, and three of the ten cost more than
@@ -51,15 +52,34 @@ describe('PopularOpeningsGrid', () => {
       })
     );
     renderGrid();
-    const note = await screen.findByText('Lichess games, Jul–Sep 2026');
+    const note = await screen.findByText('Lichess · Jul–Sep 2026');
     // A small note beside the count, not a second subtitle under the heading.
     expect(note.closest('.section-header')).toBeNull();
+  });
+
+  it('leaves the date off on mobile, where the cards show no game counts', async () => {
+    vi.stubGlobal('matchMedia', (query: string) => ({
+      matches: query === MOBILE_QUERY,
+      media: query,
+      addEventListener: () => {},
+      removeEventListener: () => {},
+    }));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => browseResponse({ window: { since: '2026-07', until: '2026-09' } }),
+      })
+    );
+    renderGrid();
+    await screen.findByText('Sicilian Defence');
+    expect(screen.queryByText(/Jul–Sep 2026/)).toBeNull();
   });
 
   it('says nothing about dates when the response has no window', async () => {
     renderGrid();
     await screen.findByText('Sicilian Defence');
-    expect(screen.queryByText(/Lichess games,/)).toBeNull();
+    expect(screen.queryByText(/Lichess ·/)).toBeNull();
   });
 
   it('the count on screen is the filtered total from the same request', async () => {

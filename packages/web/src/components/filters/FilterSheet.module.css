@@ -58,19 +58,8 @@
   border: 0;
 }
 
-.countBlock {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-left: auto;
-}
-
-.note {
-  color: var(--color-text-muted);
-  font-size: var(--text-xs);
-}
-
 .count {
+  margin-left: auto;
   color: var(--color-text-muted);
   font-size: var(--text-sm);
   font-variant-numeric: tabular-nums;

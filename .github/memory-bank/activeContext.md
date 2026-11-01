@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-01
 
-## Current Task: #205, rank by your level (PR open)
+## Current Task: #205, rank by your level (merged #216; #219 open)
 
 Plan: `docs/superpowers/plans/2026-10-29-level-ranking.md`, Phase 3, on
 `feat/your-level`. `hooks/useMyLevel.ts` is the saved band, live across
@@ -22,13 +22,17 @@ setting the level from Analyse (#205 step 2), the rating input, the rest of #206
 filtering on the LLM tag ("openings for beginners" = Discover's list). Next:
 review `data/popularity-2026-10` when October lands, then Task 3c.
 
-## Previous Task: #204, dated per-band stats (merged #213, #214)
+## Previous Task: #208, progressive content review
 
-Stats are the last 3 Lichess monthly files (Jul–Sep 2026, blitz/rapid/
-classical), combined into `popularity_stats.json`, `popularity-bands.json` and
-256 `position-stats/` shards; the detail page reads Lichess bands from the page
-response. The monthly refresh task is registered and commits to a local
-`data/popularity-YYYY-MM` branch.
+Pages now have a review record: `data/content-review/ledger.json`, keyed by FEN,
+with the date, a verdict and a hash of the description and plans. A page is due
+again when its text changes or after 12 months. Seeded with the 105
+brief-audited roots (2026-10-11). Batch 2026-11-01: PostHog views since
+2026-09-24 (142 paths, 132 pages), top 50 by people reviewed, 17 fixed in
+`api/data/eco/` (mostly bishop colours and pieces that aren't there; three
+misread positions). 76 visited pages still due. Runbook:
+`tools/content-review/README.md`. #208 stays open; #188 should export the
+viewed-pages list so step 1 stops needing Chrome.
 
 Standing: revisit analytics late Nov 2026 with six weeks of the new events;
 search ranking and the video pipeline are paused until then (`archive.md`).

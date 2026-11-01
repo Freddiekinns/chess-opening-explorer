@@ -273,8 +273,11 @@ remembering.
       owner's checkout; the branch is made only at commit time, so a failed run
       doesn't look done; a whole `.part` (416) and a cut-short stream both
       resume; no `--no-verify` (the worktree has no `.husky/_`, so no hooks).
-- [ ] Register the task (owner approves the exact task definition first). Dry
-      run with `refresh.py --check` to show what it would do.
+- [x] Register the task (owner approves the exact task definition first). Dry
+      run with `refresh.py --check` to show what it would do. Registered
+      2026-11-01 from the owner's own PowerShell (the Claude app redirects
+      `%LOCALAPPDATA%` writes into its sandbox); `--check`: nothing to do yet.
+      Owner asked for a notice when a run starts (`feat/refresh-start-notice`).
 - [ ] Commit `feat(analysis): refresh popularity stats monthly on a schedule`.
 
 ### Task 3c: Retire the original pipeline (own PR, after the first scheduled refresh)

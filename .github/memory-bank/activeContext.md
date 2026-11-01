@@ -15,10 +15,11 @@ Jul–Sep 2026" under the count, desktop only (mobile cards show no game counts)
 The detail page reads every Lichess band from the page response (`bands`,
 `parentBands`); only Masters still calls `/api/explorer`.
 `repo-invariants.test.js` holds shards under 250 KB and the bands file under 3.5
-MB. Next: register the refresh task (`schedule/register-task.ps1`; owner
-approves the task definition first; October's file lands ~3–10 Nov), then Phase
-3 (#205, needs the chess.com-line decision), then Task 3c (retire the old
-pipeline after the first scheduled refresh).
+MB. The refresh task is registered (2026-11-01); October's file lands ~3–10 Nov
+and the run notifies when it starts and ends. Next: review the
+`data/popularity-2026-10` branch it commits, then Phase 3 (#205, needs the
+chess.com-line decision), then Task 3c (retire the old pipeline after the first
+scheduled refresh).
 
 ## Previous Task: backlog split into issues and an idea pool
 

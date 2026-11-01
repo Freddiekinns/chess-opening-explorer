@@ -63,10 +63,10 @@ When there is work, it downloads each missing month to
 `%LOCALAPPDATA%\openingbook\lichess\` (resuming after a shutdown), checks the
 SHA-256 and, once summarised, the game count against `counts.txt`, then combines
 and commits to a local branch `data/popularity-YYYY-MM`. A Windows notification
-says when it starts (about 3 hours: leave the PC on), when it is ready, or that
-it failed. **It never pushes**: review the branch, push it and open the PR
-yourself. While that branch holds the month's summary it does not redo the
-month.
+says when it starts (about 3 hours a month to summarise: leave the PC on; a
+retry after a failure stays quiet), when it is ready, or that it failed. **It
+never pushes**: review the branch, push it and open the PR yourself. While that
+branch holds the month's summary it does not redo the month.
 
 The task runs `refresh.py` from its own worktree
 (`%LOCALAPPDATA%\openingbook\worktree`), reset to `origin/main` each run, so it

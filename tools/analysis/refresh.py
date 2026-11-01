@@ -35,6 +35,7 @@ WORKTREE = BASE / "worktree"
 DOWNLOADS = BASE / "lichess"
 SUMMARIES = BASE / "summaries"
 LOG = BASE / "refresh.log"
+FAILED = BASE / "last-run-failed"
 
 LISTING_URL = "https://database.lichess.org/standard/"
 WINDOW = 3
@@ -309,10 +310,20 @@ def refresh(check: bool) -> int:
         # setup_commands resets with --force: never in someone's checkout.
         raise RefreshError(f"runs only from {WORKTREE}; use --check here")
 
-    notify(
-        f"Refreshing stats for {', '.join(work)}: about 3 hours,"
-        " leave the PC on. Interrupted, it carries on next time."
-    )
+    to_summarise = [
+        month
+        for month in work
+        if not summary_is_complete(
+            SUMMARIES / f"{month}.json.gz", counts[file_name(month)]
+        )
+    ]
+    # A retry stays quiet: the failed run already said so.
+    if to_summarise and not FAILED.exists():
+        hours = 3 * len(to_summarise)
+        notify(
+            f"Refreshing stats for {', '.join(to_summarise)}: about {hours} hours,"
+            " leave the PC on. Interrupted, it carries on next time."
+        )
     try:
         DOWNLOADS.mkdir(parents=True, exist_ok=True)
         SUMMARIES.mkdir(parents=True, exist_ok=True)
@@ -326,7 +337,9 @@ def refresh(check: bool) -> int:
     except Exception:
         log.exception("refresh failed")
         notify(f"Popularity refresh failed: see {LOG}")
+        FAILED.touch()
         return 1
+    FAILED.unlink(missing_ok=True)
     # Kept until the window moves past them, in case the branch isn't merged
     # before next month's run needs them again.
     keep = {f"{month}.json.gz" for month in window_months(until)}

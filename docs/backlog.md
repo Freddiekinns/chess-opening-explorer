@@ -112,6 +112,14 @@ and drill for it.
   board" metric can be measured.
 - **Shareable opening report card** — an acquisition experiment, gated on the
   Analyse statistics fix.
+- **Assess the May 2026 roadmap** —
+  `docs/archive/memory-bank-tasks/TASK008-feature-roadmap-2026-05.md` was
+  written before rev 1 and never ranked. Family rollups and
+  rating-contextualised stats have shipped; SRS is **Parked**; compare,
+  community votes and the middlegame bridge are **Archive**d. Still unassessed:
+  the masters games tab, trap library, "what should I learn next?", repertoire
+  share links, the daily puzzle, its monetisation hooks (tip jar, affiliate
+  links) and its guiding constraints.
 
 ## Parked
 

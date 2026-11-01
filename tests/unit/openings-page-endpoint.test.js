@@ -9,6 +9,7 @@ jest.mock('../../packages/api/src/utils/path-resolver', () => ({
   getPopularityStatsPath: jest.fn(() => '/mock/data/popularity_stats.json'),
   getVideosDataPath: jest.fn(() => '/mock/data/videos'),
   getAPIDataPath: jest.fn((file) => `/mock/api/${file || ''}`),
+  getDataPath: jest.fn((file) => `/mock/data/${file || ''}`),
   getVideoIndexPath: jest.fn(() => '/mock/data/video-index.json'),
 }));
 
@@ -25,6 +26,8 @@ const STATS = {
   confidence_score: 0.9,
   analysis_date: '2025-07-15',
 };
+
+const WINDOW = { since: '2026-07', until: '2026-09' };
 
 function buildApp() {
   const openingsRoutes = require('../../packages/api/src/routes/openings.routes');
@@ -69,6 +72,9 @@ describe('GET /api/openings/page/:fen (aggregate detail-page payload)', () => {
           },
         });
       }
+      if (p.includes('popularity-bands.json')) {
+        return JSON.stringify({ window: WINDOW, positions: {} });
+      }
       if (p.includes('popularity_stats.json')) {
         return JSON.stringify({ positions: { [VAR_FEN]: STATS } });
       }
@@ -94,7 +100,7 @@ describe('GET /api/openings/page/:fen (aggregate detail-page payload)', () => {
     const { opening, stats, videos, courses, tree } = res.body.data;
     expect(opening.name).toBe('Example Opening Variation');
     expect(opening.fen).toBe(VAR_FEN);
-    expect(stats).toEqual(STATS);
+    expect(stats).toEqual({ ...STATS, window: WINDOW });
     expect(Array.isArray(videos)).toBe(true);
     expect(courses).toHaveProperty('courses');
     expect(courses).toHaveProperty('searchLinks');
@@ -110,10 +116,29 @@ describe('GET /api/openings/page/:fen (aggregate detail-page payload)', () => {
     expect(res.body.data.stats).toBeNull();
   });
 
+  it('page includes window, so the page can date its numbers', async () => {
+    const res = await request(app).get(`/api/openings/page/${encodeURIComponent(VAR_FEN)}`);
+    expect(res.body.data.stats.window).toEqual(WINDOW);
+  });
+
   it('404s for an unknown position', async () => {
     const unknown = encodeURIComponent('8/8/8/8/8/8/8/8 w - - 0 1');
     const res = await request(app).get(`/api/openings/page/${unknown}`);
     expect(res.status).toBe(404);
     expect(res.body.success).toBe(false);
+  });
+
+  it('unknown fen reads no shard', async () => {
+    await request(app).get(`/api/openings/page/${encodeURIComponent('8/8/8/8/8/8/8/8 w - - 0 1')}`);
+    const reads = fs.readFileSync.mock.calls.map(([p]) => String(p));
+    expect(reads.some((p) => p.includes('position-stats'))).toBe(false);
+  });
+
+  it('carries every Lichess band for the position and its parent, in one response', async () => {
+    const res = await request(app).get(`/api/openings/page/${encodeURIComponent(VAR_FEN)}`);
+    const { bands, parentBands } = res.body.data;
+    // The fixture's shards hold no positions: every band is there, and null.
+    expect(bands).toEqual({ all: null, u1400: null, 1400: null, 1800: null, 2200: null });
+    expect(parentBands === null || typeof parentBands === 'object').toBe(true);
   });
 });

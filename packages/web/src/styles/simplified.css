@@ -1487,11 +1487,31 @@ body {
 
 .opening-card.has-board .card-header .title-subsection {
   min-height: calc(2 * 1.3em);
+  line-height: 1.3;
+}
+
+/* The clamp is on the name alone, so a qualifier below it is never clipped:
+   a third of the openings that share a name run past two lines. */
+.opening-card.has-board .card-header .card-title-name {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-height: 1.3;
+}
+
+/* What tells apart openings that share a name — the move that reaches each.
+   Muted mono, like the moves it is taken from. */
+.name-qualifier {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-family-mono);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.card-header .name-qualifier {
+  display: block;
+  margin-top: var(--space-0-5);
 }
 
 /* --- Metadata row: complexity pill + ECO pill + style tags --- */
@@ -1619,13 +1639,30 @@ body {
 }
 
 .list-item-name {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1-5);
+  min-width: 0;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin: 0;
+}
+
+/* The name gives way, never the qualifier beside it. */
+.list-item-name-text {
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.list-item-name .name-qualifier {
+  flex-shrink: 0;
+}
+
+.list-item-name .name-qualifier::before {
+  content: '· ';
 }
 
 .list-item-moves {

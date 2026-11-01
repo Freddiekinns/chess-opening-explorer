@@ -130,6 +130,14 @@ describe('ExplorerCard', () => {
     expect(screen.queryByText('Lichess · 1400–1800')).toBeNull();
   });
 
+  test('the snapshot header dates the Lichess games it covers', () => {
+    renderCard({
+      explorer: query({ failed: true }),
+      popularityStats: { ...SNAPSHOT, window: { since: '2026-07', until: '2026-09' } },
+    });
+    expect(screen.getByText('Lichess games, Jul–Sep 2026')).toBeInTheDocument();
+  });
+
   test('pressing a pill reports the new level to the page', async () => {
     const user = userEvent.setup();
     const { onBandChange } = renderCard();

@@ -34,6 +34,8 @@ interface Opening {
   black_win_rate?: number | null;
   draw_rate?: number | null;
   style_profile?: StyleProfile | null;
+  /** Set only when other openings share this name: the move that reaches this one. */
+  name_qualifier?: string;
 }
 
 interface OpeningCardProps {
@@ -82,12 +84,14 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
     return null;
   };
 
-  const getFirstMovesDisplay = (): string => {
-    const moves = opening.moves.trim();
-    const movePattern = /(\d+\.\s*\S+(?:\s+\S+)?)/g;
-    const moveMatches = moves.match(movePattern) || [];
-    return moveMatches.slice(0, 2).join(' ');
-  };
+  const movePattern = /(\d+\.\s*\S+(?:\s+\S+)?)/g;
+  const moveMatches = opening.moves.trim().match(movePattern) || [];
+
+  const getFirstMovesDisplay = (): string => moveMatches.slice(0, 2).join(' ');
+
+  // The qualifier tells apart openings that share a name, but when the moves
+  // line already shows the whole line ("1. e4") it would only say it twice.
+  const qualifier = moveMatches.length > 2 ? opening.name_qualifier : undefined;
 
   const formatGamesPlayed = (count: number): string => {
     if (count >= 1_000_000_000) return `${(count / 1_000_000_000).toFixed(1)}B`;
@@ -107,7 +111,10 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
         <MiniBoard fen={opening.fen} size={80} className="list-item-board" />
         <div className="list-item-info">
           <div className="list-item-header">
-            <h3 className="list-item-name">{opening.name}</h3>
+            <h3 className="list-item-name">
+              <span className="list-item-name-text">{opening.name}</span>
+              {qualifier && <span className="name-qualifier">{qualifier}</span>}
+            </h3>
           </div>
           <div className="list-item-meta">
             <StyleTags profile={opening.style_profile} maxWords={2} size="sm" />
@@ -135,7 +142,10 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
       <div className="card-info-column">
         {/* 1. Name — dominant, full width */}
         <div className="card-header" data-testid="card-header">
-          <h3 className="title-subsection">{opening.name}</h3>
+          <h3 className="title-subsection">
+            <span className="card-title-name">{opening.name}</span>
+            {qualifier && <span className="name-qualifier">{qualifier}</span>}
+          </h3>
           {showStar && (
             <StarButton filled={isStarred} onClick={() => onStarClick?.(opening)} size="sm" />
           )}

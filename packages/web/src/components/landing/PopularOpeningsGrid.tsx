@@ -7,6 +7,7 @@ import { Toast } from '../shared/Toast';
 import { useBrowse } from '../../hooks/useBrowse';
 import { useIsMobile } from '../../hooks/useMediaQuery';
 import { useRepertoireToast } from '../../hooks/useRepertoireToast';
+import { formatWindow } from '../../lib/statsWindow';
 
 interface PopularOpeningsGridProps {
   className?: string;
@@ -27,6 +28,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     facets,
     total,
     remaining,
+    statsWindow,
     loading,
     loadingMore,
     error,
@@ -50,6 +52,9 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     onFacetChange: setFacet,
     onClear: clear,
   };
+  // Small print beside the count, desktop only: mobile cards show no game
+  // counts, so a date there qualifies nothing on screen.
+  const note = statsWindow ? `Lichess · ${formatWindow(statsWindow)}` : undefined;
 
   return (
     <section className={`popular-openings-section ${className}`}>
@@ -61,7 +66,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
       </div>
 
       <div className="filters-container">
-        {isMobile ? <FilterSheet {...controlProps} /> : <FilterBar {...controlProps} />}
+        {isMobile ? <FilterSheet {...controlProps} /> : <FilterBar {...controlProps} note={note} />}
       </div>
 
       {error ? (

@@ -191,6 +191,17 @@ const POPULARITY_FIXTURE = {
   },
 };
 
+// At 1800–2200 the order flips: FEN(8), last but one overall, is the most
+// played; FEN(1) is too thin there to have a count at all.
+const BANDS_FIXTURE = {
+  window: { since: '2026-07', until: '2026-09' },
+  positions: {
+    [FEN(1)]: { u1400: { g: 900, w: 450, d: 90, b: 360 }, 1400: null, 1800: null, 2200: null },
+    [FEN(2)]: { u1400: null, 1400: null, 1800: { g: 300, w: 150, d: 30, b: 120 }, 2200: null },
+    [FEN(8)]: { u1400: null, 1400: null, 1800: { g: 500, w: 200, d: 100, b: 200 }, 2200: null },
+  },
+};
+
 const FAMILIES_FIXTURE = {
   sicilian: { id: 'sicilian', display_name: 'Sicilian Defense' },
   london: { id: 'london', display_name: 'London System' },
@@ -211,6 +222,7 @@ beforeEach(() => {
     if (/eco[BCDE]\.json/.test(file)) return JSON.stringify({});
     if (file.includes('popularity_stats.json')) return JSON.stringify(POPULARITY_FIXTURE);
     if (file.includes('families.json')) return JSON.stringify(FAMILIES_FIXTURE);
+    if (file.includes('popularity-bands.json')) return JSON.stringify(BANDS_FIXTURE);
     if (file.includes('style-tags.json')) return JSON.stringify(STYLE_FIXTURE);
     throw new Error(`unexpected read: ${file}`);
   });
@@ -521,6 +533,83 @@ describe('BrowseService.browse — clamping', () => {
       style: null,
       family: 'sicilian',
       sort: 'popular',
+      band: null,
     });
+  });
+});
+
+describe('BrowseService.browse — by band', () => {
+  test('band reorders popular sort', () => {
+    const { items } = service.browse({ sort: 'popular', band: '1800', pageSize: 48 });
+    expect(items.slice(0, 2).map((o) => o.fen)).toEqual([FEN(8), FEN(2)]);
+    expect(items[0]).toMatchObject({
+      games_analyzed: 500,
+      white_win_rate: 0.4,
+      draw_rate: 0.2,
+      black_win_rate: 0.4,
+    });
+  });
+
+  test('null band item has null rates and sorts last', () => {
+    const { items } = service.browse({ sort: 'popular', band: '1800', pageSize: 48 });
+    const alpha = items.find((o) => o.fen === FEN(1));
+    // FEN(1) is the most played overall, but has no 1800–2200 count.
+    expect(alpha).toMatchObject({
+      games_analyzed: null,
+      white_win_rate: null,
+      draw_rate: null,
+      black_win_rate: null,
+      avg_rating: null,
+    });
+    expect(items.indexOf(alpha)).toBeGreaterThan(1);
+  });
+
+  test('unknown band is ignored', () => {
+    const plain = service.browse({ sort: 'popular', pageSize: 48 });
+    const masters = service.browse({ sort: 'popular', band: 'masters', pageSize: 48 });
+    expect(masters.items).toEqual(plain.items);
+    expect(masters.applied.band).toBeNull();
+  });
+
+  test('name sort ignores band but reports band counts', () => {
+    const { items, applied } = service.browse({ sort: 'name', band: '1800', pageSize: 48 });
+    expect(items.map((o) => o.name)).toEqual([...items.map((o) => o.name)].sort());
+    expect(items.find((o) => o.fen === FEN(2)).games_analyzed).toBe(300);
+    expect(applied.band).toBe('1800');
+  });
+
+  test('the response carries the window its counts cover', () => {
+    expect(service.browse({}).window).toEqual({ since: '2026-07', until: '2026-09' });
+  });
+});
+
+describe('openings that share a name', () => {
+  test('carry what tells them apart, and an opening with its own name carries nothing', () => {
+    const fs = require('fs');
+    const read = fs.readFileSync.getMockImplementation();
+    fs.readFileSync = jest.fn((p) =>
+      String(p).includes('ecoB.json')
+        ? JSON.stringify({
+            'najdorf-1': {
+              name: 'Sicilian Defense: Najdorf Variation',
+              eco: 'B90',
+              moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6',
+            },
+            'najdorf-2': {
+              name: 'Sicilian Defense: Najdorf Variation',
+              eco: 'B94',
+              moves: '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5',
+            },
+          })
+        : read(p)
+    );
+    service.clearCache();
+
+    const { items } = service.browse({ sort: 'name', pageSize: 48 });
+    const byFen = Object.fromEntries(items.map((item) => [item.fen, item]));
+
+    expect(byFen['najdorf-1'].name_qualifier).toBe('5...a6');
+    expect(byFen['najdorf-2'].name_qualifier).toBe('6.Bg5');
+    expect(byFen[FEN(1)]).not.toHaveProperty('name_qualifier');
   });
 });

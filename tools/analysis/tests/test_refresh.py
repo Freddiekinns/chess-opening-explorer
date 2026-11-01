@@ -231,3 +231,75 @@ def test_a_bare_branch_from_a_failed_run_does_not_count_as_done() -> None:
 
 def test_setup_never_makes_the_review_branch(tmp_path: Path) -> None:
     assert not any("-B" in command for command in refresh.setup_commands(tmp_path))
+
+
+def start_a_run(tmp_path: Path, monkeypatch, work, summarised=()) -> list:
+    """Run refresh() as far as setup with `work` to do, and return what it
+    notified, with "setup" marking where setup began."""
+    calls = []
+    monkeypatch.setattr(refresh, "WORKTREE", refresh.REPO)
+    monkeypatch.setattr(refresh, "DOWNLOADS", tmp_path / "downloads")
+    monkeypatch.setattr(refresh, "SUMMARIES", tmp_path / "summaries")
+    monkeypatch.setattr(refresh, "FAILED", tmp_path / "last-run-failed")
+    monkeypatch.setattr(refresh, "git", lambda args, check=True: None)
+    monkeypatch.setattr(refresh, "listing", lambda name: "")
+    monkeypatch.setattr(
+        refresh, "parse_counts", lambda text: {refresh.file_name(m): 1 for m in work}
+    )
+    monkeypatch.setattr(refresh, "find_work", lambda *args, **kwargs: work)
+    monkeypatch.setattr(
+        refresh,
+        "summary_is_complete",
+        lambda path, expected_games: path.name[:7] in summarised,
+    )
+    monkeypatch.setattr(refresh, "notify", lambda message: calls.append(message))
+
+    def run(commands) -> None:
+        calls.append("setup")
+        raise refresh.RefreshError("stop here")
+
+    monkeypatch.setattr(refresh, "run", run)
+    return calls
+
+
+def test_notifies_before_the_download_starts(tmp_path: Path, monkeypatch) -> None:
+    # The owner needs to know to leave the PC on for the next few hours.
+    calls = start_a_run(tmp_path, monkeypatch, ["2026-10"])
+    assert refresh.refresh(check=False) == 1
+    assert "2026-10" in calls[0] and "about 3 hours" in calls[0]
+    assert "leave the PC on" in calls[0]
+    assert calls[1] == "setup"
+
+
+def test_notice_counts_only_the_months_left_to_summarise(
+    tmp_path: Path, monkeypatch
+) -> None:
+    calls = start_a_run(
+        tmp_path,
+        monkeypatch,
+        ["2026-08", "2026-09", "2026-10"],
+        summarised={"2026-08"},
+    )
+    refresh.refresh(check=False)
+    assert "2026-09, 2026-10" in calls[0] and "about 6 hours" in calls[0]
+
+
+def test_no_notice_when_every_month_is_summarised(tmp_path: Path, monkeypatch) -> None:
+    # Cut off after summarising: only the combine and commit are left.
+    calls = start_a_run(tmp_path, monkeypatch, ["2026-10"], summarised={"2026-10"})
+    refresh.refresh(check=False)
+    assert calls[0] == "setup"
+
+
+def test_no_notice_while_retrying_a_failed_run(tmp_path: Path, monkeypatch) -> None:
+    calls = start_a_run(tmp_path, monkeypatch, ["2026-10"])
+    refresh.refresh(check=False)  # fails at setup
+    calls.clear()
+    refresh.refresh(check=False)
+    assert calls[0] == "setup"
+
+
+def test_check_sends_no_notice(tmp_path: Path, monkeypatch) -> None:
+    calls = start_a_run(tmp_path, monkeypatch, ["2026-10"])
+    assert refresh.refresh(check=True) == 0
+    assert calls == []

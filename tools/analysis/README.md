@@ -63,16 +63,20 @@ When there is work, it downloads each missing month to
 `%LOCALAPPDATA%\openingbook\lichess\` (resuming after a shutdown), checks the
 SHA-256 and, once summarised, the game count against `counts.txt`, then combines
 and commits to a local branch `data/popularity-YYYY-MM`. A Windows notification
-says when it is ready, or that it failed. **It never pushes**: review the
-branch, push it and open the PR yourself. While that branch holds the month's
-summary it does not redo the month.
+says when it starts (about 3 hours a month to summarise: leave the PC on; a
+retry after a failure stays quiet), when it is ready, or that it failed. **It
+never pushes**: review the branch, push it and open the PR yourself. While that
+branch holds the month's summary it does not redo the month.
 
 The task runs `refresh.py` from its own worktree
 (`%LOCALAPPDATA%\openingbook\worktree`), reset to `origin/main` each run, so it
 only runs merged code and never touches your checkout; a full run anywhere else
 refuses. `python refresh.py --check` says what it would do, from any checkout.
 The log is `%LOCALAPPDATA%\openingbook\refresh.log`. Register the task only once
-these scripts are on `main`; `register-task.ps1` checks.
+these scripts are on `main`; `register-task.ps1` checks. Run it from your own
+PowerShell window, not from the Claude desktop app: the app redirects what its
+shells write to `%LOCALAPPDATA%` into its own package folder, where the task
+never looks.
 
 Tests: `python -I -m pytest tests -q` from this directory.
 

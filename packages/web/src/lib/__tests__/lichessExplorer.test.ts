@@ -1,6 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
   BANDS,
+  RANKABLE_BANDS,
+  rangeLabel,
+  levelName,
+  levelPlayers,
+  LEVEL_OPTIONS,
   buildExplorerUrl,
   fetchExplorer,
   sideScorePct,
@@ -64,6 +69,49 @@ describe('buildExplorerUrl', () => {
 describe('BANDS', () => {
   it('exposes All plus the PRD bands lowest-to-highest', () => {
     expect(BANDS.map((b) => b.id)).toEqual(['all', 'u1400', '1400', '1800', '2200', 'masters']);
+  });
+
+  it('labels each band by its rating range', () => {
+    expect(BANDS.map((b) => rangeLabel(b.id))).toEqual([
+      'All levels',
+      'Under 1400',
+      '1400–1800',
+      '1800–2200',
+      '2200+',
+      'Masters',
+    ]);
+  });
+
+  it('names each level the way a player names themselves', () => {
+    expect(BANDS.map((b) => levelName(b.id))).toEqual([
+      'All levels',
+      'Beginner',
+      'Intermediate',
+      'Advanced',
+      'Expert',
+      'Masters',
+    ]);
+  });
+
+  it('names the players at a level inside a sentence, in lower case', () => {
+    expect(levelPlayers('u1400')).toBe('beginners');
+    expect(levelPlayers('1400')).toBe('intermediate players');
+    expect(levelPlayers('1800')).toBe('advanced players');
+    expect(levelPlayers('2200')).toBe('experts');
+  });
+
+  it('lists the level menu by name, each with its Lichess range beside it', () => {
+    expect(LEVEL_OPTIONS).toEqual([
+      { value: 'all', label: 'All levels' },
+      { value: 'u1400', label: 'Beginner', detail: 'Under 1400' },
+      { value: '1400', label: 'Intermediate', detail: '1400–1800' },
+      { value: '1800', label: 'Advanced', detail: '1800–2200' },
+      { value: '2200', label: 'Expert', detail: '2200+' },
+    ]);
+  });
+
+  it('ranks Discover and search by every band but Masters', () => {
+    expect(RANKABLE_BANDS.map((b) => b.id)).toEqual(['all', 'u1400', '1400', '1800', '2200']);
   });
 });
 

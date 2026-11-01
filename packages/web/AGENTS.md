@@ -69,6 +69,13 @@ behind "Paste a game", which cannot identify a position outside the popular
 thousand. The landing page used to pull the slice on mount for the hero alone,
 so every visitor paid for a search most of them never ran.
 
+With a level saved, the slice is `?limit=1000&band=<band>`, cached per band: one
+slice per level a visitor actually picks, never all five. The level itself is
+`hooks/useMyLevel.ts` (the `openingbook:my-level` preference, live across
+components and tabs); Discover and search rank by it, it stays out of the URL
+and out of Clear filters, and its setter is the one place `band_select` is
+tracked.
+
 ## Imports
 
 **Use relative imports for the shared package, not the package name.**

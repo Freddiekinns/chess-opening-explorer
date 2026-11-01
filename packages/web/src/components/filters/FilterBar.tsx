@@ -1,6 +1,8 @@
 import React from 'react';
 import { FacetSelect, FacetOptionList } from './FacetSelect';
 import { FamilyPicker } from './FamilyPicker';
+import { LevelOptionList } from './LevelOptionList';
+import { levelName, type BandId } from '../../lib/lichessExplorer';
 import { facetDisplay, resultCountLabel } from './resultCount';
 import { SORT_OPTIONS } from '../../hooks/useBrowse';
 import type { BrowseFacets, BrowseFilters, FacetKey } from '../../hooks/useBrowse';
@@ -26,6 +28,9 @@ interface FilterBarProps {
   onClear: () => void;
   /** Where the counts come from, shown small under the total. */
   note?: string;
+  /** The band Discover ranks by, or null for all levels. Not a filter. */
+  band: BandId | null;
+  onBandChange: (band: BandId) => void;
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({
@@ -37,6 +42,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   onFacetChange,
   onClear,
   note,
+  band,
+  onBandChange,
 }) => {
   const sortLabel =
     SORT_OPTIONS.find((option) => option.value === filters.sort)?.label ?? SORT_OPTIONS[0].label;
@@ -45,23 +52,23 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     <>
       <div className={styles.bar}>
         <FacetSelect
-          label="Difficulty"
-          display={facetDisplay(facets.level, filters.level, 'Any')}
-          active={Boolean(filters.level)}
-          menuLabel="Filter by difficulty"
+          label="Your level"
+          display={levelName(band ?? 'all')}
+          active={band !== null}
+          menuLabel="Rank by your level"
         >
           {(close) => (
-            <FacetOptionList
-              options={facets.level}
-              value={filters.level}
-              anyLabel="Any difficulty"
-              onSelect={(value) => {
-                onFacetChange('level', value);
+            <LevelOptionList
+              value={band}
+              onSelect={(next) => {
+                onBandChange(next);
                 close();
               }}
             />
           )}
         </FacetSelect>
+        {/* "How it's ranked" on the left, "what it's filtered to" on the right. */}
+        <span className={styles.divider} aria-hidden="true" data-testid="level-divider" />
 
         <FacetSelect
           label="Style"

@@ -1,5 +1,6 @@
-import { useEffect, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useSyncExternalStore } from 'react';
 import type { Opening } from './localSearch';
+import type { BandId } from './lichessExplorer';
 
 /**
  * The locally held slice of the search index — one copy, for every surface.
@@ -31,8 +32,14 @@ import type { Opening } from './localSearch';
  */
 const SEARCH_INDEX_URL = '/api/openings/search-index?limit=1000';
 
-let index: Opening[] = [];
-let inFlight: Promise<void> | null = null;
+/**
+ * One slice per level ranked by (#205): the server swaps the band's games in
+ * as games_analyzed, so the local ranking needs no change of shape. Keyed
+ * 'all' for everyone. At most five, and only the ones a visitor asks for.
+ */
+const EMPTY: Opening[] = [];
+const indexes = new Map<string, Opening[]>();
+const inFlight = new Map<string, Promise<void>>();
 let fullInFlight: Promise<Opening[]> | null = null;
 const listeners = new Set<() => void>();
 
@@ -43,32 +50,31 @@ function subscribe(listener: () => void) {
   };
 }
 
-/** Stable identity between publishes, which is what useSyncExternalStore wants. */
-function getSnapshot() {
-  return index;
-}
-
 /**
  * Fetched at most once per page load, and never retried on failure within it.
  *
  * A failed load is not an error state anywhere: the surfaces simply behave the
  * way the top bar behaved before this existed, which is to wait for the server.
  */
-export function loadSearchIndex(): Promise<void> {
-  if (inFlight) return inFlight;
+export function loadSearchIndex(band: BandId | null = null): Promise<void> {
+  const key = band ?? 'all';
+  const pending = inFlight.get(key);
+  if (pending) return pending;
 
-  inFlight = fetch(SEARCH_INDEX_URL)
+  const url = band ? `${SEARCH_INDEX_URL}&band=${band}` : SEARCH_INDEX_URL;
+  const request = fetch(url)
     .then((response) => (response.ok ? response.json() : null))
     .then((payload) => {
       if (!payload?.success || !Array.isArray(payload.data)) return;
-      index = payload.data;
+      indexes.set(key, payload.data);
       listeners.forEach((listener) => listener());
     })
     .catch(() => {
       // Offline, or the route is down. The server list is still coming.
     });
 
-  return inFlight;
+  inFlight.set(key, request);
+  return request;
 }
 
 /**
@@ -77,11 +83,13 @@ export function loadSearchIndex(): Promise<void> {
  * `enabled` is the surface saying it is worth having: passing false keeps a
  * mounted-but-idle search box from pulling the index on every page.
  */
-export function useSearchIndex(enabled: boolean): Opening[] {
+export function useSearchIndex(enabled: boolean, band: BandId | null = null): Opening[] {
   useEffect(() => {
-    if (enabled) void loadSearchIndex();
-  }, [enabled]);
+    if (enabled) void loadSearchIndex(band);
+  }, [enabled, band]);
 
+  // Stable identity between publishes, which is what useSyncExternalStore wants.
+  const getSnapshot = useCallback(() => indexes.get(band ?? 'all') ?? EMPTY, [band]);
   return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
 }
 
@@ -109,8 +117,8 @@ export function loadFullSearchIndex(): Promise<Opening[]> {
 
 /** Test seam. Nothing in the app resets a page-lifetime cache. */
 export function __resetSearchIndexForTests() {
-  index = [];
-  inFlight = null;
+  indexes.clear();
+  inFlight.clear();
   fullInFlight = null;
   listeners.clear();
 }

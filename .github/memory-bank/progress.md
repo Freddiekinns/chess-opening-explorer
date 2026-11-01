@@ -4,6 +4,10 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **2026-11-01**: #208 content review ledger and queue; batch 1, 50 pages, 17
+  fixed.
+- **2026-11-01**: #205 — Discover and search rank by your Lichess band; #204 —
+  dated per-band stats, detail page off the explorer (#213, #214).
 - **2026-10-21**: backlog split — ready items are issues (#195–199),
   `docs/backlog.md` the order and idea pool. **10-20**: #187 — `scout`,
   `implementer`, `/docs-sync` removed; skills folded into READMEs; plugins off.
@@ -80,7 +84,6 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Left
 
-- **#182**: route tests for the four live handlers that have none.
 - **Blocked upstream**: TS 7 (#107) — typescript-eslint 8.70.1 still peers
   `typescript <6.1.0`. `tools/analysis` still has no CI at all.
 - **Watch the SEO recovery**: 2026-09-22 — 7,174 indexed, 2,038 discovered-not-

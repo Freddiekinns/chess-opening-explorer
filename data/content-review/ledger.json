@@ -1,0 +1,932 @@
+{
+  "rnbqkb1r/ppp1pppp/5n2/3p4/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "59edf4fc3a04061d",
+    "notes": "Style brief audit (alekhine-defense-scandinavian-variation, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "9902207e736514f6",
+    "notes": "Style brief audit (alekhine-defense, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "1567e6523ed6efcd",
+    "notes": "Style brief audit (benoni-defense-old-benoni, researched 2026-10-03): 8 claims, 0 wrong, 4 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "474e1e18b0919d0a",
+    "notes": "Style brief audit (bird-opening-dutch-variation, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "7bacfb60e2732de0",
+    "notes": "Style brief audit (bird-opening, researched 2026-10-03): 9 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "3aa07490f23a5ac0",
+    "notes": "Style brief audit (bishops-opening-berlin-defense, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "86916f71d2d37ee9",
+    "notes": "Style brief audit (bishops-opening, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "d6fe6f8ae6f39242",
+    "notes": "Style brief audit (blackmar-diemer-gambit, researched 2026-10-03): 6 claims, 1 wrong and fixed in #171, 0 unverifiable."
+  },
+  "rnbqkbnr/pp2pppp/2p5/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "11a554489bde57dc",
+    "notes": "Style brief audit (caro-kann-defense-advance-variation, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "f8c156e8867125e1",
+    "notes": "Style brief audit (caro-kann-defense-exchange-variation, researched 2026-10-03): 7 claims, 2 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "55155ad9bbd76155",
+    "notes": "Style brief audit (caro-kann-defense, researched 2026-10-03): 10 claims, 0 wrong, 2 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/8/3pP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "78e4bdb11c1cf2bf",
+    "notes": "Style brief audit (center-game-accepted, researched 2026-10-03): 7 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "6a76563da8e484c9",
+    "notes": "Style brief audit (center-game, researched 2026-10-03): 7 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "cf17fc66f1122b77",
+    "notes": "Style brief audit (dutch-defense, researched 2026-10-04): 9 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/p1pppppp/1p6/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "bf7240f058d58712",
+    "notes": "Style brief audit (english-defense, researched 2026-10-03): 9 claims, 0 wrong, 2 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/4p3/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "6f3769ea56455c5b",
+    "notes": "Style brief audit (english-opening-agincourt-defense, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkb1r/pppppppp/5n2/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "23ca66f2b89692fd",
+    "notes": "Style brief audit (english-opening-anglo-indian-defense, researched 2026-10-03): 9 claims, 0 wrong, 2 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "db12ddf1e40a20fb",
+    "notes": "Style brief audit (english-opening-kings-english-variation, researched 2026-10-03): 9 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "eb014cbb441dbf52",
+    "notes": "Style brief audit (english-opening-symmetrical-variation, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "27ce83c33cd01403",
+    "notes": "Style brief audit (english-opening, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "cfd06c97ff2e2a3f",
+    "notes": "Style brief audit (englund-gambit, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "def8a19871018f9d",
+    "notes": "Style brief audit (four-knights-game-italian-variation, researched 2026-10-03): 8 claims, 2 wrong and fixed in #171, 0 unverifiable."
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "32319de1d46e6e3b",
+    "notes": "Style brief audit (four-knights-game, researched 2026-10-03): 7 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "9b586dee6b3bfbfd",
+    "notes": "Style brief audit (french-defense-advance-variation, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3P4/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "c238a4e0dc7be7f6",
+    "notes": "Style brief audit (french-defense-exchange-variation, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 0 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/4p3/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "2f3ec004e3f1381c",
+    "notes": "Style brief audit (french-defense-knight-variation, researched 2026-10-03): 8 claims, 0 wrong, 4 unverifiable."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "fb4ed1ce997890eb",
+    "notes": "Style brief audit (french-defense-tarrasch-variation, researched 2026-10-04): 10 claims, 1 wrong and fixed in #171, 3 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "5ab9c81b2d363645",
+    "notes": "Style brief audit (french-defense, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/8/6P1/PPPPPP1P/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "261a9b27d7debc19",
+    "notes": "Style brief audit (hungarian-opening, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "8733ece584884329",
+    "notes": "Style brief audit (indian-defense-anti-nimzo-indian, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "35e9e972016cdb11",
+    "notes": "Style brief audit (italian-game-classical-variation, researched 2026-10-03): 8 claims, 0 wrong, 2 unverifiable."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "9cc54646ccdaee67",
+    "notes": "Style brief audit (italian-game-giuoco-pianissimo, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "8e398b5ed52e3415",
+    "notes": "Style brief audit (italian-game-giuoco-piano, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "497383e839a23880",
+    "notes": "Style brief audit (italian-game-two-knights-defense, researched 2026-10-03): 6 claims, 0 wrong, 0 unverifiable."
+  },
+  "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "585cf50bcd4829f5",
+    "notes": "Style brief audit (italian-game, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "3d21b8c4c04bd80a",
+    "notes": "Style brief audit (kings-gambit, researched 2026-10-03): 6 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/8/5NP1/PPPPPP1P/RNBQKB1R b KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "bee6dbca97b021f8",
+    "notes": "Style brief audit (kings-indian-attack, researched 2026-10-03): 8 claims, 0 wrong, 2 unverifiable."
+  },
+  "rnbqkb1r/pppppp1p/5np1/8/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "f442fd39337f7ee2",
+    "notes": "Style brief audit (kings-indian-defense-normal-variation, researched 2026-10-03): 5 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP2BPPP/R1BQK2R b KQ - 3 6": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "55cdc360a46b1fb4",
+    "notes": "Style brief audit (kings-indian-defense-orthodox-variation, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 0 unverifiable."
+  },
+  "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "4f23d209c6e7c4dc",
+    "notes": "Style brief audit (kings-indian-defense, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "ec61533181950466",
+    "notes": "Style brief audit (kings-pawn-game-wayward-queen-attack, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "8773fcd213fed6a1",
+    "notes": "Style brief audit (mieses-opening, researched 2026-10-03): 9 claims, 1 wrong and fixed in #171, 2 unverifiable."
+  },
+  "rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "aa089575cbca3b1d",
+    "notes": "Style brief audit (modern-defense, researched 2026-10-03): 7 claims, 0 wrong, 2 unverifiable."
+  },
+  "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N1P3/PP3PPP/R1BQKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "0941f343bac7de78",
+    "notes": "Style brief audit (nimzo-indian-defense-rubinstein-system, researched 2026-10-03): 7 claims, 2 wrong and fixed in #171, 0 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "bdc7fb8ea333da7f",
+    "notes": "Style brief audit (nimzo-larsen-attack-classical-variation, researched 2026-10-03): 7 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "f1fea97763bf74c1",
+    "notes": "Style brief audit (nimzo-larsen-attack-modern-variation, researched 2026-10-03): 9 claims, 0 wrong, 4 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "0cd0b7ea97d1f0b7",
+    "notes": "Style brief audit (nimzo-larsen-attack, researched 2026-10-03): 7 claims, 0 wrong, 2 unverifiable."
+  },
+  "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "d0152d8d0b4a6f8d",
+    "notes": "Style brief audit (nimzowitsch-defense, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/3p4/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "a32d5e7dab86d14b",
+    "notes": "Style brief audit (old-indian-defense, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkbnr/p1pppppp/1p6/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "8c8a154dcdd16058",
+    "notes": "Style brief audit (owen-defense, researched 2026-10-03): 8 claims, 0 wrong, 2 unverifiable."
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 1 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "6eaf52d216fff115",
+    "notes": "Style brief audit (petrovs-defense-stafford-gambit, researched 2026-10-03): 7 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "26043e4e4d1c2fd1",
+    "notes": "Style brief audit (petrovs-defense, researched 2026-10-03): 9 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp2ppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "8bceeb2df70d6635",
+    "notes": "Style brief audit (philidor-defense-exchange-variation, researched 2026-10-03): 8 claims, 0 wrong, 3 unverifiable."
+  },
+  "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "86d25b6f33f61e73",
+    "notes": "Style brief audit (philidor-defense, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 0 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "fa21016b474bf0ea",
+    "notes": "Style brief audit (pirc-defense, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/1P6/8/P1PPPPPP/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "8dc0221f66c73b3b",
+    "notes": "Style brief audit (polish-opening, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "1953a5eb73ad50d7",
+    "notes": "Style brief audit (queens-gambit-accepted, researched 2026-10-03): 6 claims, 0 wrong, 1 unverifiable."
+  },
+  "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "764e25f9187a3c25",
+    "notes": "Style brief audit (queens-gambit-declined-chigorin-defense, researched 2026-10-04): 10 claims, 1 wrong and fixed in #171, 0 unverifiable."
+  },
+  "rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/2N5/PP2PPPP/R1BQKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "897807ad31931542",
+    "notes": "Style brief audit (queens-gambit-declined-exchange-variation, researched 2026-10-03): 7 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "8b756f64698e7f1e",
+    "notes": "Style brief audit (queens-gambit-declined-marshall-defense, researched 2026-10-03): 9 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "94b2d071404673f3",
+    "notes": "Style brief audit (queens-gambit-declined-normal-defense, researched 2026-10-03): 7 claims, 1 wrong and fixed in #171, 0 unverifiable."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "32b63a7bc3d0ed76",
+    "notes": "Style brief audit (queens-gambit-declined-queens-knight-variation, researched 2026-10-03): 5 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 1 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "96609b8bc18fad68",
+    "notes": "Style brief audit (queens-gambit-declined-three-knights-variation, researched 2026-10-03): 9 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "0ed88922dd8126ff",
+    "notes": "Style brief audit (queens-gambit-declined, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "0e16567a7d5865c7",
+    "notes": "Style brief audit (queens-pawn-game-chigorin-variation, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "24b2862d9f285982",
+    "notes": "Style brief audit (queens-pawn-game-colle-system, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/5N2/PPP1PPPP/RN1QKB1R b KQkq - 3 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "f0266b04034f7490",
+    "notes": "Style brief audit (queens-pawn-game-london-system, researched 2026-10-03): 13 claims, 0 wrong, 3 unverifiable."
+  },
+  "rnbqkbnr/pppppp1p/6p1/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "9c214e607106cb50",
+    "notes": "Style brief audit (queens-pawn-game-modern-defense, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "45f3b21d54a70db3",
+    "notes": "Style brief audit (queens-pawn-game-symmetrical-variation, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR b KQkq - 3 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "d29931a8810a6773",
+    "notes": "Style brief audit (rapport-jobava-system, researched 2026-10-03): 9 claims, 0 wrong, 2 unverifiable."
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "2b0202d2b602a1d9",
+    "notes": "Style brief audit (ruy-lopez-berlin-defense, researched 2026-10-03): 8 claims, 0 wrong, 2 unverifiable."
+  },
+  "r1bq1rk1/2p1bppp/p1n2n2/1p1pp3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - - 0 9": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "af47b7ded5dfe76b",
+    "notes": "Style brief audit (ruy-lopez-marshall-attack, researched 2026-10-03): 7 claims, 2 wrong and fixed in #171, 1 unverifiable."
+  },
+  "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "c752461dd873636f",
+    "notes": "Style brief audit (ruy-lopez-morphy-defense, researched 2026-10-03): 10 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "r1bqkbnr/ppp2ppp/2np4/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "5b398f1bcac80799",
+    "notes": "Style brief audit (ruy-lopez-steinitz-defense, researched 2026-10-03): 7 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "e008fd0160881e22",
+    "notes": "Style brief audit (ruy-lopez, researched 2026-10-03): 7 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnb1kbnr/ppp1pppp/8/q7/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "1ca7139eaaded998",
+    "notes": "Style brief audit (scandinavian-defense-main-line, researched 2026-10-03): 9 claims, 0 wrong, 4 unverifiable."
+  },
+  "rnb1kbnr/ppp1pppp/8/3q4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "93952be5ef0fb7f9",
+    "notes": "Style brief audit (scandinavian-defense-mieses-kotroc-variation, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3P4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 1 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "f3ae3790d4319d43",
+    "notes": "Style brief audit (scandinavian-defense-modern-variation, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/8/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "36cb76afbb103915",
+    "notes": "Style brief audit (scandinavian-defense-valencian-variation, researched 2026-10-03): 6 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "ddb19441253c05e5",
+    "notes": "Style brief audit (scandinavian-defense, researched 2026-10-03): 9 claims, 3 wrong and fixed in #171, 1 unverifiable."
+  },
+  "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "2daf5c991570898e",
+    "notes": "Style brief audit (scotch-game, researched 2026-10-03): 10 claims, 1 wrong and fixed in #171, 1 unverifiable."
+  },
+  "r1bqkbnr/pp1ppp1p/2n3p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "bf408648b99b08ad",
+    "notes": "Style brief audit (sicilian-defense-accelerated-dragon, researched 2026-10-03): 9 claims, 0 wrong, 2 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "8525990c64d45f7a",
+    "notes": "Style brief audit (sicilian-defense-alapin-variation, researched 2026-10-03): 7 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "fbd6e5598a5d4956",
+    "notes": "Style brief audit (sicilian-defense-bowdler-attack, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "aca4ec2cc2899394",
+    "notes": "Style brief audit (sicilian-defense-closed, researched 2026-10-03): 9 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pp2pp1p/3p2p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "d426db8a47c41ce9",
+    "notes": "Style brief audit (sicilian-defense-dragon-variation, researched 2026-10-03): 7 claims, 3 wrong and fixed in #171, 2 unverifiable."
+  },
+  "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "132d1f1a106afb62",
+    "notes": "Style brief audit (sicilian-defense-french-variation, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 4 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "9b02ec75e18b359d",
+    "notes": "Style brief audit (sicilian-defense-mcdonnell-attack, researched 2026-10-03): 9 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pp2pppp/3p4/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "78862a96de0be9c4",
+    "notes": "Style brief audit (sicilian-defense-modern-variations, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "d176ea39d9486720",
+    "notes": "Style brief audit (sicilian-defense-najdorf-variation, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 0 unverifiable."
+  },
+  "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "b93949fb76cd8086",
+    "notes": "Style brief audit (sicilian-defense-old-sicilian, researched 2026-10-03): 7 claims, 1 wrong and fixed in #171, 4 unverifiable."
+  },
+  "r1bqkbnr/pp1ppppp/2n5/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "1fdfe09d32a7e003",
+    "notes": "Style brief audit (sicilian-defense-open, researched 2026-10-03): 8 claims, 0 wrong, 2 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/8/4P3/2p5/PP3PPP/RNBQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "767b0e2f9be5173d",
+    "notes": "Style brief audit (sicilian-defense-smith-morra-gambit-accepted, researched 2026-10-03): 7 claims, 1 wrong and fixed in #171, 0 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "0dbf4c0e2eedea72",
+    "notes": "Style brief audit (sicilian-defense-smith-morra-gambit, researched 2026-10-03): 8 claims, 0 wrong, 2 unverifiable."
+  },
+  "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "6315f64865122842",
+    "notes": "Style brief audit (sicilian-defense-taimanov-variation, researched 2026-10-03): 7 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "a0f756e8d46eca74",
+    "notes": "Style brief audit (sicilian-defense, researched 2026-10-03): 10 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "11640b6aca3c7f99",
+    "notes": "Style brief audit (slav-defense-exchange-variation, researched 2026-10-03): 8 claims, 3 wrong and fixed in #171, 1 unverifiable."
+  },
+  "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "fixed",
+    "contentHash": "3021625da25ec992",
+    "notes": "Style brief audit (slav-defense, researched 2026-10-03): 8 claims, 2 wrong and fixed in #171, 0 unverifiable."
+  },
+  "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "250f1915e81aff05",
+    "notes": "Style brief audit (three-knights-opening, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/8/2N5/PPPPPPPP/R1BQKBNR b KQkq - 1 1": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "ac5e48eec6bf183d",
+    "notes": "Style brief audit (van-geet-opening, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/8/4P3/PPPP1PPP/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "53cdffbac77e8b2d",
+    "notes": "Style brief audit (vant-kruijs-opening, researched 2026-10-03): 7 claims, 0 wrong, 2 unverifiable."
+  },
+  "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "1981c5529a4b2492",
+    "notes": "Style brief audit (vienna-game-max-lange-defense, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkb1r/pppp1ppp/5n2/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "0dd7c2736c6a0e31",
+    "notes": "Style brief audit (vienna-game-vienna-gambit, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "dfb41710741afb54",
+    "notes": "Style brief audit (vienna-game, researched 2026-10-03): 6 claims, 0 wrong, 0 unverifiable."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2": {
+    "reviewedAt": "2026-10-11",
+    "verdict": "ok",
+    "contentHash": "3cece7a4bd02f700",
+    "notes": "Style brief audit (zukertort-opening-tennison-gambit, researched 2026-10-03): 8 claims, 0 wrong, 2 unverifiable."
+  },
+  "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "1b396ca521b79617",
+    "notes": "Plan 2 used 'the open e-file', which 1.e4 does not open."
+  },
+  "r1bqkbnr/pppp2pp/2n5/1B2pP2/8/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 4": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "c3bd3a399a3cd89b",
+    "notes": ""
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "dd793318822c65a2",
+    "notes": "Called Bb2 the light-squared bishop; it is the dark-squared one."
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/4p3/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 0 4": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "cb4c76fc866cacc8",
+    "notes": ""
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "a03da269841ee867",
+    "notes": ""
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/8/2P5/PPQPPPPP/RNB1KBNR b KQkq - 1 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "518795bc4174bb18",
+    "notes": ""
+  },
+  "rnbqkbnr/pp1pp1pp/8/2pP1p2/8/6P1/PPP1PP1P/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "fd9d827f47d910fd",
+    "notes": ""
+  },
+  "rnbqkbnr/pp3ppp/4p3/2pp4/4P3/2N3P1/PPPP1P1P/R1BQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "784474c76b25a052",
+    "notes": ""
+  },
+  "rnbqkbnr/pp1p1ppp/4p3/2p5/2P1P3/5N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "675962eb749b00e1",
+    "notes": ""
+  },
+  "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/3B1N2/PPP2PPP/RNBQK2R b KQkq - 1 4": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "2fe1bb27de5ecd6e",
+    "notes": ""
+  },
+  "rn1qkb1r/pp2pppp/2p2n2/3p4/2P3b1/5NP1/PP1PPPBP/RNBQ1RK1 b kq - 3 5": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "e100eaf6e827fef1",
+    "notes": "Said ...Bxf3 damages White's pawns and that Bg4 pins the knight; Bg2 recaptures, and nothing valuable stands behind f3."
+  },
+  "rnbq1rk1/pp3pbp/3p1np1/2pP4/4PP2/2N2N2/PP4PP/R1BQKB1R w KQ - 3 9": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "54992d15a41c5346",
+    "notes": "Had the g7-bishop pressing a d4-pawn that is not there."
+  },
+  "rnbqk2r/ppp1ppbp/3p1np1/8/3PP3/3B1N2/PPP2PPP/RNBQK2R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "27cc1b7d68a53667",
+    "notes": ""
+  },
+  "rnbqkbnr/p1pppppp/8/1p6/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "b1f4df144d0a39b4",
+    "notes": ""
+  },
+  "rnbqkbnr/p1pppppp/8/1p6/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "f606f3af83b78bf0",
+    "notes": ""
+  },
+  "rnbqk2r/pp3pbp/3p1np1/2pP4/4PP2/2N2N2/PP4PP/R1BQKB1R b KQkq - 2 8": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "f2a0da3c96b9defa",
+    "notes": "Had the g7-bishop pressing d5 and e4, which are not on its diagonal."
+  },
+  "rnbq1rk1/pp3pbp/3p1np1/2pP4/4PP2/2NB1N2/PP4PP/R1BQK2R b KQ - 4 9": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "f595521613a92cad",
+    "notes": ""
+  },
+  "r1bqk1nr/pp1pppbp/2n3p1/2p5/2P5/P1N3P1/1P1PPPBP/R1BQK1NR b KQkq - 0 5": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "ccb40bb008c4de60",
+    "notes": ""
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/8/3pP3/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 0 5": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "e7b013415994a03b",
+    "notes": "Said ...Bb4 challenges a d4-knight; the knight is not on d4 yet, and ...Bb4 pins c3."
+  },
+  "rnbqkbnr/ppp2ppp/8/3p4/3P1B2/8/PPP2PPP/RN1QKBNR b KQkq - 1 4": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "201954f14d6add94",
+    "notes": "Called Bf4 the light-squared bishop and mentioned a later e3, but White's e-pawn has been exchanged. Rerouted the bishop 'via e3 to d2', which is not a plan."
+  },
+  "r1b1kb1r/pp1n1ppp/1qn1p3/2ppP3/3P1P2/2P2N2/PP2N1PP/R1BQKB1R b KQkq - 4 8": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "8f7268641b2c9700",
+    "notes": ""
+  },
+  "r1b1kbnr/pppp1Npp/8/6q1/2BnP3/8/PPPP1PPP/RNBQK2R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "f07c20124b383ba8",
+    "notes": "Described the position as if White were winning; after 5.Nxf7 Black has the famous mate. Suggested Qf3 or Ke2 as defences; neither is available as a defence here. Promised White 'the winning advantage' after surviving."
+  },
+  "r1bq1rk1/ppp1ppbp/n2p1np1/6B1/2PPP3/2N5/PP1QBPPP/R3K1NR b KQ - 5 7": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "daa8fd135f7fc402",
+    "notes": "Called the g5-bishop light-squared; it is the dark-squared one, and the trade comes via Bh6."
+  },
+  "r2q1rk1/pp2ppbp/3pbnp1/8/2BBP3/2N2P2/PPPQ2PP/R3K2R w KQ - 1 11": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "c169f0d55a97909d",
+    "notes": ""
+  },
+  "rnbqkbnr/1p1p1ppp/p3p3/8/2PNP3/8/PP3PPP/RNBQKB1R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "2ffc6491dc3be6ea",
+    "notes": ""
+  },
+  "rnbqkbnr/pp2pppp/8/3p4/3P1B2/8/PP2PPPP/RN1QKBNR b KQkq - 1 4": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "8769be02b482dd91",
+    "notes": "Called Bf4 the light-squared bishop. Gave a knight route Nc3-e2-g3 that no line uses."
+  },
+  "rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 2 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "ebce2901bc26e221",
+    "notes": ""
+  },
+  "rnbqkbnr/pp2pppp/8/2pP4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "29130925f2a13c41",
+    "notes": ""
+  },
+  "rnbqkbnr/pppppppp/8/8/8/5P2/PPPPP1PP/RNBQKBNR b KQkq - 0 1": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "e822c12b30f2506b",
+    "notes": "Suggested Nf3, but the f-pawn stands on f3. Called the c5/h4 targets light squares; 1.f3 weakens the dark squares."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "c2b888a877327896",
+    "notes": ""
+  },
+  "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "3fda91f7c361e20c",
+    "notes": ""
+  },
+  "rnbqkb1r/pp2pppp/3p1n2/2pP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "6ce8b4a9eb191547",
+    "notes": ""
+  },
+  "rnbqk2r/pp1p1ppp/3b1n2/2pP4/8/2N5/PP2PPPP/R1BQKBNR w KQkq - 1 6": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "9395d1feeadb4011",
+    "notes": ""
+  },
+  "rnbqk2r/pp2bppp/3p1n2/2pP4/4P3/2N5/PP3PPP/R1BQKBNR w KQkq - 1 7": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "3c3f1a18e47cb1c9",
+    "notes": ""
+  },
+  "rnbq1rk1/1p1n1pbp/p2p2p1/2pP4/P3PP2/2NB1N2/1P4PP/R1BQK2R b KQ - 0 11": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "4e5a0b92cbe59e33",
+    "notes": ""
+  },
+  "rnb1kbnr/pppp1ppp/8/4p3/5PPq/8/PPPPP2P/RNBQKBNR w KQkq - 1 3": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "0e1452b498b60ca1",
+    "notes": ""
+  },
+  "rnb1kb1r/ppp2ppp/5n2/3qp3/2B5/5P2/PPPP2PP/RNBQK1NR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "348b9b136423e950",
+    "notes": "Praised 4...Qxd5 as seizing the initiative; it hangs the queen to 5.Bxd5. Called 5.Bxd5 Nxd5 'slightly passive but solid' for White."
+  },
+  "r1bqk2r/p3p1bp/2p3pn/2Np4/3P4/5N2/PP3PPP/R1BQK2R b KQkq - 1 11": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "56a291e39152a413",
+    "notes": "Presented it as a White system and called c6/d5 doubled pawns. Gave ...Nf7 as a challenge to the c5-knight; from f7 it does not reach c5."
+  },
+  "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPPKPPP/RNBQ1BNR b kq - 1 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "9492db02082d4ab1",
+    "notes": ""
+  },
+  "r1b1k2r/ppp2pbp/n2p2p1/3Pp3/2n1P2Q/2N2P2/PP3K1P/R5NR w kq - 0 13": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "a2c2c47f414fa222",
+    "notes": "Said the queens were traded and that White has the bishop pair; Black gave the queen for both White bishops and two pawns. Had White using a bishop pair it no longer has."
+  },
+  "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "a4c1152030d9f336",
+    "notes": "Mentioned a semi-open c-file; Black's pawn still stands on c6."
+  },
+  "rnbqkbnr/pp1ppppp/2p5/8/4P3/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "7f5d23cfc2544cfb",
+    "notes": ""
+  },
+  "rnbqkbnr/pp1ppppp/2p5/8/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq - 1 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "5a0849924f49e03a",
+    "notes": ""
+  },
+  "rnbqkb1r/pp2pppp/5n2/8/2BP4/2N5/PP3PPP/R1BQK1NR b KQkq - 0 6": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "ec051fe74dc9d9f0",
+    "notes": ""
+  },
+  "rnbqkb1r/pp2pppp/5n2/8/2pP4/2N5/PP3PPP/R1BQKBNR w KQkq - 0 6": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "98de7e0a5092e0b5",
+    "notes": ""
+  },
+  "r2qkb1r/pp2pppp/2n5/3n4/3P2b1/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 8": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "12008daef63bb69b",
+    "notes": ""
+  },
+  "rnbq1rk1/ppp1bppp/4pn2/8/2pP4/2N2NP1/PP2PPBP/R1BQK2R w KQ - 4 7": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "de009fd3c13432dd",
+    "notes": "Gave Qa4+ with tempo; with Black castled it is not check."
+  },
+  "rnbqkbnr/ppppp1pp/8/5p2/3P4/7P/PPP1PPP1/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "fixed",
+    "contentHash": "f42da3feee0b9078",
+    "notes": "Paired the g4 plan with a g3 fianchetto, which contradicts it."
+  },
+  "r1bq1rk1/ppp1p1bp/2np1np1/5p2/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 2 8": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "9adb53b0c92192b7",
+    "notes": ""
+  },
+  "rnbq1rk1/ppp2pbp/3p1np1/4p3/2P5/2NP1NP1/PP2PPBP/R1BQ1RK1 b - - 2 7": {
+    "reviewedAt": "2026-11-01",
+    "verdict": "ok",
+    "contentHash": "33def3b77221e2a5",
+    "notes": ""
+  }
+}

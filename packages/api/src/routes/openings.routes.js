@@ -38,13 +38,14 @@ const familyResourceService = new FamilyResourceService({
  * searching. `games_analyzed` stays because the client ranks with it;
  * `searchScore` because the client promotes saved openings within a tie.
  */
-function toSearchResult(opening) {
+function toSearchResult(opening, band = null) {
   return {
     fen: opening.fen,
     name: opening.name,
     eco: opening.eco,
     moves: opening.moves || '',
-    games_analyzed: opening.games_analyzed,
+    // Ranked by a band, the count shown is that band's (null when too thin).
+    games_analyzed: band ? (bandStats.forFen(opening.fen, band)?.g ?? null) : opening.games_analyzed,
     name_qualifier: opening.name_qualifier,
     searchScore: opening.searchScore,
   };
@@ -350,11 +351,21 @@ router.get('/browse', (req, res) => {
  * @desc Get lightweight search index for client-side search (names and ECO codes only)
  * @param {number} limit - Max results to return (default: all, can limit for faster initial load)
  */
+function withPopularity(rows) {
+  return {
+    rows,
+    byPopularity: [...rows].sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0)),
+  };
+}
+
 router.get('/search-index', (req, res) => {
   try {
     const startTime = Date.now();
     const { limit, fields } = req.query;
     const isLookupOnly = fields === 'lookup';
+    // Ranked by your level (#205): the band's games stand in for
+    // games_analyzed, so the client ranks the slice with no change of shape.
+    const band = bandStats.isBand(req.query.band) ? req.query.band : null;
 
     // A positive whole number or nothing. `-5` used to slice to all but five
     // openings, and `0` or `lots` to the whole index.
@@ -388,14 +399,21 @@ router.get('/search-index', (req, res) => {
         family_id: opening.family_id,
         ...(qualifiers.has(opening.fen) && { name_qualifier: qualifiers.get(opening.fen) }),
       }));
-      searchIndexCache = {
-        rows,
-        byPopularity: [...rows].sort((a, b) => (b.games_analyzed || 0) - (a.games_analyzed || 0)),
-      };
+      searchIndexCache = { all: withPopularity(rows) };
       searchIndexCacheTime = now;
     }
 
-    const { rows, byPopularity } = searchIndexCache;
+    // One build, one ranked copy per band, made on first ask.
+    if (band && !searchIndexCache[band]) {
+      searchIndexCache[band] = withPopularity(
+        searchIndexCache.all.rows.map(({ games_analyzed: _all, ...row }) => {
+          const games = bandStats.forFen(row.fen, band)?.g;
+          return games ? { ...row, games_analyzed: games } : row;
+        })
+      );
+    }
+
+    const { rows, byPopularity } = searchIndexCache[band || 'all'];
 
     // If limit specified, take the top N by games_analyzed
     let searchIndex = maxResults ? byPopularity.slice(0, maxResults) : rows;
@@ -459,18 +477,20 @@ router.get('/semantic-search', async (req, res) => {
     const startTime = Date.now();
     const maxResults = Math.min(parseInt(limit) || 20, 50);
     const pageOffset = Math.max(parseInt(offset) || 0, 0);
+    const band = bandStats.isBand(req.query.band) ? req.query.band : null;
 
     // Use the enhanced search service
     const searchResults = await searchService.search(q, {
       limit: maxResults,
       offset: pageOffset,
+      ...(band && { band }),
     });
 
     const searchTime = Date.now() - startTime;
 
     res.json({
       success: true,
-      data: searchResults.results.map(toSearchResult),
+      data: searchResults.results.map((opening) => toSearchResult(opening, band)),
       count: searchResults.results.length,
       totalResults: searchResults.totalResults,
       hasMore: searchResults.hasMore,

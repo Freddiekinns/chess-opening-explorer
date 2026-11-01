@@ -37,6 +37,65 @@ export const BANDS = [
 export type BandId = (typeof BANDS)[number]['id'];
 export type Band = (typeof BANDS)[number];
 
+/** Bands Discover and search can rank by: Masters has no batch data. */
+export const RANKABLE_BANDS = BANDS.filter((band) => band.id !== 'masters');
+
+/**
+ * The band a saved level ranks Discover and search by, or null for everyone.
+ * All needs no band, and a saved Masters ranks as All without being
+ * overwritten: the detail page still opens on Masters.
+ */
+export function rankingBand(saved: BandId | null): BandId | null {
+  return saved && saved !== 'all' && RANKABLE_BANDS.some((band) => band.id === saved)
+    ? saved
+    : null;
+}
+
+const RANGE_LABELS: Record<BandId, string> = {
+  all: 'All levels',
+  u1400: 'Under 1400',
+  '1400': '1400–1800',
+  '1800': '1800–2200',
+  '2200': '2200+',
+  masters: 'Masters',
+};
+
+/** A band's Lichess rating range, shown beside its name in the level menu. */
+export function rangeLabel(id: BandId): string {
+  return RANGE_LABELS[id];
+}
+
+/**
+ * A band by the name a player gives themselves: "Intermediate". The words
+ * name players only, never openings (#206 retired the Difficulty facet that
+ * used them for how hard an opening is), so a chess.com player can pick by
+ * name and read the Lichess range as a guide.
+ */
+export function levelName(id: BandId): string {
+  return id === 'all' ? RANGE_LABELS.all : getBand(id).label;
+}
+
+const PLAYERS: Record<BandId, string> = {
+  all: 'all players',
+  u1400: 'beginners',
+  '1400': 'intermediate players',
+  '1800': 'advanced players',
+  '2200': 'experts',
+  masters: 'masters',
+};
+
+/** The players at a level, mid-sentence: "Popular with intermediate players". */
+export function levelPlayers(id: BandId): string {
+  return PLAYERS[id];
+}
+
+/** The level menu's rows, on Discover and in search: the name, with the range beside it. */
+export const LEVEL_OPTIONS = RANKABLE_BANDS.map((band) =>
+  band.id === 'all'
+    ? { value: band.id, label: levelName(band.id) }
+    : { value: band.id, label: levelName(band.id), detail: rangeLabel(band.id) }
+);
+
 export function getBand(id: BandId): Band {
   return BANDS.find((band) => band.id === id) ?? BANDS[0];
 }

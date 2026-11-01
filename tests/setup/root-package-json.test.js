@@ -79,7 +79,13 @@ describe('Root Package.json Configuration', () => {
     expect(packageJson.jest).toBeDefined();
     expect(packageJson.jest.testEnvironment).toBe('node');
     expect(packageJson.jest.collectCoverageFrom).toContain('packages/api/**/*.js');
-    expect(packageJson.jest.testMatch).toContain('<rootDir>/tests/**/*.test.js');
+    expect(packageJson.jest.testMatch).toContain('**/tests/**/*.test.js');
+    // On Windows Jest expands <rootDir> with a backslash, and a following dot
+    // folder (.claude/worktrees/…) reads as an escaped "." in the glob, so
+    // every test vanishes and the pre-push hook fails with "No tests found".
+    for (const pattern of packageJson.jest.testMatch) {
+      expect(pattern).not.toContain('<rootDir>');
+    }
 
     // Coverage thresholds: a ratchet set under the measured figures (#166, #181, #182)
     expect(packageJson.jest.coverageThreshold.global.branches).toBe(72);

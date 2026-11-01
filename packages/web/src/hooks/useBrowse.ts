@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { StyleProfile } from '../lib/styleProfile';
 import type { StatsWindow } from '../lib/statsWindow';
+import { rankingBand, type BandId } from '../lib/lichessExplorer';
+import { useMyLevel } from './useMyLevel';
 
 /**
  * Everything the Discover grid knows about browsing. Filter state lives in the
@@ -13,7 +15,7 @@ import type { StatsWindow } from '../lib/statsWindow';
  * mean N requests to rebuild a scroll position the browser will not restore.
  */
 
-export type FacetKey = 'level' | 'style' | 'family' | 'sort';
+export type FacetKey = 'style' | 'family' | 'sort';
 
 export interface FacetValue {
   value: string;
@@ -23,13 +25,11 @@ export interface FacetValue {
 }
 
 export interface BrowseFacets {
-  level: FacetValue[];
   style: FacetValue[];
   family: FacetValue[];
 }
 
 export interface BrowseFilters {
-  level: string | null;
   style: string | null;
   family: string | null;
   sort: string;
@@ -61,7 +61,7 @@ export const SORT_OPTIONS = [
 ];
 
 const DEFAULT_SORT = 'popular';
-const FACET_KEYS: FacetKey[] = ['level', 'style', 'family', 'sort'];
+const FACET_KEYS: FacetKey[] = ['style', 'family', 'sort'];
 
 /**
  * 12, not the API's default of 24: every card renders a MiniBoard, and 24
@@ -70,7 +70,7 @@ const FACET_KEYS: FacetKey[] = ['level', 'style', 'family', 'sort'];
  */
 const PAGE_SIZE = 12;
 
-const EMPTY_FACETS: BrowseFacets = { level: [], style: [], family: [] };
+const EMPTY_FACETS: BrowseFacets = { style: [], family: [] };
 
 /**
  * The facet-list spelling of a URL value. Falls through to the value itself
@@ -87,7 +87,12 @@ const canonicalise = (options: { value: string }[], value: string | null): strin
 
 export function useBrowse() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const level = searchParams.get('level');
+  // The band ranks the grid but is a saved preference, not a facet: it stays
+  // out of the URL and out of Clear filters. `?level=` was the Difficulty
+  // facet, retired in #206: old links still load, and the parameter is ignored.
+  const [myLevel, saveMyLevel] = useMyLevel();
+  const band = rankingBand(myLevel);
+  const setBand = useCallback((next: BandId) => saveMyLevel(next, 'landing'), [saveMyLevel]);
   const style = searchParams.get('style');
   const family = searchParams.get('family');
   const sort = searchParams.get('sort') || DEFAULT_SORT;
@@ -113,9 +118,9 @@ export function useBrowse() {
       else setLoading(true);
 
       const params = new URLSearchParams();
-      if (level) params.set('level', level);
       if (style) params.set('style', style);
       if (family) params.set('family', family);
+      if (band) params.set('band', band);
       params.set('sort', sort);
       params.set('page', String(page));
       params.set('pageSize', String(PAGE_SIZE));
@@ -150,7 +155,7 @@ export function useBrowse() {
         }
       }
     },
-    [level, style, family, sort]
+    [style, family, sort, band]
   );
 
   useEffect(() => {
@@ -198,16 +203,18 @@ export function useBrowse() {
     // Canonicalised once, here, so every downstream `===` against a facet
     // value holds. The endpoint matches these case-insensitively, so a
     // lowercased shared link filters correctly — without this the button
-    // would go on reading "beginner" where the label says "Beginner".
+    // would go on reading "SHARP" where the label says "Sharp".
     filters: {
-      level: canonicalise(facets.level, level),
       style: canonicalise(facets.style, style),
       family: canonicalise(facets.family, family),
       sort: canonicalise(SORT_OPTIONS, sort) ?? sort,
     } as BrowseFilters,
     // Sort is excluded: it is always set, so counting it would mean the
     // "Filters" badge never read zero.
-    activeCount: [level, style, family].filter(Boolean).length,
+    activeCount: [style, family].filter(Boolean).length,
+    /** The Lichess band ranked by, or null for all levels. */
+    band,
+    setBand,
     setFacet,
     clear,
     loadMore,

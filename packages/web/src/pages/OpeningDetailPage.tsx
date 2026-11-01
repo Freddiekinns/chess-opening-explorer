@@ -31,7 +31,7 @@ import { useRepertoireToast } from '../hooks/useRepertoireToast';
 import { Toast } from '../components/shared/Toast';
 import { useExplorerQuery, useExplorerResult, type PageBands } from '../hooks/useExplorerResult';
 import { useIsMobile } from '../hooks/useMediaQuery';
-import { getMyLevel } from '../lib/myLevel';
+import { useMyLevel } from '../hooks/useMyLevel';
 import { recordRecentOpening } from '../lib/recentOpenings';
 import { prerenderFor } from '../lib/prerender';
 import type { BandId } from '../lib/lichessExplorer';
@@ -138,11 +138,18 @@ const OpeningDetailPage: React.FC = () => {
   const { isSaved, toggleWithToast, toast } = useRepertoireToast();
 
   // Level lens (sidebar unification): one band choice governs the Win rates
-  // panel and the Opening book's move stats. Persistence and analytics live
-  // in LevelLens; the page only holds the state and the explorer results.
-  // Default to the "All" level so the book shows live win rates + off-book
-  // moves on first load, without waiting for an explicit level choice.
-  const [band, setBand] = useState<BandId | null>(() => getMyLevel() ?? 'all');
+  // panel and the Opening book's move stats. It is the saved "my level", so a
+  // change on Discover or in another tab shows here too. Default to the "All"
+  // level so the book shows live win rates + off-book moves on first load,
+  // without waiting for an explicit level choice.
+  const [myLevel, saveMyLevel] = useMyLevel();
+  const band: BandId = myLevel ?? 'all';
+  const setBand = useCallback(
+    (next: BandId | null) => {
+      if (next) saveMyLevel(next, 'detail');
+    },
+    [saveMyLevel]
+  );
   // undefined until the page response arrives; see useExplorerQuery.
   const [pageBands, setPageBands] = useState<{
     bands: PageBands | null;

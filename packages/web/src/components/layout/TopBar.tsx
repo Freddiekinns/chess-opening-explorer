@@ -9,6 +9,7 @@ import { useOpeningSearch, type SearchResult } from '../../hooks/useOpeningSearc
 import { fetchRandomOpening } from '../../lib/randomOpening';
 import { trackEvent } from '../../lib/analytics';
 import { queryShape } from '../../lib/searchQuery';
+import { SearchScope } from '../shared/SearchScope';
 import styles from './TopBar.module.css';
 
 const navItems = [
@@ -74,7 +75,7 @@ function TopBarSearch() {
   // Same hook as the hero and the mobile overlay: same expansion, same
   // debounce, same ranking. This component decides only how a dropdown pinned
   // to a 240px field behaves.
-  const { query, setQuery, results, searching, noResults, hasQuery, reset } =
+  const { query, setQuery, results, searching, noResults, hasQuery, reset, band, setBand } =
     useOpeningSearch('topbar');
   const [showDropdown, setShowDropdown] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -161,6 +162,7 @@ function TopBarSearch() {
           {noResults && <SearchNoResults />}
           {results.length > 0 && (
             <>
+              <SearchScope band={band} onChange={setBand} />
               {/* No count line: the openings appearing are the feedback. */}
               <ul className={styles.results}>
                 {results.map((r, i) => (

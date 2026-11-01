@@ -6,13 +6,19 @@ test.describe('landing page filters', () => {
     await mockApiRoutes(page);
   });
 
-  test('filters popular openings by difficulty and family', async ({ page }) => {
+  test('ranks popular openings by level and filters by family', async ({ page }) => {
     await page.goto('/');
 
     await expect(page.getByRole('heading', { name: 'Popular openings' })).toBeVisible();
 
-    await page.getByRole('button', { name: 'Difficulty Any' }).click();
-    await page.getByRole('option', { name: /Intermediate/ }).click();
+    const ranked = page.waitForRequest((request) => request.url().includes('band=1400'));
+    await page.getByRole('button', { name: 'Your level All levels' }).click();
+    await page.getByRole('option', { name: /^Intermediate/ }).click();
+    await ranked;
+    await expect(
+      page.getByRole('heading', { name: 'Popular with intermediate players' })
+    ).toBeVisible();
+
     await page.getByRole('button', { name: 'Family Any' }).click();
     await page
       .getByRole('dialog', { name: 'Filter by family' })

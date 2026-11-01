@@ -57,6 +57,21 @@ describe('PopularOpeningsGrid', () => {
     expect(note.closest('.section-header')).toBeNull();
   });
 
+  // The heading names the players; the range sits beside the numbers it
+  // scopes, in the detail page's source-line form.
+  it('states the Lichess range in the note beside the count', async () => {
+    localStorage.setItem('openingbook:my-level', '1400');
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => browseResponse({ window: { since: '2026-07', until: '2026-09' } }),
+      })
+    );
+    renderGrid();
+    expect(await screen.findByText('Lichess · 1400–1800 · Jul–Sep 2026')).toBeInTheDocument();
+  });
+
   it('leaves the date off on mobile, where the cards show no game counts', async () => {
     vi.stubGlobal('matchMedia', (query: string) => ({
       matches: query === MOBILE_QUERY,
@@ -74,6 +89,39 @@ describe('PopularOpeningsGrid', () => {
     renderGrid();
     await screen.findByText('Sicilian Defence');
     expect(screen.queryByText(/Jul–Sep 2026/)).toBeNull();
+  });
+
+  // The heading is the one place the level is named; the subtitle and the
+  // cards under it don't repeat it.
+  it('heading reads Popular with intermediate players', async () => {
+    localStorage.setItem('openingbook:my-level', '1400');
+    renderGrid();
+
+    expect(
+      await screen.findByRole('heading', { name: 'Popular with intermediate players' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'The most popular openings for every style of play, from classic variations to hypermodern'
+      )
+    ).toBeInTheDocument();
+    expect(await screen.findAllByText('1K games')).toHaveLength(2);
+    expect(screen.queryByText(/games at/)).toBeNull();
+  });
+
+  it('keeps the level in lower case mid-sentence', async () => {
+    localStorage.setItem('openingbook:my-level', 'u1400');
+    renderGrid();
+
+    expect(
+      await screen.findByRole('heading', { name: 'Popular with beginners' })
+    ).toBeInTheDocument();
+  });
+
+  it('keeps the plain heading with no level saved', async () => {
+    renderGrid();
+    expect(await screen.findByRole('heading', { name: 'Popular openings' })).toBeInTheDocument();
+    expect(await screen.findAllByText('1K games')).toHaveLength(2);
   });
 
   it('says nothing about dates when the response has no window', async () => {
@@ -142,12 +190,23 @@ describe('PopularOpeningsGrid', () => {
   });
 
   it('applies a filter from the URL without the user touching a control', async () => {
+    renderGrid('/?style=gambit');
+
+    await screen.findByText('Sicilian Defence');
+    const url = (globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls[0][0] as string;
+    expect(url).toContain('style=gambit');
+    expect(screen.getByRole('button', { name: 'Style Gambit' })).toBeInTheDocument();
+  });
+
+  // #206 retired the Difficulty facet. Old shared links still load; the
+  // parameter is ignored rather than filtering with no control to undo it.
+  it('loads an old ?level= link unfiltered', async () => {
     renderGrid('/?level=Beginner');
 
     await screen.findByText('Sicilian Defence');
     const url = (globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls[0][0] as string;
-    expect(url).toContain('level=Beginner');
-    expect(screen.getByRole('button', { name: 'Difficulty Beginner' })).toBeInTheDocument();
+    expect(url).not.toContain('level=');
+    expect(screen.queryByRole('button', { name: 'Clear filters' })).not.toBeInTheDocument();
   });
 
   it('says the filters matched nothing, and offers a way out', async () => {
@@ -158,7 +217,7 @@ describe('PopularOpeningsGrid', () => {
         json: async () => browseResponse({ items: [], total: 0, remaining: 0 }),
       })
     );
-    renderGrid('/?level=Beginner');
+    renderGrid('/?style=gambit');
 
     expect(await screen.findByText('No openings match these filters.')).toBeInTheDocument();
     // Deliberately not "Clear filters": the bar above already carries that

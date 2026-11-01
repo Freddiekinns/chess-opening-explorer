@@ -87,11 +87,11 @@ closes #204, since #204 needs both surfaces on the same numbers), then Phase 3
 - **Masters saved on the detail page:** Discover and search rank as All and the
   trigger reads "All levels"; the saved preference is not overwritten.
 
-## Decisions needed before Phase 3
+## Decided before Phase 3
 
-- **Chess.com line** (#205's open question). Recommended option (a): menu footer
-  reads "Lichess ratings. On chess.com? Your Lichess rating is usually higher.
-  Saved on this device. Opening pages use it too."
+- **Chess.com line** (#205's open question), owner 2026-11-01: no footer and no
+  conversion. The band menu is headed "Lichess rating"; that one word says whose
+  scale it is. The handoff's footer ("Saved on this device…") is dropped too.
 
 ## Global constraints
 

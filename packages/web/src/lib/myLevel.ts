@@ -14,16 +14,21 @@ function broadcast(): void {
   window.dispatchEvent(new Event(MY_LEVEL_CHANGE));
 }
 
+// Where storage is blocked the level still holds for this page, so the level
+// lens and the Discover and search menus keep working; it just isn't saved.
+let unsaved: BandId | null = null;
+
 export function getMyLevel(): BandId | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     return BANDS.some((band) => band.id === raw) ? (raw as BandId) : null;
   } catch {
-    return null;
+    return unsaved;
   }
 }
 
 export function setMyLevel(band: BandId): void {
+  unsaved = band;
   try {
     localStorage.setItem(STORAGE_KEY, band);
   } catch {
@@ -33,6 +38,7 @@ export function setMyLevel(band: BandId): void {
 }
 
 export function clearMyLevel(): void {
+  unsaved = null;
   try {
     localStorage.removeItem(STORAGE_KEY);
   } catch {

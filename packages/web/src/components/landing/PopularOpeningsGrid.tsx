@@ -8,7 +8,7 @@ import { useBrowse } from '../../hooks/useBrowse';
 import { useIsMobile } from '../../hooks/useMediaQuery';
 import { useRepertoireToast } from '../../hooks/useRepertoireToast';
 import { formatWindow } from '../../lib/statsWindow';
-import { rangeLabel } from '../../lib/lichessExplorer';
+import { atRange } from '../../lib/lichessExplorer';
 
 interface PopularOpeningsGridProps {
   className?: string;
@@ -45,7 +45,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
 
   const isMobile = useIsMobile();
   const { isSaved, toggleWithToast, toast } = useRepertoireToast();
-  const range = band ? rangeLabel(band) : undefined;
+  // "at 1400–1800" or "under 1400", ready to sit in a sentence.
+  const range = band ? atRange(band) : undefined;
 
   const controlProps = {
     facets,
@@ -65,10 +66,10 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
   return (
     <section className={`popular-openings-section ${className}`}>
       <div className="section-header">
-        <h2>{range ? `Popular at ${range}` : 'Popular openings'}</h2>
+        <h2>{range ? `Popular ${range}` : 'Popular openings'}</h2>
         <p className="section-subtitle">
           {range
-            ? `Ranked by games played at ${range} on Lichess.`
+            ? `Ranked by games played ${range} on Lichess.`
             : 'The most popular openings for every style of play, from classic variations to hypermodern'}
         </p>
       </div>

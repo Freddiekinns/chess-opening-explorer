@@ -29,7 +29,7 @@ describe('OpeningCard game count', () => {
   });
 
   it('card label reads 212K games at 1400–1800', () => {
-    renderCard({ opening: { ...opening, games_analyzed: 212_000 }, gamesAt: '1400–1800' });
+    renderCard({ opening: { ...opening, games_analyzed: 212_000 }, gamesAt: 'at 1400–1800' });
 
     expect(screen.getByText('212K games at 1400–1800')).toBeInTheDocument();
   });
@@ -43,7 +43,7 @@ describe('OpeningCard game count', () => {
         draw_rate: null,
         black_win_rate: null,
       },
-      gamesAt: '2200+',
+      gamesAt: 'at 2200+',
     });
 
     expect(screen.queryByText(/games/)).not.toBeInTheDocument();

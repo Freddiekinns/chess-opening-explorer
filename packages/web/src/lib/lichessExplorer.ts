@@ -66,6 +66,16 @@ export function rangeLabel(id: BandId): string {
   return RANGE_LABELS[id];
 }
 
+/** The range mid-sentence: "Ranked for under 1400", not "for Under 1400". */
+export function rangeInText(id: BandId): string {
+  return id === 'u1400' ? 'under 1400' : RANGE_LABELS[id];
+}
+
+/** The range with its preposition: "games at 1400–1800", "games under 1400". */
+export function atRange(id: BandId): string {
+  return id === 'u1400' ? 'under 1400' : `at ${RANGE_LABELS[id]}`;
+}
+
 export function getBand(id: BandId): Band {
   return BANDS.find((band) => band.id === id) ?? BANDS[0];
 }

@@ -3,6 +3,8 @@ import {
   BANDS,
   RANKABLE_BANDS,
   rangeLabel,
+  atRange,
+  rangeInText,
   buildExplorerUrl,
   fetchExplorer,
   sideScorePct,
@@ -77,6 +79,13 @@ describe('BANDS', () => {
       '2200+',
       'Masters',
     ]);
+  });
+
+  it('puts a range inside a sentence in sentence case', () => {
+    expect(atRange('u1400')).toBe('under 1400');
+    expect(atRange('1400')).toBe('at 1400–1800');
+    expect(rangeInText('u1400')).toBe('under 1400');
+    expect(rangeInText('2200')).toBe('2200+');
   });
 
   it('ranks Discover and search by every band but Masters', () => {

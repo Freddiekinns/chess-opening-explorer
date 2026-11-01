@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LevelOptionList } from '../filters/LevelOptionList';
-import { rangeLabel, type BandId } from '../../lib/lichessExplorer';
+import { rangeInText, type BandId } from '../../lib/lichessExplorer';
 import styles from './SearchScope.module.css';
 
 /**
@@ -22,7 +22,7 @@ export const SearchScope: React.FC<SearchScopeProps> = ({ band, onChange }) => {
   return (
     <div className={styles.scope} onMouseDown={(e) => e.preventDefault()}>
       <span className="label-meta">
-        {band ? `Ranked for ${rangeLabel(band)}` : 'Ranked for all players'}
+        {band ? `Ranked for ${rangeInText(band)}` : 'Ranked for all players'}
       </span>
       <button
         type="button"

@@ -47,7 +47,7 @@ interface OpeningCardProps {
   showStar?: boolean;
   isStarred?: boolean;
   onStarClick?: (opening: Opening) => void;
-  /** The rating range the count is for, when the grid ranks by a level. */
+  /** Where the count is from when the grid ranks by a level: "at 1400–1800". */
   gamesAt?: string;
 }
 
@@ -168,7 +168,7 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
             <span className="card-moves">{firstMoves}</span>
             {gamesPlayed && gamesPlayed > 0 && (
               <span className="card-games">
-                {formatGamesPlayed(gamesPlayed)} games{gamesAt && ` at ${gamesAt}`}
+                {formatGamesPlayed(gamesPlayed)} games{gamesAt && ` ${gamesAt}`}
               </span>
             )}
           </div>

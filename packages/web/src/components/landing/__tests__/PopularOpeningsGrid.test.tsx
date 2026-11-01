@@ -87,6 +87,15 @@ describe('PopularOpeningsGrid', () => {
     expect(await screen.findAllByText('1K games at 1400–1800')).toHaveLength(2);
   });
 
+  it('keeps the lowest band in sentence case', async () => {
+    localStorage.setItem('openingbook:my-level', 'u1400');
+    renderGrid();
+
+    expect(await screen.findByRole('heading', { name: 'Popular under 1400' })).toBeInTheDocument();
+    expect(screen.getByText('Ranked by games played under 1400 on Lichess.')).toBeInTheDocument();
+    expect(await screen.findAllByText('1K games under 1400')).toHaveLength(2);
+  });
+
   it('keeps the plain heading with no level saved', async () => {
     renderGrid();
     expect(await screen.findByRole('heading', { name: 'Popular openings' })).toBeInTheDocument();

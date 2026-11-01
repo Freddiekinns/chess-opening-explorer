@@ -210,7 +210,7 @@ describe('useBrowse', () => {
     expect(result.current.activeCount).toBe(0);
   });
 
-  it('saved masters shows All levels and fetches without band', async () => {
+  it('saved masters shows any rating and fetches without band', async () => {
     localStorage.setItem('openingbook:my-level', 'masters');
     const { result } = renderHook(() => useBrowse(), { wrapper: wrapper() });
     await waitFor(() => expect(result.current.loading).toBe(false));

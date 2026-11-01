@@ -38,7 +38,7 @@ export const SearchScope: React.FC<SearchScopeProps> = ({ band, onChange, fromQu
         </button>
       )}
       {open && !fromQuery && (
-        <div className={styles.menu} role="dialog" aria-label="Rank by your level">
+        <div className={styles.menu} role="dialog" aria-label="Rank by player rating">
           <LevelOptionList
             value={band}
             onSelect={(next) => {

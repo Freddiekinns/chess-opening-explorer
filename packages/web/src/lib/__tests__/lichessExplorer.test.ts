@@ -73,7 +73,7 @@ describe('BANDS', () => {
 
   it('labels each band by its rating range', () => {
     expect(BANDS.map((b) => rangeLabel(b.id))).toEqual([
-      'All levels',
+      'Any rating',
       'Under 1400',
       '1400–1800',
       '1800–2200',
@@ -84,7 +84,7 @@ describe('BANDS', () => {
 
   it('names each level the way a player names themselves', () => {
     expect(BANDS.map((b) => levelName(b.id))).toEqual([
-      'All levels',
+      'Any rating',
       'Beginner',
       'Intermediate',
       'Advanced',
@@ -102,7 +102,7 @@ describe('BANDS', () => {
 
   it('lists the level menu by name, each with its Lichess range beside it', () => {
     expect(LEVEL_OPTIONS).toEqual([
-      { value: 'all', label: 'All levels' },
+      { value: 'all', label: 'Any rating' },
       { value: 'u1400', label: 'Beginner', detail: 'Under 1400' },
       { value: '1400', label: 'Intermediate', detail: '1400–1800' },
       { value: '1800', label: 'Advanced', detail: '1800–2200' },

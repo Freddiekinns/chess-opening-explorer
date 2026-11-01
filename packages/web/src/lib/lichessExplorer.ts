@@ -52,7 +52,7 @@ export function rankingBand(saved: BandId | null): BandId | null {
 }
 
 const RANGE_LABELS: Record<BandId, string> = {
-  all: 'All levels',
+  all: 'Any rating',
   u1400: 'Under 1400',
   '1400': '1400–1800',
   '1800': '1800–2200',

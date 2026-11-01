@@ -22,6 +22,12 @@ describe('LevelLens', () => {
     expect(pills).toEqual(['All', 'Beginner', 'Intermediate', 'Advanced', 'Expert', 'Masters']);
   });
 
+  it('says what the pills choose, in the words Discover uses', () => {
+    render(<LevelLens band={null} onChange={() => {}} />);
+    expect(screen.getByRole('group', { name: 'Player rating' })).toBeInTheDocument();
+    expect(screen.getByText('Player rating')).toBeVisible();
+  });
+
   it('keeps the Elo range discoverable via the pill tooltip', () => {
     render(<LevelLens band={null} onChange={() => {}} />);
     expect(screen.getByRole('button', { name: 'Intermediate' })).toHaveAttribute(

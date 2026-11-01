@@ -52,10 +52,10 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     <>
       <div className={styles.bar}>
         <FacetSelect
-          label="Your level"
-          display={levelName(band ?? 'all')}
+          label="Player rating"
+          display={band ? levelName(band) : 'Any'}
           active={band !== null}
-          menuLabel="Rank by your level"
+          menuLabel="Rank by player rating"
         >
           {(close) => (
             <LevelOptionList

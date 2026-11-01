@@ -3,6 +3,7 @@ const path = require('path');
 const pathResolver = require('../utils/path-resolver');
 const { getGlobalCache } = require('./cache-service');
 const styleTags = require('./style-tags-service');
+const bandStats = require('./band-stats-service');
 const { nameQualifiers } = require('./name-qualifiers');
 
 // A literal require, never a computed path: this is the first runtime API code
@@ -117,6 +118,10 @@ class BrowseService {
               draw_rate: stats && stats.draw_rate != null ? stats.draw_rate : null,
               black_win_rate: stats && stats.black_win_rate != null ? stats.black_win_rate : null,
               avg_rating: stats && stats.avg_rating != null ? stats.avg_rating : null,
+              // Held per entry so ranking by a band never rereads the file.
+              bands: Object.fromEntries(
+                bandStats.BANDS.map((band) => [band, bandStats.forFen(fen, band)])
+              ),
             });
           }
         }
@@ -244,8 +249,10 @@ class BrowseService {
       family: params.family || null,
     };
     const sort = params.sort || defaultSort;
+    const band = bandStats.isBand(params.band) ? params.band : null;
+    const view = (entry) => (band ? this.bandView(entry, band) : entry);
 
-    const filtered = index.filter((entry) => this.matches(entry, filters));
+    const filtered = index.filter((entry) => this.matches(entry, filters)).map(view);
 
     if (sort === 'name') {
       filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -266,6 +273,7 @@ class BrowseService {
 
     return {
       items: items.map((entry) => this.toItem(entry)),
+      window: bandStats.window(),
       total,
       page,
       pageSize,
@@ -276,7 +284,25 @@ class BrowseService {
         style: this.countFacet(index, filters, 'style', this.config.styles),
         family: this.countFacet(index, filters, 'family', this.familyFacetValues(index)),
       },
-      applied: { ...filters, sort },
+      applied: { ...filters, sort, band },
+    };
+  }
+
+  /**
+   * An entry with its stats replaced by one band's. A band too thin to count
+   * is null, so the opening reports no games and no rates, and sorts last.
+   * The band file has no ratings, so avg_rating is null rather than the
+   * all-ratings figure under a band label.
+   */
+  bandView(entry, band) {
+    const counts = entry.bands[band];
+    return {
+      ...entry,
+      games_analyzed: counts ? counts.g : null,
+      white_win_rate: counts ? counts.w / counts.g : null,
+      draw_rate: counts ? counts.d / counts.g : null,
+      black_win_rate: counts ? counts.b / counts.g : null,
+      avg_rating: null,
     };
   }
 

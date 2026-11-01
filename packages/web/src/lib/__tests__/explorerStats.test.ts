@@ -46,6 +46,16 @@ describe('explorerSourceLine', () => {
     );
     expect(explorerSourceLine(null, false)).toBe('Saved snapshot · all rated games');
   });
+
+  test('dates the snapshot by the window its games cover', () => {
+    expect(
+      explorerSourceLine('1400', false, '2026-10-31', { since: '2026-07', until: '2026-09' })
+    ).toBe('Lichess games, Jul–Sep 2026');
+    // Live explorer data is not the window's, so the live line is unchanged.
+    expect(
+      explorerSourceLine('1400', true, '2026-10-31', { since: '2026-07', until: '2026-09' })
+    ).toBe('Lichess · 1400–1800');
+  });
 });
 
 describe('labels', () => {
@@ -94,5 +104,19 @@ describe('stat views', () => {
     ).toEqual({ games: '54.3k', elo: '2,016', whitePct: 50, drawPct: 5, blackPct: 45 });
     expect(snapshotStatsView(null)).toBeNull();
     expect(snapshotStatsView({ games_analyzed: 0 })).toBeNull();
+  });
+
+  test('draws no bar when the rates are null, whatever the game count', () => {
+    // Under 20 games the stats file keeps the real count with null rates;
+    // "White 0% · Draw 0% · Black 0%" would be invented.
+    expect(
+      snapshotStatsView({
+        games_analyzed: 18,
+        white_win_rate: null,
+        draw_rate: null,
+        black_win_rate: null,
+        avg_rating: null,
+      })
+    ).toBeNull();
   });
 });

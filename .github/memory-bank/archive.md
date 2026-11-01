@@ -1401,3 +1401,35 @@ misreads "solid response to e4", "solid e4 openings", "… for white" and
 `search-categories` still read the old tags and have no caller; saved repertoire
 entries keep their old level. A protected preview shows Vercel's login on a
 direct `/opening/` load (middleware fetches `/index.html`).
+
+## Backlog split into issues and an idea pool (2026-10-21)
+
+`docs/backlog.md` is now the ranking, the decisions and the ideas not yet ready.
+An item becomes a GitHub issue once it has a clear problem, a "done when" and a
+link to its review or PRD; its bullet becomes `→ #N`. The five **Next** items
+are #195–199. **Now** was done apart from the popularity refresh, which was
+already parked and moved to **Parked**. `AGENTS.md` points here. Owner's call: a
+trial on Now/Next first; move the rest only if issues get used.
+
+## Content review, batch 1 (2026-11-01, #208)
+
+`ledger.json` had no predecessor: ECO records carry only
+`analysis_json.last_enriched_at`, the generation date. The seed marks the 105
+brief-audited roots reviewed on 2026-10-11 (32 `fixed`, 73 `ok`); before
+seeding, each of the 32 was checked to have changed in #171. The audits' claims
+are paraphrased, so a substring check against the text proves nothing.
+
+Views came from PostHog HogQL in Chrome (the extension truncates long results,
+so rows were read 14 at a time). 10 of 142 paths match no ECO record: transposed
+positions with no text, a moves-style path and an underscore-encoded FEN. The
+queue ranks by distinct people first, because one visitor reloading a page
+counted 7 views.
+
+Errors in the 17 fixed pages, 31 fields: bishop colour (Bf4 ×2, Bb2, Bg5),
+pieces or pawns that aren't there (a d4-pawn in the Four Pawns, a semi-open
+c-file in the Caro-Kann, Nf3 after 1.f3, an e3 after the e-pawn was exchanged),
+a pin and a "damaged structure" that don't exist after ...Bxf3 Bxf3, Qa4+ given
+as check with Black castled, and three misread positions (Walkerling 4...Qxd5
+hangs the queen; Bronstein KID is a queen sacrifice, not a trade; the
+Blackburne-Shilling after 5.Nxf7 is Black's mating trap). The move check found
+no illegal sequence in 50 pages: the errors are about the board, not notation.

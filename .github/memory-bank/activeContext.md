@@ -2,7 +2,19 @@
 
 **Date:** 2026-11-01
 
-## Current Task: #204/#205, popular at your level
+## Current Task: #208, progressive content review
+
+Pages now have a review record: `data/content-review/ledger.json`, keyed by FEN,
+with the date, a verdict and a hash of the description and plans. A page is due
+again when its text changes or after 12 months. Seeded with the 105
+brief-audited roots (2026-10-11). Batch 2026-11-01: PostHog views since
+2026-09-24 (142 paths, 132 pages), top 50 by people reviewed, 17 fixed in
+`api/data/eco/` (mostly bishop colours and pieces that aren't there; three
+misread positions). 76 visited pages still due. Runbook:
+`tools/content-review/README.md`. #208 stays open; #188 should export the
+viewed-pages list so step 1 stops needing Chrome.
+
+## Previous Task: #204/#205, popular at your level
 
 Plan: `docs/superpowers/plans/2026-10-29-level-ranking.md`. Phases 1, 2 and 4
 are merged (#213, #214; closes #204). Stats come from the last 3 Lichess monthly
@@ -20,15 +32,6 @@ and the run notifies when it starts and ends. Next: review the
 `data/popularity-2026-10` branch it commits, then Phase 3 (#205, needs the
 chess.com-line decision), then Task 3c (retire the old pipeline after the first
 scheduled refresh).
-
-## Previous Task: backlog split into issues and an idea pool
-
-`docs/backlog.md` is now the ranking, the decisions and the ideas not yet ready.
-An item becomes a GitHub issue once it has a clear problem, a "done when" and a
-link to its review or PRD; its bullet becomes `→ #N`. The five **Next** items
-are #195–199. **Now** was done apart from the popularity refresh, which was
-already parked and moved to **Parked**. `AGENTS.md` points here. Owner's call: a
-trial on Now/Next first; move the rest only if issues get used.
 
 Standing: revisit analytics late Nov 2026 with six weeks of the new events;
 search ranking and the video pipeline are paused until then (`archive.md`).

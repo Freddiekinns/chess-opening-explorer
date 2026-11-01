@@ -93,8 +93,6 @@ interface FilterSheetProps {
   loading: boolean;
   onFacetChange: (key: FacetKey, value: string | null) => void;
   onClear: () => void;
-  /** Where the counts come from, shown small under the total. */
-  note?: string;
 }
 
 export const FilterSheet: React.FC<FilterSheetProps> = ({
@@ -105,7 +103,6 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
   loading,
   onFacetChange,
   onClear,
-  note,
 }) => {
   const [open, setOpen] = useState(false);
   const [familyOpen, setFamilyOpen] = useState(false);
@@ -268,11 +265,8 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
             </span>
           )}
         </button>
-        <span className={styles.countBlock}>
-          <span className={styles.count} aria-live="polite">
-            {loading ? 'Counting…' : resultCountLabel(total)}
-          </span>
-          {note && <span className={styles.note}>{note}</span>}
+        <span className={styles.count} aria-live="polite">
+          {loading ? 'Counting…' : resultCountLabel(total)}
         </span>
       </div>
 

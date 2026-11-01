@@ -51,9 +51,10 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     loading,
     onFacetChange: setFacet,
     onClear: clear,
-    // Small print beside the count: the heading is the wrong place for a date.
-    note: statsWindow ? `Lichess games, ${formatWindow(statsWindow)}` : undefined,
   };
+  // Small print beside the count, desktop only: mobile cards show no game
+  // counts, so a date there qualifies nothing on screen.
+  const note = statsWindow ? `Lichess · ${formatWindow(statsWindow)}` : undefined;
 
   return (
     <section className={`popular-openings-section ${className}`}>
@@ -65,7 +66,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
       </div>
 
       <div className="filters-container">
-        {isMobile ? <FilterSheet {...controlProps} /> : <FilterBar {...controlProps} />}
+        {isMobile ? <FilterSheet {...controlProps} /> : <FilterBar {...controlProps} note={note} />}
       </div>
 
       {error ? (

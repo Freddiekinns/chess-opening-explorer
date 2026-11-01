@@ -98,8 +98,8 @@ const FAMILIES: Record<string, string> = {
   "Queen's Gambit": 'queens-gambit',
 };
 
-/** One /api/openings/browse page, honouring the level and family facets. */
-function buildBrowse(level: string | null, family: string | null) {
+/** One /api/openings/browse page, honouring the family facet. The band only reorders. */
+function buildBrowse(family: string | null) {
   const toItem = (opening: TestOpening) => ({
     fen: opening.fen,
     name: opening.name,
@@ -107,7 +107,7 @@ function buildBrowse(level: string | null, family: string | null) {
     moves: opening.moves,
     family_id: FAMILIES[opening.name],
     family_name: opening.name,
-    level: opening.analysis_json?.complexity ?? null,
+    level: null,
     styles: [],
     games_analyzed: opening.games_analyzed ?? 0,
     white_win_rate: 0.45,
@@ -116,13 +116,7 @@ function buildBrowse(level: string | null, family: string | null) {
     avg_rating: 1800,
   });
   const all = testOpenings.map(toItem);
-  const items = all.filter(
-    (item) => (!level || item.level === level) && (!family || item.family_id === family)
-  );
-  const facet = (values: (string | null)[]) =>
-    [...new Set(values)]
-      .filter((value): value is string => !!value)
-      .map((value) => ({ value, label: value, count: values.filter((v) => v === value).length }));
+  const items = all.filter((item) => !family || item.family_id === family);
   return {
     success: true,
     items,
@@ -132,7 +126,6 @@ function buildBrowse(level: string | null, family: string | null) {
     offset: 0,
     remaining: 0,
     facets: {
-      level: facet(all.map((item) => item.level)),
       style: [],
       family: all.map((item) => ({
         value: item.family_id,
@@ -141,7 +134,7 @@ function buildBrowse(level: string | null, family: string | null) {
         first_move: item.moves.startsWith('1. e4') ? 'e4' : 'd4',
       })),
     },
-    applied: { level, style: null, family, sort: 'popular' },
+    applied: { style: null, family, sort: 'popular' },
   };
 }
 
@@ -268,10 +261,7 @@ export async function mockApiRoutes(page: Page, options: MockOptions = {}) {
     }
 
     if (path === '/api/openings/browse') {
-      return fulfillJson(
-        route,
-        buildBrowse(url.searchParams.get('level'), url.searchParams.get('family'))
-      );
+      return fulfillJson(route, buildBrowse(url.searchParams.get('family')));
     }
 
     if (path === '/api/openings/random') {

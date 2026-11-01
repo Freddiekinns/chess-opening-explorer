@@ -103,8 +103,7 @@
       "!api/**"
     ],
     "testMatch": [
-      "<rootDir>/tests/**/*.test.js",
-      "<rootDir>/tools/**/tests/**/*.test.js"
+      "**/tests/**/*.test.js"
     ],
     "coverageReporters": [
       "text",

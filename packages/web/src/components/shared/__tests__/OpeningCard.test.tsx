@@ -28,12 +28,6 @@ describe('OpeningCard game count', () => {
     expect(screen.getByText('3.8B games')).toBeInTheDocument();
   });
 
-  it('card label reads 212K games at 1400–1800', () => {
-    renderCard({ opening: { ...opening, games_analyzed: 212_000 }, gamesAt: 'at 1400–1800' });
-
-    expect(screen.getByText('212K games at 1400–1800')).toBeInTheDocument();
-  });
-
   it('null band stats render no-stats state', () => {
     renderCard({
       opening: {
@@ -43,7 +37,6 @@ describe('OpeningCard game count', () => {
         draw_rate: null,
         black_win_rate: null,
       },
-      gamesAt: 'at 2200+',
     });
 
     expect(screen.queryByText(/games/)).not.toBeInTheDocument();

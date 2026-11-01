@@ -45,7 +45,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
 
   const isMobile = useIsMobile();
   const { isSaved, toggleWithToast, toast } = useRepertoireToast();
-  // "at 1400–1800" or "under 1400", ready to sit in a sentence.
+  // "at 1400–1800" or "under 1400". Said once, in the heading: the cards under
+  // it are already scoped by it.
   const range = band ? atRange(band) : undefined;
 
   const controlProps = {
@@ -68,9 +69,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
       <div className="section-header">
         <h2>{range ? `Popular ${range}` : 'Popular openings'}</h2>
         <p className="section-subtitle">
-          {range
-            ? `Ranked by games played ${range} on Lichess.`
-            : 'The most popular openings for every style of play, from classic variations to hypermodern'}
+          The most popular openings for every style of play, from classic variations to hypermodern
         </p>
       </div>
 
@@ -106,7 +105,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
                   })
                 }
                 className="opening-grid-item"
-                gamesAt={range}
               />
             ))}
           </div>

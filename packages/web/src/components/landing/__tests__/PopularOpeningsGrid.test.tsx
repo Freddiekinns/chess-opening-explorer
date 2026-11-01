@@ -76,6 +76,8 @@ describe('PopularOpeningsGrid', () => {
     expect(screen.queryByText(/Jul–Sep 2026/)).toBeNull();
   });
 
+  // The heading is the one place the range is stated; the subtitle and the
+  // cards under it don't repeat it.
   it('heading reads Popular at 1400–1800', async () => {
     localStorage.setItem('openingbook:my-level', '1400');
     renderGrid();
@@ -83,8 +85,13 @@ describe('PopularOpeningsGrid', () => {
     expect(
       await screen.findByRole('heading', { name: 'Popular at 1400–1800' })
     ).toBeInTheDocument();
-    expect(screen.getByText('Ranked by games played at 1400–1800 on Lichess.')).toBeInTheDocument();
-    expect(await screen.findAllByText('1K games at 1400–1800')).toHaveLength(2);
+    expect(
+      screen.getByText(
+        'The most popular openings for every style of play, from classic variations to hypermodern'
+      )
+    ).toBeInTheDocument();
+    expect(await screen.findAllByText('1K games')).toHaveLength(2);
+    expect(screen.queryByText(/games at/)).toBeNull();
   });
 
   it('keeps the lowest band in sentence case', async () => {
@@ -92,8 +99,6 @@ describe('PopularOpeningsGrid', () => {
     renderGrid();
 
     expect(await screen.findByRole('heading', { name: 'Popular under 1400' })).toBeInTheDocument();
-    expect(screen.getByText('Ranked by games played under 1400 on Lichess.')).toBeInTheDocument();
-    expect(await screen.findAllByText('1K games under 1400')).toHaveLength(2);
   });
 
   it('keeps the plain heading with no level saved', async () => {

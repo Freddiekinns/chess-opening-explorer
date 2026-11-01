@@ -51,7 +51,9 @@ describe('PopularOpeningsGrid', () => {
       })
     );
     renderGrid();
-    expect(await screen.findByText('Lichess games, Jul–Sep 2026')).toBeInTheDocument();
+    const note = await screen.findByText('Lichess games, Jul–Sep 2026');
+    // A small note beside the count, not a second subtitle under the heading.
+    expect(note.closest('.section-header')).toBeNull();
   });
 
   it('says nothing about dates when the response has no window', async () => {

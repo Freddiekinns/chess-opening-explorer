@@ -51,6 +51,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     loading,
     onFacetChange: setFacet,
     onClear: clear,
+    // Small print beside the count: the heading is the wrong place for a date.
+    note: statsWindow ? `Lichess games, ${formatWindow(statsWindow)}` : undefined,
   };
 
   return (
@@ -60,9 +62,6 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
         <p className="section-subtitle">
           The most popular openings for every style of play, from classic variations to hypermodern
         </p>
-        {statsWindow && (
-          <p className="section-subtitle">Lichess games, {formatWindow(statsWindow)}</p>
-        )}
       </div>
 
       <div className="filters-container">

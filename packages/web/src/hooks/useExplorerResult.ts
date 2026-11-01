@@ -38,9 +38,38 @@ function reportExplorerError(err: unknown): void {
   }
 }
 
+/**
+ * Every Lichess band for one position, from the page response
+ * (`data.bands` / `data.parentBands`): null for a band too thin to count.
+ */
+export type PageBands = Record<Exclude<BandId, 'masters'>, ExplorerResult | null>;
+
+/**
+ * A band under the pipeline's 20-game floor. Its zeroes are never drawn:
+ * liveStatsView needs MIN_LIVE_SAMPLE games, so the panel says the sample is
+ * too small, and the book has no moves to merge. A null result would instead
+ * read as still loading.
+ */
+export const THIN_BAND: ExplorerResult = {
+  totalGames: 0,
+  white: 0,
+  draws: 0,
+  black: 0,
+  moves: [],
+  topGames: [],
+  averageRating: null,
+};
+
+/**
+ * Lichess bands come from `pageBands`, the page response's own counts for
+ * the window Discover shows, so a level switch makes no request: undefined
+ * while the page loads, null if the server couldn't read them (the panel
+ * falls back to the snapshot). Only Masters still fetches the explorer.
+ */
 export function useExplorerQuery(
   fen: string | null | undefined,
-  band: BandId | null
+  band: BandId | null,
+  pageBands?: PageBands | null
 ): ExplorerQuery {
   const [query, setQuery] = useState<ExplorerQuery>({
     result: null,
@@ -49,7 +78,7 @@ export function useExplorerQuery(
   });
 
   useEffect(() => {
-    if (!fen || !band) {
+    if (!fen || band !== 'masters') {
       setQuery({ result: null, loading: false, failed: false });
       return;
     }
@@ -72,13 +101,18 @@ export function useExplorerQuery(
     };
   }, [fen, band]);
 
-  return query;
+  if (!fen || !band) return { result: null, loading: false, failed: false };
+  if (band === 'masters') return query;
+  if (pageBands === undefined) return { result: null, loading: true, failed: false };
+  if (pageBands === null) return { result: null, loading: false, failed: true };
+  return { result: pageBands[band] ?? THIN_BAND, loading: false, failed: false };
 }
 
 /** Result-only variant kept for callers that don't need fetch status. */
 export function useExplorerResult(
   fen: string | null | undefined,
-  band: BandId | null
+  band: BandId | null,
+  pageBands?: PageBands | null
 ): ExplorerResult | null {
-  return useExplorerQuery(fen, band).result;
+  return useExplorerQuery(fen, band, pageBands).result;
 }

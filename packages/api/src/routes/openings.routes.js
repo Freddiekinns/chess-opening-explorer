@@ -6,6 +6,9 @@ const searchService = require('../services/search-service');
 const CourseService = require('../services/course-service');
 const BrowseService = require('../services/browse-service');
 const styleTags = require('../services/style-tags-service');
+const bandStats = require('../services/band-stats-service');
+const positionStats = require('../services/position-stats-service');
+const { nameQualifiers } = require('../services/name-qualifiers');
 const {
   getStatsForFen,
   validatePopularityStats,
@@ -42,6 +45,7 @@ function toSearchResult(opening) {
     eco: opening.eco,
     moves: opening.moves || '',
     games_analyzed: opening.games_analyzed,
+    name_qualifier: opening.name_qualifier,
     searchScore: opening.searchScore,
   };
 }
@@ -194,7 +198,7 @@ router.get('/page/:fen', async (req, res) => {
     const [stats, videoResult, courses, tree] = await Promise.all([
       safe(() => {
         const s = getStatsForFen(decodedFen);
-        return s && validatePopularityStats(s) ? s : null;
+        return s && validatePopularityStats(s) ? { ...s, window: bandStats.window() } : null;
       }, null),
       safe(
         () => getVideosWithFallback(decodedFen, opening.name),
@@ -215,6 +219,12 @@ router.get('/page/:fen', async (req, res) => {
       safe(() => treeService.getTreeContext(decodedFen), null),
     ]);
 
+    // Every Lichess band, here and one move back (the book's "Instead of"
+    // rows), so the page needs no explorer request and a level switch is
+    // instant. Masters still comes from the explorer.
+    const ancestors = (tree && tree.ancestors) || [];
+    const parentFen = ancestors.length > 0 ? ancestors[ancestors.length - 1].fen : null;
+
     res.json({
       success: true,
       data: {
@@ -224,6 +234,8 @@ router.get('/page/:fen', async (req, res) => {
         videoContext: { source: videoResult.source, family: videoResult.family },
         courses,
         tree,
+        bands: positionStats.bandsFor(decodedFen),
+        parentBands: parentFen ? positionStats.bandsFor(parentFen) : null,
       },
     });
   } catch (error) {
@@ -276,7 +288,7 @@ const SEARCH_INDEX_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 router.get('/browse', (req, res) => {
   try {
     const config = browseService.getConfig();
-    const { level, style, family, sort, page, pageSize } = req.query;
+    const { level, style, family, sort, page, pageSize, band } = req.query;
 
     // Unknown values are rejected rather than ignored: a silent empty result is
     // indistinguishable from a genuine empty filter and sends the client
@@ -318,6 +330,9 @@ router.get('/browse', (req, res) => {
       sort: sortValue || config.defaultSort,
       page,
       pageSize,
+      // Unlike the facets, an unknown band is ignored: Masters is a level the
+      // detail page saves, but browse has no data for it, so it ranks as All.
+      band: bandStats.isBand(band) ? band : null,
     });
 
     res.json({ success: true, ...result });
@@ -361,7 +376,9 @@ router.get('/search-index', (req, res) => {
 
     if (!cached) {
       // Create lightweight index with only essential search fields
-      const rows = ecoService.getAllOpenings().map((opening) => ({
+      const openings = ecoService.getAllOpenings();
+      const qualifiers = nameQualifiers(openings);
+      const rows = openings.map((opening) => ({
         fen: opening.fen,
         name: opening.name,
         eco: opening.eco,
@@ -369,6 +386,7 @@ router.get('/search-index', (req, res) => {
         // Only include games_analyzed if available for sorting
         ...(opening.games_analyzed && { games_analyzed: opening.games_analyzed }),
         family_id: opening.family_id,
+        ...(qualifiers.has(opening.fen) && { name_qualifier: qualifiers.get(opening.fen) }),
       }));
       searchIndexCache = {
         rows,

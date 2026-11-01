@@ -255,3 +255,29 @@ describe('the video matcher reads channels from config, never a literal', () => 
     expect(offenders(`// ${channels[0].name} once ranked here\nconst x = 1;`)).toEqual([]);
   });
 });
+
+describe('popularity data stays inside its size budget', () => {
+  /**
+   * Discover parses popularity-bands.json on a cold start, and the detail page
+   * reads one position-stats shard per request. Their speed is their size, and
+   * the monthly refresh rewrites both, so a budget here turns slow drift (a new
+   * field, a wider move list) into a red data PR instead of a slower site.
+   * The combiner already refuses a shard over 250 KB; this holds the committed
+   * files to it on every PR, and adds the ceiling the bands file never had.
+   */
+  const MAX_SHARD_BYTES = 250_000;
+  const MAX_BANDS_BYTES = 3_500_000; // 2.6 MB at 2026-07..09
+  const size = (rel) => fs.statSync(path.join(repoRoot, rel)).size;
+
+  test('the bands file Discover loads', () => {
+    expect(size('api/data/popularity-bands.json')).toBeLessThan(MAX_BANDS_BYTES);
+  });
+
+  test('every position-stats shard', () => {
+    const dir = 'api/data/position-stats';
+    const oversized = fs
+      .readdirSync(path.join(repoRoot, dir))
+      .filter((file) => size(`${dir}/${file}`) > MAX_SHARD_BYTES);
+    expect(oversized).toEqual([]);
+  });
+});

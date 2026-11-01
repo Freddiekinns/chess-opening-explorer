@@ -83,6 +83,25 @@ describe('local ranking matches the server it is standing in for', () => {
     expect(normalise("King's Indian Defence")).toBe('kings indian defense');
   });
 
+  // Names alone cannot tell this apart: five rows share one. Compared by
+  // position, so the two halves must agree on which Najdorf comes where.
+  it('orders openings that share a name the same way', () => {
+    const line = '1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6';
+    const najdorf = 'Sicilian Defense: Najdorf Variation';
+    const najdorfs = [
+      opening('b98', najdorf, 'B98', `${line} 6. Bg5 e6 7. f4 Be7`, 1_247_877),
+      opening('b94', najdorf, 'B94', `${line} 6. Bg5`, 6_011_780),
+      opening('b96', najdorf, 'B96', `${line} 6. Bg5 e6 7. f4`, 1_992_132),
+      opening('b90', najdorf, 'B90', line, 24_382_735),
+      opening('b95', najdorf, 'B95', `${line} 6. Bg5 e6`, 4_085_939),
+    ];
+    const local = findAndRankOpenings('najdorf', najdorfs).map((result) => result.fen);
+    const server = new NameIndex(najdorfs).search('najdorf').map((result: Opening) => result.fen);
+
+    expect(local).toEqual(['b90', 'b94', 'b95', 'b96', 'b98']);
+    expect(local).toEqual(server);
+  });
+
   // ECO codes and moves have their own branches on both sides. They are not in
   // NameIndex, so they are checked against the rule rather than the module.
   it('returns every opening carrying an ECO code, most-played first, as flat ties', () => {

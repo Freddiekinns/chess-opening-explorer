@@ -260,6 +260,24 @@ describe('/api/openings routes', () => {
       expect(unplayed).not.toHaveProperty('games_analyzed');
     });
 
+    test('openings that share a name carry what tells them apart', async () => {
+      const fs = require('fs');
+      fs.readFileSync = jest.fn((p) => {
+        if (String(p).includes('popularity_stats.json')) return JSON.stringify(POPULARITY);
+        return JSON.stringify({
+          ...ECO_DATA,
+          [UNPLAYED]: { ...ECO_DATA[SICILIAN], moves: '1. e4 c5 2. Nc3' },
+        });
+      });
+
+      const res = await request(app).get('/api/openings/search-index');
+      const byFen = Object.fromEntries(res.body.data.map((row) => [row.fen, row]));
+
+      expect(byFen[SICILIAN].name_qualifier).toBe('1...c5');
+      expect(byFen[UNPLAYED].name_qualifier).toBe('2.Nc3');
+      expect(byFen[FRENCH]).not.toHaveProperty('name_qualifier');
+    });
+
     test('?limit=N returns the N most-played openings', async () => {
       const res = await request(app).get('/api/openings/search-index?limit=2');
 

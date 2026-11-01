@@ -309,6 +309,10 @@ def refresh(check: bool) -> int:
         # setup_commands resets with --force: never in someone's checkout.
         raise RefreshError(f"runs only from {WORKTREE}; use --check here")
 
+    notify(
+        f"Refreshing stats for {', '.join(work)}: about 3 hours,"
+        " leave the PC on. Interrupted, it carries on next time."
+    )
     try:
         DOWNLOADS.mkdir(parents=True, exist_ok=True)
         SUMMARIES.mkdir(parents=True, exist_ok=True)

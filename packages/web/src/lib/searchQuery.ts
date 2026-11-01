@@ -1,3 +1,5 @@
+import type { BandId } from './lichessExplorer';
+
 /**
  * What a search query looks like, and what it becomes before it is sent.
  *
@@ -140,6 +142,31 @@ export function queryShape(query: string): QueryShape {
   const words = query.toLowerCase().split(/[^a-z]+/);
   if (words.some((word) => STYLE_WORDS.has(word))) return 'style';
   return 'name';
+}
+
+/**
+ * Player levels by the words the site names them with (#206). The server's
+ * `LEVEL_WORDS` (`search/SearchConstants.js`) is the same table: it ranks a
+ * query that names a level by that band, and this lets the scope line say so
+ * on the keystroke. `searchQuery.test.ts` checks the two agree.
+ */
+const LEVEL_WORDS: Record<string, BandId> = {
+  beginner: 'u1400',
+  beginners: 'u1400',
+  intermediate: '1400',
+  intermediates: '1400',
+  advanced: '1800',
+  expert: '2200',
+  experts: '2200',
+};
+
+/** The level a query names ("openings for beginners" → u1400), or null. */
+export function levelInQuery(query: string): BandId | null {
+  const word = query
+    .toLowerCase()
+    .split(/\s+/)
+    .find((w) => Object.prototype.hasOwnProperty.call(LEVEL_WORDS, w));
+  return word ? LEVEL_WORDS[word] : null;
 }
 
 /**

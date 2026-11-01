@@ -17,8 +17,10 @@ the Lichess range beside the name in the menu (heading "Lichess rating") and in
 the note by the count, so chess.com players pick by name. The words name players
 only: the Difficulty facet is retired (#206), `?level=` is ignored. Not built:
 setting the level from Analyse (#205 step 2), the rating input, the rest of #206
-(Theory: Light/Moderate/Heavy; scores well at your level). Next: review
-`data/popularity-2026-10` when October lands, then Task 3c.
+(Theory: Light/Moderate/Heavy; scores well at your level). Stacked on it,
+`feat/level-words-search`: a level word in a query ranks by that band instead of
+filtering on the LLM tag ("openings for beginners" = Discover's list). Next:
+review `data/popularity-2026-10` when October lands, then Task 3c.
 
 ## Previous Task: #204, dated per-band stats (merged #213, #214)
 

@@ -1,5 +1,45 @@
 import { describe, it, expect } from 'vitest';
-import { expandAbbreviations, isChessMove, isEcoCode, queryShape } from '../searchQuery';
+import { createRequire } from 'node:module';
+import {
+  expandAbbreviations,
+  isChessMove,
+  isEcoCode,
+  levelInQuery,
+  queryShape,
+} from '../searchQuery';
+
+const require = createRequire(import.meta.url);
+const QueryUtils = require('../../../../api/src/services/search/QueryUtils.js');
+
+// The scope line names the level on the keystroke; the server ranks by it a
+// moment later. Both read the same words, or the line says one level and the
+// list is ranked for another.
+describe('levelInQuery', () => {
+  const queries = [
+    'beginner openings',
+    'openings for beginners',
+    'Intermediate openings',
+    'openings for intermediate players',
+    'advanced sicilian defense',
+    'e4 openings for beginners',
+    'expert openings',
+    'sicilian defense',
+    'french advance',
+    'easy openings',
+    'simple openings',
+  ];
+
+  it.each(queries)('reads "%s" as the server does', (query) => {
+    const server = QueryUtils.levelInQuery(query.toLowerCase());
+    expect(levelInQuery(query)).toBe(server ? server.band : null);
+  });
+
+  it('names the band', () => {
+    expect(levelInQuery('beginner openings')).toBe('u1400');
+    expect(levelInQuery('advanced sicilian')).toBe('1800');
+    expect(levelInQuery('sicilian')).toBeNull();
+  });
+});
 
 describe('isChessMove', () => {
   it.each(['e4', 'd4', 'Nf3', 'nf3', 'O-O', 'o-o-o', 'exd5', 'Nxe5'])('accepts %s', (move) => {

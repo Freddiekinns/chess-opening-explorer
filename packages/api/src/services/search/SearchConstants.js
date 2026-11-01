@@ -101,6 +101,21 @@ const STYLE_CATEGORIES = {
   'advanced': ['advanced', 'theoretical', 'complex', 'difficult', 'expert']
 };
 
+// Player levels, by the words the site names them with (#206): Discover's
+// "Popular with beginners" is the under-1400 band. In a query they rank by
+// that band rather than filter by the LLM's difficulty tag. "Simple", "easy"
+// and "complex" describe an opening, not a player, and are not here.
+// `packages/web/src/lib/searchQuery.ts` holds the same table.
+const LEVEL_WORDS = {
+  beginner: 'u1400',
+  beginners: 'u1400',
+  intermediate: '1400',
+  intermediates: '1400',
+  advanced: '1800',
+  expert: '2200',
+  experts: '2200',
+};
+
 // Common query patterns and their intents
 const QUERY_PATTERNS = {
   // Pattern: "X openings" or "X for Y"
@@ -163,6 +178,7 @@ module.exports = {
   STYLE_AXES,
   STYLE_NAMES,
   STYLE_CATEGORIES,
+  LEVEL_WORDS,
   QUERY_PATTERNS,
   FUSE_OPTIONS,
   ECO_CODE_PATTERN,

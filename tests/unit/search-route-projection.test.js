@@ -112,4 +112,28 @@ describe('search routes return the projected shape', () => {
 
     expect(res.body.data[0].name_qualifier).toBe('6.Bg5');
   });
+
+  // "openings for beginners" ranks by under 1400 whatever the saved level
+  // (#206): the response says which band, so the scope line can.
+  test('GET /semantic-search reports the band a level word ranked by', async () => {
+    const searchService = require('../../packages/api/src/services/search-service');
+    searchService.search.mockResolvedValue({
+      results: [],
+      totalResults: 0,
+      hasMore: false,
+      band: 'u1400',
+    });
+
+    const fromQuery = await request(app).get(
+      '/api/openings/semantic-search?q=openings%20for%20beginners&band=1400'
+    );
+    expect(fromQuery.body.band).toBe('u1400');
+
+    searchService.search.mockResolvedValue({ results: [], totalResults: 0, hasMore: false });
+    const saved = await request(app).get('/api/openings/semantic-search?q=sicilian&band=1400');
+    expect(saved.body.band).toBe('1400');
+
+    const none = await request(app).get('/api/openings/semantic-search?q=sicilian');
+    expect(none.body.band).toBeNull();
+  });
 });

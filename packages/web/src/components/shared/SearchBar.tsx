@@ -58,7 +58,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   // The query itself belongs to the hook every surface shares. This component
   // owns only the parts a dropdown under a hero field needs: focus, the
   // keyboard cursor, and what happens to a chosen result.
-  const { query, setQuery, results, noResults, hasQuery, reset, band, setBand } =
+  const { query, setQuery, results, noResults, hasQuery, reset, band, setBand, scope } =
     useOpeningSearch('hero');
 
   // Only to name a hub row's opening on the way out — see the select handler.
@@ -213,7 +213,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 would only invite the question of what it counted — the search
                 scores every record above zero, which is 4,269 for "sicilian"
                 against a family of roughly 1,710. */}
-            <SearchScope band={band} onChange={setBand} />
+            <SearchScope band={scope.band} fromQuery={scope.fromQuery} onChange={setBand} />
             {/* A real <ul>: twenty ranked results are a list, and assistive
                 technology should be told how many there are. */}
             <ul className="search-suggestions">

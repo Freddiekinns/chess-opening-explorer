@@ -84,6 +84,20 @@ replaces that list a moment later. They must agree — see
   `lib/lichessExplorer.ts` maps a saved Masters or All to no band.
   `local-server-parity.test.ts` pins parity with a band too.
 
+- **A level word in the query is that band, not a filter (#206).** Beginner,
+  intermediate, advanced and expert name player levels across the site, so
+  "openings for beginners" is every opening by under-1400 games (Discover's
+  "Popular with beginners" list) and "advanced sicilian" the Sicilians by
+  1800–2200 games. `search()` checks `QueryUtils.levelInQuery` after names (so
+  "Beginner's Trap" is still a name) and before meaning, re-runs the rest at
+  that band, and returns `band`; the route echoes it so the counts and the scope
+  line follow it. It outranks the saved level for that query, and the scope line
+  hides Change. `LEVEL_WORDS` exists twice, in `SearchConstants.js` and
+  `lib/searchQuery.ts` (for the line on the keystroke); `searchQuery.test.ts`
+  checks they agree. Simple, easy and complex describe an opening and still
+  filter on the old LLM level axis until #206's Theory measure replaces it; the
+  parser's `complexity_search` branch now only sees them.
+
 - **Clearing a debounce timer does not cancel a request that already left.**
   Anything that fetches per keystroke needs a monotonic request id checked
   before every `setState`, the way `useBrowse` and `useOpeningSearch` do it.

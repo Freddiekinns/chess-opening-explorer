@@ -194,6 +194,20 @@ class SearchService {
         return byName;
       }
 
+      // A player level ranks the rest of the query by that band (#206):
+      // "openings for beginners" is every opening by under-1400 games,
+      // "advanced sicilian" the Sicilians by 1800–2200 games. It filters
+      // nothing, and it outranks the saved level for this query. After names,
+      // so "Beginner's Trap" is still a name.
+      const level = QueryUtils.levelInQuery(normalizedQuery);
+      if (level) {
+        const atLevel = { ...sanitizedOptions, band: level.band };
+        const result = level.rest
+          ? await this.search(level.rest, atLevel)
+          : this.getAllOpenings(atLevel);
+        return { ...result, band: level.band };
+      }
+
       // Nothing is named this, so the query is describing rather than naming:
       // "aggressive openings", "solid defence for black", "attacking d4".
       const semanticResults = await this.semanticSearch(normalizedQuery, sanitizedOptions);
@@ -452,11 +466,17 @@ class SearchService {
    * @private
    */
   getAllOpenings(options = {}) {
-    const { limit = 50, offset = 0 } = options;
-    
-    // Use pre-sorted popularity cache for better performance
-    const totalResults = this.popularitySorted.length;
-    const results = this.popularitySorted.slice(offset, offset + limit);
+    const { limit = 50, offset = 0, band = null } = options;
+
+    // Use pre-sorted popularity cache for better performance; a band sorts
+    // by its own games ("beginner openings").
+    const sorted = band
+      ? [...this.openings].sort(
+          (a, b) => this.gamesFor(b, band) - this.gamesFor(a, band) || a.name.localeCompare(b.name)
+        )
+      : this.popularitySorted;
+    const totalResults = sorted.length;
+    const results = sorted.slice(offset, offset + limit);
     
     return {
       results,

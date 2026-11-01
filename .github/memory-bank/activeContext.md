@@ -1,23 +1,24 @@
 # Active Context
 
-**Date:** 2026-10-31
+**Date:** 2026-11-01
 
-## Current Task: #204/#205, popular at your level (branch `feat/level-ranking`)
+## Current Task: #204/#205, popular at your level
 
-Plan: `docs/superpowers/plans/2026-10-29-level-ranking.md`. Phase 0 and Task 3
-done. Stats now come from the last 3 Lichess monthly files (2026-07..09, 270.8M
-blitz/rapid/classical games, bots and abandoned excluded), summarised by
-`tools/analysis/summarise_month.py` and combined by `combine_window.py` into
-`popularity_stats.json`, `popularity-bands.json` and 256 `position-stats/`
-shards. Cross-checked against the explorer on 2026-03: within 0.63%. Under 20
-games a position keeps its count with null rates (601 positions, 9 ever
-visited). Task 3b: `refresh.py` + `schedule/register-task.ps1` (runs from its
-own worktree at origin/main, commits to `data/popularity-YYYY-MM`, never
-pushes); register only after merge, owner approves the task definition. Phase 2:
-`/browse?band=` ranks by level, Discover and the detail card date the stats
-("Lichess games, Jul–Sep 2026"). Phases 1+2 are one PR (refs #204). Next: Task
-10 (detail page from shards; closes #204), then Phase 3 (#205). Task 3c retires
-the old pipeline after the first scheduled refresh.
+Plan: `docs/superpowers/plans/2026-10-29-level-ranking.md`. Phases 1, 2 and 4
+are merged (#213, #214; closes #204). Stats come from the last 3 Lichess monthly
+files (2026-07..09, 270.8M blitz/rapid/classical games, bots and abandoned
+excluded), summarised by `tools/analysis/summarise_month.py` and combined by
+`combine_window.py` into `popularity_stats.json`, `popularity-bands.json` and
+256 `position-stats/` shards. Under 20 games a position keeps its count with
+null rates. Discover ranks by level (`/browse?band=`) and shows "Lichess ·
+Jul–Sep 2026" under the count, desktop only (mobile cards show no game counts).
+The detail page reads every Lichess band from the page response (`bands`,
+`parentBands`); only Masters still calls `/api/explorer`.
+`repo-invariants.test.js` holds shards under 250 KB and the bands file under 3.5
+MB. Next: register the refresh task (`schedule/register-task.ps1`; owner
+approves the task definition first; October's file lands ~3–10 Nov), then Phase
+3 (#205, needs the chess.com-line decision), then Task 3c (retire the old
+pipeline after the first scheduled refresh).
 
 ## Previous Task: backlog split into issues and an idea pool
 

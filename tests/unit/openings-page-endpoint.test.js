@@ -127,4 +127,18 @@ describe('GET /api/openings/page/:fen (aggregate detail-page payload)', () => {
     expect(res.status).toBe(404);
     expect(res.body.success).toBe(false);
   });
+
+  it('unknown fen reads no shard', async () => {
+    await request(app).get(`/api/openings/page/${encodeURIComponent('8/8/8/8/8/8/8/8 w - - 0 1')}`);
+    const reads = fs.readFileSync.mock.calls.map(([p]) => String(p));
+    expect(reads.some((p) => p.includes('position-stats'))).toBe(false);
+  });
+
+  it('carries every Lichess band for the position and its parent, in one response', async () => {
+    const res = await request(app).get(`/api/openings/page/${encodeURIComponent(VAR_FEN)}`);
+    const { bands, parentBands } = res.body.data;
+    // The fixture's shards hold no positions: every band is there, and null.
+    expect(bands).toEqual({ all: null, u1400: null, 1400: null, 1800: null, 2200: null });
+    expect(parentBands === null || typeof parentBands === 'object').toBe(true);
+  });
 });

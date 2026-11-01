@@ -475,8 +475,9 @@ must keep passing.
       response); first touch of a shard 5 ms against 2.7. The client's explorer
       request after paint is gone. Expected: no slower warm, cold start within
       10% of before. If it isn't, stop and fix before opening the PR.
-- [ ] Confirm the function bundle includes `api/data/position-stats/` and stays
-      under Vercel's limit (`build:vercel` via `verifier`).
-- [ ] `npm run test:e2e`. Commit
+- [x] Confirm the function bundle includes `api/data/position-stats/` and stays
+      under Vercel's limit (CI Build and the production page response after
+      merge).
+- [x] `npm run test:e2e` (CI Test E2E). Commit
       `feat(detail): serve band stats from our own     data`. Open the PR,
       closes #204.

@@ -74,6 +74,16 @@ replaces that list a moment later. They must agree — see
   searches fell back to corpus order and "aggressive openings" led with the Amar
   Gambit.
 
+- **A saved level swaps the popularity term, nothing else (#205).** Both halves
+  take `?band=` (`u1400`, `1400`, `1800`, `2200`): the server's ranked paths
+  read `searchService.gamesFor(opening, band)` and
+  `NameIndex.search(query, gamesOf)`, and `/search-index?band=` hands the client
+  a slice with that band's games as `games_analyzed`, so `localSearch.ts` is
+  unchanged. A band too thin to count is 0 and sorts last among equals. The Fuse
+  typo pass stays on all-ratings popularity. `rankingBand()` in
+  `lib/lichessExplorer.ts` maps a saved Masters or All to no band.
+  `local-server-parity.test.ts` pins parity with a band too.
+
 - **Clearing a debounce timer does not cancel a request that already left.**
   Anything that fetches per keystroke needs a monotonic request id checked
   before every `setState`, the way `useBrowse` and `useOpeningSearch` do it.

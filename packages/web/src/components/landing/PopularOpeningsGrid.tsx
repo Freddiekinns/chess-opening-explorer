@@ -8,6 +8,8 @@ import { useBrowse } from '../../hooks/useBrowse';
 import { useIsMobile } from '../../hooks/useMediaQuery';
 import { useRepertoireToast } from '../../hooks/useRepertoireToast';
 import { formatWindow } from '../../lib/statsWindow';
+import { levelPlayers } from '../../lib/lichessExplorer';
+import { levelEcho } from '../../lib/explorerStats';
 
 interface PopularOpeningsGridProps {
   className?: string;
@@ -34,6 +36,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     error,
     filters,
     activeCount,
+    band,
+    setBand,
     setFacet,
     clear,
     loadMore,
@@ -51,15 +55,21 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     loading,
     onFacetChange: setFacet,
     onClear: clear,
+    band,
+    onBandChange: setBand,
   };
   // Small print beside the count, desktop only: mobile cards show no game
-  // counts, so a date there qualifies nothing on screen.
-  const note = statsWindow ? `Lichess · ${formatWindow(statsWindow)}` : undefined;
+  // counts, so a date there qualifies nothing on screen. With a level set it
+  // carries the range too, beside the numbers it scopes, as the detail page's
+  // source line does; the heading names the players.
+  const note = statsWindow
+    ? ['Lichess', band && levelEcho(band), formatWindow(statsWindow)].filter(Boolean).join(' · ')
+    : undefined;
 
   return (
     <section className={`popular-openings-section ${className}`}>
       <div className="section-header">
-        <h2>Popular openings</h2>
+        <h2>{band ? `Popular with ${levelPlayers(band)}` : 'Popular openings'}</h2>
         <p className="section-subtitle">
           The most popular openings for every style of play, from classic variations to hypermodern
         </p>

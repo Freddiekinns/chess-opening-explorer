@@ -34,7 +34,7 @@ describe('LevelLens', () => {
     );
   });
 
-  it('selecting a level persists it, tracks it and notifies the page', async () => {
+  it('selecting a level notifies the page and saves nothing itself', async () => {
     const onChange = vi.fn();
     const user = userEvent.setup();
     render(<LevelLens band={null} onChange={onChange} />);
@@ -42,8 +42,8 @@ describe('LevelLens', () => {
     await user.click(screen.getByRole('button', { name: 'Intermediate' }));
 
     expect(onChange).toHaveBeenCalledWith('1400');
-    expect(localStorage.getItem('openingbook:my-level')).toBe('1400');
-    expect(trackEvent).toHaveBeenCalledWith('band_select', { band: '1400' });
+    expect(localStorage.getItem('openingbook:my-level')).toBeNull();
+    expect(trackEvent).not.toHaveBeenCalled();
   });
 
   it('marks the active level via aria-pressed', () => {
@@ -55,13 +55,12 @@ describe('LevelLens', () => {
     expect(screen.getByRole('button', { name: 'All' })).toHaveAttribute('aria-pressed', 'false');
   });
 
-  it('selecting All persists it as the broadest level', async () => {
+  it('selecting All reports it as the broadest level', async () => {
     const onChange = vi.fn();
     const user = userEvent.setup();
     render(<LevelLens band="1800" onChange={onChange} />);
 
     await user.click(screen.getByRole('button', { name: 'All' }));
     expect(onChange).toHaveBeenCalledWith('all');
-    expect(localStorage.getItem('openingbook:my-level')).toBe('all');
   });
 });

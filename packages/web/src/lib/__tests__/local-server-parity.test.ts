@@ -102,6 +102,31 @@ describe('local ranking matches the server it is standing in for', () => {
     expect(local).toEqual(server);
   });
 
+  // Ranked by a level, the client's slice carries that band's games as
+  // games_analyzed and the server swaps its popularity term for the same
+  // number. Same bands, same order.
+  it('parity holds with a band', () => {
+    const atBand: Record<string, number> = {
+      f2: 1_000,
+      f3: 90_000,
+      f4: 400_000,
+      f6: 2_000,
+      f8: 50_000,
+      f9: 30_000,
+      f10: 60_000,
+    };
+    const bandSlice = OPENINGS.map((o) => ({ ...o, games_analyzed: atBand[o.fen] ?? 0 }));
+    const bandGames = (o: Opening) => atBand[o.fen] ?? 0;
+
+    for (const query of QUERIES) {
+      const local = findAndRankOpenings(query, bandSlice).map((result) => result.fen);
+      const server = serverIndex.search(query, bandGames).map((result: Opening) => result.fen);
+      expect(local).toEqual(server);
+    }
+    // And the band really did reorder something.
+    expect(serverIndex.search('sicilian', bandGames)[0].fen).toBe('f4');
+  });
+
   // ECO codes and moves have their own branches on both sides. They are not in
   // NameIndex, so they are checked against the rule rather than the module.
   it('returns every opening carrying an ECO code, most-played first, as flat ties', () => {

@@ -124,6 +124,59 @@ beforeEach(() => {
 
 describe('search surface parity', () => {
   describe.each(surfaces)('$name', (surface) => {
+    it('scope line reads Ranked for all players', async () => {
+      const user = userEvent.setup();
+      stubSearch(SERVED);
+      surface.render();
+
+      await user.type(surface.field(), 'qgd');
+
+      expect(await screen.findByText('Ranked for all players')).toBeInTheDocument();
+      await waitFor(() => expect(searchRequests().length).toBeGreaterThan(0));
+      expect(searchRequests()[0]).not.toContain('band=');
+    });
+
+    it('scope line reads Ranked for intermediate players, and both halves ask for it', async () => {
+      const user = userEvent.setup();
+      localStorage.setItem('openingbook:my-level', '1400');
+      stubSearch(SERVED);
+      surface.render();
+
+      await user.type(surface.field(), 'qgd');
+
+      expect(await screen.findByText('Ranked for intermediate players')).toBeInTheDocument();
+      await waitFor(() => expect(searchRequests().length).toBeGreaterThan(0));
+      expect(searchRequests()[0]).toContain('band=1400');
+      const indexRequests = fetchMock.mock.calls
+        .map(([url]) => String(url))
+        .filter((url) => url.includes('/api/openings/search-index'));
+      expect(indexRequests[0]).toContain('band=1400');
+    });
+
+    it('Change opens the band menu without closing the dropdown', async () => {
+      const user = userEvent.setup();
+      stubSearch(SERVED);
+      surface.render();
+
+      await user.type(surface.field(), 'qgd');
+      await screen.findByText("Queen's Gambit Declined: Normal Defense");
+
+      await user.click(screen.getByRole('button', { name: 'Change' }));
+      expect(screen.getByText('Lichess rating')).toBeInTheDocument();
+      await user.click(screen.getByRole('option', { name: /^Advanced/ }));
+
+      // Re-ranked in place: the list is repainted for the new level, not closed.
+      expect(await screen.findByText('Ranked for advanced players')).toBeInTheDocument();
+      expect(
+        await screen.findByText("Queen's Gambit Declined: Normal Defense")
+      ).toBeInTheDocument();
+      expect(localStorage.getItem('openingbook:my-level')).toBe('1800');
+      await waitFor(() =>
+        expect(searchRequests()[searchRequests().length - 1]).toContain('band=1800')
+      );
+      expect(trackEvent).toHaveBeenCalledWith('band_select', { band: '1800', surface: 'search' });
+    });
+
     it('expands "qgd" before asking the server', async () => {
       const user = userEvent.setup();
       stubSearch(SERVED);

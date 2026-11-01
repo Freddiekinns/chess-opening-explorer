@@ -127,8 +127,11 @@ class NameIndex {
    * Returns `[]` rather than a weak guess when nothing matches literally — the
    * caller reads that as "this is a typo or a sentence" and hands over to the
    * fuzzy and semantic paths, which is the one thing they are better at.
+   *
+   * `gamesOf` replaces the popularity term, to rank by one rating band's games
+   * (#205). It never changes which band a match is in.
    */
-  search(query) {
+  search(query, gamesOf) {
     const queryNorm = normalise(query);
     if (!queryNorm) return [];
     const queryWords = queryNorm.split(' ');
@@ -137,7 +140,8 @@ class NameIndex {
     for (const entry of this.entries) {
       const matchBand = band(entry, queryWords, queryNorm);
       if (matchBand === BAND_NONE) continue;
-      matched.push({ entry, searchScore: score(matchBand, entry.games) });
+      const games = gamesOf ? gamesOf(this.openings[entry.position]) : entry.games;
+      matched.push({ entry, searchScore: score(matchBand, games) });
     }
 
     matched.sort((a, b) => b.searchScore - a.searchScore || a.entry.position - b.entry.position);

@@ -1,0 +1,44 @@
+.scope {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--space-4) 2px;
+}
+
+.change {
+  background: none;
+  border: none;
+  padding: var(--space-1) 0;
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border-hover);
+  cursor: pointer;
+}
+
+.change:hover {
+  color: var(--color-text-primary);
+}
+
+.change:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Anchored right, over the results, like Discover's facet menus. */
+.menu {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  right: var(--space-4);
+  z-index: 30;
+  width: 280px;
+  background: var(--surface-overlay);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}

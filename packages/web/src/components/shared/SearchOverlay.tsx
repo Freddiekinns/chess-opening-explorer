@@ -4,6 +4,7 @@ import { Search } from 'lucide-react';
 import { SearchHub } from './SearchHub';
 import { SearchRow, SurpriseRow } from './SearchRow';
 import { SearchNoResults } from './SearchNoResults';
+import { SearchScope } from './SearchScope';
 import { useOpeningSearch } from '../../hooks/useOpeningSearch';
 import { fetchRandomOpening } from '../../lib/randomOpening';
 import { trackEvent } from '../../lib/analytics';
@@ -23,7 +24,7 @@ interface SearchOverlayProps {
 }
 
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) => {
-  const { query, setQuery, results, searching, noResults, hasQuery, reset } =
+  const { query, setQuery, results, searching, noResults, hasQuery, reset, band, setBand } =
     useOpeningSearch('overlay');
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -112,6 +113,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ open, onClose }) =
 
         {/* No count line: the openings appearing are the feedback, the same
             reason there is no "did you mean". */}
+        {showResults && <SearchScope band={band} onChange={setBand} />}
         {showResults && (
           <ul className={styles.rowList}>
             {results.map((opening, i) => (

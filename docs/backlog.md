@@ -168,7 +168,9 @@ and drill for it.
   for each claim, supported / wrong / unverifiable against its brief, with only
   "wrong" going to a Claude fix. Unsourced briefs carry no audit, so the tail
   needs evidence before Jev can check it. Plan: step 5 and "Research once, use
-  it twice" in `docs/proposals/2026-10-02-opening-style-classification.md`.
+  it twice" in `docs/proposals/2026-10-02-opening-style-classification.md`. →
+  #208 reviews the visited pages batch by batch instead (first batch
+  2026-11-01).
 
 ## Open decisions
 

@@ -536,10 +536,10 @@
         "Surviving the Opening"
       ],
       "common_plans": [
-        "White: Attempt to solidify the position with moves like Nf3 and d4, hoping to transpose into a more playable structure.",
+        "White: Follow up with e4 and d4 to build a centre, developing the g1-knight via e2 or h3 since f3 is taken.",
         "White: Create further imbalances and hope to out-calculate the opponent in a chaotic position.",
         "Black: Seize the center immediately with ...e5 and/or ...d5.",
-        "Black: Develop pieces to attack the weakened light squares and the exposed White king, often with ...Bc5 and ...Qh4."
+        "Black: Develop pieces to attack the weakened dark squares and the exposed White king, often with ...Bc5 and ...Qh4."
       ],
       "books": [],
       "version": "1.0",
@@ -34681,7 +34681,7 @@
       ],
       "common_plans": [
         "White: Play d4 to challenge the center, often after preparing with moves like Qb3 or b3. The knight on f3 may move to e5 to challenge Black's setup. White aims to use the Bg2 to exert long-term pressure on Black's d5 pawn.",
-        "Black: Solidify the center with ...e6 and complete development with ...Nbd7 and ...Be7. Decide whether to exchange the bishop on f3 (damaging White's pawn structure) or maintain the pin. Prepare for central pawn breaks like ...c5 or ...e5."
+        "Black: Solidify the centre with ...e6 and complete development with ...Nbd7 and ...Be7. Decide whether to give up the bishop for the f3-knight (White usually recaptures with the g2-bishop) or keep it on g4. Prepare central pawn breaks like ...c5 or ...e5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:29:56.498Z"
@@ -127089,7 +127089,7 @@
         "White: Advance the e- and f-pawns (e5, f5) to launch a kingside attack, using the space advantage to restrict Black.",
         "Black: Prepare and execute the ...b5 pawn break to undermine White's center and create queenside counterplay.",
         "White: Prevent or neutralize Black's queenside play while consolidating the center.",
-        "Black: Utilize the long diagonal for the g7-bishop to pressure White's structure and d4-pawn."
+        "Black: The g7-bishop comes alive once the f6-knight moves or White's centre breaks open; it then bears down on c3 and the queenside, backing up the ...b5 break."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T12:35:16.431Z"
@@ -127154,7 +127154,7 @@
         "White: Push e4-e5 to break open the center and initiate a direct attack on the Black king, often supported by the f-pawn and piece sacrifices.",
         "Black: After castling, challenge White's center with ...Na6-c7 and ...Re8, while preparing the ...a6 and ...b5 pawn break to create queenside counterplay.",
         "White: Restrain Black's queenside expansion while methodically preparing a central or kingside assault, using the space advantage to maneuver pieces freely.",
-        "Black: Use the powerful fianchettoed bishop on g7 to pressure White's d5 and e4 pawns, creating tactical possibilities and undermining White's central control."
+        "Black: Keep the fianchettoed bishop on g7, which comes alive once the f6-knight moves or White's centre opens, bearing down on c3 and backing up the ...b5 break."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T12:35:32.099Z"
@@ -135743,7 +135743,7 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Prepare and execute the g2-g4 pawn break to undermine Black's kingside and fight for the center. Develop flexibly, often with a fianchetto setup (g3, Bg2) to control key diagonals.",
+        "White: Prepare and execute the g2-g4 pawn break to undermine Black's kingside and fight for the centre, developing flexibly with Nf3 and e3 or Nc3.",
         "Black: Continue with standard Dutch development (...Nf6, ...e6, ...d5 or ...g6), but remain vigilant to White's g4 plan. Counter in the center or on the queenside to distract from White's kingside intentions."
       ],
       "version": "1.0",
@@ -157703,7 +157703,7 @@
     "eco": "A84",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Bladel Attack is an aggressive and non-standard system against the Dutch Defense, leading to a strategically complex middlegame. White seizes the center and establishes a powerful knight outpost on c5, aiming to exploit weaknesses in Black's camp. In return, Black accepts a doubled pawn structure that solidifies control over the d5 square and opens the b-file for counterplay. This opening is ideal for strategic players who enjoy navigating unbalanced positions and fighting for long-term positional advantages.",
+      "description": "The Bladel line is an offbeat Dutch set-up in which Black plays ...g6 and develops the king's knight to h6 rather than f6. In this main line White has taken the centre and planted a knight on c5, aiming at weaknesses in Black's camp. In return, Black's recapture ...bxc6 leaves a c6-d5 pawn chain and an open b-file for counterplay. It suits players who enjoy unbalanced positions and long-term strategic fights.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -157746,7 +157746,7 @@
       ],
       "common_plans": [
         "White's plan is to utilize the strong knight on c5 to pressure Black's position, particularly the d7 and e6 squares. White will often support this knight and seek to expand on the kingside, aiming to restrict Black's fianchettoed bishop.",
-        "Black's plan revolves around challenging the c5-knight, often with moves like ...Qa5 or ...Nf7. Black will use the open b-file for the rook (...Rb8) to create queenside counterplay and will try to activate the powerful dark-squared bishop on g7."
+        "Black's plan revolves around challenging the c5-knight, for example with ...Qa5+ or by bringing the h6-knight to d6 via f7. Black will use the open b-file for the rook (...Rb8) to create queenside counterplay and will try to activate the dark-squared bishop on g7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:48:08.633Z"

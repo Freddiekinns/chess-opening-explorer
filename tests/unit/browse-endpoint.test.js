@@ -74,6 +74,7 @@ describe('GET /api/openings/browse', () => {
       sort: 'name',
       page: '2',
       pageSize: '12',
+      band: null,
     });
   });
 
@@ -98,6 +99,19 @@ describe('GET /api/openings/browse', () => {
 
   // Discover's styles were renamed onto the style taxonomy; a link saved
   // before that still filters, on the nearest new value.
+  test('a Lichess band is passed through to rank by', async () => {
+    const res = await request(app).get('/api/openings/browse?band=1800');
+    expect(res.status).toBe(200);
+    expect(mockBrowse).toHaveBeenCalledWith(expect.objectContaining({ band: '1800' }));
+  });
+
+  test('an unknown band is ignored, not rejected', async () => {
+    // Masters is a level the detail page offers but browse has no data for.
+    const res = await request(app).get('/api/openings/browse?band=masters');
+    expect(res.status).toBe(200);
+    expect(mockBrowse).toHaveBeenCalledWith(expect.objectContaining({ band: null }));
+  });
+
   test('a retired style value filters on the value that replaced it', async () => {
     const res = await request(app).get('/api/openings/browse?style=Aggressive');
     expect(res.status).toBe(200);

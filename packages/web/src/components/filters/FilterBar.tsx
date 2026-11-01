@@ -24,6 +24,8 @@ interface FilterBarProps {
   loading: boolean;
   onFacetChange: (key: FacetKey, value: string | null) => void;
   onClear: () => void;
+  /** Where the counts come from, shown small under the total. */
+  note?: string;
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({
@@ -34,6 +36,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   loading,
   onFacetChange,
   onClear,
+  note,
 }) => {
   const sortLabel =
     SORT_OPTIONS.find((option) => option.value === filters.sort)?.label ?? SORT_OPTIONS[0].label;
@@ -125,8 +128,11 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             Clear filters
           </button>
         )}
-        <span className={styles.count} aria-live="polite">
-          {loading ? 'Counting…' : resultCountLabel(total)}
+        <span className={styles.countBlock}>
+          <span className={styles.count} aria-live="polite">
+            {loading ? 'Counting…' : resultCountLabel(total)}
+          </span>
+          {note && <span className={styles.note}>{note}</span>}
         </span>
       </div>
     </>

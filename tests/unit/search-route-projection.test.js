@@ -99,4 +99,17 @@ describe('search routes return the projected shape', () => {
       FAT_FIELDS.forEach((field) => expect(row).not.toHaveProperty(field));
     }
   });
+
+  test('GET /semantic-search keeps what tells apart openings that share a name', async () => {
+    const searchService = require('../../packages/api/src/services/search-service');
+    searchService.search.mockResolvedValue({
+      results: [{ fen: 'b94', ...OPENING, name_qualifier: '6.Bg5', searchScore: 3.6 }],
+      totalResults: 1,
+      hasMore: false,
+    });
+
+    const res = await request(app).get('/api/openings/semantic-search?q=sicilian');
+
+    expect(res.body.data[0].name_qualifier).toBe('6.Bg5');
+  });
 });

@@ -23,6 +23,8 @@ export interface SearchRowOpening {
   name: string;
   eco: string;
   moves: string;
+  /** Set only when other openings share this name: the move that reaches this one. */
+  name_qualifier?: string;
 }
 
 export interface SearchRowProps {
@@ -53,7 +55,12 @@ export const SearchRow: React.FC<SearchRowProps> = ({
     onMouseEnter={onMouseEnter}
   >
     <span className={styles.rowText}>
-      <span className={styles.rowName}>{opening.name}</span>
+      <span className={styles.rowTitle}>
+        <span className={styles.rowName}>{opening.name}</span>
+        {opening.name_qualifier && (
+          <span className={styles.rowQualifier}>{opening.name_qualifier}</span>
+        )}
+      </span>
       {opening.moves && (
         <span className={styles.rowMoves}>{formatMovesPreview(opening.moves)}</span>
       )}

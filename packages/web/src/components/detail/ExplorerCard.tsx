@@ -60,7 +60,12 @@ export const ExplorerCard: React.FC<ExplorerCardProps> = ({
             Opening explorer
           </h2>
           <span className={styles.source}>
-            {explorerSourceLine(band, live, popularityStats?.analysis_date)}
+            {explorerSourceLine(
+              band,
+              live,
+              popularityStats?.analysis_date,
+              popularityStats?.window
+            )}
           </span>
         </div>
         <LevelLens band={band} onChange={onBandChange} />

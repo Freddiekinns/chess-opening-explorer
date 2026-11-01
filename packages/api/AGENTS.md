@@ -54,14 +54,23 @@ config headers override function headers and would clobber the per-band TTLs.
 The route also 403s known crawler user-agents before touching Lichess. Without
 the token the route 503s and the Win Rate panel falls back to snapshot stats.
 
+Since #204 the detail page asks it for **Masters only**. The Lichess levels
+(All and the four bands) come in the `/page/:fen` response as `bands` and
+`parentBands`, read from one `api/data/position-stats/NN.json` shard by
+`services/position-stats-service.js`: the same 3-month window Discover ranks
+by, already in the client's `ExplorerResult` shape.
+
 ## Search responses are projected
 
 Search responses are projected down to the fields a row draws by
 `toSearchResult` in `openings.routes.js` — fen, name, eco, moves,
-games_analyzed, searchScore. Twenty whole opening records was 55 KB, mostly
-`analysis_json` descriptions, to draw twenty lines of name and ECO code — on
-every keystroke, mostly on phones. It is now 4.4 KB. **Do not return raw
-service results from a search route.**
+games_analyzed, name_qualifier, searchScore. `name_qualifier` is set only on
+openings whose name another shares (`services/name-qualifiers.js`); the search
+index and Discover items carry it too, so the client never derives it.
+
+Twenty whole opening records was 55 KB, mostly `analysis_json` descriptions, to
+draw twenty lines of name and ECO code — on every keystroke, mostly on phones.
+It is now 4.4 KB. **Do not return raw service results from a search route.**
 
 ## Data
 

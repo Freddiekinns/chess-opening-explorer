@@ -8,6 +8,7 @@ import { useBrowse } from '../../hooks/useBrowse';
 import { useIsMobile } from '../../hooks/useMediaQuery';
 import { useRepertoireToast } from '../../hooks/useRepertoireToast';
 import { formatWindow } from '../../lib/statsWindow';
+import { rangeLabel } from '../../lib/lichessExplorer';
 
 interface PopularOpeningsGridProps {
   className?: string;
@@ -34,6 +35,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     error,
     filters,
     activeCount,
+    band,
+    setBand,
     setFacet,
     clear,
     loadMore,
@@ -42,6 +45,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
 
   const isMobile = useIsMobile();
   const { isSaved, toggleWithToast, toast } = useRepertoireToast();
+  const range = band ? rangeLabel(band) : undefined;
 
   const controlProps = {
     facets,
@@ -51,6 +55,8 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
     loading,
     onFacetChange: setFacet,
     onClear: clear,
+    band,
+    onBandChange: setBand,
   };
   // Small print beside the count, desktop only: mobile cards show no game
   // counts, so a date there qualifies nothing on screen.
@@ -59,9 +65,11 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
   return (
     <section className={`popular-openings-section ${className}`}>
       <div className="section-header">
-        <h2>Popular openings</h2>
+        <h2>{range ? `Popular at ${range}` : 'Popular openings'}</h2>
         <p className="section-subtitle">
-          The most popular openings for every style of play, from classic variations to hypermodern
+          {range
+            ? `Ranked by games played at ${range} on Lichess.`
+            : 'The most popular openings for every style of play, from classic variations to hypermodern'}
         </p>
       </div>
 
@@ -97,6 +105,7 @@ export const PopularOpeningsGrid: React.FC<PopularOpeningsGridProps> = ({ classN
                   })
                 }
                 className="opening-grid-item"
+                gamesAt={range}
               />
             ))}
           </div>

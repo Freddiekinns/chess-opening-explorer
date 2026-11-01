@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import type { StyleProfile } from '../lib/styleProfile';
 import type { StatsWindow } from '../lib/statsWindow';
+import { rankingBand, type BandId } from '../lib/lichessExplorer';
+import { useMyLevel } from './useMyLevel';
 
 /**
  * Everything the Discover grid knows about browsing. Filter state lives in the
@@ -87,6 +89,11 @@ const canonicalise = (options: { value: string }[], value: string | null): strin
 
 export function useBrowse() {
   const [searchParams, setSearchParams] = useSearchParams();
+  // The band ranks the grid but is a saved preference, not a facet: it stays
+  // out of the URL (where `level` means Difficulty) and out of Clear filters.
+  const [myLevel, saveMyLevel] = useMyLevel();
+  const band = rankingBand(myLevel);
+  const setBand = useCallback((next: BandId) => saveMyLevel(next, 'landing'), [saveMyLevel]);
   const level = searchParams.get('level');
   const style = searchParams.get('style');
   const family = searchParams.get('family');
@@ -116,6 +123,7 @@ export function useBrowse() {
       if (level) params.set('level', level);
       if (style) params.set('style', style);
       if (family) params.set('family', family);
+      if (band) params.set('band', band);
       params.set('sort', sort);
       params.set('page', String(page));
       params.set('pageSize', String(PAGE_SIZE));
@@ -150,7 +158,7 @@ export function useBrowse() {
         }
       }
     },
-    [level, style, family, sort]
+    [level, style, family, sort, band]
   );
 
   useEffect(() => {
@@ -208,6 +216,9 @@ export function useBrowse() {
     // Sort is excluded: it is always set, so counting it would mean the
     // "Filters" badge never read zero.
     activeCount: [level, style, family].filter(Boolean).length,
+    /** The Lichess band ranked by, or null for all levels. */
+    band,
+    setBand,
     setFacet,
     clear,
     loadMore,

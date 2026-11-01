@@ -40,6 +40,17 @@ export type Band = (typeof BANDS)[number];
 /** Bands Discover and search can rank by: Masters has no batch data. */
 export const RANKABLE_BANDS = BANDS.filter((band) => band.id !== 'masters');
 
+/**
+ * The band a saved level ranks Discover and search by, or null for everyone.
+ * All needs no band, and a saved Masters ranks as All without being
+ * overwritten: the detail page still opens on Masters.
+ */
+export function rankingBand(saved: BandId | null): BandId | null {
+  return saved && saved !== 'all' && RANKABLE_BANDS.some((band) => band.id === saved)
+    ? saved
+    : null;
+}
+
 const RANGE_LABELS: Record<BandId, string> = {
   all: 'All levels',
   u1400: 'Under 1400',

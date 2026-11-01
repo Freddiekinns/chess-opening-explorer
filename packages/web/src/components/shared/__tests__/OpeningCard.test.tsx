@@ -27,6 +27,28 @@ describe('OpeningCard game count', () => {
 
     expect(screen.getByText('3.8B games')).toBeInTheDocument();
   });
+
+  it('card label reads 212K games at 1400–1800', () => {
+    renderCard({ opening: { ...opening, games_analyzed: 212_000 }, gamesAt: '1400–1800' });
+
+    expect(screen.getByText('212K games at 1400–1800')).toBeInTheDocument();
+  });
+
+  it('null band stats render no-stats state', () => {
+    renderCard({
+      opening: {
+        ...opening,
+        games_analyzed: null,
+        white_win_rate: null,
+        draw_rate: null,
+        black_win_rate: null,
+      },
+      gamesAt: '2200+',
+    });
+
+    expect(screen.queryByText(/games/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/White \d+%/)).not.toBeInTheDocument();
+  });
 });
 
 describe('OpeningCard result bars', () => {

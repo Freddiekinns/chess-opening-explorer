@@ -47,6 +47,8 @@ interface OpeningCardProps {
   showStar?: boolean;
   isStarred?: boolean;
   onStarClick?: (opening: Opening) => void;
+  /** The rating range the count is for, when the grid ranks by a level. */
+  gamesAt?: string;
 }
 
 export const OpeningCard: React.FC<OpeningCardProps> = ({
@@ -58,6 +60,7 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
   showStar = false,
   isStarred = false,
   onStarClick,
+  gamesAt,
 }) => {
   // A real link (not div role="button"): Space/middle-click/new-tab work and
   // every card grid contributes crawlable internal links (design review #2).
@@ -164,7 +167,9 @@ export const OpeningCard: React.FC<OpeningCardProps> = ({
           <div className="card-moves-line">
             <span className="card-moves">{firstMoves}</span>
             {gamesPlayed && gamesPlayed > 0 && (
-              <span className="card-games">{formatGamesPlayed(gamesPlayed)} games</span>
+              <span className="card-games">
+                {formatGamesPlayed(gamesPlayed)} games{gamesAt && ` at ${gamesAt}`}
+              </span>
             )}
           </div>
 

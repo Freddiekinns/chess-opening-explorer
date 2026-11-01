@@ -11,6 +11,7 @@ const noFilters = { level: null, style: null, family: null, sort: 'popular' };
 const setup = (props = {}) => {
   const onFacetChange = vi.fn();
   const onClear = vi.fn();
+  const onBandChange = vi.fn();
   render(
     <FilterBar
       facets={facets}
@@ -20,13 +21,47 @@ const setup = (props = {}) => {
       loading={false}
       onFacetChange={onFacetChange}
       onClear={onClear}
+      band={null}
+      onBandChange={onBandChange}
       {...props}
     />
   );
-  return { onFacetChange, onClear };
+  return { onFacetChange, onClear, onBandChange };
 };
 
 describe('FilterBar', () => {
+  it('level is first in the bar with a divider', () => {
+    setup();
+    const buttons = screen.getAllByRole('button');
+    expect(buttons[0]).toHaveAccessibleName('Your level All levels');
+    expect(document.querySelector('[data-testid="level-divider"]')).toBeInTheDocument();
+  });
+
+  it('names a saved level by its rating range', () => {
+    setup({ band: '1400' });
+    expect(screen.getByRole('button', { name: 'Your level 1400–1800' })).toBeInTheDocument();
+  });
+
+  it('offers every Lichess band under a Lichess rating heading', async () => {
+    const user = userEvent.setup();
+    const { onBandChange } = setup();
+    await user.click(screen.getByRole('button', { name: 'Your level All levels' }));
+
+    const menu = screen.getByRole('dialog', { name: 'Rank by your level' });
+    expect(menu).toHaveTextContent('Lichess rating');
+    expect(screen.getAllByRole('option').map((o) => o.textContent)).toEqual([
+      'All levels',
+      'Under 1400',
+      '1400–1800',
+      '1800–2200',
+      '2200+',
+    ]);
+
+    await user.click(screen.getByRole('option', { name: '1800–2200' }));
+    expect(onBandChange).toHaveBeenCalledWith('1800');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
   it('every facet button states what it filters and what it is set to', () => {
     setup();
 

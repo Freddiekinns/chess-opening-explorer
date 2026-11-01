@@ -76,6 +76,23 @@ describe('PopularOpeningsGrid', () => {
     expect(screen.queryByText(/Jul–Sep 2026/)).toBeNull();
   });
 
+  it('heading reads Popular at 1400–1800', async () => {
+    localStorage.setItem('openingbook:my-level', '1400');
+    renderGrid();
+
+    expect(
+      await screen.findByRole('heading', { name: 'Popular at 1400–1800' })
+    ).toBeInTheDocument();
+    expect(screen.getByText('Ranked by games played at 1400–1800 on Lichess.')).toBeInTheDocument();
+    expect(await screen.findAllByText('1K games at 1400–1800')).toHaveLength(2);
+  });
+
+  it('keeps the plain heading with no level saved', async () => {
+    renderGrid();
+    expect(await screen.findByRole('heading', { name: 'Popular openings' })).toBeInTheDocument();
+    expect(await screen.findAllByText('1K games')).toHaveLength(2);
+  });
+
   it('says nothing about dates when the response has no window', async () => {
     renderGrid();
     await screen.findByText('Sicilian Defence');

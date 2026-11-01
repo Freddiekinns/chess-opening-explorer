@@ -17,6 +17,7 @@ const mockFetch = (payload: unknown) =>
 const fetchCalls = () => (globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls;
 
 beforeEach(() => {
+  localStorage.clear();
   vi.stubGlobal('fetch', mockFetch(browseResponse()));
 });
 
@@ -139,6 +140,75 @@ describe('useBrowse', () => {
       family: null,
       sort: 'popular',
     });
+  });
+
+  it('ranks by the saved level without putting it in the URL', async () => {
+    localStorage.setItem('openingbook:my-level', '1400');
+    const { result } = renderHook(() => useBrowse(), { wrapper: wrapper() });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.band).toBe('1400');
+    expect(fetchCalls()[0][0] as string).toContain('band=1400');
+  });
+
+  it('selecting a band refetches with band and keeps other facets and sort', async () => {
+    const { result } = renderHook(() => useBrowse(), {
+      wrapper: wrapper('/?style=gambit&sort=name'),
+    });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    act(() => result.current.setBand('1800'));
+
+    await waitFor(() => expect(fetchCalls()).toHaveLength(2));
+    const url = fetchCalls()[1][0] as string;
+    expect(url).toContain('band=1800');
+    expect(url).toContain('style=gambit');
+    expect(url).toContain('sort=name');
+    expect(localStorage.getItem('openingbook:my-level')).toBe('1800');
+  });
+
+  it('refetches when the level changes in another tab', async () => {
+    const { result } = renderHook(() => useBrowse(), { wrapper: wrapper() });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    act(() => {
+      localStorage.setItem('openingbook:my-level', '2200');
+      window.dispatchEvent(new StorageEvent('storage', { key: 'openingbook:my-level' }));
+    });
+
+    await waitFor(() => expect(fetchCalls()).toHaveLength(2));
+    expect(fetchCalls()[1][0] as string).toContain('band=2200');
+  });
+
+  it('clear filters keeps level', async () => {
+    localStorage.setItem('openingbook:my-level', '1400');
+    const { result } = renderHook(() => useBrowse(), {
+      wrapper: wrapper('/?style=gambit'),
+    });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    act(() => result.current.clear());
+
+    await waitFor(() => expect(result.current.activeCount).toBe(0));
+    expect(result.current.band).toBe('1400');
+    expect(localStorage.getItem('openingbook:my-level')).toBe('1400');
+  });
+
+  it('activeCount excludes level', async () => {
+    localStorage.setItem('openingbook:my-level', '1400');
+    const { result } = renderHook(() => useBrowse(), { wrapper: wrapper() });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.activeCount).toBe(0);
+  });
+
+  it('saved masters shows All levels and fetches without band', async () => {
+    localStorage.setItem('openingbook:my-level', 'masters');
+    const { result } = renderHook(() => useBrowse(), { wrapper: wrapper() });
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.band).toBeNull();
+    expect(fetchCalls()[0][0] as string).not.toContain('band=');
+    expect(localStorage.getItem('openingbook:my-level')).toBe('masters');
   });
 
   it('surfaces an error instead of rendering an empty grid as if it were a result', async () => {

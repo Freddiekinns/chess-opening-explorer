@@ -5,6 +5,12 @@
   flex-wrap: wrap;
 }
 
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-default);
+}
+
 /* Sort is a display control, not a filter — pushing it to the far edge keeps
    the three filters reading as one group. */
 .sortSlot {

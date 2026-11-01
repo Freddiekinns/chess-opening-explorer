@@ -10,6 +10,7 @@ const noFilters = { level: null, style: null, family: null, sort: 'popular' };
 const setup = (props = {}) => {
   const onFacetChange = vi.fn();
   const onClear = vi.fn();
+  const onBandChange = vi.fn();
   render(
     <FilterSheet
       facets={facets}
@@ -19,10 +20,12 @@ const setup = (props = {}) => {
       loading={false}
       onFacetChange={onFacetChange}
       onClear={onClear}
+      band={null}
+      onBandChange={onBandChange}
       {...props}
     />
   );
-  return { onFacetChange, onClear };
+  return { onFacetChange, onClear, onBandChange };
 };
 
 afterEach(() => {
@@ -30,6 +33,22 @@ afterEach(() => {
 });
 
 describe('FilterSheet', () => {
+  it('puts your level first in the sheet, by rating range', async () => {
+    const user = userEvent.setup();
+    const { onBandChange } = setup({ band: '1400' });
+    await user.click(screen.getByRole('button', { name: /Filters/ }));
+
+    const groups = screen.getAllByRole('group');
+    expect(groups[0]).toHaveAccessibleName('Your level · Lichess rating');
+    expect(screen.getByRole('button', { name: '1400–1800' })).toHaveAttribute(
+      'aria-pressed',
+      'true'
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Under 1400' }));
+    expect(onBandChange).toHaveBeenCalledWith('u1400');
+  });
+
   it('collapses to one control with the result count beside it', () => {
     setup();
 
@@ -112,6 +131,8 @@ describe('FilterSheet', () => {
         loading={false}
         onFacetChange={vi.fn()}
         onClear={vi.fn()}
+        band={null}
+        onBandChange={vi.fn()}
       />
     );
 
@@ -304,6 +325,8 @@ describe('FilterSheet - the grabber is not decoration', () => {
         loading={false}
         onFacetChange={vi.fn()}
         onClear={onClear}
+        band={null}
+        onBandChange={vi.fn()}
       />
     );
     fireEvent.click(screen.getByRole('button', { name: 'Filters 1 active' }));

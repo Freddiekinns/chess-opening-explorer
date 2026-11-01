@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronDown, SlidersHorizontal } from 'lucide-react';
 import { FamilyPicker } from './FamilyPicker';
+import { LEVEL_OPTIONS } from './LevelOptionList';
+import type { BandId } from '../../lib/lichessExplorer';
 import { facetDisplay } from './resultCount';
 import { resultCountLabel } from './resultCount';
 import { SORT_OPTIONS } from '../../hooks/useBrowse';
@@ -93,6 +95,9 @@ interface FilterSheetProps {
   loading: boolean;
   onFacetChange: (key: FacetKey, value: string | null) => void;
   onClear: () => void;
+  /** The band Discover ranks by, or null for all levels. Not a filter. */
+  band: BandId | null;
+  onBandChange: (band: BandId) => void;
 }
 
 export const FilterSheet: React.FC<FilterSheetProps> = ({
@@ -103,6 +108,8 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
   loading,
   onFacetChange,
   onClear,
+  band,
+  onBandChange,
 }) => {
   const [open, setOpen] = useState(false);
   const [familyOpen, setFamilyOpen] = useState(false);
@@ -316,6 +323,13 @@ export const FilterSheet: React.FC<FilterSheetProps> = ({
               </div>
 
               <div className={styles.body} ref={bodyRef}>
+                <PillRow
+                  legend="Your level · Lichess rating"
+                  options={LEVEL_OPTIONS}
+                  value={band ?? 'all'}
+                  anyLabel={null}
+                  onSelect={(value) => onBandChange((value ?? 'all') as BandId)}
+                />
                 <PillRow
                   legend="Difficulty"
                   options={facets.level}

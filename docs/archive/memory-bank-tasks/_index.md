@@ -14,6 +14,9 @@ _No tasks currently awaiting merge._
 ## Reference / Strategy
 
 - [TASK008] Competitive Analysis & Feature Opportunities - Added 2026-02-28
+- [TASK008] Feature Roadmap & Exploration - Added 2026-05-04. Never merged until
+  2026-11-01; queued for assessment in `docs/backlog.md` **Later**
+  (`TASK008-feature-roadmap-2026-05.md`)
 
 ## Pending
 

@@ -7,13 +7,13 @@ visit, 50 at a time, and records each review so nothing is done twice (#208).
 
 ## Files
 
-| File                                       | What it is                                                         |
-| ------------------------------------------ | ------------------------------------------------------------------ |
-| `data/content-review/ledger.json`          | One entry per reviewed FEN: `reviewedAt`, `verdict`, `contentHash` |
-| `data/content-review/views/<date>.json`    | An export of `/opening/…` page views, the queue's input            |
-| `data/content-review/batches/<date>.json`  | The ranked pages picked for a review, with each page's verdict     |
-| `tools/content-review/ledger.js`           | Hashing, the due rule, ranking, the move check                     |
-| `queue.js`, `sheet.js`, `record.js` (here) | The three steps below                                              |
+| File                                                          | What it is                                                         |
+| ------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `data/content-review/ledger.json`                             | One entry per reviewed FEN: `reviewedAt`, `verdict`, `contentHash` |
+| `data/content-review/views/<date>.json`                       | An export of `/opening/…` page views, the queue's input            |
+| `data/content-review/batches/<date>.json`                     | The ranked pages picked for a review, with each page's verdict     |
+| `tools/content-review/ledger.js`                              | Hashing, the due rule, ranking, the move check                     |
+| `export-views.js`, `queue.js`, `sheet.js`, `record.js` (here) | The steps below                                                    |
 
 A page is **due** when it has no ledger entry, when its description or plans
 changed after the review (`contentHash` no longer matches), or when the review
@@ -28,10 +28,18 @@ audited claim by claim, dated 2026-10-11, when #171 fixed the 43 wrong claims on
 
 Monthly, or whenever enough new pages have been visited.
 
-1. **Export the views.** PostHog has no export button for this; query it in the
-   signed-in browser on eu.posthog.com (project 283180) by POSTing HogQL to
-   `/api/projects/@current/query/` with the `posthog_csrftoken` cookie as
-   `X-CSRFToken`:
+1. **Export the views.**
+   `node tools/content-review/export-views.js [--since 2026-09-24]` runs the
+   query below through PostHog's API and writes
+   `data/content-review/views/<today>.json`. It needs `POSTHOG_PERSONAL_API_KEY`
+   in `.env`: a personal API key with only Query: Read, scoped to project
+   283180, never committed and never set on Vercel. In a worktree it reads the
+   main checkout's `.env`.
+
+   Without the key, query it in the signed-in browser on eu.posthog.com by
+   POSTing HogQL to `/api/projects/@current/query/` with the `posthog_csrftoken`
+   cookie as `X-CSRFToken`, adding `limit 10000` (HogQL returns 100 rows
+   otherwise):
 
    ```sql
    select properties.$pathname as p, count() as views, count(distinct person_id) as people

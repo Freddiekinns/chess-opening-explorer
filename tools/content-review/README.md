@@ -100,3 +100,4 @@ Monthly, or whenever enough new pages have been visited.
 | Batch      | Views since | Pages | Fixed | Notes                              |
 | ---------- | ----------- | ----- | ----- | ---------------------------------- |
 | 2026-11-01 | 2026-09-24  | 50    | 17    | 142 paths, 132 pages; 76 still due |
+| 2026-11-02 | 2026-09-24  | 50    | 18    | 147 paths, 137 pages; 31 still due |

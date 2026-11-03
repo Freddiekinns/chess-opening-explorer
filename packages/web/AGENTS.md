@@ -171,6 +171,10 @@ Never send PII or search text; properties are small enums and ranks. The SDK is
 `capture_pageview` silently recorded nothing but `$pageleave` on the first
 deploy. `App` reports `$pageview` from the router instead, and `trackEvent`
 reads the URL synchronously because callers navigate straight after tracking.
+`capture_pageleave` is set explicitly: it defaults to following
+`capture_pageview`, so turning page views off had left visits with no end time.
+Practice records its outcome as well as its start (`practice_complete`,
+`practice_abandon`); without them a session looked over at `practice_start`.
 Testing it on production: PostHog can take ~5 minutes to show events, so a
 missing event is not yet a lost one — check the browser's requests to
 `eu.i.posthog.com` for a 200 first. Test traffic is excluded by the project's

@@ -516,6 +516,19 @@ const OpeningDetailPage: React.FC = () => {
     setLastMoveSquares(null);
   }, []);
 
+  // Only the Exit button counts; leaving the opening also calls exitPractice.
+  const handleExitClick = useCallback(() => {
+    if (!isComplete) {
+      trackEvent('practice_abandon', { moves: practiceIndex, of: activePracticeLine.length });
+    }
+    exitPractice();
+  }, [isComplete, practiceIndex, activePracticeLine.length, exitPractice]);
+
+  // A line completes in two places: the user's last move or the auto-reply.
+  useEffect(() => {
+    if (isComplete) trackEvent('practice_complete', { moves: activePracticeLine.length });
+  }, [isComplete, activePracticeLine.length]);
+
   const isUserTurn = useCallback((): boolean => {
     if (!practiceGame) return false;
     const turn = practiceGame.turn();
@@ -1159,7 +1172,7 @@ const OpeningDetailPage: React.FC = () => {
                       )}
                       <button
                         className={`${practiceStyles.btn} ${practiceStyles.exitBtn}`}
-                        onClick={exitPractice}
+                        onClick={handleExitClick}
                       >
                         Exit
                       </button>
@@ -1234,7 +1247,7 @@ const OpeningDetailPage: React.FC = () => {
                     )}
                     <button
                       className={`${practiceStyles.mobileBtn} ${practiceStyles.mobileExitBtn}`}
-                      onClick={exitPractice}
+                      onClick={handleExitClick}
                       title="Exit practice mode"
                     >
                       Exit

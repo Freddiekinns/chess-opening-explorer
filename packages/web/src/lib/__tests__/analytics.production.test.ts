@@ -35,6 +35,8 @@ describe('trackEvent on openingbook.xyz', () => {
       disable_session_recording: true,
       // The slim build cannot see route changes; App reports page views.
       capture_pageview: false,
+      // Without this, turning off capture_pageview turns off $pageleave too.
+      capture_pageleave: true,
       bootstrap: { distinctID: getAnonId() },
     });
   });

@@ -25,6 +25,7 @@ export const testOpenings: TestOpening[] = [
     common_plans: [
       'White: control the center and develop quickly',
       'Black: counterattack on the queenside',
+      'White: open the centre with d4',
     ],
     games_analyzed: 120000,
   },

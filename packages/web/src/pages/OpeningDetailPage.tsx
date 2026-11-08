@@ -4,8 +4,7 @@ import { Chess, Move, Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import { ChessOpening, ResourceContext, Video } from '../../../shared/src';
 import {
-  CommonPlans,
-  PlansDiagram,
+  PlansWithDiagram,
   VideoGallery,
   StudiesGallery,
   ExplorerCard,
@@ -1464,12 +1463,13 @@ const OpeningDetailPage: React.FC = () => {
             {commonPlans.length > 0 && (
               <div className={styles.mobileSection}>
                 <h2 className={styles.mobileSectionHeading}>Common plans</h2>
-                <PlansDiagram
+                <PlansWithDiagram
                   fen={opening.fen}
                   moves={getMovesList()}
-                  className={styles.plansDiagramMobile}
+                  plans={commonPlans}
+                  variant="mobile"
+                  interactive={!practiceMode}
                 />
-                <CommonPlans plans={commonPlans} layout="mobileGroups" hideTitle />
               </div>
             )}
 
@@ -1533,17 +1533,13 @@ const OpeningDetailPage: React.FC = () => {
               <h2 className={styles.sectionHeading}>Common plans</h2>
               {/* The diagram stays beside the plans while they scroll, because
                   by now the main board is off screen (#228). */}
-              <div className={styles.plansWithDiagram}>
-                <div className={styles.plansDiagramColumn}>
-                  <PlansDiagram fen={opening.fen} moves={getMovesList()} />
-                </div>
-                <CommonPlans
-                  plans={commonPlans}
-                  layout="byColour"
-                  hideTitle
-                  className={styles.plansText}
-                />
-              </div>
+              <PlansWithDiagram
+                fen={opening.fen}
+                moves={getMovesList()}
+                plans={commonPlans}
+                variant="desktop"
+                interactive={!practiceMode}
+              />
             </div>
           )}
 

@@ -45,6 +45,17 @@ test.describe('opening detail', () => {
     expect(diagramBox && planBox && diagramBox.x + diagramBox.width <= planBox.x).toBe(true);
   });
 
+  test('clicking a move in a plan draws it and says it under the diagram', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);
+
+    const diagram = page.getByRole('figure', { name: 'Position after 2...d6' });
+    await expect(diagram).toContainText('Pick a move or square in the plans');
+
+    await page.getByRole('button', { name: 'd4', exact: true }).click();
+    await expect(diagram).toContainText('White pawn from d2 to d4');
+  });
+
   test('mobile shows the diagram above Common plans', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);

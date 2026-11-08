@@ -60,6 +60,10 @@
   --accent-a12: rgba(232, 93, 4, 0.12); /* active row background        */
   --accent-a20: rgba(232, 93, 4, 0.2); /* pressed / focus ring fill    */
   --accent-a30: rgba(232, 93, 4, 0.3); /* border highlight, shadow     */
+
+  /* Annotation — what a plan draws on a board (arrows, squares, rings).
+     Never brand orange: orange is a bookmark ribbon, not wallpaper.     */
+  --color-annotation: #9bb26a;
   --accent-a50: rgba(232, 93, 4, 0.5); /* strong border                */
 
   /* -----------------------------------------------------------------------

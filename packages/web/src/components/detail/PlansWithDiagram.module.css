@@ -1,0 +1,73 @@
+/* Common plans beside their diagram (#230). The diagram sticks at the same
+   offset as the main board's column, so it stays in view through the plans. */
+.layout {
+  display: grid;
+  grid-template-columns: 400px minmax(0, 720px);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.diagramColumn {
+  position: sticky;
+  top: calc(60px + var(--space-4));
+}
+
+@media (max-width: 1023px) {
+  .layout {
+    grid-template-columns: minmax(0, 720px);
+    gap: var(--space-4);
+  }
+
+  .diagramColumn {
+    position: static;
+    max-width: 400px;
+  }
+}
+
+/* Mobile: small enough that plan text shows below it on a phone screen. */
+.mobileDiagram {
+  width: 240px;
+  margin: 0 auto var(--space-3);
+}
+
+/* A move, route or piece in the plan text: monospace with a faint underline
+   at rest, filled when it is on the diagram. No legend. */
+.reference {
+  display: inline;
+  padding: 0 2px;
+  margin: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-family: var(--font-family-mono);
+  font-size: 0.95em;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-annotation) 60%, transparent);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Squares read as places, not notation: body font, dotted underline. */
+.reference.area {
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration-style: dotted;
+}
+
+.reference:hover,
+.reference:focus-visible {
+  text-decoration-color: var(--color-annotation);
+}
+
+.reference:focus-visible {
+  outline: 2px solid var(--color-annotation);
+  outline-offset: 1px;
+}
+
+.reference.active {
+  background: var(--color-annotation);
+  color: var(--surface-base);
+  text-decoration: none;
+}

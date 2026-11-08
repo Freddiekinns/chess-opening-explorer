@@ -266,6 +266,38 @@
   margin: 0 0 var(--space-4) 0;
 }
 
+/* Common plans beside their diagram (#230). The diagram sticks at the same
+   offset as the main board's column, so it stays in view through the plans. */
+.plansWithDiagram {
+  display: grid;
+  grid-template-columns: 400px minmax(0, 720px);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.plansDiagramColumn {
+  position: sticky;
+  top: calc(60px + var(--space-4));
+}
+
+@media (max-width: 1023px) {
+  .plansWithDiagram {
+    grid-template-columns: minmax(0, 720px);
+    gap: var(--space-4);
+  }
+
+  .plansDiagramColumn {
+    position: static;
+    max-width: 400px;
+  }
+}
+
+/* Mobile: small enough that plan text shows below it on a phone screen. */
+.plansDiagramMobile {
+  width: 240px;
+  margin: 0 auto var(--space-3);
+}
+
 /* Search pills — inline with section heading */
 .searchPills {
   display: flex;

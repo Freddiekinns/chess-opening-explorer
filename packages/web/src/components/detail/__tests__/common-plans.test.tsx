@@ -58,6 +58,28 @@ describe('CommonPlans', () => {
     expect(screen.queryByText('Keep queens on the board')).not.toBeInTheDocument();
   });
 
+  test('byColour layout stacks White, then Black, then Shared', () => {
+    render(
+      <CommonPlans
+        layout="byColour"
+        hideTitle
+        plans={[
+          'Castle early to secure the king',
+          'Black: counterattack on the queenside',
+          'White: control the center',
+        ]}
+      />
+    );
+
+    const labels = ['White', 'Black', 'Shared'].map((name) => screen.getByText(name));
+    expect(
+      labels[0].compareDocumentPosition(labels[1]) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+    expect(
+      labels[1].compareDocumentPosition(labels[2]) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
   test('renders nothing when there are no plans', () => {
     const { container } = render(<CommonPlans plans={[]} />);
     expect(container).toBeEmptyDOMElement();

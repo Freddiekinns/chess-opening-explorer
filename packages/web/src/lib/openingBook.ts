@@ -34,6 +34,12 @@ export function getMoveNumber(plyIndex: number): string {
   return isBlack ? `${moveNum}...` : `${moveNum}.`;
 }
 
+/** "Position after 5.d3" — a line's last move, numbered the way a book prints it. */
+export function positionCaption(moves: string[]): string {
+  if (moves.length === 0) return 'Starting position';
+  return `Position after ${getMoveNumber(moves.length - 1)}${moves[moves.length - 1]}`;
+}
+
 /**
  * Plies played to reach a position, read straight from the FEN (side to move
  * + fullmove number). The tree's ancestors array is one node per ply but has

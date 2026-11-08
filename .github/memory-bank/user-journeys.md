@@ -70,7 +70,12 @@ The dedicated learning environment for mastering a specific position.
 - **Overview**: High-level win rate statistics and move progression. On desktop
   the Overview card leads the right column, ahead of the level lens and the data
   panels it governs.
-- **Plans**: Deep dive into strategic themes and common goals for both sides.
+- **Plans**: Deep dive into strategic themes and common goals for both sides. By
+  the time you scroll to them the main board is off screen, so a flat diagram of
+  the page's final position sits beside them on desktop (sticky, grouped White,
+  Black, Shared beside it) and at the top of them on mobile, captioned "Position
+  after 5.d3". It has no controls and can't be moved, and it doesn't follow the
+  main board when you step back through the line.
 - **Studies Gallery**: Curated Lichess study chapters matched by FEN position
   (6,100+ chapters).
 - **Video Gallery**: Hand-picked YouTube videos from top educators matched to

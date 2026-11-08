@@ -13,8 +13,10 @@ interface CommonPlansProps {
    *  'cards' renders each side as a full-width card with left-border accent.
    *  'structured' renders shared plans full-width, White/Black side-by-side below.
    *  'mobileGroups' (design 2a) stacks White/Black/Both accent cards with
-   *  bullet rows, three visible per group and a Show-more toggle. */
-  layout?: 'stacked' | 'sideBySide' | 'cards' | 'structured' | 'mobileGroups';
+   *  bullet rows, three visible per group and a Show-more toggle.
+   *  'byColour' stacks White, Black, then Shared in one column, to sit
+   *  beside the plans diagram (#230). */
+  layout?: 'stacked' | 'sideBySide' | 'cards' | 'structured' | 'mobileGroups' | 'byColour';
   /** When true, hides the built-in "Common Plans" heading (parent provides its own). */
   hideTitle?: boolean;
 }
@@ -227,6 +229,35 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
               </div>
             )}
           </div>
+        )}
+      </div>
+    );
+  }
+
+  if (layout === 'byColour') {
+    const columns: [string, PlanSide, ClassifiedPlan[]][] = [
+      ['White', 'white', grouped.white],
+      ['Black', 'black', grouped.black],
+      ['Shared', 'general', grouped.general],
+    ];
+    return (
+      <div className={`${styles.structuredLayout} ${className}`}>
+        {!hideTitle && <h3 className="title-subsection">Common plans</h3>}
+        {columns.map(
+          ([label, side, sidePlans]) =>
+            sidePlans.length > 0 && (
+              <div key={side} className={styles.structuredColumn}>
+                <div className={styles.structuredColumnLabel}>{label}</div>
+                {sidePlans.map((plan, i) => (
+                  <div
+                    key={i}
+                    className={`${styles.structuredPlanCard} ${SIDE_CONFIG[side].className}`}
+                  >
+                    <p className={styles.cardPlanText}>{plan.text}</p>
+                  </div>
+                ))}
+              </div>
+            )
         )}
       </div>
     );

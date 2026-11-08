@@ -510,6 +510,7 @@ export function parsePlan(fen: string, plan: string): ParsedPlan {
   let last = 0;
   let previous: PlanReference | null = null;
   let previousEnd = 0;
+  let previousInLine = false;
   for (const match of text.matchAll(TOKEN)) {
     const groups = match.groups ?? {};
     const at = match.index ?? 0;
@@ -551,12 +552,16 @@ export function parsePlan(fen: string, plan: string): ParsedPlan {
         }
       }
     }
+    // "6.Rf1 Qxe4+": a move straight after a numbered one carries on its line.
+    const inLine = MOVE_NUMBER.test(before) || (previousInLine && /^\s+$/.test(gap));
     previous = ref;
     previousEnd = at + match[0].length;
+    previousInLine = inLine;
 
     // A numbered move that can't be played is the line's history ("after
-    // 4.dxc3"); ledger.js already checks those against the opening's moves.
-    if (MOVE_NUMBER.test(before) && ref.status !== 'now' && ref.status !== 'later') continue;
+    // 4.dxc3"), and so is the rest of its line; ledger.js already checks those
+    // against the opening's moves.
+    if (inLine && ref.status !== 'now' && ref.status !== 'later') continue;
 
     if (at > last) segments.push(text.slice(last, at));
     segments.push(ref);

@@ -553,7 +553,7 @@ export function parsePlan(fen: string, plan: string): ParsedPlan {
       }
     }
     // "6.Rf1 Qxe4+": a move straight after a numbered one carries on its line.
-    const inLine = MOVE_NUMBER.test(before) || (previousInLine && /^\s+$/.test(gap));
+    const inLine: boolean = MOVE_NUMBER.test(before) || (previousInLine && /^\s+$/.test(gap));
     previous = ref;
     previousEnd = at + match[0].length;
     previousInLine = inLine;

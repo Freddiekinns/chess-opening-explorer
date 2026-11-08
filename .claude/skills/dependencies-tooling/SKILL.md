@@ -173,6 +173,8 @@ install — run `npm ci` before committing, or rely on CI, which runs lint and
   does want a preview (speed-insights 2 did), push the commit to a
   non-Dependabot branch: `git push origin <sha>:refs/heads/preview/<name>`.
   `repo-invariants.test.js` fails if the `dependabot/**` entry goes.
+  `overnight/**` is off for the same reason: the unattended plan-fix job (#233)
+  pushes after every batch, and none of those pushes need a preview.
 
 ## Cross-platform paths
 

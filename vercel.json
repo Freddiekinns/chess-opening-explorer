@@ -6,7 +6,8 @@
   "installCommand": "npm install && npm run install:all",
   "git": {
     "deploymentEnabled": {
-      "dependabot/**": false
+      "dependabot/**": false,
+      "overnight/**": false
     }
   },
   "functions": {

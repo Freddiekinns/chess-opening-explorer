@@ -182,6 +182,16 @@ describe('parsePlan: what real plans say', () => {
     expect(parsed.segments.every((s) => typeof s === 'string')).toBe(true);
   });
 
+  test('the unnumbered moves that carry on a numbered line are history too', () => {
+    const SHILLING = 'r1b1kbnr/pppp1Npp/8/6q1/2BnP3/8/PPPP1PPP/RNBQK2R b KQkq - 0 5';
+    const found = refs(
+      SHILLING,
+      'White, a move earlier: 4.Nxd4 exd4 or 4.O-O sidesteps the trap. After 6.Rf1 Qxe4+, only 7.Qe2 avoids mate.'
+    );
+    expect(found.map((r) => r.text)).not.toContain('exd4');
+    expect(found.map((r) => r.text)).not.toContain('Qxe4+');
+  });
+
   test('"the e4-d4 pawn centre" rings both pawns', () => {
     const ITALIAN_D4 = 'r1bqk1nr/pppp1ppp/2n5/2b5/2BPP3/5N2/PP3PPP/RNBQK2R b KQkq - 0 5';
     const ref = only(ITALIAN_D4, 'White: hold the e4-d4 pawn centre');

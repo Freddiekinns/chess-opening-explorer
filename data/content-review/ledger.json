@@ -2056,5 +2056,65 @@
     "verdict": "fixed",
     "contentHash": "0aa292ad3cf22bfd",
     "notes": "Plan 2 'fixed' a b4-pawn that is not there; plan 4 rerouted a non-existent f6-knight. Rewrote overview and plans 2 and 4; British spelling."
+  },
+  "r1bqk2r/ppp1bppp/1nn5/4p3/8/2N2NP1/PP1PPPBP/1RBQ1RK1 b kq - 5 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "0ae9658c86b56ee6",
+    "notes": "Plan 2 read b4 as a Black move; plan 4 was a vague 'both sides manoeuvre' line. Rewrote plans 2 and 4; British spelling."
+  },
+  "rn1qk2r/pb1pbppp/1p2pn2/2p5/2P5/2N2NP1/PP1PPPBP/R1BQ1RK1 w kq - 4 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "920efce7c76ff6dc",
+    "notes": "Plan 1 called d4 a Maroczy Bind; plan 3 pushed f4 through the f3-knight; plan 4 rerouted a knight via d7-b8-c6. Rewrote plans 1, 3 and 4; British spelling."
+  },
+  "rnbqkb1r/pp1ppppp/5n2/2p5/2P5/5NP1/PP1PPP1P/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d22e4940cae6ea17",
+    "notes": "Plan 1 wrote castling as 0-0; plan 4 described a Maroczy Bind after cxd5 and e4, which cannot arise once White's c-pawn has gone. Rewrote plans 2 and 4; British spelling."
+  },
+  "rn1qk2r/pb1pppbp/1p3np1/2p5/2P5/2N2NP1/PP1PPPBP/R1BQ1RK1 w kq - 2 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "8ad8df1735aeb073",
+    "notes": "Overview did not name the real plans; plan 2 read d4 as a Black move. Rewrote overview and plan 2 around d4, ...cxd4 Nxd4 and the swap of light-squared bishops. Reviewer rejections (White has not double-fianchettoed; the f6-knight blocks the g7-bishop) fixed and re-reviewed."
+  },
+  "rn1qkb1r/1b1p1ppp/pp2pn2/2p5/2P5/2N2NP1/PP1PPPBP/R1BQ1RK1 w kq - 0 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "e4c90a885f59ea1b",
+    "notes": "Plan 3 read d5 and f5 as moves; plan 4 rerouted a knight from e8 to f6 or g7. Rewrote plans 3-4; British spelling."
+  },
+  "rn1qk2r/pb1pbppp/1p2pn2/2p5/2P5/1PN2NP1/P2PPPBP/R1BQ1RK1 b kq - 0 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "4f7c127054746b35",
+    "notes": "Plan 3 proposed a4-a5 against b6; plan 4 named ...Rce8. Rewrote plans 3-4 around Bb2 and the full Hedgehog set-up. Reviewer rejection (e3 does not open the centre) fixed and re-reviewed."
+  },
+  "rn1q1rk1/pb1pbppp/1p2pn2/2p5/2P5/1PN2NP1/P2PPPBP/R1BQ1RK1 w - - 1 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "80f5cb68fcedd1bb",
+    "notes": "Plan 3 played Qe2 through the e2-pawn; plan 4 rerouted a knight from d7, where none stands, via e8 to c7. Rewrote plans 3-4; British spelling."
+  },
+  "rn1qk2r/pb1pbppp/1p2pn2/8/2PQ4/2N2NP1/PP2PPBP/R1B2RK1 b kq - 0 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "bd84a03cac9964ba",
+    "notes": "Plan 1 prepared e4 with f3 (the knight is there); plan 3 moved the queen to c3, where White's knight stands; plan 4 suggested ...Rd8 with the queen on d8. Rewrote plans 1, 3 and 4; British spelling."
+  },
+  "rn1q1rk1/pb1pbppp/1p2pn2/8/2PQ4/2N2NP1/PP2PPBP/R1B2RK1 w - - 1 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "9772106f58eb29a5",
+    "notes": "Plan 4 named ...Rce8. Rewrote plan 4; British spelling."
+  },
+  "r2qk2r/pb1nbppp/1p1ppn2/1N6/2PQ4/1P3NP1/P3PPBP/R1B2RK1 b kq - 2 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "21f47f3a5c60c453",
+    "notes": "Plan 1 put the c1-bishop on both a3 and b2; both plans called for ...b5 with White's knight on b5. Rewrote both plans; plan 2 now names the real threat to d6."
   }
 }

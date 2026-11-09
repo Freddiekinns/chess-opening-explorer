@@ -10907,7 +10907,7 @@
     "name": "Van Geet: 1...d5 2.e4",
     "scid": "A00m",
     "analysis_json": {
-      "description": "The Van Geet Opening with 2.e4 is a provocative and aggressive system designed to immediately challenge Black's central control and steer the game into sharp, tactical waters. By creating an immediate imbalance, White aims to seize the initiative and take the opponent out of their standard preparation, leading to dynamic and unorthodox positions. This opening is well-suited for creative, tactical players who enjoy a direct fight and are comfortable navigating complex, non-standard middlegames.",
+      "description": "With 2.e4 the Van Geet offers a central exchange and invites transpositions to 1.e4 openings. Black's main choices are 2...dxe4 3.Nxe4, an open, Scandinavian-type position in which Black develops with ...Nf6 or ...Bf5 against the e4-knight; 2...d4, gaining space and driving the knight away with tempo, usually to e2; and 2...e6 or 2...c6, which transpose to the French or the Caro-Kann. White gets free piece play but no real advantage, so the line suits players happy to steer into familiar 1.e4 structures.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -10947,10 +10947,10 @@
         "Transpositional Play"
       ],
       "common_plans": [
-        "White: After the common 2...dxe4 3.Nxe4, White develops quickly to exploit the open center and use the active knight to create threats.",
-        "White: If Black plays 2...d4, White reroutes the knight via Nce2 and prepares to undermine Black's central pawn wedge with moves like d3 or f3.",
-        "Black: Respond actively to neutralize White's initiative, either by accepting the challenge with 2...dxe4 and developing soundly, or by seizing space with 2...d4.",
-        "Black: Aim to exploit the potential awkwardness of White's setup, as the Nc3 move can sometimes interfere with White's ideal pawn structure (e.g., playing c3)."
+        "White: After 2...dxe4 3.Nxe4, develop quickly with d4 and Nf3, using the active e4-knight and the open lines for the pieces.",
+        "White: Against 2...d4, retreat with 3.Nce2 and develop with Ng3, Nf3 and Bc4, undermining the d4-pawn later with c3 now that the c-pawn is free.",
+        "Black: Take with 2...dxe4 and develop with ...Nf6 or ...Bf5, gaining time on the e4-knight, followed by ...e6 or ...c6 and short castling.",
+        "Black: Alternatively, gain space with 2...d4, forcing the c3-knight to move, or transpose with 2...e6 or 2...c6 to the French or the Caro-Kann."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:18:58.346Z"
@@ -11025,7 +11025,7 @@
     "name": "Van Geet: 1...d5 2.e4 dxe4",
     "scid": "A00m",
     "analysis_json": {
-      "description": "The Van Geet opening with 2.e4 is a dynamic and ambitious attempt to seize the initiative by immediately challenging Black's central foothold. This line quickly leads to an open game, often resembling a Scandinavian Defense with colors reversed, where White's active piece play and central control are pitted against Black's solid development. It is ideal for creative and tactical players who enjoy fighting for the initiative from the very first moves and are comfortable in less theoretical territory.",
+      "description": "After 2...dxe4 Black has taken the central pawn, and White normally wins it back with 3.Nxe4, reaching a Scandinavian-type position in which White has a free hand in the centre and Black aims for quick, solid development with ...Nf6, ...Bf5 or ...e6. White can instead gambit with 3.f3 (the Dougherty Gambit) or 3.d3 for open lines. With accurate play the game is open but fairly calm, and Black equalises without much trouble.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -11067,10 +11067,9 @@
         "Provocation"
       ],
       "common_plans": [
-        "White: Recapture on e4, support the central knight with d4, and develop quickly for an attack.",
-        "Black: Challenge the Ne4 knight (e.g., ...Nf6, ...Bf5), complete development, and neutralize White's initiative.",
-        "White: Castle quickly and use the semi-open e-file to pressure Black's position.",
-        "Black: Create a solid pawn structure with ...e6 and ...c5 to fight for central squares and create counterplay."
+        "White: Recapture with 3.Nxe4, then take the centre with d4 and develop with Nf3 and Bd3 or Bc4, keeping the e4-knight active.",
+        "Black: After 3.Nxe4, gain time on the knight with ...Nf6 or ...Bf5, then complete development with ...e6 or ...c6 and short castling.",
+        "White: For a sharper game, offer a pawn with 3.f3 or 3.d3, aiming for quick development and open lines if Black keeps the extra pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:19:34.348Z"
@@ -12626,7 +12625,7 @@
       "icsbot": "English Variation, Larsen "
     },
     "analysis_json": {
-      "description": "The Nimzo-Larsen Attack with 1...c5, known as the English Variation, is a flexible and strategic system. White aims to control the center from the flank with the queen's bishop, while Black's symmetrical response immediately challenges for the d4 square. The resulting positions are often fluid and can transpose into various setups like the English Opening or a reversed Sicilian, making it ideal for creative, positional players who prefer understanding plans over memorizing sharp theory.",
+      "description": "Against 1.b3, 1...c5 takes a share of the centre from the flank, an English Opening played by Black, with the c5-pawn controlling d4. White continues with Bb2, e3 and Nf3, keeping the pawn structure flexible for c4, d4 or f4 later, while Black usually develops with ...Nc6 and ...Nf6 and either ...e6 and ...d5 or ...g6 and ...Bg7 to contest the long diagonal. The play is quiet and manoeuvring and usually level, with tactics arriving only when the diagonals open.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -12666,8 +12665,8 @@
         "Transpositional Flexibility"
       ],
       "common_plans": [
-        "White: Fianchetto the queen's bishop (Bb2), control the long diagonal, and fight for central squares like d4 and e5, often with moves like e3 and Nf3.",
-        "Black: Challenge White's flank control by fighting for the d4 square, often with ...Nc6 and a timely ...d5 push. Black may fianchetto their own bishop or adopt a solid central pawn structure."
+        "White: Fianchetto with Bb2, then play e3 and Nf3, controlling d4 and the e5-square, and choose later between c4, d4 and f4 depending on Black's set-up.",
+        "Black: Develop with ...Nc6 and ...Nf6, then take the centre with ...e6 and ...d5, or fianchetto with ...g6 and ...Bg7 to meet the b2-bishop head-on on the long diagonal."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:28:19.102Z"
@@ -13751,7 +13750,7 @@
       "icsbot": "Canard Formation; Double Duck "
     },
     "analysis_json": {
-      "description": "The Bird Opening: Double Duck Formation is a highly symmetrical and unusual setup where both sides mirror each other's initial moves, creating a double Stonewall-like pawn structure. This leads to a very closed, strategic game where slow maneuvering and long-term planning are paramount. It is best suited for creative, positional players who enjoy unconventional positions and excel at out-maneuvering their opponent by exploiting subtle weaknesses.",
+      "description": "In the Double Duck both sides push the d- and f-pawns two squares, so each has a Stonewall-type grip on one central square: White on e5 and Black on e4. After e3 and ...e6 the structures are mirror images, and each side's bishop that runs on the same colour as its own centre pawns (White's dark-squared, Black's light-squared) is restricted. Play is closed and slow: knights head for the outposts, the e-pawn break and a kingside pawn advance are the usual plans, and the better manoeuvrer usually decides the game.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -13791,10 +13790,10 @@
         "The 'Bad' Bishop Problem"
       ],
       "common_plans": [
-        "For both sides: Preparing a central pawn break (e4 for White, e5 for Black) to open lines for their pieces.",
-        "Maneuvering knights to optimal squares (e.g., Ne1-d3 or Nh3-f2 for White) to support pawn breaks or control key squares.",
-        "Solving the problem of the 'bad' light-squared bishop, often by preparing a fianchetto (...b6 and ...Ba6) or a timely pawn break on the c-file.",
-        "Initiating a kingside attack with a g-pawn push (g4 for White, g5 for Black) to challenge the opponent's weakened king position."
+        "White: Develop with Nf3, e3 and Bd3, put a knight on the e5 outpost, and prepare the e4 break to open the centre once the pieces are ready.",
+        "Black: Mirror with ...Nf6, ...e6 and ...Bd6, aim a knight at the e4 outpost, and prepare the ...e5 break to free the position.",
+        "White: Exchange off the dark-squared bishop, hemmed in by the pawns on d4 and f4, with b3 and Ba3.",
+        "Black: Do the same with the light-squared bishop via ...b6 and ...Ba6, offering to trade it for White's d3-bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:34:43.325Z"
@@ -14601,7 +14600,7 @@
     "moves": "1. f4 e5 2. d4 exd4 3. Nf3 c5 4. c3",
     "name": "Bird Opening: Siegener Gambit",
     "analysis_json": {
-      "description": "The Siegener Gambit is an aggressive and ambitious way for White to handle the From's Gambit against the Bird's Opening. By sacrificing a pawn with 4.c3, White aims to blast open the center, accelerate development, and seize a powerful initiative. This opening leads to sharp, dynamic positions where White's piece activity is pitted against Black's extra material, making it ideal for players who enjoy tactical battles and fighting for the attack from the very first moves.",
+      "description": "In the Siegener Gambit White declines the From Gambit: instead of 2.fxe5 White answers 1...e5 with 2.d4, and after 2...exd4 3.Nf3 c5 plays 4.c3 to open lines. If Black takes with 4...dxc3, Nxc3 gives White fast development and open central lines, while staying a pawn down; if Black declines, cxd4 opens the position and wins the pawn back. With sensible development, such as ...Nc6, ...d6 and ...Nf6, Black can keep the material, so the game is sharp but objectively fine for Black.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -14642,10 +14641,10 @@
         "Flank Opening vs. Central Counter"
       ],
       "common_plans": [
-        "For White: Recapture on d4 (often with the Knight), develop the light-squared bishop to c4 or b5, castle quickly, and use the open c and d-files to pressure Black's position.",
-        "For White: Maneuver the f3-knight to a strong square like e5 to create an outpost and support a kingside attack.",
-        "For Black: Solidify the c5-pawn with ...d6 or ...b6, complete development, and neutralize White's initiative before it becomes overwhelming.",
-        "For Black: Trade pieces when possible to reduce White's attacking potential and steer the game towards an endgame where the extra pawn can be decisive."
+        "White: After 4...dxc3 5.Nxc3, develop rapidly with e4, Bc4 and O-O, using the half-open d-file and the lead in development for the initiative.",
+        "White: If Black declines the pawn, recapture in the centre with cxd4, opening the c-file and aiming the f3-knight at the e5-square.",
+        "Black: Accept with 4...dxc3 and develop with ...Nc6, ...d6 and ...Nf6, keeping the extra pawn and neutralising White's initiative before it becomes dangerous.",
+        "Black: Alternatively, play ...d5 or ...Nc6 to keep a foothold in the centre, meeting cxd4 with ...cxd4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:38:59.718Z"
@@ -15199,7 +15198,7 @@
     "name": "Bird: 1..Nf6 2.e3",
     "scid": "A02",
     "analysis_json": {
-      "description": "This is a quiet and flexible system within the Bird's Opening. By playing 2.e3, White opts for a solid, often Stonewall-like setup, prioritizing king safety and control over the e5 square rather than immediate central confrontation. The game typically unfolds strategically, revolving around pawn structure and piece maneuvering, making it suitable for players who prefer to avoid sharp, theoretical lines and enjoy building up their position slowly.",
+      "description": "With 2.e3 White keeps the Bird quiet and flexible: the e-pawn frees the f1-bishop and supports a later d4 for a Stonewall set-up, or b3 and Bb2 for a classical Bird. White's main asset is control of the e5-square, while the c1-bishop will come out via b2 or d2. Black has a free choice of set-up, from ...d5 and ...c5 to a King's Indian scheme with ...g6, ...Bg7 and ...d6 aiming for ...e5. Play is strategic and manoeuvring rather than sharp.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -15240,10 +15239,10 @@
         "Fighting for Central Control"
       ],
       "common_plans": [
-        "For White: Develop with Nf3, Be2, and 0-0, often followed by d4 to form a Stonewall Attack setup.",
-        "For White: Prepare a kingside attack using the f-pawn and piece coordination, such as with Qe1-h4.",
-        "For Black: Challenge White's central influence with an early ...d5, often followed by ...c5.",
-        "For Black: Adopt a King's Indian setup with ...g6, ...Bg7, and ...d6 to fight for the center and dark squares."
+        "White: Develop with Nf3, Be2 or Bd3 and O-O, then choose between b3 and Bb2 for pressure on the long diagonal and d4 for a Stonewall structure with a grip on the e5-square.",
+        "White: After Nf3 and O-O, build a kingside attack by swinging the queen to the h4-square via the e1-square, often combined with Ne5 or a later g4.",
+        "Black: Challenge the centre with ...d5, often followed by ...c5 and ...Nc6, fighting for the e4-square against White's grip on e5.",
+        "Black: Adopt a King's Indian set-up with ...g6, ...Bg7, ...d6 and short castling, preparing ...e5 to challenge White's f4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:42:08.260Z"
@@ -15258,7 +15257,7 @@
     "name": "Bird: 1..Nf6 2.g3",
     "scid": "A02",
     "analysis_json": {
-      "description": "This is a system-based approach to the Bird's Opening, often called the \"Larsen System\" or \"Reversed Leningrad.\" White fianchettoes the king's bishop to control the long diagonal and create a solid, flexible setup, often transposing into a King's Indian Attack structure. This opening is ideal for strategic players who enjoy maneuvering and understanding pawn structures rather than engaging in early, sharp tactical battles.",
+      "description": "With 2.g3 White plays a Leningrad Dutch with colours reversed: the king's bishop goes to g2 to work on the long diagonal, the knight to f3, and White castles short, while the f4-pawn keeps a grip on e5. A later d3 and e4, often prepared by Nc3 or Qe1, is the usual central plan. Black can occupy the centre with ...d5 and ...c5 or mirror with ...g6 and ...Bg7; either way the game is a strategic manoeuvring fight with few forcing lines.",
       "style_tags": [
         "System-based",
         "Positional",
@@ -15297,8 +15296,9 @@
         "Transpositional Play"
       ],
       "common_plans": [
-        "White's Plan: Complete the kingside fianchetto (Bg2, Nf3, O-O), control the e5-square, and exert long-term pressure on the long diagonal, often preparing a central pawn break with e4.",
-        "Black's Plan: Establish central control with ...d5, often followed by ...c5. Develop pieces to challenge White's setup, sometimes fianchettoing the dark-squared bishop (...g6, ...Bg7) to neutralize White's Bg2."
+        "White: Complete the fianchetto with Bg2, Nf3 and O-O, then prepare the e4 break with d3 and Nc3 or Qe1, keeping control of the e5-square.",
+        "Black: Take the centre with ...d5, often followed by ...c5 and ...Nc6, so that the g2-bishop bites on a well-protected d5-pawn and Black gets the larger share of the centre.",
+        "Black: Alternatively, mirror with ...g6, ...Bg7 and ...O-O, then play ...d6 and ...e5 to challenge the f4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:42:29.131Z"
@@ -15600,7 +15600,7 @@
     "name": "Bird: 1..Nf6 2.Nf3 g6 3.g3",
     "scid": "A02",
     "analysis_json": {
-      "description": "This variation of Bird's Opening leads to a Reversed King's Indian Attack setup, where White adopts a flexible, system-based approach. By fianchettoing the king's bishop and controlling the e5-square, White aims for a slow, strategic buildup, often culminating in a potent kingside attack. This opening is ideal for strategic players who enjoy maneuvering and long-term planning over memorizing sharp, theoretical lines, leading to a complex and nuanced middlegame.",
+      "description": "Both sides have fianchettoed the king's bishop, so White's set-up is a Leningrad Dutch with colours reversed, facing Black's King's Indian-style pieces. White usually castles, plays d3 and prepares e4, often with Qe1 or Nc3, while the f4-pawn keeps control of e5. Black castles and chooses a central plan, usually ...d6 and ...e5 against the f4-pawn or ...d5 with ...c5. Play is strategic, and the side that handles the central break better takes the initiative.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -15640,10 +15640,9 @@
         "Fianchetto"
       ],
       "common_plans": [
-        "White: Prepare and execute the e2-e4 pawn break to challenge Black's central grip.",
-        "White: Build up a kingside attack, often involving moves like Qe1-h4, Ng5, and a potential f4-f5 pawn push.",
-        "Black: Challenge White's flank control with a central pawn break, typically involving ...d5 and sometimes ...c5.",
-        "Black: Neutralize White's fianchettoed bishop or launch a counter-attack on the queenside."
+        "White: Castle, play d3 and Nc3 or Qe1, and prepare the e4 break to gain central space.",
+        "White: Once e4 is in, look for kingside play with f5 or Ng5, supported by the queen from e1.",
+        "Black: Castle and strike in the centre with ...d6 and ...e5, or with ...d5 and ...c5, to challenge White's grip on the e5-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:44:17.277Z"
@@ -15947,7 +15946,7 @@
     "name": "Bird: From Gambit, Lasker, 5.d4",
     "scid": "A02",
     "analysis_json": {
-      "description": "This is a fiercely sharp and double-edged variation of the From Gambit where Black immediately launches a direct assault against the White king. By playing ...g5, Black intends to dislodge the key f3-knight defender, creating immediate and dangerous threats. White's response, 5.d4, fights for central control and prepares to counter-attack, leading to a tactical melee where king safety and initiative are paramount.",
+      "description": "In the Lasker Variation of the From Gambit Black has given a pawn for quick development, and 4...g5 threatens ...g4 to drive away the f3-knight, after which ...Qh4+ would strike along the e1-h4 diagonal that White's missing f-pawn has opened. With 5.d4 White takes the centre and prepares to meet 5...g4 with 6.Ne5 or 6.Ng5; Ne5 offers to trade off the d6-bishop and can lead to an early queen exchange. Play is sharp and tactical: White is a pawn up, and Black's attack must arrive before White consolidates.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -15990,10 +15989,10 @@
         "Provocation"
       ],
       "common_plans": [
-        "For Black: Continue the kingside assault with ...g4 to dislodge the f3 knight, followed by bringing the queen and other pieces into the attack (e.g., ...Qh4, ...Ng6).",
-        "For White: Challenge Black's flank expansion by playing g3 and/or h4, complete development, and use the central pawn majority to create counterplay.",
-        "For Black: Maintain the initiative at all costs, even if it means sacrificing more material, to prevent White from consolidating.",
-        "For White: Trade pieces, especially queens, to defuse Black's attack and transition into a better endgame with an extra pawn."
+        "Black: Play 5...g4 to drive the f3-knight from its defensive post, aiming for ...Qh4+ if the knight leaves the e1-h4 diagonal unguarded, and develop with ...Nc6 and ...Nge7.",
+        "White: Meet 5...g4 with 6.Ne5, offering to trade the d6-bishop; after 6...Bxe5 7.dxe5 Qxd1+ 8.Kxd1 the queens are off and White keeps the extra pawn.",
+        "White: Close the dangerous diagonal with g3 where necessary, complete development with Nc3 and e4, and use the extra pawn and the central majority once the attack is repelled.",
+        "Black: Keep the initiative with sharp, active moves rather than trades, since White's extra pawn and centre tell in a quiet position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T09:45:59.269Z"
@@ -158556,7 +158555,7 @@
     "eco": "A02",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Schlechter Gambit is a dynamic and fighting response to the Bird's Opening, where White accepts the gambit to seize central space. Black immediately challenges the e5-pawn, leading to an unbalanced and tactical struggle where initiative and precise calculation are paramount. This opening is well-suited for aggressive and creative players who enjoy steering the game into less theoretical territory and are comfortable with sharp, double-edged positions.",
+      "description": "The Schlechter Gambit is Black's alternative to the From Gambit: after 1.f4 e5 2.fxe5 Black plays 2...Nc6 instead of 2...d6, aiming to win back the e5-pawn with piece pressure rather than by opening lines. After 3.Nf3 the f3-knight is the pawn's key defender, so Black's sharpest idea is 3...g5, threatening ...g4 to drive it away. White, a pawn up, holds the pawn with d4 where possible or returns it for development, and with accurate play Black's compensation is thin. It is a rare surprise weapon.",
       "style_tags": [
         "Gambit",
         "Dynamic",
@@ -158598,8 +158597,8 @@
         "Counterplay against the e5-pawn"
       ],
       "common_plans": [
-        "White: Solidify the e5-pawn with d4, complete development (Be2, 0-0), and prepare to use the f-file for a kingside attack.",
-        "Black: Undermine the e5-pawn with moves like ...d6 or ...g6, develop pieces rapidly to create counterplay, and exploit any weaknesses around White's king."
+        "White: Support the e5-pawn with d4 and develop quickly; if Black's pressure becomes awkward, return the pawn to finish development and castle short, after which the half-open f-file favours White.",
+        "Black: Attack the e5-pawn's defenders: 3...g5 threatens ...g4 to drive away the f3-knight, while ...d6 and ...Nge7 heading for g6 add pressure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:53:00.491Z"

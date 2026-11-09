@@ -120754,7 +120754,7 @@
       "chronos": "Benoni: fianchetto variation"
     },
     "analysis_json": {
-      "description": "The Fianchetto Variation is a sophisticated and strategic response to the Benoni Defense, where White opts for long-term positional pressure over immediate confrontation. By developing the light-squared bishop to g2, White aims to control the critical d5 square and restrain Black's queenside ambitions, leading to a complex maneuvering game. This opening is perfect for patient, strategic players who enjoy building pressure and exploiting subtle positional weaknesses, particularly the backward d6-pawn.",
+      "description": "The Fianchetto Variation is a sophisticated and strategic response to the Benoni Defence, where White opts for long-term positional pressure over immediate confrontation. By developing the light-squared bishop to g2, White aims to control the critical d5 square and restrain Black's queenside ambitions, leading to a complex manoeuvring game. This opening is perfect for patient, strategic players who enjoy building pressure and exploiting subtle positional weaknesses, particularly the backward d6-pawn.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -120796,10 +120796,10 @@
         "Fianchetto Bishop pressure"
       ],
       "common_plans": [
-        "White: Develop with Bg2 and O-O, play a3 to prevent ...b5, and prepare the e2-e4 pawn break to challenge Black's central setup.",
-        "Black: Complete development with ...Bg7 and ...O-O, prepare queenside expansion with ...a6 and ...b5, and maneuver the knight via ...Na6-c7 to support the counterplay.",
-        "White: Reposition the f3-knight (e.g., Nf3-e1-d3) to bolster the center and increase control over key squares.",
-        "Black: Create counterplay by challenging White's center, often targeting the e4-pawn if White advances it."
+        "White: Develop with Bg2 and O-O, restrain ...b5 with a4, and prepare e2-e4 to support the d5-pawn.",
+        "Black: Complete development with ...Bg7 and ...O-O, then aim for ...b5 after ...a6, ...Re8 and ...Nbd7, using the queenside majority for counterplay.",
+        "White: Reroute the f3-knight via d2 to c4, where it attacks the d6-pawn and discourages ...b5.",
+        "Black: Create counterplay by challenging White's centre, often targeting the e4-pawn if White advances it."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:44:30.409Z"
@@ -120820,7 +120820,7 @@
       "icsbot": "Nimzovich Variation, Knight's Tour Variation, Benoni "
     },
     "analysis_json": {
-      "description": "The Knight's Tour Variation is a sophisticated and strategic method for White to combat the Benoni Defense. By playing 7.Nd2, White prepares to reroute the knight to key squares like b3 or e4, aiming to restrain Black's typical queenside counterplay and fight for central control. This leads to a complex, maneuvering game where understanding subtle piece placement and long-term plans is more critical than immediate tactical clashes, making it ideal for patient, strategic players.",
+      "description": "The Knight's Tour Variation is a sophisticated and strategic method for White to combat the Benoni Defence. By playing 7.Nd2, White heads for c4, where the knight presses on the d6-pawn and discourages Black's typical ...b5 counterplay, while e2-e4 can follow to support the d5-pawn. This leads to a complex, manoeuvring game where understanding subtle piece placement and long-term plans is more critical than immediate tactical clashes, making it ideal for patient, strategic players.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -120860,10 +120860,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Reroute the knight via Nd2-b3 to control the c5-square, preventing Black's ...b5 break, and prepare to challenge the g7-bishop with Ba3.",
-        "Black: Complete development with ...Bg7 and ...0-0, then prepare the thematic ...a6 and ...b5 pawn advance to create a queenside pawn majority and counterplay.",
-        "White: Solidify the center with e4, often followed by Be2 or Be3, and prepare for a long-term strategic battle, potentially shifting to a kingside attack with f4.",
-        "Black: Maneuver pieces to challenge White's central grip, often with ...Nbd7-b6 or ...Re8, aiming to neutralize White's pressure and exploit the d6-pawn's dynamic potential."
+        "White: Bring the knight to c4, where it hits the d6-pawn and discourages ...b5, and follow up with e2-e4 and Be2.",
+        "Black: Complete development with ...Bg7 and ...O-O, then prepare the thematic ...a6 and ...b5 pawn advance to use the queenside pawn majority for counterplay.",
+        "White: Solidify the centre with e4, often followed by Be2 or Be3, and prepare for a long-term strategic battle, potentially shifting to a kingside attack with f4.",
+        "Black: After ...Bg7 and ...O-O, play ...Nbd7 and ...Ne5 to challenge the c4-knight, put a rook on e8 against the e4-pawn, and prepare ...b5 with ...a6."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:44:51.781Z"
@@ -120884,7 +120884,7 @@
       "icsbot": "Uhlmann Variation, Benoni "
     },
     "analysis_json": {
-      "description": "The Uhlmann Variation is a sharp and provocative system against the Benoni Defense, characterized by the early pin with 7.Bg5. White aims to disrupt Black's development and create weaknesses, while Black often responds aggressively with ...h6 and ...g5, leading to double-edged, tactical battles. This opening is perfect for players who enjoy complex, dynamic positions and are not afraid to take calculated risks to seize the initiative.",
+      "description": "The Uhlmann Variation is a sharp and provocative system against the Benoni Defence, characterised by the early pin with 7.Bg5. White aims to disrupt Black's development and create weaknesses, while Black often responds aggressively with ...h6 and ...g5, leading to double-edged, tactical battles. This opening is perfect for players who enjoy complex, dynamic positions and are not afraid to take calculated risks to seize the initiative.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -120927,9 +120927,9 @@
         "Fighting for the initiative"
       ],
       "common_plans": [
-        "White: Exchange the g5 bishop for the f6 knight (Bxf6) to damage Black's pawn structure, then attack the weakened kingside, often with h2-h4.",
-        "Black: Break the pin with ...h6 and often ...g5, accepting kingside weaknesses in exchange for active piece play and control of the long diagonal with ...Bg7.",
-        "White: Control the center with the d5 pawn and restrict Black's pieces, aiming to exploit the light-square weaknesses around Black's king.",
+        "White: Develop with e2-e3 or e2-e4, Nd2 and Be2, keeping the pin on the f6-knight; if Black chases the bishop with ...h6 and then advances the g-pawn, retreat it to h4 and g3 and aim at the weakened light squares on Black's kingside.",
+        "Black: Break the pin with ...h6 and, once the bishop has dropped back to h4, often advance the g-pawn and play ...Nh5 to hunt it down, accepting kingside weaknesses for active play; ...Bg7 follows.",
+        "White: Control the centre with the d5 pawn and restrict Black's pieces, aiming to exploit the light-square weaknesses around Black's king.",
         "Black: Create queenside counterplay with the pawn majority via ...a6 and ...b5, distracting White from their kingside ambitions."
       ],
       "version": "1.0",
@@ -121106,10 +121106,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Control the e5 square, pressure the d6 pawn, prepare a central break with e4-e5, and restrict Black's queenside expansion (...a4).",
+        "White: Control the e5-square, pressure the d6-pawn with the f4-bishop, prepare e2-e4 and e4-e5, and restrain Black's queenside with a4.",
         "Black: Prepare the ...a6 and ...b5 pawn break to activate the queenside majority.",
-        "Black: Maneuver the knight from f6 (e.g., ...Na6 or ...Nbd7-b8-a6) to support the queenside and challenge White's control.",
-        "White: Seek to trade Black's powerful g7 bishop, often via moves like h3 and Bh2, followed by an exchange on g7."
+        "Black: Castle, then bring the b8-knight to d7 to contest the e5-square, and consider ...Nh5 to chase the f4-bishop.",
+        "White: Complete development with e2-e3 or e2-e4, Be2 and O-O, and bring the f3-knight to c4 via d2 to add pressure on the d6-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:46:02.337Z"
@@ -121280,8 +121280,8 @@
         "Pawn Majority dynamics"
       ],
       "common_plans": [
-        "White: Complete development with Be2 and O-O, prepare the central e4-e5 pawn break, and use the h-pawn to support a potential g4 kingside expansion.",
-        "Black: Complete the fianchetto with ...Bg7 and ...O-O, then initiate queenside counterplay with the ...a6 and ...b5 pawn advance, often rerouting the knight via ...Na6-c7 to support the push."
+        "White: Play e2-e4, Bd3 and O-O, prepare the central e4-e5 break, and use the h3-pawn to support a later g4 kingside expansion.",
+        "Black: Complete the fianchetto with ...Bg7 and ...O-O, then aim for queenside counterplay with ...a6 and ...b5, using ...Re8 and ...Nbd7 to support the push."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:47:01.458Z"
@@ -121569,10 +121569,10 @@
         "Exploiting the Pin"
       ],
       "common_plans": [
-        "White: Play e4 to solidify the center, prepare Nd2-e4, and challenge Black's queenside with a4. A key idea is to trade the light-squared bishop for the f6 knight (Bxf6) to damage Black's pawn structure.",
-        "Black: Prepare the ...a6 and ...b5 pawn push to create a queenside attack. Play ...h6 to question the bishop on g5, and maneuver the knight from f6 (e.g., via ...Nbd7) to break the pin and support the queenside.",
-        "White: Develop the queen's bishop to e3 or f4, complete development with Be2 and 0-0, and prepare to meet Black's queenside expansion.",
-        "Black: Use the powerful g7 bishop to exert pressure along the long diagonal, often targeting White's d4 pawn and queenside."
+        "White: Play e2-e4 to support d5, bring a knight to c4 via d2, restrain ...b5 with a4, and keep the option of Bxf6 to damage Black's pawn structure.",
+        "Black: Castle, question the g5-bishop with ...h6, and prepare ...a6 and ...b5 for queenside counterplay, developing the b8-knight to d7.",
+        "White: Complete development with e2-e3 or e2-e4, Be2 and O-O, and prepare to meet Black's queenside expansion with a4.",
+        "Black: Use the g7-bishop along the long diagonal against White's queenside; once the f6-knight moves, it bears down on the c3-knight and the b2-pawn behind it."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:48:29.863Z"
@@ -121587,7 +121587,7 @@
     "name": "Benoni: Uhlmann, 7...h6",
     "scid": "A61",
     "analysis_json": {
-      "description": "The Uhlmann Variation with 7...h6 is a direct and combative response to White's fianchetto setup in the Benoni. Black immediately questions the Bg5 pin, forcing White to decide between retreating (Bh4) or exchanging (Bxf6), each leading to distinct types of middlegames. This opening is for players who embrace dynamic imbalances and are willing to accept structural weaknesses (like a loosened kingside after ...g5) in exchange for active piece play and long-term counter-attacking chances.",
+      "description": "The Uhlmann Variation with 7...h6 is a direct and combative response to White's 7.Bg5 in the Benoni. Black immediately questions the Bg5 pin, forcing White to decide between retreating (Bh4) or exchanging (Bxf6), each leading to distinct types of middlegames. This opening is for players who embrace dynamic imbalances and are willing to accept structural weaknesses (like a loosened kingside after ...g5) in exchange for active piece play and long-term counter-attacking chances.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -121628,8 +121628,8 @@
         "Control of Dark Squares"
       ],
       "common_plans": [
-        "Black: Prepare the ...b5 pawn break to activate the queenside majority, fianchetto the bishop to g7 to control the long diagonal, and use the ...g5 push to gain space and harass White's pieces.",
-        "White: Utilize the central space advantage to prepare the e4-e5 pawn break, restrain Black's queenside expansion, and potentially launch an attack against Black's weakened kingside."
+        "Black: Fianchetto with ...Bg7 and castle, and if the bishop retreats to h4, consider advancing the g-pawn and following up with ...Nh5 to win the bishop pair; then prepare ...a6 and ...b5 to activate the queenside majority.",
+        "White: Use the central space advantage to prepare the e4-e5 pawn break, restrain Black's queenside expansion, and potentially launch an attack against Black's weakened kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:48:46.171Z"
@@ -121765,7 +121765,7 @@
     "name": "Benoni: Fianchetto, 9.O-O",
     "scid": "A62",
     "analysis_json": {
-      "description": "The Fianchetto Variation is a solid and strategic approach against the dynamic Modern Benoni. White opts for a controlled game, aiming to restrain Black's queenside counterplay and exploit the inherent weakness of the d6-pawn. This opening leads to a complex, maneuvering struggle where White's positional pressure is pitted against Black's dynamic potential, making it ideal for strategic players who appreciate long-term plans and subtle imbalances.",
+      "description": "The Fianchetto Variation is a solid and strategic approach against the dynamic Modern Benoni. White opts for a controlled game, aiming to restrain Black's queenside counterplay and exploit the inherent weakness of the d6-pawn. This opening leads to a complex, manoeuvring struggle where White's positional pressure is pitted against Black's dynamic potential, making it ideal for strategic players who appreciate long-term plans and subtle imbalances.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -121805,7 +121805,7 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Restrain ...b5 with a4, control the e4-square (e.g., Nd2-f1-e3), and pressure the d6-pawn.",
+        "White: Restrain ...b5 with a4, bring the f3-knight to c4 via d2 to press the d6-pawn, and prepare e2-e4 to support d5.",
         "Black: Achieve the ...b5 pawn break to create queenside play, activate the light-squared bishop, and use the queenside pawn majority."
       ],
       "version": "1.0",
@@ -122003,7 +122003,7 @@
     "name": "Benoni: Fianchetto, 9.O-O Re8",
     "scid": "A62",
     "analysis_json": {
-      "description": "The Fianchetto Variation against the Benoni is one of White's most solid and respected systems, leading to a deeply strategic and complex struggle. By fianchettoing the king's bishop, White aims to control the center and restrain Black's typical queenside counterplay. The move 9...Re8 is a flexible and vital response, preparing to fight for the e-file and support the thematic ...e5 pawn break. This opening is perfect for patient, strategic players who enjoy maneuvering and understanding the long-term consequences of pawn structure imbalances.",
+      "description": "The Fianchetto Variation against the Benoni is one of White's most solid and respected systems, leading to a deeply strategic and complex struggle. By fianchettoing the king's bishop, White aims to control the centre and restrain Black's typical queenside counterplay. The move 9...Re8 is a flexible and vital response, putting the rook on the half-open e-file against White's e-pawn and making e2-e4 harder to arrange. This opening is perfect for patient, strategic players who enjoy manoeuvring and understanding the long-term consequences of pawn structure imbalances.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -122045,8 +122045,8 @@
         "Prophylaxis against pawn breaks"
       ],
       "common_plans": [
-        "White: Control the e4-square with moves like Nd2, Re1, and Bf1, preparing to push e2-e4. Restrain Black's queenside expansion with a2-a4. Target the backward d6-pawn.",
-        "Black: Prepare the ...b5 pawn push, often preceded by ...a6. Maneuver the knight via ...Nbd7-f8-e6 to challenge for the e-file and support a potential ...e5 break. Activate the 'Benoni bishop' on g7."
+        "White: Bring the f3-knight to c4 via d2 to hit the d6-pawn, restrain ...b5 with a4, and prepare e2-e4 to support the d5-pawn.",
+        "Black: Prepare ...b5 with ...a6 and ...Nbd7, use the rook on e8 against the e2-pawn, and keep the g7-bishop active on the long diagonal."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:50:54.969Z"
@@ -162440,7 +162440,7 @@
       "icsbot": "Fianchetto Variation, Benoni "
     },
     "analysis_json": {
-      "description": "The Fianchetto Variation is a positional and highly strategic approach against the Benoni Defense. White opts for a solid setup, developing the kingside bishop to g2 to control the long diagonal and restrain Black's typical queenside counterplay. This leads to a complex, maneuvering game where White aims to exploit the d6-pawn weakness, while Black uses the powerful fianchettoed bishop to generate pressure and fight for the initiative. It suits patient, strategic players who enjoy a long-term battle of ideas over immediate tactical skirmishes.",
+      "description": "The Fianchetto Variation is a positional and highly strategic approach against the Benoni Defence. White opts for a solid setup, developing the kingside bishop to g2 to control the long diagonal and restrain Black's typical queenside counterplay. This leads to a complex, manoeuvring game where White aims to exploit the d6-pawn weakness, while Black uses the powerful fianchettoed bishop to generate pressure and fight for the initiative. It suits patient, strategic players who enjoy a long-term battle of ideas over immediate tactical skirmishes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -162482,8 +162482,8 @@
         "Exploiting the d6-pawn"
       ],
       "common_plans": [
-        "White: Play a3 to prevent Black's ...b5 expansion, prepare the e2-e4 pawn break to solidify the center, and maneuver pieces to target the d6 pawn.",
-        "Black: Execute the ...a6 and ...b5 pawn break to create a queenside pawn majority and counterplay. Reposition the f6-knight (e.g., via ...Ne8-c7) to support the queenside. Use the g7-bishop to exert long-range pressure on White's position."
+        "White: Castle, restrain ...b5 with a4, support the d5-pawn with e2-e4 at the right moment, and bring a knight to c4 via d2 to target the d6-pawn.",
+        "Black: Castle, then prepare ...b5 with ...a6, ...Re8 and ...Nbd7 to put the queenside pawn majority to work, while the g7-bishop presses along the long diagonal."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T17:38:50.922Z"

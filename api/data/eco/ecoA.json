@@ -136617,7 +136617,7 @@
     "name": "Dutch: 2.Bg5 h6",
     "scid": "A80f",
     "analysis_json": {
-      "description": "This line is a sharp and provocative response to the Dutch Defense, immediately challenging Black's kingside setup. By playing 2...h6, Black forces White's bishop to declare its intentions, leading to dynamic and often unbalanced positions where both sides fight for the initiative. This opening suits players who are comfortable with tactical complications and enjoy forcing the game into a concrete, confrontational path from the very beginning.",
+      "description": "This line is a sharp and provocative response to the Dutch Defence, immediately challenging Black's kingside setup. By playing 2...h6, Black forces White's bishop to declare its intentions, leading to dynamic and often unbalanced positions where both sides fight for the initiative. This opening suits players who are comfortable with tactical complications and enjoy forcing the game into a concrete, confrontational path from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -136659,8 +136659,8 @@
         "Kingside attack vs. central control"
       ],
       "common_plans": [
-        "White: Retreat the bishop to h4 to maintain pressure, often followed by g4 to attack the f5 pawn. Exchange on f6 (Bxf6) to damage Black's pawn structure at the cost of the bishop pair.",
-        "Black: After 3.Bh4, play ...g5 to trap or harass the bishop, seizing space on the kingside. Develop pieces to control the center, particularly the e4-square, and prepare a kingside counterattack."
+        "White: Retreat the bishop to h4 and, if Black chases it with the g-pawn, drop it back to g3 and hit the loosened kingside with e3 and h4.",
+        "Black: After the bishop retreats to h4, push the g-pawn to chase it and gain kingside space, possibly following up with ...f4; develop with ...Nf6 and fight for the e4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T13:27:38.540Z"
@@ -136675,7 +136675,7 @@
     "name": "Dutch: 2.Bg5 Nf6",
     "scid": "A80e",
     "analysis_json": {
-      "description": "The 2.Bg5 line against the Dutch is a sharp and provocative system designed to immediately challenge Black's setup. White's primary idea is to exchange the bishop for the f6-knight, creating long-term structural weaknesses in Black's kingside. This leads to an unbalanced and strategically complex battle where White often pursues a direct attack, while Black must skillfully use their own assets, like central control or the open e-file, to generate counterplay. This opening is perfect for aggressive players who enjoy seizing the initiative and navigating non-standard, dynamic positions.",
+      "description": "The 2.Bg5 line against the Dutch is a sharp and provocative system designed to immediately challenge Black's setup. White's primary idea is to exchange the bishop for the f6-knight, creating long-term structural weaknesses in Black's kingside. This leads to an unbalanced and strategically complex battle where White often pursues a direct attack, while Black must skillfully use their own assets, like the bishop pair or the half-open e-file after recapturing with the e-pawn, to generate counterplay. This opening is perfect for aggressive players who enjoy seizing the initiative and navigating non-standard, dynamic positions.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -136717,9 +136717,9 @@
         "Prophylaxis against Black's central breaks"
       ],
       "common_plans": [
-        "White: Exchange on f6 (Bxf6) to damage Black's pawn structure, followed by a kingside pawn storm (h4-h5) or targeting the weak e6/g6 squares.",
-        "Black: Recapture on f6 with the e-pawn (...exf6) to control the center and use the open e-file, or with the g-pawn (...gxf6) to bolster the center and prepare to fianchetto the light-squared bishop.",
-        "White: Develop quickly with Nc3, e3, and Qc2, controlling the center and preparing to exploit the light-square weaknesses around Black's king.",
+        "White: Exchange on f6 to damage Black's pawn structure, then develop with e3, Bd3 and Nd2 and play against the weakened light squares, especially the e6-square.",
+        "Black: Answer an exchange on f6 by recapturing with the e-pawn, which frees the f8-bishop and half-opens the e-file, and use the bishop pair for active play.",
+        "White: Develop quickly with e3, Nd2 and Bd3, controlling the centre and preparing to exploit the light-square weaknesses around Black's king.",
         "Black: Develop pieces to challenge White's central presence, often aiming for the ...d5 or ...c5 pawn breaks to create counterplay."
       ],
       "version": "1.0",
@@ -136735,7 +136735,7 @@
     "name": "Dutch: 2.Nc3 d5 3.Bg5",
     "scid": "A80l",
     "analysis_json": {
-      "description": "This is an aggressive and provocative system against the Dutch Defense, designed to immediately challenge Black's setup. By playing 3.Bg5, White puts immediate pressure on the kingside, often intending to trade the bishop for the f6-knight to create structural weaknesses. The resulting positions are typically sharp and tactical, suiting players who enjoy seizing the initiative and creating early imbalances rather than engaging in a slow, strategic battle.",
+      "description": "This is an aggressive and provocative system against the Dutch Defence, designed to immediately challenge Black's setup. By playing 3.Bg5, White puts immediate pressure on the kingside, often intending to trade the bishop for a knight on f6, once Black develops it there, to create structural weaknesses. The resulting positions are typically sharp and tactical, suiting players who enjoy seizing the initiative and creating early imbalances rather than engaging in a slow, strategic battle.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -136776,10 +136776,10 @@
         "Kingside Attack"
       ],
       "common_plans": [
-        "White: Trade the g5-bishop for the f6-knight (Bxf6) to damage Black's pawn structure, then target the weakened kingside and control the e5-square.",
-        "White: Prepare the e2-e4 pawn push to break open the center and challenge Black's grip.",
-        "Black: Solidify the center with ...c6, develop the queenside, and challenge White's active pieces.",
-        "Black: Break the pin with ...h6 and ...g5, accepting a riskier kingside in exchange for active play."
+        "White: If Black plays ...Nf6, trade the g5-bishop for it to damage Black's pawn structure, then target the weakened kingside and light squares.",
+        "White: Prepare the e2-e4 pawn push to break open the centre and challenge Black's grip.",
+        "Black: Solidify the centre with ...c6, develop the queenside, and challenge White's active pieces.",
+        "Black: Question the bishop with ...h6 and, if it retreats to h4, consider a g-pawn advance, accepting a riskier kingside for space."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T13:28:13.487Z"
@@ -136794,7 +136794,7 @@
     "name": "Dutch: 2.Nc3 Nf6",
     "scid": "A80m",
     "analysis_json": {
-      "description": "This variation of the Dutch Defense immediately creates a tense and unbalanced struggle for the crucial e4 square. By playing 2.Nc3, White develops a piece and directly challenges Black's flank control, often intending to seize the center with an early e2-e4 push. Black's solid 2...Nf6 response prepares to fight for this key square, leading to a strategically complex and dynamic middlegame. This opening is well-suited for players who enjoy sharp, non-symmetrical positions and are comfortable with long-term strategic battles where understanding pawn structures and piece activity is paramount.",
+      "description": "This variation of the Dutch Defence immediately creates a tense and unbalanced struggle for the crucial e4 square. By playing 2.Nc3, White develops a piece and directly challenges Black's flank control, often intending to seize the centre with an early e2-e4 push. Black's solid 2...Nf6 response prepares to fight for this key square, leading to a strategically complex and dynamic middlegame. This opening is well-suited for players who enjoy sharp, non-symmetrical positions and are comfortable with long-term strategic battles where understanding pawn structures and piece activity is paramount.",
       "style_tags": [
         "Aggressive",
         "Strategic",
@@ -136834,8 +136834,8 @@
       ],
       "common_plans": [
         "White: Prepare and execute the e2-e4 pawn break, often supported by a fianchettoed bishop on g2, to gain a space advantage and attack.",
-        "Black: Prevent White's e4-break while preparing a counter-break of their own, typically ...e5 or ...d5, to challenge for central control.",
-        "Black: Develop pieces to create pressure on White's center, for example with ...Bb4, aiming to disrupt White's coordination and launch a counterattack.",
+        "Black: Prevent White's central break while preparing a counter-break of their own, typically ...e5 or ...d5, to challenge for central control.",
+        "Black: Develop pieces to create pressure on White's centre, for example with ...Bb4, aiming to disrupt White's coordination and launch a counterattack.",
         "White: Exploit the potential weaknesses around the Black king created by the ...f5 advance, often through a direct kingside attack."
       ],
       "version": "1.0",
@@ -136851,7 +136851,7 @@
     "name": "Dutch: 2.Nc3 Nf6 3.Bg5",
     "scid": "A80n",
     "analysis_json": {
-      "description": "This is an aggressive and provocative system against the Dutch Defense, aiming to immediately disrupt Black's plans. White's key idea is the pin on the f6-knight, often leading to a trade (Bxf6) that damages Black's kingside pawn structure, setting the stage for a direct attack. The resulting positions are sharp and unbalanced, ideal for tactical players who thrive on initiative and are comfortable with creating structural weaknesses in exchange for dynamic chances.",
+      "description": "This is an aggressive and provocative system against the Dutch Defence, aiming to immediately disrupt Black's plans. White's key idea is to exchange the bishop for the f6-knight, damaging Black's kingside pawn structure and setting the stage for a direct attack. The resulting positions are sharp and unbalanced, ideal for tactical players who thrive on initiative and are comfortable with creating structural weaknesses in exchange for dynamic chances.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -136892,8 +136892,8 @@
         "Creating Imbalances"
       ],
       "common_plans": [
-        "White: Trade on f6 (Bxf6), launch an h4-h5 pawn storm, and control the e5-square.",
-        "Black: Challenge the center with ...d5, use the open g-file for counterplay after ...gxf6, or solidify and exploit White's potential overextension."
+        "White: Exchange on f6 to damage Black's pawn structure, then develop with e3 and Bd3 and play against the weakened light squares.",
+        "Black: Challenge the centre with ...d5 or ...e6, and if White exchanges on f6, use the bishop pair and, after recapturing with the g-pawn, the half-open g-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T13:28:57.449Z"
@@ -136908,7 +136908,7 @@
     "name": "Dutch: 2.Nc3 Nf6 3.Bg5 d5",
     "scid": "A80o",
     "analysis_json": {
-      "description": "This is a sharp and direct attempt by White to challenge the Dutch Defense. White's 3.Bg5 creates an immediate pin, aiming to disrupt Black's coordination and often leading to a structural imbalance after an exchange on f6. Black's solid ...d5 response creates a tense, strategic battle, pitting White's piece activity against Black's robust pawn structure and long-term kingside attacking potential. The line suits players who enjoy complex, double-edged positions where strategic understanding is paramount.",
+      "description": "This is a sharp and direct attempt by White to challenge the Dutch Defence. White's 3.Bg5 eyes the f6-knight, aiming to disrupt Black's coordination and often leading to a structural imbalance after an exchange on f6. Black's solid ...d5 response creates a tense, strategic battle, pitting White's piece activity against Black's robust pawn structure and long-term kingside attacking potential. The line suits players who enjoy complex, double-edged positions where strategic understanding is paramount.",
       "style_tags": [
         "Aggressive",
         "Strategic",
@@ -136948,10 +136948,10 @@
         "Kingside Attack vs Central Control"
       ],
       "common_plans": [
-        "White: Exchange on f6 (Bxf6) to create doubled pawns, then target the weak kingside and control the e5 square.",
+        "White: Exchange on f6 to damage Black's pawn structure, then develop with e3 and Bd3 and target the weakened kingside.",
         "White: Prepare and execute the e2-e4 pawn break to seize central control and open lines for the pieces.",
-        "Black: Break the pin with ...h6 and ...g5, or by maneuvering the queen, then consolidate the center.",
-        "Black: After Bxf6 gxf6, use the open g-file for a kingside attack and control the e4-square."
+        "Black: Question the bishop with ...h6, keep the centre solid with ...c6, and be ready to recapture on f6 with the e-pawn to free the f8-bishop.",
+        "Black: If White exchanges on f6 and Black recaptures with the g-pawn, use the half-open g-file and the bishop pair for kingside play and keep control of the e4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T13:29:20.241Z"
@@ -136966,7 +136966,7 @@
     "name": "Dutch: 2.Nc3 Nf6 3.Bg5 d5 4.Bxf6 exf6",
     "scid": "A80p",
     "analysis_json": {
-      "description": "This variation leads to a highly unbalanced and strategically complex middlegame where Black accepts a compromised pawn structure in exchange for the long-term potential of the bishop pair. White aims to exploit the static weaknesses around the Black king, while Black seeks dynamic counterplay using the open e-file and active pieces. This opening is ideal for strategic players who enjoy navigating complex, non-standard positions and understand the trade-off between structure and activity.",
+      "description": "This variation leads to a highly unbalanced and strategically complex middlegame where Black accepts a compromised pawn structure in exchange for the long-term potential of the bishop pair. White aims to exploit the static weaknesses around the Black king, while Black seeks dynamic counterplay using the half-open e-file and active pieces. This opening is ideal for strategic players who enjoy navigating complex, non-standard positions and understand the trade-off between structure and activity.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -137006,10 +137006,10 @@
         "Light-Square vs. Dark-Square Control"
       ],
       "common_plans": [
-        "White: Control the light squares, particularly the e5-square, often by planting a knight there. The goal is to restrict Black's pieces and exploit the static weaknesses.",
-        "Black: Utilize the bishop pair and the open e-file for counterplay. Prepare pawn breaks like ...c5 or ...g5 to open lines and challenge White's central grip.",
+        "White: Develop with e3, Bd3 and Nge2, and play against the weakened light squares around Black's king.",
+        "Black: Use the bishop pair and the half-open e-file for counterplay, and prepare breaks such as ...c5 to open lines.",
         "White: Target Black's doubled f-pawns and potential king safety issues, sometimes with a timely g2-g4 push to challenge Black's control of f5.",
-        "Black: Solidify the center with moves like ...c6 and ...d6, preparing to reroute the 'bad' light-squared bishop, often to g7 or h6 to become a key defensive or attacking piece."
+        "Black: Solidify the centre with ...c6, develop with ...Bd6 and ...O-O, and keep the light-squared bishop active on e6 or d7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T13:29:50.429Z"
@@ -137024,7 +137024,7 @@
     "name": "Dutch: 2.Nc3 Nf6 3.Bg5 d5 4.Bxf6 exf6 5.e3",
     "scid": "A80p",
     "analysis_json": {
-      "description": "This variation of the Dutch Defense leads to a highly strategic and structural battle. White immediately trades a bishop for a knight to inflict doubled, isolated f-pawns on Black, aiming to exploit this long-term weakness. In return, Black gains the bishop pair and an open e-file, leading to a complex game where understanding positional nuances is paramount. This opening is perfect for patient, strategic players who enjoy maneuvering and fighting over key squares and structural imbalances.",
+      "description": "This variation of the Dutch Defence leads to a highly strategic and structural battle. White immediately trades a bishop for a knight to inflict doubled f-pawns on Black, aiming to exploit this long-term weakness. In return, Black gains the bishop pair and a half-open e-file, leading to a complex game where understanding positional nuances is paramount. This opening is perfect for patient, strategic players who enjoy manoeuvring and fighting over key squares and structural imbalances.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -137066,8 +137066,8 @@
         "Control of Key Squares (e.g., e5)"
       ],
       "common_plans": [
-        "White: Play c2-c4 to challenge the d5-pawn, develop with Nge2-g3 and Bd3, control the light squares (especially e5), and target Black's weak pawns.",
-        "Black: Solidify the center with ...c6, develop the bishops (e.g., ...Be7, ...Be6), control the open e-file with a rook, and use the bishop pair to create threats on both sides of the board."
+        "White: Develop with Bd3, Nge2 and O-O, and play against Black's weakened light squares and doubled pawns.",
+        "Black: Solidify the centre with ...c6, develop the bishops (e.g., ...Be7, ...Be6), control the half-open e-file with a rook, and use the bishop pair to create threats on both sides of the board."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T13:30:09.368Z"
@@ -137141,7 +137141,7 @@
     "name": "Dutch: 2.Nc3 Nf6 3.Bg5 e6",
     "scid": "A80n",
     "analysis_json": {
-      "description": "This variation is a sharp and ambitious way for White to challenge the Dutch Defense, immediately creating tension with the pin on the f6-knight. Black's solid 3...e6 response aims to neutralize the immediate threats, leading to a strategically rich and complex middlegame where both sides have distinct plans. The game often revolves around White's control of the e4-square and pressure on the kingside versus Black's counterplay on the queenside and in the center, suiting players who enjoy dynamic, non-standard positions.",
+      "description": "This variation is a sharp and ambitious way for White to challenge the Dutch Defence, immediately creating tension with the pin on the f6-knight. Black's solid 3...e6 response aims to neutralise the immediate threats, leading to a strategically rich and complex middlegame where both sides have distinct plans. The game often revolves around White's control of the e4-square and pressure on the kingside versus Black's counterplay on the queenside and in the centre, suiting players who enjoy dynamic, non-standard positions.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -137183,9 +137183,9 @@
       ],
       "common_plans": [
         "White: Prepare and execute the e2-e4 pawn break to seize central space and open lines for an attack.",
-        "Black: Solidify the center with ...d5, complete development, and seek counterplay via a queenside pawn storm with ...b5-b4.",
-        "White: Exchange on f6 (Bxf6) to create doubled pawns, then target the resulting light-square weaknesses.",
-        "Black: Challenge White's pinning bishop with moves like ...h6 and ...g5, or reroute the f6-knight to a more active square."
+        "Black: Solidify the centre with ...d5 or keep it flexible with ...Be7 and ...O-O, then look for ...c5 or ...e5 to challenge White's centre.",
+        "White: Exchange on f6 when Black has to recapture with a pawn, damaging Black's structure, then target the light-square weaknesses.",
+        "Black: Break the pin with ...Be7, or question the bishop with ...h6 and, after it retreats, consider a g-pawn advance."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T13:30:48.052Z"
@@ -137740,7 +137740,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Fianchetto Attack is a solid and strategic response to the Dutch Defense, sidestepping the sharpest theoretical lines. By fianchettoing the light-squared bishop to g2, White creates a flexible setup that controls the long diagonal and prepares to challenge Black's central ambitions. This opening leads to a positional game where understanding pawn structures and long-term plans is paramount, making it ideal for strategic players who enjoy maneuvering and accumulating small advantages.",
+      "description": "The Fianchetto Attack is a solid and strategic response to the Dutch Defence, sidestepping the sharpest theoretical lines. By fianchettoing the light-squared bishop to g2, White creates a flexible setup that controls the long diagonal and prepares to challenge Black's central ambitions. This opening leads to a positional game where understanding pawn structures and long-term plans is paramount, making it ideal for strategic players who enjoy manoeuvring and accumulating small advantages.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -137781,8 +137781,8 @@
         "Black's potential for a kingside attack"
       ],
       "common_plans": [
-        "White: Complete the kingside fianchetto (Bg2, Nf3), play c4 to challenge the center, and prepare to pressure Black's structure with moves like Rb1 or a timely e4 pawn break.",
-        "Black: Solidify control over e4 with ...Nf6 and ...e6, often leading to a Stonewall (...d5) or Leningrad-style setup (...g6, ...Bg7), and prepare a kingside attack.",
+        "White: Complete the kingside fianchetto (Bg2, Nf3), play c4 to challenge the centre, and prepare to pressure Black's structure with moves like Rb1 or a timely e2-e4 break.",
+        "Black: Solidify control over the e4-square with ...Nf6 and ...e6, often leading to a Stonewall (...d5) or Leningrad-style setup (...g6, ...Bg7), and prepare a kingside attack.",
         "White: Restrain Black's kingside expansion and use the g2-bishop to create long-term pressure, often targeting the b7-pawn or the d5-pawn.",
         "Black: Initiate a kingside attack, sometimes involving a pawn storm with ...g5-g4, to counter White's positional pressure."
       ],

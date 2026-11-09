@@ -1,10 +1,10 @@
 # Plan reference check
 
-3976 references on 3105 of 12377 pages fail the check and show as plain text.
+3928 references on 3065 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5511 name no move, route, square or piece
-- References by kind: {"square":14942,"piece":14452,"move":52960,"route":9523}
-- References by result: {"now":65749,"on-board":13320,"later":8832,"invalid":3976}
+- Plans: 41062, of which 5505 name no move, route, square or piece
+- References by kind: {"square":14954,"piece":14500,"move":53081,"route":9518}
+- References by result: {"now":65885,"on-board":13370,"later":8870,"invalid":3928}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -18,59 +18,58 @@
   - `Bxb5`: No piece can play Bxb5 here, now or after the plan's earlier moves
 - **A03 Bird Opening: Thomas Gambit** (0 views)
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **A23 English Opening: King's English Variation, Two Knights Variation, Keres Variation** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **A23 English: Bremen, Keres, 4.Bg2 d5 5.cxd5 cxd5** (0 views)
-  - `...e6`: No piece can play e6 here, now or after the plan's earlier moves
-  - `e1-d3`: One step of e1-d3 can't be played here
-- **A24 English: Bremen, 3...g6** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **A25 English Opening: King's English Variation, Taimanov Variation** (0 views)
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **A25 English: Closed** (0 views)
-  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A25 English: Closed** (0 views)
-  - `Nf1-e3`: One step of Nf1-e3 can't be played here
-- **A25 English: Closed** (0 views)
-  - `f1-knight`: There is no knight on f1, or on its way
-- **A25 English: Closed** (0 views)
-  - `c6-d6-e5`: One step of c6-d6-e5 can't be played here
-- **A25 English: Closed** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A30 English: Symmetrical, Hedgehog, Flexible Formation, 11.e4 O-O** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **A30 English: Symmetrical, Mutual Double Fianchetto** (0 views)
   - `...exd4`: No piece can play exd4 here, now or after the plan's earlier moves
-- **A25 English: Closed** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **A25 English: Closed** (0 views)
+  - `Kxg7`: No piece can play Kxg7 here, now or after the plan's earlier moves
+- **A31 English: Symmetrical, Two Knights, 3...a6** (0 views)
+  - `Nb5`: No piece can play Nb5 here, now or after the plan's earlier moves
+- **A31 English: Symmetrical, Two Knights, 3...g6** (0 views)
+  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
+- **A31 English: Symmetrical, Two Knights, 3...g6** (0 views)
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
+- **A31 English: Symmetrical, Two Knights, 4...b6** (0 views)
+  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
+- **A31 English: Symmetrical, Two Knights, 4...g6** (0 views)
+  - `d4-pawn`: There is no pawn on d4, or on its way
+- **A31 English: Symmetrical, Two Knights, 4...g6** (0 views)
+  - `...d7-b6`: One step of ...d7-b6 can't be played here
+- **A32 English: Symmetrical, Two Knights, 5.g3 d5 6.Bg2 e5 7.Nf3** (0 views)
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **A32 English: Symmetrical, Two Knights, 5.g3 Qc7** (0 views)
+  - `exd5`: No piece can play exd5 here, now or after the plan's earlier moves
+  - `Nxd5`: No piece can play Nxd5 here, now or after the plan's earlier moves
+- **A32 English: Symmetrical, Two Knights, 5.Nc3 Bb4 6.Bd2** (0 views)
+  - `a3-b4`: One step of a3-b4 can't be played here
+  - `Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
+- **A32 English: Symmetrical, Two Knights, 5.Nc3 d5** (0 views)
+  - `Nxd5`: No piece can play Nxd5 here, now or after the plan's earlier moves
+- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.Bg5** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.e3** (0 views)
   - `cxd5`: No piece can play cxd5 here, now or after the plan's earlier moves
-  - `...Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **A26 English: Botvinnik System, 6...Nf6** (0 views)
-  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
-- **A26 English: Botvinnik System, 6...Nf6** (0 views)
-  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
-- **A26 English: Closed, 5.d3 d6 6.Nf3 Nf6** (0 views)
-  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
-- **A26 English: Closed, 5.d3 d6 6.Nf3 Nf6 7.O-O O-O 8.Rb1 a5 9.a3** (0 views)
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-  - `...axb4`: No piece can play axb4 here, now or after the plan's earlier moves
-- **A26 English: Closed, 5.d3 d6 6.Rb1 a5** (0 views)
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **A27 English: Three Knights, 3...f5 4.d4 e4** (0 views)
-  - `f7`: No piece can play f7 here, now or after the plan's earlier moves
-  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
-- **A27 English: Three Knights, 3...g6 4.d4** (0 views)
-  - `...0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **A28 English Opening: King's English Variation, Four Knights Variation** (0 views)
-  - `...Na5`: No piece can play Na5 here, now or after the plan's earlier moves
-- **A28 English: Four Knights, 4.d4** (0 views)
-  - `Bb5`: No piece can play Bb5 here, now or after the plan's earlier moves
-- **A29 English Opening: King's English Variation, Four Knights Variation, Fianchetto Line** (0 views)
-  - `Nd2-b3`: Nd2 is ambiguous: the knights on f3 and b1 can both go there
-- **A29 English Opening: King's English Variation, Four Knights Variation, Fianchetto Line, with Nb6** (0 views)
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **A29 English: Four Knights, 4.g3 Bb4 5.Bg2** (0 views)
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **A29 English: Four Knights, 4.g3 Bc5** (0 views)
-  - `Nf3-e1-d3`: One step of Nf3-e1-d3 can't be played here
-- **A29 English: Four Knights, 4.g3 Bc5** (0 views)
-  - `Ng5`: No piece can play Ng5 here, now or after the plan's earlier moves
+- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.g3 Bb4** (0 views)
+  - `Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
+  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
+- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.Ndb5 Bb4** (0 views)
+  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
+- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.Ndb5 d5** (0 views)
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
+- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.Ndb5 d5 Queenswap** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A34 English Opening: Symmetrical Variation, Rubinstein Variation** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A34 English: Symmetrical, 2...g6** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A34 English: Symmetrical, 3 Knights, 5.e4 Nb4 6.Bb5+** (0 views)
+  - `d3`: No piece can play d3 here, now or after the plan's earlier moves
+  - `c2`: No piece can play c2 here, now or after the plan's earlier moves
+- **A34 English: Symmetrical, 3 Knights, 5.e4 Nb4 6.Bc4** (0 views)
+  - `...Nxc2+`: No piece can play Nxc2 here, now or after the plan's earlier moves
+- **A34 English: Symmetrical, 3 Knights, 5.e4 Nxc3** (0 views)
+  - `e4-d4`: One step of e4-d4 can't be played here
+- **A34 English: Symmetrical, 3 Knights, Exchange** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A35 English: Symmetrical, 2.Nc3 Nc6 3.e3** (0 views)
+  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves

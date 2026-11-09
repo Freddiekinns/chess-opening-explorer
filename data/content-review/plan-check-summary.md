@@ -1,10 +1,10 @@
 # Plan reference check
 
-4151 references on 3253 of 12377 pages fail the check and show as plain text.
+4108 references on 3215 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41084, of which 5561 name no move, route, square or piece
-- References by kind: {"square":14842,"piece":14276,"move":52235,"route":9671}
-- References by result: {"now":65078,"on-board":13180,"later":8615,"invalid":4151}
+- Plans: 41071, of which 5543 name no move, route, square or piece
+- References by kind: {"square":14884,"piece":14337,"move":52407,"route":9650}
+- References by result: {"now":65275,"on-board":13223,"later":8672,"invalid":4108}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -14,61 +14,59 @@
   - `...Na6-b4`: One step of ...Na6-b4 can't be played here
 - **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6 6.Nf3 Bg4** (1 views)
   - `d4-d5`: One step of d4-d5 can't be played here
-- **E61 King's Indian: Smyslov System** (1 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **A00 Amar Opening: Paris Gambit, Gent Gambit** (0 views)
-  - `Ng5`: No piece can play Ng5 here, now or after the plan's earlier moves
-- **A00 Grob: 1...d5** (0 views)
-  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
-  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
-- **A00 Grob: 1...d5** (0 views)
-  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
-  - `h4`: No piece can play h4 here, now or after the plan's earlier moves
-- **A00 Grob: 1...d5** (0 views)
-  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
-- **A00 Hungarian Opening: Paris Gambit** (0 views)
-  - `Qe1-g1`: One step of Qe1-g1 can't be played here
-- **A00 Hungarian Opening: Symmetrical Variation** (0 views)
-  - `a1-h8`: One step of a1-h8 can't be played here
-- **A00 Kádas Opening: Beginner's Trap** (0 views)
-  - `gxh3`: No piece can play gxh3 here, now or after the plan's earlier moves
-- **A00 Mieses Opening** (0 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **A00 Polish Opening: Orangutan-Diemer Gambit** (0 views)
-  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **A00 Polish Opening: Tartakower Gambit** (0 views)
-  - `f7-pawn`: There is no pawn on f7, or on its way
-- **A00 Polish Opening: Wolferts Gambit** (0 views)
-  - `...Bxc5`: No piece can play Bxc5 here, now or after the plan's earlier moves
-- **A00 Polish: 1...d5 2.Bb2 Nf6** (0 views)
-  - `d7-b6`: One step of d7-b6 can't be played here
 - **A00 Polish: Schuehler Gambit** (0 views)
-  - `Ra4-b4`: One step of Ra4-b4 can't be played here
-- **A00 Regan Variation** (0 views)
-  - `Qxd4`: No piece can play Qxd4 here, now or after the plan's earlier moves
-- **A00 Sodium Attack: Chenoboskion Variation** (0 views)
-  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
-- **A00 Van Geet Opening: Dougherty Gambit** (0 views)
-  - `Nxf3`: No piece can play Nxf3 here, now or after the plan's earlier moves
-- **A00 Van Geet Opening: Kluever Gambit** (0 views)
-  - `Bxd3`: No piece can play Bxd3 here, now or after the plan's earlier moves
-- **A00 Van Geet Opening: Napoleon Attack** (0 views)
+  - `Bxb5`: No piece can play Bxb5 here, now or after the plan's earlier moves
+- **A03 Bird Opening: Thomas Gambit** (0 views)
+  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
+- **A03 Bird: 1...d5 2.Nf3 Nf6 3.g3 g6** (0 views)
+  - `e1-d3`: One step of e1-d3 can't be played here
+- **A03 Bird: 1...d5 2.Nf3 Nf6 3.g3 g6: 6.d3 c5** (0 views)
+  - `d2-f1-e3`: One step of d2-f1-e3 can't be played here
+- **A03 Bird: Lasker Variation** (0 views)
+  - `Ne5`: No piece can play Ne5 here, now or after the plan's earlier moves
+- **A04 Modern Defense: Semi-Averbakh Variation, Pterodactyl Variation Accepted** (0 views)
+  - `d4-pawn`: There is no pawn on d4, or on its way
+- **A04 Reti: 1...c5** (0 views)
+  - `a1-h8`: One step of a1-h8 can't be played here
+- **A04 Reti: 1...c5** (0 views)
+  - `Nbd2-f1-e3`: One step of Nbd2-f1-e3 can't be played here
+- **A04 Reti: 1...c5** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **A04 Reti: 1...c5** (0 views)
+  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
+- **A04 Reti: 1...c5, Nimzowitsch-Larsen** (0 views)
+  - `Bb2`: No piece can play Bb2 here, now or after the plan's earlier moves
+- **A04 Reti: 1...f5 2.d4** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A04 Reti: Lisitsin: 3.Ng5 Nf6** (0 views)
+  - `...f5`: No piece can play f5 here, now or after the plan's earlier moves
+- **A04 Reti: Lisitsin: 3.Ng5 Nf6** (0 views)
   - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **A00 Van Geet Opening: Novosibirsk Variation** (0 views)
-  - `Ng1-e2-f4`: One step of Ng1-e2-f4 can't be played here
+- **A04 Zukertort Opening: Dutch Variation** (0 views)
   - `e6`: No piece can play e6 here, now or after the plan's earlier moves
-- **A00 Van Geet: 1...d5 2.e4** (0 views)
-  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
-- **A00 Van Geet: 1...d5 2.e4 dxe4** (0 views)
-  - `Ne4`: No piece can play Ne4 here, now or after the plan's earlier moves
-- **A01 Nimzo-Larsen Attack: English Variation** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **A02 Bird Opening: Double Duck Formation** (0 views)
-  - `Ne1-d3`: One step of Ne1-d3 can't be played here
-- **A02 Bird Opening: Schlechter Gambit** (0 views)
-  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **A02 Bird Opening: Siegener Gambit** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **A02 Bird: 1..Nf6 2.e3** (0 views)
+  - `g6`: No piece can play g6 here, now or after the plan's earlier moves
+  - `Rf6-h6`: One step of Rf6-h6 can't be played here
+- **A04 Zukertort Opening: Slav Invitation** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A04 Zukertort Opening: Vos Gambit** (0 views)
+  - `Kxd8`: No piece can play Kxd8 here, now or after the plan's earlier moves
+- **A04 Zukertort Opening: Wade Defense** (0 views)
+  - `h3`: No piece can play h3 here, now or after the plan's earlier moves
+- **A05 King's Indian Attack** (0 views)
+  - `e4-e5`: One step of e4-e5 can't be played here
+- **A05 Reti: KIA** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **A05 Reti: KIA** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **A05 Reti: KIA** (0 views)
+  - `g2`: No piece can play g2 here, now or after the plan's earlier moves
+- **A05 Reti: KIA** (0 views)
+  - `e1-d3`: One step of e1-d3 can't be played here
+- **A05 Reti: KIA** (0 views)
+  - `e1-g2-h4`: One step of e1-g2-h4 can't be played here
+- **A05 Reti: KIA** (0 views)
   - `Qe1-h4`: One step of Qe1-h4 can't be played here
+- **A05 Reti: KIA** (0 views)
+  - `e1-d3`: One step of e1-d3 can't be played here
+- **A05 Reti: KIA, Reti-Smyslov Variation** (0 views)
+  - `c4`: No piece can play c4 here, now or after the plan's earlier moves

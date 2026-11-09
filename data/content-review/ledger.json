@@ -1216,5 +1216,65 @@
     "verdict": "fixed",
     "contentHash": "320c58a975d61d2d",
     "notes": "Plan had the f3-knight going to e1 with the king there, and plans without side prefixes. Rewritten around d3/e4, c4 and Black's ...c5, ...e5 and ...c6."
+  },
+  "rnbqk2r/ppp1ppbp/5np1/3p4/5P2/5NP1/PPPPP1BP/RNBQK2R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "cb2e1d176472b001",
+    "notes": "Plan had the f3-knight going via e1 to d3 with the king on e1; plans vague. Rewritten around the fight for e4."
+  },
+  "rnbq1rk1/pp2ppbp/5np1/2pp4/5P2/3P1NP1/PPP1P1BP/RNBQ1RK1 w - - 0 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d05f1567be41f079",
+    "notes": "Plan had the b1-knight via d2-f1-e3 through the f1-rook. Rewritten around Qe1/Nc3 and e4 against ...Nc6, ...b5 and ...d4."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/5P2/4P3/PPPP2PP/RNBQKBNR w KQkq - 1 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "e5c67c0294e75056",
+    "notes": "Plan had Ne5 without Nf3, and ...b6/...Bb7 to challenge the f4-pawn. Rewritten; reviewer rejection (...g6 against a Stonewall's dark squares, which its pawns cover) fixed to the e4 hole and re-reviewed."
+  },
+  "rnb1k1nr/pp2ppbp/3p2p1/q1P5/2P1P3/5N2/PP3PPP/RNBQKB1R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "52f1e9009d192e79",
+    "notes": "Plan had Black pressing a d4-pawn that has gone (dxc5). Rewritten around 5...Qa5+, ...Qxc5 and White's Maroczy-style centre."
+  },
+  "rnbqkbnr/pp1ppp1p/6p1/2p5/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "5a5ffe857f73affe",
+    "notes": "Plans without side prefixes and the a1-h8 diagonal read as a move. Rewritten around Symmetrical English and KIA transpositions."
+  },
+  "r1bqk1nr/pp1pppbp/2n3p1/2p5/8/3P1NP1/PPP1PPBP/RNBQ1RK1 b kq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "a41d5fd440a4608c",
+    "notes": "Plan had White's Nbd2-f1-e3 with the rook on f1; plans without side prefixes. Rewritten around the e4/c4 and ...d5/...e5 breaks."
+  },
+  "r1bqk1nr/pp2ppbp/2np2p1/2p5/4P3/3P1NP1/PPP2PBP/RNBQ1RK1 b kq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "f336c97acbf0f9fe",
+    "notes": "Plan had Black exchanging dark-squared bishops to neutralise White's key attacking piece (the g2-bishop is light-squared); f4-f5 and g4-g5 routes. Rewritten as a Closed Sicilian-type structure."
+  },
+  "r1bqkbnr/pp1ppppp/2n5/2p5/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 1 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "978bc6cd6503b1e5",
+    "notes": "Plan had ...g6/...Bg7 neutralising the g2-bishop (different diagonal); plans without side prefixes. Rewritten."
+  },
+  "rnbqkbnr/pp1ppppp/8/2p5/8/1P3N2/P1PPPPPP/RNBQKB1R b KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "07df485eedc8d25c",
+    "notes": "Plan had Black neutralising the Bb2 by unclear means; American spelling. Rewritten around ...d5/...Nc6 and the e5 outpost."
+  },
+  "rnbqkbnr/ppppp1pp/8/5p2/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "b4540bebfb2f516e",
+    "notes": "Plan had ...Qe8-h5 with the king on e8; American spelling. Rewritten around the three Dutch set-ups."
   }
 }

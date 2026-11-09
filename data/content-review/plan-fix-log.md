@@ -8,9 +8,9 @@ independent reviewer before commit; notes per page are in
 
 ## Totals
 
-- Failing references: 4,164 at the start of this job (2026-11-09 01:10 UTC run); latest known 4,164 minus this job's fixes (next plan-check refresh pending)
-- Phase 1 pages left: 3,250 (viewed: 1)
-- Pages reviewed by this job: 10
+- Failing references: 4,164 at the start of this job (2026-11-09 01:10 UTC run); 4,151 at the 02:10 UTC refresh, about 4,138 after batch 2
+- Phase 1 pages left: about 3,240, skips excluded (viewed: 0)
+- Pages reviewed by this job: 20
 - Phase: 1
 
 ## Batches
@@ -18,3 +18,4 @@ independent reviewer before commit; notes per page are in
 | UTC              | Phase | Pages | Fixed / ok / needs-research | Reviewer accept / reject | Parser changes |
 | ---------------- | ----- | ----- | --------------------------- | ------------------------ | -------------- |
 | 2026-11-09 01:40 | 1     | 10    | 10 / 0 / 0                  | 24 / 1 (fixed, re-accepted) | none        |
+| 2026-11-09 02:35 | 1     | 10    | 10 / 0 / 0                  | 19 / 1 (fixed, re-accepted) | none        |

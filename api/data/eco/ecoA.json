@@ -132,7 +132,7 @@
       "ct": "Amar Opening, Gent Gambit"
     },
     "analysis_json": {
-      "description": "The Amar Opening, particularly the Paris and Gent Gambits, is a highly unorthodox and speculative system designed to immediately unbalance the game. White sacrifices pawns to shatter their own kingside pawn structure, aiming to generate a swift and dangerous attack along the newly opened h-file. This opening is for the creative and fearless player who thrives in chaos and enjoys surprising opponents with rare and objectively dubious lines, banking on tactical skill to overcome positional defects.",
+      "description": "The Gent Gambit is a rare branch of the Amar Opening in which White gives up the f-pawn for speed. After 3.f4 Bxh3 4.Bxh3 exf4 5.O-O fxg3 6.hxg3 White is a pawn down, but has the bishop pair, a castled king and a half-open f-file aimed at f7, and the h3-bishop covers the d7-square. The price is an airy king: with the f- and h-pawns gone, the g1-king is exposed on the a7-g1 diagonal and the h-file. It is a speculative surprise weapon rather than a sound opening, and Black, with an extra pawn and easy development, should be comfortable.",
       "style_tags": [
         "Gambit",
         "Unorthodox",
@@ -175,10 +175,9 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White aims to pile pressure on the h-file with the rook and queen, often followed by Ng5 to attack f7, seeking a quick checkmate.",
-        "White may play d4 to challenge Black's central control and open more lines for the pieces.",
-        "Black focuses on consolidating, neutralizing the h-file attack, and developing pieces quickly to exploit White's exposed king and structural weaknesses.",
-        "Black will often try to trade pieces to simplify the position and realize their material advantage in the endgame."
+        "White: Play for quick central pressure with d4, Nc3 and e4, using the half-open f-file against f7 and the h3-bishop, which covers the d7-square and hinders ...Nd7, to stop Black castling comfortably.",
+        "Black: Develop with ...Nf6 and ...Bc5+, a check along the a7-g1 diagonal that the missing f-pawn has opened, then castle short and keep the extra pawn.",
+        "Black: Once castled, trade pieces where possible: every exchange blunts White's initiative and leaves the extra pawn and White's broken kingside as lasting assets."
       ],
       "books": [
         {
@@ -3248,7 +3247,7 @@
     "name": "Grob: 1...d5",
     "scid": "A00o",
     "analysis_json": {
-      "description": "The Grob is a provocative and dubious flank opening that immediately weakens White's kingside. Black's most principled response, 1...d5, strikes at the center and aims to punish White's eccentric first move. The resulting games are often sharp and unconventional, where Black seeks to exploit the glaring weaknesses around the white king, while White hopes to create unusual attacking chances. This opening is for players who enjoy punishing unorthodox play and are comfortable navigating sharp, tactical positions from the very beginning.",
+      "description": "The Grob, 1.g4, weakens White's kingside at once and leaves the g4-pawn loose. 1...d5 is Black's most popular reply: it takes the centre and opens the c8-h3 diagonal, so the c8-bishop already attacks the g4-pawn. White usually answers 2.Bg2, hitting d5 and aiming down the long diagonal at b7, and after 2...Bxg4 often gambits with 3.c4 for play against Black's queenside. With careful play Black stands well; White relies on surprise and traps.",
       "style_tags": [
         "Unorthodox",
         "Sharp",
@@ -3288,10 +3287,9 @@
         "Center Control vs. Flank Attack"
       ],
       "common_plans": [
-        "Black's Plan: Challenge the g4-pawn with ...h5, develop pieces to attack the weak f4 and h4 squares, control the center, and exploit White's exposed king.",
-        "White's Plan: Fianchetto the king's bishop (Bg2), control the h5-square, and attempt to generate an attack on the h-file, often gambiting the g-pawn to disrupt Black's development.",
-        "Black's Plan: Solidify the center with ...c6, preparing to meet Bg2, and then develop pieces quickly to target the weakened light squares on the kingside.",
-        "White's Plan: After Bg2, play c4 to challenge Black's central d5-pawn, trying to distract from the kingside weaknesses."
+        "White: Play 2.Bg2 to pressure d5 and the long diagonal towards b7, and if Black takes the pawn with 2...Bxg4, continue with c4 and Qb3 to attack d5 and b7.",
+        "Black: Take the pawn with 2...Bxg4 if White allows it, or hold the centre with ...c6, then develop quickly with ...Nf6 and ...e5 or ...e6, aiming at the light squares around White's king that g4 has weakened.",
+        "White: If Black defends d5 with ...c6 rather than taking, support the g4-pawn with h3 and continue with d3 and c4, keeping the g2-bishop trained on Black's centre."
       ],
       "books": [
         {
@@ -3997,7 +3995,7 @@
     "moves": "1. g3 e5 2. Nh3 d5 3. f4 Bxh3 4. Bxh3 exf4 5. O-O",
     "name": "Hungarian Opening: Paris Gambit",
     "analysis_json": {
-      "description": "The Hungarian Opening: Paris Gambit is a rare and highly speculative line where White voluntarily shatters their own kingside pawn structure. In exchange for these structural weaknesses and often the bishop pair, White gains an open g-file and aims for a swift, decisive attack against the Black king. This opening is best suited for creative, risk-tolerant players who thrive in sharp, tactical, and unbalanced positions, using it as a potent surprise weapon.",
+      "description": "The Paris Gambit reached through 1.g3 gives up the f-pawn: after 3.f4 Bxh3 4.Bxh3 exf4 5.O-O Black is a pawn up, while White has the bishop pair, a castled king and an f-file ready to open towards f7. Black can keep the pawn with 5...fxg3, which after 6.hxg3 is the Gent Gambit, or develop with ...Nf6 and ...Bd6; White's idea is to win the pawn back with Rxf4 or gxf4, or to play for quick pressure. It is a rare, speculative surprise weapon, and sensible development leaves Black with no problems.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -4038,10 +4036,9 @@
         "Structural Imbalance"
       ],
       "common_plans": [
-        "White: Use the open g-file for a direct attack, often involving a queen lift (Qe1-g1) and rapid piece development to support the assault.",
-        "Black: Solidify the center, complete development, and neutralize White's immediate threats before exploiting White's long-term structural weaknesses.",
-        "White: Create tactical complications to prevent Black from consolidating their positional advantages.",
-        "Black: Launch a counterattack in the center or on the queenside once the kingside is secure."
+        "White: Win back the f4-pawn if Black allows it, ideally with Rxf4, which puts the rook on the half-open f-file facing f7, or else with gxf4; the h3-bishop, which covers the d7-square and hinders ...Nd7, adds to the pressure.",
+        "Black: Keep the extra pawn with ...fxg3 (after hxg3 this is the Gent Gambit) and develop quickly with ...Nf6, ...Bc5+ and short castling, using the a7-g1 diagonal that White's missing f-pawn has opened.",
+        "Black: Trade pieces where possible, since every exchange blunts White's initiative and leaves the extra pawn and White's loose kingside as lasting assets."
       ],
       "books": [],
       "version": "1.0",
@@ -4454,7 +4451,7 @@
       "scid": "Benko Opening: Symmetrical"
     },
     "analysis_json": {
-      "description": "The Hungarian Opening: Symmetrical Variation is a hypermodern and highly flexible system where both players fianchetto their king's bishop. It sidesteps early pawn clashes, leading to a strategic game where understanding plans and piece placement is more important than memorizing sharp variations. This opening is perfect for patient, strategic players who enjoy system-based approaches and are comfortable navigating complex, non-standard middlegame positions.",
+      "description": "In the Symmetrical Variation both sides prepare to fianchetto the king's bishop and hold back their central pawns. White usually continues Bg2 and then picks a set-up with c4, d4 or Nf3 and d3, transposing to the English, a colour-reversed Modern or the King's Indian Attack, and Black can mirror it or switch to ...d5 or ...c5. Few lines are forcing, so the game is a flexible manoeuvring fight in which plans and piece placement matter more than memorised moves.",
       "style_tags": [
         "Hypermodern",
         "System-based",
@@ -4497,10 +4494,9 @@
         "Delayed Central Conflict"
       ],
       "common_plans": [
-        "Both sides will complete their kingside fianchetto (Bg2/Bg7) and development (Nf3/Nf6, 0-0) before committing to a central pawn structure.",
-        "White often aims for a King's Indian Attack setup, preparing a central push with e4 or d4, depending on Black's reaction.",
-        "Black will often mirror White's play and then seek to create counterplay with a central break like ...d5 or ...c5 to challenge White's control.",
-        "A key plan for both sides is to prove their fianchettoed bishop is superior, often by controlling key squares and creating pressure along the long a1-h8 or a8-h1 diagonals."
+        "White: Complete the fianchetto with Bg2, develop with Nf3 and O-O, then choose between a centre with c4 and d4 and a King's Indian Attack set-up with d3 and e4.",
+        "Black: Mirror with ...Bg7, ...Nf6 and ...O-O, then take a share of the centre with ...d5, or with ...c5 and ...Nc6 in English style.",
+        "Black: Alternatively, set up with ...d6 and ...e5 in King's Indian style, gaining central space before White has committed in the centre."
       ],
       "books": [
         {
@@ -4720,7 +4716,7 @@
       "eco_js": "Kadas Opening: Beginner's Trap"
     },
     "analysis_json": {
-      "description": "The Kádas Opening is a highly unorthodox and dubious system, characterized by the immediate attempt to activate the h-rook. The 'Beginner's Trap' variation with 2.Rh3 aims to provoke Black into capturing the rook, opening the g-file for a primitive kingside attack. This opening is not based on sound strategic principles and is best suited for blitz or casual games where the primary goal is to surprise an unprepared opponent.",
+      "description": "The Kádas Opening's Beginner's Trap is a trap White falls into, not one White sets. After 1.h4 d5 the c8-h3 diagonal is open, so the rook lift 2.Rh3 walks straight onto it and 2...Bxh3 wins the exchange, a rook for a bishop. Whether White recaptures with Nxh3 or gxh3, Black is materially ahead with a sound position and only needs to develop normally. The page is a lesson in checking which diagonals a move opens before lifting a rook.",
       "style_tags": [
         "Unorthodox",
         "Tricky",
@@ -4760,8 +4756,8 @@
         "Rapid Rook Activation"
       ],
       "common_plans": [
-        "White's Plan: Provoke ...Bxh3, recapture with gxh3, and use the open g-file for a swift attack, often involving the queen.",
-        "Black's Plan: Ignore the rook on h3, seize the center with moves like ...e5 and ...c5, and develop pieces normally to punish White's misplaced pieces and weakened kingside."
+        "Black: Win the exchange at once with 2...Bxh3, then develop normally with ...Nf6, ...e5 or ...e6 and ...Nc6, and convert the extra material without allowing tactics.",
+        "White: After 2...Bxh3 3.Nxh3 White has at least developed a piece (3.gxh3 instead opens the g-file but wrecks the pawns); the only practical chances lie in quick development, as objectively White is clearly worse."
       ],
       "books": [],
       "version": "1.0",
@@ -5257,7 +5253,7 @@
       "icsbot": "Mieses; Valencia; Venezuelan Opening "
     },
     "analysis_json": {
-      "description": "The Mieses Opening is a highly flexible and non-committal first move, releasing the dark-squared bishop on c1 and supporting a future e4 pawn push. It's a 'system' opening, often transposing into setups like the King's Indian Attack or the Colle System, allowing White to sidestep heavy theory. This opening is perfect for strategic players who prefer to understand plans and structures rather than memorize sharp, tactical variations, aiming for a solid and patient buildup.",
+      "description": "The Mieses Opening, 1.d3, is a modest and flexible first move: it opens the c1-bishop's diagonal and prepares e4, but makes only a small claim on the centre. White usually continues with Nf3, g3, Bg2 and O-O and then strikes with e4 or c4, reaching a King's Indian Attack, a Closed Sicilian set-up against ...c5, or a colour-reversed Pirc or Modern. Black can take the centre freely with ...d5 and ...e5 and equalises without trouble; the opening's appeal is its low theory load and a manoeuvring game the opponent may know less well.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -5298,10 +5294,9 @@
         "Flexible Development"
       ],
       "common_plans": [
-        "For White: Develop with Nf3, g3, Bg2, and 0-0, transposing to a King's Indian Attack, often followed by a kingside pawn storm with f4-f5.",
-        "For White: Build a solid center with c3 and e3, developing the pieces behind the pawn chain (Colle System setup).",
-        "For Black: Seize the center with ...d5 and ...c5 to challenge White's flexible setup and gain a space advantage.",
-        "For Black: Develop symmetrically with ...d6, ...Nf6, ...g6, and ...Bg7, entering a King's Indian Defense setup with a move in hand."
+        "White: Develop with Nf3, g3, Bg2 and O-O, then play e4 to reach a King's Indian Attack, where White often gains space with e5 and attacks on the kingside.",
+        "White: Against an early ...e5, keep the position closed with e4, Nc3, g3 and Bg2, a colour-reversed Pirc or Closed Sicilian structure in which f4 is the usual break.",
+        "Black: Occupy the centre with ...d5 and ...e5, or ...d5 and ...c5, and develop freely; White's slow start means Black has no difficulty reaching equality."
       ],
       "books": [
         {
@@ -6520,7 +6515,7 @@
     "moves": "1. b4 d5 2. Bb2 Qd6 3. a3 e5 4. e4 dxe4 5. f3",
     "name": "Polish Opening: Orangutan-Diemer Gambit",
     "analysis_json": {
-      "description": "The Orangutan-Diemer Gambit is a rare and highly aggressive line where White sacrifices a pawn to blast open the center and launch a swift attack. By combining the flank pressure of the Polish Opening with the central gambit ideas of the Blackmar-Diemer, White aims for a chaotic, tactical game, prioritizing rapid development and initiative over material. This opening is perfect for creative, risk-taking players who thrive on launching early kingside assaults and are comfortable playing with compensation.",
+      "description": "The Orangutan-Diemer Gambit borrows the Blackmar-Diemer idea: White gives up the e-pawn with 4.e4 and follows with 5.f3 to open lines. If Black takes again with 5...exf3, Nxf3 develops with an attack on the e5-pawn, which the b2-bishop already aims at, and leaves the f-file half-open for White's rook; otherwise White can try to regain the pawn with fxe4. White plays for quick development and pressure on e5 and f7, while Black, a pawn up, aims to consolidate with ...Nf6, ...Nc6 and short castling, taking care with the exposed queen on d6. It is a rare and speculative line for players who enjoy the initiative more than material.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -6563,8 +6558,9 @@
         "Opening the Position"
       ],
       "common_plans": [
-        "White aims for rapid development (Nc3, Nf3, 0-0) to use the open f-file and active bishops for a direct kingside attack.",
-        "Black seeks to consolidate, complete development (...Nf6, ...c5, ...Be7), and neutralize White's initiative before converting the material advantage."
+        "White: After 5...exf3 6.Nxf3, which hits the e5-pawn, add Nc3 and Bc4 and castle short, using the f-file and the b2-bishop against e5 and f7.",
+        "White: Use Nc3 and Nb5 to harass the d6-queen and the c7-pawn, gaining time for development.",
+        "Black: Develop with ...Nf6, ...Nc6, ...Be7 and ...O-O; keeping e5 well protected blunts the b2-bishop, and returning a pawn is fine if it speeds up development."
       ],
       "books": [],
       "version": "1.0",
@@ -163284,7 +163280,7 @@
       "icsbot": "Zilbermints Gambit, Grob "
     },
     "analysis_json": {
-      "description": "This variation of the Grob is a highly aggressive and speculative gambit where White immediately challenges Black's central control at the cost of a pawn. The resulting positions are often wild, tactical, and unbalanced, suiting players who thrive on chaos and are comfortable defending a weakened king position in exchange for dynamic chances. It's a surprise weapon designed to take the opponent out of their preparation and into a sharp, hand-to-hand fight from the very beginning.",
+      "description": "With 2.e4 White offers the e-pawn to deflect Black's d5-pawn from the centre. The move also opens the d1-h5 diagonal, so the queen now guards the g4-pawn and ...Bxg4 would simply lose the bishop. After 2...dxe4 White usually plays Nc3 and Bg2 to win back e4 with quick development, while Black can try to keep the pawn or return it for easy development. It is a speculative surprise line, and White's loosened kingside remains a long-term concern.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -163325,10 +163321,9 @@
         "Surprise Weapon"
       ],
       "common_plans": [
-        "White: Sacrifice a pawn with 2.e4 to deflect Black's central pawn, then rapidly develop pieces (Nf3, Bc4) to attack the kingside and fight for the initiative.",
-        "Black: Accept the gambit with 2...dxe4, solidify the central advantage, and develop pieces to exploit White's exposed king and weak kingside squares (f4, h4).",
-        "White: Often aims to castle queenside to get the king away from the weakened kingside and use the h-pawn for an attack.",
-        "Black: Focus on rapid, sound development to punish White's unorthodox opening, often leading to a strong and decisive counterattack."
+        "White: After 2...dxe4, attack the e4-pawn with Nc3 and Bg2, using the lead in development and the open lines for the initiative.",
+        "Black: Accept with 2...dxe4 and develop quickly with ...Nf6, ...Nc6 and ...e5; returning the pawn is fine if it gains time, because the weaknesses around White's king last longer than the material.",
+        "Black: Once the centre is settled, undermine the g4-pawn with ...h5, opening lines towards White's king, which has no safe home on the kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T17:43:29.818Z"
@@ -163345,7 +163340,7 @@
       "icsbot": "Keene Defense, Grob "
     },
     "analysis_json": {
-      "description": "This is Black's most principled and effective response to the eccentric Grob's Attack. By immediately seizing the center with ...d5 and ...e5, Black highlights the strategic drawbacks of White's flank pawn push, securing a significant space advantage and a clear path for development. This line is ideal for players who enjoy punishing unorthodox play with classical, fundamental chess, turning a potentially chaotic game into a demonstration of superior central control.",
+      "description": "With 2.h3 White props up the g4-pawn, and Black answers 2...e5, building a broad pawn centre on d5 and e5. White's flank pawns do nothing to stop it, so Black has free development and more space, while White plans Bg2 to pressure the centre from a distance. Black's simplest route is classical play: develop, castle and use the extra space, with an eye on the light squares that g4 and h3 have loosened.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -163384,9 +163379,9 @@
         "Punishing Unsound Play"
       ],
       "common_plans": [
-        "For Black: Solidify central control with natural development (e.g., ...Nf6, ...Nc6, ...Bc5), then use the space advantage to launch an attack against White's weakened kingside.",
-        "For White: Attempt to justify the flank opening by fianchettoing the bishop to g2, challenging Black's center with d3 and c4, and seeking tactical skirmishes to complicate the position.",
-        "For Black: Restrict the Bg2 bishop and exploit the weak light squares around White's king, potentially preparing a ...h5-h4 push to break open the kingside."
+        "Black: Develop naturally with ...Nc6, ...Nf6 and ...Bc5 or ...Bd6, castle, and use the space that the pawns on d5 and e5 give to press against White's loosened kingside.",
+        "White: Fianchetto with Bg2, then challenge Black's centre with d3 and c4, hoping that pressure on d5 down the long diagonal and tactical skirmishes justify the flank pawns.",
+        "Black: Strike at the g4-pawn with ...h5: if White takes on h5 the h-file opens for Black's rook, and if White pushes g5 the f5-square becomes a home for Black's pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T17:43:52.915Z"

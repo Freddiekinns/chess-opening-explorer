@@ -1,10 +1,10 @@
 # Plan reference check
 
-4164 references on 3263 of 12377 pages fail the check and show as plain text.
+4151 references on 3253 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41084, of which 5562 name no move, route, square or piece
-- References by kind: {"square":14832,"piece":14257,"move":52224,"route":9671}
-- References by result: {"now":65048,"on-board":13160,"later":8612,"invalid":4164}
+- Plans: 41084, of which 5561 name no move, route, square or piece
+- References by kind: {"square":14842,"piece":14276,"move":52235,"route":9671}
+- References by result: {"now":65078,"on-board":13180,"later":8615,"invalid":4151}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -14,29 +14,6 @@
   - `...Na6-b4`: One step of ...Na6-b4 can't be played here
 - **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6 6.Nf3 Bg4** (1 views)
   - `d4-d5`: One step of d4-d5 can't be played here
-- **C20 King's Pawn Game: King's Head Opening** (1 views)
-  - `e2`: No piece can play e2 here, now or after the plan's earlier moves
-- **C39 King's Gambit Accepted: Allgaier, Schlechter Defense** (1 views)
-  - `f3`: No piece can play f3 here, now or after the plan's earlier moves
-- **C57 Two Knights Defence, Traxler Counterattack** (1 views)
-  - `...d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **C57 Two Knights Defense, Ulvestad Variation** (1 views)
-  - `...c5-c4`: One step of ...c5-c4 can't be played here
-- **C69 Spanish: Exchange, Gligoric, 6.d4 Bg4 7.c3** (1 views)
-  - `f4-g4`: One step of f4-g4 can't be played here
-- **C74 Spanish: Modern Steinitz, Siesta, 6.exf5** (1 views)
-  - `f8-rook`: There is no rook on f8, or on its way
-- **C88 Ruy Lopez: Closed, Leonhardt Variation** (1 views)
-  - `...Ng6`: No piece can play Ng6 here, now or after the plan's earlier moves
-- **C97 Ruy Lopez: Closed, Chigorin, Yugoslav System** (1 views)
-  - `...Bg7`: No piece can play Bg7 here, now or after the plan's earlier moves
-  - `b7-d8`: One step of b7-d8 can't be played here
-- **E21 Nimzo-Indian: Nimzo-Queen's Hybrid** (1 views)
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **E34 Nimzo-Indian: Classical, Noa, 5.cxd5 Qxd5 6.Nf3 Qf5 7.Qb3** (1 views)
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-  - `a3`: No piece can play a3 here, now or after the plan's earlier moves
 - **E61 King's Indian: Smyslov System** (1 views)
   - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
   - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
@@ -74,3 +51,24 @@
   - `f4`: No piece can play f4 here, now or after the plan's earlier moves
 - **A00 Van Geet Opening: Dougherty Gambit** (0 views)
   - `Nxf3`: No piece can play Nxf3 here, now or after the plan's earlier moves
+- **A00 Van Geet Opening: Kluever Gambit** (0 views)
+  - `Bxd3`: No piece can play Bxd3 here, now or after the plan's earlier moves
+- **A00 Van Geet Opening: Napoleon Attack** (0 views)
+  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
+- **A00 Van Geet Opening: Novosibirsk Variation** (0 views)
+  - `Ng1-e2-f4`: One step of Ng1-e2-f4 can't be played here
+  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
+- **A00 Van Geet: 1...d5 2.e4** (0 views)
+  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
+- **A00 Van Geet: 1...d5 2.e4 dxe4** (0 views)
+  - `Ne4`: No piece can play Ne4 here, now or after the plan's earlier moves
+- **A01 Nimzo-Larsen Attack: English Variation** (0 views)
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
+- **A02 Bird Opening: Double Duck Formation** (0 views)
+  - `Ne1-d3`: One step of Ne1-d3 can't be played here
+- **A02 Bird Opening: Schlechter Gambit** (0 views)
+  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
+- **A02 Bird Opening: Siegener Gambit** (0 views)
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
+- **A02 Bird: 1..Nf6 2.e3** (0 views)
+  - `Qe1-h4`: One step of Qe1-h4 can't be played here

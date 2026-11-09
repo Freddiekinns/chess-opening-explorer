@@ -246,10 +246,10 @@
     "notes": "Style brief audit (kings-pawn-game-wayward-queen-attack, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
   },
   "rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR b KQkq - 0 1": {
-    "reviewedAt": "2026-10-11",
+    "reviewedAt": "2026-11-09",
     "verdict": "fixed",
-    "contentHash": "8773fcd213fed6a1",
-    "notes": "Style brief audit (mieses-opening, researched 2026-10-03): 9 claims, 1 wrong and fixed in #171, 2 unverifiable."
+    "contentHash": "594034ff66940d85",
+    "notes": "Plans claimed Black's reversed King's Indian set-up gains a move in hand (White has the extra tempo), called a d3 set-up a Colle and proposed an f4-f5 storm in the KIA. Rewritten."
   },
   "rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2": {
     "reviewedAt": "2026-10-11",
@@ -988,5 +988,59 @@
     "verdict": "fixed",
     "contentHash": "25106f06f7d83fdf",
     "notes": "Plan 3 proposed b4 with the queen on b3 blocking it; plan 4 credited Black with a bishop pair that White would get; plan 1 had Be2/O-O without e3."
+  },
+  "rnbqk2r/ppp1ppb1/3p1npp/6B1/2PP4/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "b900e0c23a356665",
+    "notes": "Overview called the g5-bishop light-squared and the Bg5 a pin; plans repeated the already played ...h6 and named ...g5 before the bishop had moved. Rewritten with the 6.Bh4 g5 7.Bg3 Nh5 line."
+  },
+  "rn1qkbnr/ppp2ppp/8/3p4/8/6PB/PPPPP3/RNBQ1RK1 b kq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "25cb38fb81590012",
+    "notes": "Plans had White attacking on the h-file with Ng5 against f7, with no knight able to reach g5. Rewritten around White's real compensation (bishop pair, half-open f-file, h3-bishop on d7) and Black's ...Bc5+."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "73f60b09b8cf6c8d",
+    "notes": "Plans had Black challenging g4 with ...h5 and attacking f4/h4, missing that 1...d5 already attacks g4 with the c8-bishop. Rewritten around 2.Bg2 Bxg4 3.c4 and Qb3."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/4P1P1/8/PPPP1P1P/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "a541e0a446ca913f",
+    "notes": "Plans repeated 2.e4 and 2...dxe4 as future moves and suggested queenside castling. Overview now notes the queen guards g4 after 2.e4; plans rewritten around Nc3/Bg2 against e4 and ...h5."
+  },
+  "rnbqkbnr/ppp2ppp/8/3pp3/6P1/7P/PPPPPP2/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "2d9b76d008a35e86",
+    "notes": "A ...h5-h4 push that cannot follow with the h3-pawn there; plans tightened and British spelling."
+  },
+  "rn1qkbnr/ppp2ppp/8/3p4/5p2/6PB/PPPPP2P/RNBQ1RK1 b kq - 1 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "5e999cfb17810250",
+    "notes": "Plans had a queen lift Qe1-g1 onto the king's square and an open g-file that is closed. Rewritten around Rxf4/gxf4, the half-open f-file and Black's ...fxg3 transposition to the Gent Gambit; reviewer rejection fixed and re-reviewed."
+  },
+  "rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "fbcc65bc2783aad9",
+    "notes": "Plans read the a1-h8 diagonal as a move and had no side prefixes. Rewritten with White:/Black: plans and the brief's transpositions."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/7P/7R/PPPPPPP1/RNBQKBN1 b Qkq - 1 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "0d8a877a47c9dfa6",
+    "notes": "Misread the line: 2.Rh3 hangs the rook to 2...Bxh3, but the page described it as White provoking Bxh3 for a g-file attack. Rewritten: Black wins the exchange."
+  },
+  "rnb1kbnr/ppp2ppp/3q4/4p3/1P2p3/P4P2/1BPP2PP/RN1QKBNR b KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "9a918551225e8851",
+    "notes": "Plans used 0-0 for castling and generic text; rewritten around Nxf3 hitting e5, the b2-bishop, Nb5 against the d6-queen and Black's consolidation."
   }
 }

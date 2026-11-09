@@ -1042,5 +1042,65 @@
     "verdict": "fixed",
     "contentHash": "9a918551225e8851",
     "notes": "Plans used 0-0 for castling and generic text; rewritten around Nxf3 hitting e5, the b2-bishop, Nb5 against the d6-queen and Black's consolidation."
+  },
+  "rnbqkbnr/pppp2pp/5p2/4p3/1P2P3/8/PBPP1PPP/RN1QKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "f1a1a1b282cd02e6",
+    "notes": "Overview called the b-pawn gambit a central-pawn sacrifice; plans targeted an f7-pawn that is on f6. Rewritten around Bc4 on the a2-g8 diagonal and f4-f5 (the Brinckmann line)."
+  },
+  "rnbqkbnr/pp1p1ppp/8/2p1p3/1P6/8/PBPPPPPP/RN1QKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "7bb06ea4dd24a244",
+    "notes": "Overview called it a c-pawn sacrifice; the real point is that e5 falls to the b2-bishop after 3.bxc5 Bxc5 4.Bxe5. Plans rewritten; reviewer rejections (...Nf6 does not hit e5) fixed and re-reviewed."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/1P6/8/PBPPPPPP/RN1QKBNR w KQkq - 2 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "19af2086e2aee6e9",
+    "notes": "Plan had Black challenging the b2-bishop with ...Bf5 or a knight route d7-b6, and 0-0 notation. Rewritten around ...e6/...Bxb4 pressure, a3 or b5, c4 and ...c5."
+  },
+  "rnbqkbnr/1p1ppppp/2p5/pP6/8/8/PBPPPPPP/RN1QKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "f77cf3f410274c0e",
+    "notes": "Plans had White using an open a-file (both a-pawns are on it) with Ra4-b4. Rewritten around 3...cxb5 4.e4 and Bxb5; Bxb5 added to skips (parser can't read the recapture after ...cxb5)."
+  },
+  "rnbqkbnr/ppp2ppp/8/3pp3/3P4/6P1/PPP1PPBP/RNBQK1NR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "af8f44bdb924a277",
+    "notes": "Plans had Qxd4 for White without the ...exd4 that allows it; overview's Scandinavian comparison dropped. Reviewer rejections (exd4 opening the g2-bishop's diagonal, ...Nf6 gaining time) fixed and re-reviewed."
+  },
+  "rnbqkbnr/pppppp1p/6p1/8/6P1/N7/PPPPPP1P/R1BQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "088303c058c9c8d9",
+    "notes": "Plan 2 read the f4-square as a move and was generic. Rewritten around h4-h5 against g6 and ...d5 opening the c8-h3 diagonal against g4."
+  },
+  "rnbqkbnr/ppp1pppp/8/8/4p3/2N2P2/PPPP2PP/R1BQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "48cd3c491fb03fb7",
+    "notes": "Plans needed ...exf3 before Nxf3 and used 0-0; overview now notes fxe4 regains the pawn if Black ignores 3.f3. Rewritten with the numbered line."
+  },
+  "rnbqkbnr/ppppp1pp/8/8/4p3/2NP4/PPP2PPP/R1BQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "989ed5ee89402a13",
+    "notes": "Plans needed ...exd3 before Bxd3; overview's open e-file and long diagonal replaced with the b1-h7 diagonal and Qh5+ along e8-h5."
+  },
+  "r1bqkbnr/pppp1ppp/2n5/4p3/3P4/2N2N2/PPP1PPPP/R1BQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "003151a2d7ecc7a5",
+    "notes": "Plans generic with 0-0 notation. Rewritten around the Scotch-like 3...exd4 4.Nxd4, ...Bb4 pinning the c3-knight, and 3...e4."
+  },
+  "r1bqkbnr/pp1ppppp/2n5/8/7Q/2N5/PPP1PPPP/R1B1KBNR b KQkq - 2 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "2c3180816b81c341",
+    "notes": "Plan had Ng1-e2-f4 and Bc4 with the e2-pawn blocking both, and squares read as moves. Rewritten around Bg5, long castling and Black's development with gain of time."
   }
 }

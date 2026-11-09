@@ -7126,7 +7126,7 @@
     "moves": "1. b4 e5 2. Bb2 f6 3. e4",
     "name": "Polish Opening: Tartakower Gambit",
     "analysis_json": {
-      "description": "The Tartakower Gambit is a sharp and aggressive line within the Polish Opening, where White sacrifices a central pawn to accelerate development and attack. By playing 3.e4, White immediately challenges Black's setup, aiming to exploit the light-square weaknesses created by the ...f6 move. This opening leads to a tactical, double-edged battle, ideal for creative and aggressive players who enjoy fighting for the initiative and are comfortable with material imbalances.",
+      "description": "The Tartakower Gambit offers White's b-pawn: after 1.b4 e5 2.Bb2 f6, 3.e4 leaves b4 to ...Bxb4 in return for quick development. Black's 2...f6 shut out the b2-bishop but weakened the a2-g8 diagonal and the cover around Black's king, so White's plan is Bc4, which makes short castling hard for Black, followed by f4 and f5 to cramp and attack the kingside. Play is sharp and tactical; Black, a pawn up, must develop carefully and pick the right moment to return material.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -7168,10 +7168,9 @@
         "Flank Attack"
       ],
       "common_plans": [
-        "White aims for rapid development with Bc4 and Nf3, targeting the f7-pawn and the weakened light squares around Black's king.",
-        "White seeks to use the open lines created by the gambit to launch a swift attack before Black can consolidate.",
-        "Black's plan is to accept the pawn with ...Bxb4, carefully consolidate the position, and use the extra material in the long run.",
-        "Black must prioritize development and king safety, often looking to return the pawn at an opportune moment to neutralize White's pressure."
+        "White: After 3...Bxb4, develop with Bc4, aiming down the weakened a2-g8 diagonal so that Black cannot castle short easily, then play f4 and f5 to cramp Black's kingside, as in 4.Bc4 Nc6 5.f4 Qe7 6.f5.",
+        "Black: Take the pawn with 3...Bxb4, then develop with ...Nc6, ...Ne7 and ...d6, keeping the king safe; the e5-pawn is already protected by f6 against the b2-bishop.",
+        "Black: Strike back with ...d5 at the right moment to block the c4-bishop's diagonal and free the position, returning the pawn rather than clinging to material."
       ],
       "books": [
         {
@@ -7274,7 +7273,7 @@
       "icsbot": "Wolferts Gambit, Polish "
     },
     "analysis_json": {
-      "description": "The Wolferts Gambit is a sharp and unorthodox response to the Polish Opening, immediately creating an unbalanced and dynamic struggle. By sacrificing the c-pawn, Black challenges White's queenside expansion, aiming to disrupt their plans and seize the initiative through rapid development and counterplay. This opening is perfect for creative, aggressive players who thrive in complex, tactical positions and are not afraid to take calculated risks to fight for an early advantage.",
+      "description": "The Wolferts Gambit ignores the threat to e5, where the b2-bishop is already hitting an undefended pawn, and counter-attacks b4 with 2...c5. After 3.bxc5 Bxc5 4.Bxe5 White has won a pawn, and Black's compensation is quick development and open lines: the c5-bishop eyes f2, ...Nf6 shields g7 from the e5-bishop, and ...Nc6 then gains time on it. It is an aggressive but dubious try; White, a pawn up, must take care over development and the f2-square.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -7317,10 +7316,9 @@
         "Fighting for Initiative"
       ],
       "common_plans": [
-        "White: Accept the gambit with 3. bxc5, aiming to consolidate the extra pawn and use the queenside space advantage.",
-        "Black: After 3. bxc5, recapture with ...Bxc5, develop pieces quickly, and use open lines to create threats against White's position, often targeting the center.",
-        "White: Decline the gambit with 3. b5, clamping down on the queenside and forcing Black to find a new plan.",
-        "Black: Generate central counterplay with moves like ...d5 to undermine White's flank-oriented setup."
+        "White: Take with 3.bxc5 and after 3...Bxc5 win the e5-pawn with 4.Bxe5, then develop with e3 and Nf3 and keep f2 covered against the c5-bishop.",
+        "Black: After 3.bxc5 Bxc5 4.Bxe5, develop quickly with ...Nf6, which shields g7 from the e5-bishop, then ...Nc6 with gain of time on the bishop, ...Qb6 alongside the c5-bishop against f2, and short castling.",
+        "White: A calmer option is 3.b5, keeping the queenside closed and leaving the b2-bishop trained on e5, which Black must then defend, for example with ...d6."
       ],
       "books": [
         {
@@ -7483,7 +7481,7 @@
     "name": "Polish: 1...d5 2.Bb2 Nf6",
     "scid": "A00q",
     "analysis_json": {
-      "description": "This is a solid and classical response to the unorthodox Polish Opening. By playing 1...d5 and 2...Nf6, Black immediately establishes a strong foothold in the center and develops naturally, challenging White's flank-oriented strategy. The game typically evolves into a strategic battle where Black's central control clashes with White's pressure from the wing, making it ideal for players who appreciate sound positional principles and prefer to punish unorthodox play with classical development.",
+      "description": "Black meets the Polish Opening with classical development: 1...d5 takes the centre and 2...Nf6 blocks the b2-bishop's view of Black's kingside. White usually continues with e3 and Nf3, often adding a3 or b5 so that ...e6 and ...Bxb4 does not win a pawn, and later c4 to challenge d5. Black's simplest set-up is ...e6, ...Bd6 or ...Be7 and castling, with ...c5 to strike at b4; the result is a calm positional game in which Black has no problems.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -7523,10 +7521,9 @@
         "Classical Development"
       ],
       "common_plans": [
-        "White: Continue development with e3 and Nf3, aiming to use the Bb2 to pressure Black's kingside and the e5-square. White may prepare a c2-c4 pawn break to challenge Black's central d5-pawn.",
-        "Black: Solidify the center with ...e6, develop the kingside with ...Be7 and ...0-0, and prepare the ...c5 pawn break to undermine White's queenside and challenge the b4-pawn.",
-        "Black: Challenge White's key bishop on b2 with moves like ...Bf5 or by preparing to reroute a knight to d7-b6.",
-        "White: Seek opportunities for a kingside attack, sometimes involving f2-f4, if Black is slow to react."
+        "White: Develop with e3 and Nf3, cover the b4-pawn with a3 or push it to b5, and prepare c4 to challenge Black's d5-pawn while the b2-bishop presses along the long diagonal.",
+        "Black: Set up with ...e6, ...Bd6 or ...Be7 and ...O-O, then strike with ...c5 to undermine the b4-pawn and open lines on the queenside.",
+        "Black: An alternative is ...Bf5 with ...e6 and ...c6, a solid set-up in the style of the London System, with the f6-knight keeping the b2-bishop's diagonal closed."
       ],
       "books": [
         {
@@ -8382,7 +8379,7 @@
     "name": "Polish: Schuehler Gambit",
     "scid": "A00p",
     "analysis_json": {
-      "description": "The Schuehler Gambit is a sharp and unorthodox line within the Polish Opening, where White sacrifices a queenside pawn to accelerate development and seize the initiative. This opening leads to dynamic, unbalanced positions and is perfect for aggressive, creative players who enjoy taking calculated risks to disrupt their opponent's plans from the very first moves. It's a potent surprise weapon that bypasses mainstream theory in favor of immediate tactical complications.",
+      "description": "In the Schuehler Gambit White meets 2...a5 not by defending b4 but by pushing 3.b5, offering the pawn to the c6-pawn. If Black takes with 3...cxb5, White hopes for quick development and play against Black's loosened queenside, with e4 and Bxb5 a natural way to try to win the pawn back. It is a rare surprise weapon rather than a sound gambit; Black, with normal development after ...cxb5, should be comfortable.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -8424,10 +8421,8 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "White aims to exploit the open a-file with the rook (e.g., Ra4-b4), accelerate development with moves like Nc3 and e3, and use the Bb2 to pressure Black's kingside.",
-        "Black's main plan is to accept the gambit with 3...cxb5, solidify their position with moves like ...d5 and ...e6, and try to weather White's initiative while making their extra pawn count in the long run.",
-        "White may try to prevent Black from consolidating by creating immediate threats and maintaining constant pressure on the queenside and center.",
-        "Black often seeks to trade pieces to reduce White's attacking potential and simplify into a favorable endgame."
+        "White: After 3...cxb5 4.e4, aim to win the pawn back with Bxb5, then continue with Nf3 and castling while the b2-bishop works on the long diagonal.",
+        "Black: Accept with 3...cxb5 and develop normally with ...e6, ...Nf6 and ...d5, using the half-open c-file; giving the b5-pawn back is fine if it speeds up development."
       ],
       "books": [
         {
@@ -8738,7 +8733,7 @@
       "eco_wikip": "Irregular Openings: Sodium Attack, Chenoboskion Variation"
     },
     "analysis_json": {
-      "description": "The Sodium Attack: Chenoboskion Variation is a hyper-aggressive and highly eccentric opening designed to immediately provoke and disrupt Black's kingside setup. By playing 2. g4, White gambles on a chaotic, tactical battle, creating significant weaknesses around their own king in exchange for a space advantage and attacking chances on the flank. This opening is suited for creative, risk-loving players who enjoy surprising their opponents and navigating sharp, unbalanced positions where standard strategic rules often take a backseat to immediate threats.",
+      "description": "The Chenoboskion Variation pairs two very eccentric moves: 1.Na3 puts the knight on the rim, and after 1...g6, 2.g4 grabs kingside space at the cost of loosening White's own king. White's idea is to push the h-pawn against the g6-pawn, while the a3-knight can return to play via c4 or b5. Black's natural answer is classical development: ...Bg7 on the long diagonal, and ...d5, which opens the c8-h3 diagonal and leaves the g4-pawn exposed to ...Bxg4. It is a very rare surprise line with no claim to an advantage.",
       "style_tags": [
         "Aggressive",
         "Unorthodox",
@@ -8780,8 +8775,8 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White aims to continue the kingside pawn storm with h2-h4, open lines against the Black king, and create tactical complications before Black can consolidate.",
-        "Black seeks to challenge White's overextended flank, exploit the weakened light and dark squares (like f4), and launch a decisive counterattack in the center or against White's exposed king."
+        "White: Push the h-pawn to h4 and h5 against the g6-pawn to open the h-file, and bring the a3-knight back into play via c4 or b5.",
+        "Black: Develop with ...Bg7 and strike with ...d5: the d-pawn's advance opens the c8-h3 diagonal, so the g4-pawn becomes a target for ...Bxg4, and Black's centre makes White's flank play look slow."
       ],
       "books": [
         {
@@ -9192,7 +9187,7 @@
     "moves": "1. Nc3 d5 2. e4 dxe4 3. f3",
     "name": "Van Geet Opening: Dougherty Gambit",
     "analysis_json": {
-      "description": "The Van Geet Opening: Dougherty Gambit is a rare and aggressive line where White sacrifices a pawn on move three to accelerate development and seize the initiative. By opening the f-file and challenging Black's central control, White aims for a swift attack, creating a sharp, tactical battle from the outset. This opening is perfect for creative, aggressive players who enjoy surprising their opponents and are comfortable playing for compensation in dynamic, unbalanced positions.",
+      "description": "The Dougherty Gambit is the Van Geet's version of the Blackmar-Diemer idea: after 1.Nc3 d5 2.e4 dxe4, 3.f3 tries to open lines. If Black accepts with 3...exf3, White recaptures with Nxf3 or Qxf3 and is a pawn down, with a lead in development and a half-open f-file aimed at f7; if Black ignores it, fxe4 wins the pawn back. Black can keep the extra pawn by consolidating with ...Nf6, ...e6, ...Be7 and castling, and White's chances rest on activity and surprise rather than a proven edge.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -9231,8 +9226,8 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "White aims for rapid development (Nxf3, Bc4, 0-0) and uses the open f-file to build an attack against the Black king, often targeting the f7-pawn.",
-        "Black typically accepts the gambit with 3...exf3, then focuses on solidifying their position, neutralizing White's initiative, and eventually converting the extra pawn in the endgame."
+        "White: After 3...exf3 4.Nxf3, develop quickly with d4, Bd3 or Bc4 and O-O, using the half-open f-file and the lead in development against f7.",
+        "Black: Accept with 3...exf3 and consolidate with ...Nf6, ...e6, ...Be7 and short castling; once Black reaches a safe middlegame the extra pawn should tell."
       ],
       "books": [
         {
@@ -9709,7 +9704,7 @@
     "moves": "1. Nc3 f5 2. e4 fxe4 3. d3",
     "name": "Van Geet Opening: Kluever Gambit",
     "analysis_json": {
-      "description": "The Kluever Gambit is a sharp and aggressive response to the Dutch Defense setup against 1. Nc3. White immediately sacrifices a pawn to open the e-file and the long diagonal, aiming to exploit the weaknesses created around the Black king by the ...f5 move. This opening is perfect for tactical players who enjoy seizing the initiative from the outset and launching a swift attack, leading to dynamic and unbalanced positions.",
+      "description": "The Kluever Gambit meets the Dutch-style 1...f5 with 2.e4 fxe4 3.d3, offering a pawn to open lines in the spirit of the From Gambit. If Black takes with 3...exd3, Bxd3 develops with pressure on the b1-h7 diagonal, and with the f-pawn gone Black's king is exposed to checks such as Qh5+ along the e8-h5 diagonal. Black can keep the extra pawn with careful development, starting with ...Nf6, which covers h5 and h7; White's play relies on rapid development and surprise rather than a sound edge.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -9751,8 +9746,8 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White aims for rapid development (Bxd3, Nf3, 0-0) to build pressure against Black's weakened kingside, often using the open e-file and the active bishop on d3.",
-        "Black seeks to consolidate the extra pawn, neutralize White's initiative with moves like ...Nf6 and ...d5, and blunt the dangerous d3-bishop, often with ...g6."
+        "White: After 3...exd3 4.Bxd3, develop quickly with Nf3 and O-O, aiming the d3-bishop at h7 and looking for Qh5+ or Ng5 against Black's weakened kingside.",
+        "Black: Accept with 3...exd3 and play ...Nf6 early to cover h5 and h7, then follow with ...d5 or ...g6 to blunt the d3-bishop and keep the extra pawn."
       ],
       "books": [],
       "version": "1.0",
@@ -10009,7 +10004,7 @@
     "moves": "1. Nc3 e5 2. Nf3 Nc6 3. d4",
     "name": "Van Geet Opening: Napoleon Attack",
     "analysis_json": {
-      "description": "The Van Geet Opening: Napoleon Attack is an aggressive and direct attempt to seize the initiative by immediately challenging Black's central control. By playing 3. d4, White aims to open the position for their pieces, leading to a sharp, tactical game where quick development and attacking ideas are paramount. This opening is well-suited for creative and combative players who enjoy taking their opponents out of standard theory and into a dynamic, open battle.",
+      "description": "In the Napoleon Attack White answers 1...e5 and 2...Nc6 with 3.d4, opening the centre at once. After 3...exd4 4.Nxd4 the game resembles a Scotch with the queen's knight already on c3, and with e4 to follow it can reach Scotch Four Knights structures. Black has an easy game: ...Nf6, ...Bb4 pinning the c3-knight, and ...d5 to strike back in the centre; 3...e4, hitting the f3-knight, is a space-gaining alternative. It is a direct, open game for players who like early piece play.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -10050,8 +10045,9 @@
         "Creating Open Positions"
       ],
       "common_plans": [
-        "White: Recapture on d4, develop pieces rapidly (Bc4, 0-0), and use the open center to build an attack.",
-        "Black: Neutralize White's initiative, complete development, and challenge White's central pieces to achieve equality or counter-attack."
+        "White: After 3...exd4 4.Nxd4, develop with e4, Be2 or Bc4 and O-O, using the knights on c3 and d4 for a Scotch-style game with free piece play.",
+        "Black: After 3...exd4 4.Nxd4, play ...Nf6 and ...Bb4, pinning the c3-knight, and look for ...d5 to free the game and reach full equality.",
+        "Black: 3...e4 is an alternative that gains space with gain of time on the f3-knight; Black then supports the pawn with ...d5 or ...f5."
       ],
       "books": [
         {
@@ -10079,7 +10075,7 @@
       "icsbot": "Novosibirsk Variation, Dunst "
     },
     "analysis_json": {
-      "description": "The Van Geet Opening: Novosibirsk Variation is a sharp, aggressive, and unconventional system where White immediately places the queen on an active attacking post. By playing 4. Qh4, White signals an intent to launch a quick kingside attack, often before development is complete. This opening is ideal for creative and tactical players who enjoy taking risks, creating immediate imbalances, and steering the game into uncharted territory from the outset.",
+      "description": "The Novosibirsk Variation swaps White's d-pawn for Black's c-pawn and then sends the queen to h4 rather than back to d1 or to a4. From h4 the queen eyes Black's kingside and the e7-pawn, and White can follow with Bg5, e4 and long castling. The queen has moved twice, though, and Black's development comes easily: ...Nf6 and ...e5 or ...d5 claim the centre, and the exposed queen can become a target. It is an offbeat surprise line rather than a route to an advantage.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -10119,10 +10115,9 @@
         "Provocation"
       ],
       "common_plans": [
-        "White aims to support the queen's attack with pieces like Bc4 and Ng1-e2-f4, often castling queenside to launch a pawn storm on the kingside.",
-        "Black seeks to challenge the exposed queen with moves like ...Nf6 and ...g6, while completing development and exploiting White's lack of central control.",
-        "Black often counters in the center with ...e6 and ...d5 to undermine White's setup and prove the queen is misplaced.",
-        "White may look for early tactical shots and sacrifices on squares like f7 and e6 to break open the Black king's position."
+        "White: Develop with Bg5 or Bf4 and Nf3, castle long, and use the h4-queen together with e4 and a kingside pawn advance to build an attack.",
+        "Black: Develop quickly with ...Nf6 and ...d5 or ...e5, claiming the centre while White's queen is offside, and castle short once the kingside is covered.",
+        "Black: Gain time against the exposed queen, for example with ...e6 and ...Be7 before the knight goes to f6, and use the lead in development to counter in the centre with ...d5."
       ],
       "books": [],
       "version": "1.0",
@@ -163158,7 +163153,7 @@
     "moves": "1. g3 d5 2. Bg2 e5 3. d4",
     "src": "chessGraph",
     "analysis_json": {
-      "description": "The Regan Variation is a modern and provocative way to challenge Black's classical central setup. By immediately striking with 3.d4, White forces a decision, leading to either open, Scandinavian-like positions after 3...exd4 or closed, French-style structures after 3...e4. This opening is ideal for flexible, strategic players who enjoy creating central tension and steering the game into less-trodden paths.",
+      "description": "The Regan Variation strikes at Black's broad centre at once: after 1.g3 d5 2.Bg2 e5, 3.d4 attacks the e5-pawn. Black chooses between 3...exd4, giving up the e5-pawn's central post and leaving White to win the pawn back, usually with Qxd4, and 3...e4, a space-gaining advance that gives a French-like structure with colours reversed, in which White undermines the chain with c4 and f3. It suits players who like to create central tension early and steer the game into little-known paths.",
       "style_tags": [
         "Strategic",
         "Flexible",
@@ -163200,10 +163195,10 @@
         "Fighting for central control"
       ],
       "common_plans": [
-        "White: After ...exd4, recapture with Qxd4, develop with Nf3, and use the Bg2 to pressure Black's center and queenside.",
-        "White: If Black plays ...e4, challenge the pawn chain with c4, aiming to open lines and undermine Black's central space.",
-        "Black: After 3...exd4, develop pieces (e.g., ...Nf6, ...c5) to challenge White's central control and neutralize the Bg2.",
-        "Black: If 3...e4, solidify the center, develop pieces behind the pawn chain, and often seek kingside attacking chances."
+        "White: After 3...exd4 4.Qxd4, accept that ...Nc6 will gain time on the queen, then develop with Nf3 and O-O and use the g2-bishop against Black's d5-pawn and queenside.",
+        "White: Against 3...e4, undermine the advanced pawn with c4 and f3, often with Nc3, opening lines for the g2-bishop and attacking Black's centre.",
+        "Black: After 3...exd4 4.Qxd4, develop with gain of time through ...Nc6, then ...Nf6 and quick castling, using the lead in development while White's queen is exposed.",
+        "Black: After 3...e4, support the chain with ...c6 and, where useful, ...f5, develop the pieces behind it and use the extra space."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T17:42:38.553Z"

@@ -16,5 +16,11 @@
     "plan": "White: Use the space advantage to build a kingside attack, often with a bishop on d3 and queen on e2. Prepare the d4-d5 pawn break to open lines. Control the critical d5 square.",
     "reference": "d4-d5",
     "reason": "correct plan, parser can't read a pawn break that waits for the blockading d5-knight to leave yet"
+  },
+  {
+    "fen": "rnbqkbnr/1p1ppppp/2p5/pP6/8/8/PBPPPPPP/RN1QKBNR b KQkq - 0 3",
+    "plan": "White: After 3...cxb5 4.e4, aim to win the pawn back with Bxb5, then continue with Nf3 and castling while the b2-bishop works on the long diagonal.",
+    "reference": "Bxb5",
+    "reason": "correct plan, parser can't read a recapture that needs the opponent's ...cxb5 first yet"
   }
 ]

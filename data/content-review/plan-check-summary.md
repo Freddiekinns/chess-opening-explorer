@@ -1,10 +1,10 @@
 # Plan reference check
 
-3640 references on 2826 of 12377 pages fail the check and show as plain text.
+3628 references on 2816 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5493 name no move, route, square or piece
-- References by kind: {"square":15129,"piece":14593,"move":53542,"route":9437}
-- References by result: {"now":66547,"on-board":13482,"later":9032,"invalid":3640}
+- References by kind: {"square":15130,"piece":14599,"move":53573,"route":9426}
+- References by result: {"now":66572,"on-board":13488,"later":9040,"invalid":3628}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -20,28 +20,6 @@
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **A65 Benoni: 6.e4 g6 7.Bd3 Bg7 8.h3** (0 views)
-  - `Nf3-e1-g2`: One step of Nf3-e1-g2 can't be played here
-  - `Nf1-g3`: One step of Nf1-g3 can't be played here
-- **A65 Benoni: 6.e4 g6 7.Bd3 Bg7 8.Nge2** (0 views)
-  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
-- **A65 Benoni: 6.e4 g6 7.Bf4** (0 views)
-  - `...Ne5`: No piece can play Ne5 here, now or after the plan's earlier moves
-- **A65 Benoni: Saemisch (6.e4 g6 7.f3)** (0 views)
-  - `f5`: No piece can play f5 here, now or after the plan's earlier moves
-- **A65 Benoni: Saemisch, 8.Bg5** (0 views)
-  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
-- **A65 Benoni: Saemisch, 8.Bg5 h6** (0 views)
-  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
-- **A65 Benoni: Saemisch, 8.Bg5 h6 9.Be3 O-O 10.Nge2** (0 views)
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **A65 Benoni: Saemisch, 8.Bg5 h6 9.Be3 O-O 10.Qd2 a6** (0 views)
-  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
-- **A65 Benoni: Saemisch, 8.Bg5 h6 9.Be3 O-O 10.Qd2 a6 11.a4 Nbd7** (0 views)
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **A65 Benoni: Saemisch, 8.Bg5 h6 9.Be3 O-O 10.Qd2 a6 11.a4 Re8** (0 views)
-  - `Kh1`: No piece can play Kh1 here, now or after the plan's earlier moves
-  - `g4-pawn push`: No piece can play g4 here, now or after the plan's earlier moves
 - **A65 Benoni: Saemisch, 8.Bg5 O-O** (0 views)
   - `e5`: No piece can play e5 here, now or after the plan's earlier moves
 - **A65 Benoni: Saemisch, 8.Bg5 O-O 9.Qd2 a6** (0 views)
@@ -74,3 +52,26 @@
   - `f8`: No piece can play f8 here, now or after the plan's earlier moves
 - **A67 Benoni: Four Pawns, Taimanov, 9.a4 O-O 10.Nf3** (0 views)
   - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **A67 Benoni: Four Pawns, Taimanov, 9.a4 O-O 10.Nf3 Na6** (0 views)
+  - `...b7-b5`: One step of ...b7-b5 can't be played here
+  - `f8-e6`: One step of f8-e6 can't be played here
+- **A67 Benoni: Four Pawns, Taimanov, 9.a4 O-O 10.Nf3 Na6 11.O-O Nc7** (0 views)
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **A67 Benoni: Four Pawns, Taimanov, 9.a4 Qh4+** (0 views)
+  - `Kg2`: No piece can play Kg2 here, now or after the plan's earlier moves
+  - `g3`: No piece can play g3 here, now or after the plan's earlier moves
+  - `...Na6-b4`: One step of ...Na6-b4 can't be played here
+- **A67 Benoni: Four Pawns, Taimanov, 9.Bd3 O-O 10.Nf3** (0 views)
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
+- **A68 Benoni: Four Pawns, 9.Be2 Bg4** (0 views)
+  - `g4-g5`: One step of g4-g5 can't be played here
+- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5** (0 views)
+  - `g4-g5`: One step of g4-g5 can't be played here
+- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6** (0 views)
+  - `g2-g4`: One step of g2-g4 can't be played here
+- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6 13.O-O Nxe5 14.d6** (0 views)
+  - `Rf3-g3`: One step of Rf3-g3 can't be played here
+- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6 13.O-O Nxe5 14.Nxe5** (0 views)
+  - `e5-pawn`: There is no pawn on e5, or on its way
+- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.e6** (0 views)
+  - `Qh5`: No piece can play Qh5 here, now or after the plan's earlier moves

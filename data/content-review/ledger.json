@@ -3670,5 +3670,65 @@
     "verdict": "fixed",
     "contentHash": "092c95f3a33499f2",
     "notes": "Plan 4 rerouted the d7-knight via b8-c6 or f8-e6 (rook on f8). Rewrote plan 4; British spelling."
+  },
+  "rnbq1rk1/pp3pbp/3p1np1/2pP2B1/4P3/2N2P2/PP4PP/R2QKBNR w KQ - 3 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "aff9e3c46ebdfc90",
+    "notes": "Plan 1 pushed g4-g5 with the bishop on g5; plan 4 read control of e5 as a move. Rewrote plans 1 and 4 (Bh6 trade, ...h6); British spelling."
+  },
+  "rnbq1rk1/1p3pbp/p2p1np1/2pP2B1/4P3/2N2P2/PP1Q2PP/R3KBNR w KQ - 0 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ecf19630a6a94c1b",
+    "notes": "Plan 1 pushed g4-h4-g5 with the bishop on g5; plan 4 played ...Na6-c7 with a pawn on a6. Rewrote plans 1 and 4; British spelling."
+  },
+  "rnbqk2r/pp1n1pbp/3p2p1/2pPP3/5P2/2N5/PP4PP/R1BQKBNR w KQkq - 1 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "21c0294126d63193",
+    "notes": "Plan 1 rerouted Ne2-g3 (ambiguous, not the line's idea); rewritten around Nb5 and e6. British spelling (Defence, centre)."
+  },
+  "rnbqk2r/pp1n1pbp/3pP1p1/2pP4/5P2/2N5/PP4PP/R1BQKBNR b KQkq - 0 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "bca2fd1497d21c73",
+    "notes": "Plan 1 used an open d-file that does not exist; plan 2 relied on a Black passed e-pawn that cannot arise after 9...fxe6 10.dxe6. Rewrote both plans; British spelling."
+  },
+  "rnbqk2r/pp1n1pbp/3p2p1/1NpPP3/5P2/8/PP4PP/R1BQKBNR b KQkq - 2 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "f9503cf1bd0e84c1",
+    "notes": "Plan 1 played Ne4 with no knight able to reach it; plan 2 pushed ...b5 onto White's knight; plan 3 claimed an unconfirmed d5 sacrifice. Rewrote plans 1-3 around 9...dxe5 10.Nd6+ Ke7 11.Nxc8+; British spelling."
+  },
+  "rnbqk2r/pp3pbp/3p1np1/1BpP4/4PP2/2N5/PP4PP/R1BQK1NR b KQkq - 2 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "43666da9a0a5c7cf",
+    "notes": "Plan 2 pushed ...b5 with the bishop on b5; plan 4 rerouted ...Na6-c7 while Black is in check. Rewrote plans 2 and 4; British spelling."
+  },
+  "r1bqk2r/pp1n1pbp/3p1np1/1BpP4/4PP2/2N5/PP4PP/R1BQK1NR w KQkq - 3 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "129ddbe301ba5d83",
+    "notes": "Plan 1 had Nf3-g5 and h4-h5 with no knight on f3; plan 2 pushed ...b5 onto the bishop and promised a passed a-pawn. Rewrote plans 1-3 around 9.e5 and the pin on d7; British spelling."
+  },
+  "rnbqk2r/pp1n1pbp/3p2p1/1BpP4/4PP2/2N5/PP4PP/R1BQK1NR w KQkq - 3 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "6f210375972b0952",
+    "notes": "Plan 2 played ...Na6 after ...a6. Rewrote plan 2 around ...Qh4+; plan 1 wording and British spelling."
+  },
+  "rnbqk2r/pp1n1pbp/3p2p1/1BpP4/P3PP2/2N5/1P4PP/R1BQK1NR b KQkq - 0 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "c2faac1464b7a349",
+    "notes": "Plan 1 relied on a g4-g5 storm; plan 3 pushed ...b5 with the bishop on b5. Rewrote plans 1 and 3 around 9...Qh4+ 10.g3 Qe7; British spelling."
+  },
+  "rnbqk2r/1p1n1pbp/p2p2p1/1BpP4/P3PP2/2N5/1P4PP/R1BQK1NR w KQkq - 0 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "efdb56d4024ca504",
+    "notes": "Plan 2 played ...Na6 with a pawn on a6; plan 4 sent the d7-knight to c6. Rewrote plans 1, 2 and 4 (a knight on e5 was also rejected: fxe5); British spelling."
   }
 }

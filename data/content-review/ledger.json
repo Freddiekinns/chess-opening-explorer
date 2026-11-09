@@ -1696,5 +1696,65 @@
     "verdict": "fixed",
     "contentHash": "86e7de4f16391686",
     "notes": "Plan had White controlling the centre with a d3-pawn that is on c3. Rewritten around Be3, Bc4, Kc2 and Black's ...Bg4 pin against the d1-king. Reviewer rejections (...f5 offered as Black's main plan; the standard set-up is ...f6 and ...e5) fixed and re-reviewed."
+  },
+  "rnbqk2r/ppp1ppbp/6p1/8/8/2P3P1/P2PPPBP/1RBQK1NR b Kkq - 2 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d56f40aed18f5c62",
+    "notes": "Plans had White pushing a b-pawn that is on c3 (b4-b5) and rook routes Rb2-f2 and Rb3-g3. Rewritten around Rb1 against b7 and ...c5/...e5."
+  },
+  "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "61cdd50b69b51906",
+    "notes": "Plans had a ...f5-f4 route, d5/c5/b4 before e4, and a knight route via h5 or e8 to g7. Rewritten around the King's Indian and Grünfeld choices."
+  },
+  "rn1q1rk1/pbppbppp/1p2pn2/8/2P5/2N2NP1/PP1PPPBP/R1BQR1K1 b - - 6 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "b87ca2ad2d47129c",
+    "notes": "Plan read e4 as Black's move; American spelling. Rewritten around Re1/e4 and ...d5/...Ne4. Reviewer rejection (Black's king is not behind its fianchettoed bishop) fixed and re-reviewed."
+  },
+  "rnbqk2r/pppp1ppp/4pn2/8/1bP5/2N2NP1/PP1PPP1P/R1BQKB1R b KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "3c680b80475eda40",
+    "notes": "Overview called ...Bb4 a pin (the d2-pawn shields the king); plan read b4 as a move. Rewritten around Qc2/Qb3, ...Bxc3 and ...b6/...Bb7."
+  },
+  "rnbqkb1r/ppp2ppp/4pn2/4P3/2Pp4/2N5/PP1P1PPP/R1BQKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "77dabeb04a7e214d",
+    "notes": "Plans had bxc3 and ...Qxf6 before the captures that allow them. Rewritten with 5.exf6 dxc3 6.bxc3 Qxf6."
+  },
+  "rnb1kb1r/pp3ppp/4pq2/2p5/2PP4/2P5/P4PPP/R1BQKBNR w KQkq - 0 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "5a653bc37d9b7fe4",
+    "notes": "Plan had ...Bb7 pressing an e4-pawn that has gone. Rewritten around the d4-pawn and doubled c-pawns."
+  },
+  "r1bqkbnr/pp1p1ppp/2n1p3/2p1P3/2P5/2N2N2/PP1P1PPP/R1BQKB1R w KQkq - 3 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "0108c8171daefaf1",
+    "notes": "Plan had a knight route h6-f7. Rewritten around ...d6/...f6 against e5 and the g8-knight's return via e7 or h6. Reviewer rejection (after 7.Nxd4 the e5-pawn simply falls to ...Nxe5) fixed and re-reviewed."
+  },
+  "r1bqkbnr/pp1p1ppp/2n1p3/2p1P3/2PP4/2N2N2/PP3PPP/R1BQKB1R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "faf1d5b0e525b1a5",
+    "notes": "Plan had the knight route h6-f7 and e7 read as a move. Rewritten around 6...cxd4 7.Nxd4 Nxe5 and ...d6. Reviewer rejections (an unconfirmed ...d6 alternative) fixed and re-reviewed."
+  },
+  "r1bqkbnr/pp1p1ppp/4p3/4n3/2PN4/2N5/PP3PPP/R1BQKB1R w KQkq - 0 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "dbe40e3a547fb0c7",
+    "notes": "Plan read d6 as a move. Rewritten around Ndb5 and Bf4 against c7 and d6."
+  },
+  "rnbqk2r/pppp1ppp/5n2/2b1p3/2P5/6P1/PP1PPPBP/RNBQK1NR w KQkq - 3 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "34e76d28f9083a4a",
+    "notes": "Plan had a knight route Nf3-e1-d3 with no knight on f3 and the king on e1. Rewritten around Nc3/d3/b4 or e3/Nge2 against ...Bc5."
   }
 }

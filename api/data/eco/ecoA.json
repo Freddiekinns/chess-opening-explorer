@@ -118466,7 +118466,7 @@
       "eco_js": "Benko Gambit Accepted, King Walk Variation"
     },
     "analysis_json": {
-      "description": "The King Walk Variation is a modern and highly respected way for White to meet the Benko Gambit. By manually repositioning the king to g2, White sidesteps Black's typical queenside pressure and creates a uniquely safe king position. The resulting game is a deep, strategic battle where Black's long-term compensation on the queenside is pitted against White's extra pawn and solid central setup. This opening is perfect for strategic players who enjoy navigating complex positions with clear, long-term plans.",
+      "description": "The King Walk Variation is a modern and highly respected way for White to meet the Benko Gambit. After 8.e4 Bxf1 9.Kxf1 White can no longer castle, so the king walks to g2 behind the g3-pawn, where it is as safe as if it had castled. The resulting game is a deep, strategic battle where Black's long-term compensation on the queenside is pitted against White's extra pawn and solid central setup. This opening is perfect for strategic players who enjoy navigating complex positions with clear, long-term plans.",
       "style_tags": [
         "Gambit",
         "Strategic",
@@ -118507,10 +118507,10 @@
         "Converting a Material Advantage"
       ],
       "common_plans": [
-        "Black: Stack rooks on the a- and b-files (e.g., ...Rfb8, ...Ra7-b7), use the g7 bishop to pressure White's center and queenside, and create weaknesses in White's camp.",
-        "White: Complete development (e.g., Be2, Re1), control the center, neutralize Black's queenside pressure with moves like Rb1 or a4, and slowly prepare to advance the central pawns (e.g., e5).",
-        "Black: Maneuver the f6-knight, often to d7 and then to c5 or e5, to increase pressure on White's central strongpoints.",
-        "White: Trade pieces to simplify the position and reduce Black's attacking potential, aiming for a favorable endgame where the extra pawn is decisive."
+        "Black: Develop with ...Nbd7 and ...Qa5 or ...Qb6, then stack the rooks on the a- and b-files with ...Rfb8 and ...Ra7, using the g7-bishop against b2 and White's queenside.",
+        "White: Finish development with h3, Re1 and Qc2 or Rb1, keep the queenside covered, and prepare the e4-e5 break to open the centre while Black's pieces are on the queenside.",
+        "Black: Manoeuvre the f6-knight, often to d7 and then to c5 or e5, to increase pressure on White's central strongpoints.",
+        "White: Trade pieces to simplify the position and reduce Black's attacking potential, aiming for a favourable endgame where the extra pawn is decisive."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:31:25.045Z"
@@ -118533,7 +118533,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Yugoslav Variation is White's most principled and aggressive attempt to refute the Benko Gambit. By playing 7.e4, White immediately fights for the center and challenges Black's key bishop on a6, aiming to neutralize Black's queenside pressure and consolidate the extra pawn. The resulting positions are sharp and strategically complex, suiting players who are comfortable handling dynamic imbalances and fighting for the initiative from the very beginning.",
+      "description": "The Yugoslav Variation (7.e4) is White's most direct way to keep the extra pawn in the Benko Gambit. White builds a broad centre at once and lets Black exchange bishops with ...Bxf1, accepting the loss of castling rights after Kxf1 and later tucking the king away on g2. The resulting positions are sharp and strategically complex, suiting players who are comfortable handling dynamic imbalances and fighting for the initiative from the very beginning.",
       "style_tags": [
         "Gambit",
         "Dynamic",
@@ -118574,10 +118574,10 @@
         "Exploiting Open Files"
       ],
       "common_plans": [
-        "White: Exchange Black's active bishop on a6 (Bxf7+ or Be3-Bh6), consolidate the extra pawn, and use the central space advantage to launch an attack.",
-        "Black: Develop the g7-bishop, place rooks on the a- and b-files to pressure White's queenside, and create weaknesses to exploit for a decisive attack or favorable endgame.",
-        "White: Complete development with Nf3, Be2/d3, and O-O, then seek to neutralize Black's pressure and convert the material advantage.",
-        "Black: Maintain the initiative, prevent White from consolidating, and use tactical possibilities arising from the active pieces to regain the pawn or checkmate the king."
+        "White: After the bishops are exchanged on f1, recapture with the king, then make it a home on g2 with g3 (or play h3 and tuck it away on h2), and consolidate the extra pawn with Nf3 and Qc2.",
+        "Black: Exchange bishops with ...Bxf1, fianchetto with ...g6 and ...Bg7, and place rooks on the a- and b-files to pressure White's queenside, aiming for tactics against b2 or a favourable endgame.",
+        "White: After recapturing on f1 with the king, complete development with Nf3, g3 and h3, walk the king to g2 so the h1-rook can join the game, then neutralise Black's pressure and convert the material advantage.",
+        "Black: Keep the pieces active with ...Nbd7, ...Qa5 or ...Qb6 and rooks on the a- and b-files, and look for tactics on the long diagonal and against b2 rather than trying to win the pawn back at once."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:31:42.251Z"
@@ -118775,7 +118775,7 @@
     "name": "Benko Gambit: 7.e4 Line, 9.Nf3",
     "scid": "A59d",
     "analysis_json": {
-      "description": "The 7.e4 line of the Benko Gambit leads to one of its most complex and theoretically rich battlegrounds. White challenges Black's setup directly in the center at the cost of forcing their own king to move to f1, ceding castling rights in exchange for the bishop pair. This creates a fascinating strategic imbalance: White's static advantages of space and the two bishops versus Black's dynamic, long-term pressure on the queenside. This opening is perfect for sophisticated players who enjoy navigating double-edged positions and have a deep understanding of positional compensation.",
+      "description": "The 7.e4 line of the Benko Gambit leads to one of its most complex and theoretically rich battlegrounds. White builds a broad centre with e4 and d5, and after 7...Bxf1 8.Kxf1 gives up castling rights; the king usually finds safety later on g2 or h2. With 9.Nf3 White develops before choosing between g3 and h3 for the king's shelter. This creates a fascinating strategic imbalance: White's extra pawn and central space versus Black's dynamic, long-term pressure on the queenside. This opening is perfect for sophisticated players who enjoy navigating double-edged positions and have a deep understanding of positional compensation.",
       "style_tags": [
         "Gambit",
         "Strategic",
@@ -118816,9 +118816,9 @@
         "Long-term Compensation"
       ],
       "common_plans": [
-        "White: Consolidate the king position (Kg2), complete development (g3, Bg2), and use the central space and bishop pair to neutralize Black's pressure before launching a decisive attack.",
-        "Black: Complete the fianchetto (...Bg7), place rooks on the a- and b-files (...Nbd7, ...Qa5, ...Ra8, ...Rb8) to exert maximum pressure on White's queenside, and exploit the awkward position of the white king.",
-        "White: Trade pieces to simplify the position, aiming to reach an endgame where the extra pawn or the bishop pair becomes the decisive factor.",
+        "White: Find the king a safe square, either with g3 and Kg2 or with h3, Kg1 and Kh2, then use the central space to neutralise Black's pressure and prepare e4-e5.",
+        "Black: Complete the fianchetto with ...Bg7, play ...O-O, then bring the pieces to the queenside with ...Nbd7, ...Qa5 and ...Rfb8, exploiting the time White spends finding the king a safe square.",
+        "White: Trade pieces to simplify the position, aiming to reach an endgame where the extra pawn becomes the decisive factor.",
         "Black: Avoid premature exchanges and maintain tension, building pressure methodically to provoke weaknesses in White's camp."
       ],
       "version": "1.0",
@@ -119000,10 +119000,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "Black: Place rooks on the a- and b-files, maneuver the knight (e.g., Nbd7-b6) to attack queenside weaknesses, and use the g7-bishop to control the long diagonal.",
-        "White: Consolidate the extra pawn, use the central space advantage to restrict Black, neutralize queenside pressure (sometimes by returning the pawn with a3), and create a passed d-pawn.",
-        "Black: Aim to create weaknesses around White's king, which has been slightly exposed by the Kxf1-Kg2 maneuver.",
-        "White: Complete development, often with h3 to prevent ...Ng4, and prepare to challenge Black's control of key squares like c4 and d4."
+        "Black: Place rooks on the a- and b-files, manoeuvre the knight (e.g., Nbd7-b6) to attack queenside weaknesses, and use the g7-bishop to control the long diagonal.",
+        "White: Consolidate the extra pawn by covering b2 with Qc2 and Rb1, and in the long run use the queenside pawn majority, which can create a passed a- or b-pawn.",
+        "Black: Keep up the pressure with ...Qa5, ...Rfb8 and ...Ra7, hitting the b2-pawn so that White's pieces stay tied to the queenside.",
+        "White: Complete development with h3, which stops ...Ng4, then Re1 and Bd2 or Bf4, and use the central space to prepare e4-e5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:34:20.762Z"
@@ -119247,7 +119247,7 @@
     "name": "Benko Gambit: 7.e4, Main Line, 11...Nbd7 12.h3 Qb6",
     "scid": "A59p",
     "analysis_json": {
-      "description": "The Benko Gambit is a dynamic and strategic defense where Black sacrifices a pawn for lasting queenside pressure along the a- and b-files. This specific main line sees White creating a strong pawn center with 7.e4 and repositioning the king to safety, while Black develops methodically to exploit the open files. The resulting positions are rich and complex, rewarding players who excel at long-term planning, understanding positional compensation, and patiently building an attack.",
+      "description": "The Benko Gambit is a dynamic and strategic defence where Black sacrifices a pawn for lasting queenside pressure along the a- and b-files. This specific main line sees White creating a strong pawn centre with 7.e4 and repositioning the king to safety, while Black develops methodically to exploit the open files. The resulting positions are rich and complex, rewarding players who excel at long-term planning, understanding positional compensation, and patiently building an attack.",
       "style_tags": [
         "Gambit",
         "Strategic",
@@ -119288,10 +119288,10 @@
         "Converting positional advantage"
       ],
       "common_plans": [
-        "Black: Pile up pressure on the a- and b-files with the queen and rooks (...Rab8), targeting the b2 pawn. Maneuver the knight from d7 to b8-c6 or f8-e6 to support the queenside or challenge the center.",
-        "White: Consolidate the position with moves like Re1 and Qc2, neutralize Black's fianchettoed bishop, and use the central space advantage to prepare a kingside attack or a favorable piece trade.",
-        "White: Aim to return the pawn at a favorable moment to completely neutralize Black's initiative and transition into a better endgame.",
-        "Black: Seek a timely ...e6 pawn break to undermine White's central d5-pawn and open lines for the g7-bishop."
+        "Black: Pile up pressure on the b-file with the queen and rooks (...Rfb8 and ...Ra7), targeting the b2-pawn, and use the d7-knight on e5, where it hits the f3-knight and eyes c4.",
+        "White: Consolidate with Re1 and Qc2, cover b2 with Rb1, and use the central space to prepare e4-e5 or a favourable piece trade.",
+        "White: Aim to return the pawn at a favourable moment to completely neutralise Black's initiative and transition into a better endgame.",
+        "Black: Seek a timely ...e6 break to undermine White's d5-pawn and open lines in the centre for the rooks."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:36:17.387Z"
@@ -120032,7 +120032,7 @@
       "icsbot": "Modern Benoni "
     },
     "analysis_json": {
-      "description": "The Modern Benoni is a sharp and ambitious defense where Black immediately challenges the center, creating a highly imbalanced and dynamic struggle. Black accepts a spatial disadvantage and a potentially weak d6-pawn in exchange for active piece play and long-term counter-attacking chances, primarily on the queenside via the ...b5 pawn break. This opening is perfect for aggressive and resourceful players who thrive in complex, double-edged positions and are not afraid to defend while seeking opportunities for a decisive counter-punch.",
+      "description": "The Modern Benoni is a sharp and ambitious defence where Black immediately challenges the centre, creating a highly imbalanced and dynamic struggle. Black accepts a spatial disadvantage and a potentially weak d6-pawn in exchange for active piece play and long-term counter-attacking chances, primarily on the queenside via the ...b5 pawn break. This opening is perfect for aggressive and resourceful players who thrive in complex, double-edged positions and are not afraid to defend while seeking opportunities for a decisive counter-punch.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -120075,10 +120075,10 @@
         "Fianchettoed Bishop Power"
       ],
       "common_plans": [
-        "White: Control the center, prepare the e4-e5 pawn break, and launch a kingside attack. Restrain Black's queenside counterplay by controlling the c4 square.",
+        "White: Control the centre, prepare the e4-e5 pawn break, and launch a kingside attack. Restrain Black's queenside counterplay by controlling the c4 square.",
         "Black: Prepare and execute the ...a6 and ...b5 pawn breaks to create queenside counterplay and open the b-file for the rook.",
-        "Black: Utilize the fianchettoed bishop on g7 to control the long diagonal and pressure White's center.",
-        "White: Systematically target the backward d6-pawn with pieces like Nd2-b3 or by exchanging dark-squared bishops."
+        "Black: Fianchetto with ...g6 and ...Bg7 to put the bishop on the long diagonal and pressure White's centre.",
+        "White: Target the weak d6-pawn by bringing a knight to c4 via f3 and d2, and by exchanging dark-squared bishops, which weakens Black's dark squares."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:40:58.183Z"
@@ -120214,7 +120214,7 @@
     "name": "Benoni: 4.Nc3 exd5 5.Nxd5",
     "scid": "A60h",
     "analysis_json": {
-      "description": "This variation is a sharp and less common alternative to the main lines of the Benoni, immediately creating an unbalanced position. By recapturing with 5.Nxd5, White sidesteps the typical Benoni pawn structures and initiates a dynamic struggle centered on the d5-square. This opening is perfect for tactical players who enjoy open piece play and are comfortable navigating complex, non-standard middlegames where initiative is paramount.",
+      "description": "This variation is a sharp and less common alternative to the main lines of the Benoni, immediately creating an unbalanced position. By recapturing with 5.Nxd5, White sidesteps the typical Benoni pawn structures and initiates a dynamic struggle centred on the d5-square. This opening is perfect for tactical players who enjoy open piece play and are comfortable navigating complex, non-standard middlegames where initiative is paramount.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -120255,8 +120255,8 @@
         "Dynamic Imbalance"
       ],
       "common_plans": [
-        "White: Maintain central control, develop quickly with moves like e4 and Nf3, and exploit potential weaknesses around Black's d6-pawn.",
-        "Black: Immediately challenge the d5-knight (usually with ...Nxd5), harass White's queen after Qxd5, and seek counterplay through rapid development and pressure on the center."
+        "White: If Black exchanges on d5, take back with the c-pawn for a Benoni structure with extra space, or with the queen for quick development; then develop with Nf3, e3 or e4 and the bishops.",
+        "Black: Exchange the d5-knight with ...Nxd5; if the queen recaptures, Black develops with gain of time through ...Nc6, ...d6 and ...Be6, and if the c-pawn recaptures, ...d6 gives a normal Benoni structure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:41:55.766Z"
@@ -120332,7 +120332,7 @@
     "name": "Benoni: 4.Nf3 exd5 5.cxd5",
     "scid": "A60c",
     "analysis_json": {
-      "description": "The Modern Benoni is a sharp and ambitious defense that creates immediate structural imbalances. Black allows White a strong pawn on d5 and a central space advantage in exchange for dynamic counterplay, primarily based on a queenside pawn majority. This opening leads to complex, double-edged middlegames and is perfect for aggressive, tactical players who thrive in unbalanced positions and enjoy fighting for the initiative.",
+      "description": "The Modern Benoni is a sharp and ambitious defence that creates immediate structural imbalances. Black allows White a strong pawn on d5 and a central space advantage in exchange for dynamic counterplay, primarily based on a queenside pawn majority. This opening leads to complex, double-edged middlegames and is perfect for aggressive, tactical players who thrive in unbalanced positions and enjoy fighting for the initiative.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -120374,10 +120374,10 @@
         "Minority Attack"
       ],
       "common_plans": [
-        "White: Solidify the center with e4, restrain Black's queenside with a4, and prepare a kingside attack.",
-        "Black: Fianchetto the bishop to g7, prepare the ...b5 pawn break to launch a queenside minority attack, and undermine White's center.",
-        "White: Reposition pieces to control key squares like e4 and c4, preventing Black's counterplay before launching an attack.",
-        "Black: Exert pressure on White's e4-pawn and use the d6-square as a strong outpost for a knight."
+        "White: Solidify the centre with e4, restrain Black's queenside with a4, and prepare a kingside attack.",
+        "Black: Fianchetto with ...g6 and ...Bg7, then prepare ...b5 with ...a6 to put the queenside pawn majority to work and undermine White's centre.",
+        "White: Develop with Nc3, e4 and Be2, and later bring a knight to c4 via d2, where it presses on d6 and holds back ...b5.",
+        "Black: Play ...d6, ...Be7, ...O-O and ...Re8 to press the e4-pawn, and use the e5-square for a knight with ...Nbd7-e5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:42:30.244Z"
@@ -120432,8 +120432,8 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "Black: Play ...g6, ...Bg7, ...0-0, and prepare the ...b5 pawn break, often rerouting the d6-bishop to c7.",
-        "White: Solidify the center with e4, develop pieces to exploit the space advantage, and challenge Black's setup by targeting the d6-bishop or preventing ...b5 with a4."
+        "Black: Castle with ...O-O, reroute the d6-bishop to c7, and prepare the ...b5 pawn break.",
+        "White: Solidify the centre with e4, develop pieces to exploit the space advantage, and challenge Black's setup by targeting the d6-bishop or preventing ...b5 with a4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:42:47.235Z"
@@ -120608,8 +120608,8 @@
         "Provocative play"
       ],
       "common_plans": [
-        "Black: Castle, play ...Bc7 to redeploy the bishop, prepare a ...b5 pawn break, and maintain control over e5.",
-        "White: Play e4 to challenge the center, develop with g3 and Bg2, expand on the queenside with a3-b4, and prove the d6 bishop is a weakness."
+        "Black: Castle, play ...Bc7 to redeploy the bishop, prepare a ...b5 pawn break, and keep control of the e5-square.",
+        "White: Play e4 to challenge the centre, develop with g3 and Bg2, expand on the queenside with a3-b4, and prove the d6 bishop is a weakness."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:43:39.532Z"

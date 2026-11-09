@@ -1876,5 +1876,65 @@
     "verdict": "fixed",
     "contentHash": "228a6451223d6924",
     "notes": "Plans had an f2-f4-f5 route and the c5- and b4-squares read as moves. Rewritten around the d5- and d4-squares."
+  },
+  "rnbqkb1r/pp1p1ppp/2p2n2/4p3/2P5/2N3P1/PP1PPP1P/R1BQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "627142974ba55dbe",
+    "notes": "Plan 4 named ...Bg4 before ...d5 frees the c8-bishop; plan 3 called for a Maroczy Bind that does not arise. Rewrote plans 3-4; British spelling."
+  },
+  "rnbqkb1r/pp3ppp/5n2/3pp3/8/2N3P1/PP1PPPBP/R1BQK1NR w KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "4e62e39eceaf06a5",
+    "notes": "Overview called it a reversed QGD; plan 2 asked for ...e6 with the pawn already on e5; plan 3 moved a non-existent f3-knight via e1-d3. Rewrote overview and plans 2-3; British spelling."
+  },
+  "rnbqk2r/pppp1pbp/5np1/4p3/2P5/2N2NP1/PP1PPPBP/R1BQK2R b KQkq - 3 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "6819edca334d36b2",
+    "notes": "Plan 4 targeted a white e4-pawn that does not exist. Rewrote plan 4; British spelling."
+  },
+  "r1bqk1nr/pppp1pbp/2n3p1/4p3/2P5/2N3P1/PP1PPPBP/R1BQK1NR w KQkq - 2 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "01b38092550260cd",
+    "notes": "Overview called it a double fianchetto (only the king's bishops are fianchettoed); plan 4 read b4 as a Black move. Rewrote overview and plan 4."
+  },
+  "r1bqkbnr/pppp2pp/2n5/4pp2/2P5/2N3P1/PP1PPP1P/R1BQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1927abe4303ea2d8",
+    "notes": "Overview called it a reversed Dutch; plan 2 mixed Stonewall and Leningrad and played ...Qe8 with the king on e8. Rewrote overview and plan 2; British spelling."
+  },
+  "r1bqkb1r/pppp2pp/2n2n2/4pp2/2P5/2N3P1/PP1PPPBP/R1BQK1NR w KQkq - 2 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "5baac3a4a96a987e",
+    "notes": "Plan 2 proposed ...g5/...h5, plan 3 moved a non-existent f1-knight, plan 4 was vague. Rewrote overview and plans 2-4 around the reversed Closed Sicilian."
+  },
+  "r1bqkb1r/pppp3p/2n2np1/4pp2/2P5/2N1P1P1/PP1P1PBP/R1BQK1NR w KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "68bc78fcb0cff5d8",
+    "notes": "Plan 3 moved a non-existent f1-knight; plan 2 proposed an unusual ...h5-h4. Rewrote plans 2-3; British spelling."
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/4p3/2P5/2N3P1/PP1PPP1P/R1BQKBNR w KQkq - 1 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "8e852e10f78c309a",
+    "notes": "Plan 3 rerouted Nc3 via d1 (occupied by the queen); plan 4 put a pawn on c6 where Black's knight stands and called it a Botvinnik System. Rewrote plans 3-4."
+  },
+  "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2P5/2N1P1P1/PP1P1PBP/R1BQK1NR b KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ab0afa801a95ee0c",
+    "notes": "Plan 2 said ...Be6 challenges the long diagonal (it contests d5); plan 4 read d4 as a Black move. Rewrote plans 2 and 4; British spelling."
+  },
+  "r1bqk2r/pppp1ppp/2n2n2/4p3/1bP5/2N3P1/PP1PPPBP/R1BQK1NR w KQkq - 3 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "e69250fecd3d8ff8",
+    "notes": "Overview and plan 1 described a pin on the c3-knight, but the d2-pawn blocks the line to the king. Rewrote overview and all four plans around ...Bxc3 doubled pawns, 5.Nd5 and 5.e4."
   }
 }

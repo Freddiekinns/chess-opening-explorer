@@ -1,10 +1,10 @@
 # Plan reference check
 
-4035 references on 3155 of 12377 pages fail the check and show as plain text.
+3976 references on 3105 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5522 name no move, route, square or piece
-- References by kind: {"square":14903,"piece":14386,"move":52751,"route":9561}
-- References by result: {"now":65535,"on-board":13257,"later":8774,"invalid":4035}
+- Plans: 41062, of which 5511 name no move, route, square or piece
+- References by kind: {"square":14942,"piece":14452,"move":52960,"route":9523}
+- References by result: {"now":65749,"on-board":13320,"later":8832,"invalid":3976}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -18,58 +18,59 @@
   - `Bxb5`: No piece can play Bxb5 here, now or after the plan's earlier moves
 - **A03 Bird Opening: Thomas Gambit** (0 views)
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **A10 English: Anglo-Dutch** (0 views)
-  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A10 English: Anglo-Dutch** (0 views)
-  - `Nc3-e1-d3-e5`: One step of Nc3-e1-d3-e5 can't be played here
-- **A10 Hickmann Gambit, English** (0 views)
-  - `...f5`: No piece can play f5 here, now or after the plan's earlier moves
-- **A11 English: Caro-Kann Defence** (0 views)
-  - `b4-b5`: One step of b4-b5 can't be played here
-- **A11 English: Caro-Kann Defence** (0 views)
-  - `c6-d5-e6`: One step of c6-d5-e6 can't be played here
-- **A12 English: Torre Defence** (0 views)
-  - `gxf3`: No piece can play gxf3 here, now or after the plan's earlier moves
-- **A13 English Opening: Agincourt Defense, Tarrasch Defense** (0 views)
-  - `...cxd4`: No piece can play cxd4 here, now or after the plan's earlier moves
-- **A13 English Opening: Agincourt Defense, Wimpy System** (0 views)
-  - `...cxd4`: No piece can play cxd4 here, now or after the plan's earlier moves
-- **A13 English: Neo-Catalan Accepted, 5.Qa4+ Nbd7 6.Qxc4** (0 views)
-  - `Nb5`: No piece can play Nb5 here, now or after the plan's earlier moves
-- **A13 English: Neo-Catalan, 4...c6 5.b3** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **A14 English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2** (0 views)
-  - `...cxd4`: No piece can play cxd4 here, now or after the plan's earlier moves
-- **A14 English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2 Nc6** (0 views)
-  - `...cxd4`: No piece can play cxd4 here, now or after the plan's earlier moves
-- **A14 English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2 Nc6 8.e3** (0 views)
-  - `...cxd4`: No piece can play cxd4 here, now or after the plan's earlier moves
-- **A15 English Opening: Anglo-Indian Defense, King's Indian Formation** (0 views)
+- **A23 English Opening: King's English Variation, Two Knights Variation, Keres Variation** (0 views)
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **A23 English: Bremen, Keres, 4.Bg2 d5 5.cxd5 cxd5** (0 views)
+  - `...e6`: No piece can play e6 here, now or after the plan's earlier moves
+  - `e1-d3`: One step of e1-d3 can't be played here
+- **A24 English: Bremen, 3...g6** (0 views)
   - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **A15 English Opening: Anglo-Indian Defense, King's Indian Formation, Double Fianchetto** (0 views)
-  - `b7`: No piece can play b7 here, now or after the plan's earlier moves
-- **A15 English Opening: Anglo-Indian Defense, Scandinavian Defense** (0 views)
-  - `...Nxd5`: No piece can play Nxd5 here, now or after the plan's earlier moves
-  - `...Qxd5`: No piece can play Qxd5 here, now or after the plan's earlier moves
-- **A16 English Opening: Anglo-Indian Defense, Anglo-Grünfeld Variation** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **A16 English: Anglo-Gruenfeld** (0 views)
-  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
-- **A16 English: Anglo-Gruenfeld, 4.Nf3 g6 5.Qa4+** (0 views)
-  - `Be2`: No piece can play Be2 here, now or after the plan's earlier moves
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **A16 English: Anglo-Gruenfeld, Andersson-Boeoek, Queenswap** (0 views)
-  - `d3-pawn`: There is no pawn on d3, or on its way
-- **A16 English: Anglo-Gruenfeld, Smyslov, 7.Rb1** (0 views)
-  - `b4-b5`: One step of b4-b5 can't be played here
-  - `Rb2-f2`: One step of Rb2-f2 can't be played here
-  - `Rb3-g3`: One step of Rb3-g3 can't be played here
-- **A16 King's Indian Defence** (0 views)
-  - `...f5-f4`: One step of ...f5-f4 can't be played here
-- **A17 English: Anglo-Queen's Indian, 4.g3** (0 views)
-  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
-- **A17 English: Nimzo-English, 4.g3** (0 views)
+- **A25 English Opening: King's English Variation, Taimanov Variation** (0 views)
   - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **A18 English: Mikenas, Flohr, 4...d4** (0 views)
-  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
-  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
+- **A25 English: Closed** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A25 English: Closed** (0 views)
+  - `Nf1-e3`: One step of Nf1-e3 can't be played here
+- **A25 English: Closed** (0 views)
+  - `f1-knight`: There is no knight on f1, or on its way
+- **A25 English: Closed** (0 views)
+  - `c6-d6-e5`: One step of c6-d6-e5 can't be played here
+- **A25 English: Closed** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+  - `...exd4`: No piece can play exd4 here, now or after the plan's earlier moves
+- **A25 English: Closed** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A25 English: Closed** (0 views)
+  - `cxd5`: No piece can play cxd5 here, now or after the plan's earlier moves
+  - `...Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
+  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
+- **A26 English: Botvinnik System, 6...Nf6** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **A26 English: Botvinnik System, 6...Nf6** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **A26 English: Closed, 5.d3 d6 6.Nf3 Nf6** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **A26 English: Closed, 5.d3 d6 6.Nf3 Nf6 7.O-O O-O 8.Rb1 a5 9.a3** (0 views)
+  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
+  - `...axb4`: No piece can play axb4 here, now or after the plan's earlier moves
+- **A26 English: Closed, 5.d3 d6 6.Rb1 a5** (0 views)
+  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
+- **A27 English: Three Knights, 3...f5 4.d4 e4** (0 views)
+  - `f7`: No piece can play f7 here, now or after the plan's earlier moves
+  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
+- **A27 English: Three Knights, 3...g6 4.d4** (0 views)
+  - `...0-0`: No piece can play O-O here, now or after the plan's earlier moves
+- **A28 English Opening: King's English Variation, Four Knights Variation** (0 views)
+  - `...Na5`: No piece can play Na5 here, now or after the plan's earlier moves
+- **A28 English: Four Knights, 4.d4** (0 views)
+  - `Bb5`: No piece can play Bb5 here, now or after the plan's earlier moves
+- **A29 English Opening: King's English Variation, Four Knights Variation, Fianchetto Line** (0 views)
+  - `Nd2-b3`: Nd2 is ambiguous: the knights on f3 and b1 can both go there
+- **A29 English Opening: King's English Variation, Four Knights Variation, Fianchetto Line, with Nb6** (0 views)
+  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
+- **A29 English: Four Knights, 4.g3 Bb4 5.Bg2** (0 views)
+  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
+- **A29 English: Four Knights, 4.g3 Bc5** (0 views)
+  - `Nf3-e1-d3`: One step of Nf3-e1-d3 can't be played here
+- **A29 English: Four Knights, 4.g3 Bc5** (0 views)
+  - `Ng5`: No piece can play Ng5 here, now or after the plan's earlier moves

@@ -26033,7 +26033,7 @@
     "name": "Reti: KIA",
     "scid": "A07",
     "analysis_json": {
-      "description": "The King's Indian Attack (KIA) is a highly flexible and system-based opening where White develops pieces to standard squares, often regardless of Black's initial moves. By fianchettoing the king's bishop and controlling the center from a distance, White prepares for a strategic middlegame, frequently culminating in a kingside attack. This opening is perfect for strategic players who enjoy building up pressure slowly and understanding long-term plans rather than engaging in early, sharp tactical complications.",
+      "description": "White has castled behind the King's Indian Attack set-up, and Black's broad centre with pawns on d5 and e5 makes this a King's Indian Defence with colours reversed and White a tempo up. White's plans are e4, prepared with Nbd2 or c3, and c4 against the d5-pawn, followed in a closed centre by Nh4 and f4 on the kingside. Black develops with ...Be7 and ...O-O, can gain space with ...d4, and often expands on the queenside with ...a5. The play is strategic, and the pawn breaks decide the middlegame.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -26073,10 +26073,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Prepare and execute the e3-e4 pawn break to challenge Black's central pawn duo.",
-        "White: Maneuver the knight from b1 (via d2-f1-e3) to support a kingside attack, often aiming for the f5 square.",
-        "Black: Use the central space advantage to restrict White and prepare the ...c7-c5 pawn break to attack the queenside.",
-        "Black: Develop pieces to solid squares (...Be7, ...Be6) and prepare to meet White's kingside ambitions with a central or queenside counter-attack."
+        "White: Prepare e4 with Nbd2 or c3 to challenge Black's centre, or strike at the d5-pawn with c4.",
+        "White: If the centre closes after ...d4, play on the kingside with Nh4 and f4, the plan of the King's Indian Defence with colours reversed.",
+        "Black: Develop with ...Be7, ...O-O and ...Be6, keep the broad centre, and gain space with ...d4 when White commits.",
+        "Black: Expand on the queenside with ...a5 and ...a4, gaining space where White's pieces are thin."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:42:24.461Z"
@@ -26209,7 +26209,7 @@
     "name": "Reti: KIA",
     "scid": "A07",
     "analysis_json": {
-      "description": "The King's Indian Attack (KIA) is a highly flexible, system-based opening where White adopts a hypermodern approach, controlling the center with pieces rather than pawns. By fianchettoing the king's bishop, White creates a solid, resilient structure from which to launch a future attack, often on the kingside. This opening is ideal for strategic players who prefer understanding plans and ideas over memorizing sharp, theoretical variations, and who enjoy slowly building pressure towards a decisive middlegame clash.",
+      "description": "With 2.g3 against 1...d5 and 2...Nf6 White heads for the King's Indian Attack: Bg2, O-O, d3, Nbd2 and e4, a set-up that suits almost any Black formation. Black chooses the structure: ...c5 with ...Nc6 for a broad centre, ...e6 and ...c5 for a French-style game, ...c6 with ...Bf5 or ...Bg4 for a solid Slav-like set-up, or ...g6 for the Neo-Grünfeld. White can also switch to a Réti or Catalan with c4. The play is strategic, built on plans rather than memorised lines.",
       "style_tags": [
         "System-based",
         "Positional",
@@ -26254,10 +26254,10 @@
         "Flexibility and Transposition"
       ],
       "common_plans": [
-        "White: Prepare and execute the e2-e4 pawn break to challenge Black's central control.",
-        "White: Launch a kingside attack, often starting with moves like Ne1, f4, and transferring pieces to attack the black king.",
-        "Black: Establish a firm grip on the center with pawns on d5 and often c5, restricting White's e4 break.",
-        "Black: Challenge White's fianchettoed bishop by controlling the long diagonal or preparing a queenside expansion with ...b5-b4."
+        "White: Complete the set-up with Bg2, O-O, d3 and Nbd2, then play e4 to challenge Black's centre.",
+        "White: Once e4 is in and the centre is fixed, attack on the kingside with e5, h4 and the knights; with a closed centre, Nh4 and f4 is another route.",
+        "Black: Take a firm grip on the centre with the d5-pawn and ...c5, so that White's central break meets a strong reply.",
+        "Black: Expand on the queenside with ...c5, ...b5 and ...b4 if White commits to the kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:43:26.637Z"
@@ -26272,7 +26272,7 @@
     "name": "Reti: KIA",
     "scid": "A07",
     "analysis_json": {
-      "description": "The King's Indian Attack (KIA) is a highly flexible, system-based opening where White fianchettoes the king's bishop to control the center from a distance. Instead of immediate pawn confrontation, White develops harmoniously, often aiming for a central pawn break with e4 to unleash the power of the g2-bishop. This opening is perfect for strategic players who prefer to understand plans and ideas rather than memorizing concrete variations, leading to a complex middlegame battle.",
+      "description": "With 3.Bg2 White completes the fianchetto, ready for O-O, d3, Nbd2 and e4 in King's Indian Attack style, or c4 for a Réti. Black has a free choice: ...c5 and ...Nc6 take space, ...e6 leads to French-style structures, ...c6 with ...Bf5 or ...Bg4 builds a solid Slav-like wall against the g2-bishop, and ...g6 gives the Neo-Grünfeld. Play is strategic, and White's e4 break is the central question.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -26315,10 +26315,10 @@
         "Flexibility and Transposition"
       ],
       "common_plans": [
-        "White: Complete the KIA setup (d3, O-O, Nbd2) and prepare the central e2-e4 pawn break to challenge Black's control and open lines for the g2-bishop.",
-        "White: After achieving e4, push e5 to cramp Black's position and launch a direct attack on the kingside, often involving Ng5, Qh5, and rook lifts.",
-        "Black: Challenge White's fianchetto by controlling the long diagonal with ...c5 and ...b5, creating queenside counterplay.",
-        "Black: Solidify the center with moves like ...e6 and ...c6 (Slav/Caro-Kann setup) to blunt the g2-bishop and prevent White's e4 break."
+        "White: Complete the set-up with d3, O-O and Nbd2, then play e4 to challenge the d5-pawn and open lines for the g2-bishop.",
+        "White: After e4, gain space with e5 where possible and build a kingside attack with Re1, h4 and the knights.",
+        "Black: Take queenside space with ...c5, ...Nc6 and later ...b5, creating counterplay while White prepares the central break.",
+        "Black: Build a solid wall with ...c6, ...Bf5 or ...Bg4 and ...e6, which keeps the g2-bishop blunted by the d5-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:43:47.266Z"
@@ -26391,7 +26391,7 @@
     "name": "Reti: KIA",
     "scid": "A07",
     "analysis_json": {
-      "description": "The King's Indian Attack (KIA) is a highly flexible, system-based opening where White develops pieces to influential squares before committing to a specific central pawn structure. By fianchettoing the king's bishop, White aims for long-term pressure on the light squares and prepares for a central pawn push (often e4) or a kingside attack. This opening is perfect for strategic players who enjoy maneuvering, understanding plans rather than memorizing theory, and building an attack patiently over time.",
+      "description": "With 3...e6 Black chooses a French-style set-up against the King's Indian Attack: the light-squared bishop stays behind the pawns, and Black usually continues ...Be7, ...O-O and ...c5. White plays O-O, d3, Nbd2 and e4, and after e5 the classic KIA structure arises, with White attacking on the kingside and Black expanding on the queenside with ...b5 and ...b4. Black can also exchange on e4 to take the sting out of White's attack.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -26433,10 +26433,10 @@
         "Flexible Pawn Breaks"
       ],
       "common_plans": [
-        "White: Prepare and execute the e3-e4 pawn break to open the position for the fianchettoed bishop and start a kingside attack.",
-        "White: Maneuver pieces (e.g., Ne1-d3, h4-h5) to build up a slow but powerful attack against the Black king.",
-        "Black: Seize space on the queenside with ...c5 and ...b5, creating counterplay against White's kingside focus.",
-        "Black: Solidify the center with ...c6 and prepare to meet White's e4 push with ...dxe4, aiming to neutralize White's pressure."
+        "White: Castle, play d3 and Nbd2, then e4; if Black keeps the pawn on d5, gain space with e5 and attack on the kingside with Re1, h4 and the knights.",
+        "Black: Develop with ...Be7, ...O-O and ...c5, then expand on the queenside with ...Nc6, ...b5 and ...b4.",
+        "Black: When White's e-pawn reaches the centre, consider exchanging the d5-pawn for it, which opens the d-file and takes the space-gaining advance out of White's plans.",
+        "Black: Alternatively, play ...b6 and ...Bb7 alongside ...c5, so that the bishop supports the d5-pawn and gains scope if the centre opens."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:44:35.706Z"
@@ -26566,7 +26566,7 @@
     "name": "Reti: KIA, Neo-Gruenfeld",
     "scid": "A07",
     "analysis_json": {
-      "description": "The Reti KIA, Neo-Gruenfeld variation is a hypermodern and highly flexible system where both sides fianchetto their kingside bishops. The game bypasses early central pawn clashes, leading to a strategic battle of ideas focused on controlling key squares from the flanks. This opening is perfect for patient, strategic players who enjoy maneuvering their pieces to build pressure slowly and are comfortable in a wide variety of pawn structures.",
+      "description": "In the Neo-Grünfeld Black answers White's kingside fianchetto with one of their own, keeping the pawn on d5 so that the g2-bishop is blunted. White can continue with O-O, d3 and e4 in King's Indian Attack style, or with c4 and d4, transposing to the Fianchetto Variation of the Grünfeld, while Black castles and chooses between ...c5, ...c6 and ...Nc6 with ...e5. Play is strategic, centred on the d4- and e4-squares.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -26606,10 +26606,10 @@
         "Preparing central pawn breaks"
       ],
       "common_plans": [
-        "White often prepares the e2-e4 pawn break to seize central space, sometimes rerouting the knight (e.g., Ne1-d3) to support this.",
-        "Black typically challenges White's setup with a ...c5 pawn break, aiming to control the d4-square and create queenside counterplay.",
-        "Both sides will maneuver to prove their fianchettoed bishop is superior, often by controlling the central e4 and d4 squares.",
-        "The game can transpose to various King's Indian, Gruenfeld, or Catalan structures depending on subsequent moves."
+        "White: Castle and prepare the e4 break with d3 and Nbd2, gaining central space against the d5-pawn.",
+        "White: Alternatively, play c4 and d4 for a Fianchetto Grünfeld structure, pressing on the d5-pawn.",
+        "Black: Castle and challenge White's set-up with ...c5 and ...Nc6, controlling the d4-square and creating queenside counterplay.",
+        "Black: Use the g7-bishop on the long diagonal, which grows stronger if the centre opens."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:45:23.203Z"
@@ -26969,7 +26969,7 @@
     "name": "Reti: KIA, Yugoslav, Main Line",
     "scid": "A07",
     "analysis_json": {
-      "description": "The Reti with a King's Indian Attack setup is a flexible, system-based opening where White develops pieces harmoniously before committing to a central pawn structure. The Yugoslav variation, characterized by Black's ...Bg4, creates a strategically complex battle where White's long-term plan of a kingside attack is met by Black's solid development and central counter-pressure. This opening is ideal for patient, strategic players who enjoy maneuvering and executing long-term plans rather than engaging in immediate tactical brawls.",
+      "description": "In the Yugoslav set-up Black meets the King's Indian Attack with ...c6, ...Bg4 and ...Nbd7, a solid Slav-like structure with the light-squared bishop developed outside the pawn chain. White continues Nbd2 and prepares e4, often with h3 to question the bishop, while Black prepares ...e5 for a share of the centre or ...e6 for a sturdier set-up, and can exchange on the f3-square when slowing White's e4 matters more than the bishop pair. Play is strategic and fairly balanced.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -27011,10 +27011,9 @@
         "Control of the e4-square"
       ],
       "common_plans": [
-        "White's primary plan is to achieve the e2-e4 pawn break, often preceded by Nbd2 and Re1. After achieving e4, White often launches a kingside attack with moves like Ne1-g2 and f2-f4.",
-        "Black's main counter-plan involves challenging White's central ambitions, often by preparing the ...e7-e5 break to open the position.",
-        "Black often exchanges the g4-bishop for the f3-knight (...Bxf3) to disrupt White's pawn structure and weaken the defense of the king, at the cost of the bishop pair.",
-        "White frequently maneuvers the queen's knight from d2 to f1 to e3 or g3 to support the kingside attack and control key central squares."
+        "White: Play Nbd2 and prepare e4, often with h3 first to ask the g4-bishop's intentions and Re1 to support the break.",
+        "Black: Prepare ...e5 to take a share of the centre, or play ...e6 and ...Bd6 or ...Be7 for a solid set-up.",
+        "Black: Exchange the g4-bishop for the f3-knight when it slows White's central advance, accepting that White gets the bishop pair."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:47:42.228Z"
@@ -27087,7 +27086,7 @@
     "name": "Reti: KIA, Yugoslav, Main Line, 6.Nbd2 e5",
     "scid": "A07",
     "analysis_json": {
-      "description": "This line represents a critical test of the King's Indian Attack, where Black's active ...e5 directly challenges White's flexible setup. The game immediately transitions from a quiet, system-based opening into a dynamic and strategically complex struggle for central control. This opening is ideal for players who enjoy blending long-term strategic planning with the necessity for sharp, concrete calculation when the position opens up.",
+      "description": "With 6...e5 Black takes a broad centre with pawns on c6, d5 and e5 against the King's Indian Attack. White's main plans are 7.e4, after which an exchange on e4 opens the d-file, and h3 to put the question to the g4-bishop first. Black develops with ...Be7 or ...Bd6 and castles short, and keeps a comfortable game: the g4-bishop and the central pawns make it hard for White to build the usual kingside attack.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -27130,10 +27129,9 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Execute the e2-e4 pawn break to open the center and unleash the g2 bishop, often followed by recapturing dxe4 and fighting for the e-file.",
-        "Black: Solidify the center after ...e5, often with ...dxe4 followed by developing the light-squared bishop and preparing to challenge White's control of key central squares.",
-        "White: Reposition the b1-knight (Nbd2-f1-e3/g3) to support a kingside attack or bolster central control.",
-        "Black: Neutralize the g2 bishop by controlling the long diagonal and seek counterplay on the queenside if White overcommits to a kingside attack."
+        "White: Play 7.e4, and after 7...dxe4 8.dxe4 use the open d-file and the e4-pawn's control of d5 and f5; h3 to question the g4-bishop is a common preparatory move.",
+        "Black: Develop with ...Be7 or ...Bd6 and castle short, keeping the d5-pawn supported and choosing the moment to exchange on e4 or keep the tension.",
+        "White: Alternatively, play c4 to pressure the d5-pawn from the flank."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:48:16.936Z"
@@ -27148,7 +27146,7 @@
     "name": "Reti: KIA, Yugoslav, Main Line, 6.Nbd2 e6",
     "scid": "A07",
     "analysis_json": {
-      "description": "This opening is a classic strategic battleground where White's flexible King's Indian Attack meets Black's solid, classical setup. White aims to build a slow but potent kingside attack, often centered around the e2-e4 pawn break, while Black focuses on central control, neutralizing White's pressure, and launching queenside counterplay. The game is ideal for patient, strategic players who enjoy maneuvering and long-term planning over immediate tactical clashes.",
+      "description": "With 6...e6 Black keeps a solid Slav-like set-up: pawns on c6, d5 and e6, the light-squared bishop outside the chain on g4, and quick development with ...Be7 or ...Bd6 and short castling. White prepares e4, often with h3 and Re1 first, and after e4 can gain space with e5 for kingside play. Black's counterplay comes from ...e5 or ...c5 in the centre, or queenside expansion with ...b5.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -27188,10 +27186,10 @@
         "Flank Attack"
       ],
       "common_plans": [
-        "White: Prepare and execute the e2-e4 pawn push, often rerouting the knight via Nf1-g3 to support a kingside attack.",
-        "Black: Control the e4-square, prepare the ...c5 pawn break for queenside counterplay, and challenge White's fianchettoed bishop.",
-        "White: Use the h3 move to break the pin from Bg4 and prepare a potential g4 pawn advance.",
-        "Black: Complete development, solidify the center, and seek favorable piece trades to neutralize White's attacking potential."
+        "White: Prepare e4 with h3, asking the g4-bishop's intentions, and Re1, then gain space with e5 when Black's pieces allow it.",
+        "Black: Develop with ...Be7 or ...Bd6 and castle short, holding the e4-square with the d5-pawn and the f6-knight, and prepare ...c5 or ...e5 for central counterplay.",
+        "White: After 7.h3 Bh5, the advance 8.g4 Bg6 9.Nh4 can chase the bishop and win the bishop pair, at the cost of loosening White's kingside.",
+        "Black: Exchange on the f3-square if White's pressure grows, accepting the bishop pair in White's hands for a solid structure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:48:42.275Z"
@@ -27270,7 +27268,7 @@
       "eco_js": "King's Indian Attack: Sicilian Variation, 7. O-O O-O 8. Re1"
     },
     "analysis_json": {
-      "description": "The King's Indian Attack is a flexible, system-based opening where White adopts a setup similar to Black's King's Indian Defense. It leads to a strategically complex game where White typically prepares a slow-building kingside attack, often initiated by the e4-e5 pawn push. This opening is ideal for strategic players who enjoy developing long-term plans and understanding thematic ideas rather than memorizing sharp, concrete variations.",
+      "description": "This is the main battleground of the King's Indian Attack against a French-style set-up: White has castled, played Re1 and is ready for e5, which gains kingside space and drives the f6-knight away. The typical race follows: White attacks on the kingside with e5, Nf1, h4 and Bf4, often bringing a knight to g4, while Black expands on the queenside with ...b5, ...b4 and ...a5 and aims to open lines there. Black can also take the tension out of the centre with ...dxe4, or play ...Qc7 to hold back e5.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -27313,10 +27311,9 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Prepare and execute the e4-e5 pawn break to open lines towards the black king, often followed by piece sacrifices to expose the king.",
-        "Black: Create queenside counterplay with the ...b5-b4 pawn push, challenge White's center, and exchange pieces to relieve pressure.",
-        "White: Systematically improve piece placement, often with maneuvers like Nf3-e1-g2 or Nh2-g4, to support the attack.",
-        "Black: Solidify the kingside and challenge White's key attacking piece, the fianchettoed bishop on g2, often by preparing ...Nh5."
+        "White: Gain space with e5 to drive the f6-knight away, then play Nf1, h4 and Bf4 and swing a knight to the g4-square for a kingside attack.",
+        "Black: Expand on the queenside with ...b5, ...b4 and ...a5, aiming to open lines against White's queenside before the kingside attack arrives.",
+        "Black: Hold back White's central advance with ...Qc7, or release the tension with ...dxe4, which removes the e-pawn's attacking role."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T10:49:15.484Z"
@@ -159360,7 +159357,7 @@
     "name": "King's Indian Attack: Sicilian Variation",
     "added": "Feb 2025",
     "analysis_json": {
-      "description": "The King's Indian Attack is a highly flexible, system-based opening where White adopts a standard setup regardless of Black's early moves. It leads to a strategically complex game, eschewing early tactical skirmishes for a slow, positional build-up, often culminating in a powerful kingside attack. This opening is perfect for strategic players who enjoy understanding plans and piece maneuvering over memorizing sharp theoretical lines.",
+      "description": "Black has met the King's Indian Attack with ...d5, ...c5, ...Nf6 and ...e6, the 'Sicilian' set-up, and after 5.d3 White is ready for Nbd2 and e4. Black usually continues with ...Nc6 and ...Be7 and short castling, and after White's e4 and e5 the classic race arises: White attacks on the kingside, Black expands on the queenside with ...b5 and ...b4. Black can also play ...b6 and ...Bb7 or release the tension with an exchange on e4.",
       "style_tags": [
         "System-based",
         "Positional",
@@ -159401,8 +159398,9 @@
         "Queenside Counterplay"
       ],
       "common_plans": [
-        "White: Prepare and execute the e3-e4 pawn break to challenge the center and activate the fianchettoed bishop. Initiate a kingside attack, often involving a knight transfer (e.g., Ne1-f1-g3) and pawn storms.",
-        "Black: Expand on the queenside with ...b5-b4 to create counterplay. Control the center and challenge White's e4 break. Neutralize the dangerous g2-bishop, often by exchanging it."
+        "White: Play Nbd2 and e4, then gain space with e5 and attack on the kingside with Re1, h4 and the knights.",
+        "Black: Develop with ...Nc6 and ...Be7, castle short, and expand on the queenside with ...b5 and ...b4 to open lines there.",
+        "Black: Alternatively, set up with ...b6 and ...Bb7, supporting the d5-pawn and ready to use the long diagonal if the centre opens."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:57:59.551Z"

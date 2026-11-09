@@ -1,10 +1,10 @@
 # Plan reference check
 
-3750 references on 2915 of 12377 pages fail the check and show as plain text.
+3690 references on 2866 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5493 name no move, route, square or piece
-- References by kind: {"square":15060,"piece":14540,"move":53347,"route":9463}
-- References by result: {"now":66278,"on-board":13418,"later":8964,"invalid":3750}
+- Plans: 41062, of which 5495 name no move, route, square or piece
+- References by kind: {"square":15079,"piece":14547,"move":53440,"route":9438}
+- References by result: {"now":66378,"on-board":13432,"later":9004,"invalid":3690}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -18,59 +18,60 @@
   - `Bxb5`: No piece can play Bxb5 here, now or after the plan's earlier moves
 - **A03 Bird Opening: Thomas Gambit** (0 views)
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **A48 Neo-King's Indian: Torre Attack** (0 views)
-  - `Nbd2-e3-c3`: One step of Nbd2-e3-c3 can't be played here
-  - `Bxf6`: No piece can play Bxf6 here, now or after the plan's earlier moves
-  - `...gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
-  - `...exf6`: No piece can play exf6 here, now or after the plan's earlier moves
-- **A48 Queen's Pawn Game: Barry Attack** (0 views)
-  - `...Bd6`: No piece can play Bd6 here, now or after the plan's earlier moves
-- **A48 Torre Attack: Fianchetto Defense, Euwe Variation** (0 views)
-  - `d3`: No piece can play d3 here, now or after the plan's earlier moves
-  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **A50 Black Knights Tango** (0 views)
-  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
-- **A50 Mexican Defense: Horsefly Gambit** (0 views)
-  - `e4-e5`: One step of e4-e5 can't be played here
-- **A51 Budapest: Fajarowicz, 4.Nf3** (0 views)
-  - `e4-pawn`: There is no pawn on e4, or on its way
-  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **A51 Budapest: Fajarowicz, 4.Nf3 Bb4+** (0 views)
-  - `...Bxc3+`: No piece can play Bxc3 here, now or after the plan's earlier moves
-- **A51 Budapest: Fajarowicz, 4.Nf3 Nc6 5.a3** (0 views)
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **A52 Budapest: Rubinstein, 4...Bb4+** (0 views)
-  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
-- **A52 Budapest: Rubinstein, Main Line** (0 views)
-  - `d4-pawn`: There is no pawn on d4, or on its way
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **A52 Indian Defense: Budapest Defense, Alekhine Variation** (0 views)
-  - `e4-d4`: One step of e4-d4 can't be played here
-- **A52 Indian Defense: Budapest Defense, Alekhine Variation, Abonyi Variation** (0 views)
-  - `d4-pawn`: There is no pawn on d4, or on its way
-- **A52 Kornl Richter Gambit, Budapest** (0 views)
-  - `...Ba6`: No piece can play Ba6 here, now or after the plan's earlier moves
-- **A53 Duz-Khotimirsky Variation** (0 views)
-  - `f8`: No piece can play f8 here, now or after the plan's earlier moves
-- **A53 Old Indian Defence** (0 views)
-  - `...O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **A53 Old Indian Defense** (0 views)
-  - `...Re8`: No piece can play Re8 here, now or after the plan's earlier moves
-- **A53 Old Indian Defense: Janowski Variation, Fianchetto Variation** (0 views)
-  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
-- **A53 Old Indian Defense: Janowski Variation, Main Line** (0 views)
-  - `f2-f3`: One step of f2-f3 can't be played here
-- **A53 Old Indian: 3.g3** (0 views)
-  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **A53 Old Indian: 3.Nc3 Nbd7** (0 views)
-  - `...Re8`: No piece can play Re8 here, now or after the plan's earlier moves
-- **A53 Old Indian: 3.Nc3 Nbd7 4.e4 e5 5.Nge2** (0 views)
+- **A57 Benko Gambit: 4.Nf3 g6 5.cxb5 a6** (0 views)
   - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **A53 Old Indian: Ukrainian, Queenswap, 6.Nf3** (0 views)
-  - `...Ke8-f7`: One step of ...Ke8-f7 can't be played here
-  - `...Ke8-c7`: One step of ...Ke8-c7 can't be played here
-- **A54 Old Indian Defense: Tartakower-Indian** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **A54 Old Indian Defense: Tartakower-Indian** (0 views)
-  - `gxf3`: No piece can play gxf3 here, now or after the plan's earlier moves
+- **A57 Benko Gambit: Zaitsev System** (0 views)
+  - `Nd2`: No piece can play Nd2 here, now or after the plan's earlier moves
+- **A57 Benko Gambit: Zaitsev, 5...axb5** (0 views)
+  - `a5`: No piece can play a5 here, now or after the plan's earlier moves
+  - `b6`: No piece can play b6 here, now or after the plan's earlier moves
+- **A58 Benko Gambit: 5.bxa6 g6** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A58 Benko Gambit: Accepted, 6.g3 d6 7.Bg2 g6** (0 views)
+  - `b6`: No piece can play b6 here, now or after the plan's earlier moves
+- **A58 Benko Gambit: Accepted, 7.Nf3** (0 views)
+  - `...Nb6`: No piece can play Nb6 here, now or after the plan's earlier moves
+- **A58 Benko Gambit: Accepted, 7.Nf3 g6 8.Nd2 Qa5** (0 views)
+  - `e4 pawn break`: No piece can play e4 here, now or after the plan's earlier moves
+- **A58 Benko Gambit: Fianchetto, 9.Bg2** (0 views)
+  - `...Rfb8`: No piece can play Rfb8 here, now or after the plan's earlier moves
+- **A58 Benko Gambit: Fianchetto, 9.Bh3** (0 views)
+  - `...Nxg7`: No piece can play Nxg7 here, now or after the plan's earlier moves
+- **A59 Benko Gambit** (0 views)
+  - `b6`: No piece can play b6 here, now or after the plan's earlier moves
+- **A59 Benko Gambit Accepted: King Walk Variation** (0 views)
+  - `...Rfb8`: No piece can play Rfb8 here, now or after the plan's earlier moves
+  - `Be2`: No piece can play Be2 here, now or after the plan's earlier moves
+- **A59 Benko Gambit Accepted: Yugoslav** (0 views)
+  - `Bxf7+`: No piece can play Bxf7 here, now or after the plan's earlier moves
+  - `d3`: No piece can play d3 here, now or after the plan's earlier moves
+- **A59 Benko Gambit: 7.e4 Line, 9.Nf3** (0 views)
+  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
+- **A59 Benko Gambit: 7.e4, Main Line** (0 views)
+  - `Kxf1`: No piece can play Kxf1 here, now or after the plan's earlier moves
+  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A59 Benko Gambit: 7.e4, Main Line, 11...Nbd7 12.h3 Qb6** (0 views)
+  - `b8-c6`: One step of b8-c6 can't be played here
+  - `f8-e6`: One step of f8-e6 can't be played here
+- **A60 Benoni: 4.Nc3 exd5 5.cxd5 d6** (0 views)
+  - `Nd2-b3`: One step of Nd2-b3 can't be played here
+- **A60 Benoni: 4.Nc3 exd5 5.Nxd5** (0 views)
+  - `Qxd5`: No piece can play Qxd5 here, now or after the plan's earlier moves
+- **A60 Benoni: 4.Nf3 exd5 5.cxd5** (0 views)
+  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
+- **A60 Benoni: Snake Variation vs. 4.Nf3** (0 views)
+  - `...Bg7`: No piece can play Bg7 here, now or after the plan's earlier moves
+- **A60 Benoni: Snake, 6.Nf3** (0 views)
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
+- **A61 Benoni Defense: Fianchetto Variation** (0 views)
+  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
+  - `Nf3-e1-d3`: One step of Nf3-e1-d3 can't be played here
+- **A61 Benoni Defense: Fianchetto Variation** (0 views)
+  - `...Ne8-c7`: One step of ...Ne8-c7 can't be played here
+- **A61 Benoni Defense: Knight's Tour Variation** (0 views)
+  - `...Re8`: No piece can play Re8 here, now or after the plan's earlier moves
+- **A61 Benoni Defense: Uhlmann Variation** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves

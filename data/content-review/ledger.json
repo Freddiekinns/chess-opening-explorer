@@ -2416,5 +2416,65 @@
     "verdict": "fixed",
     "contentHash": "209f940c88282485",
     "notes": "Plan 1 supported a d4-pawn that does not exist. Rewrote plan 1 (a reviewer rejection of 'shielding the b2-pawn' fixed and re-reviewed); British spelling."
+  },
+  "rnbqk2r/pp2npbp/3p2p1/2pP4/4P3/2N2N2/PP3PPP/R1BQKB1R w KQkq - 3 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "06edc6df06cce3c5",
+    "notes": "Plan 2 pushed f2-f4 through the f3-knight; plan 3 rerouted the e7-knight via c8-b6 or g8-f6; plan 4 called White's own d5-pawn an outpost. Rewrote plans 2-4; British spelling."
+  },
+  "r1bqkbnr/pppp2pp/2n2p2/4P3/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "a8024f5832dbef8a",
+    "notes": "Plan 1 recaptured ...Nxf6 before White had taken on f6; plan 2 wrote castling as 0-0. Rewrote plan 1, fixed plan 2; British spelling."
+  },
+  "r1bqkbnr/ppppnppp/8/3Pp3/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 1 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "2e71b33111b041fb",
+    "notes": "Plan 1 attacked a d5-e4 chain before White has played e4; overview named ...f6 as the break (it is ...f5). Rewrote overview and plans 1-2; British spelling."
+  },
+  "rnbqkb1r/pppppp1p/5np1/7P/3P4/8/PPP1PPP1/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "32de5468224f0853",
+    "notes": "Plan 1 suggested Rg1 for an h-file attack and Ng5 with no knight able to reach it. Rewrote plans 1-2 around ...Nxh5, e4, Be2 and the half-open h-file; British spelling."
+  },
+  "rnb1k1nr/pp1pppbp/6p1/q1pP4/2P5/2N5/PP2PPPP/R1BQKBNR w KQkq - 1 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "f1d8845c40e1c5b2",
+    "notes": "Plan 1 named White's Bd2 and Qc2 inside a Black plan. Rewrote plans 1 and 4; British spelling."
+  },
+  "rnbqkbnr/pp2pppp/2pp4/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "4eaecbcd151e15e7",
+    "notes": "Plan 1 wrote the pawn triangle as a move (c6-d6-e6) and put the light-squared bishop on b7 without ...b6. Rewrote plan 1; British spelling."
+  },
+  "rnbqkbnr/p1pp1ppp/1p2p3/8/2PP4/P7/1P2PPPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "e17e6a367b236813",
+    "notes": "Plan 3 offered d3 and Be2 with the d-pawn on d4 and the e-pawn on e2. Rewrote plans 3-4; British spelling."
+  },
+  "rnbqk1nr/pp1pppbp/6p1/2p5/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "b32d1ce8aa26b11e",
+    "notes": "Plan 1 named d4-d5 inside a Black plan. Rewrote plan 1; British spelling."
+  },
+  "rnbqk1nr/pp1pppbp/6p1/2p5/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "49a6df820dfbd2c4",
+    "notes": "Plan 1 named d4-d5 inside a Black plan; plan 3 and the overview suggested a Hedgehog that does not fit the g6/c5 set-up. Rewrote overview and plans 1 and 3."
+  },
+  "rn1qk1nr/ppp1ppbp/3p2p1/8/2PPP1b1/5N2/PP3PPP/RNBQKB1R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "f4e7ded64891d749",
+    "notes": "Plan 3 named gxf3 and Qxf3 before Black had taken on f3; plan 1 assumed gxf3. Rewrote plans 1 and 3; British spelling."
   }
 }

@@ -22,5 +22,11 @@
     "plan": "White: After 3...cxb5 4.e4, aim to win the pawn back with Bxb5, then continue with Nf3 and castling while the b2-bishop works on the long diagonal.",
     "reference": "Bxb5",
     "reason": "correct plan, parser can't read a recapture that needs the opponent's ...cxb5 first yet"
+  },
+  {
+    "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3p1P2/1P2PN2/PBPP2PP/RN1QKB1R b KQkq - 0 5",
+    "plan": "White: Recapture on e3, develop with Re1, and use the open e-file and the a1-h8 diagonal to pressure Black's center.",
+    "reference": "Re1",
+    "reason": "needs-research: Re1 is impossible, but the gambit's real follow-up after 5...dxe3 is not settled by the board or a short search"
   }
 ]

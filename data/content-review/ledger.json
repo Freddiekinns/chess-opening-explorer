@@ -2710,5 +2710,65 @@
     "verdict": "fixed",
     "contentHash": "42070c4c35a8b6f3",
     "notes": "Plan 2 wrote castling as 0-0 and developed Bd3 with the e-pawn on e2. Rewrote plan 2; British spelling."
+  },
+  "rnbqkb1r/pppppp1p/5np1/8/3P4/2P5/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1a8865e173be1f6b",
+    "notes": "Plan 1 wrote the centre as a route (d4-c3-e4); overview said 2.c3 prepares d5 or b4. Rewrote overview and plan 1 (reviewer rejection: c3 and d4 do not guard e4; fixed and re-reviewed); British spelling."
+  },
+  "rnbqkb1r/pppp1ppp/4pn2/8/3P1B2/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "27ee98035e526dbb",
+    "notes": "Overview called the f4-bishop light-squared; plan 1 wrote the pawn triangle as a route and suggested h4-h5. Rewrote overview and plan 1 (reviewer rejection of the 'problem bishop' wording fixed and re-reviewed)."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1d420c49bd070f69",
+    "notes": "Overview called the f4-bishop light-squared; plan 1 wrote the triangle and the knight route as moves. Rewrote overview and plan 1; British spelling."
+  },
+  "rnbqkb1r/ppp2ppp/4pn2/3p4/3P1B2/4P3/PPP2PPP/RN1QKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "5e695e78857eb015",
+    "notes": "Plan 1 supported a knight on e5 with f4, where White's bishop stands; plan 2 read c8 as a move; overview dated ...e6 to move 3. Rewrote overview and both plans."
+  },
+  "rnbqkb1r/ppp2ppp/4pn2/3p4/3P1B2/4P3/PPPN1PPP/R2QKBNR b KQkq - 1 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "9b9f6baaf865e0ca",
+    "notes": "Plan 1 proposed a rook lift via e3, White's own pawn, and wrote castling as 0-0; overview called the f4-bishop light-squared. Rewrote overview and plans 1 and 4."
+  },
+  "r1bqkb1r/pp3ppp/2n1pn2/2pp4/3P1B2/2P1P3/PP1N1PPP/R2QKBNR w KQkq - 1 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "8a076a3ebe139261",
+    "notes": "Plan 2 rerouted a b1-knight that is already on d2 via f1, where the bishop stands; plan 3 suggested ...b5 and ...a5. Rewrote plans 2-3; British spelling."
+  },
+  "rnbqkb1r/pppppp1p/5np1/6B1/3P4/8/PPP1PPPP/RN1QKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "5aa92dd7c6b1fa05",
+    "notes": "Plan 2 relied on ...gxf6 and an open g-file, impossible with the pawn on g6. Rewrote plan 2; British spelling."
+  },
+  "rnbqkb1r/pppppp1p/5Bp1/8/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "71d95f8469d6c782",
+    "notes": "Overview and plan 3 offered a ...gxf6 recapture the g6-pawn cannot make. Rewrote overview and plans 2-3 (reviewer rejection fixed and re-reviewed)."
+  },
+  "rnbqkb1r/pppp1p1p/5pp1/8/3P4/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1861c2ef5d29b3e1",
+    "notes": "Plan 2 played ...Re8 before castling. Rewrote plan 2; British spelling."
+  },
+  "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d0bde47b17ae6f79",
+    "notes": "Overview and plan 2 described a pin the e7-pawn blocks; plan 3 played ...g5 onto White's bishop. Rewrote overview and plans 1-3; British spelling."
   }
 }

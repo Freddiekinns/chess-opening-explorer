@@ -122362,7 +122362,7 @@
     "name": "Benoni: Fianchetto, 9...Nbd7 10.Nd2 a6 11.a4",
     "scid": "A63",
     "analysis_json": {
-      "description": "This variation of the Benoni Fianchetto represents a sophisticated strategic battle. White employs the Nd2-a4 system to clamp down on Black's primary source of counterplay, the ...b5 pawn break, aiming for a positional squeeze and long-term pressure. Black, in turn, must play patiently and creatively, seeking to undermine White's central control and generate dynamic chances through piece play. This opening is perfect for strategic players who enjoy complex, tense middlegames where understanding pawn structures and subtle maneuvering is key to success.",
+      "description": "This variation of the Benoni Fianchetto represents a sophisticated strategic battle. White employs the Nd2 and a4 set-up to clamp down on Black's primary source of counterplay, the ...b5 pawn break, aiming for a positional squeeze and long-term pressure. Black, in turn, must play patiently and creatively, seeking to undermine White's central control and generate dynamic chances through piece play. This opening is perfect for strategic players who enjoy complex, tense middlegames where understanding pawn structures and subtle manoeuvring is key to success.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -122404,7 +122404,7 @@
         "Long-term pressure on the d6 pawn"
       ],
       "common_plans": [
-        "White: Execute the Nd2-f1-e3 maneuver to reinforce the center and prepare the e2-e4 push, solidifying the space advantage.",
+        "White: Bring the d2-knight to c4 to press the d6-pawn, add h3 to rule out ...Ng4, and prepare e2-e4 to support d5 and gain more space.",
         "Black: Prepare queenside expansion with ...Rb8, aiming to eventually force the ...b5 break or create other weaknesses in White's camp.",
         "White: Systematically improve the position, restrict Black's pieces, and target the inherent weakness of the d6-pawn.",
         "Black: Use the powerful g7-bishop to create threats along the long diagonal and reposition pieces (...Re8, ...Qe7) to challenge for central squares."
@@ -122479,7 +122479,7 @@
     "moves": "1. d4 Nf6 2. c4 e6 3. g3 c5 4. d5 exd5 5. cxd5 d6 6. Nc3 g6 7. Bg2 Bg7 8. Nf3 O-O 9. O-O a6 10. a4 Nbd7 11. Nd2 Re8",
     "name": "Benoni Defense: Fianchetto Variation, Hastings Defense, Main Line",
     "analysis_json": {
-      "description": "The Fianchetto Variation of the Benoni is a sophisticated and strategically complex system where both sides engage in a deep maneuvering battle. White claims a central space advantage with the d5 pawn and uses the powerful g2-bishop to control key diagonals, while Black accepts a cramped position in exchange for dynamic counterplay, primarily on the queenside with the ...b5 pawn break. This opening is perfect for patient, strategic players who enjoy long-term planning, understanding pawn structures, and fighting for the initiative in imbalanced positions.",
+      "description": "The Fianchetto Variation of the Benoni is a sophisticated and strategically complex system where both sides engage in a deep manoeuvring battle. White claims a central space advantage with the d5 pawn and uses the powerful g2-bishop to control key diagonals, while Black accepts a cramped position in exchange for dynamic counterplay, primarily on the queenside with the ...b5 pawn break. This opening is perfect for patient, strategic players who enjoy long-term planning, understanding pawn structures, and fighting for the initiative in imbalanced positions.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -122521,10 +122521,10 @@
         "Restraint and Prophylaxis"
       ],
       "common_plans": [
-        "White's Plan: Maneuver the knight from d2 to c4 to control the queenside and pressure d6, followed by playing on the central files, often preparing the e2-e4 pawn push to challenge Black's setup.",
-        "Black's Plan: Achieve the ...b5 pawn break to generate queenside counterplay, creating space for the pieces and challenging White's control. The rook on e8 supports central tension and prepares for potential ...f5 breaks.",
+        "White's Plan: Manoeuvre the knight from d2 to c4 to control the queenside and pressure d6, followed by playing on the central files, often preparing the e2-e4 pawn push to challenge Black's setup.",
+        "Black's Plan: Achieve the ...b5 pawn break, prepared by ...Rb8, to generate queenside counterplay; the rook on e8 works on the half-open e-file against White's e-pawn and makes its advance harder.",
         "White's Plan: Use the a4-pawn to restrain Black's ...b5 advance and exert long-term pressure on Black's backward d6-pawn.",
-        "Black's Plan: Reposition the knight from d7, often to f8, to bolster the kingside or prepare to redeploy to the queenside via b8-c6."
+        "Black's Plan: Bring the d7-knight to e5 or b6, where it contests the c4-square that White's knight wants."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:53:25.221Z"
@@ -122543,7 +122543,7 @@
       "ct": "Benoni Defense, Fianchetto Variation"
     },
     "analysis_json": {
-      "description": "The Fianchetto Variation of the Benoni is a battleground of strategic imbalances, and the 11...Re8 line is one of its most sophisticated and respected continuations. Black prepares to challenge White's central space advantage by supporting a future ...e5 break and creating queenside counterplay with ...b5. This opening leads to a tense, strategically complex struggle where understanding long-term plans and pawn structures is paramount, suiting dynamic players who thrive in unbalanced positions.",
+      "description": "The Fianchetto Variation of the Benoni is a battleground of strategic imbalances, and the 11...Re8 line is one of its most sophisticated and respected continuations. Black puts the rook on the half-open e-file, against White's e-pawn, and prepares queenside counterplay with ...b5. This opening leads to a tense, strategically complex struggle where understanding long-term plans and pawn structures is paramount, suiting dynamic players who thrive in unbalanced positions.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -122583,8 +122583,8 @@
         "Prophylaxis and Piece Coordination"
       ],
       "common_plans": [
-        "Black's Plan: Achieve the ...b5 pawn break to activate the queenside majority. Reposition the knight from d7 (e.g., to b6 or f8-e6). Use the Re8 to challenge White's center and prepare for tactical possibilities on the e-file.",
-        "White's Plan: Restrain Black's queenside with a4. Prepare and execute the e2-e4 pawn push, often followed by f2-f4, to gain space and launch a kingside attack. Establish a strong knight on the c4 outpost to control key squares and pressure d6."
+        "Black's Plan: Achieve the ...b5 pawn break, prepared by ...Rb8, to activate the queenside majority. Bring the d7-knight to e5 or b6 to contest c4, and use the e8-rook on the e-file.",
+        "White's Plan: Restrain Black's queenside with a4 (and later a5), prepare e2-e4 with h3, and put a knight on c4 to press the d6-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:53:44.163Z"
@@ -122599,7 +122599,7 @@
     "name": "Benoni: Fianchetto, 11...Re8 12.a5",
     "scid": "A64",
     "analysis_json": {
-      "description": "This line of the Fianchetto Benoni represents a sophisticated and strategic struggle. White's key move, 12.a5, aims to clamp down on the queenside, restricting Black's typical ...b5 counterplay and creating a long-term target on b7. The game becomes a tense maneuvering battle where White tries to exploit the space advantage and the b6-square, while Black must patiently regroup to challenge White's control, often by preparing a central break with ...e5. This opening is perfect for strategic players who enjoy accumulating small advantages and navigating complex, non-forced positions.",
+      "description": "This line of the Fianchetto Benoni represents a sophisticated and strategic struggle. White's key move, 12.a5, aims to clamp down on the queenside, restricting Black's typical ...b5 counterplay and creating a long-term target on b7. The game becomes a tense manoeuvring battle where White tries to exploit the space advantage and the b6-square, while Black must regroup patiently, with ...Rb8 and pieces aimed at the e5- and c4-squares. This opening is perfect for strategic players who enjoy accumulating small advantages and navigating complex, non-forced positions.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -122641,10 +122641,10 @@
         "Battle of the Fianchettoed Bishops"
       ],
       "common_plans": [
-        "White: Play Nc4 to pressure d6 and b6, control the b-file with Rb1, and prepare f2-f4 to challenge Black's central ambitions.",
-        "Black: Prepare the central ...e5 pawn break, often supported by ...Qe7. Reroute the b8-knight via e8 to d7 to bolster the center and prepare for action.",
-        "White: Exploit the weak b6 square, often by occupying it with a knight, and slowly build pressure on Black's cramped position.",
-        "Black: Challenge White's advanced a5-pawn with ...Rb8, and if possible, prepare the ...b6 break to free the queenside."
+        "White: Play Nc4 to press d6 and the b6-square, then prepare e2-e4 with h3, keeping Black's queenside pawns fixed.",
+        "Black: Use the e8-rook against White's e-pawn, bring the d7-knight to e5 to contest c4, and develop the c8-bishop to d7 or f5.",
+        "White: Keep Black's queenside fixed: with the pawn on a5, ...b5 can be met by capturing en passant, and the b6-square stays a weakness for the c4-knight to watch.",
+        "Black: Play ...Rb8 and prepare ...b5; if White captures en passant, Black recaptures on b6 and the half-open b-file gives the rook play against b2."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:54:07.605Z"
@@ -122718,7 +122718,7 @@
     "name": "Benoni: Fianchetto, 11...Re8 12.h3 Rb8",
     "scid": "A64",
     "analysis_json": {
-      "description": "This is a highly strategic and complex variation of the Modern Benoni, where Black accepts a space disadvantage to create dynamic counterplay on the queenside. The entire setup revolves around preparing the crucial ...b5 pawn break, while White aims to use their central control and space to launch their own attack. This opening suits patient, resilient players who excel at strategic maneuvering and are comfortable navigating unbalanced, double-edged positions.",
+      "description": "This is a highly strategic and complex variation of the Modern Benoni, where Black accepts a space disadvantage to create dynamic counterplay on the queenside. The entire setup revolves around preparing the crucial ...b5 pawn break, while White aims to use their central control and space to launch their own attack. This opening suits patient, resilient players who excel at strategic manoeuvring and are comfortable navigating unbalanced, double-edged positions.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -122758,8 +122758,8 @@
         "Key Pawn Breaks (...b5, e4)"
       ],
       "common_plans": [
-        "Black: Prepare and execute the ...b5 pawn break to open lines for the rooks and challenge White's queenside. Reposition the f6-knight (e.g., via e8 to d6 or c7) to support the queenside and control central squares. Exert pressure on White's d5 and e4 pawns.",
-        "White: Use the space advantage to prepare the central e4-e5 pawn push, opening the position for the g2-bishop and attacking Black's weak d6-pawn. Restrain Black's queenside play with moves like Nc4 and Rb1. Systematically improve piece coordination before launching a decisive action."
+        "Black: Prepare and execute the ...b5 pawn break to open lines for the rooks, bring the d7-knight to e5 to contest c4, and keep the e8-rook aimed at White's e-pawn.",
+        "White: Prepare e2-e4 (h3 has already ruled out ...Ng4), bring the d2-knight to c4 to press d6, and keep ...b5 in check with a4 and, if needed, a5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:54:47.386Z"
@@ -122832,7 +122832,7 @@
     "name": "Benoni: Fianchetto, 11...Re8 12.h3 Rb8 13.Nc4 Nb6",
     "scid": "A64",
     "analysis_json": {
-      "description": "This line of the Fianchetto Benoni represents a sophisticated and highly strategic battle. Black has committed to the classic Benoni plan of queenside counterplay, while White's setup with Nd2-c4 aims to clamp down on the center and restrict Black's ambitions. The resulting positions are complex and dynamic, requiring a deep understanding of pawn breaks and piece maneuvering, making it ideal for experienced players who thrive on long-term strategic tension.",
+      "description": "This line of the Fianchetto Benoni represents a sophisticated and highly strategic battle. Black has committed to the classic Benoni plan of queenside counterplay, while White's setup with Nd2-c4 aims to clamp down on the centre and restrict Black's ambitions. The resulting positions are complex and dynamic, requiring a deep understanding of pawn breaks and piece manoeuvring, making it ideal for experienced players who thrive on long-term strategic tension.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -122872,10 +122872,10 @@
         "Knight Outposts"
       ],
       "common_plans": [
-        "White: Control the center, often with a timely f2-f4 push, restrain Black's ...b5 break, and use the c4-knight to pressure the d6-pawn.",
-        "Black: Achieve the ...b5 pawn break to open lines on the queenside, challenge White's control of the e4-square, and utilize the long diagonal for the g7-bishop.",
-        "White: Exchange Black's powerful dark-squared bishop or render it ineffective, then consolidate the central space advantage.",
-        "Black: Exchange White's strong knight on c4 (e.g., with ...Na5 or after the knight trade on b6) to ease the pressure on the d6-pawn."
+        "White: Push a5 to drive the b6-knight away, keep the knight on c4 pressing d6, and prepare e2-e4 to support the d5-pawn.",
+        "Black: Achieve the ...b5 pawn break to open lines on the queenside, challenge White's control of the e4-square, and use the long diagonal for the g7-bishop.",
+        "White: Develop the c1-bishop to f4 or g5 to add pressure on d6 or the f6-knight, then consolidate the central space advantage.",
+        "Black: Exchange White's strong c4-knight with ...Nxc4, easing the pressure on the d6-pawn, or use the b6-knight to hit the a4- and d5-pawns."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:55:26.051Z"
@@ -122890,7 +122890,7 @@
     "name": "Benoni: Fianchetto, 11...Re8 12.h3 Rb8 13.Nc4 Ne5",
     "scid": "A64",
     "analysis_json": {
-      "description": "The Fianchetto Benoni (A64) is a sharp and theoretically demanding defense that creates a significant strategic imbalance from the opening. Black accepts a central space disadvantage and a potentially weak d6-pawn in exchange for a queenside pawn majority and dynamic counter-attacking chances, spearheaded by the powerful fianchettoed bishop. This opening is perfect for ambitious, dynamic players who are well-prepared, enjoy complex strategic battles, and are not afraid to defend under pressure while waiting for their moment to strike on the queenside.",
+      "description": "The Fianchetto Benoni (A64) is a sharp and theoretically demanding defence that creates a significant strategic imbalance from the opening. Black accepts a central space disadvantage and a potentially weak d6-pawn in exchange for a queenside pawn majority and dynamic counter-attacking chances, spearheaded by the powerful fianchettoed bishop. This opening is perfect for ambitious, dynamic players who are well-prepared, enjoy complex strategic battles, and are not afraid to defend under pressure while waiting for their moment to strike on the queenside.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -122935,7 +122935,7 @@
         "Control of Key Squares (e5, c4)"
       ],
       "common_plans": [
-        "White: Use the space advantage to prepare the central e4-e5 pawn push, restrict Black's pieces, and potentially launch a kingside attack. The knight on c4 is a key piece, controlling the center and eyeing Black's weaknesses.",
+        "White: Decide what to do about the e5-knight, which attacks the c4-knight: exchange it with Nxe5 or retreat with Na3, then prepare e2-e4 and a5 to keep Black's queenside fixed.",
         "Black: Prepare and execute the ...b5 pawn break to activate the queenside pawn majority and create counterplay. The knight on e5 is a critical piece, challenging White's central control and supporting Black's plans. The fianchettoed bishop on g7 exerts long-term pressure on White's position."
       ],
       "version": "1.0",
@@ -123192,7 +123192,7 @@
     "name": "Benoni: 6.e4 g6",
     "scid": "A65b",
     "analysis_json": {
-      "description": "The Modern Benoni is a sharp and ambitious defense that creates immediate structural imbalances. Black concedes a central space advantage to White in exchange for dynamic counterplay, primarily based on a queenside pawn majority and the power of a fianchettoed bishop on g7. This opening leads to complex, double-edged positions and is ideal for aggressive, tactical players who are comfortable with risk and enjoy fighting for the initiative from the very beginning.",
+      "description": "The Modern Benoni is a sharp and ambitious defence that creates immediate structural imbalances. Black concedes a central space advantage to White in exchange for dynamic counterplay, primarily based on a queenside pawn majority and the power of a fianchettoed bishop on g7. This opening leads to complex, double-edged positions and is ideal for aggressive, tactical players who are comfortable with risk and enjoy fighting for the initiative from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -123236,10 +123236,10 @@
         "Black's ...b5 pawn break and queenside expansion"
       ],
       "common_plans": [
-        "White: Prepare and execute the e4-e5 pawn break to open the center and attack the king, often supported by f2-f4.",
+        "White: Prepare and execute the e4-e5 pawn break to open the centre and attack the king, often supported by f2-f4.",
         "Black: Create queenside counterplay with the ...a6 and ...b5 pawn advance to undermine White's central control.",
-        "White: Restrict Black's counterplay by controlling the c4 and b5 squares, often with moves like a4 and Nd2-b3.",
-        "Black: Reroute the f6-knight (e.g., to d7 or e8) to support the queenside and prepare to challenge White's center."
+        "White: Restrict Black's counterplay with a4 against ...b5 and a knight on c4 (via f3 and d2) pressing d6.",
+        "Black: Complete development with ...Bg7, ...O-O and ...Re8 to hit the e4-pawn, and reroute the f6-knight via d7 to e5 or b6."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:57:34.236Z"
@@ -123254,7 +123254,7 @@
     "name": "Benoni: 6.e4 g6 7.Bd3",
     "scid": "A65f",
     "analysis_json": {
-      "description": "The Modern Benoni is a sharp and ambitious defense where Black challenges White's central control by creating immediate imbalances. By allowing White a powerful pawn on d5, Black aims for dynamic counterplay on the queenside, typically with the ...b5 pawn break, while the fianchettoed bishop on g7 exerts long-range pressure. This opening leads to complex, double-edged struggles and is perfect for aggressive, tactical players who are comfortable with asymmetrical positions and fighting for the initiative.",
+      "description": "The Modern Benoni is a sharp and ambitious defence where Black challenges White's central control by creating immediate imbalances. By allowing White a powerful pawn on d5, Black aims for dynamic counterplay on the queenside, typically with the ...b5 pawn break, while the fianchettoed bishop on g7 exerts long-range pressure. This opening leads to complex, double-edged struggles and is perfect for aggressive, tactical players who are comfortable with asymmetrical positions and fighting for the initiative.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -123295,10 +123295,10 @@
         "King Safety"
       ],
       "common_plans": [
-        "White: Execute the f2-f4 pawn push to gain space on the kingside and launch an attack, often followed by Nf3-d2-f1-g3/h2 maneuvers.",
-        "Black: Achieve the ...b5 pawn break to undermine White's center and create a passed pawn on the queenside.",
+        "White: Develop with Nge2 (keeping the f-pawn free), h3 and O-O, then consider f2-f4 to gain space and support e4-e5.",
+        "Black: Achieve the ...b5 pawn break to undermine White's centre and create a passed pawn on the queenside.",
         "White: Control the queenside, preventing Black's ...b5 break with moves like a4 and Rb1.",
-        "Black: Exert pressure on the e4 pawn with moves like ...Re8 and maneuvering the knight from f6 to d7 and then to b6 or c5."
+        "Black: After ...Bg7 and ...O-O, press the e4-pawn with ...Re8 and bring the b8-knight via d7 to e5, where it hits the d3-bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T09:57:51.861Z"
@@ -162497,7 +162497,7 @@
     "src": "chessGraph",
     "eco": "A63",
     "analysis_json": {
-      "description": "The Fianchetto Variation of the Benoni is a strategically complex and dynamic system where both sides pursue long-term plans. Unlike more aggressive Benoni lines, this variation often leads to a tense maneuvering game where White leverages a space advantage and central control, while Black seeks counterplay through the thematic ...b5 pawn break on the queenside. This opening is perfect for strategic players who enjoy imbalanced positions and understand how to patiently build up an attack from a solid, albeit slightly passive, foundation.",
+      "description": "The Fianchetto Variation of the Benoni is a strategically complex and dynamic system where both sides pursue long-term plans. Unlike more aggressive Benoni lines, this variation often leads to a tense manoeuvring game where White leverages a space advantage and central control, while Black seeks counterplay through the thematic ...b5 pawn break on the queenside. This opening is perfect for strategic players who enjoy imbalanced positions and understand how to patiently build up an attack from a solid, albeit slightly passive, foundation.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -162537,10 +162537,10 @@
         "Knight Maneuvers"
       ],
       "common_plans": [
-        "White: Control the queenside with a4, prepare the e4 pawn break to open the center, and maneuver the knight from d2 to f1 and then e3 or g3 to support the center and pressure the d6 pawn.",
+        "White: Keep ...b5 under control with a4, bring the d2-knight to c4 to press the d6-pawn, and prepare e2-e4 to support the d5-pawn.",
         "Black: Prepare and execute the ...b5 pawn break to create queenside counterplay, place the rook on b8 to support the advance, and use the powerful g7 bishop to control key diagonals.",
-        "White: Reposition the f3 knight via d2 to e4 or c4 after Black plays ...Re8, challenging Black's central control.",
-        "Black: Use the ...Re8 move to prepare ...Ne8-d7 or to support a potential ...f5 break in some lines, adding flexibility to the position."
+        "White: Answer ...Re8 with h3 and Nc4, adding pressure on d6, and keep the e4-square under control with the c3-knight and the g2-bishop.",
+        "Black: Play ...Re8 and ...Rb8 to prepare ...b5, and use the d7-knight on e5 to contest the c4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T17:39:09.555Z"

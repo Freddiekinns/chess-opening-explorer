@@ -1088,8 +1088,8 @@
   "rnbqkbnr/ppppp1pp/8/8/4p3/2NP4/PPP2PPP/R1BQKBNR b KQkq - 0 3": {
     "reviewedAt": "2026-11-09",
     "verdict": "fixed",
-    "contentHash": "989ed5ee89402a13",
-    "notes": "Plans needed ...exd3 before Bxd3; overview's open e-file and long diagonal replaced with the b1-h7 diagonal and Qh5+ along e8-h5."
+    "contentHash": "6e9fc7983b1c6161",
+    "notes": "Follow-up to batch 3: plan had Nf3 and then Qh5+, which the knight blocks, and ...d5 said to blunt the d3-bishop (only ...g6 does). Reworded and re-reviewed."
   },
   "r1bqkbnr/pppp1ppp/2n5/4p3/3P4/2N2N2/PPP1PPPP/R1BQKB1R b KQkq - 0 3": {
     "reviewedAt": "2026-11-09",
@@ -1576,5 +1576,65 @@
     "verdict": "fixed",
     "contentHash": "5c0c38e59d1dfa77",
     "notes": "Plan had a d4-e4 route. Rewritten around King's Indian, Maroczy and Botvinnik transpositions."
+  },
+  "rnbqkb1r/ppppp1pp/5n2/5p2/2P5/2N3P1/PP1PPP1P/R1BQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d6463a52ca0fa861",
+    "notes": "Plan had ...Qe8-h5 with the king on e8 and vague bishop ideas. Rewritten around the three Dutch set-ups and the fight for e4."
+  },
+  "rnbq1rk1/ppppb1pp/4pn2/5p2/2P5/2N2NP1/PP1PPPBP/R1BQ1RK1 b - - 5 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "822c1313d23bc71f",
+    "notes": "Overview called a Classical Dutch a Stonewall; plan had the c3-knight going via e1 and d3 to e5. Rewritten."
+  },
+  "rnbqkbnr/ppppp1pp/8/8/2P1p3/3P4/PP3PPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "df63d939e668c1b4",
+    "notes": "Plan had Bg2 without g3 and an open e-file that is half-open; plans generic. Rewritten around 3...exd3 4.Bxd3 and Qh5+; reviewer rejection (Nf3 blocks Qh5+) fixed and re-reviewed."
+  },
+  "rn1qkb1r/pp2pppp/2p2n2/3p1b2/2P5/5NP1/PP1PPPBP/RNBQK2R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "c9669c429d39e9c4",
+    "notes": "Plan had Qb3 attacking d5 through White's own c4-pawn and a b4-b5 route. Rewritten around Qb3 against b7 and ...Qb6."
+  },
+  "rnbqkbnr/pp2pppp/2p5/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1cf2c3668b3462b1",
+    "notes": "Plans used b4-b5 and c6-d5-e6 as routes. Rewritten around Slav and Réti transpositions."
+  },
+  "rn1qkb1r/pp2pppp/2p2n2/3p4/2P3b1/1P3NP1/P2PPPBP/RNBQK2R b KQkq - 2 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "6f77356cb6bd7ffc",
+    "notes": "Overview called ...Bg4 a pin (the e2-pawn shields the queen); plan had gxf3 before ...Bxf3 and a b4-b5 route. Rewritten."
+  },
+  "r1bqk2r/pp2bppp/2n1pn2/2pp4/2P5/1P3NP1/P2PPPBP/RNBQ1RK1 w kq - 3 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "7334878ae5f935d5",
+    "notes": "Plan had ...dxc4 creating an isolated pawn for White and ...cxd4 with no d4-pawn; plans without side prefixes. Rewritten around Bb2, e3/d4, ...d4 and ...b6."
+  },
+  "rnbqkb1r/pp3ppp/4pn2/2pp4/2P5/1P2PN2/PB1P1PPP/RN1QKB1R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "fb609c5563d362f0",
+    "notes": "Plans had ...cxd4 with no d4-pawn, a3-b4 as a route and plans without side prefixes. Rewritten."
+  },
+  "r1bqkb1r/pppn1ppp/4pn2/8/2Q5/5NP1/PP1PPPBP/RNB1K2R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "a96acd129d012713",
+    "notes": "Plan had ...a6 to stop Nb5 with no knight able to reach b5. Rewritten around ...a6/...b5 gaining time on the c4-queen."
+  },
+  "rnbqkb1r/pp3ppp/2p1pn2/3p4/2P5/1P3NP1/P2PPPBP/RNBQK2R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "0b896da1a33033c8",
+    "notes": "Plan read e5 as a move and used 0-0. Rewritten around the double fianchetto and ...e5 or ...b6/...Bb7."
   }
 }

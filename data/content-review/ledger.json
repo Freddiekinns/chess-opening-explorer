@@ -2830,5 +2830,65 @@
     "verdict": "fixed",
     "contentHash": "6dd8e5705a5d3fe7",
     "notes": "Plan 1 pushed e4 onto Black's knight; plan 3 rerouted a knight via Nd2-f1-e3; plan 4 wrote castling as 0-0. Rewrote plans 1, 3 and 4; British spelling."
+  },
+  "rnbqkb1r/ppp1pppp/8/3p4/3PnB2/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "0415a03cdb3cd255",
+    "notes": "Plans wrote routes and structures as moves (f3-e4 with Black's knight on e4, c3-d4-e3); plan 2 said ...c5 supports the e4-knight. Rewrote plans 1-3; British spelling."
+  },
+  "rnbqkb1r/ppp1pppp/8/3p4/3PnB2/5P2/PPP1P1PP/RN1QKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "a4696d35b18b3b8e",
+    "notes": "Plan 1 pushed e2-e4 onto Black's knight. Rewrote plan 1; British spelling."
+  },
+  "rnbqkb1r/pp1ppppp/8/2p5/3Pn2B/8/PPP1PPPP/RN1QKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "8a912c2fd2238171",
+    "notes": "Plan 1 pushed e4 onto Black's knight; plan 3 was vague about the h4-bishop. Rewrote plans 1 and 3; British spelling."
+  },
+  "rnbqkb1r/pp1ppppp/8/2p5/3Pn2B/5P2/PPP1P1PP/RN1QKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "58d8a8b44be21395",
+    "notes": "Plan 1 wrote the centre as a route (d4-e4); plan 4 spoke of light-square weaknesses rather than the real 4...g5 5.fxe4 gxh4 idea. Rewrote plans 1 and 4; British spelling."
+  },
+  "rnbqkb1r/ppp1pppp/8/3p4/3Pn2B/8/PPP1PPPP/RN1QKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "8c3923ea74cb46bd",
+    "notes": "Plan 1 wrote the advance as f3-e4 with Black's knight on e4. Rewrote plan 1; British spelling."
+  },
+  "rnbqkb1r/ppp1pppp/8/3p2B1/3Pn2P/8/PPP1PPP1/RN1QKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1d90c6e59278851f",
+    "notes": "Plan 1 recaptured gxf3 on a square where nothing is captured; plan 3 put the queen on e2, where White's pawn stands; plan 2 said ...h5 challenges the h4-pawn. Rewrote plans 1-3."
+  },
+  "rnbqkb1r/pp1ppppp/5n2/2P5/8/2N5/PPP1PPPP/R1BQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ae03de2d26a8e41a",
+    "notes": "Plan 4 read ...b5 as a natural follow-up and plan 1 wrote castling as 0-0; plan 2 called the c-file semi-open. Rewrote plans 1, 2 and 4."
+  },
+  "rnbqkb1r/pppp1ppp/4pn2/8/3P4/5NP1/PPP1PP1P/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "6a2412bd1985e725",
+    "notes": "Plan 3 played Qe2 through the e2-pawn and Re1 before castling; plan 4 said ...Ba6 challenges the g2-bishop. Rewrote plans 3-4; British spelling."
+  },
+  "r1bqkb1r/pppnpppp/3p1n2/6B1/3P4/5N2/PPP1PPPP/RN1QKB1R w KQkq - 2 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ed1af09932bfb259",
+    "notes": "Overview said ...Nbd7 breaks a pin the e7-pawn blocks; plan 3 developed ...Be7 with the pawn on e7. Rewrote overview and plan 3; British spelling."
+  },
+  "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5NP1/PPP1PP1P/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "60abda25e12b880c",
+    "notes": "Plan 3 rerouted the f3-knight via e1 with the king there. Rewrote plan 3; British spelling."
   }
 }

@@ -8,9 +8,9 @@ independent reviewer before commit; notes per page are in
 
 ## Totals
 
-- Failing references: 4,164 at the start of this job (2026-11-09 01:10 UTC run); 4,151 at the 02:10 UTC refresh; 4,108 on 3,215 pages at the 02:33 refresh (after batch 5); 4,035 on 3,155 pages at the 02:55 refresh (after batch 10); 3,976 on 3,105 pages at the 07:15 refresh (after batch 16); 3,928 on 3,065 pages at the 07:40 refresh (after batch 20); 3,834 on 2,985 pages at the 08:10 refresh (after batch 28); about 3,780 after batch 33
-- Phase 1 pages left: about 2,930 skips excluded (viewed: 0)
-- Pages reviewed by this job: 332 (including two follow-ups to earlier batches)
+- Failing references: 4,164 at the start of this job (2026-11-09 01:10 UTC run); 4,151 at the 02:10 UTC refresh; 4,108 on 3,215 pages at the 02:33 refresh (after batch 5); 4,035 on 3,155 pages at the 02:55 refresh (after batch 10); 3,976 on 3,105 pages at the 07:15 refresh (after batch 16); 3,928 on 3,065 pages at the 07:40 refresh (after batch 20); 3,834 on 2,985 pages at the 08:10 refresh (after batch 28); about 3,768 after batch 34
+- Phase 1 pages left: about 2,920 skips excluded (viewed: 0)
+- Pages reviewed by this job: 342 (including two follow-ups to earlier batches)
 - Phase: 1
 
 ## Batches
@@ -49,4 +49,5 @@ independent reviewer before commit; notes per page are in
 | 2026-11-09 08:14 | 1     | 10    | 10 / 0 / 0                  | 34 / 0                   | none |
 | 2026-11-09 08:18 | 1     | 10    | 10 / 0 / 0                  | 30 / 3 (fixed, re-accepted) | none |
 | 2026-11-09 08:22 | 1     | 10    | 10 / 0 / 0                  | 31 / 2 (fixed, re-accepted) | none; `npm run test:all` passed (1,203 Jest, 788 Vitest) |
-| 2026-11-09 08:25 | 1     | 10    | 10 / 0 / 0                  | 34 / 0                   | none |
+| 2026-11-09 08:25 | 1     | 10    | 10 / 0 / 0                  | 33 / 0                   | none |
+| 2026-11-09 08:29 | 1     | 10    | 10 / 0 / 0                  | 30 / 2 (fixed, re-accepted) | none |

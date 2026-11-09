@@ -81547,7 +81547,7 @@
       "chronos": "Old Indian: Tartakower (Wade) variation"
     },
     "analysis_json": {
-      "description": "The Wade Defense is a provocative and aggressive system against 1.d4, characterized by the immediate pin on the f3-knight. Black aims to disrupt White's standard development, create imbalances, and steer the game into sharp, tactical waters, often at the cost of the bishop pair. This opening is ideal for dynamic players who enjoy seizing the initiative, avoiding mainstream theory, and posing immediate problems for their opponent from the very beginning.",
+      "description": "The Wade Defence develops the light-squared bishop at once to g4, eyeing the f3-knight before Black has settled on a pawn structure. Black is often ready to give up the bishop for the knight and aim for ...e5 or ...c5, while White gains the bishop pair if the exchange happens. It suits dynamic players who like to avoid mainstream theory and set problems from the first moves.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -81588,10 +81588,10 @@
         "Dark-square control"
       ],
       "common_plans": [
-        "Black: Exchange on f3 (...Bxf3), control the e4-square, and prepare a central break with ...e5 or ...c5.",
-        "Black: Maintain the pin to restrict White's pieces and develop quickly to generate an attack.",
-        "White: Break the pin with h3, often followed by g4, to gain space and prepare to use the bishop pair.",
-        "White: Develop calmly with moves like c4 and Nc3, accepting the doubled pawns after Bxf3 in exchange for the bishop pair and open lines."
+        "Black: Exchange on f3 when it damages White's structure or gains time, and prepare a central break with ...e5 or ...c5, often after ...Nd7.",
+        "Black: Keep the bishop on g4 while developing with ...Nd7 and ...Ngf6, so that White has to spend time on h3.",
+        "White: Question the bishop with h3; if it retreats to h5, a later g-pawn advance can gain space, and if it takes on f3 White gets the bishop pair.",
+        "White: Develop calmly with c4 and Nc3, or with e4, accepting a damaged structure after an exchange on f3 in return for the bishop pair and open lines."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T16:51:47.470Z"
@@ -81863,7 +81863,7 @@
       "icsbot": "Randspringer Variation "
     },
     "analysis_json": {
-      "description": "The Randspringer Variation is a sharp and provocative response to White's classical center, immediately challenging the e4-pawn with ...f5. This creates a highly unbalanced and dynamic struggle, where Black accepts structural weaknesses and king safety risks in exchange for immediate counterattacking chances. This opening is ideal for aggressive, tactical players who thrive in complex, double-edged positions and are not afraid to fight for the initiative from the very beginning.",
+      "description": "The Randspringer Variation is a sharp and provocative response to White's classical centre, immediately challenging the e4-pawn with ...f5. This creates a highly unbalanced and dynamic struggle, where Black accepts structural weaknesses and king safety risks in exchange for immediate counterattacking chances. This opening is ideal for aggressive, tactical players who thrive in complex, double-edged positions and are not afraid to fight for the initiative from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -81906,10 +81906,10 @@
         "Imbalanced Positions"
       ],
       "common_plans": [
-        "Black aims to generate pressure against the e4-pawn, utilize the f-file for a kingside attack, and create chaos to offset their structural deficiencies.",
+        "Black aims to pressure the e4-pawn with ...Nf6 and an exchange on e4 at the right moment, opening the f-file for a rook after castling and creating counterplay against White's centre.",
         "White seeks to consolidate their central space advantage, often with f2-f3, and exploit the weaknesses created by ...f5, particularly the vulnerable black king and the e6-square.",
-        "A critical plan for White involves accepting the challenge with exf5, aiming to control the center and target Black's weakened pawn structure after ...gxf5.",
-        "Black often prepares to maneuver the queen to the kingside (e.g., ...Qe8-h5) to create direct threats against the white king."
+        "A critical plan for White involves accepting the challenge with exf5, aiming to control the centre and target Black's weakened pawn structure after ...gxf5.",
+        "Black often develops with ...Nf6, ...O-O and ...Nc6 or ...c5, keeping the tension until an exchange on e4 opens the f-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T19:22:33.364Z"
@@ -82268,7 +82268,7 @@
     "name": "Modern: Averbakh, 4...e5 5.dxe5",
     "scid": "A42v",
     "analysis_json": {
-      "description": "This variation of the Averbakh System immediately challenges White's classical center, leading to an open and dynamic game. Black aims to leverage the powerful fianchettoed bishop and fight for central control, often accepting a slightly exposed king after an early queen trade (Qxd8+ Kxd8) in exchange for rapid development. This opening suits players who enjoy strategic battles with clear plans and appreciate the long-term power of the fianchetto structure.",
+      "description": "This variation of the Averbakh System immediately challenges White's classical centre, leading to an open and dynamic game. Black aims to leverage the powerful fianchettoed bishop and fight for central control, often accepting a slightly exposed king after an early queen trade (Qxd8+ Kxd8) in exchange for rapid development. This opening suits players who enjoy strategic battles with clear plans and appreciate the long-term power of the fianchetto structure.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -82309,8 +82309,8 @@
         "Central pawn structure"
       ],
       "common_plans": [
-        "White: Control the d-file, pressure the e5 pawn (e.g., with Nf3-d4), and exploit Black's king position after an early Qxd8+ Kxd8.",
-        "Black: Solidify the e5-pawn, complete development (Nf6, c6), activate the g7-bishop, and challenge White's control of the center and d-file."
+        "White: After the queen exchange on d8, use the d-file and quick development (Nf3, Be3, O-O-O) to exploit Black's displaced king, and put pressure on the e5-pawn.",
+        "Black: Recapture on e5, hold the pawn with ...Nc6 or ...Nd7, complete development with ...Nf6 or ...Ne7 and ...Be6, and use the g7-bishop to challenge White's control of the centre and the d-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T19:25:00.042Z"
@@ -82443,7 +82443,7 @@
     "name": "Modern: Averbakh, 4...e5 5.Nf3 Nd7",
     "scid": "A42q",
     "analysis_json": {
-      "description": "This variation of the Averbakh System is a solid and strategically complex response to White's classical pawn center. Black establishes a flexible setup, aiming to challenge White's space advantage through timely pawn breaks like ...c5, leading to a rich positional struggle. This opening is ideal for patient, strategic players who excel at maneuvering and understanding the long-term implications of pawn structures.",
+      "description": "This variation of the Averbakh System is a solid and strategically complex response to White's classical pawn centre. Black establishes a flexible setup, aiming to challenge White's space advantage through timely pawn breaks like ...c5, leading to a rich positional struggle. This opening is ideal for patient, strategic players who excel at manoeuvring and understanding the long-term implications of pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -82483,9 +82483,9 @@
         "Restricting enemy pieces"
       ],
       "common_plans": [
-        "White: Complete development with Be2 and O-O, maintain central control, and prepare for a queenside expansion with Rb1-b4 or a kingside attack with f2-f4.",
+        "White: Complete development with Be2 and O-O, maintain central control, and prepare queenside expansion with Rb1 and b4, or a kingside push with Ne1 and f2-f4.",
         "Black: Solidify the e5-pawn, prepare the ...c5 pawn break to challenge White's d4-pawn, develop the queenside, and activate the powerful g7-bishop.",
-        "Black: Exchange on d4 (...exd4) to open the position and create a different pawn structure, often leading to an isolated queen's pawn scenario for White.",
+        "Black: Exchange on d4 to open the long diagonal for the g7-bishop and fight for the e5-square, accepting that White keeps more space after recapturing with the knight.",
         "White: Play d5 to gain space and cramp Black's position, aiming to exploit the resulting structural weaknesses."
       ],
       "version": "1.0",
@@ -82560,7 +82560,7 @@
     "name": "Modern: Averbakh, 4...e5 5.Nf3 Nd7 6.Be2 Ne7",
     "scid": "A42s",
     "analysis_json": {
-      "description": "This variation of the Modern Defense is a sophisticated and flexible hypermodern system. Black allows White to build a large pawn center, intending to undermine it later with well-timed pawn breaks. The characteristic knight maneuver ...Ne7 is a subtle, multi-purpose move, preparing to support the kingside, clear the way for the ...f5 break, and maintain flexibility. This opening is ideal for patient, strategic players who enjoy complex maneuvering and fighting for the initiative from a solid, if slightly passive, foundation.",
+      "description": "This variation of the Modern Defence is a sophisticated and flexible hypermodern system. Black allows White to build a large pawn centre, intending to undermine it later with well-timed pawn breaks. The characteristic knight manoeuvre ...Ne7 is a subtle, multi-purpose move, preparing to support the kingside, clear the way for the ...f5 break, and maintain flexibility. This opening is ideal for patient, strategic players who enjoy complex manoeuvring and fighting for the initiative from a solid, if slightly passive, foundation.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -82600,7 +82600,7 @@
         "Fighting for the initiative with pawn breaks"
       ],
       "common_plans": [
-        "Black's Plan: Prepare and execute the ...f7-f5 pawn break to challenge White's central control, often after castling. Complete development and reroute the e7-knight to a more active square like f5 or g8 to support the kingside.",
+        "Black's Plan: Prepare and execute the ...f7-f5 pawn break to challenge White's central control, often after castling. The e7-knight covers the f5-square and can recapture there if White exchanges pawns.",
         "White's Plan: Solidify the central space advantage, often by playing d5 to gain space and restrict the Bg7. Develop pieces to optimal squares, control the tempo, and use the extra space to launch an attack or squeeze Black positionally.",
         "Both Sides: A key struggle revolves around the d4 and e5 squares. White aims to maintain a strong pawn on d4 (or push to d5), while Black seeks to exchange or pressure it to open lines for their pieces."
       ],
@@ -82673,7 +82673,7 @@
     "name": "Modern: Averbakh, 4...Nd7",
     "scid": "A42f",
     "analysis_json": {
-      "description": "The Averbakh System is a flexible and solid response within the Modern Defense, characterized by Black allowing White to build a large pawn center. The key move 4...Nd7 prepares to challenge this center with ...e5 or ...c5, while keeping the knight's development options open and avoiding early pins. This opening leads to a complex, strategic struggle where Black aims to counter-attack from a resilient, hypermodern setup, making it ideal for patient players who enjoy undermining an opponent's space advantage.",
+      "description": "The Averbakh System is a flexible and solid response within the Modern Defence, characterised by Black allowing White to build a large pawn centre. The key move 4...Nd7 prepares to challenge this centre with ...e5 or ...c5, while keeping the knight's development options open and avoiding early pins. This opening leads to a complex, strategic struggle where Black aims to counter-attack from a resilient, hypermodern setup, making it ideal for patient players who enjoy undermining an opponent's space advantage.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -82713,8 +82713,8 @@
         "Pawn breaks (...e5, ...c5)"
       ],
       "common_plans": [
-        "Black: Prepare and execute the ...e5 pawn break to dissolve White's center, often preceded by ...Ngf6. Alternatively, challenge the d4-pawn with the ...c5 break, sometimes supported by ...a6 and ...Rb8.",
-        "White: Solidify the central space advantage with moves like Nf3, Be2, and O-O. Restrict Black's pieces and prepare to meet the central pawn breaks. If Black is passive, White can expand on the kingside with f2-f4-f5."
+        "Black: Prepare and execute the ...e5 pawn break to dissolve White's centre, often preceded by ...Ngf6. Alternatively, challenge the d4-pawn with the ...c5 break, sometimes supported by ...a6 and ...Rb8.",
+        "White: Solidify the central space advantage with Nf3, Be2 and O-O, restrict Black's pieces and prepare to meet the central pawn breaks. If Black is passive, White can gain more space with d4-d5 and queenside expansion."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T19:27:11.147Z"
@@ -83406,8 +83406,8 @@
         "Minor Piece Play"
       ],
       "common_plans": [
-        "For White: Develop quickly with Nf3, Be2, and O-O. Play f4 to challenge Black's central control, open the f-file for the rook, and restrict the Bg7. Try to create an outpost on d5 and exploit Black's slightly awkward king position.",
-        "For Black: Complete development with ...Nf6, ...c6, and ...Be6. Use the king to support the center and prepare to connect the rooks (e.g., Ke7-f8 or Ke7-c7). Challenge White's space advantage by targeting the e4 pawn and controlling the d5 square."
+        "For White: Develop quickly with Be3, Nf3 and O-O-O, using the d-file against Black's king, and aim for the d5-square as an outpost for a knight.",
+        "For Black: Complete development with ...Nf6 or ...Nd7, ...c6 and ...Be6, tuck the king away on c7 or e7, and fight for the d5-square and the d-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T19:30:47.126Z"
@@ -84552,7 +84552,7 @@
       "icsbot": "Clarendon Court Variation, Benoni "
     },
     "analysis_json": {
-      "description": "The Mujannah Formation is a rare and highly provocative variation of the Old Benoni, characterized by Black's immediate flank thrust ...f5. This move creates a sharp, unbalanced game from the outset, similar in spirit to the Dutch Defense, but with the unique context of the ...c5 pawn challenge. It's an opening for daring, creative players who are willing to accept significant structural risks, such as a weakened kingside, in exchange for dynamic counter-attacking possibilities and a fierce fight for the crucial e4-square.",
+      "description": "The Mujannah Formation is a rare and highly provocative variation of the Old Benoni, characterised by Black's immediate flank thrust ...f5. This move creates a sharp, unbalanced game from the outset, similar in spirit to the Dutch Defence, but with the unique context of the ...c5 pawn challenge. It's an opening for daring, creative players who are willing to accept significant structural risks, such as a weakened kingside, in exchange for dynamic counter-attacking possibilities and a fierce fight for the crucial e4-square.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -84594,7 +84594,7 @@
         "Flank Attack"
       ],
       "common_plans": [
-        "Black's Plan: Solidify control over e4 with ...Nf6 and ...e6, then launch a kingside attack, often initiated by a ...g5 pawn push. Alternatively, Black may seek counterplay on the queenside with ...b5.",
+        "Black's Plan: Hold the e4-square with ...Nf6, ...d6 and ...e5, or with ...g6 and ...Bg7, aiming for a Dutch-style game, with queenside counterplay via ...b5 as an option.",
         "White's Plan: Exploit Black's weakened kingside and light squares, often by fianchettoing the king's bishop or developing the queen's bishop to f4/g5. White aims to use their space advantage to build a central or kingside attack, frequently by pushing the e-pawn to e4."
       ],
       "version": "1.0",
@@ -85049,7 +85049,7 @@
     "name": "Old Benoni: 2.c3",
     "scid": "A43c",
     "analysis_json": {
-      "description": "The Old Benoni with 2.c3 is a solid and unassuming response, designed to sidestep the sharp, tactical lines of the main Benoni. White reinforces the d4-pawn, aiming for a stable central structure and a quiet, strategic game. This opening is ideal for positional players who prefer to outmaneuver their opponents based on structural understanding rather than memorizing complex theory, often transposing into Slav or Queen's Gambit-like positions.",
+      "description": "The Old Benoni with 2.c3 is a solid and unassuming response, designed to sidestep the sharp, tactical lines of the main Benoni. White reinforces the d4-pawn, aiming for a stable central structure and a quiet, strategic game. This opening is ideal for positional players who prefer to outmanoeuvre their opponents based on structural understanding rather than memorising complex theory, often transposing into Slav or Queen's Gambit-like positions.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -85090,8 +85090,8 @@
         "Control of the d5-square"
       ],
       "common_plans": [
-        "White: Solidify the center with e3, develop pieces classically (Nf3, Be2/d3, 0-0), and prepare for a central e4-pawn break.",
-        "Black: Challenge the center directly with ...d5 (transposing to a Slav), adopt a fianchetto setup with ...g6 and ...Bg7 to pressure d4, or prepare the ...b5 pawn break to undermine White's queenside."
+        "White: Solidify the centre with e3, develop pieces classically (Nf3, Bd3 or Be2, O-O) and prepare the central e3-e4 break.",
+        "Black: Challenge the centre directly with ...d5 (a Slav set-up with colours reversed), adopt a fianchetto set-up with ...g6 and ...Bg7 to pressure d4, or prepare the ...b5 pawn break to undermine White's queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T19:39:27.446Z"
@@ -85224,7 +85224,7 @@
     "name": "Old Benoni: 2.d5 e6 3.c4",
     "scid": "A43h",
     "analysis_json": {
-      "description": "The Old Benoni is a solid and strategic response to 1.d4, characterized by Black challenging the center without immediately creating the sharp imbalances of the Modern Benoni. The resulting positions often grant White a space advantage, which Black aims to undermine through timely pawn breaks and queenside counterplay. This opening is well-suited for patient, strategic players who are comfortable defending a slightly cramped position while preparing to seize the initiative later in the game.",
+      "description": "The Old Benoni is a solid and strategic response to 1.d4, characterised by Black challenging the centre without immediately creating the sharp imbalances of the Modern Benoni. The resulting positions often grant White a space advantage, which Black aims to undermine through timely pawn breaks and queenside counterplay. This opening is well-suited for patient, strategic players who are comfortable defending a slightly cramped position while preparing to seize the initiative later in the game.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -85264,10 +85264,10 @@
         "Pawn Breaks (...b5, f4)"
       ],
       "common_plans": [
-        "White: Solidify the d5-pawn, control the center with moves like Nc3, e4, and Nf3, and use the space advantage to launch a kingside attack with f2-f4.",
+        "White: Support the d5-pawn with Nc3 and e4, develop with Nf3, Be2 and O-O, and use the space advantage to restrict Black.",
         "Black: Exchange on d5 (...exd5) to open the e-file and create a queenside pawn majority, which is then advanced with ...a6 and ...b5 to create counterplay.",
         "Black: Develop pieces to control the e4-square, often with ...Nf6, ...Be7, and sometimes fianchettoing the light-squared bishop to b7.",
-        "White: Restrain Black's queenside counterplay by controlling the b5-square, often with a3 or Nb3, while improving piece coordination for a central or kingside push."
+        "White: Restrain Black's queenside counterplay with a4, which stops ...b5, while improving the pieces for a central or kingside push."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T19:40:23.712Z"

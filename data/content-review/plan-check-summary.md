@@ -1,10 +1,10 @@
 # Plan reference check
 
-3928 references on 3065 of 12377 pages fail the check and show as plain text.
+3834 references on 2985 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5505 name no move, route, square or piece
-- References by kind: {"square":14954,"piece":14500,"move":53081,"route":9518}
-- References by result: {"now":65885,"on-board":13370,"later":8870,"invalid":3928}
+- Plans: 41062, of which 5493 name no move, route, square or piece
+- References by kind: {"square":15018,"piece":14526,"move":53216,"route":9498}
+- References by result: {"now":66107,"on-board":13400,"later":8917,"invalid":3834}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -18,58 +18,56 @@
   - `Bxb5`: No piece can play Bxb5 here, now or after the plan's earlier moves
 - **A03 Bird Opening: Thomas Gambit** (0 views)
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **A30 English: Symmetrical, Hedgehog, Flexible Formation, 11.e4 O-O** (0 views)
-  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
-- **A30 English: Symmetrical, Mutual Double Fianchetto** (0 views)
-  - `...exd4`: No piece can play exd4 here, now or after the plan's earlier moves
-  - `Kxg7`: No piece can play Kxg7 here, now or after the plan's earlier moves
-- **A31 English: Symmetrical, Two Knights, 3...a6** (0 views)
-  - `Nb5`: No piece can play Nb5 here, now or after the plan's earlier moves
-- **A31 English: Symmetrical, Two Knights, 3...g6** (0 views)
+- **A43 Old Benoni: 2.d5 e6 3.c4** (0 views)
+  - `d4 pawn`: There is no pawn on d4, or on its way
+- **A43 Old Benoni: 2.d5 Nf6 3.Nf3 g6 4.Nc3** (0 views)
+  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
+- **A43 Old Benoni: Schmidt, 3.e4 g6** (0 views)
+  - `a6-c7`: One step of a6-c7 can't be played here
+- **A43 Old Benoni: Schmidt, 3.Nc3 Nf6** (0 views)
   - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **A31 English: Symmetrical, Two Knights, 3...g6** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **A31 English: Symmetrical, Two Knights, 4...b6** (0 views)
-  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **A31 English: Symmetrical, Two Knights, 4...g6** (0 views)
-  - `d4-pawn`: There is no pawn on d4, or on its way
-- **A31 English: Symmetrical, Two Knights, 4...g6** (0 views)
-  - `...d7-b6`: One step of ...d7-b6 can't be played here
-- **A32 English: Symmetrical, Two Knights, 5.g3 d5 6.Bg2 e5 7.Nf3** (0 views)
+- **A43 Old Benoni: Schmidt, 3.Nf3** (0 views)
+  - `...Re8`: No piece can play Re8 here, now or after the plan's earlier moves
+- **A43 Old Benoni: Schmidt, 6.Bb5+** (0 views)
+  - `...b7-b5`: One step of ...b7-b5 can't be played here
+- **A43 Old Benoni: Schmidt, 6.h3** (0 views)
+  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
+- **A44 Benoni Defense: Old Benoni** (0 views)
+  - `d5-e4`: One step of d5-e4 can't be played here
+- **A44 Old Benoni: Czech, 3.c4 d6** (0 views)
+  - `...Nf6-e8-g7`: One step of ...Nf6-e8-g7 can't be played here
+- **A44 Old Benoni: Czech, 3.c4 d6 4.e4** (0 views)
+  - `...Nf6-e8-g7`: One step of ...Nf6-e8-g7 can't be played here
+- **A44 Old Benoni: Czech, 3.c4 d6 4.e4 Be7** (0 views)
+  - `Re1-e3-g3`: One step of Re1-e3-g3 can't be played here
+- **A44 Old Benoni: Czech, 3.dxe6** (0 views)
+  - `e5-pawn`: There is no pawn on e5, or on its way
+- **A44 Old Benoni: Czech, 3.e4 d6 4.Bb5+** (0 views)
+  - `...Ne7-g6`: One step of ...Ne7-g6 can't be played here
+- **A44 Old Benoni: Czech, 3.e4 d6 4.Nc3 a6 5.a4 Be7** (0 views)
+  - `c4-c5`: One step of c4-c5 can't be played here
+- **A44 Old Benoni: Czech, 3.e4 d6 4.Nc3 Be7** (0 views)
+  - `Nf6-e8-g7`: One step of Nf6-e8-g7 can't be played here
+- **A44 Old Benoni: Czech, 3.e4 d6 4.Nc3 Be7 5.Bb5+** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+  - `Bxd7+`: No piece can play Bxd7 here, now or after the plan's earlier moves
+- **A44 Old Benoni: Czech, 3.e4 d6 4.Nc3 Be7 5.Nf3 Bg4** (0 views)
   - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **A32 English: Symmetrical, Two Knights, 5.g3 Qc7** (0 views)
-  - `exd5`: No piece can play exd5 here, now or after the plan's earlier moves
-  - `Nxd5`: No piece can play Nxd5 here, now or after the plan's earlier moves
-- **A32 English: Symmetrical, Two Knights, 5.Nc3 Bb4 6.Bd2** (0 views)
-  - `a3-b4`: One step of a3-b4 can't be played here
-  - `Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
-- **A32 English: Symmetrical, Two Knights, 5.Nc3 d5** (0 views)
-  - `Nxd5`: No piece can play Nxd5 here, now or after the plan's earlier moves
-- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.Bg5** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.e3** (0 views)
-  - `cxd5`: No piece can play cxd5 here, now or after the plan's earlier moves
-- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.g3 Bb4** (0 views)
-  - `Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
-  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
-- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.Ndb5 Bb4** (0 views)
-  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
-- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.Ndb5 d5** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **A33 English: Symmetrical, Two Knights, 5.Nc3 Nc6 6.Ndb5 d5 Queenswap** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **A34 English Opening: Symmetrical Variation, Rubinstein Variation** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **A34 English: Symmetrical, 2...g6** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **A34 English: Symmetrical, 3 Knights, 5.e4 Nb4 6.Bb5+** (0 views)
-  - `d3`: No piece can play d3 here, now or after the plan's earlier moves
-  - `c2`: No piece can play c2 here, now or after the plan's earlier moves
-- **A34 English: Symmetrical, 3 Knights, 5.e4 Nb4 6.Bc4** (0 views)
-  - `...Nxc2+`: No piece can play Nxc2 here, now or after the plan's earlier moves
-- **A34 English: Symmetrical, 3 Knights, 5.e4 Nxc3** (0 views)
-  - `e4-d4`: One step of e4-d4 can't be played here
-- **A34 English: Symmetrical, 3 Knights, Exchange** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **A35 English: Symmetrical, 2.Nc3 Nc6 3.e3** (0 views)
+  - `...Na7-c8-b6`: One step of ...Na7-c8-b6 can't be played here
+- **A44 Old Benoni: Czech, 3.e4 d6 4.Nc3 g6** (0 views)
+  - `...Nbd7-e8`: One step of ...Nbd7-e8 can't be played here
+- **A45 Canard Opening** (0 views)
+  - `Qe1-h4`: One step of Qe1-h4 can't be played here
+- **A45 Indian: 2.c3** (0 views)
   - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
+- **A45 Indian: 2.c3 g6** (0 views)
+  - `d4-c3-e4`: One step of d4-c3-e4 can't be played here
+- **A45 London System Indian Setup with 2. Bf4 e6** (0 views)
+  - `d4-c3-e3`: One step of d4-c3-e3 can't be played here
+- **A45 London System Main Line with ...d5** (0 views)
+  - `d4-e3-c3`: One step of d4-e3-c3 can't be played here
+- **A45 London System Main Line with 3. ...e6** (0 views)
+  - `c8`: No piece can play c8 here, now or after the plan's earlier moves
+- **A45 London System Main Line with Black ...e6 and ...c5** (0 views)
+  - `Re1-e3-g3`: One step of Re1-e3-g3 can't be played here

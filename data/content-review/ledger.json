@@ -4150,5 +4150,65 @@
     "verdict": "fixed",
     "contentHash": "80e2f17fdcb1b5b3",
     "notes": "Plan 1 read the e4 break as a move from the wrong side; plan 2 likewise. Reworded plans 1-2; British spelling."
+  },
+  "rnbqkbnr/pppp2pp/4p3/5p2/3P4/5NP1/PPP1PP1P/RNBQKB1R b KQkq - 1 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "aa1fae0161f4fdf6",
+    "notes": "Plan 2 read control of e4 as a move. Reworded plan 2; British spelling."
+  },
+  "rnbqkb1r/pppp2pp/4pn2/5p2/3P4/6P1/PPP1PPBP/RNBQK1NR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "b4324f5c3745e9fa",
+    "notes": "Plan 1 played ...Qe8 with the king on e8. Rewrote plan 1 (...Bd6, ...O-O first); British spelling."
+  },
+  "rnbqkb1r/ppppp2p/5np1/5p2/3P4/5NP1/PPP1PPBP/RNBQK2R b KQkq - 1 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "4503acd4d5654476",
+    "notes": "Plan 3 played ...Qe8-h5 with the king on e8 and, as rewritten, through Black's own g6-pawn (reviewer catch). Rewrote plan 3 (queen via e8 to f7); British spelling."
+  },
+  "rnbqkbnr/ppppp1pp/8/5p2/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "81db47168dffe467",
+    "notes": "Plan 1 attacked an f7-pawn that is not there. Rewrote plan 1 around Nc3 with Bg5 or f3 and the e8-h5 diagonal; British spelling."
+  },
+  "rnbqkbnr/ppppp1pp/8/8/3Pp3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ac2a8982e678338f",
+    "notes": "Plan 3 used an open e-file and an f7-pawn that are not there; plan 2 played ...Be7 behind the e7-pawn and kept \"prioritize\" (reviewer catch). Rewrote plans 2-3; British spelling."
+  },
+  "rnbqkbnr/ppppp1pp/8/8/3Pp3/8/PPPN1PPP/R1BQKBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "8bc45585ac5458de",
+    "notes": "Plan 1 developed Nc3 with no knight able to reach it; plan 2 relied on an unsupported g4-g5 storm. Rewrote plans 1-2; British spelling."
+  },
+  "rnbqkb1r/p1ppp1pp/1p3n2/6B1/3Pp3/2N5/PPP2PPP/R2QKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "9bd92ec8bef67302",
+    "notes": "Plan 1 played f3 and Nf3 together and castled with the bishop on f1. Rewrote plan 1; British spelling."
+  },
+  "rnbqkb1r/pppp2pp/4pn2/6B1/3PN3/8/PPP2PPP/R2QKBNR b KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "93c3088ecfaa5bd3",
+    "notes": "Plan 3 read e2 and h5 as moves (Qh5 would also run into the f6-knight). Rewrote plan 3; British spelling."
+  },
+  "r1bqkb1r/ppppp1pp/5n2/3Pn1B1/3Qp3/2N5/PPP2PPP/R3KBNR b KQkq - 2 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "9f94013dfa9cbbb1",
+    "notes": "Plan 2 played ...Be7 behind the e7-pawn and castled without the ellipsis; plan 1 used an f-file still closed by White's f2-pawn (reviewer catch). Rewrote plans 1-3; British spelling."
+  },
+  "rnbqk2r/ppppp1bp/6pn/8/2PPN3/5N2/PP3PPP/R1BQKB1R b KQkq - 2 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "2f1c3a7278005044",
+    "notes": "Overview and plan 2 called the half-open f-file open and plan 2 read f7 as a move. Rewrote plan 2 and the overview phrase; British spelling (characterised, Use)."
   }
 }

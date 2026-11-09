@@ -1636,5 +1636,65 @@
     "verdict": "fixed",
     "contentHash": "0b896da1a33033c8",
     "notes": "Plan read e5 as a move and used 0-0. Rewritten around the double fianchetto and ...e5 or ...b6/...Bb7."
+  },
+  "rnbq1rk1/pp2bppp/4pn2/2pp4/2P5/1P3NP1/PB1PPPBP/RN1Q1RK1 b - - 1 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "828f285aa9a0ee46",
+    "notes": "Plans had ...cxd4 with no pawn on d4 and the b1-knight going to d2 onto the d2-pawn. Rewritten around e3/d4, cxd5 and ...d4."
+  },
+  "r1bq1rk1/pp2bppp/2n1pn2/2pp4/2P5/1P3NP1/PB1PPPBP/RN1Q1RK1 w - - 2 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "dfff17d7f726c326",
+    "notes": "Plans had ...cxd4 with no pawn on d4 and generic aims. Rewritten."
+  },
+  "r1bq1rk1/pp2bppp/2n1pn2/2pp4/2P5/1P2PNP1/PB1P1PBP/RN1Q1RK1 b - - 0 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "3e953fb6748a2f10",
+    "notes": "Plans had ...cxd4 with no pawn on d4 and plans without side prefixes; ...Ba6 said to challenge the g2-bishop. Rewritten."
+  },
+  "rnbqkb1r/pppppp1p/5np1/8/2P5/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d5228d069d6a737a",
+    "notes": "Overview listed a Catalan with ...g6 played; plan read d4 as Black's move. Rewritten around King's Indian and Grünfeld set-ups."
+  },
+  "rn1qkb1r/pbpppp1p/1p3np1/8/2P5/5NP1/PP1PPPBP/RNBQK2R w KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "c33719a46284a42a",
+    "notes": "Plan read b7 as a move; plans generic. Rewritten around the long diagonals and the e4/d5 squares."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "6e27b1522fbd74d3",
+    "notes": "Plan had ...Nxd5 or ...Qxd5 before cxd5 and a newly opened d-file. Rewritten with 3.cxd5 Nxd5."
+  },
+  "rnbqkb1r/ppp1pp1p/6p1/8/8/2n3P1/PP1PPPBP/R1BQK1NR w KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d1f32879a3ede9ac",
+    "notes": "Plan had a d5 push with the d-pawn still on d2; generic. Rewritten around bxc3 or dxc3."
+  },
+  "rnbqkb1r/ppp1pp1p/5np1/3p4/Q1P5/2N2N2/PP1PPPPP/R1B1KB1R b KQkq - 1 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ae41bee7d274cf6f",
+    "notes": "Plan had the queen retreating to a3 and vague aims. Rewritten around ...Bd7 or ...c6 and Qb3 against b7."
+  },
+  "rnbqkb1r/ppp1pp1p/6p1/3n4/Q7/2N2N2/PP1PPPPP/R1B1KB1R b KQkq - 1 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "18e2c86a2e3a32d7",
+    "notes": "Plan had Be2 and O-O as moves the parser could not follow; generic. Rewritten."
+  },
+  "rnb1kb1r/ppp1pp1p/6p1/8/4P3/2P2N2/PP3PPP/R1BK1B1R b kq - 0 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "86e7de4f16391686",
+    "notes": "Plan had White controlling the centre with a d3-pawn that is on c3. Rewritten around Be3, Bc4, Kc2 and Black's ...Bg4 pin against the d1-king. Reviewer rejections (...f5 offered as Black's main plan; the standard set-up is ...f6 and ...e5) fixed and re-reviewed."
   }
 }

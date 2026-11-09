@@ -39363,7 +39363,7 @@
     "name": "English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2",
     "scid": "A14",
     "analysis_json": {
-      "description": "This variation of the English Opening adopts a Catalan-style double fianchetto, creating a sophisticated and highly strategic battle. White aims for long-term positional pressure on the long diagonals, particularly controlling the key e5-square, while Black establishes a solid, symmetrical setup to challenge for central influence. The game is ideal for patient, strategic players who excel at subtle maneuvering and understanding complex pawn structures, often leading to a rich and nuanced middlegame.",
+      "description": "Black has met White's Catalan-style double fianchetto with a classical centre, pawns on c5, d5 and e6, and both sides have castled. White's b2- and g2-bishops aim along the long diagonals, and the usual plans are e3 and d4, or cxd5 followed by d4, to open lines, or Nc3 and d3 for a slower build-up; Black develops with ...Nc6 and ...b6, or plays ...d4, which gains space and blocks the b2-bishop. The game is strategic, and the timing of the central breaks decides who gets the better structure.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -39404,10 +39404,10 @@
         "Queenside Pressure"
       ],
       "common_plans": [
-        "White: Prepare the d2-d4 pawn break to open the position for the bishops, often after an exchange in the center like cxd5 exd5.",
-        "Black: Challenge White's central control with ...Nc6, potentially followed by ...dxc4 or ...cxd4 to clarify the pawn structure and relieve pressure.",
-        "White: Maneuver the b1-knight, often to d2, to support the center and prepare for action on either flank.",
-        "Black: Develop the queenside with ...b6 and ...Bb7 to create a symmetrical fianchetto and fight for control of the long diagonal."
+        "White: Prepare d4 with e3, or play cxd5 first and then d4, opening the long diagonals for the bishops.",
+        "Black: Develop with ...Nc6, then choose between ...d4, gaining space and blocking the b2-bishop, and keeping the tension with ...b6 and ...Bb7.",
+        "White: Bring the b1-knight into play via c3 or a3, supporting the central break and the queenside.",
+        "Black: Exchange pawns in the centre only when it gains time, since each exchange can open a diagonal for one of White's bishops."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:54:59.832Z"
@@ -39422,7 +39422,7 @@
     "name": "English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2 Nc6",
     "scid": "A14",
     "analysis_json": {
-      "description": "This variation of the English Opening leads to a sophisticated and strategic battle, characteristic of the Neo-Catalan. White's double fianchetto aims for long-term pressure on the center and queenside, while Black establishes a solid foothold with ...d5 and ...c5, challenging White's plans directly. The game is ideal for patient, positional players who enjoy maneuvering, understanding pawn structure nuances, and accumulating small advantages over a long struggle.",
+      "description": "With 7...Nc6 Black completes a Tarrasch-like set-up against White's double fianchetto, with the c6-knight and the c5-pawn controlling d4. White's main choices are e3, preparing d4, and cxd5 to change the structure, while Black keeps a solid centre and can gain space with ...d4, which blocks the b2-bishop, or play ...b6 and ...Bb7. Play is strategic and balanced.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -39463,8 +39463,9 @@
         "Queenside Pressure"
       ],
       "common_plans": [
-        "White: Prepare and execute the d2-d4 pawn break, pressure the queenside after an exchange on d5, neutralize Black's central control.",
-        "Black: Resolve the central tension via ...cxd4 or ...dxc4, challenge White's long diagonal control, complete development and seek equality."
+        "White: Prepare d4 with e3, or exchange with cxd5 to change the structure, then use both fianchettoed bishops against Black's centre.",
+        "Black: Gain space with ...d4, which blocks the b2-bishop's diagonal, or keep the tension with ...b6 and ...Bb7.",
+        "Black: Resolve the central tension only when it gains time, because each pawn exchange can open a diagonal for one of White's bishops."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:55:18.876Z"
@@ -39479,7 +39480,7 @@
     "name": "English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2 Nc6 8.e3",
     "scid": "A14",
     "analysis_json": {
-      "description": "The Neo-Catalan Declined is a sophisticated and highly strategic opening where both sides adopt a flexible, solid structure. The game revolves around subtle maneuvering and the fight for central control, particularly the critical d4-square. This opening is ideal for patient, positional players who excel at long-term planning and accumulating small advantages, rather than seeking immediate tactical complications.",
+      "description": "With 8.e3 White prepares d4, contesting the d4-square that Black's c5-pawn and c6-knight control, while the b2- and g2-bishops wait for the long diagonals to open. Black usually completes development with ...b6 and ...Bb7 or ...Ba6, or advances with ...d4, which invites an exchange on d4 and an open centre. Play is strategic and balanced.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -39522,10 +39523,9 @@
         "Queenside pressure"
       ],
       "common_plans": [
-        "White: Prepare and execute the d2-d4 pawn break to open the center for the bishops. Control the center and slowly build pressure on the queenside.",
-        "Black: Maintain central equality and challenge White's ambitions. Prepare to resolve the central tension with moves like ...cxd4 or ...dxc4 at an opportune moment, often seeking counterplay against White's c4-pawn.",
-        "Both sides: Maneuver pieces to optimal squares before committing to a pawn break, often leading to a complex strategic middlegame.",
-        "Black: Develop a plan around the queenside, often involving ...b6 and ...Ba6 to pressure the c4-pawn and challenge White's light-squared bishop."
+        "White: Prepare d4 with the e3-pawn's support, then open the long diagonals for the bishops with cxd5 or dxc5 at the right moment.",
+        "Black: Develop with ...b6 and ...Bb7, or with ...b6 and ...Ba6 to press on the c4-pawn.",
+        "Black: Alternatively, advance with ...d4, gaining space; after the exchange on d4 the centre opens and both sides' pieces become active."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:55:35.124Z"
@@ -39853,7 +39853,7 @@
       "ct": "English Opening, Anglo-Indian Defense"
     },
     "analysis_json": {
-      "description": "The Anglo-Indian Defense is a hypermodern and highly flexible system where Black allows White to build a center, intending to control it from the flanks with the fianchettoed bishop on g7. This opening leads to a strategically complex and maneuvering game, often transposing into variations of the King's Indian Defense, Reti Opening, or Catalan. It is ideal for patient, strategic players who enjoy flexibility and understanding long-term plans over memorizing sharp, tactical lines.",
+      "description": "With 2...g6 Black heads for a King's Indian or Grünfeld set-up against the English, letting White build a centre and aiming to hit it from the flanks with the g7-bishop. White can transpose with d4 and Nc3, keep it English with Nc3, g3 and Bg2, or play a Réti-style b3. Black's choices are ...Bg7, ...d6 and ...O-O with ...e5 or ...c5, or ...d5 for Grünfeld-style play. It is a flexible, strategic opening with many transpositions.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -39897,10 +39897,10 @@
         "Queenside expansion vs. Kingside attack"
       ],
       "common_plans": [
-        "For White: Control the d5-square, expand on the queenside with moves like b4 and Rb1, and challenge Black's fianchetto structure.",
-        "For Black: Complete the King's Indian setup with ...Bg7, ...d6, and ...O-O, followed by preparing a central pawn break with ...e5 or ...c5.",
-        "For Black: If White avoids playing d4, Black may adopt a Grünfeld-style setup with ...d5 to directly challenge White's central control.",
-        "For White: Develop pieces harmoniously, often delaying the d-pawn's advance to keep options open and react to Black's setup."
+        "White: Develop with Nc3, g3 and Bg2 or transpose with d4, then expand on the queenside with Rb1 and b4 or take the centre with e4.",
+        "Black: Complete a King's Indian set-up with ...Bg7, ...d6 and ...O-O, then break with ...e5 or ...c5.",
+        "Black: Alternatively, strike at once with ...d5 for a Grünfeld-style game, especially if White delays the d-pawn.",
+        "White: Keep the d-pawn flexible until Black commits, choosing between d3 with e4 and an advance of the d-pawn two squares."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:57:29.039Z"
@@ -39914,7 +39914,7 @@
     "moves": "1. Nf3 Nf6 2. c4 b6 3. g3 Bb7 4. Bg2 g6",
     "name": "English Opening: Anglo-Indian Defense, King's Indian Formation, Double Fianchetto",
     "analysis_json": {
-      "description": "The Double Fianchetto system is a hypermodern and highly strategic setup where both sides develop their bishops to the long diagonals before committing to a central pawn structure. The game revolves around subtle maneuvering and the fight for control over key central squares from the flanks, leading to a complex positional battle. This opening is ideal for patient, strategic players who enjoy flexibility and accumulating small advantages through superior understanding of piece placement and long-term plans.",
+      "description": "Black is fianchettoing both bishops, so the long diagonals are the heart of the game: the b7-bishop and the g2-bishop face each other along the light-squared diagonal, with the f3-knight between them, and the g7-bishop will join on the dark squares. White usually castles and takes the centre with d4 and Nc3, or plays Nc3, d3 and e4, while Black castles and chooses between ...c5, ...d5 and ...d6 with ...e5. Play is strategic and flexible, with control of the e4- and d5-squares the key question.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -39955,10 +39955,9 @@
         "Flexibility and Transpositions"
       ],
       "common_plans": [
-        "White often plays d2-d4 to occupy the center, followed by queenside expansion with Rb1 and b4.",
-        "White aims to prove the superiority of the g2-bishop over its b7-counterpart.",
-        "Black completes development with ...Bg7 and ...O-O, then challenges the center with a timely ...d5 or ...e5 pawn break.",
-        "Black seeks to neutralize White's space advantage and create counterplay against White's extended queenside or center."
+        "White: Castle and take the centre with d4 and Nc3, or play Nc3 and d3 with e4, then expand on the queenside with Rb1 and b4.",
+        "White: Use the g2-bishop to blunt the b7-bishop and fight for the e4- and d5-squares.",
+        "Black: Complete development with ...Bg7 and ...O-O, then challenge the centre with ...c5, ...d5 or ...e5 at the right moment."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:57:44.611Z"
@@ -40276,7 +40275,7 @@
       "ct": "English Opening, Anglo-Indian Defense"
     },
     "analysis_json": {
-      "description": "Black's 2...d5 is an ambitious and direct response to the English Opening, immediately challenging White's flank control with a central pawn thrust. This approach aims to clarify the central tension early, often leading to dynamic, open positions rather than the slow, maneuvering game typical of the English. It's an excellent choice for players who want to fight for the initiative from the outset and are comfortable with structures resembling the Queen's Gambit or Grünfeld Defense.",
+      "description": "With 2...d5 Black challenges the c4-pawn at once. White can exchange with cxd5, when ...Nxd5 or ...Qxd5 gives an open, Grünfeld- or Scandinavian-type game; support the centre with d4, transposing to the Queen's Gambit; or keep a Réti-style set-up with e3 or g3. Black can also take on c4, reaching Réti Accepted lines. The play depends on White's choice but is usually strategic.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -40315,8 +40314,9 @@
         "Queen Activity"
       ],
       "common_plans": [
-        "White: Resolve the central tension with cxd5, often followed by d4 to transpose into favorable Queen's Gambit structures. Develop pieces to control the center and potentially fianchetto the king's bishop (g3, Bg2) to pressure the d5-pawn.",
-        "Black: Recapture on d5 (with ...Nxd5 or ...Qxd5) to establish a firm central presence. Complete development quickly, utilize the newly opened d-file for piece activity, and generate counterplay against White's setup."
+        "White: After 3.cxd5 Nxd5, develop with g3, Bg2 and Nc3 or take the centre with d4 and e4; alternatively, transpose to the Queen's Gambit with d4.",
+        "Black: After 3.cxd5 Nxd5, develop quickly with ...g6 and ...Bg7, or ...c5 and ...Nc6, pressing on White's centre.",
+        "Black: Alternatively, take the pawn with ...dxc4 for a Réti Accepted-type game, letting White spend time recovering it."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:59:35.480Z"
@@ -41265,7 +41265,7 @@
       "icsbot": "Smyslov Defense, English "
     },
     "analysis_json": {
-      "description": "The Anglo-Grünfeld Variation is a modern and strategically rich battleground where both sides adopt a fianchetto setup. After the central knight exchange, White typically establishes a powerful pawn center with 6. bxc3, while Black seeks to undermine this structure with active piece play and well-timed pawn breaks. This opening is perfect for strategic players who enjoy fighting for the initiative and understanding the nuances of pawn structure and long-term plans.",
+      "description": "After 5...Nxc3 White recaptures, usually with 6.bxc3, gaining a central pawn and a half-open b-file, or with 6.dxc3, which opens the d-file and often leads to an early queen exchange. After bxc3 White aims for d4 and e4 or Rb1 against the b7-pawn, while Black fianchettoes with ...Bg7, castles and strikes at the centre with ...c5 or ...e5. The g2- and g7-bishops face off on the long diagonals, and the play is strategic and dynamic.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -41304,10 +41304,9 @@
         "Power of the Fianchettoed Bishop"
       ],
       "common_plans": [
-        "White: Solidify the center with bxc3 and d4, use the Bg2 for long-diagonal pressure, and prepare to use the open b-file.",
-        "Black: Complete the kingside fianchetto (...Bg7, ...O-O) and immediately challenge White's center with a pawn break, typically ...c5.",
-        "White: Respond to Black's ...c5 break by either pushing d5 to gain space or maintaining the tension, leading to different strategic battles.",
-        "Black: Create counterplay against White's central pawns, aiming to activate the fianchettoed bishop and prove White's center is overextended."
+        "White: Recapture with 6.bxc3, then play Rb1 against the b7-pawn and build a centre with d4 or d3 and e4, using the g2-bishop on the long diagonal.",
+        "Black: Fianchetto with ...Bg7, castle, and challenge White's centre with ...c5 or ...e5, using the g7-bishop against White's queenside once White has recaptured on c3.",
+        "White: Alternatively, recapture with 6.dxc3, which opens the d-file and often leads to an early queen exchange, and play for e4 and quick development."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:14:33.231Z"
@@ -41506,7 +41505,7 @@
     "name": "English: Anglo-Gruenfeld",
     "scid": "A16",
     "analysis_json": {
-      "description": "The 4. Qa4+ variation of the Anglo-Gruenfeld is a sharp and provocative sideline designed to immediately disrupt Black's standard development. By forcing an early, concrete response to the queen check, White steers the game away from well-trodden theoretical paths into complex, unbalanced territory. This opening is perfect for aggressive and creative players who enjoy posing immediate problems and navigating tactical skirmishes from the outset.",
+      "description": "With 4.Qa4+ White checks along the a4-e8 diagonal before Black can castle, aiming to make Black's development awkward. Black blocks with ...Bd7, ...c6 or ...Nbd7: after ...Bd7 the queen often drops back to b3 to hit the b7-pawn, and after ...c6 Black's centre is solid but the c-pawn has committed. White then develops with g3 and Bg2 or d4, and Black completes the fianchetto with ...Bg7 and castles. It is a sideline that avoids the main Anglo-Grünfeld lines.",
       "style_tags": [
         "Sharp",
         "Provocative",
@@ -41547,8 +41546,8 @@
         "Exploiting an Exposed Queen"
       ],
       "common_plans": [
-        "White: Maintain pressure with the active queen (often retreating to a3 or b3), complete development with g3 and Bg2, and challenge Black's central setup with a timely d4 pawn push.",
-        "Black: Block the check efficiently (e.g., with ...Bd7 or ...c6), develop pieces to harass the exposed white queen, and establish counterplay in the center, often via a ...c5 break."
+        "White: After the check is blocked, put the queen on a safe square such as the b3- or c2-square, complete the kingside fianchetto or play d4, and keep pressure on Black's d5-pawn with the c4-pawn and the c3-knight.",
+        "Black: Block the check with ...Bd7 or ...c6, then develop with ...Bg7 and ...O-O and look for ...c5 or ...dxc4 to open the centre with gain of time against the queen."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:15:51.965Z"
@@ -41862,7 +41861,7 @@
       "icsbot": "Stein Attack, English "
     },
     "analysis_json": {
-      "description": "The Anglo-Gruenfeld with 5.Qa4+ is a sharp and provocative line where White immediately challenges Black's setup. By forcing a response with an early queen check, White aims to disrupt Black's development and steer the game into less theoretical, dynamic territory. This opening is excellent for players who enjoy creating early complications and fighting for the initiative from the very first moves.",
+      "description": "In this Anglo-Grünfeld line White checks with 5.Qa4+ after Black has recaptured on d5, so Black must spend a move blocking before completing the fianchetto. Black blocks with ...Bd7, ...Nc6 or ...c6, and White then develops with g3 and Bg2 or with e3 and e4 ideas, hoping the queen's activity makes Black's development awkward, while Black completes the fianchetto with ...Bg7, castles and strikes back with ...c5 or ...e5.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -41903,10 +41902,9 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "White: Develop with e3, Be2, and O-O, using the queen on a4 to create pressure and restrict Black's options.",
-        "Black: Respond to the check with ...Bd7 or ...Nc6, complete the kingside fianchetto (...Bg7), and challenge White's central influence.",
-        "White: Prepare a timely d2-d4 push to seize central space, often after Black has committed their pieces.",
-        "Black: Undermine White's structure with pawn breaks like ...c5 or ...e5, aiming to open lines for the fianchettoed bishop."
+        "White: After the check is blocked, complete development with a kingside fianchetto, or with e3 and a bishop on e2, castle, and use the queen and the c3-knight against Black's d5-knight.",
+        "Black: Block the check with ...Bd7 or ...Nc6, complete the fianchetto with ...Bg7 and castle, then strike at the centre with ...c5 or ...e5.",
+        "White: Prepare d4 or e4 to take the centre once Black's pieces are committed."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:17:52.130Z"
@@ -41979,7 +41977,7 @@
     "name": "English: Anglo-Gruenfeld, Andersson-Boeoek, Queenswap",
     "scid": "A16",
     "analysis_json": {
-      "description": "This variation leads to an immediate queen trade and an early endgame, fundamentally altering the nature of the game. White accepts a slightly exposed king on d1 in exchange for a solid pawn structure and control of the center. The resulting positions are highly strategic and technical, revolving around piece activity, pawn breaks, and long-term planning. This opening is perfect for players who enjoy quiet, maneuvering games and have a strong grasp of endgame principles.",
+      "description": "In the Andersson-Böök Queenswap White plays 5.e4, and after 5...Nxc3 6.dxc3 Qxd1+ 7.Kxd1 the queens are gone and White's king has lost the right to castle. White has a central e4-pawn and quick development with Be3, Bc4 and the king to c2, while Black, with no weaknesses, completes the fianchetto with ...Bg7, pins the f3-knight with ...Bg4 and usually sets up ...f6 and ...e5 to blunt White's centre and pieces. Play is a quiet, technical queenless middlegame in which the more active pieces decide.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -42019,9 +42017,9 @@
         "Fianchetto Bishop Power"
       ],
       "common_plans": [
-        "White's Plan: Control the center with the d3-pawn, develop rooks to the c and d-files, and use the king as an active piece. The main goal is to restrict Black's counterplay and slowly build an advantage.",
-        "Black's Plan: Complete development with the fianchetto (...Bg7) and castling. The primary goal is to challenge White's central grip, typically by preparing the ...e5 or ...c5 pawn breaks to liberate their position.",
-        "Both sides maneuver their minor pieces to optimal squares, probing for weaknesses in the opponent's pawn structure before committing to a decisive plan."
+        "White: Develop with Be3 and Bc4, bring the king to c2 or e2, and use the e4-pawn and the open d-file for the rooks.",
+        "Black: Complete the fianchetto with ...Bg7, play ...Bg4, which pins the f3-knight to the king on d1, and set up ...f6 and ...e5 to restrain the e4-pawn and White's pieces.",
+        "Black: Bring the queen's knight to c6 or d7 to support ...e5, then contest the open d-file with a rook, or by castling long, once the queenside pieces are out."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:18:31.659Z"

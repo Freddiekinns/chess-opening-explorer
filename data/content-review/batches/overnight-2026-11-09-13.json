@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "rnbq1rk1/pp2bppp/4pn2/2pp4/2P5/1P3NP1/PB1PPPBP/RN1Q1RK1 b - - 1 7",
+      "name": "English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2",
+      "eco": "A14",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had ...cxd4 with no pawn on d4 and the b1-knight going to d2 onto the d2-pawn. Rewritten around e3/d4, cxd5 and ...d4."
+    },
+    {
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/2P5/1P3NP1/PB1PPPBP/RN1Q1RK1 w - - 2 8",
+      "name": "English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2 Nc6",
+      "eco": "A14",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had ...cxd4 with no pawn on d4 and generic aims. Rewritten."
+    },
+    {
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/2P5/1P2PNP1/PB1P1PBP/RN1Q1RK1 b - - 0 8",
+      "name": "English: Neo-Catalan Declined, 5...O-O 6.b3 c5 7.Bb2 Nc6 8.e3",
+      "eco": "A14",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had ...cxd4 with no pawn on d4 and plans without side prefixes; ...Ba6 said to challenge the g2-bishop. Rewritten."
+    },
+    {
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/2P5/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3",
+      "name": "English Opening: Anglo-Indian Defense, King's Indian Formation",
+      "eco": "A15",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview listed a Catalan with ...g6 played; plan read d4 as Black's move. Rewritten around King's Indian and Grünfeld set-ups."
+    },
+    {
+      "fen": "rn1qkb1r/pbpppp1p/1p3np1/8/2P5/5NP1/PP1PPPBP/RNBQK2R w KQkq - 0 5",
+      "name": "English Opening: Anglo-Indian Defense, King's Indian Formation, Double Fianchetto",
+      "eco": "A15",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan read b7 as a move; plans generic. Rewritten around the long diagonals and the e4/d5 squares."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3",
+      "name": "English Opening: Anglo-Indian Defense, Scandinavian Defense",
+      "eco": "A15",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had ...Nxd5 or ...Qxd5 before cxd5 and a newly opened d-file. Rewritten with 3.cxd5 Nxd5."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pp1p/6p1/8/8/2n3P1/PP1PPPBP/R1BQK1NR w KQkq - 0 6",
+      "name": "English Opening: Anglo-Indian Defense, Anglo-Grünfeld Variation",
+      "eco": "A16",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had a d5 push with the d-pawn still on d2; generic. Rewritten around bxc3 or dxc3."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/Q1P5/2N2N2/PP1PPPPP/R1B1KB1R b KQkq - 1 4",
+      "name": "English: Anglo-Gruenfeld",
+      "eco": "A16",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had the queen retreating to a3 and vague aims. Rewritten around ...Bd7 or ...c6 and Qb3 against b7."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pp1p/6p1/3n4/Q7/2N2N2/PP1PPPPP/R1B1KB1R b KQkq - 1 5",
+      "name": "English: Anglo-Gruenfeld, 4.Nf3 g6 5.Qa4+",
+      "eco": "A16",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had Be2 and O-O as moves the parser could not follow; generic. Rewritten."
+    },
+    {
+      "fen": "rnb1kb1r/ppp1pp1p/6p1/8/4P3/2P2N2/PP3PPP/R1BK1B1R b kq - 0 7",
+      "name": "English: Anglo-Gruenfeld, Andersson-Boeoek, Queenswap",
+      "eco": "A16",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had White controlling the centre with a d3-pawn that is on c3. Rewritten around Be3, Bc4, Kc2 and Black's ...Bg4 pin against the d1-king. Reviewer rejections (...f5 offered as Black's main plan; the standard set-up is ...f6 and ...e5) fixed and re-reviewed."
+    }
+  ]
+}

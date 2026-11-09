@@ -3730,5 +3730,65 @@
     "verdict": "fixed",
     "contentHash": "efdb56d4024ca504",
     "notes": "Plan 2 played ...Na6 with a pawn on a6; plan 4 sent the d7-knight to c6. Rewrote plans 1, 2 and 4 (a knight on e5 was also rejected: fxe5); British spelling."
+  },
+  "rnbqk2r/1p1n1pbp/p2p2p1/2pP4/P3PP2/2NB4/1P4PP/R1BQK1NR b KQkq - 1 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "24598c77afcdef0f",
+    "notes": "Plan 2 played ...Na6-c7 with a pawn on a6; plan 3 put the bishop on c2 to support d5 (it cannot); plan 1 relied on g4-g5. Rewrote plans 1-3; British spelling."
+  },
+  "rnbqk2r/1p1n1pbp/p2p2p1/2pP4/P3PP2/2N5/1P2B1PP/R1BQK1NR b KQkq - 1 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "7d8f0ff5a54ed8a6",
+    "notes": "Plan 2 rerouted the d7-knight via f8 to e6. Rewrote plan 2; British spelling."
+  },
+  "rnbq1rk1/pp1n1pbp/3p2p1/1BpP4/P3PP2/2N5/1P4PP/R1BQK1NR w KQ - 1 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ddc6157060404533",
+    "notes": "Plan 4 sent the d7-knight to f8, where the rook stands; plan 2 read ...b5 with the bishop on b5. Rewrote plans 2 and 4; British spelling."
+  },
+  "rnbq1rk1/pp1n1pbp/3p2p1/1BpP4/P3PP2/2N2N2/1P4PP/R1BQK2R b KQ - 2 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "cc698643641d8efb",
+    "notes": "Plan 2 named a rook on e8 that is on f8; plan 3 read ...b5 with the bishop on b5. Rewrote plans 2-3; British spelling."
+  },
+  "r1bq1rk1/pp1n1pbp/n2p2p1/1BpP4/P3PP2/2N2N2/1P4PP/R1BQK2R w KQ - 3 11": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "5acb982d7996bb9e",
+    "notes": "Plan 4 sent the d7-knight via f8 (rook there) to e6; plan 2 pushed ...b7-b5 onto the bishop. Rewrote plans 2 and 4; British spelling."
+  },
+  "r1bq1rk1/ppnn1pbp/3p2p1/1BpP4/P3PP2/2N2N2/1P4PP/R1BQ1RK1 w - - 5 12": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ff87f99c29be4003",
+    "notes": "Plan 2 pushed ...b5 onto the bishop on b5. Rewrote plan 2; British spelling."
+  },
+  "rnb1k2r/pp1n1pbp/3p2p1/1BpP4/P3PP1q/2N5/1P4PP/R1BQK1NR w KQkq - 1 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "83b9ed86ceabe66c",
+    "notes": "Plan 1 played Kg2 with the king on e1; plan 2 used the dark-squared g7-bishop on light squares (reviewer catch); plan 3 had an unsourced Rb1 and b4 plan. Rewrote plans 1-3; plan 4 wording."
+  },
+  "rnbq1rk1/pp1n1pbp/3p2p1/2pP4/4PP2/2NB1N2/PP4PP/R1BQK2R b KQ - 6 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "9a7aa3379b8b83bc",
+    "notes": "Plan 2 put a knight on e5, covered by the f4-pawn and the f3-knight; plan 3 used a3 to stop ...b5. Rewrote plans 2-3; British spelling."
+  },
+  "rn1q1rk1/pp3pbp/3p1np1/2pP4/4PPb1/2N2N2/PP2B1PP/R1BQK2R w KQ - 5 10": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "165fa988a0b7c6bb",
+    "notes": "Overview called ...Bg4 a pin (the e2-bishop stands behind the knight); plan 1 pushed g4-g5 onto the bishop. Rewrote overview phrase and plan 1; British spelling."
+  },
+  "rnbqr1k1/pp3pbp/6p1/2pPP1B1/6n1/2N2N2/PP2B1PP/R2QK2R b KQ - 2 12": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "bb142255239d1d07",
+    "notes": "Plan 1 pushed g4-g5 into its own g5-bishop; plan 2 ignored that 12.Bg5 attacks the d8-queen; plan 3 put the queen on f3 or h4 through the e2-bishop. Rewrote plans 1-3; British spelling."
   }
 }

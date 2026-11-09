@@ -29483,7 +29483,7 @@
     "name": "Reti: Accepted, 3.Qa4+",
     "scid": "A09n",
     "analysis_json": {
-      "description": "The Reti Accepted with 3.Qa4+ is a direct and provocative system where White immediately seeks to regain the c4 pawn with a queen check. This approach sidesteps more common positional treatments, aiming to seize the initiative and dictate the early course of the game. It leads to dynamic, open positions where piece activity and tempo are paramount, making it ideal for practical, tactical players who enjoy creating immediate problems for their opponent and are comfortable with early queen development.",
+      "description": "With 3.Qa4+ White wins back the c4-pawn at once: the check along the a4-e8 diagonal is met by ...c6, ...Nc6, ...Nd7, ...Bd7 or ...Qd7, and Qxc4 follows. White then has an early queen in the centre and a free hand for development with g3 and Bg2 or e3 and Be2, while Black uses the time the queen costs to develop quickly, often hitting it with ...Be6 or a knight on b6. Play is open and roughly level, with Black's easy development balancing White's central influence.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -29525,10 +29525,10 @@
         "Avoiding Mainline Theory"
       ],
       "common_plans": [
-        "White: Recapture on c4, complete development with e3, Be2, and O-O, and use the active queen to create threats or pressure.",
-        "Black: Block the check with a knight, complete development efficiently, and challenge White's central setup, often aiming to prove the white queen is misplaced.",
-        "White: Control the center with a timely d4 push, often creating a favorable pawn structure.",
-        "Black: Develop pieces to challenge White's queen and fight for central squares, potentially with moves like ...e5 or ...c5."
+        "White: After 3...c6 4.Qxc4 or 3...Nc6 4.Qxc4, develop with g3 and Bg2, or with a quieter e3 and a bishop on e2, castle, and aim for d4 when the pieces are ready.",
+        "Black: Block the check with ...c6 or ...Nc6, then develop with gain of time against the c4-queen, for example with ...Be6, or with ...Nd7 and ...Nb6.",
+        "White: Take the centre with d4 once development allows, with the c4-queen supporting it.",
+        "Black: Fight for the centre with ...e5 or ...c5, using the lead in development to challenge White's queen and pawn set-up."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:01:49.444Z"
@@ -29543,7 +29543,7 @@
     "name": "Reti: Advance, 3.e3",
     "scid": "A09d",
     "analysis_json": {
-      "description": "The Advance Variation of the Reti is a dynamic and challenging system where White immediately confronts Black's space-gaining d4-pawn. By playing 3.e3, White aims to undermine Black's central foothold, leading to a strategically rich and often sharp struggle. This opening is perfect for players who enjoy imbalanced positions and understand the nuances of fighting for central control and exploiting structural weaknesses.",
+      "description": "In the Réti Advance Black has pushed past the c4-pawn with 2...d4, and 3.e3 attacks the d4-pawn at once. Black can support it with ...c5, or with ...Nc6 and ...e5, and after exd4 cxd4 the structure is a Benoni with colours reversed and White a tempo up: a queenside majority for White and central space for Black. Black can also exchange with ...dxe3, giving a more open and roughly level game. Play is strategic and unbalanced.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -29583,10 +29583,9 @@
         "Tension in the center"
       ],
       "common_plans": [
-        "White: Play b3 and Bb2 to pressure the d4 pawn, challenge the center with d2-d4, and exploit the potential weakness of the d4 pawn.",
-        "Black: Support the d4 pawn with ...c5, develop pieces quickly to justify the space advantage, and use the central wedge to cramp White's position.",
-        "White: Exchange on d4 (exd4) to clarify the central structure, often aiming to play against a weak pawn on d4 or an isolated queen's pawn.",
-        "Black: Exchange on e3 (dxe3), opening the d-file for the queen and creating a solid pawn structure, followed by completing development."
+        "White: Exchange with exd4, and after ...cxd4 play d3, g3 and Bg2 for a Benoni structure with colours reversed, aiming for b4 and a queenside majority advance.",
+        "Black: Support the d4-pawn with ...c5, or with ...Nc6 and ...e5, develop quickly, and use the central space to cramp White's position.",
+        "Black: Alternatively, exchange with ...dxe3, opening the position for easy development; after White recaptures the game is roughly level."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:02:09.351Z"
@@ -29951,7 +29950,7 @@
     "name": "Reti: Advance, 3.g3 c5 4.Bg2 Nc6 5.d3 e5",
     "scid": "A09j",
     "analysis_json": {
-      "description": "This opening transposes into a Reversed King's Indian Defense, where White adopts the fianchetto setup against Black's classical pawn center. The resulting positions are highly strategic and closed, revolving around White's attempts to undermine Black's space advantage, often with a queenside pawn break (b4). This is an ideal choice for patient, strategic players who enjoy complex maneuvering and long-term planning over immediate tactical clashes.",
+      "description": "Black has built a broad pawn chain with ...c5, ...d4 and ...e5, so the structure is a Czech Benoni with colours reversed and White a tempo up. White's fianchettoed bishop and the pawns on c4 and d3 prepare the typical breaks, b4 on the queenside and e3 or f4 against the centre, while Black uses the extra space, develops with ...Nf6 or ...Nge7, ...Be7 and ...O-O, and may aim for ...f5 or ...e4. Play is closed and strategic, with pawn breaks on both wings.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -29993,10 +29992,10 @@
         "Queenside Expansion vs. Kingside Attack"
       ],
       "common_plans": [
-        "White: Prepare the b2-b4 pawn break to challenge Black's c5 pawn and undermine the central pawn chain. Maneuver pieces to optimal squares, often via Ne1-d3 or Ne1-c2-e3, to support the queenside plan.",
-        "Black: Solidify the central space advantage with moves like ...Be7, ...Nf6, and ...0-0. Prepare for a potential kingside attack, often initiated by the ...f5 pawn break.",
-        "White: Control the e4 square and look for opportunities to challenge Black's d4 pawn, potentially with a timely f2-f4 break later in the game.",
-        "Black: Restrict White's fianchettoed bishop on g2 and maintain control over the key d4-square, which acts as the lynchpin of their position."
+        "White: Prepare the b4 break with Nbd2, a3 and Rb1, striking at the c5-pawn to undermine the d4-pawn's support.",
+        "White: Strike at the centre with e3 or, after moving the f3-knight, with f4.",
+        "Black: Develop with ...Be7, ...Nf6 and ...O-O, then use the space for kingside play with ...f5, holding the queenside with ...a5 to slow White's expansion.",
+        "Black: Keep the d4-pawn firmly supported, since it cramps White's knights by taking the c3- and e3-squares."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:04:31.105Z"
@@ -30011,7 +30010,7 @@
     "name": "Reti: Advance, 3.g3 g6",
     "scid": "A09i",
     "analysis_json": {
-      "description": "This variation of the Reti is a sophisticated, hypermodern system where White allows Black to establish a pawn on d4, only to challenge it from the flank. The game revolves around strategic maneuvering, with White's fianchettoed bishop on g2 exerting long-term pressure against Black's central foothold. This opening is perfect for patient, strategic players who enjoy flexible positions and understanding the subtle interplay of pawn structures and piece activity.",
+      "description": "In the Réti Advance with 3...g6 Black prepares to support the d4-pawn with a fianchetto: the g7-bishop will back it up along the long diagonal, and ...c5 or ...e5 can follow. White completes the fianchetto with Bg2, castles and plays d3, then prepares b4 or e3 to undermine the d4-pawn, the usual reversed-Benoni themes. Play is strategic, with White aiming at the queenside and Black using the extra central space.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -30052,10 +30051,10 @@
         "Pawn Structure Transformation"
       ],
       "common_plans": [
-        "White: Play b4 to challenge the d4-pawn's support and gain queenside space, complete the fianchetto with Bg2, and prepare to challenge the center with d3 or e3.",
-        "Black: Solidify the d4 pawn with ...c5, fianchetto the bishop to g7, and aim to maintain central control while developing pieces harmoniously.",
-        "White: Maneuver the knight from f3 to other squares (e.g., e1-d3) to support the center and prepare for pawn breaks.",
-        "Black: Seek to create a passed d-pawn or use the central space advantage to launch an attack if White is not careful."
+        "White: Complete the fianchetto with Bg2, castle and play d3, then prepare b4 or e3 to challenge the d4-pawn.",
+        "Black: Fianchetto with ...Bg7, support the d4-pawn with ...c5 or ...e5, and castle short.",
+        "White: Gain queenside space with b4, which also takes the c5-square from Black's pawn.",
+        "Black: Use the central space to restrict White's knights, keeping the c3- and e3-squares under control."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:04:48.378Z"
@@ -30127,7 +30126,7 @@
     "name": "Reti: Advance, 3.g3 Nc6",
     "scid": "A09h",
     "analysis_json": {
-      "description": "The Reti Advance with 3...Nc6 is a modern and strategically complex system where White allows Black to establish a central space advantage with the d4 pawn. White's plan is to undermine this center from the flank, primarily using a fianchettoed bishop on g2. This opening leads to a tense, maneuvering game, ideal for strategic players who enjoy fighting for the initiative and understanding long-term positional concepts.",
+      "description": "With 3...Nc6 Black supports the d4-pawn with a piece and prepares ...e5, building a broad centre against White's flank set-up. White completes the fianchetto with Bg2, castles and plays d3, then aims for e3 or b4 to undermine the d4-pawn, while Black develops with ...e5, ...Nf6 and ...Be7 or ...g6. Play is strategic, with reversed-Benoni themes: White presses on the queenside, Black uses the central space.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -30167,10 +30166,10 @@
         "Fianchetto Power"
       ],
       "common_plans": [
-        "White: Fianchetto the king's bishop (Bg2), play d3 to support the center, and prepare the b2-b4 pawn break to challenge Black's d4 pawn.",
-        "Black: Solidify the d4-pawn with moves like ...e5 or ...c5, develop pieces actively (e.g., ...Nf6, ...Bg4), and use the space advantage to control key squares.",
-        "White: Maneuver pieces to increase pressure on d4, often involving the knight moving from f3 to d2 to support a b4 push or to e1-c2.",
-        "Black: Complete development and seek to create threats based on the central space advantage, sometimes leading to a kingside attack."
+        "White: Fianchetto with Bg2, castle and play d3, then prepare e3 or b4 to challenge the d4-pawn.",
+        "Black: Support the d4-pawn with ...e5, develop with ...Nf6, ...Be7 and ...O-O, and use the space to control key squares.",
+        "White: Bring the queen's knight to d2 and the rook to b1 to support the b4 advance.",
+        "Black: Develop the light-squared bishop actively with ...Bg4 or ...Bf5 and keep White's knights out of c3 and e3."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:05:26.292Z"
@@ -31050,7 +31049,7 @@
       "icsbot": "Loehn Gambit, English "
     },
     "analysis_json": {
-      "description": "The Löhn Gambit is an aggressive and dynamic response to the English Opening, where Black immediately challenges the center and sacrifices a pawn with 2...e6. This gambit aims to seize the initiative through rapid development and active piece play, creating an open, tactical game. It is well-suited for enterprising players who are comfortable with material imbalances and enjoy fighting for a developmental advantage from the very first moves.",
+      "description": "In the Löhn Gambit Black answers 2.cxd5 with 2...e6, offering a pawn for development. If White takes with 3.dxe6, Black recaptures 3...Bxe6 and has a lead in development and open lines, with ...Nc6, ...Nf6 and ...Bc5 or ...Bd6 to follow, in return for White's extra central pawn. White can also decline with 3.Nc3, letting Black recapture on d5. The gambit is rare and objectively dubious, but its quick development makes it a practical surprise weapon.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -31089,8 +31088,9 @@
         "Exploiting Open Lines"
       ],
       "common_plans": [
-        "Black aims for rapid development (Bxe6, Nf6, Nc6) and uses open lines to create threats, seeking compensation for the pawn.",
-        "White seeks to consolidate the extra pawn, neutralize Black's initiative with solid development (d4, Nf3, e3), and convert the material advantage in the endgame."
+        "Black: After 3.dxe6 Bxe6, develop rapidly with ...Nc6, ...Nf6 and ...Bc5 or ...Bd6, castle, and use the lead in development and open lines as compensation.",
+        "White: Take the pawn with 3.dxe6, then consolidate with Nf3, e3 and d4 or d3 and quick castling, aiming to neutralise Black's initiative and keep the extra pawn.",
+        "White: Alternatively, decline with 3.Nc3, letting Black regain the pawn with ...exd5 for a more normal game."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:10:13.952Z"
@@ -31427,7 +31427,7 @@
       "scid": "English: 1...g5"
     },
     "analysis_json": {
-      "description": "The Myers Defense is a rare, hyper-aggressive, and provocative response to the English Opening. By immediately pushing the g-pawn, Black creates a highly unbalanced and double-edged position, weakening their own kingside in a daring bid to seize the initiative and disrupt White's plans. This opening is suited for fearless, creative players who enjoy chaotic, tactical battles and are comfortable taking on significant strategic risks from the very first move.",
+      "description": "The Myers Defence meets 1.c4 with the provocative 1...g5, intending ...Bg7 to aim down the long diagonal at b2 and the queenside. The pawn on g5 is loose: once White plays d4, the c1-bishop attacks it, so Black often needs ...h6 to defend it, and the advance has weakened the f5- and h5-squares around Black's king. White takes the centre with d4, Nc3 and e4, while Black's chances lie in quick long-diagonal and queenside pressure. It is a rare surprise weapon.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -31470,10 +31470,10 @@
         "Exploiting Provocation"
       ],
       "common_plans": [
-        "For White: Strike in the center with d2-d4 to punish Black's flank focus and open lines.",
-        "For White: Target the weakened light squares on Black's kingside (f5, h5) with pieces like Nc3-e4, Qb3, and a bishop on g2.",
-        "For Black: Fianchetto the bishop to g7, control the long diagonal, and prepare to counter-attack in the center or on the queenside.",
-        "For Black: Continue the kingside pawn storm with ...h5 if White castles short, embracing the chaotic nature of the position."
+        "White: Take the centre with d4, Nc3 and e4, using the c1-bishop's attack on the g5-pawn to gain time.",
+        "White: Exploit the holes that ...g5 leaves around Black's king, especially the h5-square, which no black pawn can cover any more, and the f5-square, once development is complete.",
+        "Black: Fianchetto with ...Bg7 and support the g5-pawn with ...h6, using the bishop on the long diagonal against White's queenside.",
+        "Black: Strike at White's centre with ...c5, or with ...d6 and ...Nc6, adding pressure on the d4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:12:16.018Z"
@@ -32629,7 +32629,7 @@
     "name": "English: 1...g6 2.e4",
     "scid": "A10",
     "analysis_json": {
-      "description": "This is an ambitious and direct response to Black's fianchetto setup, where White immediately stakes a claim to the full center with e4. The game often transposes into a King's Indian Defense structure, but with the inclusion of c4, giving White extra queenside control and flexibility. This opening leads to strategically complex and dynamic battles, ideal for players who enjoy fighting for the initiative and navigating rich, unbalanced positions where central control clashes with flank counterplay.",
+      "description": "With 2.e4 White meets the fianchetto by taking the centre with pawns on c4 and e4, ready for d4. The game often transposes to a King's Indian Defence or a Modern Defence after ...Bg7 and ...d6, or to a Maroczy Bind if Black plays ...c5; White can also choose a Botvinnik set-up with Nc3, g3, Bg2 and Nge2. Black's counterplay comes from ...e5 or ...c5 against White's centre. Play is strategic and rich, with White's space set against Black's pressure on the dark squares.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -32669,8 +32669,8 @@
         "Fianchetto Defense"
       ],
       "common_plans": [
-        "White: Establish a d4-e4 pawn center, use the space advantage to launch a kingside attack, and control the d5 square.",
-        "Black: Fianchetto the king's bishop, undermine White's center with pawn breaks like ...e5 or ...c5, and create queenside counterplay."
+        "White: Complete the centre with d4 and Nc3, or adopt a Botvinnik set-up with Nc3, g3, Bg2 and Nge2, using the space advantage and control of the d5-square.",
+        "Black: Fianchetto with ...Bg7, then undermine White's centre with ...e5 or ...c5, often with ...d6 and ...Nc6, and look for counterplay on the queenside or the dark squares."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-15T11:18:28.049Z"
@@ -156091,7 +156091,7 @@
       "scid": "English: Vector"
     },
     "analysis_json": {
-      "description": "The Anglo-Scandinavian Defence is a direct and ambitious response to the English Opening, where Black immediately challenges White's flank control with a central pawn thrust. The character of the game is decided on move two: Black can either recapture with the queen (2...Qxd5), leading to strategic positions reminiscent of the Scandinavian Defense, or offer a pawn gambit (2...Nf6), steering the game into sharp, tactical waters. This opening suits dynamic players who are comfortable taking the initiative and creating early imbalances.",
+      "description": "After 1.c4 d5 2.cxd5 Black must decide how to win the pawn back. 2...Qxd5 recaptures at once, accepting that Nc3 will gain time against the queen, in a position like a Scandinavian Defence; 2...Nf6 recaptures with the knight next move, after 3.Nc3 Nxd5 or 3.Nf3 Nxd5; and 2...c6 and 2...e6 are gambits. After the exchange White is left with two central pawns against one, a small but lasting asset.",
       "style_tags": [
         "Dynamic",
         "Counter-attacking",
@@ -156132,10 +156132,10 @@
         "Transpositional possibilities"
       ],
       "common_plans": [
-        "Black: Recapture with the queen (2...Qxd5) and aim for rapid development, controlling the center despite White gaining tempo with Nc3.",
-        "Black: Offer the Icelandic Gambit (2...Nf6) to sacrifice a pawn for a lead in development and attacking chances.",
-        "White: Develop with Nc3 to harass the black queen, followed by a fianchetto setup (g3, Bg2) to control the long diagonal and central squares.",
-        "White: Consolidate the extra pawn against the Icelandic Gambit, neutralizing Black's initiative before converting the material advantage."
+        "Black: Recapture with 2...Qxd5 and after 3.Nc3 move the queen to a5, d6 or d8, then develop quickly with ...Nf6, ...c6 and ...Bf5 or ...Bg4.",
+        "Black: Play 2...Nf6 and win the pawn back with ...Nxd5, keeping the queen at home.",
+        "White: After 2...Qxd5 3.Nc3, gain more time on the queen and develop with Nf3, g3 and Bg2, using the extra central pawn.",
+        "White: Against 2...Nf6, develop with Nf3 and g3 for a Réti-style game, or with Nc3 and e4 if Black's set-up allows it."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:38:24.238Z"
@@ -161666,7 +161666,7 @@
     "moves": "1. c4 f5 2. b4",
     "src": "chessGraph",
     "analysis_json": {
-      "description": "The Anglo-Polish Dutch is a rare and ambitious flank opening where White meets the aggressive Dutch Defense with an immediate queenside space grab. This leads to a highly unbalanced and strategically complex battle, with White aiming to dominate the long diagonal and the queenside while Black pursues typical Dutch plans of kingside attack and control over the e4-square. This opening is perfect for creative and aggressive players who enjoy sharp, double-edged positions and are comfortable navigating unconventional structures.",
+      "description": "The Anglo-Polish Dutch answers 1...f5 with 2.b4, grabbing queenside space and preparing Bb2, which aims down the long diagonal at Black's kingside, weakened by ...f5. White continues with Bb2, e3 or g3 and Nf3, sometimes adding a3 and c5 for more space, while Black develops with ...Nf6, ...e6 and ...Be7 or ...g6, fights for the e4-square and can challenge the b4-pawn with ...a5. Play is unbalanced and strategic, with the two sides active on opposite wings.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -161706,8 +161706,9 @@
         "Fighting for Space"
       ],
       "common_plans": [
-        "White: Complete the queenside fianchetto with Bb2, control the long a1-h8 diagonal, and continue expansion with a3 and sometimes a push to c5. Often develops the kingside with g3 and Bg2 to create a solid setup.",
-        "Black: Challenge White's queenside with ...a5 or ...b6. Develop pieces to support a kingside attack, often involving ...Nf6, ...e6, and preparing a pawn storm with ...g5. Fight for central squares like e4 and d5 to undermine White's flank control."
+        "White: Fianchetto with Bb2, aiming down the long diagonal at Black's kingside, and gain queenside space with a3 and c5; g3 and Bg2 complete a solid set-up.",
+        "Black: Develop with ...Nf6, ...e6 and ...Be7, castle, and fight for the e4-square, which the f5-pawn and the f6-knight control.",
+        "Black: Challenge the b4-pawn with ...a5 to loosen White's queenside before it gains more space."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T16:11:55.650Z"

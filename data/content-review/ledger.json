@@ -1516,5 +1516,65 @@
     "verdict": "fixed",
     "contentHash": "47cf0b3eb63077c6",
     "notes": "Plan used 0-0 and suggested holding the pawn with ...b5, which loses it to Nxb5. Rewritten."
+  },
+  "rnbqkbnr/ppp1pppp/8/8/Q1p5/5N2/PP1PPPPP/RNB1KB1R b KQkq - 1 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "2eaef96d873a5568",
+    "notes": "Plan had Be2 behind the e2-pawn and O-O without the Qxc4 recapture; plans generic. Rewritten with the numbered recaptures and ...Be6/...Nb6 gaining time on the queen."
+  },
+  "rnbqkbnr/ppp1pppp/8/8/2Pp4/4PN2/PP1P1PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "8857ff2b41aac95f",
+    "notes": "Plan had White playing d2-d4 onto Black's d4-pawn; the dxe3 plan was vague. Rewritten as a reversed Benoni after exd4 cxd4."
+  },
+  "r1bqkbnr/pp3ppp/2n5/2p1p3/2Pp4/3P1NP1/PP2PPBP/RNBQK2R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "e2fa9f7e670561da",
+    "notes": "Plan had knight routes via e1 with the king there; overview called it a reversed King's Indian (it is a reversed Czech Benoni). Rewritten around b4, e3/f4 and ...f5."
+  },
+  "rnbqkbnr/ppp1pp1p/6p1/8/2Pp4/5NP1/PP1PPP1P/RNBQKB1R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "a050d4d487b94905",
+    "notes": "Plan had a knight route e1-d3 with the king there; plan 4 vague. Rewritten around d3, b4/e3 and the c3/e3 squares."
+  },
+  "r1bqkbnr/ppp1pppp/2n5/8/2Pp4/5NP1/PP1PPP1P/RNBQKB1R w KQkq - 1 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "c201b3ce6aab3794",
+    "notes": "Plan had a knight route via e1 to c2 with the king on e1. Rewritten around ...e5, Nd2/Rb1 and b4."
+  },
+  "rnbqkbnr/ppppp1pp/8/5p2/1PP5/8/P2PPPPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ae8030d7eda6b622",
+    "notes": "Plans read the e4-square as a move and suggested a ...g5 pawn storm. Rewritten around Bb2 on the long diagonal, the e4-square and ...a5."
+  },
+  "rnbqkbnr/ppp1pppp/8/3P4/8/8/PP1PPPPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "7bd8c18e5893c95a",
+    "notes": "Overview called 2...Nf6 a pawn gambit (Black regains on d5) and plan had Nc3 harassing a queen not yet on d5. Rewritten with 2...Qxd5 3.Nc3 and 2...Nf6 lines."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3P4/8/8/PP1PPPPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "4fba713cddce403f",
+    "notes": "Plan had ...Bxe6 before 3.dxe6. Rewritten around 3.dxe6 Bxe6 and 3.Nc3."
+  },
+  "rnbqkbnr/pppppp1p/8/6p1/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "fc64d18b0d6f3f72",
+    "notes": "Plan read the f5- and h5-squares as moves. Rewritten around d4 hitting g5 with the c1-bishop; reviewer rejections (the e8-h5 diagonal is not opened by ...g5; f5 can still be covered by ...e6) fixed and re-reviewed."
+  },
+  "rnbqkbnr/pppppp1p/6p1/8/2P1P3/8/PP1P1PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "5c0c38e59d1dfa77",
+    "notes": "Plan had a d4-e4 route. Rewritten around King's Indian, Maroczy and Botvinnik transpositions."
   }
 }

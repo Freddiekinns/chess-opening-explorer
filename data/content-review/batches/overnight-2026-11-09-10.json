@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "r1bqkb1r/pp2pp1p/2n2np1/2pp4/8/3P1NP1/PPP1PPBP/RNBQ1RK1 w kq - 1 6",
+      "name": "Reti: KIA, 2...c5 + 3...g6",
+      "eco": "A08",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had Nbd2-f1-g3 through the f1-rook; ...b5-b4 said to undermine White's c-pawn. Rewritten around e4/c4 and ...e5 or queenside play."
+    },
+    {
+      "fen": "rnbqkb1r/pp2pppp/5n2/2pp4/8/5NP1/PPPPPPBP/RNBQK2R w KQkq - 2 4",
+      "name": "Reti: KIA, 2...c5 3.Bg2 Nf6",
+      "eco": "A08",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had the f3-knight going to e1 with the king there; plan 4 read e4 as Black's move. Rewritten around the e4 break and ...d4."
+    },
+    {
+      "fen": "r1bqkb1r/pp2pppp/2n2n2/2pp4/8/5NP1/PPPPPPBP/RNBQ1RK1 w kq - 4 5",
+      "name": "Reti: KIA, 2...c5 3.Bg2 Nf6 4.O-O Nc6",
+      "eco": "A08",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans read e4 as Black's move and were generic. Rewritten with ...e6/...e5 options and White's d4/c4 alternatives."
+    },
+    {
+      "fen": "r1bqkb1r/p3nppp/1pn1p3/2pp4/4P3/3P1NP1/PPPN1PBP/R1BQ1RK1 b kq - 0 7",
+      "name": "Reti: KIA, French Variation",
+      "eco": "A08",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had f2-f4 behind the f3-knight, Nf1-e3 with the rook on f1, and a b7-bishop not yet developed. Rewritten; reviewer rejections (a b7-bishop blocked by the c6-knight) fixed with ...Bb7/...Ba6 and re-reviewed."
+    },
+    {
+      "fen": "r1bqk2r/pp2bppp/2n1pn2/2pp4/4P3/3P1NP1/PPPN1PBP/R1BQ1RK1 b kq - 0 7",
+      "name": "Reti: KIA, French Variation",
+      "eco": "A08",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had Ng4 with no knight able to reach it. Rewritten around e5, Re1/Nf1/h4 and ...b5-b4 or ...dxe4."
+    },
+    {
+      "fen": "r1bqk2r/pp2nppp/2nbp3/2pp4/4P3/3P1NP1/PPPN1PBP/R1BQ1RK1 b kq - 0 7",
+      "name": "Reti: KIA, French Variation",
+      "eco": "A08",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had f2-f4-f5 behind the f3-knight and vague bishop trades. Rewritten around the d6-bishop's control of e5."
+    },
+    {
+      "fen": "r1bqkbnr/pp3ppp/2n1p3/2pp4/3P4/5NP1/PPP1PPBP/RNBQ1RK1 b kq - 1 5",
+      "name": "Zukertort Opening: Reversed Grünfeld",
+      "eco": "A08",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called the set-up a KIA (it is a Tarrasch structure once c4 comes); plan read ...dxc4 without c4. Rewritten; reviewer rejection (g2-bishop pressing through the f3-knight) fixed and re-reviewed."
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2B5/4PN2/PP1P1PPP/RNBQK2R w KQkq - 0 5",
+      "name": "Reti: Accepted, 3.e3 Nf6 4.Bxc4 e6",
+      "eco": "A09",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had White fianchettoing a bishop that already stands on c4 and a minority attack with b4. Rewritten as a Queen's Gambit Accepted structure."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/4p3/8/2p5/5NP1/PP1PPP1P/RNBQKB1R w KQkq - 0 4",
+      "name": "Reti: Accepted, 3.g3 e6",
+      "eco": "A09",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had Black solidifying a d5-pawn that has gone to c4 and e5 read as a move. Rewritten around Qa4+ or Na3 and ...c5."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/8/2p5/N4N2/PP1PPPPP/R1BQKB1R b KQkq - 1 3",
+      "name": "Reti: Accepted, 3.Na3",
+      "eco": "A09",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan used 0-0 and suggested holding the pawn with ...b5, which loses it to Nxb5. Rewritten."
+    }
+  ]
+}

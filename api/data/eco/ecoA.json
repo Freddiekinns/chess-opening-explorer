@@ -43894,7 +43894,7 @@
     "name": "English: Nimzo-English, 4.g3",
     "scid": "A17",
     "analysis_json": {
-      "description": "In the Nimzo-English Black develops with 3...Bb4, eyeing the c3-knight and the e4-square, and 4.g3 prepares a Catalan-style fianchetto. White plans Bg2, O-O and often Qc2 or Qb3 so that ...Bxc3 can be met by a queen recapture, while Black chooses between ...Bxc3 to double White's pawns, ...c5 or ...d5 in the centre, and ...b6 with ...Bb7 to contest the long diagonal. Play is strategic, with the e4-square and White's queenside structure the main themes.",
+      "description": "In the Nimzo-English Black develops with 3...Bb4, eyeing the c3-knight, which guards e4, and 4.g3 prepares a Catalan-style fianchetto. White plans Bg2, O-O and often Qc2 or Qb3 so that ...Bxc3 can be met by a queen recapture, while Black chooses between ...Bxc3 to double White's pawns, ...c5 or ...d5 in the centre, and ...b6 with ...Bb7 to contest the long diagonal. Play is strategic, with the e4-square and White's queenside structure the main themes.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -48511,7 +48511,7 @@
     "name": "English: Lukin, 5.Nd2 Nf6 6.e3",
     "scid": "A21",
     "analysis_json": {
-      "description": "This variation leads to a complex and strategically dense middlegame, resembling a reversed King's Indian Attack against a Dutch Stonewall structure. White adopts a flexible, solid setup, aiming to challenge Black's advanced e4-pawn and exploit the resulting light-square weaknesses. This opening is perfect for patient, strategic players who enjoy maneuvering, understanding pawn structures, and slowly building pressure in a closed position.",
+      "description": "In this line of the Lukin Variation Black has taken space with ...e4, and after 5.Nd2 Nf6 6.e3 the play revolves around Black's advanced e4-pawn. White develops with Be2 and castles and aims to undermine it with f3, sometimes adding g4 to attack its f5-support, while Black supports it with ...Be7, ...O-O and ...c6, and can strike at White's centre with ...c5 or ...d5. Play is strategic, with both sides fighting over e4 and the light squares.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -48553,8 +48553,9 @@
         "Exploiting weak squares"
       ],
       "common_plans": [
-        "For White, the main plan involves preparing the f2-f3 pawn break to undermine Black's e4-pawn, often followed by kingside expansion with g4. Piece development is flexible, with Be2, O-O, and maneuvering the Nd2 knight to a more active square like f1 or b3.",
-        "For Black, the goal is to solidify the e4-pawn with moves like ...Be7, ...O-O, and ...c6. A key counter-plan is to prepare the ...c5 pawn break to challenge White's d4-pawn and create queenside counterplay, often developing the queen's bishop to b7."
+        "White: Develop with Be2 and O-O, then undermine the e4-pawn with f3, sometimes preparing g4 to attack its support from the f5-pawn.",
+        "Black: Support the e4-pawn with ...Be7, ...O-O and ...c6, then seek counterplay with ...c5 or ...d5 against White's centre.",
+        "White: Gain queenside space with b4 and c5 while Black is busy holding the e4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:52:34.480Z"
@@ -48569,7 +48570,7 @@
     "name": "English: Lukin, 5.Ng5",
     "scid": "A21",
     "analysis_json": {
-      "description": "The Lukin variation is a sharp and provocative response to Black's Dutch-style setup in the English. White's unusual 5.Ng5 immediately creates tactical tension, targeting the e6-square and daring Black to create weaknesses. This opening bypasses quiet strategic play in favor of a complex, double-edged struggle, ideal for aggressive players who enjoy steering the game into unorthodox and challenging territory from the outset.",
+      "description": "With 5.Ng5 White attacks the e4-pawn and eyes the e6-square, which ...f5 has weakened. Black usually defends the e4-pawn with ...Nf6, attacks the knight with ...Be7, or prepares ...d5 with ...c6, and can drive the knight away with ...h6, while White can support it with h4 and prepares f3 to undermine the e4-pawn, or g3 and Bg2 to add pressure on it. Play is sharp and concrete, centred on Black's advanced pawn.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -48610,10 +48611,10 @@
         "Dutch Stonewall Structure"
       ],
       "common_plans": [
-        "White: Target the e6-square (e.g., with Qb3), prepare the f2-f3 pawn break to undermine e4, and exploit any kingside weaknesses Black creates.",
-        "Black: Solidify the e4-pawn, complete development with moves like ...Nf6 and ...Be7, and use the f-pawn as a lever for a kingside attack.",
-        "White: Develop the light-squared bishop to g2 or f1-b5 to control key diagonals and pressure Black's center.",
-        "Black: Control the dark squares, particularly e5, and reroute the queen's knight to support the center or kingside."
+        "White: Attack the e4-pawn, which the g5-knight already hits, and prepare the f3 break to undermine it; h4 can support the knight if Black plays ...h6.",
+        "Black: Either attack the g5-knight at once with ...Be7, or defend the e4-pawn with ...Nf6 and prepare ...d5 with ...c6, driving the knight away later with ...h6.",
+        "White: Develop the light-squared bishop with g3 and Bg2, adding pressure on the e4-pawn.",
+        "Black: Keep the e4-pawn as a space-gaining wedge and use it to cramp White's knights."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:52:58.061Z"
@@ -48628,7 +48629,7 @@
     "name": "English: Lukin, 5.Ng5 Be7",
     "scid": "A21",
     "analysis_json": {
-      "description": "This variation is a sharp and provocative line where both sides fight for the initiative from the outset. White's unusual knight sortie to g5 directly challenges Black's kingside expansion and central pawn, leading to a complex, tactical struggle. The opening is ideal for aggressive players who thrive in unbalanced positions and are comfortable navigating concrete, tactical complications rather than quiet strategic maneuvering.",
+      "description": "With 5...Be7 Black develops and attacks the g5-knight, so White must decide whether to retreat it, usually to h3 heading for f4, or support it with h4, when ...Bxg5 hxg5 half-opens the h-file for White's rook. Black aims to keep the e4-pawn with ...Nf6, ...c6 and ...O-O, using the space it gives, while White undermines it with f3 or attacks its f5-support with g4. Play is sharp and concrete.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -48669,10 +48670,10 @@
         "Kingside Attack vs. Central Counterplay"
       ],
       "common_plans": [
-        "White: Challenge the e4-pawn, often with h4 followed by Nh3-f2, and create pressure on the f7-square.",
-        "Black: Harass and potentially trap the g5-knight with ...h6, solidify control of the e4-square, and use the space advantage to launch an attack.",
-        "White: Undermine Black's central control and exploit the potential long-term weakness of the f5-pawn.",
-        "Black: Complete development, castle, and prepare to expand on the kingside with moves like ...g5 to attack White's king."
+        "White: Retreat with Nh3 and bring the knight to the f4-square, or support it with 6.h4, when 6...Bxg5 7.hxg5 half-opens the h-file for the rook.",
+        "Black: Develop with ...Nf6, ...c6 and ...O-O, defending the e4-pawn, and drive the knight away with ...h6 if it stays on g5.",
+        "White: Undermine the e4-pawn with f3 or attack its f5-support with g4, opening lines against Black's king.",
+        "Black: Use the space from the e4-pawn for kingside play, with the queen often coming to e8 after castling."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:53:16.362Z"
@@ -48687,7 +48688,7 @@
     "name": "English: Lukin, 5.Ng5 c6",
     "scid": "A21",
     "analysis_json": {
-      "description": "This opening leads to a sharp and strategically complex battle. White's provocative 5.Ng5 immediately challenges Black's ambitious central expansion, creating an unbalanced position where tactical alertness is paramount. This line is perfect for players who enjoy navigating non-standard structures and fighting for the initiative in double-edged, dynamic middlegames.",
+      "description": "With 5...c6 Black prepares ...d5, which would give the e4-pawn solid support, and opens the d8-a5 diagonal for the queen. White keeps up the pressure on the e4-pawn with the g5-knight and plans f3, or h3 and g4 against the f5-pawn, while Black follows with ...Nf6, ...Be7 and ...h6, or ...d5, or ...Qa5, pinning the c3-knight. Play is sharp, centred on the e4-pawn.",
       "style_tags": [
         "Aggressive",
         "Strategic",
@@ -48729,10 +48730,9 @@
         "Restraining vs. Attacking the e4-pawn"
       ],
       "common_plans": [
-        "White: Pressure the e4 and d6 pawns, often with moves like h3 (preparing g4) or f3. Maneuver the g5-knight to a better square like e6 or f3, and fight for control of the d5-square.",
-        "Black: Solidify the center with ...d5. Develop pieces to challenge White's control (e.g., ...Qb6, ...Be7, ...Nbd7) and use the e4-pawn to cramp White.",
-        "White: Prepare a kingside expansion with h3 and g4 to undermine Black's f5-pawn and challenge the e4-pawn's support.",
-        "Black: Complete development, often preparing to trade the annoying g5-knight with ...h6 and ...Nf6, and then seek counterplay on the queenside or in the center."
+        "White: Keep pressure on the e4-pawn with the g5-knight, prepare f3 to undermine it, and use h3 and g4 against the f5-pawn.",
+        "Black: Support the e4-pawn with ...d5, or develop with ...Nf6 and ...Be7, then drive the g5-knight away with ...h6.",
+        "Black: Bring the queen to b6 to hit the d4-pawn, or to a5, where it pins the c3-knight to the king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:53:36.636Z"
@@ -49379,7 +49379,7 @@
     "name": "English: Bremen, Reverse Dragon, 4.cxd5 Nxd5",
     "scid": "A22",
     "analysis_json": {
-      "description": "The Reverse Dragon is a strategically rich variation of the English Opening where White employs a fianchetto setup against Black's central challenge. By playing a Sicilian Dragon with an extra tempo, White aims to exert long-term positional pressure along the long diagonal with the powerful g2-bishop. This opening leads to a complex, maneuvering game, ideal for strategic players who enjoy accumulating small advantages and understanding the nuances of pawn structure and piece placement over engaging in immediate, sharp tactical clashes.",
+      "description": "The Reverse Dragon is a Sicilian Dragon with colours reversed and White a tempo up: White's g2-bishop will press along the long diagonal, while Black has the e5-pawn and a centralised knight on d5. White usually continues with Bg2, Nf3 and O-O, often adding d3 or Rb1 and b4, and may exchange on d5 when the recapture leaves Black's queen exposed, while Black develops with ...Nb6 or ...Nxc3, ...Be7, ...O-O and ...Be6. Play is open and strategic.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -49422,10 +49422,10 @@
         "Queenside expansion"
       ],
       "common_plans": [
-        "White: Develop the Bg2, control the long diagonal, challenge Black's central knight, and often prepare queenside expansion with Rb1 and b4.",
-        "Black: Solidify the center, often with ...c6 or ...e6, develop pieces to challenge White's control, and seek counterplay on the kingside or by breaking in the center.",
-        "White: Exchange on d5 to create a favorable pawn structure and play against a potentially weak d6 pawn.",
-        "Black: Complete development, sometimes with a ...g6 fianchetto to neutralize White's bishop, and create counter-pressure against White's center."
+        "White: Develop with Bg2, which hits the d5-knight along the long diagonal, then Nf3 and O-O, and prepare Rb1 and b4 for queenside space.",
+        "Black: Move the d5-knight to b6 or exchange it on c3, develop with ...Be7, ...O-O and ...Be6, and keep the e5-pawn as a central asset.",
+        "White: Exchange knights on d5 when the recapture leaves Black's queen exposed to the g2-bishop.",
+        "Black: Support the e5-pawn with ...Nc6 or ...f6 and set up a solid centre, as in a Dragon with colours reversed."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:57:13.447Z"
@@ -49498,7 +49498,7 @@
     "name": "English: Bremen, Reverse Dragon, 4.cxd5 Nxd5 5.Bg2 Nb6",
     "scid": "A22",
     "analysis_json": {
-      "description": "The Bremen System, often leading to a Reverse Dragon setup, is a highly sophisticated and strategic response to Black's classical e5/Nf6. White adopts the Dragon's signature fianchetto (g3, Bg2) with an extra tempo, aiming for long-term pressure along the h1-a8 diagonal. The game revolves around subtle maneuvering and deep positional understanding, making it ideal for patient, strategic players who excel at controlling key squares and building pressure slowly.",
+      "description": "With 5...Nb6 Black moves the knight off the g2-bishop's diagonal, a standard retreat in the Dragon with colours reversed. White continues with Nf3, O-O and d3, often adding a3, b4 and Rb1 for queenside expansion, while Black develops with ...Nc6, ...Be7 and ...O-O and often supports the e5-pawn with ...f6, completing development with ...Be6. Play is strategic, with White's queenside play against Black's central space.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -49540,8 +49540,9 @@
         "The role of the Black knight on b6"
       ],
       "common_plans": [
-        "White: Complete development with Nf3, O-O, d3. Prepare queenside expansion with Rb1 and b4 to challenge the Nb6 and create a minority attack. Maneuver pieces to maximize the power of the Bg2 bishop.",
-        "Black: Solidify the center with ...Be7, ...O-O, and ...Nc6. Control the d4-square and prevent White from achieving a favorable d4-pawn break. Prepare to meet White's b4 push with ...a5, seeking counterplay on the queenside or in the center."
+        "White: Complete development with Nf3, O-O and d3, then expand on the queenside with a3, b4 and Rb1, using the g2-bishop on the long diagonal.",
+        "Black: Develop with ...Nc6, ...Be7 and ...O-O, support the e5-pawn with ...f6, complete development with ...Be6 and keep control of the d4-square.",
+        "Black: Challenge White's queenside expansion with ...a5, accepting that b5 will hit the c6-knight, which can then go to d4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:57:45.064Z"
@@ -49556,7 +49557,7 @@
     "name": "English: Bremen, Smyslov, 4.Bg2",
     "scid": "A22",
     "analysis_json": {
-      "description": "The Bremen System is a highly respected and strategically complex variation of the English Opening. Black's early ...Bb4 immediately challenges White's fianchetto setup, leading to a battle over control of the d5-square and the integrity of White's queenside pawn structure. The resulting positions are flexible and nuanced, appealing to players who enjoy maneuvering and understanding subtle positional imbalances rather than engaging in immediate, sharp tactical fights.",
+      "description": "In the Smyslov line of the Bremen System Black answers White's fianchetto with 3...Bb4, eyeing the c3-knight and preparing ...e4 to gain space. After 4.Bg2 Black usually castles, and White chooses between e4, which takes space and stops ...e4, and Nf3 with O-O; Black is often ready to exchange on c3, doubling White's pawns in return for the bishop pair, and to play ...Re8 with ...e4, or ...d6. Play is strategic, with the e4-square and White's queenside structure at its heart.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -49599,10 +49600,9 @@
         "Queenside Pawn Play"
       ],
       "common_plans": [
-        "White: Complete development with O-O and d3, use the g2-bishop to exert long-term pressure, and often expand on the queenside with Rb1 and b4, especially if Black concedes the bishop pair with ...Bxc3.",
-        "Black: Decide whether to exchange on c3 (creating structural imbalances) or retreat the bishop. A key plan is to challenge White's central influence with a timely ...d5 pawn break, often after castling and preparing with ...Re8.",
-        "White: Maneuver the queen's knight (often to e2 after d3) to support the center and prepare for action on either flank.",
-        "Black: Neutralize the g2-bishop by controlling the long diagonal or preparing to exchange it, often by maneuvering a knight to f4 or playing ...d5 and ...e4."
+        "White: Castle and develop with Nf3, or take space with e4 followed by Nge2; if Black exchanges on c3, recapture with the b-pawn and use the bishop pair and the half-open b-file.",
+        "Black: Castle and play ...Re8 and ...e4 to gain space, or ...d6 and ...Nc6, exchanging on c3 when it damages White's structure.",
+        "Black: Watch the d5-square, where a white knight would hit the b4-bishop, and be ready to exchange it off with the f6-knight."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:58:05.196Z"
@@ -49731,7 +49731,7 @@
     "name": "English: Bremen, Smyslov, 4.Bg2 O-O 5.e4",
     "scid": "A22",
     "analysis_json": {
-      "description": "This variation of the English is a highly ambitious and strategically complex system for White. By playing 5.e4, White immediately seizes central space, creating a structure reminiscent of a reversed King's Indian Attack. The game becomes a tense, strategic battle where White aims to consolidate their central grip and space advantage, while Black works to undermine the e4-pawn and exploit the long-term pressure from the pin on the c3-knight. This opening is perfect for sophisticated, strategic players who enjoy maneuvering and executing long-term plans.",
+      "description": "With 5.e4 White takes central space and stops ...e4, setting up pawns on c4 and e4 in Botvinnik style. White's plan is Nge2, d3 and castling, sometimes with f4 later, while Black exchanges on c3 to double White's pawns or keeps the bishop, and plays ...d6 with ...Nc6, or ...c6 and ...d5, to challenge the centre. Play is strategic, with the d5- and d4-squares and the e4-pawn the main themes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -49773,10 +49773,10 @@
         "Undermining the center"
       ],
       "common_plans": [
-        "White: Play Nge2 to break the pin, followed by d3 and O-O. Prepare the f2-f4 pawn break to challenge Black's control and attack on the kingside.",
-        "Black: Exchange the bishop for the knight on c3 (...Bxc3) to create doubled pawns. Play ...d6 and ...Re8 to prepare an assault on the e4-pawn.",
-        "White: Use the powerful g2-bishop to control the long diagonal and support central and queenside plans.",
-        "Black: Reroute the f6-knight (e.g., ...Ne7-g6) to increase pressure on White's central pawns and prepare kingside activity."
+        "White: Develop with Nge2, d3 and O-O, and consider f4 later to challenge the e5-pawn and open the f-file.",
+        "Black: Exchange on c3 to double White's c-pawns, then play ...d6 and ...Nc6 and target the c4-pawn and the d4-square.",
+        "Black: Alternatively, strike at the centre with ...c6 and ...d5, opening lines before White completes development.",
+        "White: Use the d5-square for a knight, which is hard to dislodge once the c4- and e4-pawns support it."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:58:58.185Z"
@@ -49849,7 +49849,7 @@
     "name": "English: King's, 2.Nc3 Nf6 3.e3 Bb4",
     "scid": "A22",
     "analysis_json": {
-      "description": "This variation of the English Opening introduces a Nimzo-Indian character, where Black's early ...Bb4 pin creates immediate strategic complexity. The game revolves around White's handling of the pin and Black's decision on whether to exchange the bishop for the knight, often leading to a structural battle of the bishop pair versus a potentially weak pawn structure. This opening is perfect for strategic players who enjoy subtle maneuvering and long-term planning over sharp, tactical exchanges.",
+      "description": "Against 3.e3 Black develops with 3...Bb4, a Nimzo-Indian idea: the bishop eyes the c3-knight, which guards e4, and an exchange on c3 can double White's pawns. White's usual answers are Nge2 or Qc2, so that a piece can recapture on c3 and keep the structure intact, while Black castles and plays ...e4, ...d6, or ...c6 and ...d5. Play is strategic, with the e4-square and White's d4 advance the main themes.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -49891,10 +49891,10 @@
         "Flexibility in Development"
       ],
       "common_plans": [
-        "White: Play Qc2 to break the pin, often accepting doubled pawns via bxc3 to gain the bishop pair and an open b-file for the rook.",
-        "Black: Exchange on c3 to inflict a long-term pawn weakness, then aim to control the light squares and blockade White's central pawns.",
-        "White: Prepare a central push with d2-d4, either after preparing with Nge2 or directly.",
-        "Black: Complete development and challenge for the center with a timely ...d5 pawn break."
+        "White: Prepare to recapture on c3 with a piece, playing Nge2 or Qc2, then castle and aim for d4 to take the centre.",
+        "Black: Castle and take space with ...e4, or exchange on c3 when a pawn must recapture, doubling White's c-pawns.",
+        "White: If a pawn does recapture on c3, use the bishop pair and the half-open b-file.",
+        "Black: Challenge the centre with ...c6 and ...d5, opening lines before White completes development."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T08:59:42.161Z"
@@ -49909,7 +49909,7 @@
     "name": "English: King's, 2.Nc3 Nf6 3.e4",
     "scid": "A22",
     "analysis_json": {
-      "description": "This ambitious line sees White immediately challenge for the center, steering the game away from typical English structures and into dynamic, tactical territory. It often resembles a Reverse Sicilian or King's Pawn opening, leading to sharp battles where initiative and attacking play are paramount. This opening is perfect for aggressive players who enjoy seizing space and launching early attacks.",
+      "description": "With 3.e4 White takes the centre with pawns on c4 and e4, a set-up that can lead to Vienna-like positions or to the Botvinnik system after g3 and Bg2. Black's main replies are 3...Bc5 and 3...Bb4, developing actively and eyeing d4 or the c3-knight, and 3...Nc6, while ...c6 with ...d5, or ...d6, suit a more solid game. White's grip on the d5-square is the key strategic asset, and the d4-square, which no white pawn covers, is Black's.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -49949,10 +49949,10 @@
         "Space Advantage"
       ],
       "common_plans": [
-        "For White: Use the e4/c4 pawn duo to control the center and launch a kingside attack, often involving the f2-f4-f5 pawn push.",
-        "For Black: Challenge White's center with an early ...d5 pawn break to open lines and create counterplay.",
-        "For White: Focus on rapid development to build initiative and exploit tactical shots before Black can fully coordinate.",
-        "For Black: Develop pieces to active squares like c5 or b4 to pressure White's setup and seek counterplay if White overcommits to an attack."
+        "White: Develop with Nf3 or g3 and Bg2, castle, and use the grip on the d5-square, often posting a knight there.",
+        "Black: Develop actively with ...Bc5 or ...Bb4, ...Nc6 and ...O-O, and use the d4-square, which White's pawns no longer cover.",
+        "White: Prepare f4 to challenge the e5-pawn and open lines on the kingside, typically after Nge2 and d3.",
+        "Black: Strike at the centre with ...c6 and ...d5 when White's development lags."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T09:00:01.939Z"

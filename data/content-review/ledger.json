@@ -1718,8 +1718,8 @@
   "rnbqk2r/pppp1ppp/4pn2/8/1bP5/2N2NP1/PP1PPP1P/R1BQKB1R b KQkq - 0 4": {
     "reviewedAt": "2026-11-09",
     "verdict": "fixed",
-    "contentHash": "3c680b80475eda40",
-    "notes": "Overview called ...Bb4 a pin (the d2-pawn shields the king); plan read b4 as a move. Rewritten around Qc2/Qb3, ...Bxc3 and ...b6/...Bb7."
+    "contentHash": "e3385c95365f680b",
+    "notes": "Follow-up to batch 14: overview said the b4-bishop eyes the e4-square (it guards it only indirectly, through the c3-knight). Reworded and re-reviewed."
   },
   "rnbqkb1r/ppp2ppp/4pn2/4P3/2Pp4/2N5/PP1P1PPP/R1BQKBNR w KQkq - 0 5": {
     "reviewedAt": "2026-11-09",
@@ -1816,5 +1816,65 @@
     "verdict": "fixed",
     "contentHash": "5474048007f08fe5",
     "notes": "Plans had a ...g5-g4 storm with queenside castling and an e6-pawn that does not exist. Rewritten around d4, g3/Bg2 and the e6-square. Reviewer rejection (a g2-bishop and Nd5 cannot reach e6) fixed and re-reviewed."
+  },
+  "rnbqkb1r/ppp3pp/3p1n2/5p2/2PPp3/2N1P3/PP1N1PPP/R1BQKB1R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "c4007e54cfe67e6c",
+    "notes": "Overview called the structure a reversed KIA against a Stonewall; plan read the f1-square as a move. Rewritten around Black's e4-pawn, f3/g4 and ...c5/...d5. Reviewer rejection (Nb3 then b4 is impossible) fixed and re-reviewed."
+  },
+  "rnbqkbnr/ppp3pp/3p4/5pN1/2PPp3/2N5/PP2PPPP/R1BQKB1R b KQkq - 1 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "ab4c6167541365d0",
+    "notes": "Plans had Qb3 targeting e6 through White's own c4-pawn, a bishop route f1-b5 through the e2-pawn and e5 read as a move. Rewritten around the attack on e4. Reviewer rejections (...Be7 and ...c6 do not defend e4) fixed and re-reviewed."
+  },
+  "rnbqk1nr/ppp1b1pp/3p4/5pN1/2PPp3/2N5/PP2PPPP/R1BQKB1R w KQkq - 2 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "260445b9a58efd4c",
+    "notes": "Plans had h4 and Nh3-f2 against e4 and ...g5 to attack White's king. Rewritten around Nh3-f4 or 6.h4 Bxg5 7.hxg5."
+  },
+  "rnbqkbnr/pp4pp/2pp4/5pN1/2PPp3/2N5/PP2PPPP/R1BQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "054c8d0a2c28a382",
+    "notes": "Plans had the g5-knight going to e6 (covered by the c8-bishop) and e6 read as a move. Rewritten around f3, h3/g4 and ...Qb6 or ...Qa5."
+  },
+  "rnbqkb1r/ppp2ppp/8/3np3/8/2N3P1/PP1PPP1P/R1BQKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "7b50afaeba0e6a1f",
+    "notes": "Plans had ...e6 with the e-pawn on e5 and a d6-pawn that does not exist. Rewritten as a reversed Dragon."
+  },
+  "rnbqkb1r/ppp2ppp/1n6/4p3/8/2N3P1/PP1PPPBP/R1BQK1NR w KQkq - 2 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "cd2cc6f95a01a949",
+    "notes": "Plans had a d4-pawn break read as a move and a minority attack against the b6-knight. Rewritten around a3/b4/Rb1 and ...f6/...a5. Reviewer rejection (...a5 does not fix the b-pawn; b5 follows) fixed and re-reviewed."
+  },
+  "rnbqk2r/pppp1ppp/5n2/4p3/1bP5/2N3P1/PP1PPPBP/R1BQK1NR b KQkq - 2 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "268e2d9a37c577e1",
+    "notes": "Plans had Rb1 and b4 with the bishop on b4, the queen's knight going to e2, and a knight to f4 against the g2-bishop. Rewritten around ...Re8/...e4 and the d5-square."
+  },
+  "rnbq1rk1/pppp1ppp/5n2/4p3/1bP1P3/2N3P1/PP1P1PBP/R1BQK1NR b KQ - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "35478cc7cf4dd5bc",
+    "notes": "Plans had Nge2 breaking a pin that does not exist and a knight route ...Ne7-g6 from f6. Rewritten around Nge2/d3/f4 and ...Bxc3 or ...c6/...d5."
+  },
+  "rnbqk2r/pppp1ppp/5n2/4p3/1bP5/2N1P3/PP1P1PPP/R1BQKBNR w KQkq - 1 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "3918b930dd0dd44a",
+    "notes": "Overview called ...Bb4 a pin (the d2-pawn shields the king); plan had bxc3 before ...Bxc3. Rewritten around Nge2 or Qc2. Reviewer rejection (the b4-bishop does not eye e4 directly) fixed and re-reviewed."
+  },
+  "rnbqkb1r/pppp1ppp/5n2/4p3/2P1P3/2N5/PP1P1PPP/R1BQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "228a6451223d6924",
+    "notes": "Plans had an f2-f4-f5 route and the c5- and b4-squares read as moves. Rewritten around the d5- and d4-squares."
   }
 }

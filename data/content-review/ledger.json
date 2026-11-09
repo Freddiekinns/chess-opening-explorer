@@ -1336,5 +1336,65 @@
     "verdict": "fixed",
     "contentHash": "2696deac6806b6e6",
     "notes": "Plans used e4-e5 as a route and had the f3-knight going to e1 then g2, where the bishop stands. Rewritten."
+  },
+  "rnbqkb1r/p1pppppp/1p3n2/8/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "afec33aba312de90",
+    "notes": "Plan had a knight route e1-d3 with the king on e1; American spelling. Rewritten around ...Bb7 and the fight for e4."
+  },
+  "rn1qkb1r/pbpppppp/1p3n2/8/8/5NP1/PPPPPPBP/RNBQK2R w KQkq - 2 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d6d53d6719ff01c9",
+    "notes": "Plan had a knight route e1-g2-h4 through the king and the g2-bishop. Rewritten; reviewer rejection (...d5 blocks the b7-bishop's view of e4) fixed and re-reviewed."
+  },
+  "rnbq1rk1/ppppppbp/5np1/8/8/3P1NP1/PPP1PPBP/RNBQ1RK1 b - - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "079a4c8a67804972",
+    "notes": "Plans had Nf3-e1-g2 into the bishop's square and Qe1-h4 through the g3-pawn. Rewritten around Nbd2/e4 and Nh4/f4."
+  },
+  "rnbq1rk1/pp1pppbp/5np1/2p5/8/3P1NP1/PPP1PPBP/RNBQ1RK1 w - - 0 6": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1f18661a6a47e22c",
+    "notes": "Plans had Black trading dark-squared bishops to neutralise the light-squared g2-bishop and a route e1-d3 through the rook. Rewritten; reviewer rejection (g7-bishop said to aim at d4 through its own f6-knight) fixed and re-reviewed."
+  },
+  "rnbqk2r/ppppppbp/5np1/8/1P6/5NP1/PBPPPP1P/RN1QKB1R b KQkq - 2 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "f3dfc491be3d1522",
+    "notes": "Plan read the c4-square as a move; overview generic. Rewritten around the double fianchetto, ...a5 and ...d6/...e5."
+  },
+  "rn1qkbnr/ppp1pppp/8/3p4/6b1/1P3N2/P1PPPPPP/RNBQKB1R w KQkq - 1 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1a942217237d2c33",
+    "notes": "Overview called ...Bg4 a pin (the e2-pawn shields the queen) and the g-file open after gxf3 (half-open); plan had gxf3 before ...Bxf3. Rewritten."
+  },
+  "rn1qkbnr/ppp1pppp/8/3p4/6b1/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 1 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1e95fd22c63b798f",
+    "notes": "Plans had White breaking a pin that does not exist and gxf3 before ...Bxf3. Rewritten; ...Bh5 dropped from the fight for e4 after the reviewer's note."
+  },
+  "r2qkbnr/pppnpppp/8/3p4/6b1/5NP1/PPPPPPBP/RNBQK2R w KQkq - 3 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "31d602c8879eda39",
+    "notes": "Plan had the f3-knight going to d2 with the d2-pawn there; American spelling. Rewritten around ...Ngf6, ...e6/...c6 and ...e5."
+  },
+  "rnbqkbnr/pp2pppp/8/2pp4/8/5NP1/PPPPPP1P/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "0065490abf874891",
+    "notes": "Plans used e4-e5 as a route and a knight route d2-f1-e3 through the f1-bishop. Rewritten around the two Black structures."
+  },
+  "r1bqkb1r/ppp2ppp/2n2n2/3pp3/8/3P1NP1/PPP1PPBP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "1029a18c057ad92b",
+    "notes": "Plan used an e3-e4 route with the pawn on e2 and an Ng4 route. Rewritten as a King's Indian Defence with colours reversed."
   }
 }

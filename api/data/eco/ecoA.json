@@ -52791,7 +52791,7 @@
     "name": "English: Closed",
     "scid": "A25",
     "analysis_json": {
-      "description": "This variation of the Closed English, defined by the ambitious 5. Nd5, is a proactive and challenging system. White immediately contests the central d5-square, aiming to disrupt Black's coordination and seize the initiative at the cost of potential structural concessions. The resulting positions are strategically complex and double-edged, suiting players who enjoy creating immediate problems and navigating imbalanced middlegames where piece activity often trumps pure structure.",
+      "description": "5.Nd5 sidesteps the threatened ...Bxc3, so White avoids doubled c-pawns and hits the b4-bishop at once. Black often exchanges on d5; after White recaptures with the c-pawn, White has a half-open c-file and a pawn on d5 that cramps Black's queenside, and the c6-knight can jump to d4. The bishop can also drop back to c5 or e7. The play is strategic: White leans on the g2-bishop and the queenside, while Black looks for central play with ...d6 and ...f5.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -52833,9 +52833,9 @@
         "Exploiting the long diagonal"
       ],
       "common_plans": [
-        "White: Resolve the central tension with cxd5, use the open c-file, and exert pressure with the fianchettoed bishop on g2.",
-        "Black: Challenge the Nd5 knight (often via ...Nxd5 or ...Bc5), aim to secure the bishop pair with ...Bxc3, and create counterplay against White's center.",
-        "White: Expand on the queenside with a3 and b4 to gain space and challenge Black's pieces.",
+        "White: After ...Nxd5, recapture with the c-pawn to gain a half-open c-file and a cramping pawn on d5, then support it with the g2-bishop and expand on the queenside.",
+        "Black: Exchange the d5-knight with ...Nxd5, or keep the bishop with ...Bc5 or ...Be7; after the exchange and White's recapture with the c-pawn, the c6-knight can jump to d4.",
+        "White: Ask the b4-bishop where it is going with a3, then expand on the queenside with Rb1 and the b-pawn.",
         "Black: Complete development, castle, and prepare pawn breaks like ...d6 or ...f5 to undermine White's central grip."
       ],
       "version": "1.0",
@@ -53578,7 +53578,7 @@
     "name": "English: Botvinnik System, 6...Nf6",
     "scid": "A26",
     "analysis_json": {
-      "description": "The Botvinnik System is a sophisticated and strategic setup for White against the Symmetrical English. By creating a pawn triangle with c4, d3, and e4, White establishes a firm grip on the center and prepares for a methodical kingside attack, often initiated by the f2-f4 pawn push. This opening is ideal for patient, strategic players who excel at long-term planning, understanding pawn structures, and slowly building up pressure for a decisive breakthrough.",
+      "description": "White has built the Botvinnik pawn triangle on c4, d3 and e4, which clamps down on d5, and Black has answered with a King's Indian-style set-up (...g6, ...Bg7, ...d6, ...Nf6). With the knight on f3 rather than e2, the f-pawn is blocked, so White usually castles and chooses between queenside expansion with Rb1 and b4, or rerouting the knight to free the f-pawn. Black's main counters are ...Nd4, planting a knight in the hole on d4, and ...f5 after moving the f6-knight. It is a slow, manoeuvring game for patient players.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -53618,10 +53618,10 @@
         "Reversed Sicilian Structures"
       ],
       "common_plans": [
-        "White: Initiate a kingside attack with f2-f4-f5, often supported by h4, aiming to open lines against the Black king.",
-        "Black: Prepare and execute the central pawn break ...d6-d5 to challenge White's control and open the position.",
+        "White: Play O-O, then reroute the f3-knight with Nh4 or Ne1 to free the f-pawn for f2-f4 and gain kingside space.",
+        "Black: Plant a knight on d4 with ...Nd4, where no White pawn can drive it away, and prepare ...f5 by moving the f6-knight with ...Nh5 or ...Nd7.",
         "White: Control the crucial d5 square, preventing Black's central break and establishing a positional clamp.",
-        "Black: Create queenside counterplay with moves like ...a5 and ...b5 to distract White from their kingside ambitions."
+        "Black: Use ...a5 to slow White's queenside pawn expansion, and develop the light-squared bishop with ...Bg4, pinning the f3-knight against the queen, or ...Be6 to contest d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T09:45:56.861Z"
@@ -53636,7 +53636,7 @@
     "name": "English: Botvinnik System, 6...Nf6",
     "scid": "A26",
     "analysis_json": {
-      "description": "The Botvinnik System in the English Opening is a strategically rich and flexible setup for White, characterized by the c4, d3, e4 pawn formation. It creates a reversed Sicilian Dragon structure where White aims for solid central control and a potent kingside attack, often initiated by the f2-f4 pawn push. This opening is ideal for patient, strategic players who excel at maneuvering, understanding pawn structures, and building up pressure over the long term.",
+      "description": "With both sides castled, White's Botvinnik triangle (c4, d3, e4) holds d5, while Black's e5-pawn gives a matching grip on d4. The knight on f3 blocks White's f-pawn, so White either reroutes it with Nh4 or Ne1 to prepare f2-f4, or turns to the queenside with Rb1 and b4. Black answers with ...Nd4, with ...f5 after moving the f6-knight, or with ...a5. It is a slow, manoeuvring battle for patient players.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -53676,10 +53676,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White's primary plan is to prepare and execute the f2-f4-f5 pawn advance to open lines against the Black king, often supported by moves like Qe2 and Kh1.",
+        "White: Reroute the f3-knight with Nh4 or Ne1 so the f-pawn can advance with f2-f4, or expand on the queenside with Rb1, a3 and b4.",
         "White aims to maintain firm control over the d5 square, preventing Black from achieving a central break.",
-        "Black's main counter-plan involves challenging White's center, often by occupying the d4 square with a knight (...Nd4).",
-        "Black seeks to create counterplay through pawn breaks of their own, such as ...f5 to challenge White's e4-pawn, or preparing ...b5 on the queenside."
+        "Black's main counter-plan involves challenging White's centre, often by occupying the d4 square with a knight (...Nd4).",
+        "Black: Move the f6-knight with ...Nh5 or ...Ne8 to prepare ...f5 against White's e4-pawn, and use ...a5 to slow White's queenside expansion."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T09:46:12.502Z"
@@ -54044,7 +54044,7 @@
     "name": "English: Closed, 5.d3 d6 6.Nf3 Nf6",
     "scid": "A26",
     "analysis_json": {
-      "description": "The Closed English is a deeply strategic and flexible system where both sides often adopt a similar fianchetto setup. The game revolves around subtle maneuvering and long-term plans rather than immediate tactical confrontations, with a key battleground being the control of the d5 square. This opening is perfect for patient, positional players who excel at accumulating small advantages and understanding the nuances of pawn structure and piece placement.",
+      "description": "The Closed English is a deeply strategic and flexible system where both sides often adopt a similar fianchetto setup. The game revolves around subtle manoeuvring and long-term plans rather than immediate tactical confrontations, with a key battleground being the control of the d5 square. This opening is perfect for patient, positional players who excel at accumulating small advantages and understanding the nuances of pawn structure and piece placement.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -54087,8 +54087,8 @@
       ],
       "common_plans": [
         "White: Play Rb1 followed by the a3 and b4-b5 pawn push to gain queenside space and create weaknesses.",
-        "White: Prepare a kingside attack with f2-f4-f5, often after securing the center.",
-        "Black: Prepare and execute the ...d5 pawn break to challenge White's central control and open lines for their pieces.",
+        "White: Castle and choose a central set-up: e2-e4 for a Botvinnik-style clamp on d5, or O-O followed by Ne1 and f2-f4 to open the f-file.",
+        "Black: Castle, then fight White's g2-bishop with ...Be6, ...Qd7 and ...Bh3, or prepare ...f5 by moving the f6-knight with ...Nh5.",
         "Black: Counter on the queenside with moves like ...a5 and ...Rb8 to fight against White's expansion."
       ],
       "version": "1.0",
@@ -54345,7 +54345,7 @@
     "name": "English: Closed, 5.d3 d6 6.Nf3 Nf6 7.O-O O-O 8.Rb1 a5 9.a3",
     "scid": "A26",
     "analysis_json": {
-      "description": "This variation of the Closed English is a highly strategic and nuanced system where both sides engage in a patient battle for control. White's primary plan involves a slow queenside expansion, typically initiated by the b2-b4 pawn push, while Black aims to restrain this plan and create counterplay. This opening is perfect for positional players who enjoy maneuvering, long-term planning, and accumulating small advantages in a complex, closed structure.",
+      "description": "This variation of the Closed English is a highly strategic and nuanced system where both sides engage in a patient battle for control. White's primary plan involves a slow queenside expansion, typically initiated by the b2-b4 pawn push, while Black aims to restrain this plan and create counterplay. This opening is perfect for positional players who enjoy manoeuvring, long-term planning, and accumulating small advantages in a complex, closed structure.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -54388,8 +54388,8 @@
       ],
       "common_plans": [
         "White's primary plan is to achieve the b2-b4 pawn break, gaining space on the queenside and putting pressure on Black's position.",
-        "Black's main response is to restrain White's queenside play, often with ...a4 to fix the pawn structure or by preparing to meet b4 with ...axb4, followed by targeting the b-file.",
-        "Both sides will maneuver their pieces to improve their positions, with White often rerouting knights (e.g., Ne1-d3) to support the queenside and Black seeking central counterplay with a timely ...d5.",
+        "Black's main response is to restrain White's queenside play: ...a4 fixes the pawns, and if White pushes the b-pawn anyway Black can exchange pawns to open the a-file for the a8-rook.",
+        "White usually pushes b2-b4 straight away, since a3 and Rb1 already support it, while Black looks for play on the kingside with ...h6, ...Be6 and ...Qd7, aiming to exchange White's g2-bishop with ...Bh3.",
         "The game often revolves around control of the d5 square and the activity of the long-diagonal fianchettoed bishops."
       ],
       "version": "1.0",
@@ -54523,7 +54523,7 @@
     "name": "English: Closed, 5.d3 d6 6.Rb1 a5",
     "scid": "A26",
     "analysis_json": {
-      "description": "This variation of the Closed English is a highly strategic and nuanced system where both sides engage in a patient battle for space and influence. White's key idea is the queenside expansion starting with the Rb1-b4 plan, while Black counters by controlling the center and often looks for kingside opportunities. The resulting positions are complex and require a deep understanding of long-term plans, making it ideal for positional players who excel at maneuvering and exploiting subtle weaknesses.",
+      "description": "White's key idea in this Closed English is queenside expansion with Rb1 and the b-pawn, and Black's 6...a5 is there to slow it. Black keeps a firm centre with the e5- and d6-pawns and often looks for play on the kingside. The resulting positions are complex and require a deep understanding of long-term plans, making it ideal for positional players who excel at manoeuvring and exploiting subtle weaknesses.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -54565,9 +54565,9 @@
       ],
       "common_plans": [
         "White: Prepare and execute the b2-b4 pawn push to gain queenside space, often supported by a3. The goal is to open the b-file for the rook and create pressure on Black's queenside.",
-        "Black: Prevent or control White's b4 push with ...a5. Solidify the center and seek counterplay, often through a kingside attack involving ...f5 or a central break with ...d5.",
-        "White often repositions the knight from c3 to e2 (via d1) to support the center and prepare for the b4 push without it being harassed.",
-        "Black looks to create a kingside attack, often using the 'Botvinnik' setup with pieces on f5, g5, and h5 to challenge White's king position."
+        "Black: With ...a5 already played, develop with ...Nge7 or ...Nf6 and ...O-O, then look for kingside play with ...f5 or with ...Be6, ...Qd7 and ...Bh3.",
+        "White: Play a3 so the b-pawn can still advance against the a5-pawn, and complete development with Nf3 and O-O, or e4 and Nge2 for a Botvinnik-style clamp on d5.",
+        "Black: When White pushes the b-pawn, exchange on the queenside to open the a-file for the a8-rook, or answer White's a-pawn advance with ...a4 to fix White's b2-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T09:50:50.363Z"
@@ -54942,7 +54942,7 @@
     "name": "English: Three Knights, 3...f5 4.d4 e4",
     "scid": "A27",
     "analysis_json": {
-      "description": "This is a sharp and double-edged variation where Black adopts a Dutch-style setup to aggressively challenge White's central control. The resulting positions after 4...e4 are highly complex and tactical, where Black's space advantage and attacking potential are pitted against potential structural weaknesses. This opening is ideal for combative, dynamic players who are unafraid of complications and enjoy navigating unbalanced, tactical struggles.",
+      "description": "4...e4 drives the f3-knight from its post and claims space, giving Black a Dutch-style hold on e4 backed by the f5-pawn. White aims to undermine the advanced pawn and use the light squares Black has loosened, notably the e6-square and the a2-g8 diagonal, while Black hopes the extra space pays off on the kingside. The play is sharp and unbalanced, ideal for combative players who enjoy complications.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -54984,8 +54984,8 @@
         "Provocation"
       ],
       "common_plans": [
-        "White's plan often involves challenging Black's extended pawn on e4, typically with 5.Ng5. White aims to exploit the weaknesses on the kingside (f7, h7) and the light squares (especially e6) created by Black's pawn pushes.",
-        "Black seeks to consolidate the space advantage gained by the e4-pawn, often supporting it with ...d5. The main goal is to generate a powerful kingside attack using the open f-file and advancing pawns, justifying the early aggression with dynamic piece play."
+        "White: Attack the e4-pawn: Ng5 hits it and eyes the e6-square, while Nd2 prepares e3 and f3 to break up Black's pawn chain. The d4-d5 push can also chase the c6-knight.",
+        "Black: Support the e4-pawn with ...Nf6, ...Be7 and ...O-O, use the extra space for kingside piece play, and be ready for White to undermine the chain with the f-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T10:19:31.082Z"
@@ -55056,7 +55056,7 @@
     "name": "English: Three Knights, 3...g6 4.d4",
     "scid": "A27",
     "analysis_json": {
-      "description": "This variation of the English Opening is a direct and ambitious attempt by White to seize the center and challenge Black's fianchetto setup. The move 4.d4 immediately opens the position, leading to dynamic and tactical struggles where White's space advantage is pitted against the long-range power of Black's g7-bishop. This opening is well-suited for players who enjoy fighting for the initiative and are comfortable navigating complex, open middlegames.",
+      "description": "4.d4 opens the centre before Black's bishop reaches g7. Black usually exchanges on d4, and after White recaptures with the knight and Black plays ...Bg7, the bishop bears down on the d4-knight and the long diagonal while White enjoys more central space. White can exchange on c6 to damage Black's queenside pawns, or develop calmly and castle. The game is open and dynamic, suiting players who like to fight for the initiative.",
       "style_tags": [
         "Dynamic",
         "Aggressive",
@@ -55097,10 +55097,10 @@
         "Pressure on the d4-pawn"
       ],
       "common_plans": [
-        "White aims to consolidate central control, often with Be3 and Qd2, and use the space advantage to build an attack, sometimes by castling queenside.",
-        "Black seeks to undermine White's center by exchanging on d4 and using the g7-bishop to pressure White's pieces, particularly the d4-knight.",
-        "White often tries to trade Black's powerful fianchettoed bishop or restrict its scope to nullify Black's main source of counterplay.",
-        "Black completes development, often with ...d6 and ...0-0, and prepares to counterattack against White's central pawns or on the queenside."
+        "White: After ...exd4, recapture with the knight, then complete development with g3 and Bg2 or with e3 and Be2, castle and keep the space advantage.",
+        "Black seeks to undermine White's centre by exchanging on d4 and using the g7-bishop to pressure White's pieces, particularly the d4-knight.",
+        "White: Exchange knights on c6 at a moment when Black's recapture with the b-pawn leaves weak queenside pawns, then play against them.",
+        "Black: Complete development with ...Bg7, ...d6 and ...O-O, and prepare to counterattack against White's central pawns or on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T10:20:04.994Z"
@@ -55402,8 +55402,8 @@
         "Central Tension"
       ],
       "common_plans": [
-        "White: Consolidate the center with e3, challenge the e5-knight with f4, and leverage the bishop pair for a long-term advantage.",
-        "Black: Pressure the weak c4-pawn, often with ...d6 and ...Na5, while using the active Ne5 to create threats and disrupt White's coordination.",
+        "White: Consolidate the centre with e3, challenge the e5-knight with f4, and leverage the bishop pair for a long-term advantage.",
+        "Black: Hit the weak c-pawns: the e5-knight already attacks c4, and ...d6, ...b6 and ...Ba6 add pressure, while ...Ng6 questions the h4-bishop.",
         "White: Use the open b-file for rook activity and try to untangle the doubled pawns or use them to control the d4-square.",
         "Black: Seek to trade pieces to simplify into an endgame where White's pawn weaknesses become more pronounced."
       ],
@@ -55817,7 +55817,7 @@
     "name": "English: Four Knights, 4.d4",
     "scid": "A28",
     "analysis_json": {
-      "description": "The English Four Knights with 4.d4 is a direct and classical challenge to Black's central setup, immediately opening the game. This variation steers the play away from typical slow, maneuvering English games and into dynamic, open positions where the fight for the initiative is paramount. It is ideal for players who appreciate classical principles, enjoy active piece play, and are comfortable navigating the tactical and strategic complexities of an open center.",
+      "description": "The English Four Knights with 4.d4 is a direct and classical challenge to Black's central setup, immediately opening the game. This variation steers the play away from typical slow, manoeuvring English games and into dynamic, open positions where the fight for the initiative is paramount. It is ideal for players who appreciate classical principles, enjoy active piece play, and are comfortable navigating the tactical and strategic complexities of an open centre.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -55858,8 +55858,8 @@
         "Rapid Development"
       ],
       "common_plans": [
-        "White: Recapture on d4, develop pieces to control the center (e.g., Bb5), and use the initiative to create pressure.",
-        "Black: Exchange on d4, challenge White's central control (e.g., ...Bb4), complete development, and seek counterplay against White's central pawns or on the flanks."
+        "White: After ...exd4, recapture with the knight, then develop with Bg5 or with g3 and Bg2, using the extra central space to pressure Black's position.",
+        "Black: Exchange on d4 and pin the c3-knight with ...Bb4, or push ...e4 to drive the f3-knight away and gain space."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-17T10:23:45.050Z"

@@ -1936,5 +1936,65 @@
     "verdict": "fixed",
     "contentHash": "e69250fecd3d8ff8",
     "notes": "Overview and plan 1 described a pin on the c3-knight, but the d2-pawn blocks the line to the king. Rewrote overview and all four plans around ...Bxc3 doubled pawns, 5.Nd5 and 5.e4."
+  },
+  "r1bqk2r/pppp1ppp/2n2n2/3Np3/1bP5/6P1/PP1PPPBP/R1BQK1NR b KQkq - 4 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "031d512f7c528eb8",
+    "notes": "Plan 1 called for cxd5 with no pawn to take; plan 2 offered ...Bxc3 with the knight gone from c3 and called it securing the bishop pair; plan 3 named b4 with the bishop on it. Rewrote overview and plans 1-3. Reviewer rejection (...O-O does not keep pieces on: Nxb4) fixed and re-reviewed."
+  },
+  "r1bqk2r/ppp2pbp/2np1np1/4p3/2P1P3/2NP1NP1/PP3PBP/R1BQK2R b KQkq - 2 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "d32b19ca4ea6cccc",
+    "notes": "Overview called it an anti-Symmetrical system; plan 1 pushed f2-f4-f5 through the f3-knight; plan 2 aimed at an unrealistic ...d5. Rewrote overview and plans 1, 2 and 4 around Nh4/Ne1, ...Nd4 and ...f5."
+  },
+  "r1bq1rk1/ppp2pbp/2np1np1/4p3/2P1P3/2NP1NP1/PP3PBP/R1BQ1RK1 b - - 4 8": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "60505021d9e2d1da",
+    "notes": "Overview called it a reversed Dragon; plan 1 pushed f2-f4-f5 through the f3-knight; plan 4 played ...f5 with the f6-knight in the way. Rewrote overview and plans 1 and 4. Reviewer rejection (a d6-pawn does not cover d4) fixed and re-reviewed."
+  },
+  "r1bqk2r/ppp2pbp/2np1np1/4p3/2P5/2NP1NP1/PP2PPBP/R1BQK2R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "fc6adc3b4576e15e",
+    "notes": "Plan 2 pushed f2-f4-f5 through the f3-knight; plan 3 aimed at an unrealistic ...d5. Rewrote plans 2-3; British spelling."
+  },
+  "r1bq1rk1/1pp2pbp/2np1np1/p3p3/2P5/P1NP1NP1/1P2PPBP/1RBQ1RK1 b - - 0 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "8e638750334db22d",
+    "notes": "Plan 2 read b4/axb4 as Black moves; plan 3 sent a knight to d3, where White's pawn stands, and suggested ...d5. Rewrote plans 2-3. Reviewer rejection (Bd2/Qc2 do not prepare b4) fixed and re-reviewed."
+  },
+  "r1bqk1nr/1pp2pbp/2np2p1/p3p3/2P5/2NP2P1/PP2PPBP/1RBQK1NR w Kkq - 0 7": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "fffe97f0f91ec0af",
+    "notes": "Plan 3 rerouted Nc3 via d1 (occupied by the queen); plan 4 described a 'Botvinnik' set-up with pieces on f5, g5 and h5; plan 2 repeated the ...a5 already played. Rewrote overview and plans 2-4."
+  },
+  "r1bqkbnr/pppp2pp/2n5/5p2/2PPp3/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "a455e2ab74536d98",
+    "notes": "Plan 1 read the f7 and e6 squares as moves; plan 2 relied on an open f-file that is closed by the f5-pawn. Rewrote overview and both plans."
+  },
+  "r1bqkbnr/pppp1p1p/2n3p1/4p3/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "a1c785d4773640cc",
+    "notes": "Plan 4 wrote castling as ...0-0 before the bishop had left f8; plan 3 was vague. Rewrote overview and plans 1, 3 and 4."
+  },
+  "r1bqk2r/pppp1pp1/5n1p/4n3/2PN3B/2P5/P3PPPP/R2QKB1R w KQkq - 1 9": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "e548dbdb82796919",
+    "notes": "Plan 2 sent a knight to a5 that cannot get there (the e5-knight already hits c4). Rewrote plan 2; British spelling."
+  },
+  "r1bqkb1r/pppp1ppp/2n2n2/4p3/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 0 4": {
+    "reviewedAt": "2026-11-09",
+    "verdict": "fixed",
+    "contentHash": "2c346eae0961f53e",
+    "notes": "Plan 1 developed Bb5 through the e2-pawn. Rewrote both plans around Nxd4 with Bg5 or g3, and ...Bb4 or ...e4; British spelling."
   }
 }

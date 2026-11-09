@@ -8,9 +8,9 @@ independent reviewer before commit; notes per page are in
 
 ## Totals
 
-- Failing references: 4,164 at the start of this job (2026-11-09 01:10 UTC run); 4,151 at the 02:10 UTC refresh; 4,108 on 3,215 pages at the 02:33 refresh (after batch 5); 4,035 on 3,155 pages at the 02:55 refresh (after batch 10); 3,976 on 3,105 pages at the 07:15 refresh (after batch 16); about 3,964 after batch 17
-- Phase 1 pages left: about 3,090, skips excluded (viewed: 0)
-- Pages reviewed by this job: 172 (including two follow-ups to earlier batches)
+- Failing references: 4,164 at the start of this job (2026-11-09 01:10 UTC run); 4,151 at the 02:10 UTC refresh; 4,108 on 3,215 pages at the 02:33 refresh (after batch 5); 4,035 on 3,155 pages at the 02:55 refresh (after batch 10); 3,976 on 3,105 pages at the 07:15 refresh (after batch 16); about 3,950 after batch 18
+- Phase 1 pages left: about 3,080 skips excluded (viewed: 0)
+- Pages reviewed by this job: 182 (including two follow-ups to earlier batches)
 - Phase: 1
 
 ## Batches
@@ -33,4 +33,5 @@ independent reviewer before commit; notes per page are in
 | 2026-11-09 03:10 | 1     | 10    | 10 / 0 / 0                  | 15 / 5 (fixed, re-accepted) | none |
 | 2026-11-09 03:15 | 1     | 10    | 10 / 0 / 0                  | 16 / 4 (fixed, re-accepted) | none |
 | 2026-11-09 03:20 | 1     | 11    | 11 / 0 / 0                  | 15 / 6 (fixed, re-accepted) | none; includes a fix to a batch-14 page |
-| 2026-11-09 07:40 | 1     | 10    | 10 / 0 / 0                  | 38 / 0                   | none |
+| 2026-11-09 07:19 | 1     | 10    | 10 / 0 / 0                  | 38 / 0                   | none |
+| 2026-11-09 07:24 | 1     | 10    | 10 / 0 / 0                  | 26 / 3 (fixed, re-accepted) | none |

@@ -56,18 +56,12 @@ test.describe('opening detail', () => {
     await expect(diagram).toContainText('White pawn from d2 to d4');
   });
 
-  test('mobile shows the diagram above Common plans', async ({ page }) => {
+  test('mobile opens nothing on load when the plans have references to tap', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);
 
-    const diagram = page.getByRole('figure', { name: 'Position after 2...d6' });
-    await diagram.scrollIntoViewIfNeeded();
-    await expect(diagram).toBeVisible();
-
-    const plan = page.getByText('control the center and develop quickly');
-    const diagramBox = await diagram.boundingBox();
-    const planBox = await plan.boundingBox();
-    expect(diagramBox && planBox && diagramBox.y + diagramBox.height <= planBox.y).toBe(true);
+    await expect(page.getByText('control the center and develop quickly')).toBeVisible();
+    await expect(page.getByRole('figure')).toHaveCount(0);
   });
 });
 
@@ -89,5 +83,25 @@ test.describe('opening detail on a touch screen', () => {
 
     await expect(reference).toHaveAttribute('aria-pressed', 'true');
     await expect(page.getByText('The d4 square', { exact: true })).toBeInViewport();
+  });
+
+  test('pinning a reference below an open board keeps the tapped button in place', async ({
+    page,
+  }) => {
+    await mockApiRoutes(page);
+    await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);
+
+    await page.getByRole('button', { name: 'd4', exact: true }).tap();
+    await expect(page.getByRole('figure')).toBeVisible();
+
+    const reference = page.getByRole('button', { name: 'd4 square', exact: true });
+    await reference.scrollIntoViewIfNeeded();
+    const before = (await reference.boundingBox())!.y;
+    await reference.tap();
+
+    await expect(reference).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByRole('figure')).toHaveCount(1);
+    const after = (await reference.boundingBox())!.y;
+    expect(Math.abs(after - before)).toBeLessThanOrEqual(2);
   });
 });

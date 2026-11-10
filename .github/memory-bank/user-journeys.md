@@ -70,12 +70,12 @@ The dedicated learning environment for mastering a specific position.
 - **Overview**: High-level win rate statistics and move progression. On desktop
   the Overview card leads the right column, ahead of the level lens and the data
   panels it governs.
-- **Plans**: grouped White, Black, Shared beside a flat diagram of the final
-  position (sticky on desktop, above them on mobile). Moves, routes, squares and
-  pieces that pass a legality check are buttons: hover previews on the diagram,
-  click or tap pins, and the caption says it ("Knight from b1 to d2, then f1,
-  then g3"). Failing ones stay plain text, and `plan-check.js` lists them for
-  the content review. Off in Practice; the diagram never follows the main board.
+- **Plans**: White, Black, Shared beside a flat diagram of the final position
+  (sticky on desktop). Moves, squares and pieces that pass a legality check are
+  buttons: hover previews, click pins (Clear unpins), the caption says it. On
+  mobile a tap opens a 288px board under that plan, closed by a second tap; a
+  page with no valid references keeps the static diagram above. Failing ones
+  stay text (`plan-check.js` lists them). Off in Practice.
 - **Studies Gallery**: Curated Lichess study chapters matched by FEN position
   (6,100+ chapters).
 - **Video Gallery**: Hand-picked YouTube videos from top educators matched to

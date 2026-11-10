@@ -99,9 +99,83 @@ describe('PlansWithDiagram', () => {
     expect(caption()).toBe('Position after 5.d3');
   });
 
-  test('mobile: a tap pins the reference on the diagram above the plans', () => {
-    renderIt({ variant: 'mobile' });
-    fireEvent.click(screen.getByRole('button', { name: 'Nbd2-f1-g3' }));
-    expect(caption()).toBe('Knight from b1 to d2, then f1, then g3');
+  describe('mobile', () => {
+    const NO_REFS = ['White: develop the pieces', 'Black: play Qh7 at once'];
+
+    test('nothing is open on load, and no static diagram sits above the plans', () => {
+      renderIt({ variant: 'mobile' });
+      expect(screen.queryByRole('figure')).toBeNull();
+    });
+
+    test('a tap opens a board under that plan, captioned with the description', () => {
+      renderIt({ variant: 'mobile' });
+      const ref = screen.getByRole('button', { name: 'Nbd2-f1-g3' });
+      fireEvent.click(ref);
+      expect(ref).toHaveAttribute('aria-pressed', 'true');
+      const figure = screen.getByRole('figure');
+      expect(ref.closest('p')?.parentElement).toContainElement(figure);
+      expect(figure.querySelector('figcaption')).toHaveTextContent(
+        'Knight from b1 to d2, then f1, then g3'
+      );
+      expect(figure.querySelector('figcaption')).toHaveTextContent('Position after 5.d3');
+      expect(lastOptions?.arrows).toHaveLength(3);
+    });
+
+    test('tapping the same reference again closes the board', () => {
+      renderIt({ variant: 'mobile' });
+      const ref = screen.getByRole('button', { name: 'Nbd2-f1-g3' });
+      fireEvent.click(ref);
+      fireEvent.click(ref);
+      expect(ref).toHaveAttribute('aria-pressed', 'false');
+      expect(screen.queryByRole('figure')).toBeNull();
+    });
+
+    test('only one board is open across the plans', () => {
+      renderIt({ variant: 'mobile', plans: ['White: Nbd2-f1-g3', 'Black: ...Nf6 and ...d6'] });
+      fireEvent.click(screen.getByRole('button', { name: 'Nbd2-f1-g3' }));
+      fireEvent.click(screen.getByRole('button', { name: '...d6' }));
+      expect(screen.getAllByRole('figure')).toHaveLength(1);
+      expect(screen.getByRole('button', { name: 'Nbd2-f1-g3' })).toHaveAttribute(
+        'aria-pressed',
+        'false'
+      );
+    });
+
+    test('focus and hover change nothing: only the click does', () => {
+      renderIt({ variant: 'mobile' });
+      const ref = screen.getByRole('button', { name: 'Nbd2-f1-g3' });
+      fireEvent.mouseEnter(ref);
+      fireEvent.focus(ref);
+      act(() => vi.advanceTimersByTime(500));
+      expect(screen.queryByRole('figure')).toBeNull();
+    });
+
+    test('pinning keeps the tapped button where it was on the screen', () => {
+      const scrollBy = vi.spyOn(window, 'scrollBy').mockImplementation(() => {});
+      renderIt({ variant: 'mobile', plans: ['White: Nbd2-f1-g3', 'Black: ...Nf6 and ...d6'] });
+      fireEvent.click(screen.getByRole('button', { name: 'Nbd2-f1-g3' }));
+      scrollBy.mockClear();
+      const second = screen.getByRole('button', { name: '...d6' });
+      // Before the tap the button is at 500; closing the board above lifts it to 460.
+      const rect = vi
+        .spyOn(second, 'getBoundingClientRect')
+        .mockReturnValueOnce({ top: 500 } as DOMRect)
+        .mockReturnValue({ top: 460 } as DOMRect);
+      fireEvent.click(second);
+      expect(rect).toHaveBeenCalledTimes(2);
+      expect(scrollBy).toHaveBeenCalledWith(0, -40);
+      scrollBy.mockRestore();
+    });
+
+    test('a page with no references keeps the static diagram, captioned with the position', () => {
+      renderIt({ variant: 'mobile', plans: NO_REFS.slice(0, 1) });
+      expect(caption()).toBe('Position after 5.d3');
+    });
+
+    test('not interactive: plain text, the static diagram and no boards', () => {
+      renderIt({ variant: 'mobile', interactive: false });
+      expect(screen.queryByRole('button', { name: 'Nbd2-f1-g3' })).toBeNull();
+      expect(caption()).toBe('Position after 5.d3');
+    });
   });
 });

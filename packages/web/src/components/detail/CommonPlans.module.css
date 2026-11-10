@@ -246,6 +246,11 @@
   align-items: flex-start;
 }
 
+.mobilePlanBody {
+  flex: 1;
+  min-width: 0;
+}
+
 .mobilePlanDot {
   flex: none;
   width: 4px;

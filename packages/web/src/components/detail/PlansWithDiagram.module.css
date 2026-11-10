@@ -24,6 +24,19 @@
   }
 }
 
+/* Mobile: the page keeps the tapped button in place itself (see the layout
+   effect), so the browser's own scroll anchoring must not do it twice. */
+.mobilePlans {
+  overflow-anchor: none;
+}
+
+/* The board that opens under a tapped plan. */
+.planBoard {
+  width: 288px;
+  max-width: 100%;
+  margin: var(--space-3) auto 0;
+}
+
 /* Mobile: small enough that plan text shows below it on a phone screen. */
 .mobileDiagram {
   width: 240px;

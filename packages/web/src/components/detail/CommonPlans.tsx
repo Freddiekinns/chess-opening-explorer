@@ -23,6 +23,9 @@ interface CommonPlansProps {
   /** Renders a plan's text in place of the plain string (byColour and
    *  mobileGroups only): how the plans diagram makes references clickable. */
   renderPlanText?: (raw: string, text: string) => React.ReactNode;
+  /** Content shown under a plan's text (mobileGroups only): the small board
+   *  that opens under a tapped reference. */
+  renderPlanExtra?: (raw: string) => React.ReactNode;
 }
 
 interface ClassifiedPlan {
@@ -53,7 +56,8 @@ const MobilePlanGroup: React.FC<{
   side: PlanSide;
   plans: ClassifiedPlan[];
   renderPlanText: RenderPlanText;
-}> = ({ side, plans, renderPlanText }) => {
+  renderPlanExtra?: (raw: string) => React.ReactNode;
+}> = ({ side, plans, renderPlanText, renderPlanExtra }) => {
   const [expanded, setExpanded] = useState(false);
   if (plans.length === 0) return null;
 
@@ -67,7 +71,10 @@ const MobilePlanGroup: React.FC<{
         {shown.map((plan, i) => (
           <div key={i} className={styles.mobilePlanRow}>
             <span className={styles.mobilePlanDot} aria-hidden="true" />
-            <p className={styles.mobilePlanText}>{renderPlanText(plan.raw, plan.text)}</p>
+            <div className={styles.mobilePlanBody}>
+              <p className={styles.mobilePlanText}>{renderPlanText(plan.raw, plan.text)}</p>
+              {renderPlanExtra?.(plan.raw)}
+            </div>
           </div>
         ))}
       </div>
@@ -94,6 +101,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
   layout = 'stacked',
   hideTitle = false,
   renderPlanText = plainText,
+  renderPlanExtra,
 }) => {
   const grouped = useMemo(() => {
     const white: ClassifiedPlan[] = [];
@@ -160,9 +168,24 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     return (
       <div className={`${styles.mobileGroupsLayout} ${className}`}>
         {!hideTitle && <h3 className="title-subsection">Common plans</h3>}
-        <MobilePlanGroup side="white" plans={grouped.white} renderPlanText={renderPlanText} />
-        <MobilePlanGroup side="black" plans={grouped.black} renderPlanText={renderPlanText} />
-        <MobilePlanGroup side="general" plans={grouped.general} renderPlanText={renderPlanText} />
+        <MobilePlanGroup
+          side="white"
+          plans={grouped.white}
+          renderPlanText={renderPlanText}
+          renderPlanExtra={renderPlanExtra}
+        />
+        <MobilePlanGroup
+          side="black"
+          plans={grouped.black}
+          renderPlanText={renderPlanText}
+          renderPlanExtra={renderPlanExtra}
+        />
+        <MobilePlanGroup
+          side="general"
+          plans={grouped.general}
+          renderPlanText={renderPlanText}
+          renderPlanExtra={renderPlanExtra}
+        />
       </div>
     );
   }

@@ -13,6 +13,8 @@ interface PlansDiagramProps {
   reference?: PlanReference | null;
   /** Whether the plans beside it have references to pick. */
   invite?: boolean;
+  /** The small board under a plan: the position goes under the description. */
+  compact?: boolean;
   className?: string;
 }
 
@@ -45,6 +47,7 @@ export const PlansDiagram: React.FC<PlansDiagramProps> = ({
   moves,
   reference = null,
   invite = false,
+  compact = false,
   className = '',
 }) => {
   const position = positionCaption(moves);
@@ -96,7 +99,14 @@ export const PlansDiagram: React.FC<PlansDiagramProps> = ({
         }}
       />
       <figcaption className={styles.caption} aria-live="polite">
-        {caption}
+        {compact && reference ? (
+          <>
+            <span>{caption}</span>
+            <span className={styles.position}>{position}</span>
+          </>
+        ) : (
+          caption
+        )}
       </figcaption>
     </figure>
   );

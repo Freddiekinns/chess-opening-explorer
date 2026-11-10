@@ -132,6 +132,16 @@ describe('parsePlan: a route is all or nothing', () => {
     expect(ref).toMatchObject({ text: 'Nbd2-f1-g3', kind: 'route', status: 'now' });
     expect(ref.arrows).toHaveLength(3);
   });
+
+  test('legs written as moves are read as part of the route', () => {
+    const ref = only(GIUOCO, 'White: reroute with Nbd2-Nf1-Ng3');
+    expect(ref).toMatchObject({ text: 'Nbd2-Nf1-Ng3', kind: 'route', status: 'now' });
+    expect(ref.arrows.map((a) => [a.from, a.to])).toEqual([
+      ['b1', 'd2'],
+      ['d2', 'f1'],
+      ['f1', 'g3'],
+    ]);
+  });
 });
 
 describe('parsePlan: squares and pieces', () => {

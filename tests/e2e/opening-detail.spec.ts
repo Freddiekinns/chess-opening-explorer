@@ -70,3 +70,24 @@ test.describe('opening detail', () => {
     expect(diagramBox && planBox && diagramBox.y + diagramBox.height <= planBox.y).toBe(true);
   });
 });
+
+// On a phone the diagram sits above the plans. A tap focuses the button before
+// it clicks, and anything that moves the layout in between lands the click on
+// the paragraph instead, so the reference never pins.
+test.describe('opening detail on a touch screen', () => {
+  test.use({ hasTouch: true, viewport: { width: 390, height: 844 } });
+
+  test('tapping a reference in the last plan group pins it and shows its board', async ({
+    page,
+  }) => {
+    await mockApiRoutes(page);
+    await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);
+
+    const reference = page.getByRole('button', { name: 'd4 square', exact: true });
+    await reference.scrollIntoViewIfNeeded();
+    await reference.tap();
+
+    await expect(reference).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByText('The d4 square', { exact: true })).toBeInViewport();
+  });
+});

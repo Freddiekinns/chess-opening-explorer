@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../../../lib/analytics';
 import { ChevronDown } from 'lucide-react';
 import LevelLens from '../LevelLens';
 import type { TreeContext } from '../../../hooks/useOpeningTree';
 import type { ExplorerQuery } from '../../../hooks/useExplorerResult';
+import { withoutCheckMark } from '../../../lib/plannedMoves';
 import { mergeExplorerMoves, type MergedMoveRow } from '../../../lib/bookExplorerMerge';
 import {
   deduplicateAncestors,
@@ -48,6 +49,16 @@ interface MobileDataSurfaceProps {
   /** Explorer stats for the parent position — powers the alternatives rows. */
   parentExplorer: ExplorerResult | null;
   treeData: TreeContext | null;
+  /** Moves the page's Common plans name as playable now, by side (Next moves only). */
+  planned?: Map<string, 'white' | 'black'>;
+}
+
+/** "Instead of 5...a6 · 6 other moves", or "Alternatives · 6 moves". */
+function alternativesToggleLabel(label: string, count: number): string {
+  const noun = count === 1 ? 'move' : 'moves';
+  return label === 'Alternatives'
+    ? `${label} · ${count} ${noun}`
+    : `${label} · ${count} other ${noun}`;
 }
 
 function rowStatsTitle(row: MergedMoveRow): string | undefined {
@@ -75,11 +86,12 @@ const RowKey: React.FC = () => (
   </span>
 );
 
-const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }> = ({
-  row,
-  ply,
-  countLabel,
-}) => {
+const MoveRow: React.FC<{
+  row: MergedMoveRow;
+  ply: number;
+  countLabel: string;
+  plannedSide?: 'white' | 'black';
+}> = ({ row, ply, countLabel, plannedSide }) => {
   const inner = (
     <>
       <span className={styles.rowTop}>
@@ -89,6 +101,11 @@ const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }>
         </span>
         {row.name === null && <span className={styles.offBookTag}>off-book</span>}
         <span className={styles.rowName}>{row.name ?? ''}</span>
+        {plannedSide && (
+          <span className={styles.planTag}>
+            In {plannedSide === 'white' ? 'White' : 'Black'}'s plan
+          </span>
+        )}
       </span>
       <span className={styles.rowBottom}>
         {row.stats ? (
@@ -136,11 +153,12 @@ const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }>
   );
 };
 
-const MoveRowList: React.FC<{ rows: MergedMoveRow[]; ply: number; countLabel: string }> = ({
-  rows,
-  ply,
-  countLabel,
-}) => {
+const MoveRowList: React.FC<{
+  rows: MergedMoveRow[];
+  ply: number;
+  countLabel: string;
+  planned?: Map<string, 'white' | 'black'>;
+}> = ({ rows, ply, countLabel, planned }) => {
   const [expanded, setExpanded] = useState(false);
   const canCollapse = rows.length > ROWS_COLLAPSED_LIMIT;
   const visible = canCollapse && !expanded ? rows.slice(0, ROWS_COLLAPSED_LIMIT) : rows;
@@ -149,7 +167,13 @@ const MoveRowList: React.FC<{ rows: MergedMoveRow[]; ply: number; countLabel: st
     <>
       <div className={styles.rowList}>
         {visible.map((row) => (
-          <MoveRow key={row.key} row={row} ply={ply} countLabel={countLabel} />
+          <MoveRow
+            key={row.key}
+            row={row}
+            ply={ply}
+            countLabel={countLabel}
+            plannedSide={planned?.get(withoutCheckMark(row.san))}
+          />
         ))}
       </div>
       {canCollapse && (
@@ -169,8 +193,11 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
   explorer,
   parentExplorer,
   treeData,
+  planned,
 }) => {
   const [crumbOpen, setCrumbOpen] = useState(false);
+  const [alternativesOpen, setAlternativesOpen] = useState(false);
+  const alternativesId = useId();
 
   // Hold the last live result while a band switch is loading so the stats
   // dim instead of flashing to a placeholder (design's loading treatment).
@@ -184,6 +211,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
   }, [explorer.result, fen, band]);
   useEffect(() => {
     setCrumbOpen(false);
+    setAlternativesOpen(false);
     if (lastResultRef.current && lastResultRef.current.fen !== fen) {
       lastResultRef.current = null;
     }
@@ -399,20 +427,39 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
                 <span>{movesCaption(band, live)}</span>
                 {keyOnNext && <RowKey />}
               </div>
-              <MoveRowList rows={childRows} ply={pliesPlayed} countLabel={countLabel} />
+              <MoveRowList
+                rows={childRows}
+                ply={pliesPlayed}
+                countLabel={countLabel}
+                planned={planned}
+              />
             </>
           )}
 
           {siblingRows.length > 0 && (
             <>
-              <div className={`${styles.bookHeading} ${styles.bookHeadingAlt}`}>
-                {alternativesLabel}
+              <button
+                type="button"
+                className={`${styles.showMoreBtn} ${styles.alternativesToggle}`}
+                aria-expanded={alternativesOpen}
+                aria-controls={alternativesId}
+                onClick={() => setAlternativesOpen(!alternativesOpen)}
+              >
+                {alternativesOpen
+                  ? 'Hide alternatives'
+                  : alternativesToggleLabel(alternativesLabel, siblingRows.length)}
+              </button>
+              {/* Closed, not removed: the rows and their links stay in the DOM. */}
+              <div id={alternativesId} hidden={!alternativesOpen}>
+                <div className={`${styles.bookHeading} ${styles.bookHeadingAlt}`}>
+                  {alternativesLabel}
+                </div>
+                <div className={styles.bookSubheading}>
+                  <span>{alternativesCaption(band, live)}</span>
+                  {keyOnAlternatives && <RowKey />}
+                </div>
+                <MoveRowList rows={siblingRows} ply={currentMoveIdx} countLabel={countLabel} />
               </div>
-              <div className={styles.bookSubheading}>
-                <span>{alternativesCaption(band, live)}</span>
-                {keyOnAlternatives && <RowKey />}
-              </div>
-              <MoveRowList rows={siblingRows} ply={currentMoveIdx} countLabel={countLabel} />
             </>
           )}
         </div>

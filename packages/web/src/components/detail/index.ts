@@ -2,6 +2,7 @@
 export { OpeningStats } from './OpeningStats';
 export { CommonPlans } from './CommonPlans';
 export { PlansDiagram } from './PlansDiagram';
+export { PlansWithDiagram } from './PlansWithDiagram';
 export { default as VideoGallery } from './VideoGallery';
 export { default as StudiesGallery } from './StudiesGallery';
 export { OpeningTree } from './OpeningTree';

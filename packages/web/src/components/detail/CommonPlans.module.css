@@ -192,6 +192,11 @@
   border-color: var(--accent-a30);
 }
 
+/* byColour: plans read as prose under the side label, with no card around them. */
+.byColourPlan {
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .structuredGrid {
     grid-template-columns: 1fr;
@@ -244,6 +249,11 @@
   display: flex;
   gap: var(--space-2-5);
   align-items: flex-start;
+}
+
+.mobilePlanBody {
+  flex: 1;
+  min-width: 0;
 }
 
 .mobilePlanDot {

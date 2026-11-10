@@ -95,6 +95,30 @@ Monthly, or whenever enough new pages have been visited.
 5. **Commit the batch in one commit**: the views export, the batch file, the
    ledger and the ECO fixes together, with the owner approving the fixes first.
 
+## Plan reference check
+
+The plans diagram (#228) draws the moves, routes, squares and pieces a plan
+names, but only those that pass a check against the position: a move some piece
+can make now, or once the plan's earlier moves (or one unstated quiet move) are
+made. Everything else shows as plain text. `plan-check.js` runs the page's own
+parser over every opening and lists what fails, so the plans can be fixed:
+
+    node tools/content-review/plan-check.js [--views data/content-review/views/<date>.json]
+
+It writes `data/content-review/plan-check-report.json` (every flagged page,
+plan, reference and reason, most viewed first when a views file is given) and
+`plan-check-summary.md` (the counts and the top 30 pages). It takes about four
+minutes.
+
+The parser is `packages/web/src/lib/planReferences.ts`, imported through Node's
+type stripping (Node 24), so the report and the page can't disagree. Keep that
+file to `chess.js` and erasable TypeScript. Its tests are
+`packages/web/src/lib/__tests__/planReferences.test.ts`.
+
+Reasons worth knowing: "ambiguous" is a notation slip (`Ne7` when two knights
+can go there; write `Nge7`). "No piece can play" covers both plans written for
+another position and plans that skip several preparatory moves.
+
 ## History
 
 | Batch      | Views since | Pages | Fixed | Notes                              |

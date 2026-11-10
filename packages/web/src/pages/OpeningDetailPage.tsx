@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback, useRef, CSSProperties } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo, CSSProperties } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
 import { Chess, Move, Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
+import { plannedMoves } from '../lib/plannedMoves';
 import { ChessOpening, ResourceContext, Video } from '../../../shared/src';
 import {
-  CommonPlans,
-  PlansDiagram,
+  PlansWithDiagram,
   VideoGallery,
   StudiesGallery,
   ExplorerCard,
@@ -845,6 +845,14 @@ const OpeningDetailPage: React.FC = () => {
     prevFenRef.current = fen;
   }, [fen, practiceMode, exitPractice]);
 
+  // The moves this page's plans name as playable now, for the Next moves rows.
+  // Plans are plain text in Practice, so the rows carry no tag there either.
+  const plannedFromPlans = useMemo(
+    () =>
+      practiceMode || !opening ? undefined : plannedMoves(opening.fen, opening.common_plans ?? []),
+    [practiceMode, opening]
+  );
+
   // Our own middleware's escaped HTML, from this same response.
   const prerendered = prerender && <div dangerouslySetInnerHTML={{ __html: prerender }} />;
 
@@ -1439,6 +1447,7 @@ const OpeningDetailPage: React.FC = () => {
               explorer={explorerQuery}
               parentExplorer={parentExplorer}
               treeData={treeData}
+              planned={plannedFromPlans}
             />
 
             {/* Straight after the explorer surface, because this is more of the
@@ -1464,12 +1473,13 @@ const OpeningDetailPage: React.FC = () => {
             {commonPlans.length > 0 && (
               <div className={styles.mobileSection}>
                 <h2 className={styles.mobileSectionHeading}>Common plans</h2>
-                <PlansDiagram
+                <PlansWithDiagram
                   fen={opening.fen}
                   moves={getMovesList()}
-                  className={styles.plansDiagramMobile}
+                  plans={commonPlans}
+                  variant="mobile"
+                  interactive={!practiceMode}
                 />
-                <CommonPlans plans={commonPlans} layout="mobileGroups" hideTitle />
               </div>
             )}
 
@@ -1504,6 +1514,7 @@ const OpeningDetailPage: React.FC = () => {
               parentExplorer={parentExplorer}
               treeData={treeData}
               treeLoading={treeLoading}
+              planned={plannedFromPlans}
             />
 
             <MasterGamesCard fen={opening.fen} />
@@ -1533,17 +1544,13 @@ const OpeningDetailPage: React.FC = () => {
               <h2 className={styles.sectionHeading}>Common plans</h2>
               {/* The diagram stays beside the plans while they scroll, because
                   by now the main board is off screen (#228). */}
-              <div className={styles.plansWithDiagram}>
-                <div className={styles.plansDiagramColumn}>
-                  <PlansDiagram fen={opening.fen} moves={getMovesList()} />
-                </div>
-                <CommonPlans
-                  plans={commonPlans}
-                  layout="byColour"
-                  hideTitle
-                  className={styles.plansText}
-                />
-              </div>
+              <PlansWithDiagram
+                fen={opening.fen}
+                moves={getMovesList()}
+                plans={commonPlans}
+                variant="desktop"
+                interactive={!practiceMode}
+              />
             </div>
           )}
 

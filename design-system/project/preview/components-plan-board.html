@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+body{padding:24px;background:var(--surface-base);font-family:var(--font-family-primary);color:var(--color-text-primary)}
+.plan{display:flex;gap:10px;max-width:340px}
+.dot{flex:none;width:4px;height:4px;border-radius:50%;background:var(--color-result-draw);margin-top:8px}
+p{margin:0;font-size:16px;line-height:1.65;opacity:.82}
+.ref{font-family:var(--font-family-mono);font-size:.95em;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--color-annotation) 60%,transparent);text-underline-offset:3px}
+.ref.on{background:var(--color-annotation);color:var(--surface-base);text-decoration:none;padding:0 2px;border-radius:var(--radius-sm)}
+.board{width:288px;max-width:100%;margin:12px auto 0}
+.grid{display:grid;grid-template-columns:repeat(8,1fr);aspect-ratio:1}
+.grid i{display:block}
+.grid i:nth-child(odd){background:#b8a98f}.grid i:nth-child(even){background:#7a6a52}
+.row-even i:nth-child(odd){background:#7a6a52}.row-even i:nth-child(even){background:#b8a98f}
+.cap{margin-top:8px;font-size:14px;color:var(--color-text-secondary)}
+.pos{display:block;margin-top:4px;font-size:12px;color:var(--color-text-muted)}
+.note{margin-top:16px;font-size:12px;color:var(--color-text-muted);font-style:italic;line-height:1.4}
+</style></head><body>
+<div class="plan"><span class="dot"></span><div>
+<p>Bring the knight round with <span class="ref on">Nbd2-f1-g3</span> and aim at the kingside.</p>
+<figure class="board" style="margin-bottom:0">
+  <div class="grid"><!-- 8 x 8, flat, no frame -->
+    <script>for(var r=0;r<8;r++)for(var c=0;c<8;c++){var d=document.createElement('i');d.style.background=(r+c)%2?'#7a6a52':'#b8a98f';if((r==7&&c==1)||(r==6&&c==3)||(r==7&&c==5)||(r==5&&c==6))d.style.background='color-mix(in srgb,var(--color-annotation) 50%,transparent)';document.currentScript.parentNode.appendChild(d)}</script>
+  </div>
+  <figcaption class="cap">Knight from b1 to d2, then f1, then g3<span class="pos">Position after 5.d3</span></figcaption>
+</figure>
+</div></div>
+<div class="note">Phone only: the board opens under the plan that was tapped, 288px, and closes on a second tap. Nothing is open on load.</div>
+</body></html>

@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { classifyPlan, type PlanSide } from '../../lib/planReferences';
 import styles from './CommonPlans.module.css';
 
 interface CommonPlansProps {
@@ -19,42 +20,22 @@ interface CommonPlansProps {
   layout?: 'stacked' | 'sideBySide' | 'cards' | 'structured' | 'mobileGroups' | 'byColour';
   /** When true, hides the built-in "Common Plans" heading (parent provides its own). */
   hideTitle?: boolean;
+  /** Renders a plan's text in place of the plain string (byColour and
+   *  mobileGroups only): how the plans diagram makes references clickable. */
+  renderPlanText?: (raw: string, text: string) => React.ReactNode;
+  /** Content shown under a plan's text (mobileGroups only): the small board
+   *  that opens under a tapped reference. */
+  renderPlanExtra?: (raw: string) => React.ReactNode;
 }
-
-type PlanSide = 'white' | 'black' | 'general';
 
 interface ClassifiedPlan {
   side: PlanSide;
   text: string;
+  raw: string;
 }
 
-const WHITE_PREFIX =
-  /^(?:(?:for\s+)?white[\s:,]|white's\s+(?:plan|primary|main|goal|key|long)|as\s+white[\s:,]|white\s+(?:aims|seeks|focuses|should|tries|typically|can|will|plays|often|may|must|needs?|plans|solidifies|completes|accepts|looks|develops|prepares))/i;
-
-const BLACK_PREFIX =
-  /^(?:(?:for\s+)?black[\s:,]|black's\s+(?:plan|primary|main|goal|key|long)|as\s+black[\s:,]|black\s+(?:aims|seeks|focuses|should|tries|typically|can|will|plays|often|may|must|needs?|plans|works|challenges|develops|looks|frequently|sacrifices))/i;
-
-// Matches the label portion to strip from the display text
-const STRIP_PREFIX =
-  /^(?:(?:for\s+)?(?:white|black)[\s:,]+(?:the\s+plan\s+is\s+to\s+)?|(?:white|black)'s\s+plan(?:\s+is)?\s*[:.]?\s*|as\s+(?:white|black)[\s:,]+)/i;
-
-function classifyPlan(plan: string): ClassifiedPlan {
-  const trimmed = plan.trim();
-
-  if (WHITE_PREFIX.test(trimmed)) {
-    return { side: 'white', text: trimmed.replace(STRIP_PREFIX, '').replace(/^[,:\s]+/, '') };
-  }
-  if (BLACK_PREFIX.test(trimmed)) {
-    return { side: 'black', text: trimmed.replace(STRIP_PREFIX, '').replace(/^[,:\s]+/, '') };
-  }
-  return { side: 'general', text: trimmed };
-}
-
-// Capitalise the first letter after prefix stripping
-function capitaliseFirst(s: string): string {
-  if (!s) return s;
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
+type RenderPlanText = (raw: string, text: string) => React.ReactNode;
+const plainText: RenderPlanText = (_raw, text) => text;
 
 const SIDE_CONFIG: Record<PlanSide, { label: string; cardLabel: string; className: string }> = {
   white: { label: 'White', cardLabel: 'White perspective', className: styles.white },
@@ -71,10 +52,12 @@ const MOBILE_GROUP_LABELS: Record<PlanSide, string> = {
 const MOBILE_GROUP_COLLAPSED = 3;
 
 /** One accent card per side (mobile design 2a): bullets, 3 shown, toggle. */
-const MobilePlanGroup: React.FC<{ side: PlanSide; plans: ClassifiedPlan[] }> = ({
-  side,
-  plans,
-}) => {
+const MobilePlanGroup: React.FC<{
+  side: PlanSide;
+  plans: ClassifiedPlan[];
+  renderPlanText: RenderPlanText;
+  renderPlanExtra?: (raw: string) => React.ReactNode;
+}> = ({ side, plans, renderPlanText, renderPlanExtra }) => {
   const [expanded, setExpanded] = useState(false);
   if (plans.length === 0) return null;
 
@@ -88,7 +71,10 @@ const MobilePlanGroup: React.FC<{ side: PlanSide; plans: ClassifiedPlan[] }> = (
         {shown.map((plan, i) => (
           <div key={i} className={styles.mobilePlanRow}>
             <span className={styles.mobilePlanDot} aria-hidden="true" />
-            <p className={styles.mobilePlanText}>{plan.text}</p>
+            <div className={styles.mobilePlanBody}>
+              <p className={styles.mobilePlanText}>{renderPlanText(plan.raw, plan.text)}</p>
+              {renderPlanExtra?.(plan.raw)}
+            </div>
           </div>
         ))}
       </div>
@@ -114,6 +100,8 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
   className = '',
   layout = 'stacked',
   hideTitle = false,
+  renderPlanText = plainText,
+  renderPlanExtra,
 }) => {
   const grouped = useMemo(() => {
     const white: ClassifiedPlan[] = [];
@@ -121,8 +109,7 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     const general: ClassifiedPlan[] = [];
 
     for (const raw of plans) {
-      const classified = classifyPlan(raw);
-      classified.text = capitaliseFirst(classified.text);
+      const classified = { ...classifyPlan(raw), raw };
 
       if (classified.side === 'white') white.push(classified);
       else if (classified.side === 'black') black.push(classified);
@@ -181,9 +168,24 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
     return (
       <div className={`${styles.mobileGroupsLayout} ${className}`}>
         {!hideTitle && <h3 className="title-subsection">Common plans</h3>}
-        <MobilePlanGroup side="white" plans={grouped.white} />
-        <MobilePlanGroup side="black" plans={grouped.black} />
-        <MobilePlanGroup side="general" plans={grouped.general} />
+        <MobilePlanGroup
+          side="white"
+          plans={grouped.white}
+          renderPlanText={renderPlanText}
+          renderPlanExtra={renderPlanExtra}
+        />
+        <MobilePlanGroup
+          side="black"
+          plans={grouped.black}
+          renderPlanText={renderPlanText}
+          renderPlanExtra={renderPlanExtra}
+        />
+        <MobilePlanGroup
+          side="general"
+          plans={grouped.general}
+          renderPlanText={renderPlanText}
+          renderPlanExtra={renderPlanExtra}
+        />
       </div>
     );
   }
@@ -249,12 +251,9 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
               <div key={side} className={styles.structuredColumn}>
                 <div className={styles.structuredColumnLabel}>{label}</div>
                 {sidePlans.map((plan, i) => (
-                  <div
-                    key={i}
-                    className={`${styles.structuredPlanCard} ${SIDE_CONFIG[side].className}`}
-                  >
-                    <p className={styles.cardPlanText}>{plan.text}</p>
-                  </div>
+                  <p key={i} className={`${styles.cardPlanText} ${styles.byColourPlan}`}>
+                    {renderPlanText(plan.raw, plan.text)}
+                  </p>
                 ))}
               </div>
             )

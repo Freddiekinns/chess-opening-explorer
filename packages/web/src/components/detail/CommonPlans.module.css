@@ -192,6 +192,11 @@
   border-color: var(--accent-a30);
 }
 
+/* byColour: plans read as prose under the side label, with no card around them. */
+.byColourPlan {
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .structuredGrid {
     grid-template-columns: 1fr;

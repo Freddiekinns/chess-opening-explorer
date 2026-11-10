@@ -87,6 +87,17 @@ describe('PlansWithDiagram', () => {
     expect(caption()).toMatch(/^Position after/);
   });
 
+  test('Clear shows only while a reference is pinned, and unpins it', () => {
+    renderIt();
+    expect(screen.queryByRole('button', { name: 'Clear' })).toBeNull();
+    const ref = screen.getByRole('button', { name: 'Nbd2-f1-g3' });
+    fireEvent.click(ref);
+    fireEvent.click(screen.getByRole('button', { name: 'Clear' }));
+    expect(ref).toHaveAttribute('aria-pressed', 'false');
+    expect(caption()).toMatch(/^Position after/);
+    expect(screen.queryByRole('button', { name: 'Clear' })).toBeNull();
+  });
+
   test('focus previews at once, like hover', () => {
     renderIt();
     fireEvent.focus(screen.getByRole('button', { name: 'Nbd2-f1-g3' }));
@@ -105,6 +116,12 @@ describe('PlansWithDiagram', () => {
     test('nothing is open on load, and no static diagram sits above the plans', () => {
       renderIt({ variant: 'mobile' });
       expect(screen.queryByRole('figure')).toBeNull();
+    });
+
+    test('there is no Clear button: a second tap closes the board', () => {
+      renderIt({ variant: 'mobile' });
+      fireEvent.click(screen.getByRole('button', { name: 'Nbd2-f1-g3' }));
+      expect(screen.queryByRole('button', { name: 'Clear' })).toBeNull();
     });
 
     test('a tap opens a board under that plan, captioned with the description', () => {

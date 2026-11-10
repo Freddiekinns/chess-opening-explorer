@@ -15,6 +15,8 @@ interface PlansDiagramProps {
   invite?: boolean;
   /** The small board under a plan: the position goes under the description. */
   compact?: boolean;
+  /** Shown beside the caption while a reference is pinned: unpins it. */
+  onClear?: () => void;
   className?: string;
 }
 
@@ -48,6 +50,7 @@ export const PlansDiagram: React.FC<PlansDiagramProps> = ({
   reference = null,
   invite = false,
   compact = false,
+  onClear,
   className = '',
 }) => {
   const position = positionCaption(moves);
@@ -85,7 +88,10 @@ export const PlansDiagram: React.FC<PlansDiagramProps> = ({
       : position;
 
   return (
-    <figure className={`${styles.diagram} ${className}`} aria-label={position}>
+    <figure
+      className={`${styles.diagram} ${onClear ? styles.withClear : ''} ${className}`}
+      aria-label={position}
+    >
       <Chessboard
         options={{
           id: 'plans-diagram',
@@ -108,6 +114,11 @@ export const PlansDiagram: React.FC<PlansDiagramProps> = ({
           caption
         )}
       </figcaption>
+      {onClear && (
+        <button type="button" className={`btn btn--secondary ${styles.clear}`} onClick={onClear}>
+          Clear
+        </button>
+      )}
     </figure>
   );
 };

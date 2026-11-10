@@ -251,12 +251,9 @@ export const CommonPlans: React.FC<CommonPlansProps> = ({
               <div key={side} className={styles.structuredColumn}>
                 <div className={styles.structuredColumnLabel}>{label}</div>
                 {sidePlans.map((plan, i) => (
-                  <div
-                    key={i}
-                    className={`${styles.structuredPlanCard} ${SIDE_CONFIG[side].className}`}
-                  >
-                    <p className={styles.cardPlanText}>{renderPlanText(plan.raw, plan.text)}</p>
-                  </div>
+                  <p key={i} className={`${styles.cardPlanText} ${styles.byColourPlan}`}>
+                    {renderPlanText(plan.raw, plan.text)}
+                  </p>
                 ))}
               </div>
             )

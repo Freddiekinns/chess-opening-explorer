@@ -162,6 +162,7 @@ export const PlansWithDiagram: React.FC<PlansWithDiagramProps> = ({
       moves={moves}
       reference={activeRef}
       invite={interactive && references.size > 0}
+      onClear={!mobile && interactive && pinned ? () => setPinned(null) : undefined}
       className={mobile ? styles.mobileDiagram : undefined}
     />
   );

@@ -56,6 +56,20 @@ test.describe('opening detail', () => {
     await expect(diagram).toContainText('White pawn from d2 to d4');
   });
 
+  test('Clear unpins the reference on desktop', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);
+
+    await expect(page.getByRole('button', { name: 'Clear' })).toHaveCount(0);
+    await page.getByRole('button', { name: 'd4', exact: true }).click();
+    await page.getByRole('button', { name: 'Clear' }).click();
+    await expect(page.getByRole('button', { name: 'd4', exact: true })).toHaveAttribute(
+      'aria-pressed',
+      'false'
+    );
+    await expect(page.getByRole('button', { name: 'Clear' })).toHaveCount(0);
+  });
+
   test('mobile opens nothing on load when the plans have references to tap', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);

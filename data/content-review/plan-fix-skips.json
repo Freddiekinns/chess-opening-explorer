@@ -1,0 +1,38 @@
+[
+  {
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 1 3",
+    "plan": "White: Recapture the e4-pawn via Nc3-Nxe4, castle quickly, and use the active Bb2 to pressure Black's kingside.",
+    "reference": "Nxe4",
+    "reason": "correct plan, parser can't read a recapture that needs the opponent's ...dxe4 first yet"
+  },
+  {
+    "fen": "rnbq1rk1/1p1n1pbp/p2p2p1/2pP4/P3PP2/2NB1N2/1P4PP/R1BQK2R b KQ - 0 11",
+    "plan": "Black: Create queenside pressure with ...Rb8 and ...Na6-b4 to challenge White's structure.",
+    "reference": "...Na6-b4",
+    "reason": "needs-research"
+  },
+  {
+    "fen": "r2qkb1r/pp2pppp/2n5/3n4/3P2b1/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 8",
+    "plan": "White: Use the space advantage to build a kingside attack, often with a bishop on d3 and queen on e2. Prepare the d4-d5 pawn break to open lines. Control the critical d5 square.",
+    "reference": "d4-d5",
+    "reason": "correct plan, parser can't read a pawn break that waits for the blockading d5-knight to leave yet"
+  },
+  {
+    "fen": "rnbqkbnr/1p1ppppp/2p5/pP6/8/8/PBPPPPPP/RN1QKBNR b KQkq - 0 3",
+    "plan": "White: After 3...cxb5 4.e4, aim to win the pawn back with Bxb5, then continue with Nf3 and castling while the b2-bishop works on the long diagonal.",
+    "reference": "Bxb5",
+    "reason": "correct plan, parser can't read a recapture that needs the opponent's ...cxb5 first yet"
+  },
+  {
+    "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3p1P2/1P2PN2/PBPP2PP/RN1QKB1R b KQkq - 0 5",
+    "plan": "White: Recapture on e3, develop with Re1, and use the open e-file and the a1-h8 diagonal to pressure Black's center.",
+    "reference": "Re1",
+    "reason": "needs-research: Re1 is impossible, but the gambit's real follow-up after 5...dxe3 is not settled by the board or a short search"
+  },
+  {
+    "fen": "r1b1k2r/ppppqppp/2n5/4P3/1bP2Bn1/4PN2/PP1N1PPP/R2QKB1R b KQkq - 0 7",
+    "plan": "Black's Alternative: Maintain the pin on d2 and pressure on the centre, sometimes delaying the capture on e5 to build up an attack, potentially involving ...O-O-O.",
+    "reference": "...O-O-O",
+    "reason": "needs-research: Black castling queenside is not a recognised plan here; two rewrites were rejected (the pin on d2 usually ends when White castles, and ...d6 with the pawn still on e5 allows exd6)"
+  }
+]

@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "r1bq1rk1/ppp1bppp/2n5/3np3/8/3P1NP1/PP2PPBP/RNBQ1RK1 w - - 3 8",
+      "name": "English Opening: King's English Variation, Four Knights Variation, Fianchetto Line",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named Nd2 (ambiguous) and plan 2 rerouted a knight from b8, where none stands; overview called it symmetrical. Rewrote overview and both plans around the reversed Dragon."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/1nn5/4p3/8/2N2NP1/PP1PPPBP/R1BQK2R w KQkq - 2 7",
+      "name": "English Opening: King's English Variation, Four Knights Variation, Fianchetto Line, with Nb6",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 called the c-file open; plan 2 read b4 as a Black move. Narrow rewrites; British spelling."
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/4p3/1bP5/2N2NP1/PP1PPPBP/R1BQK2R b KQkq - 2 5",
+      "name": "English: Four Knights, 4.g3 Bb4 5.Bg2",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 2 described a pin on the c3-knight, which the d2-pawn blocks; plan 1 pushed b4 onto the bishop. Rewrote overview and plans 1-2 around ...O-O, ...e4 and ...Bxc3. A new plan 3 was rejected twice (first ...d6 does not support e4, then it named an e4-pawn before ...e4), so plan 3 keeps its old text with British spelling only."
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2P5/2N2NP1/PP1PPPBP/R1BQK2R b KQkq - 2 5",
+      "name": "English: Four Knights, 4.g3 Bc5",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 routed Nf3-e1 with the king on e1 and ...Nf6-e8-g7 with a pawn on g7. Rewrote overview and plans 1 and 3; British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2P5/2NP1NP1/PP2PPBP/R1BQ1RK1 b - - 0 7",
+      "name": "English: Four Knights, 4.g3 Bc5",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 read Ng5 as a Black move; overview called the position symmetrical. Rewrote plans 1-2; British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2n2n2/3pp3/2P5/2N2NP1/PP1PPP1P/R1BQKB1R w KQkq - 0 5",
+      "name": "English: Four Knights, 4.g3 d5",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Nb6 challenging a c4-pawn that is exchanged on d5. Rewrote overview and plan 2 around the reversed Dragon."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2n2n2/3Pp3/8/2N2NP1/PP1PPP1P/R1BQKB1R b KQkq - 0 5",
+      "name": "English: Four Knights, 4.g3 d5 5.cxd5",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 proposed ...Nb6-c4 and omitted the recapture; plan 4 was a vague endgame line. Rewrote overview and plans 1-4."
+    },
+    {
+      "fen": "r2qkb1r/ppp2ppp/2n1b3/3np3/8/2N2NP1/PP1PPPBP/R1BQK2R w KQkq - 2 7",
+      "name": "English: Four Knights, 4.g3 d5 5.cxd5 Nxd5 6.Bg2 Be6",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 broke a pin that does not exist; plan 3 played ...Re8 before castling; plan 4 claimed ...Nxc3 doubles White's pawns (the c-pawn is already gone). Rewrote plans 2-4; British spelling."
+    },
+    {
+      "fen": "r1bqk2r/ppp1bppp/1nn5/4p3/8/2NP1NP1/PP2PPBP/R1BQ1RK1 b kq - 0 8",
+      "name": "English: Four Knights, 4.g3 d5 5.cxd5 Nxd5 6.Bg2 Nb6 7.O-O Be7 8.d3",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 read d5 as a Black pawn move; plan 4 was a vague endgame line; overview called it symmetrical. Rewrote overview and plans 3-4."
+    },
+    {
+      "fen": "r1bq1rk1/ppp1bppp/1nn5/4p3/8/2NP1NP1/PP2PPBP/R1BQ1RK1 w - - 1 9",
+      "name": "English: Four Knights, 4.g3 d5 5.cxd5 Nxd5 6.Bg2 Nb6 7.O-O Be7 8.d3",
+      "eco": "A29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 'fixed' a b4-pawn that is not there; plan 4 rerouted a non-existent f6-knight. Rewrote overview and plans 2 and 4; British spelling."
+    }
+  ]
+}

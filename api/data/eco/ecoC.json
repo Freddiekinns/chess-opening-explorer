@@ -4524,7 +4524,7 @@
       "common_plans": [
         "White: Control the e5-square, develop harmoniously with Nf3, Bd3, c3, and prepare a potential queenside minority attack with Rb1 and b4.",
         "Black: Neutralize White's active Bf4, often with ...Bd6, and break the central symmetry with the ...c5 pawn lever to create counterplay.",
-        "White: Keep the bishop on the b8-h2 diagonal to contest e5, and meet ...Bd6 by exchanging on d6 or retreating to g3.",
+        "White: Keep the bishop on the b8-h2 diagonal to contest the e5-square, and meet ...Bd6 by exchanging on d6 or retreating to g3.",
         "Black: Complete development with ...Nf6, ...0-0, and ...Nc6, aiming to exploit any overextension by White."
       ],
       "version": "1.0",
@@ -60811,8 +60811,8 @@
       "common_plans": [
         "White: Play e5 to dislodge the f6-knight, followed by d4 and Bc4 to build pressure on f7, often preparing a sacrifice to open the f-file.",
         "Black: Complete development rapidly with ...Be7 and ...O-O, challenge White's center with a timely ...d5, and exploit the exposed position of White's knight on g5 and potentially the white king.",
-        "White: Maneuver the g5-knight to a better square like e4 or f3 if the direct attack is not fruitful, aiming for a more positional advantage.",
-        "Black: Use the ...h6 pawn push at the right moment to question the g5-knight and create threats along the h-file."
+        "White: The g5-knight is short of retreats while the g4-pawn covers both of its squares on the third rank, so White plays fast, with moves such as d4 and Bc4, and is often ready to sacrifice it on f7 rather than drift into a passive position.",
+        "Black: Kick the g5-knight with ...h6 at the right moment, forcing White to commit to the knight sacrifice on f7 before the attack is ready."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T08:25:51.062Z"
@@ -119446,9 +119446,9 @@
         "Endgame Advantage"
       ],
       "common_plans": [
-        "White: Solidify the center with moves like Be3 and Nbd2, then prepare a kingside pawn advance (f4-g4) to create a passed pawn in the endgame. White often seeks to trade pieces to simplify into a favorable endgame.",
+        "White: Solidify the centre with moves like Be3 and Nbd2 and keep the d4/e4 pawns. Once the central pawns are exchanged, White's healthy kingside majority can create a passed pawn in the endgame, so White often seeks to trade pieces to simplify into a favourable endgame.",
         "Black: Utilize the bishop pair to pressure White's center and queenside. Develop pieces to active squares (e.g., ...Bd6, ...Qd7) and prepare a central break with ...c5 or ...exd4 to open lines for the bishops.",
-        "White: Control the d-file after a potential ...exd4 exchange and use the d5-square as an outpost for a knight.",
+        "White: If Black takes with ...exd4, recapture with cxd4 to keep a broad e4/d4 centre, and use h3 to ask the g4-bishop whether it will give itself up for the f3-knight.",
         "Black: Keep the position complex and avoid premature exchanges that would lead to a simplified endgame where White's pawn structure is the dominant factor."
       ],
       "version": "1.0",
@@ -122664,7 +122664,7 @@
     "name": "Spanish: Modern Steinitz, Siesta, 6.exf5",
     "scid": "C74",
     "analysis_json": {
-      "description": "The Siesta Variation is a sharp and ambitious response to the Modern Steinitz Defense, where Black's 5...f5 immediately challenges White's central control. By accepting the pawn with 6.exf5, White enters a double-edged struggle where the position becomes highly dynamic and unbalanced. This opening is perfect for players who thrive in complex, tactical positions and enjoy fighting for the initiative from the very beginning, often leading to fierce attacks and counterattacks.",
+      "description": "The Siesta is Black's sharp answer to 5.c3 in the Modern Steinitz: 5...f5 strikes at e4 straight away. After 6.exf5 Black usually recaptures with ...Bxf5, getting an active light-squared bishop and a half-open f-file in return for a loose e5-pawn and weakened light squares around the king. The play is open and double-edged: White castles and hits the centre with Re1 and d4 while Black's king is still in the middle, and Black relies on quick development and active pieces.",
       "style_tags": [
         "Sharp",
         "Dynamic",
@@ -122709,9 +122709,9 @@
       ],
       "common_plans": [
         "For White, the main plan is to solidify the center with d4, control the e-file, and exploit the weaknesses in Black's kingside and the potentially weak e5-pawn.",
-        "For Black, the primary goal is to use the newly opened f-file to launch a direct attack against the white king, often involving the f8-rook and other pieces.",
-        "White often seeks to complete development, castle queenside to get the king away from the f-file, and launch a counterattack on the queenside or in the center.",
-        "Black aims to develop quickly, with ...Bxf5 and ...Nf6, to put immediate pressure on White's central setup and maintain the initiative."
+        "For Black, the primary goal is to recapture with ...Bxf5, castle short so the h8-rook arrives on the half-open f-file, and aim the pieces at f2 and the white king.",
+        "White usually castles short quickly, then uses Re1 and d4 to attack the e5-pawn and open the centre while the black king is still on e8.",
+        "Black aims to develop quickly, with ...Bxf5 (sometimes followed by ...Bd3 to hamper White's queenside development) and ...Nf6, to put pressure on White's central setup and keep the initiative."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:37:51.547Z"
@@ -137538,7 +137538,7 @@
       ],
       "common_plans": [
         "White's Plan: Challenge the g5-pawn with Nf1-g3, seek to open the center to exploit Black's exposed king, and use the d5 space advantage to restrict Black's pieces.",
-        "Black's Plan: Continue the kingside assault with ...h5-h4 and ...Ng6, open the g-file for the rook, and create direct threats against the white king before White can consolidate.",
+        "Black's Plan: Continue the kingside assault with ...h5 and ...g4, bring the b8-knight round via ...Nbd7-f8-g6, open the g-file for the rook, and create direct threats against the white king before White can consolidate.",
         "White's Plan: Play on the queenside with a4 to fix Black's pawns and create a second front, diverting Black's attention from the kingside.",
         "Black's Plan: Maintain a solid center and use the knight on b8 to reroute to d7, supporting the kingside attack or central control."
       ],
@@ -147820,7 +147820,7 @@
       "scid": "Spanish: Closed, Chigorin, Yugoslav System"
     },
     "analysis_json": {
-      "description": "The Yugoslav System of the Chigorin Ruy Lopez is a pinnacle of strategic chess, leading to a slow, maneuvering game rich in positional nuance. Black's setup with ...g6 is highly solid and flexible, aiming to control key dark squares and prepare for a long-term battle for central control. This opening is perfect for patient, strategic players who excel at understanding deep plans, prophylaxis, and the subtle accumulation of advantages in a closed, complex position.",
+      "description": "The Yugoslav System of the Chigorin Ruy Lopez is a pinnacle of strategic chess, leading to a slow, manoeuvring game rich in positional nuance. Black's ...g6 takes the f5-square away from White's knights and prepares ...Bf8-g7, a solid and flexible set-up for a long-term battle for central control. This opening is perfect for patient, strategic players who excel at understanding deep plans, prophylaxis, and the subtle accumulation of advantages in a closed, complex position.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -147864,9 +147864,9 @@
       ],
       "common_plans": [
         "White: Prepare a central pawn break with d5 or launch a kingside attack, often involving the g2-g4 push to challenge Black's kingside structure.",
-        "Black: Maintain central solidity, challenge on the queenside via ...cxd4 followed by ...b4, and use the ...g6 structure to fianchetto the bishop (...Bg7) or simply control the f5-square.",
-        "White: Complete the knight maneuver Nf1-e3 to pressure the center and support kingside ambitions.",
-        "Black: Reroute the a5-knight (e.g., to c4 or via b7-d8) to participate in the central fight and neutralize White's pieces."
+        "Black: Maintain central solidity, challenge on the queenside via ...cxd4 followed by ...b4, and use the ...g6 structure to fianchetto the bishop with ...Bf8-g7 and keep White's knights out of f5.",
+        "White: With the knight already on e3, a common treatment is dxe5 followed by Nh2-g4, exchanging off the f6-knight that guards Black's kingside.",
+        "Black: Bring the a5-knight back into play, to c6 after ...cxd4 or via ...Nb7-d8, so that it joins the fight for the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:28:13.932Z"
@@ -154167,7 +154167,7 @@
     "eco": "C57",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Traxler Counterattack is one of the sharpest and most audacious responses to the Fried Liver Attack setup. Black intentionally sacrifices king safety, inviting White's attack on f7 to launch a ferocious counter-offensive against the white king. This opening leads to wild, tactical, and unbalanced positions where initiative and calculation are paramount, making it ideal for fearless, creative attackers who thrive in chaos.",
+      "description": "The Traxler Counterattack (4...Bc5) answers White's 4.Ng5 by ignoring the threat to f7 and counterattacking f2. Here White has chosen the calmer 5.Bxf7+ Ke7 6.Bd5, winning a pawn and driving Black's king to e7; Black has put the rook on the half-open f-file with ...Rf8 and backed up e5 with ...d6. Black can no longer castle but has quick development and play against White's king, while White tries to keep the extra pawn and catch the king in the centre. The play is sharp and tactical, suiting players who are comfortable calculating.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -154209,8 +154209,8 @@
         "Compensation for King Exposure"
       ],
       "common_plans": [
-        "Black aims to use the open f-file and rapid piece development (...h6, ...Qe8) to attack the white king.",
-        "Black often prepares a central break with ...d5 to open more lines.",
+        "Black aims to use the half-open f-file and rapid piece development, with ...h6 to kick the g5-knight and ...Qe8-h5, to attack the white king.",
+        "Black develops the c8-bishop with ...Bg4, gaining time on the d1-queen and adding to the pressure on White's kingside.",
         "White seeks to consolidate, neutralize threats, and exploit the exposed black king.",
         "White tries to trade pieces to defuse the attack and steer the game towards a favorable endgame."
       ],
@@ -161204,9 +161204,9 @@
         "Countering the f7 attack"
       ],
       "common_plans": [
-        "Black aims to pressure the g5-knight, develop the light-squared bishop to c5, and often castles queenside to launch an attack.",
+        "Black aims to use the active d5-queen, which hits both the b5-bishop and g2, and to develop quickly with ...Bb7 and the dark-squared bishop to c5, aiming at f2 and White's kingside.",
         "White seeks to consolidate the extra pawn, neutralize Black's initiative by exchanging pieces, and secure the king before Black's attack becomes overwhelming.",
-        "Black will often play ...c5-c4 to disrupt White's queenside and open lines for the rooks.",
+        "Black will often use the half-open b-file with ...Rb8 and kick the g5-knight with ...h6, so that White never gets time to consolidate.",
         "White must carefully navigate the early threats to transition into a better endgame with an extra pawn."
       ],
       "version": "1.0",
@@ -172323,7 +172323,7 @@
         "Black: Seize the center with an early ...d5, challenging White's e4-pawn and opening lines for development.",
         "Black: Develop pieces rapidly to their most active squares (...Bc5, ...Nc6) to exploit White's slow setup and target the weakened kingside.",
         "White: Attempt to consolidate the position and support the center with a d2-d4 push, hoping to justify the f3 move.",
-        "White: Develop the king's knight to an awkward square like e2 or h3, and try to complete development and castle safely."
+        "White: The f3-pawn takes the king's knight's best square, so it has to develop via Ne2 or Nh3; then complete development and castle safely."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:43:16.858Z"

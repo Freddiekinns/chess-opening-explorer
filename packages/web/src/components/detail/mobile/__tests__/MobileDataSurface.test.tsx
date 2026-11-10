@@ -176,8 +176,24 @@ describe('MobileDataSurface', () => {
     expect(screen.getByText('Loading Lichess data…')).toBeInTheDocument();
   });
 
-  test('renders continuations and anchored alternatives with book rows as links', () => {
+  test('alternatives are closed by default, keep their rows hidden in the DOM, and toggle', async () => {
     renderSurface();
+    const toggle = screen.getByRole('button', { name: 'Instead of 4.Nxd5 · 1 other move' });
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    const region = document.getElementById(toggle.getAttribute('aria-controls') as string);
+    expect(region).toHaveAttribute('hidden');
+    expect(region?.querySelector('a[href="/opening/fen-sib"]')).not.toBeNull();
+    expect(screen.queryByRole('link', { name: /4\.Bc4/ })).toBeNull();
+
+    await userEvent.click(toggle);
+    expect(screen.getByRole('link', { name: /4\.Bc4/ })).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Hide alternatives' }));
+    expect(screen.queryByRole('link', { name: /4\.Bc4/ })).toBeNull();
+  });
+
+  test('renders continuations and anchored alternatives with book rows as links', async () => {
+    renderSurface();
+    await userEvent.click(screen.getByRole('button', { name: /^Instead of 4\.Nxd5/ }));
     expect(screen.getByText('Next moves')).toBeInTheDocument();
     expect(screen.getByText('Most popular at 1400–1800')).toBeInTheDocument();
     expect(screen.getByText('Instead of 4.Nxd5')).toBeInTheDocument();

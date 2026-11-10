@@ -484,6 +484,10 @@
   color: var(--color-text-secondary);
 }
 
+.alternativesBody {
+  margin-top: var(--space-3);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .section,
   .contRow {

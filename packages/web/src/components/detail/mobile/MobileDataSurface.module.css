@@ -440,6 +440,13 @@
   color: var(--color-text-secondary);
 }
 
+/* The alternatives disclosure: full width, at the head of its section. */
+.alternativesToggle {
+  width: 100%;
+  margin-top: var(--space-3);
+  text-align: left;
+}
+
 .showMoreBtn:hover {
   color: var(--color-text-primary);
 }

@@ -83,10 +83,10 @@ The dedicated learning environment for mastering a specific position.
 
 ### Mobile Experience (≤767px, design 2a "one data surface")
 
-- **Single data surface**: level pills (sticky while scrolling), win-rate stats,
-  breadcrumb, continuations and alternatives merge into one card so changing the
-  level visibly re-shades every number below it. It is the page's _one_ card — a
-  deliberate "instrument" amid the surrounding editorial content.
+- **Single data surface**: level pills (sticky), win-rate stats, breadcrumb,
+  Next moves (tagged "In White's plan" when a Common plan names the move) and
+  alternatives (closed behind "Instead of 5...a6 · 6 other moves", on desktop
+  too) share one card, the page's _one_ card: a deliberate "instrument".
 - **Editorial reading zone**: Overview and Common plans share one voice —
   sentence-case section headings over un-carded, left-rule prose (matched font
   size), so they read as book-like commentary rather than competing data cards.

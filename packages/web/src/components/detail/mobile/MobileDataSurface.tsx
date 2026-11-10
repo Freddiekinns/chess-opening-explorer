@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../../../lib/analytics';
 import { ChevronDown } from 'lucide-react';
@@ -51,6 +51,14 @@ interface MobileDataSurfaceProps {
   treeData: TreeContext | null;
   /** Moves the page's Common plans name as playable now, by side (Next moves only). */
   planned?: Map<string, 'white' | 'black'>;
+}
+
+/** "Instead of 5...a6 · 6 other moves", or "Alternatives · 6 moves". */
+function alternativesToggleLabel(label: string, count: number): string {
+  const noun = count === 1 ? 'move' : 'moves';
+  return label === 'Alternatives'
+    ? `${label} · ${count} ${noun}`
+    : `${label} · ${count} other ${noun}`;
 }
 
 function rowStatsTitle(row: MergedMoveRow): string | undefined {
@@ -188,6 +196,8 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
   planned,
 }) => {
   const [crumbOpen, setCrumbOpen] = useState(false);
+  const [alternativesOpen, setAlternativesOpen] = useState(false);
+  const alternativesId = useId();
 
   // Hold the last live result while a band switch is loading so the stats
   // dim instead of flashing to a placeholder (design's loading treatment).
@@ -201,6 +211,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
   }, [explorer.result, fen, band]);
   useEffect(() => {
     setCrumbOpen(false);
+    setAlternativesOpen(false);
     if (lastResultRef.current && lastResultRef.current.fen !== fen) {
       lastResultRef.current = null;
     }
@@ -427,14 +438,28 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
 
           {siblingRows.length > 0 && (
             <>
-              <div className={`${styles.bookHeading} ${styles.bookHeadingAlt}`}>
-                {alternativesLabel}
+              <button
+                type="button"
+                className={`${styles.showMoreBtn} ${styles.alternativesToggle}`}
+                aria-expanded={alternativesOpen}
+                aria-controls={alternativesId}
+                onClick={() => setAlternativesOpen(!alternativesOpen)}
+              >
+                {alternativesOpen
+                  ? 'Hide alternatives'
+                  : alternativesToggleLabel(alternativesLabel, siblingRows.length)}
+              </button>
+              {/* Closed, not removed: the rows and their links stay in the DOM. */}
+              <div id={alternativesId} hidden={!alternativesOpen}>
+                <div className={`${styles.bookHeading} ${styles.bookHeadingAlt}`}>
+                  {alternativesLabel}
+                </div>
+                <div className={styles.bookSubheading}>
+                  <span>{alternativesCaption(band, live)}</span>
+                  {keyOnAlternatives && <RowKey />}
+                </div>
+                <MoveRowList rows={siblingRows} ply={currentMoveIdx} countLabel={countLabel} />
               </div>
-              <div className={styles.bookSubheading}>
-                <span>{alternativesCaption(band, live)}</span>
-                {keyOnAlternatives && <RowKey />}
-              </div>
-              <MoveRowList rows={siblingRows} ply={currentMoveIdx} countLabel={countLabel} />
             </>
           )}
         </div>

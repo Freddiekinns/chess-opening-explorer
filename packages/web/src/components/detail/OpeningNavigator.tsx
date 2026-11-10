@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useId, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../../lib/analytics';
 import type { TreeContext } from '../../hooks/useOpeningTree';
@@ -41,6 +41,14 @@ interface OpeningNavigatorProps {
   live?: boolean;
   /** Moves the page's Common plans name as playable now, by side (Next moves only). */
   planned?: Map<string, 'white' | 'black'>;
+}
+
+/** "Instead of 5...a6 · 6 other moves", or "Alternatives · 6 moves". */
+function alternativesToggleLabel(label: string, count: number): string {
+  const noun = count === 1 ? 'move' : 'moves';
+  return label === 'Alternatives'
+    ? `${label} · ${count} ${noun}`
+    : `${label} · ${count} other ${noun}`;
 }
 
 function statsTitle(row: MergedMoveRow): string | undefined {
@@ -198,12 +206,15 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
 }) => {
   const [continuationsExpanded, setContinuationsExpanded] = useState(false);
   const [alternativesExpanded, setAlternativesExpanded] = useState(false);
+  const [alternativesOpen, setAlternativesOpen] = useState(false);
+  const alternativesId = useId();
 
   // Reset expanded states when navigating to a different opening
   const currentFen = treeData?.current?.fen;
   useEffect(() => {
     setContinuationsExpanded(false);
     setAlternativesExpanded(false);
+    setAlternativesOpen(false);
   }, [currentFen]);
 
   if (loading) {
@@ -366,27 +377,45 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
 
           return (
             <div className={styles.section}>
-              <div className={styles.sectionLabel}>{alternativesLabel}</div>
-              <div className={styles.sectionSublabel}>
-                <span>{alternativesCaption(band, live)}</span>
-                {keyOnAlternatives && <RowKey />}
+              <button
+                type="button"
+                className={styles.showMoreBtn}
+                aria-expanded={alternativesOpen}
+                aria-controls={alternativesId}
+                onClick={() => setAlternativesOpen(!alternativesOpen)}
+              >
+                {alternativesOpen
+                  ? 'Hide alternatives'
+                  : alternativesToggleLabel(alternativesLabel, siblingRows.length)}
+              </button>
+              {/* Closed, not removed: the rows and their links stay in the DOM. */}
+              <div
+                id={alternativesId}
+                hidden={!alternativesOpen}
+                className={styles.alternativesBody}
+              >
+                <div className={styles.sectionLabel}>{alternativesLabel}</div>
+                <div className={styles.sectionSublabel}>
+                  <span>{alternativesCaption(band, live)}</span>
+                  {keyOnAlternatives && <RowKey />}
+                </div>
+                <MoveRows
+                  rows={visibleRows}
+                  ply={currentMoveIdx}
+                  maxCount={maxCount}
+                  countLabel={countLabel}
+                  hasStats={siblingRows.some((row) => row.stats !== null)}
+                  alternatives
+                />
+                {canCollapse && (
+                  <button
+                    className={styles.showMoreBtn}
+                    onClick={() => setAlternativesExpanded(!alternativesExpanded)}
+                  >
+                    {alternativesExpanded ? 'Show less' : `Show ${hiddenCount} more moves`}
+                  </button>
+                )}
               </div>
-              <MoveRows
-                rows={visibleRows}
-                ply={currentMoveIdx}
-                maxCount={maxCount}
-                countLabel={countLabel}
-                hasStats={siblingRows.some((row) => row.stats !== null)}
-                alternatives
-              />
-              {canCollapse && (
-                <button
-                  className={styles.showMoreBtn}
-                  onClick={() => setAlternativesExpanded(!alternativesExpanded)}
-                >
-                  {alternativesExpanded ? 'Show less' : `Show ${hiddenCount} more moves`}
-                </button>
-              )}
             </div>
           );
         })()}

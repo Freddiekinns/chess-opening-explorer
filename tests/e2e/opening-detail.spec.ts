@@ -23,6 +23,14 @@ test.describe('opening detail', () => {
     await expect(page.getByText('Sicilian Defense Essentials')).toBeVisible();
 
     // Tree navigator shows sibling lines
+    // The alternatives start closed behind a labelled button, and open on click
+    const alternatives = page.getByRole('button', {
+      name: /^Instead of 2\.\.\.d6 · \d+ other moves?$/,
+    });
+    await expect(alternatives).toHaveAttribute('aria-expanded', 'false');
+    await expect(page.getByText('Sicilian Defense: Alapin').first()).toBeHidden();
+    await alternatives.click();
+    await expect(alternatives).toHaveCount(0);
     await expect(page.getByText('Sicilian Defense: Alapin').first()).toBeVisible();
 
     // Practice mode arms and exits

@@ -50,6 +50,10 @@ function renderNavigator(
   );
 }
 
+function openAlternatives() {
+  fireEvent.click(screen.getByRole('button', { name: /^(Instead of|Alternatives)/ }));
+}
+
 function simpleTree(): TreeContext {
   return {
     current: makeNode({ fen: 'fen-current', name: 'French Defense', move: '1...e6' }),
@@ -97,6 +101,43 @@ describe('OpeningNavigator', () => {
   test('tags a Black move as Black', () => {
     renderNavigator(simpleTree(), null, null, { planned: new Map([['e5', 'black']]) });
     expect(screen.getByText("In Black's plan")).toBeInTheDocument();
+  });
+
+  describe('alternatives', () => {
+    test('are closed by default behind a labelled disclosure button', () => {
+      renderNavigator(simpleTree());
+      const toggle = screen.getByRole('button', { name: 'Instead of 1...e6 · 1 other move' });
+      expect(toggle).toHaveAttribute('aria-expanded', 'false');
+      expect(toggle).toHaveAttribute('aria-controls');
+    });
+
+    test('keep their rows and links in the DOM while closed, hidden', () => {
+      renderNavigator(simpleTree());
+      const toggle = screen.getByRole('button', { name: /^Instead of 1\.\.\.e6/ });
+      const region = document.getElementById(toggle.getAttribute('aria-controls') as string);
+      expect(region).toHaveAttribute('hidden');
+      expect(region?.querySelector('a[href="/opening/fen-sib"]')).not.toBeNull();
+      expect(screen.queryByRole('link', { name: /caro-kann/i })).toBeNull();
+    });
+
+    test('open to today’s section, and close again', () => {
+      renderNavigator(simpleTree());
+      openAlternatives();
+      expect(screen.getByRole('link', { name: /caro-kann/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Hide alternatives' })).toHaveAttribute(
+        'aria-expanded',
+        'true'
+      );
+      fireEvent.click(screen.getByRole('button', { name: 'Hide alternatives' }));
+      expect(screen.queryByRole('link', { name: /caro-kann/i })).toBeNull();
+    });
+
+    test('count the other moves, and say Alternatives when no move is anchored', () => {
+      const tree = simpleTree();
+      tree.current = makeNode({ fen: 'fen-current', name: 'Start', move: '' });
+      renderNavigator(tree);
+      expect(screen.getByRole('button', { name: 'Alternatives · 1 move' })).toBeInTheDocument();
+    });
   });
 
   test('orders continuations and alternatives by popularity', () => {
@@ -156,6 +197,7 @@ describe('OpeningNavigator', () => {
     };
 
     renderNavigator(treeData);
+    openAlternatives();
 
     const classicalLink = screen.getByRole('link', { name: /classical variation/i });
     const burnLink = screen.getByRole('link', { name: /burn variation/i });
@@ -304,6 +346,7 @@ describe('OpeningNavigator', () => {
         null,
         explorerWithMoves([explorerMove('e6', 800_000), explorerMove('c5', 1_000_000)])
       );
+      openAlternatives();
 
       // c5 matches the Sicilian book row; e6 is the current move and must not
       // reappear as an off-book alternative to itself.

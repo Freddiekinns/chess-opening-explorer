@@ -5,6 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import LevelLens from '../LevelLens';
 import type { TreeContext } from '../../../hooks/useOpeningTree';
 import type { ExplorerQuery } from '../../../hooks/useExplorerResult';
+import { withoutCheckMark } from '../../../lib/plannedMoves';
 import { mergeExplorerMoves, type MergedMoveRow } from '../../../lib/bookExplorerMerge';
 import {
   deduplicateAncestors,
@@ -48,6 +49,8 @@ interface MobileDataSurfaceProps {
   /** Explorer stats for the parent position — powers the alternatives rows. */
   parentExplorer: ExplorerResult | null;
   treeData: TreeContext | null;
+  /** Moves the page's Common plans name as playable now, by side (Next moves only). */
+  planned?: Map<string, 'white' | 'black'>;
 }
 
 function rowStatsTitle(row: MergedMoveRow): string | undefined {
@@ -75,11 +78,12 @@ const RowKey: React.FC = () => (
   </span>
 );
 
-const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }> = ({
-  row,
-  ply,
-  countLabel,
-}) => {
+const MoveRow: React.FC<{
+  row: MergedMoveRow;
+  ply: number;
+  countLabel: string;
+  plannedSide?: 'white' | 'black';
+}> = ({ row, ply, countLabel, plannedSide }) => {
   const inner = (
     <>
       <span className={styles.rowTop}>
@@ -89,6 +93,11 @@ const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }>
         </span>
         {row.name === null && <span className={styles.offBookTag}>off-book</span>}
         <span className={styles.rowName}>{row.name ?? ''}</span>
+        {plannedSide && (
+          <span className={styles.planTag}>
+            In {plannedSide === 'white' ? 'White' : 'Black'}'s plan
+          </span>
+        )}
       </span>
       <span className={styles.rowBottom}>
         {row.stats ? (
@@ -136,11 +145,12 @@ const MoveRow: React.FC<{ row: MergedMoveRow; ply: number; countLabel: string }>
   );
 };
 
-const MoveRowList: React.FC<{ rows: MergedMoveRow[]; ply: number; countLabel: string }> = ({
-  rows,
-  ply,
-  countLabel,
-}) => {
+const MoveRowList: React.FC<{
+  rows: MergedMoveRow[];
+  ply: number;
+  countLabel: string;
+  planned?: Map<string, 'white' | 'black'>;
+}> = ({ rows, ply, countLabel, planned }) => {
   const [expanded, setExpanded] = useState(false);
   const canCollapse = rows.length > ROWS_COLLAPSED_LIMIT;
   const visible = canCollapse && !expanded ? rows.slice(0, ROWS_COLLAPSED_LIMIT) : rows;
@@ -149,7 +159,13 @@ const MoveRowList: React.FC<{ rows: MergedMoveRow[]; ply: number; countLabel: st
     <>
       <div className={styles.rowList}>
         {visible.map((row) => (
-          <MoveRow key={row.key} row={row} ply={ply} countLabel={countLabel} />
+          <MoveRow
+            key={row.key}
+            row={row}
+            ply={ply}
+            countLabel={countLabel}
+            plannedSide={planned?.get(withoutCheckMark(row.san))}
+          />
         ))}
       </div>
       {canCollapse && (
@@ -169,6 +185,7 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
   explorer,
   parentExplorer,
   treeData,
+  planned,
 }) => {
   const [crumbOpen, setCrumbOpen] = useState(false);
 
@@ -399,7 +416,12 @@ export const MobileDataSurface: React.FC<MobileDataSurfaceProps> = ({
                 <span>{movesCaption(band, live)}</span>
                 {keyOnNext && <RowKey />}
               </div>
-              <MoveRowList rows={childRows} ply={pliesPlayed} countLabel={countLabel} />
+              <MoveRowList
+                rows={childRows}
+                ply={pliesPlayed}
+                countLabel={countLabel}
+                planned={planned}
+              />
             </>
           )}
 

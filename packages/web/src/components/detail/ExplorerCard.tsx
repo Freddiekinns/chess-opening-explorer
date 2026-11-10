@@ -33,6 +33,8 @@ interface ExplorerCardProps {
   parentExplorer: ExplorerResult | null;
   treeData: TreeContext | null;
   treeLoading: boolean;
+  /** Moves the page's plans name as playable now, by side. */
+  planned?: Map<string, 'white' | 'black'>;
 }
 
 export const ExplorerCard: React.FC<ExplorerCardProps> = ({
@@ -44,6 +46,7 @@ export const ExplorerCard: React.FC<ExplorerCardProps> = ({
   parentExplorer,
   treeData,
   treeLoading,
+  planned,
 }) => {
   const live = Boolean(band) && !explorer.failed;
   const hasStats = Boolean(popularityStats?.games_analyzed) || Boolean(band);
@@ -84,6 +87,7 @@ export const ExplorerCard: React.FC<ExplorerCardProps> = ({
             parentExplorer={parentExplorer}
             band={band}
             live={live && explorer.result !== null}
+            planned={planned}
           />
         </div>
       )}

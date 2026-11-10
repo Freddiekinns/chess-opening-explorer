@@ -103,6 +103,22 @@ function renderSurface(props: Partial<React.ComponentProps<typeof MobileDataSurf
 }
 
 describe('MobileDataSurface', () => {
+  test('tags a Next moves row the plans name, and no alternatives row', () => {
+    renderSurface({
+      planned: new Map([
+        ['Qxd5', 'black'],
+        ['Bc4', 'white'],
+      ]),
+    });
+    expect(screen.getByText("In Black's plan")).toBeInTheDocument();
+    expect(screen.queryByText("In White's plan")).toBeNull();
+  });
+
+  test('a row the plans do not name carries no tag', () => {
+    renderSurface({ planned: new Map([['Nf3', 'white']]) });
+    expect(screen.queryByText(/plan$/)).toBeNull();
+  });
+
   test('renders live level stats scoped and sourced to the active level', () => {
     renderSurface();
     expect(screen.getByRole('heading', { name: 'Opening explorer' })).toBeInTheDocument();

@@ -77,6 +77,28 @@ function explorerMove(san: string, games: number) {
 }
 
 describe('OpeningNavigator', () => {
+  test('tags a Next moves row the plans name, and no other row', () => {
+    renderNavigator(simpleTree(), null, null, {
+      planned: new Map([
+        ['e5', 'white'],
+        ['c6', 'black'],
+      ]),
+    });
+    expect(screen.getByText("In White's plan")).toBeInTheDocument();
+    // c6 is an alternative (a move from the previous position): never tagged.
+    expect(screen.queryByText("In Black's plan")).toBeNull();
+  });
+
+  test('a row the plans do not name carries no tag', () => {
+    renderNavigator(simpleTree(), null, null, { planned: new Map([['d4', 'white']]) });
+    expect(screen.queryByText(/plan$/)).toBeNull();
+  });
+
+  test('tags a Black move as Black', () => {
+    renderNavigator(simpleTree(), null, null, { planned: new Map([['e5', 'black']]) });
+    expect(screen.getByText("In Black's plan")).toBeInTheDocument();
+  });
+
   test('orders continuations and alternatives by popularity', () => {
     const treeData: TreeContext = {
       current: makeNode({

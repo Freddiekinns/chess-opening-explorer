@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { trackEvent } from '../../lib/analytics';
 import type { TreeContext } from '../../hooks/useOpeningTree';
 import type { ExplorerResult } from '../../lib/lichessExplorer';
+import { withoutCheckMark } from '../../lib/plannedMoves';
 import { mergeExplorerMoves, type MergedMoveRow } from '../../lib/bookExplorerMerge';
 import { alternativesCaption, movesCaption } from '../../lib/explorerStats';
 import type { BandId } from '../../lib/lichessExplorer';
@@ -38,6 +39,8 @@ interface OpeningNavigatorProps {
   band?: BandId | null;
   /** True when live explorer data drives the rows — gates the level echo. */
   live?: boolean;
+  /** Moves the page's Common plans name as playable now, by side (Next moves only). */
+  planned?: Map<string, 'white' | 'black'>;
 }
 
 function statsTitle(row: MergedMoveRow): string | undefined {
@@ -57,6 +60,7 @@ interface MoveRowsProps {
   /** True when explorer data drives this list — retires the orange popularity bar. */
   hasStats: boolean;
   alternatives?: boolean;
+  planned?: Map<string, 'white' | 'black'>;
 }
 
 /* The two figures on each row are coloured, not named, and their meaning
@@ -82,10 +86,12 @@ const MoveRows: React.FC<MoveRowsProps> = ({
   countLabel,
   hasStats,
   alternatives,
+  planned,
 }) => (
   <div className={styles.rows}>
     {rows.map((row, i) => {
       const movePrefix = getMoveNumber(ply);
+      const plannedSide = alternatives ? undefined : planned?.get(withoutCheckMark(row.san));
       const barPercent = maxCount > 0 ? Math.max((row.count / maxCount) * 100, 2) : 0;
       const inner = (
         <>
@@ -99,6 +105,11 @@ const MoveRows: React.FC<MoveRowsProps> = ({
             ) : (
               <span className={styles.rowName}>
                 <span className={styles.offBookTag}>off-book</span>
+              </span>
+            )}
+            {plannedSide && (
+              <span className={styles.planTag}>
+                In {plannedSide === 'white' ? 'White' : 'Black'}'s plan
               </span>
             )}
           </span>
@@ -183,6 +194,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
   parentExplorer = null,
   band = null,
   live = false,
+  planned,
 }) => {
   const [continuationsExpanded, setContinuationsExpanded] = useState(false);
   const [alternativesExpanded, setAlternativesExpanded] = useState(false);
@@ -328,6 +340,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                 maxCount={maxCount}
                 countLabel={countLabel}
                 hasStats={childRows.some((row) => row.stats !== null)}
+                planned={planned}
               />
               {canCollapse && (
                 <button

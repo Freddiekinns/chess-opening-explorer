@@ -207,6 +207,14 @@
   padding: 1px var(--space-1-5);
 }
 
+/* A move the page's Common plans name: neutral, a notch above off-book. */
+.planTag {
+  composes: offBookTag;
+  flex: none;
+  color: var(--color-text-secondary);
+  border-color: var(--border-hover);
+}
+
 @keyframes rowIn {
   from {
     opacity: 0;

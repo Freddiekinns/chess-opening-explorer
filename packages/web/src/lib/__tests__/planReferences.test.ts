@@ -109,6 +109,31 @@ describe('parsePlan: ranges and routes', () => {
   });
 });
 
+describe('parsePlan: a route is all or nothing', () => {
+  const CHEN = 'rnbqkbnr/ppp2ppp/4p3/3p4/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 1 3';
+  const PLAN =
+    "White: Recapture the e4-pawn via Nc3-Nxe4, castle quickly, and use the active Bb2 to pressure Black's kingside.";
+
+  test('a route whose second step is illegal is one invalid segment, never part linked', () => {
+    const { text, segments } = parsePlan(CHEN, PLAN);
+    const route = segments.filter(
+      (s): s is PlanReference => typeof s !== 'string' && s.text.includes('Nc3')
+    );
+    expect(route).toHaveLength(1);
+    expect(route[0]).toMatchObject({ text: 'Nc3-Nxe4', status: 'invalid' });
+    const texts = segments.map((s) => (typeof s === 'string' ? s : s.text));
+    expect(texts.join('')).toBe(text);
+    expect(texts).not.toContain('Nc3');
+    expect(texts).not.toContain('Nxe4');
+  });
+
+  test('a route whose every step is legal stays one valid reference', () => {
+    const ref = only(GIUOCO, 'White: the Italian maneuver Nbd2-f1-g3');
+    expect(ref).toMatchObject({ text: 'Nbd2-f1-g3', kind: 'route', status: 'now' });
+    expect(ref.arrows).toHaveLength(3);
+  });
+});
+
 describe('parsePlan: squares and pieces', () => {
   test('the d4-square rings the Black pieces that control it', () => {
     const ref = only(GIUOCO, 'Black: control the d4-square');

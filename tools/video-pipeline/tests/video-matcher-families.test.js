@@ -157,11 +157,11 @@ describe('VideoMatcher — family recall and video level', () => {
       const page = opening('Caro-Kann Defense', 'B10');
       const base = { channel_title: 'GothamChess', duration: 566 };
       const learn = matcher.calculateMatchScore(
-        createVideo({ ...base, title: 'Learn the Caro-Kann Defense | 10-Minute Chess Openings' }),
+        createVideo({ ...base, title: 'Learn the Caro-Kann Defense | Chess Openings' }),
         page
       );
       const plain = matcher.calculateMatchScore(
-        createVideo({ ...base, title: 'The Caro-Kann Defense | 10-Minute Chess Openings' }),
+        createVideo({ ...base, title: 'The Caro-Kann Defense | Chess Openings' }),
         page
       );
       expect(learn - plain).toBeGreaterThanOrEqual(30);

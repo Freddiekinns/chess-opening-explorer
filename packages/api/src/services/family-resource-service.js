@@ -17,6 +17,27 @@ const pathResolver = require('../utils/path-resolver');
 const FAMILY_VIDEO_LIMIT = 8;
 const FAMILY_COURSE_LIMIT = 6;
 
+/**
+ * A scored video the pipeline did not mark as being about one variation. Pins
+ * carry score 0 and must not outrank scored videos on a shelf.
+ */
+const isOverview = (video) => (video.score || 0) > 0 && video.level !== 'variation';
+
+/**
+ * Shelf order: overviews of the family, then videos about one of its
+ * variations; within each, match score then views. A shelf stands in for a
+ * page that has no videos of its own, so what belongs there is the opening as
+ * a whole. Ranked on score alone, the variation bonus put sub-variation
+ * lectures in 71% of shelf slots and kept the family's introductions off.
+ */
+function compareFamilyVideos(a, b) {
+  return (
+    isOverview(b) - isOverview(a) ||
+    (b.score || 0) - (a.score || 0) ||
+    (b.views || 0) - (a.views || 0)
+  );
+}
+
 class FamilyResourceService {
   /**
    * @param {Object} deps
@@ -100,8 +121,9 @@ class FamilyResourceService {
 
   /**
    * The family's best videos across all its positions — deduplicated by
-   * video id (keeping the highest-scored copy), ranked by match score then
-   * views. Built once per process from the consolidated index.
+   * video id (keeping the highest-scored copy), ranked overviews first, then
+   * by match score and views. Built once per process from the consolidated
+   * index.
    * @param {string} familyId
    * @param {number} limit
    * @returns {Array} Video objects
@@ -113,7 +135,7 @@ class FamilyResourceService {
         this.videoAccessService.getAllPositions(),
         (entry) => entry.videos,
         (video) => video.id,
-        (a, b) => (b.score || 0) - (a.score || 0) || (b.views || 0) - (a.views || 0)
+        compareFamilyVideos
       );
     }
     return (this.familyVideoIndex.get(familyId) || []).slice(0, limit);

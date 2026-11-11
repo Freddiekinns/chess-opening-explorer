@@ -146,6 +146,9 @@ class StaticFileGenerator {
         thumbnail: video.thumbnail_url || `https://i.ytimg.com/vi/${video.id}/default.jpg`,
         url: `https://youtube.com/watch?v=${video.id}`,
         score: video.match_score,
+        // Only variation videos are marked: the family shelf ranks everything
+        // else as an overview, and most of the index is overviews
+        ...(video.level === 'variation' ? { level: 'variation' } : {}),
       })),
       metadata: {
         total_videos: videos.length,

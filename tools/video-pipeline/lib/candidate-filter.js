@@ -60,7 +60,9 @@ class PreFilterVideos {
     // Duration thresholds (in seconds)
     this.durationThresholds = {
       premium: 240, // 4 minutes for premium channels
-      standard: 480, // 8 minutes for standard channels
+      // 5 minutes for standard channels: the scorer's own line for a short
+      // video. At 8 this withheld their 5–8 minute opening introductions.
+      standard: 300,
     };
   }
 

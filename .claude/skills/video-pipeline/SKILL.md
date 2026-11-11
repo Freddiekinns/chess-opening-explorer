@@ -56,6 +56,44 @@ one's survivors. Never "simplify" rematch back to a DB-only read.
   content matches. Aliases equal to the page's family prefix are skipped; the
   video can still qualify through the family path, which is policed.
 
+## A page's family comes from its ECO code, not its name
+
+`lib/opening-families.js` gives the page's family (ECO) and the title's
+(`getFamiliesFromTitle`). When they agree the video is a family match, and a
+name match on the family's own root page. Never add a family to a list inside
+the matcher: the two lists this replaced compared `kings indian` and `caro kann`
+with names carrying an apostrophe or hyphen and had no "QGD", so "QGD: …" pages
+were 5% covered beside "Sicilian: …" at 99%.
+
+The title's family now admits videos as well as vetoing them, so a family word
+that means something else needs a detector of its own ("King's Indian Attack")
+or masking ("\<word\> Variation", "Stonewall Attack"). Check `audit`'s "worst
+prefixes" lines after any change here.
+
+A word can be a variation keyword and a family ("Grünfeld", "Benoni"), and a
+page name can spell an umlaut out ("Saemisch", "Gruenfeld"). Both hid whole
+prefixes from the titles naming them; `namesSpecificVariation` takes the page's
+family and `normalizeForMatch` folds the listed spellings.
+
+## A video is an overview or a variation video, once
+
+`applyVideoLevels` sets `videos.level` per run: `variation` when the title names
+a line, else `overview`. Root pages demote variation videos (-40, unless the
+page's own name covers the line) and lift introductions (+30, speedruns
+excluded); variation pages drop a video that names only other lines; index
+entries carry `level: "variation"`; the API's family shelf ranks overviews
+first. Do not re-derive the level anywhere else. Before it existed the Sicilian
+root page led with ten sub-variation lectures.
+
+A segment made only of the title's own family words is not a named line ("King's
+Indian Attack: Sicilian Variation" exists, and would mark every Sicilian
+introduction a variation video).
+
+A bounded view-count bonus (0–20) is added only to scores already over the
+threshold. Keep it under the ±65 specificity swing: views may reorder like for
+like, never outrank a video that names the variation, never create a match, and
+never keep a demoted one (the root-page test subtracts it).
+
 ## Per-opening order is decided twice
 
 `compareMatches` (`lib/video-matcher.js`) picks the top 10;
@@ -87,9 +125,10 @@ descriptions and tags.
 node scripts/audit-video-matches.js
 ```
 
-Checks coverage, variation specificity, cross-family contamination, and ranking
-ties. Treat a rise in contamination or a fall in top-200 coverage as a
-regression.
+Checks coverage (with the worst-covered name prefixes), root pages led by a
+variation video, creator share of #1 slots, variation specificity, cross-family
+contamination, and ranking ties. Treat a rise in contamination or a fall in
+top-200 coverage as a regression.
 
 ## Jev filters the index after the scorer
 

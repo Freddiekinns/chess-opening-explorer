@@ -1103,9 +1103,12 @@ describe('VideoMatcher', () => {
       // video must keep its family-level score so niche pages stay covered
       const genericScotch = createVideo({ title: 'A Shot of Scotch: Gambit Lines Explained' });
       // Same ECO for both pages to isolate the variation swing from the
-      // (orthogonal) ECO-family moderate penalty
+      // (orthogonal) ECO-family moderate penalty. The comparison page is a
+      // move-notation page, which has no variation words either: the family
+      // root would differ by the name-match weight, since a title naming the
+      // family is a name match there and a family match everywhere below it.
       const lolliPage = { name: 'Scotch Game: Lolli Variation', eco: 'C45', aliases: [] };
-      const scotchFamilyPage = { name: 'Scotch Game', eco: 'C45', aliases: [] };
+      const scotchFamilyPage = { name: 'Scotch Game: 4.Nxd4', eco: 'C45', aliases: [] };
       expect(matcher.calculateMatchScore(genericScotch, lolliPage)).toBe(
         matcher.calculateMatchScore(genericScotch, scotchFamilyPage)
       );

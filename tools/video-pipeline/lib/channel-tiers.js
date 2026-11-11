@@ -39,6 +39,10 @@ function loadChannelTiers(configPath = CHANNELS_CONFIG_PATH) {
       // Sielecki)" must not require the real name to appear in the title.
       const name = normalizeChannelName(channel.name.replace(/\s*\(.*\)\s*$/, ''));
       if (name) tiers.byName.push({ name, tier });
+      // Some channels are titled with their handle, not the name we know them
+      // by: "Ben Finegold" publishes as "GMBenjaminFinegold".
+      const handle = normalizeChannelName(channel.handle);
+      if (handle && handle !== name) tiers.byName.push({ name: handle, tier });
     }
   } catch (error) {
     // No config — every channel resolves to unknown

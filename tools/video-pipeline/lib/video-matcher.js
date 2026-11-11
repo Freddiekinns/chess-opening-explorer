@@ -5,6 +5,7 @@ const {
   getFamilyFromEco,
   getFamilyFromTitle,
   getFamiliesFromTitle,
+  isFamilyName,
   compareFamilies,
 } = require('./opening-families');
 const { loadChannelTiers, resolveTier } = require('./channel-tiers');
@@ -41,6 +42,12 @@ const DEFAULT_MATCHING_CONFIG = {
     variation_specific: 25,
     sub_variation_miss: -40,
     family_mismatch_moderate: -30,
+    // A video about one variation, shown on the page of the whole opening
+    root_page_variation_video: -40,
+    root_page_introduction: 30,
+    // Ceiling of the view-count bonus; kept under the specificity swing so an
+    // audience can reorder like-for-like videos but never outrank relevance
+    popularity_max: 20,
   },
   entertainment_channels: ['chess24', 'world chess', 'fide chess'],
   // Distinctive sub-variation names. A title containing any of these is a
@@ -100,6 +107,20 @@ const DEFAULT_MATCHING_CONFIG = {
  * "Caro-Kann: 2.Nf3", "Scandinavian: 2...Qxd5 3.Nc3".
  */
 const MOVE_NOTATION_PATTERN = /\d+\.(?:\.\.)?\s*[a-zA-Z]/;
+
+/**
+ * Names the scid-style page names spell without their umlaut. Titles write
+ * "Sämisch" and "Grünfeld", so until these were folded the 182 "Saemisch"
+ * pages could not be named by any title.
+ */
+const SPELT_OUT_UMLAUTS = /gruenfeld|saemisch|jaenisch|loewenthal|huebner|moeller/g;
+
+/** "10-Minute Chess Openings", "…Explained in 20 Minutes": a timed primer. */
+const TIMED_PRIMER = /\b\d+[- ]minutes?\b/;
+
+/** How a title says it introduces an opening rather than explores a line. */
+const INTRODUCTION_TITLE =
+  /\b(?:introduction|intro|learn|beginners?|basics|crash course|how to play)\b|\b\d+[- ]minutes?\b/;
 
 /**
  * New FEN-based Video Matching System
@@ -179,6 +200,7 @@ class VideoMatcher {
       .toLowerCase()
       .normalize('NFD')
       .replace(/[̀-ͯ]/g, '')
+      .replace(SPELT_OUT_UMLAUTS, (word) => word.replace(/[aou]e/, (pair) => pair[0]))
       .replace(/\bacc\.?(?=\s|$)/g, 'accelerated');
   }
 
@@ -336,6 +358,154 @@ class VideoMatcher {
   }
 
   /**
+   * The families a title names, cached: the family path asks this once per
+   * video and page, which is millions of times in a rematch.
+   */
+  titleFamilies(title) {
+    if (!this.titleFamilyCache) this.titleFamilyCache = new Map();
+    let families = this.titleFamilyCache.get(title);
+    if (!families) {
+      families = getFamiliesFromTitle(title);
+      this.titleFamilyCache.set(title, families);
+    }
+    return families;
+  }
+
+  /**
+   * The variations of this page that the title names in full, as
+   * space-joined words: ['najdorf'], ['accelerated dragon']. Words the page
+   * shares with its own family are left out, or "Sicilian Defense: Old
+   * Sicilian" would make every Sicilian title a variation video.
+   */
+  namedVariationSegments(title, opening) {
+    const name = opening.name || '';
+    const colonIndex = name.indexOf(':');
+    if (colonIndex === -1) return [];
+
+    const familyWords = name
+      .slice(0, colonIndex)
+      .split(/[\s.\-']+/)
+      .map((word) => this.normalizeForMatch(word));
+    // "King's Indian Attack: Sicilian Variation" is a line of that opening, but
+    // a title saying "Sicilian" has named its own family, not that line
+    const titleFamilyWords = this.titleFamilies(title).flatMap((family) => family.split('_'));
+    return this.getVariationSegments(name)
+      .map((words) => words.filter((word) => word.length > 5 && !familyWords.includes(word)))
+      .filter(
+        (words) =>
+          words.length > 0 &&
+          !words.every((word) => titleFamilyWords.includes(word.replace(/'/g, ''))) &&
+          words.every((word) => this.findPhrase(title, word, name) === 'match')
+      )
+      .map((words) => words.join(' '));
+  }
+
+  /**
+   * Distinctive variation names in a title that no page had to confirm:
+   * short ones the segment rule skips (Kan, Evans, Morra). A keyword that is
+   * only the title's own family (Grünfeld, Benoni) is not a variation of it.
+   */
+  keywordVariations(title) {
+    const familyWords = this.titleFamilies(title).flatMap((family) => family.split('_'));
+    return (this.config.specific_variation_keywords || [])
+      .filter((keyword) => this.matchesTerm(title, keyword))
+      .map((keyword) => this.normalizeForMatch(keyword))
+      .filter((keyword) => !keyword.split(/[\s-]+/).every((word) => familyWords.includes(word)));
+  }
+
+  /**
+   * Decide each video's level, and demote variation videos on root pages.
+   *
+   * A video is a 'variation' video when its title names a line: a full
+   * variation segment of some page it matched, or a variation keyword. Every
+   * other matched video is an 'overview'. The level belongs to the video, not
+   * the pair, because the family shelf and every root page need the same
+   * answer; before it existed the Sicilian Defense root page showed ten
+   * sub-variation lectures and no overview, since any title containing
+   * "Sicilian Defense" scored the same 80 there.
+   *
+   * On a page with no variation of its own, a video about a line the page's
+   * name does not cover takes `root_page_variation_video`. "The Evans Gambit"
+   * is not demoted on the Evans Gambit page, only on the Italian Game's. The
+   * videos left are the ones about the opening as a whole, and among those an
+   * introduction takes `root_page_introduction`: a root page is where someone
+   * meets the opening, and a speedrun game outranked every primer there.
+   *
+   * On a variation page, a video that names lines, none of them the page's,
+   * is dropped: "Caro-Kann: Advance Variation" has no place on the Exchange
+   * Variation's page, however well the family matches.
+   *
+   * @param {Array} matches            pairs from the scoring loop; each carries
+   *                                   `named_variations` and a shared `video`
+   * @param {Map<string,Object>} openings  opening id → opening, aliases parsed
+   * @returns {Array} the matches still at or above the threshold
+   */
+  applyVideoLevels(matches, openings) {
+    const namedByVideo = new Map();
+    for (const match of matches) {
+      let named = namedByVideo.get(match.video_id);
+      if (!named) {
+        named = new Set(this.keywordVariations((match.video.title || '').toLowerCase()));
+        namedByVideo.set(match.video_id, named);
+      }
+      for (const segment of match.named_variations || []) named.add(segment);
+    }
+
+    const weights = this.config.weights;
+    const covers = (page) => (line) => line.split(/[\s-]+/).every((word) => page.includes(word));
+    return matches.filter((match) => {
+      const named = [...namedByVideo.get(match.video_id)];
+      match.video.level = named.length > 0 ? 'variation' : 'overview';
+
+      const opening = openings.get(match.opening_id) || {};
+      const name = opening.name || '';
+      if (name.includes(':')) {
+        // A lecture on other lines of the family: the title names lines and
+        // none of them is this page's, under its name or an alias
+        const page = this.normalizeForMatch([name, ...(opening.aliases || [])].join(' '));
+        return named.length === 0 || named.some(covers(page));
+      }
+
+      if (named.every(covers(this.normalizeForMatch(name)))) {
+        if (this.isIntroduction((match.video.title || '').toLowerCase())) {
+          match.match_score += weights.root_page_introduction;
+        }
+        return true;
+      }
+
+      // Views were added to a video that had already qualified; they must not
+      // be what keeps a demoted one
+      match.match_score += weights.root_page_variation_video;
+      return (
+        match.match_score - this.popularityBonus(match.video.view_count) >=
+        this.config.min_match_score
+      );
+    });
+  }
+
+  /**
+   * A title that introduces an opening: "Learn the Caro-Kann Defense |
+   * 10-Minute Chess Openings", "Introduction to the Slav Defense". Speedrun
+   * episodes use the same words ("Beginner To Master") for a played game.
+   */
+  isIntroduction(title) {
+    return INTRODUCTION_TITLE.test(title) && !title.includes('speedrun');
+  }
+
+  /**
+   * Bonus for a proven audience: 0 below 10k views, rising with each order of
+   * magnitude to `popularity_max` at about 3M. Only ever added to a video that
+   * already cleared the threshold, so views reorder matches and never make one.
+   */
+  popularityBonus(viewCount) {
+    if (!viewCount || viewCount <= 10000) return 0;
+    return Math.min(
+      this.config.weights.popularity_max,
+      Math.round((Math.log10(viewCount) - 4) * 8)
+    );
+  }
+
+  /**
    * Rank order within one opening: score, then how much of the variation the
    * title names, then proven popularity, then recency.
    *
@@ -384,9 +554,18 @@ class VideoMatcher {
    * blanket sibling move-notation pages via the family-part fallback — we can't
    * confirm a move-notation page IS that variation, so we don't guess.
    */
-  namesSpecificVariation(title) {
+  namesSpecificVariation(title, pageFamily) {
+    // "Grünfeld" and "Benoni" are keywords and families both: on a page of
+    // that family the word names the opening, not one of its lines
+    const familyWords = pageFamily ? pageFamily.split('_') : [];
     const keywords = this.config.specific_variation_keywords || [];
-    return keywords.some((keyword) => this.matchesTerm(title, keyword));
+    return keywords.some(
+      (keyword) =>
+        this.matchesTerm(title, keyword) &&
+        !this.normalizeForMatch(keyword)
+          .split(/[\s-]+/)
+          .every((word) => familyWords.includes(word))
+    );
   }
 
   /**
@@ -735,6 +914,10 @@ class VideoMatcher {
     const colonIndex = openingName.indexOf(':');
     const familyPrefix =
       colonIndex === -1 ? null : this.normalizeForMatch(openingName.slice(0, colonIndex)).trim();
+    // The page's family from its ECO code, and the families the title names:
+    // the one vocabulary that does not depend on how the page is spelt
+    const pageFamily = getFamilyFromEco(opening.eco);
+    const videoFamilies = this.titleFamilies(title);
 
     for (const name of allNames) {
       const cleanName = name.toLowerCase().trim();
@@ -782,6 +965,14 @@ class VideoMatcher {
       // corroboration rule (content matches only). Family-level evidence has a
       // path of its own further down; it must not enter as a name match.
       if (familyPrefix && this.normalizeForMatch(cleanName).trim() === familyPrefix) {
+        continue;
+      }
+
+      // The same alias under another spelling: "King's Indian Defense" on a
+      // "King's Indian: Sämisch" page is not equal to the prefix, so it slipped
+      // the check above and seated every King's Indian video as a name match.
+      // 95% of those pages had videos; 22% had one naming their variation.
+      if (familyPrefix && cleanName !== openingName && isFamilyName(cleanName, pageFamily)) {
         continue;
       }
 
@@ -896,6 +1087,16 @@ class VideoMatcher {
       }
     }
 
+    // The title names the page's family. The list above only fires when the
+    // page name contains its key verbatim, which "King's Indian", "Caro-Kann"
+    // and "Nimzo-Indian" never do (apostrophe, hyphen) and "QGD", "QGA" and
+    // "Gruenfeld" cannot: "QGD: …" pages were 5% covered beside "Sicilian: …"
+    // at 99%. On the family's own root page the family IS the name.
+    if (!hasNameMatch && pageFamily && videoFamilies.includes(pageFamily)) {
+      hasNameMatch = true;
+      matchType = isFamilyName(openingName, pageFamily) ? 'title_exact' : 'family';
+    }
+
     // Check common abbreviations (only for well-known openings, only in title)
     if (!hasNameMatch) {
       const abbreviations = this.getOpeningAbbreviations(openingName);
@@ -956,7 +1157,7 @@ class VideoMatcher {
     if (
       matchType === 'family' &&
       openingName.includes(':') &&
-      this.namesSpecificVariation(title) &&
+      this.namesSpecificVariation(title, pageFamily) &&
       !variationMatch.anyCleanWord
     ) {
       return 0;
@@ -966,8 +1167,6 @@ class VideoMatcher {
     // A title may name several openings (speedruns, comparison videos), so a
     // video is only rejected when EVERY family it names conflicts with the
     // page; otherwise the most compatible one decides the penalty.
-    const videoFamilies = getFamiliesFromTitle(title);
-
     if (videoFamilies.length > 0) {
       const familyMismatchPenalty = Math.min(
         ...videoFamilies.map((family) => this.getFamilyMismatchPenalty(family, opening.eco))
@@ -1104,6 +1303,13 @@ class VideoMatcher {
       'understanding',
       'principles',
       'concepts',
+      // How introductions are titled: "Learn the Caro-Kann Defense" (6.7M
+      // views) took the non-educational penalty and never reached a page
+      'learn',
+      'introduction',
+      'beginner',
+      'basics',
+      'crash course',
     ];
 
     const speedrunEducationalTerms = [
@@ -1116,7 +1322,8 @@ class VideoMatcher {
       'road to',
     ];
 
-    const hasStrongEducational = strongEducationalTerms.some((term) => title.includes(term));
+    const hasStrongEducational =
+      strongEducationalTerms.some((term) => title.includes(term)) || TIMED_PRIMER.test(title);
     const hasSpeedrunEducational = speedrunEducationalTerms.some((term) => title.includes(term));
     const isPremiumEducator = channelTier === 'premium';
 
@@ -1132,6 +1339,11 @@ class VideoMatcher {
       } else {
         score += weights.no_educational;
       }
+    }
+
+    // 8. Proven audience, for videos that qualified without it
+    if (score >= this.config.min_match_score) {
+      score += this.popularityBonus(video.view_count);
     }
 
     return Math.max(0, Math.round(score)); // Ensure non-negative scores
@@ -1159,6 +1371,7 @@ class VideoMatcher {
           const parsedOpenings = rows.map((opening) => ({
             ...opening,
             aliases: this.parseAliases(opening.aliases),
+            family: getFamilyFromEco(opening.eco),
           }));
           resolve(parsedOpenings);
         }
@@ -1202,8 +1415,16 @@ class VideoMatcher {
       );
 
       // Smart pre-filtering: only check openings that might match (more restrictive)
+      const lowerTitle = video.title.toLowerCase();
+      const titleFamilies = this.titleFamilies(lowerTitle);
+
       const candidateOpenings = openings.filter((opening) => {
         const allNames = [opening.name, ...opening.aliases];
+
+        // The title names the page's family (mirrors the scorer's family path)
+        if (opening.family && titleFamilies.includes(opening.family)) {
+          return true;
+        }
 
         // Move-notation names match on their family part (mirrors the scorer):
         // only generic family videos, never specific-variation ones
@@ -1211,7 +1432,7 @@ class VideoMatcher {
         if (
           familyPart &&
           videoContent.includes(this.normalizeForMatch(familyPart)) &&
-          !this.namesSpecificVariation(video.title.toLowerCase())
+          !this.namesSpecificVariation(video.title.toLowerCase(), opening.family)
         ) {
           return true;
         }
@@ -1279,6 +1500,7 @@ class VideoMatcher {
             video_id: video.id,
             match_score: score,
             variation_rank: this.variationEvidenceRank(video.title, opening),
+            named_variations: this.namedVariationSegments(lowerTitle, opening),
             video: videoForMatching,
           });
           actualMatches++;
@@ -1291,10 +1513,16 @@ class VideoMatcher {
       `   📊 Efficiency: ${totalChecks} opening checks (avg ${(totalChecks / candidateVideos.length).toFixed(1)} per video vs ${openings.length} without pre-filter)`
     );
 
+    // Overview or variation video, and what that costs on a root page
+    const levelledMatches = this.applyVideoLevels(
+      matches,
+      new Map(openings.map((opening) => [opening.id, opening]))
+    );
+
     // Select top videos per opening
     console.log('🔝 Selecting top videos per opening...');
     const openingGroups = {};
-    matches.forEach((match) => {
+    levelledMatches.forEach((match) => {
       if (!openingGroups[match.opening_id]) {
         openingGroups[match.opening_id] = [];
       }
@@ -1339,8 +1567,8 @@ class VideoMatcher {
           `
           INSERT OR REPLACE INTO videos (
             id, title, channel_id, channel_title, duration,
-            view_count, published_at, thumbnail_url, description, tags, created_at
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+            view_count, published_at, thumbnail_url, description, tags, level, created_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
         `,
           [
             video.id,
@@ -1353,6 +1581,7 @@ class VideoMatcher {
             video.thumbnail_url,
             video.description || '',
             JSON.stringify(video.tags || []),
+            video.level,
           ],
           function (err) {
             if (err) reject(err);

@@ -473,13 +473,16 @@ class VideoMatcher {
       }
 
       if (named.every(covers(page))) {
-        // An introduction to this page's opening: the page is its family's
-        // own, or the title carries its name. "Panno System" has no colon
-        // either, and a King's Indian primer is not an introduction to it.
+        // An introduction to this page's opening: the title names the family
+        // and the page is that family's own, or the title carries the page's
+        // name. "Panno System" has no colon either, and a King's Indian primer
+        // is not an introduction to it; nor is "Popular Beginner Openings",
+        // matched on its description, an introduction to the Italian Game.
         const title = this.normalizeForMatch(match.video.title);
+        const namesFamily = this.titleFamilies(title).includes(opening.family);
         if (
           this.isIntroduction(title) &&
-          (isFamilyName(name, opening.family) ||
+          ((namesFamily && isFamilyName(name, opening.family)) ||
             this.matchesTerm(title, this.normalizeForMatch(name)))
         ) {
           match.match_score += weights.root_page_introduction;

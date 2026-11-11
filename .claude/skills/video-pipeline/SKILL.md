@@ -70,6 +70,10 @@ that means something else needs a detector of its own ("King's Indian Attack")
 or masking ("\<word\> Variation", "Stonewall Attack"). Check `audit`'s "worst
 prefixes" lines after any change here.
 
+A family with no detector is matched by the prefix its pages are filed under
+("Bishop's Opening: …"), only when the title names no known family and the
+prefix has a word of its own (`SHARED_NAME_WORDS` blocks "Indian Defense").
+
 A word can be a variation keyword and a family ("Grünfeld", "Benoni"), and a
 page name can spell an umlaut out ("Saemisch", "Gruenfeld"). Both hid whole
 prefixes from the titles naming them; `namesSpecificVariation` takes the page's

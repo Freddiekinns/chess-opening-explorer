@@ -142,6 +142,7 @@ const SHARED_NAME_WORDS = new Set([
   'old',
   'neo',
   'semi',
+  'open',
 ]);
 
 /** Videos one creator can have on a page before `creator_repeat` applies. */

@@ -268,7 +268,16 @@ Two spellings used to hide whole groups of pages from the titles that name them.
 Saemisch pages could not be named by any title. And "Grünfeld" and "Benoni" are
 variation keywords as well as families, so the sibling guard rejected a Grünfeld
 overview on every "Gruenfeld: …" page; `namesSpecificVariation` now ignores a
-keyword that is the page's own family.
+keyword that is the page's own family or the name it is filed under
+("Nimzowitsch Defense: Kennedy Variation").
+
+A family with no detector (Bishop's Opening, Nimzowitsch Defense, Bird Opening,
+Latvian Gambit) is matched by the name its pages are filed under: the part
+before the colon, when the title carries it whole and names no family the
+detectors know. The prefix needs two words, one of them its own
+(`SHARED_NAME_WORDS`): "Indian Defense: …" sits inside "Old Indian Defense" and
+"King's Indian Defense", so it never matches this way. The Old Benoni (A43–A44)
+is filed with the Benoni, which is what its titles and pages call it.
 
 ### Overview or variation video
 

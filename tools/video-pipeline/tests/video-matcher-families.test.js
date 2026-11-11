@@ -1,0 +1,285 @@
+/**
+ * Test Suite: Video Matcher — family recall and video level
+ *
+ * Three gaps measured on the 2026-11 index:
+ *
+ * 1. Recall. The family path only knew the families whose page names happen
+ *    to match a hand list verbatim, so "QGD: …" (5% of 532 pages covered),
+ *    "QGA: …" (0%), "Gruenfeld: …" and every generic variation of a
+ *    punctuated family ("Caro-Kann Defense: Advance Variation") scored 0
+ *    against titles that name them outright.
+ * 2. Level. Nothing recorded whether a video is an overview of a family or a
+ *    lecture on one of its variations, so the Sicilian Defense root page led
+ *    with ten sub-variation videos and no overview.
+ * 3. Promotion. Intro videos from standard-tier channels lost to any
+ *    premium-channel title carrying the right keyword.
+ */
+
+const VideoMatcher = require('../lib/video-matcher');
+
+jest.mock('../database/schema-manager.js', () => {
+  return jest.fn().mockImplementation(() => ({
+    db: {
+      all: jest.fn(),
+      run: jest.fn(),
+      get: jest.fn(),
+    },
+  }));
+});
+
+describe('VideoMatcher — family recall and video level', () => {
+  let matcher;
+
+  beforeEach(() => {
+    matcher = new VideoMatcher(':memory:');
+  });
+
+  const createVideo = (overrides = {}) => ({
+    title: 'Test Video',
+    description: '',
+    channel_title: 'Hanging Pawns',
+    duration: 1800,
+    tags: [],
+    ...overrides,
+  });
+
+  const opening = (name, eco, aliases = []) => ({ name, eco, aliases });
+
+  describe('family path from the ECO code and the title', () => {
+    it('matches an abbreviated page name to a title that spells the family out', () => {
+      const score = matcher.calculateMatchScore(
+        createVideo({
+          title:
+            "Queen's Gambit Declined, Exchange | Carlsbad Structure - Chess Openings Explained",
+          channel_title: 'Saint Louis Chess Club',
+        }),
+        opening('QGD: Exchange', 'D35')
+      );
+      expect(score).toBeGreaterThanOrEqual(60);
+    });
+
+    it('matches a generic variation of a hyphenated family', () => {
+      const score = matcher.calculateMatchScore(
+        createVideo({ title: 'Caro-Kann Defense - Advance Variation in Depth ⎸Chess Openings' }),
+        opening('Caro-Kann Defense: Advance Variation', 'B12')
+      );
+      expect(score).toBeGreaterThanOrEqual(60);
+    });
+
+    it('matches a transliterated page name', () => {
+      const score = matcher.calculateMatchScore(
+        createVideo({ title: 'Exchange Variation of the Grünfeld Defense' }),
+        opening('Gruenfeld: Exchange Variation', 'D85')
+      );
+      expect(score).toBeGreaterThanOrEqual(60);
+    });
+
+    it('ranks a family overview below a video naming the variation', () => {
+      const page = opening("King's Indian Defense: Sämisch Variation", 'E80');
+      const overview = matcher.calculateMatchScore(
+        createVideo({ title: "The King's Indian Defense | Chess Opening Tutorial" }),
+        page
+      );
+      const specific = matcher.calculateMatchScore(
+        createVideo({ title: "King's Indian Defense: Samisch Variation | Chess Opening Tutorial" }),
+        page
+      );
+      expect(overview).toBeGreaterThan(0);
+      expect(specific).toBeGreaterThan(overview);
+    });
+
+    it('still rejects a sibling variation of the same family', () => {
+      const score = matcher.calculateMatchScore(
+        createVideo({ title: "Tarrasch Defense Opening Theory | Queen's Gambit Declined" }),
+        opening('QGD: Exchange', 'D35')
+      );
+      expect(score).toBe(0);
+    });
+
+    it('still rejects a different family sharing the variation word', () => {
+      const score = matcher.calculateMatchScore(
+        createVideo({ title: 'Caro-Kann, Exchange Variation · Complete Chess Openings' }),
+        opening('QGD: Exchange', 'D35')
+      );
+      expect(score).toBe(0);
+    });
+
+    it('treats the family named in a title as the name of the family root page', () => {
+      const score = matcher.calculateMatchScore(
+        createVideo({
+          title: 'Chess Openings: Caro Kann',
+          channel_title: 'thechesswebsite',
+          duration: 720,
+        }),
+        opening('Caro-Kann Defense', 'B10')
+      );
+      expect(score).toBeGreaterThanOrEqual(60);
+    });
+  });
+
+  describe('an alias that is only the family name', () => {
+    const page = opening("King's Indian: Sämisch, 5...O-O", 'E81', ["King's Indian Defense"]);
+
+    it('does not seat a sibling-variation video as a name match', () => {
+      const score = matcher.calculateMatchScore(
+        createVideo({ title: "Mar del Plata | King's Indian Defense Theory" }),
+        page
+      );
+      expect(score).toBe(0);
+    });
+
+    it('still lets a family overview through as a family match', () => {
+      const score = matcher.calculateMatchScore(
+        createVideo({ title: "Mastering the King's Indian Defense | Theory" }),
+        page
+      );
+      expect(score).toBeGreaterThan(0);
+    });
+  });
+
+  describe('intro videos', () => {
+    it('counts "learn" as an educational title', () => {
+      const page = opening('Caro-Kann Defense', 'B10');
+      const base = { channel_title: 'GothamChess', duration: 566 };
+      const learn = matcher.calculateMatchScore(
+        createVideo({ ...base, title: 'Learn the Caro-Kann Defense | 10-Minute Chess Openings' }),
+        page
+      );
+      const plain = matcher.calculateMatchScore(
+        createVideo({ ...base, title: 'The Caro-Kann Defense | 10-Minute Chess Openings' }),
+        page
+      );
+      expect(learn - plain).toBeGreaterThanOrEqual(30);
+    });
+
+    it('gives a proven audience a bounded bonus', () => {
+      const page = opening('Caro-Kann Defense', 'B10');
+      const title = 'The Caro-Kann Defense explained';
+      const popular = matcher.calculateMatchScore(
+        createVideo({ title, view_count: 5000000 }),
+        page
+      );
+      const obscure = matcher.calculateMatchScore(createVideo({ title, view_count: 5000 }), page);
+      expect(popular).toBeGreaterThan(obscure);
+      expect(popular - obscure).toBeLessThanOrEqual(20);
+    });
+
+    it('never lets views outrank a video that names the variation', () => {
+      const page = opening('Sicilian Defense: Najdorf Variation', 'B90');
+      const generic = matcher.calculateMatchScore(
+        createVideo({ title: 'Sicilian Defense explained', view_count: 10000000 }),
+        page
+      );
+      const specific = matcher.calculateMatchScore(
+        createVideo({ title: 'Sicilian Defense: Najdorf Variation explained', view_count: 1000 }),
+        page
+      );
+      expect(specific).toBeGreaterThan(generic);
+    });
+
+    it('does not let views lift a match over the threshold', () => {
+      const page = opening('Sicilian Defense', 'B20');
+      const video = { title: 'sicilian defense', channel_title: 'Unknown Channel', duration: 400 };
+      const quiet = matcher.calculateMatchScore(createVideo(video), page);
+      const viral = matcher.calculateMatchScore(
+        createVideo({ ...video, view_count: 9000000 }),
+        page
+      );
+      expect(quiet).toBeLessThan(matcher.config.min_match_score);
+      expect(viral).toBe(quiet);
+    });
+  });
+
+  describe('video level across a matching run', () => {
+    const candidate = (id, title, views, overrides = {}) => ({
+      id,
+      title,
+      description: '',
+      channelTitle: 'Hanging Pawns',
+      duration: 1800,
+      statistics: { viewCount: String(views) },
+      publishedAt: '2024-01-01T00:00:00Z',
+      thumbnails: { default: { url: `https://i.ytimg.com/vi/${id}/default.jpg` } },
+      tags: [],
+      ...overrides,
+    });
+
+    const run = async (openings, videos) => {
+      matcher.db.db.all.mockImplementation((sql, cb) =>
+        cb(
+          null,
+          openings.map((o) => ({ aliases: '[]', ...o }))
+        )
+      );
+      matcher.db.db.run.mockImplementation((sql, params, cb) => cb.call({}, null));
+      jest.spyOn(console, 'log').mockImplementation(() => {});
+      const result = await matcher.runMatchingWithVideos(videos, { clearDb: false });
+      console.log.mockRestore();
+      return result;
+    };
+
+    const scoreOn = (result, openingId, videoId) =>
+      (result.matches.find((m) => m.opening_id === openingId && m.video_id === videoId) || {})
+        .match_score;
+
+    const sicilian = [
+      { id: 'root', name: 'Sicilian Defense', eco: 'B20' },
+      { id: 'najdorf', name: 'Sicilian Defense: Najdorf Variation', eco: 'B90' },
+    ];
+    const lectures = [
+      candidate('specific', 'The Najdorf (part 1) | Sicilian Defense Theory', 300000),
+      candidate('overview', 'Ideas and plans | Sicilian Defense Theory', 100000),
+    ];
+
+    it('ranks an overview above a variation lecture on the family root page', async () => {
+      const result = await run(sicilian, lectures);
+      expect(scoreOn(result, 'root', 'overview')).toBeGreaterThan(
+        scoreOn(result, 'root', 'specific')
+      );
+    });
+
+    it('keeps the variation lecture first on its own page', async () => {
+      const result = await run(sicilian, lectures);
+      expect(scoreOn(result, 'najdorf', 'specific')).toBeGreaterThan(
+        scoreOn(result, 'najdorf', 'overview') || 0
+      );
+    });
+
+    it('records each video as an overview or a variation video', async () => {
+      const result = await run(sicilian, lectures);
+      const level = (videoId) => result.matches.find((m) => m.video_id === videoId).video.level;
+      expect(level('specific')).toBe('variation');
+      expect(level('overview')).toBe('overview');
+    });
+
+    it('does not demote a video on the page of the variation it names', async () => {
+      const openings = [
+        { id: 'italian', name: 'Italian Game', eco: 'C50' },
+        { id: 'evans', name: 'Evans Gambit', eco: 'C51' },
+      ];
+      const evans = candidate('evans-video', 'The Evans Gambit | Italian Game Theory', 200000);
+      const result = await run(openings, [evans]);
+      const raw = matcher.calculateMatchScore(
+        { ...evans, channel_title: evans.channelTitle, view_count: 200000 },
+        { name: 'Evans Gambit', eco: 'C51', aliases: [] }
+      );
+      expect(scoreOn(result, 'evans', 'evans-video')).toBe(raw);
+      expect(scoreOn(result, 'italian', 'evans-video')).toBeLessThan(raw);
+    });
+
+    it('scores a family-titled video against pages named by abbreviation', async () => {
+      const result = await run(
+        [{ id: 'qgd-exchange', name: 'QGD: Exchange', eco: 'D35' }],
+        [
+          candidate(
+            'carlsbad',
+            "Queen's Gambit Declined, Exchange | Carlsbad Structure - Chess Openings Explained",
+            150000,
+            { channelTitle: 'Saint Louis Chess Club' }
+          ),
+        ]
+      );
+      expect(scoreOn(result, 'qgd-exchange', 'carlsbad')).toBeGreaterThanOrEqual(60);
+    });
+  });
+});

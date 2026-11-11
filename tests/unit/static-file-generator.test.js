@@ -220,6 +220,16 @@ describe('StaticFileGenerator', () => {
       },
     ];
 
+    it('should carry the variation level through, and leave overviews unmarked', async () => {
+      const apiResponse = await generator.generateApiResponse(mockOpening, [
+        { ...mockVideos[0], level: 'variation' },
+        { ...mockVideos[0], id: 'video2', level: 'overview' },
+      ]);
+
+      expect(apiResponse.videos[0].level).toBe('variation');
+      expect(apiResponse.videos[1]).not.toHaveProperty('level');
+    });
+
     it('should generate API response in correct format', async () => {
       const apiResponse = await generator.generateApiResponse(mockOpening, mockVideos);
 

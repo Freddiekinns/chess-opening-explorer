@@ -28,6 +28,13 @@ describe('channel tiers', () => {
     expect(resolveTier(tiers, { channelTitle: 'thechesswebsite' })).toBe('standard');
   });
 
+  it('matches a channel whose title is its handle, not its config name', () => {
+    // config: "Ben Finegold", handle "@GMBenjaminFinegold" — YouTube title:
+    // "GMBenjaminFinegold". Unresolved, his 640 cached videos scored as an
+    // unknown channel and 71 of the 82 eligible ones reached no page.
+    expect(resolveTier(tiers, { channelTitle: 'GMBenjaminFinegold' })).toBe('standard');
+  });
+
   it('prefers channel id over the title', () => {
     const byId = loadChannelTiers();
     expect(

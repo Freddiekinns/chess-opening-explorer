@@ -230,6 +230,45 @@ describe('StaticFileGenerator', () => {
       expect(apiResponse.videos[1]).not.toHaveProperty('level');
     });
 
+    describe('family-level videos on a variation page', () => {
+      const rows = (ranks) =>
+        ranks.map((variation_rank, i) => ({ ...mockVideos[0], id: `v${i}`, variation_rank }));
+      const najdorf = { ...mockOpening, name: 'Sicilian Defense: Najdorf Variation' };
+
+      it('keeps six, enough to fill the four a page shows', async () => {
+        const apiResponse = await generator.generateApiResponse(
+          najdorf,
+          rows([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        );
+        expect(apiResponse.videos.map((v) => v.id)).toEqual(['v0', 'v1', 'v2', 'v3', 'v4', 'v5']);
+        expect(apiResponse.metadata.total_videos).toBe(6);
+      });
+
+      it('keeps every video that names the variation, wherever it ranks', async () => {
+        const apiResponse = await generator.generateApiResponse(
+          najdorf,
+          rows([3, 3, 0, 0, 0, 0, 0, 0, 1, 0])
+        );
+        expect(apiResponse.videos.map((v) => v.id)).toEqual([
+          'v0',
+          'v1',
+          'v2',
+          'v3',
+          'v4',
+          'v5',
+          'v8',
+        ]);
+      });
+
+      it('leaves a page with no variation of its own alone', async () => {
+        const apiResponse = await generator.generateApiResponse(
+          mockOpening,
+          rows([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        );
+        expect(apiResponse.videos).toHaveLength(10);
+      });
+    });
+
     it('should generate API response in correct format', async () => {
       const apiResponse = await generator.generateApiResponse(mockOpening, mockVideos);
 

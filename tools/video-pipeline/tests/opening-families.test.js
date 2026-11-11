@@ -5,6 +5,8 @@
 const {
   getFamilyFromEco,
   getFamilyFromTitle,
+  getFamiliesFromTitle,
+  isFamilyName,
   compareFamilies,
   FAMILY_MOVE_PREFIXES,
   ECO_FAMILY_RANGES,
@@ -93,6 +95,47 @@ describe('opening-families', () => {
 
     it('should report identical families as same', () => {
       expect(compareFamilies('sicilian', 'sicilian')).toBe('same');
+    });
+  });
+
+  // The title's family now also admits a video to a page (the positive family
+  // path), so a family word that is really another opening's name has to stop
+  // reading as that family.
+  describe('family words that name something else', () => {
+    it("should not read the King's Indian Attack as the King's Indian Defense", () => {
+      expect(getFamiliesFromTitle("King's Indian Attack - Standard chess #27")).toEqual([
+        'kings_indian_attack',
+      ]);
+      expect(getFamiliesFromTitle('How to play the KIA')).toEqual(['kings_indian_attack']);
+      expect(compareFamilies('kings_indian_attack', 'kings_indian')).toBe('compatible');
+    });
+
+    it('should not read "<Family> Variation" as that family', () => {
+      expect(getFamiliesFromTitle("Queen's Gambit Declined: Vienna Variation")).toEqual([
+        'queens_gambit_declined',
+      ]);
+      expect(getFamiliesFromTitle('Four Knights Game: Scotch Variation')).toEqual(['four_knights']);
+    });
+
+    it('should still read the family beside a named variation', () => {
+      expect(getFamiliesFromTitle('French Defense: Advance Variation')).toEqual(['french']);
+      expect(getFamiliesFromTitle('Leningrad Variation | Dutch Defense')).toEqual(['dutch']);
+    });
+  });
+
+  describe('isFamilyName', () => {
+    it('should recognise a family named with or without its classifier', () => {
+      expect(isFamilyName("King's Indian Defense", 'kings_indian')).toBe(true);
+      expect(isFamilyName('caro-kann', 'caro_kann')).toBe(true);
+      expect(isFamilyName('Sicilian', 'sicilian')).toBe(true);
+    });
+
+    it('should not recognise a variation, another family or nothing', () => {
+      expect(isFamilyName("King's Indian Defense: Sämisch", 'kings_indian')).toBe(false);
+      expect(isFamilyName('Tarrasch Defense', 'queens_gambit_declined')).toBe(false);
+      expect(isFamilyName('French Defense', 'sicilian')).toBe(false);
+      expect(isFamilyName('', 'sicilian')).toBe(false);
+      expect(isFamilyName('Sicilian Defense', null)).toBe(false);
     });
   });
 });

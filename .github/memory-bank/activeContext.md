@@ -1,38 +1,48 @@
 # Active Context
 
-**Date:** 2026-11-01
+**Date:** 2026-11-11
 
-## Current Task: #205, rank by your level (merged #216; #219 open)
+## Current Task: video matching — recall, levels, creators
 
-Plan: `docs/superpowers/plans/2026-10-29-level-ranking.md`, Phase 3, on
-`feat/your-level`. `hooks/useMyLevel.ts` is the saved band, live across
-components and tabs; its setter tracks `band_select` with a surface. Discover
-gets a "Your level" facet (first, divided off, outside Clear filters and the
-URL) and "Popular with intermediate players". Search takes `?band=` on both
-halves (`searchService.gamesFor`, `NameIndex.search(q, gamesOf)`, a slice per
-band) with a "Ranked for intermediate players · Change" line on all three
-surfaces. Saved Masters ranks as All. Owner's call (2026-11-01, reversing
-ranges-only): levels are named Beginner/Intermediate/Advanced/Expert everywhere,
-the Lichess range beside the name in the menu (heading "Lichess rating") and in
-the note by the count, so chess.com players pick by name. The words name players
-only: the Difficulty facet is retired (#206), `?level=` is ignored. Not built:
-setting the level from Analyse (#205 step 2), the rating input, the rest of #206
-(Theory: Light/Moderate/Heavy; scores well at your level). Stacked on it,
-`feat/level-words-search`: a level word in a query ranks by that band instead of
-filtering on the LLM tag ("openings for beginners" = Discover's list). Next:
-review `data/popularity-2026-10` when October lands, then Task 3c.
+Branch `feat/video-matching-recall`, local only. The owner lifted the video
+pause on 2026-11-11 after a measured review. Rematched 2026-11-11.
 
-## Previous Task: #208, progressive content review
+- **Recall.** A page's family comes from its ECO code and the title's from
+  `opening-families.js`, with a prefix path for families that have no detector
+  ("Bishop's Opening: …"), umlauts folded ("Saemisch") and a keyword that is the
+  page's own opening no longer read as a sibling. Pages with videos: 8,421 →
+  11,585 of 12,377 (68% → 93.6%); "QGD:" 27 → 532 of 532. Top-200 188/200.
+- **Level.** Each video is an overview or a variation video (`videos.level`,
+  `level` in the index). Root pages demote variation videos and lift
+  introductions; variation pages drop lectures on other lines; the family shelf
+  ranks overviews first. Root pages led by an introduction: 22 → 269.
+- **Creators.** "Learn", "Introduction", "10-Minute" count as educational, views
+  add 0–20, Finegold's tier resolves by handle, a creator's third video on a
+  page takes -20. Pages with 3+ of their four visible videos from one channel:
+  35.6% → 7.1%. Gotham's primers sit #1–#5 on their root pages.
+- Contamination 1 pair, ties 0. "#1 names the variation" 52.9% → 55.4%.
 
-Pages now have a review record: `data/content-review/ledger.json`, keyed by FEN,
-with the date, a verdict and a hash of the description and plans. A page is due
-again when its text changes or after 12 months. Seeded with the 105
-brief-audited roots (2026-10-11). Batch 2026-11-01: PostHog views since
-2026-09-24 (142 paths, 132 pages), top 50 by people reviewed, 17 fixed in
-`api/data/eco/` (mostly bishop colours and pieces that aren't there; three
-misread positions). 76 visited pages still due. Runbook:
-`tools/content-review/README.md`. #208 stays open; #188 should export the
-viewed-pages list so step 1 stops needing Chrome.
+Open, both the owner's call:
+
+- The rematch ran with `JEV_API_KEY` blanked, so 42,741 new pairs are
+  unfiltered. `node tools/video-pipeline/scripts/apply-jev-filter.js` with the
+  key asks Jev about them and pays for it; the monthly workflow will do the
+  same.
+- `video-index.json` is 37 MB (was 24), after capping family-level videos at six
+  per variation page. Normalising it is in `docs/backlog.md`.
+
+Not done: Jev's run-2 families, a judged baseline. Detail: the `video-pipeline`
+skill and `tools/video-pipeline/README.md`.
+
+## Previous Task: #205, rank by your level (merged #216; #219 open)
+
+`hooks/useMyLevel.ts` is the saved band; Discover has a "Your level" facet and
+search takes `?band=` on both halves, with a "Ranked for … players · Change"
+line. Levels are named Beginner/Intermediate/Advanced/Expert with the Lichess
+range beside them (owner, 2026-11-01). Not built: setting the level from
+Analyse, the rating input, the rest of #206. Stacked: `feat/level-words-search`.
+Next there: review `data/popularity-2026-10`, then Task 3c. Full text and the
+#208 content-review note: `archive.md`.
 
 Standing: revisit analytics late Nov 2026 with six weeks of the new events;
-search ranking and the video pipeline are paused until then (`archive.md`).
+search ranking stays paused until then (`archive.md`).

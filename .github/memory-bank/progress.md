@@ -4,6 +4,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 
 ## What's Done (newest first)
 
+- **2026-11-11**: video matching — family from ECO, overview/variation level,
+  intro lift, creator spread; 68% → 93.6% of pages with videos.
 - **2026-11-01**: #208 content review ledger and queue; batch 1, 50 pages, 17
   fixed.
 - **2026-11-01**: #205 — Discover and search rank by your Lichess band; #204 —
@@ -25,10 +27,8 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Backlog Now 1–3** (2026-10-09): Analyse cards floor 3 with no fallback, "won
   X of Y", needs-work by games lost; billions as B; Discover "Difficulty";
   move-row legend; explorer steps keep their scroll offset.
-- **Model routing** (2026-10-08): Haiku `scout`/`verifier`, Sonnet `implementer`
-  and `/docs-sync`, `pipeline-reviewer` pinned to Sonnet high; routing rules in
-  `CLAUDE.md`. Main session stays Opus, effort medium. `AGENTS.md` 441 → ~220
-  lines, tooling and subsystem detail moved to skills and the scoped files.
+- **Model routing** (2026-10-08): Haiku `verifier`, Sonnet `pipeline-reviewer`,
+  rules in `CLAUDE.md`; `AGENTS.md` 441 → ~220 lines, detail moved to skills.
 - **Style tags** (2026-10-05, #160): a fixed six-axis taxonomy replaces the LLM
   tags on the detail page, cards, Discover facets and style search. 563
   variations cover 80% of pages and 65% of games; 848 tail variations remain.
@@ -61,15 +61,11 @@ One line per completed task. Detail lives in git commits and `archive.md`.
   `dependabot/**` no longer deploys. 81 soft 404s were "Opening not found"
   painted on any failed fetch; the 568 KB site icon is 46 KB. **`archive.md`.**
 - **Fourth and fifth Dependabot passes** (2026-08-29/31, #71-#129): jest 30,
-  vite 8 / vitest 4, jsdom 30, CI on Node 24; green checks lied repeatedly.
-  **`archive.md`**, `docs/reviews/2026-08-29-*`.
-- **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): 5,750
-  indexed pages earned 4,810 impressions in 90 days because nothing linked into
-  the corpus. Ancestor and related-opening links now render before hydration;
-  non-pages 404 and trailing slashes 308 via a shared `STATIC_ROUTES`;
-  `SHARD_COUNT` 64 → 96; the audit gate runs on Windows. `lastmod` was wrong
-  twice (mtime, then a shallow clone's graft boundary) and is now **omitted** on
-  Vercel — no date beats a wrong one. Watch "Discovered — not indexed" (3,615).
+  vite 8 / vitest 4, CI on Node 24. **`archive.md`**,
+  `docs/reviews/2026-08-29-*`.
+- **The opening corpus got a crawl graph** (2026-08-28, #80/#81/#82): ancestor
+  and related-opening links before hydration, shared `STATIC_ROUTES`, `lastmod`
+  omitted on Vercel. **`archive.md`.**
 - Everything up to 2026-08-10 — **all detail in `archive.md`**: opening pages
   carry their content in the HTML (2026-08-07); video matching stopped trusting
   descriptions (2026-08-10); search answers in milliseconds via `NameIndex`
@@ -93,9 +89,9 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Lazy-load `video-index.json`** if Active CPU nears Hobby's 4h (1h55m/30d).
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
   no CI suite, and its barrels export without extensions.
-- **Video programme**: enable the monthly refresh Action (commit
-  `tools/data/videos.sqlite`, confirm `YOUTUBE_API_KEY`, add `JEV_API_KEY`),
-  then V4-V6. Unused: Jev's video families (`docs/backlog.md` → Enablers).
+- **Video programme**: run the Jev filter over the 42,741 pairs the 2026-11-11
+  rematch added; normalise `video-index.json` (37 MB); enable the monthly
+  refresh Action; V4-V6; Jev's video families (`docs/backlog.md` → Enablers).
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.
 - **Search near-duplicates**: four identical "najdorf" rows, ECO apart (data).

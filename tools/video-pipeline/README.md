@@ -419,6 +419,23 @@ slots are across channels, variation specificity, cross-family contamination,
 ranking-tie ambiguity, and index age. Run before and after any scorer change to
 verify it helped.
 
+The 2026-11-11 rematch (family from ECO, video level, creator spread), on the
+same 7,417-video corpus:
+
+| Measure                                        | Before | After  |
+| ---------------------------------------------- | ------ | ------ |
+| Pages with videos (of 12,377)                  | 8,421  | 11,585 |
+| Top-200 most-played covered                    | 186    | 188    |
+| "QGD: …" pages covered (of 532)                | 27     | 532    |
+| Sub-variation pages whose #1 names the line    | 52.9%  | 55.4%  |
+| Root pages led by an introduction              | 22     | 269    |
+| Pages with 3+ of 4 visible videos, one channel | 35.6%  | 7.1%   |
+| Conflicting-family pairs                       | 1      | 1      |
+| `video-index.json`                             | 24 MB  | 37 MB  |
+
+It ran without `JEV_API_KEY`, so 42,741 of the new pairs have no Jev answer yet
+and are shown unfiltered until the filter is run with the key.
+
 ## Utilities
 
 ### Backfill Videos

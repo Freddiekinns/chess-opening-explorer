@@ -507,6 +507,27 @@ describe('VideoMatcher — family recall and video level', () => {
       expect(scoreOn(result, 'italian', 'round-up')).toBe(rawScore(roundUp, page));
     });
 
+    it('does not lift a played game whose title promises to teach the opening', async () => {
+      const training = candidate(
+        'training',
+        "If you wanna learn the Queen's Gambit for black, analyze this game. · Training Game",
+        6000
+      );
+      const ladder = candidate(
+        'ladder',
+        "Crash Course in the Queen's Gambit Declined | Climbing the Rating Ladder vs. 1827",
+        90000,
+        { channelTitle: 'John Bartholomew' }
+      );
+      const pages = [
+        { id: 'qg', name: "Queen's Gambit", eco: 'D06' },
+        { id: 'qgd', name: "Queen's Gambit Declined", eco: 'D30' },
+      ];
+      const result = await run(pages, [training, ladder]);
+      expect(scoreOn(result, 'qg', 'training')).toBe(rawScore(training, pages[0]));
+      expect(scoreOn(result, 'qgd', 'ladder')).toBe(rawScore(ladder, pages[1]));
+    });
+
     it('does not demote a video on a root page that carries the line as an alias', async () => {
       const video = candidate('giuoco', 'Giuoco Piano | Italian Game Theory', 0);
       const result = await run(

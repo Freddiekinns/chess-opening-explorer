@@ -293,12 +293,13 @@ variation segment of a page it matched, or a variation keyword), otherwise
   demoted on the Evans Gambit page, only on the Italian Game's.
 - **Root pages, again.** Among the videos left, a title that introduces the
   opening ("Learn the …", "Introduction to …", "… | 10-Minute Chess Openings",
-  not a speedrun) takes +30. A root page is where someone meets the opening, and
-  speedrun games held five of the Sicilian root's first six places while a
-  3.4M-view primer was off the page. The lift needs the title to name the family
-  and the page to be that family's own ("Sicilian Defence"), or the title to
-  carry the page's name: "Panno System" has no colon either, and a King's Indian
-  primer is not an introduction to it.
+  not a speedrun, training game or rating-ladder episode) takes +30. A root page
+  is where someone meets the opening, and speedrun games held five of the
+  Sicilian root's first six places while a 3.4M-view primer was off the page.
+  The lift needs the title to name the family and the page to be that family's
+  own ("Sicilian Defence"), or the title to carry the page's name: "Panno
+  System" has no colon either, and a King's Indian primer is not an introduction
+  to it.
 - **Variation pages.** A video that names lines, none of them the page's (by
   name or alias), is dropped: "Caro-Kann: Advance Variation" does not belong on
   the Exchange Variation's page, however well the family matches. The keyword
@@ -422,19 +423,25 @@ verify it helped.
 The 2026-11-11 rematch (family from ECO, video level, creator spread), on the
 same 7,417-video corpus:
 
-| Measure                                        | Before | After  |
-| ---------------------------------------------- | ------ | ------ |
-| Pages with videos (of 12,377)                  | 8,421  | 11,585 |
-| Top-200 most-played covered                    | 186    | 188    |
-| "QGD: …" pages covered (of 532)                | 27     | 532    |
-| Sub-variation pages whose #1 names the line    | 52.9%  | 55.4%  |
-| Root pages led by an introduction              | 22     | 269    |
-| Pages with 3+ of 4 visible videos, one channel | 35.6%  | 7.1%   |
-| Conflicting-family pairs                       | 1      | 1      |
-| `video-index.json`                             | 24 MB  | 37 MB  |
+| Measure                                        | Before | Scorer | With Jev |
+| ---------------------------------------------- | ------ | ------ | -------- |
+| Pages with videos (of 12,377)                  | 8,421  | 11,585 | 11,398   |
+| Top-200 most-played covered                    | 186    | 188    | 184      |
+| "QGD: …" pages covered (of 532)                | 27     | 532    | 532      |
+| Sub-variation pages whose #1 names the line    | 52.9%  | 55.4%  | 55.9%    |
+| Root pages led by an introduction              | 22     | 269    | 256      |
+| Pages with 3+ of 4 visible videos, one channel | 35.6%  | 7.1%   | 7.6%     |
+| Conflicting-family pairs                       | 1      | 1      | 1        |
+| `video-index.json`                             | 24 MB  | 37 MB  | 31 MB    |
 
-It ran without `JEV_API_KEY`, so 42,741 of the new pairs have no Jev answer yet
-and are shown unfiltered until the filter is run with the key.
+"Scorer" is the rematch without `JEV_API_KEY`; "With Jev" is the committed
+index, after Jev was asked about the 42,741 new pairs (1,202 calls, 5.4M tokens,
+about $0.23). It removed 12,332 of them, 10,138 of those a family overview on a
+variation page it does not cover ("How to Sac and Attack versus the Sicilian" on
+718 Sicilian lines) and an Old Benoni guide that led 249 Modern Benoni pages.
+The four top-200 pages it emptied ("Queen's Pawn: Neo-Indian", "Zukertort
+Opening: Tennison Gambit", "Three Knights: 3...Bc5") held only another opening's
+overview and now show their family shelf.
 
 ## Utilities
 

@@ -83,11 +83,11 @@ family and `normalizeForMatch` folds the listed spellings.
 
 `applyVideoLevels` sets `videos.level` per run: `variation` when the title names
 a line, else `overview`. Root pages demote variation videos (-40, unless the
-page's own name covers the line) and lift introductions (+30, speedruns
-excluded); variation pages drop a video that names only other lines; index
-entries carry `level: "variation"`; the API's family shelf ranks overviews
-first. Do not re-derive the level anywhere else. Before it existed the Sicilian
-root page led with ten sub-variation lectures.
+page's own name covers the line) and lift introductions (+30, played-game series
+such as speedruns excluded); variation pages drop a video that names only other
+lines; index entries carry `level: "variation"`; the API's family shelf ranks
+overviews first. Do not re-derive the level anywhere else. Before it existed the
+Sicilian root page led with ten sub-variation lectures.
 
 A segment made only of the title's own family words is not a named line ("King's
 Indian Attack: Sicilian Variation" exists, and would mark every Sicilian

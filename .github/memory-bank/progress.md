@@ -5,7 +5,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 ## What's Done (newest first)
 
 - **2026-11-11**: video matching — family from ECO, overview/variation level,
-  intro lift, creator spread; 68% → 93.6% of pages with videos.
+  intro lift, creator spread, Jev over the new pairs; 68% → 92.1% of pages.
 - **2026-11-01**: #208 content review ledger and queue; batch 1, 50 pages, 17
   fixed.
 - **2026-11-01**: #205 — Discover and search rank by your Lichess band; #204 —
@@ -89,8 +89,7 @@ One line per completed task. Detail lives in git commits and `archive.md`.
 - **Lazy-load `video-index.json`** if Active CPU nears Hobby's 4h (1h55m/30d).
 - **`packages/shared` has two latent defects** (phase 5): its `tests/` runs in
   no CI suite, and its barrels export without extensions.
-- **Video programme**: run the Jev filter over the 42,741 pairs the 2026-11-11
-  rematch added; normalise `video-index.json` (37 MB); enable the monthly
+- **Video programme**: normalise `video-index.json` (31 MB); enable the monthly
   refresh Action; V4-V6; Jev's video families (`docs/backlog.md` → Enablers).
 - **Search is not a real combobox** — no roles, no live region. Biggest a11y
   gap.

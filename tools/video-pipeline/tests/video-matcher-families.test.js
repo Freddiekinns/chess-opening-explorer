@@ -397,6 +397,28 @@ describe('VideoMatcher — family recall and video level', () => {
       expect(scoreOn(result, 'root', 'hp-intro')).toBeGreaterThan(rawScore(intro, sicilian[0]));
     });
 
+    it('only lifts an introduction to the opening the page is about', async () => {
+      const kidIntro = candidate(
+        'kid-intro',
+        "Learn the King's Indian Setup | 10-Minute Chess Openings",
+        3100000,
+        { channelTitle: 'GothamChess', duration: 503 }
+      );
+      const pannoIntro = candidate('panno-intro', 'Introduction to the Panno System', 20000);
+      const pages = [
+        { id: 'panno', name: 'Panno System', eco: 'E63' },
+        { id: 'szen', name: 'Sicilian, Taimanov, Szen', eco: 'B44' },
+        { id: 'defence', name: 'Sicilian Defence', eco: 'B20' },
+      ];
+      const result = await run(pages, [kidIntro, pannoIntro, gothamIntro]);
+      expect(scoreOn(result, 'panno', 'kid-intro')).toBe(rawScore(kidIntro, pages[0]));
+      expect(scoreOn(result, 'szen', 'gotham')).toBe(rawScore(gothamIntro, pages[1]));
+      expect(scoreOn(result, 'panno', 'panno-intro')).toBeGreaterThan(
+        rawScore(pannoIntro, pages[0])
+      );
+      expect(scoreOn(result, 'defence', 'gotham')).toBeGreaterThan(rawScore(gothamIntro, pages[2]));
+    });
+
     it('does not demote a video on a root page that carries the line as an alias', async () => {
       const video = candidate('giuoco', 'Giuoco Piano | Italian Game Theory', 0);
       const result = await run(

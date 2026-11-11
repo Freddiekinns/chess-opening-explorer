@@ -286,7 +286,9 @@ variation segment of a page it matched, or a variation keyword), otherwise
   opening ("Learn the …", "Introduction to …", "… | 10-Minute Chess Openings",
   not a speedrun) takes +30. A root page is where someone meets the opening, and
   speedrun games held five of the Sicilian root's first six places while a
-  3.4M-view primer was off the page.
+  3.4M-view primer was off the page. The lift needs the page to be its family's
+  own ("Sicilian Defence") or the title to carry the page's name: "Panno System"
+  has no colon either, and a King's Indian primer is not an introduction to it.
 - **Variation pages.** A video that names lines, none of them the page's (by
   name or alias), is dropped: "Caro-Kann: Advance Variation" does not belong on
   the Exchange Variation's page, however well the family matches. The keyword

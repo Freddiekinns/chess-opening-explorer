@@ -473,7 +473,15 @@ class VideoMatcher {
       }
 
       if (named.every(covers(page))) {
-        if (this.isIntroduction((match.video.title || '').toLowerCase())) {
+        // An introduction to this page's opening: the page is its family's
+        // own, or the title carries its name. "Panno System" has no colon
+        // either, and a King's Indian primer is not an introduction to it.
+        const title = this.normalizeForMatch(match.video.title);
+        if (
+          this.isIntroduction(title) &&
+          (isFamilyName(name, opening.family) ||
+            this.matchesTerm(title, this.normalizeForMatch(name)))
+        ) {
           match.match_score += weights.root_page_introduction;
         }
         return true;

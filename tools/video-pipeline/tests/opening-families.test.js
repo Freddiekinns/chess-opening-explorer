@@ -117,6 +117,12 @@ describe('opening-families', () => {
       expect(getFamiliesFromTitle('Four Knights Game: Scotch Variation')).toEqual(['four_knights']);
     });
 
+    it('does not read the Stonewall Attack as the Dutch', () => {
+      expect(getFamiliesFromTitle('Stonewall Attack for white')).not.toContain('dutch');
+      expect(getFamiliesFromTitle('The Stonewall | Dutch Defense Theory')).toEqual(['dutch']);
+      expect(getFamiliesFromTitle('Stonewall Dutch explained')).toEqual(['dutch']);
+    });
+
     it('should still read the family beside a named variation', () => {
       expect(getFamiliesFromTitle('French Defense: Advance Variation')).toEqual(['french']);
       expect(getFamiliesFromTitle('Leningrad Variation | Dutch Defense')).toEqual(['dutch']);

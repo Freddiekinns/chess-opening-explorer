@@ -267,6 +267,53 @@ describe('VideoMatcher — family recall and video level', () => {
       expect(scoreOn(result, 'italian', 'evans-video')).toBeLessThan(raw);
     });
 
+    const caroKann = [
+      { id: 'advance', name: 'Caro-Kann Defense: Advance Variation', eco: 'B12' },
+      { id: 'short', name: 'Caro-Kann Defense: Advance Variation, Short Variation', eco: 'B12' },
+      { id: 'exchange', name: 'Caro-Kann Defense: Exchange Variation', eco: 'B13' },
+    ];
+
+    it('keeps a lecture on one variation off its sibling variations', async () => {
+      const result = await run(caroKann, [
+        candidate('advance-video', 'Caro-Kann Defense: Advance Variation | Chess Openings', 0),
+      ]);
+      expect(scoreOn(result, 'advance', 'advance-video')).toBeGreaterThanOrEqual(60);
+      expect(scoreOn(result, 'exchange', 'advance-video')).toBeUndefined();
+    });
+
+    it('keeps a lecture on a sub-line on the page of the line it belongs to', async () => {
+      const result = await run(caroKann, [
+        candidate('short-video', 'Caro-Kann Advance Variation: Short Variation theory', 0),
+      ]);
+      expect(scoreOn(result, 'short', 'short-video')).toBeGreaterThanOrEqual(60);
+      expect(scoreOn(result, 'advance', 'short-video')).toBeGreaterThanOrEqual(60);
+      expect(scoreOn(result, 'exchange', 'short-video')).toBeUndefined();
+    });
+
+    it('keeps a family overview on every variation page', async () => {
+      const result = await run(
+        [...caroKann, { id: 'gruenfeld', name: 'Gruenfeld: Exchange Variation', eco: 'D85' }],
+        [
+          candidate('caro-overview', 'Ideas and plans | Caro-Kann Defense Theory', 0),
+          candidate('gruenfeld-overview', 'The Grünfeld Defense | Chess Openings Explained', 0),
+        ]
+      );
+      expect(scoreOn(result, 'exchange', 'caro-overview')).toBeGreaterThanOrEqual(60);
+      expect(scoreOn(result, 'gruenfeld', 'gruenfeld-overview')).toBeGreaterThanOrEqual(60);
+    });
+
+    it('does not let views keep a demoted video on a root page', async () => {
+      const openings = [{ id: 'italian', name: 'Italian Game', eco: 'C50' }];
+      const evans = (views) =>
+        candidate('evans-video', 'The Evans Gambit | Italian Game', views, {
+          channelTitle: 'GothamChess',
+        });
+      const quiet = await run(openings, [evans(0)]);
+      const viral = await run(openings, [evans(5000000)]);
+      expect(scoreOn(quiet, 'italian', 'evans-video')).toBeUndefined();
+      expect(scoreOn(viral, 'italian', 'evans-video')).toBeUndefined();
+    });
+
     it('scores a family-titled video against pages named by abbreviation', async () => {
       const result = await run(
         [{ id: 'qgd-exchange', name: 'QGD: Exchange', eco: 'D35' }],

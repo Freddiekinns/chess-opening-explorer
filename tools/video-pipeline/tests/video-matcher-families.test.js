@@ -117,6 +117,21 @@ describe('VideoMatcher — family recall and video level', () => {
     });
   });
 
+  describe('page names that spell an umlaut out', () => {
+    it('reads "Sämisch" in a title as the Saemisch of the page name', () => {
+      const page = opening("King's Indian: Saemisch, 5...O-O", 'E81');
+      const specific = matcher.calculateMatchScore(
+        createVideo({ title: "King's Indian Defense: Sämisch Variation | Chess Openings" }),
+        page
+      );
+      const generic = matcher.calculateMatchScore(
+        createVideo({ title: "King's Indian Defense | Chess Openings" }),
+        page
+      );
+      expect(specific).toBeGreaterThan(generic);
+    });
+  });
+
   describe('an alias that is only the family name', () => {
     const page = opening("King's Indian: Sämisch, 5...O-O", 'E81', ["King's Indian Defense"]);
 
@@ -150,6 +165,20 @@ describe('VideoMatcher — family recall and video level', () => {
         page
       );
       expect(learn - plain).toBeGreaterThanOrEqual(30);
+    });
+
+    it('counts "10-Minute Chess Openings" as an educational title', () => {
+      const page = opening('Sicilian Defense', 'B20');
+      const base = { channel_title: 'GothamChess', duration: 576 };
+      const series = matcher.calculateMatchScore(
+        createVideo({ ...base, title: 'The Sicilian Defense | 10-Minute Chess Openings' }),
+        page
+      );
+      const plain = matcher.calculateMatchScore(
+        createVideo({ ...base, title: 'The Sicilian Defense | Chess Openings' }),
+        page
+      );
+      expect(series - plain).toBeGreaterThanOrEqual(30);
     });
 
     it('gives a proven audience a bounded bonus', () => {
@@ -312,6 +341,60 @@ describe('VideoMatcher — family recall and video level', () => {
       const viral = await run(openings, [evans(5000000)]);
       expect(scoreOn(quiet, 'italian', 'evans-video')).toBeUndefined();
       expect(scoreOn(viral, 'italian', 'evans-video')).toBeUndefined();
+    });
+
+    it('does not call an overview a variation video because another opening has a line named after its family', async () => {
+      const result = await run(
+        [
+          { id: 'root', name: 'Sicilian Defense', eco: 'B20' },
+          { id: 'pterodactyl', name: 'Pterodactyl Defense: Sicilian, Unpin', eco: 'B27' },
+        ],
+        [candidate('intro', 'Sicilian Defense (introduction, ideas & variations)', 700000)]
+      );
+      expect(result.matches.find((m) => m.video_id === 'intro').video.level).toBe('overview');
+    });
+
+    const gothamIntro = candidate(
+      'gotham',
+      'The Sicilian Defense | 10-Minute Chess Openings',
+      3400000,
+      { channelTitle: 'GothamChess', duration: 576 }
+    );
+    const speedrun = candidate(
+      'speedrun',
+      'Master Class | Sicilian Defense | Chess Speedrun | Grandmaster Naroditsky',
+      220000,
+      { channelTitle: 'Daniel Naroditsky', duration: 2400 }
+    );
+    const rawScore = (video, page) =>
+      matcher.calculateMatchScore(
+        {
+          ...video,
+          channel_title: video.channelTitle,
+          view_count: Number(video.statistics.viewCount),
+        },
+        { aliases: [], ...page }
+      );
+
+    it('leads a family root page with an introduction to the opening', async () => {
+      const result = await run(sicilian, [gothamIntro, speedrun]);
+      expect(scoreOn(result, 'root', 'gotham')).toBeGreaterThan(
+        scoreOn(result, 'root', 'speedrun')
+      );
+    });
+
+    it('gives the introduction nothing extra on a variation page or in a speedrun', async () => {
+      const intro = candidate('hp-intro', 'Introduction to the Sicilian Defense', 100000);
+      const beginnerRun = candidate(
+        'beginner-run',
+        'Beginner To Master | Chess Speedrun | Sicilian Defense',
+        70000,
+        { channelTitle: 'Daniel Naroditsky' }
+      );
+      const result = await run(sicilian, [intro, beginnerRun]);
+      expect(scoreOn(result, 'najdorf', 'hp-intro')).toBe(rawScore(intro, sicilian[1]));
+      expect(scoreOn(result, 'root', 'beginner-run')).toBe(rawScore(beginnerRun, sicilian[0]));
+      expect(scoreOn(result, 'root', 'hp-intro')).toBeGreaterThan(rawScore(intro, sicilian[0]));
     });
 
     it('scores a family-titled video against pages named by abbreviation', async () => {

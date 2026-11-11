@@ -407,12 +407,13 @@ class VideoMatcher {
   /**
    * Distinctive variation names in a title that no page had to confirm:
    * short ones the segment rule skips (Kan, Evans, Morra). A keyword that is
-   * only the title's own family (Grünfeld, Benoni) is not a variation of it.
+   * only the title's own family (Grünfeld, Benoni) is not a variation of it,
+   * nor is the first half of a double-barrelled name (Nimzowitsch-Larsen).
    */
   keywordVariations(title) {
     const familyWords = this.titleFamilies(title).flatMap((family) => family.split('_'));
     return (this.config.specific_variation_keywords || [])
-      .filter((keyword) => this.matchesTerm(title, keyword))
+      .filter((keyword) => this.matchesTerm(title, keyword) && !title.includes(`${keyword}-`))
       .map((keyword) => this.normalizeForMatch(keyword))
       .filter((keyword) => !keyword.split(/[\s-]+/).every((word) => familyWords.includes(word)));
   }
@@ -461,16 +462,17 @@ class VideoMatcher {
       const named = [...namedByVideo.get(match.video_id)];
       match.video.level = named.length > 0 ? 'variation' : 'overview';
 
+      // A line is the page's own under its name or an alias
       const opening = openings.get(match.opening_id) || {};
       const name = opening.name || '';
+      const page = this.normalizeForMatch([name, ...(opening.aliases || [])].join(' '));
       if (name.includes(':')) {
         // A lecture on other lines of the family: the title names lines and
-        // none of them is this page's, under its name or an alias
-        const page = this.normalizeForMatch([name, ...(opening.aliases || [])].join(' '));
+        // none of them is this page's
         return named.length === 0 || named.some(covers(page));
       }
 
-      if (named.every(covers(this.normalizeForMatch(name)))) {
+      if (named.every(covers(page))) {
         if (this.isIntroduction((match.video.title || '').toLowerCase())) {
           match.match_score += weights.root_page_introduction;
         }
@@ -557,6 +559,7 @@ class VideoMatcher {
     const seen = new Map();
     for (const match of ranked) {
       const creator = match.video.channel_id || match.video.channel_title;
+      if (!creator) continue;
       const above = seen.get(creator) || 0;
       seen.set(creator, above + 1);
       if (above < CREATOR_SLOTS) continue;

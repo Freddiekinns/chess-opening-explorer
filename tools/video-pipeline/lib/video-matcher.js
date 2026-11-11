@@ -155,6 +155,9 @@ const TIMED_PRIMER = /\b\d+[- ]minutes?\b/;
 const INTRODUCTION_TITLE =
   /\b(?:introduction|intro|learn|beginners?|basics|crash course|how to play)\b|\b\d+[- ]minutes?\b/;
 
+/** Series in which the creator plays a game, whatever the episode's title promises. */
+const PLAYED_GAME_SERIES = /\bspeedrun\b|\btraining games?\b|\brating ladder\b/;
+
 /**
  * New FEN-based Video Matching System
  * Implements the pipeline overhaul plan with weighted scoring
@@ -532,10 +535,11 @@ class VideoMatcher {
   /**
    * A title that introduces an opening: "Learn the Caro-Kann Defense |
    * 10-Minute Chess Openings", "Introduction to the Slav Defense". Speedrun
-   * episodes use the same words ("Beginner To Master") for a played game.
+   * and training-game episodes use the same words ("Beginner To Master", "If
+   * you wanna learn the Queen's Gambit, analyze this game") for a played game.
    */
   isIntroduction(title) {
-    return INTRODUCTION_TITLE.test(title) && !title.includes('speedrun');
+    return INTRODUCTION_TITLE.test(title) && !PLAYED_GAME_SERIES.test(title);
   }
 
   /**

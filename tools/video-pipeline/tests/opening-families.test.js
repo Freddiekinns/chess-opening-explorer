@@ -22,6 +22,9 @@ describe('opening-families', () => {
       expect(getFamilyFromEco('C42')).toBe('petrov');
       expect(getFamilyFromEco('C45')).toBe('scotch');
       expect(getFamilyFromEco('C47')).toBe('four_knights');
+      expect(getFamilyFromEco('A42')).toBe('queens_pawn');
+      expect(getFamilyFromEco('A43')).toBe('benoni');
+      expect(getFamilyFromEco('A44')).toBe('benoni');
       expect(getFamilyFromEco('C27')).toBe('vienna');
     });
 

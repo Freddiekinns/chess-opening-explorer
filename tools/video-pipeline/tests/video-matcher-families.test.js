@@ -117,6 +117,84 @@ describe('VideoMatcher — family recall and video level', () => {
     });
   });
 
+  describe('families with no detector of their own', () => {
+    const explained = (title, overrides = {}) =>
+      createVideo({ title: `${title} | Chess Openings Explained`, ...overrides });
+
+    it('matches a title that carries the name the page files its variation under', () => {
+      expect(
+        matcher.calculateMatchScore(
+          explained("Bishop's Opening"),
+          opening("Bishop's Opening: Urusov Gambit", 'C24')
+        )
+      ).toBeGreaterThanOrEqual(60);
+    });
+
+    it('does not take a keyword for a sibling when it is the page own opening', () => {
+      expect(
+        matcher.calculateMatchScore(
+          explained('Nimzowitsch Defense'),
+          opening('Nimzowitsch Defense: Kennedy Variation', 'B00')
+        )
+      ).toBeGreaterThanOrEqual(60);
+    });
+
+    it('files the Old Benoni with the Benoni', () => {
+      expect(
+        matcher.calculateMatchScore(
+          explained('The Old Benoni'),
+          opening('Old Benoni: Schmidt, 6.Be2 O-O', 'A43')
+        )
+      ).toBeGreaterThanOrEqual(60);
+    });
+
+    it('does not match on a name made of words other openings share', () => {
+      expect(
+        matcher.calculateMatchScore(
+          explained('The Old Indian Defense'),
+          opening('Indian Defense: Normal Variation', 'A46')
+        )
+      ).toBe(0);
+    });
+
+    it('leaves a title about a family it knows to that family', () => {
+      expect(
+        matcher.calculateMatchScore(
+          explained("Sicilian Defense against the Bishop's Opening players"),
+          opening("Bishop's Opening: Urusov Gambit", 'C24')
+        )
+      ).toBe(0);
+    });
+
+    it('scores such a page through the pre-filter of a matching run', async () => {
+      matcher.db.db.all.mockImplementation((sql, cb) =>
+        cb(null, [
+          { id: 'urusov', name: "Bishop's Opening: Urusov Gambit", eco: 'C24', aliases: '[]' },
+        ])
+      );
+      matcher.db.db.run.mockImplementation((sql, params, cb) => cb.call({}, null));
+      jest.spyOn(console, 'log').mockImplementation(() => {});
+      const result = await matcher.runMatchingWithVideos(
+        [
+          {
+            id: 'bishops',
+            title: "Bishop's Opening | Chess Openings Explained",
+            description: '',
+            channelTitle: 'Hanging Pawns',
+            duration: 1800,
+            statistics: { viewCount: '1000' },
+            publishedAt: '2024-01-01T00:00:00Z',
+            thumbnails: { default: { url: 'https://i.ytimg.com/vi/bishops/default.jpg' } },
+            tags: [],
+          },
+        ],
+        { clearDb: false }
+      );
+      console.log.mockRestore();
+      expect(result.matches.map((m) => m.opening_id)).toEqual(['urusov']);
+    });
+  });
+
   describe('page names that spell an umlaut out', () => {
     it('reads "Sämisch" in a title as the Saemisch of the page name', () => {
       const page = opening("King's Indian: Saemisch, 5...O-O", 'E81');

@@ -419,6 +419,16 @@ describe('VideoMatcher — family recall and video level', () => {
       expect(scoreOn(result, 'defence', 'gotham')).toBeGreaterThan(rawScore(gothamIntro, pages[2]));
     });
 
+    it('does not lift a beginner video that only mentions the opening in its description', async () => {
+      const roundUp = candidate('round-up', 'Popular Beginner Openings', 300000, {
+        description: 'We look at the Italian Game, then the Italian Game once more.',
+        channelTitle: 'Saint Louis Chess Club',
+      });
+      const page = { id: 'italian', name: 'Italian Game', eco: 'C50' };
+      const result = await run([page], [roundUp]);
+      expect(scoreOn(result, 'italian', 'round-up')).toBe(rawScore(roundUp, page));
+    });
+
     it('does not demote a video on a root page that carries the line as an alias', async () => {
       const video = candidate('giuoco', 'Giuoco Piano | Italian Game Theory', 0);
       const result = await run(

@@ -234,6 +234,7 @@ there (no code change), then run `npm run pipeline:rematch`. Defaults:
 | **Sub-variation Miss**   | -40    | Generic family video on a specific variation     |
 | **Root-page Variation**  | -40    | Video about one variation on a family root page  |
 | **Root-page Intro**      | +30    | An introduction to the opening, on its root page |
+| **Creator Repeat**       | -20    | A creator's third and later video on one page    |
 | **Short Video**          | -25    | Under 5 minutes                                  |
 | **Popularity**           | 0–20   | Log of views from 10k; only above the threshold  |
 
@@ -306,6 +307,18 @@ A segment only counts as a named line when it is more than the title's own
 family: "King's Indian Attack: Sicilian Variation" is a page, but a title saying
 "Sicilian" has not named that line. Without this every Sicilian and French
 introduction was marked a variation video.
+
+### One creator, one page
+
+A page shows four videos, and on 36% of pages three or more of them came from
+one channel: usually a run of speedrun episodes, with another creator's video a
+few points behind under the fold. `spreadCreators` marks a creator's third and
+later videos on a page down by 20, the gap between a premium and a standard
+channel, and ranks the page again. It only reorders near-equals. The mark-down
+stops above the best video that names less of the page's variation, so variety
+never puts a generic family video over a lecture on the line, and it never takes
+a match under the threshold. Like the other adjustments it changes
+`match_score`, because the SQL re-derives the displayed order from it.
 
 Per-opening ranking breaks score ties by **how much of the variation the title
 names** (full segment → some word → none), then **view count**, then **publish

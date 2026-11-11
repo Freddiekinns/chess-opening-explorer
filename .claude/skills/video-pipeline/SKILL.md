@@ -94,6 +94,14 @@ threshold. Keep it under the ±65 specificity swing: views may reorder like for
 like, never outrank a video that names the variation, never create a match, and
 never keep a demoted one (the root-page test subtracts it).
 
+## A creator's third video on a page gives way
+
+`spreadCreators` takes 20 off a creator's third and later videos on one page
+(36% of pages showed three or more of their four visible videos from one
+channel). It changes `match_score` because the SQL order is derived from it, and
+it stops above any video naming less of the variation. Do not turn it into a
+re-ordering that leaves scores alone: the SQL would undo it.
+
 ## Per-opening order is decided twice
 
 `compareMatches` (`lib/video-matcher.js`) picks the top 10;

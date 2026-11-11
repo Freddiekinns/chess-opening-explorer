@@ -45,6 +45,7 @@ const DEFAULT_MATCHING_CONFIG = {
     // A video about one variation, shown on the page of the whole opening
     root_page_variation_video: -40,
     root_page_introduction: 30,
+    creator_repeat: -20,
     // Ceiling of the view-count bonus; kept under the specificity swing so an
     // audience can reorder like-for-like videos but never outrank relevance
     popularity_max: 20,
@@ -114,6 +115,9 @@ const MOVE_NOTATION_PATTERN = /\d+\.(?:\.\.)?\s*[a-zA-Z]/;
  * pages could not be named by any title.
  */
 const SPELT_OUT_UMLAUTS = /gruenfeld|saemisch|jaenisch|loewenthal|huebner|moeller/g;
+
+/** Videos one creator can have on a page before `creator_repeat` applies. */
+const CREATOR_SLOTS = 2;
 
 /** "10-Minute Chess Openings", "…Explained in 20 Minutes": a timed primer. */
 const TIMED_PRIMER = /\b\d+[- ]minutes?\b/;
@@ -530,6 +534,42 @@ class VideoMatcher {
       (b.video.view_count || 0) - (a.video.view_count || 0) ||
       String(b.video.published_at || '').localeCompare(String(a.video.published_at || ''))
     );
+  }
+
+  /**
+   * One page's matches in rank order, with a creator's third and later videos
+   * marked down by `creator_repeat` and the list ranked again.
+   *
+   * A page shows four videos. Three or more of them came from one channel on
+   * 36% of pages, mostly a run of speedrun episodes, while another creator's
+   * video a few points behind sat under the fold. The mark-down is the gap
+   * between a premium and a standard channel, so it only reorders near-equals,
+   * and it stops above the best video that names less of the page's variation:
+   * variety must not put a generic family video over a lecture on the line.
+   * It never takes a match under the threshold either.
+   *
+   * The score is changed, not the order alone, because the displayed order is
+   * re-derived from `match_score` in SQL.
+   */
+  spreadCreators(openingMatches) {
+    const ranked = [...openingMatches].sort((a, b) => this.compareMatches(a, b));
+    const penalty = this.config.weights.creator_repeat;
+    const seen = new Map();
+    for (const match of ranked) {
+      const creator = match.video.channel_id || match.video.channel_title;
+      const above = seen.get(creator) || 0;
+      seen.set(creator, above + 1);
+      if (above < CREATOR_SLOTS) continue;
+
+      const rank = match.variation_rank || 0;
+      const lesser = ranked.filter((other) => (other.variation_rank || 0) < rank);
+      const floor = Math.max(
+        this.config.min_match_score,
+        ...lesser.map((other) => other.match_score + 1)
+      );
+      match.match_score = Math.min(match.match_score, Math.max(match.match_score + penalty, floor));
+    }
+    return ranked.sort((a, b) => this.compareMatches(a, b));
   }
 
   /**
@@ -1535,7 +1575,7 @@ class VideoMatcher {
     const uniqueVideos = new Set();
 
     Object.entries(openingGroups).forEach(([openingId, openingMatches]) => {
-      const topMatches = openingMatches.sort((a, b) => this.compareMatches(a, b)).slice(0, 10);
+      const topMatches = this.spreadCreators(openingMatches).slice(0, 10);
 
       console.log(
         `   📝 Opening ${openingId}: ${openingMatches.length} matches → selected top ${topMatches.length}`

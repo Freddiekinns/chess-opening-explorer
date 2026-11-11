@@ -60,6 +60,29 @@ describe('PreFilterVideos', () => {
     });
   });
 
+  describe('duration gate', () => {
+    // The scorer calls a video short under 5 minutes; the gate asked standard
+    // channels for 8, which withheld their 5–8 minute opening introductions.
+    it('should keep a 7-minute opening introduction from a standard channel', () => {
+      expect(
+        filter.preFilterVideo(
+          video('Learn the Dutch Defense Setup | 10-Minute Chess Openings', {
+            duration: 'PT7M1S',
+            qualityTier: 'standard',
+          })
+        )
+      ).toBe(true);
+    });
+
+    it('should still reject a standard-channel video under 5 minutes', () => {
+      expect(
+        filter.preFilterVideo(
+          video('Ruy Lopez Chess Opening TRAP', { duration: 'PT4M10S', qualityTier: 'standard' })
+        )
+      ).toBe(false);
+    });
+  });
+
   describe('educational content requirement', () => {
     it('should reject titles with no educational chess markers', () => {
       expect(filter.preFilterVideo(video('My day at the chess club'))).toBe(false);

@@ -18,6 +18,9 @@
  *   4. Ranking ties — pages with tied scores inside the displayed top 4.
  *   5. Index age in days.
  *
+ *   6. Coverage by name prefix, family root pages led by a variation video,
+ *      and how concentrated the #1 slots are across channels.
+ *
  * Usage: node scripts/audit-video-matches.js [--json]
  * No API keys required; runs in a few seconds.
  */
@@ -40,6 +43,8 @@ const POPULARITY_PATH = path.join(__dirname, '..', 'api', 'data', 'popularity_st
 
 const TOP_PLAYED_SAMPLE = 200;
 const DISPLAYED_TOP_N = 4; // VideoGallery's INITIAL_DISPLAY_COUNT
+const MIN_PREFIX_PAGES = 20; // fewer pages than this is not a naming pattern
+const LOW_PREFIX_COVERAGE_PCT = 50;
 
 function audit(indexPath = INDEX_PATH) {
   const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
@@ -80,11 +85,43 @@ function audit(indexPath = INDEX_PATH) {
   let multiVideoPages = 0;
   let pagesWithTopTies = 0;
 
+  // ── 5. Coverage by name prefix ─────────────────────────────
+  // Coverage that tracks how a page is named rather than whether videos
+  // exist: "QGD: …" sat at 5% beside "Sicilian: …" at 99% until the family
+  // path stopped depending on the page's literal name.
+  const prefixes = new Map();
+
+  // ── 6. Family root pages ───────────────────────────────────
+  let rootPagesWithVideos = 0;
+  let rootLedByVariation = 0;
+
+  // ── 7. Creators ────────────────────────────────────────────
+  const firstSlots = new Map();
+  const channelsShown = new Set();
+
   for (const position of positions) {
     const videos = position.videos || [];
+    const name = position.opening.name || '';
+    const colonIndex = name.indexOf(':');
+
+    if (colonIndex !== -1) {
+      const prefix = name.slice(0, colonIndex);
+      const tally = prefixes.get(prefix) || { pages: 0, covered: 0 };
+      tally.pages++;
+      if (videos.length > 0) tally.covered++;
+      prefixes.set(prefix, tally);
+    }
+
     if (videos.length === 0) continue;
 
-    const name = position.opening.name || '';
+    if (colonIndex === -1) {
+      rootPagesWithVideos++;
+      if (videos[0].level === 'variation') rootLedByVariation++;
+    }
+
+    for (const video of videos) channelsShown.add(video.channel);
+    firstSlots.set(videos[0].channel, (firstSlots.get(videos[0].channel) || 0) + 1);
+
     const variationWords = getVariationWords(name);
     if (variationWords.length > 0) {
       subVariationPages++;
@@ -133,6 +170,16 @@ function audit(indexPath = INDEX_PATH) {
   const pct = (numerator, denominator) =>
     denominator > 0 ? +((100 * numerator) / denominator).toFixed(1) : null;
 
+  const worstPrefixes = [...prefixes.entries()]
+    .filter(([, tally]) => tally.pages >= MIN_PREFIX_PAGES)
+    .map(([prefix, tally]) => ({ prefix, ...tally, covered_pct: pct(tally.covered, tally.pages) }))
+    .filter((entry) => entry.covered_pct < LOW_PREFIX_COVERAGE_PCT)
+    .sort((a, b) => b.pages - b.covered - (a.pages - a.covered))
+    .slice(0, 10);
+
+  const pagesWithVideos = positions.filter((p) => (p.videos || []).length > 0).length;
+  const rankedFirstSlots = [...firstSlots.entries()].sort((a, b) => b[1] - a[1]);
+
   return {
     generated_at: index.generated || null,
     index_age_days: indexAgeDays,
@@ -145,6 +192,24 @@ function audit(indexPath = INDEX_PATH) {
       top_played_covered: topPlayedCovered,
       top_played_covered_pct: pct(topPlayedCovered, topPlayedFound),
       popular_misses: popularMisses.slice(0, 20),
+      worst_prefixes: worstPrefixes,
+    },
+    root_pages: {
+      root_pages_with_videos: rootPagesWithVideos,
+      led_by_variation_video: rootLedByVariation,
+      led_by_variation_video_pct: pct(rootLedByVariation, rootPagesWithVideos),
+    },
+    creators: {
+      channels_shown: channelsShown.size,
+      top3_share_of_first_slots_pct: pct(
+        rankedFirstSlots.slice(0, 3).reduce((sum, [, count]) => sum + count, 0),
+        pagesWithVideos
+      ),
+      first_slots: rankedFirstSlots.slice(0, 8).map(([channel, count]) => ({
+        channel,
+        first_slots: count,
+        pct: pct(count, pagesWithVideos),
+      })),
     },
     variation_specificity: {
       sub_variation_pages: subVariationPages,
@@ -186,6 +251,24 @@ function main() {
   console.log(
     `  Top-${report.coverage.top_played_sample} played covered:      ${report.coverage.top_played_covered}/${report.coverage.top_played_found_in_index} (${report.coverage.top_played_covered_pct}%)  [target >90%]`
   );
+  for (const entry of report.coverage.worst_prefixes.slice(0, 6)) {
+    console.log(
+      `    ${entry.covered}/${entry.pages} (${entry.covered_pct}%)  "${entry.prefix}: …"`
+    );
+  }
+  console.log('');
+  console.log('Family root pages');
+  console.log(
+    `  Led by a variation video:    ${report.root_pages.led_by_variation_video}/${report.root_pages.root_pages_with_videos} (${report.root_pages.led_by_variation_video_pct}%)`
+  );
+  console.log('');
+  console.log('Creators');
+  console.log(
+    `  Top 3 channels' #1 slots:    ${report.creators.top3_share_of_first_slots_pct}%  (${report.creators.channels_shown} channels shown)`
+  );
+  for (const entry of report.creators.first_slots.slice(0, 5)) {
+    console.log(`    ${entry.pct}%  ${entry.channel}`);
+  }
   console.log('');
   console.log('Variation specificity (sub-variation pages)');
   console.log(

@@ -49,6 +49,7 @@ class DatabaseSchema {
           thumbnail_url TEXT,         -- Cache thumbnail for frontend
           description TEXT,           -- Persisted so rematch keeps content-match evidence
           tags TEXT,                  -- JSON array, same reason
+          level TEXT,                 -- 'overview' | 'variation': does the title name a line?
           created_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
       `,
@@ -120,6 +121,10 @@ class DatabaseSchema {
     }
     if (!columns.includes('tags')) {
       await run('ALTER TABLE videos ADD COLUMN tags TEXT');
+    }
+    // NULL until the next rematch, which reads as an overview everywhere
+    if (!columns.includes('level')) {
+      await run('ALTER TABLE videos ADD COLUMN level TEXT');
     }
   }
 
@@ -297,7 +302,7 @@ class DatabaseSchema {
   async getTopVideosForOpening(openingFen, limit = 10) {
     return new Promise((resolve, reject) => {
       const sql = `
-        SELECT v.*, ov.match_score
+        SELECT v.*, ov.match_score, ov.variation_rank
         FROM videos v
         JOIN opening_videos ov ON v.id = ov.video_id
         WHERE ov.opening_id = ?

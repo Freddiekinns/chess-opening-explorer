@@ -159,6 +159,19 @@ and drill for it.
   - ~~**Jev video experiment**~~ — shipped 2026-10-02 as a rejection filter plus
     18 pinned videos (#157), $1.60 spent. Next steps (a rubric baseline, then a
     move-order check) are in `docs/video-matching-and-jev.md`.
+  - ~~**Family recall, video level, creator spread**~~ — done 2026-11-11 on
+    `feat/video-matching-recall`: 68% → 92.1% of pages with videos, root pages
+    and family shelves lead with introductions, one creator rarely fills a
+    page's four visible slots. Numbers in `tools/video-pipeline/README.md`.
+  - **Normalise `video-index.json`** _(added 2026-11-11)_ — it stores each
+    video's title, channel, thumbnail and URL once per page it appears on:
+    55,135 pairs for 1,437 videos, 31 MB, parsed on every cold start. Videos
+    once and ids with scores per page would be about 5 MB. Readers to change:
+    `video-access-service.js`, `consolidate-video-index.js`, the Jev filter and
+    pins, the audit. Until then family-level videos are capped at six per
+    variation page.
+  - ~~**Run Jev over the new pairs**~~ — done 2026-11-11 for $0.23: 12,332 of
+    the 42,741 new pairs removed, pages with videos 93.6% → 92.1%.
   - **Use Jev's video families** _(added 2026-10-05)_ — the experiment's run 2
     put all 10,239 corpus videos in a family. Where it disagreed with every
     family the matcher had shown a video under, the blind judge sided with Jev

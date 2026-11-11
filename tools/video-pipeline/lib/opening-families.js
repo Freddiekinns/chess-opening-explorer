@@ -17,7 +17,9 @@
 const ECO_FAMILY_RANGES = [
   ['A00', 'A09', 'irregular'],
   ['A10', 'A39', 'english'],
-  ['A40', 'A44', 'queens_pawn'],
+  ['A40', 'A42', 'queens_pawn'],
+  // The Old Benoni (1.d4 c5): titles call it a Benoni, and so do its pages
+  ['A43', 'A44', 'benoni'],
   ['A45', 'A49', 'indian_systems'],
   ['A50', 'A55', 'indian_defenses'],
   ['A56', 'A56', 'benoni'],
@@ -106,6 +108,9 @@ const FAMILY_MOVE_PREFIXES = {
   queens_indian: ['d4', 'nf6', 'c4', 'e6', 'nf3', 'b6'],
   nimzo_indian: ['d4', 'nf6', 'c4', 'e6', 'nc3', 'bb4'],
   kings_indian: ['d4', 'nf6', 'c4', 'g6'],
+  // A set-up White reaches from several first moves; no ECO range maps to it.
+  // It exists so the title detector below can tell it from the defence.
+  kings_indian_attack: [],
 };
 
 /**
@@ -121,6 +126,7 @@ const TITLE_FAMILY_DETECTORS = [
   ['four_knights', /\bfour\s+knights\b/i],
   ['queens_gambit_accepted', /\bqueen'?s\s+gambit\s+accepted\b|\bqga\b/i],
   ['queens_gambit_declined', /\bqueen'?s\s+gambit\s+declined\b|\bqgd\b/i],
+  ['kings_indian_attack', /\bking'?s\s+indian\s+attack\b|\bkia\b/i],
   ['kings_indian', /\bking'?s\s+indian\b|\bkid\b/i],
   ['kings_gambit', /\bking'?s\s+gambit\b/i],
   ['nimzo_indian', /\bnimzo[\s-]?indian\b|\bnimzo\b/i],
@@ -139,7 +145,7 @@ const TITLE_FAMILY_DETECTORS = [
   ['alekhine', /\balekhine'?s?\s+defen[sc]e\b/i],
   ['pirc', /\bpirc\b/i],
   ['modern', /\bmodern\s+defen[sc]e\b/i],
-  ['dutch', /\bdutch\s+defen[sc]e\b|\bdutch\s+opening\b|\bstonewall\b|\bleningrad\b/i],
+  ['dutch', /\bdutch\s+defen[sc]e\b|\bdutch\s+opening\b|\bstonewall\b(?!\s+attack)|\bleningrad\b/i],
   ['slav', /\bslav\b/i],
   ['grunfeld', /\bgr[uü]nfeld\b/i],
   ['catalan', /\bcatalan\b/i],
@@ -149,6 +155,22 @@ const TITLE_FAMILY_DETECTORS = [
   ['trompowsky', /\btrompowsky\b|\btromp\b/i],
   ['english', /\benglish\s+opening\b/i],
 ];
+
+/** "Vienna Variation", "Scotch Variation": the word before is not a family here. */
+const VARIATION_OF_ANOTHER_OPENING = /\b[\w'-]+\s+variation\b/gi;
+
+/** Words that say what kind of opening a name is, not which one. */
+const GENERIC_NAME_WORDS = new Set([
+  'the',
+  'defense',
+  'defence',
+  'opening',
+  'game',
+  'attack',
+  'gambit',
+  'system',
+  'variation',
+]);
 
 /**
  * Get the family id for an ECO code, or null if unmapped.
@@ -180,10 +202,12 @@ function getFamiliesFromTitle(title) {
   if (!title) return [];
 
   const families = [];
+  // A family word followed by "Variation" names a line of some other opening:
+  // the Vienna Variation of the QGD, the Scotch Variation of the Four Knights.
   // Mask each match before trying later detectors, so a compound name's
   // components can't re-fire ("Reversed Sicilian" must not also yield
   // 'sicilian', "Anglo-Scandinavian" must not also yield 'scandinavian').
-  let working = title;
+  let working = title.replace(VARIATION_OF_ANOTHER_OPENING, ' ');
   for (const [family, pattern] of TITLE_FAMILY_DETECTORS) {
     if (pattern.test(working)) {
       if (!families.includes(family)) {
@@ -201,6 +225,30 @@ function getFamiliesFromTitle(title) {
 function getFamilyFromTitle(title) {
   const families = getFamiliesFromTitle(title);
   return families.length > 0 ? families[0] : null;
+}
+
+/**
+ * True when `name` is the family's own name and nothing more: "King's Indian
+ * Defense", "Caro-Kann" and "QGD" for their families, but not "King's Indian
+ * Defense: Sämisch". Tells a family root page from the pages under it, and an
+ * alias that only repeats the family from one that names a line.
+ */
+function isFamilyName(name, family) {
+  if (!name || !family) return false;
+
+  let rest = name;
+  let named = false;
+  for (const [detected, pattern] of TITLE_FAMILY_DETECTORS) {
+    if (detected !== family || !pattern.test(rest)) continue;
+    named = true;
+    rest = rest.replace(new RegExp(pattern.source, `${pattern.flags}g`), ' ');
+  }
+  if (!named) return false;
+
+  return rest
+    .toLowerCase()
+    .split(/[^a-z']+/)
+    .every((word) => !word || GENERIC_NAME_WORDS.has(word));
 }
 
 /**
@@ -233,5 +281,6 @@ module.exports = {
   getFamilyFromEco,
   getFamilyFromTitle,
   getFamiliesFromTitle,
+  isFamilyName,
   compareFamilies,
 };

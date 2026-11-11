@@ -62,6 +62,30 @@ describe('FamilyResourceService', () => {
       expect(svc.getFamilyVideos(null)).toEqual([]);
     });
 
+    it('puts family overviews before videos about one variation', () => {
+      // The pipeline marks a video whose title names a variation. Ranked on
+      // score alone, the +25 variation bonus filled 71% of shelf slots with
+      // sub-variation lectures and left the family's overviews off the shelf.
+      const svc = buildService({
+        eco,
+        positions: [
+          { fen: 'fenA', videos: [video('overview', 120)] },
+          {
+            fen: 'fenB',
+            videos: [{ ...video('najdorf', 190), level: 'variation' }, video('pinned', 0)],
+          },
+        ],
+        courses: {},
+      });
+
+      // Pins carry score 0 and stay last, as they did before
+      expect(svc.getFamilyVideos('sicilian').map((v) => v.id)).toEqual([
+        'overview',
+        'najdorf',
+        'pinned',
+      ]);
+    });
+
     it('caps results at the limit', () => {
       const many = Array.from({ length: 20 }, (_, i) => video(`v${i}`, i));
       const svc = buildService({

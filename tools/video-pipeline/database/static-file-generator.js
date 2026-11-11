@@ -20,6 +20,12 @@ const fs = require('fs').promises;
 const crypto = require('crypto');
 const { sanitizeFenKey } = require('../../../packages/api/src/utils/fen-sanitizer');
 
+/**
+ * Family-level videos a variation page carries: the four a page shows, and
+ * two more for what the Jev filter takes out afterwards.
+ */
+const FAMILY_LEVEL_FILL = 6;
+
 class StaticFileGenerator {
   constructor(options = {}) {
     this.outputDir = options.outputDir || path.join(__dirname, '../../public/api/openings');
@@ -121,12 +127,30 @@ class StaticFileGenerator {
   }
 
   /**
+   * The videos a page carries. A variation page keeps every video that names
+   * its variation, and family-level ones only up to FAMILY_LEVEL_FILL: once
+   * the matcher recognised every family, ten family videos on each of a
+   * family's hundreds of pages doubled the index to 48 MB with copies of what
+   * the family shelf already holds.
+   */
+  pageVideos(opening, videos) {
+    if (!(opening.name || '').includes(':')) return videos;
+    const kept = [];
+    for (const video of videos) {
+      if (!video.variation_rank && kept.length >= FAMILY_LEVEL_FILL) continue;
+      kept.push(video);
+    }
+    return kept;
+  }
+
+  /**
    * Generate optimized API response for opening
    * @param {Object} opening - Opening data
    * @param {Array} videos - Associated videos
    * @returns {Promise<Object>} API response object
    */
-  async generateApiResponse(opening, videos) {
+  async generateApiResponse(opening, allVideos) {
+    const videos = this.pageVideos(opening, allVideos);
     const cacheVersion = this.generateCacheVersion(opening, videos);
 
     return {
@@ -146,6 +170,9 @@ class StaticFileGenerator {
         thumbnail: video.thumbnail_url || `https://i.ytimg.com/vi/${video.id}/default.jpg`,
         url: `https://youtube.com/watch?v=${video.id}`,
         score: video.match_score,
+        // Only variation videos are marked: the family shelf ranks everything
+        // else as an overview, and most of the index is overviews
+        ...(video.level === 'variation' ? { level: 'variation' } : {}),
       })),
       metadata: {
         total_videos: videos.length,

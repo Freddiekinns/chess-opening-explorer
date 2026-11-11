@@ -142,10 +142,15 @@ Trusted channels are configured in `config/youtube_channels.json`:
 | Tier       | Duration Requirement | Scoring Bonus | Examples                                        |
 | ---------- | -------------------- | ------------- | ----------------------------------------------- |
 | `premium`  | 4+ minutes           | +40 points    | Naroditsky, Hanging Pawns, St. Louis, GingerGM  |
-| `standard` | 8+ minutes           | +20 points    | GothamChess, Chessbrah, agadmator, Ben Finegold |
+| `standard` | 5+ minutes           | +20 points    | GothamChess, Chessbrah, agadmator, Ben Finegold |
 
 Entertainment-focused channels (chess24, World Chess, FIDE Chess) receive a -30
 penalty instead.
+
+The standard gate was 8 minutes until 2026-11. Five is the scorer's own line for
+a short video, and at 8 the gate withheld the 5–8 minute opening introductions
+standard channels are best at (thechesswebsite's "Chess Openings: Sicilian
+Defense", GothamChess's Dutch and Slav set-ups).
 
 `lib/channel-tiers.js` resolves the tier — by `channel_id` when one is known,
 otherwise by channel title. **The title comparison is normalised to letters and
@@ -156,6 +161,10 @@ the unknown tier — worth 60 points in the scorer (+40 not awarded, -25 instead
 of -5) and the stricter 8-minute gate in the pre-filter, which alone withheld
 183 of its videos from corpus recovery. The enrichment cache never stored
 channel ids, so every recovered candidate depends on this path.
+
+A channel's `handle` is matched the same way, because some channels are titled
+with it: the config's "Ben Finegold" publishes as "GMBenjaminFinegold", and
+resolved to no tier at all until the handle counted.
 
 ## Using Components Independently
 
@@ -215,16 +224,114 @@ there (no code change), then run `npm run pipeline:rematch`. Defaults:
 | **Family Match**         | +50    | Opening family in title (incl. move-notation     |
 |                          |        | names like "Scandinavian: 2.exd5")               |
 | **Abbreviation**         | +35    | Known abbreviation (QGD, KID, etc.)              |
-| **Educational Keywords** | +30    | "explained", "theory", "guide"                   |
+| **Educational Keywords** | +30    | "explained", "theory", "guide", "learn",         |
+|                          |        | "10-Minute Chess Openings"                       |
 | **Premium Educator**     | +40    | `quality_tier: premium` in youtube_channels.json |
 | **Variation Specific**   | +25    | Title names the page's exact variation           |
 | **Good Duration**        | +15    | 20-60 minutes                                    |
 | **Player vs Player**     | -60    | "Magnus vs Hikaru" (capitalized)                 |
 | **Game Analysis**        | -60    | "brilliant", "crushes", etc.                     |
 | **Sub-variation Miss**   | -40    | Generic family video on a specific variation     |
+| **Root-page Variation**  | -40    | Video about one variation on a family root page  |
+| **Root-page Intro**      | +30    | An introduction to the opening, on its root page |
+| **Creator Repeat**       | -20    | A creator's third and later video on one page    |
 | **Short Video**          | -25    | Under 5 minutes                                  |
+| **Popularity**           | 0–20   | Log of views from 10k; only above the threshold  |
 
 Minimum threshold: **60 points** (`min_match_score`).
+
+### How a page's family is recognised
+
+A title names a page in one of two ways: by the page's own name or an alias, or
+by its **family**. The family comes from `lib/opening-families.js`: the page's
+from its ECO code, the title's from `getFamiliesFromTitle`. When they agree the
+video is a family match (+50), and on the family's own root page ("Caro-Kann
+Defense", "Sicilian") a name match (+80).
+
+This replaced two hand lists that compared keys such as `kings indian` and
+`caro kann` with page names that carry an apostrophe or a hyphen, and knew
+nothing of the abbreviated names ("QGD: …", "QGA: …", "Gruenfeld: …"). Coverage
+followed the spelling: 99% of "Sicilian: …" pages had videos and 5% of "QGD: …"
+pages, and "Caro-Kann Defense: Advance Variation" (1.7M games) showed one video
+while nine titles naming it scored 0. Do not add a family to a list in the
+matcher; add its detector and move prefix to `opening-families.js`.
+
+Because a title's family now admits a video as well as vetoing one, a family
+word that means something else must not read as the family. Two cases are
+handled in `getFamiliesFromTitle`: "King's Indian Attack" is its own family, and
+"\<word\> Variation" is masked ("QGD: Vienna Variation" is not the Vienna Game).
+"Stonewall Attack" is not the Dutch.
+
+Two spellings used to hide whole groups of pages from the titles that name them.
+`normalizeForMatch` folds the umlauts that scid-style names spell out
+("Saemisch", "Gruenfeld", "Jaenisch"), where titles write "Sämisch": the 182
+Saemisch pages could not be named by any title. And "Grünfeld" and "Benoni" are
+variation keywords as well as families, so the sibling guard rejected a Grünfeld
+overview on every "Gruenfeld: …" page; `namesSpecificVariation` now ignores a
+keyword that is the page's own family or the name it is filed under
+("Nimzowitsch Defense: Kennedy Variation").
+
+A family with no detector (Bishop's Opening, Nimzowitsch Defense, Bird Opening,
+Latvian Gambit) is matched by the name its pages are filed under: the part
+before the colon, when the title carries it whole and names no family the
+detectors know. The prefix needs two words, one of them its own
+(`SHARED_NAME_WORDS`): "Indian Defense: …" sits inside "Old Indian Defense" and
+"King's Indian Defense", so it never matches this way. The Old Benoni (A43–A44)
+is filed with the Benoni, which is what its titles and pages call it.
+
+### Overview or variation video
+
+Every matched video gets a `level`, decided once per run in `applyVideoLevels`
+and stored on `videos.level`: **variation** when the title names a line (a full
+variation segment of a page it matched, or a variation keyword), otherwise
+**overview**. It belongs to the video, not the pair, so three places agree:
+
+- **Root pages.** On a page with no variation of its own, a variation video
+  about a line the page's name does not cover takes -40. Without it any title
+  containing "Sicilian Defense" scored the same 80 on the Sicilian root, which
+  showed ten sub-variation lectures and no overview. "The Evans Gambit" is not
+  demoted on the Evans Gambit page, only on the Italian Game's.
+- **Root pages, again.** Among the videos left, a title that introduces the
+  opening ("Learn the …", "Introduction to …", "… | 10-Minute Chess Openings",
+  not a speedrun, training game or rating-ladder episode) takes +30. A root page
+  is where someone meets the opening, and speedrun games held five of the
+  Sicilian root's first six places while a 3.4M-view primer was off the page.
+  The lift needs the title to name the family and the page to be that family's
+  own ("Sicilian Defence"), or the title to carry the page's name: "Panno
+  System" has no colon either, and a King's Indian primer is not an introduction
+  to it.
+- **Variation pages.** A video that names lines, none of them the page's (by
+  name or alias), is dropped: "Caro-Kann: Advance Variation" does not belong on
+  the Exchange Variation's page, however well the family matches. The keyword
+  guard already did this for the names in `specific_variation_keywords`; this
+  covers the generic ones (Advance, Exchange, Classical) without a list.
+- **The index.** `video-index.json` entries carry `level: "variation"`;
+  overviews are unmarked.
+- **Family shelves.** `family-resource-service.js` ranks overviews first. Ranked
+  on score alone, the +25 variation bonus filled 71% of shelf slots with
+  sub-variation videos.
+
+These adjustments are applied to `match_score` before the top 10 are picked and
+before the pair is written, so the SQL order needs no second copy of the rule.
+The popularity bonus is ignored when testing a demoted video against the
+threshold: views reorder matches and never keep one.
+
+A segment only counts as a named line when it is more than the title's own
+family: "King's Indian Attack: Sicilian Variation" is a page, but a title saying
+"Sicilian" has not named that line. Without this every Sicilian and French
+introduction was marked a variation video.
+
+### One creator, one page
+
+A page shows four videos, and on 36% of pages three or more of them came from
+one channel: usually a run of speedrun episodes, with another creator's video a
+few points behind under the fold. `spreadCreators` marks a creator's third and
+later videos on a page down by 20, the gap between a premium and a standard
+channel, and ranks the page again. It only reorders near-equals. The mark-down
+stops above the best video that names less of the page's variation, so variety
+never puts a generic family video over a lecture on the line, and it never takes
+a match under the threshold. Like the other adjustments it changes
+`match_score`, because the SQL re-derives the displayed order from it.
 
 Per-opening ranking breaks score ties by **how much of the variation the title
 names** (full segment → some word → none), then **view count**, then **publish
@@ -307,9 +414,34 @@ node scripts/audit-video-matches.js          # human-readable report
 node scripts/audit-video-matches.js --json   # full report
 ```
 
-Reports coverage (overall + top-200 most-played), variation specificity,
-cross-family contamination, ranking-tie ambiguity, and index age. Run before and
-after any scorer change to verify it helped.
+Reports coverage (overall, top-200 most-played, and the worst-covered name
+prefixes), family root pages led by a variation video, how concentrated the #1
+slots are across channels, variation specificity, cross-family contamination,
+ranking-tie ambiguity, and index age. Run before and after any scorer change to
+verify it helped.
+
+The 2026-11-11 rematch (family from ECO, video level, creator spread), on the
+same 7,417-video corpus:
+
+| Measure                                        | Before | Scorer | With Jev |
+| ---------------------------------------------- | ------ | ------ | -------- |
+| Pages with videos (of 12,377)                  | 8,421  | 11,585 | 11,398   |
+| Top-200 most-played covered                    | 186    | 188    | 184      |
+| "QGD: …" pages covered (of 532)                | 27     | 532    | 532      |
+| Sub-variation pages whose #1 names the line    | 52.9%  | 55.4%  | 55.9%    |
+| Root pages led by an introduction              | 22     | 269    | 256      |
+| Pages with 3+ of 4 visible videos, one channel | 35.6%  | 7.1%   | 7.6%     |
+| Conflicting-family pairs                       | 1      | 1      | 1        |
+| `video-index.json`                             | 24 MB  | 37 MB  | 31 MB    |
+
+"Scorer" is the rematch without `JEV_API_KEY`; "With Jev" is the committed
+index, after Jev was asked about the 42,741 new pairs (1,202 calls, 5.4M tokens,
+about $0.23). It removed 12,332 of them, 10,138 of those a family overview on a
+variation page it does not cover ("How to Sac and Attack versus the Sicilian" on
+718 Sicilian lines) and an Old Benoni guide that led 249 Modern Benoni pages.
+The four top-200 pages it emptied ("Queen's Pawn: Neo-Indian", "Zukertort
+Opening: Tennison Gambit", "Three Knights: 3...Bc5") held only another opening's
+overview and now show their family shelf.
 
 ## Utilities
 
@@ -385,6 +517,12 @@ Location: `api/data/video-index.json` (consolidated from static files)
 `api/data/` is the single canonical data location — the API reads the index from
 there in every environment, so regenerating it is enough (the old
 copy-to-`packages/api/src/data/` step is gone).
+
+A variation page carries every video that names its variation and at most six
+family-level ones (`FAMILY_LEVEL_FILL` in `static-file-generator.js`): the four
+a page shows, and two for what the Jev filter removes. Once the matcher
+recognised every family, ten family videos on each of a family's hundreds of
+pages doubled this file to 48 MB with copies of what the family shelf holds.
 
 ### Jev rejection filter
 

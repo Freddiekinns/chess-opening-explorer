@@ -17,7 +17,9 @@
 const ECO_FAMILY_RANGES = [
   ['A00', 'A09', 'irregular'],
   ['A10', 'A39', 'english'],
-  ['A40', 'A44', 'queens_pawn'],
+  ['A40', 'A42', 'queens_pawn'],
+  // The Old Benoni (1.d4 c5): titles call it a Benoni, and so do its pages
+  ['A43', 'A44', 'benoni'],
   ['A45', 'A49', 'indian_systems'],
   ['A50', 'A55', 'indian_defenses'],
   ['A56', 'A56', 'benoni'],

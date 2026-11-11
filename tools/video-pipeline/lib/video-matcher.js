@@ -116,6 +116,34 @@ const MOVE_NOTATION_PATTERN = /\d+\.(?:\.\.)?\s*[a-zA-Z]/;
  */
 const SPELT_OUT_UMLAUTS = /gruenfeld|saemisch|jaenisch|loewenthal|huebner|moeller/g;
 
+/**
+ * Words that cannot tell one opening from another at the front of a page
+ * name: "Indian Defense: …" sits inside "Old Indian Defense" and "King's
+ * Indian Defense", "Queen's Pawn Game: …" inside half the d4 titles.
+ */
+const SHARED_NAME_WORDS = new Set([
+  'the',
+  'defense',
+  'defence',
+  'opening',
+  'game',
+  'attack',
+  'gambit',
+  'system',
+  'variation',
+  'kings',
+  'queens',
+  'pawn',
+  'knight',
+  'knights',
+  'indian',
+  'english',
+  'modern',
+  'old',
+  'neo',
+  'semi',
+]);
+
 /** Videos one creator can have on a page before `creator_repeat` applies. */
 const CREATOR_SLOTS = 2;
 
@@ -603,15 +631,29 @@ class VideoMatcher {
   }
 
   /**
+   * Whether the part of a page name before its colon can stand for a family
+   * in a title: at least two words, one of them its own.
+   */
+  isDistinctivePrefix(prefix) {
+    if (!prefix) return false;
+    const words = prefix.split(/[\s-]+/).map((word) => word.replace(/'/g, ''));
+    return words.length >= 2 && words.some((word) => word && !SHARED_NAME_WORDS.has(word));
+  }
+
+  /**
    * True when a title names a distinctive sub-variation (Najdorf, Dragon,
    * Alapin, …). Such videos are not generic family overviews, so they must not
    * blanket sibling move-notation pages via the family-part fallback — we can't
    * confirm a move-notation page IS that variation, so we don't guess.
    */
-  namesSpecificVariation(title, pageFamily) {
-    // "Grünfeld" and "Benoni" are keywords and families both: on a page of
-    // that family the word names the opening, not one of its lines
-    const familyWords = pageFamily ? pageFamily.split('_') : [];
+  namesSpecificVariation(title, pageFamily, pagePrefix) {
+    // "Grünfeld", "Benoni" and "Nimzowitsch" are keywords and openings both:
+    // on a page of that family, or one filed under that name ("Nimzowitsch
+    // Defense: Kennedy Variation"), the word names the opening, not a line
+    const familyWords = [
+      ...(pageFamily ? pageFamily.split('_') : []),
+      ...(pagePrefix ? pagePrefix.split(/[\s-]+/) : []),
+    ];
     const keywords = this.config.specific_variation_keywords || [];
     return keywords.some(
       (keyword) =>
@@ -1173,6 +1215,19 @@ class VideoMatcher {
       }
     }
 
+    // A family with no detector ("Bishop's Opening", "Nimzowitsch Defense"):
+    // the title carries the name the page files its variation under, and
+    // names no family the detectors know, which would be its real subject
+    if (
+      !hasNameMatch &&
+      videoFamilies.length === 0 &&
+      this.isDistinctivePrefix(familyPrefix) &&
+      this.phraseMatches(title, familyPrefix, opening.name)
+    ) {
+      hasNameMatch = true;
+      matchType = 'family';
+    }
+
     // ECO code matching - only if it's in title AND accompanied by other opening terms
     if (!hasNameMatch && opening.eco && title.includes(opening.eco.toLowerCase())) {
       const hasOpeningContext = ['opening', 'repertoire', 'theory', 'explained', 'guide'].some(
@@ -1211,7 +1266,7 @@ class VideoMatcher {
     if (
       matchType === 'family' &&
       openingName.includes(':') &&
-      this.namesSpecificVariation(title, pageFamily) &&
+      this.namesSpecificVariation(title, pageFamily, familyPrefix) &&
       !variationMatch.anyCleanWord
     ) {
       return 0;
@@ -1422,11 +1477,19 @@ class VideoMatcher {
         if (err) reject(err);
         else {
           // Parse JSON aliases for each opening
-          const parsedOpenings = rows.map((opening) => ({
-            ...opening,
-            aliases: this.parseAliases(opening.aliases),
-            family: getFamilyFromEco(opening.eco),
-          }));
+          const parsedOpenings = rows.map((opening) => {
+            const colonIndex = opening.name.indexOf(':');
+            const prefix =
+              colonIndex === -1
+                ? null
+                : this.normalizeForMatch(opening.name.slice(0, colonIndex)).trim();
+            return {
+              ...opening,
+              aliases: this.parseAliases(opening.aliases),
+              family: getFamilyFromEco(opening.eco),
+              prefix: this.isDistinctivePrefix(prefix) ? prefix : null,
+            };
+          });
           resolve(parsedOpenings);
         }
       });
@@ -1470,6 +1533,7 @@ class VideoMatcher {
 
       // Smart pre-filtering: only check openings that might match (more restrictive)
       const lowerTitle = video.title.toLowerCase();
+      const normalTitle = this.normalizeForMatch(lowerTitle);
       const titleFamilies = this.titleFamilies(lowerTitle);
 
       const candidateOpenings = openings.filter((opening) => {
@@ -1477,6 +1541,12 @@ class VideoMatcher {
 
         // The title names the page's family (mirrors the scorer's family path)
         if (opening.family && titleFamilies.includes(opening.family)) {
+          return true;
+        }
+
+        // The title carries the name the page is filed under and names no
+        // family of its own (mirrors the scorer's prefix path)
+        if (opening.prefix && titleFamilies.length === 0 && normalTitle.includes(opening.prefix)) {
           return true;
         }
 

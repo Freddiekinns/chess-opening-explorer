@@ -302,7 +302,7 @@ class DatabaseSchema {
   async getTopVideosForOpening(openingFen, limit = 10) {
     return new Promise((resolve, reject) => {
       const sql = `
-        SELECT v.*, ov.match_score
+        SELECT v.*, ov.match_score, ov.variation_rank
         FROM videos v
         JOIN opening_videos ov ON v.id = ov.video_id
         WHERE ov.opening_id = ?

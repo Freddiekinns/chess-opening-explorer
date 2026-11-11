@@ -485,6 +485,12 @@ Location: `api/data/video-index.json` (consolidated from static files)
 there in every environment, so regenerating it is enough (the old
 copy-to-`packages/api/src/data/` step is gone).
 
+A variation page carries every video that names its variation and at most six
+family-level ones (`FAMILY_LEVEL_FILL` in `static-file-generator.js`): the four
+a page shows, and two for what the Jev filter removes. Once the matcher
+recognised every family, ten family videos on each of a family's hundreds of
+pages doubled this file to 48 MB with copies of what the family shelf holds.
+
 ### Jev rejection filter
 
 After consolidation, `scripts/apply-jev-filter.js` removes a video from a page

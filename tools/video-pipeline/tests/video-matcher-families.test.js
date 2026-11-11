@@ -397,6 +397,58 @@ describe('VideoMatcher — family recall and video level', () => {
       expect(scoreOn(result, 'root', 'hp-intro')).toBeGreaterThan(rawScore(intro, sicilian[0]));
     });
 
+    describe('creators on one page', () => {
+      const rankOn = (result, openingId) =>
+        result.matches
+          .filter((m) => m.opening_id === openingId)
+          .sort((a, b) => matcher.compareMatches(a, b))
+          .map((m) => m.video_id);
+
+      it('lets a third video from one creator give way to a near-equal from another', async () => {
+        const result = await run(
+          [{ id: 'root', name: 'Caro-Kann Defense', eco: 'B10' }],
+          [
+            candidate('hp-1', 'Caro-Kann Defense Theory: ideas for White', 400000),
+            candidate('hp-2', 'Caro-Kann Defense Theory: ideas for Black', 300000),
+            candidate('hp-3', 'Caro-Kann Defense Theory: typical endgames', 200000),
+            candidate('stl', 'Caro-Kann Defense | Chess Openings Explained', 20000, {
+              channelTitle: 'Saint Louis Chess Club',
+            }),
+          ]
+        );
+        expect(rankOn(result, 'root')).toEqual(['hp-1', 'hp-2', 'stl', 'hp-3']);
+      });
+
+      it('leaves a creator alone when nobody else is close', async () => {
+        const result = await run(
+          [{ id: 'root', name: 'Caro-Kann Defense', eco: 'B10' }],
+          [
+            candidate('hp-1', 'Caro-Kann Defense Theory: ideas for White', 400000),
+            candidate('hp-2', 'Caro-Kann Defense Theory: ideas for Black', 300000),
+            candidate('hp-3', 'Caro-Kann Defense Theory: typical endgames', 200000),
+            candidate('weak', 'Caro-Kann Defense', 0, { channelTitle: 'Nobody' }),
+          ]
+        );
+        expect(rankOn(result, 'root')).toEqual(['hp-1', 'hp-2', 'hp-3', 'weak']);
+      });
+
+      it('never lets variety lift a generic video over one that names the variation', async () => {
+        const result = await run(
+          [{ id: 'najdorf', name: 'Sicilian Defense: Najdorf Variation', eco: 'B90' }],
+          [
+            candidate('hp-1', 'The Najdorf, part 1 | Sicilian Defense', 0),
+            candidate('hp-2', 'The Najdorf, part 2 | Sicilian Defense', 0),
+            candidate('hp-3', 'The Najdorf, part 3 | Sicilian Defense', 0),
+            candidate('generic', 'Sicilian Defense | Chess Openings Explained', 5000000, {
+              channelTitle: 'Saint Louis Chess Club',
+            }),
+          ]
+        );
+        const order = rankOn(result, 'najdorf');
+        expect(order.indexOf('hp-3')).toBeLessThan(order.indexOf('generic'));
+      });
+    });
+
     it('scores a family-titled video against pages named by abbreviation', async () => {
       const result = await run(
         [{ id: 'qgd-exchange', name: 'QGD: Exchange', eco: 'D35' }],

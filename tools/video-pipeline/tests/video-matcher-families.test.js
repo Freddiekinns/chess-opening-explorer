@@ -397,6 +397,25 @@ describe('VideoMatcher — family recall and video level', () => {
       expect(scoreOn(result, 'root', 'hp-intro')).toBeGreaterThan(rawScore(intro, sicilian[0]));
     });
 
+    it('does not demote a video on a root page that carries the line as an alias', async () => {
+      const video = candidate('giuoco', 'Giuoco Piano | Italian Game Theory', 0);
+      const result = await run(
+        [{ id: 'italian', name: 'Italian Game', eco: 'C50', aliases: '["Giuoco Piano"]' }],
+        [video]
+      );
+      expect(scoreOn(result, 'italian', 'giuoco')).toBe(
+        rawScore(video, { name: 'Italian Game', eco: 'C50', aliases: ['Giuoco Piano'] })
+      );
+    });
+
+    it('does not read half of a double-barrelled name as a variation', async () => {
+      const result = await run(
+        [{ id: 'larsen', name: 'Nimzo-Larsen Attack', eco: 'A01' }],
+        [candidate('b3', 'Nimzowitsch-Larsen Attack | Nimzo-Larsen Attack Explained', 0)]
+      );
+      expect(result.matches.find((m) => m.video_id === 'b3').video.level).toBe('overview');
+    });
+
     describe('creators on one page', () => {
       const rankOn = (result, openingId) =>
         result.matches

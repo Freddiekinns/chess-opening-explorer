@@ -575,6 +575,27 @@ describe('VideoMatcher — family recall and video level', () => {
         expect(scoreOn(result, 'jobava', 'puzzles')).toBeUndefined();
       });
 
+      it('ignores the openings a played-game video lists in its chapters or tags', async () => {
+        // Each names an opening that came up in one game, not the subject
+        const arena = candidate(
+          'arena',
+          'How to Beat Amateurs at Chess | Daily Rapid Arena',
+          50000,
+          {
+            description: '1:40:27 Borg Defense - vs a\n1:49:41 Rapport-Jobava System - vs b',
+            channelTitle: 'Eric Rosen',
+          }
+        );
+        const speedrun = candidate('speedrun', 'Opening Tactics! | Speedrun Episode 36', 50000, {
+          description: '19:00 Fighting the London',
+          tags: ['speedrun', 'greek gift', 'london', 'london system'],
+          channelTitle: 'Eric Rosen',
+        });
+        const result = await run(pages, [arena, speedrun]);
+        expect(scoreOn(result, 'jobava', 'arena')).toBeUndefined();
+        expect(scoreOn(result, 'london-a48', 'speedrun')).toBeUndefined();
+      });
+
       it('keeps a Jobava London video off the London System pages', async () => {
         const result = await run(pages, [jobava]);
         expect(scoreOn(result, 'london-d02', 'jobava')).toBeUndefined();

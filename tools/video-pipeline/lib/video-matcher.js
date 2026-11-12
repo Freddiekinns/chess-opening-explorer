@@ -100,6 +100,7 @@ const DEFAULT_MATCHING_CONFIG = {
     'pseudo',
     'reversed',
     'delayed',
+    'jobava',
   ],
 };
 
@@ -115,6 +116,19 @@ const MOVE_NOTATION_PATTERN = /\d+\.(?:\.\.)?\s*[a-zA-Z]/;
  * pages could not be named by any title.
  */
 const SPELT_OUT_UMLAUTS = /gruenfeld|saemisch|jaenisch|loewenthal|huebner|moeller/g;
+
+/**
+ * Names players use that no ECO alias source carries. The ECO calls 1.d4 d5
+ * 2.Nc3 Nf6 3.Bf4 the "Rapport-Jobava System"; titles call it the Jobava
+ * London, so its videos went to the London System pages and none to its own.
+ * ("jobava" is also a variation modifier, which keeps them off the London.)
+ * They count in titles only: Naroditsky's descriptions all cross-link
+ * "Bortnyk and Naroditsky's Jobava London", puzzle videos included.
+ */
+const COMMON_NAMES = [[/\brapport-jobava\b/i, ['Jobava London']]];
+const TITLE_ONLY_NAMES = new Set(
+  COMMON_NAMES.flatMap(([, names]) => names.map((n) => n.toLowerCase()))
+);
 
 /**
  * Words that cannot tell one opening from another at the front of a page
@@ -1088,7 +1102,11 @@ class VideoMatcher {
 
       // Exact match in content — recorded, not accepted yet, so a later
       // alias's title match still wins and the corroboration rule can run
-      if (!contentOnlyName && this.phraseMatches(videoContent, cleanName, opening.name)) {
+      if (
+        !contentOnlyName &&
+        !TITLE_ONLY_NAMES.has(cleanName) &&
+        this.phraseMatches(videoContent, cleanName, opening.name)
+      ) {
         contentOnlyName = cleanName;
       }
 
@@ -1490,7 +1508,12 @@ class VideoMatcher {
                 : this.normalizeForMatch(opening.name.slice(0, colonIndex)).trim();
             return {
               ...opening,
-              aliases: this.parseAliases(opening.aliases),
+              aliases: [
+                ...this.parseAliases(opening.aliases),
+                ...COMMON_NAMES.filter(([pattern]) => pattern.test(opening.name)).flatMap(
+                  ([, names]) => names
+                ),
+              ],
               family: getFamilyFromEco(opening.eco),
               prefix: this.isDistinctivePrefix(prefix) ? prefix : null,
             };

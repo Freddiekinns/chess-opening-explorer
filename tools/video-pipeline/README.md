@@ -360,9 +360,13 @@ Smith-Morra page over a Naroditsky Smith-Morra speedrun.
   hyperaccelerated, semi, anti, reversed, …) marks a **sibling variation** and
   the match is rejected outright — "The Accelerated Dragon" is rejected from the
   plain Dragon page, "Semi-Slav" titles from pure Slav pages, and vice versa.
-  Diacritics are normalized ("Maróczy" matches "maroczy"), a trailing s/d is
-  tolerated ("Advanced" counts for "Advance Variation" pages), and the "Acc."
-  title shorthand expands to "accelerated".
+  "jobava" is one too, so "Jobava London" is not the London System. Diacritics
+  are normalized ("Maróczy" matches "maroczy"), a trailing s/d is tolerated
+  ("Advanced" counts for "Advance Variation" pages), and the "Acc." title
+  shorthand expands to "accelerated".
+- **Common names no ECO source carries** (`COMMON_NAMES` in
+  `lib/video-matcher.js`) are added to a page's aliases at load: the
+  Rapport-Jobava pages also answer to "Jobava London", the name titles use.
 - **2-word alias minimum**: Alias fragments from comma/semicolon splitting must
   have 2+ words (prevents "Accepted" matching everything); bare shared variation
   names ("Exchange Variation") are skipped entirely

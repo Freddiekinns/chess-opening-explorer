@@ -88,6 +88,12 @@ type Opening = ChessOpening & {
 // serverless invocation (was a 5-call fan-out across 4 functions).
 const PAGE_BY_FEN = '/api/openings/page/';
 
+// Practice hints escalate with wrong moves on the same position: the piece to
+// move is highlighted from the second, and an arrow shows its square from the
+// third.
+const PIECE_HINT_AFTER = 2;
+const ARROW_HINT_AFTER = 3;
+
 interface PopularityStats {
   games_analyzed?: number;
   white_win_rate?: number;
@@ -542,19 +548,21 @@ const OpeningDetailPage: React.FC = () => {
     return activePracticeLine[practiceIndex];
   }, [activePracticeLine, practiceIndex]);
 
-  const getHintSquare = useCallback((): string | null => {
+  const getHintMove = useCallback((): Move | null => {
     if (!practiceGame) return null;
     const expectedMove = getExpectedMove();
     if (!expectedMove) return null;
 
-    // Try to find the source square by testing the move
+    // Find the source and target squares by testing the move
     const tempGame = new Chess(practiceGame.fen());
-    const move = tempGame.move(expectedMove);
-    return move?.from || null;
+    return tempGame.move(expectedMove) || null;
   }, [practiceGame, getExpectedMove]);
 
+  // Asking for the hint counts as reaching the piece stage, so the next wrong
+  // move goes on to the arrow.
   const showHintHighlight = useCallback(() => {
     setShowHint(true);
+    setIncorrectAttempts((attempts) => Math.max(attempts, PIECE_HINT_AFTER));
   }, []);
 
   const handleCorrectMove = useCallback(
@@ -618,11 +626,12 @@ const OpeningDetailPage: React.FC = () => {
     const newAttempts = incorrectAttempts + 1;
     setIncorrectAttempts(newAttempts);
 
-    // Auto-show hint after 2 failed attempts
-    if (newAttempts >= 2) {
-      showHintHighlight();
+    // The hint escalates: nothing on the first wrong move, the piece on the
+    // second, and from the third an arrow to its square (drawn at render).
+    if (newAttempts >= PIECE_HINT_AFTER) {
+      setShowHint(true);
     }
-  }, [incorrectAttempts, showHintHighlight]);
+  }, [incorrectAttempts]);
 
   // Get legal moves for a given square (for click-to-move)
   const getLegalMovesForSquare = useCallback(
@@ -819,7 +828,7 @@ const OpeningDetailPage: React.FC = () => {
 
     // 4. Hint highlighting (highest priority - persists until correct move)
     if (showHint) {
-      const hintSquare = getHintSquare();
+      const hintSquare = getHintMove()?.from;
       if (hintSquare) {
         newHighlights[hintSquare] = { backgroundColor: 'rgba(255, 170, 0, 0.5)' };
       }
@@ -833,7 +842,7 @@ const OpeningDetailPage: React.FC = () => {
     practiceMode,
     practiceGame,
     showHint,
-    getHintSquare,
+    getHintMove,
   ]);
 
   // Reset practice mode when opening changes
@@ -843,6 +852,9 @@ const OpeningDetailPage: React.FC = () => {
     }
     prevFenRef.current = fen;
   }, [fen, practiceMode, exitPractice]);
+
+  const hintArrowMove =
+    practiceMode && showHint && incorrectAttempts >= ARROW_HINT_AFTER ? getHintMove() : null;
 
   // Our own middleware's escaped HTML, from this same response.
   const prerendered = prerender && <div dangerouslySetInnerHTML={{ __html: prerender }} />;
@@ -1082,6 +1094,15 @@ const OpeningDetailPage: React.FC = () => {
                     WebkitUserSelect: 'none',
                   },
                   squareStyles: highlightSquares,
+                  arrows: hintArrowMove
+                    ? [
+                        {
+                          startSquare: hintArrowMove.from,
+                          endSquare: hintArrowMove.to,
+                          color: 'rgb(255, 170, 0)',
+                        },
+                      ]
+                    : [],
                   boardStyle: {
                     borderRadius: '8px',
                     touchAction: practiceMode ? 'none' : 'auto',

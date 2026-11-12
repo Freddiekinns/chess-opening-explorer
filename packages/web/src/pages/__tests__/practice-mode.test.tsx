@@ -563,3 +563,95 @@ describe('Practice Mode - Popular-continuation extension', () => {
     expect(screen.queryByText('incl. book continuation')).not.toBeInTheDocument();
   });
 });
+
+describe('Practice Mode - Hint ladder', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+
+    mockFetch.mockImplementation((url: string) => {
+      if (url.includes('/sounds/')) {
+        return createMockAudioResponse();
+      }
+      if (url.includes('/api/openings/page/')) {
+        return createMockPageResponse(mockPracticeOpening, mockStatsData);
+      }
+      return createMockFetchResponse({ success: true, data: [] });
+    });
+  });
+
+  // The line starts 1.e4, so as White the expected move is e2 to e4.
+  const startPractice = async () => {
+    await act(async () => {
+      renderOpeningDetailPage(mockPracticeOpening.fen);
+    });
+    await waitFor(() => {
+      expect(screen.getByText('Italian Game')).toBeInTheDocument();
+    });
+    fireEvent.click(screen.getByText('Practice'));
+    await waitFor(() => {
+      expect(screen.getByText('Playing as:')).toBeInTheDocument();
+    });
+    // The board animates back to the starting position, and until it lands
+    // a click on e2 finds no pawn there to pick up.
+    await waitFor(() => expect(square('e2').querySelector('svg')).toBeInTheDocument());
+  };
+
+  const square = (id: string) => document.querySelector(`[data-square="${id}"]`) as HTMLElement;
+  const play = (from: string, to: string) => {
+    fireEvent.click(square(from));
+    fireEvent.click(square(to));
+  };
+  const playWrongMove = () => play('d2', 'd4');
+  const hintArrow = () => document.querySelector('marker[id$="-e2-e4"]');
+  const pieceIsHighlighted = () => square('e2').outerHTML.includes('rgba(255, 170, 0, 0.5)');
+
+  test('says nothing after the first wrong move', async () => {
+    await startPractice();
+
+    playWrongMove();
+
+    expect(pieceIsHighlighted()).toBe(false);
+    expect(hintArrow()).not.toBeInTheDocument();
+  });
+
+  test('highlights the piece, without an arrow, after the second wrong move', async () => {
+    await startPractice();
+
+    playWrongMove();
+    playWrongMove();
+
+    await waitFor(() => expect(pieceIsHighlighted()).toBe(true));
+    expect(hintArrow()).not.toBeInTheDocument();
+  });
+
+  test('draws an arrow to the right square after the third wrong move', async () => {
+    await startPractice();
+
+    playWrongMove();
+    playWrongMove();
+    playWrongMove();
+
+    await waitFor(() => expect(hintArrow()).toBeInTheDocument());
+  });
+
+  test('draws the arrow on a wrong move made after asking for a hint', async () => {
+    await startPractice();
+
+    fireEvent.click(screen.getAllByText('Hint')[0]);
+    playWrongMove();
+
+    await waitFor(() => expect(hintArrow()).toBeInTheDocument());
+  });
+
+  test('clears the arrow once the right move is played', async () => {
+    await startPractice();
+    playWrongMove();
+    playWrongMove();
+    playWrongMove();
+    await waitFor(() => expect(hintArrow()).toBeInTheDocument());
+
+    play('e2', 'e4');
+
+    await waitFor(() => expect(hintArrow()).not.toBeInTheDocument());
+  });
+});

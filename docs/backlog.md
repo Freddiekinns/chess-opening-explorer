@@ -36,6 +36,9 @@ keep the record.
 - **rev 5** (2026-10-21) — the **Next** items moved to GitHub issues #195–199;
   **Now** is done apart from the parked popularity refresh, which moved to
   **Parked**. Shipped **Now** and **Next** items deleted.
+- **rev 5.1** (2026-11-10) — a practice trainer of our own was considered and
+  dropped, and the book walk behind the deviation trainer was tried on real
+  games. See **Rev 5.1 findings**.
 
 ## The unifying principle
 
@@ -63,6 +66,33 @@ and drill for it.
    real form.** Do not add a fourth surface while the first three are
    unfinished.
 
+## Rev 5.1 findings
+
+1. **No trainer of our own** (owner decision, 2026-11-10). A drilling trainer in
+   the Chessable mould (courses of lines, a looping drill) is dropped. The owner
+   learns from videos and then plays, does not drill, and expects most learners
+   to be the same. Kept from the idea: practice hints now escalate over wrong
+   moves on a position (nothing, then the piece, then an arrow to its square).
+   Revisit only with evidence that people drill.
+2. **Named lines cannot judge a move.** A throwaway script walked the owner's
+   2,867 rated chess.com games against every named line. The book ran out before
+   either player left it in 1,209 games (42%), the opponent left first in 1,061
+   (37%), and the owner left with a book move available in 587 (20%), at a
+   median of move 3 to 4. The catalogue stops at move 2 or 3 in the owner's most
+   played lines (120 games reach the Bowdler Attack, where it has no
+   continuation), it omits ordinary moves (3.Nc3 against the Owen was the top
+   "leak", 26 games), and it names doubtful ones. About half of the top
+   recurring leaks were catalogue gaps, by reading and without an engine. So the
+   PRD's §6.2 detection would headline false leaks as written: names work as
+   labels, not as the authority for what should have been played.
+3. **What held up.** Play repeats enough to show: 91 position-and-move pairs
+   recurred, and forks reached 20 or more times carry a usable split of the
+   owner's own results by move. The shape still standing is games, then named
+   forks with your own results, then what your level plays there, then a video.
+   Not committed to. Two things are untested: the Lichess explorer as the
+   authority for the alternative move, and whether our videos, matched per
+   opening and not per move, are a good enough place to send someone.
+
 ---
 
 ## Next — close the loop cheaply `1–2 weeks`
@@ -77,7 +107,8 @@ and drill for it.
 
 - **Slice 2 — deviation trainer v1**, as specified in the PRD §6. **J3,
   paste-a-game post-mortem, ships as its public face**: the same book-walk code,
-  no username needed, and it lives where "Paste a game" already is.
+  no username needed, and it lives where "Paste a game" already is. _Rev 5.1: do
+  not build §6.2 detection on named lines alone; see finding 2._
 - **Repertoire from your games** _(pending decision 3)_ — a move tree of what
   you actually play, which fills Repertoire by colour, flags inconsistent move
   orders, shows coverage gaps against what opponents really play, and exports

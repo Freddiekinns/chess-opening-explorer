@@ -660,6 +660,21 @@ class VideoMatcher {
   }
 
   /**
+   * Whether a title carries a word of its own from the page name: "Bird" for
+   * "Bird Opening", where the full name is never written out.
+   */
+  titleNamesWordOf(title, openingName) {
+    return this.normalizeForMatch(openingName)
+      .split(/[^a-z]+/)
+      .some(
+        (word) =>
+          word.length >= 4 &&
+          !SHARED_NAME_WORDS.has(word) &&
+          this.phraseMatches(title, word, openingName)
+      );
+  }
+
+  /**
    * True when a title names a distinctive sub-variation (Najdorf, Dragon,
    * Alapin, …). Such videos are not generic family overviews, so they must not
    * blanket sibling move-notation pages via the family-part fallback — we can't
@@ -1170,10 +1185,12 @@ class VideoMatcher {
     // happened to reach ("1:49:41 Rapport-Jobava System - vs …"), one game in
     // a 2.5-hour arena stream: it counts only when the title names the line,
     // as "Be prepared for the Morris Countergambit!" does on a page whose
-    // name is too long to match outright.
+    // name is too long to match outright, or names the opening even loosely,
+    // as Naroditsky's speedrun titles list their openings ("…, Bird").
     const isVariationPage = openingName.includes(':');
     const titleCorroborates = PLAYED_GAME_SERIES.test(title)
-      ? variationMatch.anyCleanWord
+      ? variationMatch.anyCleanWord ||
+        (!isVariationPage && this.titleNamesWordOf(title, openingName))
       : !isVariationPage || variationMatch.anyCleanWord;
     if (!hasNameMatch && contentOnlyName && titleCorroborates) {
       hasNameMatch = true;

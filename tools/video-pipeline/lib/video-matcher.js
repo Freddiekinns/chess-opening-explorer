@@ -1168,14 +1168,14 @@ class VideoMatcher {
     //
     // A played-game video's chapters and tags list the openings its games
     // happened to reach ("1:49:41 Rapport-Jobava System - vs …"), one game in
-    // a 2.5-hour arena stream: only its title says what it is about.
+    // a 2.5-hour arena stream: it counts only when the title names the line,
+    // as "Be prepared for the Morris Countergambit!" does on a page whose
+    // name is too long to match outright.
     const isVariationPage = openingName.includes(':');
-    if (
-      !hasNameMatch &&
-      contentOnlyName &&
-      (!isVariationPage || variationMatch.anyCleanWord) &&
-      !PLAYED_GAME_SERIES.test(title)
-    ) {
+    const titleCorroborates = PLAYED_GAME_SERIES.test(title)
+      ? variationMatch.anyCleanWord
+      : !isVariationPage || variationMatch.anyCleanWord;
+    if (!hasNameMatch && contentOnlyName && titleCorroborates) {
       hasNameMatch = true;
       matchType = 'exact';
     }

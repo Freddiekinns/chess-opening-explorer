@@ -596,6 +596,21 @@ describe('VideoMatcher — family recall and video level', () => {
         expect(scoreOn(result, 'london-a48', 'speedrun')).toBeUndefined();
       });
 
+      it('does not read a connecting word of the page name as the opening', async () => {
+        // "with" is in the page name, not a name for the opening
+        const episode = candidate(
+          'with',
+          'Winning with Positional Chess! | Speedrun Episode 11',
+          50000,
+          {
+            tags: ['Rapport-Jobava System, with e6'],
+            channelTitle: 'Eric Rosen',
+          }
+        );
+        const result = await run(pages, [episode]);
+        expect(scoreOn(result, 'jobava-e6', 'with')).toBeUndefined();
+      });
+
       it('still matches a speedrun whose title names the opening loosely', async () => {
         // Naroditsky's titles list the episode's openings: "Bird", not "Bird Opening"
         const bird = { id: 'bird', name: 'Bird Opening', eco: 'A02' };

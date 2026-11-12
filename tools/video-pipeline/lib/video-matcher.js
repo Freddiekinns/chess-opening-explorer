@@ -100,6 +100,7 @@ const DEFAULT_MATCHING_CONFIG = {
     'pseudo',
     'reversed',
     'delayed',
+    'jobava',
   ],
 };
 
@@ -115,6 +116,19 @@ const MOVE_NOTATION_PATTERN = /\d+\.(?:\.\.)?\s*[a-zA-Z]/;
  * pages could not be named by any title.
  */
 const SPELT_OUT_UMLAUTS = /gruenfeld|saemisch|jaenisch|loewenthal|huebner|moeller/g;
+
+/**
+ * Names players use that no ECO alias source carries. The ECO calls 1.d4 d5
+ * 2.Nc3 Nf6 3.Bf4 the "Rapport-Jobava System"; titles call it the Jobava
+ * London, so its videos went to the London System pages and none to its own.
+ * ("jobava" is also a variation modifier, which keeps them off the London.)
+ * They count in titles only: Naroditsky's descriptions all cross-link
+ * "Bortnyk and Naroditsky's Jobava London", puzzle videos included.
+ */
+const COMMON_NAMES = [[/\brapport-jobava\b/i, ['Jobava London']]];
+const TITLE_ONLY_NAMES = new Set(
+  COMMON_NAMES.flatMap(([, names]) => names.map((n) => n.toLowerCase()))
+);
 
 /**
  * Words that cannot tell one opening from another at the front of a page
@@ -145,6 +159,21 @@ const SHARED_NAME_WORDS = new Set([
   'open',
 ]);
 
+/** Page-name words that connect or place a line rather than name it. */
+const CONNECTING_NAME_WORDS = new Set([
+  'with',
+  'main',
+  'line',
+  'base',
+  'position',
+  'setup',
+  'early',
+  'black',
+  'white',
+  'accepted',
+  'declined',
+]);
+
 /** Videos one creator can have on a page before `creator_repeat` applies. */
 const CREATOR_SLOTS = 2;
 
@@ -156,7 +185,7 @@ const INTRODUCTION_TITLE =
   /\b(?:introduction|intro|learn|beginners?|basics|crash course|how to play)\b|\b\d+[- ]minutes?\b/;
 
 /** Series in which the creator plays a game, whatever the episode's title promises. */
-const PLAYED_GAME_SERIES = /\bspeedrun\b|\btraining games?\b|\brating ladder\b/;
+const PLAYED_GAME_SERIES = /\bspeedrun\b|\btraining games?\b|\brating ladder\b|\barena\b/;
 
 /**
  * New FEN-based Video Matching System
@@ -646,6 +675,24 @@ class VideoMatcher {
   }
 
   /**
+   * Whether a title carries a word of its own from the page name: "Bird" for
+   * "Bird Opening", where the full name is never written out. Words that only
+   * connect or place a line ("London System Main Line with Black ...e6") name
+   * nothing, and "Winning with Positional Chess!" carries one of them.
+   */
+  titleNamesWordOf(title, openingName) {
+    return this.normalizeForMatch(openingName)
+      .split(/[^a-z]+/)
+      .some(
+        (word) =>
+          word.length >= 4 &&
+          !SHARED_NAME_WORDS.has(word) &&
+          !CONNECTING_NAME_WORDS.has(word) &&
+          this.phraseMatches(title, word, openingName)
+      );
+  }
+
+  /**
    * True when a title names a distinctive sub-variation (Najdorf, Dragon,
    * Alapin, …). Such videos are not generic family overviews, so they must not
    * blanket sibling move-notation pages via the family-part fallback — we can't
@@ -1088,7 +1135,11 @@ class VideoMatcher {
 
       // Exact match in content — recorded, not accepted yet, so a later
       // alias's title match still wins and the corroboration rule can run
-      if (!contentOnlyName && this.phraseMatches(videoContent, cleanName, opening.name)) {
+      if (
+        !contentOnlyName &&
+        !TITLE_ONLY_NAMES.has(cleanName) &&
+        this.phraseMatches(videoContent, cleanName, opening.name)
+      ) {
         contentOnlyName = cleanName;
       }
 
@@ -1147,8 +1198,19 @@ class VideoMatcher {
     // 3-char floor) yields no segments at all, and treating that as a
     // family-level page let the very cross-links this rule exists to stop
     // straight back onto those pages.
+    //
+    // A played-game video's chapters and tags list the openings its games
+    // happened to reach ("1:49:41 Rapport-Jobava System - vs …"), one game in
+    // a 2.5-hour arena stream: it counts only when the title names the line,
+    // as "Be prepared for the Morris Countergambit!" does on a page whose
+    // name is too long to match outright, or names the opening even loosely,
+    // as Naroditsky's speedrun titles list their openings ("…, Bird").
     const isVariationPage = openingName.includes(':');
-    if (!hasNameMatch && contentOnlyName && (!isVariationPage || variationMatch.anyCleanWord)) {
+    const titleCorroborates = PLAYED_GAME_SERIES.test(title)
+      ? variationMatch.anyCleanWord ||
+        (!isVariationPage && this.titleNamesWordOf(title, openingName))
+      : !isVariationPage || variationMatch.anyCleanWord;
+    if (!hasNameMatch && contentOnlyName && titleCorroborates) {
       hasNameMatch = true;
       matchType = 'exact';
     }
@@ -1490,7 +1552,12 @@ class VideoMatcher {
                 : this.normalizeForMatch(opening.name.slice(0, colonIndex)).trim();
             return {
               ...opening,
-              aliases: this.parseAliases(opening.aliases),
+              aliases: [
+                ...this.parseAliases(opening.aliases),
+                ...COMMON_NAMES.filter(([pattern]) => pattern.test(opening.name)).flatMap(
+                  ([, names]) => names
+                ),
+              ],
               family: getFamilyFromEco(opening.eco),
               prefix: this.isDistinctivePrefix(prefix) ? prefix : null,
             };

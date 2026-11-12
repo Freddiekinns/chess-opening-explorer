@@ -539,6 +539,129 @@ describe('VideoMatcher — family recall and video level', () => {
       );
     });
 
+    describe('the Jobava London', () => {
+      // The ECO name is "Rapport-Jobava System"; titles call it the Jobava
+      // London, so it matched only the London pages and none of its own
+      const pages = [
+        { id: 'jobava', name: 'Rapport-Jobava System', eco: 'D01' },
+        { id: 'jobava-e6', name: 'Rapport-Jobava System, with e6', eco: 'D01' },
+        {
+          id: 'london-d02',
+          name: "Queen's Pawn Game: London System",
+          eco: 'D02',
+          aliases: '["London System"]',
+        },
+        { id: 'london-a48', name: 'London System', eco: 'A48' },
+      ];
+      const jobava = candidate('jobava', 'Introduction to the Jobava London System', 50000);
+      const london = candidate('london', 'London System for Beginners', 50000);
+
+      it('matches a Jobava London video to the Rapport-Jobava pages', async () => {
+        const result = await run(pages, [jobava]);
+        expect(scoreOn(result, 'jobava', 'jobava')).toBeGreaterThanOrEqual(
+          matcher.config.min_match_score
+        );
+        expect(scoreOn(result, 'jobava-e6', 'jobava')).toBeGreaterThanOrEqual(
+          matcher.config.min_match_score
+        );
+      });
+
+      it('ignores a Jobava London cross-link in a description', async () => {
+        // Every Naroditsky video description links his Jobava London lecture
+        const puzzles = candidate('puzzles', 'Mastering Chess Tactics | Advanced Puzzles', 50000, {
+          description: "Bortnyk and Naroditsky's Jobava London\nhttps://youtu.be/example",
+        });
+        const result = await run(pages, [puzzles]);
+        expect(scoreOn(result, 'jobava', 'puzzles')).toBeUndefined();
+      });
+
+      it('ignores the openings a played-game video lists in its chapters or tags', async () => {
+        // Each names an opening that came up in one game, not the subject
+        const arena = candidate(
+          'arena',
+          'How to Beat Amateurs at Chess | Daily Rapid Arena',
+          50000,
+          {
+            description: '1:40:27 Borg Defense - vs a\n1:49:41 Rapport-Jobava System - vs b',
+            channelTitle: 'Eric Rosen',
+          }
+        );
+        const speedrun = candidate('speedrun', 'Opening Tactics! | Speedrun Episode 36', 50000, {
+          description: '19:00 Fighting the London',
+          tags: ['speedrun', 'greek gift', 'london', 'london system'],
+          channelTitle: 'Eric Rosen',
+        });
+        const result = await run(pages, [arena, speedrun]);
+        expect(scoreOn(result, 'jobava', 'arena')).toBeUndefined();
+        expect(scoreOn(result, 'london-a48', 'speedrun')).toBeUndefined();
+      });
+
+      it('does not read a connecting word of the page name as the opening', async () => {
+        // "with" is in the page name, not a name for the opening
+        const episode = candidate(
+          'with',
+          'Winning with Positional Chess! | Speedrun Episode 11',
+          50000,
+          {
+            tags: ['Rapport-Jobava System, with e6'],
+            channelTitle: 'Eric Rosen',
+          }
+        );
+        const result = await run(pages, [episode]);
+        expect(scoreOn(result, 'jobava-e6', 'with')).toBeUndefined();
+      });
+
+      it('still matches a speedrun whose title names the opening loosely', async () => {
+        // Naroditsky's titles list the episode's openings: "Bird", not "Bird Opening"
+        const bird = { id: 'bird', name: 'Bird Opening', eco: 'A02' };
+        const episode = candidate(
+          'episode',
+          "How GMs TRAP London System Players!! | Glek, Kings Indian, Bird | GM Naroditsky's DYI Speedrun",
+          200000,
+          {
+            description: 'Learn a rare but powerful response to the Bird Opening with Nh6.',
+            channelTitle: 'Daniel Naroditsky',
+          }
+        );
+        const result = await run([bird], [episode]);
+        expect(scoreOn(result, 'bird', 'episode')).toBeDefined();
+      });
+
+      it('still matches a played game whose title names the line', async () => {
+        // The page name is too long to title-match; the title names its line
+        const morris = {
+          id: 'morris-page',
+          name: "Queen's Pawn Game: Accelerated London System, Steinitz Countergambit, Morris Countergambit Accepted",
+          eco: 'D00',
+        };
+        const game = candidate(
+          'morris',
+          'Be prepared for the Morris Countergambit! · Training Game',
+          50000,
+          {
+            description:
+              "Queen's Pawn Game: Accelerated London System, Steinitz Countergambit, Morris Countergambit Accepted",
+            channelTitle: 'ChessNetwork',
+          }
+        );
+        const result = await run([morris], [game]);
+        expect(scoreOn(result, 'morris-page', 'morris')).toBeDefined();
+      });
+
+      it('keeps a Jobava London video off the London System pages', async () => {
+        const result = await run(pages, [jobava]);
+        expect(scoreOn(result, 'london-d02', 'jobava')).toBeUndefined();
+        expect(scoreOn(result, 'london-a48', 'jobava')).toBeUndefined();
+      });
+
+      it('still matches a plain London video to the London System pages', async () => {
+        const result = await run(pages, [london]);
+        expect(scoreOn(result, 'london-d02', 'london')).toBeDefined();
+        expect(scoreOn(result, 'london-a48', 'london')).toBeDefined();
+        expect(scoreOn(result, 'jobava', 'london')).toBeUndefined();
+      });
+    });
+
     it('does not read half of a double-barrelled name as a variation', async () => {
       const result = await run(
         [{ id: 'larsen', name: 'Nimzo-Larsen Attack', eco: 'A01' }],

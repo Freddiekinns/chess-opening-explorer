@@ -360,9 +360,19 @@ Smith-Morra page over a Naroditsky Smith-Morra speedrun.
   hyperaccelerated, semi, anti, reversed, …) marks a **sibling variation** and
   the match is rejected outright — "The Accelerated Dragon" is rejected from the
   plain Dragon page, "Semi-Slav" titles from pure Slav pages, and vice versa.
-  Diacritics are normalized ("Maróczy" matches "maroczy"), a trailing s/d is
-  tolerated ("Advanced" counts for "Advance Variation" pages), and the "Acc."
-  title shorthand expands to "accelerated".
+  "jobava" is one too, so "Jobava London" is not the London System. Diacritics
+  are normalized ("Maróczy" matches "maroczy"), a trailing s/d is tolerated
+  ("Advanced" counts for "Advance Variation" pages), and the "Acc." title
+  shorthand expands to "accelerated".
+- **Common names no ECO source carries** (`COMMON_NAMES` in
+  `lib/video-matcher.js`) are added to a page's aliases at load: the
+  Rapport-Jobava pages also answer to "Jobava London", the name titles use. They
+  count in titles only.
+- **A played game's chapters and tags are not its subject.** Speedruns, arena
+  streams, training games and rating-ladder games list every opening their games
+  reached, so a description or tag mention counts only when the title names the
+  line or a word of the opening ("Bird" for "Bird Opening", as Naroditsky's
+  speedrun titles do). Their scores are untouched.
 - **2-word alias minimum**: Alias fragments from comma/semicolon splitting must
   have 2+ words (prevents "Accepted" matching everything); bare shared variation
   names ("Exchange Variation") are skipped entirely

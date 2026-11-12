@@ -539,6 +539,47 @@ describe('VideoMatcher — family recall and video level', () => {
       );
     });
 
+    describe('the Jobava London', () => {
+      // The ECO name is "Rapport-Jobava System"; titles call it the Jobava
+      // London, so it matched only the London pages and none of its own
+      const pages = [
+        { id: 'jobava', name: 'Rapport-Jobava System', eco: 'D01' },
+        { id: 'jobava-e6', name: 'Rapport-Jobava System, with e6', eco: 'D01' },
+        {
+          id: 'london-d02',
+          name: "Queen's Pawn Game: London System",
+          eco: 'D02',
+          aliases: '["London System"]',
+        },
+        { id: 'london-a48', name: 'London System', eco: 'A48' },
+      ];
+      const jobava = candidate('jobava', 'Introduction to the Jobava London System', 50000);
+      const london = candidate('london', 'London System for Beginners', 50000);
+
+      it('matches a Jobava London video to the Rapport-Jobava pages', async () => {
+        const result = await run(pages, [jobava]);
+        expect(scoreOn(result, 'jobava', 'jobava')).toBeGreaterThanOrEqual(
+          matcher.config.min_match_score
+        );
+        expect(scoreOn(result, 'jobava-e6', 'jobava')).toBeGreaterThanOrEqual(
+          matcher.config.min_match_score
+        );
+      });
+
+      it('keeps a Jobava London video off the London System pages', async () => {
+        const result = await run(pages, [jobava]);
+        expect(scoreOn(result, 'london-d02', 'jobava')).toBeUndefined();
+        expect(scoreOn(result, 'london-a48', 'jobava')).toBeUndefined();
+      });
+
+      it('still matches a plain London video to the London System pages', async () => {
+        const result = await run(pages, [london]);
+        expect(scoreOn(result, 'london-d02', 'london')).toBeDefined();
+        expect(scoreOn(result, 'london-a48', 'london')).toBeDefined();
+        expect(scoreOn(result, 'jobava', 'london')).toBeUndefined();
+      });
+    });
+
     it('does not read half of a double-barrelled name as a variation', async () => {
       const result = await run(
         [{ id: 'larsen', name: 'Nimzo-Larsen Attack', eco: 'A01' }],

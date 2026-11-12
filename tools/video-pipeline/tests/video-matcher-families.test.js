@@ -566,6 +566,15 @@ describe('VideoMatcher — family recall and video level', () => {
         );
       });
 
+      it('ignores a Jobava London cross-link in a description', async () => {
+        // Every Naroditsky video description links his Jobava London lecture
+        const puzzles = candidate('puzzles', 'Mastering Chess Tactics | Advanced Puzzles', 50000, {
+          description: "Bortnyk and Naroditsky's Jobava London\nhttps://youtu.be/example",
+        });
+        const result = await run(pages, [puzzles]);
+        expect(scoreOn(result, 'jobava', 'puzzles')).toBeUndefined();
+      });
+
       it('keeps a Jobava London video off the London System pages', async () => {
         const result = await run(pages, [jobava]);
         expect(scoreOn(result, 'london-d02', 'jobava')).toBeUndefined();

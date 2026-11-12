@@ -596,6 +596,27 @@ describe('VideoMatcher — family recall and video level', () => {
         expect(scoreOn(result, 'london-a48', 'speedrun')).toBeUndefined();
       });
 
+      it('still matches a played game whose title names the line', async () => {
+        // The page name is too long to title-match; the title names its line
+        const morris = {
+          id: 'morris-page',
+          name: "Queen's Pawn Game: Accelerated London System, Steinitz Countergambit, Morris Countergambit Accepted",
+          eco: 'D00',
+        };
+        const game = candidate(
+          'morris',
+          'Be prepared for the Morris Countergambit! · Training Game',
+          50000,
+          {
+            description:
+              "Queen's Pawn Game: Accelerated London System, Steinitz Countergambit, Morris Countergambit Accepted",
+            channelTitle: 'ChessNetwork',
+          }
+        );
+        const result = await run([morris], [game]);
+        expect(scoreOn(result, 'morris-page', 'morris')).toBeDefined();
+      });
+
       it('keeps a Jobava London video off the London System pages', async () => {
         const result = await run(pages, [jobava]);
         expect(scoreOn(result, 'london-d02', 'jobava')).toBeUndefined();

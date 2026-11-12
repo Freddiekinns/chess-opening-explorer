@@ -27,13 +27,21 @@ headers for this reason (see below).
 
 Defaults:
 
-| Route type                          | Header                                        |
-| ----------------------------------- | --------------------------------------------- |
-| Static / semi-static data           | `s-maxage=3600, stale-while-revalidate=86400`  |
-| Search and query endpoints          | `s-maxage=300, stale-while-revalidate=600`     |
-| User-specific (e.g. `/api/personal`) | `private, no-store`                           |
+| Route type                                   | Header                                          |
+| -------------------------------------------- | ----------------------------------------------- |
+| Answers read from `api/data/` (search too)   | `s-maxage=86400, stale-while-revalidate=604800` |
+| Answers that change between deploys          | set in the route, as `/api/explorer` does       |
+| User-specific (e.g. `/api/personal`)         | `private, no-store`                             |
 
 Verify with `curl -I <url>` — expect `x-vercel-cache: HIT` on the second request.
+
+A route that only reads `api/data/` cannot go stale: the files ship with the
+deployment, and Vercel's CDN keys its cache on the deployment, so every deploy
+starts from an empty one. The lifetimes were an hour (five minutes for search)
+until 2026-11-12, which on this traffic meant the first visitor after a quiet
+spell waited on a cold function — 2.8 s for the landing page's `/browse`.
+`repo-invariants.test.js` holds the floor. A route that calls out, or answers
+differently each time (`/random`), does not get these headers.
 
 This matters more than it looks: crawlers index 12,000+ pages, so an uncached
 route is multiplied across all of them against a Vercel Hobby tier limit of 10 GB

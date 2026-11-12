@@ -48,6 +48,50 @@ describe('vercel.json does not own the explorer route s headers', () => {
   });
 });
 
+describe('what cannot change within a deployment is cached for longer than a visit', () => {
+  /**
+   * Measured 2026-11-12: every `/assets/` file went out `max-age=0`, so each
+   * page view revalidated every chunk it already held, and the data routes
+   * expired at the edge after an hour, so the first visitor after a quiet spell
+   * waited on a cold function (2.8 s for the landing page's `/browse`).
+   *
+   * Neither can go stale. Vite names an asset by a hash of its content, and the
+   * data routes read JSON files that ship with the deployment — Vercel's CDN
+   * keys its cache on the deployment, so a deploy starts from an empty one.
+   * A route whose answer can change between deploys does not belong in
+   * `deploymentScoped`: `/api/explorer` and `/api/openings/random` are not.
+   */
+  const vercel = JSON.parse(read('vercel.json'));
+  const cacheControl = (source) =>
+    (vercel.headers || [])
+      .find((h) => h.source === source)
+      ?.headers.find((h) => h.key === 'Cache-Control')?.value;
+  const seconds = (value, directive) =>
+    Number(new RegExp(`(?:^|[\\s,])${directive}=(\\d+)`).exec(value || '')?.[1] ?? 0);
+
+  const DAY = 86400;
+  const deploymentScoped = [
+    '/api/openings/search-index',
+    '/api/openings/browse',
+    '/api/openings/semantic-search',
+    '/api/openings/page/(.*)',
+    '/api/openings/fen/(.*)',
+    '/api/families',
+  ];
+
+  test('hashed build assets are immutable for a year', () => {
+    const value = cacheControl('/assets/(.*)');
+    expect(seconds(value, 'max-age')).toBe(365 * DAY);
+    expect(value).toContain('immutable');
+  });
+
+  test.each(deploymentScoped)('%s stays at the edge a day, and a week stale', (source) => {
+    const value = cacheControl(source);
+    expect(seconds(value, 's-maxage')).toBeGreaterThanOrEqual(DAY);
+    expect(seconds(value, 'stale-while-revalidate')).toBeGreaterThanOrEqual(7 * DAY);
+  });
+});
+
 describe('the middleware matcher lets the static SEO files through', () => {
   /**
    * The matcher is a broad negative lookahead, so anything not named in it

@@ -170,7 +170,7 @@ const INTRODUCTION_TITLE =
   /\b(?:introduction|intro|learn|beginners?|basics|crash course|how to play)\b|\b\d+[- ]minutes?\b/;
 
 /** Series in which the creator plays a game, whatever the episode's title promises. */
-const PLAYED_GAME_SERIES = /\bspeedrun\b|\btraining games?\b|\brating ladder\b/;
+const PLAYED_GAME_SERIES = /\bspeedrun\b|\btraining games?\b|\brating ladder\b|\barena\b/;
 
 /**
  * New FEN-based Video Matching System
@@ -1165,8 +1165,17 @@ class VideoMatcher {
     // 3-char floor) yields no segments at all, and treating that as a
     // family-level page let the very cross-links this rule exists to stop
     // straight back onto those pages.
+    //
+    // A played-game video's chapters and tags list the openings its games
+    // happened to reach ("1:49:41 Rapport-Jobava System - vs …"), one game in
+    // a 2.5-hour arena stream: only its title says what it is about.
     const isVariationPage = openingName.includes(':');
-    if (!hasNameMatch && contentOnlyName && (!isVariationPage || variationMatch.anyCleanWord)) {
+    if (
+      !hasNameMatch &&
+      contentOnlyName &&
+      (!isVariationPage || variationMatch.anyCleanWord) &&
+      !PLAYED_GAME_SERIES.test(title)
+    ) {
       hasNameMatch = true;
       matchType = 'exact';
     }

@@ -596,6 +596,22 @@ describe('VideoMatcher — family recall and video level', () => {
         expect(scoreOn(result, 'london-a48', 'speedrun')).toBeUndefined();
       });
 
+      it('still matches a speedrun whose title names the opening loosely', async () => {
+        // Naroditsky's titles list the episode's openings: "Bird", not "Bird Opening"
+        const bird = { id: 'bird', name: 'Bird Opening', eco: 'A02' };
+        const episode = candidate(
+          'episode',
+          "How GMs TRAP London System Players!! | Glek, Kings Indian, Bird | GM Naroditsky's DYI Speedrun",
+          200000,
+          {
+            description: 'Learn a rare but powerful response to the Bird Opening with Nh6.',
+            channelTitle: 'Daniel Naroditsky',
+          }
+        );
+        const result = await run([bird], [episode]);
+        expect(scoreOn(result, 'bird', 'episode')).toBeDefined();
+      });
+
       it('still matches a played game whose title names the line', async () => {
         // The page name is too long to title-match; the title names its line
         const morris = {

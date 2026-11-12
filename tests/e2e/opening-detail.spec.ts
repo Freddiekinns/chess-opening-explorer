@@ -31,4 +31,31 @@ test.describe('opening detail', () => {
     await page.getByRole('button', { name: 'Exit' }).first().click();
     await expect(page.getByRole('button', { name: 'Practice' })).toBeVisible();
   });
+
+  test('desktop shows a diagram of the position beside Common plans', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);
+
+    const diagram = page.getByRole('figure', { name: 'Position after 2...d6' });
+    await expect(diagram).toBeVisible();
+
+    const plan = page.getByText('control the center and develop quickly');
+    const diagramBox = await diagram.boundingBox();
+    const planBox = await plan.boundingBox();
+    expect(diagramBox && planBox && diagramBox.x + diagramBox.width <= planBox.x).toBe(true);
+  });
+
+  test('mobile shows the diagram above Common plans', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(`/opening/${encodeURIComponent(testOpenings[0].fen)}`);
+
+    const diagram = page.getByRole('figure', { name: 'Position after 2...d6' });
+    await diagram.scrollIntoViewIfNeeded();
+    await expect(diagram).toBeVisible();
+
+    const plan = page.getByText('control the center and develop quickly');
+    const diagramBox = await diagram.boundingBox();
+    const planBox = await plan.boundingBox();
+    expect(diagramBox && planBox && diagramBox.y + diagramBox.height <= planBox.y).toBe(true);
+  });
 });

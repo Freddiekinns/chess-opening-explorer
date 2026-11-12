@@ -159,6 +159,21 @@ const SHARED_NAME_WORDS = new Set([
   'open',
 ]);
 
+/** Page-name words that connect or place a line rather than name it. */
+const CONNECTING_NAME_WORDS = new Set([
+  'with',
+  'main',
+  'line',
+  'base',
+  'position',
+  'setup',
+  'early',
+  'black',
+  'white',
+  'accepted',
+  'declined',
+]);
+
 /** Videos one creator can have on a page before `creator_repeat` applies. */
 const CREATOR_SLOTS = 2;
 
@@ -661,7 +676,9 @@ class VideoMatcher {
 
   /**
    * Whether a title carries a word of its own from the page name: "Bird" for
-   * "Bird Opening", where the full name is never written out.
+   * "Bird Opening", where the full name is never written out. Words that only
+   * connect or place a line ("London System Main Line with Black ...e6") name
+   * nothing, and "Winning with Positional Chess!" carries one of them.
    */
   titleNamesWordOf(title, openingName) {
     return this.normalizeForMatch(openingName)
@@ -670,6 +687,7 @@ class VideoMatcher {
         (word) =>
           word.length >= 4 &&
           !SHARED_NAME_WORDS.has(word) &&
+          !CONNECTING_NAME_WORDS.has(word) &&
           this.phraseMatches(title, word, openingName)
       );
   }

@@ -4564,5 +4564,65 @@
     "verdict": "fixed",
     "contentHash": "c497a94027302227",
     "notes": "Plan 3 rerouted the d2-knight via f1, where the rook stands. Rewrote plans 3 and 4; British spelling."
+  },
+  "rnbq1rk1/ppp1b1pp/4pn2/3p1p2/2PP4/1P3NP1/P3PPBP/RNBQ1RK1 b - - 0 7": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "adebfcca75f11a6a",
+    "notes": "The overview said Black trades away its weak light squares (the weaknesses are dark); plan 2 read e4 as a move; plan 3 sent a knight via f1 (rook there); plan 4 routed a knight through the g7-pawn. Rewrote overview and plans 2-4; British spelling."
+  },
+  "rnbq1rk1/p1p1b1pp/1p2pn2/3p1p2/2PP4/1P3NP1/P3PPBP/RNBQ1RK1 w - - 0 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "852b0fe5f41956c8",
+    "notes": "Plan 1 named an ambiguous ...Nd7-e5 into a square the d4-pawn covers; plan 2's c5 break ran into the b6-pawn. Rewrote both plans; British spelling."
+  },
+  "r1bq1rk1/ppp1b1pp/2n1pn2/3p1p2/2PP4/1P3NP1/P3PPBP/RNBQ1RK1 w - - 1 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "ebcb06aad3b6a6aa",
+    "notes": "Plan 1 said ...Ne8 supports ...e5; plan 4 wrote the f3-knight's route ambiguously. Rewrote plans 1 and 4; British spelling."
+  },
+  "rnbq1rk1/pp2b1pp/2p1pn2/3p1p2/2PP4/1P3NP1/PB2PPBP/RN1Q1RK1 b - - 1 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "fe5ddcc99f665f0b",
+    "notes": "Plan 3 spoke of light-square weaknesses (they are dark); plan 4 wrote the bishop route without its piece and traded on a6 with White's bishop on g2. Rewrote plans 3 and 4; British spelling."
+  },
+  "rnbq1rk1/pp2b1pp/2p1pn2/3p1p2/2PP4/1P3NP1/P1Q1PPBP/RNB2RK1 b - - 1 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "f9ec1abe1708354e",
+    "notes": "Plan 4 had a knight route f7-e5. Rewrote plan 4; British spelling."
+  },
+  "rn1q1rk1/pp1bb1pp/2p1pn2/3p1p2/2PP4/BP3NP1/P3PPBP/RN1Q1RK1 w - - 2 9": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "c9dc1bfd520e2020",
+    "notes": "Plan 1 took on d7 with the g2-bishop and routed a non-existent c3-knight; plan 2 called ...Bxa3 trading the bad bishop and routed a knight through the g7-pawn. Rewrote both plans; British spelling."
+  },
+  "rnbq1rk1/pp4pp/2p1pn2/3p1p2/2PP4/NP3NP1/P3PPBP/R2Q1RK1 b - - 0 9": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "5812ce9a34f7c8e2",
+    "notes": "Plan 2's bishop route clashed with ...Ba6 and ...Qe8-h5; plan 4 had ...a5-a4 against a knight on a3. Rewrote plans 2 and 4; British spelling."
+  },
+  "r1bq1rk1/pp1n2pp/2p1pn2/3p1p2/2PP4/NP3NP1/P3PPBP/R2Q1RK1 w - - 1 10": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "7498be80a6f71655",
+    "notes": "The overview said 8.Ba3 trades the light-squared bishops and leaves Black a weak dark-squared bishop (it is the reverse); plan 1 wrote the knight route without its piece. Rewrote overview and both plans; British spelling."
+  },
+  "rnb2rk1/pp2q1pp/2p1pn2/3p1p2/2PP4/NP3NP1/P3PPBP/R2Q1RK1 w - - 1 10": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "3f274f16946061ce",
+    "notes": "The overview said 8.Ba3 trades off Black's light-squared bishop; plan 1 used a dark-squared bishop no longer on the board and plan 2 had Black controlling e5; plan 3 pushed a4-a5 through the a3-knight; plan 4 routed a knight d7-b8-a6. Rewrote overview and all four plans."
+  },
+  "rnbq1rk1/pp2b1pp/2p1pn2/3p1p2/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 0 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "e34060266dfb96f9",
+    "notes": "Plan 3 routed a knight via f8 (rook there); plan 2 said White controls the light squares and called b4 a minority attack; plan 1 traded on a6 with White's bishop on g2. Rewrote plans 1-3; British spelling."
   }
 }

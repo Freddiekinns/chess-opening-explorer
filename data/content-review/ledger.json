@@ -4424,8 +4424,8 @@
   "rnbqk2r/pp4pp/2pbpn2/3p1p2/2PP4/5NP1/PP2PPBP/RNBQ1RK1 w kq - 0 7": {
     "reviewedAt": "2026-11-15",
     "verdict": "fixed",
-    "contentHash": "eb35b3bc574d15e9",
-    "notes": "Plan 2 played ...Qe8-h5 with the king on e8 and named White's e4 push in Black's plan. Rewrote plan 2; British spelling."
+    "contentHash": "d5a4de1fbbac1142",
+    "notes": "Follow-up to batch 4: plan 2 said the bad bishop is traded on a6, but White's light-squared bishop is on g2. Reworded plan 2 (...b6 and ...Bb7, or via d7 and e8)."
   },
   "rnbqkb1r/pp1p2pp/2p1pn2/5p2/2PP4/6P1/PP2PPBP/RNBQK1NR w KQkq - 0 5": {
     "reviewedAt": "2026-11-15",
@@ -4436,13 +4436,73 @@
   "rnbqkb1r/pp1p2pp/2p1pn2/5p2/2PP4/5NP1/PP2PPBP/RNBQK2R b KQkq - 1 5": {
     "reviewedAt": "2026-11-15",
     "verdict": "fixed",
-    "contentHash": "40609e5bbb1818f8",
-    "notes": "Plan 3 routed the bishop d7-e8-h5 through the d7-pawn and the king. Rewrote plan 3; British spelling."
+    "contentHash": "7e82cbaa0df10f49",
+    "notes": "Follow-up to batch 4: plan 3 said the bad bishop is traded on a6, but White's light-squared bishop is on g2. Reworded plan 3."
   },
   "rnbqkb1r/pp4pp/2p1pn2/3p1p2/2PP4/5NP1/PP2PPBP/RNBQK2R w KQkq - 0 6": {
     "reviewedAt": "2026-11-15",
     "verdict": "fixed",
-    "contentHash": "7c997268e7fc495e",
-    "notes": "Plan 1 played ...Qe8 and ...Bd7-e8 with the king on e8; plan 2 called e2-e3 a central break. Rewrote both plans; British spelling."
+    "contentHash": "2e6efb554b72081c",
+    "notes": "Follow-up to batch 4: plan 1 said the bad bishop is traded on a6, but White's light-squared bishop is on g2. Reworded plan 1."
+  },
+  "rnbqkb1r/pp1p2pp/2p1pn2/5p2/2PP4/6PN/PP2PPBP/RNBQK2R b KQkq - 1 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "06ceb4d1d7dd7443",
+    "notes": "The overview linked 5.Nh3 to a ...Bb4 pin and plan 4 routed the bishop d7-e8-h5 through the d7-pawn. Rewrote overview and plans 1 and 4 (reviewer: plan 4's 'traded on a6' rejected, revised, re-accepted); British spelling."
+  },
+  "rnbqkb1r/ppp3pp/4pn2/3p1p2/2PP4/6P1/PP2PPBP/RNBQK1NR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "38c3d15980508a29",
+    "notes": "Plan 1 played ...Qe8 with the king on e8 and ...g5-g4 from g7; plan 3 routed the bishop through the d7-pawn and pushed ...c6-c5 with the pawn on c7; plan 2 called e3 a break. Rewrote plans 1-3 (reviewer: plan 3 rejected once, revised, re-accepted); British spelling."
+  },
+  "rnbqkb1r/pppp2pp/4pn2/5p2/2PP4/2N3P1/PP2PP1P/R1BQKBNR b KQkq - 1 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "0100be30870b118a",
+    "notes": "Plan 1 played ...Qe8-h5 with the king on e8; plan 3 called ...Bb4 a pin (d2-pawn in the way); plan 4 called e5 a light square. Rewrote all four plans; British spelling."
+  },
+  "rnbqkb1r/pppp2pp/4pn2/5p2/2PP4/5NP1/PP2PP1P/RNBQKB1R b KQkq - 1 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "036ecfc92d922c72",
+    "notes": "Plan 4 played ...Qe8-h5 with the king on e8 and ...g5-g4 from g7. Rewrote plan 4; British spelling."
+  },
+  "rnbqkb1r/pp4pp/2p1pn2/3p1p2/2PP4/2N2NP1/PP2PPBP/R1BQK2R b KQkq - 1 6": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "88a305fce177639b",
+    "notes": "Plan 1 pushed d4-d5 into Black's d5-pawn and called e3 a break; plan 2 read e4 as a move. Rewrote both plans; British spelling."
+  },
+  "rnbqk2r/pp4pp/2pbpn2/3p1p2/2PP4/1P3NP1/P3PPBP/RNBQ1RK1 b kq - 0 7": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "5f3da1f49c6d5996",
+    "notes": "Plan 2 played ...Qe8-h5 with the king on e8; plan 3 pushed d5 into Black's pawn; plan 4 routed the bishop through the d7-pawn. Rewrote plans 2-4 (reviewer: plan 4 rejected once, revised, re-accepted); British spelling."
+  },
+  "rnbqk2r/pppp2pp/4pn2/5p2/1bPP4/6P1/PP1BPPBP/RN1QK1NR b KQkq - 3 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "3dad20796b0059a1",
+    "notes": "The overview and plan 1 gave White the bishop pair after ...Bxd2+; plan 2 played ...Qe8 with the king on e8; plan 4 put White's e4 push in Black's plan. Rewrote overview and plans 1, 2 and 4; British spelling."
+  },
+  "rnbqk2r/pppp2pp/4pn2/5p2/1bPP4/6P1/PP1NPPBP/R1BQK1NR b KQkq - 3 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "453523b218343c1f",
+    "notes": "Plan 1 routed the d2-knight via f1 after castling. Rewrote plan 1 (reviewer: Nb3 alternative rejected, revised, re-accepted); British spelling."
+  },
+  "rnbqk2r/ppppb1pp/4pn2/5p2/2PP4/6P1/PP2PPBP/RNBQK1NR w KQkq - 2 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "9e67390f19aafdf5",
+    "notes": "Plan 1 played ...Qe8-h5 before castling. Rewrote plan 1; British spelling."
+  },
+  "rnbqk2r/ppppb1pp/4pn2/5p2/2PP4/6P1/PP2PPBP/RNBQK1NR w KQkq - 3 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "c81d980a5ff6d63f",
+    "notes": "Plan 1 played ...Qe8-h5 with the king on e8 and ...g5-g4 from g7. Rewrote plan 1; British spelling."
   }
 }

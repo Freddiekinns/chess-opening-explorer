@@ -1,10 +1,10 @@
 # Plan reference check
 
-3496 references on 2717 of 12377 pages fail the check and show as plain text.
+3445 references on 2678 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5494 name no move, route, square or piece
-- References by kind: {"square":15226,"piece":14707,"move":53459,"route":9461}
-- References by result: {"now":66750,"on-board":13606,"later":9001,"invalid":3496}
+- Plans: 41062, of which 5493 name no move, route, square or piece
+- References by kind: {"square":15258,"piece":14717,"move":53548,"route":9459}
+- References by result: {"now":66888,"on-board":13616,"later":9033,"invalid":3445}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -20,56 +20,55 @@
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **A84 Dutch Defense: Bellon Gambit** (0 views)
-  - `d5-e6-f5`: One step of d5-e6-f5 can't be played here
-- **A84 Dutch Defense: Classical Variation** (0 views)
-  - `c6-d5-e6-f5`: One step of c6-d5-e6-f5 can't be played here
-  - `...Ne4`: No piece can play Ne4 here, now or after the plan's earlier moves
-- **A84 Dutch: 2.c4 e6 3.Nf3** (0 views)
-  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
-- **A84 Dutch: 2.c4 e6 3.Nf3 Nf6** (0 views)
-  - `e4 pawn push`: No piece can play e4 here, now or after the plan's earlier moves
-- **A84 Dutch: 2.c4 g6** (0 views)
+- **A90 Dutch: 2.c4 Nf6 3.g3 e6 4.Bg2 c6 5.Nh3** (0 views)
+  - `d7-e8-h5`: One step of d7-e8-h5 can't be played here
+- **A90 Dutch: 2.c4 Nf6 3.g3 e6 4.Bg2 d5** (0 views)
+  - `...d7-e8-h5`: One step of ...d7-e8-h5 can't be played here
+- **A90 Dutch: 2.c4 Nf6 3.g3 e6 4.Nc3** (0 views)
   - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A84 Dutch: 2.c4 Nf6** (0 views)
-  - `Qe8-h5`: One step of Qe8-h5 can't be played here
-- **A85 Dutch: 2.c4 Nf6 3.Nc3 e6 4.Bg5** (0 views)
-  - `g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **A85 Dutch: 2.c4 Nf6 3.Nc3 e6 4.e3 d5** (0 views)
-  - `...Bd7-e8-h5`: One step of ...Bd7-e8-h5 can't be played here
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6** (0 views)
+- **A90 Dutch: 2.c4 Nf6 3.g3 e6 4.Nf3** (0 views)
   - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.Bg5** (0 views)
-  - `gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
-  - `Ne5`: No piece can play Ne5 here, now or after the plan's earlier moves
-- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.f3** (0 views)
+- **A90 Dutch: 2.c4 Nf6 3.g3 e6 5.Nf3 d5 6.Nc3** (0 views)
+  - `d4-d5`: One step of d4-d5 can't be played here
   - `e4`: No piece can play e4 here, now or after the plan's earlier moves
-- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.Nf3** (0 views)
+- **A90 Dutch: 2.c4 Nf6 3.g3 e6 5.Nf3 d5 6.O-O Bd6 7.b3** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+  - `d7-e8-h5`: One step of d7-e8-h5 can't be played here
+- **A90 Dutch: Dutch-Indian, 5.Bd2** (0 views)
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+- **A90 Dutch: Dutch-Indian, 5.Nd2** (0 views)
+  - `f1-e3`: One step of f1-e3 can't be played here
+- **A91 Dutch Defense: Classical Variation** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A91 Dutch Defense: Classical Variation, 3. g3 Nf6 4. Bg2 Be7** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A91 Dutch: 2.c4 Nf6 3.g3 e6 4.Bg2 Be7 5.Nf3 d5 6.O-O** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A91 Dutch: 2.c4 Nf6 3.g3 e6 4.Bg2 Be7 5.Nf3 d5 6.O-O c6** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A91 Dutch: 2.c4 Nf6 3.g3 e6 4.Bg2 Be7 5.Nf3 d6** (0 views)
   - `...Na6-c7-e8-g7`: One step of ...Na6-c7-e8-g7 can't be played here
-- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.Nf3 Bg7** (0 views)
-  - `...Qh5`: No piece can play Qh5 here, now or after the plan's earlier moves
-- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.Nf3 Bg7 5.Bg5** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-  - `Bxf6`: No piece can play Bxf6 here, now or after the plan's earlier moves
-  - `gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
-- **A86 Dutch Defense: Fianchetto Variation** (0 views)
-  - `Nf3-e1-d3`: One step of Nf3-e1-d3 can't be played here
-- **A86 Dutch Defense: Leningrad Variation** (0 views)
-  - `...Qh4`: No piece can play Qh4 here, now or after the plan's earlier moves
-- **A86 Dutch: Leningrad, 4.Bg2 Bg7 5.Nc3** (0 views)
+- **A91 Dutch: 2.c4 Nf6 3.g3 e6 4.Bg2 Be7 5.Nf3 d6 6.Nc3** (0 views)
   - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A86 Dutch: Leningrad, 4.Bg2 Bg7 5.Nc3 d6** (0 views)
-  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A86 Dutch: Leningrad, 4.Nc3 Bg7** (0 views)
-  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A86 Dutch: Leningrad, 4.Nf3 Bg7** (0 views)
-  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A86 Dutch: Leningrad, 4.Nf3 Bg7 5.Nc3** (0 views)
-  - `...Qh5`: No piece can play Qh5 here, now or after the plan's earlier moves
-- **A87 Dutch Defense: Leningrad Variation** (0 views)
-  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
-- **A87 Dutch: Leningrad, Main Line, 7.d5 c5** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **A87 Dutch: Leningrad, Main Line, 7.Nc3** (0 views)
-  - `...Na6-c7-e8`: One step of ...Na6-c7-e8 can't be played here
+- **A91 Dutch: 2.c4 Nf6 3.g3 e6 4.Bg2 Be7 5.Nh3 O-O 6.O-O** (0 views)
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+- **A91 Dutch: Botvinnik-Bronstein Variation** (0 views)
+  - `...Bd7-e8-h5`: One step of ...Bd7-e8-h5 can't be played here
+- **A92 Dutch Defense: Alekhine Variation** (0 views)
+  - `e2-e4`: One step of e2-e4 can't be played here
+- **A92 Dutch Defense: Alekhine Variation** (0 views)
+  - `e2-e4`: One step of e2-e4 can't be played here
+- **A92 Dutch: 2.c4 Nf6 3.g3 e6 4.Bg2 Be7 5.Nf3 O-O 6.O-O c6 7.b3** (0 views)
+  - `...d7-e8-h5`: One step of ...d7-e8-h5 can't be played here
+- **A92 Dutch: Alekhine, 7.Nbd2** (0 views)
+  - `f1-e3`: One step of f1-e3 can't be played here
+- **A93 Dutch Defense: Stonewall Variation, Botvinnik Variation** (0 views)
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+  - `f1-e3`: One step of f1-e3 can't be played here
+  - `e8-g7`: One step of e8-g7 can't be played here
+- **A93 Dutch: Stonewall, Botvinnik, 7...b6** (0 views)
+  - `...Nd7-e5`: Nd7 is ambiguous: the knights on b8 and f6 can both go there
+- **A93 Dutch: Stonewall, Botvinnik, 7...Nc6** (0 views)
+  - `e1-d3`: One step of e1-d3 can't be played here
+- **A93 Dutch: Stonewall, Botvinnik, 8.Bb2** (0 views)
+  - `...d7-e8-h5`: One step of ...d7-e8-h5 can't be played here

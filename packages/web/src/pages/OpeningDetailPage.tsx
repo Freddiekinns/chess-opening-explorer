@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useCallback, useRef, CSSProperties } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo, CSSProperties } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
 import { Chess, Move, Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
+import { plannedMoves } from '../lib/plannedMoves';
 import { ChessOpening, ResourceContext, Video } from '../../../shared/src';
 import {
   PlansWithDiagram,
@@ -844,6 +845,14 @@ const OpeningDetailPage: React.FC = () => {
     prevFenRef.current = fen;
   }, [fen, practiceMode, exitPractice]);
 
+  // The moves this page's plans name as playable now, for the Next moves rows.
+  // Plans are plain text in Practice, so the rows carry no tag there either.
+  const plannedFromPlans = useMemo(
+    () =>
+      practiceMode || !opening ? undefined : plannedMoves(opening.fen, opening.common_plans ?? []),
+    [practiceMode, opening]
+  );
+
   // Our own middleware's escaped HTML, from this same response.
   const prerendered = prerender && <div dangerouslySetInnerHTML={{ __html: prerender }} />;
 
@@ -1438,6 +1447,7 @@ const OpeningDetailPage: React.FC = () => {
               explorer={explorerQuery}
               parentExplorer={parentExplorer}
               treeData={treeData}
+              planned={plannedFromPlans}
             />
 
             {/* Straight after the explorer surface, because this is more of the
@@ -1504,6 +1514,7 @@ const OpeningDetailPage: React.FC = () => {
               parentExplorer={parentExplorer}
               treeData={treeData}
               treeLoading={treeLoading}
+              planned={plannedFromPlans}
             />
 
             <MasterGamesCard fen={opening.fen} />

@@ -69,13 +69,15 @@ export interface ParsedPlan {
 }
 
 const SQ = '[a-h][1-8]';
+/** A later leg of a route: a square, or a move written out ("Nxe4"). */
+const ROUTE_STEP = `(?:[KQRBN][a-h]?[1-8]?x?)?${SQ}`;
 const TOKEN = new RegExp(
   '(?<![A-Za-z0-9])(?:' +
     [
       `(?<breakSq>${SQ})[- ]pawn[- ](?:break|push|advance|lever|thrust|storm)s?(?![A-Za-z])`,
       `(?<pieceSq>${SQ})[- ](?<pieceName>bishop|knight|rook|queen|king|pawn)(?![A-Za-z])`,
       `(?<square>${SQ})[- ](?:squares?|outposts?)(?![A-Za-z])`,
-      `(?<route>(?:\\.\\.\\.)?[KQRBN]?[a-h]?[1-8]?${SQ}(?:-${SQ})+)`,
+      `(?<route>(?:\\.\\.\\.)?[KQRBN]?[a-h]?[1-8]?${SQ}(?:-${ROUTE_STEP})+)`,
       `(?<castle>(?:\\.\\.\\.)?(?:O-O-O|O-O|0-0-0|0-0))`,
       `(?<move>(?:\\.\\.\\.)?(?:[KQRBN][a-h]?[1-8]?x?${SQ}|[a-h]x${SQ}|${SQ})(?:=[QRBN])?[+#]?)`,
     ].join('|') +
@@ -371,7 +373,7 @@ class PlanReader {
       };
     }
     // "the e4-d4 centre": not a route, but pieces already standing together.
-    const squares = [first.slice(-2), ...rest] as Square[];
+    const squares = [first, ...rest].map((leg) => leg.slice(-2)) as Square[];
     const pieces = squares.map((sq) => this.base.get(sq));
     const owner = pieces[0]?.color;
     if (owner && pieces.every((p) => p && p.color === owner)) {
@@ -406,10 +408,11 @@ class PlanReader {
     if (startsOnPiece) {
       // "d3-d4", "Nf3-d2-f1": the piece is already on the first square.
       let from: string = startSquare;
-      for (const to of rest) {
-        const step = this.step(colour, { from, to });
+      for (const leg of rest) {
+        const to = leg.slice(-2);
+        const step = this.step(colour, leg.length > 2 ? leg : { from, to });
         if (!step) return null;
-        arrows.push({ from, to, later: step.later });
+        arrows.push({ from: leg.length > 2 ? step.move.from : from, to, later: step.later });
         from = to;
       }
       return arrows;
@@ -421,10 +424,11 @@ class PlanReader {
       if (!step) return null;
       arrows.push({ from: step.move.from, to: step.move.to, later: step.later });
       let from: string = step.move.to;
-      for (const to of rest) {
-        const next = this.step(colour, { from, to });
+      for (const leg of rest) {
+        const to = leg.slice(-2);
+        const next = this.step(colour, leg.length > 2 ? leg : { from, to });
         if (!next) return null;
-        arrows.push({ from, to, later: true });
+        arrows.push({ from: leg.length > 2 ? next.move.from : from, to, later: true });
         from = to;
       }
       return arrows;

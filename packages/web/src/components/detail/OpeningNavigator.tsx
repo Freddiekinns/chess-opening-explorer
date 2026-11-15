@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useId, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../../lib/analytics';
 import type { TreeContext } from '../../hooks/useOpeningTree';
 import type { ExplorerResult } from '../../lib/lichessExplorer';
+import { withoutCheckMark } from '../../lib/plannedMoves';
 import { mergeExplorerMoves, type MergedMoveRow } from '../../lib/bookExplorerMerge';
 import { alternativesCaption, movesCaption } from '../../lib/explorerStats';
 import type { BandId } from '../../lib/lichessExplorer';
@@ -38,6 +39,16 @@ interface OpeningNavigatorProps {
   band?: BandId | null;
   /** True when live explorer data drives the rows — gates the level echo. */
   live?: boolean;
+  /** Moves the page's Common plans name as playable now, by side (Next moves only). */
+  planned?: Map<string, 'white' | 'black'>;
+}
+
+/** "Instead of 5...a6 · 6 other moves", or "Alternatives · 6 moves". */
+function alternativesToggleLabel(label: string, count: number): string {
+  const noun = count === 1 ? 'move' : 'moves';
+  return label === 'Alternatives'
+    ? `${label} · ${count} ${noun}`
+    : `${label} · ${count} other ${noun}`;
 }
 
 function statsTitle(row: MergedMoveRow): string | undefined {
@@ -57,6 +68,7 @@ interface MoveRowsProps {
   /** True when explorer data drives this list — retires the orange popularity bar. */
   hasStats: boolean;
   alternatives?: boolean;
+  planned?: Map<string, 'white' | 'black'>;
 }
 
 /* The two figures on each row are coloured, not named, and their meaning
@@ -82,10 +94,12 @@ const MoveRows: React.FC<MoveRowsProps> = ({
   countLabel,
   hasStats,
   alternatives,
+  planned,
 }) => (
   <div className={styles.rows}>
     {rows.map((row, i) => {
       const movePrefix = getMoveNumber(ply);
+      const plannedSide = alternatives ? undefined : planned?.get(withoutCheckMark(row.san));
       const barPercent = maxCount > 0 ? Math.max((row.count / maxCount) * 100, 2) : 0;
       const inner = (
         <>
@@ -99,6 +113,11 @@ const MoveRows: React.FC<MoveRowsProps> = ({
             ) : (
               <span className={styles.rowName}>
                 <span className={styles.offBookTag}>off-book</span>
+              </span>
+            )}
+            {plannedSide && (
+              <span className={styles.planTag}>
+                In {plannedSide === 'white' ? 'White' : 'Black'}'s plan
               </span>
             )}
           </span>
@@ -183,15 +202,19 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
   parentExplorer = null,
   band = null,
   live = false,
+  planned,
 }) => {
   const [continuationsExpanded, setContinuationsExpanded] = useState(false);
   const [alternativesExpanded, setAlternativesExpanded] = useState(false);
+  const [alternativesOpen, setAlternativesOpen] = useState(false);
+  const alternativesId = useId();
 
   // Reset expanded states when navigating to a different opening
   const currentFen = treeData?.current?.fen;
   useEffect(() => {
     setContinuationsExpanded(false);
     setAlternativesExpanded(false);
+    setAlternativesOpen(false);
   }, [currentFen]);
 
   if (loading) {
@@ -328,6 +351,7 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
                 maxCount={maxCount}
                 countLabel={countLabel}
                 hasStats={childRows.some((row) => row.stats !== null)}
+                planned={planned}
               />
               {canCollapse && (
                 <button
@@ -353,27 +377,45 @@ export const OpeningNavigator: React.FC<OpeningNavigatorProps> = ({
 
           return (
             <div className={styles.section}>
-              <div className={styles.sectionLabel}>{alternativesLabel}</div>
-              <div className={styles.sectionSublabel}>
-                <span>{alternativesCaption(band, live)}</span>
-                {keyOnAlternatives && <RowKey />}
+              <button
+                type="button"
+                className={styles.showMoreBtn}
+                aria-expanded={alternativesOpen}
+                aria-controls={alternativesId}
+                onClick={() => setAlternativesOpen(!alternativesOpen)}
+              >
+                {alternativesOpen
+                  ? 'Hide alternatives'
+                  : alternativesToggleLabel(alternativesLabel, siblingRows.length)}
+              </button>
+              {/* Closed, not removed: the rows and their links stay in the DOM. */}
+              <div
+                id={alternativesId}
+                hidden={!alternativesOpen}
+                className={styles.alternativesBody}
+              >
+                <div className={styles.sectionLabel}>{alternativesLabel}</div>
+                <div className={styles.sectionSublabel}>
+                  <span>{alternativesCaption(band, live)}</span>
+                  {keyOnAlternatives && <RowKey />}
+                </div>
+                <MoveRows
+                  rows={visibleRows}
+                  ply={currentMoveIdx}
+                  maxCount={maxCount}
+                  countLabel={countLabel}
+                  hasStats={siblingRows.some((row) => row.stats !== null)}
+                  alternatives
+                />
+                {canCollapse && (
+                  <button
+                    className={styles.showMoreBtn}
+                    onClick={() => setAlternativesExpanded(!alternativesExpanded)}
+                  >
+                    {alternativesExpanded ? 'Show less' : `Show ${hiddenCount} more moves`}
+                  </button>
+                )}
               </div>
-              <MoveRows
-                rows={visibleRows}
-                ply={currentMoveIdx}
-                maxCount={maxCount}
-                countLabel={countLabel}
-                hasStats={siblingRows.some((row) => row.stats !== null)}
-                alternatives
-              />
-              {canCollapse && (
-                <button
-                  className={styles.showMoreBtn}
-                  onClick={() => setAlternativesExpanded(!alternativesExpanded)}
-                >
-                  {alternativesExpanded ? 'Show less' : `Show ${hiddenCount} more moves`}
-                </button>
-              )}
             </div>
           );
         })()}

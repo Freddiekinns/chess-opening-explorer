@@ -95,6 +95,7 @@ describe('explorer steps keep the scroll position', () => {
   test('an alternative row on desktop', async () => {
     desktop();
     scrollTo.mockClear();
+    await userEvent.click(screen.getByRole('button', { name: /^Instead of/ }));
     await userEvent.click(screen.getByRole('link', { name: /Caro-Kann Defense/ }));
     expect(scrollTo).not.toHaveBeenCalled();
   });

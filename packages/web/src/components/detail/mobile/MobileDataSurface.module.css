@@ -346,6 +346,14 @@
   flex: none;
 }
 
+/* A move the page's Common plans name: neutral, a notch above off-book. */
+.planTag {
+  composes: offBookTag;
+  flex: none;
+  color: var(--color-text-secondary);
+  border-color: var(--border-hover);
+}
+
 .rowName {
   font-size: var(--text-2xs);
   font-weight: var(--font-weight-medium);
@@ -430,6 +438,13 @@
   font-size: var(--text-xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-secondary);
+}
+
+/* The alternatives disclosure: full width, at the head of its section. */
+.alternativesToggle {
+  width: 100%;
+  margin-top: var(--space-3);
+  text-align: left;
 }
 
 .showMoreBtn:hover {

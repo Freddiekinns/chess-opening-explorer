@@ -70,12 +70,12 @@ The dedicated learning environment for mastering a specific position.
 - **Overview**: High-level win rate statistics and move progression. On desktop
   the Overview card leads the right column, ahead of the level lens and the data
   panels it governs.
-- **Plans**: grouped White, Black, Shared beside a flat diagram of the final
-  position (sticky on desktop, above them on mobile). Moves, routes, squares and
-  pieces that pass a legality check are buttons: hover previews on the diagram,
-  click or tap pins, and the caption says it ("Knight from b1 to d2, then f1,
-  then g3"). Failing ones stay plain text, and `plan-check.js` lists them for
-  the content review. Off in Practice; the diagram never follows the main board.
+- **Plans**: White, Black, Shared beside a flat diagram of the final position
+  (sticky on desktop). Moves, squares and pieces that pass a legality check are
+  buttons: hover previews, click pins (Clear unpins), the caption says it. On
+  mobile a tap opens a 288px board under that plan, closed by a second tap; a
+  page with no valid references keeps the static diagram above. Failing ones
+  stay text (`plan-check.js` lists them). Off in Practice.
 - **Studies Gallery**: Curated Lichess study chapters matched by FEN position
   (6,100+ chapters).
 - **Video Gallery**: Hand-picked YouTube videos from top educators matched to
@@ -83,10 +83,10 @@ The dedicated learning environment for mastering a specific position.
 
 ### Mobile Experience (≤767px, design 2a "one data surface")
 
-- **Single data surface**: level pills (sticky while scrolling), win-rate stats,
-  breadcrumb, continuations and alternatives merge into one card so changing the
-  level visibly re-shades every number below it. It is the page's _one_ card — a
-  deliberate "instrument" amid the surrounding editorial content.
+- **Single data surface**: level pills (sticky), win-rate stats, breadcrumb,
+  Next moves (tagged "In White's plan" when a Common plan names the move) and
+  alternatives (closed behind "Instead of 5...a6 · 6 other moves", on desktop
+  too) share one card, the page's _one_ card: a deliberate "instrument".
 - **Editorial reading zone**: Overview and Common plans share one voice —
   sentence-case section headings over un-carded, left-rule prose (matched font
   size), so they read as book-like commentary rather than competing data cards.

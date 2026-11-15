@@ -26,6 +26,8 @@ export const testOpenings: TestOpening[] = [
       'White: control the center and develop quickly',
       'Black: counterattack on the queenside',
       'White: open the centre with d4',
+      'Black: develop with ...Nf6 and ...g6',
+      'Fight for the d4 square',
     ],
     games_analyzed: 120000,
   },

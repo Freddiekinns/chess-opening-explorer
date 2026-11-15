@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-15",
+  "pages": [
+    {
+      "fen": "rn1qkb1r/pp3ppp/2p1pn2/3p4/4P3/P1NP1Q1P/1PP2PP1/R1B1KB1R b KQkq - 0 7",
+      "name": "Caro-Kann: Two Knights, 3...Bg4 4.h3 Bxf3 5.Qxf3 e6 6.d3 Nf6 7.a3",
+      "eco": "B11",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 sent the queen to e2 or d1 ambiguously; plans 1 and 2 wrote castling as 0-0. Rewrote plans 1-3; British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/pp3ppp/2p1pn2/3p4/4P3/2N2QPP/PPPP1P2/R1B1KB1R w KQkq - 1 7",
+      "name": "Caro-Kann: Two Knights, 3...Bg4 4.h3 Bxf3 5.Qxf3 e6 6.g3 Nf6",
+      "eco": "B11",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 developed a light-squared bishop Black has already traded on f3; plan 3 sent the queen to h3, where White's pawn stands; the overview said ...Bxf3 disrupts White's structure. Rewrote overview and plans 2 and 3 (reviewer: first draft aimed ...c5 at a d4-pawn White doesn't have, revised, re-accepted)."
+    },
+    {
+      "fen": "rnbqkbnr/pp2pppp/8/2ppP3/3P4/2P5/PP3PPP/RNBQKBNR b KQkq - 0 4",
+      "name": "Caro-Kann - Botvinnik-Carls Defense - 4. c3",
+      "eco": "B12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed f2-f4-f5 with Nf3 planned; plan 3 controlled c5 where Black's pawn stands and routed a knight via e1 with the king there; plan 2 called the d-pawn isolated. Rewrote plans 1-3; British spelling."
+    },
+    {
+      "fen": "r2qkbnr/pp1n1ppp/2p1p3/3pPb2/3P4/5N2/PPP1BPPP/RNBQ1RK1 b kq - 3 6",
+      "name": "Caro-Kann Advance Variation",
+      "eco": "B12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 rerouted the b1-knight via f1, where the rook stands; plan 3 said ...a5-a4 targets d4. Rewrote plans 3 and 4; British spelling."
+    },
+    {
+      "fen": "r2qkb1r/pp1nnppp/2p1p1b1/3pP3/3P3N/8/PPP1BPPP/RNBQ1RK1 w kq - 6 8",
+      "name": "Caro-Kann Advance Variation",
+      "eco": "B12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 recaptured hxg6 before Nxg6; plan 4 rerouted the knight via f1, where the rook stands. Rewrote plans 1, 3 and 4; British spelling."
+    },
+    {
+      "fen": "rn1qkbnr/pp2pppp/2p5/3pP3/3P4/3b4/PPP2PPP/RNBQK1NR w KQkq - 0 5",
+      "name": "Caro-Kann Defence - Advance Variation",
+      "eco": "B12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 routed a knight ...Nd7-f8-g6 with the f8-bishop still at home. Rewrote plan 2; British spelling."
+    },
+    {
+      "fen": "rn1qkbnr/pp3ppp/2p1p3/3pPb2/3P4/3B4/PPP2PPP/RNBQK1NR w KQkq - 0 5",
+      "name": "Caro-Kann Defence - Advance Variation",
+      "eco": "B12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had White recapture exd3 after its own bishop trade; plan 4 routed a knight via f8 with the bishop there; plan 1 pushed f2-f4-f5 into the e6-pawn. Rewrote plans 1, 3 and 4; British spelling."
+    },
+    {
+      "fen": "rn1qkbnr/pp2pppp/2p3b1/3pP3/3P4/3B4/PPP2PPP/RNBQK1NR w KQkq - 3 5",
+      "name": "Caro-Kann Defence - Advance Variation",
+      "eco": "B12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed f4-f5 with Nf3 planned; plan 3 recaptured hxg6 before Bxg6; plan 4 routed Ne2-g3 vaguely. Rewrote plans 1, 3 and 4; British spelling."
+    },
+    {
+      "fen": "rn1qkbnr/pp2pppp/2p5/3pP3/3P4/3Q4/PPP2PPP/RNB1K1NR b KQkq - 0 5",
+      "name": "Caro-Kann Defence - Advance Variation",
+      "eco": "B12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed Ne2-g3; the overview called 5.Qxd3 the Short Variation. Rewrote overview and plan 1; British spelling."
+    },
+    {
+      "fen": "rn1qk1nr/pp3ppp/2p1p3/3pPb2/1b1P4/5N2/PPP1BPPP/RNBQK2R w KQkq - 2 6",
+      "name": "Caro-Kann Defence - Advance Variation, 4.Nf3 e6 5.Be2",
+      "eco": "B12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 told Black to provoke c3 with a check already given; plans read c3, d7 and e7 as moves. Rewrote plans 1-3; British spelling."
+    }
+  ]
+}

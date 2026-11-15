@@ -5392,5 +5392,65 @@
     "verdict": "fixed",
     "contentHash": "9c8126a44f86f691",
     "notes": "Plan 3 developed the bishop to d3, where White's own pawn stands. Rewrote plan 3; British spelling."
+  },
+  "rn1qkb1r/pp3ppp/2p1pn2/3p4/4P3/P1NP1Q1P/1PP2PP1/R1B1KB1R b KQkq - 0 7": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "cccfb465ebbeeade",
+    "notes": "Plan 3 sent the queen to e2 or d1 ambiguously; plans 1 and 2 wrote castling as 0-0. Rewrote plans 1-3; British spelling."
+  },
+  "rn1qkb1r/pp3ppp/2p1pn2/3p4/4P3/2N2QPP/PPPP1P2/R1B1KB1R w KQkq - 1 7": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "01893c8172b8f42d",
+    "notes": "Plan 2 developed a light-squared bishop Black has already traded on f3; plan 3 sent the queen to h3, where White's pawn stands; the overview said ...Bxf3 disrupts White's structure. Rewrote overview and plans 2 and 3 (reviewer: first draft aimed ...c5 at a d4-pawn White doesn't have, revised, re-accepted)."
+  },
+  "rnbqkbnr/pp2pppp/8/2ppP3/3P4/2P5/PP3PPP/RNBQKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "1920a50be2bf4af8",
+    "notes": "Plan 1 pushed f2-f4-f5 with Nf3 planned; plan 3 controlled c5 where Black's pawn stands and routed a knight via e1 with the king there; plan 2 called the d-pawn isolated. Rewrote plans 1-3; British spelling."
+  },
+  "r2qkbnr/pp1n1ppp/2p1p3/3pPb2/3P4/5N2/PPP1BPPP/RNBQ1RK1 b kq - 3 6": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "9ba26eba7923ea03",
+    "notes": "Plan 4 rerouted the b1-knight via f1, where the rook stands; plan 3 said ...a5-a4 targets d4. Rewrote plans 3 and 4; British spelling."
+  },
+  "r2qkb1r/pp1nnppp/2p1p1b1/3pP3/3P3N/8/PPP1BPPP/RNBQ1RK1 w kq - 6 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "9e2d5b2ccd1f8fc6",
+    "notes": "Plan 3 recaptured hxg6 before Nxg6; plan 4 rerouted the knight via f1, where the rook stands. Rewrote plans 1, 3 and 4; British spelling."
+  },
+  "rn1qkbnr/pp2pppp/2p5/3pP3/3P4/3b4/PPP2PPP/RNBQK1NR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "ceeb4d467e329f4b",
+    "notes": "Plan 2 routed a knight ...Nd7-f8-g6 with the f8-bishop still at home. Rewrote plan 2; British spelling."
+  },
+  "rn1qkbnr/pp3ppp/2p1p3/3pPb2/3P4/3B4/PPP2PPP/RNBQK1NR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "1287f81ca110f45a",
+    "notes": "Plan 3 had White recapture exd3 after its own bishop trade; plan 4 routed a knight via f8 with the bishop there; plan 1 pushed f2-f4-f5 into the e6-pawn. Rewrote plans 1, 3 and 4; British spelling."
+  },
+  "rn1qkbnr/pp2pppp/2p3b1/3pP3/3P4/3B4/PPP2PPP/RNBQK1NR w KQkq - 3 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "e39aeb374bda9bf3",
+    "notes": "Plan 1 pushed f4-f5 with Nf3 planned; plan 3 recaptured hxg6 before Bxg6; plan 4 routed Ne2-g3 vaguely. Rewrote plans 1, 3 and 4; British spelling."
+  },
+  "rn1qkbnr/pp2pppp/2p5/3pP3/3P4/3Q4/PPP2PPP/RNB1K1NR b KQkq - 0 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "2a8b62010d493a6e",
+    "notes": "Plan 1 routed Ne2-g3; the overview called 5.Qxd3 the Short Variation. Rewrote overview and plan 1; British spelling."
+  },
+  "rn1qk1nr/pp3ppp/2p1p3/3pPb2/1b1P4/5N2/PPP1BPPP/RNBQK2R w KQkq - 2 6": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "49eaa9d50b3fc7ee",
+    "notes": "Plan 2 told Black to provoke c3 with a check already given; plans read c3, d7 and e7 as moves. Rewrote plans 1-3; British spelling."
   }
 }

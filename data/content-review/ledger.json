@@ -4264,5 +4264,65 @@
     "verdict": "fixed",
     "contentHash": "d88a149d562f9cad",
     "notes": "Plan 1 played ...Qe8-h5 through the g6-pawn and king. Rewrote plans 1 and 4 around the Leningrad set-up; British spelling."
+  },
+  "rnbqkb1r/ppppp2p/5np1/5pB1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 1 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "4fc8a426e8ef4519",
+    "notes": "Plan 1 recaptured gxf6 (the g-pawn is on g6) and played Ne5 with no knight able to reach it; plan 2 broke a pin that doesn't exist (e7-pawn). Rewrote plans 1 and 2."
+  },
+  "rnbqkb1r/ppppp2p/5np1/5p2/2PP4/2N2P2/PP2P1PP/R1BQKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "06915d1eeea3eb66",
+    "notes": "Plan 2 put White's e4 push into Black's plan. Reworded plan 2; British spelling."
+  },
+  "rnbqkb1r/ppppp2p/5np1/5p2/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 1 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "11656909000196c3",
+    "notes": "Plan 4 routed a knight via c7 (pawn there) to g7 (bishop's square); plan 2 said Bg2 neutralises the dark-squared g7-bishop; plan 3 called Bg5 a pin; plan 1 led with ...g5-g4. Rewrote all four plans."
+  },
+  "rnbqk2r/ppppp1bp/5np1/5p2/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "958bd19b8039d26b",
+    "notes": "Plan 1 swung the queen from e8 to h5 through the g6-pawn. Rewrote plan 1; British spelling."
+  },
+  "rnbqk2r/ppppp1bp/5np1/5pB1/2PP4/2N2N2/PP2PPPP/R2QKB1R b KQkq - 3 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "8838e69fbdac948f",
+    "notes": "Overview and plan 1 called Bg5 a pin, promised doubled pawns and the bishop pair (White gives it up with Bxf6) and pressure on a d5-pawn that doesn't exist; plan 2 had ...gxf6. Rewrote overview and both plans."
+  },
+  "rnbqkb1r/ppppp1pp/5n2/5p2/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "8a687b67f11540e7",
+    "notes": "Plan 3 played Nf3-e1-d3 with no knight on f3 yet. Rewrote plan 3 (after Bg2, Nf3, O-O); British spelling."
+  },
+  "rnbqkb1r/ppppp2p/5np1/5p2/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "a266d36122fa6dca",
+    "notes": "Plan 3 played ...Qh4 through the e7-pawn; plan 2 missed White's main d4-d5 idea. Rewrote plans 2 and 3; British spelling."
+  },
+  "rnbqk2r/ppppp1bp/5np1/5p2/2PP4/2N3P1/PP2PPBP/R1BQK1NR b KQkq - 3 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "8b6788ed2bc045c5",
+    "notes": "Plan 2 played ...Qe8-h5 with the king on e8 and through g6; plan 3 said controlling e4 prevents ...e5; plan 4 called b4-b5 a minority attack. Rewrote plans 2-4; British spelling."
+  },
+  "rnbqk2r/ppp1p1bp/3p1np1/5p2/2PP4/2N3P1/PP2PPBP/R1BQK1NR w KQkq - 0 6": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "d0677ba490608006",
+    "notes": "Plan 2 played ...Qe8-h5 with the king on e8 and through g6. Rewrote plan 2 (reviewer: first draft repeated ...d6, revised, re-accepted); British spelling."
+  },
+  "rnbqk2r/ppppp1bp/5np1/5p2/2PP4/2N3P1/PP2PP1P/R1BQKBNR w KQkq - 2 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "9fb91a6d2d48c35d",
+    "notes": "Plan 3 played ...Qe8-h5 with the king on e8 and through g6; plan 2 called d6 a weakness. Rewrote plans 2 and 3; British spelling."
   }
 }

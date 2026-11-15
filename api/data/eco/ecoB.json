@@ -5885,7 +5885,7 @@
       "icsbot": "Naselwaus Variation, Owen's Defense "
     },
     "analysis_json": {
-      "description": "The Naselwaus Gambit is a rare and highly aggressive sideline against the Owen Defense, defined by the provocative 3.Bg5. White immediately challenges Black's hypermodern setup, aiming to disrupt kingside development and create immediate tactical complications. This opening leads to sharp, unbalanced positions and is perfect for creative, aggressive players looking to sidestep mainstream theory and pose difficult questions from the very start.",
+      "description": "The Naselwaus Gambit is a rare and aggressive sideline against the Owen Defence, defined by 3.Bg5, which develops the bishop actively but leaves the e4-pawn to the b7-bishop. White aims for quick development and pressure on Black's kingside rather than a slow central build-up. It leads to sharp, unbalanced positions and suits creative players looking to sidestep mainstream theory.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -5928,9 +5928,9 @@
         "Development Race"
       ],
       "common_plans": [
-        "White: Attack the kingside, often by provoking ...h6 and ...g5, and then using the h-file or sacrificing material to open lines.",
-        "Black: Challenge the Bg5 with ...h6, aiming to trap it or force it to a passive square, then counter-attack in the center.",
-        "White: Maintain the pin on a potential ...Nf6 and develop rapidly to capitalize on any awkwardness in Black's setup.",
+        "White: Offer the e4-pawn for quick development: if Black takes it with the b7-bishop, gain time against the bishop with Nc3 or Nd2 and develop rapidly.",
+        "Black: Either take the e4-pawn with ...Bxe4, accepting some loss of time, or ask the bishop to decide with ...h6 and then counter in the centre.",
+        "White: Use the g5-bishop to pressure the e7-pawn and any knight on f6, and develop rapidly to exploit awkwardness in Black's set-up.",
         "Black: Complete development, challenge White's central pawns (e.g., with ...e6 and ...d5), and prove the Bg5 is misplaced."
       ],
       "version": "1.0",
@@ -6484,9 +6484,9 @@
         "Seizing the Initiative"
       ],
       "common_plans": [
-        "Black: Recapture on d5 with the Knight, often followed by ...g6 and ...Bg7 to pressure White's center and the long diagonal.",
-        "White: Solidify the center with d4, defend the e4 pawn (usually with Nc3), and use the semi-open f-file for a potential kingside attack.",
-        "Black: Challenge White's central pawn duo with moves like ...c5, aiming to liquidate the center and fully activate their pieces.",
+        "Black: Recapture on d5 with the Knight, often followed by ...g6 and ...Bg7 to pressure White's centre and the long diagonal.",
+        "White: Try to keep the extra pawn with c2-c4 or Bb5+, or return it for smooth development with Nc3, Nf3 and Bc4.",
+        "Black: After regaining the pawn, exploit the weaknesses left by f4, especially the e4-square and the a7-g1 diagonal towards White's king.",
         "White: Complete development, castle kingside, and decide whether to launch a direct attack or consolidate their spatial advantage."
       ],
       "version": "1.0",
@@ -7247,7 +7247,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Scandinavian Defense is a direct and combative response to 1.e4, immediately challenging White's central control. Black aims for rapid development and an open game, often at the cost of bringing the queen out early, which can become a target. The main line, 2...Qxd5, gives a sound, Caro-Kann-like structure at the cost of some time, while 2...Nf6 and the gambit lines lead to sharper, more tactical play. It suits players who want a direct answer to 1.e4 and are happy to defend a solid position while White has the early initiative.",
+      "description": "The Scandinavian Defence is a direct and combative response to 1.e4, immediately challenging White's central control. Black aims for rapid development and an open game, often at the cost of bringing the queen out early, which can become a target. The main line, 2...Qxd5, gives a sound, Caro-Kann-like structure at the cost of some time, while 2...Nf6 and the gambit lines lead to sharper, more tactical play. It suits players who want a direct answer to 1.e4 and are happy to defend a solid position while White has the early initiative.",
       "style_tags": [
         "Counter-attacking",
         "Dynamic",
@@ -7287,7 +7287,7 @@
         "Structural Imbalances"
       ],
       "common_plans": [
-        "Black: Recapture with the queen (...Qxd5), retreat to a safe square like ...Qa5 or ...Qd6, and complete development with moves like ...c6, ...Bf5, and ...Nc6, often castling long.",
+        "Black: After White takes on d5, recapture with the queen, move it to a safe square such as the a5- or d6-square when it is attacked, and complete development with ...c6, ...Bf5 and ...Nf6, often castling long.",
         "White: Exploit Black's early queen moves by gaining tempo with Nc3 and developing quickly with d4, Nf3, and Bc4 to seize a space advantage and build an attack.",
         "Black: Aim for rapid piece activity and pressure on White's centre from a sound ...c6 and ...e6 structure, similar to the Caro-Kann.",
         "White: Hold the centre with the d4-pawn, complete development, and use the lead in development and extra space to create long-term pressure and restrict Black's pieces."
@@ -7349,9 +7349,9 @@
         "Fighting for Key Diagonals"
       ],
       "common_plans": [
-        "White aims to fianchetto the bishop to b2, develop the knight to c3 to attack the e4 pawn, and generate a strong initiative on the queenside and center.",
-        "Black's main plan is to accept the pawn with 2...dxe4, then either try to hold onto it with moves like ...Nf6 and ...Bf5, or give it back favorably to complete development and neutralize White's pressure.",
-        "White often continues with Qe2 and O-O-O, creating direct attacking chances against Black's king.",
+        "White aims to fianchetto the bishop to b2, develop the knight to c3 to attack the e4 pawn, and generate a strong initiative on the queenside and centre.",
+        "Black's main plan is to accept the pawn with 2...dxe4, then either try to hold onto it with moves like ...Nf6 and ...Bf5, or give it back favourably to complete development and neutralise White's pressure.",
+        "White: Often continues with Bb2, Nc3 and Qe2, sometimes castling long to attack Black's king.",
         "Black seeks to consolidate, challenge White's control of the long diagonal, and use the extra central pawn to create their own opportunities."
       ],
       "version": "1.0",
@@ -7373,7 +7373,7 @@
       "icsbot": "Anderssen Variation, Center Counter "
     },
     "analysis_json": {
-      "description": "The Anderssen Counterattack is a sharp and ambitious line in the Scandinavian Defense where Black immediately challenges White's central control. This approach leads to dynamic, open positions, often involving an early fight for the initiative and significant tactical complications. It is best suited for aggressive players who enjoy creating imbalances and are not afraid to enter sharp, double-edged middlegames right from the opening.",
+      "description": "The Anderssen Counterattack is a sharp and ambitious line in the Scandinavian Defence where Black immediately challenges White's central control. This approach leads to dynamic, open positions, often involving an early fight for the initiative and significant tactical complications. It is best suited for aggressive players who enjoy creating imbalances and are not afraid to enter sharp, double-edged middlegames right from the opening.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -7414,9 +7414,9 @@
         "Exploiting an Active Queen"
       ],
       "common_plans": [
-        "Black aims to disrupt White's development, often by sacrificing the bishop pair with ...Bxc3 to damage White's pawn structure and maintain the initiative.",
-        "White seeks to consolidate the center, complete development, and exploit the long-term advantage of the bishop pair or the exposed nature of the black queen.",
-        "Black often follows up with ...Nf6 and ...c5 to further undermine White's central grip and open lines for their pieces.",
+        "Black: Open lines and develop fast: after dxe5, ...Nc6 and ...Bb4 pin the c3-knight, sometimes followed by ...Bxc3+ to damage White's pawns.",
+        "White seeks to consolidate the centre, complete development, and exploit the long-term advantage of the bishop pair or the exposed nature of the black queen.",
+        "Black: Follow up with ...Nc6, ...Bg4 or ...Bf5 and long castling, using the open d-file against White's position.",
         "White may try to prove Black's setup is premature by developing quickly (Nf3, Be2, 0-0) and targeting Black's potential weaknesses."
       ],
       "version": "1.0",
@@ -7558,7 +7558,7 @@
       "chronos": "Scandinavian: Anderssen counter-attack orthodox attack"
     },
     "analysis_json": {
-      "description": "The Anderssen Counterattack is a sharp and ambitious line in the Scandinavian Defense where Black immediately challenges White's central control with 4...e5. This leads to a dynamic, open game where tactical awareness and a fight for the initiative take center stage. It is well-suited for aggressive players who are comfortable with complex positions and enjoy creating immediate problems for their opponent, rather than settling for a quiet, strategic battle.",
+      "description": "The Anderssen Counterattack is a sharp and ambitious line in the Scandinavian Defence where Black immediately challenges White's central control with 4...e5. This leads to a dynamic, open game where tactical awareness and a fight for the initiative take centre stage. It is well-suited for aggressive players who are comfortable with complex positions and enjoy creating immediate problems for their opponent, rather than settling for a quiet, strategic battle.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -7599,10 +7599,10 @@
         "Development Race"
       ],
       "common_plans": [
-        "For Black: Develop pieces to pressure the d4-pawn (e.g., ...Bg4), consider queenside castling to launch an attack, and control the open e-file.",
-        "For White: Solidify the center, complete development, challenge Black's active pieces (especially the b4-bishop with a3), and exploit the potential exposure of Black's queen.",
-        "For Black: Undermine White's central pawn structure and create lasting weaknesses.",
-        "For White: Neutralize Black's initiative and aim to convert the central space advantage into a tangible plus in the middlegame or endgame."
+        "Black: Win back the e5-pawn, often with ...Bg4 to remove the f3-knight that guards it, consider queenside castling, and use the open d-file.",
+        "For White: Solidify the centre, complete development, challenge Black's active pieces (especially the b4-bishop with a3), and exploit the potential exposure of Black's queen.",
+        "Black: Keep the initiative with active pieces, aiming the queen, the b4-bishop and the rooks at White's position before White completes development.",
+        "For White: Neutralise Black's initiative and aim to convert the central space advantage into a tangible plus in the middlegame or endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T19:07:10.833Z"
@@ -8061,7 +8061,7 @@
       "icsbot": "Icelandic-Palme Gambit, CC "
     },
     "analysis_json": {
-      "description": "The Icelandic-Palme Gambit is a sharp and aggressive response to the Scandinavian Defense, where Black sacrifices a pawn to blast open the center and accelerate development. This opening leads to dynamic, tactical positions where Black seeks to use a lead in development and active pieces to generate a powerful initiative against White's extended center. It is perfectly suited for daring players who enjoy gambits and are comfortable playing for compensation rather than material equality.",
+      "description": "The Icelandic-Palme Gambit is a sharp and aggressive response to the Scandinavian Defence, where Black sacrifices a pawn to blast open the centre and accelerate development. This opening leads to dynamic, tactical positions where Black seeks to use a lead in development and active pieces to generate a powerful initiative against White's extended centre. It is perfectly suited for daring players who enjoy gambits and are comfortable playing for compensation rather than material equality.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -8104,8 +8104,8 @@
         "Punishing Overextension"
       ],
       "common_plans": [
-        "Black's Plan: After ...Bxe6, rapidly develop with ...Nc6 and ...Bc5, castle quickly, and use the open d and e-files to pressure White's center and king before White can consolidate the extra pawn.",
-        "White's Plan: Accept the gambit with dxe6, develop logically with Nf3, Be2, and O-O, aiming to neutralize Black's initiative, solidify the center, and convert the material advantage in the middlegame or endgame."
+        "Black: After 4.dxe6 Bxe6, develop rapidly with ...Nc6 and ...Bc5, castle quickly, and use the half-open d-file and the open e-file to pressure White's centre and king before White can consolidate the extra pawn.",
+        "White's Plan: Accept the gambit with dxe6, develop logically with Nf3, Be2, and O-O, aiming to neutralise Black's initiative, solidify the centre, and convert the material advantage in the middlegame or endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T19:09:33.136Z"
@@ -154714,7 +154714,7 @@
     "name": "St. George Defence",
     "scid": "B00c",
     "analysis_json": {
-      "description": "The St. George Defence is an unconventional and hypermodern response to 1.e4, characterized by Black's early queenside pawn advances. By fianchettoing the queen's bishop to b7, Black aims to control the center from the flank and undermine White's e4-pawn. This opening leads to a strategically complex game, often avoiding mainstream theory, and is ideal for creative, patient players who enjoy maneuvering and fighting for control from a solid, if slightly passive, foundation.",
+      "description": "The St. George Defence is an unconventional and hypermodern response to 1.e4, characterised by Black's early queenside pawn advances. By fianchettoing the queen's bishop to b7, Black aims to control the centre from the flank and undermine White's e4-pawn. This opening leads to a strategically complex game, often avoiding mainstream theory, and is ideal for creative, patient players who enjoy manoeuvring and fighting for control from a solid, if slightly passive, foundation.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -154758,9 +154758,9 @@
       ],
       "common_plans": [
         "Black: Develop with ...e6 and ...Nf6, maintaining pressure on e4 with the Bb7 and preparing a central break with ...d5 or ...c5.",
-        "White: Solidify the center with c3, complete development, and use the space advantage to either challenge Black's queenside with a4 or launch a kingside attack.",
+        "White: Solidify the centre with c3, complete development, and use the space advantage to either challenge Black's queenside with a4 or launch a kingside attack.",
         "Black: Reroute the knight via ...Nge7 to support a ...d5 push and keep the f-pawn free for a potential ...f5 break.",
-        "White: Exploit Black's slow development and potential weak squares (like c5) by placing pieces on active outposts."
+        "White: Exploit Black's slow development and weak squares such as the c5-square by placing pieces on active outposts."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T16:16:02.264Z"
@@ -159381,8 +159381,8 @@
       ],
       "common_plans": [
         "White: Consolidate the central space advantage, complete development, and use the extra space to launch an attack, often involving f2-f4.",
-        "Black: Resolve the pin on the b4-pawn (e.g., with ...a5 or ...e6), undermine White's center with moves like ...c5 or ...d6, and seek counterplay on the queenside.",
-        "White: Target Black's queenside weaknesses (a6, c6) and prevent Black from untangling their pieces.",
+        "Black: Resolve the pin on the b4-pawn (e.g., with ...a5 or ...e6), undermine White's centre with moves like ...c5 or ...d6, and seek counterplay on the queenside.",
+        "White: Target Black's queenside weaknesses, such as the a6-pawn and the c6-square, and prevent Black from untangling the pieces.",
         "Black: Trade pieces to relieve the cramped position and aim for an endgame where White's central pawns might become a weakness."
       ],
       "version": "1.0",
@@ -159875,7 +159875,7 @@
     "eco": "B00",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "This aggressive variation is a direct attempt by White to punish the unorthodox St. George Defence. By sacrificing the bishop on f7, White immediately exposes the Black king, leading to a chaotic, tactical battle where Black's primary goal is survival. This line is suited for sharp, tactical players who enjoy launching immediate attacks and navigating the resulting imbalances.",
+      "description": "This aggressive line tries to punish the St. George Defence directly: 3.Bxf7+ Kxf7 4.Qh5+ g6 5.Qd5+ forks the king and the a8-rook, so White wins the exchange and a pawn. In return Black gains time against the queen once it is stranded on a8, and White has few pieces developed, so the game becomes sharp and tactical. It suits players who enjoy concrete calculation.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -159916,7 +159916,7 @@
       ],
       "common_plans": [
         "White: After winning the rook with Qxa8, develop pieces rapidly (Nf3, d4) to fuel the attack against the exposed black king and prevent Black from consolidating.",
-        "Black: Survive the initial onslaught, develop pieces to challenge White's control (...Nc6, ...d5), and aim to use the extra piece as a long-term advantage if White's attack can be neutralized."
+        "Black: Block the check, often with ...e6, and after the queen takes on a8 develop with gain of time against the stranded queen, for example with ...Bb7, getting play for the material while White's queen is out of the game."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T16:43:53.374Z"

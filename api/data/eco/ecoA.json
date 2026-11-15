@@ -151495,7 +151495,7 @@
       "chronos": "Dutch: stonewall: Chekhover variation"
     },
     "analysis_json": {
-      "description": "The Stonewall Dutch is a robust, system-based defense that creates a rigid central pawn structure, aiming for kingside attacking chances. The Chekhover Variation with 9. Bg5 is a direct and principled attempt by White to challenge Black's setup, often by targeting the weak e5 square and exchanging key defensive pieces. This opening leads to a tense, strategic battle where understanding the nuances of the fixed pawn structure is paramount, suiting players who enjoy long-term planning and launching methodical attacks.",
+      "description": "The Stonewall Dutch is a robust, system-based defence that creates a rigid central pawn structure, aiming for kingside attacking chances. The Chekhover Variation with 9. Bg5 is a direct and principled attempt by White to challenge Black's setup, often by targeting the weak e5 square and exchanging key defensive pieces. This opening leads to a tense, strategic battle where understanding the nuances of the fixed pawn structure is paramount, suiting players who enjoy long-term planning and launching methodical attacks.",
       "style_tags": [
         "Strategic",
         "System-based",
@@ -151536,8 +151536,8 @@
         "Fixed Pawn Structure"
       ],
       "common_plans": [
-        "Black's Plan: Launch a kingside attack with ...Qh5 and ...g5-g4, while trying to solve the problem of the 'bad' light-squared bishop, often via ...b6-Ba6.",
-        "White's Plan: Control and occupy the weak e5-square with a knight, exchange Black's dangerous dark-squared bishop, and create counterplay on the queenside or in the center."
+        "Black: Look for kingside play with ...Qh5 and a knight on e4, which also challenges the g5-bishop, and find a role for the bad light-squared bishop with ...Bd7, followed by ...Be8 once the queen has moved on.",
+        "White: Use Bxf6 to remove the knight that guards e4, aiming for the e2-e4 break, and look for counterplay in the centre or on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:10:50.321Z"
@@ -151610,7 +151610,7 @@
     "name": "Dutch: Stonewall, 7.Nc3 c6 8.b3 Qe8",
     "scid": "A95",
     "analysis_json": {
-      "description": "The Stonewall Dutch with 8...Qe8 is a classic, highly strategic system where Black creates a rigid central pawn structure to launch a kingside attack. The signature ...Qe8-h5 maneuver, often supported by a rook lift, signals Black's aggressive intentions. This opening leads to a complex, plan-oriented struggle, ideal for strategic players who enjoy executing long-term attacking plans and navigating intricate positional battles.",
+      "description": "The Stonewall Dutch with 8...Qe8 is a classic, highly strategic system where Black creates a rigid central pawn structure to launch a kingside attack. The signature ...Qe8-h5 manoeuvre, often supported by a rook lift, signals Black's aggressive intentions. This opening leads to a complex, plan-oriented struggle, ideal for strategic players who enjoy executing long-term attacking plans and navigating intricate positional battles.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -151652,10 +151652,10 @@
         "Pawn Structure Manipulation"
       ],
       "common_plans": [
-        "Black's Plan: Maneuver the queen to h5 via e8, support with a rook lift (e.g., ...Rf6-h6), and launch a direct attack on the white king, often involving a ...g5 pawn push.",
+        "Black: Bring the queen to h5 via e8, put a knight on e4 to clear the f-file for a rook lift via f6, and look for ...g5 to attack the white king.",
         "White's Plan: Control the critical e5 square, often by occupying it with a knight. Counter on the queenside with moves like a4-a5 and b4 to undermine Black's structure.",
-        "Black's Plan: Improve the 'bad' light-squared bishop, either by trading it or activating it via ...b6 and ...Ba6.",
-        "White's Plan: Exchange Black's powerful dark-squared bishop (the 'Stonewall Bishop') to weaken Black's kingside defenses and control of the dark squares."
+        "Black: Improve the bad light-squared bishop: after ...Qh5 it can come out via ...Bd7-e8, or it can be fianchettoed on b7 after ...b6.",
+        "White's Plan: Exchange Black's powerful dark-squared bishop (the 'Stonewall Bishop') to weaken Black's kingside defences and control of the dark squares."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:11:25.898Z"
@@ -151727,7 +151727,7 @@
     "name": "Dutch: Stonewall, 7.Nc3 c6 8.Bg5",
     "scid": "A95",
     "analysis_json": {
-      "description": "The Stonewall Dutch with 8.Bg5 is a highly strategic and complex system where both sides fight for control of key central squares. White's plan often revolves around challenging Black's grip on e4 and exploiting the dark squares, frequently by exchanging the g5 bishop for the f6 knight. This opening is perfect for patient, strategic players who enjoy maneuvering their pieces to create long-term structural advantages and understand the subtle plans associated with fixed pawn structures.",
+      "description": "The Stonewall Dutch with 8.Bg5 is a highly strategic and complex system where both sides fight for control of key central squares. White's plan often revolves around challenging Black's grip on e4 and exploiting the dark squares, frequently by exchanging the g5 bishop for the f6 knight. This opening is perfect for patient, strategic players who enjoy manoeuvring their pieces to create long-term structural advantages and understand the subtle plans associated with fixed pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -151768,9 +151768,9 @@
       ],
       "common_plans": [
         "White: Exchange the g5 bishop for the f6 knight (Bxf6) to weaken Black's kingside, control the e5 square, and prepare the e2-e4 pawn break.",
-        "Black: Solidify the center, expand on the queenside with ...b5-b4, and try to solve the problem of the 'bad' light-squared bishop, often via ...Bd7-e8-h5.",
-        "White: Launch a kingside attack, often involving a queen lift (e.g., Qc2-e2-h5) and using the open g-file if Black recaptures on f6 with the g-pawn.",
-        "Black: Use the e5 square as a strong outpost for a knight and prepare to meet White's kingside pressure with a solid defense or counter-attack."
+        "Black: Solidify the centre, expand on the queenside with ...b5-b4, and try to solve the problem of the 'bad' light-squared bishop, often via ...Bd7-e8-h5.",
+        "White: After Bxf6, aim for the e2-e4 break, since the knight that guarded e4 has gone; if Black recaptures with the g-pawn, the black king is also loosened.",
+        "Black: Use the e4-square as an outpost for a knight, which also challenges the g5-bishop, and meet White's pressure with solid defence or counter-attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:12:09.391Z"
@@ -151785,7 +151785,7 @@
     "name": "Dutch: Stonewall, 7.Nc3 c6 8.Ne5",
     "scid": "A95",
     "analysis_json": {
-      "description": "The Stonewall Dutch is a robust, system-based opening where Black creates a formidable pawn barrier to control the center, particularly the e4-square. This variation, with White's 8.Ne5, immediately creates a strategic flashpoint, as White places a knight on the ideal outpost, challenging Black's entire setup. The game becomes a tense, strategic battle: Black aims to launch a classic kingside attack, while White seeks to neutralize this pressure and exploit the inherent weaknesses (especially the e5-square and the light squares) in Black's structure.",
+      "description": "The Stonewall Dutch is a robust, system-based opening where Black creates a formidable pawn barrier to control the centre, particularly the e4-square. This variation, with White's 8.Ne5, immediately creates a strategic flashpoint, as White places a knight on the ideal outpost, challenging Black's entire set-up. The game becomes a tense, strategic battle: Black aims to launch a classic kingside attack, while White seeks to neutralise this pressure and exploit the inherent weaknesses in Black's structure, above all the e5-square and the other dark squares.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -151826,10 +151826,10 @@
         "Exploiting Weak Squares"
       ],
       "common_plans": [
-        "Black: Challenge the Ne5 with ...Nbd7, then launch a kingside attack with a rook lift (...Rf6-h6) and a pawn storm (...g5-g4).",
-        "White: Exchange on f6 (Nxf6) to disrupt Black's coordination, maintain control of e5, and create queenside counterplay with b4-b5.",
-        "Black: Solve the problem of the 'bad' light-squared bishop by maneuvering it (...Bd7-e8-h5) or preparing a ...b6 and ...Ba6 trade.",
-        "White: Reroute pieces for defense (e.g., Nf3-d2) to blunt Black's attack, then methodically exploit the light-square weaknesses in Black's camp."
+        "Black: Challenge the e5-knight with ...Nbd7, then look for kingside play with ...Qe8-h5 or a pawn storm with ...g5-g4.",
+        "White: Keep the knight on e5 as long as possible, support it with f2-f4 or Bf4, and create queenside counterplay with b2-b4 and b4-b5.",
+        "Black: Solve the problem of the bad light-squared bishop by rerouting it with ...Bd7-e8-h5 or by fianchettoing it with ...b6 and ...Bb7.",
+        "White: Keep enough defenders near the king to blunt Black's attack, then methodically exploit the dark-square weaknesses in Black's camp."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:12:32.581Z"
@@ -152075,7 +152075,7 @@
       "common_plans": [
         "Black: After an exchange on e4, use the newly opened f-file for a kingside attack, often supported by a ...g5-g4 pawn push.",
         "White: Challenge Black's central knight with moves like Qc2 or Nxe4, followed by targeting the potentially weak d6 and e6 pawns.",
-        "Black: Solidify control of the center, particularly the e5-square, to support the e4-pawn and restrict White's pieces.",
+        "Black: If the knights are exchanged on e4 and Black recaptures with the f-pawn, support the new pawn on e4 with ...d5 and a knight on f6, cramping White.",
         "White: Expand on the queenside with moves like b4-b5 to create a second front and exploit the space advantage."
       ],
       "version": "1.0",
@@ -152310,9 +152310,9 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "Black's Plan: Transfer the queen to the kingside (Qe8-g6/h5), prepare a rook lift (...Rf6-h6), and launch a pawn storm with ...g5-g4 to attack the white king.",
+        "Black: Transfer the queen to the kingside with ...Qh5 or ...Qg6, prepare the ...e5 break, and use a knight on e4 or g4 to support an attack.",
         "White's Plan: Control the central e5 square, often with a knight. Expand on the queenside with a3 and b4-b5 to create a counter-initiative.",
-        "Black's Plan: Improve the 'bad' light-squared bishop, sometimes via ...Bd7-e8-h5 or by preparing an ...e5 pawn break.",
+        "Black: The light-squared bishop can come to d7, and to e8 and h5 once the queen has moved on; the ...e5 break also frees it.",
         "White's Plan: Prepare the e2-e4 pawn break to challenge Black's central grip and open the position for the fianchettoed bishop."
       ],
       "version": "1.0",
@@ -152328,7 +152328,7 @@
     "name": "Dutch: Classical, 7.b3 Qe8 8.Bb2",
     "scid": "A96",
     "analysis_json": {
-      "description": "This variation of the Classical Dutch leads to a strategically rich and double-edged struggle. White's double fianchetto (Bg2 and Bb2) aims for positional control and pressure on the long diagonals, while Black's signature ...Qe8 maneuver prepares a direct kingside attack, often involving a queen transfer to h5. The game is a fascinating clash of plans on opposite wings, ideal for strategic players who appreciate long-term planning and are comfortable navigating both positional and attacking themes.",
+      "description": "This variation of the Classical Dutch leads to a strategically rich and double-edged struggle. White's double fianchetto (Bg2 and Bb2) aims for positional control and pressure on the long diagonals, while Black's signature ...Qe8 manoeuvre prepares a direct kingside attack, often involving a queen transfer to h5. The game is a fascinating clash of plans on opposite wings, ideal for strategic players who appreciate long-term planning and are comfortable navigating both positional and attacking themes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -152369,8 +152369,8 @@
         "Rook Lifts"
       ],
       "common_plans": [
-        "White's Plan: Control the critical e5-square, expand on the queenside with moves like a4 and Rab1, and prepare the central break e2-e4 to challenge Black's structure.",
-        "Black's Plan: Initiate a direct kingside attack by transferring the queen to h5 (Qe8-h5), often supported by a rook lift (...Rf6-h6) and a pawn storm (...g7-g5-g4).",
+        "White: Control the critical e5-square, develop with Nbd2 or Nc3, and prepare the central break e2-e4 to challenge Black's structure.",
+        "Black: Transfer the queen to the kingside with ...Qh5 or ...Qg6, prepare the ...e5 break, and use a knight on e4 or g4 to support an attack.",
         "Strategic Clash: The game often revolves around a race: can Black's kingside attack break through before White's queenside pressure and central control become decisive?"
       ],
       "version": "1.0",
@@ -152501,7 +152501,7 @@
     "name": "Dutch: Classical, 7.Nc3 a5 8.Qc2",
     "scid": "A96",
     "analysis_json": {
-      "description": "The Classical Dutch with 7...a5 is a sophisticated and strategically dense system where Black immediately challenges White's queenside ambitions. By preventing the b2-b4 push, Black creates a tense, double-edged struggle, focusing on controlling the critical e4-square and preparing their own counterplay. This opening is perfect for strategic players who enjoy complex maneuvering, long-term planning, and fighting for control over key squares and files.",
+      "description": "The Classical Dutch with 7...a5 is a sophisticated and strategically dense system where Black immediately challenges White's queenside ambitions. By preventing the b2-b4 push, Black creates a tense, double-edged struggle, focusing on controlling the critical e4-square and preparing their own counterplay. This opening is perfect for strategic players who enjoy complex manoeuvring, long-term planning, and fighting for control over key squares and files.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -152542,8 +152542,8 @@
         "Prophylaxis against b4"
       ],
       "common_plans": [
-        "White's Plan: Achieve the e2-e4 pawn break to open the center and challenge Black's structure. Prepare queenside expansion with b3 and a3, and reposition the f3-knight (e.g., to e1) to support the e4 push.",
-        "Black's Plan: Solidify control over the e4-square, often with ...Qe8. Prepare queenside counterplay with ...a4 or ...b5. Develop a kingside attack using the f-file, sometimes involving a rook lift (...Rf6-h6)."
+        "White: Achieve the e2-e4 break to open the centre and challenge Black's structure, with the queen on c2 already supporting it; b3 and a3 prepare queenside expansion.",
+        "Black: Keep control of the e4-square, often with ...Ne4, play ...Qe8 to prepare ...e5 or ...Qh5, and use ...a4 for queenside space."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T15:16:35.437Z"
@@ -152558,7 +152558,7 @@
     "name": "Dutch: Classical, 7.Nc3 a5 8.Re1",
     "scid": "A96",
     "analysis_json": {
-      "description": "The Classical Dutch with 7...a5 is a strategically dense and complex opening where both sides fight for central control. Black's key idea with ...a5 is to prevent White's b4 queenside expansion while preparing their own, all while maintaining a firm grip on the crucial e4 square. This opening leads to a rich, maneuvering game ideal for strategic players who enjoy long-term planning and understanding the nuances of pawn structures and piece placement.",
+      "description": "The Classical Dutch with 7...a5 is a strategically dense and complex opening where both sides fight for central control. Black's key idea with ...a5 is to prevent White's b4 queenside expansion while preparing their own, all while maintaining a firm grip on the crucial e4 square. This opening leads to a rich, manoeuvring game ideal for strategic players who enjoy long-term planning and understanding the nuances of pawn structures and piece placement.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -152598,9 +152598,9 @@
         "Prophylaxis against b4"
       ],
       "common_plans": [
-        "White: Prepare and execute the e2-e4 pawn break, often preceded by moves like Qc2. If the center is blocked, White may seek a queenside advantage with a4 and b3.",
-        "Black: Maintain a blockade on the e4-square. Develop counterplay on the queenside with ...b5 or reroute the f6-knight (e.g., to e8-d6) to further control the center.",
-        "White: Reposition the knight from c3 to e2 to support the e4 push and avoid being a target for a potential ...b4.",
+        "White: Prepare and execute the e2-e4 pawn break, often preceded by moves like Qc2. If the centre is blocked, White may seek a queenside advantage with a4 and b3.",
+        "Black: Maintain the grip on the e4-square, prepare ...e5 with ...Qe8 or ...Nc6, and use ...a4 to gain queenside space.",
+        "White: Push e2-e4 soon; if Black takes, the knights are exchanged on the e4-square and the e1-rook recaptures there, standing actively on the half-open e-file.",
         "Black: Create a kingside attack if White neglects king safety, often involving moves like ...Qe8 and ...g5."
       ],
       "version": "1.0",
@@ -152624,7 +152624,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Ilyin-Zhenevsky is an ambitious and strategic system within the Dutch Defense, characterized by the unique queen maneuver 7...Qe8. Black accepts a rigid central pawn structure and potential weaknesses (notably the e5-square) in exchange for clear, dynamic plans for a kingside attack. This opening leads to a complex, double-edged struggle, ideal for strategic players who enjoy executing long-term attacking plans and are comfortable navigating tense, non-symmetrical positions.",
+      "description": "The Ilyin-Zhenevsky is an ambitious and strategic system within the Dutch Defence, characterised by the unique queen manoeuvre 7...Qe8. Black accepts a rigid central pawn structure and potential weaknesses (notably the e5-square) in exchange for clear, dynamic plans for a kingside attack. This opening leads to a complex, double-edged struggle, ideal for strategic players who enjoy executing long-term attacking plans and are comfortable navigating tense, non-symmetrical positions.",
       "style_tags": [
         "Strategic",
         "System-based",
@@ -152664,9 +152664,9 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "Black's Plan: Prepare a kingside attack with ...Qh5, often followed by a pawn storm with ...g5-g4 and a rook lift via f6-g6/h6.",
-        "White's Plan: Control the center and the critical e5-square, often preparing the e2-e4 pawn break to challenge Black's structure.",
-        "Black's Plan: Solidify the center and prevent White's e4 break, while slowly improving piece placement for the eventual attack.",
+        "Black: Transfer the queen to the kingside with ...Qh5 or ...Qg6, prepare the ...e5 break, and use a knight on e4 or g4 to support an attack.",
+        "White's Plan: Control the centre and the critical e5-square, often preparing the e2-e4 pawn break to challenge Black's structure.",
+        "Black: Keep a firm grip on the e4-square, sometimes with ...Ne4, while slowly improving the pieces for the ...e5 break or the attack.",
         "White's Plan: Expand on the queenside with moves like b4-b5 to create a second front and distract Black from their kingside ambitions."
       ],
       "version": "1.0",

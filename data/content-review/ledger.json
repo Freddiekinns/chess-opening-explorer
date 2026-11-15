@@ -4624,5 +4624,65 @@
     "verdict": "fixed",
     "contentHash": "e34060266dfb96f9",
     "notes": "Plan 3 routed a knight via f8 (rook there); plan 2 said White controls the light squares and called b4 a minority attack; plan 1 traded on a6 with White's bishop on g2. Rewrote plans 1-3; British spelling."
+  },
+  "rnb1qrk1/pp2b1pp/2p1pn2/3p1pB1/2PP4/2N2NP1/PPQ1PPBP/R4RK1 b - - 3 9": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "5add672d68d4f407",
+    "notes": "Plan 1 pushed ...g5-g4 into the g5-bishop and traded the bad bishop on a6 with White's bishop on g2; plan 2 was vague about which bishop to trade. Rewrote both plans (reviewer: plan 2 rejected once for saying the f6-knight controls e5, revised, re-accepted); British spelling."
+  },
+  "rnb1qrk1/pp2b1pp/2p1pn2/3p1p2/2PP4/1PN2NP1/P3PPBP/R1BQ1RK1 w - - 1 9": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "1ba77bb3e0b5da6e",
+    "notes": "Plan 1 lifted the rook via f6 with the knight there; plan 3 traded the bad bishop on a6. Rewrote plans 1 and 3; British spelling."
+  },
+  "rnbq1rk1/pp2b1pp/2p1pn2/3p1pB1/2PP4/2N2NP1/PP2PPBP/R2Q1RK1 b - - 1 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "8ada9392b9754dee",
+    "notes": "Plan 3 lifted the queen via c2 and e2 (it is on d1); plan 4 gave Black a knight outpost on e5 (Black's is e4). Rewrote plans 3 and 4 (reviewer: plan 3 rejected once, revised, re-accepted); British spelling."
+  },
+  "rnbq1rk1/pp2b1pp/2p1pn2/3pNp2/2PP4/2N3P1/PP2PPBP/R1BQ1RK1 b - - 1 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "50f56eb049e488a5",
+    "notes": "Plan 2 played Nxf6 with the knight on e5 (it can't reach f6); plan 4 used a knight on f3 that had gone to e5 and called the weaknesses light squares, as did the overview. Rewrote overview and all four plans; British spelling."
+  },
+  "rnbq1rk1/ppp1b1pp/3pp3/5p2/2PPn3/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 2 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "6df1e2064be30529",
+    "notes": "Plan 3 named an e4-pawn that only exists after Nxe4 fxe4 and had Black control e5. Rewrote plan 3."
+  },
+  "rnb1qrk1/ppp1b1pp/3ppn2/5p2/2PP4/1P3NP1/P3PPBP/RNBQ1RK1 w - - 1 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "128e0eb97cb1c446",
+    "notes": "Plan 1 lifted the rook via f6 with the knight there and wrote the queen's route ambiguously; plan 3 routed the bishop through the queen on e8. Rewrote plans 1 and 3."
+  },
+  "rnb1qrk1/ppp1b1pp/3ppn2/5p2/2PP4/1P3NP1/PB2PPBP/RN1Q1RK1 b - - 2 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "8ed38ac8c2485310",
+    "notes": "Plan 2 lifted the rook via f6 with the knight there; plan 1 played Rab1 with the knight on b1. Rewrote plans 1 and 2."
+  },
+  "rnbq1rk1/1pp1b1pp/3ppn2/p4p2/2PP4/2N2NP1/PPQ1PPBP/R1B2RK1 b - - 1 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "d13dd82345a3f2f7",
+    "notes": "Plan 2 lifted the rook via f6 with the knight there and said ...Qe8 controls e4. Rewrote both plans (reviewer: 2 rejected once, Rd1 on a closed d-file and ...Nc6 controlling e4, revised, re-accepted); British spelling."
+  },
+  "rnbq1rk1/1pp1b1pp/3ppn2/p4p2/2PP4/2N2NP1/PP2PPBP/R1BQR1K1 b - - 1 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "88854c0d472804ce",
+    "notes": "Plan 2 rerouted a knight to d6, where Black's pawn stands; plan 3 played around a ...b4 that needs two moves. Rewrote plans 2 and 3 (e2-e4 with the e1-rook recapturing); British spelling."
+  },
+  "rnb1qrk1/ppp1b1pp/3ppn2/5p2/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 2 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "331f6051177c1f7d",
+    "notes": "Plan 1 lifted a rook via f6 and g6 with the knight on f6; plan 3 named White's e4 break in Black's plan. Rewrote plans 1 and 3; British spelling."
   }
 }

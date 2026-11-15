@@ -4036,7 +4036,7 @@
       "icsbot": "Pseudo-Spanish Variation "
     },
     "analysis_json": {
-      "description": "The Pseudo-Spanish Variation is a provocative and strategic response to the Nimzowitsch Defense, immediately challenging Black's setup in a manner similar to the Ruy Lopez. White aims to exert pressure on the c6-knight and control key squares, often leading to a maneuvering game where positional understanding is paramount. This opening is well-suited for players who enjoy steering the game into less-trodden paths, creating imbalances, and outplaying their opponents in a strategic, rather than purely tactical, battle.",
+      "description": "The Pseudo-Spanish Variation is a provocative and strategic response to the Nimzowitsch Defence, immediately challenging Black's setup in a manner similar to the Ruy Lopez. White aims to exert pressure on the c6-knight and control key squares, often leading to a manoeuvring game where positional understanding is paramount. This opening is well-suited for players who enjoy steering the game into less-trodden paths, creating imbalances, and outplaying their opponents in a strategic, rather than purely tactical, battle.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -4077,8 +4077,8 @@
       ],
       "common_plans": [
         "White: Exchange on c6 (Bxc6) to create pawn weaknesses, followed by central development (d4, Nf3) to exploit them.",
-        "White: Maintain the pin by retreating the bishop (Ba4 after ...a6), aiming for a Ruy Lopez-style strategic battle.",
-        "Black: Challenge the bishop with ...a6, gaining a tempo and space on the queenside, often followed by ...b5.",
+        "White: Keep up the pressure on the c6-knight by retreating the bishop to a4 after ...a6, aiming for a Ruy Lopez-style strategic battle.",
+        "Black: Put the question to the bishop with ...a6, and if it retreats to a4, consider gaining queenside space with the b-pawn.",
         "Black: Fight for central control with an early ...d5 or ...e5, often accepting a structural concession for active piece play and the bishop pair."
       ],
       "version": "1.0",
@@ -4224,7 +4224,7 @@
       "ct": "Nimzowitsch Defense, Scandinavian Variation"
     },
     "analysis_json": {
-      "description": "The Advance Variation against the Nimzowitsch-Scandinavian creates a tense, strategic battle reminiscent of the French Defense. White seizes a significant space advantage with the e5 pawn, aiming to cramp Black and launch a kingside attack. Black's strategy revolves around methodically undermining White's central pawn chain, typically with the ...f6 or ...c5 pawn breaks, to liberate their position and create counterplay. This opening is perfect for strategic players who enjoy maneuvering in closed positions and understand the long-term dynamics of pawn structures.",
+      "description": "The Advance Variation against the Nimzowitsch-Scandinavian creates a tense, strategic battle reminiscent of the French Defence. White seizes a significant space advantage with the e5-pawn, aiming to cramp Black and build a kingside attack. Black's strategy revolves around undermining White's central pawn chain, above all with the ...f6 break (...c5 needs the c6-knight to move first), to free the position and create counterplay. It suits strategic players who enjoy manoeuvring in closed positions and understand the long-term dynamics of pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -4266,10 +4266,10 @@
         "Central Tension"
       ],
       "common_plans": [
-        "White: Solidify the center with c3 and Nf3, develop for a kingside attack (Be2, 0-0, f4), and restrict Black's pieces.",
-        "Black: Challenge White's center with pawn breaks like ...f6 or ...c5.",
+        "White: Support the centre with c3 and Nf3, develop with Be2 and O-O, consider f4 to back up e5, and restrict Black's pieces.",
+        "Black: Challenge White's centre with the ...f6 break; ...c5 is only possible once the c6-knight has moved.",
         "Black: Develop the light-squared bishop to f5 before playing ...e6 to avoid a 'bad bishop'.",
-        "Black: Pressure the d4 pawn with pieces, for example, by playing ...Qb6."
+        "Black: Pressure the d4-pawn with pieces, for example ...Bg4 against a knight on f3, then ...e6 and ...Nge7-f5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:50:12.632Z"
@@ -4541,7 +4541,7 @@
       "icsbot": "Alekseev Variation, Nimzovich; Heinola-Deppe Gambit "
     },
     "analysis_json": {
-      "description": "The Heinola-Deppe Gambit is a sharp and ambitious response within the Nimzowitsch Defense, where Black immediately counter-strikes in the center with 3...e5. By offering a pawn, Black aims to disrupt White's central control, open lines for rapid piece development, and seize the initiative. This opening leads to dynamic, unbalanced positions and is perfect for aggressive, tactical players who enjoy fighting for an early attack and are comfortable with material imbalances.",
+      "description": "The Heinola-Deppe Gambit is a sharp and ambitious response within the Nimzowitsch Defence, where Black immediately counter-strikes in the centre with 3...e5. By offering a pawn, Black aims to disrupt White's central control, open lines for rapid piece development, and seize the initiative. This opening leads to dynamic, unbalanced positions and is perfect for aggressive, tactical players who enjoy fighting for an early attack and are comfortable with material imbalances.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -4585,8 +4585,8 @@
         "Disrupting White's Setup"
       ],
       "common_plans": [
-        "For Black, the main plan after 4.dxe5 d4 is to gain a lead in development, using active pieces (...Nf6, ...Bc5) to attack White's center and prevent consolidation. The goal is to convert the initiative into a tangible attack before White can organize.",
-        "For White, the primary objective is to accept the gambit, consolidate the material advantage, and neutralize Black's initiative. This often involves careful development (e.g., Ne2-f4), timely piece exchanges, and steering the game towards a calmer endgame where the extra pawn will be decisive."
+        "For Black, the main plan after 4.dxe5 d4 is to gain a lead in development, using active pieces (...Nf6, ...Bc5) to attack White's centre and prevent consolidation. The goal is to convert the initiative into a tangible attack before White can organise.",
+        "White: Accept the gambit, consolidate the extra pawn and neutralise Black's initiative: after 4.dxe5 d4 the c3-knight usually retreats via e2 to g3 or f4, followed by careful development and timely exchanges."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:51:53.552Z"
@@ -4668,7 +4668,7 @@
       "icsbot": "Richter Gambit, Nimzovich Defense "
     },
     "analysis_json": {
-      "description": "The Richter Gambit is a sharp and aggressive attempt by White to seize the initiative against a solid but temporarily passive setup from Black. By sacrificing a pawn with 5.f3, White aims to accelerate development, open the f-file for an attack, and dominate the center. This opening leads to dynamic, unbalanced positions where White's compensation is tested against Black's extra material, making it ideal for tactical players who thrive on the attack and are comfortable playing with the initiative.",
+      "description": "The Richter Gambit is a sharp and aggressive attempt by White to seize the initiative against a solid but temporarily passive setup from Black. By sacrificing a pawn with 5.f3, White aims to accelerate development, open the f-file for an attack, and dominate the centre. This opening leads to dynamic, unbalanced positions where White's compensation is tested against Black's extra material, making it ideal for tactical players who thrive on the attack and are comfortable playing with the initiative.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -4713,8 +4713,8 @@
       ],
       "common_plans": [
         "White: Recapture with fxe4, develop rapidly with Nf3 and Bc4, castle kingside, and use the open f-file to pressure Black's f7-pawn and king.",
-        "Black (Accepting): Capture with ...exf3, followed by ...Nxf3. Develop solidly with ...e6, ...Nf6, ...Be7, aiming to neutralize White's initiative and consolidate the extra pawn.",
-        "Black (Declining): Challenge the center immediately with ...e5, aiming for a more classical pawn structure where the gambit is sidestepped.",
+        "Black (accepting): Take with ...exf3 and, after White recaptures on f3, develop solidly with ...Nf6 and ...e6 or ...g6, aiming to neutralise White's initiative and keep the extra pawn.",
+        "Black (Declining): Challenge the centre immediately with ...e5, aiming for a more classical pawn structure where the gambit is sidestepped.",
         "White: Maintain central tension and use the d5-pawn to cramp Black's position, creating long-term strategic advantages."
       ],
       "version": "1.0",
@@ -4736,7 +4736,7 @@
       "icsbot": "Vehre Variation, Nimzovich Defense "
     },
     "analysis_json": {
-      "description": "The Vehre Variation is a sharp and provocative line within the Nimzowitsch Defense, where Black immediately creates central tension and challenges White to a tactical fight. By developing the knights before committing central pawns, Black aims for an unbalanced, dynamic game, often ceding a space advantage to White in exchange for counter-attacking chances. This opening is best suited for aggressive, well-prepared players who thrive on complications and are adept at undermining an opponent's center.",
+      "description": "The Vehre Variation is a sharp and provocative line within the Nimzowitsch Defence, where Black immediately creates central tension and challenges White to a tactical fight. By developing the knights before committing central pawns, Black aims for an unbalanced, dynamic game, often ceding a space advantage to White in exchange for counter-attacking chances. This opening is best suited for aggressive, well-prepared players who thrive on complications and are adept at undermining an opponent's centre.",
       "style_tags": [
         "Aggressive",
         "Counter-attacking",
@@ -4779,9 +4779,9 @@
         "Space advantage vs. counterplay"
       ],
       "common_plans": [
-        "White: Push e5 to gain space, support the center with moves like f4, and use the space advantage to develop an attack, often on the kingside.",
-        "Black: Immediately challenge White's extended e5-pawn with moves like ...h6, ...g5, or a later ...f6. Develop pieces to pressure d4 and create counterplay against White's central structure.",
-        "White: Control key squares like d6 to restrict Black's pieces and prevent liberating pawn breaks.",
+        "White: Push e5 to gain space, support the centre with moves like f4, and use the space advantage to develop an attack, often on the kingside.",
+        "Black: If White's e-pawn advances to e5, move the f6-knight to e4 or d7 and undermine the centre with ...f6, while the c6-knight and the c8-bishop press on d4.",
+        "White: Alternatively, keep the tension and develop with Nf3 and Bb5, pressing on the c6-knight, or release it with exd5.",
         "Black: Seek to trade off White's strong light-squared bishop and exploit any overextension by White."
       ],
       "version": "1.0",
@@ -4801,7 +4801,7 @@
       "ct": "Nimzowitsch Defense, Scandinavian Variation"
     },
     "analysis_json": {
-      "description": "The Nimzowitsch Defense's Scandinavian Variation leads to a structure highly reminiscent of the popular Scandinavian Defense, but with the knight already committed to c6. White's primary plan is to gain a tempo by developing with Nf3, harassing the Black queen, while Black aims to complete development and neutralize White's early initiative. The resulting positions are strategically complex, focusing on central control and piece coordination rather than immediate tactical clashes, making it a solid choice for players who enjoy maneuvering and understanding subtle positional nuances.",
+      "description": "This line of the Nimzowitsch Defence leads to a structure reminiscent of the Scandinavian Defence, but with the knight already committed to c6, where it adds pressure on d4. White's main plan is to defend d4 with Nf3 and then gain time against the black queen with c4 or Nc3 (playing Nc3 at once, the Marshall Gambit, gives up the d4-pawn), while Black aims to complete development and neutralise White's early initiative. The positions revolve around central control and piece coordination, making it a solid choice for players who enjoy manoeuvring and subtle positional nuances.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -4839,8 +4839,8 @@
         "Development race"
       ],
       "common_plans": [
-        "White: Gain a tempo with Nf3, support the d4-pawn with c4, develop the light-squared bishop actively (Bf4/g5), and use the central space to build pressure.",
-        "Black: Safely retreat the queen (Qd8/d6), complete development with ...e6 and ...Nf6, and prepare to challenge White's center or create queenside counterplay."
+        "White: Defend d4 with Nf3 first, then gain time against the queen with c4 or Nc3, develop with Be3, Bf4 or Bg5, and use the central space to build pressure.",
+        "Black: Move the queen to a safe square when it is attacked, often ...Qa5 or a retreat along the d-file, complete development with ...Nf6 and ...e6 or ...e5, and challenge White's centre or create queenside counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:53:14.231Z"
@@ -4862,7 +4862,7 @@
       "icsbot": "Marshall Gambit, Nimzovich "
     },
     "analysis_json": {
-      "description": "The Nimzowitsch-Scandinavian is a dynamic and provocative defense where Black's early queen development leads to a sharp, tactical game. White gains a tempo by attacking the queen, aiming for a development advantage, while Black relies on the active queen and quick counterplay to create imbalances. This opening is well-suited for tactical players who enjoy sharp, open positions and are comfortable defending against early initiative.",
+      "description": "In the Marshall Gambit White answers the queen's early arrival on d5 with 4.Nc3, gaining a tempo and offering the d4-pawn. If Black grabs it with 4...Qxd4, White develops with further gain of time, for example with Be3 and Nf3, so the game becomes sharp and open, with White's lead in development weighed against Black's extra pawn. It suits tactical players on both sides who enjoy open positions.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -4904,8 +4904,8 @@
       ],
       "common_plans": [
         "White: Harass the Black queen to gain time, complete development, and use the central space advantage to launch an attack.",
-        "Black: Find a safe, active square for the queen (like a5 or d6), complete development quickly, and create counterplay against White's center.",
-        "White: Solidify the d4-pawn, often with c3 or Nf3, and prepare to challenge Black's active pieces.",
+        "Black: Find a safe, active square for the queen, such as the a5- or d6-square, or take on d4 and accept some loss of time; complete development quickly and create counterplay against White's centre.",
+        "White: Either keep the d4-pawn with Be3 or Nf3, or deliberately leave it hanging and use the time Black spends taking it to develop and harass the queen.",
         "Black: Challenge White's central pawns with moves like ...e6 or ...e5 after development, aiming to open lines for the pieces."
       ],
       "version": "1.0",
@@ -5627,7 +5627,7 @@
       "icsbot": "Matovinsky Gambit "
     },
     "analysis_json": {
-      "description": "The Matinovsky Gambit is a sharp and provocative line within the Owen Defence, where Black immediately challenges White's central control with an early ...f5 pawn thrust. This aggressive gambit leads to wild, unbalanced positions, prioritizing initiative and attack over positional soundness and king safety. It is best suited for daring, tactical players who enjoy high-risk, high-reward scenarios and are comfortable navigating chaotic complications from the outset.",
+      "description": "The Matovinsky Gambit is a sharp, provocative line of the Owen Defence in which Black strikes at e4 with an early ...f5. After 4.exf5 Bxg2 Black wins a pawn and attacks the h1-rook, but 5.Qh5+ g6 6.fxg6 exposes the black king, and with accurate play, including 6...Bg7 7.Qf5, White is much better, so the gambit is considered unsound. It appeals to players who enjoy chaotic, high-risk positions and is best known as a source of traps.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -5671,8 +5671,8 @@
         "Exploiting Weakened Squares"
       ],
       "common_plans": [
-        "For Black, the main plan is to create immediate chaos after 4.exf5 Bxg2. This often involves a quick queen sortie to h4, aiming to generate mating threats against the White king to compensate for Black's own structural weaknesses and pawn deficit.",
-        "For White, the goal is to accept the gambit, weather the initial storm, and exploit Black's exposed king. A typical plan involves 5.Qh5+ followed by fxg6, opening lines for a decisive attack along the f and g-files against Black's vulnerable kingside."
+        "Black: The idea is to take on g2 once White captures on f5, winning a pawn and hitting the h1-rook, and to hope that White misses the strongest attacking moves against the exposed black king.",
+        "White: Accept the gambit; after Black takes on g2, Qh5+ forces ...g6, and capturing on g6 with the f-pawn opens lines against the black king, with the queen going to f5 as the key follow-up after ...Bg7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:57:56.660Z"
@@ -5818,7 +5818,7 @@
       "icsbot": "Matovinsky Gambit "
     },
     "analysis_json": {
-      "description": "The Matovinsky Gambit is a hyper-aggressive and highly speculative branch of the Owen Defense. Black immediately challenges the center and sacrifices king safety for the h1-rook, leading to an incredibly sharp and unbalanced tactical battle. This opening is for daring, creative players who thrive in chaos and are comfortable defending against a ferocious, all-out attack from the very first moves.",
+      "description": "The Matovinsky Gambit is a hyper-aggressive and highly speculative branch of the Owen Defence. Black immediately challenges the centre and sacrifices king safety for the h1-rook, leading to an incredibly sharp and unbalanced tactical battle. This opening is for daring, creative players who thrive in chaos and are comfortable defending against a ferocious, all-out attack from the very first moves.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -5862,8 +5862,8 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White's Plan: Continue the kingside attack with moves like fxg6, Nf3, and O-O, aiming to bring more pieces into the assault for a swift checkmate.",
-        "Black's Plan: Survive the initial onslaught, develop pieces like ...Nf6 to challenge the white queen, and attempt to consolidate the position to leverage the extra exchange in the long term.",
+        "White: Continue with 6.fxg6, and after 6...Bg7 play 7.Qf5, keeping up the pressure on the exposed black king; Nf3 brings another piece into the attack.",
+        "Black: Survive the attack, typically with ...Bg7 and ...Nf6 to gain time against the queen, and hope to keep the material won on g2 and h1.",
         "White's Plan: Prevent Black from consolidating by keeping the initiative and creating constant threats against the exposed black king.",
         "Black's Plan: Create counter-threats against White's position, forcing White to divert resources from the attack and simplifying into a more manageable endgame."
       ],
@@ -158976,10 +158976,10 @@
         "Material Imbalance"
       ],
       "common_plans": [
-        "White aims for a swift king-hunt by developing pieces to attack the exposed black king, often involving the h-rook and a knight coming to f3-g5.",
-        "Black must survive the initial onslaught and use the powerful g2-bishop and open g-file to generate decisive counterplay against White's king.",
+        "White: After the forced 5...g6, play 6.fxg6; if 6...Bg7, the strong 7.Qf5 keeps the attack going, while the g6-pawn also threatens to capture on h7.",
+        "Black: The only move is 5...g6; after 6.fxg6 Black must defend accurately, and only if the attack is beaten off can the g2-bishop and the extra material tell.",
         "White often sacrifices the h1-rook to continue the attack and prevent Black from consolidating.",
-        "Black seeks to simplify into a favorable endgame if the attack can be neutralized, leveraging the long-term power of the g2-bishop."
+        "Black seeks to simplify into a favourable endgame if the attack can be neutralised, leveraging the long-term power of the g2-bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T16:38:44.502Z"

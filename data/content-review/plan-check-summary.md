@@ -1,15 +1,15 @@
 # Plan reference check
 
-3628 references on 2816 of 12377 pages fail the check and show as plain text.
+3496 references on 2717 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5493 name no move, route, square or piece
-- References by kind: {"square":15130,"piece":14599,"move":53573,"route":9426}
-- References by result: {"now":66572,"on-board":13488,"later":9040,"invalid":3628}
+- Plans: 41062, of which 5494 name no move, route, square or piece
+- References by kind: {"square":15226,"piece":14707,"move":53459,"route":9461}
+- References by result: {"now":66750,"on-board":13606,"later":9001,"invalid":3496}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
 - **C00 French Defense: Horwitz Attack, Papa-Ticulat Gambit** (4 views)
-  - `Nxe4`: No piece can play Nxe4 here, now or after the plan's earlier moves
+  - `Nc3-Nxe4`: One step of Nc3-Nxe4 can't be played here
 - **A67 Benoni: Four Pawns, Taimanov, 9.Bd3 O-O 10.Nf3 a6** (1 views)
   - `...Na6-b4`: One step of ...Na6-b4 can't be played here
 - **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6 6.Nf3 Bg4** (1 views)
@@ -20,58 +20,56 @@
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **A65 Benoni: Saemisch, 8.Bg5 O-O** (0 views)
+- **A84 Dutch Defense: Bellon Gambit** (0 views)
+  - `d5-e6-f5`: One step of d5-e6-f5 can't be played here
+- **A84 Dutch Defense: Classical Variation** (0 views)
+  - `c6-d5-e6-f5`: One step of c6-d5-e6-f5 can't be played here
+  - `...Ne4`: No piece can play Ne4 here, now or after the plan's earlier moves
+- **A84 Dutch: 2.c4 e6 3.Nf3** (0 views)
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+- **A84 Dutch: 2.c4 e6 3.Nf3 Nf6** (0 views)
+  - `e4 pawn push`: No piece can play e4 here, now or after the plan's earlier moves
+- **A84 Dutch: 2.c4 g6** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A84 Dutch: 2.c4 Nf6** (0 views)
+  - `Qe8-h5`: One step of Qe8-h5 can't be played here
+- **A85 Dutch: 2.c4 Nf6 3.Nc3 e6 4.Bg5** (0 views)
+  - `g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **A85 Dutch: 2.c4 Nf6 3.Nc3 e6 4.e3 d5** (0 views)
+  - `...Bd7-e8-h5`: One step of ...Bd7-e8-h5 can't be played here
   - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **A65 Benoni: Saemisch, 8.Bg5 O-O 9.Qd2 a6** (0 views)
-  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
-- **A66 Benoni: Mikenas Attack, 8...Nfd7** (0 views)
-  - `Ne2-g3`: Ne2 is ambiguous: the knights on c3 and g1 can both go there
-- **A66 Benoni: Mikenas Attack, 8...Nfd7 9.e6** (0 views)
-  - `Ne2-g3`: Ne2 is ambiguous: the knights on c3 and g1 can both go there
-- **A66 Benoni: Mikenas Attack, 8...Nfd7 9.Nb5** (0 views)
-  - `Ne4`: No piece can play Ne4 here, now or after the plan's earlier moves
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **A67 Benoni Defense: Taimanov Variation** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
-- **A67 Benoni: Four Pawns, Taimanov, 8...Nbd7** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **A67 Benoni: Four Pawns, Taimanov, 8...Nfd7** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 (Zaitsev)** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 a6** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 a6 10.Bd3** (0 views)
-  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 a6 10.Be2** (0 views)
-  - `f8-e6`: One step of f8-e6 can't be played here
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 O-O** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-  - `f8`: No piece can play f8 here, now or after the plan's earlier moves
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 O-O 10.Nf3** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 O-O 10.Nf3 Na6** (0 views)
-  - `...b7-b5`: One step of ...b7-b5 can't be played here
-  - `f8-e6`: One step of f8-e6 can't be played here
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 O-O 10.Nf3 Na6 11.O-O Nc7** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **A67 Benoni: Four Pawns, Taimanov, 9.a4 Qh4+** (0 views)
-  - `Kg2`: No piece can play Kg2 here, now or after the plan's earlier moves
-  - `g3`: No piece can play g3 here, now or after the plan's earlier moves
-  - `...Na6-b4`: One step of ...Na6-b4 can't be played here
-- **A67 Benoni: Four Pawns, Taimanov, 9.Bd3 O-O 10.Nf3** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **A68 Benoni: Four Pawns, 9.Be2 Bg4** (0 views)
-  - `g4-g5`: One step of g4-g5 can't be played here
-- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5** (0 views)
-  - `g4-g5`: One step of g4-g5 can't be played here
-- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6** (0 views)
-  - `g2-g4`: One step of g2-g4 can't be played here
-- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6 13.O-O Nxe5 14.d6** (0 views)
-  - `Rf3-g3`: One step of Rf3-g3 can't be played here
-- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6 13.O-O Nxe5 14.Nxe5** (0 views)
-  - `e5-pawn`: There is no pawn on e5, or on its way
-- **A69 Benoni: Four Pawns, Main Line, 10.e5: 12.e6** (0 views)
-  - `Qh5`: No piece can play Qh5 here, now or after the plan's earlier moves
+- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.Bg5** (0 views)
+  - `gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
+  - `Ne5`: No piece can play Ne5 here, now or after the plan's earlier moves
+- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.f3** (0 views)
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.Nf3** (0 views)
+  - `...Na6-c7-e8-g7`: One step of ...Na6-c7-e8-g7 can't be played here
+- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.Nf3 Bg7** (0 views)
+  - `...Qh5`: No piece can play Qh5 here, now or after the plan's earlier moves
+- **A85 Dutch: 2.c4 Nf6 3.Nc3 g6 4.Nf3 Bg7 5.Bg5** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+  - `Bxf6`: No piece can play Bxf6 here, now or after the plan's earlier moves
+  - `gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
+- **A86 Dutch Defense: Fianchetto Variation** (0 views)
+  - `Nf3-e1-d3`: One step of Nf3-e1-d3 can't be played here
+- **A86 Dutch Defense: Leningrad Variation** (0 views)
+  - `...Qh4`: No piece can play Qh4 here, now or after the plan's earlier moves
+- **A86 Dutch: Leningrad, 4.Bg2 Bg7 5.Nc3** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A86 Dutch: Leningrad, 4.Bg2 Bg7 5.Nc3 d6** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A86 Dutch: Leningrad, 4.Nc3 Bg7** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A86 Dutch: Leningrad, 4.Nf3 Bg7** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A86 Dutch: Leningrad, 4.Nf3 Bg7 5.Nc3** (0 views)
+  - `...Qh5`: No piece can play Qh5 here, now or after the plan's earlier moves
+- **A87 Dutch Defense: Leningrad Variation** (0 views)
+  - `...Qe8-h5`: One step of ...Qe8-h5 can't be played here
+- **A87 Dutch: Leningrad, Main Line, 7.d5 c5** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **A87 Dutch: Leningrad, Main Line, 7.Nc3** (0 views)
+  - `...Na6-c7-e8`: One step of ...Na6-c7-e8 can't be played here

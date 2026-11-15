@@ -34,5 +34,11 @@
     "plan": "Black's Alternative: Maintain the pin on d2 and pressure on the centre, sometimes delaying the capture on e5 to build up an attack, potentially involving ...O-O-O.",
     "reference": "...O-O-O",
     "reason": "needs-research: Black castling queenside is not a recognised plan here; two rewrites were rejected (the pin on d2 usually ends when White castles, and ...d6 with the pawn still on e5 allows exd6)"
+  },
+  {
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 1 3",
+    "plan": "White: Recapture the e4-pawn via Nc3-Nxe4, castle quickly, and use the active Bb2 to pressure Black's kingside.",
+    "reference": "Nc3-Nxe4",
+    "reason": "correct plan, parser can't read a recapture route that needs the opponent's ...dxe4 first yet"
   }
 ]

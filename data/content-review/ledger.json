@@ -642,10 +642,10 @@
     "notes": ""
   },
   "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 1 3": {
-    "reviewedAt": "2026-11-01",
-    "verdict": "fixed",
-    "contentHash": "dd793318822c65a2",
-    "notes": "Called Bb2 the light-squared bishop; it is the dark-squared one."
+    "reviewedAt": "2026-11-15",
+    "verdict": "ok",
+    "contentHash": "567d4ae095454b53",
+    "notes": "Nc3-Nxe4 is a correct recapture route the parser cannot read yet: added to skips. British spelling only."
   },
   "r1bqkb1r/pppp1ppp/2n2n2/4p3/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 0 4": {
     "reviewedAt": "2026-11-01",
@@ -4210,5 +4210,59 @@
     "verdict": "fixed",
     "contentHash": "2f1c3a7278005044",
     "notes": "Overview and plan 2 called the half-open f-file open and plan 2 read f7 as a move. Rewrote plan 2 and the overview phrase; British spelling (characterised, Use)."
+  },
+  "rnbqkbnr/pppp2pp/4p3/5p2/2PPP3/8/PP3PPP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "f5b32525170669f5",
+    "notes": "Overview and plans treated it as a pawn-up gambit with a d5-e6-f5 structure Black cannot have after ...fxe4. Rewrote overview, plans 1, 3 and 4 around the standard Bg5xf6 and Nxe4 recapture (reviewer: 2 rejected, revised, re-accepted); British spelling."
+  },
+  "rnbqkbnr/pppp2pp/4p3/5p2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "cd146dab753e2797",
+    "notes": "Plan 1 named a c6-d5-e6-f5 chain and ...Ne4 with no knight on f6. Reworded plan 1; British spelling."
+  },
+  "rnbqkbnr/pppp2pp/4p3/5p2/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 3": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "26f8bef2253fc12e",
+    "notes": "Plan 2 read control of e4 as a move. Reworded plan 2; British spelling."
+  },
+  "rnbqkb1r/pppp2pp/4pn2/5p2/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "87ea904cbfc42cd2",
+    "notes": "Plan 3 put White's e4 push into Black's plan. Rewrote plan 3 (Classical or Stonewall set-up); British spelling."
+  },
+  "rnbqkbnr/ppppp2p/6p1/5p2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "c5e98147dbf3c87c",
+    "notes": "Plan 1 led with ...h6 and ...g5; plan 3 played ...Qe8-h5 through the king and the g6-pawn. Rewrote both around the Leningrad ...Qe8 and ...e5; British spelling."
+  },
+  "rnbqkb1r/ppppp1pp/5n2/5p2/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq - 2 3": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "dd46218628c761c6",
+    "notes": "Plan 4 played Qe8-h5 with the king on e8. Rewrote plan 4 (...e6, ...Be7, ...O-O first); British spelling."
+  },
+  "rnbqkb1r/pppp2pp/4pn2/5pB1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 1 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "d0df189f87f15c3f",
+    "notes": "Plan 3 suggested g5 with the bishop on g5; plan 1 overstated Bxf6 damaging the structure. Rewrote plans 1 and 3; British spelling."
+  },
+  "rnbqkb1r/ppp3pp/4pn2/3p1p2/2PP4/2N1P3/PP3PPP/R1BQKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "f7535c5cb8bc053b",
+    "notes": "Plan 1 routed the bishop through e8 with the king there; plan 2 read e5 as a move and called f3 a break. Rewrote plans 1 and 2; British spelling."
+  },
+  "rnbqkb1r/ppppp2p/5np1/5p2/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "d88a149d562f9cad",
+    "notes": "Plan 1 played ...Qe8-h5 through the g6-pawn and king. Rewrote plans 1 and 4 around the Leningrad set-up; British spelling."
   }
 }

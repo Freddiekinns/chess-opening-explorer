@@ -1,10 +1,10 @@
 # Plan reference check
 
-3393 references on 2638 of 12377 pages fail the check and show as plain text.
+3349 references on 2598 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5493 name no move, route, square or piece
-- References by kind: {"square":15300,"piece":14723,"move":53647,"route":9431}
-- References by result: {"now":67020,"on-board":13623,"later":9065,"invalid":3393}
+- Plans: 41062, of which 5490 name no move, route, square or piece
+- References by kind: {"square":15335,"piece":14752,"move":53659,"route":9427}
+- References by result: {"now":67104,"on-board":13654,"later":9066,"invalid":3349}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -20,54 +20,55 @@
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **A98 Dutch Defense: Classical Variation, Ilyin-Zhenevsky Variation, Alatortsev-Lisitsyn Line** (0 views)
-  - `e1-d3`: One step of e1-d3 can't be played here
-- **A98 Dutch: Ilyin-Zhenevsky, 8.Qc2 Qh5** (0 views)
-  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
-- **A99 Dutch: Ilyin-Zhenevsky, 8.b3 a5 9.Bb2 Qh5** (0 views)
-  - `...Rf6-h6`: One step of ...Rf6-h6 can't be played here
-- **A99 Dutch: Ilyin-Zhenevsky, 8.b3 Nbd7** (0 views)
-  - `...Nd7-f8-g6`: One step of ...Nd7-f8-g6 can't be played here
-- **A99 Dutch: Ilyin-Zhenevsky, 8.b3 Qh5** (0 views)
-  - `...Rf6-h6`: One step of ...Rf6-h6 can't be played here
-- **A99 Dutch: Ilyin-Zhenevsky, 8.b3 Qh5 9.Bb2** (0 views)
-  - `...Nh7-g5`: One step of ...Nh7-g5 can't be played here
-- **B00 Nimzowitsch Defence: 2.d4 d5 3.e5 Bf5** (0 views)
-  - `...Qb6`: No piece can play Qb6 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Kennedy Variation, Bielefelder Gambit** (0 views)
-  - `...Nge7-g6`: One step of ...Nge7-g6 can't be played here
-  - `Nb3`: No piece can play Nb3 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Kennedy Variation, de Smet Gambit** (0 views)
-  - `...Qxd6`: No piece can play Qxd6 here, now or after the plan's earlier moves
-  - `...Bxd6`: No piece can play Bxd6 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Kennedy Variation, Keres Attack** (0 views)
-  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Pseudo-Spanish Variation** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Scandinavian Variation, Advance Variation** (0 views)
-  - `...Qb6`: No piece can play Qb6 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Scandinavian Variation, Bogoljubow Variation, Heinola-Deppe Gambit** (0 views)
-  - `Ne2-f4`: Ne2 is ambiguous: the knights on c3 and g1 can both go there
-- **B00 Nimzowitsch Defense: Scandinavian Variation, Bogoljubow Variation, Richter Gambit** (0 views)
-  - `...Nxf3`: No piece can play Nxf3 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Scandinavian Variation, Bogoljubow Variation, Vehre Variation** (0 views)
-  - `d6`: No piece can play d6 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Scandinavian Variation, Exchange Variation** (0 views)
+- **B01 Scandinavian: 2...Nf6 3.Bb5+ Bd7 4.Be2 Nxd5 5.d4 Bf5** (0 views)
+  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
+- **B01 Scandinavian: 2...Qxd5 3.d4 e5** (0 views)
+  - `d5 pawn`: There is no pawn on d5, or on its way
+- **B01 Scandinavian: 2...Qxd5 3.Nc3 Qa5 4.Bc4 Nf6** (0 views)
+  - `...0-0`: No piece can play O-O here, now or after the plan's earlier moves
+- **B01 Scandinavian: 2...Qxd5 3.Nc3 Qa5 4.Nf3 Nf6** (0 views)
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **B01 Scandinavian: 2...Qxd5 3.Nc3 Qa5 4.Nf3 Nf6 5.Be2** (0 views)
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **B01 Scandinavian: 2...Qxd5 3.Nf3 Nf6** (0 views)
   - `g5`: No piece can play g5 here, now or after the plan's earlier moves
-  - `d6`: No piece can play d6 here, now or after the plan's earlier moves
-- **B00 Nimzowitsch Defense: Scandinavian Variation, Exchange Variation, Marshall Gambit** (0 views)
-  - `d6`: No piece can play d6 here, now or after the plan's earlier moves
-- **B00 Owen Defence: Matinovsky Gambit** (0 views)
-  - `fxg6`: No piece can play fxg6 here, now or after the plan's earlier moves
-- **B00 Owen Defence: Matovinsky Gambit Accepted** (0 views)
-  - `f3-g5`: One step of f3-g5 can't be played here
-- **B00 Owen Defense: Matovinsky Gambit** (0 views)
+- **B01 Scandinavian: 2...Qxd5, Main Line, 6.Bc4 Bf5** (0 views)
+  - `...Nd7-b6`: Nd7 is ambiguous: the knights on b8 and f6 can both go there
+- **B01 Scandinavian: 2...Qxd5, Main Line, 6.Bc4 Bf5 7.Bd2** (0 views)
+  - `...Nb6`: No piece can play Nb6 here, now or after the plan's earlier moves
+- **B01 Scandinavian: 2...Qxd5, Main Line, 6.Bc4 Bg4** (0 views)
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+  - `e4-e5`: One step of e4-e5 can't be played here
+- **B01 Scandinavian: 2...Qxd5, Main Line, 8.Qe2 Bb4 9.a3** (0 views)
+  - `c4-c5`: One step of c4-c5 can't be played here
+- **B01 Scandinavian: Icelandic Gambit, 5.Nf3** (0 views)
+  - `d2-d4`: One step of d2-d4 can't be played here
+- **B01 Scandinavian: Marshall, 4.c4 Nb6** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **B01 Scandinavian: Marshall, 4.c4 Nb6 5.Nf3 g6** (0 views)
+  - `e4-e5`: One step of e4-e5 can't be played here
+- **B01 Scandinavian: Marshall, 4.c4 Nb6 5.Nf3 g6 6.Be2 Bg7** (0 views)
+  - `d7-f8-e6`: One step of d7-f8-e6 can't be played here
+  - `d7-c5`: One step of d7-c5 can't be played here
+- **B01 Scandinavian: Marshall, 4.c4 Nb6 5.Nf3 g6 6.h3 Bg7** (0 views)
+  - `c8-d6`: One step of c8-d6 can't be played here
+- **B01 Scandinavian: Marshall, 4.c4 Nb6 5.Nf3 g6 6.Nc3 Bg7** (0 views)
+  - `e4-e5`: One step of e4-e5 can't be played here
+- **B01 Scandinavian: Portuguese, 4.Bb5+** (0 views)
+  - `...Be7`: No piece can play Be7 here, now or after the plan's earlier moves
+- **B01 Scandinavian: Portuguese, 4.f3** (0 views)
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **B02 Alekhine Defence:Krejcik Variation** (0 views)
+  - `f7-pawn`: There is no pawn on f7, or on its way
+- **B02 Alekhine Defense: Scandinavian Variation, Geschev Gambit** (0 views)
+  - `...Nxc6`: No piece can play Nxc6 here, now or after the plan's earlier moves
+- **B02 Alekhine Defense: Scandinavian Variation, Myers Gambit** (0 views)
   - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **B00 Owen Defense: Naselwaus Gambit** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **B00 Rat Defense: Fuller Gambit** (0 views)
-  - `e4 pawn`: There is no pawn on e4, or on its way
-- **B00 St. George Defence** (0 views)
-  - `c5`: No piece can play c5 here, now or after the plan's earlier moves
-- **B00 St. George Defence** (0 views)
-  - `...d5`: No piece can play d5 here, now or after the plan's earlier moves
+  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
+- **B02 Alekhine Defense: Spielmann Gambit** (0 views)
+  - `...Be7`: No piece can play Be7 here, now or after the plan's earlier moves
+- **B02 Alekhine: Scandinavian, Exchange** (0 views)
+  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
+- **B02 Alekhine: Scandinavian, Exchange, 4.Nxd5** (0 views)
+  - `d6`: No piece can play d6 here, now or after the plan's earlier moves
+  - `d8`: No piece can play d8 here, now or after the plan's earlier moves

@@ -45822,7 +45822,7 @@
     "name": "Caro-Kann: Panov-Botvinnik, 5...g6, Main Line",
     "scid": "B14f",
     "analysis_json": {
-      "description": "The Panov-Botvinnik with 5...g6 is a sharp and theoretically rich response, leading to dynamic and complex middlegames. White accepts an Isolated Queen's Pawn (IQP) in exchange for a space advantage and active piece play, while Black's fianchetto setup aims to control the long diagonal and blockade the central pawn. This opening is ideal for ambitious players who enjoy double-edged positions that require a deep understanding of both tactical initiative and long-term strategic plans.",
+      "description": "In this main line Black gives up the d5-pawn with 6...Bg7 7.cxd5 O-O, leaving White a pawn up with pawns on d4 and d5. White aims to complete development, usually with Be2 or Bc4 and Nf3 or Nge2, and keep the extra pawn; Black's compensation is quick development, pressure from the g7-bishop and play against the d5-pawn with ...Nbd7-b6. It suits players who like concrete, theoretical positions.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -45865,10 +45865,10 @@
         "Space Advantage vs. Structural Weakness"
       ],
       "common_plans": [
-        "White: Use the central space to develop pieces towards the kingside for an attack, often involving Ne5 and f4-f5 pushes.",
-        "White: Advance the d-pawn (d5) at a critical moment to break open the position and create tactical threats.",
-        "Black: Blockade the isolated d-pawn, typically with ...Nd5, and exchange pieces to transition into a favorable endgame.",
-        "Black: Utilize the g7-bishop to pressure White's center and queenside, often combining this with pressure along the c-file."
+        "White: Complete development with Be2 or Bc4, Nf3 and O-O, keep the extra d5-pawn protected, and only then look for active play.",
+        "White: Be ready for Black to regain the d5-pawn with ...Nbd7-b6 and ...Nfxd5; in return, finish development comfortably and keep the d4-pawn well protected.",
+        "Black: Win the d5-pawn back with ...Nbd7-b6 and pressure from the queen and rooks, or keep up the initiative if White holds on to it.",
+        "Black: Utilise the g7-bishop to pressure White's centre and queenside, often combining this with pressure along the c-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T23:35:37.253Z"
@@ -45883,7 +45883,7 @@
     "name": "Caro-Kann: Panov-Botvinnik, 5...g6, Main Line, 8.Be2",
     "scid": "B14g",
     "analysis_json": {
-      "description": "This variation of the Panov-Botvinnik Attack leads to a classic Isolated Queen's Pawn (IQP) position, creating a dynamic and strategically rich middlegame. White leverages a space advantage and active pieces for a potential kingside attack, while Black aims to blockade the d4-pawn, control the key d5 square, and generate counterplay using the fianchettoed bishop. This opening is ideal for strategic players who enjoy fighting around a central pawn structure, blending deep positional understanding with sharp tactical possibilities.",
+      "description": "After 6...Bg7 7.cxd5 O-O 8.Be2 White keeps the extra d5-pawn with calm development, planning Nf3 and O-O, while Black seeks compensation with ...Nbd7-b6 against d5 and pressure from the g7-bishop on the long diagonal. It is a theoretical line in which Black's activity is weighed against White's extra pawn, suiting players who enjoy concrete positions.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -45926,10 +45926,10 @@
         "Space Advantage vs. Structural Weakness"
       ],
       "common_plans": [
-        "White: Develop pieces to support a d5 pawn push, maneuver knights to powerful squares like e5, and launch a kingside attack.",
-        "Black: Establish a firm blockade on the d5 square, pressure the isolated d4-pawn, and trade minor pieces to transition into a favorable endgame.",
+        "White: Protect the d5-pawn with Bf3, develop with Nge2 and castle, keeping the extra pawn for as long as it is safe to do so.",
+        "Black: Attack the d5-pawn with ...Nbd7-b6 and the queen, and use the lead in development before White has castled.",
         "White: Use the open files to create threats and prevent Black from consolidating their blockade.",
-        "Black: Use the fianchettoed bishop on g7 to control the long diagonal and create counterplay against White's center and queenside."
+        "Black: Use the fianchettoed bishop on g7 to control the long diagonal and create counterplay against White's centre and queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T23:35:56.414Z"
@@ -46389,7 +46389,7 @@
       "icsbot": "Gurgenidze System, Caro-Kann "
     },
     "analysis_json": {
-      "description": "The Gurgenidze System is a flexible and provocative response to the Caro-Kann, blending the trademark solidity of 1...c6 with a King's Indian-style fianchetto. By delaying the typical ...dxe4 exchange, Black creates a complex strategic battle, aiming to control the long diagonal with the g7-bishop while maintaining a resilient pawn structure. This opening is ideal for creative and strategic players who enjoy steering the game into less-traveled territory and outmaneuvering opponents in positions where understanding is more important than rote memorization.",
+      "description": "The Gurgenidze System is a flexible and provocative response to the Caro-Kann, blending the trademark solidity of 1...c6 with a King's Indian-style fianchetto. By delaying the typical ...dxe4 exchange, Black creates a complex strategic battle, aiming to control the long diagonal with the g7-bishop while maintaining a resilient pawn structure. This opening is ideal for creative and strategic players who enjoy steering the game into less-travelled territory and outmanoeuvring opponents in positions where understanding is more important than rote memorisation.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -46431,7 +46431,7 @@
       "common_plans": [
         "Black fianchettoes the king's bishop to g7, puts pressure on d4, and often decides later whether to exchange on e4 or maintain central tension.",
         "White often tries to seize space with e5 or challenge the fianchetto structure directly with an early h4-h5 pawn push.",
-        "Black may reroute the queen's knight via d7 to f8 to support the kingside or to e8-f6.",
+        "Black: Develop the knights with ...Nd7 and ...Nh6 or ...Nf6, depending on whether White advances the e-pawn.",
         "White can develop classically with Nf3, Be2, and O-O, or choose a more aggressive setup with Be3, Qd2, and queenside castling."
       ],
       "version": "1.0",
@@ -46805,10 +46805,10 @@
         "Development Advantage"
       ],
       "common_plans": [
-        "White: Solidify the e4-pawn, develop pieces, and use the central space to launch an attack, often by castling long.",
-        "Black: Immediately challenge the center with the ...e5 pawn break to open lines and exploit White's weakened king position.",
+        "White: Keep the e4-knight supported, develop with Bc4 or Bd3 and Ne2, and use the central space for an attack, sometimes after castling long.",
+        "Black: Immediately challenge the centre with the ...e5 pawn break to open lines and exploit White's weakened king position.",
         "White: Complete development while defending against Black's immediate threats, aiming to prove the long-term value of the central pawn.",
-        "Black: Develop rapidly, targeting the weak e1-h4 diagonal and preventing White from consolidating the center."
+        "Black: Develop rapidly, targeting the weak e1-h4 diagonal and preventing White from consolidating the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T23:39:56.635Z"
@@ -46823,7 +46823,7 @@
     "name": "Caro-Kann: 4.Nxe4 Nf6 5.Ng3",
     "scid": "B15s",
     "analysis_json": {
-      "description": "This variation is a quiet and strategic approach against the Caro-Kann, sidestepping the main theoretical battles of 5.Nxf6+. White's 5.Ng3 aims for a maneuvering game, preserving the knight to support the center and prepare for future plans, leading to a position rich in strategic nuances rather than immediate tactical clashes. It suits players who prefer to outmaneuver their opponents in less-forced positions and appreciate long-term planning.",
+      "description": "This variation is a quiet and strategic approach against the Caro-Kann, sidestepping the main theoretical battles of 5.Nxf6+. White's 5.Ng3 aims for a manoeuvring game, preserving the knight to support the centre and prepare for future plans, leading to a position rich in strategic nuances rather than immediate tactical clashes. It suits players who prefer to outmanoeuvre their opponents in less-forced positions and appreciate long-term planning.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -46862,8 +46862,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, develop pieces (Be2, 0-0), play h3 to prevent ...Bg4, and potentially reroute the g3-knight to f1-e3.",
-        "Black: Complete development with ...e6, ...Be7, ...0-0, and challenge White's center with the ...c5 pawn break to create queenside counterplay."
+        "White: Develop with Nf3, Bd3 or Be2 and O-O, play c3 to support d4, and use the g3-knight to control the e4- and f5-squares.",
+        "Black: Complete development with ...e6, ...Be7 and ...O-O, and challenge White's centre with the ...c5 break to create queenside counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T23:40:15.169Z"
@@ -46919,9 +46919,9 @@
       ],
       "common_plans": [
         "White: Complete development with c3, Bd3, Nf3, and use the central space advantage to restrict Black's pieces.",
-        "Black (with ...exf6): Solidify the position with ...c5, use the semi-open e-file, and aim for a favorable endgame.",
+        "Black (after ...exf6): Develop quickly with ...Bd6 and ...O-O, use the open e-file, and aim for a solid position with chances in the endgame.",
         "Black (with ...gxf6): Create dynamic counterplay using the open g-file (...Rg8) and activate the light-squared bishop, often castling queenside.",
-        "White (vs. ...gxf6): Challenge Black's weakened kingside, often with h2-h4-h5, while maintaining central control."
+        "White (against ...gxf6): Target Black's weakened kingside, often by advancing the h-pawn, while maintaining central control."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T23:40:40.525Z"
@@ -47051,7 +47051,7 @@
     "name": "Caro-Kann: Gurgenidze: 4.e5",
     "scid": "B15f",
     "analysis_json": {
-      "description": "The Gurgenidze with 4.e5 is a modern and ambitious way for White to combat Black's fianchetto setup in the Caro-Kann. By seizing space in the center, White creates a structure similar to the Advance Variation, leading to a tense, strategic struggle. The game revolves around White's attempt to consolidate their spatial advantage and launch a kingside attack, versus Black's efforts to undermine the e5-pawn and activate the powerful g7-bishop. This opening is ideal for strategic players who enjoy complex, closed positions and long-term maneuvering.",
+      "description": "The Gurgenidze with 4.e5 is a modern and ambitious way for White to combat Black's fianchetto setup in the Caro-Kann. By seizing space in the centre, White creates a structure similar to the Advance Variation, leading to a tense, strategic struggle. The game revolves around White's attempt to consolidate their spatial advantage and launch a kingside attack, versus Black's efforts to undermine the e5-pawn and activate the powerful g7-bishop. This opening is ideal for strategic players who enjoy complex, closed positions and long-term manoeuvring.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -47091,8 +47091,8 @@
         "Fighting for Central Control"
       ],
       "common_plans": [
-        "White: Solidify the center with Nf3, Be2, O-O, and prepare a kingside expansion with the f2-f4-f5 pawn push.",
-        "Black: Challenge White's center with the ...c5 pawn break, often prepared with ...Bg7, ...e6, and ...Ne7.",
+        "White: Support the centre with f2-f4 and Nf3, develop with Be2 or Be3, and use the space for a kingside push, sometimes with h4-h5.",
+        "Black: Challenge White's centre with the ...c5 pawn break, often prepared with ...Bg7, ...e6, and ...Ne7.",
         "Black: Develop the queenside and put pressure on the d4 pawn, using the fianchettoed bishop as a key long-range piece.",
         "White: Restrict Black's pieces, particularly the light-squared bishop, and slowly improve piece placement before launching a decisive attack."
       ],
@@ -47284,7 +47284,7 @@
     "name": "Caro-Kann: Gurgenidze: 4.e5 Bg7 5.f4 Nh6",
     "scid": "B15g",
     "analysis_json": {
-      "description": "The Gurgenidze variation with 5.f4 Nh6 leads to a highly strategic and complex battle. White seizes a significant space advantage with the d4-e5-f4 pawn formation, aiming to cramp Black and launch a kingside attack. Black's plan is to remain solid, undermine White's center with pawn breaks like ...c5 and ...f6, and utilize the long-range power of the fianchettoed bishop. This opening is ideal for patient, strategic players who are comfortable maneuvering in cramped positions and excel at planning counter-attacks.",
+      "description": "The Gurgenidze variation with 5.f4 Nh6 leads to a highly strategic and complex battle. White seizes a significant space advantage with the d4-e5-f4 pawn formation, aiming to cramp Black and launch a kingside attack. Black's plan is to remain solid, undermine White's centre with pawn breaks like ...c5 and ...f6, and utilise the long-range power of the fianchettoed bishop. This opening is ideal for patient, strategic players who are comfortable manoeuvring in cramped positions and excel at planning counter-attacks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -47325,9 +47325,9 @@
         "The Bad vs. Good Bishop"
       ],
       "common_plans": [
-        "White: Solidify the center, develop with Nf3, Be2/d3, O-O, and often prepare a kingside attack with moves like h4-h5 or by transferring pieces.",
+        "White: Support the centre, develop with Nf3, Be2 or Bd3 and O-O, and often prepare a kingside attack with h4-h5 or by transferring pieces.",
         "Black: Prepare the ...c5 pawn break to challenge d4 and open lines on the queenside.",
-        "Black: Maneuver the knight from h6 to f7 to pressure the e5 pawn and aid in defense.",
+        "Black: Bring the h6-knight to f5, a strong post from which it presses on d4.",
         "Black: Prepare the ...f6 pawn break at an opportune moment to dismantle White's central pawn chain."
       ],
       "version": "1.0",
@@ -47460,7 +47460,7 @@
     "name": "Caro-Kann: Gurgenidze: 4.Nf3",
     "scid": "B15j",
     "analysis_json": {
-      "description": "The Gurgenidze System is a flexible and strategic response to the Caro-Kann, blending the solidity of the c6-d5 pawn structure with the dynamic potential of a kingside fianchetto. This opening leads to a complex, strategic battle where understanding pawn structures and long-term plans is more crucial than memorizing sharp tactical lines. It is ideal for creative and positional players who enjoy steering the game into less-trodden paths and outmaneuvering their opponents in a maneuvering middlegame.",
+      "description": "The Gurgenidze System is a flexible and strategic response to the Caro-Kann, blending the solidity of the c6-d5 pawn structure with the dynamic potential of a kingside fianchetto. This opening leads to a complex, strategic battle where understanding pawn structures and long-term plans is more crucial than memorising sharp tactical lines. It is ideal for creative and positional players who enjoy steering the game into less-trodden paths and outmanoeuvring their opponents in a manoeuvring middlegame.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -47501,8 +47501,8 @@
         "Transpositional possibilities"
       ],
       "common_plans": [
-        "White: Develop classically with Be2 and O-O, control the center, and try to exploit the dark-square weaknesses created by Black's ...g6, often with a timely h4-h5 push.",
-        "Black: Complete the fianchetto with ...Bg7, pressure White's d4-pawn, and seek counterplay by challenging the center with a ...c5 or ...e6 pawn break.",
+        "White: Develop classically with Be2 and O-O, control the centre, and try to exploit the dark-square weaknesses created by Black's ...g6, often with a timely h4-h5 push.",
+        "Black: Complete the kingside fianchetto, pressure White's d4-pawn with the bishop from g7, and seek counterplay by challenging the centre with ...Bg4 or ...dxe4.",
         "White: Restrict the Bg7 bishop and prepare a central expansion with c3 and eventually e5.",
         "Black: Maintain a solid structure, complete development, and prepare to create queenside counterplay or reroute pieces to challenge White's central grip."
       ],
@@ -155462,10 +155462,10 @@
         "Exploiting a Lead in Tempo"
       ],
       "common_plans": [
-        "White aims for rapid development (Nf3, O-O) and uses the open d-file and active queen to generate an attack after ...Bxd3 Qxd3.",
-        "Black accepts the pawn, consolidates with ...Nd7, ...Ngf6, ...e6, and tries to neutralize White's initiative.",
+        "White: Offer the d4-pawn: if Black takes it with the queen, develop rapidly with Nf3, Be3 and O-O, gaining time against the queen; if Black exchanges on d3 instead, recapture with the queen.",
+        "Black accepts the pawn, consolidates with ...Nd7, ...Ngf6, ...e6, and tries to neutralise White's initiative.",
         "White seeks to maintain central pressure and prove Black's development is lagging.",
-        "Black aims to trade pieces to simplify into a favorable endgame with an extra pawn."
+        "Black aims to trade pieces to simplify into a favourable endgame with an extra pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T16:19:21.844Z"

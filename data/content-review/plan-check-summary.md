@@ -1,10 +1,10 @@
 # Plan reference check
 
-3349 references on 2598 of 12377 pages fail the check and show as plain text.
+3300 references on 2558 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5490 name no move, route, square or piece
-- References by kind: {"square":15335,"piece":14752,"move":53659,"route":9427}
-- References by result: {"now":67104,"on-board":13654,"later":9066,"invalid":3349}
+- Plans: 41062, of which 5491 name no move, route, square or piece
+- References by kind: {"square":15352,"piece":14774,"move":53683,"route":9426}
+- References by result: {"now":67185,"on-board":13682,"later":9068,"invalid":3300}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -20,55 +20,54 @@
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **B01 Scandinavian: 2...Nf6 3.Bb5+ Bd7 4.Be2 Nxd5 5.d4 Bf5** (0 views)
-  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
-- **B01 Scandinavian: 2...Qxd5 3.d4 e5** (0 views)
-  - `d5 pawn`: There is no pawn on d5, or on its way
-- **B01 Scandinavian: 2...Qxd5 3.Nc3 Qa5 4.Bc4 Nf6** (0 views)
-  - `...0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **B01 Scandinavian: 2...Qxd5 3.Nc3 Qa5 4.Nf3 Nf6** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **B01 Scandinavian: 2...Qxd5 3.Nc3 Qa5 4.Nf3 Nf6 5.Be2** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **B01 Scandinavian: 2...Qxd5 3.Nf3 Nf6** (0 views)
-  - `g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **B01 Scandinavian: 2...Qxd5, Main Line, 6.Bc4 Bf5** (0 views)
-  - `...Nd7-b6`: Nd7 is ambiguous: the knights on b8 and f6 can both go there
-- **B01 Scandinavian: 2...Qxd5, Main Line, 6.Bc4 Bf5 7.Bd2** (0 views)
-  - `...Nb6`: No piece can play Nb6 here, now or after the plan's earlier moves
-- **B01 Scandinavian: 2...Qxd5, Main Line, 6.Bc4 Bg4** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-  - `e4-e5`: One step of e4-e5 can't be played here
-- **B01 Scandinavian: 2...Qxd5, Main Line, 8.Qe2 Bb4 9.a3** (0 views)
-  - `c4-c5`: One step of c4-c5 can't be played here
-- **B01 Scandinavian: Icelandic Gambit, 5.Nf3** (0 views)
-  - `d2-d4`: One step of d2-d4 can't be played here
-- **B01 Scandinavian: Marshall, 4.c4 Nb6** (0 views)
+- **B06 Modern: 3.Nc3 d6 4.Bc4** (0 views)
   - `f4-f5`: One step of f4-f5 can't be played here
-- **B01 Scandinavian: Marshall, 4.c4 Nb6 5.Nf3 g6** (0 views)
-  - `e4-e5`: One step of e4-e5 can't be played here
-- **B01 Scandinavian: Marshall, 4.c4 Nb6 5.Nf3 g6 6.Be2 Bg7** (0 views)
-  - `d7-f8-e6`: One step of d7-f8-e6 can't be played here
-  - `d7-c5`: One step of d7-c5 can't be played here
-- **B01 Scandinavian: Marshall, 4.c4 Nb6 5.Nf3 g6 6.h3 Bg7** (0 views)
-  - `c8-d6`: One step of c8-d6 can't be played here
-- **B01 Scandinavian: Marshall, 4.c4 Nb6 5.Nf3 g6 6.Nc3 Bg7** (0 views)
-  - `e4-e5`: One step of e4-e5 can't be played here
-- **B01 Scandinavian: Portuguese, 4.Bb5+** (0 views)
-  - `...Be7`: No piece can play Be7 here, now or after the plan's earlier moves
-- **B01 Scandinavian: Portuguese, 4.f3** (0 views)
+- **B06 Modern: 3.Nc3 d6 4.Bc4** (0 views)
+  - `Nf3-g5`: One step of Nf3-g5 can't be played here
+- **B06 Modern: Pseudo-Austrian Attack** (0 views)
+  - `Bxd4`: No piece can play Bxd4 here, now or after the plan's earlier moves
+- **B06 Modern: Two Knights, Suttles, Tal Gambit** (0 views)
+  - `...Qa3`: No piece can play Qa3 here, now or after the plan's earlier moves
+- **B06 Pterodactyl Defense: Austrian, Austriadactylus Western** (0 views)
+  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
+  - `Bd2`: No piece can play Bd2 here, now or after the plan's earlier moves
+- **B06 Pterodactyl Defense: Eastern, Benoni Pteranodon** (0 views)
+  - `...Nf6-d7-b6`: One step of ...Nf6-d7-b6 can't be played here
+- **B07 Lion Defense: Anti-Philidor** (0 views)
+  - `Nxd4`: No piece can play Nxd4 here, now or after the plan's earlier moves
+- **B07 Pirc Defense: 150 Attack, Inner Doll Defense** (0 views)
+  - `g4-g5`: One step of g4-g5 can't be played here
+- **B07 Pirc Defense: 150 Attack, Sveshnikov-Jansa Attack** (0 views)
+  - `Qd2-g2`: One step of Qd2-g2 can't be played here
+  - `h2`: No piece can play h2 here, now or after the plan's earlier moves
+- **B07 Pirc Defense: Bayonet Attack** (0 views)
+  - `Ng3-f5`: One step of Ng3-f5 can't be played here
+- **B07 Pirc Defense: Kholmov System** (0 views)
+  - `Qe1-h4`: One step of Qe1-h4 can't be played here
+- **B07 Pirc: 3.f3 e5 Queenswap** (0 views)
+  - `0-0-0`: No piece can play O-O-O here, now or after the plan's earlier moves
+  - `0-0-0`: No piece can play O-O-O here, now or after the plan's earlier moves
+- **B07 Pirc: 3.Nc3 e5 Queenswap** (0 views)
+  - `Kxd8`: No piece can play Kxd8 here, now or after the plan's earlier moves
+- **B07 Pirc/Reti: Wade Defence** (0 views)
   - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **B02 Alekhine Defence:Krejcik Variation** (0 views)
-  - `f7-pawn`: There is no pawn on f7, or on its way
-- **B02 Alekhine Defense: Scandinavian Variation, Geschev Gambit** (0 views)
-  - `...Nxc6`: No piece can play Nxc6 here, now or after the plan's earlier moves
-- **B02 Alekhine Defense: Scandinavian Variation, Myers Gambit** (0 views)
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **B02 Alekhine Defense: Spielmann Gambit** (0 views)
-  - `...Be7`: No piece can play Be7 here, now or after the plan's earlier moves
-- **B02 Alekhine: Scandinavian, Exchange** (0 views)
-  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
-- **B02 Alekhine: Scandinavian, Exchange, 4.Nxd5** (0 views)
-  - `d6`: No piece can play d6 here, now or after the plan's earlier moves
-  - `d8`: No piece can play d8 here, now or after the plan's earlier moves
+- **B08 Pirc Defense: Classical Variation, Quiet System, Parma Defense** (0 views)
+  - `gxf3`: No piece can play gxf3 here, now or after the plan's earlier moves
+- **B08 Pirc: Classical, 5.Bc4 c6** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **B08 Pirc: Classical, 5.Be2 c6** (0 views)
+  - `...b4`: No piece can play b4 here, now or after the plan's earlier moves
+- **B08 Pirc: Classical, 5.Be2 O-O 6.O-O Bg4 7.Be3 Nc6 8.Qd2** (0 views)
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **B09 Pirc Defense: Austrian Attack, Dragon Formation** (0 views)
+  - `g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **B09 Pirc Defense: Austrian Attack, Ljubojevic Variation** (0 views)
+  - `Qe1-h4`: One step of Qe1-h4 can't be played here
+- **B09 Pirc Defense: Austrian Attack, Weiss Variation** (0 views)
+  - `Qe1-h4`: One step of Qe1-h4 can't be played here
+- **B09 Pirc: Austrian, 5...c5 6.Bb5+** (0 views)
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **B09 Pirc: Austrian, 5...c5 6.Bb5+** (0 views)
+  - `...a6-b5`: One step of ...a6-b5 can't be played here
+- **B09 Pirc: Austrian, 5...c5 6.Bb5+ Bd7 7.e5 Ng4 8.e6 Bxb5** (0 views)
+  - `...Kg8`: No piece can play Kg8 here, now or after the plan's earlier moves

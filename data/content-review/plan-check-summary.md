@@ -1,10 +1,10 @@
 # Plan reference check
 
-3300 references on 2558 of 12377 pages fail the check and show as plain text.
+3265 references on 2528 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5491 name no move, route, square or piece
-- References by kind: {"square":15352,"piece":14774,"move":53683,"route":9426}
-- References by result: {"now":67185,"on-board":13682,"later":9068,"invalid":3300}
+- References by kind: {"square":15375,"piece":14782,"move":53700,"route":9415}
+- References by result: {"now":67247,"on-board":13691,"later":9069,"invalid":3265}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -20,54 +20,70 @@
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **B06 Modern: 3.Nc3 d6 4.Bc4** (0 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **B06 Modern: 3.Nc3 d6 4.Bc4** (0 views)
-  - `Nf3-g5`: One step of Nf3-g5 can't be played here
-- **B06 Modern: Pseudo-Austrian Attack** (0 views)
-  - `Bxd4`: No piece can play Bxd4 here, now or after the plan's earlier moves
-- **B06 Modern: Two Knights, Suttles, Tal Gambit** (0 views)
-  - `...Qa3`: No piece can play Qa3 here, now or after the plan's earlier moves
-- **B06 Pterodactyl Defense: Austrian, Austriadactylus Western** (0 views)
-  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
-  - `Bd2`: No piece can play Bd2 here, now or after the plan's earlier moves
-- **B06 Pterodactyl Defense: Eastern, Benoni Pteranodon** (0 views)
-  - `...Nf6-d7-b6`: One step of ...Nf6-d7-b6 can't be played here
-- **B07 Lion Defense: Anti-Philidor** (0 views)
-  - `Nxd4`: No piece can play Nxd4 here, now or after the plan's earlier moves
-- **B07 Pirc Defense: 150 Attack, Inner Doll Defense** (0 views)
-  - `g4-g5`: One step of g4-g5 can't be played here
-- **B07 Pirc Defense: 150 Attack, Sveshnikov-Jansa Attack** (0 views)
-  - `Qd2-g2`: One step of Qd2-g2 can't be played here
-  - `h2`: No piece can play h2 here, now or after the plan's earlier moves
-- **B07 Pirc Defense: Bayonet Attack** (0 views)
-  - `Ng3-f5`: One step of Ng3-f5 can't be played here
-- **B07 Pirc Defense: Kholmov System** (0 views)
-  - `Qe1-h4`: One step of Qe1-h4 can't be played here
-- **B07 Pirc: 3.f3 e5 Queenswap** (0 views)
-  - `0-0-0`: No piece can play O-O-O here, now or after the plan's earlier moves
-  - `0-0-0`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **B07 Pirc: 3.Nc3 e5 Queenswap** (0 views)
-  - `Kxd8`: No piece can play Kxd8 here, now or after the plan's earlier moves
-- **B07 Pirc/Reti: Wade Defence** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **B08 Pirc Defense: Classical Variation, Quiet System, Parma Defense** (0 views)
+- **B10 Caro-Kann: English Variation** (0 views)
+  - `Ne5`: No piece can play Ne5 here, now or after the plan's earlier moves
+- **B10 Caro-Kann: English Variation** (0 views)
+  - `d4-d5`: One step of d4-d5 can't be played here
+- **B10 Caro-Kann: English, Exchange** (0 views)
+  - `d5-d4`: One step of d5-d4 can't be played here
+- **B10 Caro-Kann: English, Exchange, 4...Nf6 5.Nc3 Nxd5** (0 views)
+  - `d4-d5`: One step of d4-d5 can't be played here
+- **B10 Caro-Kann: Two Knights, 3...dxe4 4.Nxe4 Nf6** (0 views)
+  - `...gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
+  - `...exf6`: No piece can play exf6 here, now or after the plan's earlier moves
+  - `...exf6`: No piece can play exf6 here, now or after the plan's earlier moves
+  - `...gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
+  - `...gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
+  - `...exf6`: No piece can play exf6 here, now or after the plan's earlier moves
+- **B11 Caro-Kann Defense: Two Knights Attack, Mindeno Variation** (0 views)
+  - `Qxf3`: No piece can play Qxf3 here, now or after the plan's earlier moves
   - `gxf3`: No piece can play gxf3 here, now or after the plan's earlier moves
-- **B08 Pirc: Classical, 5.Bc4 c6** (0 views)
+- **B11 Caro-Kann: Two Knights, 3...Bg4 4.h3** (0 views)
+  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
+- **B11 Caro-Kann: Two Knights, 3...Bg4 4.h3 Bxf3 5.Qxf3** (0 views)
+  - `e2`: No piece can play e2 here, now or after the plan's earlier moves
+- **B11 Caro-Kann: Two Knights, 3...Bg4 4.h3 Bxf3 5.Qxf3 e6 6.d3 Nd7** (0 views)
+  - `d6`: No piece can play d6 here, now or after the plan's earlier moves
+  - `d1`: No piece can play d1 here, now or after the plan's earlier moves
+- **B11 Caro-Kann: Two Knights, 3...Bg4 4.h3 Bxf3 5.Qxf3 e6 6.d3 Nf6** (0 views)
+  - `b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **B11 Caro-Kann: Two Knights, 3...Bg4 4.h3 Bxf3 5.Qxf3 e6 6.d3 Nf6 7.a3** (0 views)
+  - `e2`: No piece can play e2 here, now or after the plan's earlier moves
+  - `e2`: No piece can play e2 here, now or after the plan's earlier moves
+  - `d1`: No piece can play d1 here, now or after the plan's earlier moves
+- **B11 Caro-Kann: Two Knights, 3...Bg4 4.h3 Bxf3 5.Qxf3 e6 6.g3 Nf6** (0 views)
+  - `...Bb7`: No piece can play Bb7 here, now or after the plan's earlier moves
+  - `g2`: No piece can play g2 here, now or after the plan's earlier moves
+- **B12 Caro-Kann - Botvinnik-Carls Defense - 4. c3** (0 views)
   - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
-- **B08 Pirc: Classical, 5.Be2 c6** (0 views)
-  - `...b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **B08 Pirc: Classical, 5.Be2 O-O 6.O-O Bg4 7.Be3 Nc6 8.Qd2** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **B09 Pirc Defense: Austrian Attack, Dragon Formation** (0 views)
-  - `g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **B09 Pirc Defense: Austrian Attack, Ljubojevic Variation** (0 views)
-  - `Qe1-h4`: One step of Qe1-h4 can't be played here
-- **B09 Pirc Defense: Austrian Attack, Weiss Variation** (0 views)
-  - `Qe1-h4`: One step of Qe1-h4 can't be played here
-- **B09 Pirc: Austrian, 5...c5 6.Bb5+** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **B09 Pirc: Austrian, 5...c5 6.Bb5+** (0 views)
-  - `...a6-b5`: One step of ...a6-b5 can't be played here
-- **B09 Pirc: Austrian, 5...c5 6.Bb5+ Bd7 7.e5 Ng4 8.e6 Bxb5** (0 views)
-  - `...Kg8`: No piece can play Kg8 here, now or after the plan's earlier moves
+  - `f3-e1-d3`: One step of f3-e1-d3 can't be played here
+- **B12 Caro-Kann Advance Variation** (0 views)
+  - `f1-g3`: One step of f1-g3 can't be played here
+- **B12 Caro-Kann Advance Variation** (0 views)
+  - `Nxg6`: No piece can play Nxg6 here, now or after the plan's earlier moves
+  - `hxg6`: No piece can play hxg6 here, now or after the plan's earlier moves
+  - `f1-g3`: One step of f1-g3 can't be played here
+- **B12 Caro-Kann Defence - Advance Variation** (0 views)
+  - `...Nd7-f8-g6`: One step of ...Nd7-f8-g6 can't be played here
+- **B12 Caro-Kann Defence - Advance Variation** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+  - `exd3`: No piece can play exd3 here, now or after the plan's earlier moves
+  - `...Nd7-f8-g6`: One step of ...Nd7-f8-g6 can't be played here
+- **B12 Caro-Kann Defence - Advance Variation** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+  - `hxg6`: No piece can play hxg6 here, now or after the plan's earlier moves
+- **B12 Caro-Kann Defence - Advance Variation** (0 views)
+  - `Ne2-g3`: One step of Ne2-g3 can't be played here
+- **B12 Caro-Kann Defence - Advance Variation, 4.Nf3 e6 5.Be2** (0 views)
+  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
+  - `d7`: No piece can play d7 here, now or after the plan's earlier moves
+  - `e7`: No piece can play e7 here, now or after the plan's earlier moves
+- **B12 Caro-Kann Defence - Advance Variation, 4.Nf3 e6 5.Be2** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **B12 Caro-Kann Defense: Maróczy Variation** (0 views)
+  - `Rf1-f3-g3`: One step of Rf1-f3-g3 can't be played here
+- **B12 Caro-Kann Defense: Maróczy Variation, Maróczy Gambit** (0 views)
+  - `Rf3-g3`: One step of Rf3-g3 can't be played here
+- **B12 Caro-Kann: 3.Nd2 dxe4** (0 views)
+  - `Ng3-f5`: One step of Ng3-f5 can't be played here
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves

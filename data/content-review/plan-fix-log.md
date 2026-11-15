@@ -9,8 +9,8 @@ independent reviewer before commit; notes per page are in
 ## Totals
 
 - Failing references: 4,164 at the start of this job (2026-11-09 01:10 UTC run); 4,151 at the 02:10 UTC refresh; 4,108 on 3,215 pages at the 02:33 refresh (after batch 5); 4,035 on 3,155 pages at the 02:55 refresh (after batch 10); 3,976 on 3,105 pages at the 07:15 refresh (after batch 16); 3,928 on 3,065 pages at the 07:40 refresh (after batch 20); 3,834 on 2,985 pages at the 08:10 refresh (after batch 28); 3,750 on 2,915 pages at the 08:38 refresh (after batch 35); 3,684 on 2,860 pages at the 12:10 refresh (after batch 40); 3,628 on 2,816 pages at the 12:38 refresh (after batch 46); about 3,490 after batch 55; 3,496 on 2,717 pages at the 2026-11-15 19:12 refresh, after merging the feat/228 parser change that reads a hyphenated route whole (batch files from 2026-11-15 are numbered from 1); 3,445 on 2,678 pages at the 19:33 refresh (after batch 2026-11-15-4); 3,393 on 2,638 pages at the 19:46 refresh (after batch 2026-11-15-8)
-- Phase 1 pages left: about 2,600, skips excluded
-- Pages reviewed by this job: 665 (including five follow-ups to earlier batches)
+- Phase 1 pages left: about 2,591, skips excluded
+- Pages reviewed by this job: 675 (including five follow-ups to earlier batches)
 - Phase: 1
 
 ## Batches
@@ -83,3 +83,4 @@ independent reviewer before commit; notes per page are in
 | 2026-11-15 19:49 | 1     | 10    | 10 / 0 / 0                  | 13 / 2 (fixed, re-accepted) | none |
 | 2026-11-15 19:54 | 1     | 10    | 10 / 0 / 0                  | 19 / 4 (fixed, re-accepted) | none |
 | 2026-11-15 19:57 | 1     | 10    | 10 / 0 / 0                  | 15 / 2 (fixed, re-accepted) | none |
+| 2026-11-15 20:03 | 1     | 10    | 9 / 0 / 1                   | 16 / 4 (3 fixed, re-accepted; 1 plan left as it was, needs-research) | none |

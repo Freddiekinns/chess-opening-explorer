@@ -4684,5 +4684,65 @@
     "verdict": "fixed",
     "contentHash": "331f6051177c1f7d",
     "notes": "Plan 1 lifted a rook via f6 and g6 with the knight on f6; plan 3 named White's e4 break in Black's plan. Rewrote plans 1 and 3; British spelling."
+  },
+  "rnb1qrk1/ppp1b1pp/3ppn2/5p2/2PP4/2N2NP1/PPQ1PPBP/R1B2RK1 b - - 3 8": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "d7c20910b42d724b",
+    "notes": "Plan 4 wrote the knight route ambiguously; plan 3 sent the knight to h5 vaguely. Rewrote plans 3 and 4 (reviewer: plan 4's Nf3-e1-d3 rejected as unconfirmed after 8.Qc2, replaced with the e2-e4 break, re-accepted); British spelling."
+  },
+  "rnb2rk1/ppp1b1pp/3ppn2/5p1q/2PP4/2N2NP1/PPQ1PPBP/R1B2RK1 w - - 4 9": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "7ccae644fcdaeaf0",
+    "notes": "Plan 1 named White's e4 break in Black's plan. Rewrote plan 1; British spelling."
+  },
+  "rnb2rk1/1pp1b1pp/3ppn2/p4p1q/2PP4/1PN2NP1/PB2PPBP/R2Q1RK1 w - - 2 10": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "b809689407e4fdbf",
+    "notes": "Plan 1 lifted the rook via f6 with the knight there; plan 2 used a b-file still closed by the b3-pawn. Rewrote both plans."
+  },
+  "r1b1qrk1/pppnb1pp/3ppn2/5p2/2PP4/1PN2NP1/P3PPBP/R1BQ1RK1 w - - 1 9": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "b965926e321910d7",
+    "notes": "Plan 1 routed a knight via f8, where the rook stands. Rewrote plan 1; British spelling."
+  },
+  "rnb2rk1/ppp1b1pp/3ppn2/5p1q/2PP4/1PN2NP1/P3PPBP/R1BQ1RK1 w - - 1 9": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "04ca1ea232b6b388",
+    "notes": "Plan 1 lifted the rook via f6 with the knight there. Rewrote plan 1."
+  },
+  "rnb2rk1/ppp1b1pp/3ppn2/5p1q/2PP4/1PN2NP1/PB2PPBP/R2Q1RK1 b - - 2 9": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "2d7690f7479e50ce",
+    "notes": "Plan 1 played ...Nh7-g5 with no knight able to reach h7. Rewrote plan 1."
+  },
+  "r2qkbnr/ppp1pppp/2n5/3pPb2/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 1 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "894d810c650d9f28",
+    "notes": "Plan 1 relied on ...c5 and ...Qb6 with the c6-knight blocking the c-pawn. Rewrote plan 1; British spelling."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/2b1P3/4P3/8/PPP2PPP/RNBQKBNR w KQkq - 1 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "21ccb97a0916cea3",
+    "notes": "Plan 1's ...Nf6 clashed with ...Nge7-g6; plan 4 played Nb3 with no knight able to reach it. Rewrote plans 1 and 4 (reviewer: plan 4 rejected once for saying Nf3 covers f2, revised, re-accepted); British spelling."
+  },
+  "r1bqkbnr/ppp2ppp/2np4/4P3/4P3/8/PPP2PPP/RNBQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "2e041f0344162135",
+    "notes": "Plan 1 recaptured on d6 before White has taken there; plan 3 claimed pins that don't exist. Rewrote plans 1 and 3; British spelling."
+  },
+  "r1bqkbnr/pppp1ppp/8/4n3/4P3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 4": {
+    "reviewedAt": "2026-11-15",
+    "verdict": "fixed",
+    "contentHash": "c882fe311176f421",
+    "notes": "Plan 1 wrote the f-pawn push without its route; plan 2 named White's f4 in Black's plan. Rewrote both plans; British spelling."
   }
 }

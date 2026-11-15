@@ -1276,8 +1276,8 @@
         "Queenside Counterplay"
       ],
       "common_plans": [
-        "Black's plan is to challenge White's central pawn on d4 with moves like ...c5 and ...Qb6. After playing ...e6, Black will complete development (...Nge7, ...Be7) and seek counterplay against White's extended center.",
-        "White's plan is to solidify the center with c3 and Nf3, develop pieces harmoniously, and often challenge the f5-bishop with Nh4. White will use their space advantage to restrict Black and potentially build a kingside attack."
+        "Black: Play ...e6 and develop with ...Nge7, then undermine White's centre with ...f6; ...c5 is only possible once the c6-knight has moved.",
+        "White's plan is to solidify the centre with c3 and Nf3, develop pieces harmoniously, and often challenge the f5-bishop with Nh4. White will use their space advantage to restrict Black and potentially build a kingside attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:33:13.096Z"
@@ -3285,7 +3285,7 @@
       "icsbot": "Bileefelder Gambit, Nimzovich Defense "
     },
     "analysis_json": {
-      "description": "The Bielefelder Gambit is a sharp and aggressive response within the Nimzowitsch Defense, where Black sacrifices a pawn for rapid development and immediate pressure. By placing the bishop on c5, Black takes aim at White's weak f2-square and fights for the initiative, leading to a dynamic and tactical battle. This opening is perfect for creative, attacking players who enjoy taking calculated risks to seize control and dictate the flow of the game from the outset.",
+      "description": "The Bielefelder Gambit is a sharp and aggressive response within the Nimzowitsch Defence, where Black sacrifices a pawn for rapid development and immediate pressure. By placing the bishop on c5, Black takes aim at White's weak f2-square and fights for the initiative, leading to a dynamic and tactical battle. This opening is perfect for creative, attacking players who enjoy taking calculated risks to seize control and dictate the flow of the game from the outset.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -3327,10 +3327,10 @@
         "Rapid Development"
       ],
       "common_plans": [
-        "Black: Develop quickly with ...Nf6 and ...d6 to challenge the e5 pawn and open lines. Maneuver pieces (...Nge7-g6, ...Qh4) to create threats against White's kingside, especially the f2 pawn.",
-        "White: Solidify the center and the extra pawn with moves like Nf3, Be2/c4, and O-O. Aim to neutralize Black's initiative through careful defense and piece exchanges, hoping to convert the material advantage in the endgame.",
-        "Black: Recapture the e5 pawn under favorable circumstances, often transitioning from an initiative-based attack to a positionally equal or better middlegame.",
-        "White: Challenge Black's active bishop on c5 with moves like Nb3 or a timely a4, forcing it to move and relieving pressure."
+        "Black: Develop quickly with ...d6 or ...Nge7-g6 to win back the e5-pawn, and use the c5-bishop and ...Qh4 to create threats against f2.",
+        "White: Solidify the centre and the extra pawn with moves like Nf3, Be2/c4, and O-O. Aim to neutralise Black's initiative through careful defence and piece exchanges, hoping to convert the material advantage in the endgame.",
+        "Black: Recapture the e5 pawn under favourable circumstances, often transitioning from an initiative-based attack to a positionally equal or better middlegame.",
+        "White: Develop with Nf3, which also stops ...Qh4, castle quickly, and later harass the c5-bishop with Nbd2-b3."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:44:49.386Z"
@@ -3349,7 +3349,7 @@
       "icsbot": "Burgar Gambit, Nimzovich Defense "
     },
     "analysis_json": {
-      "description": "The de Smet Gambit is a sharp and unorthodox response within the Nimzowitsch Defense, where Black sacrifices a pawn to accelerate development and seize the initiative. This opening leads to dynamic, unbalanced positions and is perfect for aggressive players who enjoy taking calculated risks to create immediate attacking chances against an unprepared opponent.",
+      "description": "The de Smet Gambit is a sharp and unorthodox response within the Nimzowitsch Defence, where Black sacrifices a pawn to accelerate development and seize the initiative. This opening leads to dynamic, unbalanced positions and is perfect for aggressive players who enjoy taking calculated risks to create immediate attacking chances against an unprepared opponent.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -3390,10 +3390,10 @@
         "Opening Lines for Attack"
       ],
       "common_plans": [
-        "Black aims for rapid development after ...Qxd6 or ...Bxd6, using open files to pressure White's center and king before they can consolidate the extra pawn.",
-        "White seeks to accept the gambit, neutralize Black's initiative through careful development and piece trades, and convert the material advantage in the middlegame or endgame.",
-        "Black often develops with ...Nf6 and ...Bg4 to create pins and pressure on White's central setup.",
-        "White may try to return the pawn at a favorable moment to kill Black's initiative and gain a lasting positional edge."
+        "Black: If White takes on d6, recapture with the queen or the f8-bishop and use the open d-file and quick development to pressure White's centre and king before White consolidates.",
+        "White seeks to accept the gambit, neutralise Black's initiative through careful development and piece trades, and convert the material advantage in the middlegame or endgame.",
+        "Black: Develop quickly with ...Nf6 and ...Bg4 or ...Be6, using the lead in development to pressure White's centre.",
+        "White may try to return the pawn at a favourable moment to kill Black's initiative and gain a lasting positional edge."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:45:08.531Z"
@@ -3539,7 +3539,7 @@
       "icsbot": "Keres Attack, Nimzovich Defense "
     },
     "analysis_json": {
-      "description": "The Keres Attack against the Nimzowitsch Defense leads to a sharp and dynamic struggle for the center. White accepts the challenge, aiming to use a space advantage and the key f2-f4 pawn thrust to dislodge Black's central knight and launch an attack. This opening is perfect for aggressive, tactical players who enjoy fighting for the initiative in unbalanced positions and are comfortable navigating non-standard structures.",
+      "description": "The Keres Attack against the Nimzowitsch Defence leads to a sharp and dynamic struggle for the centre. White accepts the challenge, aiming to use a space advantage and the key f2-f4 pawn thrust to dislodge Black's central knight and launch an attack. This opening is perfect for aggressive, tactical players who enjoy fighting for the initiative in unbalanced positions and are comfortable navigating non-standard structures.",
       "style_tags": [
         "Dynamic",
         "Aggressive",
@@ -3580,8 +3580,8 @@
         "Undermining the Center"
       ],
       "common_plans": [
-        "White: Prepare and execute the f4 pawn thrust to gain space and attack the e5-knight, followed by kingside development and pressure.",
-        "Black: Develop quickly with moves like ...Nf6 and ...Bc5, find a good retreat for the e5-knight after f4, and create counterplay against White's extended center."
+        "White: Prepare and execute the f2-f4 thrust to gain space and attack the e5-knight, followed by kingside development and pressure.",
+        "Black: Develop quickly with ...Nf6 and ...Bc5, keep a good retreat ready for the e5-knight in case White pushes the f-pawn, and create counterplay against White's extended centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-18T18:46:11.615Z"

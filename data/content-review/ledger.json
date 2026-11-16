@@ -9172,5 +9172,65 @@
     "verdict": "needs-research",
     "contentHash": "3853d9e2ec8f6eff",
     "notes": "Plan 1 had ...Bxc5 with Black's own pawn on c5. Rewrite rejected (theory after 4...Nf6 unconfirmed: 5.Bb5+, 5.dxe6, 5.dxc5), old plan 1 kept with British spelling and its reference added to the skips. Plan 2 rewritten (it claimed White accepts with 5.dxc5) and accepted; British spelling in overview."
+  },
+  "rnbqkbnr/pp3ppp/4p3/2Pp4/4P3/8/PPPN1PPP/R1BQKBNR b KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "5a6d9a34ba5ad185",
+    "notes": "Overview had the isolated pawn on the wrong side (White space, Black blockading); plan 2 had a d4-d5 push with no White d-pawn. Rewrote overview and all four plans."
+  },
+  "r1bqkbnr/pp3ppp/2n1p3/2pp4/3PP3/5N2/PPPN1PPP/R1BQKB1R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "5ed00e90436aca33",
+    "notes": "Overview gave White the isolated pawn (the main line leaves it with Black after 5.exd5 exd5 6.Bb5 Bd6 7.dxc5 Bxc5); plan 3 had a d4-d5 push. Rewrote overview and all four plans."
+  },
+  "rnbqkb1r/pp3ppp/4pn2/2pp4/3PP3/5N2/PPPN1PPP/R1BQKB1R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "6c40843c31b39c43",
+    "notes": "Overview gave White the isolated pawn; plan 1 had a d4-d5 push; plan 3 had the exchange logic reversed. Rewrote overview and all four plans around the main line to 9...Nxc5."
+  },
+  "rnb1kbnr/pp3ppp/3qp3/8/2Bp4/5N2/PPPN1PPP/R1BQK2R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "863100a8b3e3d77d",
+    "notes": "Overview and plans described an isolated d4-pawn for White and a d4-d5 break; after the main line White regains d4 with the knight and there is no isolated pawn. Rewrote overview and both plans."
+  },
+  "r1b1kb1r/1p3ppp/p2qpn2/8/2BN4/2P5/PP3PPP/R1BQ1RK1 b kq - 0 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "3b1f7a9ed1a10203",
+    "notes": "Overview and plans described an isolated d4-pawn, a d5 push and blockade on d5, with no White d-pawn on the board. Rewrote overview and both plans."
+  },
+  "r1b1kb1r/1p3ppp/p2qpn2/8/2BN4/8/PPP2PPP/R1BQR1K1 b kq - 1 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "9ec5d50598e059ec",
+    "notes": "Plan 1 had an e5-push with no White e-pawn; plan 2 called ...Qc7 an unpin. Rewrote both plans (first plan 2 rewrite gave a wrong reason for ...Qc7, reviewer rejected, reworded and re-accepted)."
+  },
+  "rnbqkbnr/pp3ppp/8/2pp4/3P4/8/PPPN1PPP/R1BQKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "2b3b009ad1dcd1c6",
+    "notes": "Plan 2 had a d5-d4 push blocked by White's pawn; plan 3 wrote 0-0 and plan 4 Black moves without ellipses, so they read as White moves, and plan 4 claimed an open c-file. Rewrote plans 2-4; British spelling in overview and plan 1."
+  },
+  "rnbqkbnr/pp3ppp/8/2pp4/3P4/5N2/PPPN1PPP/R1BQKB1R b KQkq - 1 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "3c44a9d41d8d1b9c",
+    "notes": "Plan 2 had a ...d5-d4 push blocked by White's pawn. Rewrote plan 2; British spelling in overview."
+  },
+  "rnbqkbnr/pp3ppp/8/3p4/2pP4/5N2/PPPN1PPP/R1BQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "2dd51e25dd29a34b",
+    "notes": "Plan 2 had Black controlling c5 (no piece can go there); plan 1 used d4 as a White outpost with White's own pawn on it. Rewrote both plans; British spelling in overview."
+  },
+  "rnbqkbnr/1p3ppp/p7/2pp4/3P4/5N2/PPPNBPPP/R1BQK2R b KQkq - 1 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "c941de6689429319",
+    "notes": "Plan 4 had ...a6 stopping Nb5 (the point is to keep the bishop off b5); plan 2 claimed an open c-file; plan 1 blockaded on d4 with White's pawn there. Rewrote plans 1, 2 and 4."
   }
 }

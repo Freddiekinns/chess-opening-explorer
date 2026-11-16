@@ -5926,5 +5926,65 @@
     "verdict": "fixed",
     "contentHash": "e5b4e35981b06834",
     "notes": "Overview and plan 1 had White preparing f2-f4 and playing Nf3 (no knight can reach f3); plan 3 was vague. Rewrote overview and plans 1 and 3."
+  },
+  "r2qkbnr/pp1nppp1/2p4p/7P/3P4/3b1NN1/PPP2PP1/R1BQK2R w KQkq - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "96e380a3e3040835",
+    "notes": "Plan 2 gave Black a ...b5-b4 minority attack, which this structure doesn't have; plan 1 targeted e6/f7 vaguely. Rewrote plans 1-2; British spelling elsewhere."
+  },
+  "r2qkb1r/pp1n1pp1/2p1pn1p/7P/3P4/3Q1NN1/PPPB1PP1/R3K2R w KQkq - 2 12": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "458c6f9ba372f5b3",
+    "notes": "Plan 1 pushed g4-g5 with the g3-knight blocking the g-pawn. Rewrote plan 1 (Ne4 first); British spelling in plans 2 and 4."
+  },
+  "r3kbnr/ppqn1pp1/2p1p2p/7P/3P4/3Q1NN1/PPPB1PP1/R3K2R w KQkq - 2 12": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "702926d630be4580",
+    "notes": "Plan 1 pushed g4-g5 through the g3-knight; plan 2 castled short where this ...Qc7 line usually castles long. Rewrote plans 1-2; British spelling elsewhere."
+  },
+  "r2qkb1r/pp1n1pp1/2p1pn1p/7P/3P4/3Q1NN1/PPPB1PP1/2KR3R b kq - 3 12": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "54909477b9fbd9f0",
+    "notes": "Plan 1 pushed g2-g4-g5 through the g3-knight. Rewrote plan 1; British spelling."
+  },
+  "r2qk2r/pp1nbpp1/2p1pn1p/7P/3P4/3Q1NN1/PPPB1PP1/2KR3R w kq - 4 13": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "ccb326efaa0bf409",
+    "notes": "Plan 1 pushed g2-g4-g5 through the g3-knight; plan 4 repurposed the Bh7, which was traded on d3; plan 2 called a pawn advance at White's king a minority attack. Rewrote plans 1, 2, 4; British spelling."
+  },
+  "rn1qkbnr/pp3pp1/2p1p1bp/8/3P3P/5NN1/PPP2PP1/R1BQKB1R w KQkq - 0 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "0986776feabba90e",
+    "notes": "Plan 1 recaptured Qxd3 without the bishop trade the parser could follow; plan 3 routed a knight as ...Nd7-f6; plan 4 offered a minority attack. Rewrote plans 1, 3, 4; British spelling."
+  },
+  "rn1qkb1r/pp2ppp1/2p2nbp/7P/3P4/5NN1/PPP2PP1/R1BQKB1R b KQkq - 0 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "c79127066a88f82d",
+    "notes": "Plan 1 castled short and pushed g2-g4 through the g3-knight; plan 2 wrote the bishop trade so it could not be read. Rewrote plans 1-2; British spelling in plan 4."
+  },
+  "r2qkbnr/pp1nppp1/2p4p/7P/3P4/3Q1NN1/PPP2PP1/R1B1K2R b KQkq - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "48070cd1bdfbb408",
+    "notes": "Overview and plan 2 relied on a ...e5 break and activating the h7-bishop, which has been traded; plan 1 pushed g4-g5 through the g3-knight; plan 4's ...a5-a4 was not this line's idea. Rewrote overview and plans 1, 2, 4."
+  },
+  "r2qkbnr/pp1n1pp1/2p1p2p/7P/3P4/3Q1NN1/PPP2PP1/R1B1K2R w KQkq - 0 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "4673e9025c1942ab",
+    "notes": "Plan 1 pushed g2-g4-g5 through the g3-knight. Rewrote plan 1; British spelling in plan 2."
+  },
+  "r2qkbnr/pp1n1pp1/2p1p2p/7P/3P1B2/3Q1NN1/PPP2PP1/R3K2R b KQkq - 1 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "451a8c7eb219c8cb",
+    "notes": "Plan 1 pushed g4-g5 through the g3-knight; plan 2 wrote castling without the dots and ...Nf6 ambiguously; plan 3 called queen play a minority attack. Rewrote plans 1-3 (...Qa5+ is check)."
   }
 }

@@ -6056,8 +6056,8 @@
   "rnbqkbnr/pp1ppp1p/6p1/2p5/4P3/6P1/PPPP1P1P/RNBQKBNR w KQkq - 0 3": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "ef04a27c32b0ca5d",
-    "notes": "Plan 2 had Black play ...d6 and then ...d5. Rewrote plan 2; British spelling in the overview. Plan 1 (Re1 before castling) is fixed in the follow-up in batch 2026-11-16-6 (reviewer: the first draft had c3 covering d5)."
+    "contentHash": "0ead3b5782c93f3c",
+    "notes": "Follow-up to batch 2026-11-16-5: plan 1 played Re1 before castling. Rewrote plan 1 (reviewer: first draft had c3 covering d5)."
   },
   "r1bqkbnr/pp1ppppp/2n5/2p5/2P1P3/8/PP1PNPPP/RNBQKB1R b KQkq - 2 3": {
     "reviewedAt": "2026-11-16",
@@ -6106,5 +6106,65 @@
     "verdict": "fixed",
     "contentHash": "f48306ff176611f1",
     "notes": "Plan 1 wrote the queen lift as Qe1-h4 before castling. Rewrote plan 1; British spelling in plan 4."
+  },
+  "rnbqkbnr/pp2pppp/8/2ppP3/5P2/8/PPPP2PP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "4400e495552b53b7",
+    "notes": "Plan 3 routed the knight ...Nge7-g6 through Black's own e7-pawn. Rewrote plan 3; British spelling in the overview."
+  },
+  "rnbqkb1r/pp2pppp/5n2/1BpP4/5P2/8/PPPP2PP/RNBQK1NR b KQkq - 2 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "18b012a93f357d97",
+    "notes": "Plan 1 used a 'semi-open' f-file that White's f4-pawn closes and wrote castling as 0-0; plan 2 ignored the check. Rewrote plans 1-2; British spelling in plan 3."
+  },
+  "rnbqkbnr/pp1p1ppp/4p3/8/4P3/2N2N2/PP3PPP/R1BQKB1R b KQkq - 1 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a9f5df9d3f80dde4",
+    "notes": "Plan 3 named d6 and f7 as weak pawns (d6 is a square, the pawn is on d7); plan 1 called the d-file open. Rewrote plans 1 and 3; British spelling in plan 2."
+  },
+  "r1bqkbnr/pp2pppp/2np4/8/4P3/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "fb620c48152ec8e6",
+    "notes": "Plan 3 lifted a rook via e1-e3-g3 before castling; plan 1 called the d-file open. Rewrote plans 1 and 3; British spelling elsewhere."
+  },
+  "r1bqkb1r/pp3ppp/2nppn2/8/2B1P3/2N2N2/PP3PPP/R1BQ1RK1 w kq - 2 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "b02c09cae5acb4e5",
+    "notes": "Plan 1 pushed f2-f4-f5 through the f3-knight; overview and plan 4 called a d6-e6 structure a Hedgehog. Rewrote overview and plans 1 and 4; British spelling in plan 2."
+  },
+  "rnb1kbnr/pp2pppp/8/2pq4/8/2P5/PP1P1PPP/RNBQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "37f2b86e5c32cf70",
+    "notes": "Plan 1 developed a knight to c3, where White's pawn stands; plan 2 wrote the queen retreats as bare squares. Rewrote plans 1-2; British spelling in the overview."
+  },
+  "r3kbnr/pp2pppp/8/8/3n4/2N2P2/PP3P1P/R1B1KB1R w KQkq - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "3ddf3d647aa27d7a",
+    "notes": "Overview and plan 1 gave White a d4-pawn that Black has just taken and missed that Black is a pawn up and threatens ...Nc2+ and ...Nxf3+; plan 2 attacked a 'weak d4-pawn' (it is Black's knight). Rewrote overview and plans 1, 2, 4. Plan 3 (Nb1-d2-b3, with the knight already on c3) is fixed in the follow-up in batch 2026-11-16-7 (reviewer: first draft's Be3/Bb5+ do not chase the knight)."
+  },
+  "r1bqkb1r/pp1ppppp/2n5/2pnP3/8/N1P2N2/PP1P1PPP/R1BQKB1R b KQkq - 4 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "66f0ff8ab0631a54",
+    "notes": "Plan 3 pressed a d6-pawn that isn't there. Rewrote plan 3; British spelling in the overview."
+  },
+  "rnbqkbnr/pp2pppp/8/2pp4/4P3/2P5/PP1P1PPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "d37de7058b61fee7",
+    "notes": "Plan 1 wrote the d4-d5 break from a position where the d-pawn is still on d2. Rewrote plan 1; British spelling in plan 2."
+  },
+  "rnb1kbnr/pp2pppp/8/3q4/3p4/2P5/PP3PPP/RNBQKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "1c45b9b91b310059",
+    "notes": "Plan 1 used d5 as White's outpost (it is in front of White's isolated pawn); plan 3 broke with e5 when White has no e-pawn; plan 2 blockaded with ...Nf6. Rewrote plans 1-3."
   }
 }

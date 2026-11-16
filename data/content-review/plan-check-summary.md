@@ -1,10 +1,10 @@
 # Plan reference check
 
-2721 references on 2108 of 12377 pages fail the check and show as plain text.
+2661 references on 2058 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5479 name no move, route, square or piece
-- References by kind: {"square":15767,"piece":15053,"move":54156,"route":9149}
-- References by result: {"now":68230,"on-board":13998,"later":9176,"invalid":2721}
+- References by kind: {"square":15831,"piece":15061,"move":54185,"route":9115}
+- References by result: {"now":68344,"on-board":14007,"later":9180,"invalid":2661}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -32,45 +32,48 @@
   - `d5`: No piece can play d5 here, now or after the plan's earlier moves
 - **B57 Sicilian: Sozin, Benko, 7.Nb3** (0 views)
   - `c1-d3`: One step of c1-d3 can't be played here
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O Nc6 8.Nb3 O-O** (0 views)
-  - `d4 pawn`: There is no pawn on d4, or on its way
-  - `d2-e4`: One step of d2-e4 can't be played here
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O** (0 views)
+- **B76 Sicilian Defense: Dragon Variation, Yugoslav Attack** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5** (0 views)
+  - `Qe1-h4`: One step of Qe1-h4 can't be played here
+- **B76 Sicilian Defense: Dragon Variation, Yugoslav Attack, Modern Line** (0 views)
+  - `Bxh7+`: No piece can play Bxh7 here, now or after the plan's earlier moves
+  - `Nxg6`: No piece can play Nxg6 here, now or after the plan's earlier moves
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5** (0 views)
+- **B76 Sicilian Defense: Dragon Variation, Yugoslav Attack, Panov Variation** (0 views)
+  - `Kb1`: No piece can play Kb1 here, now or after the plan's earlier moves
+  - `...Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
+- **B76 Sicilian: Dragon, Yugoslav, 7.f3 O-O 8.Qd2** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3** (0 views)
+- **B76 Sicilian: Dragon, Yugoslav, 9.g4 Be6** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 a6** (0 views)
+- **B76 Sicilian: Dragon, Yugoslav, 9.g4 Nxd4** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 Be6** (0 views)
-  - `c1-d3`: One step of c1-d3 can't be played here
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 Be6 10.Kh1** (0 views)
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Bd7** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Re1** (0 views)
-  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Bd7 10.g4** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Re1 Nc6 9.Nb3** (0 views)
-  - `f3-d2`: One step of f3-d2 can't be played here
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Be2 Nc6** (0 views)
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5 10.exd5** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Bg5** (0 views)
-  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
-  - `Bxf6`: No piece can play Bxf6 here, now or after the plan's earlier moves
-  - `gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.Bg5** (0 views)
-  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
-- **B70 Sicilian: Dragon, 6.g3 Nc6** (0 views)
-  - `Nge2`: No piece can play Nge2 here, now or after the plan's earlier moves
-- **B71 Sicilian Defense: Dragon Variation, Levenfish Variation, Main Line** (0 views)
-  - `...Nf6-b8`: One step of ...Nf6-b8 can't be played here
-- **B72 Sicilian Defense: Dragon Variation** (0 views)
-  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5 10.exd5 Nxd5 11.Nxc6** (0 views)
+  - `c6-pawn`: There is no pawn on c6, or on its way
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5: 12.Bd4 e5** (0 views)
+  - `Bh6`: No piece can play Bh6 here, now or after the plan's earlier moves
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5: 12.Bd4 e5 13.Bc5 Be6** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B72 Sicilian Defense: Dragon Variation, Classical Variation** (0 views)
+  - `g7`: No piece can play g7 here, now or after the plan's earlier moves
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5: 12.Nxd5** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B72 Sicilian Defense: Dragon Variation, Classical Variation** (0 views)
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Nxd4 10.Bxd4 Be6** (0 views)
+  - `Bh6`: No piece can play Bh6 here, now or after the plan's earlier moves
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Nxd4: 11.Kb1** (0 views)
+  - `Bh6`: No piece can play Bh6 here, now or after the plan's earlier moves
+- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Nxd4: 11.Kb1 Qc7** (0 views)
+  - `Bh6`: No piece can play Bh6 here, now or after the plan's earlier moves
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B77 Sicilian Defense: Dragon Variation, Yugoslav Attack** (0 views)
+  - `Bxh7+`: No piece can play Bxh7 here, now or after the plan's earlier moves
+  - `Nxe6`: No piece can play Nxe6 here, now or after the plan's earlier moves
+  - `g7`: No piece can play g7 here, now or after the plan's earlier moves
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves

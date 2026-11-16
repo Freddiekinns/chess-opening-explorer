@@ -1,10 +1,10 @@
 # Plan reference check
 
-3149 references on 2449 of 12377 pages fail the check and show as plain text.
+2869 references on 2227 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5490 name no move, route, square or piece
-- References by kind: {"square":15453,"piece":14831,"move":53737,"route":9361}
-- References by result: {"now":67406,"on-board":13746,"later":9081,"invalid":3149}
+- Plans: 41062, of which 5481 name no move, route, square or piece
+- References by kind: {"square":15670,"piece":14979,"move":54016,"route":9228}
+- References by result: {"now":67973,"on-board":13918,"later":9133,"invalid":2869}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -20,55 +20,53 @@
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **B15 Caro-Kann: Gurgenidze: 4.Nf3** (0 views)
-  - `Bg7`: No piece can play Bg7 here, now or after the plan's earlier moves
-- **B15 Caro-Kann: Gurgenidze: 4.Nf3 Bg7 5.h3 Nf6 6.e5** (0 views)
+- **B22 Sicilian Defense: Heidenfeld Variation** (0 views)
+  - `Nb5`: No piece can play Nb5 here, now or after the plan's earlier moves
+- **B30 Sicilian Defense: Nyezhmetdinov-Rossolimo Attack: 3...a6?!** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **B41 Sicilian: Kan, 5.c4 Nf6 6.Nc3 Bb4** (0 views)
+  - `f3`: No piece can play f3 here, now or after the plan's earlier moves
+- **B44 Sicilian, Taimanov, Szen, 7.N1c3 a6** (0 views)
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **B45 Sicilian: Taimanov, Four Knights, 6.Nxc6 bxc6 7.e5 Nd5** (0 views)
+  - `Ne2-c3`: One step of Ne2-c3 can't be played here
+- **B46 Sicilian: Taimanov, 5...a6 6.Be2 Nge7** (0 views)
+  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
+  - `c8-b6`: One step of c8-b6 can't be played here
+- **B47 Sicilian Defense: Taimanov Variation, Bastrikov Variation, Ponomariov Gambit** (0 views)
+  - `...axb6`: No piece can play axb6 here, now or after the plan's earlier moves
+- **B47 Sicilian: Taimanov, 6.g3 a6 7.Bg2 d6** (0 views)
+  - `d4-pawn`: There is no pawn on d4, or on its way
+- **B47 Sicilian: Taimanov, 6.g3 a6 7.Bg2 Nf6** (0 views)
+  - `Nf1-g3`: One step of Nf1-g3 can't be played here
+- **B47 Sicilian: Taimanov, 6.g3 a6 7.Bg2 Nf6 8.O-O Bc5** (0 views)
+  - `Nb3`: No piece can play Nb3 here, now or after the plan's earlier moves
+- **B47 Sicilian: Taimanov, 6.g3 a6 7.Bg2 Nf6 8.O-O Be7 9.Re1** (0 views)
+  - `...Bxd4`: No piece can play Bxd4 here, now or after the plan's earlier moves
+- **B48 Sicilian: Taimanov, 6.Be3 a6 7.a3** (0 views)
+  - `f1`: No piece can play f1 here, now or after the plan's earlier moves
+- **B48 Sicilian: Taimanov, 6.Be3 a6 7.Bd3** (0 views)
+  - `...Nf6-e8-g7`: One step of ...Nf6-e8-g7 can't be played here
+- **B48 Sicilian: Taimanov, 6.Be3 a6 7.Bd3 Nf6 8.O-O Bd6** (0 views)
+  - `...d6-d5`: One step of ...d6-d5 can't be played here
+- **B49 Sicilian: Taimanov, 6.Be3 a6 7.Be2 Nf6 8.O-O Bb4 9.Na4 Be7** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **B49 Sicilian: Taimanov, 6.Be3 a6 7.Be2 Nf6 8.O-O Bb4 9.Na4 Be7 10.Nxc6** (0 views)
+  - `c6 pawn`: There is no pawn on c6, or on its way
+- **B49 Sicilian: Taimanov, 6.Be3 a6 7.Be2 Nf6 8.O-O Bb4 9.Na4 O-O** (0 views)
+  - `...Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
+- **B50 Sicilian Defense** (0 views)
   - `f4-f5`: One step of f4-f5 can't be played here
-- **B16 Caro-Kann Defense: Finnish Variation** (0 views)
-  - `Bf5`: No piece can play Bf5 here, now or after the plan's earlier moves
-- **B17 Caro-Kann Defense: Karpov Variation, Modern Main Line** (0 views)
-  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
-- **B17 Caro-Kann: Steinitz, 5.Bc4 Ngf6** (0 views)
-  - `gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
-- **B17 Caro-Kann: Steinitz, 5.Nf3 Ngf6** (0 views)
-  - `...O-O`: No piece can play O-O here, now or after the plan's earlier moves
-  - `...exf6`: No piece can play exf6 here, now or after the plan's earlier moves
-- **B17 Caro-Kann: Steinitz, 5.Nf3 Ngf6 6.Nxf6+** (0 views)
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **B17 Caro-Kann: Steinitz, 5.Ng5 Ngf6 6.Bd3** (0 views)
-  - `Bxe6`: No piece can play Bxe6 here, now or after the plan's earlier moves
-- **B18 Caro-Kann Defence: Burris Gambit accepted** (0 views)
-  - `d6`: No piece can play d6 here, now or after the plan's earlier moves
-  - `d8`: No piece can play d8 here, now or after the plan's earlier moves
-- **B18 Caro-Kann Defence:Burris Gambit accepted** (0 views)
-  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
-- **B18 Caro-Kann Defence:Classical Variation** (0 views)
-  - `0-0-0`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **B18 Caro-Kann Defense: Classical Variation, Flohr Variation** (0 views)
-  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
-  - `Nf4`: No piece can play Nf4 here, now or after the plan's earlier moves
-  - `h4-h5`: One step of h4-h5 can't be played here
-- **B18 Caro-Kann Defense: Martian Gambit** (0 views)
-  - `...e6`: No piece can play e6 here, now or after the plan's earlier moves
-- **B18 Caro-Kann: Classical, 5.Nc5** (0 views)
-  - `d7`: No piece can play d7 here, now or after the plan's earlier moves
-- **B18 Caro-Kann: Classical, 5.Nc5 b6** (0 views)
-  - `...c5`: No piece can play c5 here, now or after the plan's earlier moves
-- **B18 Caro-Kann: Classical, 5.Ng3** (0 views)
-  - `Bg6`: No piece can play Bg6 here, now or after the plan's earlier moves
-- **B18 Caro-Kann: Classical, 6.Bc4 e6 7.N1e2 Nf6** (0 views)
-  - `...Nd7-f8-g6`: Nd7 is ambiguous: the knights on b8 and f6 can both go there
-- **B18 Caro-Kann: Classical, 6.h4 h6 7.f4** (0 views)
-  - `g4-g5`: One step of g4-g5 can't be played here
-- **B18 Caro-Kann: Classical, 6.h4 h6 7.Nh3** (0 views)
-  - `...Nd7-f8`: One step of ...Nd7-f8 can't be played here
-- **B18 Caro-Kann: Classical, 6.N1e2** (0 views)
-  - `Nf3`: No piece can play Nf3 here, now or after the plan's earlier moves
-- **B19 Caro-Kann Defence: Classical Variation** (0 views)
-  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
-- **B19 Caro-Kann Defence: Classical Variation** (0 views)
-  - `g4-g5`: One step of g4-g5 can't be played here
-- **B19 Caro-Kann Defence:Classical Variation** (0 views)
-  - `g4-g5`: One step of g4-g5 can't be played here
-- **B19 Caro-Kann Defence:Classical Variation, Spassky, 10.Qxd3 e6** (0 views)
-  - `g2-g4-g5`: One step of g2-g4-g5 can't be played here
+- **B50 Sicilian Defense: Delayed Alapin Variation, with d6** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **B50 Sicilian Defense: Modern Variations** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **B50 Sicilian: 2.Nf3 d6 3.c3 Nf6** (0 views)
+  - `...cxd4`: No piece can play cxd4 here, now or after the plan's earlier moves
+- **B50 Sicilian: 2.Nf3 d6 3.c3 Nf6 4.Bd3** (0 views)
+  - `Nbd2`: No piece can play Nbd2 here, now or after the plan's earlier moves
+- **B50 Sicilian: 2.Nf3 d6 3.c3 Nf6 4.Bd3 Nc6** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+  - `...cxd4`: No piece can play cxd4 here, now or after the plan's earlier moves
+- **B50 Sicilian: 2.Nf3 d6 3.c3 Nf6 4.Be2** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves

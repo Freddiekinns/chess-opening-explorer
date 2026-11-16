@@ -50330,9 +50330,9 @@
         "King Safety"
       ],
       "common_plans": [
-        "White aims to neutralize Black's central pressure, often via exd5, complete development, and use the semi-open f-file for a kingside attack.",
-        "Black seeks to open the center to exploit White's slightly exposed king position, developing pieces quickly to challenge for control of the e4 and d5 squares.",
-        "After the central tension resolves (e.g., via exd5 exd4 or dxe4 dxe4), the game revolves around piece activity and controlling key lines in an open position.",
+        "White aims to neutralise Black's central pressure, often via exd5, complete development, and open the f-file with fxe5 for a kingside attack.",
+        "Black seeks to open the centre to exploit White's slightly exposed king position, developing pieces quickly to challenge for control of the e4 and d5 squares.",
+        "After the central tension resolves (for example with exd5 and ...exf4, or ...dxe4 and Nxe5), the game revolves around piece activity and controlling key lines in an open position.",
         "Both sides must carefully balance development with immediate threats, as a single tempo can decide who gains a lasting initiative."
       ],
       "version": "1.0",
@@ -50551,7 +50551,7 @@
       "icsbot": "Miles Gambit, KGD "
     },
     "analysis_json": {
-      "description": "The Miles Gambit is a sharp and ambitious line within the Falkbeer Countergambit where Black prioritizes rapid development and initiative over material. By placing the bishop on the active c5 square, Black creates immediate threats and challenges White's control of the center, leading to a complex tactical battle. This opening is perfect for dynamic players who enjoy seizing the initiative and are comfortable with imbalanced, concrete positions.",
+      "description": "The Miles Gambit is a sharp and ambitious line within the Falkbeer Countergambit where Black prioritises rapid development and initiative over material. By placing the bishop on the active c5 square, Black creates immediate threats and challenges White's control of the centre, leading to a complex tactical battle. This opening is perfect for dynamic players who enjoy seizing the initiative and are comfortable with imbalanced, concrete positions.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -50594,8 +50594,8 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "Black's Plan: Rapidly develop with ...Nf6 and ...0-0, maintain pressure on the f2-pawn, and use active pieces to launch a kingside attack before White can consolidate the extra pawn.",
-        "White's Plan: Carefully neutralize Black's threats (often with Nc3 and d4), complete development, secure the king, and aim to convert the material advantage in the middlegame or endgame."
+        "Black's Plan: Rapidly develop with ...Nf6 and ...O-O, use the c5-bishop's grip on the g1-square to keep White's king in the centre, and launch a kingside attack before White can consolidate the extra pawn.",
+        "White's Plan: Carefully neutralise Black's threats (often with Nf3, which also stops ...Qh4+), complete development, secure the king, and aim to convert the material advantage in the middlegame or endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:12:00.097Z"
@@ -50857,10 +50857,10 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "For Black, the plan is to develop rapidly with ...Nf6 and ...Nc6, targeting the weak f2 and d4 squares, preventing White from castling and consolidating.",
-        "For White, the primary goal is to survive the initial onslaught by carefully developing pieces (e.g., Nf3, d4), returning material if necessary to defuse the attack, and aiming to leverage the extra pawn(s) in a calmer endgame.",
+        "For Black, the plan is to develop rapidly with ...Nf6 and ...Nxc6, using the c5-bishop, which covers the g1-square, to keep White from castling and consolidating.",
+        "For White, the primary goal is to survive the initial onslaught by carefully developing pieces (e.g., Nf3, which also stops ...Qh4+), returning material if necessary to defuse the attack, and aiming to leverage the extra pawn(s) in a calmer endgame.",
         "Black must maintain constant pressure, using open lines and active pieces to create immediate threats against the white king, avoiding simplifying exchanges.",
-        "White seeks to challenge Black's active pieces, secure the king (sometimes via queenside castling), and transition into a favorable endgame where the material advantage becomes decisive."
+        "White seeks to challenge Black's active pieces, secure the king (sometimes via queenside castling), and transition into a favourable endgame where the material advantage becomes decisive."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:13:11.266Z"
@@ -51246,7 +51246,7 @@
     "name": "KGD: Falkbeer, 5.dxe4 Nxe4 6.Be3",
     "scid": "C32",
     "analysis_json": {
-      "description": "This line of the Falkbeer Countergambit leads to a sharp and dynamic struggle for central control. Black establishes a strong pawn and an active knight on e4, aiming for a quick initiative, while White's solid 6.Be3 challenges Black's central dominance and aims to exploit the potential weakness of the advanced e-pawn. This opening is ideal for players who enjoy tactical complications and fighting for the initiative right from the start.",
+      "description": "In this Falkbeer line Black has given up the e-pawn: after 5.dxe4 Nxe4 White is a pawn up, with the extra pawn on d5, while Black has an active knight on e4 and quick development. 6.Be3 develops and covers the c5-square, so Black's dark-squared bishop cannot easily use the a7-g1 diagonal against White's uncastled king. The play is sharp, with Black seeking piece activity against White's extra material, ideal for players who enjoy tactical complications and fighting for the initiative.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -51287,8 +51287,8 @@
         "Initiative"
       ],
       "common_plans": [
-        "White: Challenge the Ne4 with Nf3 and Bd3, complete development, and undermine the e4-pawn.",
-        "Black: Support the central outposts, develop quickly with ...Bd6 and ...c5, and use active pieces to create threats and maintain the initiative."
+        "White: Challenge the Ne4 with Nf3 and Bd3, complete development, and hold on to the extra d5-pawn.",
+        "Black: Keep the e4-knight active, develop quickly with ...Bd6 and ...O-O, and either win back the d5-pawn or use the lead in development against White's uncastled king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:15:07.277Z"
@@ -51362,7 +51362,7 @@
     "name": "KGD: Falkbeer, 5.dxe4 Nxe4 6.Nf3 Bc5 7.Qe2",
     "scid": "C32",
     "analysis_json": {
-      "description": "This is a sharp, tactical variation of the Falkbeer Countergambit where Black prioritizes rapid development and initiative over material. Black's active knight on e4 and bishop on c5 create immediate threats against the f2-pawn and the uncastled white king. White's critical 7.Qe2 response aims to neutralize these threats and challenge Black's central control, leading to a complex, double-edged battle ideal for players who thrive in dynamic and calculative positions.",
+      "description": "This is a sharp, tactical variation of the Falkbeer Countergambit where Black prioritises rapid development and initiative over material. Black's active knight on e4 and bishop on c5 create immediate threats against the f2-square and the uncastled white king. White's critical 7.Qe2 response aims to neutralise these threats and challenge Black's central control, leading to a complex, double-edged battle ideal for players who thrive in dynamic and calculative positions.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -51405,8 +51405,8 @@
         "King Safety for both sides"
       ],
       "common_plans": [
-        "White: Neutralize the c5-bishop, challenge the e4-knight (e.g., with Nd2), complete development (often via O-O-O), and use the semi-open f-file for a counterattack.",
-        "Black: Maintain the initiative with moves like ...f5 or ...Bf5, prevent White from consolidating, and build an attack against the white king before it finds safety.",
+        "White: Pin the e4-knight against Black's king with the queen on e2, complete development with Nc3 and Be3 to challenge the c5-bishop, and try to hold the extra pawn.",
+        "Black: Support the pinned e4-knight with ...Bf5 (the Charousek Gambit) or break the pin with ...Bf2+ (the Alapin Variation) or castling, prevent White from consolidating, and attack the king before it finds safety.",
         "White: Trade pieces to relieve the pressure and transition into a better endgame where the extra pawn might tell.",
         "Black: Keep pieces on the board to fuel the attack and exploit White's slightly exposed king position."
       ],
@@ -51545,7 +51545,7 @@
       "chronos": "KGD: Falkbeer, Alapin variation"
     },
     "analysis_json": {
-      "description": "The Alapin Variation of the Falkbeer Countergambit leads to an incredibly sharp and chaotic position where Black sacrifices material for a tremendous initiative. By forcing the white king to d1, Black's active pieces create immediate and dangerous threats, making this a perfect choice for aggressive players who thrive on tactical complications and attacking the king. White's task is to survive the onslaught, consolidate the extra pawn, and hope to exploit Black's own exposed king in the long run.",
+      "description": "The Alapin Variation of the Falkbeer Countergambit leads to an incredibly sharp and chaotic position where Black's early pawn sacrifice is repaid with a tremendous initiative. By forcing the white king to d1, Black's active pieces create immediate and dangerous threats, making this a perfect choice for aggressive players who thrive on tactical complications and attacking the king. White's task is to survive the onslaught, untangle the pieces, and hope to exploit Black's own exposed king in the long run.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -51586,10 +51586,10 @@
         "Exploiting Development Lead"
       ],
       "common_plans": [
-        "Black: Break the pin on the e4-knight with ...f5, maintain the attack on the exposed white king, and use the e4-pawn to cramp White's position.",
-        "White: Survive the initial attack, aim to trade queens to relieve pressure, and try to untangle pieces and bring the king to safety (e.g., via Ke2-f1).",
-        "Black: Develop rapidly with moves like ...O-O and ...Re8 to intensify the pressure on the e-file and against the centralized king.",
-        "White: Challenge Black's central knight and pawn with moves like Nc3 and eventually look to consolidate the extra material for an endgame advantage."
+        "Black: Support the pinned e4-knight with ...f5 or break the pin by castling, then keep attacking the exposed white king.",
+        "White: Survive the initial attack, aim to trade queens to relieve the pressure, and untangle the pieces to bring the king to safety.",
+        "Black: Develop rapidly with moves like ...O-O and ...Re8 to intensify the pressure on the e-file and against the centralised king.",
+        "White: Challenge Black's central pieces with Nc3, which hits both the d5-queen and the e4-knight, and look to consolidate before Black's initiative grows."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:16:39.479Z"
@@ -51851,8 +51851,8 @@
         "Exploiting Weak Squares"
       ],
       "common_plans": [
-        "White: Neutralize Black's pressure by challenging the e4-pawn with Nc3, untangle the kingside pieces, and try to consolidate the extra pawn. Trading pieces, especially queens, often favors White.",
-        "Black: Maintain the pin on the f3-knight, increase pressure on the f2-square, and prevent White from completing development. Black often keeps the king in the center or castles queenside to support the attack."
+        "White: Neutralise Black's pressure by challenging the e4-knight with Nc3, untangle the kingside pieces, and try to consolidate the extra pawn. Trading pieces, especially queens, often favours White.",
+        "Black: Break the pin on the e4-knight with ...Qe7, and meet Nc3 by exchanging knights on c3; against 8.g4, castle and bring a rook to e8 down the open e-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:17:44.572Z"
@@ -53107,7 +53107,7 @@
       "chronos": "KGA: bishop's gambit, classical defence"
     },
     "analysis_json": {
-      "description": "This variation of the Bishop's Gambit leads to a highly complex and double-edged struggle. White sacrifices a pawn for central control and attacking chances along the f-file, but is forced to place the king on the unusual f1 square. Black adopts a solid fianchetto setup, aiming to neutralize White's initiative and exploit the king's placement, making this a sharp battle ideal for creative and tactical players who are comfortable navigating unconventional positions.",
+      "description": "This variation of the Bishop's Gambit leads to a highly complex and double-edged struggle. White sacrifices a pawn for central control and attacking chances along the f-file, but is forced to place the king on the unusual f1 square. Black adopts a solid fianchetto setup, aiming to neutralise White's initiative and exploit the king's placement, making this a sharp battle ideal for creative and tactical players who are comfortable navigating unconventional positions.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -53148,10 +53148,10 @@
         "Fianchetto Defense"
       ],
       "common_plans": [
-        "White aims to complete development with Nf3, challenge the g5-pawn (often with h4), and use the open f-file to attack Black's king.",
-        "Black focuses on completing development with ...d6 and ...0-0, solidifying the position, and using the active queen and fianchettoed bishop for counterplay.",
-        "A key idea for White is to improve the king's position, often by maneuvering it to g2 via Kg2.",
-        "Black often seeks to undermine White's center with moves like ...c6 and ...d5, or create queenside counterplay."
+        "White aims to complete development with Nf3, which drives the queen from h4, then challenge the g5-pawn by advancing the h-pawn and use the half-open f-file to attack Black's king.",
+        "Black focuses on completing development with ...d6 and ...O-O, solidifying the position, and using the active queen and fianchettoed bishop for counterplay.",
+        "White often plays g3 to challenge the f4-pawn and puts the king on g2, as in the main line 7.g3 fxg3 8.Kg2.",
+        "Black often seeks to undermine White's centre with moves like ...c6 and ...d5, or create queenside counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:24:14.824Z"
@@ -53243,7 +53243,7 @@
       "icsbot": "Cozio; Hanneken; Prussian; Lichtenhein "
     },
     "analysis_json": {
-      "description": "The Cozio Defense is a sharp and respected reply to the Bishop's Gambit, immediately challenging White's central pawn on e4. This line leads to a dynamic and tactical battle where White aims to leverage a development lead and the open f-file for an attack, while Black seeks to undermine White's center and exploit the slightly exposed white king. It's an opening for players who are comfortable with complex, double-edged positions and enjoy fighting for the initiative from the very first moves.",
+      "description": "The Cozio Defence is a sharp and respected reply to the Bishop's Gambit, immediately challenging White's central pawn on e4. This line leads to a dynamic and tactical battle where White aims to leverage a development lead and the open f-file for an attack, while Black seeks to undermine White's centre and exploit the slightly exposed white king. It's an opening for players who are comfortable with complex, double-edged positions and enjoy fighting for the initiative from the very first moves.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -53286,9 +53286,9 @@
         "King Safety vs. Initiative"
       ],
       "common_plans": [
-        "White: Defend e4 (often with Nc3), castle, and use the open f-file for a kingside attack, often involving Rf1, Ng5, and Qh5.",
-        "Black: Continue to pressure e4, develop pieces quickly (...Be7, ...0-0), and challenge White's control of the center with a timely ...d5 pawn break.",
-        "White: Play d4 to solidify the center, blunt the c8-bishop, and create space for the pieces.",
+        "White: Defend e4 with 4.Nc3, develop with Nf3 and d4, castle and win back the f4-pawn with the c1-bishop, opening the f-file for a kingside attack.",
+        "Black: Continue to pressure e4, develop pieces quickly (...Be7, ...O-O), and challenge White's control of the centre with a timely ...d5 pawn break.",
+        "White: Play d4 to build a broad centre and free the c1-bishop to recapture on f4.",
         "Black: Exploit White's weakened kingside and potentially exposed king, often by rerouting pieces to challenge White's attacking setup."
       ],
       "version": "1.0",
@@ -158045,7 +158045,7 @@
     "eco": "C33",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Bishop's Gambit with 4.Ke2 is one of the most audacious and romantic lines in chess, harkening back to the 19th century. White willingly forfeits castling rights to gain a tempo on the black queen and build a powerful pawn center, leading to an incredibly sharp and unbalanced tactical battle. This opening is for fearless, creative attackers who are comfortable navigating chaos and calculating complex variations with their own king in the crossfire.",
+      "description": "The Bishop's Gambit with 4.Ke2 is one of the most audacious and romantic lines in chess, harkening back to the 19th century. White willingly forfeits castling rights hoping to gain time against the black queen with Nf3 and to build a powerful pawn centre, leading to an incredibly sharp and unbalanced tactical battle. This opening is for fearless, creative attackers who are comfortable navigating chaos and calculating complex variations with their own king in the crossfire.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -158087,9 +158087,9 @@
         "Exploiting the Exposed King"
       ],
       "common_plans": [
-        "White: Play d4 to seize the center, develop knights to f3 and c3, and manually walk the king to safety (e.g., Kf2-g1). Use the open f-file and superior development to launch a decisive attack.",
+        "White: Play d4 to seize the centre, develop the knights to f3 and c3 (Nf3 drives the queen away), and later tuck the king away towards g1 once the f2-square is no longer covered by the queen; recapturing on f4 with the c1-bishop opens the f-file.",
         "Black: Continue developing pieces to target the exposed white king (e.g., ...Nf6, ...d5). Prevent White from consolidating their central control and seek tactical opportunities to exploit the king's vulnerability.",
-        "Black: Aim to trade queens, as this often neutralizes White's attacking potential and leaves them with a permanently weakened king structure.",
+        "Black: Aim to trade queens, as this often neutralises White's attacking potential and leaves them with a permanently weakened king structure.",
         "White: Create threats against f7 and use the active bishop on c4 to control key diagonals, justifying the king's awkward placement with overwhelming piece activity."
       ],
       "version": "1.0",

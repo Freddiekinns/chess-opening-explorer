@@ -16736,7 +16736,7 @@
     "name": "French: Rubinstein, 4...Bd7 5.Nf3 Bc6 6.Bd3 Nd7 7.O-O Ngf6 8.Ng3",
     "scid": "C10x",
     "analysis_json": {
-      "description": "This line of the French Rubinstein is a sophisticated and strategic battleground where both sides engage in deep maneuvering. By retreating the knight to g3 instead of exchanging, White signals an intent to maintain tension and build a kingside initiative, often based on the f2-f4 pawn push. Black's setup is exceptionally solid, aiming to neutralize White's central space and create counterplay with a timely ...c5 break. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and understanding the nuances of piece placement.",
+      "description": "8.Ng3 avoids an exchange of knights and keeps more pieces on the board. White hopes the extra space and the d3-bishop, aimed at h7, will give a lasting edge, and the g3-knight can later jump to f5 or h5. Black's set-up is very solid: the c6-bishop can exchange itself for the f3-knight, ...Be7 and ...O-O complete development, and the ...c5 break challenges White's centre. It suits patient, strategic players.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -16777,10 +16777,10 @@
         "Timing the c5 pawn break for Black"
       ],
       "common_plans": [
-        "White: Prepare and execute the f2-f4-f5 pawn push to open lines against the Black king, often rerouting the g3 knight to h5.",
-        "Black: Prepare and time the ...c7-c5 pawn break to undermine White's center and create queenside counterplay.",
+        "White: Keep the pieces on, with the g3-knight eyeing the f5- and h5-squares, and use Re1, c4 and the d3-bishop to build pressure on Black's kingside.",
+        "Black: Prepare and time the ...c7-c5 pawn break to undermine White's centre and create queenside counterplay.",
         "White: Maintain central control, restrict Black's pieces, and slowly build pressure on the kingside.",
-        "Black: Complete development, exchange pieces to ease pressure, and neutralize White's initiative before it becomes dangerous."
+        "Black: Complete development, exchange pieces to ease pressure, and neutralise White's initiative before it becomes dangerous."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:03:07.743Z"
@@ -17394,7 +17394,7 @@
       "chessGraph": "C12"
     },
     "analysis_json": {
-      "description": "The Classical Variation, initiated by 4. Bg5, is one of White's most ambitious and principled responses to the French Defense. White immediately develops a piece and creates a pin on the f6-knight, challenging Black's central control and preparing for a dynamic struggle. This opening leads to rich, complex middlegames where strategic understanding of pawn structures and tactical alertness are paramount, suiting players who enjoy a deep theoretical and practical battle.",
+      "description": "The Classical Variation, initiated by 4. Bg5, is one of White's most ambitious and principled responses to the French Defence. White immediately develops a piece and creates a pin on the f6-knight, challenging Black's central control and preparing for a dynamic struggle. This opening leads to rich, complex middlegames where strategic understanding of pawn structures and tactical alertness are paramount, suiting players who enjoy a deep theoretical and practical battle.",
       "style_tags": [
         "Strategic",
         "Classical",
@@ -17437,9 +17437,9 @@
         "Exploiting structural weaknesses"
       ],
       "common_plans": [
-        "White: Control the center, often with f4, and attack Black's kingside or structural weaknesses.",
-        "Black: Challenge White's center with ...c5 or ...dxe4, and create counterplay on the queenside or against White's center.",
-        "In the Burn sub-variation (after ...dxe4 and ...gxf6), White attacks the weakened kingside while Black uses the open g-file and bishop pair for counterplay."
+        "White: Control the centre, often with f4, and attack Black's kingside or structural weaknesses.",
+        "Black: Challenge White's centre with ...c5 or ...dxe4, and create counterplay on the queenside or against White's centre.",
+        "In the Burn line, 4...dxe4 5.Nxe4 Be7 6.Bxf6, Black can recapture with the g-pawn: White then attacks the weakened kingside, while Black uses the half-open g-file and the bishop pair."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:06:28.350Z"
@@ -17628,7 +17628,7 @@
       ],
       "common_plans": [
         "Black's plan is to use the open g-file for a kingside attack with ...Rg8, often after castling queenside. Black will also fight for central control, particularly the e5-square, and leverage the long-term potential of the bishop pair.",
-        "White's plan is to exploit Black's structural weaknesses, especially the exposed king and the doubled f-pawns. This is often achieved by developing pieces like Nf3-g3-f5, controlling the dark squares, and launching a methodical attack on the weakened kingside."
+        "White's plan is to exploit Black's broken kingside pawns: develop with Nf3 and Qd2, often followed by long castling, keep the knight on its strong central post, and play against the weakened pawns and Black's king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:07:22.477Z"
@@ -18292,7 +18292,7 @@
       "icsbot": "Burn Variation, French "
     },
     "analysis_json": {
-      "description": "The Burn Variation is a solid and reliable response to the Classical French, where Black immediately resolves the central tension with 4...dxe4. This leads to a less sharp, more strategic game compared to other main lines, focusing on piece play and structural nuances. It's an excellent choice for players who prefer to neutralize White's early initiative and steer the game towards a technical middlegame where understanding pawn structures and piece activity is paramount.",
+      "description": "The Burn Variation is a solid and reliable response to the Classical French, where Black immediately resolves the central tension with 4...dxe4. This leads to a less sharp, more strategic game compared to other main lines, focusing on piece play and structural nuances. It's an excellent choice for players who prefer to neutralise White's early initiative and steer the game towards a technical middlegame where understanding pawn structures and piece activity is paramount.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -18332,8 +18332,8 @@
         "Targeting the d4-pawn"
       ],
       "common_plans": [
-        "White: Use the space advantage to develop smoothly, often bolstering the center with f4, and preparing a kingside attack or pressure on the d-file.",
-        "Black: Challenge White's center with the ...c5 pawn break, trade pieces to relieve the space disadvantage, and solve the problem of the light-squared bishop, often via ...b6 and ...Ba6 or ...Bd7-e8-g6."
+        "White: Regain the pawn with Nxe4, keep the space advantage and smoother development with Nf3, Bd3 and Qd2 or Qe2, and often castle queenside for a kingside attack.",
+        "Black: Develop with ...Be7 or ...Nbd7, free the game with ...c5, and bring the light-squared bishop out with ...b6 and ...Bb7; when White trades the g5-bishop for the f6-knight, Black gets the bishop pair."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:10:28.093Z"
@@ -18522,7 +18522,7 @@
     "name": "French: Burn, 5.Nxe4 Nbd7 6.Nf3",
     "scid": "C11q",
     "analysis_json": {
-      "description": "The Burn Variation of the French Defense is a highly solid and strategic system where Black immediately releases central tension to achieve a resilient, albeit slightly passive, pawn structure. White gains a comfortable space advantage and free development, aiming to build a central attack, while Black prepares to undermine White's center with moves like ...c5. This opening is perfect for patient, strategic players who are adept at defense, counter-attack, and exploiting subtle positional nuances rather than seeking immediate tactical complications.",
+      "description": "The Burn Variation of the French Defence is a highly solid and strategic system where Black immediately releases central tension to achieve a resilient, albeit slightly passive, pawn structure. White gains a comfortable space advantage and free development, aiming to build a central attack, while Black prepares to undermine White's centre with moves like ...c5. This opening is perfect for patient, strategic players who are adept at defence, counter-attack, and exploiting subtle positional nuances rather than seeking immediate tactical complications.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -18562,10 +18562,10 @@
         "The d4-pawn as a Target"
       ],
       "common_plans": [
-        "White: Utilize the space advantage to build pressure, often preparing a kingside attack with f4-f5 or simply controlling the center with c3 and Bd3.",
+        "White: Use the space advantage and smoother development with Bd3 and Qe2, castle, and keep Black cramped by exchanging on f6 at the right moment.",
         "Black: Prepare and execute the ...c5 pawn break to challenge White's d4-pawn and open lines for counterplay on the queenside.",
         "Black: Complete development harmoniously (...Be7, ...O-O) and seek to exchange pieces to relieve the spatial pressure.",
-        "White: Restrain Black's counterplay, particularly the ...c5 break, and convert the spatial plus into a tangible attack or a favorable endgame."
+        "White: Restrain Black's counterplay, particularly the ...c5 break, and convert the spatial plus into a tangible attack or a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:11:42.643Z"
@@ -19223,7 +19223,7 @@
     "name": "French: Steinitz, 5.Nf3 c5",
     "scid": "C11d",
     "analysis_json": {
-      "description": "This variation of the French Defense features Black's most principled and common response to the Steinitz advance. By playing 5...c5, Black immediately challenges White's central pawn on d4, initiating a tense strategic battle. The game revolves around Black's attempt to undermine White's central space advantage, while White aims to consolidate, restrict Black's pieces, and often launch a kingside attack. This opening is perfect for strategic players who enjoy complex pawn structures and generating counterplay from a solid but slightly cramped position.",
+      "description": "This variation of the French Defence features Black's most principled and common response to the Steinitz advance. By playing 5...c5, Black immediately challenges White's central pawn on d4, initiating a tense strategic battle. The game revolves around Black's attempt to undermine White's central space advantage, while White aims to consolidate, restrict Black's pieces, and often launch a kingside attack. This opening is perfect for strategic players who enjoy complex pawn structures and generating counterplay from a solid but slightly cramped position.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -19264,9 +19264,9 @@
       ],
       "common_plans": [
         "Black's primary plan is to exert pressure on the d4 pawn via ...Nc6, ...Qb6, and eventually ...cxd4 to open the c-file and create weaknesses in White's camp.",
-        "White aims to solidify the center, often with c3, develop pieces harmoniously, and prepare for a kingside attack, frequently initiated by a timely f4-f5 push.",
+        "White: Take on c5 with dxc5 to free the d4-square for pieces, support the e5-pawn with Bf4, and develop with Bd3 and O-O, aiming pieces at Black's kingside.",
         "A key struggle involves Black's light-squared bishop; Black will try to trade it off or activate it via ...b6 and ...Ba6, while White seeks to keep it passive.",
-        "After the center clarifies (e.g., after ...cxd4 Nxd4), the game often revolves around Black's pressure on the d4-knight and White's control of the e5 square and corresponding attacking chances."
+        "After the centre clarifies (e.g., after ...cxd4 Nxd4), the game often revolves around Black's pressure on the d4-knight and White's control of the e5 square and corresponding attacking chances."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:40:47.216Z"
@@ -19379,10 +19379,10 @@
         "Central pawn breaks"
       ],
       "common_plans": [
-        "White: Develop with Nf3, Be2/d3, castle, and try to establish a knight on the d4 outpost, often followed by pressure on the kingside.",
+        "White: Develop with Nf3, Bd3 and O-O, keep the e5-pawn supported by f4, and plant a knight on the d4-square, which Black's pawns can no longer attack.",
         "Black: Recapture on c5 (usually with ...Bxc5), control the d4-square, and seek counterplay on the queenside with moves like ...a6 and ...b5.",
         "White: Control the c-file and pressure Black's queenside if Black's pieces are focused elsewhere.",
-        "Black: Challenge White's space advantage with a timely ...f6 pawn break or by rerouting the f7-knight."
+        "Black: Challenge White's space advantage with a timely ...f6, opening the f-file and freeing the d7-knight."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:41:19.407Z"
@@ -19437,8 +19437,8 @@
         "Battle for key squares (c4, d4, e5)"
       ],
       "common_plans": [
-        "Black: Prepare and execute the ...b5 pawn break to challenge White's queenside and open lines. Exchange on d4 (...cxd4) and then exert pressure on the d4 pawn, often with ...Qb6. Reroute the Nfd7 to a more active square like f8 or b6.",
-        "White: Solidify the center with Qd2, castle kingside, and prepare a kingside attack, potentially using the f-pawn. Control the c-file after an exchange on d4. Restrain Black's queenside expansion or prepare to meet ...b5 with a4."
+        "Black: Gain queenside space with ...b5, exchange on d4 with ...cxd4 and pile up on the d4-pawn with ...Qb6 and ...Bc5.",
+        "White: Develop with Qd2, keep the d4-e5-f4 chain intact, and answer ...b5 with a3 so that ...b4 cannot drive the c3-knight away; taking on c5 with dxc5 frees the d4-square for White's pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:41:39.494Z"
@@ -170322,7 +170322,7 @@
     "name": "French Defense: Steinitz Variation",
     "added": "Feb 2025",
     "analysis_json": {
-      "description": "The French Defense, Steinitz Variation with 3...a6 is a solid and strategic choice, leading to a closed game defined by pawn structures. Black's early ...a6 is a subtle move that prepares queenside expansion with ...b5 while controlling the b5-square, aiming to undermine White's central space advantage. This opening is perfect for patient, strategic players who enjoy maneuvering their pieces and executing long-term plans based on pawn breaks.",
+      "description": "The French Defence, Steinitz Variation with 3...a6 is a solid and strategic choice, leading to a closed game defined by pawn structures. Black's early ...a6 is a subtle move that prepares queenside expansion with ...b5 while controlling the b5-square, aiming to undermine White's central space advantage. This opening is perfect for patient, strategic players who enjoy manoeuvring their pieces and executing long-term plans based on pawn breaks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -170362,10 +170362,10 @@
         "Maneuvering behind the pawn chain"
       ],
       "common_plans": [
-        "White: Bolster the d4-pawn with c3, prepare a kingside attack with f4-f5, and use the space advantage.",
-        "Black: Execute the ...c5 pawn break to challenge the center, followed by queenside expansion with ...b5.",
-        "White: Control the d4-square as a potential outpost for a knight.",
-        "Black: Solve the problem of the 'bad' light-squared bishop, often via ...b6 and ...Ba6 or ...Bd7-e8-g6."
+        "White: Support d4 with Be3 or by rerouting the c3-knight to e2, develop with Bd3 and O-O, and use the space advantage on the kingside.",
+        "Black: Execute the ...c5 pawn break to challenge the centre, followed by queenside expansion with ...b5.",
+        "White: If Black plays ...c5 and exchanges with ...cxd4, recapture on d4 with the f3-knight and use the square as a central post.",
+        "Black: Use ...a6 to support ...b5 and queenside space, and free the light-squared bishop by opening lines with ...c5 and ...f6."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:31:43.346Z"
@@ -170380,7 +170380,7 @@
     "name": "French Defense: Steinitz Variation",
     "added": "Feb 2025",
     "analysis_json": {
-      "description": "The French Defense, Steinitz Variation with 6. a3, leads to a highly strategic and closed game. Both sides engage in a patient maneuvering battle, with White aiming to leverage a kingside space advantage while Black prepares the classic ...c5 pawn break to challenge White's center and create queenside counterplay. This opening is perfect for positional players who enjoy long-term planning, understanding pawn structures, and slowly building pressure.",
+      "description": "The French Defence, Steinitz Variation with 6. a3, leads to a highly strategic and closed game. Both sides engage in a patient manoeuvring battle, with White aiming to leverage a kingside space advantage while Black prepares the classic ...c5 pawn break to challenge White's centre and create queenside counterplay. This opening is perfect for positional players who enjoy long-term planning, understanding pawn structures, and slowly building pressure.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -170420,9 +170420,9 @@
         "Maneuvering in Closed Positions"
       ],
       "common_plans": [
-        "White: Bolster the d4-pawn with c3, develop for a kingside attack (Ne2-g3, f4-f5), and restrain Black's queenside play.",
-        "Black: Prepare and execute the ...c5 pawn break to challenge the center, pressure the d4-pawn with ...Nc6 and ...Qb6, and seek queenside expansion.",
-        "Black: Maneuver the 'bad' French bishop to an active square, often via ...b6-Ba6 to trade it for White's good bishop on d3."
+        "White: Support d4 with Be3 or by rerouting the c3-knight to e2, develop with Bd3 and O-O, and use the extra space on the kingside; a3 rules out ...Bb4 and can support b4.",
+        "Black: Prepare and execute the ...c5 pawn break to challenge the centre, pressure the d4-pawn with ...Nc6 and ...Qb6, and seek queenside expansion.",
+        "Black: Free the light-squared bishop by opening lines with ...c5 and ...f6, and use ...b5, which ...a6 prepared, for queenside space."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:32:07.296Z"

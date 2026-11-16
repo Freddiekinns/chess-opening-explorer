@@ -52,5 +52,23 @@
     "plan": "White: Prevent Black's ...b5 break by playing a3 and developing harmoniously, aiming to squeeze Black positionally.",
     "reference": "...b5",
     "reason": "needs-research: two rewrites rejected; White's standard way to restrain ...b5 here (with the b5-knight attacked and a2-a4 blocked once it goes to a3) needs a source"
+  },
+  {
+    "fen": "r1bqkb1r/p2p1ppp/2p1p3/3nP3/8/2N5/PPP2PPP/R1BQKB1R w KQkq - 1 8",
+    "plan": "White: Challenge the Nd5 knight (e.g., with Ne2-c3), develop with Bd3, and prepare a kingside attack, often involving f2-f4.",
+    "reference": "Ne2-c3",
+    "reason": "needs-research: Follow-up to batch 2026-11-16-23: plan 1 (a knight route Ne2-c3 for the knight already on c3) was rewritten twice and rejected twice (Bc4 runs into ...cxd5; Ne4 does not attack d5). Old text kept."
+  },
+  {
+    "fen": "rqb1kbnr/1p1p1ppp/pBn1p3/1N6/4P3/2N5/PPP2PPP/R2QKB1R b KQkq - 1 8",
+    "plan": "Black must accept the sacrifice with ...axb6 and then carefully defend, aiming to neutralize White's initiative by trading pieces and eventually converting the material advantage in the endgame.",
+    "reference": "...axb6",
+    "reason": "needs-research: The overview calls 8.Bb6 a bishop sacrifice and plan 2 has Black take with ...axb6, but the b6-bishop cannot be taken that way; the piece en prise is the b5-knight (8...axb5). A short search did not settle the theory of 8.Bb6 axb5 9.Nxb5, so the text was left unchanged."
+  },
+  {
+    "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/N2NP3/4B3/PPP1BPPP/R2Q1RK1 w kq - 6 10",
+    "plan": "White: Play Nxc6 to damage Black's pawn structure and gain long-term control over the light squares, especially d5.",
+    "reference": "d5",
+    "reason": "needs-research: Follow-up to batch 2026-11-16-24: plan 2 (Nxc6 for 'control of d5', which the c6- and e6-pawns cover after either recapture) was rewritten twice and rejected twice (second draft: Nb6 at once drops the knight to ...Qxb6). Old text kept."
   }
 ]

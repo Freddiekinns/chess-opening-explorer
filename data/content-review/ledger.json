@@ -7624,5 +7624,65 @@
     "verdict": "fixed",
     "contentHash": "435f935980f363c9",
     "notes": "Plan 1 and the overview said Bxf6 damages Black's pawns, though the e7-bishop recaptures; plan 3 routed the b3-knight to f1. Rewrote the overview and plans 1, 3 and 4."
+  },
+  "r1bq1rk1/1p2bppp/2np1n2/p3p3/4P3/1NN1B3/PPP1BPPP/R2Q1RK1 w - - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "136816e41991d27d",
+    "notes": "Plan 3 had a knight route from b8 to c7 with the knight on c6. Rewrote plan 3."
+  },
+  "r1bq1rk1/pp2bppp/2np1n2/4p1B1/4P3/1NN5/PPP1BPPP/R2Q1RK1 b - - 5 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "318db73c33a4284a",
+    "notes": "The overview and plan 1 said Bxf6 damages Black's pawns, though the e7-bishop recaptures; plan 2 called Bg5 a pin; plan 3 routed the b3-knight through c1 to the occupied e2; plan 4 recommended 9...Nxe4, which loses a piece to 10.Bxe7. Rewrote the overview and all four plans."
+  },
+  "r1bq1rk1/pp2bppp/2np1n2/4p3/4PP2/1NN5/PPP1B1PP/R1BQ1RK1 b - - 0 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a567e21f709a796a",
+    "notes": "Plan 4 had a Bg3 manoeuvre and a Qe1-g3 route the parser could not read. Rewrote plan 4."
+  },
+  "r1b1kb1r/pp2pppp/1qnp1n2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R w KQkq - 5 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "62e2efb8fa82833c",
+    "notes": "Plan 1 had White defend d4 with a move; plan 2 called Bg5 a pin, though the e7-pawn shields d8. Rewrote plans 1 and 2; British spelling in the overview and plan 4."
+  },
+  "r3kb1r/pp1bpppp/2np1n2/q5B1/3NP3/2N5/PPP1BPPP/R2QK2R w KQkq - 7 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f0719d4490e62a20",
+    "notes": "Plan 1 named White's Bxf6 as a Black move; it now notes that the a5-queen pins the c3-knight to the e1-king."
+  },
+  "r2qkb1r/pp1bpppp/2np1n2/6B1/4P3/1NN5/PPP2PPP/R2QKB1R b KQkq - 6 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "8250702179ccb3e3",
+    "notes": "Plan 3 routed the b3-knight through c1 to e2. Rewrote plan 3; British spelling in the overview."
+  },
+  "2rqkb1r/pp1bpppp/2np1n2/6B1/3NP3/2N5/PPPQ1PPP/2KR1B1R b k - 8 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "5f4feb5e853d81cf",
+    "notes": "Plan 4 had Black play ...Bxf6 with no bishop able to reach f6. Rewrote plan 4 around ...e6, ...Be7 and the ...Rxc3 exchange sacrifice; British spelling in the overview."
+  },
+  "r1bqkb1r/pp3ppp/2nppn2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R w KQkq - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "fe5ad3babf827bb1",
+    "notes": "Plan 3 had White play an exchange sacrifice Rxc6 that no rook can make. Rewrote plan 3 around Qd2, O-O-O, f4 and e5; British spelling in plan 4."
+  },
+  "r1bqkb1r/pp3ppp/2Nppn2/6B1/4P3/2N5/PPP2PPP/R2QKB1R b KQkq - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "60871ca20569776c",
+    "notes": "The overview said knight-for-knight on c6 hands Black the bishop pair, and plan 2 relied on it; plan 3 targeted a c6-pawn that does not exist yet. Rewrote the overview around 8.e5 and the pin on f6, and plans 1-3."
+  },
+  "r1bqkb1r/pp3ppp/2nppn2/6B1/4P3/1NN5/PPP2PPP/R2QKB1R b KQkq - 1 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "eb86ebee160d479b",
+    "notes": "Plan 1 rerouted a knight from f3 that does not exist and prepared Nc5 against the d6-pawn's cover; plan 3 had the bishop attack the queenside after being traded. Rewrote plans 1 and 3 (the reviewer rejected pairing O-O-O with a4); British spelling in the overview."
   }
 }

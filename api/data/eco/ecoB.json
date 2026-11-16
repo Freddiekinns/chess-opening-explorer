@@ -114442,7 +114442,7 @@
       "common_plans": [
         "Black's Plan: Use the a-pawn to gain space on the queenside (...a4), disrupt White's pieces, and prepare the central ...d5 break. The knight on c6 often reroutes to support these plans.",
         "White's Plan: Respond to the queenside pressure, often with a2-a4, while preparing the f2-f4 pawn push to challenge Black's central grip and open lines for an attack.",
-        "Black's Plan: Systematically improve piece placement, often with moves like ...Qc7, ...Rb8, and ...Nb8-c7, to support the dual goals of queenside pressure and the central break.",
+        "Black's Plan: Improve the pieces with ...Be6, ...Qc7 and ...Rc8, supporting both the queenside pressure and the central break.",
         "White's Plan: Solidify control over the d4 and d5 squares, often using the knight on b3 and bishop on e3, before launching active operations."
       ],
       "version": "1.0",
@@ -114634,7 +114634,7 @@
     "name": "Sicilian: Boleslavsky, 7.Nb3 Be7 8.O-O O-O 9.Bg5",
     "scid": "B59h",
     "analysis_json": {
-      "description": "This variation of the Classical Sicilian, marked by 9.Bg5, initiates a rich and complex strategic battle. White's primary idea is to exert pressure on the f6-knight, indirectly controlling the key d5 square and often preparing an f2-f4 advance. The game is ideal for strategic players who enjoy maneuvering and building pressure, as it revolves around deep positional concepts like pawn structure, weak squares, and long-term plans rather than immediate, wild tactics.",
+      "description": "This variation of the Classical Sicilian, marked by 9.Bg5, initiates a rich and complex strategic battle. White's main idea is Bxf6, removing a defender of the key d5 square so that a knight can settle there, with f2-f4 as a later option. The game is ideal for strategic players who enjoy manoeuvring and building pressure, as it revolves around deep positional concepts like pawn structure, weak squares, and long-term plans rather than immediate, wild tactics.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -114675,10 +114675,10 @@
         "Black's queenside counterplay"
       ],
       "common_plans": [
-        "White: Play f4 to challenge Black's e5-pawn, exchange on f6 (Bxf6) to damage Black's pawn structure, and control the center, particularly the d5-square.",
-        "Black: Neutralize the pin with ...Be6, prepare the liberating ...d5 pawn break, and create counterplay on the queenside with moves like ...a6 and ...b5.",
-        "White: Reposition the b3-knight, often to c1 then e2 or d3, to support the center and prepare for action on either flank.",
-        "Black: Consider the sharp tactical continuation 9...Nxe4, sacrificing a pawn to disrupt White's coordination and seize the initiative."
+        "White: Exchange on f6 to remove a defender of d5 and follow with Nd5, or prepare f4 to challenge Black's e5-pawn.",
+        "Black: Develop with ...Be6, prepare the liberating ...d5 pawn break, and create counterplay on the queenside with ...a5 or ...a6 and ...b5.",
+        "White: Add pressure on d5 with Bf3 or Bc4 and Qd3, aiming to plant a knight on d5.",
+        "Black: If White exchanges on f6, recapture with the bishop, keeping the bishop pair, and then aim for ...a5 and ...a4 against the b3-knight."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:54:41.819Z"
@@ -114736,7 +114736,7 @@
         "White: Advance on the kingside with f5 and g4, control the d5 square, and attack the d6 pawn.",
         "Black: Prepare a queenside counter-attack with ...a6 and ...b5, aiming to create pressure and open lines for the rooks.",
         "Black: Achieve the central pawn break with ...d5 to challenge White's control and liberate their position.",
-        "White: Maneuver pieces to support the attack, such as Qe1-g3 or Bg3, while preventing Black's counterplay."
+        "White: Bring the queen to the kingside via e1 and g3, and add Kh1 and Be3, while keeping Black's queenside counterplay under control."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:55:06.245Z"
@@ -115169,10 +115169,10 @@
         "Control of the d5 square"
       ],
       "common_plans": [
-        "White: Defend d4 (e.g., Nb3), complete development, and launch a kingside attack, often with f4-f5 or queenside castling.",
-        "Black: Create queenside counterplay (...a6, ...b5), challenge White's center, and carefully manage king safety against the Bg5 pin.",
+        "White: Answer the attack on the d4-knight with Nb3, then develop with Qd2 and O-O-O, or Be2 and O-O, before starting a kingside attack.",
+        "Black: Create queenside counterplay (...a6, ...b5), challenge White's centre, and watch for an exchange on f6 damaging the kingside pawns.",
         "White: Exchange on f6 (Bxf6) to create dark-square weaknesses around Black's king.",
-        "Black: Neutralize White's attacking bishop on g5 and fight for control of the central dark squares."
+        "Black: Neutralise White's attacking bishop on g5 and fight for control of the central dark squares."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:57:19.887Z"
@@ -115347,7 +115347,7 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "For Black, a key plan is to use the bishop pair and the open g-file (after the common Bxf6 gxf6) to launch a kingside attack, while the active queen creates problems across the board.",
+        "Black: Use the a5-queen's pin of the c3-knight against the e1-king to pressure e4, and if White exchanges on f6, recapture with the g-pawn to keep the bishop pair and a half-open g-file.",
         "For White, the main plan involves exploiting Black's compromised pawn structure, controlling the d5-square, and methodically targeting the potentially exposed black king."
       ],
       "version": "1.0",
@@ -115418,7 +115418,7 @@
     "name": "Sicilian: Richter-Rauzer, Larsen, 7.Nb3",
     "scid": "B60g",
     "analysis_json": {
-      "description": "The Larsen variation with 7.Nb3 is a positional and prophylactic approach for White within the Richter-Rauzer complex. Instead of the main lines involving 7.Qd2 and opposite-side castling, White opts for a quieter, more strategic battle. This opening is ideal for players who want to avoid sharp, theoretical lines and prefer to outmaneuver their opponents in a complex middlegame focused on central control and restraining Black's queenside counterplay.",
+      "description": "The Larsen variation with 7.Nb3 is a positional and prophylactic approach for White within the Richter-Rauzer complex. Instead of the main lines involving 7.Qd2 and opposite-side castling, White opts for a quieter, more strategic battle. This opening is ideal for players who want to avoid sharp, theoretical lines and prefer to outmanoeuvre their opponents in a complex middlegame focused on central control and restraining Black's queenside counterplay.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -115458,9 +115458,9 @@
         "Restraining the opponent's plan"
       ],
       "common_plans": [
-        "White: Play f2-f4, Be2, and O-O, aiming for a more classical kingside setup while controlling the center.",
+        "White: Play f2-f4, Be2, and O-O, aiming for a more classical kingside setup while controlling the centre.",
         "Black: Execute the standard Sicilian plan of ...a6 and ...b5 to generate queenside counterplay and challenge White's control.",
-        "White: Reposition the b3-knight if necessary (e.g., to c1-e2) to support the center or prepare for kingside action.",
+        "White: Keep the b3-knight covering the d4-square, and support a4 against Black's queenside expansion.",
         "Black: Resolve the pressure from the Bg5, often by playing ...e6 and ...Be7, preparing to challenge or trade the bishop."
       ],
       "version": "1.0",
@@ -115835,7 +115835,7 @@
     "name": "Sicilian: Richter-Rauzer, Larsen, 7.Qd2 Rc8 8.O-O-O",
     "scid": "B61f",
     "analysis_json": {
-      "description": "The Richter-Rauzer with 8.O-O-O is one of the sharpest and most theoretically demanding lines in the entire Sicilian Defense. White signals immediate aggressive intentions by castling queenside, preparing a pawn storm against the black king. This opening leads to a ferocious, double-edged battle where both sides launch attacks on opposite wings, making it a perfect choice for aggressive, tactical players who are well-prepared and thrive on navigating complex, high-stakes positions.",
+      "description": "The Richter-Rauzer with 8.O-O-O is one of the sharpest and most theoretically demanding lines in the entire Sicilian Defence. White signals immediate aggressive intentions by castling queenside, preparing a pawn storm against the black king. This opening leads to a ferocious, double-edged battle where both sides launch attacks on opposite wings, making it a perfect choice for aggressive, tactical players who are well-prepared and thrive on navigating complex, high-stakes positions.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -115881,7 +115881,7 @@
         "White: Launch a kingside pawn storm with h4 and g4-g5 to open lines against the black king, often sacrificing material to accelerate the attack.",
         "Black: Initiate a queenside counterattack with ...a6 and ...b5-b4, aiming to expose the white king on the c-file.",
         "White: Maintain central tension and use the bishop on g5 to pressure Black's kingside structure, sometimes provoking weaknesses.",
-        "Black: Challenge White's control of the center with moves like ...e5 or neutralize the pin on f6 via ...Bxf6, solidifying the kingside before expanding on the queenside."
+        "Black: Develop with ...e6 and ...Be7, ready to recapture on f6 with the g-pawn and keep the bishop pair if White exchanges, and use the c8-rook against c3, where an exchange sacrifice is a typical resource."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:00:42.594Z"
@@ -116083,7 +116083,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Richter-Rauzer is a sharp and classical system against the Sicilian Defense, defined by White's aggressive 6.Bg5. This move immediately creates a pin and puts Black's position under pressure, leading to highly theoretical and tactical middlegames. The opening is perfect for aggressive, well-prepared players who thrive in complex, double-edged positions where White often pursues a kingside attack while Black seeks counterplay on the queenside and in the center.",
+      "description": "The Richter-Rauzer is a sharp and classical system against the Sicilian Defence, defined by White's aggressive 6.Bg5. This move immediately creates a pin and puts Black's position under pressure, leading to highly theoretical and tactical middlegames. The opening is perfect for aggressive, well-prepared players who thrive in complex, double-edged positions where White often pursues a kingside attack while Black seeks counterplay on the queenside and in the centre.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -116126,8 +116126,8 @@
       "common_plans": [
         "White: Castle queenside, launch a pawn storm on the kingside (g4, h4), and prepare an attack against the Black king.",
         "Black: Develop with ...Be7, ...O-O, and ...a6, preparing ...b5 to create queenside counterplay and challenge White's control.",
-        "White: Execute an exchange sacrifice (Rxc6) to shatter Black's pawn structure and create long-term weaknesses.",
-        "Black: Consolidate the position, neutralize White's immediate threats, and aim for a favorable endgame where White's attacking pieces may be misplaced."
+        "White: After Qd2 and O-O-O, play f4 and look for the e5 break, which hits the d6-pawn and the f6-knight.",
+        "Black: Consolidate the position, neutralise White's immediate threats, and aim for a favourable endgame where White's attacking pieces may be misplaced."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:01:47.935Z"
@@ -116211,7 +116211,7 @@
       "icsbot": "Exchange Variation, Richter-Rauzer Sicilian "
     },
     "analysis_json": {
-      "description": "The Richter-Rauzer Exchange Variation is a strategically rich and complex system where White voluntarily trades a knight for a knight on c6. This exchange cedes the bishop pair to Black but inflicts a long-term structural weakness in the form of doubled c-pawns. The resulting middlegames are a fascinating clash of ideas: White typically aims for a kingside attack, often after castling queenside, to exploit their space and development advantages, while Black uses the bishop pair and the open b-file to generate queenside counterplay. This opening is perfect for strategic players who enjoy executing clear, long-term plans based on structural imbalances.",
+      "description": "In the Exchange Variation White takes on c6 at once. After 7...bxc6 Black has an extra central pawn on c6 and the half-open b-file, but White usually strikes with 8.e5, exploiting the pin of the f6-knight against the d8-queen; Black often breaks the pin with ...h6 and ...g5. The play is sharp and concrete, suiting well-prepared players who are comfortable with early tactics and the structural imbalances that follow.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -116253,9 +116253,9 @@
         "Structural Imbalance"
       ],
       "common_plans": [
-        "White: Castle queenside, play f4, and launch a kingside pawn storm (g4-g5) to attack the black king.",
-        "Black: Utilize the bishop pair for defense and counter-attack, and create queenside pressure with moves like ...a5-a4 and activity on the b-file.",
-        "White: Target the weak c6 and d6 pawns, often by maneuvering pieces to control the d5-square.",
+        "White: Strike at once with e5, using the pin of the f6-knight against the d8-queen, and follow with Ne4 or long castling to exploit Black's loosened position.",
+        "Black: Recapture with ...bxc6, use the extra central pawns and the half-open b-file, break the pin by kicking the bishop with ...h6 and the g-pawn when necessary, and aim for ...d5.",
+        "White: Target the d6-pawn and the squares around Black's pawn centre, aiming to stop Black from achieving ...d5.",
         "Black: Prepare the ...d5 pawn break to challenge White's central control and free the position for the bishops."
       ],
       "version": "1.0",
@@ -116278,7 +116278,7 @@
       "icsbot": "Podebrady Variation, Sicilian "
     },
     "analysis_json": {
-      "description": "The Podebrady Variation is a subtle and strategic treatment of the Richter-Rauzer. By moving the knight to b3, White sidesteps some of Black's immediate tactical ideas and prepares for long-term positional pressure, often focusing on controlling the c5-square and preparing queenside expansion. This leads to a complex, strategic middlegame where understanding pawn structures and piece maneuvering is paramount, suiting players who enjoy a deep, less-forced battle.",
+      "description": "The Podebrady Variation is a subtle and strategic treatment of the Richter-Rauzer. By moving the knight to b3, White sidesteps some of Black's immediate tactical ideas and prepares for long-term positional pressure, often focusing on controlling the c5-square and preparing queenside expansion. This leads to a complex, strategic middlegame where understanding pawn structures and piece manoeuvring is paramount, suiting players who enjoy a deep, less-forced battle.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -116318,9 +116318,9 @@
         "Light-square vs. Dark-square battle"
       ],
       "common_plans": [
-        "White: Play Qd2 and O-O-O to pressure d6, use the a-pawn (a4) to control the queenside and prepare Nc5, and reroute the f3-knight to support the center.",
+        "White: Play Qd2 and O-O-O, so that the d1-rook bears on the d6-pawn, then expand on the kingside with f3 or f4 and g4.",
         "Black: Play ...a6 followed by ...b5 to gain queenside space and develop the light-squared bishop. Challenge the Bg5 with ...h6 and prepare for a central break with ...d5.",
-        "White: Maneuver the dark-squared bishop to attack the queenside, often after trading it for the f6 knight to inflict doubled pawns.",
+        "White: Exchange on f6 when the recapture would double Black's f-pawns, then aim the pieces at the d6-pawn and the d5-square.",
         "Black: Create counterplay on the c-file and target White's king, especially if White castles queenside."
       ],
       "version": "1.0",

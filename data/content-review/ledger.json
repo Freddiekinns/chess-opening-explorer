@@ -7064,8 +7064,8 @@
   "r1bqkb1r/pp1p1ppp/2n1pn2/8/2PNP3/2N5/PP3PPP/R1BQKB1R b KQkq - 2 6": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "0442c71bbb958a7e",
-    "notes": "British spelling in the overview and plan 2. Plan 4 (...Bb4 written as Bxc3) is fixed in the follow-up in batch 2026-11-16-23 (reviewer: first draft gave the wrong reason for Nxc6)."
+    "contentHash": "05398d7f8aabc389",
+    "notes": "Follow-up to batch 2026-11-16-22: plan 4 rewritten with the right reason for 7.Nxc6 (Bd3 and castling break the pin)."
   },
   "r1bqk2r/p2p1ppp/2p1pn2/8/1bP1P3/2N5/PP3PPP/R1BQKB1R w KQkq - 0 8": {
     "reviewedAt": "2026-11-16",
@@ -7108,5 +7108,65 @@
     "verdict": "fixed",
     "contentHash": "1ac374d779dfabc9",
     "notes": "Plan 1 sent the blockading knight to d3, where White's bishop stands. Rewrote plan 1."
+  },
+  "r1bq1rk1/pp3ppp/2n2n2/3p4/8/P1NB4/1PP2PPP/R1BQK2R w KQ - 2 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "fb8839b4ef66673a",
+    "notes": "Plan 1 blockaded with Nd4, which the c3-knight cannot reach in one move. Rewrote plan 1."
+  },
+  "r1bqkb1r/pp3ppp/2nppn2/1N6/4P3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "482e26194cef123c",
+    "notes": "Plan 1 set up a Maroczy Bind with c4, which the c3-knight blocks; plan 3 played ...b5 into the knight; plan 4 offered a Hedgehog. Rewrote plans 1, 3, 4 and the overview's Maroczy reference."
+  },
+  "r1bqkb1r/pp3ppp/2nppn2/1N6/4PB2/2N5/PPP2PPP/R2QKB1R b KQkq - 1 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "25d7e1bcf0502102",
+    "notes": "Plan 2 played ...b5 into the knight. Rewrote plan 2; British spelling in plan 4."
+  },
+  "r1bqkb1r/p2p1ppp/2p1p3/3nP3/8/2N5/PPP2PPP/R1BQKB1R w KQkq - 1 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "aa06ffe325871519",
+    "notes": "Plan 2 called the b-file open (half-open); plan 4 developed the bishop 'after ...a6'. Rewrote plans 2 and 4; British spelling in plan 3. Plan 1 (a knight route Ne2-c3 for the knight on c3) is fixed in the follow-up in batch 2026-11-16-24 (reviewer: first draft's Bc4 runs into ...cxd5)."
+  },
+  "r1bqkb1r/1p1pnppp/p1n1p3/8/3NP3/2N5/PPP1BPPP/R1BQK2R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "6b50ec42311a4e55",
+    "notes": "British spelling in the overview and plan 2. Plan 1 (routes ...c8-b6, f4 as a move, a Hedgehog) is fixed in the follow-up in batch 2026-11-16-24 (reviewer: first draft tied ...Ng6 to the exchange on d4)."
+  },
+  "r1bqkb1r/1p1pnppp/p1n1p3/8/3NP3/2N1B3/PPP2PPP/R2QKB1R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "740ce51386eb95ea",
+    "notes": "Plans wrote castling with zeros and played ...Be7 with the knight on e7; plan 2 called the queenside advance a minority attack. Rewrote plans 1, 2, 4. Plan 3 is fixed in the follow-up in batch 2026-11-16-24 (reviewer: first draft had a c8-knight supporting ...b5)."
+  },
+  "rqb1kbnr/1p1p1ppp/pBn1p3/1N6/4P3/2N5/PPP2PPP/R2QKB1R b KQkq - 1 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "needs-research",
+    "contentHash": "c6c06000d0a1a6a9",
+    "notes": "The overview calls 8.Bb6 a bishop sacrifice and plan 2 has Black take with ...axb6, but the b6-bishop cannot be taken that way; the piece en prise is the b5-knight (8...axb5). A short search did not settle the theory of 8.Bb6 axb5 9.Nxb5, so the text was left unchanged."
+  },
+  "r1b1kbnr/ppqp1ppp/2n1p3/8/3NP3/2N5/PPP1BPPP/R1BQK2R b KQkq - 4 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "9b297b19aace705b",
+    "notes": "Plans named Nb5 as a Black move and wrote ...d6-d5 from a pawn still on d7. Rewrote plans 2 and 4; British spelling elsewhere."
+  },
+  "r1b1kbnr/ppqp1ppp/2n1p3/8/3NPP2/2N5/PPP3PP/R1BQKB1R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "ca1a12211408b296",
+    "notes": "Plans wrote castling as O-O-O in a way the parser could not read and named Nb5 as a Black move. Rewrote plans 1-2."
+  },
+  "r1b1kbnr/1pq2ppp/p1npp3/8/3NP3/2N3P1/PPP2PBP/R1BQK2R w KQkq - 0 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "af3d4911967f3568",
+    "notes": "British spelling in the overview. Plan 3 (a d4-pawn that isn't there, ...Rc8 with the bishop on c8) is fixed in the follow-up in batch 2026-11-16-24 (reviewer: first draft had a c-file rook hitting the d4-knight)."
   }
 }

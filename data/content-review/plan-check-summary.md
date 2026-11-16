@@ -1,10 +1,10 @@
 # Plan reference check
 
-2405 references on 1852 of 12377 pages fail the check and show as plain text.
+2333 references on 1794 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5473 name no move, route, square or piece
-- References by kind: {"square":16022,"piece":15178,"move":54525,"route":8940}
-- References by result: {"now":68880,"on-board":14143,"later":9237,"invalid":2405}
+- Plans: 41062, of which 5475 name no move, route, square or piece
+- References by kind: {"square":16060,"piece":15205,"move":54573,"route":8907}
+- References by result: {"now":68997,"on-board":14173,"later":9242,"invalid":2333}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -38,35 +38,37 @@
   - `...b5-b4`: One step of ...b5-b4 can't be played here
 - **C07 French Defense: Tarrasch Variation, Open System, Shaposhnikov Gambit** (0 views)
   - `...Bxc5`: No piece can play Bxc5 here, now or after the plan's earlier moves
-- **C11 French: Burn, 6.Bxf6 gxf6 7.Nf3 b6** (0 views)
-  - `e4 pawn`: There is no pawn on e4, or on its way
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **C11 French: Burn, 6.Bxf6 gxf6 7.Nf3 f5** (0 views)
-  - `...Bh3`: No piece can play Bh3 here, now or after the plan's earlier moves
-- **C11 French: Steinitz, Boleslavsky, 7...cxd4 8.Nxd4 Qb6** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **C12 French Defense: MacCutcheon Variation, Advance Variation** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **C12 French Defense: MacCutcheon Variation, Dr. Olland Variation** (0 views)
-  - `d2`: No piece can play d2 here, now or after the plan's earlier moves
-  - `e3`: No piece can play e3 here, now or after the plan's earlier moves
-- **C12 French Defense: MacCutcheon Variation, Janowski Variation** (0 views)
-  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
-- **C12 French Defense: MacCutcheon Variation, Tartakower Variation** (0 views)
-  - `a3-b4`: One step of a3-b4 can't be played here
-- **C12 French: MacCutcheon, 8.Qg4 Kf8** (0 views)
+- **C19 French: Winawer, 6...Ne7 7.Nf3 b6 8.Bb5+** (0 views)
+  - `Qg4`: No piece can play Qg4 here, now or after the plan's earlier moves
+  - `h4-h5`: One step of h4-h5 can't be played here
+- **C19 French: Winawer, 6...Ne7 7.Nf3 Nbc6 8.a4 Qa5+ 9.Bd2 Bd7 10.Bb5** (0 views)
+  - `Ba3`: No piece can play Ba3 here, now or after the plan's earlier moves
+- **C21 Danish Gambit Accepted** (0 views)
   - `e7`: No piece can play e7 here, now or after the plan's earlier moves
-- **C12 French: MacCutcheon, 8.Qg4 Kf8 9.Bd3** (0 views)
-  - `d7-b6-c4`: One step of d7-b6-c4 can't be played here
-- **C13 French Defense: Alekhine-Chatard Attack, Spielmann Variation** (0 views)
+- **C21 Danish Gambit Accepted, Classical  Defence** (0 views)
+  - `...dxc3`: No piece can play dxc3 here, now or after the plan's earlier moves
+- **C21 Danish Gambit Accepted: Classical Defense** (0 views)
   - `Ng5`: No piece can play Ng5 here, now or after the plan's earlier moves
-- **C13 French Defense: Classical Variation, Vistaneckis Variation** (0 views)
-  - `Bxg8`: No piece can play Bxg8 here, now or after the plan's earlier moves
-- **C13 French: Chatard-Alekhine, 6...Bxg5 7.hxg5 Qxg5 8.Nh3 Qe7 9.Nf4** (0 views)
-  - `g6`: No piece can play g6 here, now or after the plan's earlier moves
-- **C13 French: Chatard-Alekhine, Breyer, 7.Bxe7 Kxe7** (0 views)
-  - `Qd2-g4`: One step of Qd2-g4 can't be played here
-- **C14 French Defense: Classical Variation, Alapin Variation** (0 views)
-  - `Nc7`: No piece can play Nc7 here, now or after the plan's earlier moves
-- **C14 French Defense: Classical Variation, Stahlberg Variation** (0 views)
-  - `Ng3-h5`: One step of Ng3-h5 can't be played here
+- **C22 Center Game: Paulsen Attack Variation** (0 views)
+  - `g4-h5`: One step of g4-h5 can't be played here
+- **C23 Bishop's Opening: 2... g6?** (0 views)
+  - `f6`: No piece can play f6 here, now or after the plan's earlier moves
+  - `h6`: No piece can play h6 here, now or after the plan's earlier moves
+- **C23 Bishop's Opening: McDonnell Gambit, McDonnell Double Gambit** (0 views)
+  - `Rf1-f3-g3`: One step of Rf1-f3-g3 can't be played here
+- **C23 Bishop's Opening: Pratt Variation** (0 views)
+  - `...O-O`: No piece can play O-O here, now or after the plan's earlier moves
+- **C23 Bishop's Opening: Stein Gambit** (0 views)
+  - `Rf1-f3-g3`: One step of Rf1-f3-g3 can't be played here
+- **C24 Bishop's Opening: 3.d3** (0 views)
+  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
+- **C24 Bishop's Opening: Paulsen Defence** (0 views)
+  - `exd5`: No piece can play exd5 here, now or after the plan's earlier moves
+- **C24 Bishop's Opening: Paulsen, 4.Nf3** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
+- **C24 Bishop's Opening: Ponziani Gambit** (0 views)
+  - `Nxe4`: No piece can play Nxe4 here, now or after the plan's earlier moves
+  - `Qxd4`: No piece can play Qxd4 here, now or after the plan's earlier moves
+- **C24 Bishop's Opening: Urusov Gambit, Larsen Variation** (0 views)
+  - `e6`: No piece can play e6 here, now or after the plan's earlier moves

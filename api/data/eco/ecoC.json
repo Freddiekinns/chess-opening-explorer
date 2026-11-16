@@ -46346,10 +46346,10 @@
         "Attack on the f-file"
       ],
       "common_plans": [
-        "White: Develop with Be3, Nf3, and 0-0, then use the f-file to attack. Maneuver pieces to control or occupy the weak e6 square.",
-        "Black: Solidify the e4 knight with ...Be7 and ...c5. Develop the queenside with ...Nc6 and ...Be6 to create counterplay against White's center.",
-        "White: Prepare the d5 pawn push to dislodge the e4 knight and open lines for the pieces.",
-        "Black: Aim to trade White's strong light-squared bishop and challenge White's control of the center."
+        "White: Develop with Bd3 or Bb5+ and Nge2 (the queen stands on f3), castle, and use the weakness of the e6-square left by ...f5.",
+        "Black: Solidify the e4 knight with ...Be7 and ...c5. Develop the queenside with ...Nc6 and ...Be6 to create counterplay against White's centre.",
+        "White: Undermine the e4-knight, either with Bd3 or with g4 against the f5-pawn that supports it, to open lines for the pieces.",
+        "Black: Aim to trade White's strong light-squared bishop and challenge White's control of the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:50:24.825Z"
@@ -47015,7 +47015,7 @@
     "name": "KGD: Classical, 3.Nf3",
     "scid": "C30j",
     "analysis_json": {
-      "description": "The Classical Defense is one of the most solid and respected ways to decline the King's Gambit. By developing the bishop to c5, Black immediately challenges White's control of the center and puts pressure on the weak f2 square, often forcing White to delay castling. The game typically transitions into a sharp, strategic battle where White aims to justify the f4-pawn by gaining space and attacking chances, while Black seeks to exploit the structural weaknesses in White's position. This opening is perfect for players who want to meet aggression with sound, classical development and counter-punching ideas.",
+      "description": "The Classical Defence is one of the most solid and respected ways to decline the King's Gambit. By developing the bishop to c5, Black immediately challenges White's control of the centre and aims down the a7-g1 diagonal, weakened by f4, which stops White castling kingside for now. The game typically transitions into a sharp, strategic battle where White aims to justify the f4-pawn by gaining space and attacking chances, while Black seeks to exploit the structural weaknesses in White's position. This opening is perfect for players who want to meet aggression with sound, classical development and counter-punching ideas.",
       "style_tags": [
         "Gambit",
         "Sharp",
@@ -47056,10 +47056,10 @@
         "Control of the d4-square"
       ],
       "common_plans": [
-        "White: Play c3 and d4 to build a strong center, challenge the Bc5, and use the f-file for a kingside attack.",
-        "Black: Play ...d6 to solidify the center, develop with ...Nf6 and ...Nc6, maintain pressure on White's kingside, and prepare to counterattack.",
-        "White: Reroute the knight via h4 to f5 to attack Black's defensive setup.",
-        "Black: Neutralize White's central control and exploit the weakened squares around White's king, particularly f2 and g3."
+        "White: Play c3 and d4 to build a strong centre, challenge the Bc5, and use the f-file for a kingside attack.",
+        "Black: Play ...d6 to solidify the centre, develop with ...Nf6 and ...Nc6, maintain pressure on White's kingside, and prepare to counterattack.",
+        "White: Develop with Nc3 and Bc4, then blunt the c5-bishop with d3 and Na4 or Be3, so that White can castle kingside.",
+        "Black: Neutralise White's central control and use the c5-bishop's grip on the a7-g1 diagonal, which keeps White from castling kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:54:09.212Z"
@@ -47074,7 +47074,7 @@
     "name": "KGD: Classical, 3.Nf3 d6",
     "scid": "C30k",
     "analysis_json": {
-      "description": "The Classical Defense is one of the most solid and respected ways to decline the King's Gambit. By developing the bishop to c5 before committing to ...d6, Black creates a robust central bastion, neutralizing White's immediate attacking ideas and steering the game into more strategic channels. This opening is perfect for the positional player who prefers to outmaneuver their opponent through superior understanding of structure and piece play, rather than engaging in the wild tactical skirmishes typical of the King's Gambit Accepted.",
+      "description": "The Classical Defence is one of the most solid and respected ways to decline the King's Gambit. By developing the bishop to c5 before committing to ...d6, Black creates a robust central bastion, neutralising White's immediate attacking ideas and steering the game into more strategic channels. This opening is perfect for the positional player who prefers to outmanoeuvre their opponent through superior understanding of structure and piece play, rather than engaging in the wild tactical skirmishes typical of the King's Gambit Accepted.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -47115,9 +47115,9 @@
       ],
       "common_plans": [
         "White: Play c3 and d4 to challenge Black's central control, often followed by developing pieces to support a kingside attack.",
-        "Black: Solidify the center with ...Nf6 and ...Nc6, complete development, and prepare to counter-attack against White's slightly exposed king or the weak d4 square.",
-        "Black: Use the c5 bishop to exert long-term pressure on White's kingside and the f2 pawn.",
-        "White: Attempt to dislodge the c5 bishop with moves like b4 or Na4 to regain control of key diagonals."
+        "Black: Solidify the centre with ...Nf6 and ...Nc6, complete development, and prepare to counter-attack against White's slightly exposed king or the weak d4 square.",
+        "Black: Use the c5-bishop to exert long-term pressure along the a7-g1 diagonal, which keeps White's king from castling kingside.",
+        "White: Neutralise the c5-bishop, for example with Nc3 and Na4 to exchange it, or with c3 and d4 to block its diagonal."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:54:27.131Z"
@@ -47306,7 +47306,7 @@
     "name": "KGD: Classical, 4.c3 Nf6",
     "scid": "C30p",
     "analysis_json": {
-      "description": "This is a classical and highly respected way to decline the King's Gambit. By playing 4...Nf6, Black immediately challenges White's central ambitions, putting direct pressure on the e4 pawn. The game transitions from a wild gambit into a tense, strategic battle for central control, where precise play is required from both sides. This opening is perfect for players who enjoy a rich, classical struggle and prefer to outmaneuver their opponent positionally rather than engage in the chaotic tactics of an accepted gambit.",
+      "description": "This is a classical and highly respected way to decline the King's Gambit. By playing 4...Nf6, Black immediately challenges White's central ambitions, putting direct pressure on the e4 pawn. The game transitions from a wild gambit into a tense, strategic battle for central control, where precise play is required from both sides. This opening is perfect for players who enjoy a rich, classical struggle and prefer to outmanoeuvre their opponent positionally rather than engage in the chaotic tactics of an accepted gambit.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -47346,8 +47346,8 @@
         "Development with tempo"
       ],
       "common_plans": [
-        "White: Successfully execute the d2-d4 pawn push to seize central space, often after preparing with moves like Qe2. Use the semi-open f-file for a kingside attack.",
-        "Black: Maintain pressure on e4 to disrupt White's plans, often forcing White to play d3 instead of d4. Complete development and prepare to counterattack in the center or exploit the weakened light squares around White's king."
+        "White: Successfully execute the d2-d4 pawn push to seize central space, often after preparing with moves like Qe2, and open the f-file with fxe5 for a kingside attack.",
+        "Black: Keep up the pressure on e4 and on the a7-g1 diagonal, so that White's central push costs time (after 5.d4 exd4 6.cxd4 the bishop drops back to b6). Complete development and prepare to counterattack in the centre or exploit the weakened light squares around White's king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:55:34.220Z"
@@ -47478,7 +47478,7 @@
     "name": "KGD: Classical, 4.c3 Nf6 5.d4",
     "scid": "C30q",
     "analysis_json": {
-      "description": "This variation of the King's Gambit Declined leads to a classical and dynamic struggle for the center. White establishes a powerful pawn duo on d4 and e4, aiming to use a space advantage to launch an attack, while Black actively challenges this center with well-placed pieces, particularly the bishop on b6. The game is strategically rich, suiting players who enjoy blending central control principles with tactical alertness and counter-attacking possibilities.",
+      "description": "This variation of the King's Gambit Declined leads to a classical and dynamic struggle for the centre. White establishes a powerful pawn duo on d4 and e4, aiming to use a space advantage to launch an attack, while Black actively challenges this centre with well-placed pieces, particularly the bishop on b6. The game is strategically rich, suiting players who enjoy blending central control principles with tactical alertness and counter-attacking possibilities.",
       "style_tags": [
         "Classical",
         "Strategic",
@@ -47519,10 +47519,10 @@
         "The Power of the b6 Bishop"
       ],
       "common_plans": [
-        "White: Solidify the center with Nc3, develop with Bd3 and 0-0, and use the space advantage to build an attack on the kingside or in the center.",
-        "Black: Increase pressure on the d4 pawn with ...Nc6, complete development with ...Be6 and ...0-0, and prepare to challenge White's center with a ...c5 pawn break.",
-        "White: Play a3 to prevent the ...Bb4 pin and prepare to expand on the queenside if the center becomes blocked.",
-        "Black: Maneuver the b6 bishop to create threats against White's kingside (e.g., eyeing f2) and exploit any weaknesses in White's pawn structure."
+        "White: Solidify the centre with Nc3, develop with Bd3 and O-O, and use the space advantage to build an attack on the kingside or in the centre.",
+        "Black: Increase pressure on the d4 pawn with ...Nc6, complete development with ...Be6 and ...O-O, and prepare to challenge White's centre with a ...c5 pawn break.",
+        "White: Keep the d4-e4 centre intact and push e4-e5 at the right moment to drive the f6-knight away.",
+        "Black: Keep the b6-bishop aimed at d4, adding ...Nc6 and ...Bg4 to pin the f3-knight that defends it, and look for a timely ...d5 or ...c5 against White's centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:56:30.187Z"
@@ -48104,10 +48104,10 @@
         "Development Race"
       ],
       "common_plans": [
-        "White: Play d4 to seize central space, develop pieces to support a kingside attack using the open f-file (e.g., Bc4, 0-0, Rf3-g3).",
-        "Black: Solidify the center with ...Nf6, complete development, and prepare to counterattack against White's slightly exposed king or challenge for the f-file.",
-        "White: Create direct threats against the f7 pawn, often combining the pressure of a rook on f1 and a bishop on c4.",
-        "Black: Neutralize White's pressure through timely exchanges and seek to exploit the weak d4-square as a long-term outpost."
+        "White: After 4...dxe5, develop with c3 and d4 or with Bc4 and castle once the c5-bishop is blocked, using the half-open f-file; grabbing the e5-pawn with the knight runs into ...Qd4, which hits the knight and threatens mate on f2.",
+        "Black: Recapture with ...dxe5, develop with ...Nf6 and ...Nc6, and use the c5-bishop, which stops White castling kingside, to keep White's king in the centre.",
+        "White: Create direct threats against the f7 pawn once castled, combining the pressure of a rook on f1 and a bishop on c4.",
+        "Black: Neutralise White's pressure through timely exchanges and seek to exploit the weak d4-square as a long-term outpost."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:59:09.205Z"
@@ -48256,7 +48256,7 @@
       "icsbot": "Keene Defense, KGD "
     },
     "analysis_json": {
-      "description": "The Keene Defense is a modern and provocative response to the King's Gambit, sidestepping the main theoretical battles. Black uses an early queen check to force a structural weakness in White's kingside before retreating to a solid, flexible setup. This leads to a strategically complex game where Black aims to exploit the g3-pawn and challenge White's central control, making it ideal for creative, counter-attacking players who enjoy fighting on their own terms.",
+      "description": "The Keene Defence is a modern and provocative response to the King's Gambit, sidestepping the main theoretical battles. Black uses an early queen check to force a structural weakness in White's kingside before retreating to a solid, flexible setup. This leads to a strategically complex game where Black aims to exploit the g3-pawn and challenge White's central control, making it ideal for creative, counter-attacking players who enjoy fighting on their own terms.",
       "style_tags": [
         "Strategic",
         "Counterattack",
@@ -48296,8 +48296,8 @@
         "Battle for the center"
       ],
       "common_plans": [
-        "Black's Plan: Develop with ...Nf6 and ...d6, preparing the central break ...d5. Target the g3-pawn and the weakened light squares around White's king.",
-        "White's Plan: Solidify the center with d4 and Nf3, then use the semi-open f-file to generate a kingside attack. Often involves moves like Bc4, Kh1, and preparing to challenge Black's control of the center."
+        "Black's Plan: Take on f4 when it opens lines against White's loosened kingside, develop with ...Nf6 and ...Nc6, and use the queen on e7 to keep the e4-pawn under pressure.",
+        "White's Plan: Develop with Nf3 and Nc3, keeping e4 protected against the queen on e7, then build a centre with d4, castle, and use the f-file once it opens; the g3-pawn weakens the long light diagonal, so Bg2 often follows."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:00:12.402Z"
@@ -48962,7 +48962,7 @@
       "ct": "King's Gambit, Panteldakis Countergambit"
     },
     "analysis_json": {
-      "description": "The Schiller's Defense is a rare and highly aggressive line within the Panteldakis Countergambit, where Black ignores the central pawn tension to immediately develop the light-squared bishop. This choice leads to a sharp, tactical battle where Black prioritizes rapid development and creating immediate threats against the f2 square over material. It's an opening for daring players who thrive in complex, double-edged positions and enjoy fighting for the initiative from the very first moves.",
+      "description": "The Schiller's Defence is a rare and highly aggressive line within the Panteldakis Countergambit, where Black ignores the pawn on f5 to develop the dark-squared bishop at once. This choice leads to a sharp, tactical battle where Black prioritises rapid development and aims the bishop down the a7-g1 diagonal, which stops White castling kingside, rather than winning back material. It's an opening for daring players who thrive in complex, double-edged positions and enjoy fighting for the initiative from the very first moves.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -49004,7 +49004,7 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "For Black: Pressure the f2-pawn, complete development with ...Nf6 and ...0-0, and use the open f-file to attack the white king.",
+        "For Black: Aim the c5-bishop at g1 to keep White from castling kingside, develop with ...Nf6 and ...O-O, and use the half-open f-file against the white king.",
         "For White: Defend the king with Nf3, consolidate the extra pawn, challenge Black's active pieces, and exploit the weaknesses in Black's pawn structure."
       ],
       "version": "1.0",
@@ -49129,10 +49129,10 @@
         "Symmetrical Imbalances"
       ],
       "common_plans": [
-        "White: Develop with Nc3 and O-O, control the e4-square, and prepare an attack on the f-file, often targeting the f7-pawn.",
-        "Black: Develop with Nf6, challenge White's central control, and use the open f-file for a counterattack against the white king.",
-        "Both sides: Maneuver rooks to the f-file and fight for control of key central squares like e4 and d5.",
-        "Black: Often aims to trade the strong Bd6 for a white piece to relieve pressure and neutralize White's attacking potential."
+        "White: Develop with Nc3 and O-O, control the e4-square, aim to win back the f4-pawn, and use the f5-pawn to cramp Black's kingside.",
+        "Black: Develop with ...Nf6 and ...O-O, hold on to the f4-pawn as long as it is safe, and counterattack against the white king.",
+        "Both sides: Bring the rooks to the f-file and fight for the key e4-square.",
+        "Black: Often aims to trade the strong Bd6 for a white piece to relieve pressure and neutralise White's attacking potential."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:05:00.353Z"
@@ -157819,7 +157819,7 @@
     "eco": "C30",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "This variation of the King's Gambit Declined immediately plunges the game into sharp, tactical complications. Black's early queen check forces the white king into the open, creating a chaotic and unbalanced position where concrete calculation is paramount. This line is perfect for aggressive, tactical players who thrive on early initiative and are comfortable navigating wild, double-edged situations.",
+      "description": "Here White has taken the e5-pawn with 3.fxe5??, a blunder that loses at once. After 3...Qh4+ White has only two replies: 4.g3 Qxe4+ forks the king and the h1-rook, and 4.Ke2 runs into 4...Qxe4 mate, because the c5-bishop covers f2. White should have played 3.Nf3 instead. The line is worth knowing as a trap for Black to spring and for White to avoid.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -157860,8 +157860,8 @@
         "Development vs. King Safety"
       ],
       "common_plans": [
-        "Black: Continue the direct attack on the exposed white king, often forking the king and rook with ...Qxe4+, and use the initiative to prevent White from consolidating.",
-        "White: Survive the initial attack, secure the king (e.g., via Ke2-f2), complete development, and leverage the extra pawn and central space for a long-term advantage."
+        "Black: After 4.g3, take on e4 with check and then capture the h1-rook, leaving Black a rook up; after 4.Ke2, 4...Qxe4 is checkmate.",
+        "White: There is no good defence: 4.g3 loses the h1-rook and 4.Ke2 is mated at once. The lesson is to avoid 3.fxe5?? and develop with 3.Nf3 first."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:24:40.259Z"

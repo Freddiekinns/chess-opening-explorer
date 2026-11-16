@@ -6346,5 +6346,65 @@
     "verdict": "fixed",
     "contentHash": "6ddffab2f652fc3d",
     "notes": "Plan 1 retreated the attacked e3-bishop with Bf1 (it is the g2-bishop that stands next to f1) and pushed f5 onto Black's knight. Rewrote plan 1; British spelling elsewhere."
+  },
+  "r1bq1rk1/pp2npbp/3pp1p1/2p5/3nPP2/2NPBNP1/PPPQ2BP/R4RK1 b - - 7 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "7ef41e91a0537be0",
+    "notes": "Plan 1 rerouted the knight via e1 to g2, where White's bishop stands. Rewrote plan 1 around Nd1 and c3; British spelling elsewhere."
+  },
+  "r1bq1rk1/pp2npbp/3pp1p1/2p5/3nPP2/2NPBNP1/PPP3BP/1R1Q1RK1 b - - 7 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "51e55ef9cb7a920d",
+    "notes": "Plan 1 said b4 challenges the d4-knight (it undermines the c5-pawn that supports it); plan 2 answered b4 with ...a5 as a Black b4 move. Rewrote plans 1-2; British spelling in the overview."
+  },
+  "rnb1k1nr/pp1pppbp/6p1/q1P5/4P3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "9b2b55827ed03700",
+    "notes": "Plan 1 recaptured with a knight via a6-c5 as one route, missing the usual ...Qxc5. Rewrote plan 1; British spelling elsewhere."
+  },
+  "rnbqk1nr/pp1ppp1p/6pb/2p5/2P1P3/5N2/PP1P1PPP/RNBQKB1R w KQkq - 1 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f3f8390d4e709b65",
+    "notes": "Plan 3 traded the h6-bishop for a knight on f4 that isn't there; plan 1 'challenged' the bishop with g3. Rewrote plans 1 and 3 around ...Bxc1 once the d-pawn moves."
+  },
+  "rnbqk1nr/pp1pppbp/6p1/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "c490d45c59b0b8d2",
+    "notes": "Plan 1 rerouted a knight via f6-d7-c5 when no black knight stands on f6. Rewrote plan 1; British spelling in the overview."
+  },
+  "rnb1k1nr/pp1pppbp/6p1/q1P5/4P3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "47a6d1cc05f79056",
+    "notes": "Plan 2 developed a knight to c3, where White's pawn stands; plan 3's ...b6 was not this line's idea. Rewrote plans 2-3."
+  },
+  "rnbqkbnr/pp1ppp1p/6p1/2p5/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f2b0fff9e5d641b4",
+    "notes": "Plan 1 wrote the centre as an e4-d4 route. Rewrote plan 1; British spelling in plan 2."
+  },
+  "rnbqkbnr/pp1ppp1p/6p1/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "c9818a1f64fe43ac",
+    "notes": "Plan 2 played ...Rc8 with the bishop still on c8 and called the c-file semi-open correctly but unreadably. Rewrote plan 2; British spelling in plans 1 and 4."
+  },
+  "rnbqkbnr/3ppppp/p7/1pp5/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f138db121cb86e7f",
+    "notes": "Plan 1 named c6 as a weak square (the d7-pawn guards it). Rewrote plan 1 around a4 against the b5-pawn; British spelling in plan 2."
+  },
+  "rnbqkbnr/1p1ppppp/p7/2p5/1P2P3/5N2/P1PP1PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "af9edd9db4204f31",
+    "notes": "Plan 1 called the b-file open (it is half-open); plan 2 wrote ...bxa3 so it could not be read. Rewrote plans 1-2."
   }
 }

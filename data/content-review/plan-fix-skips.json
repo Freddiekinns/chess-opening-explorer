@@ -40,5 +40,11 @@
     "plan": "White: Recapture the e4-pawn via Nc3-Nxe4, castle quickly, and use the active Bb2 to pressure Black's kingside.",
     "reference": "Nc3-Nxe4",
     "reason": "correct plan, parser can't read a recapture route that needs the opponent's ...dxe4 first yet"
+  },
+  {
+    "fen": "r1bqkbnr/1p1ppppp/p1n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+    "plan": "White: Maneuver pieces to control the light squares, especially d5, and restrict Black's pieces.",
+    "reference": "d5",
+    "reason": "needs-research: two rewrites rejected; after Bxc6 dxc6 White's light-squared bishop is gone and the c6-pawn covers d5, so this line's real White plan needs a source"
   }
 ]

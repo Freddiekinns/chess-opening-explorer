@@ -486,10 +486,10 @@
     "notes": "Style brief audit (scotch-game, researched 2026-10-03): 10 claims, 1 wrong and fixed in #171, 1 unverifiable."
   },
   "r1bqkbnr/pp1ppp1p/2n3p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5": {
-    "reviewedAt": "2026-10-11",
-    "verdict": "ok",
-    "contentHash": "bf408648b99b08ad",
-    "notes": "Style brief audit (sicilian-defense-accelerated-dragon, researched 2026-10-03): 9 claims, 0 wrong, 2 unverifiable."
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "7e1adbc916c9145a",
+    "notes": "Plan 1 supported ...d5 with ...a6 and ...b5 rather than the Accelerated Dragon's point, ...d5 in one move; plan 3 wrote ...Rxc3 with no rook able to reach c3. Rewrote plans 1 and 3."
   },
   "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2": {
     "reviewedAt": "2026-10-11",
@@ -6434,8 +6434,8 @@
   "rnbqkb1r/pp1p1ppp/4p3/2pNP3/8/5N2/PPPP1PPP/R1BQKB1R b KQkq - 0 5": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "501663785d272ed2",
-    "notes": "Follow-up to batch 2026-11-16-11: plan 1 pressured a d5-pawn not yet there and claimed a c-file. Rewrote plan 1 (reviewer: first draft's development did not bear on d5)."
+    "contentHash": "db5c1dfcd42ea05d",
+    "notes": "Follow-up to batch 2026-11-16-12: plan 1 wrote Qxd5 so the parser could not read it and left out Black's play against f2. Reworded plan 1."
   },
   "r1bqkb1r/pp1p1ppp/2n5/2PpP3/8/5N2/PPP2PPP/R1BQKB1R b KQkq - 0 7": {
     "reviewedAt": "2026-11-16",
@@ -6469,9 +6469,9 @@
   },
   "r1bqkbnr/1p1ppppp/p1n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4": {
     "reviewedAt": "2026-11-16",
-    "verdict": "fixed",
+    "verdict": "needs-research",
     "contentHash": "2f6d525e860a1e78",
-    "notes": "Plan 2 recaptured with dxc6 written so it could not be read and called the d-file open (half-open). Rewrote plan 2; British spelling in the overview. Plan 3 (light-square play on d5, which the c6-pawn covers once White's light-squared bishop is gone) is fixed in the follow-up in batch 2026-11-16-13."
+    "notes": "Follow-up to batch 2026-11-16-12: plan 3 (light-square play on d5 after Bxc6 dxc6, when the c6-pawn covers d5 and White's light-squared bishop is gone) was rewritten twice and rejected twice (second time: it assumed the exchange on c6 without saying so). Old text kept; added to plan-fix-skips."
   },
   "r1bqkb1r/pp1ppppp/2n2n2/2p5/4P3/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 1 4": {
     "reviewedAt": "2026-11-16",
@@ -6506,8 +6506,8 @@
   "r1bqkb1r/pp1pnppp/2n1p3/1Bp5/4P3/1P3N2/P1PP1PPP/RNBQ1RK1 b kq - 0 5": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "8cc56e105d12da10",
-    "notes": "Overview called b3 a light-squared fianchetto (Bb2 is the dark-squared bishop); plan 4 'neutralised' a light-squared bishop with ...b4 ideas. Fixed the overview and rewrote plan 4. Plan 3 is fixed in the follow-up in batch 2026-11-16-13 (reviewer: first draft's c3 blocks the b2-bishop)."
+    "contentHash": "4bea0c29ac0a25a3",
+    "notes": "Follow-up to batch 2026-11-16-12: plan 3 rerouted the knight Nf3-e1-d3. Rewrote plan 3 around Bb2 and d4 (reviewer: first draft's c3 blocked the b2-bishop)."
   },
   "r1bqkb1r/pp1pnppp/2n1p3/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQ1RK1 b kq - 0 5": {
     "reviewedAt": "2026-11-16",
@@ -6526,5 +6526,59 @@
     "verdict": "fixed",
     "contentHash": "cd13dd15dee3e5a9",
     "notes": "Plan 1 played c3 with the knight on c3; plans 2 and 4 wrote ...b5 into the bishop and f4/h4 as moves. Rewrote plans 1, 2, 4; British spelling elsewhere."
+  },
+  "r1bqkb1r/pp1pnppp/2n1p3/1Bp5/4P3/5N2/PPPP1PPP/RNBQR1K1 b kq - 3 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "230dc70860678f69",
+    "notes": "Plan 4 played ...b5 into the b5-bishop and fianchettoed with ...b4. Rewrote plan 4; British spelling elsewhere."
+  },
+  "r1bqkbnr/pp1ppp1p/2n3p1/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "4dfaaa4b42f79ccb",
+    "notes": "Plan 4 gave Black a 'semi-open b-file' after ...dxc6 (it is the d-file). Rewrote plan 4; British spelling in plan 2."
+  },
+  "r1bqkbnr/pp2pp1p/2p3p1/2p5/4P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "3fd9a1514689df28",
+    "notes": "Plan 3 rerouted the knight via d2-f1-e3 as one route. Rewrote plan 3 around Nbd2-c4 and play against the doubled pawns; British spelling elsewhere."
+  },
+  "r1bqk1nr/pp2ppbp/2p3p1/2p5/4P3/3P1N1P/PPP2PP1/RNBQK2R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "8c7f03e8fa631f94",
+    "notes": "Plan 3 routed a knight Ne2-d4-c4; plan 1 used Nc3-e2. Rewrote plans 1 and 3; British spelling elsewhere."
+  },
+  "r1bqk1nr/pp1p1pbp/2n3p1/1Bp1p3/4P3/5N2/PPPP1PPP/RNBQR1K1 w kq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "0a4f0e38753fb72c",
+    "notes": "Plan 1 wrote the knight route as d2-f1-g3; plan 2 played ...b5 into the bishop. Rewrote plans 1-2; British spelling elsewhere."
+  },
+  "r1bqk1nr/pp1p1pbp/2n3p1/1Bp1p3/4P3/2P2N2/PP1P1PPP/RNBQR1K1 b kq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "054cf9858333a9bd",
+    "notes": "Plan 2 named d4 as a Black move and ...b5 into the bishop. Rewrote plan 2; British spelling in the overview."
+  },
+  "r1bq1rk1/pp1pppbp/2n2np1/1Bp5/3PP3/2P2N2/PP3PPP/RNBQR1K1 b - - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "4de0ee1ccba945c1",
+    "notes": "Plan 3 offered Nf3-e1-g2 and Nf3-d2-f1-e3 routes with no point; plan 4 wrote ...b5-b4 into the bishop. Rewrote plans 3-4; British spelling elsewhere."
+  },
+  "r1bq1rk1/pp1pppbp/2n2np1/1Bp5/4P3/2P2N1P/PP1P1PP1/RNBQR1K1 b - - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "37522a6ba197b21e",
+    "notes": "Plan 2 played ...b5 into the bishop. Rewrote plan 2; British spelling in the overview."
+  },
+  "r1bqkbnr/pp3ppp/2np4/1N2p3/4P3/8/PPP2PPP/RNBQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "93896e13873c8834",
+    "notes": "Plan 1 named d5 as a move; plan 2 played ...b5 into the knight; plan 4 pinned an f6-knight not yet developed. Rewrote plans 1, 2, 4."
   }
 }

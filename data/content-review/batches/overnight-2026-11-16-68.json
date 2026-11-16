@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rnb1k1r1/ppq1np1Q/4p3/3pP3/3p4/P1P5/2P1NPPP/R1B1KB1R b KQq - 1 10",
+      "name": "French Defense: Winawer Variation, Poisoned Pawn Variation, Main Line",
+      "eco": "C19",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Kf1 and plan 4 Kf1-g1 with White's bishop on f1; plan 2 called the g-file open (White's g-pawn stands). Rewrote plans 1, 2 and 4."
+    },
+    {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2",
+      "name": "King's Pawn Game: MacLeod Attack",
+      "eco": "C20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had 'Bc4/e2', read as a pawn move, and Nc3 with White's pawn on c3. Rewrote plan 1; British spelling in overview."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/8/3pp3/2P1P3/8/PP1P1PPP/RNBQKBNR w KQkq - 0 3",
+      "name": "King's Pawn Game: Bavarian Gambit",
+      "eco": "C20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had ...Qxd5, which drops the queen to cxd5; plan 3 named g4 as a move. Rewrote plans 1 and 3; British spelling in overview."
+    },
+    {
+      "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P3/2P5/PP1P1PPP/RNBQKBNR w KQkq - 0 3",
+      "name": "King's Pawn Game: MacLeod Attack, Lasa Gambit",
+      "eco": "C20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had ...Qh4+ (not check while the f2-pawn stands) and d4 read as a Black move; plans 2-3 had d4 written so the parser cannot place it. Rewrote plans 1-3; British spelling in overview and plan 4."
+    },
+    {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/8/PPPP1PPP/RNBQK1NR w KQkq - 2 3",
+      "name": "Open Game: Portuguese, 2...Nc6",
+      "eco": "C20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had dxc6 and bxc6 before White takes on c6; plan 4 fianchettoed the 'light-squared' bishop on g7. Rewrote plans 2 and 4; British spelling in overview and plan 1."
+    },
+    {
+      "fen": "rnbqkb1r/pppp1ppp/5n2/1B2p3/3PP3/8/PPP2PPP/RNBQK1NR b KQkq - 0 3",
+      "name": "Portuguese Opening: Portuguese Gambit",
+      "eco": "C20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Nd6 with no knight able to reach it yet. Rewrote plan 2; British spelling in overview and plan 4."
+    },
+    {
+      "fen": "rnbqk2r/pppp1ppp/5n2/2b1p3/4PP2/3P4/PPP3PP/RNBQKBNR w KQkq - 1 4",
+      "name": "King's Pawn Game: Clam Variation, Radisch Gambit",
+      "eco": "C20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 targeted an f2-pawn that has gone to f4. Rewrote plan 4; British spelling in plans 1 and 3."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+      "name": "Parham Attack/Scholar's Mate",
+      "eco": "C20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The page is the final position of the Scholar's Mate (4.Qxf7 is checkmate), but the overview and plans advised Black to defend f7 with ...g6. Rewrote overview and both plans."
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/5n2/2b5/3nP3/5N2/PP2QPPP/RNB1KB1R w KQkq - 0 7",
+      "name": "King's Pawn Opening: Van Hooydoon Gambit",
+      "eco": "C20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Plan 4 castled with the f1-bishop at home. Rewrote plan 4; British spelling in plan 2. Overview not settled: it says Black sacrifices a knight, but 6...Nxd4 attacks the e2-queen and after 7.Nxd4 Bxd4 Black is a pawn up; plan 1's 'bishop on d4' also assumes that line. No source found to settle the gambit's real line."
+    },
+    {
+      "fen": "rnbqkbnr/pp1p1ppp/8/2p5/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "name": "Center Game: Kieseritzky Variation",
+      "eco": "C21",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...dxc3 before White plays c3. Rewrote plan 2; British spelling in overview (Centre Game) and plan 3."
+    }
+  ]
+}

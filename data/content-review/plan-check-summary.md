@@ -1,78 +1,73 @@
 # Plan reference check
 
-4216 references on 3299 of 12377 pages fail the check and show as plain text.
+2221 references on 1707 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41084, of which 5555 name no move, route, square or piece
-- References by kind: {"square":14824,"piece":14275,"move":52271,"route":9671}
-- References by result: {"now":65037,"on-board":13178,"later":8610,"invalid":4216}
+- Plans: 41062, of which 5471 name no move, route, square or piece
+- References by kind: {"square":16121,"piece":15304,"move":54630,"route":8881}
+- References by result: {"now":69170,"on-board":14282,"later":9263,"invalid":2221}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
 - **C00 French Defense: Horwitz Attack, Papa-Ticulat Gambit** (4 views)
-  - `Nxe4`: No piece can play Nxe4 here, now or after the plan's earlier moves
-- **A36 English: Symmetrical, 5.a3** (2 views)
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-- **A68 Benoni: Four Pawns, 9.Bd3** (2 views)
-  - `...Na6-c7`: One step of ...Na6-c7 can't be played here
-- **B23 Sicilian Defense: Closed, Korchnoi Defense** (2 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **B77 Sicilian Defense: Dragon Variation, Yugoslav Attack, Czerniak Variation** (2 views)
-  - `fxe6`: No piece can play fxe6 here, now or after the plan's earlier moves
-- **C01 French: Exchange, 4.Bf4** (2 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **C50 Italian: Blackburne-Shilling Gambit** (2 views)
-  - `Qxe4+`: No piece can play Qxe4 here, now or after the plan's earlier moves
-  - `exd4`: No piece can play exd4 here, now or after the plan's earlier moves
-- **A45 London System Main Line with Black ...e6 and ...c5** (1 views)
-  - `d4-e3-c3`: One step of d4-e3-c3 can't be played here
-- **A56 Benoni Defense: Hromádka System** (1 views)
-  - `...Re8`: No piece can play Re8 here, now or after the plan's earlier moves
-- **A60 Benoni Defense: Modern Variation, Snake Variation** (1 views)
-  - `c7`: No piece can play c7 here, now or after the plan's earlier moves
-  - `b8`: No piece can play b8 here, now or after the plan's earlier moves
-- **A65 Benoni: 6.e4 Be7** (1 views)
-  - `Nd2`: No piece can play Nd2 here, now or after the plan's earlier moves
+  - `Nc3-Nxe4`: One step of Nc3-Nxe4 can't be played here
 - **A67 Benoni: Four Pawns, Taimanov, 9.Bd3 O-O 10.Nf3 a6** (1 views)
   - `...Na6-b4`: One step of ...Na6-b4 can't be played here
-- **A80 Dutch Defense: Korchnoi Attack** (1 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **B00 O'Neill Gambit** (1 views)
-  - `c5`: No piece can play c5 here, now or after the plan's earlier moves
-- **B10 Caro-Kann Defense: Hillbilly Attack** (1 views)
-  - `cxd5`: No piece can play cxd5 here, now or after the plan's earlier moves
 - **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6 6.Nf3 Bg4** (1 views)
   - `d4-d5`: One step of d4-d5 can't be played here
-- **C20 King's Pawn Game: King's Head Opening** (1 views)
-  - `e2`: No piece can play e2 here, now or after the plan's earlier moves
-- **C39 King's Gambit Accepted: Allgaier, Schlechter Defense** (1 views)
-  - `f3`: No piece can play f3 here, now or after the plan's earlier moves
-- **C57 Two Knights Defence, Traxler Counterattack** (1 views)
-  - `...d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **C57 Two Knights Defense, Ulvestad Variation** (1 views)
-  - `...c5-c4`: One step of ...c5-c4 can't be played here
-- **C69 Spanish: Exchange, Gligoric, 6.d4 Bg4 7.c3** (1 views)
-  - `f4-g4`: One step of f4-g4 can't be played here
-- **C74 Spanish: Modern Steinitz, Siesta, 6.exf5** (1 views)
-  - `f8-rook`: There is no rook on f8, or on its way
-- **C88 Ruy Lopez: Closed, Leonhardt Variation** (1 views)
-  - `...Ng6`: No piece can play Ng6 here, now or after the plan's earlier moves
-- **C97 Ruy Lopez: Closed, Chigorin, Yugoslav System** (1 views)
-  - `...Bg7`: No piece can play Bg7 here, now or after the plan's earlier moves
-  - `b7-d8`: One step of b7-d8 can't be played here
-- **E21 Nimzo-Indian: Nimzo-Queen's Hybrid** (1 views)
+- **A00 Polish: Schuehler Gambit** (0 views)
+  - `Bxb5`: No piece can play Bxb5 here, now or after the plan's earlier moves
+- **A03 Bird Opening: Thomas Gambit** (0 views)
+  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
+- **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
+  - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
+- **B30 Sicilian Defense: Nyezhmetdinov-Rossolimo Attack: 3...a6?!** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **B44 Sicilian, Taimanov, Szen, 7.N1c3 a6** (0 views)
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **B45 Sicilian: Taimanov, Four Knights, 6.Nxc6 bxc6 7.e5 Nd5** (0 views)
+  - `Ne2-c3`: One step of Ne2-c3 can't be played here
+- **B47 Sicilian Defense: Taimanov Variation, Bastrikov Variation, Ponomariov Gambit** (0 views)
+  - `...axb6`: No piece can play axb6 here, now or after the plan's earlier moves
+- **B49 Sicilian: Taimanov, 6.Be3 a6 7.Be2 Nf6 8.O-O Bb4 9.Na4 Be7** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **B57 Sicilian: Sozin, Benko, 7.Nb3** (0 views)
+  - `c1-d3`: One step of c1-d3 can't be played here
+- **C02 French Defense: Advance Variation, Paulsen Attack** (0 views)
+  - `...b5-b4`: One step of ...b5-b4 can't be played here
+- **C07 French Defense: Tarrasch Variation, Open System, Shaposhnikov Gambit** (0 views)
+  - `...Bxc5`: No piece can play Bxc5 here, now or after the plan's earlier moves
+- **C19 French: Winawer, 6...Ne7 7.Nf3 b6 8.Bb5+** (0 views)
+  - `Qg4`: No piece can play Qg4 here, now or after the plan's earlier moves
+  - `h4-h5`: One step of h4-h5 can't be played here
+- **C19 French: Winawer, 6...Ne7 7.Nf3 Nbc6 8.a4 Qa5+ 9.Bd2 Bd7 10.Bb5** (0 views)
+  - `Ba3`: No piece can play Ba3 here, now or after the plan's earlier moves
+- **C26 Vienna: Smyslov, 3...Bc5 4.Bg2 Nc6** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **C28 Vienna: 3.Bc4 Nc6 4.d3 Bb4 5.Nf3** (0 views)
+  - `Ne2-g3`: One step of Ne2-g3 can't be played here
+- **C33 King's Gambit Accepted: Bishop's Gambit, Kieseritzky Gambit** (0 views)
+  - `Bxb5`: No piece can play Bxb5 here, now or after the plan's earlier moves
+- **C39 King's Gambit Accepted: Allgaier, Urusov Attack** (0 views)
+  - `...Kh7-g8`: One step of ...Kh7-g8 can't be played here
+- **C40 King's Knight Opening: Gunderam Gambit, Bishop Attack** (0 views)
+  - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
+- **C40 King's Pawn Game: Gunderam Gambit** (0 views)
+  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
+- **C40 Latvian Gambit Accepted: Bronstein Gambit** (0 views)
   - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **E34 Nimzo-Indian: Classical, Noa, 5.cxd5 Qxd5 6.Nf3 Qf5 7.Qb3** (1 views)
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-  - `b4`: No piece can play b4 here, now or after the plan's earlier moves
-  - `a3`: No piece can play a3 here, now or after the plan's earlier moves
-- **E61 King's Indian: Smyslov System** (1 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **A00 Amar Opening: Paris Gambit, Gent Gambit** (0 views)
-  - `Ng5`: No piece can play Ng5 here, now or after the plan's earlier moves
-- **A00 Grob: 1...d5** (0 views)
-  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
-  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
-- **A00 Grob: 1...d5** (0 views)
-  - `f4`: No piece can play f4 here, now or after the plan's earlier moves
-  - `h4`: No piece can play h4 here, now or after the plan's earlier moves
+  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
+- **C40 Latvian Gambit Accepted: Nimzowitsch Attack** (0 views)
+  - `f5`: No piece can play f5 here, now or after the plan's earlier moves
+- **C40 Latvian Gambit: 3.d4 fxe4 5.Nxe5 Nf6** (0 views)
+  - `f7`: No piece can play f7 here, now or after the plan's earlier moves
+- **C40 Latvian Gambit: 3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4** (0 views)
+  - `Nc3-e3`: One step of Nc3-e3 can't be played here
+- **C40 Latvian Gambit: Corkscrew Countergambit** (0 views)
+  - `f7-pawn`: There is no pawn on f7, or on its way
+  - `Bxf7+`: No piece can play Bxf7 here, now or after the plan's earlier moves
+- **C40 Latvian Gambit: Mayet Attack** (0 views)
+  - `f7-pawn`: There is no pawn on f7, or on its way
+- **C40 Latvian Gambit: Mayet Attack, Morgado Defense** (0 views)
+  - `f7-pawn`: There is no pawn on f7, or on its way
+- **C40 Latvian Gambit: Svedenborg, 6.Nxg6 hxg6** (0 views)
+  - `Qxh7`: No piece can play Qxh7 here, now or after the plan's earlier moves

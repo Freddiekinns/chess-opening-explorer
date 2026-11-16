@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "rnb1k1nr/ppp2p1p/8/4P3/6p1/8/PPP1P1PP/RNBqKB1R w KQkq - 0 8",
+      "name": "Bird: From Gambit, Lasker, Queenswap Line",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had Kc2 and Bg2 for White without the forced 8.Kxd1 (and Bg2 needs g3 first). Rewritten around the queenless middlegame: ...Nc6 against e5, long castling with check, Bf4."
+    },
+    {
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+      "name": "Bird's Opening, 1...e6",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had Ne5 in a Stonewall without Nf3; American spelling. Rewritten, adding the 2.e4 d5 French transposition."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+      "name": "Bird Opening: Dutch Variation",
+      "eco": "A03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 named an e8-a4 diagonal against White's king (it is Black's own); overview in American spelling. Overview and plans 3-4 rewritten."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P2P2/8/PP1PP1PP/RNBQKBNR b KQkq - 0 2",
+      "name": "Bird Opening: Sturm Gambit",
+      "eco": "A03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had Bxc4 without ...dxc4 and a semi-open f-file with the f4-pawn on it. Rewritten around 3.e3/4.Bxc4 and 3.Qa4+/4.Qxc4."
+    },
+    {
+      "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3p1P2/1P2PN2/PBPP2PP/RN1QKB1R b KQkq - 0 5",
+      "name": "Bird Opening: Thomas Gambit",
+      "eco": "A03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "needs-research: plan 1 has Re1, impossible before castling, but the gambit's real follow-up after 5...dxe3 was not settled by the board or a short search. Text left unchanged; Re1 added to the skips."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/8/4pP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 1 3",
+      "name": "Bird Opening: Williams Gambit",
+      "eco": "A03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had White using an open f-file (the f4-pawn is on it) and Black solidifying a d5-pawn that is on e4. Rewritten around Qe2, g4 and d3 against Black's ...Nf6 and ...Bf5."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/5P2/1P6/P1PPP1PP/RNBQKBNR w KQkq - 1 3",
+      "name": "Bird: 1...d5 2.b3",
+      "eco": "A03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called the c1-bishop light-squared; plans had O-O without development and vague attacking ideas. Rewritten around Bb2 and e5, ...c5 and the 3...d4 option."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pp1p/6p1/3p4/5P2/4PN2/PPPP2PP/RNBQKB1R b KQkq - 0 3",
+      "name": "Bird: 1...d5 2.Nf3 g6 3.e3",
+      "eco": "A03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had Qe1-h4 with the king on e1 and a b8-knight route to c7. Rewritten as a Stonewall versus fianchetto with ...Bf5 to trade the d3-bishop."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pp1p/6p1/3p4/5P2/5NP1/PPPPP2P/RNBQKB1R b KQkq - 0 3",
+      "name": "Bird: 1...d5 2.Nf3 g6 3.g3",
+      "eco": "A03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had ...Bg7 neutralising the g2-bishop (different diagonal) and a knight route d2-f1-e3 through the d2-pawn and the f1-bishop. Rewritten around the e4 break."
+    },
+    {
+      "fen": "rnbqk1nr/ppp1ppbp/6p1/3p4/5P2/5NP1/PPPPP1BP/RNBQK2R b KQkq - 2 4",
+      "name": "Bird: 1...d5 2.Nf3 g6 3.g3",
+      "eco": "A03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had the f3-knight going to e1 with the king there, and plans without side prefixes. Rewritten around d3/e4, c4 and Black's ...c5, ...e5 and ...c6."
+    }
+  ]
+}

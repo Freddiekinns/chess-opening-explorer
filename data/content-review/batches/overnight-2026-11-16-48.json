@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rnbq1rk1/1p2bppp/p2p1n2/4p3/4P3/2N3P1/PPP1NPBP/R1BQK2R w KQ - 4 9",
+      "name": "Sicilian: Najdorf, 6.g3 e5 7.Nde2 Be7 8.Bg2 O-O",
+      "eco": "B91",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Plan 3 had a3 against ...b4 in a way the parser read as a Black move; plan 4 called d5 a dark square. Rewrote plans 3 and 4. Plan 1 (Nde2 to g3, where White's own pawn stands) was rewritten twice and rejected twice (the second time because the e4-pawn blocks the g2-bishop); old text kept with British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/1p1n1ppp/p2p1n2/4p3/4P3/2N3P1/PPP1NP1P/R1BQKB1R w KQkq - 2 8",
+      "name": "Sicilian: Najdorf, 6.g3 e5 7.Nde2 Nbd7",
+      "eco": "B91",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 rerouted the f6-knight via e8-c7 and had a ...b5-b4 route; plan 4 aimed for a queenside passed pawn. Rewrote plans 2 and 4 (reviewer caught that a d7-knight does not cover b5 or d5)."
+    },
+    {
+      "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP1BPPP/R1BQK2R b KQkq - 1 6",
+      "name": "Sicilian Defense: Najdorf Variation, Opocensky Variation",
+      "eco": "B92",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had ...Rxc3 with the bishop on c8; plan 2 had a ...b5-b4 route. Reworded both."
+    },
+    {
+      "fen": "rnbq1rk1/1p2bppp/p2p1n2/4p3/4P3/1NN5/PPP1BPPP/R1BQ1RK1 w - - 4 9",
+      "name": "Sicilian Defense: Najdorf Variation, Opocensky Variation, Traditional Line",
+      "eco": "B92",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 routed the b3-knight via c1-d3 or a1-c2; plan 2 had a ...b5-b4 route. Rewrote both (reviewer caught that a b3-knight does not support Nd5)."
+    },
+    {
+      "fen": "rnbqkb1r/1p3ppp/p2p1n2/4p3/3NP3/2N5/PPP1BPPP/R1BQK2R w KQkq - 0 7",
+      "name": "Sicilian: Najdorf, 6.Be2 e5",
+      "eco": "B92",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had a ...Nbd7-b6 route and called ...b5-b4 a minority attack; plan 1 had f3 and a g4-g5 storm in the Be2 line. Rewrote plans 1 and 2; British spelling in plans 3 and 4."
+    },
+    {
+      "fen": "rn1q1rk1/1p2bppp/p2pbn2/4p3/P3P3/1NN1B3/1PP1BPPP/R2Q1RK1 b - - 0 10",
+      "name": "Sicilian: Najdorf, 6.Be2 e5 7.Nb3 Be7 8.O-O O-O 9.Be3 Be6 10.a4",
+      "eco": "B92",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted a knight via f1-e3; plan 2 had a d7-b6 route. Rewrote both plans."
+    },
+    {
+      "fen": "rn1q1rk1/1p2bppp/p2pbn2/3Np3/4P3/1N2B3/PPP1BPPP/R2Q1RK1 b - - 7 10",
+      "name": "Sicilian: Najdorf, 6.Be2 e5 7.Nb3 Be7 8.O-O O-O 9.Be3 Be6 10.Nd5",
+      "eco": "B92",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named White's exd5 recapture in a Black-to-move position the parser could not follow; plan 2 had a ...b5-b4 route. Rewrote both around the e-pawn recapture, c4-c5 and ...f5."
+    },
+    {
+      "fen": "rn1q1rk1/1p2bppp/p2pbn2/4p3/4P3/1NN5/PPP1BPPP/R1BQ1R1K w - - 6 10",
+      "name": "Sicilian: Najdorf, 6.Be2 e5 7.Nb3 Be7 8.O-O O-O 9.Kh1 Be6",
+      "eco": "B92",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had a ...b5-b4 route and named f4 as a Black move. Reworded plan 2; British spelling in the overview and plan 3."
+    },
+    {
+      "fen": "rnbqkb1r/1p3ppp/p2p1n2/4p3/4PP2/2N2N2/PPP3PP/R1BQKB1R b KQkq - 1 7",
+      "name": "Sicilian: Najdorf, 6.f4 e5 7.Nf3",
+      "eco": "B93",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 listed d5 as both a light and a dark square and named e6 as a move. Rewrote plan 3 around d5 and the e5-pawn."
+    },
+    {
+      "fen": "r1bqkb1r/1p1n1ppp/p2p1n2/4p3/P3PP2/2N2N2/1PP3PP/R1BQKB1R b KQkq - 0 8",
+      "name": "Sicilian: Najdorf, 6.f4 e5 7.Nf3 Nbd7 8.a4",
+      "eco": "B93",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a Bd3-c2 route. Rewrote plan 1 around Bc4 or Bd3; British spelling in the overview."
+    }
+  ]
+}

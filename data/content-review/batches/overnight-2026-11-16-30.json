@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rn1qkbnr/pp1bpppp/3p4/8/3QP3/5N2/PPP2PPP/RNB1KB1R w KQkq - 1 5",
+      "name": "Sicilian, Chekhover, 4...Bd7",
+      "eco": "B53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had White give up the queen for a minor piece on c6 (Qxc6); the overview said 4...Bd7 challenges the queen, when it prepares ...Nc6 without allowing the Bb5 pin. Rewrote the overview and plan 3; British spelling in plan 4."
+    },
+    {
+      "fen": "r2qkbnr/pp1bpppp/2np4/1B6/3QP3/5N2/PPP2PPP/RNB1K2R w KQkq - 3 6",
+      "name": "Sicilian, Chekhover, 4...Nc6 5.Bb5 Bd7",
+      "eco": "B53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 recaptured with a pawn (bxc6) while calling it the bishop recapture; plan 1 exploited doubled pawns Black does not get after ...Bxc6. Rewrote the overview and plans 1-3 around 6.Bxc6 Bxc6 with Nc3, Bg5 and O-O-O or c4."
+    },
+    {
+      "fen": "r2qkb1r/pp2pp1p/2bp1np1/8/2PQP3/2N2N2/PP3PPP/R1B1K2R w KQkq - 0 9",
+      "name": "Sicilian, Chekhover, 7.c4 Nf6 8.Nc3 g6",
+      "eco": "B53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a kingside f4-f5 attack with the knight on f3; plan 2 had a ...d5 break that does not fit the ...g6 setup. Rewrote both plans (reviewer caught that ...Bg7 does not hit the d4-queen while the f6-knight blocks); British spelling in the overview."
+    },
+    {
+      "fen": "r2qk2r/pp2bppp/2bppn2/6B1/3QP3/2N2N2/PPP2PPP/2KRR3 b kq - 3 10",
+      "name": "Sicilian, Chekhover, Main Line, 10.Rhe1",
+      "eco": "B53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had ...h6 and ...g5 with the bishop already on g5. Reworded plan 4; British spelling in the overview."
+    },
+    {
+      "fen": "r2q1rk1/pp2bppp/2bppn2/6B1/3QP3/2N2N2/PPP2PPP/2KRR3 w - - 4 11",
+      "name": "Sicilian, Chekhover, Main Line, 10.Rhe1 O-O",
+      "eco": "B53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 sent the queen to h2, which it cannot reach. Rewrote plan 3 around Kb1 and a queen retreat; British spelling in the overview."
+    },
+    {
+      "fen": "rnbqkb1r/pp3ppp/3p1n2/4p3/4P3/1N3P2/PPP3PP/RNBQKB1R b KQkq - 1 6",
+      "name": "Sicilian: Prins (Moscow), 5...e5 6.Nb3",
+      "eco": "B54",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed a knight to c4 after c4 had been played. Rewrote plan 1; British spelling in the overview and plan 3."
+    },
+    {
+      "fen": "r1b1kb1r/pp2pppp/1qnp1n2/8/2PNP3/5P2/PP4PP/RNBQKB1R w KQkq - 1 7",
+      "name": "Sicilian: Prins (Moscow), 5...Nc6 6.c4 Qb6",
+      "eco": "B54",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named the d4-knight's square as a pawn target. Reworded plan 2; British spelling in the overview and plan 1."
+    },
+    {
+      "fen": "rn1qkb1r/pp1b1ppp/3p1n2/1B2p3/3NP3/5P2/PPP3PP/RNBQK2R w KQkq - 2 7",
+      "name": "Sicilian: Prins, Venice Attack, 6...Bd7",
+      "eco": "B55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...b5 with White's bishop on b5. Reworded plan 2; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkb1r/pp1n1ppp/3p1n2/1B2pN2/4P3/5P2/PPP3PP/RNBQK2R b KQkq - 3 7",
+      "name": "Sicilian: Prins, Venice Attack, 6...Nbd7 7.Nf5",
+      "eco": "B55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had ...b5 with White's bishop on b5 and missed 7...d5, the main reply. Rewrote plan 3; British spelling in the overview and plan 4."
+    },
+    {
+      "fen": "r1bqkb1r/pp1n1ppp/5n2/1B1ppN2/4P3/5P2/PPP3PP/RNBQK2R w KQkq - 0 8",
+      "name": "Sicilian: Prins, Venice Attack, 6...Nbd7 7.Nf5 d5",
+      "eco": "B55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 attacked a d6-pawn that has advanced to d5; plan 2 called the half-open c-file open. Rewrote plan 1 (reviewer rejected calling f5 an outpost while ...g6 is possible) and corrected plan 2."
+    }
+  ]
+}

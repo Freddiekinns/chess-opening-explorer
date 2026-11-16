@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "rnbqk2r/ppp1ppb1/3p1npp/6B1/2PP4/2N2N2/PP2PPPP/R2QKB1R w KQkq - 0 6",
+      "name": "King's Indian: Smyslov System",
+      "eco": "E61",
+      "views": 1,
+      "people": 1,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called the g5-bishop light-squared and the Bg5 a pin; plans repeated the already played ...h6 and named ...g5 before the bishop had moved. Rewritten with the 6.Bh4 g5 7.Bg3 Nh5 line."
+    },
+    {
+      "fen": "rn1qkbnr/ppp2ppp/8/3p4/8/6PB/PPPPP3/RNBQ1RK1 b kq - 0 6",
+      "name": "Amar Opening: Paris Gambit, Gent Gambit",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had White attacking on the h-file with Ng5 against f7, with no knight able to reach g5. Rewritten around White's real compensation (bishop pair, half-open f-file, h3-bishop on d7) and Black's ...Bc5+."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/6P1/8/PPPPPP1P/RNBQKBNR w KQkq - 0 2",
+      "name": "Grob: 1...d5",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had Black challenging g4 with ...h5 and attacking f4/h4, missing that 1...d5 already attacks g4 with the c8-bishop. Rewritten around 2.Bg2 Bxg4 3.c4 and Qb3."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P1P1/8/PPPP1P1P/RNBQKBNR b KQkq - 0 2",
+      "name": "Grob: 1...d5",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans repeated 2.e4 and 2...dxe4 as future moves and suggested queenside castling. Overview now notes the queen guards g4 after 2.e4; plans rewritten around Nc3/Bg2 against e4 and ...h5."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/8/3pp3/6P1/7P/PPPPPP2/RNBQKBNR w KQkq - 0 3",
+      "name": "Grob: 1...d5",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "A ...h5-h4 push that cannot follow with the h3-pawn there; plans tightened and British spelling."
+    },
+    {
+      "fen": "rn1qkbnr/ppp2ppp/8/3p4/5p2/6PB/PPPPP2P/RNBQ1RK1 b kq - 1 5",
+      "name": "Hungarian Opening: Paris Gambit",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had a queen lift Qe1-g1 onto the king's square and an open g-file that is closed. Rewritten around Rxf4/gxf4, the half-open f-file and Black's ...fxg3 transposition to the Gent Gambit; reviewer rejection fixed and re-reviewed."
+    },
+    {
+      "fen": "rnbqkbnr/pppppp1p/6p1/8/8/6P1/PPPPPP1P/RNBQKBNR w KQkq - 0 2",
+      "name": "Hungarian Opening: Symmetrical Variation",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans read the a1-h8 diagonal as a move and had no side prefixes. Rewritten with White:/Black: plans and the brief's transpositions."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/7P/7R/PPPPPPP1/RNBQKBN1 b Qkq - 1 2",
+      "name": "Kádas Opening: Beginner's Trap",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Misread the line: 2.Rh3 hangs the rook to 2...Bxh3, but the page described it as White provoking Bxh3 for a g-file attack. Rewritten: Black wins the exchange."
+    },
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/3P4/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+      "name": "Mieses Opening",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans claimed Black's reversed King's Indian set-up gains a move in hand (White has the extra tempo), called a d3 set-up a Colle and proposed an f4-f5 storm in the KIA. Rewritten."
+    },
+    {
+      "fen": "rnb1kbnr/ppp2ppp/3q4/4p3/1P2p3/P4P2/1BPP2PP/RN1QKBNR b KQkq - 0 5",
+      "name": "Polish Opening: Orangutan-Diemer Gambit",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans used 0-0 for castling and generic text; rewritten around Nxf3 hitting e5, the b2-bishop, Nb5 against the d6-queen and Black's consolidation."
+    }
+  ]
+}

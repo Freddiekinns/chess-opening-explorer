@@ -1,0 +1,126 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rnbqkbnr/1p2pppp/p7/2pp4/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 0 4",
+      "name": "Sicilian: O'Kelly, 3.c3 d5",
+      "eco": "B28",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 recaptured with ...Qxd5 before White has taken on d5; plan 3 wrote castling as 0-0. Rewrote plans 2-3; British spelling in the overview."
+    },
+    {
+      "fen": "rnbqkbnr/1p1p1ppp/p3p3/2p5/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 0 4",
+      "name": "Sicilian: O'Kelly, 3.c3 e6",
+      "eco": "B28",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 pushed f4-f5 through the f3-knight; plan 2 gave White an isolated pawn without the exchanges that create one; plan 3 wrote ...0-0. Rewrote plans 2-4; British spelling elsewhere."
+    },
+    {
+      "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3",
+      "name": "Sicilian Defense: Nimzowitsch Variation, Closed Variation",
+      "eco": "B29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed f2-f4-f5 through the f3-knight. Rewrote plan 1; British spelling in the overview."
+    },
+    {
+      "fen": "rnbqkb1r/pp2pppp/5n2/2pP4/8/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 0 4",
+      "name": "Sicilian: Nimzowitsch, 3.Nc3 d5 4.exd5",
+      "eco": "B29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 challenged a knight on d5 that has not yet recaptured there. Rewrote plan 1; British spelling in plan 2."
+    },
+    {
+      "fen": "rnbqkb1r/pp1p1ppp/4p3/2pNP3/8/5N2/PPPP1PPP/R1BQKB1R b KQkq - 0 5",
+      "name": "Sicilian: Nimzowitsch, 4.Nc3 e6 5.Nxd5",
+      "eco": "B29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 used ...Qe7 to control e4 and missed that ...exd5 must come first. Rewrote plan 2. Plan 1 (pressure on a d5-pawn not yet there, a c-file) is fixed in the follow-up in batch 2026-11-16-12 (reviewer: first draft's development did not bear on d5)."
+    },
+    {
+      "fen": "r1bqkb1r/pp1p1ppp/2n5/2PpP3/8/5N2/PPP2PPP/R1BQKB1R b KQkq - 0 7",
+      "name": "Sicilian: Nimzowitsch, Rubinstein Countergambit, 7.dxc5",
+      "eco": "B29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said White gains the development lead (it is Black's, for the pawn); plan 2 named e4 and c4 as moves. Rewrote overview and plan 2 around 7...Bxc5 8.Qxd5 Qb6; British spelling in plan 3."
+    },
+    {
+      "fen": "r1bqk1nr/pp3ppp/2np4/2p1p1b1/2B1P3/2NP4/PPPN1PPP/R1BQK2R w KQkq - 2 7",
+      "name": "Sicilian Defense: Closed, Anti-Sveshnikov Variation, Kharlov-Kramnik Line",
+      "eco": "B30",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 2 traded the g5-bishop for a knight on f3 that has gone to d2; plan 1 wrote the knight route as f1-g3; plan 4 developed a 'queenside knight' already on c6. Rewrote overview and plans 1, 2, 4; British spelling in plan 3."
+    },
+    {
+      "fen": "r1bqk1nr/pp2bppp/2np4/2p1p3/2B1P3/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 0 6",
+      "name": "Sicilian Defense: Closed, Anti-Sveshnikov Variation, with d6",
+      "eco": "B30",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played a3 to stop ...Bb4, which the d6-pawn already blocks; plan 4 routed the knight f6-e8-g7; overview called it a reversed King's Indian. Rewrote overview and plans 1 and 4."
+    },
+    {
+      "fen": "r1bqkbnr/pp1ppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "name": "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack",
+      "eco": "B30",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 'broke the pin' when Bb5 pins nothing; plan 1-2 wrote the exchanges so they could not be read; plan 3 wrote 0-0. Rewrote all four plans; British spelling in the overview."
+    },
+    {
+      "fen": "rnbqkbnr/pp1ppppp/8/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "name": "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack, Brooklyn Retreat Defense",
+      "eco": "B30",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 played ...b5 with White's bishop on b5. Rewrote plan 4; British spelling elsewhere."
+    },
+    {
+      "fen": "r1bqk1nr/pp1pppbp/6p1/1Bp5/3nPP2/2N2N2/PPPP2PP/R1BQ1RK1 b kq - 5 6",
+      "name": "Sicilian: Closed, Grand Prix, 3...g6 4.Nf3 Bg7 5.Bb5 Nd4 6.O-O",
+      "eco": "B23",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-16-9: plan 3 kept a pin that isn't one. Rewrote plan 3 (reviewer: first draft retreated the bishop to d3 and then played d3)."
+    },
+    {
+      "fen": "r1bqk2r/pp2npbp/2np2p1/2p1p3/4PP2/2NP1NP1/PPP3BP/R1BQK2R w KQkq - 2 8",
+      "name": "Sicilian: Closed, 6.f4 e5 7.Nf3 Nge7",
+      "eco": "B25",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-16-9: plan 2 offered a ...d6-d5 break. Rewrote plan 2 (reviewer: first draft said both knights control d4)."
+    }
+  ]
+}

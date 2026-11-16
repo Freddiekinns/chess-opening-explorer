@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "r1b1k2r/ppppqppp/2n5/4P3/1bP2Bn1/4PN2/PP1N1PPP/R2QKB1R b KQkq - 0 7",
+      "name": "Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3",
+      "eco": "A52",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Plan 3 suggests ...O-O-O after keeping the pin on d2; two rewrites were rejected (the pin usually ends when White castles, ...Bxd2 is common, and ...d6 with White's pawn on e5 allows exd6), so plan 3 keeps its old text with British spelling only and the reference is in plan-fix-skips.json. Plans 1, 2 and 4 and the overview: spelling only."
+    },
+    {
+      "fen": "rnbqkb1r/pppp1ppp/8/4P3/2P1P1n1/8/PP3PPP/RNBQKBNR b KQkq - 0 4",
+      "name": "Indian Defense: Budapest Defense, Alekhine Variation",
+      "eco": "A52",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 consolidated an e4-d4 pawn duo when White's d-pawn has already gone. Rewrote both plans around ...Nxe5 and f4; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pppp1ppp/2n5/8/2P1PP2/8/PP4PP/RNBQKBNR w KQkq - 1 6",
+      "name": "Indian Defense: Budapest Defense, Alekhine Variation, Abonyi Variation",
+      "eco": "A52",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 bolstered a d4-pawn that does not exist. Rewrote plan 3; British spelling."
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/4P3/2P2Bn1/2b2N2/PP2PPPP/R2QKB1R w KQkq - 0 7",
+      "name": "Kornl Richter Gambit, Budapest",
+      "eco": "A52",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named ...Ba6 while White is in check and before recapturing; reworded. British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/pppn1ppp/3p1n2/4p3/2PP4/2NBP3/PP3PPP/R1BQK1NR b KQkq - 1 5",
+      "name": "Duz-Khotimirsky Variation",
+      "eco": "A53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 manoeuvred pieces to f8 with the bishop and rook there. Rewrote both plans; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "name": "Old Indian Defence",
+      "eco": "A53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 developed ...Be7 with the e-pawn on e7; plan 4 called b4-b5 a minority attack. Rewrote plans 3-4; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "name": "Old Indian Defense",
+      "eco": "A53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 supported ...e5 with ...Re8 before castling. Rewrote plan 1; British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/ppp1pppp/3p1n2/5b2/2PP4/2N3P1/PP2PP1P/R1BQKBNR b KQkq - 0 4",
+      "name": "Old Indian Defense: Janowski Variation, Fianchetto Variation",
+      "eco": "A53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named e2-e4 against two defenders without preparation; plan 2 read e4 as a move. Reworded plans 1-2; British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/ppp1pppp/3p1n2/5b2/2PP4/2N2P2/PP2P1PP/R1BQKBNR b KQkq - 0 4",
+      "name": "Old Indian Defense: Janowski Variation, Main Line",
+      "eco": "A53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 read f2-f3 as a Black move. Reworded plan 3; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3",
+      "name": "Old Indian: 3.g3",
+      "eco": "A53",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Re1 after castling without Nf3. Fixed plan 1; British spelling."
+    }
+  ]
+}

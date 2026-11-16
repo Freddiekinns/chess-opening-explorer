@@ -1,0 +1,116 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rnb1kbnr/pp3ppp/4p3/2pq4/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 1 5",
+      "name": "Sicilian: Alapin, 2...d5 3.exd5 Qxd5 4.d4 e6 5.Nf3",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 fianchettoed the light-squared bishop to g7; plan 1 prepared a d4-d5 break into Black's d5-queen. Rewrote plans 1 and 4; British spelling in plans 2-3."
+    },
+    {
+      "fen": "r1b1kbnr/pp2pppp/2n5/3q4/3P4/5N2/PP3PPP/RNBQKB1R b KQkq - 0 6",
+      "name": "Sicilian: Alapin, 2...d5 3.exd5 Qxd5 4.d4 Nc6 5.Nf3 cxd4 6.cxd4",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed d4-d5 into the queen on d5; plan 3 called the e-file open (Black's e7-pawn makes it half-open). Rewrote plans 1 and 3; British spelling in plan 4."
+    },
+    {
+      "fen": "rnb1kb1r/pp2pppp/5n2/2pq4/3P4/2P5/PP3PPP/RNBQKBNR w KQkq - 1 5",
+      "name": "Sicilian: Alapin, 2...d5 3.exd5 Qxd5 4.d4 Nf6",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 harassed the queen with Nc3 while White's pawn stands on c3; plan 4 prepared ...c4 rather than the standard ...cxd4; plan 1 pushed d4-d5 into the queen. Rewrote all four plans; British spelling in the overview."
+    },
+    {
+      "fen": "rnb1kb1r/pp2pppp/5n2/2pq4/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5",
+      "name": "Sicilian: Alapin, 2...d5 3.exd5 Qxd5 4.d4 Nf6 5.Nf3",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview described a d4/e4 pawn duo when White has no e-pawn; plan 1 used d5 as White's outpost and gave Black the isolated pawn. Rewrote overview and plans 1-3; British spelling in plan 4."
+    },
+    {
+      "fen": "rnb1kb1r/pp3ppp/4pn2/2pq4/3P4/2P1BN2/PP3PPP/RN1QKB1R b KQkq - 1 6",
+      "name": "Sicilian: Alapin, 2...d5 3.exd5 Qxd5 4.d4 Nf6 5.Nf3 e6 6.Be3",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 supported d4 with Nc3, where White's pawn stands; plan 4 pinned a c3-knight that isn't there. Rewrote plans 1 and 4; British spelling elsewhere. Plan 3 (Nxd4 to avoid the isolated pawn) is fixed in the follow-up in batch 2026-11-16-9 (reviewer: the first draft's 'stable edge' could not be confirmed)."
+    },
+    {
+      "fen": "rnbqkbnr/pp2pppp/3p4/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR w KQkq - 0 3",
+      "name": "Sicilian: Alapin, 2...d6",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 wrote the centre as a d4-e4 route. Rewrote plan 1; British spelling elsewhere."
+    },
+    {
+      "fen": "rnbqkbnr/pp1p1ppp/8/2p1p3/4P3/2P5/PP1P1PPP/RNBQKBNR w KQkq - 0 3",
+      "name": "Sicilian: Alapin, 2...e5",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "British spelling in the overview. Plan 2 (named d4 as a Black move) is fixed in the follow-up in batch 2026-11-16-9 (reviewer: the first draft had ...Nf6 controlling d4)."
+    },
+    {
+      "fen": "rnbqkbnr/pp3ppp/8/2pp4/3P4/2P5/PP3PPP/RNBQKBNR w KQkq - 0 5",
+      "name": "Sicilian: Alapin, 2...e6 3.d4 d5 4.exd5 exd5",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plans gave White the isolated pawn; after a later dxc5 it is Black's d5-pawn. Rewrote overview and plans 1, 2, 4; British spelling in plan 3."
+    },
+    {
+      "fen": "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 1 3",
+      "name": "Sicilian: Alapin, 2...e6 3.Nf3",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 wrote the centre as a d4-e4 route and mixed a pawn duo with an isolated pawn. Rewrote plan 1; British spelling elsewhere."
+    },
+    {
+      "fen": "rnbqkbnr/pp1ppp1p/6p1/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR w KQkq - 0 3",
+      "name": "Sicilian: Alapin, 2...g6",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 wrote the centre as a d4-e4 route. Rewrote plan 1; British spelling elsewhere."
+    },
+    {
+      "fen": "r3kbnr/pp2pppp/8/8/3n4/2N2P2/PP3P1P/R1B1KB1R w KQkq - 0 10",
+      "name": "Sicilian Defense: Alapin Variation, Barmen Defense, Endgame Variation",
+      "eco": "B22",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-16-6: plan 3 rerouted a knight via d2 to b3 when it already stands on c3. Rewrote plan 3 around Kd1 (reviewer: the first draft's Be3/Bb5+ do not chase the knight)."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4PP2/5N2/PPPP2PP/RNBQKB1R b KQkq - 1 3",
+      "name": "King's Gambit Declined: Falkbeer Countergambit, Blackburne Attack",
+      "eco": "C31",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 called the f-file semi-open with White's pawn on f4; plan 3 had the impossible exd4. Rewrote plans 1 and 3 (3...exf4 4.exd5, 3...dxe4 4.Nxe5); British spelling in plan 2."
+    },
+    {
+      "fen": "rnbqk1nr/ppp2ppp/8/2bPp3/5P2/8/PPPP2PP/RNBQKBNR w KQkq - 1 4",
+      "name": "King's Gambit Declined: Falkbeer Countergambit, Miles Gambit",
+      "eco": "C31",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named an f2-pawn that isn't there and 0-0. Rewrote plans 1-2 (the c5-bishop covers g1; Nf3 stops ...Qh4+); British spelling in overview."
+    },
+    {
+      "fen": "rnbqk1nr/pp3ppp/2P5/2b1p3/5P2/8/PPPP2PP/RNBQKBNR w KQkq - 1 5",
+      "name": "King's Gambit Declined: Falkbeer Countergambit, Pickler Gambit",
+      "eco": "C31",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had ...Nc6 with White's pawn on c6 and targeted f2 and d4. Rewrote plans 1-2; British spelling in plan 4."
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/8/3P4/4nP2/4B3/PPP3PP/RN1QKBNR b KQkq - 1 6",
+      "name": "KGD: Falkbeer, 5.dxe4 Nxe4 6.Be3",
+      "eco": "C32",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 1 spoke of Black's advanced e4-pawn; Black has no e-pawn and White is a pawn up on d5. Rewrote overview and both plans."
+    },
+    {
+      "fen": "rnbqk2r/ppp2ppp/8/2bP4/4nP2/5N2/PPP1Q1PP/RNB1KB1R b KQkq - 3 7",
+      "name": "KGD: Falkbeer, 5.dxe4 Nxe4 6.Nf3 Bc5 7.Qe2",
+      "eco": "C32",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 castled queenside with the c1-bishop and b1-knight at home. Rewrote plans 1-2 (the Qe2 pin; ...Bf5 Charousek or ...Bf2+ Alapin); overview's f2-pawn changed to f2-square; British spelling."
+    },
+    {
+      "fen": "rnb1k2r/ppp2ppp/8/3q4/4nP2/8/PPPNQbPP/RNBK1B1R b kq - 1 9",
+      "name": "King's Gambit Declined: Falkbeer Countergambit, Alapin Variation",
+      "eco": "C32",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 4 gave White an extra pawn after Black regained it with ...Qxd5+; plan 2 had Ke2-f1 with the queen on e2; plan 1 mentioned an e4-pawn. Rewrote all four plans and two overview phrases."
+    },
+    {
+      "fen": "rn1qk2r/ppp2ppp/8/2bP1b2/4nP2/5N2/PPP1Q1PP/RNB1KB1R w KQkq - 4 8",
+      "name": "King's Gambit Declined: Falkbeer Countergambit, Charousek Gambit, Main Line",
+      "eco": "C32",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 challenged a non-existent e4-pawn; plan 2 had a pin on the f3-knight that isn't there, and the first rewrite's ...Bf2+ idea was not confirmed (reviewer). Rewrote both plans (...Qe7 to unpin; 8.g4 O-O 9.gxf5 Re8)."
+    },
+    {
+      "fen": "rnb1kbnr/pppp1ppp/8/8/2B1Pp1q/8/PPPPK1PP/RNBQ2NR b kq - 3 4",
+      "name": "King's Gambit Accepted: Bishop's Gambit",
+      "eco": "C33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had the king walking via f2 with the queen covering it. Rewrote plan 1; British spelling in overview and plan 3."
+    },
+    {
+      "fen": "rnb1k2r/ppppnpbp/8/6p1/2BPPp1q/2N5/PPP3PP/R1BQ1KNR w kq - 1 7",
+      "name": "King's Gambit Accepted: Bishop's Gambit, Classical Defense",
+      "eco": "C33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had h4 with Black's queen on h4; plan 3 had Kg2 without g3, and the first rewrite dropped the main line (reviewer). Rewrote plans 1 and 3 (7.g3 fxg3 8.Kg2); British spelling in overview and plans 2 and 4."
+    },
+    {
+      "fen": "rnbqkb1r/pppp1ppp/5n2/8/2B1Pp2/8/PPPP2PP/RNBQK1NR w KQkq - 2 4",
+      "name": "King's Gambit Accepted: Bishop's Gambit, Cozio Defense",
+      "eco": "C33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Ng5 from g1 and Rf1 without castling; plan 3 had d4 'blunting the c8-bishop'. Rewrote plans 1 and 3; British spelling in overview and plan 2."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "rnb1r1k1/pp3pbp/1q4p1/2pPP1B1/6n1/2N2N2/PP2B1PP/R2QK2R w KQ - 3 13",
+      "name": "Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6",
+      "eco": "A69",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 relied on Nd2 and g2-g4 with no clear purpose; plan 2 pushed ...a6/...b5 and ignored ...Nxe5 and the b2-pawn. Rewrote both plans; first rewrite of plan 2 said \"win back material\" (material is level; reviewer catch)."
+    },
+    {
+      "fen": "rnb1r1k1/pp3pbp/1q1P2p1/2p1n1B1/8/2N2N2/PP2B1PP/R2Q1RK1 b - - 0 14",
+      "name": "Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6 13.O-O Nxe5 14.d6",
+      "eco": "A69",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called 14.d6 a d-pawn sacrifice (the e-pawn was given up); plan 1 played Rf3-g3 with the rook on f1. Rewrote overview and both plans."
+    },
+    {
+      "fen": "rnb1r1k1/pp3pbp/1q4p1/2pPN1B1/8/2N5/PP2B1PP/R2Q1RK1 b - - 0 14",
+      "name": "Benoni: Four Pawns, Main Line, 10.e5: 12.Bg5 Qb6 13.O-O Nxe5 14.Nxe5",
+      "eco": "A69",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 targeted a d6-pawn and plan 4 an e5-pawn, neither on the board; plan 1 was generic. Rewrote plans 1, 3, 4."
+    },
+    {
+      "fen": "rnbqr1k1/pp3pbp/4P1p1/2pP4/6n1/2N2N2/PP2B1PP/R1BQK2R b KQ - 0 12",
+      "name": "Benoni: Four Pawns, Main Line, 10.e5: 12.e6",
+      "eco": "A69",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Qh5 through the e2-bishop; plan 2 targeted an e5-pawn that is not there. Rewrote plans 1-3; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/pp1n1pbp/3p1np1/2pP4/4PP2/2N5/PP1NB1PP/R1BQK2R w KQ - 7 11",
+      "name": "Benoni: Four Pawns, Main Line, 10.Nd2 Nbd7",
+      "eco": "A69",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted Nd2-f1-g3 with a rook on f1 after castling; plan 3 had the g7-bishop hitting e4. Rewrote plans 1 and 3; British spelling."
+    },
+    {
+      "fen": "rnbqk2r/pp3pbp/3p1np1/2pP4/4P3/2N2N2/PP2BPPP/R1BQK2R b KQkq - 2 8",
+      "name": "Benoni Defense: Classical Variation, Traditional Variation",
+      "eco": "A70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 used a3 to stop ...b5; plan 2 played ...Na6-c7 after ...a6; plan 3 rerouted Nf3-e1 with the king on e1. Rewrote all four plans; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/1p3p1p/p2p1np1/2pP4/P3P3/2N2N2/1P3PPP/R1BQKB1R b KQkq - 0 8",
+      "name": "Benoni: Classical, 7...a6 8.a4",
+      "eco": "A70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 controlled b4 with Bg5; plan 4 played ...Na6-c7 with a pawn on a6. Rewrote plans 1 and 4; British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/1p3p1p/p2p1np1/2pP4/P3P1b1/2N2N2/1P3PPP/R1BQKB1R w KQkq - 1 9",
+      "name": "Benoni: Classical, 7...a6 8.a4 Bg4",
+      "eco": "A70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview had ...Bxf3 shattering White's pawns (the queen recaptures); plan 2 relied on gxf3 and an open g-file. Rewrote overview sentence and plans 1-2; British spelling."
+    },
+    {
+      "fen": "rnbqk2r/pp3pbp/3p1np1/2pP4/4P3/2NB1N2/PP3PPP/R1BQK2R b KQkq - 3 8",
+      "name": "Benoni: Classical, 8.Bd3",
+      "eco": "A70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 played ...Ne8-d7 with the king on e8; plan 3 rerouted Nd2-f1 with no knight on d2; plan 4 spoke of exchanging a \"bad\" d6-pawn. Rewrote plans 2-4; British spelling."
+    },
+    {
+      "fen": "rnbq1rk1/pp3pbp/3p1np1/2pP4/4P3/2NB1N2/PP3PPP/R1BQ1RK1 b - - 5 9",
+      "name": "Benoni: Classical, 8.Bd3 O-O 9.O-O",
+      "eco": "A70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Plan 3 read c4 as a move; rewritten and accepted. Plan 4 says the g7-bishop targets e4 and the kingside, which is wrong (its diagonal runs to c3 and b2 and is blocked by the f6-knight); two rewrites were rejected by the reviewer (second: the f6-knight blocks the bishop while it hits e4), so plan 4 is left as it was. Suggested direction: f6-knight and ...Re8 against e4; once the knight moves, the g7-bishop bears on c3 and b2."
+    }
+  ]
+}

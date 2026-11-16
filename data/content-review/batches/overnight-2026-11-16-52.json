@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "r1b1k2r/2qnbppp/p2ppn2/1p4B1/3NPPP1/2N2Q2/PPP4P/2KR1B1R w kq - 0 11",
+      "name": "Sicilian: Najdorf, Main Line, 10.g4 b5",
+      "eco": "B99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rfc8 before Black has castled. Rewrote plan 2 around ...b4, ...Bb7 and ...Rc8."
+    },
+    {
+      "fen": "r3k2r/1bqnbppp/p2ppn2/1p4B1/3NPPP1/2NB1Q2/PPP4P/2KR3R w kq - 2 12",
+      "name": "Sicilian: Najdorf, Main Line, 10.g4 b5 11.Bd3 Bb7",
+      "eco": "B99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed g5 with White's own bishop on g5 (reviewer); plan 2 had an ...a5-a4 route and ...Rxc3 with no rook on the c-file. Rewrote both plans; British spelling in the overview."
+    },
+    {
+      "fen": "r1b1k2r/1pqnbppp/p2ppn2/6B1/3NPP2/2N3Q1/PPP3PP/2KR1B1R b kq - 6 10",
+      "name": "Sicilian: Najdorf, Main Line, 10.Qg3",
+      "eco": "B99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a g-pawn storm with the queen on g3 blocking the pawn (reviewer); plan 3 had a ...b5-b4 route. Rewrote plan 1 around e5, Bxf6 and sacrifices on b5 or e6; reworded plan 3."
+    },
+    {
+      "fen": "r3k2r/1bq1bppp/p2ppn2/1p2P3/3N1P2/2N3Q1/PPP1B1PP/2KR3R b kq - 2 13",
+      "name": "Sicilian: Najdorf, Main Line, Keres, 13.Qg3",
+      "eco": "B99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rxc3 with no rook on the c-file. Reworded plan 2."
+    },
+    {
+      "fen": "r1b1k2r/2q2ppp/p2pp3/1p2nPb1/3NP3/2N2Q2/PPP4P/1K1R1B1R w kq - 2 15",
+      "name": "Sicilian: Najdorf, Modern Main Line 13.f5 Bxg5+ 14.Kb1 Ne5",
+      "eco": "B99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had g6 with no white g-pawn and missed the main 15.Qh5 and the Nxe6 sacrifice (reviewer). Rewrote plan 1."
+    },
+    {
+      "fen": "r1b1k2r/2q1bppp/p2pp3/1pn2PP1/3NP3/2N2Q2/PPP4P/2KR1B1R w kq - 1 14",
+      "name": "Sicilian: Najdorf, Modern Main Line 13.f5 Nc5",
+      "eco": "B99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had Kh1 with the king on c1. Rewrote plan 3."
+    },
+    {
+      "fen": "r1bqkbnr/pp1p1ppp/2n1p3/2p5/4P3/5N2/PPPPQPPP/RNB1KB1R w KQkq - 2 4",
+      "name": "Chigorin Variation, 3...Nc6",
+      "eco": "C00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had f4-f5 with the knight on f3 and 0-0 notation; plan 2 had a ...b5-b4 route; plan 4 had White castle long to support the centre. Rewrote plans 1, 2 and 4; British spelling in the overview."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PPP3/8/PP3PPP/RNBQKBNR b KQkq - 0 3",
+      "name": "French Defense: Diemer-Duhm Gambit",
+      "eco": "C00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview said 3.c4 sacrifices the c-pawn, though the gambit is the e4-pawn after 3...dxe4 4.Nc3 Nf6 5.f3; plan 2 had White castle long. Rewrote the overview and all four plans."
+    },
+    {
+      "fen": "rnbqkbnr/pppp1ppp/4p3/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "name": "French Defense: Knight Variation",
+      "eco": "C00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named exd5 before ...d5; plan 4 called queenside expansion a minority attack. Rewrote plans 1 and 4; British spelling in the overview."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3",
+      "name": "French Defense: Pelikan Variation",
+      "eco": "C00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a rook lift Rf1-f3-g3 with the bishop still on f1. Rewrote plan 1; British spelling in the overview and plan 3."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rnbqk2r/p1p1bp1p/1p2pp2/8/3PN3/5N2/PPP2PPP/R2QKB1R w KQkq - 0 8",
+      "name": "French: Burn, 6.Bxf6 gxf6 7.Nf3 b6",
+      "eco": "C11",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had the b7-bishop pressing an e4-pawn (it is a knight); plan 4 called e5 a light square. Rewrote plans 1 and 4; British spelling in overview and plan 2."
+    },
+    {
+      "fen": "rnbqk2r/ppp1bp1p/4p3/5p2/3PN3/5N2/PPP2PPP/R2QKB1R w KQkq - 0 8",
+      "name": "French: Burn, 6.Bxf6 gxf6 7.Nf3 f5",
+      "eco": "C11",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had ...Bh3 through Black's own e6-pawn; plan 2 called e5 a light square; overview called f5 and e6 a central pawn mass and missed that the knight is attacked. Rewrote overview and both plans."
+    },
+    {
+      "fen": "r1b1kb1r/pp1n1ppp/1qn1p3/3pP3/3N1P2/2N1B3/PPP3PP/R2QKB1R w KQkq - 1 9",
+      "name": "French: Steinitz, Boleslavsky, 7...cxd4 8.Nxd4 Qb6",
+      "eco": "C11",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Qd2 'to defend d4' read as a pawn move and missed the ...Qxb2 Rb1 gambit. Rewrote plan 1; British spelling in plans 3-4."
+    },
+    {
+      "fen": "rnbqk2r/ppp2ppp/4pn2/3pP1B1/1b1P4/2N5/PPP2PPP/R2QKBNR b KQkq - 0 5",
+      "name": "French Defense: MacCutcheon Variation, Advance Variation",
+      "eco": "C12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...g5 as a standard follow-up and missed the main line (...h6, Bd2, ...Bxc3, ...Ne4); plan 1 had a3 against the b4-bishop after e5. Rewrote both plans; British spelling in overview."
+    },
+    {
+      "fen": "rnbqk2r/ppp2pp1/4pn1p/3pP3/1b1P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 6",
+      "name": "French Defense: MacCutcheon Variation, Dr. Olland Variation",
+      "eco": "C12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 named d2 and e3 as moves; plan 1 had a3 'solidifying d4'. Rewrote plans 1 and 3; British spelling in overview and plan 2."
+    },
+    {
+      "fen": "rnbqk2r/ppp2pp1/4pn1p/3pP3/1b1P4/2N1B3/PPP2PPP/R2QKBNR b KQkq - 1 6",
+      "name": "French Defense: MacCutcheon Variation, Janowski Variation",
+      "eco": "C12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had c3 with the knight on c3. Rewrote plan 1 (first rewrite said Nge2 attacks the e4-knight, reviewer rejected, reworded and re-accepted); British spelling in plan 4."
+    },
+    {
+      "fen": "rnbqk2r/pppn1pp1/4p2p/3pP3/1b1P4/2N5/PPPB1PPP/R2QKBNR w KQkq - 2 7",
+      "name": "French Defense: MacCutcheon Variation, Tartakower Variation",
+      "eco": "C12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had an a3-b4 advance onto the b4-bishop. Rewrote plan 4; British spelling in overview and plans 1 and 3."
+    },
+    {
+      "fen": "rnbq1k1r/ppp2pp1/4p2p/3pP3/3Pn1Q1/2P5/P1PB1PPP/R3KBNR w KQ - 3 9",
+      "name": "French: MacCutcheon, 8.Qg4 Kf8",
+      "eco": "C12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 rerouted the king to e7 as a move and the overview said Kf8 takes the king off the g-file. Rewrote overview and plan 4; British spelling in plan 3."
+    },
+    {
+      "fen": "rnbq1k1r/ppp2pp1/4p2p/3pP3/3Pn1Q1/2PB4/P1PB1PPP/R3K1NR b KQ - 4 9",
+      "name": "French: MacCutcheon, 8.Qg4 Kf8 9.Bd3",
+      "eco": "C12",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had a d7-b6-c4 knight route from b8 and an open b-file for Black (it is half-open for White). Rewrote plan 4. A rewrite of the overview and plan 2 built on 9...Nxc3 was rejected (the d2-bishop guards c3), so both were kept, plan 2 with British spelling."
+    },
+    {
+      "fen": "rnbqk1nr/ppp1bppp/4p3/3pP1B1/3P4/2N5/PPP2PPP/R2QKBNR w KQkq - 1 6",
+      "name": "French Defense: Classical Variation, Vistaneckis Variation",
+      "eco": "C13",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had Bxg8 with no piece on g8 to take. Rewrote plan 4; British spelling in plan 1."
+    }
+  ]
+}

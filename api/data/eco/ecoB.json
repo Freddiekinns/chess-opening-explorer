@@ -140657,10 +140657,10 @@
         "Race to Attack"
       ],
       "common_plans": [
-        "White's Plan: Castle queenside via Qd2 and 0-0-0, then launch a pawn storm with g4-g5 to open files against the black king. The ultimate goal is a checkmating attack, often involving sacrifices on the kingside.",
-        "Black's Plan: Complete development with ...Nbd7 and ...0-0, then create counterplay on the queenside with the ...b5-b4 pawn push to attack White's knight and undermine the center. Black also seeks to control the d5 square and may prepare the ...d5 pawn break.",
+        "White's Plan: Castle queenside via Qd2 and O-O-O, then launch a pawn storm with g4-g5 to open files against the black king. The ultimate goal is a checkmating attack, often involving sacrifices on the kingside.",
+        "Black's Plan: Complete development with ...Nbd7 and ...O-O, then create counterplay on the queenside with ...b5 and ...b4 to attack White's knight and undermine the centre. Black also seeks to control the d5 square and may prepare the ...d5 pawn break.",
         "Central Tension: Both sides fight for control of the critical d5 square. White aims to occupy it with a knight, while Black strives to execute the ...d6-d5 pawn break to liberate their position.",
-        "Piece Maneuvering: White often repositions the f3 bishop to g2 (after g4) to support the attack and control key diagonals. Black's queen's knight typically goes to d7 to support both the ...e5 pawn and the ...b5 advance."
+        "Piece Manoeuvring: White often follows Qd2 and O-O-O with g4 and Kb1, while Black's queen's knight goes to d7, where it defends the e5-pawn and watches the c5-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T15:04:20.122Z"
@@ -140721,9 +140721,9 @@
       ],
       "common_plans": [
         "White's Plan: Castle queenside, launch a kingside pawn storm with g4-g5 to attack the black king, and maintain control over the critical d5 square.",
-        "Black's Plan: Castle kingside, generate queenside counterplay with ...b5-b4 to undermine White's knight on c3, and prepare the ...d5 pawn break to challenge the center.",
+        "Black's Plan: Castle kingside, generate queenside counterplay with ...b5 and ...b4 to undermine White's knight on c3, and prepare the ...d5 pawn break to challenge the centre.",
         "White's Alternative: Sometimes White castles kingside (O-O) for a more positional battle, aiming to exploit the d5 square and Black's d6 pawn.",
-        "Black's Counter: A common defensive and counter-attacking resource for Black is the exchange sacrifice ...Rxc3, shattering White's queenside pawn structure."
+        "Black's Counter: A common resource for Black is a rook on c8 and an exchange sacrifice on c3, shattering White's queenside pawn structure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T15:04:33.911Z"
@@ -141090,8 +141090,8 @@
       ],
       "common_plans": [
         "White: Launch a kingside pawn storm with g4-g5 and h4-h5 to open lines against the black king.",
-        "Black: Create queenside counterplay with ...b5-b4, targeting the white king and challenging for the center.",
-        "White: Maneuver pieces to support the attack, often involving the queen, rooks on the g/h files, and knights aiming for f5.",
+        "Black: Create queenside counterplay with ...b5 and ...b4, targeting the white king and challenging for the centre.",
+        "White: Support the attack with the queen and rooks on the g- and h-files, and use Nd5 to exchange Black's defenders of the d5-square.",
         "Black: Use the semi-open c-file for pressure and seek to undermine White's central control."
       ],
       "version": "1.0",
@@ -141210,8 +141210,8 @@
       ],
       "common_plans": [
         "White: Castle queenside and launch a g4-g5 pawn storm to attack the Black king.",
-        "Black: Develop quickly, control the d5 square, and launch a queenside counterattack with ...b5-b4.",
-        "White: Reposition the b3 knight, often to d3 via c1, to bolster the center and aid the attack.",
+        "Black: Develop quickly, control the d5 square, and launch a queenside counterattack with ...b5 and ...b4.",
+        "White: Play f3 and O-O-O, then use the g-pawn and the d5-square, with Nd5 when Black allows it.",
         "Black: Use the ...h5 pawn push to restrain White's g4 advance and create counter-chances."
       ],
       "version": "1.0",
@@ -141268,10 +141268,10 @@
         "Control of the d5 square"
       ],
       "common_plans": [
-        "White: Castle long and initiate a kingside pawn storm with g4 and h4 to attack Black's king.",
-        "Black: Challenge the g5 bishop with ...h6, followed by queenside expansion with ...b5-b4 to create counterplay.",
-        "Black: Control the key d5 square and prepare to break in the center, often after playing ...e6.",
-        "White: Maintain the pin on the f6 knight and use superior piece activity to pressure Black's central pawn structure."
+        "White: After 7...h6 8.Bh4 g5 9.Bg3, deal with the g4-knight with h3 or Be2, then attack the loosened kingside with h4 and castle long.",
+        "Black: Challenge the g5-bishop with ...h6 and a further g-pawn advance, then expand on the queenside with ...b5 to create counterplay.",
+        "Black: Control the key d5 square and prepare to break in the centre, often after playing ...e6.",
+        "White: Use the lead in development and the bishop's pressure to exploit the loosening h- and g-pawn advances that Black usually needs."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T15:07:09.050Z"
@@ -141286,7 +141286,7 @@
     "name": "Sicilian: Najdorf, 6.Be3 Ng4 7.Bg5 h6 8.Bh4 g5 9.Bg3 Bg7",
     "scid": "B90i",
     "analysis_json": {
-      "description": "This line of the Sicilian Najdorf, known as the 'Poisoned Pawn's cousin' or the main line of the 6.Be3 system, initiates a fiercely sharp and double-edged battle. Black immediately challenges White's setup with provocative pawn thrusts, leading to unbalanced positions where tactical accuracy and theoretical knowledge are paramount. It is the quintessential opening for aggressive, well-prepared players who thrive in complex, concrete situations and are willing to fight for the initiative from move one.",
+      "description": "This is the main line of 6.Be3 Ng4: after 7.Bg5 h6 8.Bh4 g5 9.Bg3 Bg7 Black has gained space on the kingside and activated the g7-bishop, at the cost of weakening the f5- and h5-squares. White usually continues with h3 or Be2 to question the g4-knight, and ideas such as Nf5 exploit the holes; the play is sharp and highly theoretical. It suits aggressive, well-prepared players who thrive in complex, concrete positions.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -141329,9 +141329,9 @@
         "Control of the d5-square"
       ],
       "common_plans": [
-        "White: Often castles queenside and initiates a queenside attack with a4, b4. A key plan is to prepare the f2-f4 pawn break to challenge Black's kingside and open the f-file for the rook.",
-        "Black: Aims to consolidate the kingside, often with ...Be7 and ...0-0, before continuing the attack with ...h5-h4. Black fights for control of the d5 square and uses the powerful Bg7 to pressure White's position along the long diagonal.",
-        "White: Maneuver the knight from d4 (often to b3 or f3) and the light-squared bishop (from g3) to more active squares, preparing to meet Black's kingside threats.",
+        "White: Deal with the g4-knight with h3 or Be2, exploit the weakened f5-square (Nf5 is a typical idea), and consider h4 to open the kingside.",
+        "Black: Complete development with ...Nc6 or ...Nd7, keep the king flexible, often in the centre for a while, and use the g7-bishop on the long diagonal.",
+        "White: Reposition the d4-knight (often to b3 or f5) and develop the light-squared bishop, preparing to meet Black's kingside play.",
         "Black: Prepare the ...d6-d5 pawn break to liberate the position and challenge White's central control. The knight on g4 is a key piece, often rerouting to e5 or f6 to support the attack."
       ],
       "version": "1.0",
@@ -141391,10 +141391,10 @@
         "Exploiting Weakened King Positions"
       ],
       "common_plans": [
-        "White often castles queenside and launches a pawn storm with f3, g4, and h4 to break open Black's kingside.",
-        "White aims to control the center, exploit the weak d6 pawn, and use the open d-file.",
-        "Black seeks to generate a powerful counterattack on the queenside with ...b5-b4, often supported by the knight on c6 and queen on c7.",
-        "Black uses the active g7-bishop to pressure White's center and queenside, while trying to consolidate their own kingside weaknesses."
+        "White: Often exchange on g4 and follow with f3 and Bf2, then castle long and target the weakened kingside pawns and the f5-square.",
+        "White aims to control the centre, exploit the weak d6 pawn, and use the open d-file.",
+        "Black seeks to generate a counterattack on the queenside with ...b5 and ...b4, often supported by a knight on c6 and the queen on c7.",
+        "Black uses the active g7-bishop to pressure White's centre and queenside, while trying to consolidate their own kingside weaknesses."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T15:07:42.944Z"
@@ -141713,7 +141713,7 @@
     "name": "Sicilian: Najdorf, 6.g3 e5",
     "scid": "B91f",
     "analysis_json": {
-      "description": "The 6.g3 variation against the Najdorf is a positional and strategic approach, sidestepping the razor-sharp tactical battles of the main lines. White aims for a solid fianchetto setup, controlling the long diagonal and preparing for a long-term fight. Black's immediate 6...e5 response challenges White's central intentions, leading to a complex maneuvering game where understanding pawn structures, weak squares (especially d5), and long-range piece activity is paramount. This opening is perfect for strategic players who enjoy accumulating small advantages and outmaneuvering their opponents in a rich, complex middlegame.",
+      "description": "The 6.g3 variation against the Najdorf is a positional and strategic approach, sidestepping the razor-sharp tactical battles of the main lines. White aims for a solid fianchetto setup, controlling the long diagonal and preparing for a long-term fight. Black's immediate 6...e5 response challenges White's central intentions, leading to a complex manoeuvring game where understanding pawn structures, weak squares (especially d5), and long-range piece activity is paramount. This opening is perfect for strategic players who enjoy accumulating small advantages and outmanoeuvring their opponents in a rich, complex middlegame.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -141756,8 +141756,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Use the g2-bishop to pressure Black's center and kingside, often rerouting the b3-knight (e.g., to c1-d3) to support the position and prepare a timely f2-f4 pawn break.",
-        "Black: Solidify control over the d5-square, often with ...Be6 and ...Nbd7. Launch a queenside minority attack with ...b5-b4 to create weaknesses. Reposition pieces to counter White's pressure and create counterplay."
+        "White: Retreat the d4-knight to b3 or e2, fianchetto with Bg2 and castle, then use the g2-bishop and a timely f4 to fight for the centre.",
+        "Black: Solidify control over the d5-square, often with ...Be6 and ...Nbd7, and expand on the queenside with ...b5 to create counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T15:09:21.252Z"
@@ -141772,7 +141772,7 @@
     "name": "Sicilian: Najdorf, 6.g3 e5 7.Nb3",
     "scid": "B91g",
     "analysis_json": {
-      "description": "This variation of the Najdorf steers the game into more positional and strategic waters compared to the sharper main lines. White's 6.g3 fianchetto setup aims for long-term pressure on the long diagonal, while Black's immediate 6...e5 stakes a claim in the center, leading to a complex struggle reminiscent of a Maroczy Bind. The game revolves around the critical d5 square, subtle piece maneuvering, and long-term planning, making it ideal for strategic players who enjoy accumulating small advantages in a tense, dynamic position.",
+      "description": "This variation of the Najdorf steers the game into more positional and strategic waters compared to the sharper main lines. White's 6.g3 fianchetto setup aims for long-term pressure on the long diagonal, while Black's 6...e5 stakes a claim in the centre and leaves the d5-square as the critical point of the position. The game revolves around d5, subtle piece manoeuvring and long-term planning, making it ideal for strategic players who enjoy accumulating small advantages in a tense, dynamic position.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -141814,8 +141814,8 @@
         "Queenside expansion"
       ],
       "common_plans": [
-        "White: Control the d5 square, often with moves like f4 and knight maneuvers (e.g., Nd1-e3). Pressure the d6 pawn and prepare for a potential kingside attack or queenside play with a3-b4.",
-        "Black: Solidify the center with ...Be6 and ...Be7, prepare queenside expansion with ...b5-b4 to challenge White's knight on c3, and seek counterplay by controlling the c-file or challenging White's central grip."
+        "White: Control the d5-square with Bg2 and a knight on d5 or e3, press on the d6-pawn, and choose between f4 and queenside play with a4.",
+        "Black: Solidify the centre with ...Be6 and ...Be7, prepare queenside expansion with ...b5 and ...b4 to challenge White's knight on c3, and seek counterplay on the c-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T15:09:37.565Z"
@@ -141946,7 +141946,7 @@
     "name": "Sicilian: Najdorf, 6.g3 e5 7.Nde2 b5",
     "scid": "B91j",
     "analysis_json": {
-      "description": "This variation of the Najdorf Sicilian leads to a highly strategic and complex struggle. By playing 6.g3, White sidesteps the sharpest theoretical battles and opts for a more positional game, aiming to control the long diagonal. Black's immediate counter-thrusts with ...e5 and ...b5 ensure a dynamic and double-edged middlegame, where long-term planning and understanding pawn structures take precedence over immediate tactical skirmishes. This opening is perfect for sophisticated players who thrive on maneuvering and accumulating small advantages in a rich, strategic environment.",
+      "description": "This variation of the Najdorf Sicilian leads to a highly strategic and complex struggle. By playing 6.g3, White sidesteps the sharpest theoretical battles and opts for a more positional game, aiming to control the long diagonal. Black's immediate counter-thrusts with ...e5 and ...b5 ensure a dynamic and double-edged middlegame, where long-term planning and understanding pawn structures take precedence over immediate tactical skirmishes. This opening is perfect for sophisticated players who thrive on manoeuvring and accumulating small advantages in a rich, strategic environment.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -141990,10 +141990,10 @@
         "Exploiting pawn structure weaknesses"
       ],
       "common_plans": [
-        "White: Complete the kingside fianchetto (Bg2, 0-0), challenge Black's control of d5 with moves like Bg5, and prepare a central push with f2-f4 to undermine Black's structure.",
-        "Black: Develop the light-squared bishop to b7, continue queenside expansion (...a5-a4), and exert pressure on White's center, particularly the e4-pawn.",
+        "White: Complete the kingside fianchetto (Bg2, O-O), challenge Black's control of d5 with moves like Bg5, and prepare a central push with f2-f4 to undermine Black's structure.",
+        "Black: Develop the light-squared bishop to b7, continue queenside expansion (...a5-a4), and exert pressure on White's centre, particularly the e4-pawn.",
         "White: Reroute the Nde2 to f4 or g3 to bolster the kingside and control key central squares, while restraining Black's ...b4 push.",
-        "Black: Maneuver the b8-knight to d7, prepare ...Rc8, and seek opportunities for a central pawn break or a minority attack on the queenside."
+        "Black: Develop the b8-knight to d7, put a rook on c8 after ...Bb7, and look for central breaks or further queenside expansion."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T15:10:29.783Z"

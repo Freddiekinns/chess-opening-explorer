@@ -7984,5 +7984,65 @@
     "verdict": "fixed",
     "contentHash": "0199c25b4c67ed55",
     "notes": "Plan 1 had an h4-h5 storm in front of White's own king; plan 2 had ...Rc8 with the bishop on c8; plan 4 had ...Rxc3. Rewrote plans 1, 2 and 4."
+  },
+  "r1bqkb1r/pp2pp1p/2np1np1/8/3NP3/2N5/PPP1BPPP/R1BQK2R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "1062809f4245605f",
+    "notes": "Plan 2 had ...Rxc3 with no rook on the c-file; plan 1 proposed Bh6 without Qd2. Reworded plans 1 and 2; British spelling in the overview."
+  },
+  "rnbqkb1r/pp2pp1p/3p1np1/6B1/3NP3/2N5/PPP2PPP/R2QKB1R b KQkq - 1 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "09b000f5be582d8a",
+    "notes": "Plan 4 recaptured on f6 with the g-pawn, which cannot reach f6, and claimed an open g-file; the overview called Bg5 a pin; plan 2 had ...Rc8 with the bishop on c8. Rewrote the overview and plans 2 and 4 (the reviewer caught that after ...exf6 the f6-pawn blocks the g7-bishop)."
+  },
+  "rnbqk2r/pp2ppbp/3p1np1/6B1/3NP3/2N5/PPP2PPP/R2QKB1R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a449d6eaa65a3cc0",
+    "notes": "Plan 2 had ...Rc8 with the bishop on c8. Reworded plan 2."
+  },
+  "r1bqkb1r/pp2pp1p/2np1np1/8/3NP3/2N3P1/PPP2P1P/R1BQKB1R w KQkq - 1 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "be7d2e04d9dcdf2b",
+    "notes": "Plan 1 had Nge2 with no knight on g1 (it is Nde2). Corrected plan 1; British spelling in the overview."
+  },
+  "r1bqkb1r/pp1npp1p/3p1np1/8/3NPP2/2N5/PPP3PP/R1BQKB1R w KQkq - 1 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "edc46b109a83c02c",
+    "notes": "Plan 2 had Black meet e5 with ...Nf6-b8 and missed that the d7-knight already covers e5; plan 1 combined Nf3 and Qf3. Rewrote both plans."
+  },
+  "rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/2N1B3/PPP2PPP/R2QKB1R b KQkq - 1 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "630204f156b6620c",
+    "notes": "Plan 4 had ...Rxc3 with no rook on the c-file; plan 2 had ...Rc8 with the bishop on c8; plan 3 had Bh6 without Qd2. Reworded plans 1-4; British spelling in the overview."
+  },
+  "rnbqk2r/pp2ppbp/3p1np1/8/3NP3/2N1B3/PPP1BPPP/R2QK2R b KQkq - 3 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "02510d97c7216dd3",
+    "notes": "The overview and plan 1 said the 7.Be2 Classical leads to the Yugoslav Attack with long castling and f3; plan 2 had ...Rxc3. Rewrote the overview and both plans."
+  },
+  "r1bqk2r/pp2ppbp/2np1np1/8/4P3/1NN1B3/PPP1BPPP/R2QK2R b KQkq - 5 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a69980d541cc1d61",
+    "notes": "Plan 1 had White castle long with a pawn storm as the main plan; plan 2 had ...Rc8 with the bishop on c8; plan 3 had ...Rxc3. Rewrote plans 1-3."
+  },
+  "r1bqk2r/pp2ppbp/2np1np1/8/3NP3/2N1B3/PPPQBPPP/R3K2R b KQkq - 3 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "745f653e5ab019a1",
+    "notes": "Plan 1 had a sacrifice Bxh6 with no pawn on h6; plan 2 had ...Rc8 with the bishop on c8. Rewrote the overview and plans 1 and 2; British spelling in plans 3 and 4."
+  },
+  "rnbqkb1r/pp2pp1p/3p2p1/8/3NP1n1/2N1B3/PPP2PPP/R2QKB1R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "7e52f029e1c65f60",
+    "notes": "The overview called 6...Ng4?? a major branch; it is a blunder to 7.Bb5+ (after 7...Bd7 the pinned bishop no longer guards g4, so 8.Qxg4 wins the knight; 7...Qd7 drops the queen to Bxd7+). Rewrote the overview and all four plans."
   }
 }

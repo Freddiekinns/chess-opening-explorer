@@ -1,10 +1,10 @@
 # Plan reference check
 
-2818 references on 2187 of 12377 pages fail the check and show as plain text.
+2721 references on 2108 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5481 name no move, route, square or piece
-- References by kind: {"square":15700,"piece":14998,"move":54035,"route":9203}
-- References by result: {"now":68038,"on-board":13940,"later":9140,"invalid":2818}
+- Plans: 41062, of which 5479 name no move, route, square or piece
+- References by kind: {"square":15767,"piece":15053,"move":54156,"route":9149}
+- References by result: {"now":68230,"on-board":13998,"later":9176,"invalid":2721}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -30,45 +30,47 @@
   - `...axb6`: No piece can play axb6 here, now or after the plan's earlier moves
 - **B49 Sicilian: Taimanov, 6.Be3 a6 7.Be2 Nf6 8.O-O Bb4 9.Na4 Be7** (0 views)
   - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **B51 Sicilian: Moscow 3...Nd7 4.d4 cxd4** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **B51 Sicilian: Moscow 3...Nd7 4.d4 Nf6 5.Nc3 cxd4 6.Qxd4** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **B51 Sicilian: Moscow 3...Nd7 4.d4 Nf6 5.Nc3 cxd4 6.Qxd4 e5** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-  - `...Nb8-c6`: One step of ...Nb8-c6 can't be played here
-  - `...Nf8-e6`: One step of ...Nf8-e6 can't be played here
-- **B52 Sicilian Defense: Moscow Variation, Main Line** (0 views)
-  - `...a6-b5`: One step of ...a6-b5 can't be played here
-- **B52 Sicilian Defense: Moscow Variation, Sokolsky Variation** (0 views)
-  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
-- **B52 Sicilian: 3.Bb5+ Bd7 4.Bxd7+ Qxd7 5.O-O Nc6** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **B52 Sicilian: 3.Bb5+, Sokolsky, 5...Nc6 6.Nc3** (0 views)
-  - `Bg2`: No piece can play Bg2 here, now or after the plan's earlier moves
-- **B52 Sicilian: 3.Bb5+, Sokolsky, 5...Nc6 6.Nc3 Nf6** (0 views)
-  - `Be2`: No piece can play Be2 here, now or after the plan's earlier moves
-  - `c7`: No piece can play c7 here, now or after the plan's earlier moves
-- **B52 Sicilian: Moscow 3...Bd7 4.Bxd7+ Nxd7 5.O-O Ngf6** (0 views)
-  - `c2-e3`: One step of c2-e3 can't be played here
-  - `f1-e3`: One step of f1-e3 can't be played here
-- **B53 Sicilian, Chekhover, 4...a6 5.c4** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **B53 Sicilian, Chekhover, 4...Bd7** (0 views)
-  - `Qxc6`: No piece can play Qxc6 here, now or after the plan's earlier moves
-- **B53 Sicilian, Chekhover, 4...Nc6 5.Bb5 Bd7** (0 views)
-  - `bxc6`: No piece can play bxc6 here, now or after the plan's earlier moves
-- **B53 Sicilian, Chekhover, 7.c4 Nf6 8.Nc3 g6** (0 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **B53 Sicilian, Chekhover, Main Line, 10.Rhe1** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **B53 Sicilian, Chekhover, Main Line, 10.Rhe1 O-O** (0 views)
-  - `e3`: No piece can play e3 here, now or after the plan's earlier moves
-- **B54 Sicilian: Prins (Moscow), 5...e5 6.Nb3** (0 views)
-  - `Nd2-c4`: Nd2 is ambiguous: the knights on b3 and b1 can both go there
-- **B54 Sicilian: Prins (Moscow), 5...Nc6 6.c4 Qb6** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **B55 Sicilian: Prins, Venice Attack, 6...Bd7** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **B55 Sicilian: Prins, Venice Attack, 6...Nbd7 7.Nf5** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **B57 Sicilian: Sozin, Benko, 7.Nb3** (0 views)
+  - `c1-d3`: One step of c1-d3 can't be played here
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O Nc6 8.Nb3 O-O** (0 views)
+  - `d4 pawn`: There is no pawn on d4, or on its way
+  - `d2-e4`: One step of d2-e4 can't be played here
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 a6** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 Be6** (0 views)
+  - `c1-d3`: One step of c1-d3 can't be played here
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 Be6 10.Kh1** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Re1** (0 views)
+  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Re1 Nc6 9.Nb3** (0 views)
+  - `f3-d2`: One step of f3-d2 can't be played here
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Be2 Nc6** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Bg5** (0 views)
+  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
+  - `Bxf6`: No piece can play Bxf6 here, now or after the plan's earlier moves
+  - `gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.Bg5** (0 views)
+  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
+- **B70 Sicilian: Dragon, 6.g3 Nc6** (0 views)
+  - `Nge2`: No piece can play Nge2 here, now or after the plan's earlier moves
+- **B71 Sicilian Defense: Dragon Variation, Levenfish Variation, Main Line** (0 views)
+  - `...Nf6-b8`: One step of ...Nf6-b8 can't be played here
+- **B72 Sicilian Defense: Dragon Variation** (0 views)
+  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B72 Sicilian Defense: Dragon Variation, Classical Variation** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B72 Sicilian Defense: Dragon Variation, Classical Variation** (0 views)
+  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves

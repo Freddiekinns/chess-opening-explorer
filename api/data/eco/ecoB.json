@@ -107880,7 +107880,7 @@
     "name": "Sicilian, Chekhover, 4...Bd7",
     "scid": "B53e",
     "analysis_json": {
-      "description": "The Chekhover Sicilian with 4...Bd7 is a solid and strategic response to White's early queen development. By challenging the white queen and preparing to develop the queenside, Black steers the game away from the razor-sharp tactical battles of the main Open Sicilians. This opening leads to a more positional struggle, focusing on central control, piece coordination, and long-term plans, making it ideal for players who appreciate strategic maneuvering and neutralizing an opponent's initiative.",
+      "description": "4...Bd7 is a useful waiting move against White's early queen: it covers b5, so that ...Nc6 can follow and hit the queen without White pinning the knight with Bb5. White usually answers with c4 and Nc3, building a Maroczy-style grip on d5 while the queen is still centralised, and Black develops with ...Nc6, ...Nf6 and ...g6 or ...e6, gaining time on the queen. The play is positional rather than sharp, suiting players who appreciate strategic manoeuvring and neutralising an opponent's initiative.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -107920,10 +107920,10 @@
         "Space advantage vs. solid structure"
       ],
       "common_plans": [
-        "White: Complete development with c4, Nc3, Be3, and O-O, aiming to maintain a space advantage and control the center.",
+        "White: Complete development with c4, Nc3, Be3, and O-O, aiming to maintain a space advantage and control the centre.",
         "Black: Develop with ...Nc6, ...Nf6, and ...e6, challenge White's central queen, and prepare for queenside counterplay with ...a6 and ...b5.",
-        "White: Exchange the queen for a minor piece on c6 (Qxc6) to disrupt Black's pawn structure, followed by exploiting the resulting weaknesses.",
-        "Black: Neutralize White's pressure, trade pieces to ease the position, and aim for a favorable endgame where White's early queen activity is no longer a factor."
+        "White: Keep the queen centralised for as long as possible; when ...Nc6 arrives, step back to d2 or d3 and keep the pawns on c4 and e4 clamping the d5-square.",
+        "Black: Neutralise White's pressure, trade pieces to ease the position, and aim for a favourable endgame where White's early queen activity is no longer a factor."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:18:07.240Z"
@@ -107998,7 +107998,7 @@
     "name": "Sicilian, Chekhover, 4...Nc6 5.Bb5 Bd7",
     "scid": "B53n",
     "analysis_json": {
-      "description": "The Chekhover Sicilian is a positional and strategic offshoot of the Sicilian Defense, sidestepping the razor-sharp main lines of the Open Sicilian. White's plan, initiated by 4.Qxd4 and 5.Bb5, often revolves around exchanging the light-squared bishop for the c6-knight to inflict a long-term structural weakness on Black. This opening leads to a sophisticated battle of strategic maneuvering, ideal for players who enjoy understanding pawn structures and accumulating small, lasting advantages, often resembling the character of a Ruy Lopez.",
+      "description": "In the Chekhover White recaptures on d4 with the queen and, after 4...Nc6, pins the knight with 5.Bb5 so that it cannot chase the queen away. Black's 5...Bd7 breaks the pin; White normally gives up the bishop with 6.Bxc6 to keep the queen on d4, and Black recaptures with the bishop, keeping a healthy pawn structure and the bishop pair. White's compensation is a lead in development and central space, used either with Nc3, Bg5 and long castling or with c4 for a Maroczy-style bind.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -108039,9 +108039,9 @@
         "Fighting for central control"
       ],
       "common_plans": [
-        "White: Exchange on c6 (Bxc6), control the light squares, and exploit Black's doubled pawns, aiming for a slight endgame advantage.",
-        "Black: Recapture on c6 with the bishop (bxc6) to gain the bishop pair, use the open b-file for counterplay, and challenge White's center.",
-        "White: Complete development, often castling queenside to support an attack or kingside for a more solid setup, and reroute the queen from d4.",
+        "White: Exchange on c6 to keep the queen centralised, then develop quickly with Nc3, Bg5 and O-O-O, aiming at the d6-pawn.",
+        "Black: Recapture on c6 with the bishop, keeping the bishop pair and a sound pawn structure, then develop with ...Nf6, ...e6 and ...Be7.",
+        "White: Alternatively, play c4 and Nc3 for a Maroczy-style bind on d5 before deciding where to castle, and move the queen off its central square when Black's pieces start to hit it.",
         "Black: Develop pieces actively to create threats and prevent White from consolidating their positional pluses, often aiming for a ...e5 pawn break."
       ],
       "version": "1.0",
@@ -108294,7 +108294,7 @@
     "name": "Sicilian, Chekhover, 7.c4 Nf6 8.Nc3 g6",
     "scid": "B53q",
     "analysis_json": {
-      "description": "This variation leads to a classic Maroczy Bind structure, a hallmark of positional chess. White establishes a strong grip on the center, particularly the d5 square, aiming to slowly squeeze Black with a space advantage. Black counters by fianchettoing the king's bishop, preparing to undermine White's central control and create counterplay on the long diagonal. The resulting game is a deep, strategic struggle ideal for patient players who excel at maneuvering and long-term planning.",
+      "description": "This variation leads to a classic Maroczy Bind structure, a hallmark of positional chess. White establishes a strong grip on the centre, particularly the d5 square, aiming to slowly squeeze Black with a space advantage. Black counters by fianchettoing the king's bishop, preparing to undermine White's central control and create counterplay on the long diagonal. The resulting game is a deep, strategic struggle ideal for patient players who excel at manoeuvring and long-term planning.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -108334,8 +108334,8 @@
         "Undermining the Center"
       ],
       "common_plans": [
-        "White: Maintain the central clamp, expand on the queenside with a3-b4, and prepare a kingside attack with f4-f5.",
-        "Black: Prepare the ...e6 and ...d5 pawn break, create queenside counterplay with ...a6 and ...b5, and utilize the g7-bishop's pressure on the long diagonal."
+        "White: Hold the clamp on d5 with Be3, short castling and the rooks on c1 and d1, then expand slowly on the queenside with b3, a3 and b4.",
+        "Black: Fianchetto with ...Bg7 and castle, then look for queenside play with ...a6 and ...b5 or reroute the f6-knight via ...Nd7 to c5; once that knight moves, the g7-bishop bears down on the d4-queen, while the c6-bishop eyes the e4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:20:11.973Z"
@@ -108584,7 +108584,7 @@
     "name": "Sicilian, Chekhover, Main Line, 10.Rhe1",
     "scid": "B53v",
     "analysis_json": {
-      "description": "The Chekhover Sicilian with 10.Rhe1 is a sharp and strategically complex line where White aims to exploit central control and launch a kingside attack. By castling queenside and centralizing the rooks, White prepares to break open the center, while Black maintains a solid structure, looking to counter-attack on the queenside or challenge White's central dominance. This opening leads to a dynamic battle of opposing plans, ideal for players who thrive in complex, double-edged positions.",
+      "description": "The Chekhover Sicilian with 10.Rhe1 is a sharp and strategically complex line where White aims to exploit central control and launch a kingside attack. By castling queenside and centralising the rooks, White prepares to break open the centre, while Black maintains a solid structure, looking to counter-attack on the queenside or challenge White's central dominance. This opening leads to a dynamic battle of opposing plans, ideal for players who thrive in complex, double-edged positions.",
       "style_tags": [
         "Aggressive",
         "Strategic",
@@ -108628,9 +108628,9 @@
       ],
       "common_plans": [
         "White: Prepare and execute the e5 pawn break, often supported by f2-f4, to open lines against the Black king.",
-        "White: Use the rooks on d1 and e1 to exert maximum pressure on the center and the d6-pawn.",
+        "White: Use the rooks on d1 and e1 to exert maximum pressure on the centre and the d6-pawn.",
         "Black: Complete development with O-O, then launch a queenside counter-attack with ...a6, ...b5, and ...Rc8.",
-        "Black: Challenge White's central control with a timely ...d5 pawn break or neutralize the Bg5 with ...h6 and ...g5."
+        "Black: Ask the g5-bishop the question with ...h6, castle, and prepare a well-timed ...d5 with the c6-bishop and f6-knight to free the position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:22:19.664Z"
@@ -108645,7 +108645,7 @@
     "name": "Sicilian, Chekhover, Main Line, 10.Rhe1 O-O",
     "scid": "B53w",
     "analysis_json": {
-      "description": "This line of the Chekhover Sicilian leads to a tense and strategically rich middlegame characterized by opposite-side castling. White aims to use their central space and development advantage to launch a decisive kingside attack, often initiated by a pawn storm. Black, in turn, must play precisely to organize a potent queenside counterattack while shoring up their king's defenses. The position is ideal for dynamic, tactical players who are comfortable navigating sharp, double-edged scenarios where initiative is key.",
+      "description": "This line of the Chekhover Sicilian leads to a tense and strategically rich middlegame characterised by opposite-side castling. White aims to use their central space and development advantage to launch a decisive kingside attack, often initiated by a pawn storm. Black, in turn, must play precisely to organise a potent queenside counterattack while shoring up their king's defences. The position is ideal for dynamic, tactical players who are comfortable navigating sharp, double-edged scenarios where initiative is key.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -108689,7 +108689,7 @@
       "common_plans": [
         "White's Plan: Initiate a kingside attack with moves like g4, h4, and the central pawn push e5 to open lines against the black king.",
         "Black's Plan: Generate queenside counterplay with ...b5-b4 to undermine White's knight on c3 and create threats against the white king.",
-        "White's Plan: Reposition the queen to an attacking square like e3 or h2 to support the kingside assault.",
+        "White: Tuck the king away with Kb1 and move the queen off the exposed d4-square, for example to d2 or d3, before pushing e5 or the kingside pawns.",
         "Black's Plan: Prepare the central ...d5 break to challenge White's control and relieve pressure."
       ],
       "version": "1.0",
@@ -109374,7 +109374,7 @@
     "name": "Sicilian: Prins (Moscow), 5...e5 6.Nb3",
     "scid": "B54m",
     "analysis_json": {
-      "description": "The Prins Variation with 5...e5 is a strategic and complex response to White's solid 5.f3 setup. Black immediately challenges for central space, but in doing so, creates a long-term weakness on the d6 square. The resulting positions often resemble a Maroczy Bind, leading to a tense, maneuvering game where White tries to exploit the d6-pawn and Black seeks counterplay by controlling the d5-square. This opening is ideal for strategic players who enjoy a complex fight for central control and understand the nuances of pawn structures.",
+      "description": "The Prins Variation with 5...e5 is a strategic and complex response to White's solid 5.f3 setup. Black immediately challenges for central space, but in doing so, creates a long-term weakness on the d6 square. The resulting positions often resemble a Maroczy Bind, leading to a tense, manoeuvring game where White tries to exploit the d6-pawn and Black seeks counterplay by controlling the d5-square. This opening is ideal for strategic players who enjoy a complex fight for central control and understand the nuances of pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -109416,10 +109416,10 @@
         "Queenside counterplay"
       ],
       "common_plans": [
-        "White: Play c4 to establish a Maroczy Bind, control the d5 square, and build pressure against the d6 pawn. Maneuver pieces to optimal squares (e.g., Nd2-c4) and prepare for a kingside attack.",
+        "White: Play c4 to establish a Maroczy Bind, control the d5-square and build pressure against the d6-pawn, developing with Nc3, Be3 and Be2.",
         "Black: Prevent White from consolidating the bind with moves like ...Be6 and ...a5-a4. Prepare the ...d5 pawn break to liquidate the central weakness and seek counterplay on the queenside.",
-        "White: Develop with Be2, O-O, and often Be3, aiming for a slow squeeze and capitalizing on any positional inaccuracies from Black.",
-        "Black: Develop pieces to challenge White's control, such as ...Be7, ...O-O, and ...Qc7, while remaining vigilant about the d6-pawn's defense."
+        "White: Develop with Be2, O-O, and often Be3, aiming for a slow squeeze and capitalising on any positional inaccuracies from Black.",
+        "Black: Develop pieces to challenge White's control, such as ...Be7, ...O-O, and ...Qc7, while remaining vigilant about the d6-pawn's defence."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:26:13.722Z"
@@ -109728,7 +109728,7 @@
     "name": "Sicilian: Prins (Moscow), 5...Nc6 6.c4 Qb6",
     "scid": "B54k",
     "analysis_json": {
-      "description": "This variation of the Sicilian leads to a tense, strategic battle centered around White's Maroczy Bind-like structure. By playing 6...Qb6, Black immediately challenges White's central control, putting pressure on the d4-knight and creating queenside counter-chances. The resulting positions are complex and double-edged, ideal for players who enjoy fighting for the initiative and navigating intricate positional struggles rather than wide-open tactical slugfests.",
+      "description": "This variation of the Sicilian leads to a tense, strategic battle centred around White's Maroczy Bind-like structure. By playing 6...Qb6, Black immediately challenges White's central control, putting pressure on the d4-knight and creating queenside counter-chances. The resulting positions are complex and double-edged, ideal for players who enjoy fighting for the initiative and navigating intricate positional struggles rather than wide-open tactical slugfests.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -109770,8 +109770,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Solidify the center with Nb3, develop pieces, and use the space advantage to restrict Black, often aiming to control the c5-square.",
-        "Black: Increase pressure on White's center (d4, c4), develop with ...e6 and ...Be7, and prepare the liberating ...d5 pawn break or create queenside counterplay with ...a6-b5.",
+        "White: Solidify the centre with Nb3, develop pieces, and use the space advantage to restrict Black, often aiming to control the c5-square.",
+        "Black: Keep up the pressure on the d4-knight and the b2-pawn, develop with ...e6 and ...Be7, and prepare the liberating ...d5 break or queenside counterplay with ...a6 and ...b5.",
         "White: Complete development and potentially launch a kingside attack, leveraging the central space control.",
         "Black: Trade pieces to relieve pressure and exploit any weaknesses in White's pawn structure, particularly the c4-pawn."
       ],
@@ -109853,7 +109853,7 @@
     "name": "Sicilian: Prins, Venice Attack, 6...Bd7",
     "scid": "B55",
     "analysis_json": {
-      "description": "The Venice Attack with 6...Bd7 is a dynamic and strategically rich response within the Sicilian Defense. White's 6.Bb5+ check aims to disrupt Black's coordination, often leading to a trade of light-squared bishops and a subsequent fight for control of the d5 square. The resulting positions are less about immediate tactical fireworks and more about long-term strategic maneuvering, making it ideal for players who enjoy complex, unbalanced middlegames where piece activity and subtle positional understanding are key.",
+      "description": "The Venice Attack with 6...Bd7 is a dynamic and strategically rich response within the Sicilian Defence. White's 6.Bb5+ check aims to disrupt Black's coordination, often leading to a trade of light-squared bishops and a subsequent fight for control of the d5 square. The resulting positions are less about immediate tactical fireworks and more about long-term strategic manoeuvring, making it ideal for players who enjoy complex, unbalanced middlegames where piece activity and subtle positional understanding are key.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -109894,9 +109894,9 @@
       ],
       "common_plans": [
         "White: Trade on d7 (Bxd7+), play Nc3, Be3, and aim to control the d5 square with a knight, often preparing a kingside expansion with g4-g5.",
-        "Black: Recapture on d7, complete development with ...Be7 and ...0-0, and generate queenside counterplay with ...a6 and ...b5.",
+        "Black: Recapture on d7, complete development with ...Be7 and ...O-O, then use ...a6 and the half-open c-file for queenside play.",
         "White: Maintain central tension, develop pieces harmoniously, and prevent Black's counterplay while looking for opportunities to attack the e5 pawn.",
-        "Black: Challenge White's control of the center, often by targeting the e4 pawn, and use the semi-open c-file for pressure."
+        "Black: Challenge White's control of the centre, often by targeting the e4 pawn, and use the semi-open c-file for pressure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:28:43.459Z"
@@ -109970,7 +109970,7 @@
     "name": "Sicilian: Prins, Venice Attack, 6...Nbd7 7.Nf5",
     "scid": "B55",
     "analysis_json": {
-      "description": "The Venice Attack with 7.Nf5 is a sharp and provocative line against the Sicilian Defense, immediately creating tactical tension. White places a powerful knight on f5 to pressure the d6 pawn and eye the e7 square, aiming for a swift attack. This opening leads to a concrete, unbalanced struggle where precise calculation is paramount, suiting aggressive players who thrive on initiative and direct confrontation.",
+      "description": "The Venice Attack with 7.Nf5 is a sharp and provocative line against the Sicilian Defence, immediately creating tactical tension. White places a powerful knight on f5 to pressure the d6 pawn and eye the e7 square, aiming for a swift attack. This opening leads to a concrete, unbalanced struggle where precise calculation is paramount, suiting aggressive players who thrive on initiative and direct confrontation.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -110013,8 +110013,8 @@
       "common_plans": [
         "White aims to build pressure on d6, often with c4, and seek tactical shots, sometimes involving sacrifices on d6 or e7.",
         "White may try to exchange the f5 knight for a key defender to weaken Black's kingside.",
-        "Black's primary plan is to neutralize or challenge the f5-knight, often with moves like ...a6, ...b5, and ...Qb6.",
-        "Black seeks to complete development and generate counterplay against White's center or on the queenside."
+        "Black's main reply is the central counter-strike ...d5, hitting back before White consolidates; ...a6, questioning the b5-bishop, is the quieter option.",
+        "Black seeks to complete development and generate counterplay against White's centre or on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:29:12.848Z"
@@ -110029,7 +110029,7 @@
     "name": "Sicilian: Prins, Venice Attack, 6...Nbd7 7.Nf5 d5",
     "scid": "B55",
     "analysis_json": {
-      "description": "The Venice Attack is a sharp and aggressive system against the Sicilian where White immediately places a knight on the menacing f5-square. Black's immediate counter-thrust 7...d5 signals a no-holds-barred fight for the center and the initiative, leading to exceptionally complex and double-edged positions. This opening is perfect for fearless, tactical players who thrive on concrete calculation and are willing to engage in a theoretical battle from the very first moves.",
+      "description": "The Venice Attack is a sharp and aggressive system against the Sicilian where White immediately places a knight on the menacing f5-square. Black's immediate counter-thrust 7...d5 signals a no-holds-barred fight for the centre and the initiative, leading to exceptionally complex and double-edged positions. This opening is perfect for fearless, tactical players who thrive on concrete calculation and are willing to engage in a theoretical battle from the very first moves.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -110070,10 +110070,10 @@
         "King Safety vs. Attack"
       ],
       "common_plans": [
-        "White: Maintain the knight on f5, attack the d6-pawn, and generate threats against the Black king, often by opening the h-file or sacrificing material.",
-        "Black: Challenge White's central control with the d5-break, eliminate the dangerous Nf5 knight, and generate counterplay using the open c-file and active piece play.",
-        "White: Solidify the center after 8.exd5, put pressure on the e5 pawn, and try to prove that Black's pawn structure is weak.",
-        "Black: After 8.exd5 Nxd5, Black aims to trade pieces to relieve pressure and prove that the e5 pawn provides a solid foothold in the center."
+        "White: Open the position with exd5, keep the f5-knight active for as long as Black cannot easily drive it away, and develop quickly to exploit Black's uncastled king.",
+        "Black: Challenge White's central control with the d5-break, eliminate the dangerous Nf5 knight, and generate counterplay using the half-open c-file and active piece play.",
+        "White: Solidify the centre after 8.exd5, put pressure on the e5 pawn, and try to prove that Black's pawn structure is weak.",
+        "Black: After 8.exd5 Nxd5, Black aims to trade pieces to relieve pressure and prove that the e5 pawn provides a solid foothold in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:29:27.287Z"

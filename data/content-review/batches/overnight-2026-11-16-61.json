@@ -9,8 +9,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 3 had a c1-e2 knight reroute (no knight on b3 can do that) and a b2-b4 minority attack; plan 4 wrote Black moves without ellipses and a ...d5-d4 push. Rewrote plans 3-4; British spelling in overview and plan 1."
     },
     {
       "fen": "r1bqk2r/pp2nppp/2nb4/1B1p2B1/8/1N3N2/PPP2PPP/R2Q1RK1 b kq - 3 10",
@@ -19,8 +19,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 3 had Bg5 pressing an f6-knight that is not there (it pins the e7-knight); plan 4 had ...Nf6 with no knight able to go there. Rewrote plans 3-4; British spelling in overview."
     },
     {
       "fen": "r1bqk2r/pp2nppp/2nb4/1B1p4/3N4/5N2/PPP2PPP/R1BQ1RK1 b kq - 3 10",
@@ -29,8 +29,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 2 had a ...d4 push onto White's d4-knight. Rewrote plan 2; British spelling in plan 1."
     },
     {
       "fen": "r1bq1rk1/pp2nppp/1bn5/1B1p4/8/1NP2N2/PP3PPP/R1BQR1K1 b - - 4 11",
@@ -39,8 +39,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Overview and plans gave White the isolated pawn and a d4-d5 break; Black has the isolated d5-pawn. Rewrote overview and both plans."
     },
     {
       "fen": "rnbqk1nr/ppp1bppp/4p3/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4",
@@ -49,8 +49,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 3 developed an 'f8-knight'; plan 1 had ...a6 and ...b5 before ...c5 as the main plan. Rewrote plans 1 and 3; British spelling in overview and plan 2."
     },
     {
       "fen": "r1bqkbnr/ppp2ppp/2n1p3/3P4/3P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 4",
@@ -59,8 +59,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had 'Be2/d3', which reads as a pawn move to d3. Rewrote plan 1; British spelling in plan 3."
     },
     {
       "fen": "rnbqkbnr/ppp2ppp/4p3/8/3Pp3/2N1B3/PPP2PPP/R2QKBNR b KQkq - 1 4",
@@ -69,8 +69,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had O-O-O written as a move the parser cannot place; plan 2 used an e-file that is not open; plan 3 had ...f5 to hold the pawn; plan 4 named O-O-O. Rewrote all four plans; British spelling in overview."
     },
     {
       "fen": "rn1qkbnr/ppp2ppp/2b1p3/8/3PN3/5N2/PPP2PPP/R1BQKB1R w KQkq - 3 6",
@@ -79,8 +79,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 2 had f4-f5 behind the f3-knight. Rewrote plan 2; British spelling in overview and plans 1 and 3."
     },
     {
       "fen": "r1bqkb1r/pppn1ppp/4pN2/8/3P4/5N2/PPP2PPP/R1BQKB1R b KQkq - 0 6",
@@ -89,8 +89,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 castled in a line where the parser could not place it; plan 2 activated the bishop 'via b6'; plan 3 called the e-file open. Rewrote all three plans; British spelling in overview."
     },
     {
       "fen": "r2qkb1r/pppn1ppp/2b1pn2/8/3PN3/3B1N2/PPP2PPP/R1BQ1RK1 w kq - 7 8",
@@ -99,8 +99,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had f2-f4-f5 behind the f3-knight; plan 3 used d4 as an outpost with White's pawn on it. Rewrote plans 1 and 3; British spelling in overview and plan 4."
     }
   ]
 }

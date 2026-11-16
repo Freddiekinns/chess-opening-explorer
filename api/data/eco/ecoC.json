@@ -14983,7 +14983,7 @@
     "name": "French: Tarrasch, Open, Main Line, 9.c3 O-O 10.Nb3 Bb6 11.Re1",
     "scid": "C09j",
     "analysis_json": {
-      "description": "The Tarrasch Open Main Line leads to a classic Isolated Queen's Pawn (IQP) position, one of the most strategically rich structures in chess. White leverages a space advantage and active pieces to generate an attack, while Black aims to blockade the d4-pawn, exchange pieces, and exploit its static weakness in the long run. This opening is perfect for strategic players who enjoy a dynamic struggle where understanding long-term plans and positional nuances is paramount.",
+      "description": "This main line of the Open Tarrasch gives Black the familiar isolated d5-pawn. With 9.c3 and 10.Nb3 White prepares to blockade it from d4, while 11.Re1 puts a rook on the open e-file against the e7-knight. Black has active pieces in return: the b6-bishop eyes f2, the knights can come to f5 or g6, and ...Bg4 develops with pressure on the f3-knight. The fight is the classic one between blockade and activity.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -15025,8 +15025,8 @@
         "Minor Piece Play"
       ],
       "common_plans": [
-        "White: Use the central space to build a kingside attack, often with pieces on d3, g5, and h5. Prepare the d4-d5 pawn break to open lines for the major pieces.",
-        "Black: Blockade the d4-pawn, often with a knight on d5. Exchange pieces to simplify into a favorable endgame where the IQP is a clear weakness. Pressure the d4-pawn and create counterplay."
+        "White: Blockade the d5-pawn with Nbd4 or Nfd4, develop with Be3 or Bg5, and exchange minor pieces to head for an endgame where the pawn is weak.",
+        "Black: Keep the pieces active with ...Bg4, ...Qd6 and ...Nf5, use the open e-file for a rook, and avoid exchanges that would leave the d5-pawn weak."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:53:56.526Z"
@@ -15220,7 +15220,7 @@
     "name": "French: Tarrasch, Open, Main Line, 9.Nb3 Bd6",
     "scid": "C09l",
     "analysis_json": {
-      "description": "The Open Tarrasch leads to one of the most classic and strategically rich positions in chess, centered around Black's Isolated Queen's Pawn (IQP) on d5. Black accepts this long-term structural weakness in exchange for superior piece activity, central space, and dynamic attacking chances, particularly against the kingside. This opening is perfect for strategic players who enjoy a deep, classical struggle and understand the delicate balance between dynamic potential and static weaknesses.",
+      "description": "The Open Tarrasch leads to one of the most classic and strategically rich positions in chess, centred around Black's Isolated Queen's Pawn (IQP) on d5. Black accepts this long-term structural weakness in exchange for superior piece activity, central space, and dynamic attacking chances, particularly against the kingside. This opening is perfect for strategic players who enjoy a deep, classical struggle and understand the delicate balance between dynamic potential and static weaknesses.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -15261,10 +15261,10 @@
         "Space Advantage"
       ],
       "common_plans": [
-        "White's Plan: Blockade the d5 pawn (often via Nd4), exchange pieces to simplify into a favorable endgame, and exert pressure on the d5-pawn and the d-file.",
+        "White's Plan: Blockade the d5 pawn (often via Nd4), exchange pieces to simplify into a favourable endgame, and exert pressure on the d5-pawn and the d-file.",
         "Black's Plan: Use the d5 pawn as a springboard for a kingside attack, avoid piece exchanges, and play actively to create threats before the IQP becomes a decisive weakness.",
-        "White's Plan: Control the d4-square, reroute the b3-knight (e.g., to c1-e2), and sometimes launch a queenside minority attack with b2-b4.",
-        "Black's Plan: Develop pieces to active squares (e.g., Ne7-g6, Bd6, Bg4) to support an attack and prepare the ...d5-d4 pawn break to open lines."
+        "White: Plant a knight on d4 with Nbd4 or Nfd4, develop the c1-bishop to g5 or e3, and put a rook on e1 against the e7-knight.",
+        "Black: Develop with ...O-O, ...Bg4 and ...Qc7, aiming the d6-bishop and the queen at h2, and bring the e7-knight to g6 or f5 for the attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:55:13.645Z"
@@ -15279,7 +15279,7 @@
     "name": "French: Tarrasch, Open, Main Line, 9.Nb3 Bd6 10.Bg5",
     "scid": "C09n",
     "analysis_json": {
-      "description": "This line of the Tarrasch French leads to a classic Isolated Queen's Pawn (IQP) position, one of the most instructive structures in chess. Black accepts a long-term structural weakness (the isolated d5-pawn) in exchange for superior piece activity and attacking chances in the middlegame. The game becomes a dynamic and strategic struggle where White aims to blockade and attack the weak pawn, while Black must use their initiative to create threats before the position simplifies. This opening is perfect for strategic players who enjoy complex middlegames centered around a single, critical pawn structure.",
+      "description": "This line of the Tarrasch French leads to a classic Isolated Queen's Pawn (IQP) position, one of the most instructive structures in chess. Black accepts a long-term structural weakness (the isolated d5-pawn) in exchange for superior piece activity and attacking chances in the middlegame. The game becomes a dynamic and strategic struggle where White aims to blockade and attack the weak pawn, while Black must use their initiative to create threats before the position simplifies. This opening is perfect for strategic players who enjoy complex middlegames centred around a single, critical pawn structure.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -15324,8 +15324,8 @@
       "common_plans": [
         "White's Plan: Control the d4-square to blockade the IQP, exchange minor pieces to reduce Black's attacking potential, and target the d5-pawn as a weakness in the endgame.",
         "Black's Plan: Use the central space provided by the d5-pawn to launch a kingside attack, avoid simplifying exchanges, and create threats with active pieces before the endgame arrives.",
-        "White's Plan: The move 10.Bg5 puts pressure on the f6-knight (once it arrives), often provoking ...f6 which creates long-term weaknesses around Black's king.",
-        "Black's Plan: Complete development with ...O-O, ...Nf6, and often ...a6 to control b5. Black will seek to use the e-file and the c-file for their rooks to generate counterplay."
+        "White: 10.Bg5 pins the e7-knight against the d8-queen; Re1 adds pressure down the e-file, and if Black plays ...h6 the bishop can keep the pin from h4.",
+        "Black: Break the pin with ...O-O and ...Qc7 or with ...f6, then complete development with ...Bg4 and use the open e-file and the half-open c-file for the rooks."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:55:32.763Z"
@@ -15381,8 +15381,8 @@
         "Control of the d4-square"
       ],
       "common_plans": [
-        "White: Blockade the d5 pawn with a knight on d4, trade minor pieces to reduce Black's attacking potential, and aim for a favorable endgame where the IQP is a clear weakness.",
-        "Black: Use active pieces to launch a kingside attack, avoid premature piece exchanges, use the d5 pawn to support outposts (e.g., on e4), and consider a ...d4 pawn push to open lines."
+        "White: Blockade the d5 pawn with a knight on d4, trade minor pieces to reduce Black's attacking potential, and aim for a favourable endgame where the IQP is a clear weakness.",
+        "Black: Use active pieces to launch a kingside attack, avoid premature piece exchanges, and use the d5-pawn to support outposts such as the e4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:55:50.318Z"
@@ -15610,9 +15610,9 @@
         "Transition to an Open Game"
       ],
       "common_plans": [
-        "White: Develop rapidly (Nf3, Be2/d3, O-O), control the d-file, and use the space advantage to pressure Black's position.",
+        "White: Develop rapidly with Nf3, Bd3 or Bb5 and O-O, and use the lead in development against the c6-knight, which blocks Black's c-pawn.",
         "Black: Recapture on d5 (with ...exd5 or ...Qxd5), complete development, and challenge White's central control, often by targeting the d4-pawn.",
-        "Black: Aim to neutralize White's initiative and prove the soundness of the ...Nc6 setup, transitioning into a balanced middlegame."
+        "Black: Aim to neutralise White's initiative and prove the soundness of the ...Nc6 setup, transitioning into a balanced middlegame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:57:11.294Z"
@@ -15961,7 +15961,7 @@
       "chronos": "French: Fort Knox variation"
     },
     "analysis_json": {
-      "description": "The Fort Knox is a hyper-solid and reliable system within the French Rubinstein, characterized by Black's plan to immediately solve the problem of the 'bad' light-squared bishop. By maneuvering ...Bd7-c6, Black aims to exchange this piece for White's active knight, leading to a safe, resilient position. This opening is ideal for risk-averse, strategic players who prioritize safety, enjoy neutralizing the opponent's initiative, and are comfortable steering the game towards a simplified middlegame or a favorable endgame.",
+      "description": "The Fort Knox is a hyper-solid and reliable system within the French Rubinstein, characterised by Black's plan to immediately solve the problem of the 'bad' light-squared bishop. By manoeuvring ...Bd7-c6, Black aims to exchange this piece for White's active knight, leading to a safe, resilient position. This opening is ideal for risk-averse, strategic players who prioritise safety, enjoy neutralising the opponent's initiative, and are comfortable steering the game towards a simplified middlegame or a favourable endgame.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -16003,9 +16003,9 @@
         "Queenside Counterplay"
       ],
       "common_plans": [
-        "Black: Complete development with ...Nf6, ...Be7, ...0-0, then challenge the center with a ...c5 pawn break. The exchange of the light-squared bishop for the knight on e4 is the primary goal.",
-        "White: Maintain a space advantage and develop pieces to active squares (e.g., Bd3, 0-0, Re1). Prevent or control Black's ...c5 break and try to generate kingside pressure with moves like f4-f5.",
-        "Black: After neutralizing the center, Black often seeks counterplay on the queenside with moves like ...a6 and ...b5.",
+        "Black: Complete development with ...Nf6, ...Be7, ...0-0, then challenge the centre with a ...c5 pawn break. The exchange of the light-squared bishop for the knight on e4 is the primary goal.",
+        "White: Keep a space advantage and develop actively with Bd3, O-O and Re1; Neg5 or Ng3 can sidestep the exchange of the e4-knight for the c6-bishop.",
+        "Black: After neutralising the centre, Black often seeks counterplay on the queenside with moves like ...a6 and ...b5.",
         "White: Aim to prove that Black's setup is too passive by building a slow but steady attack, often targeting the kingside or exploiting any positional concessions Black makes."
       ],
       "version": "1.0",
@@ -16144,7 +16144,7 @@
     "name": "French: 3.Nc3 Be7",
     "scid": "C10e",
     "analysis_json": {
-      "description": "Black's 3...Be7 is a subtle and flexible response within the French Defense, sidestepping the immense theory of the Winawer (3...Bb4) and Classical (3...Nf6) variations. It aims for a solid, strategic game where Black waits for White to commit before launching counter-play, typically against the d4-pawn. This opening is ideal for patient, strategic players who excel at maneuvering in closed positions and are comfortable outplaying opponents in a long-term battle.",
+      "description": "Black's 3...Be7 is a subtle and flexible response within the French Defence, sidestepping the immense theory of the Winawer (3...Bb4) and Classical (3...Nf6) variations. It aims for a solid, strategic game where Black waits for White to commit before launching counter-play, typically against the d4-pawn. This opening is ideal for patient, strategic players who excel at manoeuvring in closed positions and are comfortable outplaying opponents in a long-term battle.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -16184,9 +16184,9 @@
         "Countering White's space advantage"
       ],
       "common_plans": [
-        "Black: Prepare the ...c5 pawn break, often preceded by ...a6 and ...b5 for queenside space. If White plays e5, attack the pawn chain with moves like ...f6.",
-        "White: Advance with e5 to gain space and cramp Black. Develop pieces to support the center (Nf3, Bd3) and potentially launch a kingside attack.",
-        "Black: Develop the f8-knight, castle, and maintain flexibility, often waiting to see White's plan before committing to a specific pawn break.",
+        "Black: Keep options open: ...Nf6 can transpose to the Classical, and if White plays e5, Black strikes at the chain with ...c5 and ...f6.",
+        "White: Advance with e5 to gain space and cramp Black. Develop pieces to support the centre (Nf3, Bd3) and potentially launch a kingside attack.",
+        "Black: Develop the g8-knight to f6, castle, and stay flexible, waiting to see White's set-up before choosing a pawn break.",
         "White: Try to exploit Black's potentially passive light-squared bishop by controlling key light squares and restricting its scope."
       ],
       "version": "1.0",
@@ -16674,7 +16674,7 @@
     "name": "French: Rubinstein, 4...Bd7 5.Nf3 Bc6 6.Bd3 Nd7 7.O-O Ngf6",
     "scid": "C10w",
     "analysis_json": {
-      "description": "The French Rubinstein with the ...Bd7-c6 maneuver is a highly solid and strategic defense. Black immediately resolves the central tension and reroutes the often problematic light-squared bishop to an active post, challenging White's control of the center. This opening leads to a game of subtle maneuvering and long-term planning, making it ideal for patient, positional players who enjoy accumulating small advantages and neutralizing their opponent's initiative.",
+      "description": "The French Rubinstein with the ...Bd7-c6 manoeuvre is a highly solid and strategic defence. Black immediately resolves the central tension and reroutes the often problematic light-squared bishop to an active post, challenging White's control of the centre. This opening leads to a game of subtle manoeuvring and long-term planning, making it ideal for patient, positional players who enjoy accumulating small advantages and neutralising their opponent's initiative.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -16718,10 +16718,10 @@
         "Asymmetrical Pawn Structure"
       ],
       "common_plans": [
-        "White: Trade knights on f6 (often with Nxf6+ or Ng3) to remove a key defender, then prepare a kingside expansion with f2-f4-f5.",
+        "White: Exchange on f6 with Nxf6+ or keep the pieces with Ng3 or Neg5, then use the space advantage and the d3-bishop against Black's kingside.",
         "Black: Challenge White's central control with a timely ...c7-c5 pawn break.",
-        "White: Maintain the space advantage, improve piece coordination, and use the d4-square as an outpost.",
-        "Black: Complete development, trade pieces to ease the pressure, and aim for a favorable, often equal, endgame."
+        "White: Keep the space advantage with c4 and Re1, and use the e5-square for a knight.",
+        "Black: Complete development, trade pieces to ease the pressure, and aim for a favourable, often equal, endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:02:50.650Z"
@@ -17027,7 +17027,7 @@
     "name": "French: Rubinstein, 5.Nf3 Ngf6 6.Nxf6+",
     "scid": "C10l",
     "analysis_json": {
-      "description": "This variation of the French Rubinstein leads to a quiet and highly strategic game. By exchanging knights on f6, White immediately simplifies the central tension, aiming for a small but persistent space advantage and a clear, low-risk middlegame. The resulting positions are often symmetrical and require a deep understanding of positional nuances, making it ideal for players who enjoy maneuvering and accumulating small advantages rather than engaging in sharp, tactical battles.",
+      "description": "This variation of the French Rubinstein leads to a quiet and highly strategic game. By exchanging knights on f6, White immediately simplifies the central tension, aiming for a small but persistent space advantage and a clear, low-risk middlegame. The resulting positions are often symmetrical and require a deep understanding of positional nuances, making it ideal for players who enjoy manoeuvring and accumulating small advantages rather than engaging in sharp, tactical battles.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -17067,9 +17067,9 @@
         "Queenside Counterplay"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, develop with Bd3 and O-O, and use the space advantage to slowly build pressure.",
-        "Black: Challenge White's center with the ...c5 pawn break, complete development, and seek counterplay on the queenside, often by activating the light-squared bishop via b6.",
-        "Both sides often maneuver for control of the open files that arise (typically the c and e-files) and prepare for a smooth transition into the endgame."
+        "White: Support d4 with c3, develop with Bd3 or Bg5 and castle, and use the slight space advantage to build pressure.",
+        "Black: Recapture with ...Nxf6, challenge White's centre with ...c5, and develop the light-squared bishop with ...b6 and ...Bb7.",
+        "Both sides aim for the files that open after an exchange on c5 or d4, and the game can head for a quiet endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T22:04:42.054Z"
@@ -172155,7 +172155,7 @@
       "icsbot": "Rasa-Studier Variation, BDG "
     },
     "analysis_json": {
-      "description": "The Rasa-Studier Gambit is a rare and aggressive sideline against the French Defense, Rubinstein Variation. By playing 4.Be3 instead of the standard 4.Nxe4, White sacrifices a pawn for a significant lead in development and immediate attacking chances. This opening is perfect for creative, tactical players who enjoy seizing the initiative and are comfortable navigating sharp, unbalanced positions from the very beginning.",
+      "description": "The Rasa-Studier Gambit is a rare and aggressive sideline against the French Defence, Rubinstein Variation. By playing 4.Be3 instead of the standard 4.Nxe4, White sacrifices a pawn for a significant lead in development and immediate attacking chances. This opening is perfect for creative, tactical players who enjoy seizing the initiative and are comfortable navigating sharp, unbalanced positions from the very beginning.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -172197,10 +172197,10 @@
         "Punishing Greed"
       ],
       "common_plans": [
-        "For White, rapidly complete development with moves like f3, Qd2, and O-O-O, launching a pawn storm or piece attack against Black's kingside.",
-        "For White, use the open e-file and active pieces to create threats against Black's uncastled king.",
-        "For Black, attempt to consolidate the extra pawn with ...f5, complete development, and neutralize White's initiative before it becomes overwhelming.",
-        "For Black, challenge White's central control and seek counterplay, often by targeting White's potentially overextended position or exposed king after O-O-O."
+        "For White, complete development quickly with f3, Qd2 and castling queenside, then attack Black's kingside with pieces and pawns.",
+        "For White, reopen lines with f3, recapture on f3 with the knight, and use the half-open f-file and quick development against Black's king.",
+        "For Black, develop with ...Nf6 and either keep the e4-pawn or give it back by taking on f3, then complete development with ...Be7 and ...O-O and neutralise White's initiative.",
+        "For Black, challenge White's centre with ...c5 and seek counterplay against White's king once it has castled queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:42:39.634Z"

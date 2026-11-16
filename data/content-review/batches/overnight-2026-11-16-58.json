@@ -9,8 +9,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Overview generic (claimed White space advantage in an isolated-pawn position); plans vague, plan 3 claimed 12...O-O runs into 13.Nxd5 (unconfirmed) and named Nb5 ambiguously. Rewrote overview and all four plans."
     },
     {
       "fen": "r1bqkb1r/pp1n2pp/2n1pp2/3pP3/3P1N2/3B4/PP1N1PPP/R1BQK2R b KQkq - 1 9",
@@ -19,8 +19,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had Bxe6 (the d3-bishop cannot reach e6); plan 2 missed the critical 9...Nxd4 10.Qh5+ Ke7; overview did not give the line. Rewrote overview and plans 1-3."
     },
     {
       "fen": "r1b1kb1r/pp1n1ppp/1qn1p3/3pP3/3P4/3B4/PP1NNPPP/R1BQK2R w KQkq - 1 9",
@@ -29,8 +29,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had f2-f4-f5 behind the knight that goes to f3; plan 3 sent the d7-knight to f8 where the bishop stands. Rewrote plans 1 and 3 (first plan 3 rewrite rejected for putting ...Be7 and ...O-O before ...f6, reworded and re-accepted); British spelling in overview and plan 2."
     },
     {
       "fen": "r1b1kb1r/pp1n1ppp/1qn1p3/3pP3/3P4/3B4/PP1NNPPP/R1BQ1RK1 b kq - 2 9",
@@ -39,8 +39,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Overview and plan 2 called ...Nxd4 a Black pawn sacrifice (it is White's gambit: 9...Nxd4 10.Nxd4 Qxd4 11.Nf3); plan 3 had ...b5-b4 and ...Ba6 for a long diagonal; plan 1 had f4-f5 and Ng3-f5. Rewrote overview and plans 1-3; British spelling in plan 4."
     },
     {
       "fen": "r1bqkb1r/pp3ppp/1nn1p3/3pP3/3P4/3B1N2/PP2NPPP/R1BQK2R b KQkq - 2 9",
@@ -49,8 +49,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Bd7-e8-g6 with the king on e8; plan 1 had f4 behind the f3-knight. Rewrote overview and both plans (...Bd7, ...Rc8, ...a5, ...Nb4)."
     },
     {
       "fen": "r1bqkb1r/1p3ppp/1nn1p3/p2pP3/3P4/3B4/PP1NNPPP/R1BQ1RK1 w kq - 0 10",
@@ -59,8 +59,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 4 had ...Bd7-e8-g6 with the king on e8. Rewrote plan 4; British spelling in overview and plans 1-2."
     },
     {
       "fen": "r1b1kb1r/1p3ppp/p2qpn2/8/2BN4/8/PPP2PPP/R1BQ1RK1 w kq - 0 11",
@@ -69,8 +69,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Overview described a pawn structure and centre that are not on the board; plan 4 targeted an e4-pawn that does not exist. Rewrote overview and plans 1 and 4."
     },
     {
       "fen": "rnbqkbnr/pp3ppp/4p3/8/2Bp4/5N2/PPPN1PPP/R1BQK2R w KQkq - 2 7",
@@ -79,8 +79,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Overview and plans described an isolated d5-pawn for Black; Black has no d-pawn (the extra pawn is on d4 and White regains it). Rewrote overview and all four plans."
     },
     {
       "fen": "rnbqkbnr/pp3ppp/4p3/2pp4/3PP3/8/PPPN1PPP/R1BQKBNR w KQkq - 0 4",
@@ -89,8 +89,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plans 1-2 had Nd4 with no knight in reach and a d5-d4 push blocked by White's pawn. Rewrote both plans; British spelling in overview."
     },
     {
       "fen": "rnbqkb1r/pp3ppp/4pn2/2pP4/3P4/8/PPPN1PPP/R1BQKBNR w KQkq - 1 5",
@@ -99,8 +99,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "needs-research",
+      "notes": "Plan 1 had ...Bxc5 with Black's own pawn on c5. Rewrite rejected (theory after 4...Nf6 unconfirmed: 5.Bb5+, 5.dxe6, 5.dxc5), old plan 1 kept with British spelling and its reference added to the skips. Plan 2 rewritten (it claimed White accepts with 5.dxc5) and accepted; British spelling in overview."
     }
   ]
 }

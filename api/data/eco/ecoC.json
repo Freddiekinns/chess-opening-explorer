@@ -11585,7 +11585,7 @@
     "name": "French: Tarrasch, Closed, 8...f6 9.exf6, 11...Qb6 12.Nc3",
     "scid": "C06p",
     "analysis_json": {
-      "description": "This variation of the French Tarrasch leads to a highly complex and strategically rich middlegame. White leverages a space advantage and solid development to prepare a potential kingside attack, while Black exerts immediate pressure on the central d4-pawn. The game becomes a dynamic struggle where understanding pawn breaks, piece activity, and long-term plans is more critical than immediate tactical shots, making it ideal for well-prepared, strategic players.",
+      "description": "12.Nc3 develops White's last minor piece, eyes the d5-pawn and threatens to jump to b5, from where the knight would challenge the d6-bishop. The structure is typical of this Tarrasch line: White's isolated d4-pawn against Black's backward e6-pawn, with the e5-square a long-term outpost for White. Black keeps the queen on b6 against d4 and b2, can stop the knight with ...a6, and then castles and uses the half-open f-file.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -11628,10 +11628,10 @@
         "Kingside Attack"
       ],
       "common_plans": [
-        "White: Solidify control of the center, often with Bf4, and use the space advantage to build a kingside attack. Maneuvering pieces to support the d4-pawn is a constant theme.",
-        "Black: Increase pressure on the d4-pawn, often by preparing ...b5 to challenge the c3-knight. Black seeks to neutralize White's central control and create counterplay on the queenside or against White's king.",
-        "Black's main plan involves playing ...a6 to prevent Nb5 and prepare queenside expansion with ...b5. The move 12...O-O is playable but can run into a tactical shot with 13.Nxd5.",
-        "White often responds to ...a6 with a4 to restrain Black's queenside ambitions, leading to a tense battle for control of the b5 square."
+        "White: Develop with Be3 or Bg5 and Rc1, keep d4 protected, and aim pieces at the e5-square and the backward e6-pawn.",
+        "Black: Keep up the pressure on d4 with the b6-queen and the c6-knight, castle, and use the half-open f-file for the rooks; ...Bd7 and ...Rac8 complete development.",
+        "Black: Consider ...a6 to keep White's knight off the b5-square, where it would challenge the d6-bishop, before castling.",
+        "White: Answer ...a6 with a4 if Black prepares ...b5, keeping a grip on the b5-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:25:16.512Z"
@@ -11759,7 +11759,7 @@
     "name": "French: Tarrasch, Closed, 8...f6 9.Nf4",
     "scid": "C06l",
     "analysis_json": {
-      "description": "This is a highly aggressive and tactical variation of the French Tarrasch where the game's character is decided immediately. Black's move 8...f6 is a double-edged attempt to dismantle White's central space advantage, but it critically weakens the e6-pawn and the king's position. White's sharp reply 9.Nf4 directly targets these weaknesses, leading to a concrete, theoretical battle where precise calculation and initiative are paramount. This opening is perfect for aggressive, tactical players who enjoy sharp complications and are well-prepared.",
+      "description": "9.Nf4 is a sharp alternative to the main 9.exf6. The knight eyes the e6-pawn and, with the e2-square cleared, White's queen can reach h5 with check. Black's most testing answer is 9...Nxd4, grabbing a pawn and meeting 10.Qh5+ with 10...Ke7; after 11.exf6 Nxf6 12.Ng6+ hxg6 13.Qxh8 Kf7 the position is wild, and sources rate Black's chances well. The line suits well-prepared tactical players on both sides.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -11801,9 +11801,9 @@
         "Exploiting weak squares"
       ],
       "common_plans": [
-        "White: Focus all attention on the e6-pawn, often preparing a sacrifice with Nxe6 or Bxe6 to expose the black king. Develop rapidly with moves like Qh5 to fuel the attack.",
-        "Black: Defend the e6-pawn at all costs, often with moves like ...Qe7 or the risky ...Kf7. Seek counterplay by challenging White's d4-pawn and using the newly opened f-file.",
-        "White: Maintain the space advantage and restrict Black's pieces, preventing them from coordinating for a counterattack.",
+        "White: Aim everything at the e6-pawn and the light squares around Black's king: Qh5+ is a constant threat, and Nxe6 or Ng6 sacrifices appear in many lines.",
+        "Black: Take up the challenge with ...Nxd4 and answer the queen check from h5 with ...Ke7; the king looks exposed, but Black wins a pawn and White's attack is hard to keep going.",
+        "White: If Black avoids the tactics, exchange with exf6 and play against the backward e6-pawn with Nf3 and castling.",
         "Black: Try to trade pieces to relieve the pressure and steer the game towards a more manageable endgame where the structural weaknesses are less critical."
       ],
       "version": "1.0",
@@ -11819,7 +11819,7 @@
     "name": "French: Tarrasch, Closed, 8...Qb6",
     "scid": "C06g",
     "analysis_json": {
-      "description": "The Tarrasch with 8...Qb6 is a classical and strategically profound response to White's space advantage. Black immediately challenges the key d4-pawn, setting the stage for a complex battle where long-term planning and structural understanding are paramount. This opening is ideal for patient, strategic players who enjoy maneuvering in closed positions and generating counterplay against a central strongpoint.",
+      "description": "The Tarrasch with 8...Qb6 is a classical and strategically profound response to White's space advantage. Black immediately challenges the key d4-pawn, setting the stage for a complex battle where long-term planning and structural understanding are paramount. This opening is ideal for patient, strategic players who enjoy manoeuvring in closed positions and generating counterplay against a central strongpoint.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -11860,9 +11860,9 @@
         "Exploiting a Space Advantage"
       ],
       "common_plans": [
-        "White: Solidify the center with Nf3, prepare a kingside expansion with f2-f4-f5, and use the space advantage to launch an attack.",
-        "Black: Intensify pressure on the d4 pawn, often preparing the ...f6 pawn break to dissolve White's center. Develop queenside counterplay with moves like ...a5-a4.",
-        "Black: Reposition the Nfd7 to a more active square, typically f8 to support ...g6 and control e6, or sometimes to b8 to aid queenside operations."
+        "White: Guard d4 with Nf3, castle and keep the e5-pawn as a wedge; if Black breaks with ...f6, exchanging on f6 leaves a backward e6-pawn and the e5-square for White's pieces.",
+        "Black: Intensify pressure on the d4 pawn, often preparing the ...f6 pawn break to dissolve White's centre. Develop queenside counterplay with moves like ...a5-a4.",
+        "Black: Strike at e5 with ...f6 straight away, recapture on f6 with the d7-knight, then develop with ...Bd6 and castle, using the half-open f-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:26:45.704Z"
@@ -11993,7 +11993,7 @@
     "name": "French: Tarrasch, Closed, 8...Qb6 9.O-O",
     "scid": "C06h",
     "analysis_json": {
-      "description": "This mainline of the French Tarrasch leads to a tense and strategically complex middlegame. White enjoys a space advantage and a solid central pawn chain, while Black aims to undermine this structure, primarily by targeting the d4 pawn with the active queen on b6. The position is rich in both long-term strategic plans and sharp tactical possibilities, often revolving around Black's potential pawn sacrifice on d4, making it a battleground for players who appreciate deep calculation and strategic nuance.",
+      "description": "After 9.O-O White leaves the d4-pawn to its fate: 9...Nxd4 10.Nxd4 Qxd4 wins a pawn, but after 11.Nf3 White has a lead in development and good compensation, so this is a real gambit. Many players prefer to hit the chain at once with 9...f6, reaching the typical structure of White's isolated d4-pawn against Black's backward e6-pawn after the exchange on f6. It is a tense strategic line with a sharp gambit option.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -12036,10 +12036,10 @@
         "Kingside Attack vs. Queenside Counterplay"
       ],
       "common_plans": [
-        "White: Bolster the d4-pawn with Nf3, use the space advantage to prepare a kingside attack with f4-f5 or Ng3-f5.",
-        "Black: Increase pressure on d4 with moves like ...f6, and critically, consider the temporary pawn sacrifice ...Nxd4 to seize the initiative.",
-        "Black: Develop the light-squared bishop via ...b5-b4 and ...Ba6 to challenge White's control of the long diagonal.",
-        "White: Complete development and neutralize Black's queenside pressure before launching active operations on the kingside."
+        "White: Guard d4 with Nf3 if Black does not take it, keep the e5-pawn as a wedge, and after ...f6 exchange on f6 and play against the backward e6-pawn and for the e5-square.",
+        "Black: Break with ...f6 to challenge the e5-pawn; taking on d4 with ...Nxd4 wins a pawn but hands White quick development and the initiative.",
+        "Black: Use the open c-file and the b6-queen for queenside pressure; once the d7-knight has moved, the light-squared bishop can develop to d7 and a rook can come to c8.",
+        "White: Complete development and neutralise Black's queenside pressure before launching active operations on the kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:27:40.170Z"
@@ -12054,7 +12054,7 @@
     "name": "French: Tarrasch, Closed, Leningrad, 9.Nf3",
     "scid": "C06c",
     "analysis_json": {
-      "description": "This mainline of the French Tarrasch leads to a complex and strategically dense middlegame. White enjoys a space advantage and aims to consolidate central control, often preparing a kingside attack, while Black seeks to undermine White's central pawn on d4 and generate counterplay on the queenside. The opening is ideal for strategic players who appreciate long-term planning and maneuvering within a locked pawn structure.",
+      "description": "In the Leningrad line Black retreats the knight to b6 rather than striking at once with ...f6: from b6 it covers c4 and frees d7 for the light-squared bishop. After 9.Nf3 White keeps the d4-e5 chain and aims for the kingside, while Black develops with ...Bd7 and ...Rc8, gains space with ...a5 and looks to exchange White's d3-bishop with ...Nb4. The play is slow and strategic, with the d4-pawn and Black's cramped kingside as the main themes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -12094,8 +12094,8 @@
         "Controlling Key Squares"
       ],
       "common_plans": [
-        "White: Castle kingside, support the d4 pawn with moves like O-O and f4, and prepare a kingside attack, often with g4-g5, while restricting Black's pieces.",
-        "Black: Increase pressure on the d4 pawn with ...f6 or ...Qb6, develop the light-squared bishop (often via ...Bd7-e8-g6), and create queenside counterplay with moves like ...a6 and ...b5."
+        "White: Castle, keep the d4-e5 chain protected by the knights, and build a kingside attack with Nf4 and the d3-bishop pointing at h7.",
+        "Black: Develop with ...Bd7 and ...Rc8, play ...a5 to gain queenside space, and use ...Nb4 to exchange White's d3-bishop; ...f6 against e5 remains an option."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:27:56.788Z"
@@ -12171,7 +12171,7 @@
     "name": "French: Tarrasch, Closed, Leningrad, 9.O-O a5",
     "scid": "C06e",
     "analysis_json": {
-      "description": "The Leningrad variation of the Tarrasch French is a highly strategic and complex battleground. Black's characteristic 9...a5 move signals immediate intent to create queenside counterplay, aiming to undermine White's central space advantage before it becomes overwhelming. The resulting middlegame is a tense, maneuvering affair where White plays on the kingside and in the center, while Black focuses on the queenside and the d4-pawn. This opening is perfect for patient, strategic players who enjoy long-term planning and fighting for the initiative in closed positions.",
+      "description": "The Leningrad variation of the Tarrasch French is a highly strategic and complex battleground. Black's characteristic 9...a5 move signals immediate intent to create queenside counterplay, aiming to undermine White's central space advantage before it becomes overwhelming. The resulting middlegame is a tense, manoeuvring affair where White plays on the kingside and in the centre, while Black focuses on the queenside and the d4-pawn. This opening is perfect for patient, strategic players who enjoy long-term planning and fighting for the initiative in closed positions.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -12213,10 +12213,10 @@
         "Prophylaxis against Kingside Attack"
       ],
       "common_plans": [
-        "White: Solidify the center with f2-f4, reroute the knight from e2 to g3 to support a kingside attack, and restrain Black's queenside ambitions.",
-        "Black: Continue queenside expansion with ...a4, pile up pressure on the d4-pawn, and prepare the critical ...f6 pawn break to challenge White's center.",
+        "White: Solidify the centre with f2-f4, reroute the knight from e2 to g3 to support a kingside attack, and restrain Black's queenside ambitions.",
+        "Black: Continue queenside expansion with ...a4, pile up pressure on the d4-pawn, and prepare the critical ...f6 pawn break to challenge White's centre.",
         "White: Use the space advantage to restrict Black's pieces and slowly build pressure on the kingside.",
-        "Black: Maneuver the 'bad' French bishop, often to d7-e8-g6 or via c8-b7, to make it an active participant in the game."
+        "Black: Bring the light-squared bishop out with ...Bd7 and consider ...Nb4 to exchange White's d3-bishop, the piece that most threatens Black's king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:36:40.850Z"
@@ -12356,7 +12356,7 @@
       "ct": "French Defense, Tarrasch Variation"
     },
     "analysis_json": {
-      "description": "The Modern Line of the Chistyakov Defense is a highly respected and strategically complex system against the Tarrasch French. Black temporarily brings the queen out to recapture on d5, aiming for a solid and flexible pawn structure after retreating. The resulting positions are dynamic and balanced, where White's central space and active pieces are pitted against Black's solid setup and counter-attacking potential, often via the queenside. This opening is perfect for the versatile player who enjoys navigating intricate middlegames that blend deep strategy with concrete tactical possibilities.",
+      "description": "In the Modern Line of the Chistyakov the centre has been cleared: Black's queen stands on d6, White's knight on d4, and Black's e6-pawn is the only central pawn left. 10...a6 prepares ...b5, gaining time on the c4-bishop and making room for the light-squared bishop on b7. White has a small lead in development and aims for active play with Re1, Bb3 and the queen to f3 or e2, while Black, with a sound structure, completes development with ...Be7 and ...O-O and aims to equalise.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -12398,10 +12398,10 @@
         "Managing Piece Activity"
       ],
       "common_plans": [
-        "White: Secure the center with moves like Re1 and Bb3, then seek to expand on the kingside with f4-f5 or pressure Black's potential weaknesses.",
+        "White: Use the lead in development with Re1 and Bb3, and bring the queen to f3 or e2 to keep up the pressure while Black finishes developing.",
         "Black: Complete development with ...Be7 and ...O-O, then launch the ...b5 pawn break to challenge White's c4-bishop and create queenside counterplay.",
         "White: Maintain the strong knight on d4 as a central pivot, rerouting it if necessary to support an attack.",
-        "Black: Challenge White's central control, often by targeting the e4-pawn, and aim to neutralize White's most active pieces before they can generate threats."
+        "Black: After ...b5, develop the light-squared bishop on b7, where it eyes White's kingside, and use the open d-file and the half-open c-file for the rooks."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:37:57.668Z"
@@ -12421,7 +12421,7 @@
       "chronos": "French: Tarrasch, Eliskases variation"
     },
     "analysis_json": {
-      "description": "The Eliskases Variation is a sophisticated and strategically rich response to the Tarrasch French. Black's early queen sortie is temporary, leading to a position where Black often accepts an Isolated Queen's Pawn (IQP) in exchange for active piece play and central influence. This opening is ideal for strategic players who enjoy dynamic positions and understand the dual nature of the IQP—a strength that supports an attack but a potential weakness in the endgame.",
+      "description": "In the Eliskases Variation Black retreats the queen to d8 after 6.Bc4 hit it, holding on to the extra pawn on d4 for the moment. White normally regains it with Nb3 and Nbxd4, reaching an open position with no isolated pawn: White has a queenside pawn majority and a lead in development, Black a central e-pawn and a sound structure. Black aims to finish development with ...Nc6, ...Nf6 and ...Be7 and equalise.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -12462,10 +12462,10 @@
         "King Safety"
       ],
       "common_plans": [
-        "White: Castle, establish a knight on the d4 outpost to blockade the IQP, and build pressure on the d5-pawn. White often uses their development advantage to launch a kingside attack.",
-        "Black: Complete development to support the d5-pawn (...Nc6, ...Nf6, ...Be6). Use the IQP to generate a central or kingside attack, often aiming for a ...d4 pawn break to open lines.",
-        "White: Aim for a favorable endgame where the isolated d5-pawn becomes a clear weakness by trading pieces.",
-        "Black: Use the open c and e-files for rooks to create counterplay against White's position."
+        "White: Regain the d4-pawn with Nb3 and Nbxd4, castle, and use the lead in development and the queenside pawn majority.",
+        "Black: Develop with ...Nc6, ...Nf6 and ...Be7 while White spends time regaining the pawn, then castle and aim to equalise in an open position.",
+        "White: Put a knight on d4 after regaining the pawn and bring the rooks to the open d-file and the half-open e-file.",
+        "Black: After castling, bring the rooks to the c- and d-files and develop the light-squared bishop with ...b6 and ...Bb7 or with ...Bd7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:38:18.844Z"
@@ -12488,7 +12488,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Tarrasch Variation, Open System is a dynamic and ambitious response to the French Defense, where Black immediately challenges White's central control with 3...c5. This often leads to open, strategically complex positions, frequently revolving around an Isolated Queen's Pawn (IQP) for Black. The opening is perfect for players who enjoy active piece play and fighting for the initiative, and who are comfortable navigating the double-edged nature of the resulting structures.",
+      "description": "The Tarrasch Variation, Open System is a dynamic and ambitious response to the French Defence, where Black immediately challenges White's central control with 3...c5. This often leads to open, strategically complex positions, frequently revolving around an Isolated Queen's Pawn (IQP) for Black. The opening is perfect for players who enjoy active piece play and fighting for the initiative, and who are comfortable navigating the double-edged nature of the resulting structures.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -12528,8 +12528,8 @@
         "Activity vs. Structure"
       ],
       "common_plans": [
-        "White: Blockade the isolated d5-pawn (often with Nd4), exchange pieces to reach a favorable endgame, and control the d-file.",
-        "Black: Use active pieces and open files to create an attack, prepare the d5-d4 pawn break to dissolve the weakness, and fight for the initiative."
+        "White: After 4.exd5 exd5, develop with Ngf3, Bb5+ and O-O, then blockade the isolated d5-pawn with a knight on d4 and exchange pieces towards a favourable endgame.",
+        "Black: Accept the isolated pawn in return for active pieces: develop with ...Nc6, ...Bd6 and ...Nge7, castle, and look for kingside play or a timely advance of the d-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:38:41.374Z"
@@ -12613,7 +12613,7 @@
       "icsbot": "Shaposhnikov Gambit, French "
     },
     "analysis_json": {
-      "description": "The Shaposhnikov Gambit is a sharp and ambitious response within the Tarrasch French, where Black sacrifices a central pawn for a significant lead in development and lasting initiative. This opening steers the game away from the typical strategic grind of the French Defense into a dynamic, tactical battle where piece activity and tempo are paramount. It is perfectly suited for aggressive, creative players who are comfortable with material imbalances and enjoy fighting for the initiative from the very first moves.",
+      "description": "The Shaposhnikov Gambit is a sharp and ambitious response within the Tarrasch French, where Black sacrifices a central pawn for a significant lead in development and lasting initiative. This opening steers the game away from the typical strategic grind of the French Defence into a dynamic, tactical battle where piece activity and tempo are paramount. It is perfectly suited for aggressive, creative players who are comfortable with material imbalances and enjoy fighting for the initiative from the very first moves.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -12654,8 +12654,8 @@
         "Central Tension"
       ],
       "common_plans": [
-        "For Black, the main plan is to use the development advantage to create immediate threats, often involving ...Bxc5, ...Nc6, and ...Qb6 to pressure White's queenside and center before they can consolidate. The goal is to either regain the pawn with a superior position or launch a decisive attack.",
-        "For White, the primary goal is to accept the gambit with 5.dxc5, complete development safely (e.g., Ngf3, Be2, 0-0), and neutralize Black's initiative. The long-term plan is to consolidate the extra pawn and convert the material advantage in the middlegame or endgame."
+        "For Black, the main plan is to use the development advantage to create immediate threats, often involving ...Bxc5, ...Nc6, and ...Qb6 to pressure White's queenside and centre before they can consolidate. The goal is to either regain the pawn with a superior position or launch a decisive attack.",
+        "White: Hold on to the extra pawn only while it is safe: develop with Ngf3, Bb5+ and O-O, and be ready to return the d5-pawn for a lead in development and a sound position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T21:39:12.263Z"

@@ -6434,8 +6434,8 @@
   "rnbqkb1r/pp1p1ppp/4p3/2pNP3/8/5N2/PPPP1PPP/R1BQKB1R b KQkq - 0 5": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "1ed675c294cdcf2d",
-    "notes": "Plan 2 used ...Qe7 to control e4 and missed that ...exd5 must come first. Rewrote plan 2. Plan 1 (pressure on a d5-pawn not yet there, a c-file) is fixed in the follow-up in batch 2026-11-16-12 (reviewer: first draft's development did not bear on d5)."
+    "contentHash": "501663785d272ed2",
+    "notes": "Follow-up to batch 2026-11-16-11: plan 1 pressured a d5-pawn not yet there and claimed a c-file. Rewrote plan 1 (reviewer: first draft's development did not bear on d5)."
   },
   "r1bqkb1r/pp1p1ppp/2n5/2PpP3/8/5N2/PPP2PPP/R1BQKB1R b KQkq - 0 7": {
     "reviewedAt": "2026-11-16",
@@ -6466,5 +6466,65 @@
     "verdict": "fixed",
     "contentHash": "e2f53264c7948509",
     "notes": "Plan 4 played ...b5 with White's bishop on b5. Rewrote plan 4; British spelling elsewhere."
+  },
+  "r1bqkbnr/1p1ppppp/p1n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "2f6d525e860a1e78",
+    "notes": "Plan 2 recaptured with dxc6 written so it could not be read and called the d-file open (half-open). Rewrote plan 2; British spelling in the overview. Plan 3 (light-square play on d5, which the c6-pawn covers once White's light-squared bishop is gone) is fixed in the follow-up in batch 2026-11-16-13."
+  },
+  "r1bqkb1r/pp1ppppp/2n2n2/2p5/4P3/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 1 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "aa92769b027ee4f6",
+    "notes": "Plan 1 pushed f4-f5 from a King's Indian Attack with the knight on f3 blocking the f-pawn. Rewrote plan 1; British spelling elsewhere."
+  },
+  "r1bqkbnr/pp1p1ppp/2n1p3/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "8419525a318d4486",
+    "notes": "Plan 4 played ...b5 with White's bishop on b5. Rewrote plan 4; British spelling in the overview."
+  },
+  "r1bqkbnr/pp1p1ppp/2n1p3/1Bp5/4P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 1 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "936beaaead40d9e1",
+    "notes": "Plan 4 played ...b5 with White's bishop on b5. Rewrote plan 4; British spelling in the overview."
+  },
+  "r1bqkbnr/pp1p1ppp/2n1p3/1Bp5/4P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 1 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "fe011778dfb9e64a",
+    "notes": "Plans wrote Bxc6 and ...b5 so they could not be read. Rewrote plans 1-2; British spelling in the overview."
+  },
+  "r1bqkb1r/pp1pnppp/2n1p3/1Bp5/4P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 2 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "2f04bb484538ff2a",
+    "notes": "Plan 4 played ...Be7 and ...O-O with the knight still on e7. Rewrote plan 4 around ...Ng6; British spelling elsewhere."
+  },
+  "r1bqkb1r/pp1pnppp/2n1p3/1Bp5/4P3/1P3N2/P1PP1PPP/RNBQ1RK1 b kq - 0 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "8cc56e105d12da10",
+    "notes": "Overview called b3 a light-squared fianchetto (Bb2 is the dark-squared bishop); plan 4 'neutralised' a light-squared bishop with ...b4 ideas. Fixed the overview and rewrote plan 4. Plan 3 is fixed in the follow-up in batch 2026-11-16-13 (reviewer: first draft's c3 blocks the b2-bishop)."
+  },
+  "r1bqkb1r/pp1pnppp/2n1p3/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQ1RK1 b kq - 0 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f5b12f85ba331733",
+    "notes": "Plan 2 wrote ...a6-b5 as one route into White's bishop. Rewrote plan 2; British spelling elsewhere."
+  },
+  "r1bqkb1r/1p1pnppp/p1n1p3/1Bp5/4P3/2P2N2/PP1P1PPP/RNBQ1RK1 w kq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "79b54b76260e6137",
+    "notes": "Plan 2 sent the knight to g6 'to control f4, h4' as moves and gave Black a queenside majority after Bxc6, which the e7-knight recaptures. Rewrote plan 2; British spelling elsewhere."
+  },
+  "r1bqkb1r/pp1pnppp/2n1p3/1Bp5/4P3/2N2N2/PPPP1PPP/R1BQ1RK1 b kq - 3 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "cd13dd15dee3e5a9",
+    "notes": "Plan 1 played c3 with the knight on c3; plans 2 and 4 wrote ...b5 into the bishop and f4/h4 as moves. Rewrote plans 1, 2, 4; British spelling elsewhere."
   }
 }

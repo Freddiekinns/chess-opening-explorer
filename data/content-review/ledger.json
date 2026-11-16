@@ -8224,5 +8224,125 @@
     "verdict": "fixed",
     "contentHash": "2e1abe21adaa1b5c",
     "notes": "Plan 3 pressed a d6-pawn that is no longer there; plans 2 and 4 had c-file play and ...Rxc3, though after 11.Nxc6 bxc6 the c-file is closed and Black's play is on the b-file and long diagonal. Rewrote plans 2-4."
+  },
+  "r1bq1rk1/pp2ppbp/2N3p1/3n4/8/2N1BP2/PPPQ2PP/2KR1B1R b - - 0 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "d0af36313c3e7da7",
+    "notes": "Plan 2 targeted a c6-pawn before Black has recaptured; the overview said White shatters Black's structure, missing the 12.Nxd5 or 12.Bd4 choice; plan 4 had Black aiming for an endgame a pawn down. Rewrote the overview and plans 2 and 4."
+  },
+  "r1bq1rk1/p4pbp/2p3p1/3np3/3B4/2N2P2/PPPQ2PP/2KR1B1R w - - 0 13": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "4f604a5d435d8633",
+    "notes": "Plan 1 had Bh6 with the bishop on d4; plan 2 relied on a c-file closed by the c6-pawn. Rewrote plans 1 and 2 around 13.Bc5 and the half-open b-file."
+  },
+  "r2q1rk1/p4pbp/2p1b1p1/2Bnp3/8/2N2P2/PPPQ2PP/2KR1B1R w - - 2 14": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f65cff00f28bae91",
+    "notes": "Plan 1 rerouted the knight via e2 and the queen via h2; plan 2 had c-file play and ...Rxc3 with the c-file closed; plan 4 had the g7-bishop pressing the queenside through the e5-pawn (reviewer). Rewrote plans 1, 2 and 4 around Ne4 and the b-file."
+  },
+  "r1bq1rk1/p3ppbp/2p3p1/3N4/8/4BP2/PPPQ2PP/2KR1B1R b - - 0 12": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "594ea22da9a02ec7",
+    "notes": "Plan 1 had Bh6 after the queen has left d2; plan 2 had ...Rxc3 and missed the known 13...Qc7 14.Qxa8 Bf5 attack. Rewrote both plans."
+  },
+  "r2q1rk1/pp2ppbp/3pbnp1/8/3BP3/2N2P2/PPPQ2PP/2KR1B1R w - - 1 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "b887390ce2a4a13c",
+    "notes": "Plan 1 had Bh6 with the bishop on d4; plan 2 called the half-open c-file open and had ...Rxc3. Rewrote both plans."
+  },
+  "r2q1rk1/pp2ppbp/3pbnp1/8/3BP3/2N2P2/PPPQ2PP/1K1R1B1R b - - 2 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f9f74bfde0b2e7a4",
+    "notes": "Plan 1 had Bh6 with the bishop on d4. Rewrote plan 1."
+  },
+  "r4rk1/ppq1ppbp/3pbnp1/8/3BP3/2N2P2/PPPQ2PP/1K1R1B1R w - - 3 12": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "48d54a202c871872",
+    "notes": "Plan 1 had Bh6 with the bishop on d4; plan 2 had ...Rxc3. Rewrote both plans."
+  },
+  "r2q1rk1/pp1bppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/R3K2R w KQ - 5 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "9c7602c01b442464",
+    "notes": "Plan 1 had sacrifices Bxh7+ and Nxe6 that no piece can make; plan 4 had ...Rxc3 and named g7 as a move. Rewrote plans 1 and 4."
+  },
+  "r1bq1rk1/1p2ppbp/2np1np1/p7/2BNP3/2N1BP2/PPPQ2PP/R3K2R w KQ - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "797d591f78cba55f",
+    "notes": "Plan 2 called the half-open c-file open and missed the Byrne idea ...a5-a4 against the bishop on b3; plan 4 named g7 as a move. Rewrote plans 2 and 4."
+  },
+  "r1bq1rk1/pp2ppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/R3K2R b KQ - 4 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "2006e40f8963c480",
+    "notes": "Plan 2 had Qh2 with the h-pawn at home; plan 3 had ...Rxc3; plan 4 named g7 as a move. Rewrote plans 2-4."
+  },
+  "r2q1rk1/pp1bppbp/2np1np1/8/3NP3/1BN1BP2/PPPQ2PP/R3K2R b KQ - 6 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a8eeb60edaa3069c",
+    "notes": "Plan 2 had ...Rxc3 with no rook on the c-file; the overview called the half-open c-file open. Reworded both."
+  },
+  "r2q1rk1/pp1bppbp/2np1np1/8/2BNP1P1/2N1BP2/PPPQ3P/R3K2R b KQ - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "fb0ace9e343f6f63",
+    "notes": "Plan 2 had ...Rxc3; plan 1 named g7 as a move. Reworded both."
+  },
+  "r2q1rk1/pp1bppbp/2np1np1/8/2BNP2P/2N1BP2/PPPQ2P1/R3K2R b KQ - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "4478edd3aca7ef1f",
+    "notes": "Plan 2 had ...Rxc3 with no rook on the c-file. Reworded plan 2."
+  },
+  "2rq1rk1/pp1bppbp/2np1np1/8/2BNP2P/2N1BP2/PPPQ2P1/R3K2R w KQ - 1 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "912c0a4810212e6c",
+    "notes": "Plan 1 had an h4-h5-h6 route; plan 2 called the half-open c-file open and had ...Rxc3 through the c6-knight. Reworded both."
+  },
+  "r1bq1rk1/pp2ppbp/3p1np1/4n3/2BNP3/2N1BP2/PPPQ2PP/R3K2R w KQ - 5 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "1c8c535c1137507b",
+    "notes": "Plan 3 put Bb3 on the long diagonal and the queen on h2 with the h-pawn at home; plan 2 had ...Rxc3. Rewrote plans 2 and 3; British spelling in plan 4."
+  },
+  "r1bq1rk1/pp2ppbp/3p1np1/8/2BnP3/2N1BP2/PPPQ2PP/R3K2R w KQ - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f649eb96fce14456",
+    "notes": "Plan 2 had ...Rxc3 with no rook on the c-file. Reworded plan 2; British spelling in plan 4."
+  },
+  "2rq1rk1/pp1bppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/2KR3R w - - 7 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "acc4680e64c17beb",
+    "notes": "Plan 2 had ...Rxc3 through the c6-knight. Reworded plan 2; British spelling in plans 1, 3 and 4."
+  },
+  "r2q1rk1/pp1bppbp/3p1np1/4n3/2BNP3/2N1BP2/PPPQ2PP/2KR3R w - - 7 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "43e392889642a506",
+    "notes": "Plan 1 had a sacrifice on g7 and plan 2 called the half-open c-file open with ...Rxc3. Rewrote both plans."
+  },
+  "2rq1rk1/pp1bppbp/3p1np1/4n3/3NP2P/1BN1BP2/PPPQ2P1/2KR3R b - - 0 12": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "047b74b3826225fe",
+    "notes": "Plan 2 had ...Rxc3 and missed the main 12...h5 (Soltis). Rewrote plan 2."
+  },
+  "2rq1rk1/pp1bppb1/3p1np1/4n1Bp/3NP2P/1BN2P2/PPPQ2P1/2KR3R b - - 1 13": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "d7e1458230a40bec",
+    "notes": "Plan 1 had Kh1 with the king on c1 and called the g5-bishop light-squared; plan 2 had ...Rxc3 and named g7 as a move. Rewrote both plans."
   }
 }

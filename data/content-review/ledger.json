@@ -7864,5 +7864,125 @@
     "verdict": "fixed",
     "contentHash": "038a259c1b3485cc",
     "notes": "Plan 2 had ...Rxc3 and ...Rc8 with the bishop still on c8; plan 1 proposed f3 in the Classical; plan 3 routed the knight to the occupied c1. Rewrote plans 1-3."
+  },
+  "r1bq1rk1/pp2ppbp/2np1np1/8/4P3/1NN5/PPP1BPPP/R1BQ1RK1 w - - 6 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "e3c404640a454e92",
+    "notes": "Plan 2 had ...Rc8 with the bishop on c8 and targeted a d4-pawn that is not there; plan 3 had a knight route d2-e4 onto White's own pawn. Rewrote plans 1-3."
+  },
+  "rnbq1rk1/pp2ppbp/3p1np1/8/3NP3/2N5/PPP1BPPP/R1BQ1RK1 w - - 4 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "d2ae587f37838510",
+    "notes": "Plan 3 had ...Rc8 with the bishop on c8 and an ...a6-b5 route; plan 4 had ...Rxc3 with no rook on the c-file; plan 2 proposed a3 and b4. Rewrote plans 2-4."
+  },
+  "rnbq1rk1/pp2ppbp/3p1np1/6B1/3NP3/2N5/PPP1BPPP/R2Q1RK1 b - - 5 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "06294d5d5d6313ee",
+    "notes": "The overview and plan 2 called Bg5 a pin (the e7-pawn shields d8); plan 1 called the g5-bishop light-squared; plan 3 had a Qe1-h4 route through the f2-pawn. Rewrote the overview and all four plans."
+  },
+  "r1bq1rk1/pp2ppbp/2np1np1/6B1/3NP3/2N5/PPP1BPPP/R2Q1RK1 w - - 6 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "903ae5ae18ca31f0",
+    "notes": "Plan 1 said Bxf6 weakens the dark squares, though the g7-bishop stays; plan 2 had ...Rxc3 with no rook on the c-file. Rewrote plans 1 and 2."
+  },
+  "r1bq1rk1/pp2ppbp/2np1np1/6B1/4P3/1NN5/PPP1BPPP/R2Q1RK1 b - - 7 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "1f136ea6266259d8",
+    "notes": "Plan 4 had ...Rxc3 with no rook on the c-file; plan 1 proposed a3 and said f4 controls d5 (reviewer). Rewrote plans 1 and 4."
+  },
+  "r1bq1rk1/1p2ppbp/p1np1np1/6B1/4P3/1NN5/PPP1BPPP/R2Q1RK1 w - - 0 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "34514f24d372ea4e",
+    "notes": "Plan 2 had ...Rxc3 with no rook on the c-file; the overview called Bg5 a pin. Reworded the overview and plan 2."
+  },
+  "r2q1rk1/pp2ppbp/2npbnp1/6B1/4P3/1NN5/PPP1BPPP/R2Q1RK1 w - - 8 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "452a9a6a7dbba9c7",
+    "notes": "Plan 1 routed the b3-knight via c1-d3 in a way the parser could not read; plan 2 had a ...b7-b5-b4 route and ...Rxc3 with no rook on c3. Rewrote both plans."
+  },
+  "r2q1rk1/pp2ppbp/2npbnp1/6B1/4P3/1NN5/PPP1BPPP/R2Q1R1K b - - 9 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "c169a7e17e7b4df1",
+    "notes": "Plan 4 had ...Rxc3 with no rook on the c-file. Reworded plan 4."
+  },
+  "rnbq1rk1/pp2ppbp/3p1np1/8/3NP3/2N5/PPP1BPPP/R1BQR1K1 b - - 5 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a98460c6b5674688",
+    "notes": "Plan 2 had a Bf1-h3 route for a bishop on e2; plan 3 had ...Rc8 with the bishop on c8 and ...Rxc3. Rewrote plans 2 and 3; British spelling in the overview."
+  },
+  "r1bq1rk1/pp2ppbp/2np1np1/8/4P3/1NN5/PPP1BPPP/R1BQR1K1 b - - 7 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a40cdc44652fd864",
+    "notes": "Plan 1 rerouted a knight from f3 that does not exist; plan 2 called the half-open c-file open and had ...Rc8 and ...Rxc3 before a rook can get there. Rewrote both plans (reviewer caught that a b3-knight does not cover a4); British spelling in the overview."
+  },
+  "rnbqk2r/pp2ppbp/3p1np1/8/3NP3/2N1B3/PPP2PPP/R2QKB1R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "72b1254ff044da2c",
+    "notes": "Plan 2 called the half-open c-file open and had ...Rc8 with the bishop on c8 and ...Rxc3. Reworded plan 2; British spelling in the overview."
+  },
+  "rnbqk2r/pp2ppbp/3p1np1/8/2BNP3/2N1B3/PPP2PPP/R2QK2R b KQkq - 3 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "842e20979a9468fa",
+    "notes": "Plan 1 had an h4-h5-h6 route; plan 2 had ...Rxc3 with no rook on the c-file. Reworded both."
+  },
+  "r1bqk2r/pp2ppbp/2np1np1/8/2BNP3/2N1B3/PPP2PPP/R2QK2R w KQkq - 4 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "b30eed8ea04d7855",
+    "notes": "Plan 3 had ...Rc8 with the bishop on c8 on an open c-file; plan 4 had ...Rxc3. Reworded both; British spelling elsewhere."
+  },
+  "rnbq1rk1/pp2ppbp/3p1np1/8/2BNP3/2N1B3/PPP2PPP/R2QK2R w KQ - 4 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "de40079273d9226a",
+    "notes": "Plan 2 put ...Qa5 on the long diagonal and said ...Rxc3 hits the kingside pawn cover. Rewrote plan 2."
+  },
+  "rnbqk2r/pp2ppbp/3p1np1/8/3NP3/2N1B3/PPPQ1PPP/R3KB1R b KQkq - 3 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "0f0244857b01010e",
+    "notes": "Plan 4 had ...Rxc3 with no rook on the c-file. Reworded plan 4; British spelling in plan 3."
+  },
+  "rnbq1rk1/pp2ppbp/3p1np1/8/3NP3/2N1B3/PPP1BPPP/R2QK2R w KQ - 4 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "3fcc735336618c04",
+    "notes": "The overview and plan 1 described a Yugoslav-style f3, g4, h4 storm and long castling for the Classical Attack, where White castles short with Be2; plan 1 also had Bxh6 with no pawn on h6. Rewrote the overview and both plans."
+  },
+  "rnbq1rk1/pp2ppbp/3p1np1/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 b - - 5 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "b5f454b49f43f188",
+    "notes": "Plan 1 had a pawn storm in front of White's own castled king; plan 2 had ...Rc8 with the bishop on c8. Rewrote plans 1 and 2; British spelling in plan 4."
+  },
+  "r1bqk2r/pp2ppbp/2np1np1/8/3NP3/2N1B3/PPPQBPPP/R3K2R b KQkq - 5 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "4e9c0040439ab52a",
+    "notes": "Plan 1 had an h4-h5-hxg6 route; plan 2 had ...Rc8 and ...Rxc3. Rewrote plans 1 and 2; British spelling in plan 4."
+  },
+  "r1bq1rk1/pp2ppbp/2np1np1/8/3NP3/2N1B3/PPPQBPPP/2KR3R b - - 7 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "20169d20cf75c2b1",
+    "notes": "Plan 2 had ...Rxc3 with no rook on the c-file. Reworded plan 2; British spelling in plans 3 and 4."
+  },
+  "r1bq1rk1/pp2ppbp/2np1np1/8/3NP3/2N1B3/PPPQBPPP/R4RK1 b - - 7 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "0199c25b4c67ed55",
+    "notes": "Plan 1 had an h4-h5 storm in front of White's own king; plan 2 had ...Rc8 with the bishop on c8; plan 4 had ...Rxc3. Rewrote plans 1, 2 and 4."
   }
 }

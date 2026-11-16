@@ -40216,10 +40216,10 @@
         "Flank Attack"
       ],
       "common_plans": [
-        "Black aims to pile up pressure on the h-file with major pieces, often involving ...Rxh4 and ...Qh4.",
-        "White seeks to accept the pawn (Nxh4), consolidate the kingside defense, and use the material advantage.",
+        "Black aims to open the h-file with ...hxg3 and turn the h8-rook, backed by the queen, against White's king if it castles kingside.",
+        "White seeks to accept the pawn (Nxh4), consolidate the kingside defence, and use the material advantage.",
         "White may decline the gambit with O-O or d3, aiming for a more positional struggle.",
-        "Black tries to prevent White from castling and completing development, keeping the king in the center as a target."
+        "Black tries to prevent White from castling and completing development, keeping the king in the centre as a target."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:18:39.088Z"
@@ -40344,7 +40344,7 @@
         "Opening the Position"
       ],
       "common_plans": [
-        "White aims to coordinate an attack using the open f-file for the rook, the active bishop on c4, and bringing the queen into the fray (via Qf3 or Qe1-h4) to target Black's exposed king.",
+        "White aims to attack Black's exposed king with the c4-bishop aimed at f7, the queen swinging over to the kingside, and the f1-rook once the f-pawns are cleared; the c6-pawn also threatens cxb7, hitting the a8-rook.",
         "Black must survive the initial storm, consolidate the material advantage, and launch a counterattack. Key plans involve challenging White's control, developing quickly, and using the newly opened lines (e.g., the b-file after ...bxc6) against White's own exposed king."
       ],
       "version": "1.0",
@@ -40554,7 +40554,7 @@
     "name": "Vienna: 2...Bc5 3.Bc4",
     "scid": "C25e",
     "analysis_json": {
-      "description": "This variation of the Vienna Game mirrors the classical principles of the Italian Game, focusing on rapid development and central influence. White places the bishop on the active c4 square to pressure Black's weak f7 point, aiming for a slight but enduring initiative. The game typically unfolds into a strategic battle where understanding piece placement and pawn breaks is more crucial than memorizing sharp tactical lines, making it an excellent choice for players who appreciate classical chess and want to build an attack methodically.",
+      "description": "This variation of the Vienna Game mirrors the classical principles of the Italian Game, focusing on rapid development and central influence. White places the bishop on the active c4 square to pressure Black's weak f7 point, aiming for a slight but enduring initiative. The game typically unfolds into a strategic battle where understanding piece placement and pawn breaks is more crucial than memorising sharp tactical lines, making it an excellent choice for players who appreciate classical chess and want to build an attack methodically.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -40595,9 +40595,9 @@
       ],
       "common_plans": [
         "White: Complete development with Nf3, d3, and O-O, then prepare the f2-f4 pawn break to open the f-file for an attack.",
-        "Black: Solidify the center with ...Nf6 and ...d6, challenge White's active bishop, and seek counterplay.",
-        "White: Maneuver the b1-knight to g3 (via d2-f1 or c3-e2) to support a kingside attack.",
-        "Black: Neutralize the c4-bishop with ...Na5 or prepare a central pawn break with ...d5 to seize the initiative."
+        "Black: Solidify the centre with ...Nf6 and ...d6, challenge White's active bishop, and seek counterplay.",
+        "White: Develop the g1-knight with Nge2 rather than Nf3 and play d3, keeping the f-pawn free for the f2-f4 break.",
+        "Black: Trade off the c4-bishop with ...Nc6 and ...Na5, or prepare a central pawn break with ...d5 to seize the initiative."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:20:32.207Z"
@@ -40612,7 +40612,7 @@
     "name": "Vienna: 2...Bc5 3.Nf3",
     "scid": "C25f",
     "analysis_json": {
-      "description": "This variation of the Vienna Game is a classical and flexible approach, steering the game towards a more strategic battle rather than the wild gambits sometimes associated with the opening. White develops logically, aiming for central control, while Black establishes a solid foothold with the active ...Bc5. The resulting positions are often balanced and rich in plans, appealing to players who enjoy maneuvering and understanding subtle positional nuances over immediate tactical fireworks.",
+      "description": "This variation of the Vienna Game is a classical and flexible approach, steering the game towards a more strategic battle rather than the wild gambits sometimes associated with the opening. White develops logically, aiming for central control, while Black establishes a solid foothold with the active ...Bc5. The resulting positions are often balanced and rich in plans, appealing to players who enjoy manoeuvring and understanding subtle positional nuances over immediate tactical fireworks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -40652,10 +40652,10 @@
         "Prophylaxis against Black's active bishop"
       ],
       "common_plans": [
-        "White: Achieve the d2-d4 pawn break to open the center and gain a space advantage.",
-        "Black: Solidify the center with ...d6, develop with ...Nf6, and prepare to challenge White's control of d4.",
-        "White: Develop the light-squared bishop to c4 (Italian Game style) or b5 to pressure Black's setup.",
-        "Black: Use the c5 bishop to create threats against f2 and potentially exchange it for the f3 knight to disrupt White's pawn structure."
+        "White: Achieve the d2-d4 pawn break to open the centre and gain a space advantage.",
+        "Black: Defend the e5-pawn and solidify the centre with ...d6, develop with ...Nf6, and prepare to challenge White's control of d4.",
+        "White: Develop the light-squared bishop with Bc4 (Italian Game style) or Bb5 to pressure Black's setup.",
+        "Black: Keep the c5-bishop aimed at f2 and at the d4-square, so that White's central pawn break needs careful preparation."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:20:49.294Z"
@@ -41389,7 +41389,7 @@
       "scid": "Vienna: 3.Bc4 Bc5 4.d3"
     },
     "analysis_json": {
-      "description": "The Bishop's Opening: Vienna Hybrid, also known as the Spielmann Attack, is a solid and flexible system that combines ideas from the Italian Game and the Vienna. By delaying the development of the g1-knight in favor of 4. d3, White creates a robust pawn structure, controls the center, and keeps options open for a future kingside attack, often initiated by the f2-f4 pawn push. This opening is perfect for strategic players who prefer to build a position patiently, aiming to outmaneuver their opponent in a complex middlegame rather than engaging in immediate, sharp tactical battles.",
+      "description": "The Bishop's Opening: Vienna Hybrid, also known as the Spielmann Attack, is a solid and flexible system that combines ideas from the Italian Game and the Vienna. By delaying the development of the g1-knight in favour of 4. d3, White creates a robust pawn structure, controls the centre, and keeps options open for a future kingside attack, often initiated by the f2-f4 pawn push. This opening is perfect for strategic players who prefer to build a position patiently, aiming to outmanoeuvre their opponent in a complex middlegame rather than engaging in immediate, sharp tactical battles.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -41429,10 +41429,10 @@
         "Flexible Development"
       ],
       "common_plans": [
-        "White: Prepare and execute the f2-f4 pawn break to open the f-file and attack the kingside. Often involves maneuvering the c3-knight (e.g., Ne2-g3) to support the attack.",
-        "White: Maintain a solid center, restrict Black's counterplay (especially the ...d5 break), and slowly build pressure.",
-        "Black: Solidify the center with ...d6, challenge White's c4-bishop with ...a6 and ...b5, and prepare the equalizing ...d5 pawn break.",
-        "Black: Develop pieces to counter White's kingside ambitions, often playing ...h6 to prevent Bg5 and preparing to defend against the f4-f5 push."
+        "White: Prepare and execute the f2-f4 pawn break to open the f-file and attack the kingside, often developing the g1-knight with Nge2 rather than Nf3 so that the f-pawn stays free.",
+        "White: Maintain a solid centre, restrict Black's counterplay (especially the ...d5 break), and slowly build pressure.",
+        "Black: Solidify the centre with ...d6, challenge White's c4-bishop with ...a6 and ...b5, and prepare the equalising ...d5 pawn break.",
+        "Black: Develop pieces to counter White's kingside ambitions, often playing ...h6 to keep the c1-bishop off the g5-square, and prepare to meet a later f-pawn advance."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:24:50.034Z"
@@ -41454,7 +41454,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Falkbeer Variation is a solid and flexible response to the Vienna Game, steering the game into more strategic territory. By developing the knight to f6, Black prepares to control the center and avoids the immediate sharp complications of the Vienna Gambit, often leading to positions resembling a King's Gambit Declined or a Four Knights Game. This opening is well-suited for players who prefer sound development and strategic maneuvering over early tactical skirmishes, aiming to build a robust position before initiating counterplay.",
+      "description": "The Falkbeer Variation is a solid and flexible response to the Vienna Game, steering the game into more strategic territory. By developing the knight to f6, Black prepares to control the centre and avoids the immediate sharp complications of the Vienna Gambit, often leading to positions resembling a King's Gambit Declined or a Four Knights Game. This opening is well-suited for players who prefer sound development and strategic manoeuvring over early tactical skirmishes, aiming to build a robust position before initiating counterplay.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -41495,10 +41495,10 @@
         "Flexible development schemes"
       ],
       "common_plans": [
-        "White: Prepare and execute the d2-d4 pawn break to gain a space advantage in the center.",
+        "White: Prepare and execute the d2-d4 pawn break to gain a space advantage in the centre.",
         "White: Play f2-f4 to challenge Black's e5-pawn, aiming for a King's Gambit-style attack.",
-        "Black: Counter in the center with ...d7-d5, especially in response to White's f4, to open the position and activate pieces.",
-        "Black: Complete development with ...Be7, ...0-0, and prepare to challenge White's central control or pressure the e4-pawn."
+        "Black: Counter in the centre with ...d7-d5, especially after White pushes the f-pawn, to open the position and activate pieces.",
+        "Black: Complete development with ...Be7, ...O-O, and prepare to challenge White's central control or pressure the e4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:25:05.747Z"
@@ -41689,10 +41689,10 @@
         "Attacking the Uncastled King"
       ],
       "common_plans": [
-        "For Black: Rapidly develop pieces, often with ...Nxc6 and ...Qb6 (pressuring b2 and d4), and potentially castle queenside to launch an attack.",
-        "For White: Accept the gambit with 5. dxc6, consolidate the position, complete development (Bg2, d3, Nf3, 0-0), and use the extra pawn as a long-term advantage.",
-        "For Black: Exploit the open c and d-files for rooks and the queen to create threats against White's center and king.",
-        "For White: Neutralize Black's initiative, trade pieces to simplify the position, and aim for a favorable endgame where the extra pawn is decisive."
+        "For Black: After 5.dxc6 Nxc6, develop rapidly with ...Bc5 and castling, using the lead in development and the open lines to attack.",
+        "For White: Accept the gambit with 5. dxc6, consolidate the position, complete development (Bg2, d3, Nf3, O-O), and use the extra pawn as a long-term advantage.",
+        "For Black: Use the half-open d-file for the rooks and queen to press against the d2-pawn and create threats against White's king.",
+        "For White: Neutralise Black's initiative, trade pieces to simplify the position, and aim for a favourable endgame where the extra pawn is decisive."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:26:06.091Z"
@@ -41775,7 +41775,7 @@
       "icsbot": "Stanley Variation, Vienna; C27 "
     },
     "analysis_json": {
-      "description": "The Vienna Game's Stanley Variation is a classical and flexible system where White develops the light-squared bishop to its most active post on c4. It often leads to a strategic game focused on central control and harmonious development, frequently transposing into lines of the Italian Game or the Four Knights Game. This opening is ideal for versatile players who enjoy solid positions and are comfortable navigating different types of middlegames, from quiet maneuvering to sharp tactical skirmishes.",
+      "description": "The Vienna Game's Stanley Variation is a classical and flexible system where White develops the light-squared bishop to its most active post on c4. It often leads to a strategic game focused on central control and harmonious development, frequently transposing into lines of the Italian Game or the Four Knights Game. This opening is ideal for versatile players who enjoy solid positions and are comfortable navigating different types of middlegames, from quiet manoeuvring to sharp tactical skirmishes.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -41816,8 +41816,8 @@
         "Solid Development"
       ],
       "common_plans": [
-        "White: Support the center with d3, prepare the f2-f4 pawn break, and develop pieces for a potential kingside attack.",
-        "Black: Challenge White's central control with ...d5, neutralize the active Bc4 bishop (e.g., with ...Na5), or enter tactical lines with ...Nxe4."
+        "White: Support the centre with d3, prepare the f2-f4 pawn break, and develop pieces for a potential kingside attack.",
+        "Black: Develop with ...Nc6 and ...Bc5 or ...Bb4, or play 3...Nxe4, when 4.Nxe4 d5 regains the piece with a fork and 4.Qh5 Nd6 leads to sharp, heavily analysed play."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:26:41.238Z"
@@ -41900,7 +41900,7 @@
       "icsbot": "Reversed Spanish, Vienna "
     },
     "analysis_json": {
-      "description": "The Stanley Variation, or Reversed Spanish, is a provocative and strategically rich response to the Vienna Game. Black cleverly mirrors the main idea of the Ruy Lopez by pinning the c3 knight, immediately creating central tension and imbalances. This opening often leads to a complex struggle where White might gain the bishop pair at the cost of a damaged pawn structure, making it ideal for players who enjoy posing problems and navigating nuanced positional battles from the very beginning.",
+      "description": "The Stanley Variation, or Reversed Spanish, is a provocative and strategically rich response to the Vienna Game. Black mirrors the main idea of the Ruy Lopez by putting the bishop on b4, where it attacks the c3-knight that defends e4, immediately creating central tension and imbalances. This opening often leads to a complex struggle where White might gain the bishop pair at the cost of a damaged pawn structure, making it ideal for players who enjoy posing problems and navigating nuanced positional battles from the very beginning.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -41942,8 +41942,8 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "White: Break the pin with d3 or Nge2. If Bxc3, use the bishop pair and open b-file for pressure. Control the d5-square and develop.",
-        "Black: Maintain the pin to restrict White. Exchange on c3 (Bxc3+) to create long-term pawn weaknesses for White, then challenge for central control with ...d5."
+        "White: Develop with Nf3 or Nge2 and d3. If Black gives up the bishop for the c3-knight, recapture with the b-pawn, keeping the bishop pair and a half-open b-file, and fight for the d5-square.",
+        "Black: Use the b4-bishop to pressure the c3-knight, the defender of e4, and consider exchanging on c3 to double White's pawns before challenging the centre with ...d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:27:15.123Z"
@@ -42131,7 +42131,7 @@
       "icsbot": "Bishop Variation, Vienna "
     },
     "analysis_json": {
-      "description": "This variation of the Vienna Game leads to a quiet, symmetrical position reminiscent of the Giuoco Piano, often called the 'Italian Game with 2.Nc3'. The game is highly strategic, focusing on subtle piece maneuvering and long-term plans rather than immediate tactical fireworks. It's an excellent choice for players who enjoy classical development, understanding pawn structures, and patiently building an advantage in a less theoretical setting.",
+      "description": "This variation of the Vienna Game leads to a quiet, symmetrical position reminiscent of the Giuoco Piano, often called the 'Italian Game with 2.Nc3'. The game is highly strategic, focusing on subtle piece manoeuvring and long-term plans rather than immediate tactical fireworks. It's an excellent choice for players who enjoy classical development, understanding pawn structures, and patiently building an advantage in a less theoretical setting.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -42172,9 +42172,9 @@
       ],
       "common_plans": [
         "White: Play d3, Nf3, O-O, and prepare the d4 pawn break, often rerouting the c3-knight to support it.",
-        "Black: Solidify the center with ...d6, complete development with ...O-O, and prepare the ...d5 counter-break.",
-        "Both sides often maneuver pieces to improve their position before committing to a central break.",
-        "Black can challenge White's Bc4 with moves like ...a6 and ...Na5 to trade it off or force it to move."
+        "Black: Solidify the centre with ...d6, complete development with ...O-O, and prepare the ...d5 counter-break.",
+        "Both sides often manoeuvre pieces to improve their position before committing to a central break.",
+        "Black can challenge White's Bc4 with moves like ...a6, ...Nc6 and ...Na5 to trade it off or force it to move."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:28:28.353Z"

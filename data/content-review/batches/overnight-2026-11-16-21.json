@@ -1,0 +1,126 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "r1bqkbnr/1p3ppp/p1np4/1N2p3/4P3/4B3/PPP2PPP/RN1QKB1R w KQkq - 0 8",
+      "name": "Sicilian, Taimanov, Szen, 6.Bf4 e5 7.Be3 a6",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 wrote ...b5-b4 into the b5-knight; plan 1 restrained '...b5' while the knight was attacked; plan 4 wrote ...0-0. Rewrote plans 1, 2, 4; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkb1r/pp3ppp/2np1n2/1N2p3/4P3/4B3/PPP2PPP/RN1QKB1R w KQkq - 2 8",
+      "name": "Sicilian, Taimanov, Szen, 6.Bf4 e5 7.Be3 Nf6",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 played ...b5 into the b5-knight. Rewrote plan 2."
+    },
+    {
+      "fen": "r1bqkbnr/pp3ppp/2npp3/1N6/2P1P3/8/PP3PPP/RNBQKB1R b KQkq - 0 6",
+      "name": "Sicilian, Taimanov, Szen, 6.c4",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans played ...b5 into the knight and wrote castling as 0-0; plan 3 wrote Nc3 where both knights can go. Rewrote all four plans; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkbnr/1p3ppp/p1npp3/1N6/2P1P3/8/PP3PPP/RNBQKB1R w KQkq - 0 7",
+      "name": "Sicilian, Taimanov, Szen, 6.c4 a6",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 played ...b5 into the knight; plan 4 wrote ...0-0. Rewrote plans 2 and 4; British spelling in the overview. Plan 1 is fixed in the follow-up in batch 2026-11-16-22 (reviewer: first draft ignored that the b5-knight is attacked)."
+    },
+    {
+      "fen": "r1bqkb1r/pp3ppp/2nppn2/1N6/2P1P3/8/PP3PPP/RNBQKB1R w KQkq - 1 7",
+      "name": "Sicilian, Taimanov, Szen, 6.c4 Nf6",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans played ...b5 into the knight. Rewrote plans 1-2; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkb1r/pp3ppp/2nppn2/1N6/2P1P3/2N5/PP3PPP/R1BQKB1R b KQkq - 2 7",
+      "name": "Sicilian, Taimanov, Szen, 7.N1c3",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 played ...b5 into the knight. Rewrote plan 2; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkb1r/1p3ppp/p1nppn2/1N6/2P1P3/2N5/PP3PPP/R1BQKB1R w KQkq - 0 8",
+      "name": "Sicilian, Taimanov, Szen, 7.N1c3 a6",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans played ...b5 into the knight and named d4 as a move; plan 1 rerouted an a3-knight not yet on a3. Rewrote plans 1, 2, 4; British spelling in the overview. Plan 3 is fixed in the follow-up in batch 2026-11-16-22 (reviewer: first draft's a4 is blocked by the a3-knight)."
+    },
+    {
+      "fen": "r1bqkb1r/5ppp/ppnppn2/8/2P1P3/N1N5/PP3PPP/R1BQKB1R w KQkq - 0 9",
+      "name": "Sicilian, Taimanov, Szen, 7.N1c3 a6 8.Na3 b6",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 wrote the knight route as c2-e3; plan 2 wrote ...0-0. Rewrote plans 1-2; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqk2r/1p2bppp/p1nppn2/8/2P1P3/N1N5/PP3PPP/R1BQKB1R w KQkq - 2 9",
+      "name": "Sicilian, Taimanov, Szen, 7.N1c3 a6 8.Na3 Be7",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 sent the knight 'Nb4' from c2 in one move; plan 3 wrote ...0-0 and named d4 as a move. Rewrote plans 1 and 3; British spelling elsewhere."
+    },
+    {
+      "fen": "r1bqk2r/1p2bppp/p1nppn2/8/2P1P3/N1N5/PP2BPPP/R1BQK2R b KQkq - 3 9",
+      "name": "Sicilian, Taimanov, Szen, 7.N1c3 a6 8.Na3 Be7 9.Be2",
+      "eco": "B44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 targeted a d4-pawn White doesn't have; plan 3 named d5 and b5 as moves. Rewrote plans 3-4; British spelling in the overview."
+    },
+    {
+      "fen": "rnbqk1nr/pp1p1ppp/4p3/2b5/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+      "name": "Sicilian Defense: Paulsen-Basman Defense",
+      "eco": "B40",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-16-19: plan 3 rewritten so the b-pawn advance supports ...Bb7 rather than the c5-bishop."
+    },
+    {
+      "fen": "r1bqkb1r/pp1p1ppp/2n1pn2/8/3NP3/3B4/PPP2PPP/RNBQK2R w KQkq - 3 6",
+      "name": "Sicilian: Open, 2...e6, 4.Nxd4 Nf6 5.Bd3 Nc6",
+      "eco": "B40",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-16-19: plan 2 rewritten without the b7-bishop that the c6-pawn would block."
+    }
+  ]
+}

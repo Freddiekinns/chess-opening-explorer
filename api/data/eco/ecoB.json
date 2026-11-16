@@ -89437,7 +89437,7 @@
       "common_plans": [
         "For Black, develop quickly with ...Nf6, ...d6, and ...a6, maintaining pressure on the center and looking for tactical shots involving the c5 bishop.",
         "For White, challenge the c5 bishop with moves like Nb3 or Be3, complete development, and aim to exploit potential weaknesses in Black's camp, such as the d6 square.",
-        "Black often plays ...a6 to prevent Nb5 and prepare ...b5 to gain queenside space and support the c5 bishop.",
+        "Black often plays ...a6 to rule out the knight jump to b5, and may follow with ...b5 and ...Bb7 to gain queenside space and pressure the e4-pawn.",
         "White seeks to consolidate central control and may look to open the e-file to create attacking chances against Black's king."
       ],
       "version": "1.0",
@@ -90337,7 +90337,7 @@
       ],
       "common_plans": [
         "White: Resolve the central tension with Nxc6 or Be3, complete development, and use the space advantage to organize an attack or squeeze Black.",
-        "Black: Recapture on c6 with the b-pawn (bxc6) to open the b-file, develop the light-squared bishop (often to b7), and exert pressure on White's center, particularly the e4-pawn."
+        "Black: If White takes on c6, recapture with the b-pawn, which supports a later ...d5 against the e4-pawn, and use the half-open b-file with ...Rb8."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:20:51.471Z"
@@ -93912,7 +93912,7 @@
     "name": "Sicilian, Taimanov, Szen, 6.Bf4 e5 7.Be3 a6",
     "scid": "B44m",
     "analysis_json": {
-      "description": "This variation of the Taimanov Sicilian leads to a strategically dense and complex middlegame. Black immediately challenges White's central control by advancing the e-pawn, accepting a potential long-term weakness on the d5 square in exchange for space and active piece play. The resulting positions are rich in positional maneuvering, where both sides fight for control of key squares and pawn breaks, making it an excellent choice for strategic players who enjoy nuanced battles.",
+      "description": "This variation of the Taimanov Sicilian leads to a strategically dense and complex middlegame. Black immediately challenges White's central control by advancing the e-pawn, accepting a potential long-term weakness on the d5 square in exchange for space and active piece play. The resulting positions are rich in positional manoeuvring, where both sides fight for control of key squares and pawn breaks, making it an excellent choice for strategic players who enjoy nuanced battles.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -93952,10 +93952,10 @@
         "Queenside expansion"
       ],
       "common_plans": [
-        "White's plan is to control the d5 square, often with a knight, restrain Black's queenside expansion (...b5), and exploit the d6 pawn.",
-        "Black aims to neutralize White's pressure on d5, achieve the ...b5-b4 pawn break to gain queenside space, and create counterplay against White's center.",
+        "White's plan is to retreat the attacked knight to c3 or a3, control the d5-square, often with a knight, restrain Black's queenside expansion, and press against the d6-pawn.",
+        "Black aims to neutralise White's pressure on d5, gain queenside space with a b-pawn advance once the knight has retreated, and create counterplay against White's centre.",
         "White often fianchettos the king's bishop (g3, Bg2) to increase pressure on the long diagonal and prepare for a long strategic fight.",
-        "Black completes development with ...Nf6, ...Be7, and ...0-0, aiming for a flexible setup to react to White's central strategy."
+        "Black completes development with ...Nf6, ...Be7, and ...O-O, aiming for a flexible setup to react to White's central strategy."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:42:09.227Z"
@@ -94011,7 +94011,7 @@
       ],
       "common_plans": [
         "White: Control the d5 square with a knight, pressure the backward d6 pawn, and restrict Black's counterplay.",
-        "Black: Use active piece play to generate counterplay, often via queenside expansion with ...a6 and ...b5, to compensate for the static weakness on d6.",
+        "Black: Use active piece play to generate counterplay, often via queenside expansion with ...a6 and a b-pawn advance, to compensate for the static weakness on d6.",
         "White: Often plays f2-f4 to challenge Black's central grip and open the f-file for the rook after castling.",
         "Black: Prepare the ...d5 pawn break to resolve central tension and liquidate the d6-pawn weakness."
       ],
@@ -94028,7 +94028,7 @@
     "name": "Sicilian, Taimanov, Szen, 6.c4",
     "scid": "B44o",
     "analysis_json": {
-      "description": "This variation, known as the Szen, leads to a classic Maroczy Bind structure, a highly strategic and positional battle. White establishes pawns on c4 and e4 to seize a significant space advantage and clamp down on the critical d5-square, aiming to slowly squeeze the opponent. This opening is perfect for patient, strategic players who enjoy maneuvering, understanding pawn structures, and methodically building an advantage, while Black must be resourceful in finding counterplay.",
+      "description": "This variation, known as the Szen, leads to a classic Maroczy Bind structure, a highly strategic and positional battle. White establishes pawns on c4 and e4 to seize a significant space advantage and clamp down on the critical d5-square, aiming to slowly squeeze the opponent. This opening is perfect for patient, strategic players who enjoy manoeuvring, understanding pawn structures, and methodically building an advantage, while Black must be resourceful in finding counterplay.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -94070,10 +94070,10 @@
         "Queenside Expansion"
       ],
       "common_plans": [
-        "White: Solidify the Maroczy Bind, control the d5-square, prevent Black's pawn breaks (...b5, ...d5), and slowly build pressure, often preparing for a kingside attack with f2-f4.",
-        "Black: Challenge the bind with the ...b5 pawn break, often after playing ...a6 to remove the Nb5 knight. Maneuver pieces to pressure White's center and create queenside counterplay.",
-        "White: Develop pieces harmoniously (Be2, 0-0, Nc3, Be3) to support the central pawn structure and prepare to meet Black's plans.",
-        "Black: Complete development with ...Nf6, ...Be7, ...0-0, and seek to trade pieces to relieve the spatial pressure, aiming for a favorable endgame."
+        "White: Solidify the Maroczy Bind, control the d5-square, prevent Black's b-pawn and ...d5 breaks, and slowly build pressure, often preparing a kingside attack with f2-f4.",
+        "Black: Challenge the bind with a b-pawn break after driving the b5-knight away with ...a6, and manoeuvre the pieces to pressure White's centre and create queenside counterplay.",
+        "White: Develop pieces harmoniously (Be2, O-O, N1c3, Be3) to support the central pawn structure and prepare to meet Black's plans.",
+        "Black: Complete development with ...Nf6, ...Be7 and ...O-O, and seek to trade pieces to relieve the spatial pressure, aiming for a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:42:51.419Z"
@@ -94088,7 +94088,7 @@
     "name": "Sicilian, Taimanov, Szen, 6.c4 a6",
     "scid": "B44o",
     "analysis_json": {
-      "description": "This variation leads to a Maroczy Bind structure, where White's pawns on c4 and e4 aim to restrict Black's position and control the key d5 square. The game becomes a tense, strategic struggle where White tries to capitalize on a space advantage, while Black seeks counterplay by undermining the c4-pawn, typically with the ...b5 pawn break. This opening is ideal for patient, strategic players who excel at maneuvering and understanding complex pawn structures.",
+      "description": "This variation leads to a Maroczy Bind structure, where White's pawns on c4 and e4 aim to restrict Black's position and control the key d5 square. The game becomes a tense, strategic struggle where White tries to capitalise on a space advantage, while Black seeks counterplay by undermining the c4-pawn, typically with the ...b5 pawn break. This opening is ideal for patient, strategic players who excel at manoeuvring and understanding complex pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -94129,9 +94129,9 @@
       ],
       "common_plans": [
         "White: Solidify the center with moves like Nc3, Be3, f3, prevent Black's ...b5 break, and slowly build pressure on the queenside or in the center.",
-        "Black: Prepare and execute the ...b5 pawn break to create counterplay and challenge White's pawn structure. Develop pieces to fight for central squares and reroute the knight from c6 if necessary.",
+        "Black: Prepare and execute a b-pawn break to create counterplay and challenge White's pawn structure, develop the pieces to fight for central squares, and reroute the c6-knight if necessary.",
         "White: Reposition the b5-knight to a3, where it controls c2 and b5, and prepare to meet Black's queenside expansion.",
-        "Black: Complete development with ...Nf6, ...Be7, and ...0-0, maintaining flexibility before committing to a specific plan of counterattack."
+        "Black: Complete development with ...Nf6, ...Be7 and ...O-O, maintaining flexibility before committing to a specific plan of counterattack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:43:07.551Z"
@@ -94146,7 +94146,7 @@
     "name": "Sicilian, Taimanov, Szen, 6.c4 Nf6",
     "scid": "B44o",
     "analysis_json": {
-      "description": "This variation establishes the Maroczy Bind, a powerful positional setup for White aimed at clamping down on Black's central counterplay. The game becomes a highly strategic and maneuvering battle where White leverages a space advantage to restrict Black's pieces, while Black seeks to generate counterplay, typically on the queenside with the ...b5 pawn break. This opening is ideal for patient, strategic players who enjoy slowly outmaneuvering their opponents and appreciate the subtleties of pawn structure.",
+      "description": "This variation establishes the Maroczy Bind, a powerful positional setup for White aimed at clamping down on Black's central counterplay. The game becomes a highly strategic and manoeuvring battle where White leverages a space advantage to restrict Black's pieces, while Black seeks to generate counterplay, typically on the queenside with the ...b5 pawn break. This opening is ideal for patient, strategic players who enjoy slowly outmanoeuvring their opponents and appreciate the subtleties of pawn structure.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -94186,8 +94186,8 @@
         "Restricting the opponent"
       ],
       "common_plans": [
-        "White aims to consolidate the space advantage, prevent Black's freeing pawn breaks (like ...b5 and ...d5), and slowly improve their pieces for a kingside attack or to win an endgame.",
-        "Black's main plan is to prepare and execute the ...b5 pawn break to create queenside counterplay, exchange pieces to relieve the cramp, and challenge White's control of the center, particularly the d4 square."
+        "White aims to consolidate the space advantage, prevent Black's freeing b-pawn and ...d5 breaks, and slowly improve the pieces for a kingside attack or to win an endgame.",
+        "Black's main plan is to prepare a b-pawn break to create queenside counterplay, exchange pieces to relieve the cramp, and challenge White's control of the centre, particularly the d4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:43:23.671Z"
@@ -94202,7 +94202,7 @@
     "name": "Sicilian, Taimanov, Szen, 7.N1c3",
     "scid": "B44q",
     "analysis_json": {
-      "description": "The Szen Variation of the Taimanov Sicilian leads to a classic Maroczy Bind structure, where White's c4 and e4 pawns clamp down on the center, particularly the critical d5 square. This creates a tense, strategic battle where White aims to slowly squeeze Black, while Black adopts a flexible, 'hedgehog' setup, patiently preparing counter-thrusts like ...b5 or ...d5. The opening is perfect for strategic players who enjoy maneuvering, understanding pawn structures, and building pressure over time.",
+      "description": "The Szen Variation of the Taimanov Sicilian leads to a classic Maroczy Bind structure, where White's c4 and e4 pawns clamp down on the centre, particularly the critical d5 square. This creates a tense, strategic battle where White aims to slowly squeeze Black, while Black adopts a flexible, 'hedgehog' setup, patiently preparing counter-thrusts like ...b5 or ...d5. The opening is perfect for strategic players who enjoy manoeuvring, understanding pawn structures, and building pressure over time.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -94245,7 +94245,7 @@
       ],
       "common_plans": [
         "White: Consolidate the bind with moves like Be2, O-O, Be3, and f3, preparing a queenside expansion with a3 and b4.",
-        "Black: Develop flexibly with ...a6, ...Be7, ...O-O, and ...Rb8 to prepare for the liberating ...b5 or ...d5 pawn breaks.",
+        "Black: Develop flexibly with ...a6, ...Be7, ...O-O and ...Rb8 to prepare the liberating b-pawn or ...d5 breaks.",
         "White: Systematically improve piece placement, prevent Black's counterplay, and exploit any weaknesses created when Black tries to break free.",
         "Black: Trade minor pieces to relieve spatial pressure and aim for an endgame where White's space advantage is less relevant."
       ],
@@ -94262,7 +94262,7 @@
     "name": "Sicilian, Taimanov, Szen, 7.N1c3 a6",
     "scid": "B44q",
     "analysis_json": {
-      "description": "This variation leads to a complex strategic battle centered around the Maroczy Bind structure, where White clamps down on the d5 square. Black's setup is solid and flexible, aiming to undermine White's spatial advantage with the thematic ...b5 pawn break and active piece play. This opening is ideal for sophisticated players who enjoy deep positional struggles and understand how to generate dynamic counterplay against a static structure.",
+      "description": "This variation leads to a complex strategic battle centred around the Maroczy Bind structure, where White clamps down on the d5 square. Black's setup is solid and flexible, aiming to undermine White's spatial advantage with the thematic ...b5 pawn break and active piece play. This opening is ideal for sophisticated players who enjoy deep positional struggles and understand how to generate dynamic counterplay against a static structure.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -94303,10 +94303,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Solidify central control, reroute the Na3 to a better square (usually via c2), and use the space advantage to slowly build pressure or launch a kingside attack.",
-        "Black: Prepare and execute the ...b5 pawn break to challenge the bind, often followed by ...Bb7 to pressure White's e4 pawn and create queenside counterplay.",
+        "White: Retreat the b5-knight to a3 and reroute it via c2, keep central control, and use the space advantage to slowly build pressure or launch a kingside attack.",
+        "Black: Prepare and execute a b-pawn break to challenge the bind, often followed by ...Bb7 to pressure White's e4-pawn and create queenside counterplay.",
         "White: Prevent Black's ...b5 break by playing a3 and developing harmoniously, aiming to squeeze Black positionally.",
-        "Black: Maneuver pieces to challenge White's key squares (d4, c4) and trade pieces to relieve the spatial pressure."
+        "Black: Manoeuvre the pieces to challenge White's key squares, such as the d4-square and the c4-pawn, and trade pieces to relieve the spatial pressure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:43:56.745Z"
@@ -94381,7 +94381,7 @@
     "name": "Sicilian, Taimanov, Szen, 7.N1c3 a6 8.Na3 b6",
     "scid": "B44s",
     "analysis_json": {
-      "description": "This variation of the Taimanov Sicilian leads to a complex strategic battle reminiscent of a Maroczy Bind or Hedgehog setup. White aims to clamp down on the center, particularly the d5 square, while Black adopts a flexible, patient approach, preparing to challenge White's control with the ...b6 and ...Bb7 fianchetto. The game is ideal for strategic players who enjoy maneuvering, understanding pawn structures, and patiently building counterplay rather than engaging in immediate, wide-open tactical skirmishes.",
+      "description": "This variation of the Taimanov Sicilian leads to a complex strategic battle reminiscent of a Maroczy Bind or Hedgehog setup. White aims to clamp down on the centre, particularly the d5 square, while Black adopts a flexible, patient approach, preparing to challenge White's control with the ...b6 and ...Bb7 fianchetto. The game is ideal for strategic players who enjoy manoeuvring, understanding pawn structures, and patiently building counterplay rather than engaging in immediate, wide-open tactical skirmishes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -94421,8 +94421,8 @@
         "Control of the d5 square"
       ],
       "common_plans": [
-        "White: Solidify the center with Be3, f3, and Be2, then reroute the Na3 via c2 to a more active square like e3. The main goal is to restrict Black's counterplay and slowly build pressure.",
-        "Black: Complete development with ...Bb7, ...Be7, and ...0-0. Prepare for the key pawn breaks ...b5 or ...d5 to challenge White's central control and create counter-attacking chances.",
+        "White: Solidify the centre with Be3, f3 and Be2, then reroute the a3-knight with Nc2 and Ne3. The main goal is to restrict Black's counterplay and slowly build pressure.",
+        "Black: Complete development with ...Bb7, ...Be7 and ...O-O, and prepare the key ...b5 or ...d5 breaks to challenge White's central control and create counter-attacking chances.",
         "White: Prevent Black's freeing breaks (...b5, ...d5) and, if possible, launch a kingside attack with moves like g4-g5.",
         "Black: Exert pressure on White's e4-pawn and c4-pawn, often using the fianchettoed bishop on b7 and maneuvering the queen and rooks."
       ],
@@ -94439,7 +94439,7 @@
     "name": "Sicilian, Taimanov, Szen, 7.N1c3 a6 8.Na3 Be7",
     "scid": "B44t",
     "analysis_json": {
-      "description": "This variation of the Taimanov Sicilian transposes into a classic Maroczy Bind structure, defined by White's pawns on c4 and e4. The game takes on a highly strategic and positional character, where White leverages a space advantage to restrict Black's development. Black, in turn, aims for a solid, resilient setup, patiently preparing counterplay with pawn breaks like ...b5. This opening is ideal for strategic players who enjoy complex maneuvering and the gradual accumulation of small advantages over sharp, tactical skirmishes.",
+      "description": "This variation of the Taimanov Sicilian transposes into a classic Maroczy Bind structure, defined by White's pawns on c4 and e4. The game takes on a highly strategic and positional character, where White leverages a space advantage to restrict Black's development. Black, in turn, aims for a solid, resilient setup, patiently preparing counterplay with pawn breaks like ...b5. This opening is ideal for strategic players who enjoy complex manoeuvring and the gradual accumulation of small advantages over sharp, tactical skirmishes.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -94480,10 +94480,10 @@
         "Knight Maneuvering"
       ],
       "common_plans": [
-        "White: Reroute the knight from a3 to c2 to bolster the center and prepare for queenside action (Nb4) or central support. Solidify the center with Be3, f3, and Qd2, restricting Black's options and preparing a potential kingside expansion.",
+        "White: Reroute the a3-knight with Nc2, from where it can support the centre or head for the e3-square, solidify the centre with Be3, f3 and Qd2, restricting Black's options, and prepare a possible kingside expansion.",
         "Black: Prepare and execute the ...b5 pawn break to challenge White's bind on the queenside and create counterplay. Adopt a 'Hedgehog' formation, developing pieces flexibly behind the pawn chain, waiting for the right moment to strike.",
-        "Black: Complete development with ...0-0 and look for opportunities to trade pieces to relieve the spatial pressure, often aiming to challenge White's control of the key d4 and d5 squares.",
-        "White: Systematically improve piece placement, control the d-file, and prevent Black's freeing pawn breaks. The long-term plan is to convert the space advantage into a tangible attack or a favorable endgame."
+        "Black: Complete development with ...O-O and look for opportunities to trade pieces to relieve the spatial pressure, often aiming to challenge White's control of the d4-square and d5-square.",
+        "White: Systematically improve piece placement, control the d-file, and prevent Black's freeing pawn breaks. The long-term plan is to convert the space advantage into a tangible attack or a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:44:54.246Z"
@@ -94498,7 +94498,7 @@
     "name": "Sicilian, Taimanov, Szen, 7.N1c3 a6 8.Na3 Be7 9.Be2",
     "scid": "B44u",
     "analysis_json": {
-      "description": "This variation of the Taimanov Sicilian leads to a classic Maroczy Bind structure, characterized by a tense, strategic struggle. White enjoys a space advantage and aims to slowly constrict Black's position, while Black adopts a solid, flexible 'hedgehog' setup, patiently preparing for a liberating pawn break like ...b5 or ...d5. The game is ideal for strategic players who appreciate complex maneuvering, long-term planning, and understanding the nuances of pawn structures.",
+      "description": "This variation of the Taimanov Sicilian leads to a classic Maroczy Bind structure, characterised by a tense, strategic struggle. White enjoys a space advantage and aims to slowly constrict Black's position, while Black adopts a solid, flexible 'hedgehog' setup, patiently preparing for a liberating pawn break like ...b5 or ...d5. The game is ideal for strategic players who appreciate complex manoeuvring, long-term planning, and understanding the nuances of pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -94541,8 +94541,8 @@
       "common_plans": [
         "White: Reroute the Na3 knight (usually via c2 to e3), control the center, and use the space advantage to restrict Black's pieces before seeking an attack.",
         "Black: Complete development with ...O-O, ...b6, and ...Bb7, maintain a solid structure, and prepare to challenge White's center with a timely ...d5 or ...b5 pawn break.",
-        "White: Prevent Black's counterplay by controlling key squares (like d5 and b5) and slowly improving the position of the pieces.",
-        "Black: Trade pieces to relieve the pressure from White's space advantage and aim for an endgame where White's d4-pawn can become a weakness."
+        "White: Prevent Black's counterplay by controlling key squares such as the d5-square and b5-square, and slowly improve the position of the pieces.",
+        "Black: Trade pieces to relieve the pressure from White's space advantage and aim for an endgame where the c4- and e4-pawns can become targets."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:45:12.730Z"

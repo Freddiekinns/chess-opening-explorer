@@ -606,10 +606,10 @@
     "notes": "Style brief audit (vant-kruijs-opening, researched 2026-10-03): 7 claims, 0 wrong, 2 unverifiable."
   },
   "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3": {
-    "reviewedAt": "2026-10-11",
-    "verdict": "ok",
-    "contentHash": "1981c5529a4b2492",
-    "notes": "Style brief audit (vienna-game-max-lange-defense, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "895433a73315f9ec",
+    "notes": "Plan 4 named an early f4 in a Black plan. Reworded; British spelling in overview and plan 3."
   },
   "rnbqkb1r/pppp1ppp/5n2/4p3/4PP2/2N5/PPPP2PP/R1BQKBNR b KQkq - 0 3": {
     "reviewedAt": "2026-10-11",
@@ -618,10 +618,10 @@
     "notes": "Style brief audit (vienna-game-vienna-gambit, researched 2026-10-03): 7 claims, 0 wrong, 1 unverifiable."
   },
   "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2": {
-    "reviewedAt": "2026-10-11",
-    "verdict": "ok",
-    "contentHash": "dfb41710741afb54",
-    "notes": "Style brief audit (vienna-game, researched 2026-10-03): 6 claims, 0 wrong, 0 unverifiable."
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "8bebae6e9da04fa3",
+    "notes": "Plan 4 named an early f4 in a Black plan. Reworded; British spelling in plan 2."
   },
   "rnbqkbnr/ppp1pppp/8/3p4/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2": {
     "reviewedAt": "2026-10-11",
@@ -9826,5 +9826,53 @@
     "verdict": "fixed",
     "contentHash": "eacbb4e605290059",
     "notes": "Plan 1 wrote 0-0 and castled without Nf3; plan 3 had the g1-knight going to e3 via f1. Rewrote plans 1 and 3 (Nb1-d2-f1-g3/e3 manoeuvre); British spelling in overview and plans 2 and 4."
+  },
+  "rnbqkb1r/pp1p1ppp/2p2n2/4p3/2B1P3/3P4/PPP2PPP/RNBQK1NR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "43f4096109ed8d8d",
+    "notes": "Plan 2 had exd5 before Black's ...d5. Rewrote it around Bb3 so ...d5 gains no time; British spelling in overview."
+  },
+  "rnbqkb1r/pp1p1ppp/2p2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 1 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "132c9b1e4be1d185",
+    "notes": "Plan 1 wrote 0-0 and a d2-f1-g3 route with no knight on d2; plan 4 had ...Be6 with the d7-pawn blocking and a b7 bishop behind the c6-pawn; plan 2 had ...d6 before ...d5. Rewrote plans 1, 2 and 4; British spelling in overview."
+  },
+  "rnbqkb1r/pppp1ppp/5n2/4p3/2BPP3/8/PPP2PPP/RNBQK1NR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "b9bd9b562c2dacb7",
+    "notes": "Plan 2 listed Black's Nxe4 as a White move; plan 1 spoke of open files that don't exist yet. Rewrote plans 1 and 2 (3...exd4 4.Nf3 Nxe4 5.Qxd4, then Nc3, Bg5, long castling); British spelling in plan 3."
+  },
+  "rnbq1rk1/pp2bppp/2p2n2/3p2B1/2B4Q/2N2N2/PPP2PPP/2KRR3 b - - 3 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "71f6e116a51d6222",
+    "notes": "Plan 1 had h4-h5 with the queen on h4 and sacrifices on e6; plan 2 a pin that isn't one. Rewrote plans 1-2 (Bd3, Bxf6 and Qxh7 mate; ...dxc4 drops the queen to the d1-rook, first wording rejected by the reviewer and revised); British spelling in overview and plan 3."
+  },
+  "r1bqkbnr/pppp1p1p/2n5/8/2B1Pp2/2N2p2/PPPP2PP/R1BQ1RK1 w kq - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "67be19556ad332e4",
+    "notes": "Plan 1 had Rae1 with the c1-bishop and queen in the way and the queen hitting f7 through the f4-pawn (reviewer). Rewrote around Qxf3 hitting f4, the c4-bishop on f7, d4 and Bxf4."
+  },
+  "r1bqk1nr/ppp2ppp/2np4/2b1P3/4P3/2N5/PPPP2PP/R1BQKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "6cd290c65e57d831",
+    "notes": "Plan 1 castled kingside while the c5-bishop covers g1, and pushed d4 into Bc5 and Nc6 (reviewer); plan 4 had Bxd6 before exd6 and White's f4-push after fxe5. Rewrote plans 1, 2 and 4; British spelling in plan 3."
+  },
+  "r1b1kbnr/ppp2ppp/2np4/8/3PPp1q/2N5/PPP1K1PP/R1BQ1BNR w kq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "4f7641470a818ae1",
+    "notes": "Plan 2 had Kf2 with the h4-queen covering f2, and its rewrite mentioned a check no longer on the board (reviewer). Rewrote; British spelling in overview."
+  },
+  "r1b1kbnr/pppp1p1p/2n5/6p1/3PPp1q/2N5/PPP1K1PP/R1BQ1BNR w kq - 0 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "452cff6f174c19b5",
+    "notes": "Plan 1 had Kg2 with the king on e2. Rewrote it (Nf3 hitting the queen, g3 against f4); British spelling in overview and plan 3."
   }
 }

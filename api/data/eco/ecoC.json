@@ -37596,7 +37596,7 @@
     "name": "Bishop's Opening: Paulsen Defence",
     "scid": "C24",
     "analysis_json": {
-      "description": "The Paulsen Defence is a solid and reliable system against the Bishop's Opening, aiming to neutralize White's early pressure and prepare a central counter-strike. By playing ...c6, Black prepares the crucial ...d5 pawn break, challenging White's control of the center and the active bishop on c4. The resulting positions are often strategic and require careful maneuvering, making it ideal for players who enjoy building their position methodically and fighting for the initiative in the middlegame.",
+      "description": "The Paulsen Defence is a solid and reliable system against the Bishop's Opening, aiming to neutralise White's early pressure and prepare a central counter-strike. By playing ...c6, Black prepares the crucial ...d5 pawn break, challenging White's control of the centre and the active bishop on c4. The resulting positions are often strategic and require careful manoeuvring, making it ideal for players who enjoy building their position methodically and fighting for the initiative in the middlegame.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -37637,7 +37637,7 @@
       ],
       "common_plans": [
         "Black's primary plan is to prepare and execute the ...d5 pawn break, challenging White's central control and freeing their position.",
-        "White aims to restrain Black's ...d5 push, maintain the activity of the c4-bishop, and build up pressure in the center, often preparing to meet ...d5 with exd5.",
+        "White aims to keep the c4-bishop out of harm's way with Bb3, so that ...d5 does not gain time, and to answer the break by capturing on d5 or by keeping the tension with Nf3 and O-O.",
         "A common secondary plan for Black involves queenside expansion with ...a6 and ...b5 to harass the c4-bishop and create counterplay.",
         "White often responds to the queenside plan with a4, or by repositioning the bishop to b3 to maintain its influence."
       ],
@@ -37654,7 +37654,7 @@
     "name": "Bishop's Opening: Paulsen, 4.Nf3",
     "scid": "C24",
     "analysis_json": {
-      "description": "The Paulsen variation of the Bishop's Opening is a classical and flexible system where both sides prioritize solid development and central control. White builds a sound position, often aiming for a timely d4 push, while Black's key idea is to prepare the ...d5 pawn break to challenge for the initiative. This opening leads to a strategically rich game, ideal for players who appreciate maneuvering and understanding pawn structures rather than memorizing sharp, tactical lines.",
+      "description": "The Paulsen variation of the Bishop's Opening is a classical and flexible system where both sides prioritise solid development and central control. White builds a sound position, often aiming for a timely d4 push, while Black's key idea is to prepare the ...d5 pawn break to challenge for the initiative. This opening leads to a strategically rich game, ideal for players who appreciate manoeuvring and understanding pawn structures rather than memorising sharp, tactical lines.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -37694,10 +37694,10 @@
         "Prophylaxis against Black's central expansion"
       ],
       "common_plans": [
-        "White: Complete development with 0-0 and prepare the central break d3-d4, often rerouting the b1-knight via d2-f1-g3 to support the attack.",
-        "Black: Execute the ...d5 pawn break to challenge White's center, often after playing ...d6 or ...Be6 to prepare.",
+        "White: Complete development with O-O and Re1, prepare the central break d3-d4, and often reroute the queen's knight with Nbd2-f1-g3 to support a kingside attack.",
+        "Black: Play the ...d5 break, at once or after ...Be7 and ...O-O, to take a share of the centre and gain time against the c4-bishop.",
         "White: Use the c4-bishop to pressure the f7-pawn and maintain long-term pressure on Black's kingside.",
-        "Black: Develop the light-squared bishop to an active square like e6 or b7 (after ...a6 and ...b5) to challenge White's control."
+        "Black: Develop with ...Be7 and ...O-O, then bring the light-squared bishop to e6 or g4 once the d-pawn has moved, to challenge White's pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:06:38.446Z"
@@ -37757,9 +37757,9 @@
         "Pressure on f7"
       ],
       "common_plans": [
-        "For White, develop the knight to f3, castle quickly, and use the open e and d-files to attack Black's position, often targeting the f7-pawn.",
-        "For White, recapture the d4-pawn with the queen (e.g., after ...exd4, Nf3, Nxe4, Qxd4), centralizing the queen early to create threats.",
-        "For Black, accept the gambit and try to consolidate the extra pawn while completing development and neutralizing White's initiative.",
+        "For White, develop the knight to f3, castle quickly, and use the lines that open after the exchange on d4, often targeting the f7-pawn.",
+        "For White, after 3...exd4 4.Nf3 Nxe4, recapture with 5.Qxd4, centralising the queen with gain of time against the e4-knight, then develop quickly with Nc3, Bg5 and long castling.",
+        "For Black, accept the gambit and try to consolidate the extra pawn while completing development and neutralising White's initiative.",
         "For Black, decline the gambit pawn, develop pieces soundly (e.g., with ...Nc6), and aim to exploit White's slightly exposed position."
       ],
       "version": "1.0",
@@ -38183,7 +38183,7 @@
     "name": "Bishop's Opening: Urusov Gambit, Larsen Variation",
     "scid": "C24",
     "analysis_json": {
-      "description": "The Urusov Gambit, Larsen Variation, leads to a fiercely sharp and tactical battle where White prioritizes rapid development and a direct attack over material. By castling queenside and pointing all pieces towards the Black king, White seeks to overwhelm the defense before Black can consolidate. This opening is perfect for aggressive, calculating players who enjoy seizing the initiative and navigating complex, double-edged positions.",
+      "description": "The Urusov Gambit, Larsen Variation, leads to a fiercely sharp and tactical battle where White prioritises rapid development and a direct attack over material. By castling queenside and pointing all pieces towards the Black king, White seeks to overwhelm the defence before Black can consolidate. This opening is perfect for aggressive, calculating players who enjoy seizing the initiative and navigating complex, double-edged positions.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -38224,9 +38224,9 @@
         "Rapid Development"
       ],
       "common_plans": [
-        "White aims to break through on the kingside with pieces and pawns (e.g., h4-h5), often involving sacrifices on key squares like e6 or f7.",
-        "White seeks to maintain the pin on the f6 knight to paralyze Black's defense and create tactical shots.",
-        "Black's primary plan is to consolidate, neutralize White's immediate threats (e.g., with ...Be6), and trade pieces to reach a better endgame.",
+        "White aims to bring the c4-bishop to d3, aiming it at h7 alongside the queen on h4; then Bxf6 removes the knight that guards h7 and threatens Qxh7 mate.",
+        "White keeps up the pressure on the f6-knight with the g5-bishop and the queen behind it on h4; if Black takes the c4-bishop with ...dxc4, the d1-rook captures the queen on d8, leaving Black only a rook and a bishop for it.",
+        "Black's primary plan is to consolidate, neutralise White's immediate threats (e.g., with ...Be6), and trade pieces to reach a better endgame.",
         "Black looks for counterattacking chances against White's somewhat exposed king, often after successfully defending the initial wave of attack."
       ],
       "version": "1.0",
@@ -38854,7 +38854,7 @@
         "Exploiting Open Files"
       ],
       "common_plans": [
-        "White aims for a swift checkmate by using the open f-file with Qxf3 and Rae1, opening the center with d4, and coordinating all pieces against the Black king.",
+        "White aims for a swift attack by recapturing with Qxf3, which hits the f4-pawn while the c4-bishop aims at f7; then d4 opens the centre and Bxf4 wins the pawn back, so that every piece joins the attack on the Black king.",
         "Black must defend precisely, often with moves like ...Qe7 or ...Qf6, aiming to consolidate, trade pieces to defuse the attack, and eventually leverage the extra material in the endgame.",
         "White focuses on creating immediate threats against the f7-square and preventing Black from finding safety for their king.",
         "Black's plan involves returning some material if necessary to survive the onslaught, completing development, and launching a counterattack once the initial storm has passed."
@@ -39054,10 +39054,10 @@
         "Kingside Attack vs. Central Counterplay"
       ],
       "common_plans": [
-        "White: Consolidate the center with d4, complete development (Nf3, Be2, 0-0), and use the open f-file to launch a kingside attack.",
-        "Black: Undermine White's e4-pawn, open the d-file for the queen and rook, and create counterplay against White's potentially exposed king.",
-        "White: Try to prove Black's gambit is unsound by holding onto the extra pawn and neutralizing Black's initiative.",
-        "Black: Develop pieces quickly to active squares (...Nf6, ...Bxd6 after exd6), aiming to exploit any weaknesses created by White's f4-push."
+        "White: Take on d6 with exd6 and develop with Nf3 and d3 or Be2, playing d4 only once it is well supported; the c5-bishop covers the g1-square, so White cannot castle kingside until it is blocked or exchanged.",
+        "Black: Use the lead in development and the c5-bishop's grip on the a7-g1 diagonal, opening the d-file for the queen and rook and creating counterplay against White's king.",
+        "White: Try to prove Black's gambit is unsound by holding onto the extra pawn and neutralising Black's initiative.",
+        "Black: Develop quickly with ...Nf6 and ...Bg4, recapturing on d6 with the queen or the c-pawn if White takes there, and aim at the weakened dark squares around White's king left by the f-pawn's advance."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:13:13.510Z"
@@ -39277,7 +39277,7 @@
       "icsbot": "Paulsen Defense, Vienna "
     },
     "analysis_json": {
-      "description": "The Steinitz Gambit is a wildly aggressive and unorthodox line where White voluntarily exposes the king to e2 in exchange for a powerful pawn center and rapid development. This opening leads to exceptionally sharp, double-edged positions where tactical calculation and a feel for the initiative are paramount. It is designed for fearless, creative players who enjoy navigating chaos and are willing to take immense risks from the very first moves.",
+      "description": "The Steinitz Gambit is a wildly aggressive and unorthodox line where White voluntarily exposes the king to e2 in exchange for a powerful pawn centre and rapid development. This opening leads to exceptionally sharp, double-edged positions where tactical calculation and a feel for the initiative are paramount. It is designed for fearless, creative players who enjoy navigating chaos and are willing to take immense risks from the very first moves.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -39320,7 +39320,7 @@
       ],
       "common_plans": [
         "White aims to complete development with Nf3, Be3, and connect the rooks, using the central pawns to cramp Black and challenge the misplaced queen.",
-        "White often prepares to move the king to safety via Kf2-g1 once the immediate threats are neutralized.",
+        "White often walks the king back to safety via the f2-square to g1 once the h4-queen has been driven off and the f4-pawn regained.",
         "Black focuses on exploiting the exposed white king by developing pieces like ...Nf6 and ...Be7 to create direct threats.",
         "Black will challenge White's pawn center with moves like ...d5 or try to undermine it from the wings, preventing White from consolidating."
       ],
@@ -39342,7 +39342,7 @@
       "icsbot": "Soerensen Defense, Vienna "
     },
     "analysis_json": {
-      "description": "The Sörensen Defense is an incredibly sharp and double-edged response to the Steinitz Gambit, leading to a chaotic and tactical battle. White sacrifices a pawn and castling rights to build a massive pawn center, while Black immediately launches a direct assault on the exposed white king. This opening is perfect for fearless, creative players who excel in wild, unconventional positions and are not afraid to engage in a tactical slugfest from the very first moves.",
+      "description": "The Sörensen Defence is an incredibly sharp and double-edged response to the Steinitz Gambit, leading to a chaotic and tactical battle. White sacrifices a pawn and castling rights to build a massive pawn centre, while Black immediately launches a direct assault on the exposed white king. This opening is perfect for fearless, creative players who excel in wild, unconventional positions and are not afraid to engage in a tactical slugfest from the very first moves.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -39385,9 +39385,9 @@
         "Compensation vs. Material"
       ],
       "common_plans": [
-        "White: Develop with Nf3, play g3 to challenge the h4-queen and prepare Kg2, and use the central pawn majority to control the game and create threats.",
+        "White: Develop with Nf3, hitting the queen, and use the big pawn centre; later g3 challenges the f4-pawn and gives the king a route towards the kingside.",
         "Black: Continue the kingside attack with ...Bg7 and ...d6, aiming to open more lines towards the vulnerable white king and prevent White from consolidating.",
-        "White: Aim to trade queens to relieve the immediate pressure and transition into a favorable endgame where the central pawns are a major asset.",
+        "White: Aim to trade queens to relieve the immediate pressure and transition into a favourable endgame where the central pawns are a major asset.",
         "Black: Keep pieces on the board, especially the queen, to maintain attacking potential and exploit the permanent weakness of the white king's position."
       ],
       "version": "1.0",
@@ -39520,9 +39520,9 @@
       ],
       "common_plans": [
         "White: Prepare and execute the f2-f4 pawn push to open the f-file for a kingside attack.",
-        "White: Adopt a fianchetto setup with g3 and Bg2 for a more positional game, controlling the center and preparing a slow expansion.",
+        "White: Adopt a fianchetto setup with g3 and Bg2 for a more positional game, controlling the centre and preparing a slow expansion.",
         "Black: Challenge White's central influence with moves like ...Nf6 and an eventual ...d5 pawn break.",
-        "Black: Develop quickly and counterattack in the center, especially if White overextends with an early f4 push."
+        "Black: Develop quickly and counterattack in the centre, especially if White overextends by pushing the f-pawn early."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:15:15.162Z"
@@ -39928,7 +39928,7 @@
       "scid": "Vienna: 2...Nc6"
     },
     "analysis_json": {
-      "description": "The Max Lange Defense is a classical and highly reliable response to the Vienna Game, creating a symmetrical and balanced position. The game often develops along strategic lines, focusing on central control and harmonious piece development, though it retains the flexibility to transpose into sharper variations. This opening is perfect for players who appreciate classical principles and want a solid foundation from which to outmaneuver their opponents in the middlegame.",
+      "description": "The Max Lange Defence is a classical and highly reliable response to the Vienna Game, creating a symmetrical and balanced position. The game often develops along strategic lines, focusing on central control and harmonious piece development, though it retains the flexibility to transpose into sharper variations. This opening is perfect for players who appreciate classical principles and want a solid foundation from which to outmanoeuvre their opponents in the middlegame.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -39970,8 +39970,8 @@
       "common_plans": [
         "White: Prepare the d2-d4 pawn break, often supported by Nf3, to seize central space.",
         "White: Consider the Vienna Gambit with an early f2-f4 to create an imbalanced, attacking game.",
-        "Black: Develop symmetrically with ...Nf6 and prepare the ...d5 break to equalize and challenge White's center.",
-        "Black: Maintain a solid pawn structure and look for counterattacking chances, especially against an early f4."
+        "Black: Develop symmetrically with ...Nf6 and prepare the ...d5 break to equalise and challenge White's centre.",
+        "Black: Maintain a solid pawn structure and look for counterattacking chances, especially if White pushes the f-pawn early."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:17:17.425Z"

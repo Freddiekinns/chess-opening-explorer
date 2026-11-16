@@ -582,7 +582,7 @@
       "icsbot": "Diemer-Duhm Gambit, French "
     },
     "analysis_json": {
-      "description": "The Diemer-Duhm Gambit is a sharp and ambitious try against the French Defense, immediately challenging Black's central bastion. By sacrificing the c-pawn, White aims to seize the initiative, accelerate development, and create attacking chances in an open game. This opening is perfect for aggressive players who enjoy surprising their opponents and navigating tactical complications from the very beginning.",
+      "description": "The Diemer-Duhm Gambit is a sharp try against the French Defence: with 3.c4 White offers the e4-pawn, and after 3...dxe4 4.Nc3 Nf6 White often follows with f3, in Blackmar-Diemer style, to open the f-file and gain a lead in development. Black can also take the other pawn with 3...dxc4 or keep things solid with ...Nf6 and ...c5. It suits aggressive players who enjoy early initiative and open lines.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -624,10 +624,10 @@
         "Exploiting Open Files"
       ],
       "common_plans": [
-        "White: After 3...dxc4, White aims for rapid development (Nc3, Nf3, Bxc4) to build an attack based on superior piece activity and control of the center.",
-        "White: Often involves castling queenside to launch a direct pawn storm against the Black king.",
-        "Black: Accept the gambit and aim to consolidate, either holding the extra pawn or returning it to neutralize White's initiative and reach a better endgame.",
-        "Black: Decline the gambit with moves like 3...c5 or 3...Nf6, aiming to transpose into more favorable and solid structures."
+        "White: After 3...dxe4, play Nc3 and f3 to open lines, recapturing on f3 with the knight and aiming the pieces at Black's kingside.",
+        "White: If Black takes on c4 instead, regain the pawn with the f1-bishop, keeping a strong centre and quick development.",
+        "Black: Accept the e4-pawn and consolidate with ...Nf6, ...Be7 and ...O-O, returning material if needed to finish development.",
+        "Black: Strike at the centre with ...c5 or ...Nc6, using the tension to open the position while White's king is still in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T17:11:31.553Z"
@@ -1214,7 +1214,7 @@
       "icsbot": "Knight Variation, French "
     },
     "analysis_json": {
-      "description": "The Knight Variation is a flexible and popular way for White to meet the French Defense, often sidestepping the complex main lines. By developing the knight to f3, White keeps options open, frequently transposing into Exchange Variation structures or a King's Indian Attack setup. This opening is well-suited for players who prefer a more classical, open game and wish to avoid the deep theoretical debates of the Winawer or Tarrasch variations.",
+      "description": "The Knight Variation is a flexible and popular way for White to meet the French Defence, often sidestepping the complex main lines. By developing the knight to f3, White keeps options open, frequently transposing into Exchange Variation structures or a King's Indian Attack setup. This opening is well-suited for players who prefer a more classical, open game and wish to avoid the deep theoretical debates of the Winawer or Tarrasch variations.",
       "style_tags": [
         "Flexible",
         "Positional",
@@ -1254,10 +1254,10 @@
         "King's Indian Attack Setup"
       ],
       "common_plans": [
-        "White: Transpose to an Exchange French (exd5) and use superior development to create pressure.",
+        "White: Play d4 to transpose into normal French lines, or exchange on d5 after ...d5 for a quiet, open game.",
         "White: Adopt a King's Indian Attack setup (g3, Bg2, O-O) to build a kingside attack.",
-        "Black: Challenge the center with ...d5, aiming for symmetrical and equal positions.",
-        "Black: In symmetrical structures, neutralize White's initiative and prepare a queenside minority attack with ...b5-b4."
+        "Black: Challenge the centre with ...d5, aiming for symmetrical and equal positions.",
+        "Black: Against a King's Indian Attack set-up, play ...c5, ...Nc6 and ...b5 to expand on the queenside while White attacks on the kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T17:14:49.086Z"
@@ -1713,7 +1713,7 @@
       "icsbot": "Pelikan Variation, French "
     },
     "analysis_json": {
-      "description": "The Pelikan Variation is a sharp and ambitious attempt by White to sidestep mainstream French Defense theory, immediately creating an unbalanced and tactical battle. By challenging Black's central d5-pawn with 3.f4, White signals an intent to seize the initiative and launch a kingside attack, often at the cost of structural purity. This opening is perfect for aggressive players who enjoy dynamic, double-edged positions and are comfortable navigating tactical complications from the very beginning.",
+      "description": "The Pelikan Variation is a sharp and ambitious attempt by White to sidestep mainstream French Defence theory, immediately creating an unbalanced and tactical battle. By challenging Black's central d5-pawn with 3.f4, White signals an intent to seize the initiative and launch a kingside attack, often at the cost of structural purity. This opening is perfect for aggressive players who enjoy dynamic, double-edged positions and are comfortable navigating tactical complications from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -1754,9 +1754,9 @@
         "Exploiting an Open f-file"
       ],
       "common_plans": [
-        "White: Attack on the f-file, often with a rook lift (Rf1-f3-g3).",
-        "Black: Challenge the center with ...c5 or accept the gambit with ...dxe4 and consolidate.",
-        "White: Use the space advantage to develop an attack before Black can organize a counter.",
+        "White: Push e5 when allowed to gain space, then develop with Nf3, Be2 or Bd3 and castle, using the f-pawn to support a kingside attack.",
+        "Black: Challenge the centre with ...c5 or accept the gambit with ...dxe4 and consolidate.",
+        "White: Use the space advantage to develop an attack before Black can organise a counter.",
         "Black: Target White's king, which can become exposed due to the f4-pawn advance."
       ],
       "version": "1.0",
@@ -150326,7 +150326,7 @@
     "eco": "C00",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Chigorin Variation with 3...Nc6 is a flexible and strategic response to White's unusual second move. Black adopts a Sicilian-style setup, challenging White's central control and aiming for a dynamic, non-standard game that often transposes into a Closed Sicilian structure. This opening is perfect for versatile players who enjoy complex strategic battles and are comfortable navigating hybrid positions that blend the ideas of the French and Sicilian Defenses.",
+      "description": "The Chigorin Variation with 3...Nc6 is a flexible and strategic response to White's unusual second move. Black adopts a Sicilian-style setup, challenging White's central control and aiming for a dynamic, non-standard game that often transposes into a Closed Sicilian structure. This opening is perfect for versatile players who enjoy complex strategic battles and are comfortable navigating hybrid positions that blend the ideas of the French and Sicilian Defences.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -150365,10 +150365,10 @@
         "Prophylactic Queen Placement"
       ],
       "common_plans": [
-        "White: Develop into a Closed Sicilian setup (g3, Bg2, 0-0) and prepare a kingside attack with f4-f5.",
-        "Black: Create a solid central structure with ...g6, ...Bg7, and ...d6, followed by queenside expansion with ...b5-b4.",
-        "Black: Challenge White's control of the center with a well-timed ...d5 pawn break.",
-        "White: An alternative plan involves castling queenside to support the center and launch a direct pawn storm against the Black king."
+        "White: Develop with g3, Bg2 and O-O, often adding d3 and c3 in King's Indian Attack style, and look for e5 or a kingside advance.",
+        "Black: Create a solid central structure with ...g6, ...Bg7 and ...d6, followed by queenside expansion with ...b5.",
+        "Black: Challenge White's control of the centre with a well-timed ...d5 pawn break.",
+        "White: Keep the queen on e2 to support e4 and a later e5, gaining space on the kingside, while watching for ...d5 or ...Nd4 hitting the queen."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:43:35.884Z"

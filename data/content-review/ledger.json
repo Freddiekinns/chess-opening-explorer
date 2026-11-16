@@ -7010,8 +7010,8 @@
   "r1bqkbnr/1p3ppp/p1npp3/1N6/2P1P3/8/PP3PPP/RNBQKB1R w KQkq - 0 7": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "92d63a0e8c74697b",
-    "notes": "Plan 2 played ...b5 into the knight; plan 4 wrote ...0-0. Rewrote plans 2 and 4; British spelling in the overview. Plan 1 is fixed in the follow-up in batch 2026-11-16-22 (reviewer: first draft ignored that the b5-knight is attacked)."
+    "contentHash": "a5d9a00657f90e61",
+    "notes": "Follow-up to batch 2026-11-16-21: plan 1 ignored that the b5-knight is attacked. Rewrote plan 1 around N5c3."
   },
   "r1bqkb1r/pp3ppp/2nppn2/1N6/2P1P3/8/PP3PPP/RNBQKB1R w KQkq - 1 7": {
     "reviewedAt": "2026-11-16",
@@ -7027,9 +7027,9 @@
   },
   "r1bqkb1r/1p3ppp/p1nppn2/1N6/2P1P3/2N5/PP3PPP/R1BQKB1R w KQkq - 0 8": {
     "reviewedAt": "2026-11-16",
-    "verdict": "fixed",
+    "verdict": "needs-research",
     "contentHash": "1b5899896890ade9",
-    "notes": "Plans played ...b5 into the knight and named d4 as a move; plan 1 rerouted an a3-knight not yet on a3. Rewrote plans 1, 2, 4; British spelling in the overview. Plan 3 is fixed in the follow-up in batch 2026-11-16-22 (reviewer: first draft's a4 is blocked by the a3-knight)."
+    "notes": "Follow-up to batch 2026-11-16-21: plan 3 (holding back ...b5 with a3) was rewritten twice and rejected twice (a4 is blocked by the a3-knight; Nc2 and Be2 don't cover b5). Old text kept; added to plan-fix-skips."
   },
   "r1bqkb1r/5ppp/ppnppn2/8/2P1P3/N1N5/PP3PPP/R1BQKB1R w KQkq - 0 9": {
     "reviewedAt": "2026-11-16",
@@ -7048,5 +7048,65 @@
     "verdict": "fixed",
     "contentHash": "7a24d65191ad93e9",
     "notes": "Plan 4 targeted a d4-pawn White doesn't have; plan 3 named d5 and b5 as moves. Rewrote plans 3-4; British spelling in the overview."
+  },
+  "r1bq1rk1/1p2bppp/p1nppn2/8/2P1P3/N1N5/PP2BPPP/R1BQK2R w KQ - 4 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "93cbafef7a22a15c",
+    "notes": "Plan 4 routed the knight ...Ne8-d7 from f6; plan 1 named c2 as a move. Rewrote plans 1 and 4; British spelling in the overview."
+  },
+  "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP1BPPP/RNBQK2R b KQkq - 2 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "246393c90e8335d2",
+    "notes": "Plan 3 rerouted an f3-knight that isn't there; plan 2 named Nb5 as a Black move. Rewrote plans 2-3; British spelling in the overview."
+  },
+  "r1bqkb1r/pp1p1ppp/2n1pn2/8/2PNP3/2N5/PP3PPP/R1BQKB1R b KQkq - 2 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "0442c71bbb958a7e",
+    "notes": "British spelling in the overview and plan 2. Plan 4 (...Bb4 written as Bxc3) is fixed in the follow-up in batch 2026-11-16-23 (reviewer: first draft gave the wrong reason for Nxc6)."
+  },
+  "r1bqk2r/p2p1ppp/2p1pn2/8/1bP1P3/2N5/PP3PPP/R1BQKB1R w KQkq - 0 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "8d1e161517063670",
+    "notes": "Overview called it a Hedgehog with a doubled c-pawn (Black has a single c6-pawn) and the b-file open; plan 1 expanded with an a3-b4 route; plan 3 called the b-file open. Rewrote overview and plans 1 and 3."
+  },
+  "r1bq1rk1/4bppp/pp1ppn2/4n3/2P1P3/N1N1B3/PP2BPPP/R2Q1RK1 w - - 2 12": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "9d6fb3c6e8d4e4bb",
+    "notes": "Plan 1 pushed f2-f4-f5 as one route and named c2 as a move. Rewrote plan 1; British spelling in the overview."
+  },
+  "r1bqk2r/pp1p1ppp/2nNpn2/8/1b2P3/2N5/PPP2PPP/R1BQKB1R b KQkq - 6 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "87e91f4fdda4a9b2",
+    "notes": "Plan 1 'solidified d6 with c4' and pushed f2-f4-f5; plan 2 called the c-file open. Rewrote plans 1-2."
+  },
+  "r1bqk1nr/pp1p1ppp/2n1p3/8/1b1NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "d76fa31966340f5d",
+    "notes": "Plan 2 wrote ...bxc6 as a move in a Black plan before White's exchange. Rewrote plan 2."
+  },
+  "r1bqkb1r/pp1p1ppp/2n1pn2/1N6/4P3/2N5/PPP2PPP/R1BQKB1R b KQkq - 4 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "d4ecd5f329c3b617",
+    "notes": "Plan 1 occupied d6 'after exchanging on f6'; plan 2 played ...b5 into the knight. Rewrote plans 1-2."
+  },
+  "r1bqk2r/pp3ppp/2n1pn2/3p4/4P3/P1N5/1PP2PPP/R1BQKB1R w KQkq - 0 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "9757c31cf0f11c55",
+    "notes": "Plan 1 blockaded with Nd4, which the c3-knight cannot reach in one move. Rewrote plan 1."
+  },
+  "r1bq1rk1/pp3ppp/2n2n2/8/3p4/P1NB4/1PP2PPP/R1BQ1RK1 w - - 0 12": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "1ac374d779dfabc9",
+    "notes": "Plan 1 sent the blockading knight to d3, where White's bishop stands. Rewrote plan 1."
   }
 }

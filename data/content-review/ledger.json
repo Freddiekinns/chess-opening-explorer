@@ -516,10 +516,10 @@
     "notes": "Style brief audit (sicilian-defense-dragon-variation, researched 2026-10-03): 7 claims, 3 wrong and fixed in #171, 2 unverifiable."
   },
   "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3": {
-    "reviewedAt": "2026-10-11",
+    "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "132d1f1a106afb62",
-    "notes": "Style brief audit (sicilian-defense-french-variation, researched 2026-10-03): 8 claims, 1 wrong and fixed in #171, 4 unverifiable."
+    "contentHash": "10cd2616befea8e0",
+    "notes": "Plan 2 played ...Rc8 with the bishop on c8. Rewrote plan 2; British spelling in the overview."
   },
   "rnbqkbnr/pp1ppppp/8/2p5/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2": {
     "reviewedAt": "2026-10-11",
@@ -6818,14 +6818,14 @@
   "r1bqk2r/pp2ppbp/3p1np1/6B1/2PQP3/2N5/PP2BPPP/R3K2R b KQkq - 2 9": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "ad77b790b43e01e9",
-    "notes": "Plan 2 'neutralised a pin' that doesn't exist (the e7-pawn blocks the line); plan 3 secured a d4-knight that has been exchanged. Rewrote plan 2. Plan 3 is fixed in the follow-up in batch 2026-11-16-19 (reviewer: first draft kept the queen on d4, in the g7-bishop's line)."
+    "contentHash": "38d0f11e458a41e8",
+    "notes": "Follow-up to batch 2026-11-16-18: plan 3 secured a d4-knight that has been exchanged. Rewrote plan 3 (reviewer: first draft left the queen in the g7-bishop's line)."
   },
   "r2q1rk1/pp2ppbp/2npbnp1/8/2P1P3/2N5/PPN1BPPP/R1BQ1RK1 w - - 4 10": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "21da0df34a4fb5f8",
-    "notes": "Plan 2 traded the light-squared bishop for a knight on c4 that isn't there; plan 3 wrote Nc2-e3 as a route. Rewrote plans 2-3; British spelling elsewhere. Plan 4 (a knight from b8 that stands on c6) is fixed in the follow-up in batch 2026-11-16-19 (reviewer: first draft had a c5-knight pressuring c4)."
+    "contentHash": "52c588f8b062edd5",
+    "notes": "Follow-up to batch 2026-11-16-18: plan 4 rerouted a knight from b8 that stands on c6. Rewrote plan 4 (reviewer: first draft had a c5-knight pressuring c4)."
   },
   "r1bq1rk1/pp2ppbp/2np2p1/2n5/2P1P3/2N5/PPNBBPPP/R2Q1RK1 w - - 6 11": {
     "reviewedAt": "2026-11-16",
@@ -6866,13 +6866,67 @@
   "r2q1rk1/pp1bppbp/3p1np1/8/2PBP3/2N5/PP1QBPPP/R4RK1 b - - 0 11": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "7ec351a472625cbb",
-    "notes": "British spelling in the overview and plan 4. Plan 3 (pressure on a c6-knight that has been exchanged) is fixed in the follow-up in batch 2026-11-16-19 (reviewer: first draft gave White a c-file blocked by the c4-pawn)."
+    "contentHash": "ef33d2e0bcb6aa10",
+    "notes": "Follow-up to batch 2026-11-16-18: plan 3 pressed a c6-knight that has been exchanged. Rewrote plan 3 (reviewer: first draft gave White a c-file blocked by the c4-pawn)."
   },
   "r2q1rk1/pp1bppbp/2np1np1/8/2PNP3/2N1B3/PP2BPPP/2RQ1RK1 b - - 3 10": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
     "contentHash": "0ba6bb2708eb4876",
     "notes": "Plan 2 played ...Bxc3 with the light-squared bishop (the g7-bishop is dark-squared and blocked). Rewrote plan 2; British spelling in the overview."
+  },
+  "r1bq1rk1/pp1nppbp/2np2p1/8/2PNP3/2N1B3/PP2BPPP/R2Q1RK1 w - - 2 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "62af001871cad3a1",
+    "notes": "Plan 2 rerouted the knight 'to c5 via b8'; plan 4 played ...Bd7 with the knight on d7. Rewrote plans 2 and 4; British spelling elsewhere."
+  },
+  "r1bqk2r/pp1p1pbp/6p1/4p3/2PnP3/2NBB3/PP3PPP/R2QK2R b KQkq - 1 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "b7f69836723e6b1a",
+    "notes": "Overview said White gave up the bishop pair (both sides keep two bishops after the knight trade); plan 1 played Nb3, which no knight can reach; plan 2 aimed for a ...d5 break the c4- and e4-pawns and Nc3 control. Rewrote overview and plans 1-3."
+  },
+  "r1bqkb1r/pp1p1ppp/2n1p3/2pnP3/3P4/2P2N2/PP3PPP/RNBQKB1R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "bcaa0da9e598410a",
+    "notes": "Plan 3 played Nc3-b5 with White's pawn on c3. Rewrote plan 3; British spelling elsewhere."
+  },
+  "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "2651ab931399b940",
+    "notes": "Plan 1 wrote the centre as an e4-d4 route; plan 4 put a knight on b4, which the c3-pawn covers. Rewrote plans 1 and 4; British spelling in the overview."
+  },
+  "rnbqkb1r/pp1p1ppp/4pn2/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "95e848fb74a61062",
+    "notes": "Plan 3 played ...Rc8 with the bishop on c8. Rewrote plan 3."
+  },
+  "rnbqk1nr/pp1p1ppp/4p3/2b5/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "b5f1c9a6d69bac56",
+    "notes": "Overview called the c5-bishop light-squared (c5 is a dark square). Fixed the overview. Plan 3 is fixed in the follow-up in batch 2026-11-16-21 (reviewer: first draft had ...b5 supporting the c5-bishop)."
+  },
+  "r1bqkbnr/pp1p1ppp/2n1p3/2p5/4P3/1P3N2/P1PP1PPP/RNBQKB1R w KQkq - 1 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "68a0eaaefb325efe",
+    "notes": "Overview called b2 a light-squared fianchetto; plan 1 'pinned' the c6-knight with Bb5 (the d7-pawn stands behind it). Rewrote plan 1, fixed the overview, and British spelling in plan 2."
+  },
+  "r1bqkb1r/pp1p1ppp/2n1pn2/8/3NP3/3B4/PPP2PPP/RNBQK2R w KQkq - 3 6": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a6637d0e44d75005",
+    "notes": "British spelling in the overview. Plan 2 (recapture written as bxc6, an 'open' b-file) is fixed in the follow-up in batch 2026-11-16-21 (reviewer: first draft had a b7-bishop pressing e4 through the c6-pawn)."
+  },
+  "rnbqk2r/1p1p1ppp/p3pn2/8/1bPNP3/2N5/PP3PPP/R1BQKB1R w KQkq - 3 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "10381e5e771ad3b1",
+    "notes": "Plan 1 solidified with f3 without addressing the pin and the ...Nxe4 threat. Rewrote plan 1."
   }
 }

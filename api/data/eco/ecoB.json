@@ -84524,7 +84524,7 @@
       "common_plans": [
         "White: Exchange on f6 (Bxf6) to gain the bishop pair and inflict a pawn weakness, followed by exploiting the space advantage.",
         "Black: Castle, develop with ...Be6, and create queenside counterplay with ...Qa5, ...Rfc8 and ...a6 followed by a b-pawn advance.",
-        "White: Methodical queenside expansion with a3-b4 to cramp Black's position further and secure the d4-knight.",
+        "White: Retreat the queen to d2 or e3, out of the g7-bishop's line, castle and play Rc1 or f3, then expand on the queenside with b3 and a3.",
         "Black: Solidify the position with moves like ...e6 and ...Rb8, keeping the g7-bishop as a key defensive and counter-attacking piece."
       ],
       "version": "1.0",
@@ -85602,7 +85602,7 @@
         "White: Systematically improve the position by expanding on the queenside with a3 and b4, controlling the d5 square, and potentially launching a kingside attack later in the game.",
         "Black: Prepare the ...b5 break with ...Rc8 and ...a6, or play ...Qa5 and ...Rfc8 to pressure the c4-pawn, sometimes giving up the e6-bishop for a knight that lands on d5.",
         "White: Manoeuvre the knights to their best squares, for example Ne3 from c2, to support the centre and prepare to meet Black's plans.",
-        "Black: Reroute the b8-knight, often via ...Nd7-b6, to support the ...b5 push or to challenge for control of the d5-square."
+        "Black: Reroute the f6-knight via d7 to b6, from where it hits c4, or to c5, from where it eyes the e4-pawn and the b3-square, supporting a b-pawn advance."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T08:54:42.438Z"
@@ -87442,7 +87442,7 @@
       "common_plans": [
         "White: Solidify the center, expand on the queenside with a3-b4, and slowly improve piece placement, often rerouting the d4 bishop to c3 or e3.",
         "Black: Prepare the ...b5 pawn break (often via ...a6) to challenge White's queenside grip and create counterplay.",
-        "White: Control the c-file and exert pressure on the c6-knight and the backward d6-pawn.",
+        "White: Keep the bind with f3 and Rac1, and aim to trade the dark-squared bishops so that Black's g7-bishop, its best defender and most active piece, disappears.",
         "Black: Manoeuvre pieces to challenge White's e4-pawn and prepare for an eventual ...d5 pawn break to liquidate the centre."
       ],
       "version": "1.0",
@@ -87691,7 +87691,7 @@
     "name": "Sicilian: Maroczy Bind, 7.Nc3 O-O 8.Be2 d6 9.O-O Nd7",
     "scid": "B38o",
     "analysis_json": {
-      "description": "The Maroczy Bind is a strategically complex system where White seizes a significant space advantage by clamping down on the d5 square. Black's setup with 9...Nd7 is a sophisticated and resilient response, aiming to challenge White's central control through careful maneuvering and preparing counterplay on the queenside. This opening leads to a tense, strategic battle of attrition, ideal for patient players who excel at long-term planning, understanding pawn structures, and exploiting subtle positional nuances.",
+      "description": "The Maroczy Bind is a strategically complex system where White seizes a significant space advantage by clamping down on the d5 square. Black's setup with 9...Nd7 is a sophisticated and resilient response, aiming to challenge White's central control through careful manoeuvring and preparing counterplay on the queenside. This opening leads to a tense, strategic battle of attrition, ideal for patient players who excel at long-term planning, understanding pawn structures, and exploiting subtle positional nuances.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -87733,10 +87733,10 @@
         "The ...e5 pawn break for Black"
       ],
       "common_plans": [
-        "White: Methodically improve pieces, control the center, and often expand on the queenside with a4-a5 to restrict Black further.",
-        "Black: Reroute the knight from d7 (e.g., to c5 via b8) to challenge White's control, or prepare the ...e5 break, often after exchanging knights on d4.",
+        "White: Methodically improve pieces, control the centre, and often expand on the queenside with a4-a5 to restrict Black further.",
+        "Black: Exchange on d4 with ...Nxd4, then bring the d7-knight to c5 to hit the e4-pawn, or prepare the ...a5 and ...f5 ideas.",
         "White: Prepare a potential kingside attack with f2-f4, especially if the center remains locked.",
-        "Black: Generate counterplay along the semi-open c-file with moves like ...Bd7 and ...Rc8, targeting the c4-pawn."
+        "Black: Generate counterplay along the half-open c-file, with ...a5, a knight on c5 and a rook on c8 once the bishop has developed, targeting the c4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:06:49.627Z"
@@ -88104,7 +88104,7 @@
     "name": "Sicilian: Maroczy Bind, Breyer, 8.Qxg4 Nxd4 9.Qd1 e5 10.Bd3",
     "scid": "B39g",
     "analysis_json": {
-      "description": "This sharp variation of the Maroczy Bind creates a fascinating strategic imbalance where White accepts giving up the bishop pair in exchange for a significant space advantage and control over the critical d5-square. The resulting positions are complex and double-edged, demanding a deep understanding of pawn structures and long-term plans. This opening is perfect for strategic players who enjoy maneuvering in closed positions and fighting for key squares, rather than engaging in wide-open tactical brawls.",
+      "description": "This line of the Maroczy Bind arises from Black's 7...Ng4 trick: after 8.Qxg4 Nxd4 9.Qd1 e5 Black has a strong knight on d4, supported by the e5-pawn, while White keeps the Maroczy space and the d5-square. The structure is fixed and strategic: White aims to challenge or exchange the d4-knight and use d5, while Black plays ...d6, ...O-O and the ...f5 break. It suits strategic players who enjoy manoeuvring and fighting for key squares rather than wide-open tactical brawls.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -88146,9 +88146,9 @@
         "Restricting the fianchettoed bishop"
       ],
       "common_plans": [
-        "White aims to consolidate control over the d5 square, often with Nb3, and use the space advantage to launch a kingside attack with f2-f4.",
-        "Black's primary goal is to achieve the liberating ...d5 pawn break, which would challenge White's center and unleash the power of the bishop pair.",
-        "White often tries to exchange pieces to reduce the effectiveness of Black's bishop pair and transition into a favorable endgame.",
+        "White: Castle, challenge the d4-knight with Ne2 or by preparing to exchange it, and use the d5-square, sometimes for the c3-knight.",
+        "Black: Castle, play ...d6, and prepare the ...f5 break to challenge White's centre, keeping the d4-knight as a strong central piece.",
+        "White often tries to exchange the d4-knight, for example with Bxd4 at a good moment, and reach a position where the c4- and e4-pawns give a lasting space advantage.",
         "Black seeks to create counterplay by targeting White's c4 pawn and developing pieces to active squares like ...Be6 to support the central struggle."
       ],
       "version": "1.0",
@@ -88520,7 +88520,7 @@
     "moves": "1. e4 c5 2. Nf3 e6 3. c3 Nf6 4. e5 Nd5 5. d4 Nc6",
     "name": "Sicilian Defense: Alapin Variation, Sherzer Variation",
     "analysis_json": {
-      "description": "The Alapin's Sherzer Variation leads to a strategically complex and dynamic middlegame. White establishes a strong pawn center with e5 and d4, gaining a space advantage, while Black places a knight on the excellent d5 outpost and prepares to challenge White's central control. The resulting positions are rich in plans for both sides, revolving around the themes of central tension and piece activity, making it suitable for players who enjoy a blend of strategic planning and tactical possibilities.",
+      "description": "The Alapin's Sherzer Variation leads to a strategically complex and dynamic middlegame. White establishes a strong pawn centre with e5 and d4, gaining a space advantage, while Black places a knight on the excellent d5 outpost and prepares to challenge White's central control. The resulting positions are rich in plans for both sides, revolving around the themes of central tension and piece activity, making it suitable for players who enjoy a blend of strategic planning and tactical possibilities.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -88562,9 +88562,9 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Solidify the d4-e5 center, develop pieces harmoniously (e.g., Bd3, Be2, O-O), and use the space advantage to restrict Black or launch a kingside attack.",
-        "Black: Challenge White's center with ...cxd4 followed by ...d6, activate the light-squared bishop (often via ...b6 and ...Bb7), and use the d5 knight as a pivot for counterplay.",
-        "White: Target the d5 knight to force a concession or trade, often with moves like Nc3-b5 or by preparing f4.",
+        "White: Solidify the d4-e5 centre, develop pieces harmoniously (e.g., Bd3, Be2, O-O), and use the space advantage to restrict Black or launch a kingside attack.",
+        "Black: Challenge White's centre with ...cxd4 followed by ...d6, activate the light-squared bishop (often via ...b6 and ...Bb7), and use the d5 knight as a pivot for counterplay.",
+        "White: Challenge the d5-knight with Bc4, or with c4 once the d4-pawn is secure, to force a concession or a trade.",
         "Black: Create queenside counterplay by advancing the a- and b-pawns to undermine White's central support."
       ],
       "version": "1.0",
@@ -88582,7 +88582,7 @@
       "ct": "Sicilian Defense, Delayed Alapin Variation"
     },
     "analysis_json": {
-      "description": "The Delayed Alapin is a solid and strategic system against the Sicilian, aiming to establish a strong pawn center with d4. By delaying c3, White sidesteps some of Black's most aggressive replies, leading to a game characterized by positional maneuvering rather than the sharp tactical skirmishes of the Open Sicilians. This opening is perfect for players who prefer to build a position based on central control and long-term plans, seeking a slight but enduring advantage.",
+      "description": "The Delayed Alapin is a solid and strategic system against the Sicilian, aiming to establish a strong pawn centre with d4. By delaying c3, White sidesteps some of Black's most aggressive replies, leading to a game characterised by positional manoeuvring rather than the sharp tactical skirmishes of the Open Sicilians. This opening is perfect for players who prefer to build a position based on central control and long-term plans, seeking a slight but enduring advantage.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -88622,10 +88622,10 @@
         "Isolated Queen's Pawn (IQP)"
       ],
       "common_plans": [
-        "White aims to establish and maintain the e4-d4 pawn center, using the space advantage to restrict Black's pieces.",
+        "White aims to establish and maintain a pawn centre on d4 and e4, using the space advantage to restrict Black's pieces.",
         "Black's primary plan is to challenge White's center with an early ...d5 pawn break, often leading to an IQP position.",
         "White often develops harmoniously and can prepare for a kingside expansion if the center becomes stable.",
-        "Black seeks counterplay by targeting the d4 pawn, blockading it, and developing pieces to active squares like c5 and b4 for the knight."
+        "Black seeks counterplay by targeting the d4-pawn with ...Nc6 and ...Qb6, blockading it after exchanges, and posting a knight on d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:11:52.485Z"
@@ -88830,7 +88830,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Sicilian Defense: French Variation is named after 2...e6, the French Defense's first move, but after 3.d4 cxd4 the game usually reaches Sicilian structures such as the Taimanov, Kan or Scheveningen rather than French ones. It leads to a strategically complex game where Black aims to control the d5-square and launch a counter-thrust after completing development. This opening is perfect for versatile players who appreciate a solid foundation and are adept at navigating both positional maneuvering and sharp tactical possibilities.",
+      "description": "The Sicilian Defence: French Variation is named after 2...e6, the French Defence's first move, but after 3.d4 cxd4 the game usually reaches Sicilian structures such as the Taimanov, Kan or Scheveningen rather than French ones. It leads to a strategically complex game where Black aims to control the d5-square and launch a counter-thrust after completing development. This opening is perfect for versatile players who appreciate a solid foundation and are adept at navigating both positional manoeuvring and sharp tactical possibilities.",
       "style_tags": [
         "Flexible",
         "Solid",
@@ -88872,7 +88872,7 @@
       ],
       "common_plans": [
         "Black: Prepare and execute the central pawn break ...d5 to challenge White's control and liberate the position.",
-        "Black: Initiate queenside counterplay with moves like ...a6, ...b5, and ...Rc8, often creating pressure against the e4-pawn.",
+        "Black: Start queenside counterplay with ...a6, ...b5 and ...Bb7, with a rook coming to c8 later, often creating pressure against the e4-pawn.",
         "White: Use the central space advantage to develop an attack, often on the kingside, while restraining Black's counterplay.",
         "White: Control the critical d5-square and often target the backward d6-pawn if it appears, a common weakness in many Sicilian structures."
       ],
@@ -88939,7 +88939,7 @@
       "common_plans": [
         "White: Control the d5 square with Nc3, Be3, and f4, often preparing a kingside attack.",
         "Black: Prepare and execute the ...d5 pawn break to challenge White's center and free the position.",
-        "Black: Utilize the semi-open c-file for queenside pressure with moves like ...Rc8, ...b5, and ...a6.",
+        "Black: Use the half-open c-file for queenside pressure with ...a6, ...b5 and a rook on c8 once the bishop has developed.",
         "White: Restrain Black's queenside play and exert pressure on the d6 pawn if Black plays ...d6."
       ],
       "version": "1.0",
@@ -89394,7 +89394,7 @@
       "scid": "Sicilian: Open, 2...e6, 4.Nxd4 Bc5"
     },
     "analysis_json": {
-      "description": "The Paulsen-Basman Defense is a provocative and less-traveled path within the Sicilian, characterized by the early development of the light-squared bishop to c5. This move immediately challenges White's central knight, aiming to disrupt standard plans and create imbalanced, tactical positions from the outset. It suits creative and fighting players who are comfortable with non-standard structures and enjoy seizing the initiative, even at the cost of some structural concessions.",
+      "description": "The Paulsen-Basman Defence is a provocative and less-traveled path within the Sicilian, characterised by the early development of the dark-squared bishop to c5. This move immediately challenges White's central knight, aiming to disrupt standard plans and create imbalanced, tactical positions from the outset. It suits creative and fighting players who are comfortable with non-standard structures and enjoy seizing the initiative, even at the cost of some structural concessions.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -89767,7 +89767,7 @@
     "name": "Sicilian: 2...e6 3.b3 Nc6",
     "scid": "B40d",
     "analysis_json": {
-      "description": "This is a flexible and strategic anti-Sicilian system. White sidesteps the main lines with 3.b3, aiming to fianchetto the light-squared bishop to b2 to exert long-range pressure on the center and Black's kingside. The resulting game is often less tactical and more positional than open Sicilians, appealing to players who prefer strategic maneuvering and understanding long-term plans over memorizing sharp, theoretical variations.",
+      "description": "This is a flexible and strategic anti-Sicilian system. White sidesteps the main lines with 3.b3, aiming to fianchetto the dark-squared bishop on b2 to exert long-range pressure on the centre and Black's kingside. The resulting game is often less tactical and more positional than open Sicilians, appealing to players who prefer strategic manoeuvring and understanding long-term plans over memorising sharp, theoretical variations.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -89807,8 +89807,8 @@
         "Long-range piece play"
       ],
       "common_plans": [
-        "White: Fianchetto with Bb2, play Bb5 to pin the c6 knight, control the e5 square, and prepare a central pawn push (d3 or d4) at an opportune moment.",
-        "Black: Prepare and execute the ...d5 pawn break to challenge White's central control, develop pieces harmoniously (...Nf6, ...Be7), and neutralize the pressure from White's Bb2."
+        "White: Develop the bishop to b2, consider Bb5 to put pressure on the c6-knight, control the e5-square, and prepare a central pawn advance with d3 or d4 at the right moment.",
+        "Black: Prepare and execute the ...d5 pawn break to challenge White's central control, develop pieces harmoniously (...Nf6, ...Be7), and neutralise the pressure from White's bishop on the long diagonal."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T09:18:05.819Z"
@@ -90295,7 +90295,7 @@
     "name": "Sicilian: Open, 2...e6, 4.Nxd4 Nf6 5.Bd3 Nc6",
     "scid": "B40p",
     "analysis_json": {
-      "description": "This variation offers a solid and flexible approach for both sides, steering the game away from the sharpest lines of the Open Sicilian. White's 5.Bd3 is a sound developing move aiming for classical central control, while Black's 5...Nc6 immediately challenges this plan, leading to a strategic battle rich in positional ideas. This opening is well-suited for players who enjoy maneuvering and understanding pawn structures, rather than memorizing long, tactical variations.",
+      "description": "This variation offers a solid and flexible approach for both sides, steering the game away from the sharpest lines of the Open Sicilian. White's 5.Bd3 is a sound developing move aiming for classical central control, while Black's 5...Nc6 immediately challenges this plan, leading to a strategic battle rich in positional ideas. This opening is well-suited for players who enjoy manoeuvring and understanding pawn structures, rather than memorising long, tactical variations.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -91135,7 +91135,7 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "White: Solidify the center with Qd3 or f3, complete development, and use the space advantage to control the position or attack on the kingside.",
+        "White: Defend the e4-pawn against ...Nxe4 with Bd3 or Qd3, complete development, and use the space advantage to control the position or attack on the kingside.",
         "Black: Maintain pressure on the e4-pawn, prepare the liberating ...d5 pawn break, and use active piece play to compensate for White's space.",
         "Black: Provoke weaknesses in White's camp (e.g., by forcing f3) and then re-route pieces to exploit them.",
         "White: Challenge the pinning bishop with a3, forcing it to trade or retreat, thereby relieving the central pressure."

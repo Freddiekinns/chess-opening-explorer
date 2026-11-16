@@ -127058,9 +127058,9 @@
       ],
       "common_plans": [
         "White: Launch a kingside pawn storm with h4-h5 and g4 to open lines against the Black king, often followed by trading the dark-squared bishops with Bh6.",
-        "Black: Generate queenside counterplay along the c-file with pieces like ...Qa5 and ...Rc8, aiming for the thematic exchange sacrifice ...Rxc3.",
-        "White: Maneuver the queen to the kingside (e.g., Qe1-h4) to support the attack and create mating threats.",
-        "Black: Use the g7 bishop to exert pressure on White's queenside and center, while defending the kingside just enough to survive and execute the counterattack."
+        "Black: Generate queenside counterplay along the c-file with ...Qa5 and a rook on c8, aiming for the thematic exchange sacrifice on c3.",
+        "White: Castle queenside, then use the Qd2 and Be3 battery to play Bh6 and bring the rooks to the h-file once it opens.",
+        "Black: Use the g7 bishop to exert pressure on White's queenside and centre, while defending the kingside just enough to survive and execute the counterattack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:55:50.745Z"
@@ -127124,8 +127124,8 @@
         "Exchange Sacrifice"
       ],
       "common_plans": [
-        "White's Plan: Launch a pawn storm with h4-h5-hxg6, sacrifice material (e.g., Bxh7+ or Nxg6) to expose the black king, and trade off Black's powerful g7 bishop.",
-        "Black's Plan: Generate a swift counterattack on the queenside using the open c-file (...Rc8, ...Qa5), sacrifice the exchange on c3 (...Rxc3) to shatter White's pawn cover, and utilize the g7 bishop's power along the long diagonal."
+        "White's Plan: Launch a pawn storm with h4-h5 to open the h-file, exchange the Dragon bishop with Bh6, and be ready to sacrifice material to expose the black king.",
+        "Black's Plan: Generate a swift counterattack on the queenside using the half-open c-file, with a rook on c8 and ...Qa5, or strike in the centre with ...d5; sacrifice the exchange on c3 to shatter White's pawn cover, and use the g7-bishop's power along the long diagonal."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:56:07.948Z"
@@ -127188,9 +127188,9 @@
       ],
       "common_plans": [
         "White: Continue the kingside pawn storm with h4-h5, open the h-file, sacrifice material to expose the Black king, and castle queenside to support the attack.",
-        "Black: Generate queenside counterplay via the c-file with moves like ...Rc8 and ...Qa5, pressure White's center, and prepare the ...d5 pawn break to disrupt White's coordination.",
-        "White: Control the center and prevent Black's ...d5 break, often by playing Kb1 after castling to safeguard the king from checks on the c-file.",
-        "Black: Trade the Dragon bishop for the c3 knight (...Bxc3) to weaken White's queenside pawn structure and create long-term targets."
+        "Black: Generate queenside counterplay via the c-file with a rook on c8 and ...Qa5, pressure White's centre, and prepare the ...d5 pawn break to disrupt White's coordination.",
+        "White: Control the centre and prevent Black's ...d5 break; after O-O-O, Kb1 often follows to step off the c-file.",
+        "Black: Strike in the centre with ...Nxd4 and ...Be6, or ...d5 when it works, since 9.g4 loosens White's kingside before the king has left the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:56:22.328Z"
@@ -127248,7 +127248,7 @@
       ],
       "common_plans": [
         "White: Castle queenside, launch a pawn storm with h4-h5, trade the dark-squared bishop with Bh6, and attack the Black king on the h-file.",
-        "Black: Create a queenside counterattack with ...b5 and ...a5, utilize the thematic exchange sacrifice ...Rxc3 to destroy White's queenside, and use the g7-bishop to pressure White's position."
+        "Black: Create a queenside counterattack with ...b5 and ...a5, use the thematic exchange sacrifice on c3 to destroy White's queenside, and use the g7-bishop to pressure White's position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:56:43.686Z"
@@ -127306,7 +127306,7 @@
       ],
       "common_plans": [
         "White: Advance the h-pawn to h5, open the h-file, and sacrifice material to expose the Black king for a mating attack.",
-        "Black: Create queenside counterplay against the c-file, often involving the thematic exchange sacrifice ...Rxc3, while using the g7-bishop to pressure White's position."
+        "Black: Create queenside counterplay down the c-file, often involving the thematic exchange sacrifice on c3, while using the g7-bishop to pressure White's position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:57:01.811Z"
@@ -127321,7 +127321,7 @@
     "name": "Sicilian: Dragon, Yugoslav, 9.g4 Nxd4",
     "scid": "B76f",
     "analysis_json": {
-      "description": "This variation represents one of the most aggressive and theoretically demanding lines in the entire Sicilian Dragon. White's 9.g4 launches a direct pawn storm against the Black king, while Black's 9...Nxd4 immediately challenges the center, aiming to counter the flank attack with a central break. The game explodes into a fiercely tactical and double-edged battle, suiting players who thrive on complex calculations and are unafraid of high-stakes, sacrificial attacks.",
+      "description": "This variation represents one of the most aggressive and theoretically demanding lines in the entire Sicilian Dragon. White's 9.g4 launches a direct pawn storm against the Black king, while Black's 9...Nxd4 immediately challenges the centre, aiming to counter the flank attack with a central break. The game explodes into a fiercely tactical and double-edged battle, suiting players who thrive on complex calculations and are unafraid of high-stakes, sacrificial attacks.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -127363,8 +127363,8 @@
         "Thematic Exchange Sacrifice (...Rxc3)"
       ],
       "common_plans": [
-        "White: Castle queenside, advance the h-pawn (h4-h5) to open files against the Black king, and use the h-file and the e3-bishop/d2-queen battery for a decisive attack.",
-        "Black: Solidify the center, often with ...Be6, and launch a queenside counterattack with ...a6, ...b5, and the thematic exchange sacrifice ...Rxc3 to destroy White's pawn cover and expose the king."
+        "White: Recapture with Bxd4, castle queenside, and advance the h-pawn (h4-h5) to open files against the black king.",
+        "Black: Solidify the centre, often with ...Be6, and launch a queenside counterattack with ...a6, ...b5 and the thematic exchange sacrifice on c3 to destroy White's pawn cover and expose the king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:57:20.859Z"
@@ -127423,9 +127423,9 @@
       ],
       "common_plans": [
         "White: Launch a kingside pawn storm with h4-h5, aiming to open the h-file for a decisive attack against the Black king. Often involves trading the dark-squared bishops with Bh6.",
-        "Black: Create a powerful queenside counterattack using the c-file, often with moves like ...Qa5 and ...Rc8. The thematic exchange sacrifice ...Rxc3 is a key resource to destroy White's queenside and expose the king.",
+        "Black: Create a powerful queenside counterattack using the c-file, often with ...Qa5 and ...Rc8. The thematic exchange sacrifice on c3 is a key resource to destroy White's queenside and expose the king.",
         "White: Control the critical d5 square to restrict Black's pieces and prepare for a central breakthrough if the flank attack stalls.",
-        "Black: Utilize the g7 'Dragon' bishop to exert pressure along the long diagonal, targeting White's king and key queenside pawns."
+        "Black: Utilise the g7 'Dragon' bishop to exert pressure along the long diagonal, targeting White's king and key queenside pawns."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:57:42.985Z"
@@ -127485,9 +127485,9 @@
       ],
       "common_plans": [
         "White: Execute a kingside pawn storm with h4-h5, aiming to open the h-file and expose the Black king. The goal is to coordinate a decisive attack with the queen, rooks, and bishop on e3, often involving material sacrifices.",
-        "Black: Launch a queenside counterattack with moves like ...b5, ...a5, and ...a4 to undermine White's king position. The exchange sacrifice ...Rxc3 is a hallmark of the defense, aiming to shatter White's pawn structure and create attacking chances.",
-        "White: Control the d5 square to restrict Black's pieces. Maneuver the queen to the h-file (e.g., Qh2) to prepare the final assault.",
-        "Black: Utilize the power of the 'Dragon' bishop on g7, which exerts pressure on the long diagonal. Seek to trade the d7-bishop for a key White knight to relieve defensive pressure."
+        "Black: Launch a queenside counterattack with moves like ...b5, ...a5 and ...a4 to undermine White's king position. The exchange sacrifice on c3 is a hallmark of the defence, aiming to shatter White's pawn structure and create attacking chances.",
+        "White: Control the d5-square to restrict Black's pieces, and after h4 bring the queen to h2 along the second rank to prepare the final assault.",
+        "Black: Use the power of the 'Dragon' bishop on g7 along the long diagonal, and keep the d7-bishop ready to support the queenside pawn advance."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:58:03.136Z"
@@ -127546,7 +127546,7 @@
       ],
       "common_plans": [
         "White: Launch a kingside pawn storm with h4-h5, aiming to open the h-file for the rook, often by sacrificing a pawn. Exchange Black's powerful g7 bishop. Control the d-file.",
-        "Black: Create immediate counterplay in the center and on the queenside. Use the semi-open c-file for an attack, often involving the classic exchange sacrifice with ...Rxc3 to shatter White's kingside defenses. Neutralize White's attack."
+        "Black: Strike in the centre with ...d5; after 10.exd5 Nxd5 11.Nxc6 bxc6 Black gives up a pawn for open lines, using the half-open b-file and the g7-bishop on the long diagonal against White's king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:58:20.546Z"
@@ -127561,7 +127561,7 @@
     "name": "Sicilian: Dragon, Yugoslav, 9.O-O-O d5 10.exd5",
     "scid": "B76q",
     "analysis_json": {
-      "description": "This line of the Sicilian Dragon's Yugoslav Attack represents one of the sharpest and most theoretically demanding battlegrounds in chess. By immediately challenging White's center with 9...d5, Black initiates a fierce, double-edged struggle where both sides race to attack the opposing king. The resulting positions are a pure tactical melee, ideal for aggressive, calculating players who thrive on complexity and are unafraid to live on the razor's edge.",
+      "description": "This line of the Sicilian Dragon's Yugoslav Attack represents one of the sharpest and most theoretically demanding battlegrounds in chess. By immediately challenging White's centre with 9...d5, Black initiates a fierce, double-edged struggle where both sides race to attack the opposing king. The resulting positions are a pure tactical melee, ideal for aggressive, calculating players who thrive on complexity and are unafraid to live on the razor's edge.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -127604,9 +127604,9 @@
       ],
       "common_plans": [
         "White: Launch a kingside pawn storm with h4-h5, trade the Dragon bishop with Bh6, and create mating threats on the h-file.",
-        "Black: Recapture on d5, generate a queenside counterattack on the c-file, and often execute an exchange sacrifice with ...Rxc3 to expose the White king.",
-        "White: Control the d-file, pressure the d6-pawn, and coordinate pieces for a decisive attack against g7 and h7.",
-        "Black: Utilize the g7 bishop to pressure White's queenside and use the semi-open c-file for rooks and the queen to attack the b2 pawn and the c3 knight."
+        "Black: Recapture with ...Nxd5 and, after 11.Nxc6 bxc6, accept being a pawn down in return for the half-open b-file and the long diagonal for an attack on the white king.",
+        "White: Control the d-file and the d5-square after the exchanges, with Nxc6 and Bd4 as typical follow-ups, and coordinate the pieces for an attack on the kingside.",
+        "Black: Use the g7-bishop on the long diagonal towards b2 and put the rooks on the b-file, aiming at the white king on c1."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T13:58:38.176Z"

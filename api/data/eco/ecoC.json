@@ -7566,7 +7566,7 @@
     "name": "French: Advance, Euwe, 6.Be2",
     "scid": "C02p",
     "analysis_json": {
-      "description": "The Euwe Variation with 6.Be2 is a classical and strategic approach for White in the French Advance. White prioritizes solid development and king safety over immediate confrontation, aiming to maintain a space advantage and slowly build pressure. This line leads to a complex, maneuvering game where understanding pawn breaks and long-term plans is paramount, suiting players who enjoy a strategic grind rather than a tactical brawl.",
+      "description": "The Euwe Variation with 6.Be2 is a quiet, classical treatment of the French Advance. White develops the bishop modestly, castles and keeps the d4-e5 chain supported by c3 and the f3-knight, often bringing the queen's knight to c2 via a3 to guard d4. Black keeps up the pressure on d4 with ...Nge7-f5, ...Qb6 and ...cxd4, and can strike at e5 with ...f6 later. The play is slow and manoeuvring, suiting players who enjoy a long strategic fight around a fixed pawn chain.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7607,8 +7607,8 @@
         "The 'bad' French bishop"
       ],
       "common_plans": [
-        "White: Maintain the central pawn chain (e5, d4), prepare a kingside attack with f4-f5, and restrict Black's pieces.",
-        "Black: Pressure the d4 pawn with ...Qb6 and ...f6, create queenside counterplay, and execute the ...cxd4 pawn break to open lines."
+        "White: Keep the d4-e5 chain intact, castle, and bring the queen's knight to c2 via Na3 to over-protect d4; with the centre secure, White can expand on the queenside or regroup for a kingside attack.",
+        "Black: Pile up on d4 with ...Nge7-f5, ...Qb6 and ...cxd4, then strike at the e5-pawn with ...f6 to free the position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:03:54.051Z"
@@ -7623,7 +7623,7 @@
     "name": "French: Advance, Euwe, 6.Be2 Nge7",
     "scid": "C02q",
     "analysis_json": {
-      "description": "This variation is a highly respected and flexible response to the French Advance, favored by players who prefer strategic maneuvering over immediate tactical clashes. Black prepares to challenge White's central space advantage with the thematic ...f6 pawn break, aiming to dismantle the e5-pawn and open lines for their pieces. The resulting positions are complex and require a deep understanding of pawn structures and long-term planning, making it ideal for patient, strategic players.",
+      "description": "6...Nge7 sends the king's knight towards f5, where it joins the c5-pawn and the c6-knight in attacking d4. White usually answers with Na3, ready to guard d4 from c2 once the c-pawns are exchanged, while Black adds ...Qb6 and keeps the ...f6 break in reserve against the e5-pawn. It is a slow, strategic line built around one question: can White hold d4?",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7663,10 +7663,10 @@
         "Blockade"
       ],
       "common_plans": [
-        "For Black, the primary plan is to prepare and execute the ...f6 pawn break to challenge White's central pawn chain. This is often followed by castling and maneuvering the knight from e7 to g6 to control key squares.",
-        "For White, the main goal is to solidify their space advantage, often with O-O and a3. They will meet ...f6 with exf6 to open the e-file for their rook and seek to either attack on the kingside or exploit Black's cramped position.",
-        "A key positional struggle revolves around Black's 'bad' light-squared bishop. Black will try to trade it or activate it via ...a6 and ...b5, while White will try to keep it passive.",
-        "Both sides maneuver to control the d4 square, which is a constant source of tension and a potential weakness for White that Black will target."
+        "Black: Exchange on d4 with ...cxd4, then hit the pawn again with ...Nf5 and ...Qb6; ...f6 later undermines e5 once the pieces are in place.",
+        "White: Castle and over-protect d4 with Na3-c2 once the c-pawns are exchanged, keeping the e5-pawn fixed so Black's pieces stay cramped.",
+        "Black: Gain queenside space with ...a6 and ...b5, and use the open c-file with ...Rc8 after the exchange on d4.",
+        "White: If Black breaks with ...f6, exchanging on f6 can leave a weak e6-pawn for White's pieces to target."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:04:17.302Z"
@@ -7869,7 +7869,7 @@
       "chronos": "French: Tarrasch, Guimard variation"
     },
     "analysis_json": {
-      "description": "The Guimard Defense is a provocative and dynamic response to the Tarrasch Variation, immediately challenging White's central control by targeting the d4-pawn. Black accepts a potentially cramped position in exchange for active piece play and counter-attacking chances, often leading to sharp, unbalanced middlegames. This opening is well-suited for resourceful players who enjoy creating complications and are comfortable defending slightly worse, but resilient, positions while looking for tactical opportunities.",
+      "description": "The Guimard Defence, 3...Nc6, develops the queen's knight to put immediate pressure on d4, at the cost of blocking Black's c-pawn, so the usual French c-pawn break has to wait until the knight moves again. Black relies instead on piece play and the ...f6 or ...e5 levers, while White aims for a space-gaining e5 and a comfortable edge. It is an offbeat, slightly passive choice that rewards players who know its plans better than their opponents.",
       "style_tags": [
         "Dynamic",
         "Counter-attacking",
@@ -7910,10 +7910,10 @@
         "Blockade"
       ],
       "common_plans": [
-        "Black: Increase pressure on d4 with ...Nf6 and ...Qb6, preparing a potential ...c5 break.",
-        "White: Solidify the center with c3, gain space with an e4-e5 advance, and develop pieces to exploit Black's cramped position.",
-        "Black: If White plays e5, blockade the e5-pawn and attack the base of the pawn chain at d4.",
-        "White: Complete development and use the central space advantage to launch a kingside attack or squeeze Black positionally."
+        "Black: Develop with ...Nf6 and, if White plays e5, retreat with ...Nd7 and break with ...f6; against a slow set-up, the freeing ...e5 is also possible.",
+        "White: Gain space with e5, develop with Ngf3 and Bd3 or Bb5, and keep the c-pawn free for c3 to support d4.",
+        "Black: While the c6-knight blocks the c-pawn, Black aims at e5 with ...f6 and at d4 with piece pressure; the knight can later step aside to b4 or e7 to free the c-pawn.",
+        "White: Pin the c6-knight with Bb5 to reduce its pressure on d4 and e5, and use the extra space for a kingside build-up if Black's pieces stay passive."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:05:47.713Z"
@@ -8351,7 +8351,7 @@
     "name": "French: Tarrasch, 3...Be7 4.Bd3 c5 5.dxc5 Nf6",
     "scid": "C03i",
     "analysis_json": {
-      "description": "This variation of the French Tarrasch leads to a dynamic and semi-open game, diverging from the typically closed nature of the French Defense. Black immediately challenges White's central control with ...c5, and after White captures, Black focuses on rapid development and regaining the pawn to achieve an active and balanced position. This opening is well-suited for strategic players who enjoy maneuvering and fighting for the initiative in complex, but not overly sharp, middlegames.",
+      "description": "This French Tarrasch line hands White Black's c-pawn for a while: after 3...Be7 4.Bd3 c5 5.dxc5 Nf6, Black attacks the e4-pawn and plans to regain the pawn on c5 later. White usually guards e4 with Qe2, develops with Ngf3 and castles, while Black develops quickly, castles and can aim ...Nc6-b4 at the d3-bishop. The position is semi-open and roughly balanced, a calmer alternative to the main 3...c5 lines.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -8391,8 +8391,8 @@
         "Creating active piece play"
       ],
       "common_plans": [
-        "White: Solidify control of d4, complete development with Ngf3 and 0-0, and use the temporary pawn advantage to restrict Black or expand on the queenside with a3-b4.",
-        "Black: Recapture the c5 pawn (e.g., via ...Nxc5), complete kingside development with ...0-0, and exert pressure on White's e4 pawn to generate counterplay."
+        "White: Guard e4 with Qe2, develop with Ngf3 and O-O, and choose the moment for e5 to gain space or exd5 to open the position.",
+        "Black: Castle and regain the pawn with ...Bxc5, using quick development and pressure on e4 for counterplay; ...Nc6-b4 can exchange White's d3-bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:08:30.540Z"
@@ -8816,7 +8816,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Guimard Defense is a solid and strategic system within the Tarrasch French, where Black accepts a temporarily cramped position in exchange for long-term counter-attacking potential. The game revolves around a locked center after White's e5, leading to a nuanced battle of space versus structural integrity. This opening is ideal for patient, strategic players who excel at maneuvering in tight quarters and understand how to methodically undermine an opponent's central control.",
+      "description": "After 4.Ngf3 Nf6 the Guimard reaches its main position. White's most testing reply is 5.e5, driving the knight to d7 and closing the centre; Black, unable to use the blocked c-pawn, then strikes at the e5-pawn with ...f6 and keeps the c6-knight trained on d4. White can also pin with Bb5 or keep the tension with a quieter set-up. The play is strategic and manoeuvring, with the e5-pawn as the main target.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -8856,8 +8856,8 @@
         "Minority Attack"
       ],
       "common_plans": [
-        "White's Plan: Use the central space advantage to support a kingside attack, often with moves like f4-f5. Prevent or control Black's ...f6 pawn break and keep Black's pieces passive.",
-        "Black's Plan: Prepare and execute the ...f6 pawn break to dismantle White's pawn chain and activate the light-squared bishop. Re-route pieces to challenge White's control of d4 and create queenside counterplay."
+        "White: Gain space with e5, drive the knight to d7 and support the centre with c3, Bd3 and O-O; the queen's knight often goes to b3 so the c1-bishop can develop.",
+        "Black: After e5 and ...Nd7, break with ...f6 to challenge the e5-pawn, then castle and use the half-open f-file; the c6-knight keeps up the pressure on d4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:10:53.300Z"
@@ -8872,7 +8872,7 @@
     "name": "French: Tarrasch, Guimard, 4.Ngf3 Nf6 5.e5",
     "scid": "C04b",
     "analysis_json": {
-      "description": "The Guimard variation of the Tarrasch French leads to a complex, strategic battle after White's 5.e5. This move locks the center, creating a structure where both sides fight for control of key squares and pawn breaks. This opening is excellent for strategic players who enjoy maneuvering and long-term planning in closed positions, as Black aims to undermine White's central pawn chain while White seeks to consolidate and use a space advantage.",
+      "description": "5.e5 gains space and drives Black's knight from f6, usually to d7. Because the c6-knight blocks Black's c-pawn, the standard French c-pawn lever needs the knight to move first, so Black's counterplay usually rests on the ...f6 break against e5 and piece pressure on d4. White supports the chain with Nb3 or c3 and develops with Bd3 or Bb5, aiming to keep a lasting space advantage.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -8912,10 +8912,10 @@
         "Exploiting a Space Advantage"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, then prepare a kingside attack with moves like f4-g4, aiming to break through on the f-file or h-file.",
-        "Black: Systematically attack White's pawn center with the ...c5 pawn break, often followed by moves like ...Qb6 to increase pressure on d4.",
-        "Black: Prepare the ...f6 pawn break to challenge White's space advantage and open the f-file for the rook, even at the cost of creating a backward e6-pawn.",
-        "White: Restrict Black's pieces, especially the light-squared bishop, and use the space advantage to maneuver pieces for an attack."
+        "White: Support the centre with Nb3 or c3, develop with Bd3 or Bb5 and castle, keeping the e5-pawn firm so Black stays cramped.",
+        "Black: Retreat with ...Nd7, then challenge the e5-pawn with ...f6 and develop with ...Be7 and ...O-O.",
+        "Black: After the ...f6 break, recapture on f6 with a piece to open the f-file, accepting a backward e6-pawn in return for active play.",
+        "White: Restrict Black's light-squared bishop, which is shut in behind the e6-pawn, and use the extra space to manoeuvre pieces towards the kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:11:18.000Z"
@@ -9054,7 +9054,7 @@
     "name": "French: Tarrasch, Guimard, Main Line, 6.Be2",
     "scid": "C04f",
     "analysis_json": {
-      "description": "The Guimard variation against the Tarrasch leads to a highly strategic and complex middlegame. White secures a space advantage with the e5 pawn and aims for a slow, positional buildup, while Black creates a resilient, flexible structure, planning to undermine the white center with the characteristic ...f6 pawn break. This opening is perfect for patient, strategic players who enjoy maneuvering and long-term planning in closed positions.",
+      "description": "6.Be2 is a modest development in the Guimard main line: White prepares to castle and usually supports the centre with Nb3 or c3. Black answers with the ...f6 break against the e5-pawn, often after ...Be7 and ...O-O, and keeps the c6-knight pressing on d4. The result is a closed, manoeuvring position in which Black's shut-in light-squared bishop and White's space advantage are the long-term themes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -9096,10 +9096,10 @@
         "Prophylactic play"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, develop pieces, and use the space advantage to build a kingside attack.",
-        "Black: Prepare and execute the ...f6 pawn break to dissolve White's center, followed by pressure on the d4-pawn.",
-        "Black: Maneuver knights to key squares like f5 and c4 to challenge White's control.",
-        "White: Prevent Black's counterplay by controlling key squares and improving piece placement before launching active operations."
+        "White: Castle, then support the d4-e5 chain with c3 or Nb3 and use the space advantage to build up on the kingside.",
+        "Black: Prepare and execute the ...f6 pawn break to dissolve White's centre, followed by pressure on the d4-pawn.",
+        "Black: Develop with ...Be7 and ...O-O before striking with ...f6, so the king is safe when the f-file opens.",
+        "White: If Black breaks with ...f6, exchange on f6 and aim pieces at the weakened e6-pawn; Re1 and Nf1 is a typical regrouping to support the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:12:15.914Z"
@@ -9230,7 +9230,7 @@
     "name": "French: Tarrasch, Guimard, Main Line, 6.Nb3",
     "scid": "C04h",
     "analysis_json": {
-      "description": "The Tarrasch Guimard with 6.Nb3 is a modern and highly strategic approach against the French Defense. White secures a space advantage with the e5 pawn and uses the flexible Nb3 knight to control key central squares, preparing for a long-term positional battle. This opening is perfect for patient, strategic players who enjoy maneuvering, understanding complex pawn structures, and gradually building pressure rather than seeking immediate tactical complications.",
+      "description": "6.Nb3 frees the c1-bishop and adds a guard to d4, the point Black targets in the Guimard. White keeps the e5-pawn as a space-gaining wedge, often supporting it with Bf4, while Black, whose c-pawn is blocked by the c6-knight, counters with ...f6 to undermine e5 or with ...a5-a4 to harass the b3-knight. It is a strategic line in which White aims for a lasting space advantage.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -9270,8 +9270,8 @@
         "Knight maneuvering"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, use the space advantage for a kingside attack (f4-f5), and restrict Black's pieces.",
-        "Black: Challenge White's center with the ...c5 or ...f6 pawn breaks, develop the light-squared bishop via ...b6 to ...Ba6, and create queenside counterplay."
+        "White: Support the e5-pawn with Bf4, develop with Bd3 or Bb5 and castle, adding c3 if d4 needs more protection.",
+        "Black: Undermine e5 with ...f6, develop with ...Be7 and ...O-O, and use ...a5-a4 to gain queenside space and drive away the b3-knight."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:13:09.269Z"
@@ -9341,7 +9341,7 @@
     "name": "French: Tarrasch, Guimard, Main Line, 6.Nb3 Be7",
     "scid": "C04j",
     "analysis_json": {
-      "description": "The Guimard variation of the French Tarrasch is a sophisticated and strategic system where both sides engage in a complex maneuvering game. White leverages a central space advantage granted by the e5 pawn, while Black methodically prepares to undermine this structure, primarily through the ...c5 pawn break. This opening leads to a rich, positional struggle, ideal for players who enjoy long-term planning and understanding the nuances of closed positions.",
+      "description": "After 6...Be7 Black prepares to castle and then hit the e5-pawn with ...f6, the main lever in the Guimard because the c6-knight blocks the c-pawn. White, with d4 guarded by the b3-knight, can develop the c1-bishop to f4 to support e5, bring the light-squared bishop to d3 or b5, and build a lasting space advantage. The game is closed and manoeuvring, with the e5-pawn as the focal point.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -9382,10 +9382,10 @@
         "Piece Maneuvering"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, develop pieces, and use the space advantage to control the board or launch a kingside attack.",
-        "Black: Prepare and execute the ...c5 pawn break to challenge White's center and create queenside counterplay.",
-        "Black: Maneuver the d7 knight to support pawn breaks (e.g., to b6 for ...c5) or redeploy to a more active square like f8.",
-        "White: Control the c5 square with the Nb3 knight and prepare to meet Black's ...c5 break with d-pawn captures or by maintaining the tension."
+        "White: Support the e5-pawn with Bf4 and c3, develop with Bd3 or Bb5 and castle, keeping Black's pieces cramped.",
+        "Black: Castle, then break with ...f6 to challenge the e5-pawn and open the f-file for the rook.",
+        "Black: Gain queenside space with ...a5-a4 to drive the b3-knight away from its defence of d4.",
+        "White: If Black breaks with ...f6, exchanging on f6 leaves Black with a backward e6-pawn and the e5-square for White's pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:13:46.551Z"
@@ -9446,8 +9446,8 @@
         "Prophylaxis against kingside attack"
       ],
       "common_plans": [
-        "Black: Execute the ...Ba6 plan to exchange light-squared bishops, then increase pressure on the d4 pawn with ...Nc6 and ...Qb6, and ultimately prepare the ...f6 pawn break.",
-        "White: Continue development with Ne2-f3 and O-O. Decide whether to allow the bishop trade or prevent it (e.g., with Ba3). Use the central space advantage to organize a kingside attack or expand on the queenside."
+        "Black: Exchange light-squared bishops with ...Ba6, then pressure d4 with ...Nc6 and challenge the e5-pawn with ...f6.",
+        "White: Complete development with Ne2 and O-O, usually allowing the bishop exchange, then use the space advantage with f4 and a kingside build-up."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:14:02.714Z"

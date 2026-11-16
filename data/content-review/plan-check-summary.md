@@ -1,10 +1,10 @@
 # Plan reference check
 
-2579 references on 1989 of 12377 pages fail the check and show as plain text.
+2493 references on 1921 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5480 name no move, route, square or piece
-- References by kind: {"square":15877,"piece":15079,"move":54257,"route":9065}
-- References by result: {"now":68469,"on-board":14029,"later":9201,"invalid":2579}
+- Plans: 41062, of which 5479 name no move, route, square or piece
+- References by kind: {"square":15944,"piece":15110,"move":54354,"route":8993}
+- References by result: {"now":68619,"on-board":14062,"later":9227,"invalid":2493}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -32,41 +32,40 @@
   - `d5`: No piece can play d5 here, now or after the plan's earlier moves
 - **B57 Sicilian: Sozin, Benko, 7.Nb3** (0 views)
   - `c1-d3`: One step of c1-d3 can't be played here
-- **B90 Sicilian: Najdorf, 6.Be3 e5 7.Nb3 Be6 8.Qd2** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **B93 Sicilian: Najdorf, 6.f4 e5 7.Nf3 Nbd7 8.a4 Be7 9.Bd3 O-O 10.O-O exf4** (0 views)
-  - `Ne3`: No piece can play Ne3 here, now or after the plan's earlier moves
-- **B93 Sicilian: Najdorf, 6.f4 Nbd7** (0 views)
+- **B98 Sicilian: Najdorf, Browne, 10.O-O-O Nbd7 11.Qg3** (0 views)
+  - `g4-g5`: One step of g4-g5 can't be played here
+- **C02 French Defense: Advance Variation, Paulsen Attack** (0 views)
   - `...b5-b4`: One step of ...b5-b4 can't be played here
-- **B93 Sicilian: Najdorf, 6.f4 Qc7 7.Nf3 Nbd7** (0 views)
-  - `Qe1-g3`: One step of Qe1-g3 can't be played here
-- **B94 Sicilian: Najdorf, 6.Bg5 e5** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **B94 Sicilian: Najdorf, 6.Bg5 Nbd7** (0 views)
-  - `...0-0`: No piece can play O-O here, now or after the plan's earlier moves
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **B94 Sicilian: Najdorf, 6.Bg5 Nbd7 7.Bc4 e6 8.O-O** (0 views)
+- **C02 French: Advance, Euwe, 6.Be2** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **C02 French: Advance, Euwe, 6.Be2 Nge7** (0 views)
+  - `exf6`: No piece can play exf6 here, now or after the plan's earlier moves
+- **C03 French Defense: Tarrasch Variation, Guimard Defense** (0 views)
+  - `...Qb6`: No piece can play Qb6 here, now or after the plan's earlier moves
+- **C03 French: Tarrasch, 3...Be7 4.Bd3 c5 5.dxc5 Nf6** (0 views)
+  - `...Nxc5`: No piece can play Nxc5 here, now or after the plan's earlier moves
+- **C04 French Defense: Tarrasch Variation, Guimard Defense, Main Line** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **C04 French: Tarrasch, Guimard, 4.Ngf3 Nf6 5.e5** (0 views)
+  - `...Qb6`: No piece can play Qb6 here, now or after the plan's earlier moves
+- **C04 French: Tarrasch, Guimard, Main Line, 6.Be2** (0 views)
+  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
+- **C04 French: Tarrasch, Guimard, Main Line, 6.Nb3** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **C04 French: Tarrasch, Guimard, Main Line, 6.Nb3 Be7** (0 views)
   - `f8`: No piece can play f8 here, now or after the plan's earlier moves
-- **B95 Sicilian Defense: Najdorf Variation** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B95 Sicilian: Najdorf, 6...e6 7.Be2** (0 views)
-  - `Qd1-e1-g3`: One step of Qd1-e1-g3 can't be played here
-- **B95 Sicilian: Najdorf, 6...e6 7.Qd3 Nc6** (0 views)
-  - `b8-d7`: One step of b8-d7 can't be played here
-- **B96 Sicilian: Najdorf, 7.f4 h6** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-  - `...gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
-- **B96 Sicilian: Najdorf, 7.f4 Nbd7 8.Qe2 Qc7** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **B96 Sicilian: Najdorf, 7.f4 Nbd7 8.Qf3 Qc7 9.O-O-O b5 10.Bd3** (0 views)
-  - `Bxe6`: No piece can play Bxe6 here, now or after the plan's earlier moves
-- **B96 Sicilian: Najdorf, 7.f4 Nc6 8.Nxc6** (0 views)
-  - `c6-pawn`: There is no pawn on c6, or on its way
-- **B96 Sicilian: Najdorf, 7.f4 Qc7 8.Qf3 b5 9.Bxf6** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **B96 Sicilian: Najdorf, Polugaevsky, 10.exf6** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **B96 Sicilian: Najdorf, Polugaevsky, 10.exf6 Qe5+ 11.Be2** (0 views)
-  - `...Qxg2`: No piece can play Qxg2 here, now or after the plan's earlier moves
-- **B96 Sicilian: Najdorf, Polugaevsky, 10.exf6 Qe5+ 11.Be2 Qxg5 12.Qd3** (0 views)
-  - `h3-f3`: One step of h3-f3 can't be played here
+- **C05 French Defense: Tarrasch Variation, Botvinnik Variation** (0 views)
+  - `Ne2-f3`: One step of Ne2-f3 can't be played here
+- **C05 French: Tarrasch, Closed, 4...Nfd7** (0 views)
+  - `Ng3`: No piece can play Ng3 here, now or after the plan's earlier moves
+- **C05 French: Tarrasch, Closed, 4.e5** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **C05 French: Tarrasch, Closed, 5.f4 c5 6.c3 Nc6 7.Ndf3** (0 views)
+  - `Ndf3-g3`: One step of Ndf3-g3 can't be played here
+- **C05 French: Tarrasch, Closed, 5.f4 c5 6.c3 Nc6 7.Ndf3 Qb6** (0 views)
+  - `...Ba6`: No piece can play Ba6 here, now or after the plan's earlier moves
+- **C05 French: Tarrasch, Closed, 5.f4 c5 6.c3 Nc6 7.Ndf3 Qb6 8.g3** (0 views)
+  - `Kg2`: No piece can play Kg2 here, now or after the plan's earlier moves
+- **C05 French: Tarrasch, Closed, 5.f4 c5 6.c3 Nc6 7.Ndf3 Qb6 8.h4** (0 views)
+  - `Ng3`: No piece can play Ng3 here, now or after the plan's earlier moves
+  - `Kh1`: No piece can play Kh1 here, now or after the plan's earlier moves

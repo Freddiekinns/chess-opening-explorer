@@ -110159,7 +110159,7 @@
       "icsbot": "Fianchetto Variation, Richter-Rauzer Sicilizn "
     },
     "analysis_json": {
-      "description": "The Fianchetto Variation against the Classical Sicilian is a flexible and positional system where White forgoes immediate central confrontation for long-range pressure. By fianchettoing the light-squared bishop to g2, White aims for a strategically complex game, controlling key diagonals and the crucial d5-square. This opening is ideal for strategic players who prefer to outmaneuver their opponents in a less theoretical battle, focusing on subtle piece play and structural understanding rather than sharp, tactical melees.",
+      "description": "The Fianchetto Variation against the Classical Sicilian is a flexible and positional system where White forgoes immediate central confrontation for long-range pressure. By fianchettoing the light-squared bishop to g2, White aims for a strategically complex game, controlling key diagonals and the crucial d5-square. This opening is ideal for strategic players who prefer to outmanoeuvre their opponents in a less theoretical battle, focusing on subtle piece play and structural understanding rather than sharp, tactical melees.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -110199,9 +110199,9 @@
         "Prophylactic play"
       ],
       "common_plans": [
-        "White: Complete the fianchetto (Bg2, O-O), control the center, and use the g2-bishop to restrict Black's pieces and prepare a potential kingside expansion with f4.",
-        "Black: Respond with a symmetrical fianchetto (...g6, ...Bg7) to neutralize the g2-bishop, or adopt a Scheveningen-style setup with ...e6 to control d5 and prepare queenside expansion (...a6, ...b5).",
-        "White: Reposition the d4-knight to support the center or aid in an attack, often via Nb3 or Nf3-e1-d3.",
+        "White: Complete the fianchetto (Bg2, O-O), control the centre, and use the g2-bishop to restrict Black's pieces and prepare a potential kingside expansion with f4.",
+        "Black: Respond with a Dragon-style fianchetto (...g6, ...Bg7), or adopt a Scheveningen-style setup with ...e6 to cover d5 and blunt the g2-bishop, then prepare queenside expansion (...a6, ...b5).",
+        "White: Reposition the d4-knight, usually to e2 or b3, or exchange it on c6, before ...Nxd4 or ...e5 gains time against it.",
         "Black: Challenge White's central space, trade pieces to relieve pressure, and create counterplay against White's extended pawn structure."
       ],
       "version": "1.0",
@@ -110279,7 +110279,7 @@
     "moves": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Nde2",
     "name": "Sicilian Defense: Spielmann Variation",
     "analysis_json": {
-      "description": "The Spielmann Variation is a subtle and strategic sideline against the Classical Sicilian. By repositioning the d4-knight to e2, White aims to avoid doubled pawns after a knight exchange on c3 and prepares to challenge the center with a future f2-f4 push. This system leads to a less theoretical and more maneuvering game, appealing to positional players who prefer to outplay their opponents in a complex middlegame rather than engage in sharp, tactical duels from the outset.",
+      "description": "The Spielmann Variation is a subtle and strategic sideline against the Classical Sicilian. By retreating the d4-knight to e2, White avoids exchanges on d4, keeps the c3-knight protected and keeps the option of g3 and Bg2 or a later f2-f4. This system leads to a less theoretical, more manoeuvring game, appealing to positional players who prefer to outplay their opponents in a complex middlegame rather than engage in sharp, tactical duels from the outset.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -110319,8 +110319,8 @@
         "Control of the d5-square"
       ],
       "common_plans": [
-        "White: Fianchetto the king's bishop (g3, Bg2), prepare and execute the f2-f4 pawn break to challenge the center.",
-        "White: Reposition the e2-knight to g3 to bolster the kingside and control key squares like f5.",
+        "White: Fianchetto the king's bishop (g3, Bg2), prepare and execute the f2-f4 pawn break to challenge the centre.",
+        "White: Reposition the e2-knight to g3 to bolster the kingside and watch the f5-square.",
         "Black: Develop rapidly and initiate queenside counterplay with the ...a6 and ...b5 pawn push.",
         "Black: Prepare the ...e5 pawn break to challenge White's central control and open lines for the pieces."
       ],
@@ -110343,7 +110343,7 @@
       "icsbot": "Venice Attack, Sicilian "
     },
     "analysis_json": {
-      "description": "The Venice Attack is a sharp and provocative sideline against the Open Sicilian, characterized by the early check on b5. White aims to disrupt Black's development and create immediate tactical complications, avoiding the dense theory of the main lines. This opening leads to a dynamic and unbalanced struggle, appealing to players who enjoy seizing the initiative and navigating less-traveled, concrete variations.",
+      "description": "The Venice Attack is a sharp and provocative sideline against the Open Sicilian, characterised by the early check on b5. White aims to disrupt Black's development and create immediate tactical complications, avoiding the dense theory of the main lines. This opening leads to a dynamic and unbalanced struggle, appealing to players who enjoy seizing the initiative and navigating less-travelled, concrete variations.",
       "style_tags": [
         "Sharp",
         "Dynamic",
@@ -110385,7 +110385,7 @@
       ],
       "common_plans": [
         "White: Exchange the b5-bishop for a knight or bishop on d7 to influence the light squares, pressure the d6-pawn, and maintain a central space advantage.",
-        "Black: Resolve the check with ...Bd7 or ...Nbd7, complete development, and generate counterplay using the semi-open c-file and a potential ...b5 pawn break."
+        "Black: Resolve the check with ...Bd7 or ...Nbd7, complete development, and use the half-open c-file, expanding on the queenside with ...a6 once the bishop has gone."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:31:03.251Z"
@@ -110571,7 +110571,7 @@
       "common_plans": [
         "White: Castle queenside, play Qd2, and launch a kingside pawn storm with g4-h4 to attack the Black king.",
         "Black: Break the pin with ...e6 and ...Be7, or challenge the bishop with ...h6.",
-        "Black: Accept the doubled f-pawns after Bxf6 gxf6 to gain the bishop pair and use the open g-file for a counterattack.",
+        "Black: If White takes on f6, recapture with the g-pawn, keeping the bishop pair and using the half-open g-file for counterplay.",
         "White: Increase pressure on the d5-square and the d6-pawn to restrict Black's central counterplay."
       ],
       "version": "1.0",
@@ -110643,7 +110643,7 @@
     "name": "Sicilian: Open, 2...d6, 5.Nc3 Nbd7",
     "scid": "B56d",
     "analysis_json": {
-      "description": "The 5...Nbd7 variation is a highly flexible and resilient system against the Open Sicilian. Instead of immediately defining the pawn structure like in the Najdorf or Dragon, Black maintains options, often aiming for a Scheveningen-like setup with a subsequent ...e6. This opening is perfect for the strategic player who enjoys subtle maneuvering, controlling key squares, and launching well-prepared counterattacks rather than engaging in immediate, razor-sharp tactical complications.",
+      "description": "The 5...Nbd7 variation is a highly flexible and resilient system against the Open Sicilian. Instead of immediately defining the pawn structure like in the Najdorf or Dragon, Black maintains options, often aiming for a Scheveningen-like setup with a subsequent ...e6. This opening is perfect for the strategic player who enjoys subtle manoeuvring, controlling key squares, and launching well-prepared counterattacks rather than engaging in immediate, razor-sharp tactical complications.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -110686,9 +110686,9 @@
       ],
       "common_plans": [
         "Black: Achieve the ...b5 pawn break to undermine White's central control and create queenside counterplay, often after completing development with ...e6 and ...Be7.",
-        "White: Utilize the space advantage to organize an attack, either through a kingside pawn storm (f4-f5) in classical setups (Be2, 0-0) or a direct assault in the English Attack (Be3, f3, Qd2, 0-0-0).",
-        "Both sides: Fight for control of the critical d5 square and contest the open c-file.",
-        "Black: Reposition the knight from d7 to b6 to challenge White's powerful knight on d4."
+        "White: Use the space advantage to organise an attack, either with the English Attack (Be3, f3, Qd2, O-O-O) or, in classical setups, with Be2, short castling and f4.",
+        "Both sides: Fight for control of the critical d5-square, with Black using the half-open c-file.",
+        "Black: Use the d7-knight flexibly: ...Nc5 hits the e4-pawn, and ...Nb6 is useful against a bishop on c4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:32:57.102Z"
@@ -110703,7 +110703,7 @@
     "name": "Sicilian: Open, 2...d6, 5.Nc3 Nbd7 6.Bc4",
     "scid": "B56e",
     "analysis_json": {
-      "description": "The 6.Bc4 variation against the Sicilian Defense is a classical and aggressive approach, leading to sharp and complex middlegames. White develops the light-squared bishop to an active post, putting immediate pressure on the f7-square and preparing for a potential kingside attack. This opening is ideal for dynamic players who enjoy tactical, double-edged battles and are comfortable navigating complex, unbalanced positions where initiative is paramount.",
+      "description": "The 6.Bc4 variation against the Sicilian Defence is a classical and aggressive approach, leading to sharp and complex middlegames. White develops the light-squared bishop to an active post, putting immediate pressure on the f7-square and preparing for a potential kingside attack. This opening is ideal for dynamic players who enjoy tactical, double-edged battles and are comfortable navigating complex, unbalanced positions where initiative is paramount.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -110747,10 +110747,10 @@
         "Prophylaxis against opponent's plans"
       ],
       "common_plans": [
-        "White: Castle short, support the center with moves like Be3 and f4, and launch a kingside attack, often targeting the f7 and e6 squares.",
-        "Black: Complete development with ...Be7 and ...O-O, then counter-attack either in the center with a timely ...e5 or ...d5 pawn break, or on the queenside with ...a6 and ...b5.",
-        "White: Maneuver the queen to d2 or e2 to connect the rooks and support the attack, sometimes opting for long castling to intensify the assault.",
-        "Black: Trade off White's dangerous light-squared bishop or neutralize its influence to relieve pressure on the kingside."
+        "White: Castle short, support the centre with moves like Be3 and f4, and launch a kingside attack, often targeting the f7 and e6 squares.",
+        "Black: Complete development with ...e6, ...Be7 and ...O-O, then counter-attack either in the centre with a timely ...d5 break, or on the queenside with ...a6 and ...b5.",
+        "White: Manoeuvre the queen to d2 or e2 to connect the rooks and support the attack, sometimes opting for long castling to intensify the assault.",
+        "Black: Trade off White's dangerous light-squared bishop or neutralise its influence to relieve pressure on the kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:33:14.411Z"
@@ -111418,7 +111418,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Sozin Attack is a sharp and aggressive system against the Classical Sicilian, where White's 6.Bc4 immediately places pressure on the vulnerable f7-square. This opening leads to highly tactical, double-edged positions where White aims for a direct kingside attack, while Black seeks counterplay against White's center and exposed bishop. It is ideal for combative players who enjoy calculating concrete variations and fighting for the initiative from the very beginning.",
+      "description": "The Sozin Attack is a sharp and aggressive system against the Classical Sicilian, where White's 6.Bc4 immediately places pressure on the vulnerable f7-square. This opening leads to highly tactical, double-edged positions where White aims for a direct kingside attack, while Black seeks counterplay against White's centre and exposed bishop. It is ideal for combative players who enjoy calculating concrete variations and fighting for the initiative from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -111460,7 +111460,7 @@
       ],
       "common_plans": [
         "White: Prepare a kingside attack with f2-f4-f5, often targeting the e6 pawn as a prelude to attacking f7. Maintain central tension and use the Bc4 to restrict Black's development.",
-        "Black: Respond with ...e6 and ...Qb6 to pressure White's d4-pawn and b2-pawn, creating queenside counterplay. Aim to neutralize or exchange White's dangerous bishop on c4.",
+        "Black: Respond with ...e6 and ...Qb6 to pressure White's d4-knight and the b2-pawn, creating queenside counterplay, and aim to neutralise or exchange White's dangerous bishop on c4.",
         "White: In some lines, castle queenside to launch a direct pawn storm against the black king.",
         "Black: Develop pieces to challenge White's central control and exploit the slightly exposed position of the Bc4."
       ],
@@ -157349,7 +157349,7 @@
     "eco": "B56",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "This variation of the Open Sicilian leads to a deeply strategic and complex struggle. By playing 5...e5, Black immediately challenges White's central control but accepts a long-term positional weakness on the d5 square. The ensuing game revolves around White's attempts to blockade and exploit the d5-hole, versus Black's dynamic counterplay based on queenside expansion and pressure against White's e4-pawn. This opening is ideal for sophisticated, strategic players who enjoy maneuvering and understanding the nuances of pawn structures.",
+      "description": "This variation of the Open Sicilian leads to a deeply strategic and complex struggle. By playing 5...e5, Black immediately challenges White's central control but accepts a long-term positional weakness on the d5 square. The ensuing game revolves around White's attempts to blockade and exploit the d5-hole, versus Black's dynamic counterplay based on queenside expansion and pressure against White's e4-pawn. This opening is ideal for sophisticated, strategic players who enjoy manoeuvring and understanding the nuances of pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -157391,9 +157391,9 @@
         "The 'Boleslavsky Hole'"
       ],
       "common_plans": [
-        "White aims to control the d5 square, often by maneuvering a knight to c4 or f5, and may launch a kingside attack.",
-        "Black seeks counterplay through a queenside pawn advance (...b5-b4), challenges White's center, and aims to prove that the d5-square weakness is manageable.",
-        "White often plays Nf5 to trade off Black's key defender of d5, followed by piece pressure.",
+        "White: Control the d5-hole, aiming to plant a knight there, often after Bg5 has removed the f6-knight, and keep the b5-bishop pinning the d7-knight to slow Black's development.",
+        "Black: Seek counterplay by putting the question to the b5-bishop with ...a6, expanding on the queenside once it has gone, and pressing on e4, to show that the d5 weakness is manageable.",
+        "White: The d4-knight is attacked by the e5-pawn, and its most active retreat is Nf5, where it eyes d6 and g7.",
         "Black develops pieces to active squares, often targeting the e4 pawn, to create dynamic compensation for the static weakness on d5."
       ],
       "version": "1.0",
@@ -162548,7 +162548,7 @@
       "icsbot": "Spielmann Variation, Sicilian "
     },
     "analysis_json": {
-      "description": "The Spielmann Variation is a subtle and strategic system against the Classical Sicilian, sidestepping the sharp, theory-intensive main lines. By repositioning the knight to e2, White prepares to control the center with a flexible setup, often involving a kingside fianchetto (g3, Bg2). This opening is perfect for positional players who enjoy a less-forced game, aiming to outmaneuver their opponent in a complex middlegame rather than engaging in immediate tactical warfare.",
+      "description": "The Spielmann Variation is a subtle and strategic system against the Classical Sicilian, sidestepping the sharp, theory-intensive main lines. By repositioning the knight to e2, White prepares to control the centre with a flexible setup, often involving a kingside fianchetto (g3, Bg2). This opening is perfect for positional players who enjoy a less-forced game, aiming to outmanoeuvre their opponent in a complex middlegame rather than engaging in immediate tactical warfare.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -162589,9 +162589,9 @@
       ],
       "common_plans": [
         "White: Fianchetto the king's bishop via g3 and Bg2 to control the long diagonal and prepare a solid kingside.",
-        "Black: Challenge for the center with ...e5, aiming to open lines and activate pieces against White's less aggressive setup.",
-        "White: Reposition the e2 knight, often to g3, to bolster the kingside and control the key f5 and h5 squares.",
-        "Black: Develop actively with moves like ...Be6 and ...Qc7, preparing to create queenside counterplay or pressure in the center."
+        "Black: Challenge for the centre with ...e5, aiming to open lines and activate pieces against White's less aggressive setup.",
+        "White: Reposition the e2-knight, often to g3, to bolster the kingside and watch the f5- and h5-squares.",
+        "Black: Develop actively with moves like ...Be6 and ...Qc7, preparing to create queenside counterplay or pressure in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T16:58:58.391Z"
@@ -162609,7 +162609,7 @@
       "icsbot": "Yates Variation, Sicilian "
     },
     "analysis_json": {
-      "description": "The Yates Variation is a quiet and solid sideline against the Classical Sicilian, designed to sidestep heavy theory and steer the game into strategic channels. By developing the bishop to d3, White aims for a stable position, focusing on piece coordination and long-term plans rather than immediate confrontation. This approach is ideal for positional players who are confident in their middlegame skills and prefer to outmaneuver their opponents in less-traveled territory.",
+      "description": "The Yates Variation is a quiet and solid sideline against the Classical Sicilian, designed to sidestep heavy theory and steer the game into strategic channels. By developing the bishop to d3, White aims for a stable position, focusing on piece coordination and long-term plans rather than immediate confrontation. This approach is ideal for positional players who are confident in their middlegame skills and prefer to outmanoeuvre their opponents in less-travelled territory.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -162650,10 +162650,10 @@
         "Sidestepping main line theory"
       ],
       "common_plans": [
-        "White: Solidify the center, often with f3, castle, and prepare for a long-term strategic battle, sometimes rerouting the Bd3.",
+        "White: Castle, keep the e4-pawn well protected and prepare f4, with the d3-bishop aimed at Black's kingside.",
         "Black: Complete development with ...e6, prepare the central break ...d5, and create queenside counterplay with ...a6 and ...b5.",
-        "Black: Alternatively, adopt a Dragon-like setup with ...g6, fianchettoing the bishop to g7 to pressure White's center.",
-        "White: After castling, slowly prepare for potential kingside expansion with moves like Kh1 and g4 if Black commits elsewhere."
+        "Black: Alternatively, adopt a Dragon-like setup with ...g6, fianchettoing the bishop to g7 to pressure White's centre.",
+        "White: After O-O, prepare kingside expansion with Kh1, f4 and sometimes g4 if Black commits elsewhere."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T16:59:26.814Z"

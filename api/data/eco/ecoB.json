@@ -105742,7 +105742,7 @@
     "name": "Sicilian: Moscow 3...Nd7 4.d4 cxd4",
     "scid": "B51f",
     "analysis_json": {
-      "description": "The Moscow Variation with 3...Nd7 is a highly respected and solid response, steering the game into complex strategic territory rather than the razor-sharp tactical lines of the Open Sicilian. Black aims to neutralize White's initiative and create a flexible pawn structure, while White seeks to exploit a space advantage and quicker development. This opening is perfect for versatile players who enjoy a rich middlegame fight, blending deep positional understanding with tactical alertness to navigate the ensuing complexities.",
+      "description": "After 4.d4 cxd4 White normally recaptures with the queen, 5.Qxd4: with Black's queen's knight already on d7, there is no ...Nc6 to chase the queen away. Black usually answers ...a6 to make White exchange on d7, taking the bishop pair, and then develops with ...Nf6 and ...e6 or hits the queen with ...e5. White has the lead in development and more space in the centre; Black has a sound position and the two bishops for the long game.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -105782,10 +105782,10 @@
         "Development vs. Structure"
       ],
       "common_plans": [
-        "White: Establish a Maroczy Bind with c4 to control the center and restrict Black's position.",
+        "White: Recapture with Qxd4 and, after the bishop exchange on d7, clamp the centre with c4 and Nc3 in Maroczy style, restricting Black's pawn breaks.",
         "White: Use the space advantage and rapid development to prepare a central or kingside initiative.",
-        "Black: Create queenside counterplay with ...a6 and ...b5 to undermine White's central grip.",
-        "Black: Complete development flexibly and prepare the liberating ...d5 pawn break."
+        "Black: Play ...a6 to make White decide about the b5-bishop, recapture on d7 to keep the bishop pair, then develop with ...Nf6 and ...e6, or gain time on the queen with ...e5.",
+        "Black: Put a rook on the half-open c-file to press on c2, and keep the structure compact until White commits to a plan."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:06:52.012Z"
@@ -105973,7 +105973,7 @@
     "name": "Sicilian: Moscow 3...Nd7 4.d4 Nf6 5.Nc3 cxd4 6.Qxd4",
     "scid": "B51i",
     "analysis_json": {
-      "description": "The Moscow Variation with 6.Qxd4 is a strategically rich and dynamic system where White seizes a space advantage and places the queen on an active central square. Unlike the razor-sharp open Sicilians, this line leads to a more positional struggle where White aims to consolidate control, while Black maintains a solid structure, seeking counterplay by challenging the white queen and preparing central breaks like ...e5. This opening is perfect for strategic players who enjoy fighting for the initiative and controlling the center, while being prepared for tactical skirmishes that arise from the dynamic tension.",
+      "description": "The Moscow Variation with 6.Qxd4 is a strategically rich and dynamic system where White seizes a space advantage and places the queen on an active central square. Unlike the razor-sharp open Sicilians, this line leads to a more positional struggle where White aims to consolidate control, while Black maintains a solid structure, seeking counterplay by challenging the white queen and preparing central breaks like ...e5. This opening is perfect for strategic players who enjoy fighting for the initiative and controlling the centre, while being prepared for tactical skirmishes that arise from the dynamic tension.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -106014,8 +106014,8 @@
         "Queenside expansion for Black with ...a6 and ...b5"
       ],
       "common_plans": [
-        "White: Often castles queenside, using the space advantage to launch a kingside pawn storm (g4-h4). A key plan is to prevent or neutralize Black's ...e5 break.",
-        "Black: Prepare and execute the ...e5 pawn break to challenge White's central control. Develop queenside counterplay with ...a6, ...b5, and ...Bb7. Harass the white queen to gain time for development."
+        "White: Often castles queenside, using the space advantage to launch a kingside pawn storm (g4-h4). A key plan is to prevent or neutralise Black's ...e5 break.",
+        "Black: Gain time on the queen with ...e5, or play ...a6 to force the exchange on d7 and recapture, keeping the bishop pair, then expand on the queenside and use the half-open c-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:08:03.692Z"
@@ -106030,7 +106030,7 @@
     "name": "Sicilian: Moscow 3...Nd7 4.d4 Nf6 5.Nc3 cxd4 6.Qxd4 e5",
     "scid": "B51j",
     "analysis_json": {
-      "description": "This line of the Moscow Sicilian is a dynamic and strategically rich system where Black immediately challenges White's central queen with the move 6...e5. This creates a complex, non-symmetrical pawn structure, leading to a sophisticated battle centered around control of the key d5 square. It is ideal for strategic players who enjoy maneuvering, understanding pawn breaks, and are comfortable navigating positions where long-term plans are more critical than immediate tactical fireworks.",
+      "description": "This line of the Moscow Sicilian is a dynamic and strategically rich system where Black immediately challenges White's central queen with the move 6...e5. This creates a complex, non-symmetrical pawn structure, leading to a sophisticated battle centred around control of the key d5 square. It is ideal for strategic players who enjoy manoeuvring, understanding pawn breaks, and are comfortable navigating positions where long-term plans are more critical than immediate tactical fireworks.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -106071,10 +106071,10 @@
         "Exploiting the d6-e5 pawn duo"
       ],
       "common_plans": [
-        "Black: Solidify the center with ...Be7, ...0-0, and prepare queenside expansion with ...a6 and ...b5.",
-        "White: Relocate the queen (usually to d3), complete development, and challenge Black's central grip, often by targeting the e5-pawn.",
-        "Black: Maneuver pieces to control the d5-square, often using the knight route ...Nb8-c6 or ...Nf8-e6.",
-        "White: Use the space advantage to create pressure, often developing the light-squared bishop to g5 or f4 to challenge Black's setup."
+        "Black: Develop with ...Be7 and ...O-O, then play ...a6 to question the b5-bishop, taking the bishop pair if White exchanges on d7.",
+        "White: Retreat the queen, usually to d3, castle short, and keep the pieces aimed at the d5-square and the backward d6-pawn.",
+        "Black: Guard d5 and, once ...O-O has broken the pin on d7, reroute the d7-knight, for example to c5 with tempo on a queen on d3, keeping the d6-pawn well protected.",
+        "White: Use the dark-squared bishop on g5 to remove the f6-knight, a key defender of d5, then post a knight on d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:08:22.945Z"
@@ -106385,8 +106385,8 @@
         "Queenside Counterplay"
       ],
       "common_plans": [
-        "White: Exchange on d7, play c3-d4 to build a strong center, and use the development lead.",
-        "Black: Solidify the position, prepare queenside expansion with ...a6-b5, and aim to utilize the bishop pair in the long run.",
+        "White: Exchange on d7, then either play c3 and d4 to build a strong centre or c4 for a Maroczy-style bind, using the lead in development.",
+        "Black: Recapture on d7, usually with the queen, then develop with ...Nc6, ...Nf6 and ...g6 or ...e6, and look for queenside counterplay once the bishops are traded.",
         "Black: Challenge White's central pawn on e4 and fight for control of the key d5 square."
       ],
       "version": "1.0",
@@ -106407,7 +106407,7 @@
       "chronos": "Sicilian: Canal-Sokolsky attack, Sokolsky variation"
     },
     "analysis_json": {
-      "description": "The Sokolsky Variation of the Moscow Sicilian is a strategic and positional approach where White immediately stakes a claim in the center with 5.c4, creating a Maroczy Bind-like structure. This opening sidesteps the sharp tactical battles of the Open Sicilians, leading to a game of maneuver focused on controlling the key d5-square. It is ideal for strategic players who enjoy building pressure slowly and outplaying their opponents in a complex positional struggle.",
+      "description": "The Sokolsky Variation of the Moscow Sicilian is a strategic and positional approach where White immediately stakes a claim in the centre with 5.c4, creating a Maroczy Bind-like structure. This opening sidesteps the sharp tactical battles of the Open Sicilians, leading to a game of manoeuvre focused on controlling the key d5-square. It is ideal for strategic players who enjoy building pressure slowly and outplaying their opponents in a complex positional struggle.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -106446,10 +106446,10 @@
         "Fianchetto Setup (for White)"
       ],
       "common_plans": [
-        "White aims to consolidate the center with Nc3, g3, and Bg2, controlling the d5-square and slowly building a space advantage.",
-        "Black often responds with ...Nc6 and ...Nf6, followed by preparing queenside counterplay with ...a6 and ...b5 to undermine White's c4-pawn.",
+        "White: Develop with Nc3 and castle, then play d4 and recapture with the knight, reaching a Maroczy bind with pawns on c4 and e4 that clamps the d5-square.",
+        "Black: Develop with ...Nc6 and ...Nf6, often with ...g6 and ...Bg7 to aim the bishop down the long diagonal, then look for queenside play with ...a6 and ...b5 against the c4-pawn.",
         "A key struggle revolves around Black's ability to achieve a central pawn break, typically with ...e6 followed by ...d5, or by playing ...e5 to challenge White's control.",
-        "White may later seek to expand on the kingside after solidifying the center, using the space advantage to create attacking chances."
+        "White may later seek to expand on the kingside after solidifying the centre, using the space advantage to create attacking chances."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:10:23.775Z"
@@ -106521,7 +106521,7 @@
     "name": "Sicilian: 3.Bb5+ Bd7 4.Bxd7+ Qxd7 5.O-O Nc6",
     "scid": "B52o",
     "analysis_json": {
-      "description": "This variation of the Sicilian allows White to sidestep the razor-sharp main lines, leading to a more strategic and positional battle. By trading the light-squared bishop early, White aims for solid central control, while Black gets an active queen and long-term prospects on the light squares. This opening is perfect for players who enjoy maneuvering and understanding pawn structures rather than memorizing complex tactical variations.",
+      "description": "This variation of the Sicilian allows White to sidestep the razor-sharp main lines, leading to a more strategic and positional battle. With the light-squared bishops traded, White usually aims for c3 and d4 to build a broad centre, while Black's development is easy with ...Nf6 and either ...g6 or ...e6. This opening is perfect for players who enjoy manoeuvring and understanding pawn structures rather than memorising complex tactical variations.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -106562,10 +106562,10 @@
         "Exploiting the active Black queen"
       ],
       "common_plans": [
-        "White: Prepare and execute the c3-d4 pawn push to gain central space and challenge Black's queen.",
-        "Black: Counter in the center, often with ...e5, to prevent White from gaining a comfortable space advantage and to activate their pieces.",
-        "White: Adopt a Maroczy Bind setup with c4 to clamp down on Black's d5 and b5 squares, leading to a long positional struggle.",
-        "Black: Complete development, connect the rooks, and use the semi-open c-file and potential light-square dominance as long-term assets."
+        "White: Prepare c3 and d4, often with Re1 first, to build a broad pawn centre and gain space.",
+        "Black: Develop with ...Nf6 and then ...e6 or ...g6, answer White's central pawn advance by exchanging pawns on d4 and challenging the centre, and keep ...d5 as an option once development is complete.",
+        "White: Adopt a Maroczy Bind setup with c4 instead, clamping the d5-square and restraining ...b5, leading to a long positional struggle.",
+        "Black: Develop with ...Nf6 and either ...g6 and ...Bg7 or ...e6 and ...Be7, castle, and once the c-pawn has been exchanged for White's d-pawn use the half-open c-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:11:07.023Z"
@@ -106873,7 +106873,7 @@
     "name": "Sicilian: 3.Bb5+, Sokolsky, 5...Nc6 6.Nc3",
     "scid": "B52k",
     "analysis_json": {
-      "description": "This variation of the Sicilian Defense, often called the Moscow or Rossolimo deferred, leads to a highly strategic and positional game. By playing c4 and Nc3, White establishes a Maroczy Bind-like structure, aiming to clamp down on the center and restrict Black's typical counterplay. The game becomes a sophisticated battle of maneuvering where White tries to consolidate a space advantage, while Black seeks to undermine White's central control, often by preparing the ...d5 pawn break. This opening is ideal for patient, strategic players who enjoy accumulating small advantages and understanding pawn structure nuances.",
+      "description": "In this Sokolsky line of the Moscow Variation the light-squared bishops are gone and White has pawns on c4 and e4, the Maroczy bind shape that clamps the d5-square. White usually follows with d4 and Nxd4, then castles and puts the dark-squared bishop on e3; Black develops with ...Nf6 and either ...g6 and ...Bg7 or ...e6 and ...Be7, and looks for counterplay with ...b5 or a well-timed ...d5. It suits patient, strategic players who enjoy accumulating small advantages and understanding pawn-structure nuances.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -106915,9 +106915,9 @@
         "Pawn Breaks"
       ],
       "common_plans": [
-        "White: Solidify the center with d4, control the d5 square, and potentially expand on the queenside with a3-b4. The main goal is to restrict Black's pieces and slowly build pressure.",
-        "Black: Prepare the central pawn break ...e6 followed by ...d5 to challenge White's grip. Alternatively, Black can adopt a fianchetto setup with ...g6 and ...Bg7 to pressure White's center from the flank.",
-        "White: Develop the kingside with g3 and Bg2 to create a solid setup and control key diagonals.",
+        "White: Play d4 and recapture with the knight to complete the bind, control the d5-square, and slowly build pressure, sometimes with queenside expansion.",
+        "Black: Fianchetto with ...g6 and ...Bg7 to aim at the long diagonal, or play ...e6 and ...Be7; then prepare ...b5 or, less often, ...d5 to break the bind.",
+        "White: After d4, castle, put the dark-squared bishop on e3 and the rooks on c1 and d1, keeping a firm grip on the d5-square.",
         "Black: Reposition the queen from d7 to a more active square and seek counterplay by targeting White's extended pawn on c4."
       ],
       "version": "1.0",
@@ -106933,7 +106933,7 @@
     "name": "Sicilian: 3.Bb5+, Sokolsky, 5...Nc6 6.Nc3 Nf6",
     "scid": "B52l",
     "analysis_json": {
-      "description": "This variation of the Sokolsky (or Rossolimo) leads to a Maroczy Bind structure, a strategically rich setup where White aims to control the center, particularly the d5 square. Unlike the sharp, tactical battles of the Open Sicilian, this line ushers in a more positional game focused on maneuvering, pawn structure, and long-term plans. It is ideal for strategic players who enjoy building pressure and restricting their opponent's counterplay, while Black seeks to undermine White's central grip and utilize the long-term potential of the bishop pair.",
+      "description": "This position of the Sokolsky line of the Moscow Sicilian leads to a Maroczy Bind structure, a strategically rich setup where White aims to control the centre, particularly the d5 square. Unlike the sharp, tactical battles of the Open Sicilian, this line ushers in a more positional game focused on manoeuvring, pawn structure, and long-term plans. It is ideal for strategic players who enjoy building pressure and restricting their opponent's counterplay, while Black, with the light-squared bishops traded, seeks to undermine White's central grip and ease the cramp through exchanges.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -106975,9 +106975,9 @@
         "Bishop Pair vs Space"
       ],
       "common_plans": [
-        "White: Solidify the center with d4, develop pieces to support the bind (e.g., Be2, O-O), and slowly squeeze Black, often by expanding on the queenside or preparing a central push.",
+        "White: Play d4 and recapture with the knight to complete the bind, then castle and develop with Be3 and the rooks to c1 and d1, slowly squeezing Black.",
         "Black: Prepare the ...d5 pawn break, often by playing ...e6 first, to challenge White's central control. Alternatively, Black can play on the queenside with ...a6 and ...b5 to create counterplay.",
-        "Black: Maneuver the queen from d7 to a more active square (like c7 or b7) and aim to trade pieces to relieve the spatial pressure.",
+        "Black: Trade a pair of knights to ease the cramp, put a rook on c8 and aim the pieces at the c4-pawn, keeping ...b5 in reserve.",
         "White: Prevent Black's ...d5 break at all costs and exploit any weaknesses created by Black's attempts to find freedom."
       ],
       "version": "1.0",
@@ -107282,7 +107282,7 @@
     "name": "Sicilian: Moscow 3...Bd7 4.Bxd7+ Nxd7 5.O-O Ngf6",
     "scid": "B52d",
     "analysis_json": {
-      "description": "The Moscow Variation with 3...Bd7 is a strategic and solid approach against the Sicilian Defense, sidestepping the razor-sharp tactical battles of the main lines. White trades the light-squared bishop to create a stable pawn structure, often aiming for a Maroczy Bind setup with c4 to control the d5 square and gain a space advantage. This opening leads to a game of patient maneuvering and long-term planning, ideal for strategic players who enjoy accumulating small advantages and understanding structural nuances.",
+      "description": "The Moscow Variation with 3...Bd7 is a strategic and solid approach against the Sicilian Defence, sidestepping the razor-sharp tactical battles of the main lines. White trades the light-squared bishop to create a stable pawn structure, often aiming for a Maroczy Bind setup with c4 to control the d5 square and gain a space advantage. This opening leads to a game of patient manoeuvring and long-term planning, ideal for strategic players who enjoy accumulating small advantages and understanding structural nuances.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -107323,10 +107323,10 @@
         "Prophylactic play"
       ],
       "common_plans": [
-        "White: Play c4 to establish a Maroczy Bind, followed by developing pieces to support the center (Re1, Qe2) and restricting Black's counterplay.",
-        "Black: Prepare the ...e5 or ...d5 pawn breaks to challenge White's central grip, develop the queenside with ...a6 and ...b5, and aim to utilize the long-term potential of the bishop pair.",
-        "White: Maneuver knights to optimal squares like c2-e3 or f1-e3 to control key points and prepare for a kingside expansion.",
-        "Black: Seek counterplay on the queenside or by challenging White's e4 pawn, often rerouting the d7 knight to f8 or b6."
+        "White: Play c4 for a Maroczy-style clamp, or c3 and d4 for a broad centre, with Qe2 and Re1 to support the e4-pawn.",
+        "Black: Develop with ...e6, ...Be7 and ...O-O, then prepare the ...d5 break or queenside play with ...a6 and ...b5; the d7-knight covers e5 and c5, so Black's position is compact and hard to break.",
+        "White: Develop the queen's knight to c3, or to d2 when c3 is wanted for a pawn, and the dark-squared bishop to b2 after b3, keeping a grip on the centre.",
+        "Black: Seek counterplay on the queenside or against White's e4-pawn, often rerouting the d7-knight to b6 or e5 to press on c4 when White has played that pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:15:05.168Z"
@@ -107703,7 +107703,7 @@
     "name": "Sicilian, Chekhover, 4...a6 5.c4",
     "scid": "B53h",
     "analysis_json": {
-      "description": "This variation of the Chekhover Sicilian introduces a Maroczy Bind-like structure, steering the game into highly strategic and positional waters. White aims to use the space advantage granted by the e4 and c4 pawns to restrict Black's development and counterplay, particularly the ...d5 break. The game is ideal for patient, strategic players who enjoy maneuvering, understanding pawn structures, and slowly building pressure, rather than engaging in immediate tactical fireworks.",
+      "description": "This variation of the Chekhover Sicilian introduces a Maroczy Bind-like structure, steering the game into highly strategic and positional waters. White aims to use the space advantage granted by the e4 and c4 pawns to restrict Black's development and counterplay, particularly the ...d5 break. The game is ideal for patient, strategic players who enjoy manoeuvring, understanding pawn structures, and slowly building pressure, rather than engaging in immediate tactical fireworks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -107744,10 +107744,10 @@
         "Queenside Expansion"
       ],
       "common_plans": [
-        "White: Solidify the Maroczy Bind structure, control the d5-square, and slowly build pressure on the kingside or in the center.",
+        "White: Solidify the Maroczy Bind structure, control the d5-square, and slowly build pressure on the kingside or in the centre.",
         "Black: Challenge White's central grip, typically by preparing the ...b5 pawn break to undermine the c4-pawn and create queenside counterplay.",
-        "Black: Maneuver pieces to control key squares like d4 and e5, and patiently prepare for the liberating ...d5 pawn break.",
-        "White: Exchange pieces to enter a favorable endgame where the space advantage and control of key squares become decisive."
+        "Black: Develop with gain of time on the exposed queen, with ...Nc6 and later ...g6 and ...Bg7 pressing on the long diagonal, and patiently prepare the liberating ...d5 break.",
+        "White: Exchange pieces to enter a favourable endgame where the space advantage and control of key squares become decisive."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T12:17:17.364Z"

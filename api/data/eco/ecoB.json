@@ -65560,7 +65560,7 @@
       "common_plans": [
         "White: Push f5 to open the f-file, bring the queen to the kingside with Qe1 and Qh4, and create a direct attack on the black king.",
         "Black: Exchange the d4-knight for the b5-bishop to gain the bishop pair, use the long diagonal, and counter in the centre with ...d5 or on the queenside with ...a6 and a later b-pawn advance.",
-        "White: If Black doesn't take on b5, maintain the pin and pressure, reroute the knight from c3, and continue to build up the attack.",
+        "White: If Black leaves the bishop alone, keep it on b5 or drop it back to e2, play d3, and continue building the kingside attack.",
         "Black: Neutralise White's initiative, solidify the position with moves like ...e6, and aim to exploit White's potential structural weaknesses in a favourable endgame."
       ],
       "version": "1.0",
@@ -66964,7 +66964,7 @@
       ],
       "common_plans": [
         "White: Castle and prepare f5 to open lines on the kingside, supported by Be3 and Qd2, or play fxe5 to open the f-file for the rooks.",
-        "Black: Prepare the ...d6-d5 pawn break to challenge White's center and liberate the position.",
+        "Black: Castle and use ...exf4 or ...f5 at the right moment to free the pieces, keeping a firm grip on the d4-square with the c6-knight and the c5- and e5-pawns.",
         "White: Control the d5 square, preventing Black's central expansion and using it as a potential outpost.",
         "Black: Create queenside counterplay with moves like ...a6 and ...b5-b4 to distract White from their kingside ambitions."
       ],
@@ -72321,7 +72321,7 @@
     "name": "Sicilian: O'Kelly, 3.c3 d5",
     "scid": "B28j",
     "analysis_json": {
-      "description": "The O'Kelly with 3...d5 is a direct and solid response to the Alapin Sicilian, immediately challenging White's central intentions. The resulting positions often resemble a Scandinavian Defense, where Black's queen becomes a central feature, both an asset and a potential target. This opening leads to a strategic battle focused on central control and tempo, making it ideal for players who prefer clear plans and solid structures over the wild tactical complications of more open Sicilians.",
+      "description": "The O'Kelly with 3...d5 is a direct and solid response to the Alapin Sicilian, immediately challenging White's central intentions. The resulting positions often resemble a Scandinavian Defence, where Black's queen becomes a central feature, both an asset and a potential target. This opening leads to a strategic battle focused on central control and tempo, making it ideal for players who prefer clear plans and solid structures over the wild tactical complications of more open Sicilians.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -72361,8 +72361,8 @@
       ],
       "common_plans": [
         "White: Play exd5 followed by d4, developing pieces to harass the Black queen and exploit a space advantage.",
-        "Black: Recapture with the queen (...Qxd5), complete development, and neutralize White's central pressure, aiming for an equal middlegame.",
-        "White: Use the c3-pawn to support a d4-strongpoint and develop rapidly with moves like Be2, 0-0, and Nbd2.",
+        "Black: After exd5, recapture with the queen, complete development, and neutralise White's central pressure, aiming for an equal middlegame.",
+        "White: Use the c3-pawn to support a strong point on d4 and develop rapidly with moves like Be2, O-O and Nbd2.",
         "Black: Use the early ...a6 move to control the b5-square, preventing annoying knight jumps and preparing potential queenside expansion."
       ],
       "version": "1.0",
@@ -72378,7 +72378,7 @@
     "name": "Sicilian: O'Kelly, 3.c3 e6",
     "scid": "B28i",
     "analysis_json": {
-      "description": "The O'Kelly with 3...e6 is a solid and strategic response to the Alapin Sicilian, steering the game away from sharp, open positions. Black adopts a robust, French Defense-like pawn structure, aiming to challenge White's central control with a timely ...d5 push. This opening is ideal for patient, strategic players who prefer to outmaneuver their opponents based on a superior understanding of pawn structures rather than engaging in immediate tactical melees.",
+      "description": "The O'Kelly with 3...e6 is a solid and strategic response to the Alapin Sicilian, steering the game away from sharp, open positions. Black adopts a robust, French Defence-like pawn structure, aiming to challenge White's central control with a timely ...d5 push. This opening is ideal for patient, strategic players who prefer to outmanoeuvre their opponents based on a superior understanding of pawn structures rather than engaging in immediate tactical melees.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -72419,10 +72419,10 @@
         "Blockade"
       ],
       "common_plans": [
-        "White: Establish a full pawn center with d4, develop pieces harmoniously, and use the space advantage to launch an attack or squeeze Black.",
-        "Black: Challenge White's center with ...d5, often leading to an IQP for White which Black will seek to blockade and attack.",
-        "Black: Complete development with ...Nf6, ...Be7, ...0-0 and prepare queenside counterplay if White overcommits in the center.",
-        "White: If Black plays passively, White can expand on the kingside with moves like f4-f5."
+        "White: Establish a full pawn centre with d4, develop pieces harmoniously, and use the space advantage to launch an attack or squeeze Black.",
+        "Black: Challenge White's centre with ...d5, answering e5 with French-style pressure against the d4-pawn, and after exchanges on d5 aim for active piece play.",
+        "Black: Complete development with ...Nf6, ...Be7 and ...O-O and prepare queenside counterplay if White overcommits in the centre.",
+        "White: If Black plays passively, gain more space with e5 after d4, cramping Black's kingside pieces as in a French Advance."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T07:41:45.895Z"
@@ -72688,7 +72688,7 @@
       "ct": "Sicilian Defense, Nimzowitsch  Variation"
     },
     "analysis_json": {
-      "description": "The Nimzowitsch Variation, Closed Variation is a solid and strategic way for White to meet an early ...Nf6 in the Sicilian. By defending the e4 pawn with 3.Nc3 instead of chasing the knight, White steers the game away from sharp, open positions and into a more controlled, maneuvering battle. This opening is well-suited for positional players who enjoy building up pressure slowly and understanding subtle pawn structures, often leading to a kingside buildup for White against Black's queenside counterplay.",
+      "description": "The Nimzowitsch Variation, Closed Variation is a solid and strategic way for White to meet an early ...Nf6 in the Sicilian. By defending the e4 pawn with 3.Nc3 instead of chasing the knight, White steers the game away from sharp, open positions and into a more controlled, manoeuvring battle. This opening is well-suited for positional players who enjoy building up pressure slowly and understanding subtle pawn structures, often leading to a kingside buildup for White against Black's queenside counterplay.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -72727,7 +72727,7 @@
         "The central pawn break (...d5)"
       ],
       "common_plans": [
-        "White: Fianchetto the king's bishop (g3, Bg2), prepare a kingside attack with f2-f4-f5, and control the center.",
+        "White: Either play d4 for Open Sicilian positions or keep things closed with g3, Bg2, d3 and O-O, controlling the d5-square and preparing kingside play.",
         "Black: Challenge White's central control with a ...d5 pawn break, often preceded by ...e6.",
         "Black: Create queenside counterplay with moves like ...a6 and ...b5-b4 to undermine White's structure."
       ],
@@ -73080,8 +73080,8 @@
         "Symmetrical Structures"
       ],
       "common_plans": [
-        "White: Challenge the Nd5 knight (via Bb5+ or Nxd5), complete development, and fight for central space with d4.",
-        "Black: Maintain the active knight on d5, complete development quickly, and use open lines for counterplay against White's center."
+        "White: After the knight recaptures on d5, challenge it with Bb5+ or by trading knights, complete development, and fight for central space with d4.",
+        "Black: Maintain the active knight on d5, complete development quickly, and use open lines for counterplay against White's centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T07:45:44.273Z"
@@ -73369,7 +73369,7 @@
       ],
       "common_plans": [
         "White: Play d4 to challenge Black's central pawn, develop pieces to pressure d5 (e.g., Be3, Qd2), control the c-file, and use the space advantage to restrict Black.",
-        "Black: Solidify the d5-pawn, develop pieces to control the e4-square (e.g., ...Be7, ...Qe7), prepare a pawn break like ...d6 or ...f6 to challenge White's center, and seek counterplay on the e-file."
+        "Black: Recapture with ...exd5, then develop with ...Nc6 and break with ...d6 or ...f6 to undermine the e5-pawn; after d4, the Rubinstein Countergambit with ...Nc6 and a gift of the d5-pawn is a sharp option."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T07:47:22.957Z"
@@ -73384,7 +73384,7 @@
     "name": "Sicilian: Nimzowitsch, Rubinstein Countergambit, 7.dxc5",
     "scid": "B29n",
     "analysis_json": {
-      "description": "The Rubinstein Countergambit is a dynamic and strategically complex response to the Sicilian Nimzowitsch. White's 7.dxc5 immediately challenges Black's central pawn on d5, leading to an unbalanced struggle where White often gains a development advantage against Black's potentially strong, but also weak, central pawn. This opening is well-suited for players who thrive in sharp, non-standard positions and enjoy fighting for the initiative based on structural imbalances.",
+      "description": "The Rubinstein Countergambit arises after 5...exd5 6.d4 Nc6, when Black offers the d5-pawn for rapid development. After 7.dxc5 Bxc5 8.Qxd5, Black's 8...Qb6 lines up queen and bishop against f2, and the pawn White has won is balanced by Black's lead in development and active pieces. This opening is well-suited for players who thrive in sharp, non-standard positions and enjoy fighting for the initiative.",
       "style_tags": [
         "Dynamic",
         "Unbalanced",
@@ -73427,8 +73427,8 @@
       ],
       "common_plans": [
         "White aims to blockade and attack the isolated d5-pawn, often using moves like Be3 and coordinating pieces on the d-file to exploit it as a long-term weakness.",
-        "Black seeks to use the d5-pawn as a strength, supporting it and using it to generate piece activity and control key central squares like e4 and c4.",
-        "White often develops rapidly with moves like Be2, O-O, and Re1 to consolidate control and prepare to increase pressure on the center.",
+        "Black seeks counterplay in return for the pawn: recapture on c5 with the bishop, then use quick development and pressure on f2, for example with ...Qb6, to make up for the d5-pawn that White may take.",
+        "White often develops rapidly with moves like Be2, O-O, and Re1 to consolidate control and prepare to increase pressure on the centre.",
         "Black will recapture on c5 (usually with ...Bxc5) and try to complete development quickly, aiming for counterplay before White can fully organize an attack on the d5-pawn."
       ],
       "version": "1.0",
@@ -73446,7 +73446,7 @@
       "eco_js": "Sicilian Defense: Closed Sicilian, Anti-Sveshnikov Variation, Kharlov-Kramnik Line"
     },
     "analysis_json": {
-      "description": "The Kharlov-Kramnik Line is a sophisticated and highly strategic response within the Closed Sicilian. White opts for a maneuvering game, avoiding early confrontations, while Black's provocative 6...Bg5 immediately challenges White's setup, aiming to create structural imbalances by trading on f3. This opening leads to a complex, subtle battle of ideas where understanding long-term plans and pawn structures is paramount, suiting patient, strategic players.",
+      "description": "The Kharlov-Kramnik Line is a sophisticated and highly strategic response within the Closed Sicilian. With 6.Nd2 White reroutes the knight towards f1 and e3 and prepares f4, while Black's 6...Bg5 offers to trade off the dark-squared bishops: with pawns on c5, d6 and e5, the e7-bishop was Black's less active piece, and on g5 it also hinders f4. This opening leads to a subtle battle over the d5- and f4-squares, suiting patient, strategic players.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -73489,10 +73489,10 @@
         "Exploiting Weakened Pawn Structures"
       ],
       "common_plans": [
-        "White: Maneuver the knight from d2 (to f1-g3 or e4), prepare the f2-f4 pawn break, and control the d5 square.",
-        "Black: Trade the g5-bishop for the f3-knight to damage White's kingside pawn structure, control the d4-square, and seek counterplay on the queenside with ...a6-b5.",
-        "White: Reposition the c4-bishop to d3 or b3 to support the center and prepare for Black's queenside expansion.",
-        "Black: Develop the queenside knight to d7, often rerouting to f8 to defend the kingside or support a central break."
+        "White: Reroute the d2-knight via f1 to e3, where it eyes the d5-square and f5-square, prepare the f2-f4 break, and keep control of the d5-square.",
+        "Black: Trade the g5-bishop for White's dark-squared bishop, keep control of the d4- and f4-squares, and seek counterplay on the queenside with ...a6 and ...b5.",
+        "White: Reposition the c4-bishop to d3 or b3 to support the centre and prepare for Black's queenside expansion.",
+        "Black: Develop the g8-knight via e7 or h6 and castle, keeping the option of ...Nd4 on the strong d4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T07:48:02.062Z"
@@ -73513,7 +73513,7 @@
       "icsbot": "Rossolimo (Nezmetdinov) Variation, Sicilian; B30 "
     },
     "analysis_json": {
-      "description": "The Nyezhmetdinov-Rossolimo Attack is a highly respected and strategic Anti-Sicilian system where White avoids the sharp, theoretical main lines of the Open Sicilian. By playing 3. Bb5, White immediately challenges Black's control of the center and poses the positional threat of Bxc6, potentially damaging Black's pawn structure. This opening leads to a more positional and maneuver-based game, ideal for strategic players who prefer to sidestep heavy theory and outplay their opponents based on a deeper understanding of structure and piece placement.",
+      "description": "The Nyezhmetdinov-Rossolimo Attack is a highly respected and strategic Anti-Sicilian system where White avoids the sharp, theoretical main lines of the Open Sicilian. By playing 3. Bb5, White immediately challenges Black's control of the centre and poses the positional threat of Bxc6, potentially damaging Black's pawn structure. This opening leads to a more positional and manoeuvre-based game, ideal for strategic players who prefer to sidestep heavy theory and outplay their opponents based on a deeper understanding of structure and piece placement.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -73555,10 +73555,10 @@
         "Space Advantage"
       ],
       "common_plans": [
-        "White: Exchange on c6 (Bxc6) to create doubled pawns, then play against this weakness. Control the center with a c3-d4 pawn structure.",
-        "Black: Respond to Bxc6 with bxc6, using the open b-file for counterplay and leveraging the long-term advantage of the bishop pair.",
-        "White: Maintain the tension with the bishop on b5, develop quickly with 0-0, Re1, and c3, and prepare to seize the center with d4.",
-        "Black: Break the pin with moves like ...g6, ...e6, or ...d6, complete development, and challenge White's central ambitions, often with a timely ...d5 pawn break."
+        "White: Exchange the bishop for the c6-knight to leave Black with doubled pawns, then play against this weakness, controlling the centre with a c3-d4 pawn structure or a d3 set-up.",
+        "Black: If White takes on c6, recapture with the b-pawn to use the half-open b-file and keep central pawns, or with the d-pawn for quick development, relying on the long-term value of the bishop pair.",
+        "White: Maintain the tension with the bishop on b5, develop quickly with O-O, Re1 and c3, and prepare to seize the centre with d4.",
+        "Black: Develop with ...g6 and ...Bg7, or with ...e6 and ...Nge7 so that a piece can recapture on c6, and challenge White's centre later, often with ...d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T07:48:19.570Z"
@@ -73762,7 +73762,7 @@
       "ct": "Sicilian Defense, Rossolimo Variation"
     },
     "analysis_json": {
-      "description": "The Brooklyn Retreat is a rare and highly provocative response to the Rossolimo Attack, characterized by the surprising knight retreat 3...Nb8. Black sidesteps the main positional threat of Bxc6, aiming for a complex strategic battle where long-term flexibility is valued over immediate central influence. This opening is perfect for creative and patient players who enjoy steering the game into unique, uncharted territory and outmaneuvering their opponents from a seemingly passive setup.",
+      "description": "The Brooklyn Retreat is a rare and highly provocative response to the Rossolimo Attack, characterised by the surprising knight retreat 3...Nb8. Black sidesteps the main positional threat of Bxc6, aiming for a complex strategic battle where long-term flexibility is valued over immediate central influence. This opening is perfect for creative and patient players who enjoy steering the game into unique, uncharted territory and outmanoeuvring their opponents from a seemingly passive setup.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -73802,10 +73802,10 @@
         "Hypermodern Control"
       ],
       "common_plans": [
-        "White: Seize the center with an early d4, develop rapidly, and use the space advantage to restrict Black.",
+        "White: Seise the centre with an early d4, develop rapidly, and use the space advantage to restrict Black.",
         "Black: Solidify the position with ...d6 and ...e6, redeploy the knight to d7, and challenge White's center later.",
         "White: Maintain a flexible pawn structure and avoid premature attacks, preventing Black's counter-play.",
-        "Black: Prepare a queenside expansion with ...a6 and ...b5 after securing the center."
+        "Black: Chase the bishop with ...a6 and gain queenside space with a later b-pawn advance once the centre is secure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T07:49:41.393Z"
@@ -161204,7 +161204,7 @@
     "src": "eco_tsv",
     "eco": "B30",
     "analysis_json": {
-      "description": "This variation of the Closed Sicilian leads to a highly strategic and maneuvering game. Black adopts a solid, reversed King's Indian-style setup with ...e5 and ...d6, aiming to clamp down on the d4 square and create a robust defensive wall. The game's character is slow-burning and positional, revolving around the control of key squares (d4 and d5) and long-term plans rather than immediate tactical skirmishes. It is perfectly suited for patient, strategic players who excel at piece coordination and understanding subtle shifts in the pawn structure.",
+      "description": "This variation of the Closed Sicilian leads to a highly strategic and manoeuvring game. Black adopts a solid Botvinnik-style set-up with ...e5 and ...d6, aiming to clamp down on the d4-square and create a robust defensive wall. The game's character is slow-burning and positional, revolving around the control of key squares (d4 and d5) and long-term plans rather than immediate tactical skirmishes. It is perfectly suited for patient, strategic players who excel at piece coordination and understanding subtle shifts in the pawn structure.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -161244,10 +161244,10 @@
         "Knight maneuvering"
       ],
       "common_plans": [
-        "For White: Prepare and execute the Nd5 knight jump to a dominant outpost, often preceded by a3 to prevent ...Bb4.",
+        "For White: Occupy the d5-outpost with the c3-knight or with the f3-knight rerouted via d2, f1 and e3, keeping Black's dark-squared bishop passive.",
         "For White: Expand on the kingside with moves like h3 and g4 to create attacking chances or gain space.",
         "For Black: Challenge White's c4 bishop with the ...a6 and ...b5 pawn lever, gaining queenside space and tempo.",
-        "For Black: Reroute the g8 knight via f6-e8-g7 to bolster the kingside and prepare a potential ...f5 pawn break."
+        "For Black: Develop the g8-knight to f6, castle short, and prepare the ...f5 break after moving the knight again, or put a knight on the strong d4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T16:51:52.294Z"

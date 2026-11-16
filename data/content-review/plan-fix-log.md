@@ -9,8 +9,8 @@ independent reviewer before commit; notes per page are in
 ## Totals
 
 - Failing references: 4,164 at the start of this job (2026-11-09 01:10 UTC run); 4,151 at the 02:10 UTC refresh; 4,108 on 3,215 pages at the 02:33 refresh (after batch 5); 4,035 on 3,155 pages at the 02:55 refresh (after batch 10); 3,976 on 3,105 pages at the 07:15 refresh (after batch 16); 3,928 on 3,065 pages at the 07:40 refresh (after batch 20); 3,834 on 2,985 pages at the 08:10 refresh (after batch 28); 3,750 on 2,915 pages at the 08:38 refresh (after batch 35); 3,684 on 2,860 pages at the 12:10 refresh (after batch 40); 3,628 on 2,816 pages at the 12:38 refresh (after batch 46); about 3,490 after batch 55; 3,496 on 2,717 pages at the 2026-11-15 19:12 refresh, after merging the feat/228 parser change that reads a hyphenated route whole (batch files from 2026-11-15 are numbered from 1); 3,445 on 2,678 pages at the 19:33 refresh (after batch 2026-11-15-4); 3,393 on 2,638 pages at the 19:46 refresh (after batch 2026-11-15-8); 3,349 on 2,598 pages at the 20:04 refresh (after batch 2026-11-15-12); 3,300 on 2,558 pages at the 20:24 refresh (after batch 2026-11-15-16); 3,265 on 2,528 pages at the 20:39 refresh (after batch 2026-11-15-19); 3,203 on 2,488 pages at the 21:00 refresh (after batch 2026-11-15-23); 3,149 on 2,449 pages at the 2026-11-16 00:10 refresh (batch files from 2026-11-16 are numbered from 1); 3,061 on 2,373 pages at the 2026-11-16 00:38 refresh (after batch 2026-11-16-8)
-- Phase 1 pages left: about 2,343, skips excluded
-- Pages reviewed by this job: 930 (including ten follow-ups to earlier batches)
+- Phase 1 pages left: about 2,333, skips excluded
+- Pages reviewed by this job: 942 (including twelve follow-ups to earlier batches)
 - Phase: 1
 
 ## Batches
@@ -109,3 +109,4 @@ independent reviewer before commit; notes per page are in
 | 2026-11-16 00:37 | 1     | 10    | 10 / 0 / 0                  | 18 / 1 (held for re-review in batch 9) | none; `npm run test:all` passed (1,203 Jest, 819 Vitest, pre-push hook) |
 | 2026-11-16 00:41 | 1     | 13    | 13 / 0 / 0                  | 18 / 2 (held for re-review in batch 11) | none; includes three follow-ups to batches 7-8 |
 | 2026-11-16 00:42 | 1     | 10    | 10 / 0 / 0                  | 14 / 0                   | none |
+| 2026-11-16 00:46 | 1     | 12    | 12 / 0 / 0                  | 24 / 1 (held for re-review in batch 12) | none; includes two follow-ups to batch 9 |

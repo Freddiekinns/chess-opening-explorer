@@ -9542,7 +9542,7 @@
   "rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/P1N5/1PP2PPP/R1BQKBNR b KQkq - 0 4": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "b135d94b9eed090f",
+    "contentHash": "c86b06812f2258ce",
     "notes": "Plan 4 targeted a c4-pawn that does not exist (White's doubled pawns are on c2 and c3). Rewrote plan 4; British spelling in plan 2."
   },
   "rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2NB4/PPP2PPP/R1BQK1NR b KQkq - 3 4": {
@@ -9554,7 +9554,7 @@
   "rnbqk1nr/ppp2ppp/4p3/3P4/1b1P4/2N5/PPP2PPP/R1BQKBNR b KQkq - 0 4": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "31fcdbd2f54c7a02",
+    "contentHash": "6a79d2f7eb29b290",
     "notes": "Plan 3 had bxc3 written so the parser cannot place it. Rewrote plan 3."
   },
   "rnbqk1nr/ppp2ppp/4p3/3p4/3PP3/P1b5/1PP2PPP/R1BQKBNR w KQkq - 0 5": {
@@ -9566,7 +9566,7 @@
   "rnbqk1nr/ppp2ppp/4p3/8/1b1Pp3/2N5/PPP1NPPP/R1BQKB1R w KQkq - 0 5": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "eb5cba1fb1c396e9",
+    "contentHash": "30276f47cacf217b",
     "notes": "Plan 1 had White recapturing on c3 with the b-pawn when the e2-knight recaptures in the Alekhine Gambit. Rewrote plan 1; British spelling in plans 2-3."
   },
   "rnbqk1nr/ppp1bppp/4p3/8/3Pp3/P1N5/1PP1NPPP/R1BQKB1R w KQkq - 1 6": {
@@ -9650,7 +9650,67 @@
   "rnbqk2r/pp2nppp/4p3/2PpP3/1b6/2N5/PPPB1PPP/R2QKBNR b KQkq - 0 6": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "99edf551ae91501c",
+    "contentHash": "bddd82fa622628da",
     "notes": "Plan 2 had ...Nxc5 from a c6-knight, which cannot reach c5. Rewrote plan 2; British spelling in plan 3."
+  },
+  "rnbqk1nr/pp3ppp/4p3/3pP3/1P6/2p5/1PP2PPP/R1BQKBNR w KQkq - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "b765fe85a26f2463",
+    "notes": "Plan 2 had ...Na5 with no knight in reach of a5; plan 1 called the a-file open (Black's a-pawn is on a7). Rewrote plans 1-2."
+  },
+  "r3k1r1/ppqbnp2/2n1p3/3pP3/5P2/P1pQ4/2P1N1PP/R1B1KB1R w KQq - 0 13": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f88cd4b1c1089500",
+    "notes": "Plan 1 had Kf1 with White's bishop on f1; plan 2 targeted a d4-pawn that has gone and called the g-file open (White's g-pawn stands). Rewrote plans 1-2."
+  },
+  "r3k1r1/ppqbnp2/2n1p3/3pP3/5P2/P1NQ4/2P3PP/R1B1KB1R b KQq - 0 13": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "24711fdd999bf406",
+    "notes": "Plan 1 had a Kf1-g1 king walk with the bishop on f1; plan 2 had ...a5-a4 where the main line is ...a6. Rewrote both plans."
+  },
+  "rnbqk2r/p3nppp/1p2p3/2ppP3/3P4/P1P2N2/2P2PPP/R1BQKB1R w KQkq - 0 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "d339c306b1831ff4",
+    "notes": "Plan 1 had an ambiguous ...Nc6-a5, ...Qb6 with Black's pawn on b6, and a c4-pawn that does not exist. Rewrote plan 1; British spelling in overview."
+  },
+  "rnbqk2r/p3nppp/1p2p3/2ppP3/P2P4/2P2N2/2P2PPP/R1BQKB1R b KQkq - 0 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "1cad33e87e0d4e56",
+    "notes": "Plan 2 developed the bishop to b7, read as a move and blocked by d5. Rewrote plan 2; British spelling in overview."
+  },
+  "rnbqk2r/p3nppp/1p2p3/1BppP3/3P4/P1P2N2/2P2PPP/R1BQK2R b KQkq - 1 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "needs-research",
+    "contentHash": "0629d16c35c9fc13",
+    "notes": "Plan 3 had the ...Ba6 manoeuvre and plan 1 had Qg4 and h4-h5, which read as moves while Black is in check. Rewrites of plans 1 and 3 were rejected (the f3-knight blocks Qg4, and after 8...Bd7 White usually keeps the bishop with 9.Bd3 or 9.Ba4), so the old text was kept with British spelling in overview and plans 3-4; plan 1 references added to the skips."
+  },
+  "r1b1k2r/pp2nppp/2n1p3/q1ppP3/P2P4/2P2N2/2P2PPP/R1BQKB1R w KQkq - 1 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "99f04cd06e9c170e",
+    "notes": "Plan 1 had a5 with Black's queen on a5. Rewrote plan 1; British spelling in plan 2."
+  },
+  "r1b1k2r/pp2nppp/2n1p3/q1ppP3/P2P4/2P2N2/2PQ1PPP/R1B1KB1R b KQkq - 2 9": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "169d5c6b424f9206",
+    "notes": "Plan 1 had Ba3 'exchanging Black's active bishop' (Black has no dark-squared bishop) and f4-f5 behind the f3-knight; plan 2 targeted a c4-pawn that does not exist; plan 4 called d4 an isolated target. Rewrote plans 1, 2 and 4; British spelling in overview and plan 3."
+  },
+  "r3k2r/pp1bnppp/2n1p3/q1ppP3/P2P4/2P2N2/2PB1PPP/R2QKB1R w KQkq - 3 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "1ae32dd3e336a863",
+    "notes": "Plan 1 had f4-f5 behind the f3-knight and d4 used as a square with White's pawn on it; plan 2 said ...c4 opens the b-file. Rewrote both plans; British spelling in overview."
+  },
+  "r3k2r/pp1bnppp/2n1p3/qBppP3/P2P4/2P2N2/2PB1PPP/R2QK2R b KQkq - 4 10": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "needs-research",
+    "contentHash": "76d1cd9cb3648698",
+    "notes": "Plan 1 had Ba3 for a bishop on d2 that cannot reach a3. A rewrite was rejected (the plan after 10.Bb5 is unconfirmed: ...a6 and Bxc6 are common), so the old text was kept with British spelling (overview, plans 1-2) and the Ba3 reference added to the skips."
   }
 }

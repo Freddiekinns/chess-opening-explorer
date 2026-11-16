@@ -9,8 +9,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Na5 with no knight in reach of a5; plan 1 called the a-file open (Black's a-pawn is on a7). Rewrote plans 1-2."
     },
     {
       "fen": "r3k1r1/ppqbnp2/2n1p3/3pP3/5P2/P1pQ4/2P1N1PP/R1B1KB1R w KQq - 0 13",
@@ -19,8 +19,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had Kf1 with White's bishop on f1; plan 2 targeted a d4-pawn that has gone and called the g-file open (White's g-pawn stands). Rewrote plans 1-2."
     },
     {
       "fen": "r3k1r1/ppqbnp2/2n1p3/3pP3/5P2/P1NQ4/2P3PP/R1B1KB1R b KQq - 0 13",
@@ -29,8 +29,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had a Kf1-g1 king walk with the bishop on f1; plan 2 had ...a5-a4 where the main line is ...a6. Rewrote both plans."
     },
     {
       "fen": "rnbqk2r/p3nppp/1p2p3/2ppP3/3P4/P1P2N2/2P2PPP/R1BQKB1R w KQkq - 0 8",
@@ -39,8 +39,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had an ambiguous ...Nc6-a5, ...Qb6 with Black's pawn on b6, and a c4-pawn that does not exist. Rewrote plan 1; British spelling in overview."
     },
     {
       "fen": "rnbqk2r/p3nppp/1p2p3/2ppP3/P2P4/2P2N2/2P2PPP/R1BQKB1R b KQkq - 0 8",
@@ -49,8 +49,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 2 developed the bishop to b7, read as a move and blocked by d5. Rewrote plan 2; British spelling in overview."
     },
     {
       "fen": "rnbqk2r/p3nppp/1p2p3/1BppP3/3P4/P1P2N2/2P2PPP/R1BQK2R b KQkq - 1 8",
@@ -59,8 +59,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "needs-research",
+      "notes": "Plan 3 had the ...Ba6 manoeuvre and plan 1 had Qg4 and h4-h5, which read as moves while Black is in check. Rewrites of plans 1 and 3 were rejected (the f3-knight blocks Qg4, and after 8...Bd7 White usually keeps the bishop with 9.Bd3 or 9.Ba4), so the old text was kept with British spelling in overview and plans 3-4; plan 1 references added to the skips."
     },
     {
       "fen": "r1b1k2r/pp2nppp/2n1p3/q1ppP3/P2P4/2P2N2/2P2PPP/R1BQKB1R w KQkq - 1 9",
@@ -69,8 +69,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had a5 with Black's queen on a5. Rewrote plan 1; British spelling in plan 2."
     },
     {
       "fen": "r1b1k2r/pp2nppp/2n1p3/q1ppP3/P2P4/2P2N2/2PQ1PPP/R1B1KB1R b KQkq - 2 9",
@@ -79,8 +79,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had Ba3 'exchanging Black's active bishop' (Black has no dark-squared bishop) and f4-f5 behind the f3-knight; plan 2 targeted a c4-pawn that does not exist; plan 4 called d4 an isolated target. Rewrote plans 1, 2 and 4; British spelling in overview and plan 3."
     },
     {
       "fen": "r3k2r/pp1bnppp/2n1p3/q1ppP3/P2P4/2P2N2/2PB1PPP/R2QKB1R w KQkq - 3 10",
@@ -89,8 +89,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had f4-f5 behind the f3-knight and d4 used as a square with White's pawn on it; plan 2 said ...c4 opens the b-file. Rewrote both plans; British spelling in overview."
     },
     {
       "fen": "r3k2r/pp1bnppp/2n1p3/qBppP3/P2P4/2P2N2/2PB1PPP/R2QK2R b KQkq - 4 10",
@@ -99,8 +99,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "needs-research",
+      "notes": "Plan 1 had Ba3 for a bishop on d2 that cannot reach a3. A rewrite was rejected (the plan after 10.Bb5 is unconfirmed: ...a6 and Bxc6 are common), so the old text was kept with British spelling (overview, plans 1-2) and the Ba3 reference added to the skips."
     }
   ]
 }

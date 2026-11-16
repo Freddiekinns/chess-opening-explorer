@@ -1,10 +1,10 @@
 # Plan reference check
 
-2661 references on 2058 of 12377 pages fail the check and show as plain text.
+2579 references on 1989 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5479 name no move, route, square or piece
-- References by kind: {"square":15831,"piece":15061,"move":54185,"route":9115}
-- References by result: {"now":68344,"on-board":14007,"later":9180,"invalid":2661}
+- Plans: 41062, of which 5480 name no move, route, square or piece
+- References by kind: {"square":15877,"piece":15079,"move":54257,"route":9065}
+- References by result: {"now":68469,"on-board":14029,"later":9201,"invalid":2579}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -32,48 +32,41 @@
   - `d5`: No piece can play d5 here, now or after the plan's earlier moves
 - **B57 Sicilian: Sozin, Benko, 7.Nb3** (0 views)
   - `c1-d3`: One step of c1-d3 can't be played here
-- **B76 Sicilian Defense: Dragon Variation, Yugoslav Attack** (0 views)
+- **B90 Sicilian: Najdorf, 6.Be3 e5 7.Nb3 Be6 8.Qd2** (0 views)
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **B93 Sicilian: Najdorf, 6.f4 e5 7.Nf3 Nbd7 8.a4 Be7 9.Bd3 O-O 10.O-O exf4** (0 views)
+  - `Ne3`: No piece can play Ne3 here, now or after the plan's earlier moves
+- **B93 Sicilian: Najdorf, 6.f4 Nbd7** (0 views)
+  - `...b5-b4`: One step of ...b5-b4 can't be played here
+- **B93 Sicilian: Najdorf, 6.f4 Qc7 7.Nf3 Nbd7** (0 views)
+  - `Qe1-g3`: One step of Qe1-g3 can't be played here
+- **B94 Sicilian: Najdorf, 6.Bg5 e5** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **B94 Sicilian: Najdorf, 6.Bg5 Nbd7** (0 views)
+  - `...0-0`: No piece can play O-O here, now or after the plan's earlier moves
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **B94 Sicilian: Najdorf, 6.Bg5 Nbd7 7.Bc4 e6 8.O-O** (0 views)
+  - `f8`: No piece can play f8 here, now or after the plan's earlier moves
+- **B95 Sicilian Defense: Najdorf Variation** (0 views)
   - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-  - `Qe1-h4`: One step of Qe1-h4 can't be played here
-- **B76 Sicilian Defense: Dragon Variation, Yugoslav Attack, Modern Line** (0 views)
-  - `Bxh7+`: No piece can play Bxh7 here, now or after the plan's earlier moves
-  - `Nxg6`: No piece can play Nxg6 here, now or after the plan's earlier moves
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian Defense: Dragon Variation, Yugoslav Attack, Panov Variation** (0 views)
-  - `Kb1`: No piece can play Kb1 here, now or after the plan's earlier moves
-  - `...Bxc3`: No piece can play Bxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 7.f3 O-O 8.Qd2** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.g4 Be6** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.g4 Nxd4** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Bd7** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Bd7 10.g4** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5 10.exd5** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5 10.exd5 Nxd5 11.Nxc6** (0 views)
+- **B95 Sicilian: Najdorf, 6...e6 7.Be2** (0 views)
+  - `Qd1-e1-g3`: One step of Qd1-e1-g3 can't be played here
+- **B95 Sicilian: Najdorf, 6...e6 7.Qd3 Nc6** (0 views)
+  - `b8-d7`: One step of b8-d7 can't be played here
+- **B96 Sicilian: Najdorf, 7.f4 h6** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+  - `...gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
+- **B96 Sicilian: Najdorf, 7.f4 Nbd7 8.Qe2 Qc7** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **B96 Sicilian: Najdorf, 7.f4 Nbd7 8.Qf3 Qc7 9.O-O-O b5 10.Bd3** (0 views)
+  - `Bxe6`: No piece can play Bxe6 here, now or after the plan's earlier moves
+- **B96 Sicilian: Najdorf, 7.f4 Nc6 8.Nxc6** (0 views)
   - `c6-pawn`: There is no pawn on c6, or on its way
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5: 12.Bd4 e5** (0 views)
-  - `Bh6`: No piece can play Bh6 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5: 12.Bd4 e5 13.Bc5 Be6** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-  - `g7`: No piece can play g7 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O d5: 12.Nxd5** (0 views)
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Nxd4 10.Bxd4 Be6** (0 views)
-  - `Bh6`: No piece can play Bh6 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Nxd4: 11.Kb1** (0 views)
-  - `Bh6`: No piece can play Bh6 here, now or after the plan's earlier moves
-- **B76 Sicilian: Dragon, Yugoslav, 9.O-O-O Nxd4: 11.Kb1 Qc7** (0 views)
-  - `Bh6`: No piece can play Bh6 here, now or after the plan's earlier moves
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
-- **B77 Sicilian Defense: Dragon Variation, Yugoslav Attack** (0 views)
-  - `Bxh7+`: No piece can play Bxh7 here, now or after the plan's earlier moves
-  - `Nxe6`: No piece can play Nxe6 here, now or after the plan's earlier moves
-  - `g7`: No piece can play g7 here, now or after the plan's earlier moves
-  - `...Rxc3`: No piece can play Rxc3 here, now or after the plan's earlier moves
+- **B96 Sicilian: Najdorf, 7.f4 Qc7 8.Qf3 b5 9.Bxf6** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **B96 Sicilian: Najdorf, Polugaevsky, 10.exf6** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **B96 Sicilian: Najdorf, Polugaevsky, 10.exf6 Qe5+ 11.Be2** (0 views)
+  - `...Qxg2`: No piece can play Qxg2 here, now or after the plan's earlier moves
+- **B96 Sicilian: Najdorf, Polugaevsky, 10.exf6 Qe5+ 11.Be2 Qxg5 12.Qd3** (0 views)
+  - `h3-f3`: One step of h3-f3 can't be played here

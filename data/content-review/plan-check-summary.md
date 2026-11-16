@@ -1,10 +1,10 @@
 # Plan reference check
 
-2493 references on 1921 of 12377 pages fail the check and show as plain text.
+2405 references on 1852 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5479 name no move, route, square or piece
-- References by kind: {"square":15944,"piece":15110,"move":54354,"route":8993}
-- References by result: {"now":68619,"on-board":14062,"later":9227,"invalid":2493}
+- Plans: 41062, of which 5473 name no move, route, square or piece
+- References by kind: {"square":16022,"piece":15178,"move":54525,"route":8940}
+- References by result: {"now":68880,"on-board":14143,"later":9237,"invalid":2405}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -36,36 +36,37 @@
   - `g4-g5`: One step of g4-g5 can't be played here
 - **C02 French Defense: Advance Variation, Paulsen Attack** (0 views)
   - `...b5-b4`: One step of ...b5-b4 can't be played here
-- **C02 French: Advance, Euwe, 6.Be2** (0 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **C02 French: Advance, Euwe, 6.Be2 Nge7** (0 views)
-  - `exf6`: No piece can play exf6 here, now or after the plan's earlier moves
-- **C03 French Defense: Tarrasch Variation, Guimard Defense** (0 views)
-  - `...Qb6`: No piece can play Qb6 here, now or after the plan's earlier moves
-- **C03 French: Tarrasch, 3...Be7 4.Bd3 c5 5.dxc5 Nf6** (0 views)
-  - `...Nxc5`: No piece can play Nxc5 here, now or after the plan's earlier moves
-- **C04 French Defense: Tarrasch Variation, Guimard Defense, Main Line** (0 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **C04 French: Tarrasch, Guimard, 4.Ngf3 Nf6 5.e5** (0 views)
-  - `...Qb6`: No piece can play Qb6 here, now or after the plan's earlier moves
-- **C04 French: Tarrasch, Guimard, Main Line, 6.Be2** (0 views)
-  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
-- **C04 French: Tarrasch, Guimard, Main Line, 6.Nb3** (0 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **C04 French: Tarrasch, Guimard, Main Line, 6.Nb3 Be7** (0 views)
-  - `f8`: No piece can play f8 here, now or after the plan's earlier moves
-- **C05 French Defense: Tarrasch Variation, Botvinnik Variation** (0 views)
-  - `Ne2-f3`: One step of Ne2-f3 can't be played here
-- **C05 French: Tarrasch, Closed, 4...Nfd7** (0 views)
-  - `Ng3`: No piece can play Ng3 here, now or after the plan's earlier moves
-- **C05 French: Tarrasch, Closed, 4.e5** (0 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **C05 French: Tarrasch, Closed, 5.f4 c5 6.c3 Nc6 7.Ndf3** (0 views)
-  - `Ndf3-g3`: One step of Ndf3-g3 can't be played here
-- **C05 French: Tarrasch, Closed, 5.f4 c5 6.c3 Nc6 7.Ndf3 Qb6** (0 views)
-  - `...Ba6`: No piece can play Ba6 here, now or after the plan's earlier moves
-- **C05 French: Tarrasch, Closed, 5.f4 c5 6.c3 Nc6 7.Ndf3 Qb6 8.g3** (0 views)
-  - `Kg2`: No piece can play Kg2 here, now or after the plan's earlier moves
-- **C05 French: Tarrasch, Closed, 5.f4 c5 6.c3 Nc6 7.Ndf3 Qb6 8.h4** (0 views)
-  - `Ng3`: No piece can play Ng3 here, now or after the plan's earlier moves
-  - `Kh1`: No piece can play Kh1 here, now or after the plan's earlier moves
+- **C07 French Defense: Tarrasch Variation, Open System, Shaposhnikov Gambit** (0 views)
+  - `...Bxc5`: No piece can play Bxc5 here, now or after the plan's earlier moves
+- **C11 French: Burn, 6.Bxf6 gxf6 7.Nf3 b6** (0 views)
+  - `e4 pawn`: There is no pawn on e4, or on its way
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
+- **C11 French: Burn, 6.Bxf6 gxf6 7.Nf3 f5** (0 views)
+  - `...Bh3`: No piece can play Bh3 here, now or after the plan's earlier moves
+- **C11 French: Steinitz, Boleslavsky, 7...cxd4 8.Nxd4 Qb6** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **C12 French Defense: MacCutcheon Variation, Advance Variation** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **C12 French Defense: MacCutcheon Variation, Dr. Olland Variation** (0 views)
+  - `d2`: No piece can play d2 here, now or after the plan's earlier moves
+  - `e3`: No piece can play e3 here, now or after the plan's earlier moves
+- **C12 French Defense: MacCutcheon Variation, Janowski Variation** (0 views)
+  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
+- **C12 French Defense: MacCutcheon Variation, Tartakower Variation** (0 views)
+  - `a3-b4`: One step of a3-b4 can't be played here
+- **C12 French: MacCutcheon, 8.Qg4 Kf8** (0 views)
+  - `e7`: No piece can play e7 here, now or after the plan's earlier moves
+- **C12 French: MacCutcheon, 8.Qg4 Kf8 9.Bd3** (0 views)
+  - `d7-b6-c4`: One step of d7-b6-c4 can't be played here
+- **C13 French Defense: Alekhine-Chatard Attack, Spielmann Variation** (0 views)
+  - `Ng5`: No piece can play Ng5 here, now or after the plan's earlier moves
+- **C13 French Defense: Classical Variation, Vistaneckis Variation** (0 views)
+  - `Bxg8`: No piece can play Bxg8 here, now or after the plan's earlier moves
+- **C13 French: Chatard-Alekhine, 6...Bxg5 7.hxg5 Qxg5 8.Nh3 Qe7 9.Nf4** (0 views)
+  - `g6`: No piece can play g6 here, now or after the plan's earlier moves
+- **C13 French: Chatard-Alekhine, Breyer, 7.Bxe7 Kxe7** (0 views)
+  - `Qd2-g4`: One step of Qd2-g4 can't be played here
+- **C14 French Defense: Classical Variation, Alapin Variation** (0 views)
+  - `Nc7`: No piece can play Nc7 here, now or after the plan's earlier moves
+- **C14 French Defense: Classical Variation, Stahlberg Variation** (0 views)
+  - `Ng3-h5`: One step of Ng3-h5 can't be played here

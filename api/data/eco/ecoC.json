@@ -23500,7 +23500,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The French Winawer is a sharp and combative defense, immediately challenging White's central control by pinning the c3 knight. This opening leads to highly complex and unbalanced positions, often with a locked center where both sides fight for the initiative on the flanks. It is perfect for aggressive, tactical players who are well-prepared, thrive in chaos, and are not afraid to embrace structural weaknesses in exchange for dynamic counter-attacking chances.",
+      "description": "The French Winawer is a sharp and combative defence, immediately challenging White's central control by pinning the c3 knight. This opening leads to highly complex and unbalanced positions, often with a locked centre where both sides fight for the initiative on the flanks. It is perfect for aggressive, tactical players who are well-prepared, thrive in chaos, and are not afraid to embrace structural weaknesses in exchange for dynamic counter-attacking chances.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -23543,10 +23543,10 @@
         "Exploiting structural weaknesses"
       ],
       "common_plans": [
-        "White: Solidify the e5-d4 pawn chain and launch a kingside attack, often initiated by Qg4, targeting Black's vulnerable king position.",
-        "Black: Immediately challenge White's center with ...c5, piling pressure on the d4 pawn with pieces like ...Nc6 and ...Qb6.",
-        "Black: Create queenside counterplay, often using the doubled c-pawns (after Bxc3+) as a strength to control the b-file and support an advance.",
-        "White: Exploit Black's 'bad' light-squared bishop and other structural weaknesses created by the ...Bb4 pin."
+        "White: Gain space with e5, question the bishop with a3, and after the exchange on c3 use the bishop pair and Qg4 for a kingside attack.",
+        "Black: Immediately challenge White's centre with ...c5, piling pressure on the d4 pawn with pieces like ...Nc6 and ...Qb6.",
+        "Black: After exchanging on c3, create queenside counterplay against White's doubled c-pawns, often with ...c5, ...Qa5, ...Nc6 and ...Bd7.",
+        "White: Exploit the dark squares Black weakens by giving up the b4-bishop, and Black's light-squared bishop, hemmed in behind the e6-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T23:00:59.767Z"
@@ -23738,10 +23738,10 @@
         "Piece Activity vs. Space"
       ],
       "common_plans": [
-        "White: Solidify the center with moves like Bb5 or Be3, complete development, and use the space advantage to launch a kingside attack.",
+        "White: Solidify the centre with moves like Bb5 or Be3, complete development, and use the space advantage to launch a kingside attack.",
         "Black: Increase pressure on the d4-pawn with ...Nf6 and sometimes ...f6, develop pieces actively, and aim to dismantle White's central pawn duo.",
         "White: Prepare the d4-d5 pawn push to break open the position and exploit Black's slightly cramped setup.",
-        "Black: Complete development quickly (...Be7, ...0-0) and prepare to open the f-file for counterplay against White's king."
+        "Black: Complete development quickly with ...Nge7 or ...Nf6, castle, and look to free the position with ...e5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T23:01:51.751Z"
@@ -23873,7 +23873,7 @@
       "common_plans": [
         "White: Develop classically with Nf3, Bd3, 0-0, often followed by a3 to question the b4-bishop and gain space.",
         "Black: Complete development with ...Nf6, ...0-0, and decide whether to exchange on c3 (conceding the bishop pair for doubled pawns) or retreat the bishop.",
-        "White: If Black plays ...Bxc3+, recapture bxc3 and use the bishop pair and open b-file to create long-term pressure.",
+        "White: If Black exchanges on c3, recapture with the b-pawn and use the bishop pair and the half-open b-file to create long-term pressure.",
         "Black: Neutralize White's central control and seek equality through timely piece exchanges, aiming for a balanced middlegame or endgame."
       ],
       "version": "1.0",
@@ -24209,7 +24209,7 @@
       "icsbot": "Kondratiyev Variation, French "
     },
     "analysis_json": {
-      "description": "The Kondratiyev Variation is a sharp and relatively uncommon line against the Winawer, leading to immediate tactical complications. By challenging Black's central queen with 6. Bd2, White forces a critical decision, often leading to dynamic positions where White gets the bishop pair for doubled pawns. This opening is perfect for tactical players who enjoy concrete calculation and fighting for the initiative right from the start.",
+      "description": "6.Bd2 blocks the pin on the c3-knight, so Nxd5 becomes a threat to Black's queen. Black usually answers with ...Bxc3, which White recaptures with the bishop, keeping a sound pawn structure and the bishop pair, or moves the queen and exchanges with ...cxd4. The queen on d5 is active but exposed, so the line needs concrete play from both sides.",
       "style_tags": [
         "Tactical",
         "Sharp",
@@ -24251,10 +24251,10 @@
         "Rapid Development"
       ],
       "common_plans": [
-        "White: After ...Bxc3, play Bxc3, develop with Nf3 and O-O, and use the bishop pair and open b-file to create threats against Black's king and center.",
-        "Black: Decide between capturing on c3 to damage White's structure or retreating the queen to maintain flexibility. In either case, Black must complete development quickly and challenge White's central control.",
+        "White: If Black takes on c3, recapture with the d2-bishop, develop with Nf3 and O-O, and use the bishop pair against Black's king and centre.",
+        "Black: Meet the threat to the queen with ...Bxc3 or a queen move, then complete development quickly with ...Nf6 and ...Nc6 and challenge White's centre.",
         "White: If the Black queen retreats, play a3 to question the bishop, then continue with standard development (Nf3, O-O) to consolidate a space advantage.",
-        "Black: After ...Bxc3, play ...cxd4 to open the position, followed by ...Nc6 and ...Nf6 to fight for central squares and target the weak c-pawns in the long run."
+        "Black: Once the exchange on c3 has removed the threat to the queen, open the position with ...cxd4, follow up with ...Nc6 and ...Nf6, and keep the queen active in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T23:04:09.546Z"
@@ -24317,9 +24317,9 @@
       ],
       "common_plans": [
         "White: After ...Bxc3+ bxc3, develop rapidly with moves like Qg4, Bd3, and Ne2, aiming to launch a swift kingside attack before Black can consolidate.",
-        "Black: Neutralize White's initiative, challenge the center with ...c5, and aim to exploit White's pawn weaknesses (doubled c-pawns) in the long term.",
+        "Black: Neutralize White's initiative, challenge the centre with ...c5, and aim to exploit White's pawn weaknesses (doubled c-pawns) in the long term.",
         "White: Use the bishop pair to control key squares and create threats across the board, converting the dynamic advantage into a material or decisive positional one.",
-        "Black: If White overextends, counterattack in the center and on the queenside, targeting the weak c4 pawn and the exposed White king."
+        "Black: If White overextends, counterattack in the centre and on the queenside, targeting the doubled c-pawns and White's king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T23:04:23.793Z"
@@ -24376,8 +24376,8 @@
         "Light-square vs. Dark-square control"
       ],
       "common_plans": [
-        "White: Utilize the bishop pair for a kingside attack (often with Qg4 and h4-h5), control the center, and prove the doubled pawns are a strength.",
-        "Black: Attack the weak c-pawns (e.g., ...Qb6, ...Na5), control the light squares, and create queenside counterplay with moves like ...c5 and ...a5-a4."
+        "White: Recapture with bxc3, use the bishop pair for a kingside attack with Qg4 and the h-pawn, and show that the doubled c-pawns help to control the centre.",
+        "Black: Strike at d4 with ...c5, bring the queen and the queen's knight to bear on the doubled c-pawns, and aim to exchange the light-squared bishops on the a6-square after ...b6."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T23:04:41.173Z"
@@ -24574,7 +24574,7 @@
     "name": "French: Winawer, 4.Bd3",
     "scid": "C15e",
     "analysis_json": {
-      "description": "The 4.Bd3 variation of the Winawer is a solid and flexible system where White sidesteps the main theoretical battles. By preparing to recapture on c3 with the bishop, White avoids the characteristic doubled pawns, aiming for harmonious development and a slight, comfortable space advantage. This leads to a more strategic and less chaotic game than the main lines, appealing to players who prefer classical development and central control over sharp, unbalanced positions.",
+      "description": "4.Bd3 is a simple developing move against the Winawer: White guards e4 with the bishop and keeps the pawn structure flexible. Black's most testing reply is 4...c5, striking at d4 (after 5.exd5 Qxd5, 6.Bd2 is the Kondratiyev Variation), while 4...dxe4 5.Bxe4 Nf6 leads to quieter play. It is less sharp than the main lines and suits players who prefer classical development.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -24614,10 +24614,10 @@
         "Bishop Pair Potential"
       ],
       "common_plans": [
-        "White: After the common ...dxe4 Bxe4, White develops with Nf3 and 0-0, aiming to control the center and use the active bishop on e4 to create pressure.",
+        "White: After the common ...dxe4 Bxe4, White develops with Nf3 and 0-0, aiming to control the centre and use the active bishop on e4 to create pressure.",
         "Black: Challenge White's central bishop with ...Nf6, complete development, and seek counterplay by undermining White's central pawn on e4.",
-        "White: If Black plays ...Bxc3+, White recaptures with bxc3, gaining the bishop pair and planning to use the open b-file for the rook.",
-        "Black: Create a solid pawn structure, neutralize White's active pieces, and look for opportunities to break in the center or on the queenside."
+        "White: If Black exchanges on c3, recapture with the b-pawn, gaining the bishop pair and using the half-open b-file for a rook.",
+        "Black: Create a solid pawn structure, neutralise White's active pieces, and look for opportunities to break in the centre or on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T23:05:47.541Z"
@@ -25129,9 +25129,9 @@
         "Exploiting Weak Squares"
       ],
       "common_plans": [
-        "White: Play a3, forcing the bishop, followed by bxc3 to fortify the center. Rapidly develop pieces to attack the e4-pawn and pressure Black's kingside.",
-        "Black: Attempt to consolidate the extra e4-pawn with moves like ...Nf6 and ...c5. Neutralize White's initiative through timely exchanges and counter-attack in the center.",
-        "White: Use the f-file after playing f2-f3 to support the center and launch a kingside attack.",
+        "White: Play a3 to put the question to the bishop; after ...Bxc3+ recapture with the e2-knight, which then attacks the e4-pawn, and develop rapidly to win it back.",
+        "Black: Attempt to consolidate the extra e4-pawn with moves like ...Nf6 and ...c5. Neutralize White's initiative through timely exchanges and counter-attack in the centre.",
+        "White: Use the f-file after playing f2-f3 to support the centre and launch a kingside attack.",
         "Black: Complete development, secure the king, and aim to transition into an endgame where the extra pawn becomes decisive."
       ],
       "version": "1.0",
@@ -25311,10 +25311,10 @@
         "Exploiting developmental advantages"
       ],
       "common_plans": [
-        "For White, the main plan is to recapture on e4 with the knight, use the tempo advantage to complete development (Be3, O-O), and build pressure in the center, often with an f2-f4 push.",
-        "For Black, the goal is to consolidate the position with moves like ...Nf6, ...c5, and ...Nc6, challenge White's central control, and aim to trade pieces to simplify into a favorable endgame with an extra pawn.",
+        "For White, the main plan is to win back the pawn with Nxe4, develop quickly with Be3 and Qd2, and use the lead in development for pressure in the centre.",
+        "For Black, the goal is to consolidate the position with moves like ...Nf6, ...c5, and ...Nc6, challenge White's central control, and aim to trade pieces to simplify into a favourable endgame with an extra pawn.",
         "White often seeks to maintain a space advantage and keep Black's pieces passive, preventing the freeing ...c5 break or making it less effective.",
-        "Black must play actively to neutralize White's initiative, often creating counterplay against White's center or on the queenside once development is complete."
+        "Black must play actively to neutralise White's initiative, often creating counterplay against White's centre or on the queenside once development is complete."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T23:09:14.189Z"
@@ -25671,8 +25671,8 @@
         "Development vs. Material"
       ],
       "common_plans": [
-        "White: Continue the kingside attack after 6.Qxg7 Rg8 7.Qh6, often involving h4-h5. Castle queenside to connect the rooks and use the king as an attacking piece. Prevent Black from consolidating and neutralizing the initiative.",
-        "Black: Use the open g-file for the rook to pressure White's position. Complete development rapidly (e.g., ...c5, ...Nc6, ...Rg6). Challenge White's control of the center and create counter-threats against the exposed White queen and king."
+        "White: Continue the kingside attack after 6.Qxg7 Rg8 7.Qh6, often involving h4-h5. Castle queenside to connect the rooks and use the king as an attacking piece. Prevent Black from consolidating and neutralising the initiative.",
+        "Black: After White's queen takes on g7 and Black answers ...Rg8, use the half-open g-file to harass the queen and press on g2, complete development rapidly with ...c5 and ...Nc6, and hold on to the e4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T23:11:01.400Z"

@@ -9,8 +9,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "needs-research",
+      "notes": "Plan 3 routes the b3-knight through occupied c1 and a1. Two rewrites were rejected (Rd1 and Qe2 do not back up f4; Qf3 blocks the f-pawn), so the old plan 3 is kept and added to the skips. British spelling in the overview."
     },
     {
       "fen": "r1b1kb1r/pp3ppp/1qnppn2/8/2B1P3/1NN5/PPP2PPP/R1BQK2R w KQkq - 0 8",
@@ -19,8 +19,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 sent the b3-knight to c5, where the d6-pawn covers it; plan 2 had a ...b5-b4 route from an empty b5. Rewrote both (reviewer caught that ...Bb7 does not blunt the c4-bishop; the plan now has ...b5 challenge it)."
     },
     {
       "fen": "r1b1kb1r/pp3ppp/1qnppn2/8/2B1P3/1NN5/PPP2PPP/R1BQ1RK1 b kq - 1 8",
@@ -29,8 +29,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 used an f2-f4-f5 route; plan 4 proposed f3 alongside an f4 attack. Rewrote plans 1 and 4 around Be3 (with tempo on the b6-queen), Kh1, Qe2 or Qf3, f4 and f5."
     },
     {
       "fen": "r1b1k2r/pp2bppp/1qnppn2/8/2B1P3/1NN5/PPP2PPP/R1BQ1RK1 w kq - 2 9",
@@ -39,8 +39,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 2 had a ...b5-b4 route from an empty b5. Rewrote plan 2 around ...a6, ...b5 and the b-pawn hitting the c3-knight; British spelling in plan 4."
     },
     {
       "fen": "r2qkb1r/pp1bpppp/2np1n2/8/3NP3/2N5/PPP1BPPP/R1BQK2R w KQkq - 5 7",
@@ -49,8 +49,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 4 had White fianchetto with g3 and Bg2 when the bishop is already on e2. Rewrote plan 4."
     },
     {
       "fen": "r1bqkb1r/pp3ppp/2np1n2/1N2p3/4P3/2N5/PPP1BPPP/R1BQK2R b KQkq - 1 7",
@@ -59,8 +59,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "The overview put the Boleslavsky hole on b6 (it is d5); plan 2 had ...b5 with White's knight on b5; plan 1 had an a4-a5 route. Rewrote the overview and plans 1-3."
     },
     {
       "fen": "r1bqkb1r/pp3ppp/2np1n2/4p3/4P3/2N2N2/PPP1BPPP/R1BQK2R b KQkq - 1 7",
@@ -69,8 +69,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 had g3 and Bg2 with the bishop already on e2 and an Ne1-d3 route from an empty e1. Rewrote plan 1 around Bg5xf6 and Nd5; British spelling in the overview and plan 2."
     },
     {
       "fen": "r1bqkb1r/p4ppp/2pp1n2/4p3/4P3/2N5/PPP1BPPP/R1BQK2R w KQkq - 0 8",
@@ -79,8 +79,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 4 had White castling long, which needs the queen and c1-bishop moved first, and called it common. Rewrote plan 4 around short castling and pressure on d5; British spelling in plan 3."
     },
     {
       "fen": "r2qkb1r/pp3ppp/2npbn2/4p3/4P3/1NN5/PPP1BPPP/R1BQK2R w KQkq - 2 8",
@@ -89,8 +89,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 4 routed the b3-knight through occupied c1 and a1; plan 1 had a ...b5-b4 route. Rewrote plans 1, 3 and 4 (reviewer caught that Nd2 does not head for d5)."
     },
     {
       "fen": "r1bqk2r/pp2bppp/2np1n2/4p1B1/4P3/1NN5/PPP1BPPP/R2QK2R b KQkq - 3 8",
@@ -99,8 +99,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 and the overview said Bxf6 damages Black's pawns, though the e7-bishop recaptures; plan 3 routed the b3-knight to f1. Rewrote the overview and plans 1, 3 and 4."
     }
   ]
 }

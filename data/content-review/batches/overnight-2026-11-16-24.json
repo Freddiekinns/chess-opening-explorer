@@ -1,0 +1,146 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "r1b1kb1r/1pqp1ppp/p1n1pn2/8/3NP3/2N3P1/PPP2PBP/R1BQK2R w KQkq - 2 8",
+      "name": "Sicilian: Taimanov, 6.g3 a6 7.Bg2 Nf6",
+      "eco": "B47",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 rerouted knights via Nde2-f4 or Nf1-g3 as single routes. Rewrote plan 3; British spelling in the overview."
+    },
+    {
+      "fen": "r1b1k2r/1pqp1ppp/p1n1pn2/2b5/3NP3/2N3P1/PPP2PBP/R1BQ1RK1 w kq - 4 9",
+      "name": "Sicilian: Taimanov, 6.g3 a6 7.Bg2 Nf6 8.O-O Bc5",
+      "eco": "B47",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 supported the centre with c2-c4 through the c3-knight. Rewrote plan 1."
+    },
+    {
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/3NP3/2N3P1/PPP2PBP/R1BQR1K1 b kq - 5 9",
+      "name": "Sicilian: Taimanov, 6.g3 a6 7.Bg2 Nf6 8.O-O Be7 9.Re1",
+      "eco": "B47",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 traded 'light-squared bishops' with ...Bxd4, which the dark-squared e7-bishop cannot play. Rewrote plan 4; British spelling in the overview."
+    },
+    {
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/P1N1B3/1PP2PPP/R2QKB1R b KQkq - 0 7",
+      "name": "Sicilian: Taimanov, 6.Be3 a6 7.a3",
+      "eco": "B48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 wrote development as 'Bd2/f1, 0-0'; plan 2 wrote ...0-0. Rewrote plans 1-2; British spelling in the overview."
+    },
+    {
+      "fen": "r1b1kbnr/1pqp1ppp/p1n1p3/8/3NP3/2NBB3/PPP2PPP/R2QK2R b KQkq - 1 7",
+      "name": "Sicilian: Taimanov, 6.Be3 a6 7.Bd3",
+      "eco": "B48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 used a ...Nf6-e8-g7 manoeuvre into Black's own g7-pawn. Plan 4 is fixed in the follow-up in batch 2026-11-16-26 (reviewer: first draft had ...Bc5 hitting the e3-bishop after Bxd4)."
+    },
+    {
+      "fen": "r1b1k2r/1pqp1ppp/p1nbpn2/8/3NP3/2NBB3/PPP2PPP/R2Q1RK1 w kq - 4 9",
+      "name": "Sicilian: Taimanov, 6.Be3 a6 7.Bd3 Nf6 8.O-O Bd6",
+      "eco": "B48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed f2-f4-f5 as one route; plan 4 played ...d6-d5 with the bishop on d6 blocking the d-pawn. Rewrote plans 1 and 4."
+    },
+    {
+      "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/N2NP3/4B3/PPP1BPPP/R2Q1RK1 w kq - 6 10",
+      "name": "Sicilian: Taimanov, 6.Be3 a6 7.Be2 Nf6 8.O-O Bb4 9.Na4 Be7",
+      "eco": "B49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "British spelling in plan 3. Plan 2 (light-square control of d5 after Nxc6) is fixed in the follow-up in batch 2026-11-16-26 (reviewer: the c6- and e6-pawns cover d5 after either recapture)."
+    },
+    {
+      "fen": "r1b1k2r/1pqpbppp/p1N1pn2/8/N3P3/4B3/PPP1BPPP/R2Q1RK1 b kq - 0 10",
+      "name": "Sicilian: Taimanov, 6.Be3 a6 7.Be2 Nf6 8.O-O Bb4 9.Na4 Be7 10.Nxc6",
+      "eco": "B49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 targeted a c6-pawn with a minority attack before Black has recaptured; plan 2 put the bishop on b7 behind the c6-pawn. Rewrote plans 1-2; British spelling in the overview. Plan 4 is fixed in the follow-up in batch 2026-11-16-26 (reviewer: Na4-c5 runs into the e7-bishop and ...d6)."
+    },
+    {
+      "fen": "r1b2rk1/1pqp1ppp/p1n1pn2/8/Nb1NP3/4B3/PPP1BPPP/R2Q1RK1 w - - 6 10",
+      "name": "Sicilian: Taimanov, 6.Be3 a6 7.Be2 Nf6 8.O-O Bb4 9.Na4 O-O",
+      "eco": "B49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 played ...Bxc3 when the knight has gone to a4; plan 1 challenged the bishop with c4, which doesn't attack b4. Rewrote plans 1-2."
+    },
+    {
+      "fen": "rnbqkbnr/pp2pppp/3p4/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "name": "Sicilian Defense",
+      "eco": "B50",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed f4-f5 with the f3-knight blocking the f-pawn. Rewrote plan 1."
+    },
+    {
+      "fen": "r1bqkb1r/p2p1ppp/2p1p3/3nP3/8/2N5/PPP2PPP/R1BQKB1R w KQkq - 1 8",
+      "name": "Sicilian: Taimanov, Four Knights, 6.Nxc6 bxc6 7.e5 Nd5",
+      "eco": "B45",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "needs-research",
+      "notes": "Follow-up to batch 2026-11-16-23: plan 1 (a knight route Ne2-c3 for the knight already on c3) was rewritten twice and rejected twice (Bc4 runs into ...cxd5; Ne4 does not attack d5). Old text kept."
+    },
+    {
+      "fen": "r1bqkb1r/1p1pnppp/p1n1p3/8/3NP3/2N5/PPP1BPPP/R1BQK2R w KQkq - 2 7",
+      "name": "Sicilian: Taimanov, 5...a6 6.Be2 Nge7",
+      "eco": "B46",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-16-23: plan 1 rewritten with the e7-knight going to g6, or to c6 after an exchange on d4."
+    },
+    {
+      "fen": "r1bqkb1r/1p1pnppp/p1n1p3/8/3NP3/2N1B3/PPP2PPP/R2QKB1R w KQkq - 2 7",
+      "name": "Sicilian: Taimanov, 5...a6 6.Be3 Nge7",
+      "eco": "B46",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-16-23: plan 3 rewritten without the c8-knight supporting ...b5."
+    },
+    {
+      "fen": "r1b1kbnr/1pq2ppp/p1npp3/8/3NP3/2N3P1/PPP2PBP/R1BQK2R w KQkq - 0 8",
+      "name": "Sicilian: Taimanov, 6.g3 a6 7.Bg2 d6",
+      "eco": "B47",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-16-23: plan 3 rewritten so the c-file rook aims at c3 and the queenside, not the d4-knight."
+    }
+  ]
+}

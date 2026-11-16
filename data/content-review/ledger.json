@@ -8812,5 +8812,65 @@
     "verdict": "fixed",
     "contentHash": "0160e7edee6e0c26",
     "notes": "Plan 1 had a rook lift Rf1-f3-g3 with the bishop still on f1. Rewrote plan 1; British spelling in the overview and plan 3."
+  },
+  "rnbqkbnr/pppp1ppp/4p3/8/4P3/6P1/PPPP1P1P/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "0785b3192b5a5482",
+    "notes": "Plan 1 had an f4-f5 storm with the knight on f3 and 0-0 notation; plan 4 had Black trade light-squared bishops as if c8 could reach g2. Rewrote plans 1 and 4; British spelling in the overview."
+  },
+  "rnbqkbnr/2pp1ppp/p3p3/1p6/2PPP3/8/PP3PPP/RNBQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "cf8f0eacd97ed976",
+    "notes": "Plan 3 named White's b3 and a3 as Black moves. Rewrote plan 3."
+  },
+  "rnbqkbnr/pppp1ppp/4p3/8/2P1P3/8/PP1P1PPP/RNBQKBNR b KQkq - 0 2": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a7bd8f32203e8014",
+    "notes": "Plan 3 named cxd5, ...exd5 and ...Qxd5 in a way the parser could not follow; plan 2 had White \"maintain the tension with c4\" already played. Rewrote plans 2 and 3; British spelling in the overview."
+  },
+  "rnbqkbnr/pp1p1ppp/4p3/2p5/4P3/5N2/PPPPQPPP/RNB1KB1R b KQkq - 1 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "04960ad6067beb83",
+    "notes": "Plan 1 had an f4-f5 storm with the knight on f3. Rewrote plan 1."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/3P4/PPP2PPP/RNBQKBNR w KQkq - 0 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "79db638bf62122a9",
+    "notes": "Plan 1 had an Ne1-g2-f4 route; plan 2 had ...cxd4 with no white pawn on d4 and a ...b5-b4 route; plan 3 had a d2-f1-e3 route. Rewrote plans 1-3."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/3P4/PPPN1PPP/R1BQKBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "88e473bae43c7576",
+    "notes": "Plan 1 had an Nf1-g3-f5 route; plan 3 had a Qe1-h4 route. Rewrote both (the reviewer caught that the castled rook on f1 must move before a knight can use it)."
+  },
+  "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/3P4/PPP1QPPP/RNB1KBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "86113462e9fc498d",
+    "notes": "Plan 3 had an Ne1-f3 route; plan 1 used 0-0. Rewrote plans 1 and 3; British spelling elsewhere."
+  },
+  "rnbqk1nr/ppp2ppp/8/3p4/1b1P4/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "90b5c8d307591a95",
+    "notes": "Plans 3 and 4 named Bxc3 in a way that read as White's move; plan 1 used 0-0. Rewrote plans 1, 3 and 4."
+  },
+  "r1bqkbnr/ppp2ppp/2n5/3p4/3P4/3B4/PPP2PPP/RNBQK1NR w KQkq - 2 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "8a6e7d600574dbc0",
+    "notes": "Plan 1 had an f4-f5 break; plan 2 called ...b5-b4 a minority attack and used 0-0. Rewrote both; British spelling elsewhere."
+  },
+  "rnbqkb1r/ppp2ppp/5n2/3p4/2PP4/8/PP3PPP/RNBQKBNR w KQkq - 1 5": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "de5364c892821e29",
+    "notes": "Plan 3 called the c1-bishop light-squared (it went to b2 or d2); plan 1 had a d4-d5 route. Rewrote plans 1 and 3; British spelling in the overview."
   }
 }

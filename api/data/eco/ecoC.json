@@ -6618,7 +6618,7 @@
       "icsbot": "Paulsen Attack, French "
     },
     "analysis_json": {
-      "description": "The Paulsen Attack is the most classical and popular setup in the French Advance, leading to a tense, strategic battle. White secures a space advantage with the e5 pawn and fortifies the center, while Black immediately works to undermine the d4-pawn and generate counterplay on the queenside. The game revolves around long-term plans dictated by the fixed pawn structure, making it ideal for strategic players who enjoy maneuvering and fighting for control over key squares.",
+      "description": "The Paulsen Attack is the most classical and popular setup in the French Advance, leading to a tense, strategic battle. White secures a space advantage with the e5 pawn and fortifies the centre, while Black immediately works to undermine the d4-pawn and generate counterplay on the queenside. The game revolves around long-term plans dictated by the fixed pawn structure, making it ideal for strategic players who enjoy manoeuvring and fighting for control over key squares.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -6660,7 +6660,7 @@
         "Queenside vs. Kingside play"
       ],
       "common_plans": [
-        "White: Solidify the d4-point, develop pieces harmoniously, and often prepare a kingside attack with f2-f4-f5.",
+        "White: Solidify the d4-point with Be2 or Bd3, castle, and sometimes play a3 and b4 to gain queenside space.",
         "Black: Increase pressure on d4 with ...Qb6 and sometimes ...f6, seek queenside counterplay with ...b5-b4, and solve the problem of the light-squared bishop, often via ...b6 and ...Ba6."
       ],
       "version": "1.0",
@@ -6746,7 +6746,7 @@
       "chronos": "French: advance, Steinitz variation"
     },
     "analysis_json": {
-      "description": "The Steinitz Variation of the French Advance immediately alters the typical closed structure by releasing the central tension with 4.dxc5. This leads to a more open and dynamic game where White aims to consolidate a space advantage while Black seeks to regain the pawn and challenge White's center. The resulting positions are strategically complex, revolving around piece activity and control of key squares, making it suitable for players who enjoy a blend of strategic planning and concrete, tactical play.",
+      "description": "The Steinitz Variation of the French Advance immediately alters the typical closed structure by releasing the central tension with 4.dxc5. This leads to a more open and dynamic game where White aims to consolidate a space advantage while Black seeks to regain the pawn and challenge White's centre. The resulting positions are strategically complex, revolving around piece activity and control of key squares, making it suitable for players who enjoy a blend of strategic planning and concrete, tactical play.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -6785,8 +6785,8 @@
         "White's Space Advantage"
       ],
       "common_plans": [
-        "White: Solidify the center with Nf3 and Be2/d3, control the d4-square, and use the space advantage to restrict Black's pieces or prepare a kingside attack.",
-        "Black: Recapture on c5 (often via ...Nc6-a5 or ...Bxc5), challenge White's pawn on d4 with moves like ...Qb6, and develop counterplay on the queenside.",
+        "White: Hold on to e5 with Nf3 and Bf4 or f4, control the d4-square, and use the space advantage to restrict Black's pieces.",
+        "Black: Regain the pawn with ...Bxc5, or by bringing a knight to d7 to recapture on c5, then pressure the e5-pawn and use the d4-square for a piece.",
         "Black: Prepare the ...f6 pawn break to dismantle White's central pawn chain and liberate the position."
       ],
       "version": "1.0",
@@ -6865,7 +6865,7 @@
     "name": "French: Advance, 3...b6",
     "scid": "C02b",
     "analysis_json": {
-      "description": "The 3...b6 variation of the French Advance is a rare and provocative sideline where Black immediately seeks to solve the problem of the 'bad' light-squared bishop by fianchettoing it. This strategic choice cedes central space and initiative to White in exchange for long-term pressure on the e4-d5 pawn chain. The resulting positions are often unbalanced and require a patient, strategic approach from Black, who must be prepared to defend against White's natural space advantage and potential kingside attack.",
+      "description": "3...b6 is a rare sideline of the French Advance in which Black aims to solve the problem of the 'bad' light-squared bishop by exchanging it with ...Ba6, since the d5-pawn would block a bishop on b7. Black cedes central space and time for that trade and later pressure on White's d4-e5 pawn chain with ...c5. The resulting positions are unbalanced and require patience from Black, who must be ready to defend against White's space advantage and potential kingside attack.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -6906,10 +6906,10 @@
         "Queenside counterplay"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, develop with Nf3-Be2, and launch a kingside attack with f4-f5, exploiting the tempo advantage.",
-        "Black: Complete the fianchetto with ...Bb7, challenge the center with ...c5, and use the active bishop to control key central squares like e4.",
-        "White: Restrict the ...Bb7 bishop and target Black's slightly weakened queenside pawn structure.",
-        "Black: Reroute the knight via d7 to support the center and prepare to meet White's kingside ambitions with a solid defensive setup."
+        "White: Support the centre with c3 and Nf3, decide whether to allow Black's ...Ba6 exchange of light-squared bishops, and keep the space advantage for kingside play.",
+        "Black: Exchange the light-squared bishops with ...Ba6, then challenge the centre with ...c5 and use the light squares freed by the trade.",
+        "White: Use the space advantage on the kingside, and target the weakened c6-square and Black's queenside pawns when the chance arises.",
+        "Black: Reroute the knight via d7 to support the centre and prepare to meet White's kingside ambitions with a solid defensive setup."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T19:59:44.914Z"
@@ -6924,7 +6924,7 @@
     "name": "French: Advance, 3...b6",
     "scid": "C02b",
     "analysis_json": {
-      "description": "The French Advance with 3...b6 is a strategic and flexible sideline where Black immediately seeks to solve the problem of the 'bad' light-squared bishop. By preparing to fianchetto this bishop to b7, Black challenges White's central pawn chain from the flank, leading to a complex positional struggle. This opening is ideal for patient, strategic players who enjoy maneuvering, undermining the opponent's center, and are comfortable playing with less space in the early stages.",
+      "description": "The French Advance with 3...b6 is a strategic and flexible sideline where Black immediately seeks to solve the problem of the 'bad' light-squared bishop. With ...Qd7, Black prepares ...Ba6 to exchange it for White's light-squared bishop, since the d5-pawn would block a bishop on b7, leading to a complex positional struggle. This opening is ideal for patient, strategic players who enjoy manoeuvring, undermining the opponent's centre, and are comfortable playing with less space in the early stages.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -6964,8 +6964,8 @@
         "The 'Good' vs 'Bad' Bishop"
       ],
       "common_plans": [
-        "Black: Fianchetto to b7, prepare the ...c5 pawn break, and reroute pieces to attack the e5 pawn.",
-        "White: Solidify the center with Nf3/c3, control the queenside, and use the space advantage to launch a kingside attack with f4-f5."
+        "Black: Exchange the light-squared bishops with ...Ba6, prepare the ...c5 break, and reroute pieces to attack the e5-pawn.",
+        "White: Support the centre with Nf3, develop with Bd3 or Be2 while deciding whether to allow Black's ...Ba6 exchange, and use the space advantage for kingside play."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:00:04.637Z"
@@ -6980,7 +6980,7 @@
     "name": "French: Advance, 3...Ne7",
     "scid": "C02a",
     "analysis_json": {
-      "description": "The 3...Ne7 variation of the French Advance is a flexible and resilient system, sidestepping the immediate confrontation of the main line 3...c5. Black adopts a more patient, maneuvering approach, preparing to challenge White's central space advantage with a well-supported ...c5 pawn break. This opening is ideal for strategic players who enjoy subtle piece play and are comfortable in complex, closed positions where understanding long-term plans is paramount.",
+      "description": "The 3...Ne7 variation of the French Advance is a flexible and resilient system, sidestepping the immediate confrontation of the main line 3...c5. Black adopts a more patient, manoeuvring approach, preparing to challenge White's central space advantage with a well-supported ...c5 pawn break. This opening is ideal for strategic players who enjoy subtle piece play and are comfortable in complex, closed positions where understanding long-term plans is paramount.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7023,8 +7023,8 @@
         "Activating the 'bad' light-squared bishop"
       ],
       "common_plans": [
-        "Black: Prepare and execute the ...c5 pawn break, often supported by ...Qb6. Maneuver the knight from e7 to f5 to pressure d4. Prepare the secondary ...f6 break to completely dismantle White's center.",
-        "White: Solidify the e5-d4 pawn chain with c3, Nf3, and Be2/d3. Develop pieces to prepare a kingside attack, often involving the Ne2-g3 maneuver. Restrict Black's pieces and maintain the space advantage."
+        "Black: Prepare and execute the ...c5 pawn break, often supported by ...Qb6. Bring the e7-knight to f5 to pressure d4. Prepare the secondary ...f6 break to dismantle White's centre.",
+        "White: Solidify the e5-d4 pawn chain with c3, Nf3, and Be2 or Bd3. Develop pieces to prepare a kingside attack, often with a knight heading via e2 to g3. Restrict Black's pieces and keep the space advantage."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:00:23.348Z"
@@ -7212,7 +7212,7 @@
     "name": "French: Advance, 5.Nf3 Qb6 6.a3 Bd7",
     "scid": "C02w",
     "analysis_json": {
-      "description": "This is a highly strategic and nuanced line in the French Advance. Black's 6...Bd7 is a flexible and solid developing move, preparing to challenge White's central space advantage while keeping options open for the light-squared bishop. The resulting middlegames are typically closed and complex, revolving around long-term plans, pawn breaks (...f6 for Black, b4 for White), and subtle piece maneuvering rather than immediate tactical clashes. This opening is perfect for patient, strategic players who excel at understanding pawn structures and outmaneuvering their opponents in a tense, positional struggle.",
+      "description": "This is a highly strategic and nuanced line in the French Advance. Black's 6...Bd7 is a flexible and solid developing move, preparing to challenge White's central space advantage while keeping options open for the light-squared bishop. The resulting middlegames are typically closed and complex, revolving around long-term plans, pawn breaks (...f6 for Black, b4 for White), and subtle piece manoeuvring rather than immediate tactical clashes. This opening is perfect for patient, strategic players who excel at understanding pawn structures and outmanoeuvring their opponents in a tense, positional struggle.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7256,9 +7256,9 @@
       ],
       "common_plans": [
         "White: Play b4 to gain queenside space, challenge Black's c5-pawn, and create an outpost on c5.",
-        "Black: Undermine White's center, either by exchanging on d4 (...cxd4) to pressure the pawn, or by preparing the ...f6 pawn break.",
-        "White: Solidify the center, develop the light-squared bishop (often to d3 or e2), and prepare for a potential kingside attack if Black commits to ...f6.",
-        "Black: Maneuver pieces to optimal squares, often rerouting the f8-knight or preparing to challenge White's control of the light squares."
+        "Black: Undermine White's centre, either by exchanging on d4 (...cxd4) to pressure the pawn, or by preparing the ...f6 pawn break.",
+        "White: Solidify the centre, develop the light-squared bishop (often to d3 or e2), and prepare for a potential kingside attack if Black commits to ...f6.",
+        "Black: Manoeuvre pieces to good squares, often bringing the g8-knight to f5 via e7 or h6, and keep ...f6 in reserve."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:02:00.531Z"
@@ -7273,7 +7273,7 @@
     "name": "French: Advance, 5.Nf3 Qb6 6.a3 c4",
     "scid": "C02y",
     "analysis_json": {
-      "description": "By playing 6...c4, Black creates a locked pawn structure, transforming the game into a highly strategic and maneuvering battle. The character of the game is a race on opposite wings: Black will seek to expand and create an attack on the queenside, while White will build up for a decisive kingside attack, typically centered around the f4-f5 pawn break. This opening is perfect for patient, strategic players who excel at long-term planning and understanding the nuances of closed positions.",
+      "description": "By playing 6...c4, Black creates a locked pawn structure, transforming the game into a highly strategic and manoeuvring battle. The character of the game is a race on opposite wings: Black will seek to expand and create an attack on the queenside, while White will build up for a decisive kingside attack, typically centred around the f4-f5 pawn break. This opening is perfect for patient, strategic players who excel at long-term planning and understanding the nuances of closed positions.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7314,8 +7314,8 @@
         "Pawn Breaks"
       ],
       "common_plans": [
-        "White: Prepare and execute the f4-f5 pawn break to open lines against the Black king. Maneuver the b1-knight to d2-b3 to control the queenside. Centralize pieces to support the kingside assault.",
-        "Black: Expand on the queenside with ...a5 and ...b5-b4 to create threats. Control the b3 square and pressure White's queenside. Reposition pieces to defend the kingside and prepare for counterplay."
+        "White: Develop with Nbd2, g3 and Bh3 or Be2, then relocate the f3-knight so that the f-pawn can advance two steps against Black's kingside.",
+        "Black: Expand on the queenside with ...a5 and a later b-pawn advance to create threats. Control the b3 square and pressure White's queenside. Reposition pieces to defend the kingside and prepare for counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:02:17.502Z"
@@ -7330,7 +7330,7 @@
     "name": "French: Advance, 5.Nf3 Qb6 6.a3 c4 7.Nbd2",
     "scid": "C02z",
     "analysis_json": {
-      "description": "This variation of the French Advance leads to a highly strategic and closed game, defined by Black's committal 6...c4. The resulting locked pawn structure dictates the plans for both sides, shifting the focus from open-file tactics to slow maneuvering and targeting pawn chain weaknesses. This opening is perfect for patient, strategic players who enjoy outmaneuvering their opponents in complex, closed positions and understanding the nuances of pawn breaks.",
+      "description": "This variation of the French Advance leads to a highly strategic and closed game, defined by Black's committal 6...c4. The resulting locked pawn structure dictates the plans for both sides, shifting the focus from open-file tactics to slow manoeuvring and targeting pawn chain weaknesses. This opening is perfect for patient, strategic players who enjoy outmanoeuvring their opponents in complex, closed positions and understanding the nuances of pawn breaks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7372,10 +7372,10 @@
         "Controlling key squares"
       ],
       "common_plans": [
-        "White's Plan: Attack on the kingside, centered around the f2-f4-f5 pawn break to open lines against the Black king.",
+        "White's Plan: Attack on the kingside, freeing the f-pawn by relocating the f3-knight and then advancing the f-pawn to open lines against the black king.",
         "Black's Plan: Counterplay on the queenside, aiming for the ...b7-b5 pawn break to undermine White's structure and create threats.",
-        "White's secondary plan involves rerouting the b1-knight (via d2-b1-a3/c3) to pressure Black's fixed c4 pawn.",
-        "Both sides maneuver to improve their 'bad' light-squared bishops, often a key factor in the long-term struggle."
+        "White: Develop the f1-bishop and reroute the d2-knight towards the kingside, for example via f1 to g3 or e3.",
+        "Both sides manoeuvre to improve their bad bishops: White's dark-squared bishop is hemmed in by the pawns on c3, d4 and e5, and Black's light-squared bishop by the pawns on d5 and e6."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:02:45.275Z"
@@ -7448,7 +7448,7 @@
     "name": "French: Advance, 5.Nf3 Qb6 6.Be2 cxd4 7.cxd4",
     "scid": "C02u",
     "analysis_json": {
-      "description": "This variation of the French Advance leads to a tense, strategic battle centered around control of the d4 square and the integrity of White's pawn chain. Black aims to pressure White's center, often with moves like ...Nh6-f7 or by targeting the d4 pawn, while White seeks to consolidate their space advantage and launch an attack on the kingside. The resulting positions are rich in positional nuances, making this line ideal for strategic players who excel at long-term planning and exploiting subtle weaknesses.",
+      "description": "This variation of the French Advance leads to a tense, strategic battle centred around control of the d4-square and the integrity of White's pawn chain. Black aims to pressure White's centre, often with ...Nh6 heading for f5 or with pieces aimed at the d4-pawn, while White seeks to consolidate the space advantage and launch an attack on the kingside. The resulting positions are rich in positional nuances, making this line ideal for strategic players who excel at long-term planning and exploiting subtle weaknesses.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7491,8 +7491,8 @@
       "common_plans": [
         "White: Consolidate the d4-pawn, complete development, and use the space advantage to launch a kingside attack, often involving h4-h5.",
         "Black: Increase pressure on the d4 pawn with pieces (e.g., ...Nh6), prepare the ...f6 pawn break to challenge the e5 pawn, and use the semi-open c-file for counterplay.",
-        "White: Maneuver the f3 knight to a better square (e.g., Ne1-g2) to support the kingside and prepare for Black's ...f6 break.",
-        "Black: Solve the problem of the 'bad' light-squared bishop, often by preparing ...b6 and ...Ba6 to trade it off."
+        "White: Keep the f3-knight guarding d4 and e5, and use Nc3 and O-O to complete development before Black's ...f6 arrives.",
+        "Black: Develop with ...Bd7 and a rook on c8, using the open c-file, and look for ...Nb4 or ...Bb4+ to exchange pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-19T20:03:22.727Z"
@@ -170246,9 +170246,9 @@
       ],
       "common_plans": [
         "White: After the typical 8...Nxd4 9.Nxd4 Qxd4, White plays 10.Nc3 to develop with tempo against the queen and d5-pawn. White's main plan is to use the lead in development and open lines to launch a quick attack, often involving moves like Re1, Bg5, and targeting Black's king.",
-        "Black: Accept the gambit pawn and carefully consolidate the position. The main goals are to neutralize White's initiative by trading pieces, complete development (often with ...a6, ...Ne7-f5), and secure the king, aiming to convert the material advantage in the middlegame or endgame.",
-        "White: Create pressure along the semi-open c-file and d-file, often placing a rook on c1 to target the backward c-pawn that may arise.",
-        "Black: Challenge White's central space advantage by preparing the ...f6 pawn break, which, if successful, can completely dismantle White's center and free Black's position."
+        "Black: Accept the gambit pawn and carefully consolidate the position. The main goals are to neutralise White's initiative by trading pieces, complete development (often with ...a6, ...Nge7 and ...Nf5), and secure the king, aiming to convert the material advantage in the middlegame or endgame.",
+        "White: Use the open lines in the centre and on the c-file, with Re1, Qe2 and a rook on c1 or d1, to keep Black's king in the centre.",
+        "Black: Challenge White's central space advantage by preparing the ...f6 pawn break, which, if successful, can completely dismantle White's centre and free Black's position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:31:03.604Z"

@@ -1,10 +1,10 @@
 # Plan reference check
 
-3203 references on 2488 of 12377 pages fail the check and show as plain text.
+3149 references on 2449 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5490 name no move, route, square or piece
-- References by kind: {"square":15415,"piece":14799,"move":53730,"route":9387}
-- References by result: {"now":67340,"on-board":13710,"later":9078,"invalid":3203}
+- References by kind: {"square":15453,"piece":14831,"move":53737,"route":9361}
+- References by result: {"now":67406,"on-board":13746,"later":9081,"invalid":3149}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -20,66 +20,55 @@
   - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
 - **A52 Budapest: Rubinstein, Main Line, 6.Nbd2 Qe7 7.e3** (0 views)
   - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **B13 Caro-Kann Exchange Variation, Rubinstein, 7.Qb3 Qd7** (0 views)
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-  - `c8-bishop`: There is no bishop on c8, or on its way
-  - `...Bb7`: No piece can play Bb7 here, now or after the plan's earlier moves
-- **B13 Caro-Kann Exchange Variation, Rubinstein, 7.Qb3 Qd7** (0 views)
-  - `b4-b5`: One step of b4-b5 can't be played here
-  - `...Be7`: No piece can play Be7 here, now or after the plan's earlier moves
-  - `e4 pawn`: There is no pawn on e4, or on its way
-- **B13 Caro-Kann: Exchange, Rubinstein, 6...Bg4** (0 views)
-  - `Qb3`: No piece can play Qb3 here, now or after the plan's earlier moves
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **B13 Caro-Kann: Exchange, Rubinstein, 7.Qb3 Qc8** (0 views)
-  - `b4-b5`: One step of b4-b5 can't be played here
-- **B13 Caro-Kann: Panov-Botvinnik, 4...e6** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-  - `...Nd5`: No piece can play Nd5 here, now or after the plan's earlier moves
-- **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6 6.Bg5 dxc4** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6 6.cxd5 Nxd5** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6 6.Nf3** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6 6.Nf3 Bg4: Main Line** (0 views)
-  - `Ba3`: No piece can play Ba3 here, now or after the plan's earlier moves
-  - `Qh3`: No piece can play Qh3 here, now or after the plan's earlier moves
-- **B13 Caro-Kann: Panov-Botvinnik, 5...Nc6, Normal Variation** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B14 Caro-Kann Defense: Panov Attack** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B14 Caro-Kann Defense: Panov Attack, Fianchetto Defense** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B14 Caro-Kann Defense: Panov Attack, Fianchetto Defense, Fianchetto Gambit** (0 views)
-  - `Nxd5`: No piece can play Nxd5 here, now or after the plan's earlier moves
-- **B14 Caro-Kann Defense: Panov Attack, Main Line** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-  - `e4-pawn`: There is no pawn on e4, or on its way
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Bb4 7.cxd5 exd5** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-  - `...Nd5`: No piece can play Nd5 here, now or after the plan's earlier moves
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Bb4 7.cxd5 Nxd5** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Bb4 7.cxd5 Nxd5 8.Bd2** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-  - `c5`: No piece can play c5 here, now or after the plan's earlier moves
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Bb4 7.cxd5 Nxd5 8.Bd2 Nc6** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-  - `c5`: No piece can play c5 here, now or after the plan's earlier moves
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-  - `e4 pawn`: There is no pawn on e4, or on its way
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Bb4 7.cxd5 Nxd5 8.Bd2 Nc6** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Bb4 7.cxd5 Nxd5 8.Qc2** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Bb4 7.cxd5 Nxd5 8.Qc2 Nc6** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Bb4 7.cxd5 Nxd5 8.Qc2 Nc6 9.Bd3** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **B14 Caro-Kann: Panov-Botvinnik, 5...e6 6.Nf3 Be7 7.Bd3** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
+- **B15 Caro-Kann: Gurgenidze: 4.Nf3** (0 views)
+  - `Bg7`: No piece can play Bg7 here, now or after the plan's earlier moves
+- **B15 Caro-Kann: Gurgenidze: 4.Nf3 Bg7 5.h3 Nf6 6.e5** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **B16 Caro-Kann Defense: Finnish Variation** (0 views)
+  - `Bf5`: No piece can play Bf5 here, now or after the plan's earlier moves
+- **B17 Caro-Kann Defense: Karpov Variation, Modern Main Line** (0 views)
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **B17 Caro-Kann: Steinitz, 5.Bc4 Ngf6** (0 views)
+  - `gxf6`: No piece can play gxf6 here, now or after the plan's earlier moves
+- **B17 Caro-Kann: Steinitz, 5.Nf3 Ngf6** (0 views)
+  - `...O-O`: No piece can play O-O here, now or after the plan's earlier moves
+  - `...exf6`: No piece can play exf6 here, now or after the plan's earlier moves
+- **B17 Caro-Kann: Steinitz, 5.Nf3 Ngf6 6.Nxf6+** (0 views)
+  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
+- **B17 Caro-Kann: Steinitz, 5.Ng5 Ngf6 6.Bd3** (0 views)
+  - `Bxe6`: No piece can play Bxe6 here, now or after the plan's earlier moves
+- **B18 Caro-Kann Defence: Burris Gambit accepted** (0 views)
+  - `d6`: No piece can play d6 here, now or after the plan's earlier moves
+  - `d8`: No piece can play d8 here, now or after the plan's earlier moves
+- **B18 Caro-Kann Defence:Burris Gambit accepted** (0 views)
+  - `0-0`: No piece can play O-O here, now or after the plan's earlier moves
+- **B18 Caro-Kann Defence:Classical Variation** (0 views)
+  - `0-0-0`: No piece can play O-O-O here, now or after the plan's earlier moves
+- **B18 Caro-Kann Defense: Classical Variation, Flohr Variation** (0 views)
+  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
+  - `Nf4`: No piece can play Nf4 here, now or after the plan's earlier moves
+  - `h4-h5`: One step of h4-h5 can't be played here
+- **B18 Caro-Kann Defense: Martian Gambit** (0 views)
+  - `...e6`: No piece can play e6 here, now or after the plan's earlier moves
+- **B18 Caro-Kann: Classical, 5.Nc5** (0 views)
+  - `d7`: No piece can play d7 here, now or after the plan's earlier moves
+- **B18 Caro-Kann: Classical, 5.Nc5 b6** (0 views)
+  - `...c5`: No piece can play c5 here, now or after the plan's earlier moves
+- **B18 Caro-Kann: Classical, 5.Ng3** (0 views)
+  - `Bg6`: No piece can play Bg6 here, now or after the plan's earlier moves
+- **B18 Caro-Kann: Classical, 6.Bc4 e6 7.N1e2 Nf6** (0 views)
+  - `...Nd7-f8-g6`: Nd7 is ambiguous: the knights on b8 and f6 can both go there
+- **B18 Caro-Kann: Classical, 6.h4 h6 7.f4** (0 views)
+  - `g4-g5`: One step of g4-g5 can't be played here
+- **B18 Caro-Kann: Classical, 6.h4 h6 7.Nh3** (0 views)
+  - `...Nd7-f8`: One step of ...Nd7-f8 can't be played here
+- **B18 Caro-Kann: Classical, 6.N1e2** (0 views)
+  - `Nf3`: No piece can play Nf3 here, now or after the plan's earlier moves
+- **B19 Caro-Kann Defence: Classical Variation** (0 views)
+  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
+- **B19 Caro-Kann Defence: Classical Variation** (0 views)
+  - `g4-g5`: One step of g4-g5 can't be played here
+- **B19 Caro-Kann Defence:Classical Variation** (0 views)
+  - `g4-g5`: One step of g4-g5 can't be played here
+- **B19 Caro-Kann Defence:Classical Variation, Spassky, 10.Qxd3 e6** (0 views)
+  - `g2-g4-g5`: One step of g2-g4-g5 can't be played here

@@ -8486,8 +8486,8 @@
   "rn1qkb1r/1p3ppp/p2pbn2/4p3/4P3/1NN1B3/PPPQ1PPP/R3KB1R b KQkq - 3 8": {
     "reviewedAt": "2026-11-16",
     "verdict": "fixed",
-    "contentHash": "e85f24f54d2f347f",
-    "notes": "Plan 3 routed the b3-knight via c1 to d3; plan 2 had a ...b5-b4 route. Rewrote plans 2 and 3."
+    "contentHash": "71b11fa643721e96",
+    "notes": "Plan 4 named White's g4 as a Black move. Reworded plan 4."
   },
   "rnbqkb1r/1p2pppp/p2p4/6B1/3NP1n1/2N5/PPP2PPP/R2QKB1R b KQkq - 3 7": {
     "reviewedAt": "2026-11-16",
@@ -8584,5 +8584,59 @@
     "verdict": "fixed",
     "contentHash": "6ffc98055eea500f",
     "notes": "Plan 1 had a Bd3-c2 route. Rewrote plan 1 around Bc4 or Bd3; British spelling in the overview."
+  },
+  "r1bq1rk1/1p1nbppp/p2p1n2/8/P3Pp2/2NB1N2/1PP3PP/R1BQ1RK1 w - - 0 11": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "ca4dde1e1e2750e8",
+    "notes": "Plan 1 had Ne3 with no knight able to reach it and claimed the e-file for White, whose e4-pawn blocks it (reviewer). Rewrote plan 1 around Bxf4, the half-open f-file and the weak d6-pawn."
+  },
+  "r1bqkb1r/1p1npppp/p2p1n2/8/3NPP2/2N5/PPP3PP/R1BQKB1R w KQkq - 1 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "c01a03829486cad4",
+    "notes": "Plan 3 had ...Nb6 controlling e5 and a ...b5-b4 route. Rewrote plan 3."
+  },
+  "r1b1kb1r/1pqnpppp/p2p1n2/8/4PP2/2N2N2/PPP3PP/R1BQKB1R w KQkq - 3 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "43b83b454af83f39",
+    "notes": "Plan 1 had a Qe1-g3 route; plan 2 had a ...b7-b5-b4 route; plan 3 sent the d7-knight to f8, where the bishop stands. Rewrote plans 1-3."
+  },
+  "rnbqkb1r/1p3ppp/p2p1n2/4p1B1/3NP3/2N5/PPP2PPP/R2QKB1R w KQkq - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "cae15147c8cded54",
+    "notes": "Plan 2 had ...g5 with the bishop on g5 and a ...b5-b4 route. Rewrote plan 2 (second wording after the reviewer noted Black usually recaptures on f6 with a piece)."
+  },
+  "r1bqkb1r/1p1npppp/p2p1n2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "c2d65b188a90e767",
+    "notes": "Plan 2 used ...0-0 notation and a ...b5-b4 route; plan 3 had ...g5 with the bishop on g5. Rewrote plans 2 and 3; British spelling in the overview and plan 4."
+  },
+  "r1bqkb1r/1p1n1ppp/p2ppn2/6B1/2BNP3/2N5/PPP2PPP/R2Q1RK1 b kq - 1 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "ca350a788a646c75",
+    "notes": "Plan 1 had a Qe1-g3 route; plan 4 rerouted a b8-knight already on d7 and sent it to f8, where the bishop stands. Rewrote plans 1 and 4."
+  },
+  "rnbqkb1r/1p3ppp/p2ppn2/6B1/3NP3/2N5/PPP2PPP/R2QKB1R w KQkq - 0 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "a07e264164ebd34e",
+    "notes": "Plan 3 had ...Rxc3 with the bishop on c8; plan 2 had a ...b5-b4 route. Reworded both."
+  },
+  "rnbqkb1r/1p3ppp/p2ppn2/6B1/3NP3/2N5/PPP1BPPP/R2QK2R b KQkq - 1 7": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "f174defb6b03c104",
+    "notes": "Plan 4 had a Qd1-e1-g3 route through the f2-pawn; plan 2 had a ...b5-b4 route. Rewrote both."
+  },
+  "r1bqkb1r/1p3ppp/p1nppn2/6B1/3NP3/2NQ4/PPP2PPP/R3KB1R w KQkq - 2 8": {
+    "reviewedAt": "2026-11-16",
+    "verdict": "fixed",
+    "contentHash": "fa4f0c17b3460e4d",
+    "notes": "Plan 4 rerouted the c6-knight to e5 via b8-d7. Rewrote plan 4; reworded plan 2."
   }
 }

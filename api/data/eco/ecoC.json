@@ -94776,7 +94776,7 @@
       "icsbot": "Stone-Ware Defense, Evans Gambit "
     },
     "analysis_json": {
-      "description": "The Stone-Ware Variation is a solid and somewhat passive response to the aggressive Evans Gambit. By retreating the bishop to d6, Black aims to blunt White's immediate attacking intentions and create a stable, if slightly cramped, position. This opening leads to a strategic struggle where White tries to justify the gambit by prying open the center, while Black seeks to consolidate and neutralize the initiative, suiting players who prefer to defend accurately against an attack.",
+      "description": "The Stone-Ware Variation is a solid and somewhat passive response to the aggressive Evans Gambit. By retreating the bishop to d6, Black guards e5 and blunts White's immediate attacking intentions, but the bishop blocks the d-pawn and with it the c8-bishop, leaving a stable if slightly cramped position. This opening leads to a strategic struggle where White tries to justify the gambit by prying open the centre, while Black seeks to consolidate and neutralise the initiative, suiting players who prefer to defend accurately against an attack.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -94818,8 +94818,8 @@
         "Defensive Consolidation"
       ],
       "common_plans": [
-        "White: Push d4 to open the center, develop rapidly with Nc3 and O-O, and use the queen and rooks to attack Black's king.",
-        "Black: Solidify the position with ...d6 and ...Nf6, challenge White's central control, and aim to trade pieces to neutralize the initiative and reach a favorable endgame."
+        "White: Push d4 to open the centre and castle quickly, then bring the b1-knight and the rooks into play before Black can untangle the queenside.",
+        "Black: Develop the kingside with ...Nf6 and short castling while the d6-bishop guards e5, then untangle the queenside, where the bishop blocks the d-pawn, and aim to trade pieces to keep the extra pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:23:55.594Z"
@@ -95136,7 +95136,7 @@
     "name": "Evans Gambit: Tartakower Attack, 7...Qd7",
     "scid": "C52",
     "analysis_json": {
-      "description": "The Tartakower Attack is a highly respected and solid defense to the Evans Gambit, where Black prioritizes safety and development over immediate counter-punches. While White still gains the typical gambit initiative and central space, Black's 7...Qd7 calmly defends the weak f7-pawn and prepares to untangle the queenside. The resulting game is a tense, complex battle where White must prove compensation for the pawn against Black's resilient and flexible setup, making it ideal for players who enjoy navigating sharp positions from a sound defensive foundation.",
+      "description": "The Tartakower Attack, 7.Qb3, hits f7 and b7 at once, and 7...Qd7 is Black's solid, highly respected answer, prioritising safety and development over immediate counter-punches. While White still gains the typical gambit initiative and central space, the queen on d7 calmly defends the weak f7-pawn and Black prepares to untangle the queenside. The resulting game is a tense, complex battle where White must prove compensation for the pawn against Black's resilient and flexible set-up, making it ideal for players who enjoy navigating sharp positions from a sound defensive foundation.",
       "style_tags": [
         "Gambit",
         "Sharp",
@@ -95181,10 +95181,10 @@
         "Central Dominance"
       ],
       "common_plans": [
-        "White: Castle and use the open files (especially the e-file after dxe5) to attack. Maneuver the knight to d2-f1-g3 or e3 to join the assault on the kingside. Maintain pressure on the f7 and b7 pawns.",
-        "Black: Complete development with ...Nf6 and ...O-O. Neutralize White's pressure by challenging the center, often with ...exd4 followed by developing the light-squared bishop. Aim to trade pieces to simplify into a favorable endgame with an extra pawn.",
+        "White: Open the d-file with dxe5, castle and bring a rook to d1 to face the d7-queen, develop the b1-knight via d2, and keep up the pressure on the f7- and b7-pawns.",
+        "Black: Complete development with ...Nf6 and ...O-O. Neutralise White's pressure by challenging the centre, often with ...exd4 followed by developing the light-squared bishop. Aim to trade pieces to simplify into a favourable endgame with an extra pawn.",
         "White: Prevent Black from consolidating by creating constant threats and maintaining the initiative, even at the cost of more material.",
-        "Black: After consolidating, use the extra pawn on the queenside as a long-term strategic advantage, potentially creating a passed a-pawn."
+        "Black: After consolidating, use the extra pawn as a long-term asset: Black's three queenside pawns face only two of White's."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:25:32.173Z"
@@ -95199,7 +95199,7 @@
     "name": "Evans Gambit: Tartakower Attack, 8.dxe5 Bb6",
     "scid": "C52",
     "analysis_json": {
-      "description": "The Tartakower Attack is a sharp and theoretically significant line within the Evans Gambit. White sacrifices a pawn for rapid development and a powerful center, aiming to launch a swift attack. Black's solid 8...Bb6 response prepares to challenge White's central control, leading to a dynamic and complex struggle where White's initiative is pitted against Black's resilience and counter-attacking potential. This opening is perfect for tactical players who enjoy seizing the initiative and navigating double-edged positions.",
+      "description": "The Tartakower Attack is a sharp and theoretically significant line within the Evans Gambit. White has given a pawn for rapid development and a powerful centre, aiming to launch a swift attack. Black's solid 8...Bb6 response prepares to challenge White's central control, leading to a dynamic and complex struggle where White's initiative is pitted against Black's resilience and counter-attacking potential. This opening is perfect for tactical players who enjoy seizing the initiative and navigating double-edged positions.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -95240,8 +95240,8 @@
         "Counterplay"
       ],
       "common_plans": [
-        "White aims to complete development rapidly (O-O, Nbd2, Re1), maintain pressure on the center and the f7-pawn, and convert the initiative into a decisive attack.",
-        "Black seeks to neutralize White's initiative by challenging the center (e.g., ...dxe5 followed by ...Nxe5 or ...Bxe5), completing development (...Nf6), and launching counter-attacks against White's exposed position."
+        "White aims to complete development rapidly (O-O, Nbd2, Re1), maintain pressure on the centre and the f7-pawn, and convert the initiative into a decisive attack.",
+        "Black seeks to neutralise White's initiative by eliminating the c4-bishop with ...Na5, which also hits the b3-queen, taking back on e5 at the right moment, and completing development with ...Nf6 or ...Ne7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:25:47.764Z"
@@ -95256,7 +95256,7 @@
     "name": "Evans Gambit: Tartakower Attack, 8.dxe5 dxe5",
     "scid": "C52",
     "analysis_json": {
-      "description": "The Tartakower Attack with 8.dxe5 dxe5 leads to a sharp, open, and highly tactical battle. White has sacrificed a pawn for a lead in development and lasting initiative, aiming to exploit the open center and pressure on Black's position. This line is perfect for aggressive, tactical players who thrive on maintaining pressure and are comfortable playing with the initiative in exchange for material.",
+      "description": "The Tartakower Attack with 8.dxe5 dxe5 leads to a sharp, open, and highly tactical battle. White has sacrificed a pawn for a lead in development and lasting initiative, aiming to exploit the open centre and pressure on Black's position. This line is perfect for aggressive, tactical players who thrive on maintaining pressure and are comfortable playing with the initiative in exchange for material.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -95299,7 +95299,7 @@
       "common_plans": [
         "White plans to castle quickly, play Ba3 to disrupt Black's development and control the long diagonal, and use the open d-file with Rd1 to build pressure.",
         "Black aims to consolidate by playing ...Nf6, castling, and challenging White's central control. Black often seeks to trade pieces to relieve the pressure and steer the game towards an endgame where the extra pawn can be decisive.",
-        "White often continues with O-O, followed by moves like Nc3 and Re1, maintaining maximum piece activity and looking for a decisive breakthrough.",
+        "White often continues with O-O, followed by moves like Nbd2 and Re1, maintaining maximum piece activity and looking for a decisive breakthrough.",
         "Black must carefully defend against threats on f7 and b7, often using the queen on d7 as a key defensive hub before untangling the rest of their pieces."
       ],
       "version": "1.0",
@@ -95738,9 +95738,9 @@
         "Central Domination"
       ],
       "common_plans": [
-        "White: Use the open d-file and the e5 pawn to fuel a direct attack on Black's king, often involving sacrifices on f7 or e6.",
-        "White: Maneuver the c3-knight to key squares like d5 to intensify the pressure and restrict Black's pieces.",
-        "Black: Prioritize king safety by preparing to castle, while challenging White's center with a timely ...d5 pawn break.",
+        "White: Use the d1-rook, the e5-pawn and Ba3, which hits the e7-knight and keeps Black's king in the centre, to fuel a direct attack.",
+        "White: Bring the c3-knight to an active square with Nd5 or Nb5 to intensify the pressure and restrict Black's pieces.",
+        "Black: Prioritise king safety by preparing to castle, while challenging White's centre with a timely ...d5 pawn break.",
         "Black: Seek to trade pieces to diffuse White's initiative and aim for an endgame where the extra pawns become decisive."
       ],
       "version": "1.0",
@@ -95946,7 +95946,7 @@
       "chronos": "Evans gambit: Lasker defence"
     },
     "analysis_json": {
-      "description": "The Lasker Defense is a highly respected and solid response to the aggressive Evans Gambit. Black calmly retreats the bishop to a5 and prepares to return the gambit pawn with ...d6 and ...Bb6, aiming to neutralize White's initiative and steer the game into more strategic channels. This opening leads to a complex battle where White tries to prove compensation for the pawn, while Black relies on precise, principled play to achieve equality and exploit any overextensions.",
+      "description": "The Lasker Defence is a highly respected and solid response to the aggressive Evans Gambit. Black calmly retreats the bishop to a5 and prepares to return the gambit pawn with ...d6 and ...Bb6, aiming to neutralise White's initiative and steer the game into more strategic channels. This opening leads to a complex battle where White tries to prove compensation for the pawn, while Black relies on precise, principled play to achieve equality and exploit any overextensions.",
       "style_tags": [
         "Gambit",
         "Dynamic",
@@ -95988,7 +95988,7 @@
         "Neutralizing an Attack"
       ],
       "common_plans": [
-        "White: Push the e-pawn to e5, develop the queen to b3 or d3 to pressure Black's weak points (f7, b6), and use the open files for an attack.",
+        "White: 8.dxe5 dxe5 9.Qxd8+ Nxd8 10.Nxe5 wins the pawn back but leads to a queenless middlegame; to keep the attack, White can instead try a4 against the b6-bishop or Qb3 against f7.",
         "Black: Return the pawn at an opportune moment (e.g., via ...dxe5 or trading on d4), complete development with ...Nf6 and ...O-O, and challenge White's central dominance to reach a balanced middlegame."
       ],
       "version": "1.0",
@@ -96205,7 +96205,7 @@
       "icsbot": "Mieses Defense, Evans "
     },
     "analysis_json": {
-      "description": "The Mieses Defense (5...Ba5) is a solid and respected reply to the swashbuckling Evans Gambit. By developing with 7...Nge7, Black opts for a more restrained approach, aiming to consolidate and neutralize White's initiative rather than immediately grabbing more material. This leads to a dynamic and complex struggle where White leverages a space advantage and development lead against Black's sound structure and extra pawn. The opening is perfect for tactical players who enjoy fighting for the initiative from both sides of the board.",
+      "description": "The Mieses Defence (7...Nge7) is a solid and respected reply to the swashbuckling Evans Gambit. By developing with 7...Nge7, Black opts for a more restrained approach, aiming to consolidate and neutralise White's initiative rather than immediately grabbing more material. This leads to a dynamic and complex struggle where White leverages a space advantage and development lead against Black's sound structure and extra pawn. The opening is perfect for tactical players who enjoy fighting for the initiative from both sides of the board.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -96247,10 +96247,10 @@
         "Attack on the King"
       ],
       "common_plans": [
-        "White: Use the open lines and development lead to build a quick attack, often targeting f7 and the king. Push the central pawns (d4-d5) to break open the position.",
-        "Black: Consolidate, complete development, and challenge White's center with a timely ...d5 break. Neutralize White's initiative and aim to convert the extra pawn in the endgame.",
-        "White: Maneuver the queen to an active square like Qb3 to pressure both f7 and b7, creating multiple threats.",
-        "Black: Safely castle and prepare to trade pieces, simplifying the position to a more favorable one where the material advantage is more significant."
+        "White: Recapture with 8.cxd4 to rebuild the centre, then use the development lead against f7 (Ng5 is a common idea) and push d5 to drive the c6-knight away.",
+        "Black: Consolidate, complete development, and challenge White's centre with a timely ...d5 break. Neutralise White's initiative and aim to convert the extra pawn in the endgame.",
+        "White: Manoeuvre the queen to an active square with Qb3 to pressure both f7 and b7, creating multiple threats.",
+        "Black: Safely castle and prepare to trade pieces, simplifying to a more favourable position where the material advantage counts for more."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:30:12.012Z"
@@ -96650,10 +96650,10 @@
         "Central Dominance"
       ],
       "common_plans": [
-        "White aims to complete development rapidly (Nc3, 0-0), open the center with moves like dxe5 or e5, and launch a decisive attack against the uncastled Black king.",
+        "White aims to complete development rapidly (O-O, Nbd2), open the centre with dxe5, and launch a decisive attack against the uncastled Black king.",
         "White often uses the open b-file for a rook (Rb1) to add pressure to Black's queenside and the b7 pawn.",
         "Black's primary plan is to survive the initial onslaught by defending accurately (often with ...Qd7), completing development (...Nf6, ...0-0), and consolidating the extra pawn for a long-term advantage.",
-        "Black may need to return the gambit pawn at an opportune moment to neutralize White's initiative and simplify into a more manageable position."
+        "Black may need to return the gambit pawn at an opportune moment to neutralise White's initiative and simplify into a more manageable position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:31:54.821Z"
@@ -96934,7 +96934,7 @@
       "chronos": "Giuoco Piano"
     },
     "analysis_json": {
-      "description": "The Classical Variation of the Italian Game is a principled and strategically rich opening where both sides fight for central control from the outset. White's 4.c3 prepares the d4-pawn push to build an ideal center, while Black's 4...Nf6 immediately challenges the e4-pawn, leading to a dynamic struggle. This opening is perfect for players who enjoy classical principles, developing a deep understanding of central control, piece activity, and the transition into complex middlegames.",
+      "description": "The Classical Variation of the Italian Game is a principled and strategically rich opening where both sides fight for central control from the outset. White's 4.c3 prepares the d4-pawn push to build an ideal centre, while Black's 4...Nf6 immediately challenges the e4-pawn, leading to a dynamic struggle. This opening is perfect for players who enjoy classical principles, developing a deep understanding of central control, piece activity, and the transition into complex middlegames.",
       "style_tags": [
         "Classical",
         "Strategic",
@@ -96976,10 +96976,10 @@
         "Space Advantage vs. Counter-pressure"
       ],
       "common_plans": [
-        "White: Execute the d2-d4 pawn break to seize the center, often leading to an Isolated Queen's Pawn which grants dynamic attacking chances against the Black king.",
-        "Black: Counter White's central ambitions by challenging the e4 pawn, completing development, and preparing to either blockade an IQP or undermine White's center with a timely ...d5.",
-        "White: Develop pieces to active squares (e.g., Re1, Bg5, Nbd2-f1-g3) to support the center and prepare a kingside attack.",
-        "Black: Neutralize the dangerous Italian bishop on c4, often by rerouting the knight via a5 or preparing to challenge it with ...d5, while creating queenside counterplay."
+        "White: Execute the d2-d4 pawn break to seize the centre, often leading to an isolated queen's pawn which grants dynamic attacking chances against the Black king.",
+        "Black: Counter White's central ambitions by challenging the e4-pawn, completing development, and preparing to either blockade an isolated queen's pawn or undermine White's centre with a timely ...d5.",
+        "White: In the slower 5.d3 lines, develop with O-O, Re1 and Nbd2-f1-g3 to support the centre and prepare a kingside attack.",
+        "Black: Neutralise the dangerous Italian bishop on c4, often by rerouting the knight via a5 or preparing to challenge it with ...d5, while creating queenside counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:33:25.083Z"
@@ -171899,8 +171899,8 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "White: Push d5 to attack the knight, develop with Qb3 and Ba3, use the open b-file with Rb1.",
-        "Black: Counter in the center with ...d5, complete development and castle, neutralize White's bishop pair, return the pawn to relieve pressure."
+        "White: Hit the f6-knight with 8.e5, when 8...d5 9.exf6 dxc4 leads to wild play; the other key ideas are Ba3 to stop Black castling, Qb3 against f7 and Rb1 on the half-open b-file.",
+        "Black: Meet 8.e5 with 8...d5, counter-attacking the c4-bishop; otherwise complete development and castle, returning a pawn if needed to defuse White's initiative."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:41:14.064Z"

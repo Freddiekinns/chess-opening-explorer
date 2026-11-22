@@ -11032,5 +11032,65 @@
     "verdict": "fixed",
     "contentHash": "0e8f7e53f5124710",
     "notes": "Plan 1 developed the b1-knight to c3 (the c3-pawn stands there); rewritten around 7.Be2 or 7.Nxe5 Nxc4 8.Nxc4. British spelling in plans 2 and 3."
+  },
+  "r1bqk1nr/pppp1ppp/2nb4/4p3/2B1P3/2P2N2/P2P1PPP/RNBQK2R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "e5900729b3c15278",
+    "notes": "Plan 1 developed the b1-knight to c3 (the c3-pawn stands there); plan 2 played ...d6 with the bishop on d6. Rewrote both plans and the overview (the d6-bishop blocks the d-pawn and the c8-bishop); British spelling."
+  },
+  "r1b1k1nr/pppq1ppp/2np4/b3p3/2BPP3/1QP2N2/P4PPP/RNB1K2R w KQkq - 2 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "28ee354ea6f7c21d",
+    "notes": "Plan 1 rerouted a knight via d2-f1-g3 with no f1 route open after castling; the overview called the Tartakower Attack (7.Qb3) Black's defence. Rewrote the overview and plans 1, 2 and 4."
+  },
+  "r1b1k1nr/pppq1ppp/1bnp4/4P3/2B1P3/1QP2N2/P4PPP/RNB1K2R w KQkq - 1 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "48df1c2cf053d816",
+    "notes": "Plan 2 recaptured on e5 with a b6-bishop that can't reach it; rewritten around ...Na5 against the c4-bishop and b3-queen. British spelling in the overview and plan 1."
+  },
+  "r1b1k1nr/pppq1ppp/2n5/b3p3/2B1P3/1QP2N2/P4PPP/RNB1K2R w KQkq - 0 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "915f900a8a54975a",
+    "notes": "Plan 3 developed the knight to c3 (a pawn stands there); now Nbd2. British spelling in the overview."
+  },
+  "r1bqk2r/pppp1ppp/2n2n2/b7/2BpP3/2P2N2/P4PPP/RNBQ1RK1 w kq - 2 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "cee5e75a97b500e2",
+    "notes": "Plan 1 pushed d5 with no White d-pawn (Black's pawn is on d4); plan 2 spoke of White's bishop pair (both sides have two bishops). Both rewritten around 8.e5 d5 9.exf6 dxc4, Ba3, Qb3 and Rb1."
+  },
+  "r1b1k2r/ppppnppp/2n3q1/b3P3/2B5/1QN2N2/P4PPP/R1BR2K1 b kq - 2 11": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "e38000317d33c6b4",
+    "notes": "Plan 2 sent the knight to 'key squares like d5' (read as a pawn move); plan 1 had sacrifices on e6 where nothing stands. Rewrote plans 1 and 2; British spelling in plan 3."
+  },
+  "r1bqk1nr/ppp2ppp/1bnp4/4p3/2BPP3/2P2N2/P4PPP/RNBQ1RK1 w kq - 1 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "011767dbf783bca2",
+    "notes": "Plan 1 named 'weak points (f7, b6)' where b6 holds Black's bishop; rewritten around 8.dxe5 dxe5 9.Qxd8+ Nxd8 10.Nxe5 and the a4 and Qb3 alternatives. British spelling in the overview."
+  },
+  "r1bqk2r/ppppnppp/2n5/b7/2BpP3/2P2N2/P4PPP/RNBQ1RK1 w kq - 2 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "bdce45b31a7f0a7f",
+    "notes": "Plan 1 pushed d4-d5 with no White d-pawn; the overview called 5...Ba5 the Mieses (it is 7...Nge7). Rewrote the overview and plan 1 (8.cxd4, Ng5, d5); British spelling in plans 2 to 4."
+  },
+  "r1bqk1nr/ppp2ppp/2np4/b3p3/2BPP3/1QP2N2/P4PPP/RNB1K2R b KQkq - 1 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9b07b7e54cedb39e",
+    "notes": "Plan 1 developed the knight to c3 (a pawn stands there); now Nbd2 and dxe5. British spelling in plan 4."
+  },
+  "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9051e07ff472959a",
+    "notes": "Plan 3's Nbd2-f1-g3 was impossible with the d2-pawn unmoved; now tied to the 5.d3 lines. 'IQP' spelled out; British spelling throughout."
   }
 }

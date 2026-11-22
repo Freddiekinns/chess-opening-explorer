@@ -11800,5 +11800,65 @@
     "verdict": "fixed",
     "contentHash": "15f8e9f2039328af",
     "notes": "Overview credited Black with the bishop pair (the d7-bishop has just been taken) and one pawn; plan 1 routed the knight Nc8-b6 without its first step. Rewritten. British spelling."
+  },
+  "r4bnr/1p1q1k1p/2p3p1/1N2Q3/2P1p3/8/PP1P1PPP/R1B1K2R w KQ - 0 14": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "23dd3a046641b110",
+    "notes": "Plan 1 routed the rook ...Ra7-d7 onto its own queen; overview said one pawn down (two) and claimed a lead in development Black does not have (reviewer rejected; fixed and accepted). British spelling."
+  },
+  "r1bqkb1r/pppp2pp/2n2n2/1B2p3/4P3/5N2/PPP2PPP/RNBQK2R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "bad700e992ffb78a",
+    "notes": "Plan 2 played ...Rf6-g6 with no rook able to reach f6 and called the f-file open. Rewritten. British spelling."
+  },
+  "r1bqkbnr/ppp3pp/2n5/1B2N3/4p3/8/PPPP1PPP/R1BQK2R w KQkq - 0 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "ebf98d751d7e2190",
+    "notes": "Plan 3 targeted g7 and an f7-pawn that has gone; overview made concrete (7.Nxc6 hits the queen). British spelling."
+  },
+  "r1b1kb1r/ppp3pp/2N2n2/1B4q1/4p3/8/PPPPQPPP/R1B1K2R w KQkq - 3 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "10caf8924b80a023",
+    "notes": "Plan 4 castled queenside with the c8-bishop at home; plan 3 had f3 blunting the queen. Rewritten around 9.f4 (reviewer rejected the first wording, which said f4 cuts the g5-g2 line; fixed and accepted). British spelling."
+  },
+  "r1b1k2r/ppppb1pp/2n2q2/1B2p3/8/5N2/PPPPQPPP/R1B1K2R w KQkq - 2 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "27f6c20442863b6d",
+    "notes": "Plan 1 castled queenside with the c1-bishop at home and a g4-h4 storm; plan 4 relied on O-O-O. Rewritten around Bxc6 and Nxe5 (reviewer rejected a claimed lead in development; fixed and accepted). British spelling."
+  },
+  "r1b1k2r/ppppb1pp/2B2q2/4p3/8/5N2/PPPPQPPP/R1B1K2R b KQkq - 0 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "b0a85b1d906ea0a9",
+    "notes": "Plan 3 castled White queenside with the c1-bishop at home. Rewritten; reviewer rejected recommending ...bxc6 over the standard ...dxc6, fixed and accepted. British spelling."
+  },
+  "r1bqkbnr/pppp2pp/2n5/1B2pp2/4P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "eca258a28ff6ba8a",
+    "notes": "Plan 3 rerouted the f3-knight via d2 or g1-e2. Rewritten. British spelling."
+  },
+  "r1bqkb1r/pppp2pp/2n2N2/1B2p3/8/5N2/PPPP1PPP/R1BQK2R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "4dc2f5136b4dead0",
+    "notes": "Overview called 6...gxf6 the main move (6...Qxf6 is usual); plan 1 played Be3 through the d2-pawn and castled queenside. Rewritten. British spelling."
+  },
+  "r1b1k1nr/ppppqppp/2n5/1Bb1p3/4P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "3d4085c11dba7a44",
+    "notes": "Plan 2 took on d4 before White has a d-pawn there; plans 3-4 wrote castling with zeros and Nbd2 through the d2-pawn. Rewritten (reviewer rejected the c5-bishop \"holding e5\"; fixed and accepted). British spelling."
+  },
+  "r1bqk1nr/pppp1ppp/8/1Bb1p3/1P1nP3/5N2/P1PP1PPP/RNBQ1RK1 b kq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "eb28590f1c58d882",
+    "notes": "Plan 1 pushed c3-d4 onto the d4-knight and called the b-file open; rewritten around c3 hitting both b4 and d4. British spelling."
   }
 }

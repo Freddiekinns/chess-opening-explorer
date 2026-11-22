@@ -1,10 +1,10 @@
 # Plan reference check
 
-1975 references on 1515 of 12377 pages fail the check and show as plain text.
+1888 references on 1446 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5463 name no move, route, square or piece
-- References by kind: {"square":16266,"piece":15510,"move":54856,"route":8825}
-- References by result: {"now":69622,"on-board":14517,"later":9343,"invalid":1975}
+- References by kind: {"square":16332,"piece":15608,"move":54862,"route":8788}
+- References by result: {"now":69737,"on-board":14623,"later":9342,"invalid":1888}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -51,23 +51,22 @@
   - `fxe3`: No piece can play fxe3 here, now or after the plan's earlier moves
 - **C55 Italian Game: Two Knights Defense, Max Lange Attack, Loman Defense** (0 views)
   - `fxg7`: No piece can play fxg7 here, now or after the plan's earlier moves
-- **C57 Two Knights: Fritz, Paoli's 8.h4** (0 views)
-  - `d2-d4`: One step of d2-d4 can't be played here
-- **C57 Two Knights: Traxler, 5.Nxf7 & 6.Kf1, Palkin Variation** (0 views)
-  - `Kg1-h2`: One step of Kg1-h2 can't be played here
-- **C57 Two Knights: Traxler, 5.Nxf7 & 6.Kxf2** (0 views)
-  - `Kh1`: No piece can play Kh1 here, now or after the plan's earlier moves
-- **C57 Two Knights: Traxler, Chigorin/Pithart Variation** (0 views)
-  - `...d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **C58 Italian Game: Two Knights Defense, Colman Variation** (0 views)
-  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
-- **C58 Italian Game: Two Knights Defense, Maróczy Variation** (0 views)
-  - `a5-knight`: There is no knight on a5, or on its way
-- **C58 Italian Game: Two Knights Defense, Polerio Defense, Bogoljubow Variation** (0 views)
-  - `Ng5-h7`: One step of Ng5-h7 can't be played here
-- **C58 Italian Game: Two Knights Defense, Polerio Defense, Yankovich Variation** (0 views)
-  - `d4-pawn`: There is no pawn on d4, or on its way
-  - `f1-g3`: One step of f1-g3 can't be played here
-  - `Na5`: No piece can play Na5 here, now or after the plan's earlier moves
-- **C58 Two Knights Defence: Morphy, Polerio, 6...Bd7** (0 views)
-  - `...bxc6`: No piece can play bxc6 here, now or after the plan's earlier moves
+- **C63 Ruy Lopez: Schliemann Defense, Classical Variation** (0 views)
+  - `...f5`: No piece can play f5 here, now or after the plan's earlier moves
+- **C64 Ruy Lopez: Classical Variation** (0 views)
+  - `Nf3-g3-f1-e3`: One step of Nf3-g3-f1-e3 can't be played here
+- **C64 Ruy Lopez: Classical Variation, Central Variation** (0 views)
+  - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
+  - `e3`: No piece can play e3 here, now or after the plan's earlier moves
+- **C64 Ruy Lopez: Classical Variation, Charousek Variation** (0 views)
+  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
+- **C64 Ruy Lopez: Classical Variation, Modern Main Line** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **C64 Spanish: Classical, 4.c3 Nf6** (0 views)
+  - `...exd4`: No piece can play exd4 here, now or after the plan's earlier moves
+- **C64 Spanish: Classical, 4.c3 Nge7** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **C64 Spanish: Classical, 4.c3 Qf6** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **C64 Spanish: Classical, 4.O-O** (0 views)
+  - `Nb1-d2-f1-g3`: One step of Nb1-d2-f1-g3 can't be played here

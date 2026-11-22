@@ -1,10 +1,10 @@
 # Plan reference check
 
-2025 references on 1554 of 12377 pages fail the check and show as plain text.
+1975 references on 1515 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5465 name no move, route, square or piece
-- References by kind: {"square":16252,"piece":15458,"move":54833,"route":8837}
-- References by result: {"now":69558,"on-board":14459,"later":9338,"invalid":2025}
+- Plans: 41062, of which 5463 name no move, route, square or piece
+- References by kind: {"square":16266,"piece":15510,"move":54856,"route":8825}
+- References by result: {"now":69622,"on-board":14517,"later":9343,"invalid":1975}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -49,24 +49,25 @@
   - `d4`: No piece can play d4 here, now or after the plan's earlier moves
 - **C50 Giuoco Pianissimo: Italian Four Knights, 5...d6 6.Be3** (0 views)
   - `fxe3`: No piece can play fxe3 here, now or after the plan's earlier moves
-- **C55 Italian Game: Two Knights Defense, Max Lange Attack, Krause Variation** (0 views)
-  - `Nxc3`: No piece can play Nxc3 here, now or after the plan's earlier moves
 - **C55 Italian Game: Two Knights Defense, Max Lange Attack, Loman Defense** (0 views)
   - `fxg7`: No piece can play fxg7 here, now or after the plan's earlier moves
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **C55 Two Knights: 4.d3 Be7 5.c3** (0 views)
-  - `Nf3-e1-g3`: One step of Nf3-e1-g3 can't be played here
-- **C55 Two Knights: 4.d3 Be7 5.O-O O-O** (0 views)
-  - `Ng1-e2-g3`: One step of Ng1-e2-g3 can't be played here
-- **C55 Two Knights: 4.d3 Be7 5.O-O O-O 6.Bb3** (0 views)
-  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
-- **C55 Two Knights: 4.d3 Be7 5.O-O O-O 6.Re1** (0 views)
-  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
-- **C55 Two Knights: 5.O-O Be7** (0 views)
-  - `d5-pawn break`: No piece can play d5 here, now or after the plan's earlier moves
-- **C55 Two Knights: Max Lange, 6.e5 d5** (0 views)
-  - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **C56 Italian Game: Scotch Gambit, Anderssen Attack, Main Line** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **C56 Italian Game: Scotch Gambit, Double Gambit Accepted** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **C57 Two Knights: Fritz, Paoli's 8.h4** (0 views)
+  - `d2-d4`: One step of d2-d4 can't be played here
+- **C57 Two Knights: Traxler, 5.Nxf7 & 6.Kf1, Palkin Variation** (0 views)
+  - `Kg1-h2`: One step of Kg1-h2 can't be played here
+- **C57 Two Knights: Traxler, 5.Nxf7 & 6.Kxf2** (0 views)
+  - `Kh1`: No piece can play Kh1 here, now or after the plan's earlier moves
+- **C57 Two Knights: Traxler, Chigorin/Pithart Variation** (0 views)
+  - `...d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **C58 Italian Game: Two Knights Defense, Colman Variation** (0 views)
+  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
+- **C58 Italian Game: Two Knights Defense, Maróczy Variation** (0 views)
+  - `a5-knight`: There is no knight on a5, or on its way
+- **C58 Italian Game: Two Knights Defense, Polerio Defense, Bogoljubow Variation** (0 views)
+  - `Ng5-h7`: One step of Ng5-h7 can't be played here
+- **C58 Italian Game: Two Knights Defense, Polerio Defense, Yankovich Variation** (0 views)
+  - `d4-pawn`: There is no pawn on d4, or on its way
+  - `f1-g3`: One step of f1-g3 can't be played here
+  - `Na5`: No piece can play Na5 here, now or after the plan's earlier moves
+- **C58 Two Knights Defence: Morphy, Polerio, 6...Bd7** (0 views)
+  - `...bxc6`: No piece can play bxc6 here, now or after the plan's earlier moves

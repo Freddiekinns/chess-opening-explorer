@@ -11092,5 +11092,65 @@
     "verdict": "fixed",
     "contentHash": "9051e07ff472959a",
     "notes": "Plan 3's Nbd2-f1-g3 was impossible with the d2-pawn unmoved; now tied to the 5.d3 lines. 'IQP' spelled out; British spelling throughout."
+  },
+  "r1bqk1nr/pppp2pp/2n5/2b1pp2/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "86cb709281fec0ca",
+    "notes": "Plan 1 named White's d4 in a Black plan; rewritten around the half-open f-file after ...fxe4. The overview now names 5.d4 as the testing reply; British spelling."
+  },
+  "r1b1k1nr/ppppqppp/1bn5/4p3/2BPP3/2P2N2/PP3PPP/RNBQK2R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "5b3f2637b729d236",
+    "notes": "Plan 4 aimed ...a5-a4 at a 'c3-knight' (c3 holds a pawn) and a b2-pawn; rewritten around keeping the b6-bishop safe from a4-a5. Plan 2 dropped a ...d5 break that doesn't fit the line. British spelling, including the opening's name in the overview."
+  },
+  "r1b1k1nr/ppppqppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "647298efd9847e07",
+    "notes": "Plan 2 met d4 with ...exd4, missing the point of 4...Qe7 (5.d4 Bb6 keeps e5); rewritten. British spelling."
+  },
+  "r1b1k2r/1pp1qppp/pbnp1n2/4p3/P1BPP3/2P2N1P/1P3PP1/RNBQR1K1 b kq - 2 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "e92b2b162e1658be",
+    "notes": "Plan 1 pushed e4-e5 onto Black's e5-pawn; rewritten around Nbd2-f1-g3, d4-d5 and a4-a5. Plan 4 sent the c6-knight to e7, where the queen stands (caught by the reviewer); now ...Na5 or ...Nd8-e6. British spelling."
+  },
+  "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 b kq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9446bc8640c8d9a9",
+    "notes": "Plan 1 played Nbd2-f1-g3 with the rook on f1 (now after Re1); plan 4 rerouted the f6-knight via e7-g6 (it is the c6-knight). British spelling."
+  },
+  "r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/5N2/PP1B1PPP/RN1QK2R b KQkq - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "72650e0e365dc989",
+    "notes": "Plan 3 assumed ...Bxd2+ Qxd2 and queenside expansion (8.Nbxd2 is the move, and ...d5 leaves White an isolated d4-pawn). Rewrote the overview and all four plans around the isolated-pawn position."
+  },
+  "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQ1RK1 b kq - 2 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "a1c7f9f1934b114f",
+    "notes": "The overview had Black sacrificing a pawn by taking on e4; White's 5.O-O is the gambit. Plans gave the extra pawn to White and played Nc3 with a pawn on c3. Rewrote the overview and all four plans."
+  },
+  "r1bqk2r/pppp1ppp/2n5/2bBP3/8/2p2NK1/PP4PP/RNBQ3R b kq - 1 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "5b46bd2318b49cd6",
+    "notes": "Plan 2 played ...d5 onto White's d5-bishop; rewritten around ...cxb2, ...Ne7 and ...h5-h4. British spelling in plan 1."
+  },
+  "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w - - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "d69af3bb9c09fa6a",
+    "notes": "Plan 3 routed Black's knight via ...Nbd7-f8-g6 (Black's knight is on c6); plan 1's Nbd2-f1-g3 came before Re1. Both rewritten; British spelling."
+  },
+  "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP1N1PPP/R1BQ1RK1 b - - 3 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "b5043dd2f90c57b9",
+    "notes": "Plan 1 routed the knight from b1 (it is on d2) via f1 with the rook still there; rewritten with Re1 first. British spelling."
   }
 }

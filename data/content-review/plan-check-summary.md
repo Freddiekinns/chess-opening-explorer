@@ -1,10 +1,10 @@
 # Plan reference check
 
-2157 references on 1651 of 12377 pages fail the check and show as plain text.
+2104 references on 1613 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5470 name no move, route, square or piece
-- References by kind: {"square":16181,"piece":15354,"move":54746,"route":8863}
-- References by result: {"now":69338,"on-board":14349,"later":9300,"invalid":2157}
+- Plans: 41062, of which 5468 name no move, route, square or piece
+- References by kind: {"square":16210,"piece":15391,"move":54761,"route":8854}
+- References by result: {"now":69416,"on-board":14391,"later":9305,"invalid":2104}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -54,28 +54,22 @@
   - `Ne6`: No piece can play Ne6 here, now or after the plan's earlier moves
 - **C42 Petrov's Defense: Kaufmann Attack** (0 views)
   - `e4 pawn`: There is no pawn on e4, or on its way
-- **C44 Scotch Game: Scotch Gambit, Cochrane-Anderssen Variation** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-- **C44 Scotch Game: Scotch Gambit, London Defense** (0 views)
-  - `d4-d5`: One step of d4-d5 can't be played here
-  - `dxc3`: No piece can play dxc3 here, now or after the plan's earlier moves
-- **C44 Scotch Game: Sea-Cadet Mate** (0 views)
-  - `...Be7`: No piece can play Be7 here, now or after the plan's earlier moves
-- **C44 Scotch: Cochrane Variation** (0 views)
-  - `Kxf7`: No piece can play Kxf7 here, now or after the plan's earlier moves
-- **C45 Scotch Game: Horwitz Attack, Blackburne Variation** (0 views)
-  - `Bg5`: No piece can play Bg5 here, now or after the plan's earlier moves
-- **C45 Scotch Game: Malaniuk Variation** (0 views)
-  - `...dxc3`: No piece can play dxc3 here, now or after the plan's earlier moves
+- **C48 Four Knights: Rubinstein, 5.Ba4 Nxf3+** (0 views)
+  - `...d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **C48 Four Knights: Rubinstein, 5.Nxe5** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **C49 Four Knights Game: Spanish Variation, Symmetrical Variation** (0 views)
+  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
+- **C49 Four Knights Game: Spanish Variation, Symmetrical Variation** (0 views)
+  - `Bxc6`: No piece can play Bxc6 here, now or after the plan's earlier moves
+- **C49 Four Knights Game: Spanish Variation, Symmetrical Variation** (0 views)
+  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
+- **C49 Four Knights Game: Spanish Variation, Symmetrical Variation, Metger Unpin** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **C49 Four Knights: 4.Bb5 Bb4 5.O-O O-O** (0 views)
+  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **C49 Four Knights: Symmetrical, 7.Bg5** (0 views)
   - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
-  - `Nxc3`: No piece can play Nxc3 here, now or after the plan's earlier moves
-  - `d4-pawn`: There is no pawn on d4, or on its way
-- **C45 Scotch Game: Meitner Variation** (0 views)
-  - `...Bxc2`: No piece can play Bxc2 here, now or after the plan's earlier moves
-  - `bxc2`: No piece can play bxc2 here, now or after the plan's earlier moves
-  - `...Bxc2`: No piece can play Bxc2 here, now or after the plan's earlier moves
-  - `d4-pawn`: There is no pawn on d4, or on its way
-- **C45 Scotch Game: Romanishin Variation** (0 views)
-  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
-- **C45 Scotch Game: Tartakower Variation** (0 views)
-  - `f1-g3`: One step of f1-g3 can't be played here
+- **C49 Four Knights: Symmetrical, 7.Bg5 Bxc3** (0 views)
+  - `Ne2-g3`: One step of Ne2-g3 can't be played here

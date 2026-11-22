@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-22",
+  "pages": [
+    {
+      "fen": "r1bqkb1r/pppn1ppp/8/3pN3/3Pn3/3B4/PPP1QPPP/RNB1K2R b KQkq - 2 6",
+      "name": "Russian Game: Modern Attack, 3...Nxe4 4.Bd3 d5 5.Nxe5 Nd7 6.Qe2",
+      "eco": "C43",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named a 'Nd7-Nxe5' route; rewrote it around 6...Nxe5 7.Bxe4 dxe4 8.Qxe4 and the pawn sacrifice ...Be7, ...O-O (a first version said 8.Qxe4 wins the piece back at once; the reviewer rejected it, as the pinned knight only falls next move). British spelling in plan 3."
+    },
+    {
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/1P2P3/2PP1N2/P4PPP/RNBQKB1R b KQkq - 0 5",
+      "name": "Breyer Opening, Ponziani",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had Nbd2-f1-g3 with the f1-bishop and then the rook on f1; now Be2, O-O, Re1 first. British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq - 0 3",
+      "name": "King's Knight Opening: Konstantinopolsky",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview put the g2-bishop on an 'e4-d5 diagonal' (it is the h1-a8 diagonal); plan 2 had Nbd2-f1-e3 with the bishop on f1; now after Bg2, O-O and Re1. Notation and British spelling in plan 1."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2n2n2/3pp3/4P3/3P1N2/PPPNBPPP/R1BQK2R b KQkq - 1 5",
+      "name": "King's Pawn Game: Tayler Opening, Inverted Hanham",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted the 'b1-knight to f1-g3' when it is already on d2; now Nd2-f1-g3 after Re1. British spelling in the overview and plan 2."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/3P1NP1/PPP2P1P/RNBQKB1R b KQkq - 0 4",
+      "name": "Open Game: Inverted Philidor, 4.g3",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had Re1 and Nbd2-f1-e3 before Bg2 and castling; reordered. British spelling in the overview and plan 2."
+    },
+    {
+      "fen": "rnbqk2r/ppp1b1pp/3p1n2/3Pp3/4N3/2PB4/PP3PPP/RNBQK2R w KQkq - 3 9",
+      "name": "Ponziani Countergambit, Cordel Variation",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2's 'd7' read as a move (now ...Nbd7) and the f-file is half-open for Black, not open."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2PP1N2/PP3PPP/RNBQKB1R b KQkq - 0 4",
+      "name": "Ponziani Opening: Jaenisch Counterattack",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had the Nb1-d2-f1-g3 manoeuvre with the f1-bishop at home; now after Be2, O-O and Re1. '0-0' notation in plans 1 and 4. British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkb1r/ppppnppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 1 4",
+      "name": "Ponziani Opening: Réti Variation",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a d2-f1-g3 route for the b1-knight with the bishop on f1; plan 2 put the knight on g6 and then played ...g6. Rewrote both. British spelling in the overview and plan 3."
+    },
+    {
+      "fen": "r1bqkb1r/ppppnppp/8/3Pp3/4n3/2P2N2/PP3PPP/RNBQKB1R w KQkq - 1 6",
+      "name": "Ponziani: 3...Nf6 4.d4 Nxe4 5.d5 Ne7",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 missed that 6.Nxe5 wins the pawn back; plan 2 had ...Be7 with the knight on e7, and ...d6 against the d5-pawn (rejected by the reviewer, as ...d6 doesn't attack d5); rewrote both."
+    },
+    {
+      "fen": "r1bqk1nr/pppp1ppp/2n5/b3P3/2B5/2P2N2/P4PPP/RNBQK2R b KQkq - 0 7",
+      "name": "Scotch Game: Cochrane Variation",
+      "eco": "C44",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview restricted an f6-knight that is still on g8; plan 3 had an ambiguous ...Ne7-g6. Rewrote both, adding 7...d5."
+    }
+  ]
+}

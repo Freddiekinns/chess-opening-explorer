@@ -91846,7 +91846,7 @@
       "icsbot": "Canal Variation, Italian "
     },
     "analysis_json": {
-      "description": "The Canal Variation introduces a sharp, provocative element to the otherwise quiet Giuoco Pianissimo. By pinning the f6 knight with 6. Bg5, White immediately creates tension and challenges Black's setup, often aiming to disrupt the kingside pawn structure. This opening leads to a strategically complex game where understanding the nuances of the pin and potential pawn structure changes is paramount, suiting players who enjoy creating problems for their opponent from a solid base.",
+      "description": "The Canal Variation introduces a sharp, provocative element to the otherwise quiet Giuoco Pianissimo. By pinning the f6-knight with 6. Bg5, White immediately creates tension and challenges Black's set-up, often aiming for Nd5 to add to the pressure on f6. This opening leads to a strategically complex game where understanding the nuances of the pin and potential pawn structure changes is paramount, suiting players who enjoy creating problems for their opponent from a solid base.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -91886,9 +91886,9 @@
         "Kingside Attack vs. Central Control"
       ],
       "common_plans": [
-        "White: Exchange on f6 (Bxf6) to damage Black's pawn structure, followed by controlling the center and potentially launching a kingside attack.",
+        "White: Answer 6...h6 with 7.Bxf6 and, after 7...Qxf6, play 8.Nd5, hitting the queen and the c7-pawn, before c3 and d4 claim the centre.",
         "White: Maintain the pin, develop with O-O and Re1, and prepare a central break with d4.",
-        "Black: Break the pin with ...h6, forcing the bishop to a decision (Bh4 or Bxf6), and then developing a counter-plan.",
+        "Black: Put the question to the bishop with 6...h6: 7.Bxf6 Qxf6 hands Black the bishop pair, while 7.Bh4 can be met by 7...g5 while Black's king is still uncastled.",
         "Black: Challenge White's c4 bishop with ...Na5, aiming to gain the bishop pair or force a trade to relieve pressure."
       ],
       "version": "1.0",
@@ -92367,7 +92367,7 @@
       "icsbot": "Jerome Gambit; Kentucky Opening "
     },
     "analysis_json": {
-      "description": "The Jerome Gambit is a highly aggressive and speculative opening where White immediately sacrifices a bishop to expose the Black king. This gambit throws classical principles out the window in favor of a chaotic, all-out attack, hoping to overwhelm an unprepared opponent with immediate threats. It is considered unsound at higher levels but is a dangerous surprise weapon in blitz or casual games, perfect for players who thrive on tactical mayhem and psychological pressure.",
+      "description": "The Jerome Gambit is a highly aggressive and speculative opening where White immediately sacrifices a bishop to expose the Black king. This gambit throws classical principles out of the window in favour of a chaotic, all-out attack, hoping to overwhelm an unprepared opponent with immediate threats. It is considered unsound at higher levels but is a dangerous surprise weapon in blitz or casual games, perfect for players who thrive on tactical mayhem and psychological pressure.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -92409,10 +92409,10 @@
         "Psychological Pressure"
       ],
       "common_plans": [
-        "For White, the plan is to continue the attack at all costs with moves like Ng5 and Qh5, aiming for a swift checkmate before Black can consolidate.",
-        "White aims to prevent Black from organizing their pieces by creating constant threats against the exposed king.",
-        "For Black, the primary plan is to survive the initial onslaught, secure the king (often via ...Ke6), and then convert the extra piece in the middlegame or endgame.",
-        "Black should focus on developing pieces, challenging White's control of key squares, and neutralizing the most dangerous attacking pieces."
+        "White: After 4...Kxf7 5.Nxe5+ Nxe5, try to win material back with 6.d4, forking the c5-bishop and the e5-knight, or with 6.Qh5+, and keep the black king under fire. Against good defence the attack runs out and Black stays well ahead in material.",
+        "White aims to prevent Black from organising their pieces by creating constant threats against the exposed king.",
+        "Black: Take with 4...Kxf7; after 5.Nxe5+ Nxe5 6.Qh5+, answer 6...g6 7.Qxe5 with 7...d6, hitting the queen, then finish development and use the extra material.",
+        "Black should focus on developing pieces, challenging White's control of key squares, and neutralising the most dangerous attacking pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:12:19.675Z"
@@ -92432,7 +92432,7 @@
       "icsbot": "Half Giuoco Piano; Semi-Italian Opening "
     },
     "analysis_json": {
-      "description": "The Paris Defense is a solid and resilient response to the Italian Game, characterized by its emphasis on structural integrity over immediate tactical skirmishes. By playing 3...d6, Black secures the central e5-pawn and prepares for steady development, often leading to a more closed, strategic battle. This opening is ideal for patient, positional players who are comfortable defending a slightly passive but fundamentally sound position, aiming to outmaneuver their opponent in the long run.",
+      "description": "The Paris Defence is a solid and resilient response to the Italian Game, characterised by its emphasis on structural integrity over immediate tactical skirmishes. By playing 3...d6, Black secures the central e5-pawn and prepares for steady development, often leading to a more closed, strategic battle. This opening is ideal for patient, positional players who are comfortable defending a slightly passive but fundamentally sound position, aiming to outmanoeuvre their opponent in the long run.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -92472,10 +92472,10 @@
         "Prophylactic play"
       ],
       "common_plans": [
-        "White: Play c3 and d4 to build a strong pawn center and seize a space advantage.",
-        "Black: Complete development with ...Nf6, ...Be7, ...0-0 and prepare to challenge White's center or bishop, often with moves like ...a6 and ...b5.",
-        "White: Develop piece pressure on the kingside, sometimes rerouting the knight via d2-f1-g3.",
-        "Black: Neutralize White's initiative and seek counterplay by exploiting any overextension, often targeting the c4-bishop."
+        "White: Play c3 and d4 to build a strong pawn centre and seize a space advantage.",
+        "Black: Complete development with ...Nf6, ...Be7, ...0-0 and prepare to challenge White's centre or bishop, often with moves like ...a6 and ...b5.",
+        "White: Castle and, after d3 and Re1, bring the b1-knight round with Nbd2-f1-g3 to support a kingside build-up.",
+        "Black: Neutralise White's initiative and seek counterplay by exploiting any overextension, often targeting the c4-bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:12:36.889Z"
@@ -92604,10 +92604,10 @@
         "Rapid Development vs. Structural Damage"
       ],
       "common_plans": [
-        "For Black: Undermine White's center with ...fxe4, followed by ...d5 to open lines for attack. Develop pieces rapidly to target White's king, often before White can consolidate.",
+        "For Black: Undermine White's centre with ...fxe4, followed by ...d5 to open lines for attack. Develop pieces rapidly to target White's king, often before White can consolidate.",
         "For White: Accept the gambit with 4. exf5 and try to weather the storm, aiming to exploit Black's exposed king and structural weaknesses in the long run.",
         "For White: Decline the gambit with 4. d4 or 4. d3, fighting for a central advantage and highlighting the positional defects of Black's ...f5 push.",
-        "For Black: Create pressure along the f-file and challenge White's control of the light squares, particularly d4 and e5."
+        "For Black: Use the half-open f-file after ...fxe4 and aim the pieces at f2, while keeping the light squares around the king, weakened by ...f5, covered."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:13:12.059Z"
@@ -92678,7 +92678,7 @@
     "name": "Evans Gambit Accepted, 5.c3",
     "scid": "C51",
     "analysis_json": {
-      "description": "The Evans Gambit is a quintessential Romantic opening, where White sacrifices a pawn to seize a powerful initiative and a lead in development. By playing 5.c3, White prepares the central thrust d2-d4, aiming to blast open the position for their rapidly developing pieces. This opening is perfect for aggressive, tactical players who thrive in sharp, open battles and enjoy dictating the pace of the game from the very beginning.",
+      "description": "The Evans Gambit is a quintessential Romantic opening, where White sacrifices a pawn to seize a powerful initiative and a lead in development. By playing 5.c3, White hits the b4-bishop and prepares the central thrust d2-d4, aiming to blast open the position for their rapidly developing pieces. This opening is perfect for aggressive, tactical players who thrive in sharp, open battles and enjoy dictating the pace of the game from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -92722,9 +92722,9 @@
         "Exploiting Tempo"
       ],
       "common_plans": [
-        "White: Push d4 to open the center, develop rapidly with moves like Qb3 and Ba3 to pressure Black's weak points (f7, c5), and launch a direct attack.",
-        "Black: Accept the challenge, consolidate the extra pawn, and prepare to counter-attack in the center with ...d5, or return the pawn at the right moment to neutralize White's initiative.",
-        "White: Castle quickly and use the open lines (e-file, d-file) for rooks to join the attack against Black's uncastled king.",
+        "White: Push d4 to open the centre, then castle and use Qb3 against f7 and Ba3 to stop Black castling short, launching a direct attack.",
+        "Black: Retreat the attacked bishop (to a5, e7 or c5), consolidate the extra pawn and prepare to counter-attack in the centre with ...d5, or return the pawn at the right moment to neutralise White's initiative.",
+        "White: Castle quickly and use the lines that d4 opens, especially the e- and d-files, for the rooks to join the attack against Black's uncastled king.",
         "Black: Defend accurately, exchange pieces to relieve pressure, and aim to survive the middlegame to convert the material advantage in the endgame."
       ],
       "version": "1.0",
@@ -93656,8 +93656,8 @@
         "Counterplay on Open Files"
       ],
       "common_plans": [
-        "White: Continue the attack with moves like Qf3 and h4, using the powerful bishop on e5 to control the board. Maneuver the knight from d2 to f1-g3 to join the assault on the exposed black king. Prevent Black from consolidating or creating counterplay.",
-        "Black: Survive the initial onslaught and secure the king, often by moving it to e8. Use the queen on g5 and rook on g8 to generate counterplay against White's king. Attempt to trade pieces to diffuse the attack and reach a favorable endgame."
+        "White: First deal with the threat to g2 from the queen and the g8-rook: Qf3 covers it, and Nd2-f1-g3 can block the g-file. Then use the e5-bishop and the four pawns for the piece, chasing the queen with h4 when possible.",
+        "Black: Use the queen and the g8-rook on the g-file against g2, bring the king to safety and the a5-knight back into play, and trade pieces to blunt White's initiative."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:18:16.873Z"
@@ -93911,9 +93911,9 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White aims to maintain the initiative by completing development rapidly (0-0, Nc3), using the open files to attack, and often sacrificing more material to prevent Black from consolidating.",
-        "Black seeks to neutralize White's attack by trading key pieces (like the c4 bishop), completing development (...d6, ...Nf6), and aiming to use the extra pawn in a favorable endgame.",
-        "White often plays to open the center further to expose the Black king before it can find safety.",
+        "White: Keep the bishop with 7.Be2, or take with 7.Nxe5 and answer 7...Nxc4 with 8.Nxc4; either way, castle quickly and use the open lines while Black's king is still in the centre.",
+        "Black seeks to neutralise White's attack by trading key pieces (like the c4-bishop), completing development (...d6, ...Nf6), and aiming to use the extra pawn in a favourable endgame.",
+        "White often plays to open the centre further to expose the Black king before it can find safety.",
         "Black tries to untangle the queenside, reroute the Na5, and create counter-threats to distract White from the attack."
       ],
       "version": "1.0",
@@ -153873,7 +153873,7 @@
       "scid": "Italian: Hungarian Defence"
     },
     "analysis_json": {
-      "description": "The Hungarian Defence is a solid and reliable, albeit somewhat passive, response to the Italian Game. By playing 3...Be7, Black sidesteps the sharp tactical battles of the Giuoco Piano and Two Knights, aiming for a safe and strategic game. This opening is perfect for cautious players who prefer to neutralize White's early initiative, complete their development, and engage in a long-term positional struggle rather than immediate, open conflict.",
+      "description": "The Hungarian Defence is a solid and reliable, albeit somewhat passive, response to the Italian Game. By playing 3...Be7, Black sidesteps the sharp tactical battles of the Giuoco Piano and Two Knights, aiming for a safe and strategic game. 4.d4 is White's most direct reply, claiming the centre, and Black usually holds the e5-point with 4...d6 rather than opening the game. This opening is perfect for cautious players who prefer to neutralise White's early initiative, complete their development, and engage in a long-term positional struggle rather than immediate, open conflict.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -153914,9 +153914,9 @@
         "Prophylactic play"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, develop pieces, and use the space advantage to pressure Black's slightly cramped position.",
+        "White: Use the extra space: after 4...d6, the d4-d5 push gains more ground and drives the c6-knight away, while Nc3 and castling complete a comfortable set-up.",
         "Black: Respond to d4 with ...d6, complete development with ...Nf6 and ...0-0, and prepare for a timely ...d5 pawn break.",
-        "White: Maneuver to create an attack, often by rerouting the knight to f1-g3 or preparing a kingside pawn advance.",
+        "White: Castle and support e4 with Nc3 and Re1; if Black ever captures on d4, recapture with the knight and enjoy the freer game.",
         "Black: Challenge White's active bishop on c4 with moves like ...Na5 or by preparing to trade it after the ...d5 break."
       ],
       "version": "1.0",
@@ -162173,7 +162173,7 @@
     "eco": "C50",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "This is a cornerstone of classical chess, representing a main line of the Giuoco Piano. White's plan is straightforward and powerful: use the c3 pawn to prepare the d2-d4 central advance, seizing space and initiative. Black's solid development allows for a flexible response, typically meeting d4 with ...exd4 to open the position. The resulting middlegame is strategically rich, revolving around central control and piece activity, making it ideal for players who appreciate a logical and principled battle.",
+      "description": "This is a cornerstone of classical chess, representing a main line of the Giuoco Piano. White's plan is straightforward and powerful: use the c3-pawn to prepare the d2-d4 central advance, seizing space and initiative. Black's solid development allows for a flexible response, typically meeting d4 by taking on d4 to open the position or by dropping the bishop to b6. The resulting middlegame is strategically rich, revolving around central control and piece activity, making it ideal for players who appreciate a logical and principled battle.",
       "style_tags": [
         "Classical",
         "Strategic",
@@ -162214,10 +162214,10 @@
         "Development and Tempo"
       ],
       "common_plans": [
-        "White: Achieve the d4 pawn break to open the center and gain a space advantage.",
-        "Black: Counter in the center with ...exd4, often followed by rerouting the c5-bishop to b6 to maintain pressure.",
-        "White: Utilize the central pawn majority to restrict Black's pieces and build a kingside attack.",
-        "Black: Neutralize White's central pressure and create counterplay against the e4-pawn or on the queenside."
+        "White: Achieve the d4 pawn break to open the centre and gain a space advantage.",
+        "Black: When White pushes the d-pawn, either capture on d4 to open lines or drop the bishop back to b6 to keep the e5-pawn, then look for counterplay against e4.",
+        "White: After d4, aim to keep a broad pawn centre and use it to support a kingside attack, often with Re1 and Bg5.",
+        "Black: Neutralise White's central pressure and create counterplay against the e4-pawn or on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:47:27.903Z"
@@ -170779,7 +170779,7 @@
     "name": "Italian Game: Giuoco Pianissimo",
     "added": "Feb 2025",
     "analysis_json": {
-      "description": "The Giuoco Pianissimo, or 'Very Quiet Game,' is a classical and highly strategic variation of the Italian Game. Both sides opt for solid, logical development, creating a symmetrical and balanced position that avoids early tactical complications. This opening is perfect for patient, positional players who enjoy maneuvering their pieces, understanding subtle pawn structures, and gradually building pressure for a long-term advantage.",
+      "description": "The Giuoco Pianissimo, or 'Very Quiet Game', is a classical and highly strategic variation of the Italian Game. Both sides opt for solid, logical development, creating a symmetrical and balanced position that avoids early tactical complications. With the knight already on c3, White's c-pawn is blocked, so the usual c3 and d4 plan is replaced by piece play. This opening is perfect for patient, positional players who enjoy manoeuvring their pieces, understanding subtle pawn structures, and gradually building pressure for a long-term advantage.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -170820,8 +170820,8 @@
         "The 'Italian' bishop on c4"
       ],
       "common_plans": [
-        "White: Prepare and execute the d3-d4 pawn break, often preceded by moves like h3, Re1, and knight maneuvers (Nbd2-f1-g3).",
-        "Black: Maintain central equality, often with ...a6 to control b5, and prepare to meet d4 with ...exd4 or execute their own ...d5 break.",
+        "White: With the knight on c3, play for Bg5 or Be3, or Na4 to trade off the c5-bishop; the slower plan reroutes the c3-knight via e2 to the g3-square, followed later by c3 and d4.",
+        "Black: Keep the c5-bishop out of reach of a knight jump to a4 with ...a6 and ...Ba7, and mirror White with ...Bg4 or ...Be6, the latter challenging the c4-bishop.",
         "Both sides often play Bg5 (or ...Bg4) to pin the f3/f6 knight, creating positional pressure.",
         "Queenside expansion with a4 for White or ...a6/...b5 for Black is a common secondary plan."
       ],

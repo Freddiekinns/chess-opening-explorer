@@ -9,8 +9,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "needs-research",
+      "notes": "needs-research: plan 2 relies on 'the pin on the e5 pawn', which does not exist; two rewrites were rejected (Qf5+ drops the queen to ...Kxf5; the second named White's knight on d5 before 11.Nxd5), so the old text is kept. Fixed: plan 1 castled a king that has already moved (now 10...Nxa1 11.Nxd5); plan 4's 'd5 pawn' is a knight. British spelling in plan 3."
     },
     {
       "fen": "r1bqkb1r/ppp2Npp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R b KQkq - 0 6",
@@ -19,8 +19,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 2 had Black play ...Ke6 before taking on f7; plan 1's 'Qf3-g3' replaced by 7.Qf3+ Ke6 and Nc3 against the pinned d5-knight. Overview explains the pin; British spelling."
     },
     {
       "fen": "r1bqk2r/pppp1Bpp/2n2n2/2b1p1N1/4P3/8/PPPP1PPP/RNBQK2R b KQkq - 0 5",
@@ -29,8 +29,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1's ...Qh4 is blocked by the king on e7; rewritten around ...Rf8, ...d6 and ...Bg4. Plan 4's 'f8-rook' (it is on h8 yet) reworded; plan 3 corrected (White is a pawn up). British spelling."
     },
     {
       "fen": "r1bqk2r/pppp1Npp/2n5/4p3/2B1n3/8/PPPP2PP/RNBQ2KR b kq - 1 7",
@@ -39,8 +39,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 aimed ...Qh4 at f2 and g2 without the real threat (...Qf2 mate); plan 2 played Re1 with the king on g1 in the way. Rewritten around 7...Qh4 8.g3 Nxg3 9.hxg3 Qxg3+."
     },
     {
       "fen": "r1bqkb1r/p1p2ppp/2n2n2/1p1Pp1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6",
@@ -49,8 +49,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 played ...Qb6 through the c7-pawn; the first rewrite's '...Bb7 adds pressure on g2' was rejected (the c6-knight blocks it) and corrected. Overview no longer calls 4.Ng5 a Fried Liver set-up; British spelling."
     },
     {
       "fen": "r1bq1r2/ppppk1pp/2n2n2/2bBp1N1/4P3/8/PPPP1PPP/RNBQ1RK1 b - - 4 7",
@@ -59,8 +59,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 played ...d5 onto White's d5-bishop; rewritten around the f-file, ...d6 and ...Bg4. Plan 4's 'c3-d4' and the overview's 'Fried Liver Attack setup' corrected; British spelling."
     },
     {
       "fen": "r1bq1r2/ppp1k1pp/2np1n2/2bBp1N1/4P3/2P5/PP1P1PPP/RNBQ1RK1 b - - 0 8",
@@ -69,8 +69,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 sent the queen to h4 through the king on e7 and pinned a f3-knight that is on g5; rewritten around ...Bg4 hitting the d1-queen and ...Bb6. British spelling."
     },
     {
       "fen": "r2q1r2/ppp1k1pp/1bBp1n2/4p1N1/4P1b1/1QP5/PP1P1PPP/RNB2RK1 b - - 0 10",
@@ -79,8 +79,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 used the b-file with the b6-bishop on it and wrote 'd2-d4'; rewritten. British spelling in the overview and plan 2."
     },
     {
       "fen": "r1bqkb1r/p1p2ppp/5n2/1p1Pp1N1/3n4/2P5/PP1P1PPP/RNBQKB1R b KQkq - 1 7",
@@ -89,8 +89,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 4 pushed d2-d4 onto Black's d4-knight; rewritten around 7...Nxd5 8.cxd4 Qxg5. British spelling in plan 2."
     },
     {
       "fen": "r1b1kb1r/p1p2ppp/8/1p1np1q1/3P4/8/PP1P1PPP/RNBQKB1R w KQkq - 0 9",
@@ -99,8 +99,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1's Kg2 walk and 'material advantage' (material is level after 8...Qxg5) rewritten around covering g2 and Bxb5+."
     }
   ]
 }

@@ -10696,5 +10696,65 @@
     "verdict": "fixed",
     "contentHash": "316eecec6dca3e9e",
     "notes": "The overview and plan 2 named a d4-pawn that is a knight; plan 3 had Bg5 pinning an f6-knight (the queen is on f6, the bishop already on e3); plan 4's ...a5-a4 against b2-b4 replaced with ...d5 or ...O-O and ...d6."
+  },
+  "r1b1k2r/ppppnppp/5q2/2b1n3/2BNP3/2P1B3/PP3PPP/RN1QK2R w KQkq - 3 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "cfb466888eaea02e",
+    "notes": "Plan 3 named 'key squares like d5 and c5', read as moves; rewrote it around the supported d4-knight and Nb3 against the c5-bishop."
+  },
+  "r1bqk1nr/pppp1ppp/1bn5/8/P3P3/1N6/1PP2PPP/RNBQKB1R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "7c63aea1f5b98e99",
+    "notes": "Plan 3 had White castling long with the c1-bishop, b1-knight and queen at home; now Nc3-d5 against the b6-bishop and short castling. Plan 1 notes a5 hits the bishop. British spelling in the overview and plan 1."
+  },
+  "r1b1k1nr/pppp1ppp/2N2q2/2b5/4P3/8/PPPQ1PPP/RNB1KB1R b KQkq - 2 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "b964e1844cca492f",
+    "notes": "Plan 1 had Be3 and long castling with the queen on d2 blocking the c1-bishop (rejected once in a rewrite that kept it); now Nc3, Bd3 and O-O. Plan 2 had ...Be7 for a bishop on c5; now ...Ne7, ...Be6 and castling."
+  },
+  "r1b1k1nr/ppp2ppp/2p2q2/2b5/4P3/2N5/PPPQ1PPP/R1B1KB1R b KQkq - 1 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9d962fd49606723d",
+    "notes": "Plan 4 sent the queen to 'e3', read as a pawn move; now Qf4 offering a queen trade. '0-0' notation in plans 1 and 2; British spelling in the overview."
+  },
+  "r1b1kb1r/p1ppqppp/2p2n2/4P3/8/8/PPP1QPPP/RNB1KB1R b KQkq - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "d172458c5da8279c",
+    "notes": "Plan 2 rerouted a knight from d7 (it is on f6, attacked by e5); rewrote it around ...Nd5, ...Nb6 or ...Ba6. Plan 3's d-file is half-open, not open. British spelling in the overview, plans 1 and 4."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/3Np3/1b2P3/5N2/PPPP1PPP/R1BQKB1R b KQkq - 5 4": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "fd2c45f35f3e3b5f",
+    "notes": "The overview called the c6-knight pinned (nothing pins it; the d5-knight attacks the b4-bishop and c7); plan 2 had ...Bxd5 and ...c6 with a knight on c6; plan 3 had f2-f4 behind the f3-knight. Rewrote all three. British spelling in plan 4."
+  },
+  "r1bqkbnr/ppp2ppp/2np4/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 0 4": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "f3b3a017389f1713",
+    "notes": "Plan 2 had ...exd4 before White has played d4; rewrote it. British spelling in the overview and plan 1."
+  },
+  "1rb1kbnr/pp1p1ppp/3P1qn1/1N6/5P2/8/PPP3PP/R1BQKB1R w KQk - 3 12": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "2c964202b4cf1b40",
+    "notes": "Plan 3's 'Nc7+' in Black's plan reworded. British spelling in the overview and plan 3."
+  },
+  "r1bqkb1r/pppp2pp/2n5/3N1p2/3pn3/5N2/PPP1QPPP/R1B1KB1R w KQkq - 0 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "a1e9b9a92f004d14",
+    "notes": "The overview said White sacrificed a pawn (Black is two pawns up); plan 2 had ...d5 with White's knight on d5. Rewrote both, adding the critical 7.Ng5 d3! 8.cxd3 Nd4 (a first rewrite without it was rejected as missing the main idea). British spelling in plans 1 and 3."
+  },
+  "r1bqkb1r/pppp1ppp/2n5/3N4/3pn3/5N2/PPP2PPP/R1BQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "efb8e9e264ca6f18",
+    "notes": "Plan 2 had ...d5 with White's knight on d5; rewrote it. British spelling in the overview and plan 1."
   }
 }

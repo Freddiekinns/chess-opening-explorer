@@ -10516,5 +10516,65 @@
     "verdict": "needs-research",
     "contentHash": "1a07a35c6cfeae11",
     "notes": "needs-research: plan 2 targets an e4-pawn that is a black knight. Two rewrites were rejected by the reviewer (the counterplay against the d-pawn and d4-square could not be confirmed, and the structure is not symmetrical after ...Nxc3 dxc3), so the old text is kept, with British spelling only, and the reference added to the skips. British spelling in the overview and plan 3."
+  },
+  "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/3P1N2/PPP2PPP/RNBQKB1R b KQkq - 0 3": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "29695e5bd8817d7b",
+    "notes": "Plan 2 had an ambiguous Nd2-f1-g3 with the f1-bishop at home; now Be2, O-O, Re1 and Nbd2-f1-g3. British spelling in the overview and plan 3."
+  },
+  "rnb1kb1r/ppp2ppp/3p1n2/6B1/8/3P1N2/PPP1qPPP/RN2KB1R w KQkq - 0 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "5a008ccf9682250a",
+    "notes": "Plan 1 targeted an e5-pawn that isn't there; plan 2 had Re1 before castling and '0-0'; plan 3 had '...0-0' and both ...c6 and ...Nc6. Rewrote plans 1-3 around the open e-file, Nc3-b5 and long castling. British spelling in the overview and plan 4."
+  },
+  "rnbqkb1r/ppp2ppp/8/3p4/3Pn3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "b715f5e559daa868",
+    "notes": "Plan 3 named 'squares like e5 and d4', read as moves; rewrote it around the fight for the e4-knight. British spelling in the overview and plan 2."
+  },
+  "rnbqk2r/ppp1bppp/8/3p4/3Pn3/3B1N2/PPP2PPP/RNBQK2R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "21a8e2bebcf68221",
+    "notes": "Plan 1 had Re1 supporting an e4-pawn White no longer has (e4 holds Black's knight); fixed. British spelling in the overview and plans 2 and 3."
+  },
+  "r2qk2r/ppp1bppp/2n5/3p1b2/3Pn3/3B1N2/PPP2PPP/RNBQR1K1 w kq - 6 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "ca56498e378f3015",
+    "notes": "Plan 1 had a d2-b3 knight route; now 9.c4 Nb4 10.Bf1 O-O 11.a3 Nc6 12.Nc3. Plan 2's ...c5 replaced with ...O-O, ...Bf6, ...Re8 and ...Nb4. Plan 3 claimed the f5-bishop pins and could take on f3; rewritten (a first rewrite with Bxe4 'exchanging' the bishop was rejected)."
+  },
+  "rnbqk2r/pppp1ppp/5n2/4p3/1b2P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "8a2c146754226945",
+    "notes": "The overview and plan 1 called 3...Bb4 a pin (the d2-pawn stands in the way) and missed 4.Nxe5; rewrote them. Notation in plan 2 (...Bxc3) and plan 3 (O-O); British spelling."
+  },
+  "r1bqkb1r/pppp1ppp/2n5/2n1P3/3N4/8/PPP1QPPP/RNB1KB1R w KQkq - 1 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "81850825b8f455e5",
+    "notes": "Plan 2 had Black's ...bxc6 after White's unplayed Nxc6 and ...d5 'dismantling' the centre; rewrote it (a first rewrite insisting on the b-pawn recapture was rejected as unconfirmed). British spelling in the overview and plans 1, 3 and 4."
+  },
+  "rnbq1rk1/ppp2ppp/8/3pb3/2PPn3/3B4/PP3PPP/RNBQ1RK1 w - - 0 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9238856612d30cd1",
+    "notes": "Plans 1 and 2 supported or blockaded an e5-pawn before White has recaptured; now 8.dxe5 and ...Nc6 against the new pawn. British spelling in the overview."
+  },
+  "rnbqkb1r/ppp2ppp/3n4/8/3Q4/2N2N2/PPP2PPP/R1B1KB1R b KQkq - 1 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "f9382b5f2b1bfeb2",
+    "notes": "The overview credited White with an e5-pawn that has been exchanged; plan 1 pinned an f6-knight that is on d6; plan 2 had '...0-0'. Rewrote all three."
+  },
+  "r1bqkb1r/pppN1ppp/8/3p4/3Pn3/3B4/PPP2PPP/RNBQK2R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "0a4d5c3735c29120",
+    "notes": "Plan 2 had ...O-O with the f8-bishop at home; now ...Bd6 and ...O-O, or ...Qh4 and long castling. British spelling in the overview and plan 3."
   }
 }

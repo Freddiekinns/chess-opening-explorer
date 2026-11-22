@@ -88347,7 +88347,7 @@
     "name": "Four Knights: Rubinstein, 5.Ba4",
     "scid": "C48n",
     "analysis_json": {
-      "description": "The 5.Ba4 variation of the Rubinstein Four Knights is a sharp and strategically complex line where White maintains pressure on the c6 knight while avoiding immediate exchanges. This leads to a tense maneuvering game centered around the fate of Black's ambitious knight on d4. The opening is ideal for players who enjoy dynamic positions and fighting for the initiative, blending tactical possibilities with long-term strategic plans.",
+      "description": "The 5.Ba4 variation of the Rubinstein Four Knights is a sharp and strategically complex line where White keeps the bishop rather than allowing it to be exchanged on b5. This leads to a tense manoeuvring game centred around the fate of Black's ambitious knight on d4 and White's chance to take the e5-pawn. The opening is ideal for players who enjoy dynamic positions and fighting for the initiative, blending tactical possibilities with long-term strategic plans.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -88388,8 +88388,8 @@
         "Central pawn breaks"
       ],
       "common_plans": [
-        "White: Complete development with O-O and d3, challenge the d4-knight with c3, and prepare a central d4-break.",
-        "Black: Develop the light-squared bishop to c5, play ...c6 to challenge the a4-bishop and prepare ...d5, and use the d4-knight to disrupt White's coordination."
+        "White: Complete development with O-O and d3, and decide whether to take the e5-pawn with Nxe5 (Black often gives it for activity with ...Bc5 and ...O-O) or to exchange the d4-knight with Nxd4.",
+        "Black: Develop the dark-squared bishop to c5, play ...c6 to prepare ...d5, and use the d4-knight to disrupt White's coordination."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T10:58:11.978Z"
@@ -88632,7 +88632,7 @@
     "name": "Four Knights: Rubinstein, 5.Ba4 Nxf3+",
     "scid": "C48n",
     "analysis_json": {
-      "description": "This variation of the Rubinstein leads to a strategically rich game where Black immediately resolves the central tension. By capturing on f3, Black cedes the bishop pair to White but obtains a solid, easy-to-play position. The game's character shifts from tactical skirmishes to a long-term battle of plans, with White aiming to exploit the two bishops and Black seeking to neutralize them and control the center. This opening is ideal for patient, strategic players who enjoy maneuvering and understanding positional imbalances.",
+      "description": "This variation of the Rubinstein leads to a calm, strategically rich game where Black immediately resolves the central tension by trading knights on f3. White usually recaptures with the queen, and Black, with no structural weaknesses, aims for ...c6 and ...d5 or ...Bc5 to reach a solid, easy-to-play position. The game's character shifts from tactical skirmishes to a long-term battle of plans, making it ideal for patient, strategic players who enjoy manoeuvring and understanding positional imbalances.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -88673,10 +88673,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Utilize the bishop pair to control key diagonals, often preparing a d2-d4 pawn push to open the center and enhance their power.",
+        "White: Use the two bishops and the active queen, often preparing a d2-d4 pawn push to open the centre and enhance their power.",
         "Black: Play ...c6 followed by ...d5 to challenge White's central influence and create space for their pieces.",
-        "White: Maneuver the queen from f3 to other active squares (like g3 or h5) to create threats against the Black king.",
-        "Black: Aim to trade one of White's bishops, particularly the light-squared one, to nullify White's primary long-term advantage."
+        "White: After recapturing with the queen on f3, use it actively, for example on g3, where it eyes the g7- and e5-pawns.",
+        "Black: Develop calmly with ...Bc5 or ...Be7 and castling; with no structural weaknesses, Black can aim for full equality by trading pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T18:53:30.242Z"
@@ -88793,10 +88793,10 @@
         "King in the Center"
       ],
       "common_plans": [
-        "White: Consolidate the extra pawn, neutralize Black's initiative, complete development, and trade pieces to reach a favorable endgame.",
+        "White: Consolidate the extra pawn, neutralise Black's initiative, complete development, and trade pieces to reach a favourable endgame.",
         "Black: Use superior development and piece activity to create threats, regain the pawn with advantage, or maintain a lasting initiative.",
         "White: Often involves retreating the knight from e5 to g4 or f3, followed by d4 to challenge Black's central control.",
-        "Black: A key plan involves ...Qe7 to pin the e5 knight, followed by moves like ...c6 to harass the b5 bishop and prepare queenside expansion."
+        "Black: A key plan is ...Qe7, attacking the e5-knight; if it retreats to f3, Black takes on b5 and wins back the pawn on e4 with check, so White often supports the knight with the f-pawn instead."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T18:54:06.214Z"
@@ -88923,7 +88923,7 @@
     "name": "Four Knights: Rubinstein, Exchange Variation, 8...Qe5+",
     "scid": "C48m",
     "analysis_json": {
-      "description": "This sharp and forcing variation leads to a dynamic and unbalanced position right out of the opening. Black sacrifices a knight temporarily to activate the queen and disrupt White's pawn structure, aiming to neutralize the initiative with a timely queen check. The game often simplifies into an endgame where Black hopes to capitalize on a superior pawn structure, making it an excellent choice for tactical players who are confident in their endgame technique.",
+      "description": "This sharp and forcing variation leads to a dynamic and unbalanced position right out of the opening. Black sacrifices a knight temporarily to activate the queen and disrupt White's pawn structure, aiming to neutralise the initiative with a timely queen check. The game often simplifies into an endgame where Black hopes to capitalise on a superior pawn structure, making it an excellent choice for tactical players who are confident in their endgame technique.",
       "style_tags": [
         "Sharp",
         "Tactical",
@@ -88963,8 +88963,8 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "For Black: Force a queen trade with ...Qxe2+ to enter a favorable endgame, develop the light-squared bishop to c5, and pressure White's weak c3-pawn.",
-        "For White: After 9.Qe2 Qxe2+ 10.Kxe2, complete development, control the open d-file, and try to prove that the central space and piece activity compensate for the doubled pawns."
+        "For Black: If White blocks the check with the queen on e2, trade queens to enter a comfortable endgame, then develop the dark-squared bishop and pressure White's doubled c-pawns.",
+        "For White: After 9.Qe2 Qxe2+ 10.Bxe2 (or recapturing with the king), complete development quickly, use the open e-file and the half-open d-file, and show that active pieces make up for the doubled c-pawns."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T18:55:02.537Z"
@@ -89257,7 +89257,7 @@
         "Piece Activity vs Pawn Structure"
       ],
       "common_plans": [
-        "White aims to consolidate the extra pawn, neutralize the active Nd4 knight (often with Be2 or Ba4-c2), and leverage the central pawn majority.",
+        "White aims to consolidate the extra pawn and neutralise the active d4-knight, often with Ba4 and Nd3 (hitting the c5-bishop), then e5 to gain space.",
         "Black seeks to use the initiative to create threats against White's king and weak pawns (like c2), often with moves like ...Re8, to prevent consolidation and launch an attack."
       ],
       "version": "1.0",
@@ -89278,7 +89278,7 @@
       "chronos": "Four knights"
     },
     "analysis_json": {
-      "description": "The Spanish Variation of the Four Knights Game is a classical and strategically rich opening defined by Black's decision to trade a bishop for a knight, creating a fundamental imbalance. White gains the long-term advantage of the bishop pair, while Black inflicts a doubled pawn on White's queenside. This leads to a quiet, strategic battle where White aims to open the position to unleash the bishops, and Black seeks to keep it closed, control key squares, and target the structural weaknesses. It is ideal for patient, positional players who enjoy maneuvering and executing long-term plans.",
+      "description": "The Spanish Variation of the Four Knights Game is a classical and strategically rich opening defined by Black's decision to trade a bishop for a knight, creating a fundamental imbalance. White gains the long-term advantage of the bishop pair, while Black inflicts a doubled pawn on White's queenside. This leads to a quiet, strategic battle where White aims to open the position to unleash the bishops, and Black seeks to keep it closed, control key squares, and target the structural weaknesses. It is ideal for patient, positional players who enjoy manoeuvring and executing long-term plans.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -89319,10 +89319,10 @@
         "Opening the Position"
       ],
       "common_plans": [
-        "White: After 7.bxc3, prepare the d3-d4 pawn break to open the center and activate the bishop pair.",
-        "Black: Play ...d5 to challenge the center and keep the position relatively closed, neutralizing White's bishops.",
-        "White: Maneuver pieces to support the central advance and use the bishops to create threats on both flanks.",
-        "Black: Target White's weak c4-pawn with pieces like the knight via ...Na5, creating a long-term positional pressure point."
+        "White: After 7.bxc3, prepare the d3-d4 pawn break to open the centre and activate the bishop pair.",
+        "Black: Play ...d5 to challenge the centre and keep the position relatively closed, neutralising White's bishops.",
+        "White: Manoeuvre pieces to support the central advance and use the bishops to create threats on both flanks.",
+        "Black: Target White's doubled c-pawns with pieces, for example ...Na5 and, if White pushes the front pawn to c4, ...b6 and ...Ba6 against it, creating a long-term positional pressure point."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T18:56:45.448Z"
@@ -89473,7 +89473,7 @@
       "chronos": "Four knights: double Ruy Lopez"
     },
     "analysis_json": {
-      "description": "The Double Spanish Variation is a highly symmetrical and strategic line in the Four Knights Game. It leads to a quiet, maneuvering game where both sides build up their positions slowly, focusing on long-term plans rather than immediate tactical clashes. This opening is ideal for patient, positional players who excel at understanding subtle piece placement, managing central tension, and accumulating small advantages in a balanced structure.",
+      "description": "The Double Spanish Variation is a highly symmetrical and strategic line in the Four Knights Game. It leads to a quiet, manoeuvring game where both sides build up their positions slowly, focusing on long-term plans rather than immediate tactical clashes. This opening is ideal for patient, positional players who excel at understanding subtle piece placement, managing central tension, and accumulating small advantages in a balanced structure.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -89514,7 +89514,7 @@
         "Maneuvering"
       ],
       "common_plans": [
-        "White aims for the d3-d4 pawn break to seize central space and may reroute the c3-knight (e.g., Nd2-f1-g3).",
+        "White aims for the d3-d4 pawn break to seize central space and may reroute the c3-knight via e2 to g3 (Ne2-g3).",
         "Black seeks to maintain equality, often preparing the ...d7-d5 break and challenging White's bishop with ...a6.",
         "Both sides must decide whether to exchange their 'Spanish' bishop for the knight, which fundamentally alters the pawn structure and strategic nature of the game."
       ],
@@ -89603,7 +89603,7 @@
       "icsbot": "Janowski Variation, Four Knights "
     },
     "analysis_json": {
-      "description": "The Janowski Variation is a highly strategic and positional line in the Four Knights Game. The defining moment is Black's exchange on c3, ceding the bishop pair to inflict doubled pawns on White, setting the stage for a long-term structural battle. This opening is perfect for patient, strategic players who enjoy maneuvering, understanding pawn structures, and accumulating small advantages rather than seeking immediate tactical complications.",
+      "description": "The Janowski Variation is a highly strategic and positional line in the Four Knights Game. The defining moment is Black's exchange on c3, ceding the bishop pair to inflict doubled pawns on White, setting the stage for a long-term structural battle. This opening is perfect for patient, strategic players who enjoy manoeuvring, understanding pawn structures, and accumulating small advantages rather than seeking immediate tactical complications.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -89644,8 +89644,8 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White aims to use the bishop pair by preparing the d3-d4 pawn break to open the center. A key plan involves repositioning the knight via Ng1-f1-e3/g3 to support the center and prepare kingside activity.",
-        "Black seeks to keep the position relatively closed to devalue White's bishops, while targeting the doubled c-pawns as a long-term weakness. A common maneuver is ...Ne7-g6 to control key squares and pressure White's e4-pawn."
+        "White aims to use the bishop pair by preparing the d3-d4 pawn break to open the centre. A key plan involves repositioning the f3-knight via d2 and f1 to e3 or g3 (Nd2-f1) to support the centre and prepare kingside activity.",
+        "Black seeks to keep the position relatively closed to devalue White's bishops, while targeting the doubled c-pawns as a long-term weakness. A common manoeuvre is ...Ne7 and ...Ng6 to eye the f4- and h4-squares."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T18:58:21.013Z"
@@ -174413,7 +174413,7 @@
     "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Bb4 5. O-O O-O 6. d3 d6 7. Bg5 Bxc3 8. bxc3 Ne7",
     "src": "chessGraph",
     "analysis_json": {
-      "description": "The Bernstein Variation is a highly strategic and nuanced line within the Four Knights Game. By trading his light-squared bishop for the knight on c3, Black concedes the bishop pair but saddles White with doubled pawns, creating a long-term structural imbalance. The game revolves around Black's attempts to exploit the c-pawn weakness and White's efforts to use the bishop pair and open b-file to generate an attack. This opening is perfect for patient, strategic players who enjoy maneuvering and fighting for subtle positional advantages.",
+      "description": "The Bernstein Variation is a highly strategic and nuanced line within the Four Knights Game. By trading the dark-squared bishop for the knight on c3, Black concedes the bishop pair but saddles White with doubled pawns, creating a long-term structural imbalance. The game revolves around Black's attempts to exploit the c-pawn weakness and White's efforts to use the bishop pair and half-open b-file to generate an attack. This opening is perfect for patient, strategic players who enjoy manoeuvring and fighting for subtle positional advantages.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -174455,10 +174455,10 @@
         "Knight Maneuvering"
       ],
       "common_plans": [
-        "White: Use the bishop pair and open b-file to create pressure, often preparing a kingside attack with moves like Qe2, h3, and f4.",
-        "Black: Maneuver the knight from e7 to g6 to control key squares (f4, h4) and prepare to challenge the center.",
-        "Black: Target the weak c4 pawn, often with moves like ...Qe8, ...Na5, or by controlling the c5 square.",
-        "White: Solidify the center, often with moves like Kh1 and Re1, to support a potential e4-e5 push or defend against Black's ...d5 break."
+        "White: Use the bishop pair and half-open b-file to create pressure. A typical attacking idea is Bxf6, breaking up Black's kingside pawns, followed by Nh4 and f4.",
+        "Black: Manoeuvre the knight from e7 to g6 to control the f4- and h4-squares and prepare to challenge the centre.",
+        "Black: Keep the position closed and treat White's doubled c-pawns as a long-term target, while untangling with ...Ng6 or ...c6 and ...Qc7.",
+        "White: Solidify the centre, often with Re1, to support a later d3-d4 push or defend against Black's ...d5 break."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:54:47.178Z"
@@ -174535,7 +174535,7 @@
     "moves": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Bb4 5. O-O O-O 6. Nd5 Bc5 7. d4",
     "src": "chessGraph",
     "analysis_json": {
-      "description": "The Blackburne Attack with 7.d4 is a sharp and ambitious pawn sacrifice by White, aiming to blow open the center and seize the initiative. This line transforms a typically strategic Four Knights Game into a tactical melee, where White's piece activity is pitted against Black's material advantage. It is perfectly suited for aggressive players who thrive in complex, dynamic positions and enjoy calculating sharp variations from the very beginning.",
+      "description": "The Blackburne Attack with 7.d4 is a sharp and ambitious pawn sacrifice by White, aiming to blow open the centre and seize the initiative. This line transforms a typically strategic Four Knights Game into a tactical melee, where White's piece activity is pitted against Black's material advantage. It is perfectly suited for aggressive players who thrive in complex, dynamic positions and enjoy calculating sharp variations from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -174577,8 +174577,8 @@
       "common_plans": [
         "White's plan is to justify the d4-pawn sacrifice by opening lines for the pieces, especially the c1-bishop and queen, to create a swift attack against the black king.",
         "White aims to use the active knights on d5 and f3 to generate threats and prevent Black from consolidating the extra pawn.",
-        "Black's primary goal is to accept the gambit, carefully neutralize White's initiative through precise defense and exchanges, and convert the material advantage in the endgame.",
-        "Black often seeks to counterattack in the center, sometimes with a timely ...d5 push, to challenge White's control and simplify into a favorable position."
+        "Black's primary goal is to accept the gambit, carefully neutralise White's initiative through precise defence and exchanges, and convert the material advantage in the endgame.",
+        "Black often seeks to counterattack in the centre, for example by exchanging the d5-knight with ...Nxd5 and then hitting White's centre, to challenge White's control and simplify into a favourable position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:55:21.790Z"

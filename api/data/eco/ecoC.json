@@ -115295,7 +115295,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Improved Steinitz Defense is a solid and classical response within the Ruy Lopez, offering a more flexible setup than the traditional Steinitz. Black fortifies the center with ...d6, aiming for a robust and resilient position rather than the immediate liquidations of the main Berlin Wall. This opening is ideal for strategic players who enjoy maneuvering, understanding pawn structures, and accumulating small advantages in a complex, closed middlegame.",
+      "description": "The Improved Steinitz Defence is a solid and classical response within the Ruy Lopez, offering a more flexible setup than the traditional Steinitz. Black fortifies the centre with ...d6, aiming for a robust and resilient position rather than the immediate liquidations of the main Berlin Wall. This opening is ideal for strategic players who enjoy manoeuvring, understanding pawn structures, and accumulating small advantages in a complex, closed middlegame.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -115336,8 +115336,8 @@
         "Space Advantage vs. Solid Structure"
       ],
       "common_plans": [
-        "White: Play d4 to open the center, use the space advantage, and maintain pressure on Black's central pawns.",
-        "Black: Solidify the position with ...Be7 and ...O-O, challenge White's bishop with ...b5, and aim for a timely ...d5 pawn break to equalize."
+        "White: Play d4 to open the centre, use the space advantage, and maintain pressure on Black's central pawns.",
+        "Black: Unpin the c6-knight with ...Bd7 and develop with ...Be7; once White has pushed the d-pawn and brought a rook to the e-file, give up the e5-point by exchanging pawns before castling, since castling first walks into the Tarrasch Trap."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:02:28.115Z"
@@ -115351,7 +115351,7 @@
     "moves": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6 4. d4 Bd7 5. Nc3 Nf6 6. O-O Be7 7. Re1 O-O",
     "name": "Ruy Lopez: Berlin Defense, Tarrasch Trap",
     "analysis_json": {
-      "description": "The Ruy Lopez, Steinitz Defense Deferred (often reaching this position) is a classical and highly strategic system. Black opts for a solid, resilient setup, reinforcing the e5-pawn before developing the kingside, leading to a game rich in positional maneuvering and long-term planning. While the position is fundamentally sound, it contains the famous 'Tarrasch Trap', a tactical pitfall White can fall into, making it a strategically deep yet tactically alert opening for players who appreciate subtle positional battles.",
+      "description": "This position from the Steinitz Defence to the Ruy Lopez is the setting of the famous Tarrasch Trap. Black's solid but passive setup holds the e5-pawn, yet castling here with 7...O-O is a mistake: White wins a pawn by force with 8.Bxc6 Bxc6 9.dxe5 dxe5 10.Qxd8 Raxd8 11.Nxe5, and the natural counter 11...Bxe4 loses more material. It rewards players who know the line and punishes those who develop on autopilot.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -115393,10 +115393,10 @@
         "Exploiting the pin on the e-file"
       ],
       "common_plans": [
-        "White often plays Bxc6 to damage Black's pawn structure, followed by controlling the center and using the space advantage to build an attack.",
-        "White plans to complete development with moves like c3, h3, and maneuvering the b1-knight to d2-f1-g3.",
-        "Black aims to maintain a solid structure, neutralize White's pressure, and prepare the liberating ...d5 pawn break.",
-        "Black must remain vigilant for the Tarrasch Trap after 8.Bxc6 Bxc6 9.dxe5 dxe5 10.Qxd8 Raxd8, where 11.Nxe5?? loses to 11...Bxe4."
+        "White: Spring the trap with 8.Bxc6 Bxc6 9.dxe5 dxe5 10.Qxd8 Raxd8 11.Nxe5, winning the e5-pawn.",
+        "White: Black's position is cramped, so even without the trap White keeps the tension on e5, with the b5-bishop, both knights and the e1-rook all bearing on the centre.",
+        "Black: The safe course was to give up the centre with ...exd4 before castling; now Black must accept the loss of a pawn after the forcing line and try to hold with active pieces and the bishop pair.",
+        "Black's natural 11...Bxe4 12.Nxe4 Nxe4 regains the pawn only on the surface: 13.Nd3 f5 14.f3 Bc5+ 15.Nxc5 Nxc5 16.Bg5 Rd5 17.Be7 wins material, as in Tarrasch–Marco, Dresden 1892."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:02:45.742Z"
@@ -115415,7 +115415,7 @@
       "eco_js": "Ruy Lopez: Closed Berlin Defense: Chigorin Variation"
     },
     "analysis_json": {
-      "description": "The Chigorin Variation of the Closed Berlin is a classical and highly respected defense, offering a solid alternative to the more famous Berlin Wall. Black reinforces the central e5-pawn with ...Nd7, leading to a strategically complex game where both sides maneuver for control of the center. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and understanding subtle positional nuances.",
+      "description": "The Chigorin Variation of the Closed Berlin is a classical and respected defence, offering a solid alternative to the more famous Berlin Wall. Black reinforces the central e5-pawn with ...Nd7, leading to a strategically complex game where both sides manoeuvre for control of the centre. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and understanding subtle positional nuances.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -115458,10 +115458,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Play c3-d4 to build a strong center, develop pieces harmoniously, and create pressure on Black's structure.",
-        "Black: Challenge White's center with ...exd4, play ...b5 to kick the b5-bishop, and seek counterplay through piece maneuvering and potential pawn breaks like ...c5.",
-        "White: Exchange on e5 (dxe5 dxe5) to open the d-file and target the d6 pawn.",
-        "Black: Fianchetto the light-squared bishop via ...g6 and ...Bg7 to control key diagonals and bolster the kingside."
+        "White: Often play Bxc6 bxc6 to leave Black with doubled c-pawns, then develop with Nc3 and Re1 and keep the d4-e4 centre.",
+        "Black: Hold the e5-point with ...Be7 and ...O-O, or release the tension with ...exd4; if White takes on c6, the bishop pair and a compact position give Black long-term chances.",
+        "White: After Bxc6 bxc6, open the d-file with dxe5 at a good moment and press against the doubled c-pawns in a slow game.",
+        "Black: Bring the dark-squared bishop to f6 via ...Be7, or fianchetto it with ...g6 and ...Bg7; either way it adds support to e5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:03:05.808Z"
@@ -115476,7 +115476,7 @@
     "name": "Spanish: Closed Berlin, 5.d4",
     "scid": "C66",
     "analysis_json": {
-      "description": "White immediately challenges Black's solid Berlin setup by striking in the center with 5.d4, aiming to seize the initiative and open lines. This leads to a strategically complex and rich middlegame where central control, piece activity, and understanding pawn tension are paramount. The opening is well-suited for players who enjoy a classical, strategic battle and are comfortable navigating intricate positional struggles.",
+      "description": "White immediately challenges Black's solid Berlin setup by striking in the centre with 5.d4, aiming to seize the initiative and open lines. This leads to a strategically complex and rich middlegame where central control, piece activity, and understanding pawn tension are paramount. The opening is well-suited for players who enjoy a classical, strategic battle and are comfortable navigating intricate positional struggles.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -115517,10 +115517,10 @@
         "Black's Solid Counterplay"
       ],
       "common_plans": [
-        "For White, maintain central tension, develop pieces to active squares (e.g., Nc3, Re1), and prepare to open the position favorably, often targeting Black's e5 pawn.",
-        "For Black, solidify the center with ...Bd7, complete development, and seek counterplay by challenging White's control, often through moves like ...a6 or preparing a ...b5 pawn break.",
+        "For White, maintain central tension, develop pieces to active squares (e.g., Nc3, Re1), and prepare to open the position favourably, often targeting Black's e5 pawn.",
+        "For Black, unpin the c6-knight with ...Bd7 and develop with ...Be7, but release the tension with ...exd4 before castling: holding e5 and castling first walks into the Tarrasch Trap.",
         "After an exchange on d4 (e.g., 5...exd4 6.Nxd4), White will use the open d-file and pressure on e5 to build an advantage.",
-        "Black aims to neutralize White's powerful light-squared bishop, often by exchanging it, to relieve the pin and simplify into a more manageable position."
+        "Black aims to neutralise White's powerful light-squared bishop, often by exchanging it, to relieve the pin and simplify into a more manageable position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:03:20.693Z"
@@ -115594,7 +115594,7 @@
     "name": "Spanish: Closed Berlin, 5.Re1",
     "scid": "C66",
     "analysis_json": {
-      "description": "The Closed Berlin is a solid and strategic response to the Ruy Lopez, sidestepping the famous 'Berlin Wall' endgame. By playing 4...d6, Black creates a robust central pawn structure, leading to a closed, maneuvering game where long-term planning and understanding of pawn breaks are paramount. This line is perfect for strategic players who enjoy accumulating small advantages and outplaying their opponents in a complex middlegame.",
+      "description": "The Closed Berlin is a solid and strategic response to the Ruy Lopez, sidestepping the famous 'Berlin Wall' endgame. By playing 4...d6, Black creates a robust central pawn structure, leading to a closed, manoeuvring game where long-term planning and understanding of pawn breaks are paramount. This line is perfect for strategic players who enjoy accumulating small advantages and outplaying their opponents in a complex middlegame.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -115635,10 +115635,10 @@
         "Queenside expansion vs. Kingside play"
       ],
       "common_plans": [
-        "White: Playing c3 and d4 to seize central space, maneuvering the knight via Nf1-g3, and potentially launching a kingside attack.",
-        "Black: Maintaining a solid pawn structure, developing pieces harmoniously (e.g., ...Be7, ...O-O), and seeking counterplay with moves like ...a6 and ...b5.",
+        "White: Playing c3 and d4 to seize central space, manoeuvring the queen's knight via Nbd2-f1-g3, and potentially launching a kingside attack.",
+        "Black: Maintaining a solid pawn structure, developing pieces harmoniously (e.g., ...Be7, ...O-O), and seeking counterplay with ...a6 to question the b5-bishop, followed by queenside expansion with the b-pawn.",
         "White: Repositioning the b5 bishop, often to c4 or back to a4, to maintain pressure on Black's position.",
-        "Black: Preparing to untangle the queenside pieces and create counter-pressure, often by challenging the white center or expanding on the queenside."
+        "Black: Preparing to untangle the queenside pieces and create counter-pressure, often by challenging the white centre or expanding on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:03:53.614Z"
@@ -115659,7 +115659,7 @@
       "icsbot": "Tarrasch Trap, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Closed Berlin is a highly respected and solid defense to the Ruy Lopez, embodying classical principles of central control and sound development. Unlike the sharp, open battles of other Spanish lines, this variation leads to a tense, strategic game where deep understanding of pawn structures and piece maneuvering is paramount. It is ideal for patient, strategic players who enjoy accumulating small advantages and are prepared for a long, complex struggle.",
+      "description": "This Closed Berlin position, reached via 3...Nf6 and 4...d6, is the same one as in the Steinitz Defence line known for the Tarrasch Trap. Black's setup holds the e5-pawn solidly, but castling here with 7...O-O is a mistake: White wins a pawn by force with 8.Bxc6 Bxc6 9.dxe5 dxe5 10.Qxd8 Raxd8 11.Nxe5, and the natural counter 11...Bxe4 loses more material. It rewards players who know the line and punishes those who develop on autopilot.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -115701,8 +115701,8 @@
         "The d5-pawn break"
       ],
       "common_plans": [
-        "White: Exchange on c6 (Bxc6) to damage Black's pawn structure and increase central pressure. Prepare queenside expansion with a3-b4. Maneuver pieces to support the center (e.g., Nd2-f1-g3).",
-        "Black: Maintain the central strongpoint on e5. Prepare to challenge White's center with ...d5. Be ready for the tactical shot ...Bxe4 followed by ...Nxe4 (the Tarrasch Trap idea). Complete development and seek equality."
+        "White: Spring the trap with 8.Bxc6 Bxc6 9.dxe5 dxe5 10.Qxd8 Raxd8 11.Nxe5, winning the e5-pawn; Black's position is cramped, so even without it White keeps the tension on e5, with the b5-bishop, both knights and the e1-rook all bearing on the centre.",
+        "Black: The safe course was to give up the centre with ...exd4 before castling. Now Black must avoid the natural 11...Bxe4, which only seems to win the pawn back: 12.Nxe4 Nxe4 13.Nd3 f5 14.f3 Bc5+ 15.Nxc5 Nxc5 16.Bg5 Rd5 17.Be7 wins material."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:04:12.140Z"
@@ -115719,7 +115719,7 @@
       "ct": "Spanish Game, Berlin Defense"
     },
     "analysis_json": {
-      "description": "The Berlin Wall is a famously solid and resilient defense, leading to a queenless middlegame right out of the opening. Black accepts a slightly compromised pawn structure and a displaced king in exchange for the long-term potential of the bishop pair. This opening is perfect for patient, strategic players who excel in subtle maneuvering and grinding out advantages in complex endgames.",
+      "description": "The Berlin Wall is a famously solid and resilient defence, leading to a queenless middlegame right out of the opening. Black accepts a slightly compromised pawn structure and a displaced king in exchange for the long-term potential of the bishop pair. This opening is perfect for patient, strategic players who excel in subtle manoeuvring and grinding out advantages in complex endgames.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -115759,8 +115759,8 @@
         "Restricting Piece Activity"
       ],
       "common_plans": [
-        "White: Use the space advantage with h3-g4 to restrict Black's pieces, control the center, and maneuver knights to strong outposts like f5 or d5.",
-        "Black: Untangle pieces with ...Ke8, prepare the ...c5 pawn break to challenge the center, and aim to activate the powerful bishop pair for long-term pressure."
+        "White: Kick the f5-knight with h3 and g4, put the rooks on the d- and e-files, and use the healthy kingside majority, led by the cramping e5-pawn, to gain space.",
+        "Black: Untangle pieces with ...Ke8, prepare the ...c5 pawn break to challenge the centre, and aim to activate the powerful bishop pair for long-term pressure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:04:29.048Z"
@@ -115846,7 +115846,7 @@
       "icsbot": "L'Hermet Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The l'Hermet Variation is a primary and highly respected line in the Berlin Defense, leading directly to a complex queenless middlegame. By immediately challenging the b5-bishop with 5...Nd6, Black sidesteps the more famous 'Berlin Wall' endgame and enters a strategically rich battle defined by pawn structures and piece activity. This opening is ideal for resilient, technical players who excel at long-term planning, maneuvering, and converting slight advantages in the endgame.",
+      "description": "The l'Hermet Variation is the main line of the Berlin Defence after 4.O-O Nxe4 5.d4. Black's 5...Nd6 hits the b5-bishop, and the usual 6.Bxc6 dxc6 7.dxe5 Nf5 8.Qxd8+ Kxd8 leads straight into the Berlin Wall endgame, where Black has doubled c-pawns and a king stuck in the centre but gets the bishop pair and a very solid position. This opening suits resilient, technical players who enjoy long manoeuvring endgames and converting slight advantages.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -115886,10 +115886,10 @@
         "Central Control without Queens"
       ],
       "common_plans": [
-        "White: Utilize the kingside pawn majority (f4-g4) and control the d-file.",
-        "Black: Leverage the bishop pair and advance the queenside pawn majority (a5-b5-c5).",
-        "White: Restrict Black's pieces, particularly the bishops, and aim for a favorable endgame.",
-        "Black: Activate the king (e.g., to c7) to support the center and queenside."
+        "White: Take on c6 with 6.Bxc6 dxc6, drive the knight back with 7.dxe5, and after 7...Nf5 8.Qxd8+ Kxd8 use the healthy kingside majority and the cramping e5-pawn in the endgame.",
+        "Black: Rely on the bishop pair and the solid structure; the doubled c-pawns mean Black's queenside majority cannot easily make a passed pawn, so the bishops are the long-term asset.",
+        "White: Restrict Black's pieces, particularly the bishops, and aim for a favourable endgame.",
+        "Black: After the queen trade, tuck the king away on c8 or e8, connect the rooks and keep the position compact."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:05:00.280Z"
@@ -115967,7 +115967,7 @@
       "icsbot": "Westerinen Line, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Westerinen Line of the Berlin Defense leads to a strategically complex and often endgame-focused battle. White concedes the bishop pair to inflict doubled pawns on Black, aiming to leverage a central pawn majority and space advantage. Black, in turn, relies on the long-term power of the two bishops and a solid, albeit slightly passive, structure to generate counterplay. This opening is perfect for patient, strategic players who excel in understanding pawn structures and navigating nuanced endgames.",
+      "description": "The Westerinen Line of the Berlin Defence sees Black place the knight on e4 with 7...Ne4 instead of the usual 7...Nf5. White has given up the bishop pair to inflict doubled pawns, and aims to use the kingside pawn majority, led by the cramping e5-pawn, and a space advantage. Black, in turn, relies on the long-term power of the two bishops and a solid, if slightly passive, structure to generate counterplay. This opening is perfect for patient, strategic players who excel in understanding pawn structures and navigating nuanced endgames.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -116008,10 +116008,10 @@
         "Space Advantage"
       ],
       "common_plans": [
-        "White: Trade pieces to reach a favorable king and pawn endgame, using the central pawn majority as the winning advantage.",
-        "Black: Activate the bishop pair and use the semi-open files (d and c) for counterplay, while avoiding simplification into a lost endgame.",
-        "White: Use the space advantage to restrict Black's pieces and prepare a central pawn advance (e.g., f4-f5).",
-        "Black: Solidify the position, challenge White's central control, and prepare to create a passed pawn on the queenside."
+        "White: Trade pieces to reach a favourable king and pawn endgame, using the kingside pawn majority as the winning advantage.",
+        "Black: Activate the bishop pair and use the open d-file for counterplay, while avoiding simplification into a lost endgame.",
+        "White: Use the space advantage to restrict Black's pieces and, once the f3-knight has moved, advance the f-pawn to support e5 and gain more room.",
+        "Black: Solidify the position and challenge the e5-pawn; the doubled c-pawns make a queenside passed pawn hard to create, so piece activity matters more."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:05:31.934Z"
@@ -169415,7 +169415,7 @@
         "Queen Activity"
       ],
       "common_plans": [
-        "White aims to consolidate, rescue the knight on a7 if possible, and exploit the weaknesses around the Black king created by the ...f5 and ...g6 pushes.",
+        "White aims to consolidate, rescue the knight on a7 if possible, and exploit the weaknesses around the Black king left by the early f-pawn advance and ...g6.",
         "Black focuses on maintaining the initiative: the g6-pawn hits the white queen, the a8-rook attacks the stranded a7-knight, and Black develops rapidly to use the open lines against the white king.",
         "White may try to trade pieces to simplify the position and realise the material advantage in the endgame.",
         "Black seeks to use the advanced e4-pawn and superior development to overwhelm White before the position stabilises."

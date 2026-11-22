@@ -11780,8 +11780,8 @@
   "r3kbnr/Nppq3p/6p1/7Q/2P1p3/8/PP1P1PPP/R1B1K2R w KQkq - 0 12": {
     "reviewedAt": "2026-11-22",
     "verdict": "fixed",
-    "contentHash": "4237f55ec0f43004",
-    "notes": "Plan 2 had Black trap an a7-knight the a8-rook can simply take; plan 4 named a central pawn mass that is a lone e4-pawn. Rewritten. British spelling."
+    "contentHash": "f595fd5afaff48e3",
+    "notes": "Plan 1 named ...f5 as if still to come (the f-pawn has already gone); reworded. British spelling."
   },
   "r1b1kbnr/ppp4p/2Nq2p1/1B5Q/2P1p3/8/PP1P1PPP/R1B1K2R w KQkq - 0 10": {
     "reviewedAt": "2026-11-22",
@@ -12040,5 +12040,59 @@
     "verdict": "fixed",
     "contentHash": "e4f2a7915d4fe7b7",
     "notes": "Overview said Bxc6 gives White the better pawn structure (the d7-bishop recaptures); plan 2 played ...c5 before the recapture. Rewritten. British spelling."
+  },
+  "r1bqkb1r/ppp2ppp/2np1n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "74e08ba7370bf48d",
+    "notes": "Plan 2 had Black prepare ...b5 and ...d5, which are not the line's ideas; it now unpins with ...Bd7 and gives up e5 before castling to avoid the Tarrasch Trap. British spelling."
+  },
+  "r2q1rk1/pppbbppp/2np1n2/1B2p3/3PP3/2N2N2/PPP2PPP/R1BQR1K1 w - - 7 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "1ea7db8c4171290b",
+    "notes": "Overview and plan 4 had the Tarrasch Trap the wrong way round (11.Nxe5 is White's win, and 11...Bxe4 loses material). Plan 2 sent the b1-knight to g3, but it is already on c3. Rewritten with the verified Tarrasch-Marco line. British spelling."
+  },
+  "r1bqkb1r/pppn1ppp/2np4/1B2p3/3PP3/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "1a072baeeaaaf36f",
+    "notes": "Plan 1 told White to play c3-d4 when d4 is already on the board; plan 3 targeted a d6-pawn that disappears after dxe5 dxe5; plan 4 called the g7-bishop light-squared. Fixed. British spelling."
+  },
+  "r1bqkb1r/ppp2ppp/2np1n2/1B2p3/3PP3/5N2/PPP2PPP/RNBQ1RK1 b kq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "713c0a2b8df2c6de",
+    "notes": "Plan 2 had ...b5 with the bishop still on b5 and castled before ...exd4 (the Tarrasch Trap order); fixed. British spelling."
+  },
+  "r1bqkb1r/ppp2ppp/2np1n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQR1K1 b kq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "964e3895dfa10e2b",
+    "notes": "Plan 1 sent a knight from f1, which is empty; now Nbd2-f1-g3. Plan 2 had ...b5 with the bishop on b5; reworded. British spelling."
+  },
+  "r2q1rk1/pppbbppp/2np1n2/1B2p3/3PP3/2N2N2/PPP2PPP/R1BQR1K1 w - - 5 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "2820c9a626674963",
+    "notes": "Overview was generic and plan 2 called ...Bxe4 a good shot for Black, when it is the Tarrasch Trap's losing line; plan 1 suggested Nd2-f1-g3 with the knight already on c3. Rewritten. British spelling."
+  },
+  "r2k1b1r/pppb1ppp/2p5/4Pn2/8/2N2N2/PPP2PPP/R1B2RK1 w - - 2 10": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "68504300d675753f",
+    "notes": "Plan 1 named knight outposts on f5 (Black's knight is there) and d5 as pawn moves; rewritten with the standard h3-g4 and kingside majority plan. British spelling."
+  },
+  "r1bqkb1r/pppp1ppp/2nn4/1B2p3/3P4/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "e31f3084bc5e5fec",
+    "notes": "Overview said 5...Nd6 sidesteps the Berlin Wall, when it is the main line into it; plans had a nonsense f4-g4 route, an a5-b5-c5 majority advance with doubled c-pawns, and the king going to c7 (a pawn is there). Rewritten. British spelling."
+  },
+  "r1bqkb1r/ppp2ppp/2p5/4P3/4n3/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "e0281d9e4a7507fb",
+    "notes": "Overview and plan 1 called White's majority central (it is on the kingside); plan 2 said the c-file was semi-open; plan 3 used an unplayable f4-f5; plan 4 promised a queenside passed pawn. Fixed. British spelling."
   }
 }

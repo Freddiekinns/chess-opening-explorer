@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-22",
+  "pages": [
+    {
+      "fen": "r3kbnr/Nppq3p/6p1/7Q/2P1p3/8/PP1P1PPP/R1B1K2R w KQkq - 0 12",
+      "name": "Ruy Lopez: Schliemann Defense, Classical Variation",
+      "eco": "C63",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named ...f5 as if still to come (the f-pawn has already gone); reworded. British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 5",
+      "name": "Ruy Lopez: Berlin Defense, Improved Steinitz Defense",
+      "eco": "C66",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had Black prepare ...b5 and ...d5, which are not the line's ideas; it now unpins with ...Bd7 and gives up e5 before castling to avoid the Tarrasch Trap. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/pppbbppp/2np1n2/1B2p3/3PP3/2N2N2/PPP2PPP/R1BQR1K1 w - - 7 8",
+      "name": "Ruy Lopez: Berlin Defense, Tarrasch Trap",
+      "eco": "C66",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 4 had the Tarrasch Trap the wrong way round (11.Nxe5 is White's win, and 11...Bxe4 loses material). Plan 2 sent the b1-knight to g3, but it is already on c3. Rewritten with the verified Tarrasch-Marco line. British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/pppn1ppp/2np4/1B2p3/3PP3/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 6",
+      "name": "Ruy Lopez: Closed Berlin Defense, Chigorin Variation",
+      "eco": "C66",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 told White to play c3-d4 when d4 is already on the board; plan 3 targeted a d6-pawn that disappears after dxe5 dxe5; plan 4 called the g7-bishop light-squared. Fixed. British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/1B2p3/3PP3/5N2/PPP2PPP/RNBQ1RK1 b kq - 0 5",
+      "name": "Spanish: Closed Berlin, 5.d4",
+      "eco": "C66",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...b5 with the bishop still on b5 and castled before ...exd4 (the Tarrasch Trap order); fixed. British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQR1K1 b kq - 1 5",
+      "name": "Spanish: Closed Berlin, 5.Re1",
+      "eco": "C66",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 sent a knight from f1, which is empty; now Nbd2-f1-g3. Plan 2 had ...b5 with the bishop on b5; reworded. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/pppbbppp/2np1n2/1B2p3/3PP3/2N2N2/PPP2PPP/R1BQR1K1 w - - 5 8",
+      "name": "Spanish: Closed Berlin, Tarrasch Trap",
+      "eco": "C66",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview was generic and plan 2 called ...Bxe4 a good shot for Black, when it is the Tarrasch Trap's losing line; plan 1 suggested Nd2-f1-g3 with the knight already on c3. Rewritten. British spelling."
+    },
+    {
+      "fen": "r2k1b1r/pppb1ppp/2p5/4Pn2/8/2N2N2/PPP2PPP/R1B2RK1 w - - 2 10",
+      "name": "Ruy Lopez: Berlin Defense, Berlin Wall",
+      "eco": "C67",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named knight outposts on f5 (Black's knight is there) and d5 as pawn moves; rewritten with the standard h3-g4 and kingside majority plan. British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1ppp/2nn4/1B2p3/3P4/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 6",
+      "name": "Ruy Lopez: Berlin Defense, l'Hermet Variation",
+      "eco": "C67",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said 5...Nd6 sidesteps the Berlin Wall, when it is the main line into it; plans had a nonsense f4-g4 route, an a5-b5-c5 majority advance with doubled c-pawns, and the king going to c7 (a pawn is there). Rewritten. British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2p5/4P3/4n3/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 8",
+      "name": "Ruy Lopez: Berlin Defense, l'Hermet Variation, Westerinen Line",
+      "eco": "C67",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 1 called White's majority central (it is on the kingside); plan 2 said the c-file was semi-open; plan 3 used an unplayable f4-f5; plan 4 promised a queenside passed pawn. Fixed. British spelling."
+    }
+  ]
+}

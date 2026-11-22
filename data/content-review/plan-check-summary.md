@@ -1,10 +1,10 @@
 # Plan reference check
 
-1888 references on 1446 of 12377 pages fail the check and show as plain text.
+1848 references on 1416 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5463 name no move, route, square or piece
-- References by kind: {"square":16332,"piece":15608,"move":54862,"route":8788}
-- References by result: {"now":69737,"on-board":14623,"later":9342,"invalid":1888}
+- Plans: 41062, of which 5461 name no move, route, square or piece
+- References by kind: {"square":16378,"piece":15634,"move":54864,"route":8766}
+- References by result: {"now":69799,"on-board":14650,"later":9345,"invalid":1848}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -53,20 +53,22 @@
   - `fxg7`: No piece can play fxg7 here, now or after the plan's earlier moves
 - **C63 Ruy Lopez: Schliemann Defense, Classical Variation** (0 views)
   - `...f5`: No piece can play f5 here, now or after the plan's earlier moves
-- **C64 Ruy Lopez: Classical Variation** (0 views)
-  - `Nf3-g3-f1-e3`: One step of Nf3-g3-f1-e3 can't be played here
-- **C64 Ruy Lopez: Classical Variation, Central Variation** (0 views)
-  - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
-  - `e3`: No piece can play e3 here, now or after the plan's earlier moves
-- **C64 Ruy Lopez: Classical Variation, Charousek Variation** (0 views)
-  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
-- **C64 Ruy Lopez: Classical Variation, Modern Main Line** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **C64 Spanish: Classical, 4.c3 Nf6** (0 views)
-  - `...exd4`: No piece can play exd4 here, now or after the plan's earlier moves
-- **C64 Spanish: Classical, 4.c3 Nge7** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **C64 Spanish: Classical, 4.c3 Qf6** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **C64 Spanish: Classical, 4.O-O** (0 views)
-  - `Nb1-d2-f1-g3`: One step of Nb1-d2-f1-g3 can't be played here
+- **C66 Ruy Lopez: Berlin Defense, Improved Steinitz Defense** (0 views)
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **C66 Ruy Lopez: Berlin Defense, Tarrasch Trap** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+- **C66 Ruy Lopez: Closed Berlin Defense, Chigorin Variation** (0 views)
+  - `c3-d4`: One step of c3-d4 can't be played here
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **C66 Spanish: Closed Berlin, 5.d4** (0 views)
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **C66 Spanish: Closed Berlin, 5.Re1** (0 views)
+  - `Nf1-g3`: One step of Nf1-g3 can't be played here
+  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
+- **C66 Spanish: Closed Berlin, Tarrasch Trap** (0 views)
+  - `...Bxe4`: No piece can play Bxe4 here, now or after the plan's earlier moves
+- **C67 Ruy Lopez: Berlin Defense, Berlin Wall** (0 views)
+  - `f5`: No piece can play f5 here, now or after the plan's earlier moves
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **C67 Ruy Lopez: Berlin Defense, l'Hermet Variation** (0 views)
+  - `a5-b5-c5`: One step of a5-b5-c5 can't be played here

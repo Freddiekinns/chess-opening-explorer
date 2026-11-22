@@ -12508,5 +12508,65 @@
     "verdict": "fixed",
     "contentHash": "6b373a402a171ba5",
     "notes": "Plan 1 routed the knight through f1 before Re1; plan 2 had a ...c5 break blocked by the c6-knight and an invented queenside majority; plan 3 put a c2-bishop on the d1-h5 diagonal. Fixed. British spelling."
+  },
+  "r2qk2r/1bppbppp/p1n2n2/1p2p3/4P3/1B1P1N2/PPP2PPP/RNBQ1RK1 w kq - 1 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "ee90615fa914b137",
+    "notes": "Plan 3 rerouted the f3-knight via d2-f1-e3 with the rook on f1; plan 4 suggested ...Na7. Fixed. British spelling."
+  },
+  "r2qk2r/1bp2ppp/p1np1n2/1pb1p3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w kq - 0 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "52c9e6aac85cb3ab",
+    "notes": "Plan 3 rerouted the f3-knight; plan 4 suggested a ...d5 break with the d-pawn already on d6. Fixed. British spelling."
+  },
+  "r1bqk2r/1ppp1ppp/p1n2n2/2b1p3/B3P3/2P2N2/PP1P1PPP/RNBQ1RK1 b kq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "949dd323dc39563e",
+    "notes": "Overview called c5 the light-squared bishop's square; plan 3 rerouted a \"b-pawn knight\" with the rook on f1; plan 4 suggested an untypical ...d5. Fixed. British spelling."
+  },
+  "r1bqkb1r/2p2ppp/p1pp4/4p3/3Pn3/5N2/PPP2PPP/RNBQ1RK1 w kq - 0 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "5cff717fa8788396",
+    "notes": "Plan 1 had an ambiguous Nd2-f1-e3; plan 3 put a white knight on d5, which the c6-pawn covers. Overview now explains 7...Nxe4 8.Re1 and ...f5. Reviewer rejected \"open e-file\" (it is half-open); fixed and re-accepted. British spelling."
+  },
+  "r2qbrk1/1pp1bppp/p1np1n2/4p3/B2PP3/2P2N2/PP1N1PPP/R1BQR1K1 w - - 3 10": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "d9135b58c3da19ea",
+    "notes": "Kecskemet-type 9...Be8: plan 1 had an unreadable Nbd2-f1-g3/e3; plan 3 had ...Nf8-g6 with no knight on f8 (a Breyer idea). Rewritten around ...Nd7 and ...Bf6, the point of the bishop retreat. British spelling."
+  },
+  "r1bqkb1r/1pp2ppp/p1np1n2/4p3/B3P3/2P2N2/PP1P1PPP/RNBQ1RK1 b kq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "635086b8bbc906e0",
+    "notes": "Plan 2 had a ...b5-b4 route with the pawn on b7 and ignored the pin on c6; plan 4 had ...exd4 with no d4-pawn. Fixed. British spelling."
+  },
+  "r1bqkb1r/1pp2ppp/p1np1n2/4p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 b kq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "b7c7b7b12d37ff47",
+    "notes": "Plan 1 had Nf1-g3 with no knight on f1; plan 2 ignored the pin on the c6-knight. Fixed. British spelling."
+  },
+  "r1bqkb1r/1pp2ppp/p1Bp1n2/4p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "8611997e88a3215c",
+    "notes": "Plan 1 had an f4-f5 advance blocked by the f3-knight; plan 2 advanced ...b5 (no b-pawn after ...bxc6) and ...c5 before the recapture. Fixed. British spelling."
+  },
+  "r1bqk2r/1pp1bppp/p1n5/3p2B1/B2pn3/5N2/PPP2PPP/RN1QR1K1 w kq - 2 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "8c925914685ed42a",
+    "notes": "Overview and plan 1 described pins on an f6-knight that is not there and suggested Nxd5 or Bxd5 (impossible). Rewritten: Black is two pawns up; White has the e-file and the Bg5 pin on e7. No source found for 8.Bg5 Be7 theory; plans judged on the board. British spelling."
+  },
+  "r2qkb1r/2p2ppp/p1n1b3/1p1pP3/4n3/1B3N2/PPPN1PPP/R1BQ1RK1 b kq - 2 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "bd3bf57e0579bdbf",
+    "notes": "Plan 1 manoeuvred a \"b2-knight\" via Nf1-g3 and put the dark-squared bishop on the light squares. Rewritten around Nd2, c3 and 9...Nc5 10.c3 d4. Reviewer queried a game citation; removed and re-accepted. British spelling."
   }
 }

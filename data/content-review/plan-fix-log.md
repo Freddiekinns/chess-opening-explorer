@@ -187,13 +187,13 @@ independent reviewer before commit; notes per page are in
 | 2026-11-22 19:52 | 1     | 10    | 10 / 0 / 0                  | 15 / 2 (fixed, re-accepted) | none (batch 2026-11-22-8); `npm run test:all` passed via the verifier after this batch (1,203 Jest, 819 Vitest) |
 | 2026-11-22 19:57 | 1     | 10    | 10 / 0 / 0                  | 20 / 4 (fixed, re-accepted) | none (batch 2026-11-22-9) |
 | 2026-11-22 20:03 | 1     | 10    | 9 / 0 / 1                  | 19 / 5 (4 fixed and re-accepted; 1 plan rejected twice, old text kept) | none (batch 2026-11-22-10) |
-| 2026-11-22 20:210 | 1     | 10    | 10 / 0 / 0                  | 28 / 2 (fixed, re-accepted) | none (batch 2026-11-22-11) |
-| 2026-11-22 20:235 | 1     | 10    | 10 / 0 / 0                  | 32 / 1 (fixed, re-accepted) | none; 1 skip added (batch 2026-11-22-12) |
-| 2026-11-22 20:290 | 1     | 10    | 10 / 0 / 0                  | 26 / 1 (fixed, re-accepted) | none (batch 2026-11-22-13) |
-| 2026-11-22 20:310 | 1     | 10    | 10 / 0 / 0                  | 31 / 2 (fixed, re-accepted) | none (batch 2026-11-22-14) |
-| 2026-11-22 20:365 | 1     | 10    | 10 / 0 / 0                  | 33 / 1 (fixed, re-accepted) | none (batch 2026-11-22-15); `npm run test:all` passed via the verifier after batch 2026-11-22-14 (1,203 Jest, 819 Vitest) |
-| 2026-11-22 20:382 | 1     | 10    | 10 / 0 / 0                  | 31 / 0 | none (batch 2026-11-22-16) |
-| 2026-11-22 20:428 | 1     | 10    | 9 / 0 / 1                   | 30 / 4 (2 fixed and re-accepted; 1 plan rejected twice, old text kept) | none; 1 skip added (batch 2026-11-22-17) |
-| 2026-11-22 20:440 | 1     | 10    | 10 / 0 / 0                  | 27 / 1 (fixed, re-accepted) | none (batch 2026-11-22-18) |
-| 2026-11-22 20:480 | 1     | 10    | 9 / 0 / 1                   | 27 / 3 (1 fixed and re-accepted; 1 plan rejected twice, old text kept) | none (batch 2026-11-22-19) |
-| 2026-11-22 20:490 | 1     | 10    | 10 / 0 / 0                  | 29 / 0 | none (batch 2026-11-22-20) |
+| 2026-11-22 20:21 | 1     | 10    | 10 / 0 / 0                  | 28 / 2 (fixed, re-accepted) | none (batch 2026-11-22-11) |
+| 2026-11-22 20:23 | 1     | 10    | 10 / 0 / 0                  | 32 / 1 (fixed, re-accepted) | none; 1 skip added (batch 2026-11-22-12) |
+| 2026-11-22 20:29 | 1     | 10    | 10 / 0 / 0                  | 26 / 1 (fixed, re-accepted) | none (batch 2026-11-22-13) |
+| 2026-11-22 20:31 | 1     | 10    | 10 / 0 / 0                  | 31 / 2 (fixed, re-accepted) | none (batch 2026-11-22-14) |
+| 2026-11-22 20:36 | 1     | 10    | 10 / 0 / 0                  | 33 / 1 (fixed, re-accepted) | none (batch 2026-11-22-15); `npm run test:all` passed via the verifier after batch 2026-11-22-14 (1,203 Jest, 819 Vitest) |
+| 2026-11-22 20:38 | 1     | 10    | 10 / 0 / 0                  | 31 / 0 | none (batch 2026-11-22-16) |
+| 2026-11-22 20:42 | 1     | 10    | 9 / 0 / 1                   | 30 / 4 (2 fixed and re-accepted; 1 plan rejected twice, old text kept) | none; 1 skip added (batch 2026-11-22-17) |
+| 2026-11-22 20:44 | 1     | 10    | 10 / 0 / 0                  | 27 / 1 (fixed, re-accepted) | none (batch 2026-11-22-18) |
+| 2026-11-22 20:48 | 1     | 10    | 9 / 0 / 1                   | 27 / 3 (1 fixed and re-accepted; 1 plan rejected twice, old text kept) | none (batch 2026-11-22-19) |
+| 2026-11-22 20:49 | 1     | 10    | 10 / 0 / 0                  | 29 / 0 | none (batch 2026-11-22-20) |

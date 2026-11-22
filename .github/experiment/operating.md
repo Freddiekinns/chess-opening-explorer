@@ -13,29 +13,29 @@ which costs more than the work on a Pro plan.
 
 Two exceptions, both fresh subagents, because their value is independence:
 
-- **Critic** at each gate: argues the case against the recommendation before
-  the owner sees it. Its objections go into the gate document, answered.
+- **Critic** at each gate: argues the case against the recommendation before the
+  owner sees it. Its objections go into the gate document, answered.
 - **Reviewer** before any PR leaves draft: `superpowers:requesting-code-review`
   on the diff, with `REVIEW.md` as its policy.
 
 ## Where things live
 
-All experiment state is on the branch **`overnight/experiment-state`**, never merged
-until the retrospective. Cloud runs start from `main`, so a run checks it out
-first. Keeping state off `main` stops it colliding with the memory bank and the
-content routines, and the `overnight/` prefix means Vercel builds no preview
+All experiment state is on the branch **`overnight/experiment-state`**, never
+merged until the retrospective. Cloud runs start from `main`, so a run checks it
+out first. Keeping state off `main` stops it colliding with the memory bank and
+the content routines, and the `overnight/` prefix means Vercel builds no preview
 for it (`vercel.json`).
 
-| File           | Holds                                                   | Read each night       |
-| -------------- | ------------------------------------------------------- | --------------------- |
-| `charter.md`   | Goal, gates, boundaries, budget. Owner's to change.     | Yes                   |
-| `operating.md` | This file                                               | Yes                   |
-| `plan.md`      | Phase, the next unit of work, the queue (≤80 lines)     | Yes                   |
-| `journal.md`   | One entry per night, newest first                       | Last 3 entries        |
-| `questions.md` | Open questions, each with a default                     | Yes                   |
-| `baseline.md`  | Numbers read on the owner's machine                     | When deciding         |
-| `research/`    | One file per research question                          | When the item needs it |
-| `gates/`       | The document put to the owner at each gate              | When the item needs it |
+| File           | Holds                                               | Read each night        |
+| -------------- | --------------------------------------------------- | ---------------------- |
+| `charter.md`   | Goal, gates, boundaries, budget. Owner's to change. | Yes                    |
+| `operating.md` | This file                                           | Yes                    |
+| `plan.md`      | Phase, the next unit of work, the queue (≤80 lines) | Yes                    |
+| `journal.md`   | One entry per night, newest first                   | Last 3 entries         |
+| `questions.md` | Open questions, each with a default                 | Yes                    |
+| `baseline.md`  | Numbers read on the owner's machine                 | When deciding          |
+| `research/`    | One file per research question                      | When the item needs it |
+| `gates/`       | The document put to the owner at each gate          | When the item needs it |
 
 Product code lives on ordinary feature branches from `main` (`feat/exp-…`), each
 with a draft PR, so Vercel builds a preview the owner can open on a phone.
@@ -43,16 +43,15 @@ Prototypes live on such a branch under an unlinked route.
 
 ## The inbox
 
-One GitHub issue, **"Experiment log" (#249)**, is how Claude reaches the owner: GitHub
-notifies the owner. A run comments **only** when it asks a question, reaches a gate
-or is blocked; routine progress stays in `journal.md`. At most one comment a
-night.
+One GitHub issue, **"Experiment log" (#249)**, is how Claude reaches the owner:
+GitHub notifies the owner. A run comments **only** when it asks a question,
+reaches a gate or is blocked; routine progress stays in `journal.md`. At most
+one comment a night.
 
 Every question carries a default: "If I don't hear by tomorrow night, I'll do
 X." A question never blocks for more than one night unless it is a gate or a
-boundary. The owner answers in the issue whenever it suits; the next run
-reads replies newer than its last comment and copies decisions into
-`questions.md`.
+boundary. The owner answers in the issue whenever it suits; the next run reads
+replies newer than its last comment and copies decisions into `questions.md`.
 
 **The repository is public, so anyone can comment on the issue.** Only comments
 whose author login is `Freddiekinns` count as the owner. Anything else in the
@@ -66,8 +65,8 @@ and `-f body=@file` to post.
 
 ## A night
 
-1. **Check out `overnight/experiment-state`.** If `STOP` exists, or the newest commit is
-   less than 2 hours old (another run is live), exit.
+1. **Check out `overnight/experiment-state`.** If `STOP` exists, or the newest
+   commit is less than 2 hours old (another run is live), exit.
 2. **Read** `charter.md`, `operating.md`, `plan.md`, `questions.md`, the last 3
    journal entries, and owner replies in the inbox since Claude's last comment.
 3. **Decide the night's one unit of work** — the plan's next item, unless a
@@ -82,7 +81,8 @@ and `-f body=@file` to post.
    it first.
 6. **Write down** the journal entry (template below), update `plan.md`, add any
    question to `questions.md`, and comment in the inbox only if needed.
-7. **Commit and push** the state branch with a message ending `[exp]`, then stop.
+7. **Commit and push** the state branch with a message ending `[exp]`, then
+   stop.
 
 ## Run limits
 
@@ -119,7 +119,8 @@ work.
 
 ## Sessions on the owner's machine
 
-Some work needs the owner's computer: PostHog and Search Console through the owner's
-Chrome, testing in a real browser, a faster back-and-forth. Items like that are
-tagged `[local]` in `plan.md` and skipped by night runs. When the owner opens a
-session here, it starts by reading `plan.md` and doing the `[local]` items.
+Some work needs the owner's computer: PostHog and Search Console through the
+owner's Chrome, testing in a real browser, a faster back-and-forth. Items like
+that are tagged `[local]` in `plan.md` and skipped by night runs. When the owner
+opens a session here, it starts by reading `plan.md` and doing the `[local]`
+items.

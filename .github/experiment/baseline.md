@@ -7,15 +7,15 @@ summarised under **Then**.
 
 ## Traffic
 
-| Source              | Window           | Number                                           |
-| ------------------- | ---------------- | ------------------------------------------------ |
-| Vercel              | 30d to 11-22     | 276 visitors (+104%), 535 views, 76% bounce      |
-| PostHog people/week | w/c 10-12 → 11-16 | 26, 25, 29, 36, **76**, 49                     |
-| PostHog returning   | since 09-24      | 13 of 296 people seen on more than one day (4%)  |
-| Search Console      | 28d to 11-20     | 62 clicks, 1.88k impressions, CTR 3.3%, pos 8    |
+| Source              | Window            | Number                                          |
+| ------------------- | ----------------- | ----------------------------------------------- |
+| Vercel              | 30d to 11-22      | 276 visitors (+104%), 535 views, 76% bounce     |
+| PostHog people/week | w/c 10-12 → 11-16 | 26, 25, 29, 36, **76**, 49                      |
+| PostHog returning   | since 09-24       | 13 of 296 people seen on more than one day (4%) |
+| Search Console      | 28d to 11-20      | 62 clicks, 1.88k impressions, CTR 3.3%, pos 8   |
 
-The jump in w/c 11-09 is real in both tools but **unexplained**. It is mostly
-US (67 of ~110 people since 11-10), direct, landing on `/`. Do not credit any
+The jump in w/c 11-09 is real in both tools but **unexplained**. It is mostly US
+(67 of ~110 people since 11-10), direct, landing on `/`. Do not credit any
 feature with it until it is understood; it may be a bot or a single link.
 
 Search is flat against October (~14 clicks/week then, ~15 now). Google brings
@@ -29,8 +29,8 @@ people to obscure named lines; the top queries are the brand and "opening book".
   `/repertoire` 7 (5). `/assets/` 11 — probably a broken link or bot, unchecked.
 - Events (count, people): band_select 40/10, video_gallery_view 33/20,
   opening_nav 25/8, practice_start 20/13, search_start 10/7, search_select 8/6,
-  **video_click 8/7**, practice_complete 8/5, repertoire_toggle 2/1,
-  pgn_lookup 1/1.
+  **video_click 8/7**, practice_complete 8/5, repertoire_toggle 2/1, pgn_lookup
+  1/1.
 
 ## What changed since October
 

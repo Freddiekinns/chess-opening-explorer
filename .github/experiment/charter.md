@@ -37,7 +37,8 @@ Never, without the owner's yes in the inbox issue:
 
 - merge, deploy to production, or push to `main`;
 - touch `middleware.ts`, sitemaps, `seo-lookup` shards, canonicals,
-  `STATIC_ROUTES` or `robots.txt` (read the `seo-crawl-graph` skill to know why);
+  `STATIC_ROUTES` or `robots.txt` (read the `seo-crawl-graph` skill to know
+  why);
 - add, remove or upgrade a dependency, or touch the lockfile;
 - run a data pipeline, or spend money on any API (LLM, YouTube quota, Lichess
   beyond the cached `/api/explorer` proxy);
@@ -56,9 +57,9 @@ content routines spend what is left from Sunday 19:00 UTC, so the experiment
 runs **Monday to Friday nights only**, one run a night.
 
 - Target: **at most ~8% of the weekly allowance per night**, so ~40% a week.
-- Cloud runs cannot see usage. Until calibrated, the owner posts the weekly %
-  in the inbox issue on the mornings of the first week, and `operating.md`'s
-  run limits are tuned to it.
+- Cloud runs cannot see usage. Until calibrated, the owner posts the weekly % in
+  the inbox issue on the mornings of the first week, and `operating.md`'s run
+  limits are tuned to it.
 - A run that has done its one unit of work stops. A night that is waiting on the
   owner costs one short turn and exits.
 

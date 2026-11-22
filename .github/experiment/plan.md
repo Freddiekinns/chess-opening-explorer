@@ -22,9 +22,9 @@ Phase 1 — Discover (one research file each):
 3. **Why learners use YouTube and not sites like ours.** Comments, creator
    formats, what a viewer does after a video. What would make a video on our
    page the better place to watch it.
-4. **What the free chess book needs.** The common plans as they stand (#228–236),
-   what a real opening book chapter has that a plan list lacks, and what can be
-   built from data we already hold without new pipelines.
+4. **What the free chess book needs.** The common plans as they stand
+   (#228–236), what a real opening book chapter has that a plan list lacks, and
+   what can be built from data we already hold without new pipelines.
 5. **Your games.** The deviation-trainer PRD, what shipped from slice 1, and why
    slice 2 never started; how others (Aimchess, Chessbook, Lichess insights)
    connect games to study.
@@ -32,8 +32,8 @@ Phase 1 — Discover (one research file each):
    case against it answered, the success measure, and a rough slice plan.
    Comment in the inbox.
 
-Phase 2 — Design (after Gate A; nights ~7–9): prototype, iterate on the
-owner's notes, Gate B.
+Phase 2 — Design (after Gate A; nights ~7–9): prototype, iterate on the owner's
+notes, Gate B.
 
 Phase 3 — Build (after Gate B; nights ~10–15): slices as PRs behind an unlinked
 route or flag, Gate C per PR.

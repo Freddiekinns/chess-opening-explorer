@@ -12388,5 +12388,65 @@
     "verdict": "fixed",
     "contentHash": "b3476e62b56970ed",
     "notes": "Plan 2 rerouted the f3-knight via d2-f1-g3 (the queen's knight goes); plan 3 had ...Na5 without ...b5. Fixed. British spelling."
+  },
+  "r1bqkb1r/1ppp1ppp/p1B2n2/4p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "439bf1de49b2f9d3",
+    "notes": "Bayreuth 5.Bxc6: plan 1 had an f4-f5 route (the f3-knight blocks f2-f4); plan 2 promised a passed pawn from a queenside majority crippled by the doubled c-pawns. Overview and plans now explain the structure after 5...dxc6 and d4. British spelling."
+  },
+  "r2qk2r/2p1bppp/p1np1n2/1p2p3/3PP1b1/1BP2N2/PP2QPPP/RNB1K2R w KQkq - 1 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "2f26380454124cc8",
+    "notes": "Plan 3 needed ...Bxf3 before Qxf3/gxf3 (parser); reworded. Plan 4 had ...Re8 pressing e4 through Black's own e5-pawn; now after ...exd4. British spelling."
+  },
+  "r1bqkb1r/1pp2ppp/p1np1n2/4p3/B3P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "09a70b2ad02c96cb",
+    "notes": "Plan 3 routed the knight d2-f1 without a piece; now O-O, c3, Re1 and Nbd2-f1-g3. British spelling."
+  },
+  "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "d962395c2d9f9e77",
+    "notes": "Plan 1 rerouted \"the b1-knight via d2-f1-g3\" without Re1; fixed. British spelling."
+  },
+  "r1bqk2r/2pp1ppp/p1n2n2/1pb1p3/4P3/1BP2N2/PP1PQPPP/RNB1K2R b KQkq - 0 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "c5f1e87d0f19ddf3",
+    "notes": "Plan 3 rerouted the f3-knight via d2-f1-g3 (the queen's knight goes, after d4); plan 4 had ...exd4 with no d4-pawn. Fixed. British spelling."
+  },
+  "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPPQPPP/RNB1K2R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "0b52987976ef24b3",
+    "notes": "Plan 3 rerouted the f3-knight via d2 with the d2-pawn in place. Fixed. British spelling."
+  },
+  "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPPQPPP/RNB1K2R w KQkq - 4 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9cfced7e58a38481",
+    "notes": "Plan 3 routed Nb1-d2 with the d2-pawn in place. Fixed. British spelling."
+  },
+  "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 3 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "0ac49b36e17a6adf",
+    "notes": "Plan 2 routed Nbd2-f1-g3 with the d2-pawn and f1-rook in place; now after Re1, c3 and d4. British spelling."
+  },
+  "r1bqkb1r/2p2ppp/p1np1n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQ1RK1 w kq - 0 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "c0283c23882371fe",
+    "notes": "Plan 1 rerouted the f3-knight; plan 3 suggested a3, which does not restrain ...b5. Overview and plan 3 now give 7.Ng5 d5 8.exd5 Nd4 and the a4 lever. British spelling."
+  },
+  "r2qkb1r/1bpp1ppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQ1RK1 w kq - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9fd99cd9b252e11b",
+    "notes": "Plan 3 rerouted the f3-knight via d2-f1-g3; plan 4 invented a Black queenside majority (the pawns are symmetrical). Plan 4 now gives the modern ...Bc5. British spelling."
   }
 }

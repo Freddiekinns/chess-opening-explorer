@@ -123754,7 +123754,7 @@
       "icsbot": "Treybel; Flohr; Exchange Var Deferred "
     },
     "analysis_json": {
-      "description": "A strategic variation of the Ruy Lopez where White resolves the central tension early by capturing on c6, similar to the main Exchange Variation. This creates a clear structural imbalance: White gains a kingside pawn majority, while Black obtains the bishop pair and a queenside majority. The resulting positions are less about subtle maneuvering and more about executing long-term plans based on these static advantages, making it suitable for players who enjoy clear strategic battles.",
+      "description": "A strategic variation of the Ruy Lopez where White resolves the central tension early by capturing on c6, similar to the main Exchange Variation. After 5...dxc6 this creates a clear structural imbalance: once White's d-pawn is exchanged for Black's e-pawn, White has a healthy kingside majority, while Black obtains the bishop pair and a queenside majority weakened by the doubled c-pawns. The resulting positions are less about subtle manoeuvring and more about executing long-term plans based on these static advantages, making it suitable for players who enjoy clear strategic battles.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -123796,8 +123796,8 @@
         "Exploiting Doubled Pawns"
       ],
       "common_plans": [
-        "White: Advance the kingside pawn majority (f4-f5), control the center with d4, and trade pieces to simplify into a favorable endgame where the pawn majority is decisive.",
-        "Black: Utilize the bishop pair for central control and kingside defense, use the queenside pawn majority to create a passed pawn, and keep the position dynamic to prevent White from easily realizing their structural advantage."
+        "White: Play d4 to trade the d-pawn for Black's e-pawn, leaving a four-against-three kingside majority, then trade pieces to steer towards an endgame where that majority can produce a passed pawn.",
+        "Black: Recapture with 5...dxc6 to open lines for the bishops, use the bishop pair actively and avoid needless simplification, since the doubled c-pawns make the queenside majority hard to turn into a passed pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:43:23.071Z"
@@ -124179,9 +124179,9 @@
       ],
       "common_plans": [
         "White: Play h3 to challenge the g4-bishop, complete development with Nbd2 and O-O, and use the central space advantage. Plans often involve a slow kingside expansion or pressure on the queenside.",
-        "Black: Maintain pressure on d4, decide whether to exchange on f3 (Bxf3) to damage White's structure or retreat the bishop. Plans involve challenging White's center with ...exd4 or seeking counterplay after castling.",
-        "White: After h3 Bxf3, recapture with Qxf3 to keep the structure intact and develop the queen, or gxf3 to open the g-file for the rook and accept a doubled pawn for dynamic chances.",
-        "Black: Complete development with ...O-O and ...Re8 to increase pressure on the e4 pawn, and prepare to challenge White's central pawn duo."
+        "Black: Maintain pressure on d4, decide whether to exchange on f3 (Bxf3) to damage White's structure or retreat the bishop. Plans involve challenging White's centre with ...exd4 or seeking counterplay after castling.",
+        "White: After h3 and the exchange on f3, recapture with the queen to keep the structure intact, or with the g-pawn to open the g-file for the rook and accept doubled pawns for dynamic chances.",
+        "Black: Complete development with ...O-O, keep the e5-strongpoint, and consider ...exd4 followed by ...Re8 to press on the e4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:45:28.602Z"
@@ -124252,7 +124252,7 @@
     "name": "Spanish: Anderssen, 5...d6",
     "scid": "C77d",
     "analysis_json": {
-      "description": "This is a solid and strategic variation of the Ruy Lopez, often chosen by White to sidestep the heavily theoretical main lines. By playing 5.d3, White opts for a slower, more maneuvering game, often resembling a Giuoco Piano, focusing on building a solid center before initiating action. This opening is perfect for positional players who enjoy a strategic battle, emphasizing piece placement and long-term plans over immediate tactical complications.",
+      "description": "This is a solid and strategic variation of the Ruy Lopez, often chosen by White to sidestep the heavily theoretical main lines. By playing 5.d3, White opts for a slower, more manoeuvring game, often resembling a Giuoco Piano, focusing on building a solid centre before initiating action. This opening is perfect for positional players who enjoy a strategic battle, emphasising piece placement and long-term plans over immediate tactical complications.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -124293,9 +124293,9 @@
         "Pawn structure manipulation"
       ],
       "common_plans": [
-        "White's primary plan involves a slow central buildup with c3, preparing the d4 pawn push to challenge Black's control of the center.",
+        "White's primary plan involves a slow central buildup with c3, preparing the d4 pawn push to challenge Black's control of the centre.",
         "Black aims to create a solid position, completing development with ...Be7 and ...O-O, and often playing ...b5 to challenge the White bishop and gain queenside space.",
-        "White often maneuvers the knight from b1 to g3 (via d2-f1) to support the center and prepare for kingside action.",
+        "White often castles, plays c3 and Re1, and then manoeuvres the queen's knight via Nbd2-f1-g3 to support the centre and prepare for kingside action.",
         "Black seeks counterplay by preparing a timely ...d5 pawn break or by rerouting pieces to challenge White's setup."
       ],
       "version": "1.0",
@@ -124728,7 +124728,7 @@
       "chronos": "Ruy Lopez: Morphy defence"
     },
     "analysis_json": {
-      "description": "The Morphy Defence is the main highway of the Ruy Lopez, representing a classical and strategically profound approach for both sides. Black develops actively, challenging White's central influence while forcing the Spanish bishop to declare its intentions. The resulting positions are incredibly rich, offering a blend of long-term strategic planning, piece maneuvering, and potential for tactical fireworks as the middlegame unfolds. This opening is perfect for versatile players who appreciate deep theory and enjoy navigating complex, double-edged positions where understanding is paramount.",
+      "description": "The Morphy Defence is the main highway of the Ruy Lopez, representing a classical and strategically profound approach for both sides. Black develops actively, challenging White's central influence while forcing the Spanish bishop to declare its intentions. The resulting positions are incredibly rich, offering a blend of long-term strategic planning, piece manoeuvring, and potential for tactical fireworks as the middlegame unfolds. This opening is perfect for versatile players who appreciate deep theory and enjoy navigating complex, double-edged positions where understanding is paramount.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -124771,7 +124771,7 @@
         "Queenside expansion vs. Kingside attack"
       ],
       "common_plans": [
-        "White: Castle and support the center with c3 and d4, often rerouting the b1-knight via d2-f1-g3 to prepare for kingside action or to bolster the center.",
+        "White: Castle, play Re1, and support the centre with c3 and d4, often rerouting the queen's knight via Nbd2-f1-g3 to prepare for kingside action or to bolster the centre.",
         "Black: Solidify the position, often playing ...b5 to gain queenside space and challenge the Ba4 bishop, while preparing the central break ...d5 to achieve equality and counterplay."
       ],
       "version": "1.0",
@@ -124900,7 +124900,7 @@
     "name": "Spanish: Wormald Attack, 5...b5 6.Bb3 Bc5 7.c3",
     "scid": "C77t",
     "analysis_json": {
-      "description": "The Wormald Attack is a solid and strategic variation of the Ruy Lopez where White's 5.Qe2 sidesteps the most theoretically heavy main lines. The game revolves around a classical struggle for the center, with White methodically preparing the d2-d4 pawn break using 7.c3. This opening leads to a strategically rich middlegame, ideal for players who enjoy maneuvering and executing long-term plans over immediate tactical skirmishes.",
+      "description": "The Wormald Attack is a solid and strategic variation of the Ruy Lopez where White's 5.Qe2 sidesteps the most theoretically heavy main lines. The game revolves around a classical struggle for the centre, with White methodically preparing the d2-d4 pawn break using 7.c3. This opening leads to a strategically rich middlegame, ideal for players who enjoy manoeuvring and executing long-term plans over immediate tactical skirmishes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -124942,9 +124942,9 @@
       ],
       "common_plans": [
         "White's primary plan is to complete development and achieve the d4 pawn push, securing a space advantage and central control.",
-        "Black aims to use the active Bc5 to hinder White's d4 plan, often playing ...d6 and preparing to counter-attack in the center or on the queenside.",
-        "A common maneuvering plan for White involves rerouting the knight via Nf3-d2-f1-g3 to support the kingside and the center.",
-        "Black often responds to d4 with ...exd4, followed by challenging White's central pawns and creating active play for their pieces."
+        "Black aims to use the active Bc5 to hinder White's central pawn advance, often playing ...d6 and preparing to counter-attack in the centre or on the queenside.",
+        "A common manoeuvring plan for White, once d4 has been played, is the classical knight route Nbd2-f1-g3 to support the kingside and the centre.",
+        "Black often answers White's central pawn push by capturing it with the e-pawn, followed by challenging White's central pawns and creating active play for their pieces."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:49:29.761Z"
@@ -124959,7 +124959,7 @@
     "name": "Spanish: Wormald Attack, 5...b5 6.Bb3 Be7",
     "scid": "C77u",
     "analysis_json": {
-      "description": "The Wormald Attack is a flexible and strategic system against the Ruy Lopez, sidestepping the most heavily analyzed main lines. By playing 5.Qe2, White bolsters the e4-pawn and prepares for a complex strategic battle, often keeping castling options open. This opening leads to a nuanced struggle where long-term planning and piece maneuvering are paramount, appealing to players who enjoy outplaying their opponents positionally rather than through immediate tactical assaults.",
+      "description": "The Wormald Attack is a flexible and strategic system against the Ruy Lopez, sidestepping the most heavily analysed main lines. By playing 5.Qe2, White bolsters the e4-pawn and prepares for a complex strategic battle, often keeping castling options open. This opening leads to a nuanced struggle where long-term planning and piece manoeuvring are paramount, appealing to players who enjoy outplaying their opponents positionally rather than through immediate tactical assaults.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -125001,8 +125001,8 @@
       ],
       "common_plans": [
         "White: Prepare and execute the d2-d4 pawn break, often after c3, to seize central control.",
-        "Black: Solidify the position with ...d6 and ...O-O, then use the queenside space advantage for a counterattack, often targeting the c4 square.",
-        "White: Maneuver the knight from f3 (e.g., Nf3-d2-f1-g3/e3) to support the center and prepare for kingside action.",
+        "Black: Solidify the position with ...d6 and ...O-O, then use the queenside space advantage for a counter-attack, often with ...Na5 against the b3-bishop and the c4 square.",
+        "White: Once c3 and d4 are in, follow the classical knight route Nbd2-f1-g3 to support the centre and prepare for kingside action.",
         "Black: Prepare the ...d5 pawn break to challenge White's central ambitions and liberate their position."
       ],
       "version": "1.0",
@@ -125018,7 +125018,7 @@
     "name": "Spanish: Wormald Attack, 5...Be7",
     "scid": "C77q",
     "analysis_json": {
-      "description": "The Wormald Attack is a subtle and strategic approach to the Ruy Lopez, sidestepping some of the most complex main lines. By playing 5. Qe2, White prepares to support the d4-pawn push and avoids the Marshall Gambit, aiming for a game where long-term positional understanding and maneuvering are key. This opening suits players who prefer to build pressure gradually and outmaneuver their opponents in a less theoretical, more strategic battle.",
+      "description": "The Wormald Attack is a subtle and strategic approach to the Ruy Lopez, sidestepping some of the most complex main lines. By playing 5. Qe2, White prepares to support the d4-pawn push and avoids the Marshall Gambit, aiming for a game where long-term positional understanding and manoeuvring are key. This opening suits players who prefer to build pressure gradually and outmanoeuvre their opponents in a less theoretical, more strategic battle.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -125059,8 +125059,8 @@
       ],
       "common_plans": [
         "White: Prepare and execute the d2-d4 pawn push, often after c3 and Re1, to gain central space and control.",
-        "Black: Complete development with ...O-O and ...b5, then prepare the ...d5 pawn break to challenge White's center.",
-        "White: Maneuver the Queen's Knight via the path Nb1-d2-f1-g3/e3 to support the kingside and center.",
+        "Black: Complete development with ...O-O and ...b5, then prepare the ...d5 pawn break to challenge White's centre.",
+        "White: Play c3 and d4, then follow the classical knight route Nbd2-f1-g3 to support the kingside and centre.",
         "Black: Create counterplay on the queenside, often using the a- and b-pawns to harass White's light-squared bishop."
       ],
       "version": "1.0",
@@ -125211,7 +125211,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Morphy Defense is the cornerstone of the Ruy Lopez, establishing a classical and strategically profound battleground. White completes development and prepares to challenge Black's central control, while Black maintains flexibility, often preparing to drive the Bishop back with ...b5. This opening is perfect for versatile players who appreciate deep strategic planning, subtle maneuvering, and the gradual accumulation of advantages in a complex middlegame.",
+      "description": "The Morphy Defence is the cornerstone of the Ruy Lopez, establishing a classical and strategically profound battleground. White completes development and prepares to challenge Black's central control, while Black maintains flexibility, often preparing to drive the Bishop back with ...b5. This opening is perfect for versatile players who appreciate deep strategic planning, subtle manoeuvring, and the gradual accumulation of advantages in a complex middlegame.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -125250,7 +125250,7 @@
       ],
       "common_plans": [
         "White: Execute the c3-d4 pawn push to seize central space and activate pieces.",
-        "White: Reroute the knight (Nbd2-f1-g3) to support the center and prepare for kingside action.",
+        "White: After Re1, c3 and d4, reroute the queen's knight (Nbd2-f1-g3) to support the centre and prepare for kingside action.",
         "Black: Create queenside space and counterplay with ...b5, followed by developing the light-squared bishop.",
         "Black: Prepare the central break ...d5 to challenge White's control and resolve the tension."
       ],
@@ -125275,7 +125275,7 @@
       "icsbot": "Neo-Steinitz Defense, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Ruy Lopez with 6...d6 is a classical and highly respected defense, embodying a solid and strategic approach. Black fortifies the center and prepares a flexible development, often leading to a complex, maneuvering middlegame. This opening is perfect for patient, strategic players who excel at understanding pawn structures, long-term planning, and accumulating small advantages in a closed or semi-closed position.",
+      "description": "The Ruy Lopez with 6...d6 is a classical and highly respected defence, embodying a solid and strategic approach. Black fortifies the centre and prepares a flexible development, often leading to a complex, manoeuvring middlegame. White's most direct try is 7.Ng5, hitting f7 with knight and bishop, which Black meets with the counter-attack 7...d5 8.exd5 Nd4. This opening is perfect for patient, strategic players who excel at understanding pawn structures, long-term planning, and accumulating small advantages in a closed or semi-closed position.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -125317,10 +125317,10 @@
         "Prophylactic play"
       ],
       "common_plans": [
-        "White: Build a strong pawn center with c3 and d4, reroute the f3-knight (e.g., Nd2-f1-g3) to support the kingside or center, and slowly build pressure.",
-        "Black: Challenge White's bishop with ...Na5, complete development with ...Be7 and ...O-O, and seek counterplay by challenging the center or expanding on the queenside.",
-        "White: Restrain Black's queenside counterplay with a3 and prepare for a long-term strategic battle, often involving kingside piece maneuvers.",
-        "Black: Solidify the position and aim to neutralize White's central space advantage, looking for favorable simplifications into an equal endgame."
+        "White: Build a strong pawn centre with c3 and d4, play Re1 and reroute the queen's knight (Nbd2-f1-g3) to support the kingside or centre, and slowly build pressure.",
+        "Black: Challenge White's bishop with ...Na5, complete development with ...Be7 and ...O-O, and seek counterplay by challenging the centre or expanding on the queenside.",
+        "White: Besides the quiet c3, White can test Black at once with 7.Ng5 against f7; the standard reply 7...d5 8.exd5 Nd4 gives Black active play for the pawn, so the lever a4 against b5 is another common choice.",
+        "Black: Solidify the position and aim to neutralise White's central space advantage, looking for favourable simplifications into an equal endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:51:00.163Z"
@@ -125340,7 +125340,7 @@
       "chronos": "Ruy Lopez: Archangelsk (counterthrust) variation"
     },
     "analysis_json": {
-      "description": "The Arkhangelsk Variation is a sharp and dynamic response to the Ruy Lopez where Black prioritizes rapid development and counterplay over a solid pawn structure. By fianchettoing the light-squared bishop to b7, Black immediately challenges White's central e4-pawn, leading to complex, tactical positions. This opening is perfect for ambitious players who enjoy fighting for the initiative and are comfortable navigating unbalanced and concrete middlegames.",
+      "description": "The Arkhangelsk Variation is a sharp and dynamic response to the Ruy Lopez where Black prioritises rapid development and counterplay over a solid pawn structure. By fianchettoing the light-squared bishop to b7, Black immediately challenges White's central e4-pawn, leading to complex, tactical positions. This opening is perfect for ambitious players who enjoy fighting for the initiative and are comfortable navigating unbalanced and concrete middlegames.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -125381,10 +125381,10 @@
         "Fighting for the initiative"
       ],
       "common_plans": [
-        "White: Solidify the center with c3 and d4 to blunt the Bb7 and seize space, often after defending e4 with Re1.",
+        "White: Solidify the centre with c3 and d4 to blunt the Bb7 and seize space, often after defending e4 with Re1.",
         "Black: Increase pressure on e4, complete development, and use active pieces to create threats, often preparing the ...d5 pawn break to open the position.",
-        "White: Reposition the f3-knight (e.g., via d2-f1-g3) to support the center and prepare for kingside action.",
-        "Black: Use the queenside pawn majority for a long-term advantage if the central tension resolves favorably."
+        "White: After Re1, c3 and d4, bring the queen's knight round via Nbd2-f1-g3 to support the centre and prepare for kingside action.",
+        "Black: Develop the dark-squared bishop actively with ...Bc5, the modern main line, so that it presses on f2 while the b7-bishop eyes e4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:51:18.347Z"

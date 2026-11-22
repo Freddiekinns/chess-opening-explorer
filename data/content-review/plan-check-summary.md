@@ -1,10 +1,10 @@
 # Plan reference check
 
-2192 references on 1680 of 12377 pages fail the check and show as plain text.
+2157 references on 1651 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5470 name no move, route, square or piece
-- References by kind: {"square":16157,"piece":15334,"move":54674,"route":8872}
-- References by result: {"now":69254,"on-board":14322,"later":9269,"invalid":2192}
+- References by kind: {"square":16181,"piece":15354,"move":54746,"route":8863}
+- References by result: {"now":69338,"on-board":14349,"later":9300,"invalid":2157}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -52,25 +52,30 @@
   - `Nxc7`: No piece can play Nxc7 here, now or after the plan's earlier moves
   - `Ng5+`: No piece can play Ng5 here, now or after the plan's earlier moves
   - `Ne6`: No piece can play Ne6 here, now or after the plan's earlier moves
-- **C42 Petrov Defense: Stafford Gambit** (0 views)
-  - `...h4`: No piece can play h4 here, now or after the plan's earlier moves
-- **C42 Petrov's Defence, Damiano Variation** (0 views)
-  - `e5 pawn`: There is no pawn on e5, or on its way
-  - `e5 pawn`: There is no pawn on e5, or on its way
-- **C42 Petrov's Defence: Stafford Gambit** (0 views)
-  - `h3`: No piece can play h3 here, now or after the plan's earlier moves
-- **C42 Petrov's Defense** (0 views)
-  - `e4-pawn`: There is no pawn on e4, or on its way
-- **C42 Petrov's Defense: Classical Attack** (0 views)
-  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
-- **C42 Petrov's Defense: Classical Attack, Berger Variation** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
-- **C42 Petrov's Defense: Classical Attack, Chigorin Variation** (0 views)
-  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
-- **C42 Petrov's Defense: Classical Attack, Closed Variation** (0 views)
-  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
-- **C42 Petrov's Defense: Karklins-Martinovsky Variation** (0 views)
-  - `c1-e2`: One step of c1-e2 can't be played here
 - **C42 Petrov's Defense: Kaufmann Attack** (0 views)
   - `e4 pawn`: There is no pawn on e4, or on its way
+- **C44 Scotch Game: Scotch Gambit, Cochrane-Anderssen Variation** (0 views)
+  - `d4-d5`: One step of d4-d5 can't be played here
+- **C44 Scotch Game: Scotch Gambit, London Defense** (0 views)
+  - `d4-d5`: One step of d4-d5 can't be played here
+  - `dxc3`: No piece can play dxc3 here, now or after the plan's earlier moves
+- **C44 Scotch Game: Sea-Cadet Mate** (0 views)
+  - `...Be7`: No piece can play Be7 here, now or after the plan's earlier moves
+- **C44 Scotch: Cochrane Variation** (0 views)
+  - `Kxf7`: No piece can play Kxf7 here, now or after the plan's earlier moves
+- **C45 Scotch Game: Horwitz Attack, Blackburne Variation** (0 views)
+  - `Bg5`: No piece can play Bg5 here, now or after the plan's earlier moves
+- **C45 Scotch Game: Malaniuk Variation** (0 views)
+  - `...dxc3`: No piece can play dxc3 here, now or after the plan's earlier moves
+  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
+  - `Nxc3`: No piece can play Nxc3 here, now or after the plan's earlier moves
+  - `d4-pawn`: There is no pawn on d4, or on its way
+- **C45 Scotch Game: Meitner Variation** (0 views)
+  - `...Bxc2`: No piece can play Bxc2 here, now or after the plan's earlier moves
+  - `bxc2`: No piece can play bxc2 here, now or after the plan's earlier moves
+  - `...Bxc2`: No piece can play Bxc2 here, now or after the plan's earlier moves
+  - `d4-pawn`: There is no pawn on d4, or on its way
+- **C45 Scotch Game: Romanishin Variation** (0 views)
+  - `c3`: No piece can play c3 here, now or after the plan's earlier moves
+- **C45 Scotch Game: Tartakower Variation** (0 views)
+  - `f1-g3`: One step of f1-g3 can't be played here

@@ -10636,5 +10636,65 @@
     "verdict": "fixed",
     "contentHash": "502e156d51cee867",
     "notes": "The overview restricted an f6-knight that is still on g8; plan 3 had an ambiguous ...Ne7-g6. Rewrote both, adding 7...d5."
+  },
+  "r2qk1nr/ppp2ppp/2np4/2b5/2BpP1b1/2P2N2/PP3PPP/RNBQ1RK1 w kq - 1 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "22c97ea6dceea168",
+    "notes": "Plan 3 had White push d4-d5 with no d-pawn (d4 is Black's pawn); now cxd4 first. British spelling in plans 2 and 4."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/8/1bBpP3/5N2/PPP2PPP/RNBQK2R w KQkq - 2 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "f9b687fd11da378c",
+    "notes": "Plan 1 supported a d4-d5 push with no White d-pawn; rewrote it around 5.c3, offering a second pawn. Plan 3's notation fixed. British spelling in the overview."
+  },
+  "r2q1bnr/ppp1kBpp/3p4/3NN3/4P3/8/PP3PPP/R1Bb1RK1 b - - 2 10": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "8aeac31029c6e73c",
+    "notes": "The overview called the final mate smothered (it is a knights-and-bishop mate on e7); plan 4 recommended ...Be7 in a mated position. Rewrote both: the real error was 7...Ne5, since 8...dxe5 9.Qxg4 also costs a piece. Plan 1 clarified."
+  },
+  "r1bqkb1r/pp1p1Npp/2p1nn2/8/2B1P3/8/PPP2PPP/RNBQ1RK1 b kq - 0 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "f53b1238c5dca77e",
+    "notes": "Plan 1 had White's plan start with Black's Kxf7 and the 'open e-file' (White's e4-pawn is on it); rewrote it around e5, the c4-bishop pinning the e6-knight and the queen via f3 or h5 (a first version with the queen via d5, covered by the c6-pawn, was rejected)."
+  },
+  "r1bk2nr/pppp1ppp/2n5/1N6/4q3/8/PPPQBPPP/RN3RK1 b - - 0 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "feba272253e5c71b",
+    "notes": "Plan 1 had Bg5 after White's dark-squared bishop has been traded on d2; now N1c3 and Bf3 against the e4-queen."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/8/1b1NP3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "c03692595288f524",
+    "notes": "Plans 1, 3 and 4 built on a White pawn centre, Black's ...dxc3 and a d4-pawn that don't exist (White's d-pawn has gone, d4 holds a knight); rewrote all four plans."
+  },
+  "r1b1k2r/ppppnppp/2n2q2/2b5/4P3/2P1B3/PPN2PPP/RN1QKB1R b KQkq - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "3c15c61590291a8b",
+    "notes": "The overview and plans 1-2 had the c5-bishop capturing a knight on c2 and a 'b-file' afterwards; rewrote them around 7...Bxe3 8.Nxe3 or 7...Bb6."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/8/1b2P3/1N6/PPP2PPP/RNBQKB1R w KQkq - 3 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "bc29c6af26bb4b02",
+    "notes": "Plan 1's Maroczy-bind claim and plan 2's White c3 in Black's plan rewritten. British spelling in the overview."
+  },
+  "r1bqkb1r/p1pp1ppp/2p2n2/8/4P3/8/PPPN1PPP/R1BQKB1R b KQkq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "2159310db941e825",
+    "notes": "Plan 3 routed the d2-knight via f1-g3 with the bishop on f1; rewrote it (a first version claiming the knight would support e4 from f3 or b3 was rejected). British spelling in the overview and plans 1 and 2."
+  },
+  "r1b1k2r/ppppnppp/2n2q2/2b5/3NP3/2P1B3/PP3PPP/RN1QKB1R w KQkq - 1 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "316eecec6dca3e9e",
+    "notes": "The overview and plan 2 named a d4-pawn that is a knight; plan 3 had Bg5 pinning an f6-knight (the queen is on f6, the bishop already on e3); plan 4's ...a5-a4 against b2-b4 replaced with ...d5 or ...O-O and ...d6."
   }
 }

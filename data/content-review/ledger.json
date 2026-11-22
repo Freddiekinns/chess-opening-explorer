@@ -11564,7 +11564,67 @@
   "r1bqkb1r/p4pp1/2p2n1p/n3p3/8/7N/PPPPBPPP/RNBQK2R b KQkq - 1 9": {
     "reviewedAt": "2026-11-22",
     "verdict": "fixed",
-    "contentHash": "169e4eb2cd754b6b",
-    "notes": "Plan 1 played ...d4 with no black d-pawn and both ...Bc5 and ...Bd6; plan 2 sent the knight to f2, where White's pawn stands. Rewritten. British spelling."
+    "contentHash": "f8097fac9a28a099",
+    "notes": "Follow-up to batch 2026-11-22-22: the revised plan 2 sent the h3-knight to f4, which the e5-pawn covers; now via f2 once the f-pawn has moved."
+  },
+  "r1bqk2r/p4pp1/2pb1n1p/n7/8/3N4/PPP1BPPP/RNBQK2R b KQkq - 0 12": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "6a7cb45598ebc818",
+    "notes": "Plan 1 had ...Qc7 pressuring an e4-pawn that was taken en passant; rewritten around the queen and d6-bishop battery on h2. British spelling."
+  },
+  "r1bqk2r/p4pp1/2pb1n1p/n3p3/8/7N/PPPPBPPP/RNBQK2R w KQkq - 2 10": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "4dc2e7c56ba95465",
+    "notes": "Plan 1 used a ...d4 break with no black d-pawn; plan 3 sent the knight to f2, where White's pawn stands; overview named 8.Be2 instead of 9.Nh3. Rewritten. British spelling."
+  },
+  "r1bqk2r/p4pp1/2pb1n1p/n3p3/8/3P3N/PPP1BPPP/RNBQK2R b KQkq - 0 10": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "b4429bce1646243d",
+    "notes": "Plan 1 used ...d5, ...c6 and ...d4, with no black d-pawn and the c-pawn already on c6; plan 2 sent the knight to f2 with the pawn still there. Rewritten. British spelling."
+  },
+  "r1bqkb1r/p4p2/2p2n1p/n3p1p1/8/7N/PPPPBPPP/RNBQK2R w KQkq - 0 10": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "68805b9d109d900a",
+    "notes": "Plan 1 said ...g4 traps the h3-knight (it still has g1) and plan 2 rerouted it via f2. Rewritten. British spelling."
+  },
+  "r1bqk2r/p4pp1/2p2n1p/n1b1p3/8/7N/PPPPBPPP/RNBQK2R w KQkq - 2 10": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "eea66e1fffb4757a",
+    "notes": "Plan 1 used a ...d4 break with no d-pawn and claimed a bishop pair both sides have; plan 2 rerouted via f2 with the pawn there. Rewritten. British spelling."
+  },
+  "r1bqk2r/p4pp1/2pb1n1p/n3N3/8/3p4/PPP1BPPP/RNBQK2R w KQkq - 0 12": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "25993b71d848e477",
+    "notes": "Plan 1 challenged an e4-pawn already taken en passant; overview rewritten (reviewer rejected the first wording, which said 11.d4 strikes at e4; it supports the e5-knight; fixed and accepted). British spelling."
+  },
+  "r1b1k2r/p1q2pp1/2pb1n1p/n7/8/3N4/PPP1BPPP/RNBQK2R w KQkq - 1 13": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "2f9ea7656fce71a9",
+    "notes": "Plans 1 and 2 used an e4-pawn and a central black pawn that no longer exist; rewritten around h3 or b3 with Bb2 and the battery on h2. British spelling."
+  },
+  "r1b1k2r/p1q2pp1/2pb1n1p/n3N3/3Pp3/8/PPP1BPPP/RNBQK2R w KQkq - 1 12": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9ee628e46fd8ccd6",
+    "notes": "Plan 1 pushed ...f5-f4 through the f6-knight; plan 3 took en passant a move too late. Rewritten; reviewer rejected a ...Nc4 route that drops the knight, so it was removed and accepted. British spelling."
+  },
+  "r1b1k2r/p1q2pp1/2pb1n1p/n7/8/1P1N4/P1P1BPPP/RNBQK2R b KQkq - 0 13": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "1f3f9820c3a3a07c",
+    "notes": "Overview and plan 1 relied on an e4-pawn that is gone. Rewritten around 13.b3 controlling c4 and preparing Bb2 (reviewer rejected the first wording, that Bb2 was needed to castle; fixed and accepted). British spelling."
+  },
+  "r1bqk2r/p4pp1/2pb1n1p/n3N3/8/5p2/PPPPB1PP/RNBQK2R w KQkq - 0 12": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "02d868c7ba78cc90",
+    "notes": "Plan 1 attacked a non-existent d5-pawn; overview said 11.f4 challenges e4 rather than supporting the e5-knight. Rewritten. British spelling."
   }
 }

@@ -109750,7 +109750,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Ruy Lopez: Steinitz Defense is a classical and highly resilient system against the Spanish Game. By playing 3...d6, Black immediately shores up the central e5-pawn, leading to a more closed and strategic battle compared to more popular lines. This opening is perfect for the patient, strategic player who enjoys building a solid foundation, maneuvering their pieces to good squares, and gradually neutralizing White's initiative before launching their own counter-plans.",
+      "description": "The Ruy Lopez: Steinitz Defence is a classical and highly resilient system against the Spanish Game. By playing 3...d6, Black immediately shores up the central e5-pawn, leading to a more closed and strategic battle compared to more popular lines. This opening is perfect for the patient, strategic player who enjoys building a solid foundation, manoeuvring their pieces to good squares, and gradually neutralising White's initiative before launching their own counter-plans.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -109791,10 +109791,10 @@
         "The 'Spanish' Bishop"
       ],
       "common_plans": [
-        "White: Play d4 to open the center, use the space advantage to build pressure, and often target the kingside.",
+        "White: Play d4 to open the centre, use the space advantage to build pressure, and often target the kingside.",
         "Black: Play ...Bd7 to break the pin, followed by ...Nf6 and ...O-O, aiming for a solid setup and eventual counterplay.",
         "White: Exchange on c6 (Bxc6) to inflict a doubled pawn, then try to exploit this structural weakness.",
-        "Black: Hold a solid but somewhat cramped position, often conceding the centre with ...exd4, and neutralise White's pressure."
+        "Black: Hold a solid but somewhat cramped position, often conceding the centre by taking on d4 once White plays it, and neutralise White's pressure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:35:02.312Z"
@@ -110108,7 +110108,7 @@
     "name": "Spanish: Old Steinitz, 4.d4 Bd7",
     "scid": "C62",
     "analysis_json": {
-      "description": "The Old Steinitz Defense with 4...Bd7 is a classical and highly solid response to the Ruy Lopez. Black prioritizes structural integrity, immediately challenging White's Spanish bishop and preparing to resolve the pin on the c6-knight without creating weaknesses. This opening leads to a strategically rich, often closed game, suiting patient players who excel at maneuvering, understanding pawn structures, and neutralizing the opponent's initiative before launching their own counter-plans.",
+      "description": "The Old Steinitz Defence with 4...Bd7 is a classical and highly solid response to the Ruy Lopez. Black breaks the pin on the c6-knight, so that the knight is defended and e5 can be held without weakening the pawn structure. This opening leads to a strategically rich, often closed game, suiting patient players who excel at manoeuvring, understanding pawn structures, and neutralising the opponent's initiative before launching their own counter-plans.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -110149,10 +110149,10 @@
         "Prophylactic Play"
       ],
       "common_plans": [
-        "White: Complete development with Nc3 and O-O, maintain central pressure, and often play Bxc6 to inflict doubled pawns at the cost of the bishop pair.",
-        "Black: Resolve the pin via ...Bxc6 or by forcing the bishop away, complete development with ...Nf6 and ...Be7, and challenge White's center with a timely ...exd4.",
-        "White: Maneuver pieces to prepare a kingside attack (e.g., Nd2-f1-g3) or expand on the queenside with a4.",
-        "Black: Create counterplay by preparing a queenside expansion (...a6, ...b5) or, in some cases, a kingside pawn break with ...f5."
+        "White: Complete development with Nc3 and O-O, keep the pressure on e5, and look for the right moment to exchange on c6 and open the centre with dxe5.",
+        "Black: Keep the c6-knight defended with the d7-bishop, complete development with ...Nf6 and ...Be7, and give up the centre with ...exd4 at the right moment.",
+        "White: Build up with Nc3, O-O and Re1 to increase the pressure on e5; if Black castles too early, exchanging on c6 and taking on e5 can win a pawn.",
+        "Black: Give up the centre with ...exd4 at the right moment and look for counterplay on the half-open e-file against the e4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:36:51.376Z"
@@ -110282,7 +110282,7 @@
     "name": "Spanish: Old Steinitz, 4.d4 exd4 5.Nxd4",
     "scid": "C62",
     "analysis_json": {
-      "description": "The Old Steinitz Defense is a classical and highly resilient response to the Ruy Lopez, creating a solid but somewhat passive pawn structure. White gains a comfortable space advantage and central control, aiming to methodically build pressure, while Black focuses on neutralizing White's initiative and gradually untangling their pieces. This opening is perfect for strategic players who appreciate subtle maneuvering, long-term planning, and the art of defending a slightly worse but tenable position to achieve equality.",
+      "description": "The Old Steinitz Defence is a classical and highly resilient response to the Ruy Lopez, creating a solid but somewhat passive pawn structure. After 4...exd4 5.Nxd4 White gains a comfortable space advantage and central control, and the c6-knight is now attacked twice, so Black usually breaks the pin with ...Bd7. White aims to methodically build pressure, while Black focuses on neutralising White's initiative and gradually untangling their pieces. This opening is perfect for strategic players who appreciate subtle manoeuvring, long-term planning, and the art of defending a slightly worse but tenable position.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -110323,10 +110323,10 @@
         "Improving Black's light-squared bishop"
       ],
       "common_plans": [
-        "White: Utilize the central space advantage to develop pieces to active squares (e.g., Bf4, Qe2), control key files, and build pressure on Black's slightly cramped position.",
+        "White: Use the central space advantage to develop pieces to active squares (e.g., Bf4, Qe2), control key files, and build pressure on Black's slightly cramped position.",
         "Black: Break the pin with ...Bd7, often trading on d4 to ease central pressure and simplify the position.",
-        "White: Maintain the initiative by preventing Black's freeing pawn breaks (...c5 or ...f5) while preparing a potential kingside attack.",
-        "Black: Complete development safely (...Nf6, ...Be7, ...0-0) and prepare to challenge White's central control with a timely ...c5 or ...f6 pawn break."
+        "White: Keep the initiative and the space advantage, restrain Black's freeing pawn breaks, and prepare a potential kingside attack.",
+        "Black: Complete development safely (...Nf6, ...Be7, ...O-O) and prepare to challenge White's central control with pressure on e4 or a timely ...d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:37:44.520Z"
@@ -110399,7 +110399,7 @@
     "name": "Spanish: Old Steinitz, 4.O-O",
     "scid": "C62",
     "analysis_json": {
-      "description": "The Old Steinitz Defense is a classical and highly solid response to the Ruy Lopez, immediately shoring up the central e5-pawn. This leads to a more strategic and less tactical game compared to other Spanish lines, focusing on piece maneuvering and long-term structural plans. It's an excellent choice for players who prefer a robust, low-risk setup and enjoy accumulating small advantages in a closed or semi-closed position.",
+      "description": "The Old Steinitz Defence is a classical and highly solid response to the Ruy Lopez, immediately shoring up the central e5-pawn. This leads to a more strategic and less tactical game compared to other Spanish lines, focusing on piece manoeuvring and long-term structural plans. It's an excellent choice for players who prefer a robust, low-risk setup and enjoy accumulating small advantages in a closed or semi-closed position.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -110439,9 +110439,9 @@
         "Maneuvering in a closed position"
       ],
       "common_plans": [
-        "White: Play d4 to challenge Black's center, develop pieces (c3, Re1), and create pressure on the e-file.",
-        "Black: Solidify the center, develop with ...Bd7, ...Nf6, and ...O-O, and prepare a queenside expansion or a central break.",
-        "White: The 'Ruy Lopez' knight maneuver (Nf3-d2-f1-g3/e3) to support the center and prepare an attack.",
+        "White: Play d4 to challenge Black's centre, develop pieces (c3, Re1), and create pressure on the e-file.",
+        "Black: Solidify the centre, develop with ...Bd7, ...Nf6, and ...O-O, and prepare a queenside expansion or a central break.",
+        "White: The typical Spanish knight manoeuvre, bringing the b1-knight via d2 and f1 to g3 or e3 after the d-pawn has moved and Re1 has been played, to support the centre and prepare an attack.",
         "Black: Break the pin with ...Bd7, forcing White to decide the fate of the light-squared bishop."
       ],
       "version": "1.0",
@@ -110464,7 +110464,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Schliemann Defense is a sharp and aggressive counter-gambit to the Ruy Lopez, immediately challenging White's central ambitions with the provocative 3...f5. This move creates a highly unbalanced and tactical game, where Black accepts a weakened kingside and a compromised pawn structure in exchange for dynamic counterplay and the initiative. It is perfectly suited for daring, tactical players who thrive in complex, double-edged positions and are not afraid to take calculated risks from the very beginning.",
+      "description": "The Schliemann Defence is a sharp and aggressive counter-gambit to the Ruy Lopez, immediately challenging White's central ambitions with the provocative 3...f5. This move creates a highly unbalanced and tactical game, where Black accepts a weakened kingside, especially the e8-h5 diagonal, in exchange for dynamic counterplay and the initiative. It is perfectly suited for daring, tactical players who thrive in complex, double-edged positions and are not afraid to take calculated risks from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -110507,10 +110507,10 @@
         "Central Tension"
       ],
       "common_plans": [
-        "For Black: Disrupt White's center with ...fxe4, develop pieces rapidly to attack the e4-pawn, and generate threats against White's king to compensate for structural weaknesses.",
-        "For White: Consolidate the center (e.g., with 4.Nc3 or 4.d4), exploit Black's weakened kingside and f7-pawn, and aim to neutralize Black's initiative before launching a decisive attack.",
-        "For Black: Utilize the newly opened f-file for the rook to support a kingside attack.",
-        "For White: Complete development, sometimes castling queenside to use the kingside pawns for an attack, and seek to trade pieces to enter a favorable endgame where Black's structural defects are more pronounced."
+        "For Black: Open the f-file with ...fxe4, develop rapidly, and use the f-file and quick piece play to generate threats against White's king.",
+        "For White: Meet the challenge to the centre (e.g., with 4.Nc3 or 4.d4), exploit the weakened light squares around Black's king, and aim to neutralise Black's initiative.",
+        "For Black: Use the newly opened f-file for the rook to support a kingside attack.",
+        "For White: Complete development and look to trade pieces into a favourable endgame where Black's loosened structure is more of a liability."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:38:39.510Z"
@@ -158453,7 +158453,7 @@
     "eco": "C62",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Steinitz Defence is a classical and highly solid response to the Ruy Lopez, though less common than the main lines. By playing 3...d6, Black immediately reinforces the central e5-pawn, creating a resilient, if sometimes slightly passive, structure. The resulting positions are strategically complex, focusing on central control and piece maneuvering, making it ideal for patient, strategic players who are comfortable defending a solid core before launching counter-operations.",
+      "description": "The Steinitz Defence is a classical and highly solid response to the Ruy Lopez, though less common than the main lines. Here it is reached by the Philidor move order 2...d6 3.d4 Nc6 4.Bb5: Black's d6-pawn reinforces the e5-pawn, creating a resilient, if sometimes slightly passive, structure, while the b5-bishop pins the c6-knight. The resulting positions are strategically complex, focusing on central control and piece manoeuvring, making it ideal for patient, strategic players who are comfortable defending a solid core before launching counter-operations.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -158492,10 +158492,10 @@
         "Control of the d5 square"
       ],
       "common_plans": [
-        "White: Exchanging on c6 (Bxc6) to damage Black's pawn structure, followed by central expansion with c3-d4.",
-        "White: Maintaining the pin and pressure, maneuvering the knight (Nb1-d2-f1-g3) to support an attack.",
-        "Black: Breaking the pin with ...Bd7, developing pieces, and preparing to challenge White's center.",
-        "Black: Relieving spatial pressure through timely piece exchanges and seeking counterplay on the queenside or in the center."
+        "White: Exchange on c6 (Bxc6) to damage Black's pawn structure, then use the d4-pawn and quick development to keep up the central pressure.",
+        "White: Maintain the pin and the pressure on e5, developing with Nc3 and O-O and keeping the option of exchanging on c6.",
+        "Black: Break the pin with ...Bd7, develop pieces, and prepare to challenge White's centre.",
+        "Black: Relieving spatial pressure through timely piece exchanges and seeking counterplay on the queenside or in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:28:15.388Z"
@@ -167712,7 +167712,7 @@
     "eco": "C63",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Möhring Variation of the Schliemann Defense is one of the sharpest and most theoretically demanding lines in all of chess. It leads to a wild, tactical melee where White sacrifices material for a blistering attack against the Black king, whose position is compromised early on. This opening is tailor-made for fearless, tactical players who are comfortable navigating chaotic positions and excel at both calculation and resourcefulness under pressure.",
+      "description": "The Möhring Variation of the Schliemann Defence is one of the sharpest and most theoretically demanding lines in the opening. After 9...g6 the white queen on h5 is attacked and White's knight on c6 is hit by both the b7-pawn and the d6-queen, so White, a pawn up for the moment, must find active moves to keep the extra material while both kings are loosened. This opening is tailor-made for fearless, tactical players who are comfortable navigating chaotic positions and excel at both calculation and resourcefulness under pressure.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -167757,9 +167757,9 @@
       ],
       "common_plans": [
         "White aims to exploit the weaknesses around Black's king (created by ...g6) with the active queen and rapid development, often seeking a decisive attack before Black can consolidate.",
-        "Black's primary goal is to survive the initial storm, untangle their pieces, and leverage their material or positional compensation. The active Black queen on d6 is a key piece for both defense and counterattack.",
-        "White often continues the attack with moves like Qe2, preparing to bring more pieces into the fray and targeting the e-file and weak light squares.",
-        "Black seeks to complete development, often by preparing ...b5 to challenge White's c4-pawn and create space for the queen and other pieces."
+        "Black's primary goal is to survive the initial storm, untangle their pieces, and win back material. The active black queen on d6 is a key piece for both defence and counterattack.",
+        "White must move the attacked queen, ideally with gain of time (for example with a check on e5), and then target the e4-pawn and the weak light squares.",
+        "Black seeks to complete development and win back material, since the c6-knight is attacked by the b7-pawn and the d6-queen."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:17:54.546Z"
@@ -168244,7 +168244,7 @@
     "eco": "C63",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Möhring Variation is one of the sharpest and most complex lines in the already aggressive Schliemann Defense. Black sacrifices king safety and pawn structure for immediate, ferocious counterplay, leading to a tactical melee where material is often secondary to initiative. This opening is tailor-made for fearless, tactical players who are comfortable navigating chaotic positions and excel at concrete calculation.",
+      "description": "The Möhring Variation is one of the sharpest and most complex lines in the already aggressive Schliemann Defence. Black sacrifices king safety and pawn structure for immediate, ferocious counterplay, leading to a tactical melee where material is often secondary to initiative. This opening is tailor-made for fearless, tactical players who are comfortable navigating chaotic positions and excel at concrete calculation.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -168289,9 +168289,9 @@
       ],
       "common_plans": [
         "Black aims to use the active queen and knight to generate perpetual threats against the white king, often ignoring their own king's safety to maintain the initiative.",
-        "White's primary goal is to consolidate, secure their king, and neutralize Black's threats, hoping to eventually convert their material advantage.",
+        "White's primary goal is to consolidate, secure their king, and neutralise Black's threats, hoping to eventually convert their material advantage.",
         "A key struggle revolves around White's knight on a7; White tries to save it or trade it effectively, while Black works to trap it.",
-        "Black often plays ...c5 to challenge White's center and open lines for the rooks, while White may seek to play d4 to stabilize the position."
+        "Black can win back the stranded a7-knight with the a8-rook if White cannot rescue it, while the g5-queen keeps up the pressure on g2."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:20:39.812Z"
@@ -168951,7 +168951,7 @@
     "eco": "C63",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Möhring Variation of the Schliemann Defense is a razor-sharp and highly tactical line where Black sacrifices a pawn for a significant lead in development and central control. The resulting positions are incredibly complex and unbalanced, with Black's active pieces and bishop pair compensating for the material deficit. This opening is perfect for audacious, tactical players who thrive on chaos and are comfortable playing with the initiative.",
+      "description": "The Möhring Variation of the Schliemann Defence is a razor-sharp line in which Black has given up two pawns for a lead in development and threats against the white king. After 11.Bxd7+ Black must first recapture on d7, and White's knight on a7 is stranded and attacked by the a8-rook, so the material balance is still in flux. The resulting positions are incredibly complex and unbalanced, suiting audacious, tactical players who thrive on chaos and are comfortable playing with the initiative.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -168997,8 +168997,8 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White's primary plan is to consolidate their position, untangle the knight on a7 (often via Nc8-b6 or by sacrificing it back), and convert their extra pawn in the long run. They must carefully neutralize Black's initiative and threats against their king.",
-        "Black aims to use their superior development and active pieces to create immediate threats against the white king and exploit White's uncoordinated position. Key plans involve targeting the weak b2 pawn, using the bishop pair, and preventing the white knight on a7 from rejoining the game."
+        "White's primary plan is to consolidate, rescue the knight on a7 (via b5 or c6, or by giving it back) and convert the extra pawns in the long run, while carefully neutralising Black's initiative and threats against the king.",
+        "Black aims to recapture on d7, then use the superior development and active pieces to create immediate threats against the white king, win back the stranded a7-knight with the rook if it cannot escape, and exploit White's uncoordinated position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:24:28.664Z"
@@ -169371,7 +169371,7 @@
     "eco": "C63",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Classical Variation of the Schliemann Defense leads to exceptionally sharp and unbalanced positions. Black sacrifices material to seize the initiative and create chaos, resulting in a tactical melee where White's knight often becomes trapped on a7. This opening is tailor-made for audacious, calculating players who enjoy double-edged battles and are comfortable navigating complex, high-stakes situations.",
+      "description": "The Classical Variation of the Schliemann Defence leads to exceptionally sharp and unbalanced positions. Black sacrifices material to seize the initiative and create chaos, resulting in a tactical melee where White's knight often becomes trapped on a7. This opening is tailor-made for audacious, calculating players who enjoy double-edged battles and are comfortable navigating complex, high-stakes situations.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -169416,9 +169416,9 @@
       ],
       "common_plans": [
         "White aims to consolidate, rescue the knight on a7 if possible, and exploit the weaknesses around the Black king created by the ...f5 and ...g6 pushes.",
-        "Black focuses on maintaining the initiative, developing rapidly to trap the a7-knight, and launching an attack using the open files and active pieces.",
-        "White may try to trade pieces to simplify the position and realize the material advantage in the endgame.",
-        "Black seeks to use the central pawn mass and superior development to overwhelm White before the position stabilizes."
+        "Black focuses on maintaining the initiative: the g6-pawn hits the white queen, the a8-rook attacks the stranded a7-knight, and Black develops rapidly to use the open lines against the white king.",
+        "White may try to trade pieces to simplify the position and realise the material advantage in the endgame.",
+        "Black seeks to use the advanced e4-pawn and superior development to overwhelm White before the position stabilises."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:26:51.086Z"

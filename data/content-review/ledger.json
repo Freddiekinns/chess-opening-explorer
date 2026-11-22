@@ -11860,5 +11860,65 @@
     "verdict": "fixed",
     "contentHash": "eb28590f1c58d882",
     "notes": "Plan 1 pushed c3-d4 onto the d4-knight and called the b-file open; rewritten around c3 hitting both b4 and d4. British spelling."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/1Bb1p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "bde8f2192745fecc",
+    "notes": "Plan 3 routed the f3-knight Nf3-g3-f1-e3 (impossible); plan 1 wrote c3-d4 as one route; plan 4 called the b-file open. Rewritten. British spelling."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/1Bb1p3/4P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "a9dd5adcafefb17e",
+    "notes": "Plan 3 played Nbd2 with the d2-pawn still at home; plan 4 suggested a ...b6 fianchetto. Rewritten. British spelling."
+  },
+  "r1bqk1nr/pppp1ppp/1bn5/1B2p3/4P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9dfeb9b168569693",
+    "notes": "Plan 3 played Nd2-f1-g3 with the d-pawn on d2. Rewritten. British spelling."
+  },
+  "r1bq1rk1/pppp1ppp/1bn2n2/1B2p1B1/3PP3/2P2N2/PP3PPP/RN1Q1RK1 b - - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "d7fd1709c82c5313",
+    "notes": "Plan 1 had White meet ...h6 and ...g5 with h4, a sequence that does not parse or fit; rewritten around the pin and the loosened kingside. British spelling."
+  },
+  "r1bqk2r/pppp1ppp/2n2n2/1Bb1p3/4P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "ea042aa34d2da73b",
+    "notes": "Plan 3 had White castle queenside for a pawn storm; plan 2 wrote ...exd4 before White has a d4-pawn. Rewritten. British spelling."
+  },
+  "r1bqk2r/ppppnppp/2n5/1Bb1p3/4P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "df08f9c4b61c4cbc",
+    "notes": "Plan 2 put d4 inside Black's plan; overview called 4...Nge7 the Cordel Defence (3...Bc5 is). Rewritten. British spelling."
+  },
+  "r1b1k1nr/pppp1ppp/2n2q2/1Bb1p3/4P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "76b1fbc09527b96b",
+    "notes": "Plan 2 claimed threats against e4, which no black piece attacks (reviewer rejected; rewritten around f2 and f3, accepted). British spelling."
+  },
+  "r1bqk1nr/pppp1ppp/2n5/1Bb1p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "ef40155df73a7bdd",
+    "notes": "Plan 3 played Nb1-d2-f1-g3 with the d-pawn on d2 and the rook on f1; plan 4 said ...Na5 challenges the b5-bishop. Rewritten around 4...Nd4 and 4...Nf6. British spelling."
+  },
+  "r1bqk1nr/ppp2ppp/2np4/1Bb1p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9350d1b7cc6a58d0",
+    "notes": "Plan 4 played ...b5 onto the bishop; plan 1 wrote c3-d4 as one route. Rewritten. British spelling."
+  },
+  "r1bqk1nr/ppp2ppp/2np4/1Bb1p3/4P3/2P2N2/PP1P1PPP/RNBQ1RK1 b kq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "0738922183c7703b",
+    "notes": "Plan 2 took on d4 before White has a pawn there, played ...b5 onto the bishop, and rerouted the pinned c6-knight (reviewer rejected; now breaks the pin with ...Bd7 first, accepted). British spelling."
   }
 }

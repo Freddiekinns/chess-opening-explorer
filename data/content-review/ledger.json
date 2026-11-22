@@ -198,10 +198,10 @@
     "notes": "Style brief audit (italian-game-giuoco-piano, researched 2026-10-03): 8 claims, 0 wrong, 1 unverifiable."
   },
   "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4": {
-    "reviewedAt": "2026-10-11",
-    "verdict": "ok",
-    "contentHash": "497383e839a23880",
-    "notes": "Style brief audit (italian-game-two-knights-defense, researched 2026-10-03): 6 claims, 0 wrong, 0 unverifiable."
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "eb601a00206ab2aa",
+    "notes": "Plan 2 named Ng5 in a Black plan; rewritten as 4.Ng5 d5 5.exd5 Na5. British spelling."
   },
   "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3": {
     "reviewedAt": "2026-10-11",
@@ -11152,5 +11152,59 @@
     "verdict": "fixed",
     "contentHash": "b5043dd2f90c57b9",
     "notes": "Plan 1 routed the knight from b1 (it is on d2) via f1 with the rook still there; rewritten with Re1 first. British spelling."
+  },
+  "r1bqk2r/pppp1pp1/2n2n1p/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 b kq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "1fdf6ccf06622af6",
+    "notes": "Plan 1 played Nbd2-f1-g3 with the rook still on f1 (now after Re1); plan 2 called a4 and Rb1 a minority attack. Both rewritten; British spelling."
+  },
+  "r1bqk2r/1pp2ppp/p1np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w kq - 0 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "2b8b4cbe0a59fc95",
+    "notes": "Plan 4's 'a6-b5 pawn structure' rewritten as ...b5 and ...Ba7; plan 3 tidied. British spelling."
+  },
+  "r1bqk2r/1pp2ppp/p1np1n2/2b1p3/2B1P3/2PP1N2/PP1N1PPP/R1BQK2R w KQkq - 0 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "d1f7fb4f325d8a33",
+    "notes": "Plan 1 routed the knight as Nbd2 (it is on d2) via f1 before castling and Re1; the overview's '...a6 prevents Nb5' had no knight able to reach b5; plan 2 named White's moves in a Black plan. Rewritten; British spelling."
+  },
+  "r1bqk2r/pppp1pp1/2n2n1p/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 w kq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "f3142ba17f740c7c",
+    "notes": "Plan 1's 'Italian maneuver' via f1 came before Re1; rewritten. British spelling."
+  },
+  "r1bqk2r/ppp2pp1/2np1n1p/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w kq - 0 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "e24e8c113c63337d",
+    "notes": "Plan 1 routed via f1 before Re1; plan 3 called a4-a5 a minority attack. Both rewritten; British spelling."
+  },
+  "r1bqk2r/pppp1ppp/2n5/8/1bBP4/2n2N2/PP3PPP/R1BQ1RK1 w kq - 0 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "f3ef9f331f4ddfb4",
+    "notes": "Plan 1 had Re1 'pin the e5 pawn' (there is no e5-pawn); rewritten around Re1+ on the open e-file and Qb3 against f7. Plan 2 tidied around 9...d5."
+  },
+  "r1bqk2r/ppppnppp/5b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1 w kq - 3 11": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "e7005608004343cd",
+    "notes": "Plan 1 played Rxe7 with the e4-knight in the way; rewritten around 11.Rxe4 d6 12.Bg5 Bxg5 13.Nxg5. Plan 2 rewritten with the same line; overview notes the piece must be won back."
+  },
+  "r2qk2r/ppp2pPp/2n1b3/2b5/2pp4/5N2/PPP2PPP/RNBQR1K1 b kq - 0 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "c1b9a61ca093c13d",
+    "notes": "Plan 1 used a c4-bishop that is gone (a Black pawn stands on c4); plan 4 suggested ...Kf8 (covered by the g7-pawn). Plans 1, 2 and 4 rewritten around 9...Rg8 10.Bg5 and ...Rxg7."
+  },
+  "r1bqk2r/ppp2ppp/3p1n2/4p1B1/2BnP3/8/PPP2PPP/RN1Q1RK1 w kq - 0 8": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "d417f41620beb7a3",
+    "notes": "The overview missed that White is a pawn down after 5.d4 Bxd4 6.Nxd4 Nxd4; plans 2 and 3 rewritten (...h6, queen recapture, f4 against f6 and f7)."
   }
 }

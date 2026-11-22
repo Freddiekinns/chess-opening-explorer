@@ -102018,7 +102018,7 @@
     "name": "Two Knights: Classical, 6.Re1",
     "scid": "C56b",
     "analysis_json": {
-      "description": "The Classical Variation with 6.Re1 is one of the most critical and theoretical tests of the Two Knights Defense. White immediately creates a pin along the e-file, forcing a tactical confrontation and leading to sharp, open positions. This line is perfect for well-prepared, aggressive players who thrive on calculating concrete variations and fighting for the initiative from the very first moves.",
+      "description": "The Classical Variation with 6.Re1 is one of the most critical and theoretical tests of the Two Knights Defence. White immediately pins the e4-knight on the e-file, forcing a tactical confrontation and leading to sharp, open positions. This line is perfect for well-prepared, aggressive players who thrive on calculating concrete variations and fighting for the initiative from the very first moves.",
       "style_tags": [
         "Tactical",
         "Sharp",
@@ -102059,8 +102059,8 @@
         "Central Tension"
       ],
       "common_plans": [
-        "White: Use the Re1 to pressure the center, recapture on d4 (often via Bxd5 and Nxd4), and maintain a lasting initiative against Black's position.",
-        "Black: Immediately break the pin with ...d5, challenge White's central control, trade pieces to relieve pressure, and aim to consolidate the position or transition into a favorable endgame."
+        "White: Use the rook to pin the e4-knight; after 6...d5, 7.Bxd5 Qxd5 8.Nc3 hits the queen and the knight, and White wins back the piece, staying a pawn down but with a lasting initiative.",
+        "Black: Defend the pinned knight with 6...d5; after 7.Bxd5 Qxd5 8.Nc3 Qa5 9.Nxe4 Be6, Black stays a pawn up and aims to complete development and get the king to safety, often by castling long."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:57:22.498Z"
@@ -102965,7 +102965,7 @@
     "name": "Two Knights: Classical, Moller, 9.Nxe4 Be6",
     "scid": "C56h",
     "analysis_json": {
-      "description": "The Moller Variation is a sharp, highly theoretical line in the Two Knights Defense where White sacrifices a pawn for a significant lead in development and lasting initiative. The game becomes a tense, double-edged struggle where White aims for a decisive attack, while Black must defend with extreme precision to consolidate and convert the material advantage. This opening is perfect for well-prepared, tactical players who thrive in complex and dynamic positions.",
+      "description": "The Moller Variation is a sharp, highly theoretical line in the Two Knights Defence where White sacrifices a pawn for a significant lead in development and lasting initiative. The game becomes a tense, double-edged struggle where White aims for a decisive attack, while Black must defend with extreme precision to consolidate and convert the material advantage. This opening is perfect for well-prepared, tactical players who thrive in complex and dynamic positions.",
       "style_tags": [
         "Sharp",
         "Tactical",
@@ -103008,9 +103008,9 @@
         "King Hunt"
       ],
       "common_plans": [
-        "White: Use the open e-file and active pieces to build an attack against Black's uncastled king. Common ideas include Bg5 to pressure f6, Bd3 to prepare kingside threats, and maneuvering the knights to create tactical shots.",
-        "Black: Neutralize White's initiative through careful exchanges and precise defensive moves. Aim to complete development, castle the king to safety, and use the long-term advantage of the extra pawn, especially in an endgame.",
-        "Black: The queen on a5 puts pressure on the c3-knight and prepares the ...c7-c5 pawn break to challenge White's central control and create counterplay.",
+        "White: Use the open e-file and active pieces to build an attack against Black's uncastled king. Common ideas include Bd2, gaining time on the a5-queen, Bg5 to cover the d8-square against long castling, and Neg5 to hit the e6-bishop.",
+        "Black: Neutralise White's initiative through careful exchanges and precise defensive moves. Aim to complete development, castle the king to safety, and use the long-term advantage of the extra pawn, especially in an endgame.",
+        "Black: Bring the king to safety, usually by castling long now that the queen has left the d8-square, and keep the extra d4-pawn defended.",
         "White: Prevent Black from consolidating by maintaining constant pressure and tempo. Avoid allowing piece trades that relieve the pressure on Black's position."
       ],
       "version": "1.0",
@@ -155528,8 +155528,8 @@
         "Development Advantage"
       ],
       "common_plans": [
-        "For White, the plan is to use the development advantage and open lines to sustain a decisive attack against the exposed Black king, often involving moves like d4 and O-O to bring more pieces into the fray.",
-        "For Black, the goal is survival and consolidation. The plan involves using the active knights to create counter-threats, securing the king by walking it to a safer square (e.g., ...Kd7-c8), and aiming to trade pieces (especially queens) to diffuse White's attack and realize the material advantage."
+        "For White: Black's knight has taken on c2 with check, so step aside with 10.Kd1, let the knight take the a1-rook, and play 11.Nxd5 to renew the threats against the king on e6 with the queen and the c4-bishop.",
+        "For Black: Grab the a1-rook after 10.Kd1, then try to survive by trading pieces (especially queens) and moving the king away from the centre to realise the material advantage."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:12:52.027Z"
@@ -164175,7 +164175,7 @@
     "eco": "C56",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Nakhmanson Gambit is one of the sharpest and most sacrificial lines in chess, where White gives up a full rook's worth of material to drag the Black king into the open. This opening leads to a wild, do-or-die tactical battle where White must checkmate or regain the material quickly, while Black must defend with ice-cold precision to consolidate their decisive advantage. It is the ultimate test of nerve and calculation, suited for fearless, creative attackers who thrive in chaos.",
+      "description": "The Nakhmanson Gambit is one of the sharpest and most sacrificial lines in chess, where White gives up two minor pieces to drag the Black king into the open. Next comes 8.Qd5+, a check that also hits the e4-knight, so White wins some material back at once. This opening leads to a wild, do-or-die tactical battle where White must keep the attack going while Black must defend with ice-cold precision to consolidate the extra material. It is the ultimate test of nerve and calculation, suited for fearless, creative attackers who thrive in chaos.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -164219,10 +164219,10 @@
         "Attack on the King"
       ],
       "common_plans": [
-        "White's Plan: Bring the queen to h5 or d3 to attack the exposed king, use rooks on the e and d-files to cut off escape routes, and create mating threats before Black can consolidate.",
-        "Black's Plan: Consolidate the king's position (e.g., Ke8-d8-c7), develop pieces quickly to create counter-threats, and return some material at the right moment to defuse the attack.",
+        "White's Plan: Play 8.Qd5+, which checks the king and hits the e4-knight, then Re1 and take the knight with the queen or rook to win back a piece while the black king stays exposed.",
+        "Black's Plan: Answer 8.Qd5+ with a king move such as 8...Ke8 or 8...Kf6, develop with ...Be7 or ...Ne7, and return some material at the right moment to defuse the attack.",
         "White's Plan: Force a perpetual check if the main attack stalls, using the active queen and rook.",
-        "Black's Plan: Trade queens to neutralize White's primary attacking piece and transition into a winning endgame with a large material advantage."
+        "Black's Plan: Trade queens to neutralise White's primary attacking piece and transition into a winning endgame with a large material advantage."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:58:42.608Z"
@@ -164814,7 +164814,7 @@
     "eco": "C56",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Nakhmanson Gambit is a hyper-aggressive and speculative line within the Scotch Gambit, where White sacrifices two minor pieces to rip open the center and launch a ferocious attack against the exposed black king. This opening leads to an incredibly sharp, tactical melee where White's initiative and attacking prowess are pitted against Black's extra material and defensive resilience. It is designed for fearless, calculating players who thrive in chaos and enjoy playing for a direct checkmate from the very first moves.",
+      "description": "The Nakhmanson Gambit is a hyper-aggressive and speculative line within the Scotch Gambit, where White sacrifices two minor pieces to rip open the centre and launch a ferocious attack against the exposed black king. 8.Qd5+ checks the king and hits the e4-knight at the same time. This opening leads to an incredibly sharp, tactical melee where White's initiative and attacking prowess are pitted against Black's extra material and defensive resilience. It is designed for fearless, calculating players who thrive in chaos and enjoy playing for a direct checkmate from the very first moves.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -164860,7 +164860,7 @@
       "common_plans": [
         "White aims to use the queen and rooks (especially via Re1) to create overwhelming threats against the black king, preventing Black from consolidating or developing.",
         "White seeks to maintain the initiative at all costs, often sacrificing more material to keep the attack flowing.",
-        "Black's primary goal is to survive the initial onslaught, consolidate the king's position (e.g., ...Kg8), and return material if necessary to neutralize the attack.",
+        "Black's primary goal is to survive: step out of check with ...Ke8 or ...Kf6 (the king can't go back to g8, on the queen's diagonal), then consolidate and return material if necessary to neutralise the attack.",
         "Black tries to complete development and trade pieces, aiming to reach an endgame where the material advantage will be decisive."
       ],
       "version": "1.0",
@@ -166709,7 +166709,7 @@
     "eco": "C56",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Nakhmanson Gambit is one of the sharpest and most aggressive lines in chess, where White sacrifices a full piece to permanently expose the Black king. The game becomes a frantic, tactical battle centered on White's relentless initiative and attack versus Black's desperate defense and material advantage. This opening is for fearless, calculating players who enjoy high-stakes attacks and navigating chaotic positions.",
+      "description": "The Nakhmanson Gambit is one of the sharpest and most aggressive lines in chess, where White sacrifices a full piece to permanently expose the Black king. The game becomes a frantic, tactical battle centred on White's relentless initiative and attack versus Black's desperate defence and material advantage. This opening is for fearless, calculating players who enjoy high-stakes attacks and navigating chaotic positions.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -166754,10 +166754,10 @@
         "Development Advantage"
       ],
       "common_plans": [
-        "White: Continue the attack with moves like Rxe7+, bringing the other rook into the game via d1 or f1, and preventing Black from consolidating or exchanging key attacking pieces.",
+        "White: Win back a piece with 10.Rxe4, which pins the e7-bishop to the king, then bring the c1-bishop and the a1-rook into play (for example Bg5) before Black can untangle.",
         "Black: Defend tenaciously, try to exchange queens, and consolidate the position to make the extra piece count in the long run.",
         "White: Use the open e-file and active queen to create constant threats against the exposed king, aiming for a quick checkmate or decisive material gain.",
-        "Black: Develop pieces to defend the king (e.g., ...Qe7, ...Nd8-f7), untangle the kingside, and create counter-threats to disrupt White's attack."
+        "Black: Untangle once the e4-knight goes: step off the e-file with ...Kf8 (Black can no longer castle), free the c8-bishop with ...d6, and give back material if that kills the attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:12:34.765Z"
@@ -167303,7 +167303,7 @@
     "eco": "C56",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Nakhmanson Gambit is one of the sharpest and most uncompromising lines in modern chess, where White sacrifices a full piece to drag the Black king into the center. This opening leads to a chaotic, tactical melee where White's developmental lead and attacking chances are pitted against Black's extra material. It is perfectly suited for fearless, creative attackers who thrive on initiative and are comfortable navigating complex, unbalanced positions.",
+      "description": "The Nakhmanson Gambit is one of the sharpest and most uncompromising lines in modern chess, where White sacrifices a full piece to drag the Black king into the centre. After 10.Rxe4 the rook pins the e7-bishop to the king. This opening leads to a chaotic, tactical melee where White's developmental lead and attacking chances are pitted against Black's extra material. It is perfectly suited for fearless, creative attackers who thrive on initiative and are comfortable navigating complex, unbalanced positions.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -167343,10 +167343,10 @@
         "Initiative vs. Material"
       ],
       "common_plans": [
-        "White's primary plan is a direct assault on the exposed Black king. This involves using the open e-file (Rae1), activating the queen, and preventing Black from consolidating or trading pieces.",
-        "Black's goal is survival and consolidation. The plan involves carefully defending against immediate threats, untangling the pieces (e.g., with ...c6, ...d5), and aiming to trade pieces to simplify into a winning endgame with the extra material.",
+        "White's primary plan is a direct assault on the exposed Black king: keep the pin on the e-file, develop the c1-bishop (Bg5 adds to the pressure on e7) so that the a1-rook can join, and prevent Black from consolidating or trading pieces.",
+        "Black's goal is survival and consolidation: break the pin on the e7-bishop with ...Kf8, free the c8-bishop with ...d6, and aim to trade pieces to simplify into a winning endgame with the extra material.",
         "White often looks to create new weaknesses in Black's camp, for example by using a pawn lever like h4-h5 to open more lines of attack.",
-        "Black may seek to return some material at an opportune moment to defuse White's initiative and stabilize the position."
+        "Black may seek to return some material at an opportune moment to defuse White's initiative and stabilise the position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:15:42.108Z"
@@ -167461,10 +167461,10 @@
         "Development Lead"
       ],
       "common_plans": [
-        "White: Continue the attack with all available pieces, using the open e-file and preparing to swing the h-rook into the action. The primary goal is to prevent Black from consolidating and to deliver a decisive checkmate.",
+        "White: Continue the attack with all available pieces, using the open e-file and bringing the a1-rook in once the c1-bishop has moved. The primary goal is to prevent Black from consolidating and to deliver a decisive checkmate.",
         "Black: Survive the initial onslaught by giving back material if necessary to defuse threats. The key objectives are to trade queens, complete development, and consolidate the position to leverage the long-term material advantage.",
-        "White: Create a mating net by coordinating the queen and rooks, often targeting weak squares like g6 and f7.",
-        "Black: Seek to untangle pieces and find a safe haven for the king, often by creating a pawn shield with moves like ...h6 and ...g5, even at the cost of further structural weaknesses."
+        "White: Create a mating net by coordinating the queen and rooks, often targeting the light squares around the king, such as the g6- and f7-squares.",
+        "Black: Bring the king back towards safety with ...Kf7, then untangle with ...d5 or ...d6 to free the c8-bishop; ...d5 also gains time on the e4-queen."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:16:26.858Z"
@@ -168056,7 +168056,7 @@
       ],
       "common_plans": [
         "White's Plan: Continue the assault with moves like Ng5, Bg5, and bringing the a1-rook into the attack. The primary goal is to prevent the Black king from finding safety and to force a checkmate or win back material with a decisive advantage.",
-        "Black's Plan: Survive the initial storm by carefully defending and seeking to trade off White's key attacking pieces. The king must be carefully maneuvered to a safer square (like g8). If Black can consolidate, their extra material should prove decisive in the long run."
+        "Black's Plan: Survive the initial storm by carefully defending and seeking to trade off White's key attacking pieces. The king must be carefully manoeuvred to safety, often with ...Kg8. If Black can consolidate, the extra piece should prove decisive in the long run."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:19:23.953Z"
@@ -168465,8 +168465,8 @@
       ],
       "common_plans": [
         "White: Maintain a relentless attack on the exposed Black king by bringing all remaining pieces into the fray, often using the open e-file. Prevent Black from consolidating or trading queens at all costs.",
-        "Black: Survive the initial onslaught by finding a safe square for the king (g8 or h8), then aim to consolidate, develop pieces, and force trades to realize the material advantage.",
-        "White: Use pins and tactical threats (like Ng5 or Qc4) to create a mating net or force decisive material concessions.",
+        "Black: Survive the initial onslaught by finding a safe square for the king with ...Kg8, then aim to consolidate, develop pieces, and force trades to realise the material advantage.",
+        "White: Use pins and checks, such as Qc4+ or the pin of the e7-knight against the d8-queen, to create a mating net or force decisive material concessions.",
         "Black: Challenge White's central control with moves like ...c5, aiming to open lines for their own pieces and create counterplay."
       ],
       "version": "1.0",

@@ -65232,7 +65232,7 @@
       "icsbot": "Mayet Attack, Latvian "
     },
     "analysis_json": {
-      "description": "The Mayet Attack is White's most direct and challenging response to the risky Latvian Gambit. By developing the bishop to c4, White immediately targets Black's weakened f7-pawn and prepares for a swift kingside attack, sidestepping the main gambit lines. The resulting positions are exceptionally sharp and tactical, demanding precise calculation from both sides, making it ideal for aggressive players who thrive on punishing early strategic risks.",
+      "description": "The Mayet Attack meets the risky Latvian Gambit with 3.Bc4, aiming the bishop down the a2-g8 diagonal that ...f5 has weakened. After 3...fxe4 White takes on e5 with the knight, and the main lines (4...d5 5.Qh5+ g6, or 4...Qg5) are exceptionally sharp and tactical, demanding precise calculation from both sides, making it ideal for aggressive players who thrive on punishing early strategic risks.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -65275,8 +65275,8 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White: Castle quickly, play d4 to open the center, and launch a direct attack on Black's exposed king, often targeting the f7-pawn.",
-        "Black: Attempt to survive the initial onslaught by creating immediate counter-threats, often with ...Qh4 or a quick ...d5, to disrupt White's coordination.",
+        "White: After 3...fxe4 take on e5 with the knight, then use Qh5+ and the c4-bishop on the a2-g8 diagonal against Black's king; castle quickly and open the centre with d3 or d4.",
+        "Black: Take on e4 and meet Nxe5 with counter-threats: ...d5 hits the c4-bishop, while ...Qg5 attacks the e5-knight and the g2-pawn at once.",
         "White: Use the lead in development and Black's structural weaknesses to convert the advantage if the initial attack is repelled.",
         "Black: Try to trade pieces to relieve the pressure and steer the game towards an endgame where the king is less of a liability."
       ],
@@ -65299,7 +65299,7 @@
       "icsbot": "Morgado Defense, Latvian "
     },
     "analysis_json": {
-      "description": "The Morgado Defense is a sharp and combative response within the already aggressive Latvian Gambit. By playing 3...Nf6, Black immediately challenges White's central e4-pawn and prepares to counterattack, rather than passively defending the weakened kingside. This leads to wild, tactical positions where king safety is a paramount concern for both sides, suiting players who thrive on chaos and are not afraid to take significant risks for the initiative.",
+      "description": "The Morgado Defence is a sharp and combative response within the already aggressive Latvian Gambit. By playing 3...Nf6, Black immediately challenges White's central e4-pawn and prepares to counterattack, rather than passively defending the weakened kingside. This leads to wild, tactical positions where king safety is a paramount concern for both sides, suiting players who thrive on chaos and are not afraid to take significant risks for the initiative.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -65343,7 +65343,7 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White aims to attack the f7-pawn and Black's exposed king, often with Ng5 and d4, to open the position and exploit the weaknesses created by ...f5.",
+        "White aims at Black's loosened kingside along the a2-g8 diagonal, often by taking the undefended e5-pawn with Nxe5 or by bringing the knight to g5 to eye the f7-square, and opens the centre with d3 or d4.",
         "Black seeks to generate immediate counterplay against the e4-pawn, often with ...Nxe4, and create threats to distract White from consolidating their advantage.",
         "White focuses on rapid development and castling to secure their king before launching a decisive attack.",
         "Black may try to force piece exchanges to relieve the pressure on their position, even at the cost of material, to transition into a manageable middlegame."
@@ -65844,9 +65844,9 @@
         "Race to Attack"
       ],
       "common_plans": [
-        "White: Continue the attack with Qxh7 and bringing more pieces (like the f1-rook) to target the exposed Black king.",
+        "White: The h5-queen is attacked by both the g6-pawn and the h8-rook, so it must move at once: Qxg6+ keeps Black's king in the open, while Qxh8 wins the rook but lets ...dxc4 take the bishop. Then bring the remaining pieces against the exposed king.",
         "White: Prevent Black from consolidating and creating a counterattack along the h-file.",
-        "Black: Use the open h-file with the rook (...Rh7) to defend and create counter-threats.",
+        "Black: Use the open h-file: the h8-rook already hits the h5-queen, and once the queen has moved, the rook (...Rh7) and the knight (...Nf6) help to shield the king and create counter-threats.",
         "Black: Develop pieces rapidly (...Nf6, ...Bg7) to challenge White's queen and fight for survival."
       ],
       "version": "1.0",
@@ -65924,7 +65924,7 @@
     "name": "Open Game: Gunderam Defence, 3.Nc3",
     "scid": "C40d",
     "analysis_json": {
-      "description": "The Gunderam Defence is a rare and solid, though slightly passive, response to the King's Pawn Game. By playing 2...Qe7, Black defends the e5 pawn but temporarily blocks the light-squared bishop, leading to a more strategic and maneuvering game. This opening is well-suited for players who wish to avoid sharp, mainstream theory and are comfortable defending a slightly cramped but resilient position, aiming to neutralize White's initiative and equalize in the middlegame.",
+      "description": "The Gunderam Defence is a rare and solid, though slightly passive, response to the King's Pawn Game. By playing 2...Qe7, Black defends the e5-pawn but blocks the dark-squared bishop on f8, leading to a more strategic, manoeuvring game. This opening is well-suited for players who wish to avoid sharp, mainstream theory and are comfortable defending a slightly cramped but resilient position, aiming to neutralise White's initiative and equalise in the middlegame.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -65964,10 +65964,10 @@
         "Development race"
       ],
       "common_plans": [
-        "White aims to seize the center with an early d4, leveraging the space advantage and more active development to create pressure.",
+        "White aims to seize the centre with an early d4, leveraging the space advantage and more active development to create pressure.",
         "Black often prepares the ...d5 pawn break, sometimes preceded by ...c6, to challenge White's central control and free the position.",
         "White develops harmoniously with moves like Bc4, O-O, and Re1, looking to exploit the awkward placement of Black's queen.",
-        "Black seeks to complete development with ...Nf6, ...Be7, and ...O-O, aiming to trade pieces to relieve spatial pressure and achieve equality."
+        "Black seeks to complete development with ...Nf6 and ...d6, free the f8-bishop with ...g6 and ...Bg7 (the queen blocks e7), castle short, and trade pieces to relieve the spatial pressure and achieve equality."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T08:59:34.564Z"
@@ -65989,7 +65989,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Philidor Defense is a classical, solid, and resilient response to 1.e4, though it can lead to a passive and cramped position for Black. By supporting the e5-pawn with ...d6, Black aims for a robust pawn structure at the cost of ceding space and the initiative to White. This opening is ideal for patient, strategic players who are comfortable defending, understand how to neutralize pressure, and excel at creating counter-attacking chances from a slightly inferior position.",
+      "description": "The Philidor Defence is a classical, solid, and resilient response to 1.e4, though it can lead to a passive and cramped position for Black. By supporting the e5-pawn with ...d6, Black aims for a robust pawn structure at the cost of ceding space and the initiative to White. This opening is ideal for patient, strategic players who are comfortable defending, understand how to neutralise pressure, and excel at creating counter-attacking chances from a slightly inferior position.",
       "style_tags": [
         "Solid",
         "Positional",
@@ -66029,8 +66029,8 @@
         "Queenside Counterplay"
       ],
       "common_plans": [
-        "White: Seize the center with an early d4, exploit the space advantage to restrict Black's pieces, and develop an attack on the kingside or pressure the e5 pawn.",
-        "Black: Maintain a solid defensive setup, challenge White's center (e.g., with ...exd4 followed by ...c5), maneuver pieces to better squares (like the Hanham set-up with ...Nbd7, ...Be7, ...c6 and ...O-O), and aim for an endgame where White's space advantage is less relevant."
+        "White: Seize the centre with an early d4, exploit the space advantage to restrict Black's pieces, and develop an attack on the kingside or pressure the e5 pawn.",
+        "Black: Build a solid set-up, usually the Hanham formation (...Nf6, ...Nbd7, ...Be7, ...c6 and ...O-O), then free the position by taking on d4 or with ...d5 at the right moment, or aim for an endgame where White's space advantage counts for less."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T08:59:49.840Z"
@@ -66354,7 +66354,7 @@
       "icsbot": "Bird Gambit, Philidor "
     },
     "analysis_json": {
-      "description": "The Bird Gambit is an aggressive and dynamic approach against the Philidor Defense, where White sacrifices a pawn to accelerate development and seize control of the center. This opening leads to sharp, open positions where White's initiative and active pieces clash with Black's extra material. It is perfectly suited for attacking players who enjoy taking risks to dictate the flow of the game from the very beginning.",
+      "description": "The Bird Gambit is an aggressive and dynamic approach against the Philidor Defence, where White sacrifices a pawn to accelerate development and seize control of the centre. This opening leads to sharp, open positions where White's initiative and active pieces clash with Black's extra material. It is perfectly suited for attacking players who enjoy taking risks to dictate the flow of the game from the very beginning.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -66394,9 +66394,9 @@
         "Seizing the Initiative"
       ],
       "common_plans": [
-        "White aims for rapid development with Nxc3, Bc4, and 0-0, using the open d-file to exert pressure.",
+        "White: If Black takes on c3, recapture with the b1-knight (or offer a second pawn with Bc4), then castle quickly and use the lead in development and the open lines in the centre.",
         "White often launches a quick attack against the f7 square and the Black king.",
-        "Black's main plan is to accept the gambit with ...dxc3, consolidate the position, and neutralize White's initiative.",
+        "Black's main plan is to accept the gambit with ...dxc3, consolidate the position, and neutralise White's initiative.",
         "Black seeks to complete development safely and leverage the extra pawn in the middlegame or endgame."
       ],
       "version": "1.0",
@@ -66739,7 +66739,7 @@
       "icsbot": "Delmar Variation, Philidor "
     },
     "analysis_json": {
-      "description": "The Hanham Variation is a classical and robust system within the Philidor Defense, characterized by Black's solid but passive pawn structure. By playing ...Nd7 and ...c6, Black reinforces the center and prepares a slow, maneuvering game, aiming to neutralize White's space advantage over time. This opening is ideal for patient, strategic players who are comfortable defending a slightly cramped position and excel at long-term planning and prophylaxis.",
+      "description": "The Hanham Variation is a classical and robust system within the Philidor Defence, characterised by Black's solid but passive pawn structure. By playing ...Nd7 and ...c6, Black reinforces the centre and prepares a slow, manoeuvring game, aiming to neutralise White's space advantage over time. This opening is ideal for patient, strategic players who are comfortable defending a slightly cramped position and excel at long-term planning and prophylaxis.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -66780,8 +66780,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Complete development with Nc3 and O-O, use the space advantage to build pressure, and prevent Black from achieving freeing pawn breaks like ...d5.",
-        "Black: Complete the solid setup with ...Be7, ...Nf6 (or ...Nge7), and ...O-O, aiming to trade pieces to relieve pressure and challenge White's center later in the game."
+        "White: Complete development with O-O, Nbd2 (the c3-pawn has taken the knight's usual square) and Re1, keep the broad d4-e4 centre, watch for Ng5 ideas against f7, and prevent freeing pawn breaks like ...d5.",
+        "Black: Complete the solid setup with ...Be7, ...Ngf6 (or ...Nge7), and ...O-O, aiming to trade pieces to relieve pressure and challenge White's centre later in the game."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:03:14.052Z"
@@ -67120,7 +67120,7 @@
       "icsbot": "Larsen Variation, Philidor "
     },
     "analysis_json": {
-      "description": "The Philidor Defense: Larsen Variation is a solid and flexible hypermodern system where Black fianchettoes the king's bishop to challenge White's central control from the flank. Instead of directly occupying the center, Black aims for a strategically complex game, undermining White's space advantage with moves like ...c5. This opening suits patient, strategic players who enjoy maneuvering and are comfortable playing against a central space advantage, waiting for the right moment to counterattack.",
+      "description": "The Philidor Defence: Larsen Variation is a solid and flexible hypermodern system where Black fianchettoes the king's bishop to challenge White's central control from the flank. Instead of directly occupying the centre, Black aims for a strategically complex game, undermining White's space advantage with moves like ...c5. This opening suits patient, strategic players who enjoy manoeuvring and are comfortable playing against a central space advantage, waiting for the right moment to counterattack.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -67162,9 +67162,9 @@
         "Undermining White's Space Advantage"
       ],
       "common_plans": [
-        "Black: Complete the fianchetto with ...Bg7 and ...Nf6, castle, and prepare the ...c7-c5 pawn break to challenge White's d4-pawn and open lines for the bishop.",
+        "Black: Complete the fianchetto with ...Bg7 and ...Nf6, castle, and prepare a freeing ...c5 or ...d5 break to open lines for the bishop; ...Re8 adds pressure on the e4-pawn.",
         "White: Solidify central control with Nc3 and Be3. Develop pieces to prepare for a kingside attack, often with f3 and Qd2, sometimes castling queenside to launch a pawn storm.",
-        "Black: Neutralize White's active pieces, for example by trading the g7-bishop for the d4-knight if it becomes too strong, or by playing ...Bg4 to pin the f3-knight.",
+        "Black: Neutralise White's active pieces by exchanging them, for example ...Nc6 and ...Nxd4 to remove the centralised knight, which eases the cramp of the smaller space.",
         "White: Exploit the space advantage to restrict Black's pieces and build up pressure on the kingside, often aiming to control the key d5-square."
       ],
       "version": "1.0",
@@ -67291,9 +67291,9 @@
         "Defensive Consolidation"
       ],
       "common_plans": [
-        "White: Rapidly develop pieces (e.g., Qh5, Ng5, O-O and Re1) to target the exposed Black king and prevent consolidation.",
-        "Black: Accept the sacrifice, secure the king (e.g., Kg8), and aim to trade pieces (especially queens) to defuse the attack and reach a winning endgame.",
-        "White: Maintain the initiative at all costs, creating constant threats to prevent Black from organizing their defenses.",
+        "White: After ...Kxf7, follow up with Ng5+ and, when the king goes back to g8, Ne6, hitting the queen and eyeing the c7-square (Nxc7 would fork a queen on e8 and the a8-rook). Then castle and bring the queen and rooks against the exposed king.",
+        "Black: Take with ...Kxf7, answer Ng5+ with ...Kg8, and after Ne6 move the queen while watching the c7-square; once the attack is parried, trade pieces (especially queens) and win with the extra piece.",
+        "White: Maintain the initiative at all costs, creating constant threats to prevent Black from organising their defences.",
         "Black: Challenge White's central control and develop pieces to defend critical squares, aiming to eventually use the extra piece to win."
       ],
       "version": "1.0",
@@ -67352,8 +67352,8 @@
         "King Hunt"
       ],
       "common_plans": [
-        "White's Plan: Follow up with Ng5+ to continue the attack, bring the queen to h5 or f3, and use the open f-file to create overwhelming threats against the exposed Black king.",
-        "Black's Plan: Survive the initial onslaught by finding precise defensive moves, move the king to a safer square (like g8), and aim to consolidate the extra material to launch a decisive counterattack."
+        "White's Plan: After ...Kxf7, follow up with Ng5+ and Ne6 to harass the queen, bring the queen to h5 once the f3-knight has moved, and castle quickly so the rooks join the attack on the exposed Black king.",
+        "Black's Plan: Take with ...Kxf7, answer Ng5+ with ...Kg8, find precise defensive moves against Ne6 and Qh5 ideas, and consolidate the extra piece before launching a decisive counterattack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:05:56.856Z"

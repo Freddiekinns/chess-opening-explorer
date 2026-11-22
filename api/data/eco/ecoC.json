@@ -125406,7 +125406,7 @@
       "icsbot": "Moeller Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Neo-Arkhangelsk is a sharp and ambitious defense where Black immediately develops the bishop to the active c5-square, challenging White's central control. This choice leads to dynamic, open positions rich in tactical possibilities, often revolving around a race for the initiative. It is an excellent choice for enterprising players who are comfortable in complex, double-edged situations and enjoy fighting for counterplay from the earliest moves.",
+      "description": "The Neo-Arkhangelsk is a sharp and ambitious defence where Black immediately develops the bishop to the active c5-square, aiming at f2 and challenging White's central control. White can answer with the fork trick 6.Nxe5 Nxe5 7.d4, regaining the piece with central space, or with the quieter c3 and d4, gaining time on the bishop. This choice leads to dynamic, open positions rich in tactical possibilities, often revolving around a race for the initiative. It is an excellent choice for enterprising players who are comfortable in complex, double-edged situations and enjoy fighting for counterplay from the earliest moves.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -125445,10 +125445,10 @@
         "Pressure on the e4-pawn"
       ],
       "common_plans": [
-        "White: Execute the c3-d4 pawn break to seize the center and challenge the active black pieces.",
-        "White: Reroute the b1-knight (Nbd2-f1-g3/e3) to control key squares and challenge the Bc5.",
+        "White: Execute the c3-d4 pawn break to seize the centre and challenge the active black pieces.",
+        "White: Use the fork trick 6.Nxe5 Nxe5 7.d4, hitting the c5-bishop and the e5-knight at once to regain the piece and open the centre.",
         "Black: Maintain pressure on e4 and f2, forcing White into a defensive posture.",
-        "Black: Seek counterplay with a timely ...d5 pawn break or by targeting White's queenside."
+        "Black: Kick the bishop with ...b5, then follow with ...d6 and, once White's centre advances, ...Bb6, keeping the bishop on the a7-g1 diagonal against f2."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:51:38.161Z"
@@ -125529,7 +125529,7 @@
       "scid": "Spanish: Rabinovich Variation"
     },
     "analysis_json": {
-      "description": "The Rabinovich Variation is a razor-sharp and highly tactical line within the Ruy Lopez where both sides walk a tightrope. Black sacrifices castling rights to create immediate dynamic counterplay, challenging White's central control and piece activity. This opening is perfect for fearless, tactical players who thrive in complex, unbalanced positions and are comfortable calculating forcing variations.",
+      "description": "The Rabinovich Variation is a razor-sharp and highly tactical line within the Ruy Lopez where both sides walk a tightrope. Black has given up two pawns and the right to castle for very active pieces, above all the centralised d4-knight and the c5-bishop, while White's pieces are not yet coordinated. This opening is perfect for fearless, tactical players who thrive in complex, unbalanced positions and are comfortable calculating forcing variations.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -125571,9 +125571,9 @@
         "Dynamic Counterplay"
       ],
       "common_plans": [
-        "White aims to consolidate, neutralize the powerful Nd4, and exploit Black's exposed king, often with moves like c3 and d4.",
-        "Black seeks to generate a swift counterattack using the active pieces and open files (especially the f-file) before White can coordinate.",
-        "Both sides must prioritize calculation and the initiative, as the position is extremely volatile and can change character in a single move."
+        "White aims to consolidate, drive away the powerful d4-knight with c3, and exploit Black's displaced king while hanging on to the extra material.",
+        "Black seeks to generate a swift counter-attack with the active pieces, especially the d4-knight, which eyes the b3-bishop and c2, before White can coordinate.",
+        "Both sides must prioritise calculation and the initiative, as the position is extremely volatile and can change character in a single move."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:52:09.077Z"
@@ -125634,10 +125634,10 @@
         "Role of the Spanish Bishop"
       ],
       "common_plans": [
-        "White: Prepare the central advance with c3 and d4, often rerouting the knight (Nf3-d2-f1-g3) to support a kingside attack or control the center.",
-        "Black: Develop the light-squared bishop to an active square like c5 or b7 to pressure White's center and kingside.",
+        "White: Prepare the central advance with c3 and d4, often after Re1, and reroute the queen's knight (Nbd2-f1-g3) to support a kingside attack or control the centre.",
+        "Black: Develop the bishops actively, the light-squared one with ...Bb7 and the dark-squared one with ...Bc5 or ...Be7, to pressure White's centre and kingside.",
         "White: Use the a4 pawn break to challenge Black's queenside expansion and create weaknesses.",
-        "Black: Utilize the queenside pawn majority to create threats and counter-play, while fighting for control of the d4 square."
+        "Black: Use the queenside space gained by ...b5, often with ...Na5 to trade off the Spanish bishop, while fighting for control of the d4 square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:52:31.096Z"
@@ -125893,7 +125893,7 @@
     "name": "Spanish: 5.O-O b5 6.Bb3 Bc5 7.c3",
     "scid": "C78j",
     "analysis_json": {
-      "description": "This variation of the Ruy Lopez, often leading to the Archangel Defense, is a sharp and dynamic battle for central control and the initiative. By playing 7.c3, White prepares the classic d2-d4 pawn push to seize space, while Black's active ...Bc5 development creates immediate counter-attacking chances. The resulting middlegames are often open and tactical, appealing to players who enjoy complex, double-edged positions and are comfortable calculating sharp variations.",
+      "description": "This variation of the Ruy Lopez, in which Black develops the bishop actively to c5 after 5...b5 6.Bb3, is a sharp and dynamic battle for central control and the initiative. By playing 7.c3, White prepares the classic d2-d4 pawn push to seize space, while Black's active ...Bc5 development creates immediate counter-attacking chances; after 7...d6 8.d4 the bishop usually drops back to b6. The resulting middlegames are often open and tactical, appealing to players who enjoy complex, double-edged positions and are comfortable calculating sharp variations.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -125934,8 +125934,8 @@
         "The Initiative"
       ],
       "common_plans": [
-        "White: Execute the d4 pawn break to gain central space and activate pieces, followed by maneuvering pieces (e.g., Nbd2-f1-g3) to support the center and prepare a kingside initiative.",
-        "Black: Solidify the center with ...d6, maintain the active Bc5, and create counterplay against White's center or on the queenside with active piece development like ...Bb7 and ...Re8."
+        "White: Execute the d4 pawn break to gain central space and activate pieces, followed by Re1 and manoeuvring pieces (e.g., Nbd2-f1-g3) to support the centre and prepare a kingside initiative.",
+        "Black: Solidify the centre with ...d6, keep the active bishop (often dropping back to b6), and create counterplay against White's centre or on the queenside with active piece development like ...Bb7, ...O-O and ...Re8."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:54:31.157Z"
@@ -126011,7 +126011,7 @@
     "name": "Spanish: 5.O-O b5 6.Bb3 Bc5 7.c3 d6 8.d4",
     "scid": "C78k",
     "analysis_json": {
-      "description": "This is a classical and highly strategic variation of the Ruy Lopez, forming a cornerstone of modern opening theory. White establishes a powerful pawn center with the c3-d4 push, while Black's active ...Bc5 creates immediate counter-pressure and dynamic possibilities. The resulting middlegames are rich and complex, demanding a deep understanding of positional play, pawn structures, and long-term planning, making it ideal for strategic players who enjoy a sophisticated battle for control.",
+      "description": "This is a classical and highly strategic variation of the Ruy Lopez, forming a cornerstone of modern opening theory. White establishes a powerful pawn centre with the c3-d4 push, while Black's active ...Bc5 creates immediate counter-pressure and dynamic possibilities; the usual reply is 8...Bb6, keeping the bishop trained on d4 and f2. The resulting middlegames are rich and complex, demanding a deep understanding of positional play, pawn structures, and long-term planning, making it ideal for strategic players who enjoy a sophisticated battle for control.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -126053,8 +126053,8 @@
         "Pressure on the e5-pawn"
       ],
       "common_plans": [
-        "White: Complete the central pawn duo, execute the d5 pawn push to cramp Black, reroute the knight (Nf3-d2-f1-g3), and build kingside pressure.",
-        "Black: Maintain central tension with ...Bb6, challenge White's center with moves like ...d5, expand on the queenside (...a5, ...b4), and seek active piece play to neutralize White's long-term pressure."
+        "White: Keep the central pawn duo, gain queenside space with a4 against b5, consider the d5 push to cramp Black, and after Re1 reroute the queen's knight (Nbd2-f1-g3) to build kingside pressure.",
+        "Black: Retreat with 8...Bb6 to keep pressure on d4, pin the f3-knight with ...Bg4, castle, and seek active piece play to neutralise White's long-term pressure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:55:06.439Z"
@@ -126130,7 +126130,7 @@
     "name": "Spanish: 5.O-O b5 6.Bb3 Bc5 7.Nxe5",
     "scid": "C78i",
     "analysis_json": {
-      "description": "This is a sharp and tactical variation of the Ruy Lopez where White immediately challenges Black's central control with a temporary piece sacrifice on e5. The resulting positions are open and dynamic, demanding precise calculation as White's d4-pawn fork creates immediate tension. This line is perfect for players who enjoy complex, tactical battles and are not afraid to enter sharp, concrete variations early in the game.",
+      "description": "This is a sharp and tactical variation of the Ruy Lopez where White immediately challenges Black's central control with a temporary piece sacrifice on e5. The resulting positions are open and dynamic, demanding precise calculation as White's d4-pawn fork of the c5-bishop and e5-knight creates immediate tension; the usual answer is 8...Bxd4 9.Qxd4 d6. This line is perfect for players who enjoy complex, tactical battles and are not afraid to enter sharp, concrete variations early in the game.",
       "style_tags": [
         "Tactical",
         "Sharp",
@@ -126170,9 +126170,9 @@
         "Bishop Pair"
       ],
       "common_plans": [
-        "White: Use the d4-pawn to control the center, develop pieces quickly, and try to prove that Black's pieces are uncoordinated.",
-        "Black: Resolve the central tension (e.g., Bxd4, Nxd4), complete development, and use the potential of the bishop pair in the resulting open position.",
-        "White: Target weaknesses around the Black king, particularly the f7-square, after the center opens up.",
+        "White: Use the d4-pawn to control the centre, develop pieces quickly, and try to prove that Black's pieces are uncoordinated.",
+        "Black: Resolve the fork with 8...Bxd4 9.Qxd4 d6, keeping the e5-knight centralised, then complete development and use ...c5 or ...Be6 to gain time against White's queen and bishop.",
+        "White: Target weaknesses around the Black king, particularly the f7-square, after the centre opens up.",
         "Black: Create counterplay against White's extended position, often by challenging the e4 pawn or attacking on the queenside."
       ],
       "version": "1.0",
@@ -126188,7 +126188,7 @@
     "name": "Spanish: 5.O-O b5 6.Bb3 Be7",
     "scid": "C78g",
     "analysis_json": {
-      "description": "This is a cornerstone of classical chess, representing one of the main battlegrounds in the Ruy Lopez. The position leads to a strategically profound and complex game where long-term planning and piece maneuvering take precedence over immediate tactical clashes. It is ideal for patient, strategic players who enjoy building pressure, understanding central tension, and accumulating small, lasting advantages in a rich middlegame.",
+      "description": "This is a cornerstone of classical chess, representing one of the main battlegrounds in the Ruy Lopez. The position leads to a strategically profound and complex game where long-term planning and piece manoeuvring take precedence over immediate tactical clashes. It is ideal for patient, strategic players who enjoy building pressure, understanding central tension, and accumulating small, lasting advantages in a rich middlegame.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -126230,10 +126230,10 @@
         "Knight Maneuvering (e.g., Nf1-g3)"
       ],
       "common_plans": [
-        "White: Prepare the central advance with c3 and d4, often rerouting the knight via Nf1-g3 to support the center and a potential kingside attack.",
-        "Black: Solidify the center with ...d6, prepare queenside counterplay with ...c5, and develop pieces to challenge White's central control.",
-        "White: Exert long-term pressure on the a2-g8 diagonal with the Bb3 and control the center.",
-        "Black: Complete development, often with ...O-O and ...d6, and seek to neutralize White's key pieces before launching a counterattack."
+        "White: Prepare the central advance with Re1, c3 and d4, often rerouting the queen's knight via Nbd2-f1-g3 to support the centre and a potential kingside attack.",
+        "Black: Solidify the centre with ...d6 and ...O-O, then prepare queenside counterplay with ...Na5 and ...c5, developing pieces to challenge White's central control.",
+        "White: Exert long-term pressure on the a2-g8 diagonal with the Bb3 and control the centre.",
+        "Black: Complete development, often with ...O-O and ...d6, and seek to neutralise White's key pieces before launching a counter-attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:56:03.479Z"
@@ -126248,7 +126248,7 @@
     "name": "Spanish: 5.O-O b5 6.Bb3 Be7",
     "scid": "C78g",
     "analysis_json": {
-      "description": "This variation of the Ruy Lopez immediately forces a confrontation in the center with 7.d4, creating a critical crossroads. Black's response determines the game's character: capturing on d4 leads to the sharp, tactical Open Spanish, while a move like ...d6 transposes to more strategic, closed positions. This line is ideal for versatile, well-prepared players who are comfortable navigating complex theoretical battles and can adapt their style from tactical to positional.",
+      "description": "This variation of the Ruy Lopez immediately forces a confrontation in the centre with 7.d4, creating a critical crossroads. Black's response determines the game's character: 7...d6 holds the centre and leads to strategic, Closed Spanish-type positions, often after 8.c3 Bg4, while 7...exd4 gives up the centre for sharper, more open play, for instance 8.e5 Ne4. This line is ideal for versatile, well-prepared players who are comfortable navigating complex theoretical battles and can adapt their style from tactical to positional.",
       "style_tags": [
         "Strategic",
         "Tactical",
@@ -126287,9 +126287,9 @@
         "Transitioning between Open and Closed Positions"
       ],
       "common_plans": [
-        "White: Solidify the center with c3, aiming for a classic 'Spanish' space advantage and long-term pressure from the Bb3 bishop.",
-        "Black: Decide whether to enter the sharp, tactical Open Spanish with 7...exd4 or transpose to a more strategic, closed game with 7...d6.",
-        "White: Reposition the f3-knight (e.g., Nf3-d2-f1-g3) to support the center and prepare for a potential kingside attack.",
+        "White: Solidify the centre with c3, aiming for a classic 'Spanish' space advantage and long-term pressure from the Bb3 bishop.",
+        "Black: Decide between holding the centre with 7...d6, usually followed by ...Bg4 or ...O-O, and the sharper 7...exd4, when 8.e5 Ne4 leads to open, tactical play.",
+        "White: After c3 and Re1, reroute the queen's knight via Nbd2-f1-g3 to support the centre and prepare for a potential kingside attack.",
         "Black: Generate queenside counterplay with the ...b5-b4 pawn advance, challenging White's structure and creating space for Black's pieces."
       ],
       "version": "1.0",
@@ -126405,10 +126405,10 @@
         "Bishop Pair Potential"
       ],
       "common_plans": [
-        "White: Play 8.d4 to open the center, followed by Re1 to pressure the e-file and the knight on e4, aiming to exploit Black's temporary lack of coordination.",
-        "Black: Solidify the center with ...d5, complete development with ...Be7 and ...O-O, and use the active bishop on b7 to create counterplay against White's center and kingside.",
-        "White: Develop the queenside (Nbd2-f1-g3) to support the center and prepare an attack.",
-        "Black: Challenge White's control of the d4 square and seek favorable exchanges to relieve pressure and transition into a playable endgame."
+        "White: Play 8.d4 to open the centre, followed by Re1 to pressure the e-file and the knight on e4, aiming to exploit Black's temporary lack of coordination.",
+        "Black: Solidify the centre with ...d5, complete development with ...Be7 and ...O-O, and use the active bishop on b7 to create counterplay against White's centre and kingside.",
+        "White: After d4, develop the queen's knight with Nbd2 to challenge the e4-knight and bring more pieces into the fight quickly.",
+        "Black: Challenge White's control of the d4 square and seek favourable exchanges to relieve pressure and transition into a playable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T07:57:04.626Z"
@@ -126423,7 +126423,7 @@
     "name": "Spanish: Archangelsk, 7.d3",
     "scid": "C78p",
     "analysis_json": {
-      "description": "The 7.d3 variation against the Archangelsk is a quieter, more strategic approach compared to the main lines. White opts for a solid central setup, aiming to complete development smoothly before committing to a specific plan, often involving the classic knight maneuver Nb1-d2-f1-g3. This opening leads to a complex, maneuvering game where understanding long-term strategy and piece placement is more critical than immediate tactical calculation, making it ideal for patient, positional players who enjoy accumulating small advantages.",
+      "description": "The 7.d3 variation against the Archangelsk is a quieter, more strategic approach compared to the main lines. White opts for a solid central setup, aiming to complete development smoothly before committing to a specific plan, often involving Re1 and the classic knight manoeuvre Nb1-d2-f1-g3. This opening leads to a complex, manoeuvring game where understanding long-term strategy and piece placement is more critical than immediate tactical calculation, making it ideal for patient, positional players who enjoy accumulating small advantages.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -126463,9 +126463,9 @@
         "Queenside space advantage for Black"
       ],
       "common_plans": [
-        "White: Complete development with Nbd2-f1-g3, play Re1 to support e4, and slowly build pressure on the kingside or in the center with a later d4 push.",
-        "Black: Develop with ...Be7 or ...Bc5, maintain pressure on e4, and seek counterplay through a ...c5 pawn break or by activating the queenside majority.",
-        "White: Maneuver the b3 bishop to c2 to control the d1-h5 diagonal and prepare for a central advance.",
+        "White: Play Re1 to support e4, complete development with Nbd2-f1-g3, and slowly build pressure on the kingside or in the centre with a later d4 push.",
+        "Black: Develop with ...Be7 or ...Bc5, ...d6 and ...O-O, maintain pressure on e4, and prepare the ...d5 break when it is safe.",
+        "White: Play c3 so that the bishop can drop back to c2 when it is attacked, keeping it on the b1-h7 diagonal and preparing a central advance.",
         "Black: Challenge White's b3 bishop with ...Na5, aiming to either trade it or force it to a less active square."
       ],
       "version": "1.0",

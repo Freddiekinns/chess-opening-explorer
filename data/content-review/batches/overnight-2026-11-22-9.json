@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-22",
+  "pages": [
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b5/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 1 6",
+      "name": "Four Knights: Scotch, 4...exd4 5.Nxd4 Bc5",
+      "eco": "C47",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview called the c5-bishop light-squared; plan 1 claimed Nxc6 wins the bishop pair; plan 2 had ...bxc6 after White's unplayed Nxc6. Rewrote all three."
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/3Pp3/1b2P3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 0 5",
+      "name": "Four Knights: Scotch, Bogoljubow, 5.d5",
+      "eco": "C47",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 supported d5 with c4 (the c3-knight blocks the c-pawn); plan 3 'resolved' the pin with Be2 (Bd2 breaks it). British spelling in plan 2."
+    },
+    {
+      "fen": "r1bq1rk1/p4ppp/2p2n2/3p2B1/Nb6/3B4/PPP2PPP/R2Q1RK1 b - - 1 11",
+      "name": "Four Knights: Scotch, Main Line, 10.Bg5 c6 11.Na4",
+      "eco": "C47",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed the knight Na4-b2-c4 through the b2-pawn and Na4-c5 'to attack d7'; rewrote it (a first version claiming the knight supports c4 was rejected). British spelling in the overview and plan 2."
+    },
+    {
+      "fen": "r1bq1rk1/p1p2ppp/5n2/3p4/1b6/2NB4/PPP2PPP/R1BQ1RK1 w - - 2 10",
+      "name": "Four Knights: Scotch, Main Line, 8.exd5 cxd5 9.O-O O-O",
+      "eco": "C47",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 named Bg5 in Black's plan and ...Qc7 with the c7-pawn on c7; plan 2's minority attack with ...a5-a4 replaced with ...Rb8, ...c6, ...Bg4/...Be6 and ...Re8. British spelling in the overview and plan 1."
+    },
+    {
+      "fen": "r1bq1rk1/p4ppp/2p2n2/3p2B1/1b6/2NB4/PPP2PPP/R2Q1RK1 w - - 0 11",
+      "name": "Four Knights: Scotch, Main Line, 9.O-O O-O 10.Bg5 c6",
+      "eco": "C47",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 manoeuvred a d4-knight that was exchanged on c6; plan 3 targeted doubled c-pawns that no longer exist (Black has c6 and d5). The overview now explains the pin and ...c6 (a first version said ...c6 freed d6 for the queen, which was already free). British spelling in plans 2 and 4."
+    },
+    {
+      "fen": "r1bq1rk1/pppp1ppp/5n2/2b1N3/B2nP3/2N5/PPPP1PPP/R1BQK2R w KQ - 3 7",
+      "name": "Four Knights Game, Spanish Variation",
+      "eco": "C48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 planned a d4 push with Black's knight on d4; plan 2 supported the knight with ...c5 while the bishop stands on c5. Rewrote both around 7.Nd3 and Black's gambit play (a first version had d3 after Nd3, rejected)."
+    },
+    {
+      "fen": "r1b1kb1r/ppppqppp/5n2/1B2N3/3nPP2/2N5/PPPP2PP/R1BQK2R b KQkq - 0 6",
+      "name": "Four Knights Game: Spanish Variation, Rubinstein Variation",
+      "eco": "C48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 consolidated with d4 (the square holds Black's knight) and long castling; plan 2's ...d5 and ...f6 replaced with ...Nxb5 and ...d6."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1ppp/5n2/1B2p3/3nP3/2N2N2/PPPP1PPP/R1BQ1RK1 b kq - 7 5",
+      "name": "Four Knights Game: Spanish Variation, Rubinstein Variation, Henneberger Variation",
+      "eco": "C48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had c3 with the knight on c3 and a recapture written as a White move after Black's; plan 2 called the f8-bishop light-squared. Rewrote both. British spelling in the overview."
+    },
+    {
+      "fen": "r1bq1rk1/ppp2ppp/1b1p1n2/4p3/N3P3/3P1B2/PPP2PPP/R1BQ1RK1 w - - 2 10",
+      "name": "Four Knights Game: Spanish Variation, Rubinstein Variation, Maróczy Variation",
+      "eco": "C48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview said Black traded a knight for White's bishop (a knight pair was traded; both sides keep two bishops); plan 1's 'bishop pair' fixed; plan 4's Bg5 in Black's plan reworded. British spelling in plan 2."
+    },
+    {
+      "fen": "r1bq1rk1/pppp1ppp/5n2/1Bb1N3/3nP3/2N5/PPPP1PPP/R1BQ1RK1 w - - 3 7",
+      "name": "Four Knights Game: Spanish Variation, Rubinstein Variation, Marshall Variation",
+      "eco": "C48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 challenged with a d4 push while Black's knight sits on d4; now Nf3 or Nd3. British spelling in the overview and plan 3."
+    }
+  ]
+}

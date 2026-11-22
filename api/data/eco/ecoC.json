@@ -90472,7 +90472,7 @@
     "name": "Four Knights: Symmetrical, 7.Bg5 Bxc3",
     "scid": "C49l",
     "analysis_json": {
-      "description": "This variation of the Four Knights leads to a rich, strategic battle where White's bishop pair is pitted against Black's superior pawn structure. White aims to leverage the long-range power of the bishops and control the center, while Black seeks to neutralize White's initiative, challenge the d4-square, and exploit the weakness of the doubled c-pawns. It's a game of long-term plans and subtle maneuvering, appealing to players who enjoy deep strategic complexity.",
+      "description": "This variation of the Four Knights leads to a rich, strategic battle where White's bishop pair is pitted against Black's healthier pawn structure. Black has given up the dark-squared bishop to double White's c-pawns; White's trumps are the two bishops, the half-open b-file and a later d3-d4, while Black's standard answer to the pin is the Metger Unpin, ...Qe7 followed by ...Nd8-e6. It's a game of long-term plans and subtle manoeuvring, appealing to players who enjoy deep strategic complexity.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -90514,9 +90514,9 @@
       ],
       "common_plans": [
         "White: Prepare and execute the d3-d4 pawn break to open the position for the bishops.",
-        "Black: Play ...Qe7 to break the pin, followed by ...h6 to challenge the g5-bishop.",
-        "White: Maneuver the knight from c3 (e.g., Ne2-g3) to support the center and prepare an attack.",
-        "Black: Target the weak c4-pawn, often starting with moves like ...a5-a4."
+        "Black: Break the pin with the Metger Unpin: ...Qe7, then ...Nd8 and ...Ne6, where the knight challenges the g5-bishop.",
+        "White: Protect e4 with Re1 ahead of the d4 push, and use the half-open b-file with Rb1.",
+        "Black: Keep the centre closed, where the knights work well against the bishops, and play for the long-term weakness of the doubled c-pawns, particularly in an endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:02:46.385Z"
@@ -90647,7 +90647,7 @@
     "name": "Four Knights: Symmetrical, Metger, 10.d4 Ne6",
     "scid": "C49p",
     "analysis_json": {
-      "description": "This variation of the Four Knights leads to a deep, strategic battle defined by a classic imbalance: White's bishop pair and central space versus Black's superior pawn structure and well-placed knight on e6. The game revolves around slow maneuvering and long-term plans, as Black aims to blockade and neutralize White's bishops while White seeks to open the position to their advantage. It is an ideal choice for patient, strategic players who enjoy complex positional struggles and understanding subtle piece play.",
+      "description": "This variation of the Four Knights leads to a deep, strategic battle defined by a classic imbalance: White's bishop pair and central space versus Black's healthier pawn structure and well-placed knight on e6, which now hits the g5-bishop. The game revolves around slow manoeuvring and long-term plans, as Black aims to blockade and neutralise White's bishops while White seeks to open the position to their advantage. It is an ideal choice for patient, strategic players who enjoy complex positional struggles and understanding subtle piece play.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -90689,8 +90689,8 @@
       ],
       "common_plans": [
         "White aims to open the position for the bishop pair, often with a c3-c4 push, and create pressure on the kingside.",
-        "Black seeks to keep the position closed, use the powerful Ne6 knight to control the center, and eventually challenge White's structure with a ...c5 pawn break.",
-        "White may maneuver the light-squared bishop to an active diagonal (e.g., via d2-e1-h4) to create attacking chances.",
+        "Black seeks to keep the position closed, use the powerful Ne6 knight to control the centre, and eventually challenge White's structure with a ...c5 pawn break.",
+        "White: Keep the bishop pair by retreating the g5-bishop from the knight, usually with Bc1 (the main line) or Bh4.",
         "Black's plan involves solidifying the position, improving piece coordination, and exploiting White's doubled c-pawns in the endgame."
       ],
       "version": "1.0",
@@ -90706,7 +90706,7 @@
     "name": "Four Knights: Symmetrical, Metger, 10.d4 Ne6 11.Bc1 c5",
     "scid": "C49r",
     "analysis_json": {
-      "description": "This variation of the Four Knights Game leads to a profound strategic battle, characterized by a classic imbalance: White's bishop pair versus Black's superior pawn structure. The game revolves around slow maneuvering and deep positional concepts, exemplified by Black's knight journey from d8 to e6. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and navigating complex, closed positions where long-term planning is paramount.",
+      "description": "This variation of the Four Knights Game leads to a profound strategic battle, characterised by a classic imbalance: White's bishop pair versus Black's healthier pawn structure. The game revolves around slow manoeuvring and deep positional concepts, exemplified by Black's knight journey from d8 to e6, and 11...c5 now adds pressure on d4. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and navigating complex, closed positions where long-term planning is paramount.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -90748,8 +90748,8 @@
         "Prophylactic Play"
       ],
       "common_plans": [
-        "White aims to utilize the bishop pair by opening the position, often with a central pawn push like d5. Other plans involve pressuring the d6-pawn with Ba3 and controlling the b-file.",
-        "Black seeks to keep the position relatively closed to limit White's bishops, establish a blockade on the light squares, and exploit White's doubled c-pawns. Key moves involve challenging the center and using the knights to control key squares like d4 and f4."
+        "White aims to use the bishop pair by opening the position, either by taking on c5 or with a central push like d5, which gains space and drives the e6-knight back. Ba3 can then add pressure on c5, and a rook can use the half-open b-file.",
+        "Black seeks to keep the position relatively closed to limit White's bishops and to exploit White's doubled c-pawns. The c5-pawn and the e6-knight press on d4, and the knight also eyes the f4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:03:55.847Z"
@@ -90884,7 +90884,7 @@
       "icsbot": "Italian Variation, Four Knights Game "
     },
     "analysis_json": {
-      "description": "The Four Knights Italian Variation is a classical and symmetrical opening that epitomizes quiet, strategic chess. Both sides develop their pieces logically to key squares, leading to a game rich in positional maneuvering and long-term planning rather than immediate tactical clashes. It is ideal for patient, strategic players who enjoy building up small advantages and understanding the subtle interplay of the pieces.",
+      "description": "The Four Knights Italian Variation is a classical, symmetrical position that usually leads to quiet, strategic chess, though White has sharper tries such as 5.d4 and 5.Nxe5, the fork trick, where 5...Nxe5 6.d4 wins the piece back with a pawn fork and gives White central space. In the quieter lines after 5.d3, both sides develop logically, leading to a game rich in positional manoeuvring and long-term planning. It is ideal for patient, strategic players who enjoy building up small advantages and understanding the subtle interplay of the pieces.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -90924,8 +90924,8 @@
         "Pawn breaks in the center"
       ],
       "common_plans": [
-        "White: Prepare the d2-d4 pawn break, often rerouting the c3-knight (e.g., to e2-g3) to support the center and kingside ambitions.",
-        "Black: Maintain central tension, prepare the ...d7-d5 pawn break, and neutralize White's active bishop on c4, often through slow queenside expansion (...a6, ...b5)."
+        "White: Either play the fork trick 5.Nxe5 Nxe5 6.d4 for a slightly freer game, or develop quietly with 5.d3, then reroute the c3-knight with Ne2-g3 and prepare c3 and d4.",
+        "Black: Against the fork trick, the usual answer is 6...Bd6 7.dxe5 Bxe5, with a solid if slightly passive game. In the quiet lines, play ...d6 and castle, keep the c5-bishop safe with ...a6 and ...Ba7, and prepare the ...d5 break."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:04:49.015Z"
@@ -90940,7 +90940,7 @@
     "name": "Giuoco Pianissimo: 4.d3 Nf6 5.O-O",
     "scid": "C50p",
     "analysis_json": {
-      "description": "The Giuoco Pianissimo is a classical and highly strategic approach to the Italian Game, characterized by its slow, maneuvering nature. By playing 4.d3, White avoids early tactical complications and aims for a solid central setup, preparing for a long-term battle of piece placement and pawn structure. This opening is perfect for positional players who enjoy accumulating small advantages and outmaneuvering their opponents in a complex, yet fundamentally sound, middlegame.",
+      "description": "The Giuoco Pianissimo is a classical and highly strategic approach to the Italian Game, characterised by its slow, manoeuvring nature. By playing 4.d3, White avoids early tactical complications and aims for a solid central set-up, preparing for a long-term battle of piece placement and pawn structure. This opening is perfect for positional players who enjoy accumulating small advantages and outmanoeuvring their opponents in a complex, yet fundamentally sound, middlegame.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -90980,8 +90980,8 @@
         "Piece Maneuvering"
       ],
       "common_plans": [
-        "White: Prepare the central d4-break, often supported by c3. A key plan is the 'Italian maneuver' (Nbd2-f1-g3) to bolster the kingside and center.",
-        "Black: Counter in the center with the ...d5 break. Often plays ...a6 to control the b5 square and prepare queenside activity, aiming for solid development and to neutralize White's c4 bishop."
+        "White: Prepare the central d4 break with c3. Once the rook has moved with Re1, the knight can take the classic route Nbd2-f1-g3 to bolster the kingside and centre.",
+        "Black: Castle and play ...d6 and ...a6, so the c5-bishop can drop back to a7 when White expands on the queenside or in the centre, and look for the ...d5 break when White's set-up allows it."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:05:09.264Z"
@@ -90996,7 +90996,7 @@
     "name": "Giuoco Pianissimo: 4.d3 Nf6 5.O-O d6",
     "scid": "C50q",
     "analysis_json": {
-      "description": "The Giuoco Pianissimo, or 'Very Quiet Game', is a classical and highly strategic response to the Italian Game. It deliberately avoids early tactical confrontations, leading to a slow, maneuvering game where both sides focus on improving their piece placement and pawn structure. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and outplaying their opponents in a complex middlegame.",
+      "description": "The Giuoco Pianissimo, or 'Very Quiet Game', is a classical and highly strategic response to the Italian Game. It deliberately avoids early tactical confrontations, leading to a slow, manoeuvring game where both sides focus on improving their piece placement and pawn structure. This opening is perfect for patient, strategic players who enjoy accumulating small advantages and outplaying their opponents in a complex middlegame.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -91039,8 +91039,8 @@
         "Controlling the c-file and d5-square"
       ],
       "common_plans": [
-        "White: Prepare the central d4-pawn break, often via c3. Reroute the knight with maneuvers like Nf3-d2-f1-g3. Expand on the kingside or control the center.",
-        "Black: Solidify the position with ...a6 to prevent Nb5 and prepare queenside expansion with ...b5. Prepare the ...d5 counter-break to challenge White's center. Develop pieces harmoniously and seek counterplay."
+        "White: Prepare the central d4 break with c3. After Re1, bring the b1-knight round with Nbd2-f1-g3, and gain queenside space with a4 where useful.",
+        "Black: Castle and play ...a6, so the c5-bishop can drop back to a7 when White expands on the queenside or in the centre. Then aim for the ...d5 counter-break or play on the kingside with ...h6 and ...Re8."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:05:23.445Z"
@@ -91055,7 +91055,7 @@
     "name": "Giuoco Pianissimo: Canal, 6...h6",
     "scid": "C50v",
     "analysis_json": {
-      "description": "This variation of the Giuoco Pianissimo introduces immediate strategic tension. Black's 6...h6 is a crucial move, forcing White to decide the fate of the pinning bishop. The game's character hinges on this choice: White can either exchange on f6, leading to a structural battle of the bishop pair versus a damaged pawn structure, or retreat, often inviting Black to expand on the kingside. This opening is ideal for strategic players who enjoy nuanced positions and long-term planning over early tactical fireworks.",
+      "description": "This variation of the Giuoco Pianissimo introduces immediate strategic tension. Black's 6...h6 is a crucial move, forcing White to decide the fate of the pinning bishop. The game's character hinges on this choice: White can either exchange on f6, giving Black the bishop pair but gaining time for Nd5, or retreat to h4 and invite ...g5, after which Black's kingside is loosened. This opening is ideal for strategic players who enjoy nuanced positions and long-term planning over early tactical fireworks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -91096,10 +91096,10 @@
         "Thematic Piece Trades"
       ],
       "common_plans": [
-        "White: Exchange on f6 (Bxf6) to damage Black's pawn structure, then try to control the light squares and target the weakened kingside.",
-        "White: Maintain the pin with 7.Bh4, preparing to meet ...g5 by maneuvering pieces to exploit the newly created weaknesses around Black's king.",
-        "Black: After 7.Bxf6 gxf6, use the open g-file for the rook and leverage the bishop pair to compensate for the structural weaknesses.",
-        "Black: After 7.Bh4, play ...g5 to break the pin, gain space, and develop the light-squared bishop to g7, fighting for central control."
+        "White: Take on f6 with 7.Bxf6 and, after 7...Qxf6, jump in with 8.Nd5, hitting the queen and the c7-pawn, before following up with c3 and d4.",
+        "White: Keep the pin with 7.Bh4; if Black chases the bishop with 7...g5, retreat with 8.Bg3 and aim at the loosened kingside.",
+        "Black: After 7.Bxf6, recapture with the queen to keep the pawns intact and the bishop pair; after 8.Nd5 the queen drops back to d8 and Black aims for ...Be6 or ...Ne7 to challenge the d5-knight.",
+        "Black: After 7.Bh4, break the pin with 7...g5 at once; Black has not castled, so the loosened kingside matters less, and the king can wait in the centre for now."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:05:42.248Z"
@@ -91171,7 +91171,7 @@
     "name": "Giuoco Pianissimo: Italian Four Knights, 5...d6 6.Be3",
     "scid": "C50t",
     "analysis_json": {
-      "description": "The Italian Four Knights with 6.Be3 is a modern and ambitious way to handle the Giuoco Pianissimo. White immediately challenges Black's key bishop on c5, forcing a decision that will shape the entire game's strategic character. This opening leads to a rich, positional struggle centered on central control and pawn structure, ideal for strategic players who enjoy accumulating small advantages and executing long-term plans.",
+      "description": "The Italian Four Knights with 6.Be3 is a modern and ambitious way to handle the Giuoco Pianissimo. White immediately challenges Black's key bishop on c5, forcing a decision that will shape the entire game's strategic character. This opening leads to a rich, positional struggle centred on central control and pawn structure, ideal for strategic players who enjoy accumulating small advantages and executing long-term plans.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -91212,9 +91212,9 @@
       ],
       "common_plans": [
         "White aims to prepare and execute the d3-d4 pawn break to seize central space.",
-        "Black often retreats the bishop to b6 (...Bb6) to preserve it, maintaining pressure on White's center.",
-        "If Black captures on e3 (...Bxe3), White recaptures with the f-pawn (fxe3) to open the f-file for the rook and bolster the center.",
-        "Both sides maneuver their knights to optimal squares, with White often rerouting the c3-knight (e.g., Ne2-g3) to support a kingside buildup."
+        "Black often retreats the bishop to b6 (...Bb6) to preserve it, maintaining pressure on White's centre.",
+        "If Black captures on e3 (...Bxe3), White recaptures with the f-pawn (fxe3) to open the f-file for the rook and bolster the centre.",
+        "Both sides manoeuvre their knights to good squares, with White often rerouting the c3-knight (e.g., Ne2-g3) to support a kingside build-up."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:06:19.517Z"
@@ -91286,7 +91286,7 @@
     "name": "Giuoco Piano: 4.O-O Nf6",
     "scid": "C50l",
     "analysis_json": {
-      "description": "The Giuoco Piano with 4...Nf6 is one of the most classical and respected chess openings, forming a primary branch of the Italian Game. By developing the knight, Black immediately challenges White's central e4-pawn, leading to a dynamic and strategically rich struggle. The game can either proceed down quiet, maneuvering lines (the Giuoco Pianissimo) or explode into sharp, tactical complications after 5.d4, making it an excellent choice for versatile players who are comfortable in both open and closed positions.",
+      "description": "The Giuoco Piano with 4...Nf6 is one of the most classical and respected chess openings, forming a primary branch of the Italian Game. By developing the knight, Black immediately challenges White's central e4-pawn, leading to a dynamic and strategically rich struggle. The game can either proceed down quiet, manoeuvring lines (the Giuoco Pianissimo) or explode into sharp, tactical complications after 5.d4, making it an excellent choice for versatile players who are comfortable in both open and closed positions.",
       "style_tags": [
         "Classical",
         "Strategic",
@@ -91327,9 +91327,9 @@
         "Development vs. Attack"
       ],
       "common_plans": [
-        "White: Prepare and execute the c3-d4 pawn break to gain central space and open lines for attack.",
+        "White: Play c3 and d4 to build a big centre and open lines for attack; 5.d4 at once leads to sharper play.",
         "Black: Counter White's central ambitions, often with a timely ...d5 pawn break, while maintaining pressure on the e4-pawn.",
-        "White: Reroute the queen's knight via Nbd2-f1-g3 to support the kingside and the center.",
+        "White: After d3 and Re1, reroute the queen's knight via Nbd2-f1-g3 to support the kingside and the centre.",
         "Black: Complete development with ...O-O and ...d6, aiming for a solid structure and equality, ready to exploit any overextensions by White."
       ],
       "version": "1.0",
@@ -91345,7 +91345,7 @@
     "name": "Giuoco Piano: 4.O-O Nf6 5.Nc3",
     "scid": "C50m",
     "analysis_json": {
-      "description": "The 5.Nc3 variation of the Giuoco Piano is a classical and highly reliable system, steering the game towards strategic and positional waters. Rather than seeking immediate confrontation, both sides focus on completing development, controlling the center, and preparing for a complex middlegame battle. This opening is perfect for the developing player learning classical principles or the seasoned strategist who enjoys accumulating small advantages and outmaneuvering their opponent.",
+      "description": "With 5.Nc3 White develops calmly but allows the fork trick, 5...Nxe4 6.Nxe4 d5, where the pawn fork wins the piece back and frees Black's game; for that reason the line is considered harmless for Black. White usually returns the material with Bd3 and Bxe4, reaching a level, open position. This opening suits players learning classical principles, and Black players who like to seize the initiative early.",
       "style_tags": [
         "Positional",
         "Solid",
@@ -91387,10 +91387,10 @@
         "Piece maneuvering"
       ],
       "common_plans": [
-        "White: Prepare and execute the c3-d4 central pawn break to gain space and open lines for the pieces.",
-        "White: Reroute the b1-knight (e.g., Nc3-e2-g3) to support the kingside or the d4-push.",
-        "Black: Solidify the center with ...d6, preparing the ...d5 counter-break to equalize and challenge White's control.",
-        "Black: Develop pieces to active squares, often targeting White's e4-pawn and looking for tactical opportunities if White overextends."
+        "White: With the knight blocking the c-pawn, d3 is the natural set-up; after the fork trick 5...Nxe4 6.Nxe4 d5, give the material back with 7.Bd3 dxe4 8.Bxe4 for a level game.",
+        "White: In the quiet lines, reroute the c3-knight with Ne2-g3 to support the kingside or a later d4 push.",
+        "Black: In the quiet lines, play ...d6 and castle, keep the c5-bishop safe with ...a6 and ...Ba7, and prepare the ...d5 break to equalise.",
+        "Black: Strike at once with the fork trick 5...Nxe4 6.Nxe4 d5, regaining the piece with an easy, active game."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T19:07:28.844Z"

@@ -9,8 +9,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 3 rerouted a knight from c3 (it was taken on c3; White has pawns there) and plan 4 targeted a c4-pawn that doesn't exist; plan 2 missed the Metger Unpin. Rewrote the overview and plans 2 to 4; British spelling."
     },
     {
       "fen": "r1b2rk1/ppp1qppp/3pnn2/1B2p1B1/3PP3/2P2N2/P1P2PPP/R2QR1K1 w - - 1 11",
@@ -19,8 +19,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 3 sent the light-squared bishop via d2-e1-h4 (it is on b5; the g5-bishop is the one under attack from the e6-knight). Rewritten around Bc1 or Bh4; overview notes the knight hits g5. British spelling in plan 2 and the overview."
     },
     {
       "fen": "r1b2rk1/pp2qppp/3pnn2/1Bp1p3/3PP3/2P2N2/P1P2PPP/R1BQR1K1 w - - 0 12",
@@ -29,8 +29,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1's Ba3 'pressuring d6' (it hits c5) and plan 2's vague 'light-square blockade' rewritten; overview mentions 11...c5 against d4. British spelling."
     },
     {
       "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
@@ -39,8 +39,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1's route 'e2-g3' could not be read and the overview missed the fork trick 5.Nxe5 Nxe5 6.d4; rewrote the overview and both plans (6...Bd6 7.dxe5 Bxe5, or the quiet 5.d3)."
     },
     {
       "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 b kq - 2 5",
@@ -49,8 +49,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1's Nbd2-f1-g3 with the rook still on f1; rewritten with Re1 first. Plan 2 rewritten around ...a6 and ...Ba7. British spelling in the overview."
     },
     {
       "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 w kq - 0 6",
@@ -59,8 +59,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 1 routed the f3-knight via d2-f1-g3 (it is the b1-knight, and the rook stands on f1); plan 2's ...a6 'to prevent Nb5' (no knight can reach b5). Both rewritten; British spelling in the overview."
     },
     {
       "fen": "r1bqk2r/ppp2pp1/2np1n1p/2b1p1B1/2B1P3/2NP1N2/PPP2PPP/R2QK2R w KQkq - 0 7",
@@ -69,8 +69,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plans 1 and 3 assumed ...gxf6 after 7.Bxf6 (the queen recaptures, and 8.Nd5 hits it and c7); plan 4 put the light-squared bishop on g7. Rewrote the overview and all four plans."
     },
     {
       "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2NPBN2/PPP2PPP/R2QK2R b KQkq - 1 6",
@@ -79,8 +79,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 3 is correct but the parser can't read fxe3 after ...Bxe3 in an unprefixed plan; added to the skips. British spelling in the overview and plans 2 to 4; no reviewer verdict needed beyond spelling."
     },
     {
       "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 6 5",
@@ -89,8 +89,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "Plan 3's Nbd2-f1-g3 with the rook on f1 (now after Re1); plan 1's unreadable 'c3-d4' rewritten. British spelling in the overview."
     },
     {
       "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQ1RK1 b kq - 7 5",
@@ -99,8 +99,8 @@
       "views": 0,
       "people": 0,
       "reason": "plan-check",
-      "verdict": null,
-      "notes": ""
+      "verdict": "fixed",
+      "notes": "The overview and plans missed the fork trick 5...Nxe4 6.Nxe4 d5 that makes 5.Nc3 harmless; plan 1 pushed c3 with the knight on c3; plan 2 called the c3-knight the b1-knight. Rewrote the overview and all four plans."
     }
   ]
 }

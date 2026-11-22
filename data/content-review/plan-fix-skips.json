@@ -124,5 +124,11 @@
     "plan": "White: Often involves retreating the knight from e5 to g4 or f3, followed by d4 to challenge Black's central control.",
     "reference": "d4",
     "reason": "needs-research: the plan pushes d4 onto Black's d4-knight; two rewrites were rejected by the reviewer (after 5...Qe7 neither Nf3 nor 6.f4 keeps the extra pawn, and the d4-knight usually takes on b5). Old text kept."
+  },
+  {
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2NPBN2/PPP2PPP/R2QK2R b KQkq - 1 6",
+    "plan": "If Black captures on e3 (...Bxe3), White recaptures with the f-pawn (fxe3) to open the f-file for the rook and bolster the centre.",
+    "reference": "fxe3",
+    "reason": "correct plan, parser can't read a recapture that follows the opponent's capture in a plan with no side prefix yet"
   }
 ]

@@ -210,4 +210,4 @@ independent reviewer before commit; notes per page are in
 | 2026-11-22 22:18 | 1     | 10    | 10 / 0 / 0                  | 28 / 3 (fixed, re-accepted) | none (batch 2026-11-22-31) |
 | 2026-11-22 22:25 | 1     | 10    | 10 / 0 / 0                  | 29 / 1 (fixed, re-accepted) | none (batch 2026-11-22-32) |
 | 2026-11-22 22:29 | 1     | 10    | 10 / 0 / 0                  | 25 / 0 | none (batch 2026-11-22-33) |
-| 2026-11-22 22:34 | 1     | 10    | 9 / 0 / 1                  | 24 / 1 (1 restored, needs-research) | none (batch 2026-11-22-34) |
+| 2026-11-22 22:34 | 1     | 10    | 9 / 0 / 1                  | 24 / 1 (1 restored, needs-research) | none (batch 2026-11-22-34); run stopped early at the owner's request after 4 batches, so the every-fourth-batch `npm run test:all` was not run this time |

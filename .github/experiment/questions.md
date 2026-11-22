@@ -10,5 +10,8 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-22 — Night 1 may run on Sunday despite the Mon–Fri rule, lean, as ~30%
+  of the week is left. (Owner, in chat; one-off, charter unchanged.)
+
 - 2026-11-22 — Claude chooses the feature; theme is "useful to learners";
   research before design, design before build. (Owner, setup session.)

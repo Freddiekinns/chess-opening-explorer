@@ -2,6 +2,19 @@
 
 Newest first. Template in `operating.md`.
 
+## Night 1 — 2026-11-22 — researcher: the learner's journey today
+
+Did: walked three learners (London beginner, KID club player, Google arrival on
+an obscure line) through the code and data; wrote
+`research/01-journey-today.md`. Decided: the site is a reference, not a lesson;
+nothing persists to bring someone back; `/analyse` already links into pages with
+`ref=personal&username=…` and the page ignores it, the cheapest seam to join.
+Assumed: the owner's chat message ("you can break tonight's rule") is the yes to
+run on a Sunday; production was unreachable through the proxy, so page order was
+read from code, not clicked. Next: night 2, how others teach openings. Cost:
+tool calls ~17, subagents 0, web pages 0 (the owner said ~30% of the week was
+left, so tonight ran lean and skipped the reviewer).
+
 ## Skipped — 2026-11-22 (Sunday, 22:43 UTC) — not a run night
 
 Did: nothing. The routine fired on a Sunday night; the charter runs the

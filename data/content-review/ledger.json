@@ -9948,10 +9948,10 @@
     "notes": "Plan 1 had a Rf1-f3-g3 lift with the rook on h1 and ignored that the c5-bishop covers g1, so White cannot castle. Rewrote plan 1 (Na4 or Be3 first); British spelling in plans 2-4."
   },
   "r1bqk2r/pppp1ppp/2n2n2/2b1p3/4P3/2N3P1/PPPP1PBP/R1BQK1NR w KQkq - 3 5": {
-    "reviewedAt": "2026-11-16",
+    "reviewedAt": "2026-11-22",
     "verdict": "fixed",
-    "contentHash": "626da9c2923f7613",
-    "notes": "Plan 1 had a bare d4 with the pawn on d3. Rewrote as d3-d4; British spelling in overview."
+    "contentHash": "4f0459870ebed7cf",
+    "notes": "Plan 2 named d4/e4 as 'key central squares', which the parser read as moves; rewrote it with the standard ideas (...a6 against Na4, ...Nd4, ...Be6/...Qd7/...Bh3 to trade the g2-bishop)."
   },
   "r1bqk2r/pppp1ppp/2n2n2/2b1p3/4P3/2N3P1/PPPPNPBP/R1BQK2R b KQkq - 4 5": {
     "reviewedAt": "2026-11-16",
@@ -10194,10 +10194,10 @@
     "notes": "Plan 1 had White's impossible dxe5 (e5 is White's own pawn) and an h3-f2 knight route; plan 3 had Kg2 with the g2-pawn in place. Rewrote plans 1 and 3; British spelling in overview."
   },
   "rnbqkbnr/p1pp1ppp/8/1p6/2B1Pp2/8/PPPP2PP/RNBQK1NR w KQkq - 0 4": {
-    "reviewedAt": "2026-11-16",
+    "reviewedAt": "2026-11-22",
     "verdict": "fixed",
-    "contentHash": "4b4bc0158bcc9da8",
-    "notes": "Plan 1 offered Bb3 as an alternative in a way the parser read as following Bxb5. Reworded plan 1."
+    "contentHash": "56460dffdd911940",
+    "notes": "Plan 2 put White's Bxb5 in Black's plan; rewrote it as ...Nf6 hitting e4 and ...c6 gaining time on the b5-bishop, then ...d5 (the first rewrite gave the tempo to ...Nf6 and the reviewer rejected it)."
   },
   "rnb1kbnr/pppp1ppp/8/8/4Pp1q/2N5/PPPP2PP/R1BQKBNR w KQkq - 2 4": {
     "reviewedAt": "2026-11-16",
@@ -10294,5 +10294,53 @@
     "verdict": "fixed",
     "contentHash": "d91a136b29127bb6",
     "notes": "Plans called the b4-bishop's line a pin after 9.Kf2 had already broken it, and gave Bxc3 as a White move. Rewrote both plans (the c3-knight now hits the d5-queen); British spelling in overview."
+  },
+  "rnbq1bnr/ppp3k1/7p/3B4/3PPppP/8/PPP3P1/RNBQK2R b KQ - 0 9": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9c346415891d1981",
+    "notes": "Plan 3 routed the king ...Kh7-g8 when it stands on g7; rewrote it (king on g7/h7, give back material). Plan 1 now adds Bxf4 to win back material. British spelling in plan 4."
+  },
+  "rnb1k2r/pp1p1ppp/2p2n2/4q3/1b2P3/2NP4/PPP1BPPP/R1BQK2R w KQkq - 2 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "5e33818219bb6d5c",
+    "notes": "Plan 4 suggested ...Nc6 and ...O-O-O, impossible with the pawn on c6 and Black's king headed short; rewrote it around the ...Bxc3+ and ...Qxc3 threat, then ...O-O, ...d5, ...Nbd7. British spelling in plan 2."
+  },
+  "rnbqkbnr/pp1p1ppp/2p5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "9bd0b9b2e3983778",
+    "notes": "Plan 3 had Re1 before White can castle; rewrote it as the immediate Nxe5 (e5 is undefended after 2...c6). British spelling in the overview and plans 1, 2 and 4."
+  },
+  "rnb1kbnr/ppp4p/3p1qp1/8/2NPp3/8/PPP1QPPP/RNB1KB1R b KQkq - 1 7": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "bbc284dedc313b8a",
+    "notes": "The overview said Black sacrifices material; it is White who leaves d4 unguarded after Qh5+ g6 Qe2, with material level. Rewrote it; plan 3 had O-O/Re1 with the f1-bishop at home; plans 1 and 2 got Nc3/Be3 and a half-open (not open) f-file."
+  },
+  "rnb1kbnr/ppp3pp/3p1q2/8/3Pp3/4N3/PPP2PPP/RNBQKB1R b KQkq - 1 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "e908e68f4bfc75ef",
+    "notes": "Plan 1 named 'squares like d5 and f5', read as moves; rewrote it around Nc3 hitting e4, Be2 and O-O, the e3-knight on d5/g4. Plan 2 had both ...c6 and ...Nc6 and an 'open' f-file (half-open)."
+  },
+  "rnbqkb1r/pppp2pp/5n2/4N3/3Pp3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "5fc2a9d3e58c6555",
+    "notes": "Plan 1 named 'the weak f7 and e6 squares' (f7 read as a pawn); rewrote it around Bc4/Bg5, Nc3, pressure on e4 and the a2-g8 diagonal. British spelling in the overview and plan 3."
+  },
+  "rnb1kbnr/ppp3pp/3p1q2/8/2NPp3/8/PPP2PPP/RNBQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "cfb8e5ecc9a4b9b5",
+    "notes": "Plan 2 had a Nc3-e3 route for a knight on c4; rewrote it as Nc3 and Ne3. Plan 1 called the line a pawn sacrifice when material is level. British spelling in the overview and plan 4."
+  },
+  "rnbqkb1r/pppp2pp/5n2/4N3/2B1p3/8/PPPP1PPP/RNBQK2R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "aea4fb9b32ce3111",
+    "notes": "Plan 1 targeted an f7-pawn that is gone; rewrote it around 5.Nf7 Qe7 6.Nxh8 d5 and Bf7+. Plan 2 claimed a White material advantage when material is level; plan 3 said 'open' f-file (half-open) and now notes ...d5 hits c4."
   }
 }

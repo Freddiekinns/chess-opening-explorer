@@ -42703,7 +42703,7 @@
       ],
       "common_plans": [
         "White: Play d3, Nge2, O-O, and prepare a central push with d3-d4 or expand on the kingside with h3 and f4. The main goal is to leverage the power of the Bg2 bishop.",
-        "Black: Play ...d6, ...O-O, and challenge White's central control. Black might prepare a queenside expansion with ...a6 and ...b5 or reroute pieces to fight for key central squares like d4 and e4."
+        "Black: Castle and play ...d6, keeping the c5-bishop with ...a6 if White aims Na4 at it. The c6-knight can jump into the d4-square, and ...Be6 with ...Qd7 prepares ...Bh3 to trade off White's strong g2-bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:31:13.321Z"
@@ -53764,7 +53764,7 @@
       ],
       "common_plans": [
         "White: Accept the gambit with Bxb5, develop with Nf3, and use the half-open f-file for a kingside attack. Retreating the bishop to b3 instead keeps the pressure on f7 and leads to standard King's Gambit development.",
-        "Black: After Bxb5, play ...c6 to gain another tempo on the bishop. Develop quickly with ...Nf6 and prepare a central break with ...d5 to open lines and launch a counterattack against White's exposed king."
+        "Black: Once the bishop takes on b5, develop with ...Nf6 to hit the e4-pawn and gain time against the bishop with ...c6, then aim for ...d5 to open lines against White's king, which has lost its f-pawn shelter."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T02:26:48.828Z"
@@ -60874,10 +60874,10 @@
         "Rapid Development"
       ],
       "common_plans": [
-        "White aims to develop rapidly with Nc3 and O-O, using the open files and diagonals (especially with Qe2) to create unstoppable threats against the exposed Black king.",
+        "White aims to win back material with Bxf4, develop rapidly with Nc3 and O-O, and use the open files and diagonals (especially with Qe2) to create threats against the exposed Black king.",
         "White must prevent Black from consolidating at all costs, often by sacrificing more material to keep the attack flowing.",
-        "Black's primary goal is to survive the initial storm, secure the king (often via ...Kh7-g8), and develop pieces like ...Nf6 and ...Bd6 to defend.",
-        "If Black survives, the plan is to simplify the position by trading pieces, neutralize White's initiative, and convert the extra piece in the endgame."
+        "Black's primary goal is to survive the initial storm: keep the king tucked away on g7 or h7, give back material if needed, and develop pieces like ...Nf6 and ...Bd6 to defend.",
+        "If Black survives, the plan is to simplify the position by trading pieces, neutralise White's initiative, and convert the extra piece in the endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T08:26:08.990Z"
@@ -63321,7 +63321,7 @@
       "icsbot": "Gunderam Gambit "
     },
     "analysis_json": {
-      "description": "The Gunderam Gambit is a rare and dubious response to the King's Pawn Game, characterized by the move 2...c6. Black's idea is to support a future ...d5 push to challenge the center, but this plan is generally too slow and passive, allowing White to seize a significant space and development advantage. This opening is primarily a surprise weapon, suited for players who enjoy taking their opponents into obscure territory, but it requires navigating a difficult, often cramped position against a well-prepared adversary.",
+      "description": "The Gunderam Gambit is a rare and dubious response to the King's Pawn Game, characterised by the move 2...c6. Black's idea is to support a future ...d5 push to challenge the centre, but this plan is generally too slow and passive, allowing White to seize a significant space and development advantage. This opening is primarily a surprise weapon, suited for players who enjoy taking their opponents into obscure territory, but it requires navigating a difficult, often cramped position against a well-prepared adversary.",
       "style_tags": [
         "Unorthodox",
         "Passive",
@@ -63361,10 +63361,10 @@
         "Surprise value vs. objective soundness"
       ],
       "common_plans": [
-        "White: Seize the full center with an early d2-d4, develop pieces rapidly to their natural squares, and use the space advantage to launch an attack or squeeze Black.",
-        "Black: Complete the ...d5 pawn break to challenge White's center, trade pieces to relieve the pressure of a cramped position, and aim for a solid, if passive, defensive setup.",
-        "White: Target the e5-pawn, which can become a long-term weakness, often by playing Nxe5 or preparing pressure with moves like Re1.",
-        "Black: Seek counterplay on the queenside if White focuses too heavily on the center and kingside, potentially using the c-pawn as a lever."
+        "White: Seize the full centre with an early d2-d4, develop pieces rapidly to their natural squares, and use the space advantage to launch an attack or squeeze Black.",
+        "Black: Complete the ...d5 pawn break to challenge White's centre, trade pieces to relieve the pressure of a cramped position, and aim for a solid, if passive, defensive setup.",
+        "White: Take the e5-pawn at once with Nxe5, since 2...c6 left it undefended. Black can win it back with ...Qa5 or ...Qe7 hitting the knight, but only by spending time with the queen while White develops.",
+        "Black: Seek counterplay on the queenside if White focuses too heavily on the centre and kingside, potentially using the c-pawn as a lever."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T08:47:27.150Z"
@@ -63774,7 +63774,7 @@
       "icsbot": "Bronstein Gambit, Latvian "
     },
     "analysis_json": {
-      "description": "The Bronstein Gambit is a highly tactical and double-edged line within the already aggressive Latvian Gambit. Black challenges White's central control immediately, sacrificing material to disrupt White's development and create attacking chances. The resulting positions are complex and unbalanced, demanding precise calculation and a willingness to embrace chaos, making it suitable for creative and tactical players who enjoy fighting for the initiative from the very first moves.",
+      "description": "The Bronstein Gambit is a sharp line of the Latvian Gambit in which White checks with Qh5+ to provoke ...g6 and then turns the queen on the e4-pawn with Qe2, leaving the d4-pawn unguarded. Material is level for now, but Black's kingside is loose and both kings are still in the centre. The resulting positions are complex and unbalanced, demanding precise calculation and a willingness to embrace chaos, making it suitable for creative and tactical players who enjoy fighting for the initiative from the very first moves.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -63817,9 +63817,9 @@
         "Development Race"
       ],
       "common_plans": [
-        "White: Solidify the center (c3, Be3), target the weak e4-pawn, and use the space advantage to launch an attack.",
-        "Black: Develop rapidly (...Nc6, ...Bg7), use the open f-file for a kingside attack, and prove that the initiative compensates for the structural weaknesses.",
-        "White: Complete development quickly (O-O, Re1) and challenge Black's control of the light squares.",
+        "White: Develop with Nc3 and Be3 (or support d4 with c3), pile up on the e4-pawn, and exploit Black's loosened kingside after ...g6.",
+        "Black: Develop rapidly (...Nc6, ...Bg7), use the half-open f-file to press against f2, and prove that the initiative compensates for the structural weaknesses.",
+        "White: Complete development quickly (Nc3, Be3 and castling) before Black can open lines against the king, keeping the e4-pawn under fire.",
         "Black: Create threats against White's king before White can consolidate their central space advantage."
       ],
       "version": "1.0",
@@ -64146,8 +64146,8 @@
         "Converting a Space Advantage"
       ],
       "common_plans": [
-        "White: Solidify the center with Nc3, Be2, and O-O. Use the Ne3 knight to control key squares like d5 and f5, restricting Black's play. Eventually, challenge Black's control of the f-file and exploit the weaknesses around the Black king.",
-        "Black: Develop quickly with moves like ...c6, ...Nc6, and ...Be7 to support the center and prepare castling. Use the open f-file for active counterplay, often targeting f2. Challenge White's d4-pawn to undermine their central grip."
+        "White: Develop with Nc3, which attacks the e4-pawn at once, then Be2 and O-O. The e3-knight eyes the d5- and g4-squares, and White aims to exploit Black's lag in development and the kingside loosened by ...f5.",
+        "Black: Develop quickly with moves like ...c6 (or ...Nc6) and ...Be7 to support the centre and prepare castling. Use the half-open f-file for active counterplay, often targeting f2. Challenge White's d4-pawn to undermine their central grip."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T08:51:04.987Z"
@@ -64279,7 +64279,7 @@
     "name": "Latvian Gambit: 3.d4 fxe4 5.Nxe5 Nf6",
     "scid": "C40m",
     "analysis_json": {
-      "description": "The Latvian Gambit is a hyper-aggressive and risky defense where Black immediately challenges White's central control at the cost of weakening their own kingside. This specific line leads to a sharp, tactical battle where Black aims to generate a swift attack and create chaos, while White seeks to refute the gambit by exploiting Black's exposed king and structural weaknesses. This opening is suited for daring, tactical players who enjoy unbalanced positions and are comfortable taking significant risks from move two.",
+      "description": "The Latvian Gambit is a hyper-aggressive and risky defence where Black immediately challenges White's central control at the cost of weakening their own kingside. This specific line leads to a sharp, tactical battle where Black aims to generate a swift attack and create chaos, while White seeks to refute the gambit by exploiting Black's exposed king and structural weaknesses. This opening is suited for daring, tactical players who enjoy unbalanced positions and are comfortable taking significant risks from move two.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -64322,9 +64322,9 @@
         "Central Tension"
       ],
       "common_plans": [
-        "White's Plan: Develop rapidly with moves like Bc4 and Nc3, control the center, and launch a decisive attack against Black's exposed king, often targeting the weak f7 and e6 squares.",
+        "White's Plan: Develop quickly with Bc4 or Bg5 and Nc3, pressure the e4-pawn, and attack Black's exposed king, especially along the a2-g8 diagonal that ...f5 weakened.",
         "Black's Plan: Continue development to support an attack (...d5, ...Qe7, ...Bd6), create immediate threats to seize the initiative, and prevent White from consolidating their positional advantages.",
-        "White's Plan: Systematically neutralize Black's threats, exchange pieces to transition into a favorable endgame where Black's pawn structure is a permanent liability.",
+        "White's Plan: Systematically neutralise Black's threats, exchange pieces to transition into a favourable endgame where Black's pawn structure is a permanent liability.",
         "Black's Plan: Keep the position as complex and tactical as possible, avoiding simplification and aiming for a quick knockout before their own structural weaknesses become fatal."
       ],
       "version": "1.0",
@@ -64585,7 +64585,7 @@
     "name": "Latvian Gambit: 3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4",
     "scid": "C40u",
     "analysis_json": {
-      "description": "The Latvian Gambit is a sharp and aggressive defense where Black immediately challenges White's central e4-pawn. This particular line leads to a highly unbalanced and tactical struggle where Black sacrifices pawn structure and king safety for rapid development and the initiative. It's a high-risk, high-reward opening suited for daring players who enjoy complex, double-edged positions and are comfortable navigating chaos from the very first moves.",
+      "description": "The Latvian Gambit is a sharp and aggressive defence where Black immediately challenges White's central e4-pawn. This particular line leads to a highly unbalanced and tactical struggle where Black sacrifices pawn structure and king safety for rapid development and the initiative. It's a high-risk, high-reward opening suited for daring players who enjoy complex, double-edged positions and are comfortable navigating chaos from the very first moves.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -64627,10 +64627,10 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "Black aims to complete development quickly (...Nc6, ...Be7), castle, and use their active pieces to generate threats against White's center and king, justifying the initial pawn sacrifice.",
-        "White seeks to consolidate their central control, often with moves like Nc3-e3, Be2, and O-O, aiming to neutralize Black's initiative and exploit the long-term structural weaknesses in Black's position.",
+        "Black aims to complete development quickly (...Nc6, ...Be7), castle, and use their active pieces to generate threats against White's centre and king, justifying the weakened kingside.",
+        "White seeks to consolidate with Nc3 (hitting the e4-pawn) and Ne3, then Be2 and O-O, aiming to neutralise Black's initiative and exploit the long-term structural weaknesses in Black's position.",
         "Black often challenges White's d4-pawn with ...c5 or prepares to attack on the kingside, hoping to prevent White from reaching a stable, advantageous middlegame.",
-        "White may try to exchange pieces to simplify the position, as this often favors the side with the better pawn structure and safer king, thereby transitioning into a favorable endgame."
+        "White may try to exchange pieces to simplify the position, as this often favours the side with the better pawn structure and safer king, thereby transitioning into a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T08:53:20.056Z"
@@ -64817,9 +64817,9 @@
         "Counterattack"
       ],
       "common_plans": [
-        "White: Immediately target the f7-pawn with moves like Nf7 or Bxf7+, aiming to expose the black king. Prioritize rapid development and castling to launch a decisive attack before Black can consolidate.",
-        "White: Consolidate the material advantage, neutralize Black's threats, and steer the game towards a more favorable endgame.",
-        "Black: Generate immediate counterplay against White's king and central pieces, often with moves like ...d5. Use the open f-file for the rook to create threats.",
+        "White: Nf7 forks the queen and the h8-rook, but after ...Qe7 Nxh8 ...d5 the knight is trapped in the corner and Black gets play for the exchange. Bf7+ is another try, driving the king to e7. Either way, White must develop and castle quickly.",
+        "White: Develop soundly with O-O, d3 and Nc3, neutralise Black's threats and steer the game towards a calmer position where Black's loosened kingside tells.",
+        "Black: Generate immediate counterplay against White's king and central pieces, often with moves like ...d5, which also hits the c4-bishop. Use the half-open f-file for the rook to create threats.",
         "Black: Create maximum tactical complications to prevent White from coordinating their pieces and exploiting Black's structural weaknesses."
       ],
       "version": "1.0",
@@ -165100,9 +165100,9 @@
       ],
       "common_plans": [
         "White: Complete development with O-O and Bd2, break the pin with a3, and use the central space to challenge Black's active pieces.",
-        "Black: Maintain pressure with the Bb4 pin, challenge the center with a ...d5 pawn break, and use the active queen to create threats before White can consolidate.",
+        "Black: Maintain pressure with the Bb4 pin, challenge the centre with a ...d5 pawn break, and use the active queen to create threats before White can consolidate.",
         "White: Play f4 to gain space, challenge Black's control of e5, and prepare to attack on the kingside.",
-        "Black: Develop the queenside with ...Nc6 and ...O-O-O, creating an opposite-side castling scenario and a sharp attacking game."
+        "Black: The c3-knight is attacked twice and defended once, so ...Bxc3+ and ...Qxc3 threatens to win a pawn and White must spend a move on it. Then Black castles short and finishes development with ...d5 and ...Nbd7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:03:23.754Z"

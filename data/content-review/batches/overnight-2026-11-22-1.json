@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-22",
+  "pages": [
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/4P3/2N3P1/PPPP1PBP/R1BQK1NR w KQkq - 3 5",
+      "name": "Vienna: Smyslov, 3...Bc5 4.Bg2 Nc6",
+      "eco": "C26",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named d4/e4 as 'key central squares', which the parser read as moves; rewrote it with the standard ideas (...a6 against Na4, ...Nd4, ...Be6/...Qd7/...Bh3 to trade the g2-bishop)."
+    },
+    {
+      "fen": "rnbqkbnr/p1pp1ppp/8/1p6/2B1Pp2/8/PPPP2PP/RNBQK1NR w KQkq - 0 4",
+      "name": "King's Gambit Accepted: Bishop's Gambit, Kieseritzky Gambit",
+      "eco": "C33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 put White's Bxb5 in Black's plan; rewrote it as ...Nf6 hitting e4 and ...c6 gaining time on the b5-bishop, then ...d5 (the first rewrite gave the tempo to ...Nf6 and the reviewer rejected it)."
+    },
+    {
+      "fen": "rnbq1bnr/ppp3k1/7p/3B4/3PPppP/8/PPP3P1/RNBQK2R b KQ - 0 9",
+      "name": "King's Gambit Accepted: Allgaier, Urusov Attack",
+      "eco": "C39",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 routed the king ...Kh7-g8 when it stands on g7; rewrote it (king on g7/h7, give back material). Plan 1 now adds Bxf4 to win back material. British spelling in plan 4."
+    },
+    {
+      "fen": "rnb1k2r/pp1p1ppp/2p2n2/4q3/1b2P3/2NP4/PPP1BPPP/R1BQK2R w KQkq - 2 7",
+      "name": "King's Knight Opening: Gunderam Gambit, Bishop Attack",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 suggested ...Nc6 and ...O-O-O, impossible with the pawn on c6 and Black's king headed short; rewrote it around the ...Bxc3+ and ...Qxc3 threat, then ...O-O, ...d5, ...Nbd7. British spelling in plan 2."
+    },
+    {
+      "fen": "rnbqkbnr/pp1p1ppp/2p5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "name": "King's Pawn Game: Gunderam Gambit",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had Re1 before White can castle; rewrote it as the immediate Nxe5 (e5 is undefended after 2...c6). British spelling in the overview and plans 1, 2 and 4."
+    },
+    {
+      "fen": "rnb1kbnr/ppp4p/3p1qp1/8/2NPp3/8/PPP1QPPP/RNB1KB1R b KQkq - 1 7",
+      "name": "Latvian Gambit Accepted: Bronstein Gambit",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview said Black sacrifices material; it is White who leaves d4 unguarded after Qh5+ g6 Qe2, with material level. Rewrote it; plan 3 had O-O/Re1 with the f1-bishop at home; plans 1 and 2 got Nc3/Be3 and a half-open (not open) f-file."
+    },
+    {
+      "fen": "rnb1kbnr/ppp3pp/3p1q2/8/3Pp3/4N3/PPP2PPP/RNBQKB1R b KQkq - 1 6",
+      "name": "Latvian Gambit Accepted: Nimzowitsch Attack",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named 'squares like d5 and f5', read as moves; rewrote it around Nc3 hitting e4, Be2 and O-O, the e3-knight on d5/g4. Plan 2 had both ...c6 and ...Nc6 and an 'open' f-file (half-open)."
+    },
+    {
+      "fen": "rnbqkb1r/pppp2pp/5n2/4N3/3Pp3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+      "name": "Latvian Gambit: 3.d4 fxe4 5.Nxe5 Nf6",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named 'the weak f7 and e6 squares' (f7 read as a pawn); rewrote it around Bc4/Bg5, Nc3, pressure on e4 and the a2-g8 diagonal. British spelling in the overview and plan 3."
+    },
+    {
+      "fen": "rnb1kbnr/ppp3pp/3p1q2/8/2NPp3/8/PPP2PPP/RNBQKB1R w KQkq - 0 6",
+      "name": "Latvian Gambit: 3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had a Nc3-e3 route for a knight on c4; rewrote it as Nc3 and Ne3. Plan 1 called the line a pawn sacrifice when material is level. British spelling in the overview and plan 4."
+    },
+    {
+      "fen": "rnbqkb1r/pppp2pp/5n2/4N3/2B1p3/8/PPPP1PPP/RNBQK2R w KQkq - 1 5",
+      "name": "Latvian Gambit: Corkscrew Countergambit",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 targeted an f7-pawn that is gone; rewrote it around 5.Nf7 Qe7 6.Nxh8 d5 and Bf7+. Plan 2 claimed a White material advantage when material is level; plan 3 said 'open' f-file (half-open) and now notes ...d5 hits c4."
+    }
+  ]
+}

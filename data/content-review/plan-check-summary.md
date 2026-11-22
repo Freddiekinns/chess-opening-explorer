@@ -3,8 +3,8 @@
 2221 references on 1707 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5471 name no move, route, square or piece
-- References by kind: {"square":16121,"piece":15304,"move":54630,"route":8881}
-- References by result: {"now":69170,"on-board":14282,"later":9263,"invalid":2221}
+- References by kind: {"square":16121,"piece":15303,"move":54627,"route":8881}
+- References by result: {"now":69167,"on-board":14281,"later":9263,"invalid":2221}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 

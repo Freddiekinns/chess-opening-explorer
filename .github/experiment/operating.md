@@ -65,8 +65,8 @@ and `-f body=@file` to post.
 
 ## A night
 
-1. **Check out `overnight/experiment-state`.** If `STOP` exists, or the newest
-   commit is less than 2 hours old (another run is live), exit.
+1. **Check out `overnight/experiment-state`.** If `STOP` exists, or `journal.md`
+   already has an entry dated today (UTC), exit: one run a day.
 2. **Read** `charter.md`, `operating.md`, `plan.md`, `questions.md`, the last 3
    journal entries, and owner replies in the inbox since Claude's last comment.
 3. **Decide the night's one unit of work** — the plan's next item, unless a

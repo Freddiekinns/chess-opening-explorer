@@ -1,10 +1,10 @@
 # Plan reference check
 
-2104 references on 1613 of 12377 pages fail the check and show as plain text.
+2025 references on 1554 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5468 name no move, route, square or piece
-- References by kind: {"square":16210,"piece":15391,"move":54761,"route":8854}
-- References by result: {"now":69416,"on-board":14391,"later":9305,"invalid":2104}
+- Plans: 41062, of which 5465 name no move, route, square or piece
+- References by kind: {"square":16252,"piece":15458,"move":54833,"route":8837}
+- References by result: {"now":69558,"on-board":14459,"later":9338,"invalid":2025}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -43,33 +43,30 @@
   - `Ba3`: No piece can play Ba3 here, now or after the plan's earlier moves
 - **C28 Vienna: 3.Bc4 Nc6 4.d3 Bb4 5.Nf3** (0 views)
   - `Ne2-g3`: One step of Ne2-g3 can't be played here
-- **C40 Latvian Gambit: Mayet Attack** (0 views)
-  - `Nxe5`: No piece can play Nxe5 here, now or after the plan's earlier moves
-- **C40 Open Game: Gunderam Defence, 3.Nc3** (0 views)
-  - `e7`: No piece can play e7 here, now or after the plan's earlier moves
-- **C41 Philidor Defense: Lion Variation, Bishop Sacrifice** (0 views)
-  - `Ne6`: No piece can play Ne6 here, now or after the plan's earlier moves
-  - `Nxc7`: No piece can play Nxc7 here, now or after the plan's earlier moves
-  - `Ng5+`: No piece can play Ng5 here, now or after the plan's earlier moves
-  - `Ne6`: No piece can play Ne6 here, now or after the plan's earlier moves
 - **C42 Petrov's Defense: Kaufmann Attack** (0 views)
   - `e4 pawn`: There is no pawn on e4, or on its way
-- **C48 Four Knights: Rubinstein, 5.Ba4 Nxf3+** (0 views)
-  - `...d5`: No piece can play d5 here, now or after the plan's earlier moves
 - **C48 Four Knights: Rubinstein, 5.Nxe5** (0 views)
   - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **C49 Four Knights Game: Spanish Variation, Symmetrical Variation** (0 views)
-  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
-- **C49 Four Knights Game: Spanish Variation, Symmetrical Variation** (0 views)
-  - `Bxc6`: No piece can play Bxc6 here, now or after the plan's earlier moves
-- **C49 Four Knights Game: Spanish Variation, Symmetrical Variation** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
-- **C49 Four Knights Game: Spanish Variation, Symmetrical Variation, Metger Unpin** (0 views)
+- **C50 Giuoco Pianissimo: Italian Four Knights, 5...d6 6.Be3** (0 views)
+  - `fxe3`: No piece can play fxe3 here, now or after the plan's earlier moves
+- **C55 Italian Game: Two Knights Defense, Max Lange Attack, Krause Variation** (0 views)
+  - `Nxc3`: No piece can play Nxc3 here, now or after the plan's earlier moves
+- **C55 Italian Game: Two Knights Defense, Max Lange Attack, Loman Defense** (0 views)
+  - `fxg7`: No piece can play fxg7 here, now or after the plan's earlier moves
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **C55 Two Knights: 4.d3 Be7 5.c3** (0 views)
+  - `Nf3-e1-g3`: One step of Nf3-e1-g3 can't be played here
+- **C55 Two Knights: 4.d3 Be7 5.O-O O-O** (0 views)
+  - `Ng1-e2-g3`: One step of Ng1-e2-g3 can't be played here
+- **C55 Two Knights: 4.d3 Be7 5.O-O O-O 6.Bb3** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+- **C55 Two Knights: 4.d3 Be7 5.O-O O-O 6.Re1** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+- **C55 Two Knights: 5.O-O Be7** (0 views)
+  - `d5-pawn break`: No piece can play d5 here, now or after the plan's earlier moves
+- **C55 Two Knights: Max Lange, 6.e5 d5** (0 views)
+  - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
+- **C56 Italian Game: Scotch Gambit, Anderssen Attack, Main Line** (0 views)
   - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **C49 Four Knights: 4.Bb5 Bb4 5.O-O O-O** (0 views)
-  - `e6`: No piece can play e6 here, now or after the plan's earlier moves
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **C49 Four Knights: Symmetrical, 7.Bg5** (0 views)
-  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
-- **C49 Four Knights: Symmetrical, 7.Bg5 Bxc3** (0 views)
-  - `Ne2-g3`: One step of Ne2-g3 can't be played here
+- **C56 Italian Game: Scotch Gambit, Double Gambit Accepted** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves

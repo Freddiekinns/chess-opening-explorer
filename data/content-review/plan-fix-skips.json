@@ -130,5 +130,11 @@
     "plan": "If Black captures on e3 (...Bxe3), White recaptures with the f-pawn (fxe3) to open the f-file for the rook and bolster the centre.",
     "reference": "fxe3",
     "reason": "correct plan, parser can't read a recapture that follows the opponent's capture in a plan with no side prefix yet"
+  },
+  {
+    "fen": "r2qk2r/ppp2p1p/2n1bPp1/2b3N1/2pp4/8/PPP2PPP/RNBQR1K1 w kq - 0 10",
+    "plan": "White: Continue the kingside attack with moves like Nxe6 and fxg7, exploiting the f6-pawn and open e-file to target the weakened Black king.",
+    "reference": "fxg7",
+    "reason": "needs-research: fxg7 is impossible after 9...g6, but two rewrites (Qf3/Qe2, then 10.Nxe6 fxe6 11.Qg4) were rejected by the reviewer; old text kept"
   }
 ]

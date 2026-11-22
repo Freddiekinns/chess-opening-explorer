@@ -116160,7 +116160,7 @@
       "icsbot": "Rio de Janeiro Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Rio de Janeiro Variation is a solid and highly respected alternative to the main 'Berlin Wall' endgame. Black develops the bishop to e7, aiming for a more complex and strategic middlegame where long-term positional understanding is paramount. This opening leads to a rich, maneuvering game, ideal for patient players who enjoy accumulating small advantages and outplaying their opponents in structurally imbalanced positions.",
+      "description": "The Rio de Janeiro Variation develops the bishop with 5...Be7 instead of retreating the knight to d6 at once. White's main reply 6.Qe2 attacks the e4-knight, and after 6...Nd6 7.Bxc6 bxc6 8.dxe5 Nb7 Black has doubled c-pawns and an offside knight but the bishop pair and a solid position, while White has the cramping e5-pawn and quicker development. Queens stay on, unlike in the Berlin Wall, so this suits patient players who enjoy a long manoeuvring middlegame with structural imbalances.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -116201,8 +116201,8 @@
         "Maneuvering Warfare"
       ],
       "common_plans": [
-        "White's Plan: Utilize the kingside pawn majority, control the d5-square, restrict Black's bishops, and often reroute the knight via c3-d1-e3 to attack.",
-        "Black's Plan: Leverage the bishop pair, expand on the queenside with ...a5 and ...c5, challenge White's center with a timely ...d5, and improve the position of the knight on b7."
+        "White's Plan: Hit the e4-knight with 6.Qe2; after 6...Nd6 7.Bxc6 bxc6 8.dxe5 Nb7, develop quickly with Nc3, Re1 and Nd4, using the cramping e5-pawn before Black untangles.",
+        "Black's Plan: Castle, bring the knight back into play via c5 and e6, and use the bishop pair; a later ...d6 or ...d5 frees the bishops and, if White captures en passant, undoubles the c-pawns."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:06:22.916Z"
@@ -116219,7 +116219,7 @@
       "eco_js": "Ruy Lopez: Berlin Defense: Rio de Janeiro Variation"
     },
     "analysis_json": {
-      "description": "The Rio de Janeiro Variation of the Berlin Defense sidesteps the famous endgame lines, leading to a complex and strategically rich middlegame. White enjoys a central space advantage and active pieces, while Black relies on dynamic counterplay, challenging White's center with the ...c5 pawn break to activate their own forces. This opening is perfect for sophisticated players who appreciate deep strategic battles and maneuvering for subtle advantages.",
+      "description": "This is a main line of the Rio de Janeiro Variation of the Berlin Defence. Black has traded off the offside knight via c5 and e6 and now hits the d4-bishop with 13...c5, so White must retreat it, after which Black frees the position with ...d6 or ...d5, aiming to undouble the c-pawns and open lines for the bishop pair. White has the cramping e5-pawn and a lead in development, and the game is balanced and strategic, suiting players who enjoy bishops against active pieces.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -116260,8 +116260,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Use the d4-bishop and e5-pawn to control the center, prepare a kingside expansion with f4, and target Black's slightly weakened pawn structure (a7, c5).",
-        "Black: Use the ...c5 break to create counterplay, activate the light-squared bishop, control the d-file, and reroute the b7-knight to a more active square."
+        "White: Retreat the attacked d4-bishop to e3, keep the e5-pawn as a cramping wedge, and use the lead in development and the rooks on the central files before Black frees the bishops.",
+        "Black: Free the position with ...d6 or ...d5, which undoubles the c-pawns if White captures en passant, bring the c8-bishop to b7 to aim down the long diagonal, and use the bishop pair once lines open."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:06:39.316Z"
@@ -116351,7 +116351,7 @@
       "icsbot": "Rosenthal Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Rosenthal Variation is a provocative and flexible sideline in the Berlin Defense. By immediately questioning the b5-bishop with 5...a6, Black forces White's hand, often aiming to enter the main Berlin endgame lines under slightly different circumstances or to steer the game into sharper, more complex middlegames if White avoids the bishop exchange. This line suits versatile players who want to fight for the initiative and are comfortable navigating both strategic endgames and tactical skirmishes.",
+      "description": "The Rosenthal Variation is a rare sideline of the Berlin Defence. Instead of the usual 5...Nd6 or 5...Be7, Black questions the b5-bishop with 5...a6 while the knight still sits on e4. If the bishop retreats to a4, Black can transpose to the Open Ruy Lopez with ...b5 and ...d5; White usually prefers to take on c6 and then go after the e4-knight and the e5-pawn with a lead in development, while Black gets the bishop pair but must untangle quickly. This line suits players who are happy to defend a slightly loose position in return for long-term assets.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -116391,8 +116391,8 @@
         "Exploiting pawn structure imbalances"
       ],
       "common_plans": [
-        "White: Exchange on c6 (Bxc6) to create a kingside pawn majority and play for a win in the resulting endgame, or retreat the bishop (Ba4) to maintain the pin and fight for a middlegame initiative.",
-        "Black: Force the bishop's hand, aiming for the solid Berlin endgame where the two bishops and better pawn structure offer long-term compensation. If White avoids the exchange, Black will often play ...b5 and ...d5 to challenge White's central control."
+        "White: Take on c6 with Bxc6, then go after the e4-knight and the e5-pawn with Re1 and dxe5, aiming to use the lead in development before Black's bishops come to life; retreating the bishop to a4 instead allows a transposition to the Open Ruy Lopez.",
+        "Black: After the exchange on c6, bring the knight back to safety, castle quickly and use the bishop pair and the open lines for active play; if the bishop retreats to a4, the b- and d-pawn advances lead into the Open Ruy Lopez."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:07:10.575Z"
@@ -116476,7 +116476,7 @@
       "ct": "Spanish Game, Berlin Defense"
     },
     "analysis_json": {
-      "description": "This variation of the Berlin Defense, the Winawer Attack, represents a more ambitious and challenging approach for White compared to the main lines. White establishes a powerful knight on d4, aiming to exploit Black's slightly compromised pawn structure for a lasting space advantage. The resulting game is a deep, strategic struggle where White's central control and active knight are pitted against Black's long-term asset of the bishop pair, making it ideal for patient, positional players who excel at complex maneuvering.",
+      "description": "This variation of the Berlin Defence, the Winawer Attack, is an ambitious approach for White. White plants a knight on d4, eyeing the c6-pawn, and aims to exploit Black's doubled c-pawns and offside b7-knight for a lasting space advantage. The resulting game is a deep, strategic struggle where White's central control and active knight are pitted against Black's long-term asset of the bishop pair, making it ideal for patient, positional players who excel at complex manoeuvring.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -116518,9 +116518,9 @@
         "Prophylactic Play"
       ],
       "common_plans": [
-        "White: Support the Nd4 with c3, followed by Nc3, and prepare a kingside expansion with f4 to restrict Black's pieces.",
-        "Black: Complete development with ...O-O, ...Re8, and prepare the ...d5 pawn break to challenge White's center and liberate the bishop pair.",
-        "White: Reroute the queen's knight (e.g., Nc3-e2-g3) to support the kingside and control important squares.",
+        "White: Bring the queen's knight out with Nc3, add a rook to d1 or e1 and the bishop to e3, and consider f4 to support the e5-pawn and gain kingside space.",
+        "Black: Complete development with ...O-O, ...Re8, and prepare the ...d5 pawn break to challenge White's centre and liberate the bishop pair.",
+        "White: Keep the d4-knight as a central outpost, eyeing the c6-pawn and the f5-square, unless Black challenges it.",
         "Black: Reroute the b7-knight, often to c5, to challenge White's d4-knight and create queenside pressure."
       ],
       "version": "1.0",
@@ -116780,7 +116780,7 @@
     "name": "Spanish: Open Berlin, 5...Be7 6.Qd2 Nd6 7.Bxc6 bxc6 8.dxe5 Nb7",
     "scid": "C67j",
     "analysis_json": {
-      "description": "This variation of the Open Berlin leads to a deeply strategic and complex middlegame. White accepts a structural concession from Black (doubled c-pawns) in exchange for the bishop pair, leading to a classic strategic imbalance. The resulting positions are rich in long-term plans, focusing on pawn structure, piece activity, and subtle maneuvering rather than immediate tactical clashes. This opening is perfect for patient, strategic players who excel at understanding positional nuances and accumulating small advantages over a long game.",
+      "description": "This variation of the Open Berlin leads to a deeply strategic and complex middlegame. White has given up the bishop pair to inflict doubled c-pawns on Black and push the knight back to b7, leading to a classic strategic imbalance. The resulting positions are rich in long-term plans, focusing on pawn structure, piece activity, and subtle manoeuvring rather than immediate tactical clashes. This opening is perfect for patient, strategic players who excel at understanding positional nuances and accumulating small advantages over a long game.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -116822,10 +116822,10 @@
         "Knight Repositioning"
       ],
       "common_plans": [
-        "White: Play Nc3, b3, and Bb2 to control the center and prepare to pressure Black's weak c-pawns.",
+        "White: Develop quickly with Nc3, a rook to d1 or e1 and Nd4, using the lead in development before the b7-knight returns to play.",
         "White: Use the e5-pawn as a cramping element and a launchpad for central dominance.",
-        "Black: Reroute the b7-knight, typically via ...Nc5 to ...d7 or ...e6, to challenge White's central control.",
-        "Black: Prepare the ...c5 pawn break to undouble the pawns, challenge the d4-pawn, and open lines for the bishop pair."
+        "Black: Reroute the b7-knight via c5 to e6, where it challenges White's central control and eyes the d4-square.",
+        "Black: Prepare ...d6 or ...d5, which undoubles the c-pawns if White captures en passant and opens lines for the bishop pair."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:09:11.165Z"
@@ -116840,7 +116840,7 @@
     "name": "Spanish: Open Berlin, 5...Be7 6.Qe2",
     "scid": "C67h",
     "analysis_json": {
-      "description": "This variation of the Open Spanish is a direct and ambitious attempt by White to punish Black's foray with 4...Nxe4. By playing 6.Qe2, White maintains central tension and prepares to exploit the e-file, leading to a complex and strategically demanding middlegame. This opening is suited for players who enjoy intricate maneuvering and fighting for the initiative in positions with subtle imbalances.",
+      "description": "This is the main line of the Rio de Janeiro Variation of the Open Berlin. White's 6.Qe2 attacks the e4-knight; 6...d5 is a sideline, and the usual 6...Nd6 7.Bxc6 bxc6 8.dxe5 Nb7 leaves Black with doubled c-pawns and an offside knight but the bishop pair, while White has the cramping e5-pawn and quicker development. This opening suits players who enjoy intricate manoeuvring in positions with subtle imbalances.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -116881,10 +116881,10 @@
         "Queenside Counterplay"
       ],
       "common_plans": [
-        "White: Exert pressure on the e-file with the Qe2/Re1 battery, targeting Black's e5-pawn and central setup.",
-        "Black: Challenge the b5-bishop with ...Nd6, solidifying the center with ...cxd6 and preparing to neutralize White's initiative.",
-        "White: After exchanging on d6, leverage the space advantage and better pawn structure, often aiming for a d4-d5 pawn break.",
-        "Black: Complete development and seek counterplay on the queenside, often via the c-file or a ...c5 pawn break."
+        "White: Use the pressure on the e-file and the lead in development: after 6...Nd6 7.Bxc6 bxc6 8.dxe5 Nb7, follow up with Nc3, a rook to d1 or e1, and Nd4.",
+        "Black: Retreat the knight with ...Nd6, which also hits the b5-bishop, then castle and bring the knight back into play from b7 via c5 to e6.",
+        "White: Keep the pawn that arrives on e5 as a wedge that cramps Black's kingside, and support it with the f-pawn once the f3-knight has moved to d4.",
+        "Black: Complete development and free the bishops with a timely advance of the d-pawn, which also undoubles the c-pawns if White captures en passant."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:09:37.789Z"
@@ -116960,7 +116960,7 @@
     "name": "Spanish: Open Berlin, 5.d4 Nd6 6.Bxc6",
     "scid": "C67o",
     "analysis_json": {
-      "description": "This variation of the Open Berlin creates a fundamental strategic imbalance that defines the entire game. White voluntarily gives up the bishop pair to inflict a damaged pawn structure on Black, leading to a rich, strategic battle. The game revolves around the classic theme of White's superior pawn structure and kingside majority versus Black's long-term potential of the two bishops. This opening is perfect for patient, strategic players who enjoy maneuvering and fighting for long-term advantages in complex middlegames and endgames.",
+      "description": "This variation of the Open Berlin creates a fundamental strategic imbalance that defines the entire game. White voluntarily gives up the bishop pair to inflict a damaged pawn structure on Black, leading to a rich, strategic battle. The game revolves around the classic theme of White's superior pawn structure and kingside majority versus Black's long-term potential of the two bishops. This opening is perfect for patient, strategic players who enjoy manoeuvring and fighting for long-term advantages in complex middlegames and endgames.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -117002,9 +117002,9 @@
         "Exploiting Weak Pawns"
       ],
       "common_plans": [
-        "White: After ...dxc6, White aims to use the kingside pawn majority (advancing with f4-f5) to create a passed pawn. White will control the d5-square and exert long-term pressure on Black's doubled c-pawns.",
-        "Black: Black will complete development, use the bishop pair to create threats, and control the open d-file. A key idea is to challenge White's center and undouble the pawns with a timely ...c5 pawn break.",
-        "Both sides often maneuver for a favorable transition into an endgame where their respective advantages (structure vs. bishops) become more pronounced."
+        "White: After 6...dxc6 7.dxe5 Nf5 8.Qxd8+ Kxd8, use the healthy kingside majority, led by the e5-pawn, to gain space and in the long run create a passed pawn, with h3 and g4 to drive away the f5-knight.",
+        "Black: After the recapture on c6, complete development, use the bishop pair and the open d-file, and keep the position compact; the doubled c-pawns mean Black's queenside majority cannot easily make a passed pawn, so the bishops are Black's trump.",
+        "Both sides often manoeuvre for a favourable transition into an endgame where their respective advantages (structure vs. bishops) become more pronounced."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:10:11.273Z"
@@ -117251,7 +117251,7 @@
     "name": "Spanish: Open Berlin, 5.d4 Nd6 Queenswap, 9.Nc3 h6",
     "scid": "C67t",
     "analysis_json": {
-      "description": "This variation of the Open Spanish, often called the 'Berlin Endgame' or 'Berlin Wall', leads to a queenless middlegame directly from the opening. The character of the game is profoundly strategic, revolving around long-term plans, pawn structure nuances, and the activity of the minor pieces. It is ideal for patient, technical players who are confident in their endgame skills and enjoy accumulating small advantages over a long struggle.",
+      "description": "This variation of the Berlin Defence, often called the 'Berlin Endgame' or 'Berlin Wall', leads to a queenless middlegame directly from the opening; 9...h6 takes the g5-square away from White's bishop and knight. The character of the game is profoundly strategic, revolving around long-term plans, pawn structure nuances, and the activity of the minor pieces. It is ideal for patient, technical players who are confident in their endgame skills and enjoy accumulating small advantages over a long struggle.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -117293,10 +117293,10 @@
         "Pawn Structure Manipulation"
       ],
       "common_plans": [
-        "White: Utilize the space advantage and bishop pair by developing with h3, b3, Bb2, and Rd1. Maneuver the f3-knight to d2-f1-e3 or the c3-knight to e2-g3-f5 to target Black's position.",
-        "Black: Consolidate the king's position, often via Ke7-f8 or Ke7-d7-c7. Develop with ...Be6, ...Bd7, and ...a5 to control key squares and prepare to challenge White's central influence.",
+        "White: Use the space the e5-pawn gives and the healthy kingside majority: play h3 and g4 to drive the f5-knight away, put a rook on d1 with gain of time, and look for Ne4 to probe the c5- and f6-squares.",
+        "Black: Tuck the king away, usually on e8 (or on c8 once the c8-bishop has moved), develop with ...Be6 or ...Bd7 and ...a5, and keep the position compact.",
         "White: Create pressure on the queenside, sometimes using a minority attack with a4-a5, to exploit Black's slightly compromised pawn structure.",
-        "Black: Neutralize White's pressure, trade minor pieces to ease the defense, and aim to prove that the slightly exposed king is not a long-term weakness."
+        "Black: Neutralise White's pressure, trade minor pieces to ease the defence, and aim to prove that the slightly exposed king is not a long-term weakness."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:11:29.095Z"
@@ -117311,7 +117311,7 @@
     "name": "Spanish: Open Berlin, 5.d4 Nd6 Queenswap, 9.Nc3 Ke8",
     "scid": "C67u",
     "analysis_json": {
-      "description": "The Berlin Defense endgame is a hallmark of modern, high-level chess, renowned for its solidity and strategic depth. By trading queens early, Black sidesteps White's main attacking ideas and steers the game into a complex queenless middlegame where deep positional understanding is paramount. This opening is perfect for the patient, technical player who enjoys accumulating small advantages and excels in maneuvering, pawn structure nuances, and long-term strategic battles.",
+      "description": "The Berlin Defence endgame is a hallmark of modern, high-level chess, renowned for its solidity and strategic depth. With queens traded early, Black avoids any attack against the king and steers the game into a complex queenless middlegame where deep positional understanding is paramount. This opening is perfect for the patient, technical player who enjoys accumulating small advantages and excels in manoeuvring, pawn structure nuances, and long-term strategic battles.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -117353,8 +117353,8 @@
         "Minor Piece Imbalances"
       ],
       "common_plans": [
-        "White: Expand on the queenside with a4-b4 to create a passed pawn. Restrict Black's bishops and maneuver the knight to key squares like d4 or f4.",
-        "Black: Utilize the bishop pair to control key diagonals and create threats. Keep the position solid, often using the king as an active piece (moving to f8/d7). Challenge White's space advantage and seek favorable piece trades."
+        "White: Use the kingside majority: play h3 and g4 to drive the f5-knight away and advance the pawns to gain space and aim for a passed pawn, while the knights look for the e4- and d4-squares.",
+        "Black: Utilise the bishop pair to control key diagonals and create threats. Keep the position solid, often using the king as an active piece (moving to f8/d7). Challenge White's space advantage and seek favourable piece trades."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:11:44.034Z"
@@ -117369,7 +117369,7 @@
     "name": "Spanish: Open Berlin, 5.d4 Nd6 Queenswap, 9.Nc3 Ke8 10.h3",
     "scid": "C67w",
     "analysis_json": {
-      "description": "This variation of the Berlin Defense leads to the famous 'Berlin Endgame,' a queenless middlegame that is rich in strategic complexity. White aims to leverage a queenside pawn majority, while Black relies on the long-term potential of the bishop pair and a rock-solid pawn structure. This opening is ideal for patient, technical players who excel at subtle maneuvering, long-term planning, and endgame technique, rather than those seeking immediate tactical fireworks.",
+      "description": "This variation of the Berlin Defence leads to the famous 'Berlin Endgame', a queenless middlegame that is rich in strategic complexity. White aims to leverage the kingside pawn majority, while Black relies on the long-term potential of the bishop pair and a rock-solid pawn structure. This opening is ideal for patient, technical players who excel at subtle manoeuvring, long-term planning, and endgame technique, rather than those seeking immediate tactical fireworks.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -117411,8 +117411,8 @@
         "Maneuvering"
       ],
       "common_plans": [
-        "White: Expand on the queenside with a4-b4 to create a passed pawn, use the h3-g4 lever to challenge the f5-knight, and trade pieces to reach a favorable king and pawn endgame.",
-        "Black: Utilize the bishop pair to control key squares and restrict White's pieces, maintain a solid central structure, and use the king as an active piece. Black often seeks counterplay with moves like ...h5 or by challenging White's central control."
+        "White: Follow h3 with g4 to drive the f5-knight away, use the kingside majority led by the e5-pawn to gain space and aim for a passed pawn, and trade pieces towards a favourable endgame.",
+        "Black: Utilise the bishop pair to control key squares and restrict White's pieces, maintain a solid central structure, and use the king as an active piece. Black often seeks counterplay with moves like ...h5 or by challenging White's central control."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:11:58.912Z"

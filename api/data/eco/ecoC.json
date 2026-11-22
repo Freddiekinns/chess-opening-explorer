@@ -42703,7 +42703,7 @@
       ],
       "common_plans": [
         "White: Play d3, Nge2, O-O, and prepare a central push with d3-d4 or expand on the kingside with h3 and f4. The main goal is to leverage the power of the Bg2 bishop.",
-        "Black: Castle and play ...d6, keeping the c5-bishop with ...a6 if White aims Na4 at it. The c6-knight can jump into the d4-square, and ...Be6 with ...Qd7 prepares ...Bh3 to trade off White's strong g2-bishop."
+        "Black: Castle and play ...d6, keeping the c5-bishop with ...a6 if White's knight heads for the a4-square. The c6-knight can jump into the d4-square, and ...Be6 with ...Qd7 prepares ...Bh3 to trade off White's strong g2-bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T01:31:13.321Z"
@@ -64146,7 +64146,7 @@
         "Converting a Space Advantage"
       ],
       "common_plans": [
-        "White: Develop with Nc3, which attacks the e4-pawn at once, then Be2 and O-O. The e3-knight eyes the d5- and g4-squares, and White aims to exploit Black's lag in development and the kingside loosened by ...f5.",
+        "White: Develop with Nc3, which attacks the e4-pawn at once, then Be2 and O-O. The e3-knight eyes the d5- and g4-squares, and White aims to exploit Black's lag in development and the kingside loosened by the early f-pawn advance.",
         "Black: Develop quickly with moves like ...c6 (or ...Nc6) and ...Be7 to support the centre and prepare castling. Use the half-open f-file for active counterplay, often targeting f2. Challenge White's d4-pawn to undermine their central grip."
       ],
       "version": "1.0",
@@ -64322,7 +64322,7 @@
         "Central Tension"
       ],
       "common_plans": [
-        "White's Plan: Develop quickly with Bc4 or Bg5 and Nc3, pressure the e4-pawn, and attack Black's exposed king, especially along the a2-g8 diagonal that ...f5 weakened.",
+        "White's Plan: Develop quickly with Bc4 or Bg5 and Nc3, pressure the e4-pawn, and attack Black's exposed king, especially along the a2-g8 diagonal that Black's early f-pawn advance weakened.",
         "Black's Plan: Continue development to support an attack (...d5, ...Qe7, ...Bd6), create immediate threats to seize the initiative, and prevent White from consolidating their positional advantages.",
         "White's Plan: Systematically neutralise Black's threats, exchange pieces to transition into a favourable endgame where Black's pawn structure is a permanent liability.",
         "Black's Plan: Keep the position as complex and tactical as possible, avoiding simplification and aiming for a quick knockout before their own structural weaknesses become fatal."
@@ -67352,8 +67352,8 @@
         "King Hunt"
       ],
       "common_plans": [
-        "White's Plan: After ...Kxf7, follow up with Ng5+ and Ne6 to harass the queen, bring the queen to h5 once the f3-knight has moved, and castle quickly so the rooks join the attack on the exposed Black king.",
-        "Black's Plan: Take with ...Kxf7, answer Ng5+ with ...Kg8, find precise defensive moves against Ne6 and Qh5 ideas, and consolidate the extra piece before launching a decisive counterattack."
+        "White's Plan: After ...Kxf7, follow up with Ng5+ and, when the king goes back to g8, a knight jump to e6 to harass the queen. Bring the queen to h5 once the f3-knight has moved, and castle quickly so the rooks join the attack on the exposed Black king.",
+        "Black's Plan: Take with ...Kxf7, meet the knight check from g5 with ...Kg8, defend precisely against the knight jump to e6 and the queen coming to h5, and consolidate the extra piece before launching a decisive counterattack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:05:56.856Z"
@@ -67796,7 +67796,7 @@
       "icsbot": "Lopez Counter-Gambit, Philidor "
     },
     "analysis_json": {
-      "description": "The Lopez Countergambit is a sharp and provocative response within the Philidor Defense, immediately challenging White's central control at the cost of significantly weakening Black's own kingside. This choice transforms a typically solid opening into a double-edged, tactical melee where Black gambles on seizing the initiative. It is an ideal weapon for aggressive, uncompromising players who enjoy chaotic positions and are willing to take major risks for attacking chances.",
+      "description": "The Lopez Countergambit is a sharp and provocative response within the Philidor Defence, immediately challenging White's central control at the cost of significantly weakening Black's own kingside. This choice transforms a typically solid opening into a double-edged, tactical melee where Black gambles on seizing the initiative. It is an ideal weapon for aggressive, uncompromising players who enjoy chaotic positions and are willing to take major risks for attacking chances.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -67841,9 +67841,9 @@
       ],
       "common_plans": [
         "White: Accept the gambit with 4. exf5, develop rapidly, and launch an attack against Black's exposed king, often targeting the f7 and e6 squares.",
-        "Black: After 4. exf5, recapture with ...Bxf5, develop the knight to f6, and use the open f-file for a rook to fuel a counterattack against White's center.",
+        "Black: If White takes on f5, recapture with the c8-bishop (or push ...e4 first), develop the knight to f6, and use the half-open f-file for a rook to fuel a counterattack against White's centre.",
         "White: Decline the gambit with a move like 4. d4, aiming to secure a space advantage and play a more positional game, highlighting the long-term weaknesses of Black's ...f5 push.",
-        "Black: Create maximum chaos to prevent White from consolidating. This can involve further pawn pushes like ...g5 to open more lines towards the white king."
+        "Black: Keep the position sharp and strike before White's lead in development tells, with ...Nf6 and ...e4 to drive the f3-knight away, and rook play down the f-file against f2."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:08:31.074Z"
@@ -69365,7 +69365,7 @@
     "name": "Philidor: Improved Hanham, 5.Bc4",
     "scid": "C41s",
     "analysis_json": {
-      "description": "The Improved Hanham is a highly resilient and strategic defense where Black creates a 'coiled spring' position, temporarily ceding space to complete development before challenging White's center. White's 5.Bc4 is a natural developing move that puts pressure on f7 and prepares for a kingside initiative. The resulting middlegames are rich in strategic maneuvering, suiting patient players who excel at defending solid structures and launching well-timed counter-attacks.",
+      "description": "The Improved Hanham is a highly resilient and strategic defence where Black creates a 'coiled spring' position, temporarily ceding space to complete development before challenging White's centre. White's 5.Bc4 is a natural developing move that puts pressure on f7 and prepares for a kingside initiative. The resulting middlegames are rich in strategic manoeuvring, suiting patient players who excel at defending solid structures and launching well-timed counter-attacks.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -69407,9 +69407,9 @@
       ],
       "common_plans": [
         "White: Maintain central space, develop pieces, and often prepare a kingside attack, sometimes using an f2-f4 push.",
-        "Black: Complete development with ...Be7 and ...O-O, then challenge White's center, often by preparing ...c6 and ...b5 to gain queenside space.",
-        "White: Prevent Black's freeing ...c5 or ...e5 pawn breaks while improving piece coordination.",
-        "Black: After exchanging on d4 (exd4, Nxd4), aim to play ...c5 to undermine White's central control and activate the light-squared bishop."
+        "Black: Complete development with ...Be7 and ...O-O, then challenge White's centre, often by preparing ...c6 and ...b5 to gain queenside space.",
+        "White: Prevent Black's freeing ...d5 and ...b5 pawn breaks while improving piece coordination.",
+        "Black: Alternatively, release the tension with ...exd4 and, after the knight recaptures, develop with ...Be7, ...O-O and ...Re8, using ...Ne5 to hit the c4-bishop and fight for active squares."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:15:37.235Z"
@@ -69483,7 +69483,7 @@
     "name": "Philidor: Improved Hanham, 6.dxe5",
     "scid": "C41s",
     "analysis_json": {
-      "description": "This variation of the Philidor Defense leads to a quiet, strategic game where White enjoys a slight space advantage while Black maintains a very solid and resilient pawn structure. The play revolves around maneuvering and long-term plans rather than immediate tactical clashes, making it ideal for patient, positional players who appreciate subtle positional struggles and accumulating small advantages.",
+      "description": "With 6.dxe5 White releases the central tension in this Philidor Defence line, and after Black recaptures (6...dxe5 or 6...Nxe5) the position simplifies, with the d-file opening fully after 6...dxe5. White keeps a slight space and development edge while Black's structure stays solid, though after 6...dxe5 Black must watch for Bxf7+ and Ng5+ tricks against f7. The play revolves around manoeuvring and long-term plans, making it ideal for patient, positional players who appreciate subtle positional struggles and accumulating small advantages.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -69524,8 +69524,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "For White, develop with O-O, Re1, and Bg5 or f4, aiming to control the center and use the space advantage. A queenside expansion with a4-a5 is also a common idea.",
-        "For Black, complete development with ...O-O and ...c6, challenge White's central control, and seek counterplay on the queenside with ...b5 or by rerouting pieces (e.g., ...Nf8-e6).",
+        "For White, develop with O-O, Qe2 and Bg5 or Be3, using the space advantage and the d-file once it opens. A queenside expansion with a4-a5 is also a common idea.",
+        "For Black, recapture on e5 (with the pawn to keep the structure, or with the d7-knight to trade pieces), complete development with ...O-O and ...c6, and seek counterplay on the queenside with ...b5.",
         "White often targets the e5 pawn and tries to prevent Black from achieving easy equality through pawn breaks.",
         "Black aims to trade pieces to relieve the slightly cramped position and steer the game towards a balanced endgame."
       ],
@@ -69598,7 +69598,7 @@
     "name": "Philidor: Improved Hanham, 6.dxe5 Nxe5",
     "scid": "C41s",
     "analysis_json": {
-      "description": "The Improved Hanham is a modern and highly respected treatment of the Philidor Defence, aiming for a solid and flexible setup. By exchanging knights on e5, the position simplifies, often leading to a strategic, queenless middlegame where understanding pawn structure and piece activity is paramount. This opening is perfect for the patient, strategic player who enjoys accumulating small advantages and outmaneuvering their opponent in a technically demanding position.",
+      "description": "The Improved Hanham is a modern and highly respected treatment of the Philidor Defence, aiming for a solid and flexible setup. After 6...Nxe5 the knight hits the c4-bishop and the f3-knight, and once knights are traded on e5 (Nxe5 dxe5) White can exchange queens on d8, often reaching a strategic, queenless middlegame where pawn structure and piece activity are paramount. This opening is perfect for the patient, strategic player who enjoys accumulating small advantages and outmanoeuvring their opponent in a technically demanding position.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -69639,10 +69639,10 @@
         "Minor piece play"
       ],
       "common_plans": [
-        "For White: Exchange queens with Qxd8+ to enter a favorable endgame, control the d-file, and use the c2-c4 push to challenge Black's center.",
-        "For Black: Solidify the e5-pawn with ...c6, complete development, and seek counterplay by challenging White's e4-pawn or expanding on the queenside.",
-        "For White: Develop the light-squared bishop to g5 or f4 to create pressure on Black's structure.",
-        "For Black: Maneuver the queen's knight to f8 (via d7) to bolster the kingside and support the e6 square."
+        "For White: Trade knights with Nxe5 and, after the d6-pawn recaptures, exchange queens with Qxd8+ to enter a slightly favourable endgame, using the open d-file and the more active pieces.",
+        "For Black: Use the active e5-knight or trade it, complete development with ...O-O and ...c6, and seek counterplay by challenging White's e4-pawn or expanding on the queenside.",
+        "For White: Develop the dark-squared bishop to g5 or f4 to create pressure on Black's structure.",
+        "For Black: Trade pieces to ease the slight lack of space; after an exchange on e5 the pawn structure is symmetrical enough for Black to aim for an equal endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:16:45.638Z"
@@ -69717,7 +69717,7 @@
     "name": "Philidor: Improved Hanham, 7.a4",
     "scid": "C41v",
     "analysis_json": {
-      "description": "The Improved Hanham variation of the Philidor is a highly solid and resilient defense, leading to a strategic, maneuvering game. White's 7.a4 is a key prophylactic move, preventing Black's ...b5 expansion and securing a space advantage on the queenside. This opening is perfect for patient, strategic players who enjoy subtle positional battles and are comfortable defending a slightly passive but robust position.",
+      "description": "The Improved Hanham variation of the Philidor is a highly solid and resilient defence, leading to a strategic, manoeuvring game. White's 7.a4 is a key prophylactic move, preventing Black's ...b5 expansion and securing a space advantage on the queenside. This opening is perfect for patient, strategic players who enjoy subtle positional battles and are comfortable defending a slightly passive but robust position.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -69757,10 +69757,10 @@
         "Maneuvering behind a solid pawn structure"
       ],
       "common_plans": [
-        "White: Use the space advantage from a4, often preparing b4 to further cramp the queenside. A key plan involves the rook lift Re1-e3-g3 to attack the kingside.",
-        "Black: Prepare the ...c6 pawn break to challenge White's center. Reroute the knight from d7 (e.g., to f8-g6) to bolster the kingside or support the center.",
-        "White: Maintain central tension and slowly improve piece placement, looking for a favorable moment to break through.",
-        "Black: Play ...a5 to fix the queenside pawn structure and challenge White's control, or seek counterplay with moves like ...h6 and ...g5."
+        "White: The a4-pawn stops ...b5, so White can calmly improve with Re1, h3 and Qe2 (or Ba2, keeping the bishop out of reach), keeping the space advantage and the pressure on e5.",
+        "Black: Play ...c6 to prepare a later ...d5 and to give the queen c7. After ...Re8, the d7-knight can be rerouted via f8 to g6 to bolster the kingside or support the centre.",
+        "White: Maintain central tension and slowly improve piece placement, looking for a favourable moment to break through.",
+        "Black: Play ...a5 to fix the queenside pawn structure and secure the b4-square, or release the tension with ...exd4 followed by ...Re8 and ...Bf8 against the e4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:17:16.541Z"
@@ -69775,7 +69775,7 @@
     "name": "Philidor: Improved Hanham, 7.a4 c6",
     "scid": "C41v",
     "analysis_json": {
-      "description": "The Improved Hanham is a modern and highly resilient interpretation of the Philidor Defence, aiming for a solid, flexible pawn structure. Black avoids early confrontations, instead focusing on completing development and preparing for a strategic middlegame battle. This opening is perfect for patient, strategic players who enjoy maneuvering, understanding subtle positional nuances, and gradually outplaying their opponents in a long game.",
+      "description": "The Improved Hanham is a modern and highly resilient interpretation of the Philidor Defence, aiming for a solid, flexible pawn structure. Black avoids early confrontations, instead focusing on completing development and preparing for a strategic middlegame battle. This opening is perfect for patient, strategic players who enjoy manoeuvring, understanding subtle positional nuances, and gradually outplaying their opponents in a long game.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -69817,9 +69817,9 @@
         "Piece Maneuvering"
       ],
       "common_plans": [
-        "White's Plan: Utilize the space advantage with moves like Re1, Qe2, and h3. Prepare to either break in the center with d5 or expand on the queenside with b4.",
-        "Black's Plan: Consolidate the position, often with ...a5. Prepare for the central break ...exd4 followed by ...c5 to challenge White's control and free the position.",
-        "Maneuvering: Both sides engage in slow piece maneuvering, with Black often rerouting the d7-knight (e.g., to f8-g6) and White improving the placement of all pieces before committing to a concrete plan."
+        "White's Plan: Utilise the space advantage with moves like Re1, Qe2, and h3. Prepare to either break in the centre with d5 or expand on the queenside with b4.",
+        "Black's Plan: Consolidate with ...a5 (stopping White's a-pawn advance and securing the b4-square) and ...Qc7, then free the position with ...exd4 followed by ...Re8 and ...Bf8 against the e4-pawn, or with a well-timed ...d5.",
+        "Manoeuvring: Both sides engage in slow piece manoeuvring; Black often plays ...Re8 and brings the d7-knight via f8 to g6, while White improves the placement of all pieces before committing to a concrete plan."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:17:34.382Z"
@@ -69893,7 +69893,7 @@
     "name": "Philidor: Improved Hanham, 7.Qe2 c6 8.a4",
     "scid": "C41w",
     "analysis_json": {
-      "description": "The Improved Hanham variation of the Philidor is a highly resilient and strategic defense, leading to a game of maneuver and long-term planning. White enjoys a space advantage and aims to methodically build pressure, while Black maintains a solid, flexible pawn structure, waiting for the right moment to counter-attack in the center. This opening is perfect for patient, strategic players who excel at understanding subtle positional nuances and accumulating small advantages in a closed to semi-open game.",
+      "description": "The Improved Hanham variation of the Philidor is a highly resilient and strategic defence, leading to a game of manoeuvre and long-term planning. White enjoys a space advantage and aims to methodically build pressure, while Black maintains a solid, flexible pawn structure, waiting for the right moment to counter-attack in the centre. This opening is perfect for patient, strategic players who excel at understanding subtle positional nuances and accumulating small advantages in a closed to semi-open game.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -69934,10 +69934,10 @@
         "Piece Maneuvering"
       ],
       "common_plans": [
-        "White: Build pressure with moves like Re1 and Rd1, prepare a central expansion with f2-f4, and use the space advantage to restrict Black's pieces.",
-        "Black: Prepare and execute the liberating ...d6-d5 pawn break to challenge White's control of the center and free the position.",
-        "Black: Develop the queenside with moves like ...a6, ...b5, and ...Qb6 to create counterplay.",
-        "White: Reposition the c4-bishop to a safer square like b3 or d3 to prepare for Black's central activity."
+        "White: Build pressure with Rd1 on the d-file and h3, keep the broad centre, and use the space advantage to restrict Black's pieces.",
+        "Black: Prepare and execute the liberating ...d6-d5 pawn break to challenge White's control of the centre and free the position.",
+        "Black: Gain queenside room with ...a5 and ...Qc7, and look for ...exd4 followed by ...Re8 to press on the e4-pawn.",
+        "White: Reposition the c4-bishop to a2 or b3, out of reach of ...b5 and ...d5, to prepare for Black's central activity."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:18:13.809Z"
@@ -70011,7 +70011,7 @@
     "name": "Philidor: Improved Hanham, 7.Re1 c6 8.a4",
     "scid": "C41x",
     "analysis_json": {
-      "description": "This variation of the Philidor Defense is a modern, highly strategic, and solid system for Black. By playing 8.a4, White clamps down on Black's potential queenside expansion (...b5), leading to a tense maneuvering game. The opening is ideal for patient, strategic players who enjoy accumulating small advantages and understanding the nuances of pawn structures and piece placement.",
+      "description": "This variation of the Philidor Defence is a modern, highly strategic, and solid system for Black. By playing 8.a4, White clamps down on Black's potential queenside expansion (...b5), leading to a tense manoeuvring game. The opening is ideal for patient, strategic players who enjoy accumulating small advantages and understanding the nuances of pawn structures and piece placement.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -70052,8 +70052,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Use the space advantage to build pressure, often with Qe2 and h3, while preventing Black's ...b5 counterplay. The main goal is to control the center and prepare a favorable pawn break or kingside initiative.",
-        "Black: Maintain a solid structure, prepare the central ...d5 break to equalize, and reroute the b7-knight (e.g., to b6 or f8) to challenge White's control. Playing ...a5 to fix the a4-pawn is a common counter-strategy."
+        "White: Use the space advantage to build pressure, often with Qe2 and h3, while preventing Black's ...b5 counterplay. The main goal is to control the centre and prepare a favourable pawn break or kingside initiative.",
+        "Black: Maintain a solid structure, prepare the central ...d5 break to equalise, and reroute the d7-knight (to b6, or to f8 after ...Re8) to challenge White's control. Playing ...a5 to fix the a4-pawn is a common counter-strategy."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:18:54.512Z"
@@ -70068,7 +70068,7 @@
     "name": "Philidor: Improved Hanham, 7.Re1 c6 8.a4 a5",
     "scid": "C41y",
     "analysis_json": {
-      "description": "The Improved Hanham variation of the Philidor is a highly solid and resilient defense, leading to a closed, strategic game. Black creates a fortress-like pawn structure, aiming to slowly unravel and counterattack, often on the queenside, while White enjoys a space advantage and must find a way to break through. This opening is perfect for patient, strategic players who are comfortable with maneuvering and excel in understanding pawn structures and long-term plans.",
+      "description": "The Improved Hanham variation of the Philidor is a highly solid and resilient defence, leading to a closed, strategic game. Black creates a fortress-like pawn structure, aiming to slowly unravel and counterattack, often on the queenside, while White enjoys a space advantage and must find a way to break through. This opening is perfect for patient, strategic players who are comfortable with manoeuvring and excel in understanding pawn structures and long-term plans.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -70109,10 +70109,10 @@
         "Maneuvering Warfare"
       ],
       "common_plans": [
-        "White: Utilize the space advantage, often by preparing a central pawn break (d5) or launching a kingside attack with piece maneuvers like Nf3-d2-f1-g3.",
-        "Black: Maintain a solid structure, challenge White's control of the d5-square, and seek counterplay on the queenside, often by rerouting the b8-knight via c7 or preparing a ...b5 break.",
-        "White: Reposition the c4-bishop to a more active square like b3 or d3 to prepare for central action and avoid exchanges.",
-        "Black: Prepare the ...d5 pawn break to liquidate the center and relieve the cramped position, often after careful preparation."
+        "White: Utilise the space advantage, often by preparing a central pawn break (d5) or launching a kingside attack with piece manoeuvres like Nf3-d2-f1-g3.",
+        "Black: Maintain a solid structure with ...Qc7 and ...Re8, bring the e7-bishop back to f8 to guard the kingside, and keep the d5-square covered with the c6-pawn while waiting for ...exd4 or ...d5 at the right moment.",
+        "White: Reposition the c4-bishop to a2 or b3 to keep it safe from ...d5 and avoid exchanges, preparing for central action.",
+        "Black: Prepare the ...d5 pawn break to liquidate the centre and relieve the cramped position, often after careful preparation."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:19:14.012Z"
@@ -70127,7 +70127,7 @@
     "name": "Philidor: Improved Hanham, 7.Re1 c6 8.a4 b6",
     "scid": "C41z",
     "analysis_json": {
-      "description": "The Improved Hanham variation of the Philidor is a highly resilient and strategic defense. Black creates a super-solid, flexible pawn structure, often aiming for a 'Hedgehog' setup with ...b6 and ...Bb7, ceding a space advantage to White in exchange for long-term counter-attacking potential. This opening is perfect for patient, strategic players who enjoy maneuvering, frustrating their opponent's plans, and striking back once White overextends.",
+      "description": "The Improved Hanham variation of the Philidor is a highly resilient and strategic defence. With 8...b6 Black keeps a super-solid, flexible pawn structure and prepares ...Bb7 and ...a6, ceding a space advantage to White in exchange for long-term counter-attacking potential. This opening is perfect for patient, strategic players who enjoy manoeuvring, frustrating their opponent's plans, and striking back once White overextends.",
       "style_tags": [
         "Positional",
         "Solid",
@@ -70169,10 +70169,10 @@
         "Central Tension"
       ],
       "common_plans": [
-        "White: Utilize the space advantage to build pressure, often preparing the d4-d5 pawn break or maneuvering for a kingside attack.",
+        "White: Utilise the space advantage to build pressure, often preparing the d4-d5 pawn break or manoeuvring for a kingside attack.",
         "Black: Complete development with ...Bb7, maintain structural integrity, and prepare for a timely counter-break with ...d5 or by challenging on the queenside.",
         "White: Use the a4-pawn to restrain Black's queenside and prevent the freeing ...b5 pawn push.",
-        "Black: Re-route the b8-knight (via d7-f8-g6/e6) to bolster the kingside or prepare to challenge the center."
+        "Black: After ...Re8, re-route the d7-knight via f8 to g6 or e6 to bolster the kingside or prepare to challenge the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T09:19:30.714Z"

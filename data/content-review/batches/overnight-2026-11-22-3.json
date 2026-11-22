@@ -1,0 +1,146 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-22",
+  "pages": [
+    {
+      "fen": "rnbqkbnr/ppp3pp/3p4/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+      "name": "Philidor Defense: Lopez Countergambit",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 put White's 4.exf5 in Black's plan and called the f-file open (half-open for Black); plan 4's ...g5 'towards the white king' replaced with ...Nf6/...e4 and f-file play. British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkb1r/pppn1ppp/3p1n2/4p3/2BPP3/2N2N2/PPP2PPP/R1BQK2R b KQkq - 4 5",
+      "name": "Philidor: Improved Hanham, 5.Bc4",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had both sides' moves (exd4, Nxd4) in Black's plan; plan 3 listed an ...e5 break when the pawn is already on e5. Rewrote both. British spelling in the overview and plans 1 and 2."
+    },
+    {
+      "fen": "r1bqk2r/pppnbppp/3p1n2/4P3/2B1P3/2N2N2/PPP2PPP/R1BQK2R b KQkq - 0 6",
+      "name": "Philidor: Improved Hanham, 6.dxe5",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 routed the knight ...Nf8-e6 from a square it isn't on; plan 1 had f4 behind the f3-knight. The overview now explains the recaptures and the Bxf7+/Ng5+ tricks after 6...dxe5 (a first version called the d-file open after either recapture and was rejected). British spelling in plan 3."
+    },
+    {
+      "fen": "r1bqk2r/ppp1bppp/3p1n2/4n3/2B1P3/2N2N2/PPP2PPP/R1BQK2R w KQkq - 0 7",
+      "name": "Philidor: Improved Hanham, 6.dxe5 Nxe5",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview had knights already exchanged; plan 1 had Qxd8+ through the d6-pawn and c2-c4 onto the c4-bishop; plan 2 solidified an e5-pawn that is a knight; plan 3 called the c1-bishop light-squared; plan 4 rerouted the knight from d7, where it no longer is. Rewrote all."
+    },
+    {
+      "fen": "r1bq1rk1/pppnbppp/3p1n2/4p3/P1BPP3/2N2N2/1PP2PPP/R1BQ1RK1 b - - 0 7",
+      "name": "Philidor: Improved Hanham, 7.a4",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had the knight via f8 with the rook on f8; plan 1 had Re1-e3-g3 through the f3-knight; plan 4's ...h6 and ...g5 replaced by ...exd4, ...Re8, ...Bf8. British spelling in the overview and plan 3."
+    },
+    {
+      "fen": "r1bq1rk1/pp1nbppp/2pp1n2/4p3/P1BPP3/2N2N2/1PP2PPP/R1BQ1RK1 w - - 0 8",
+      "name": "Philidor: Improved Hanham, 7.a4 c6",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had the knight via f8 with the rook on f8; plan 2's ...exd4 then ...c5 (with the pawn on c6) replaced by ...a5, ...Qc7, ...exd4, ...Re8 and ...Bf8. British spelling in the overview and plan 1."
+    },
+    {
+      "fen": "r1bq1rk1/pp1nbppp/2pp1n2/4p3/P1BPP3/2N2N2/1PP1QPPP/R1B2RK1 b - - 1 8",
+      "name": "Philidor: Improved Hanham, 7.Qe2 c6 8.a4",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had Bd3 (read as d3, and blocked by nothing but pointless); now Ba2 or Bb3. Plan 1 had f2-f4 behind the f3-knight; plan 3 ...b5 against the a4-pawn. Rewrote those. British spelling in the overview and plan 2."
+    },
+    {
+      "fen": "r1bq1rk1/pp1nbppp/2pp1n2/4p3/P1BPP3/2N2N2/1PP2PPP/R1BQR1K1 b - - 0 8",
+      "name": "Philidor: Improved Hanham, 7.Re1 c6 8.a4",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 rerouted a 'b7-knight' (it is on d7) to f8 with the rook there; fixed. British spelling in the overview and plan 1."
+    },
+    {
+      "fen": "r1bq1rk1/1p1nbppp/2pp1n2/p3p3/P1BPP3/2N2N2/1PP2PPP/R1BQR1K1 w - - 0 9",
+      "name": "Philidor: Improved Hanham, 7.Re1 c6 8.a4 a5",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had Bd3; now Ba2 or Bb3. Plan 2 rerouted a 'b8-knight' via c7 (it is on d7); rewrote it. British spelling in the overview and plans 1 and 4."
+    },
+    {
+      "fen": "r1bq1rk1/p2nbppp/1ppp1n2/4p3/P1BPP3/2N2N2/1PP2PPP/R1BQR1K1 w - - 0 9",
+      "name": "Philidor: Improved Hanham, 7.Re1 c6 8.a4 b6",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 rerouted the 'b8-knight' via d7-f8 (it is on d7, the rook is on f8); now ...Re8 first. The overview's 'Hedgehog' label dropped. British spelling in plans 1 and 2."
+    },
+    {
+      "fen": "r1bqk2r/pppnbBpp/5n2/4p3/4P3/2N2N2/PPP2PPP/R1BQK2R b KQkq - 0 7",
+      "name": "Philidor Defense: Lion Variation, Delayed Bishop Sacrifice",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-22-2: plans 1 and 2 still named moves the parser couldn't place (Ne6 before ...Kg8, White moves in Black's plan); reworded."
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/4P3/2N3P1/PPPP1PBP/R1BQK1NR w KQkq - 3 5",
+      "name": "Vienna: Smyslov, 3...Bc5 4.Bg2 Nc6",
+      "eco": "C26",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-22-1: plan 2's 'Na4' in Black's plan reworded as the knight heading for the a4-square."
+    },
+    {
+      "fen": "rnb1kbnr/ppp3pp/3p1q2/8/3Pp3/4N3/PPP2PPP/RNBQKB1R b KQkq - 1 6",
+      "name": "Latvian Gambit Accepted: Nimzowitsch Attack",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-22-1: plan 1's '...f5' in White's plan reworded."
+    },
+    {
+      "fen": "rnbqkb1r/pppp2pp/5n2/4N3/3Pp3/8/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+      "name": "Latvian Gambit: 3.d4 fxe4 5.Nxe5 Nf6",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "follow-up",
+      "verdict": "fixed",
+      "notes": "Follow-up to batch 2026-11-22-1: plan 1's '...f5' in White's plan reworded."
+    }
+  ]
+}

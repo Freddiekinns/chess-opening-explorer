@@ -120727,7 +120727,7 @@
       "chronos": "Ruy Lopez: fianchetto defence deferred"
     },
     "analysis_json": {
-      "description": "The Fianchetto Defense Deferred is a solid and flexible system against the Ruy Lopez where Black prioritizes fianchettoing the dark-squared bishop. By first playing 3...a6, Black sidesteps the immediate Fianchetto lines and creates a hypermodern setup, aiming to control the center from the flank. This opening is ideal for strategic players who enjoy maneuvering and understanding pawn structures, preferring to avoid the dense theory of the main lines in favor of a more conceptual battle.",
+      "description": "The Fianchetto Defence Deferred (4...g6) is a solid and flexible system against the Ruy Lopez in which Black fianchettoes the dark-squared bishop on g7 to reinforce e5 and eye the long diagonal. Inserting 3...a6 4.Ba4 before ...g6 keeps the option of ...b5 to drive the bishop back whenever it suits Black. White usually answers with c3 and d4, or an immediate d4, to open the centre before Black's kingside is developed. This opening suits strategic players who enjoy manoeuvring and understanding pawn structures, preferring a less theoretical battle than the main lines.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -120768,10 +120768,10 @@
         "Flank Development"
       ],
       "common_plans": [
-        "For White: Establish a strong pawn center with c3 and d4, challenging Black's fianchetto setup and aiming for a space advantage.",
-        "For Black: Complete the fianchetto with ...Bg7, control the long diagonal, and prepare to challenge White's center with a timely ...d5 or ...d6.",
-        "For White: Develop pieces to active squares, often targeting Black's e5 pawn and preparing to restrict the influence of the Bg7 bishop.",
-        "For Black: Develop the kingside with ...Nf6 and O-O, maintaining a solid structure and preparing to counter-attack on the queenside or in the center."
+        "For White: Establish a strong pawn centre with c3 and d4, challenging Black's fianchetto setup and aiming for a space advantage.",
+        "For Black: Complete the fianchetto with ...Bg7, support e5 with ...d6, and keep ...b5 in reserve to chase the a4-bishop.",
+        "For White: Open the centre with d4 while Black's king is still uncastled, targeting the e5-pawn and the dark squares around Black's king that ...g6 has loosened.",
+        "For Black: Develop the kingside with ...Nge7 and ...O-O, keeping the structure solid, then look for counterplay with ...b5 on the queenside or a prepared ...f5 break."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:28:59.987Z"
@@ -120921,7 +120921,7 @@
       "icsbot": "Nightingale Gambit, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Nightingale Gambit is a highly speculative and aggressive line where White sacrifices the key Ruy Lopez bishop to permanently expose the Black king. The resulting positions are incredibly sharp and unbalanced, with White banking on a swift attack while Black must defend accurately to consolidate their material advantage. This opening is for players who thrive in chaotic, tactical melees and are not afraid to take significant risks for the initiative.",
+      "description": "The Nightingale Gambit is a highly speculative and aggressive line: rather than let 5...Na5 take the Spanish bishop, White gives it up on f7. After 6...Kxf7 7.Nxe5+ White has two pawns for the piece and Black's king has lost the right to castle. The resulting positions are sharp and unbalanced, with White banking on a swift attack while Black must defend accurately to consolidate the extra material. This opening is for players who thrive in chaotic, tactical melees and are not afraid to take significant risks for the initiative.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -120964,8 +120964,8 @@
         "Development Speed"
       ],
       "common_plans": [
-        "White's Plan: Rapidly develop all pieces towards the exposed Black king, often with moves like Ng5, d4, and sometimes long castling to bring the rook into the attack. The goal is to checkmate or win back material with a decisive attack before Black can consolidate.",
-        "Black's Plan: Survive the initial onslaught by defending precisely. The king must be moved to a safer square (e.g., ...Kg8). Black aims to trade pieces to defuse the attack and then convert the extra piece in the resulting endgame."
+        "White's Plan: After 6...Kxf7 7.Nxe5+, keep the king exposed with d4 and early queen checks, castle short and bring the rooks to the centre and the f-file. The goal is to win more material or mate before Black can consolidate.",
+        "Black's Plan: Take the bishop with 6...Kxf7 and, after 7.Nxe5+, step the king out of the way with ...Ke7 or ...Ke8. Black aims to complete development, trade pieces to defuse the attack and then convert the extra piece."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:29:55.434Z"
@@ -121117,7 +121117,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Spanish Game with 4.Ba4 is the gateway to the main lines of the Ruy Lopez, one of chess's most classical and strategically rich openings. By retreating the bishop, White maintains long-term pressure on Black's position, leading to a complex battle where deep planning and positional understanding are paramount. This opening is perfect for strategic players who enjoy maneuvering their pieces to build a slow, crushing advantage rather than seeking immediate tactical fireworks.",
+      "description": "The Spanish Game with 4.Ba4 is the gateway to the main lines of the Ruy Lopez, one of chess's most classical and strategically rich openings. By retreating the bishop, White maintains long-term pressure on Black's position, leading to a complex battle where deep planning and positional understanding are paramount. This opening is perfect for strategic players who enjoy manoeuvring their pieces to build a slow, crushing advantage rather than seeking immediate tactical fireworks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -121162,8 +121162,8 @@
         "Queenside expansion vs. Kingside attack"
       ],
       "common_plans": [
-        "White: Prepare the c3-d4 central advance, reroute the knight (e.g., Nd2-f1-g3) to support the center and kingside, and build a long-term attack.",
-        "Black: Break the pin with ...b5 and ...Na5, develop pieces to control the center, prepare the liberating ...d5 pawn break, and create counterplay on the queenside."
+        "White: Castle, play Re1, then prepare the c3-d4 central advance and reroute the queen's knight (Nbd2-f1-g3) to support the centre and kingside, building a long-term attack.",
+        "Black: Develop with ...Nf6 and ...Be7, drive the bishop back with ...b5, and seek queenside counterplay with ...Na5 and ...c5, or the central break ...d5 in sharper lines such as the Marshall."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:30:51.038Z"
@@ -121401,10 +121401,10 @@
         "Flank Attack vs. Center"
       ],
       "common_plans": [
-        "White: Solidify the e5-pawn, complete development (O-O, Re1), and exploit Black's exposed kingside and structural weaknesses.",
-        "Black: Challenge White's center with moves like ...d5 or ...b5, create counterplay on the kingside using the open f-file, and target the advanced e5-pawn.",
+        "White: Castle and regain the d4-pawn, for instance with Nxd4, then support the e5-pawn, play Re1 and exploit Black's loosened kingside.",
+        "Black: Hold the extra d4-pawn for as long as it is safe, undermine the e5-pawn with ...d6, and use the half-open e-file against it.",
         "White: Use the central space advantage to restrict Black's pieces and prepare a decisive attack.",
-        "Black: Develop pieces rapidly to active squares (e.g., ...Ne7-g6) to pressure White's central strongpoints before White can consolidate."
+        "Black: Develop quickly with ...Bc5 and ...Nge7, aiming the knight at g6 to hit e5 before White can consolidate."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:32:09.466Z"
@@ -121427,7 +121427,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Modern Steinitz is a solid and highly resilient defense to the Ruy Lopez, aiming for a strategic and maneuvering game rather than immediate tactical clashes. By playing 4...d6, Black shores up the e5-pawn and prepares to challenge White's central ambitions, often leading to closed or semi-closed positions. This opening is perfect for patient, strategic players who are comfortable building a solid foundation and gradually outplaying their opponent through superior understanding of pawn structures and piece placement.",
+      "description": "The Modern Steinitz is a solid and highly resilient defence to the Ruy Lopez, aiming for a strategic and manoeuvring game rather than immediate tactical clashes. By playing 4...d6, Black shores up the e5-pawn and prepares to challenge White's central ambitions, often leading to closed or semi-closed positions. This opening is perfect for patient, strategic players who are comfortable building a solid foundation and gradually outplaying their opponent through superior understanding of pawn structures and piece placement.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -121468,10 +121468,10 @@
         "Solidifying the pawn structure"
       ],
       "common_plans": [
-        "White: Play c3 and d4 to seize the center, often leading to a classic Spanish pawn structure.",
-        "Black: Complete development with ...Nf6, ...Be7, and ...O-O, then break the pin with ...b5 and ...Na5.",
+        "White: Play c3 and d4 to seize the centre, often leading to a classic Spanish pawn structure.",
+        "Black: Complete development with ...Nf6, ...Be7, and ...O-O, unpinning the c6-knight with ...Bd7 or with ...b5 when it suits.",
         "White: Adopt a quieter d3 setup, maintaining the tension and looking to exploit long-term pressure.",
-        "Black: Challenge White's center, often by exchanging on d4 (...exd4) and then targeting the e4 pawn."
+        "Black: When White plays d4, either hold e5 with ...Bd7 or give up the centre by exchanging on d4 and aim the pieces at e4; after 5.c3 the sharpest option is the Siesta, 5...f5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:32:24.017Z"
@@ -121676,7 +121676,7 @@
     "name": "Spanish: Modern Steinitz, 5.d4",
     "scid": "C71",
     "analysis_json": {
-      "description": "The Modern Steinitz with 5.d4 is a classical and ambitious approach by White, immediately challenging Black's solid central setup. White aims to open the position to seize the initiative and exploit the long-term pressure of the Spanish bishop. This opening leads to a strategically complex and rich game, demanding precise play and a deep understanding of central tension. It is ideal for strategic players who enjoy fighting for the center and are comfortable navigating positions that blend positional maneuvering with tactical possibilities.",
+      "description": "The Modern Steinitz with 5.d4 strikes at the centre at once, but because the c6-knight is pinned, Black can fight for e5 with ...Bd7 or ...b5. The most famous line is 5...b5 6.Bb3 Nxd4 7.Nxd4 exd4, where the greedy 8.Qxd4? walks into the Noah's Ark Trap: 8...c5, followed by ...Be6 and ...c4, shuts in and wins the Spanish bishop. White does better with 8.Bd5 or the gambit 8.c3. The game blends positional manoeuvring with sharp tactical possibilities, and suits players who enjoy fighting for the centre.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -121719,9 +121719,9 @@
       ],
       "common_plans": [
         "White aims to maintain central pressure, often with moves like Re1 and c3, preparing to either push d5 or capture on e5 to open lines for their pieces.",
-        "Black's main plan is to resolve the central tension, typically via ...exd4, followed by developing pieces (...Nf6, ...Be7), castling, and preparing the ...c5 pawn break to challenge White's center.",
-        "White often tries to create a long-term advantage by targeting Black's d6 pawn or creating a favorable pawn structure after central exchanges.",
-        "Black seeks to neutralize White's bishop on a4, either by forcing a trade or by maneuvering to blunt its influence, before launching counterplay on the queenside or in the center."
+        "Black's main plan is to unpin with ...Bd7 and hold the e5-strongpoint with ...Nf6, ...Be7 and ...O-O; the sharper 5...b5 6.Bb3 Nxd4 7.Nxd4 exd4 sets the Noah's Ark Trap, meeting 8.Qxd4? with 8...c5 and ...c4.",
+        "White often tries to create a long-term advantage by targeting Black's d6 pawn or creating a favourable pawn structure after central exchanges.",
+        "Black seeks to neutralise White's bishop on a4, either by forcing a trade or by manoeuvring to blunt its influence, before launching counterplay on the queenside or in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:33:28.135Z"
@@ -121806,7 +121806,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Modern Steinitz Defense is a highly solid and strategic response to the Ruy Lopez, prioritizing a robust pawn structure over immediate counterplay. Black's 4...d6 secures the center, leading to a game of patient maneuvering where understanding long-term plans is key. This opening is perfect for positional players who enjoy a slow-burning, strategic battle and are adept at neutralizing an opponent's initiative.",
+      "description": "The Modern Steinitz Defence is a highly solid and strategic response to the Ruy Lopez, prioritising a robust pawn structure over immediate counterplay. Black's 4...d6 secures the centre, leading to a game of patient manoeuvring where understanding long-term plans is key. This opening is perfect for positional players who enjoy a slow-burning, strategic battle and are adept at neutralising an opponent's initiative.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -121848,8 +121848,8 @@
         "Pawn Breaks (d4 vs. f5)"
       ],
       "common_plans": [
-        "White: Build a strong center with c3-d4, maneuver the knight (Nbd2-f1-g3), and exploit the space advantage.",
-        "Black: Solidify with ...Bd7 and ...Nge7, challenge the center, and seek counterplay on the queenside (...Na5) or via a central break."
+        "White: Play c3, Re1 and d4 to build a strong centre, then reroute the queen's knight with Nbd2-f1-g3 and use the space advantage.",
+        "Black: Solidify with ...Bd7 and ...Nge7, challenge the centre, and seek counterplay on the queenside (...Na5) or via a central break."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:34:01.445Z"
@@ -121864,7 +121864,7 @@
     "name": "Spanish: Modern Steinitz, 5.O-O Bd7",
     "scid": "C72",
     "analysis_json": {
-      "description": "The Modern Steinitz with 5...Bd7 is a highly solid and resilient defense to the Ruy Lopez, embodying a 'safety-first' approach. Black aims to neutralize White's early pressure by preparing to break the pin on the c6-knight without incurring pawn structure weaknesses. This opening leads to a strategically complex game, ideal for patient players who enjoy maneuvering, understanding subtle positional nuances, and outplaying their opponents in the long run.",
+      "description": "The Modern Steinitz with 5...Bd7 is a highly solid and resilient defence to the Ruy Lopez, embodying a 'safety-first' approach. By unpinning the c6-knight at once, Black neutralises White's early pressure without committing to ...b5 or weakening the pawn structure. This opening leads to a strategically complex game, ideal for patient players who enjoy manoeuvring, understanding subtle positional nuances, and outplaying their opponents in the long run.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -121906,9 +121906,9 @@
       ],
       "common_plans": [
         "White's Plan: Achieve the central pawn break with c3 and d4, securing a space advantage and opening lines for an attack.",
-        "Black's Plan: Neutralize White's pressure by resolving the pin on c6 (e.g., via ...b5 and ...Na5), challenge the center, and seek counterplay on the queenside.",
-        "White's Plan: Maneuver pieces for a kingside attack, often involving Re1 followed by Nf1-g3, while keeping Black's queenside counterplay in check.",
-        "Black's Plan: Maintain a solid, flexible structure, complete development, and prepare to trade pieces to ease the pressure, aiming for a favorable endgame."
+        "Black's Plan: Hold the e5-strongpoint with ...Nf6, ...Be7 and ...O-O (or ...g6 and ...Bg7), and gain queenside space with ...b5 when it suits.",
+        "White's Plan: Manoeuvre pieces for a kingside attack, often after c3, d4 and Re1, rerouting the queen's knight with Nbd2-f1-g3, while keeping Black's queenside counterplay in check.",
+        "Black's Plan: Maintain a solid, flexible structure, complete development, and prepare to trade pieces to ease the pressure, aiming for a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:34:19.115Z"
@@ -122102,7 +122102,7 @@
     "name": "Spanish: Modern Steinitz, 5.O-O Ne7",
     "scid": "C72",
     "analysis_json": {
-      "description": "The Modern Steinitz with 5...Ne7 is a solid and flexible response to the Ruy Lopez, aiming for a strategically complex game rather than immediate tactical fireworks. Black prepares to challenge the center with ...c5 and reroute the knight to g6, creating a resilient structure that avoids early weaknesses. This opening is well-suited for patient, strategic players who enjoy maneuvering and are comfortable with slightly cramped but fundamentally sound positions.",
+      "description": "The Modern Steinitz with 5...Nge7 is a solid and flexible response to the Ruy Lopez, aiming for a strategically complex game rather than immediate tactical fireworks. Black intends to reroute the knight to g6, where it guards e5 and eyes f4, and only then develop the f8-bishop, creating a resilient structure that avoids early weaknesses. This opening is well-suited for patient, strategic players who enjoy manoeuvring and are comfortable with slightly cramped but fundamentally sound positions.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -122142,10 +122142,10 @@
         "Space Advantage vs. Structural Solidity"
       ],
       "common_plans": [
-        "White: Play c3 and d4 to seize the center, develop pieces harmoniously, and use the space advantage to probe Black's position on both flanks.",
-        "Black: Complete development with ...Be7, ...O-O, and then challenge White's center with a timely ...c5 pawn break. The knight often repositions to g6 to control f4 and support the kingside.",
+        "White: Play c3 and d4 to seize the centre, develop pieces harmoniously, and use the space advantage to probe Black's position on both flanks.",
+        "Black: Bring the knight to g6 with ...Ng6, unpin the c6-knight with ...Bd7, and then develop with ...Be7 and ...O-O, holding e5 firmly.",
         "White: Maintain the pressure of the 'Spanish Bishop' on a4, potentially exchanging it for the c6 knight later to inflict a pawn weakness.",
-        "Black: Create counterplay on the queenside after the ...c5 break, or on the kingside if White overextends."
+        "Black: Look for counterplay with ...b5 on the queenside, or with a well-prepared ...f5 on the kingside if White overextends."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:35:26.292Z"
@@ -122350,7 +122350,7 @@
       "chessGraph": "C73"
     },
     "analysis_json": {
-      "description": "The Richter Variation of the Modern Steinitz is a strategically complex and rich opening. White immediately trades the \"Spanish Bishop\" for a knight, creating a lasting structural imbalance where Black's doubled c-pawns are a potential weakness, but their bishop pair and solid center offer significant long-term compensation. The game revolves around White's attempts to exploit the pawn structure and Black's efforts to leverage the bishop pair and central control, making it ideal for patient, strategic players who enjoy maneuvering and understanding structural nuances.",
+      "description": "The Richter Variation of the Modern Steinitz is a strategically complex and rich opening. White immediately trades the \"Spanish Bishop\" for a knight, creating a lasting structural imbalance where Black's doubled c-pawns are a potential weakness, but their bishop pair and solid centre offer significant long-term compensation. The game revolves around White's attempts to exploit the pawn structure and Black's efforts to leverage the bishop pair and central control, making it ideal for patient, strategic players who enjoy manoeuvring and understanding structural nuances.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -122392,10 +122392,10 @@
         "Maneuvering Warfare"
       ],
       "common_plans": [
-        "White: Play d2-d4 to challenge Black's center, maneuver a knight to c4 to control the c5 square, and prepare a queenside pawn advance (a4, b4) to attack Black's weak pawns.",
-        "Black: Solidify the center, often with ...d5, use the bishop pair to control key diagonals, and prepare a kingside attack, sometimes initiated by ...f5.",
-        "White: Aim to trade one of Black's bishops to nullify their primary advantage and simplify into a favorable endgame.",
-        "Black: Repurpose the light-squared bishop (e.g., ...Bd7-e8-g6) and use the semi-open b-file for counterplay with the rook."
+        "White: Open the centre with d4, develop quickly with O-O and Nc3, and target the doubled c-pawns and the a6-pawn, especially as the game heads towards an endgame.",
+        "Black: Keep the centre compact with ...Nf6 and ...Be7 (or ...g6 and ...Bg7), and look for the freeing ...d5 at the right moment to give the bishops open lines.",
+        "White: Aim to trade one of Black's bishops to nullify their primary advantage and simplify into a favourable endgame.",
+        "Black: Use the half-open b-file with ...Rb8 against b2, and aim the bishops at long diagonals, for instance with ...g6 and ...Bg7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T21:36:30.716Z"

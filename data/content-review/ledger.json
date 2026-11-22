@@ -12268,5 +12268,65 @@
     "verdict": "fixed",
     "contentHash": "0f8c5327dd029b7b",
     "notes": "Overview called the c5-bishop light-squared; plan 3 had a nonsense Nf3-g3-f1-e3 route. Fixed. British spelling."
+  },
+  "r1bqkbnr/1ppp1p1p/p1n3p1/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "49de9dc6ffb67616",
+    "notes": "Plan 3 named Bg7 as a White move; overview claimed 3...a6 sidesteps the Fianchetto lines. Rewrote overview around the ...b5 option and the c3/d4 or d4 replies; plans now give ...d6, ...Nge7 and the ...f5 break. Reviewer rejected a pin claim (d7-pawn still there); fixed and re-accepted. British spelling."
+  },
+  "r1bqkbnr/2pp1Bpp/p7/np2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "885643fc461786e3",
+    "notes": "Plan 2 suggested ...Kg8 (impossible: king on e8, then g8-knight in the way after 7.Nxe5+). Overview now explains 6...Kxf7 7.Nxe5+ and two pawns for the piece; plans rewritten. British spelling."
+  },
+  "r1bqkbnr/1ppp1ppp/p1n5/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "5209ccfaabce2fd3",
+    "notes": "Plan 1 routed Nd2-f1-g3 with no knight on d2; now Nbd2-f1-g3 after castling and Re1. Plan 2 said ...b5 breaks a pin that does not exist; rewritten. British spelling."
+  },
+  "r1bqkbnr/1ppp2pp/p1n5/4Pp2/B2p4/5N2/PPP2PPP/RNBQK2R b KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "c00b80393717cc91",
+    "notes": "Plan 4 had an ambiguous ...Ne7; plan 2 claimed an open f-file (Black f5-pawn still there). Plans rewritten around regaining d4, ...d6 and ...Bc5/...Nge7-g6."
+  },
+  "r1bqkbnr/1pp2ppp/p1np4/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "3d0d1ed0969efc75",
+    "notes": "Plan 4 had ...exd4 with no pawn on d4; rewritten with the Siesta. Plan 2 now notes the real pin on c6. British spelling."
+  },
+  "r1bqkbnr/1pp2ppp/p1np4/4p3/B2PP3/5N2/PPP2PPP/RNBQK2R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "021f054bbe1e1009",
+    "notes": "Overview generic; rewritten around the pin and the Noah's Ark Trap (5...b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4? c5). Plan 2 had a ...c5 break blocked by the c6-knight. British spelling."
+  },
+  "r1bqkbnr/1pp2ppp/p1np4/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 1 5": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "55fb9291ee73956b",
+    "notes": "Plan 1 routed Nbd2-f1-g3 with the rook on f1 and the d2-pawn in place; now after c3, Re1 and d4. British spelling."
+  },
+  "r2qkbnr/1ppb1ppp/p1np4/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 2 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "12c79b715c7aa282",
+    "notes": "Overview and plan 2 said Black still has to break the pin, which 5...Bd7 already did; plan 3 had Nf1-g3 with the rook on f1. Rewritten. British spelling."
+  },
+  "r1bqkb1r/1pp1nppp/p1np4/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 2 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "0bdb8e68d38c894d",
+    "notes": "Plan 2 proposed ...Be7 with a knight on e7 and a ...c5 break blocked by the c6-knight; overview also cited ...c5. Rewritten around ...Ng6, ...Bd7, ...Be7. Reviewer rejected a ...g6 fianchetto with the knight on g6; removed and re-accepted. British spelling."
+  },
+  "r1bqkbnr/2p2ppp/p1pp4/4p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-22",
+    "verdict": "fixed",
+    "contentHash": "d85542f45cfd0768",
+    "notes": "Plan 4 routed ...Bd7-e8-g6 through the king on e8; plan 1 said a c4-knight controls c5. Plans 1, 2 and 4 rewritten (d4 and the doubled c-pawns; ...d5 break; ...Rb8 on the half-open b-file). British spelling."
   }
 }

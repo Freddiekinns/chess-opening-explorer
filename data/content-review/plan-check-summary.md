@@ -1,10 +1,10 @@
 # Plan reference check
 
-1848 references on 1416 of 12377 pages fail the check and show as plain text.
+1791 references on 1376 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5461 name no move, route, square or piece
-- References by kind: {"square":16378,"piece":15634,"move":54864,"route":8766}
-- References by result: {"now":69799,"on-board":14650,"later":9345,"invalid":1848}
+- References by kind: {"square":16447,"piece":15675,"move":54893,"route":8729}
+- References by result: {"now":69909,"on-board":14691,"later":9353,"invalid":1791}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -51,24 +51,23 @@
   - `fxe3`: No piece can play fxe3 here, now or after the plan's earlier moves
 - **C55 Italian Game: Two Knights Defense, Max Lange Attack, Loman Defense** (0 views)
   - `fxg7`: No piece can play fxg7 here, now or after the plan's earlier moves
-- **C63 Ruy Lopez: Schliemann Defense, Classical Variation** (0 views)
-  - `...f5`: No piece can play f5 here, now or after the plan's earlier moves
-- **C66 Ruy Lopez: Berlin Defense, Improved Steinitz Defense** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **C66 Ruy Lopez: Berlin Defense, Tarrasch Trap** (0 views)
-  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
-- **C66 Ruy Lopez: Closed Berlin Defense, Chigorin Variation** (0 views)
-  - `c3-d4`: One step of c3-d4 can't be played here
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **C66 Spanish: Closed Berlin, 5.d4** (0 views)
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **C66 Spanish: Closed Berlin, 5.Re1** (0 views)
+- **C70 Ruy Lopez: Morphy Defense, Fianchetto Defense Deferred** (0 views)
+  - `Bg7`: No piece can play Bg7 here, now or after the plan's earlier moves
+- **C70 Ruy Lopez: Morphy Defense, Norwegian Variation, Nightingale Gambit** (0 views)
+  - `...Kg8`: No piece can play Kg8 here, now or after the plan's earlier moves
+- **C70 Spanish: 4.Ba4** (0 views)
+  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
+- **C70 Spanish: Schliemann Deferred, 5.d4 exd4 6.e5** (0 views)
+  - `...Ne7-g6`: Ne7 is ambiguous: the knights on g8 and c6 can both go there
+- **C71 Ruy Lopez: Morphy Defense, Modern Steinitz Defense** (0 views)
+  - `...exd4`: No piece can play exd4 here, now or after the plan's earlier moves
+- **C71 Spanish: Modern Steinitz, 5.d4** (0 views)
+  - `...c5`: No piece can play c5 here, now or after the plan's earlier moves
+- **C72 Ruy Lopez: Morphy Defense, Modern Steinitz Defense** (0 views)
+  - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
+- **C72 Spanish: Modern Steinitz, 5.O-O Bd7** (0 views)
   - `Nf1-g3`: One step of Nf1-g3 can't be played here
-  - `...b5`: No piece can play b5 here, now or after the plan's earlier moves
-- **C66 Spanish: Closed Berlin, Tarrasch Trap** (0 views)
-  - `...Bxe4`: No piece can play Bxe4 here, now or after the plan's earlier moves
-- **C67 Ruy Lopez: Berlin Defense, Berlin Wall** (0 views)
-  - `f5`: No piece can play f5 here, now or after the plan's earlier moves
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **C67 Ruy Lopez: Berlin Defense, l'Hermet Variation** (0 views)
-  - `a5-b5-c5`: One step of a5-b5-c5 can't be played here
+- **C72 Spanish: Modern Steinitz, 5.O-O Ne7** (0 views)
+  - `...O-O`: No piece can play O-O here, now or after the plan's earlier moves
+  - `...c5`: No piece can play c5 here, now or after the plan's earlier moves
+  - `...c5`: No piece can play c5 here, now or after the plan's earlier moves

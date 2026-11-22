@@ -24,9 +24,9 @@ before relying on any claim about what is above the fold.
 - **Analyse games** (`/analyse`): pulls a Chess.com or Lichess username's games
   and lists the openings played, each linking to its page with
   `?ref=personal&platform=…&username=…`. **The opening page never reads those
-  parameters**, so the learner arrives on the same generic page anyone else gets:
-  nothing says "you have played this 14 times, scored 35%, and left book at move
-  6".
+  parameters**, so the learner arrives on the same generic page anyone else
+  gets: nothing says "you have played this 14 times, scored 35%, and left book
+  at move 6".
 - Data depth: all 12,377 positions have an LLM description and `common_plans`
   (2–5 one-sentence bullets, e.g. "White: Play Qe2 followed by Rd1…"). Plans are
   prose with move names in them but no board positions; nothing links a plan to
@@ -88,8 +88,8 @@ exactly: the query is answered or not in the first screen.
 ## Patterns across the three
 
 1. **The site is a reference, not a lesson.** Every page describes a position;
-   none teaches a sequence (what to play, why, what to watch for, then drill it).
-   A learner has nothing to _finish_, so a visit has no length.
+   none teaches a sequence (what to play, why, what to watch for, then drill
+   it). A learner has nothing to _finish_, so a visit has no length.
 2. **Nothing persists that would bring someone back.** Starred positions, recent
    openings and watched videos live in `localStorage` and change nothing about
    the next visit. No drill queue, no progress, no "you were last here".

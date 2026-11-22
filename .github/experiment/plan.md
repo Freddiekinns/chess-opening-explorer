@@ -13,10 +13,11 @@ have an end, and what makes a learner return.
 
 Phase 1 — Discover (one research file each):
 
-2. ~~How others teach openings~~ — now Next. Chessable, Lichess studies and practice,
-   Chess.com lessons, Aimchess, Chessbook, opening books (Everyman "move by
-   move", Starting Out), and the YouTube creators the video index already ranks
-   highest. What makes a learner stay for a session, and come back.
+2. ~~How others teach openings~~ — now Next. Chessable, Lichess studies and
+   practice, Chess.com lessons, Aimchess, Chessbook, opening books (Everyman
+   "move by move", Starting Out), and the YouTube creators the video index
+   already ranks highest. What makes a learner stay for a session, and come
+   back.
 3. **Why learners use YouTube and not sites like ours.** Comments, creator
    formats, what a viewer does after a video. What would make a video on our
    page the better place to watch it.
@@ -43,6 +44,6 @@ Phase 4 — Retrospective: `retro.md`.
 - Find out what the w/c 2026-11-09 spike was (PostHog: landing pages, user
   agents and session lengths of US direct visitors to `/`).
 - What is `/assets/` (11 pageviews)?
-- Walk night 1's three journeys on a real phone; production was unreachable
-  from the cloud (proxy), so fold positions are unverified.
+- Walk night 1's three journeys on a real phone; production was unreachable from
+  the cloud (proxy), so fold positions are unverified.
 - Week 1: owner posts weekly usage % in the inbox each morning.

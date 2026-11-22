@@ -118,13 +118,19 @@ shows why. The next night starts by noticing the gap in the journal, reading
 `git log` for anything half done, and writing the missed night up before new
 work.
 
-## What the cloud cannot reach
+## What the cloud can reach
 
-Learned on night 1: the cloud proxy refuses `openingbook.xyz`, so a run cannot
-click through production (and should assume Vercel previews are refused too). To
-see a page, build it and run it inside the container (`npm ci`, then the dev
-server or `npm run build`), and read the components and the API. Claims about
-real mobile layout go to a `[local]` item for checking on the owner's machine.
+Night 1 found `openingbook.xyz` refused by the proxy. The owner then added it to
+the environment's allowed domains, and a check on 2026-11-22 returned 200 for
+the home page and `/api/openings/search-index`. So a run can read production.
+Vercel previews (`*.vercel.app`) are not allowed and are behind Vercel's login.
+
+Chrome for Testing is installed at `/usr/bin/google-chrome` (`CHROME_PATH` is
+set; version 153). Point Playwright at it
+(`executablePath: process.env.CHROME_PATH`) instead of downloading a browser.
+Use it to click through production or a build running in the container, at phone
+width (390 px) as well as desktop, and commit screenshots a gate needs under
+`gates/`. Real-phone checks are still `[local]` items for the owner.
 
 ## Sessions on the owner's machine
 

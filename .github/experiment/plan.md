@@ -50,6 +50,6 @@ Phase 4 — Retrospective: `retro.md`.
 - Find out what the w/c 2026-11-09 spike was (PostHog: landing pages, user
   agents and session lengths of US direct visitors to `/`).
 - What is `/assets/` (11 pageviews)?
-- Walk night 1's three journeys on a real phone; production was unreachable from
-  the cloud (proxy), so fold positions are unverified.
+- Walk night 1's three journeys on a real phone (fold positions were read from
+  code, not seen).
 - Week 1: owner posts weekly usage % in the inbox each morning.

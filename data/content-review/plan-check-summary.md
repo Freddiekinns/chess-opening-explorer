@@ -1,10 +1,10 @@
 # Plan reference check
 
-2221 references on 1707 of 12377 pages fail the check and show as plain text.
+2192 references on 1680 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5471 name no move, route, square or piece
-- References by kind: {"square":16121,"piece":15303,"move":54627,"route":8881}
-- References by result: {"now":69167,"on-board":14281,"later":9263,"invalid":2221}
+- Plans: 41062, of which 5470 name no move, route, square or piece
+- References by kind: {"square":16157,"piece":15334,"move":54674,"route":8872}
+- References by result: {"now":69254,"on-board":14322,"later":9269,"invalid":2192}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -41,33 +41,36 @@
   - `h4-h5`: One step of h4-h5 can't be played here
 - **C19 French: Winawer, 6...Ne7 7.Nf3 Nbc6 8.a4 Qa5+ 9.Bd2 Bd7 10.Bb5** (0 views)
   - `Ba3`: No piece can play Ba3 here, now or after the plan's earlier moves
-- **C26 Vienna: Smyslov, 3...Bc5 4.Bg2 Nc6** (0 views)
-  - `d4`: No piece can play d4 here, now or after the plan's earlier moves
 - **C28 Vienna: 3.Bc4 Nc6 4.d3 Bb4 5.Nf3** (0 views)
   - `Ne2-g3`: One step of Ne2-g3 can't be played here
-- **C33 King's Gambit Accepted: Bishop's Gambit, Kieseritzky Gambit** (0 views)
-  - `Bxb5`: No piece can play Bxb5 here, now or after the plan's earlier moves
-- **C39 King's Gambit Accepted: Allgaier, Urusov Attack** (0 views)
-  - `...Kh7-g8`: One step of ...Kh7-g8 can't be played here
-- **C40 King's Knight Opening: Gunderam Gambit, Bishop Attack** (0 views)
-  - `...O-O-O`: No piece can play O-O-O here, now or after the plan's earlier moves
-- **C40 King's Pawn Game: Gunderam Gambit** (0 views)
-  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **C40 Latvian Gambit Accepted: Bronstein Gambit** (0 views)
-  - `O-O`: No piece can play O-O here, now or after the plan's earlier moves
-  - `Re1`: No piece can play Re1 here, now or after the plan's earlier moves
-- **C40 Latvian Gambit Accepted: Nimzowitsch Attack** (0 views)
-  - `f5`: No piece can play f5 here, now or after the plan's earlier moves
-- **C40 Latvian Gambit: 3.d4 fxe4 5.Nxe5 Nf6** (0 views)
-  - `f7`: No piece can play f7 here, now or after the plan's earlier moves
-- **C40 Latvian Gambit: 3.Nxe5 Qf6 4.d4 d6 5.Nc4 fxe4** (0 views)
-  - `Nc3-e3`: One step of Nc3-e3 can't be played here
-- **C40 Latvian Gambit: Corkscrew Countergambit** (0 views)
-  - `f7-pawn`: There is no pawn on f7, or on its way
-  - `Bxf7+`: No piece can play Bxf7 here, now or after the plan's earlier moves
 - **C40 Latvian Gambit: Mayet Attack** (0 views)
-  - `f7-pawn`: There is no pawn on f7, or on its way
-- **C40 Latvian Gambit: Mayet Attack, Morgado Defense** (0 views)
-  - `f7-pawn`: There is no pawn on f7, or on its way
-- **C40 Latvian Gambit: Svedenborg, 6.Nxg6 hxg6** (0 views)
-  - `Qxh7`: No piece can play Qxh7 here, now or after the plan's earlier moves
+  - `Nxe5`: No piece can play Nxe5 here, now or after the plan's earlier moves
+- **C40 Open Game: Gunderam Defence, 3.Nc3** (0 views)
+  - `e7`: No piece can play e7 here, now or after the plan's earlier moves
+- **C41 Philidor Defense: Lion Variation, Bishop Sacrifice** (0 views)
+  - `Ne6`: No piece can play Ne6 here, now or after the plan's earlier moves
+  - `Nxc7`: No piece can play Nxc7 here, now or after the plan's earlier moves
+  - `Ng5+`: No piece can play Ng5 here, now or after the plan's earlier moves
+  - `Ne6`: No piece can play Ne6 here, now or after the plan's earlier moves
+- **C42 Petrov Defense: Stafford Gambit** (0 views)
+  - `...h4`: No piece can play h4 here, now or after the plan's earlier moves
+- **C42 Petrov's Defence, Damiano Variation** (0 views)
+  - `e5 pawn`: There is no pawn on e5, or on its way
+  - `e5 pawn`: There is no pawn on e5, or on its way
+- **C42 Petrov's Defence: Stafford Gambit** (0 views)
+  - `h3`: No piece can play h3 here, now or after the plan's earlier moves
+- **C42 Petrov's Defense** (0 views)
+  - `e4-pawn`: There is no pawn on e4, or on its way
+- **C42 Petrov's Defense: Classical Attack** (0 views)
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+- **C42 Petrov's Defense: Classical Attack, Berger Variation** (0 views)
+  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
+  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
+- **C42 Petrov's Defense: Classical Attack, Chigorin Variation** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+- **C42 Petrov's Defense: Classical Attack, Closed Variation** (0 views)
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+- **C42 Petrov's Defense: Karklins-Martinovsky Variation** (0 views)
+  - `c1-e2`: One step of c1-e2 can't be played here
+- **C42 Petrov's Defense: Kaufmann Attack** (0 views)
+  - `e4 pawn`: There is no pawn on e4, or on its way

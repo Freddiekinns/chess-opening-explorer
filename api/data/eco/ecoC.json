@@ -104133,7 +104133,7 @@
     "name": "Two Knights: 4.Ng5 d5 5.exd5 Nxd5",
     "scid": "C57e",
     "analysis_json": {
-      "description": "This variation is a razor-sharp and highly tactical battle, famously leading to the Fried Liver Attack after 6.Nxf7. Black's decision to recapture with the knight invites a direct, sacrificial assault on the king, demanding precise calculation from both sides. This opening is a true test of nerve, perfectly suited for aggressive, tactical players who enjoy complex, forcing variations and are not afraid to walk a tightrope.",
+      "description": "This variation is a razor-sharp and highly tactical battle, famously leading to the Fried Liver Attack after 6.Nxf7. Black's decision to recapture with the knight invites a direct, sacrificial assault on the king, demanding precise calculation from both sides; 6.d4, the Lolli Attack, is White's other dangerous try. This opening is a true test of nerve, perfectly suited for aggressive, tactical players who enjoy complex, forcing variations and are not afraid to walk a tightrope.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -104174,9 +104174,9 @@
         "Exploiting weak squares (f7)"
       ],
       "common_plans": [
-        "White's Plan: Sacrifice the knight on f7, followed by Qf3-d5 to create a mating attack. Develop all pieces with tempo to overwhelm Black's defenses before they can consolidate.",
-        "Black's Plan: Survive the initial attack by finding a safe haven for the king (e.g., via ...Ke6). Coordinate the remaining pieces to neutralize White's initiative and aim to convert the material advantage in the long run.",
-        "White's Alternative (Lolli Attack): Play 6.d4 to open the center and challenge Black's knight. Aim to exploit the pin on the e-file and Black's exposed king for a strong positional and tactical advantage."
+        "White's Plan: Sacrifice the knight with 6.Nxf7 Kxf7 7.Qf3+, then bring the knight to c3 to pile up on the pinned d5-knight. Develop all pieces with tempo to overwhelm Black's defences before they can consolidate.",
+        "Black's Plan: Survive the initial attack by finding a safe haven for the king (after 6.Nxf7 Kxf7 7.Qf3+, usually 7...Ke6). Coordinate the remaining pieces to neutralise White's initiative and aim to convert the material advantage in the long run.",
+        "White's Alternative (Lolli Attack): Play 6.d4 to open the centre; if Black takes on d4, castling and Re1 bring pressure down the e-file against Black's uncastled king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:07:08.984Z"
@@ -154921,10 +154921,10 @@
         "Consolidation"
       ],
       "common_plans": [
-        "White: Continue the attack with moves like O-O, Re1, and Ne4 to prevent Black's king from finding safety and to create mating threats.",
-        "Black: Defend the king with moves like ...c6 and ...Qe8, aiming to consolidate the position, complete development, and eventually leverage the extra piece.",
+        "White: Keep the d5-knight pinned against the king on e6, play Qe4 to add pressure on d5 and e5, then castle and bring a rook to e1 to open the e-file.",
+        "Black: Keep the pinned d5-knight defended, step out of the pin with ...Kd7 when it is safe, then consolidate the position, complete development, and eventually make the extra piece count.",
         "White: Open lines, especially the e-file, to target the vulnerable king on e6.",
-        "Black: Seek counterplay by challenging White's center or creating threats on the queenside once the initial attack is weathered."
+        "Black: Seek counterplay by challenging White's centre or creating threats on the queenside once the initial attack is weathered."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:09:50.585Z"
@@ -154981,7 +154981,7 @@
         "Coordination"
       ],
       "common_plans": [
-        "White aims to fuel the attack by rapidly developing pieces (O-O, Re1, Nc3) to target the exposed Black king and prevent Black from consolidating.",
+        "White: After 9...Ke6, fuel the attack by developing rapidly (castle, bring a rook to the e-file and develop the b1-knight via d2), opening the e-file to target the exposed Black king and prevent Black from consolidating.",
         "Black's primary plan is to secure the king (often via ...Ke6), challenge White's control of key squares, and carefully coordinate the extra piece to repel the attack and launch a counter-offensive."
       ],
       "version": "1.0",
@@ -155050,7 +155050,7 @@
     "eco": "C57",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Lolli Variation is one of the sharpest and most dangerous lines in chess, where White sacrifices a knight to permanently expose the Black king. This leads to a wild, tactical battle where White's attack rages against Black's precarious defense and desperate counter-attacking chances. This opening is for fearless, calculating players who enjoy high-stakes, concrete positions and are comfortable playing with or against a massive initiative for sacrificed material.",
+      "description": "The Lolli Variation is one of the sharpest and most dangerous lines in chess, where White sacrifices a knight to permanently expose the Black king. This leads to a wild, tactical battle where White's attack rages against Black's precarious defence and desperate counter-attacking chances. This opening is for fearless, calculating players who enjoy high-stakes, concrete positions and are comfortable playing with or against a massive initiative for sacrificed material.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -155096,8 +155096,8 @@
       "common_plans": [
         "White aims to use the queen on e4 and rooks on the central files to create a decisive attack against the exposed king on e6, preventing Black from consolidating.",
         "Black seeks to survive the initial onslaught, using the rook on f8 and other developing pieces to generate counterplay against White's own position.",
-        "White must prevent Black from trading queens, which would almost certainly neutralize the attack and leave White down material.",
-        "Black tries to use the central d5-pawn as a shield and a springboard for counter-attacks, often involving moves like ...b5 to activate the queenside."
+        "White must prevent Black from trading queens, which would almost certainly neutralise the attack and leave White down material.",
+        "Black tries to keep the pinned d5-knight as a shield in front of the king and to step out of the pin with ...Kd7 when it is safe, before bringing more pieces to the defence."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:10:42.297Z"
@@ -155115,7 +155115,7 @@
       "scid": "Two Knights: Fegatello (Fried Liver) Attack"
     },
     "analysis_json": {
-      "description": "The Fried Liver Attack is one of the most aggressive and tactical openings in chess, defined by a knight sacrifice on f7 to expose the Black king. This gambit leads to a wild, unbalanced battle where White's ferocious attack clashes with Black's extra material. It is the ultimate test of nerve and calculation, ideal for daring players who enjoy high-risk, all-or-nothing attacks from the very first moves.",
+      "description": "The Fried Liver Attack is one of the most aggressive and tactical openings in chess, defined by a knight sacrifice on f7 to expose the Black king. After 7.Qf3+ the king usually goes to e6 to keep the d5-knight defended, and White piles up on that pinned knight. This gambit leads to a wild, unbalanced battle where White's ferocious attack clashes with Black's extra material. It is the ultimate test of nerve and calculation, ideal for daring players who enjoy high-risk, all-or-nothing attacks from the very first moves.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -155160,8 +155160,8 @@
         "Initiative"
       ],
       "common_plans": [
-        "White: Follow up the sacrifice with Qf3+ to continue harassing the king. Develop rapidly, often castling queenside, to bring all pieces into the attack. Prevent Black from consolidating or trading key attacking pieces.",
-        "Black: Defend precisely and move the king to a safer square (like g8 or sometimes f6). Develop pieces to create counter-threats and challenge White's attackers. Aim to survive the initial storm and convert the material advantage in the endgame."
+        "White: Follow up with 7.Qf3+, forcing the king to e6 to defend the d5-knight, then pile up on that pinned knight with Nc3 and open lines with d4, or with O-O and Re1. Prevent Black from consolidating or trading key attacking pieces.",
+        "Black: Answer 7.Qf3+ with 7...Ke6, keeping the d5-knight defended, then cover it with ...Ncb4 or ...Ne7 and develop with counter-threats. Aim to survive the initial storm and convert the material advantage in the endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:10:59.298Z"
@@ -158853,7 +158853,7 @@
       ],
       "common_plans": [
         "Black's Plan: Continue the attack at all costs, using the open files and active pieces (especially the queen) to create mating threats against the exposed white king. Prevent White from consolidating.",
-        "White's Plan: Survive the initial onslaught, find a safe square for the king (often g1 or h1), and consolidate the position. Aim to trade pieces to leverage the material advantage and transition into a winning endgame.",
+        "White's Plan: Step out of the knight's check, usually with 7.Kg1 (7.Ke3 is the risky King March), survive the initial onslaught and consolidate the position. Aim to trade pieces to leverage the material advantage and transition into a winning endgame.",
         "Black's Plan: Sacrifice more material if necessary to keep the initiative and maintain pressure. The attack is the only path to victory.",
         "White's Plan: Develop pieces rapidly to defend the king and challenge Black's control. If the attack is repelled, the extra piece should be decisive."
       ],
@@ -159098,7 +159098,7 @@
     "eco": "C57",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Traxler Counterattack is one of the sharpest and most aggressive responses to the Italian Game, embodying a spirit of pure attack over material or safety. By sacrificing a pawn and exposing their own king, Black launches a ferocious, do-or-die assault against White's king. This opening is tailor-made for fearless, tactical players who thrive in chaotic, unbalanced positions and enjoy calculating complex sacrificial lines.",
+      "description": "The Traxler Counterattack is one of the sharpest and most aggressive responses to 4.Ng5, embodying a spirit of pure attack over material or safety. By sacrificing a pawn and exposing their own king, Black launches a ferocious, do-or-die assault against White's king. This opening is tailor-made for fearless, tactical players who thrive in chaotic, unbalanced positions and enjoy calculating complex sacrificial lines.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -159142,9 +159142,9 @@
         "Rapid Development"
       ],
       "common_plans": [
-        "Black aims to use the open f-file for the rook, bring the queen into the attack (e.g., via Qh4), and create immediate threats against the white king, often with further sacrifices.",
-        "White's primary goal is to survive the initial onslaught, consolidate the position by completing development (d3, O-O), and neutralize Black's key attacking pieces.",
-        "After ...dxc6, Black will use the newly opened d-file to create central pressure and activate the d8-rook.",
+        "Black aims to use the half-open f-file for the f8-rook, recapture with ...dxc6 to open lines for the queen and the c8-bishop, and create threats against f2 and White's king.",
+        "White's primary goal is to survive the initial onslaught, consolidate the position by completing development (d3, O-O), and neutralise Black's key attacking pieces.",
+        "After ...dxc6, the half-open d-file gives Black's queen and a rook more scope for central pressure.",
         "White seeks to trade pieces to blunt the attack and eventually convert the material advantage by exploiting Black's exposed king and structural weaknesses in the endgame."
       ],
       "version": "1.0",
@@ -161042,7 +161042,7 @@
     "eco": "C57",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Traxler Counterattack is one of the most aggressive and tactically complex responses to the Italian Game, embodying a true gambit spirit. Black willingly sacrifices material, exposing their own king to launch a ferocious, all-or-nothing assault against the white monarch. This opening is perfect for fearless, creative players who thrive in chaotic positions and excel at calculating sharp, forcing variations.",
+      "description": "The Traxler Counterattack is one of the most aggressive and tactically complex responses to 4.Ng5, embodying a true gambit spirit. Black willingly sacrifices material, exposing their own king to launch a ferocious, all-or-nothing assault against the white monarch. This opening is perfect for fearless, creative players who thrive in chaotic positions and excel at calculating sharp, forcing variations.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -161086,8 +161086,8 @@
         "Time is More Valuable than Material"
       ],
       "common_plans": [
-        "Black aims to use the open f-file and d-file to generate a swift attack, often involving ...Qh4 or ...Qg5, targeting White's king before they can consolidate.",
-        "White's primary goal is to survive the initial onslaught, neutralize Black's threats, and consolidate their material advantage. Castling queenside is a common plan to secure the king and connect the rooks.",
+        "Black aims to use the half-open f- and d-files, with ...Bg4 and ...Qd4 as typical ideas, targeting f2 and White's king before White can consolidate.",
+        "White's primary goal is to survive the initial onslaught, neutralise Black's threats, and consolidate the material advantage: d3 frees the c1-bishop, and short castling secures the king.",
         "Black will often sacrifice more material to keep the attack going, preventing White from untangling their pieces.",
         "White seeks to trade pieces, especially queens, to simplify the position and transition into a winning endgame where their extra material will be decisive."
       ],
@@ -162469,7 +162469,7 @@
     "eco": "C57",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Ulvestad Variation is a sharp and ambitious gambit within the Two Knights Defense, where Black sacrifices a pawn to deflect White's dangerous bishop and seize the initiative. This line leads to highly tactical and dynamic positions where Black's rapid development and potential bishop pair offer excellent compensation for the material deficit. It is perfectly suited for aggressive, counter-attacking players who are comfortable navigating complex, unbalanced situations and fighting for the initiative from the earliest moves.",
+      "description": "The Ulvestad Variation is a sharp and ambitious gambit within the Two Knights Defence, where Black sacrifices a pawn to deflect White's dangerous bishop and seize the initiative. Here 7.Bxc6+ gives check, and after 7...Qxc6 Black keeps the bishop pair, which with rapid development offers compensation for the pawn. It is perfectly suited for aggressive, counter-attacking players who are comfortable navigating complex, unbalanced situations and fighting for the initiative from the earliest moves.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -162510,8 +162510,8 @@
         "Counterattack in the Center"
       ],
       "common_plans": [
-        "Black's Plan: After ...bxc6, use the open b-file, develop rapidly, often castle long, and use the bishop pair to attack White's king.",
-        "White's Plan: Consolidate the extra pawn, neutralize Black's initiative, complete development (often with Nc3, d3, Qe2), and aim to exploit Black's potential king exposure in the long run."
+        "Black's Plan: Answer the check with 7...Qxc6, keeping the bishop pair, then develop rapidly (...Bb7 or ...Bc5, and castling) and use the half-open b-file and the open lines against White's king.",
+        "White's Plan: Consolidate the extra pawn, neutralise Black's initiative, complete development (often with Nc3, d3, Qe2), and aim to exploit Black's potential king exposure in the long run."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:49:12.181Z"
@@ -162647,7 +162647,7 @@
     "eco": "C57",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Ulvestad Variation is a fiercely sharp and tactical gambit where Black sacrifices a pawn to seize a dangerous initiative. By challenging White's aggressive 4.Ng5 head-on, Black creates an unbalanced position where piece activity and attacking chances take precedence over material. This opening is perfect for audacious players who enjoy complex, double-edged battles and are comfortable calculating forcing variations.",
+      "description": "The Ulvestad Variation is a fiercely sharp and tactical gambit where Black sacrifices a pawn to seize a dangerous initiative. By challenging White's aggressive 4.Ng5 head-on, Black creates an unbalanced position where piece activity and attacking chances take precedence over material; here the queen can take on g2, hitting the h1-rook. This opening is perfect for audacious players who enjoy complex, double-edged battles and are comfortable calculating forcing variations.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -162690,10 +162690,10 @@
         "Exploiting Tempo"
       ],
       "common_plans": [
-        "Black: Continue the attack with ...Qxg2, develop the light-squared bishop to an active square like c5, and often castle queenside to launch a pawn storm.",
-        "White: Consolidate the position, often with Qe2 or Qf3 to defend g2, complete development, and aim to trade queens to neutralize Black's attack and convert the material advantage.",
+        "Black: Take the g2-pawn with ...Qxg2, hitting the h1-rook, develop the dark-squared bishop with ...Bc5 or ...Bd6 and the light-squared bishop to d7, and use the open lines against White's king.",
+        "White: Meet ...Qxg2 with Qf3, offering a queen trade that defuses Black's attack, then complete development and aim to show that Black's activity is not enough.",
         "Black: Use the active queen to create multiple threats, preventing White from coordinating their pieces and developing harmoniously.",
-        "White: Challenge Black's control of the center with moves like d3-d4, aiming to open lines for their own pieces and prove the gambit unsound."
+        "White: Challenge Black's control of the centre with d3 or d4, aiming to open lines for their own pieces and prove the gambit unsound."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T10:50:22.797Z"

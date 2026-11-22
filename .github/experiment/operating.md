@@ -118,6 +118,14 @@ shows why. The next night starts by noticing the gap in the journal, reading
 `git log` for anything half done, and writing the missed night up before new
 work.
 
+## What the cloud cannot reach
+
+Learned on night 1: the cloud proxy refuses `openingbook.xyz`, so a run cannot
+click through production (and should assume Vercel previews are refused too). To
+see a page, build it and run it inside the container (`npm ci`, then the dev
+server or `npm run build`), and read the components and the API. Claims about
+real mobile layout go to a `[local]` item for checking on the owner's machine.
+
 ## Sessions on the owner's machine
 
 Some work needs the owner's computer: PostHog and Search Console through the

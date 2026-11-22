@@ -9,6 +9,12 @@ test against: the site is a reference, not a lesson, and nothing brings a
 learner back (`research/01-journey-today.md`). Look for what makes a session
 have an end, and what makes a learner return.
 
+Before Gate A, every candidate is checked against the open issues that already
+cover parts of it (`gh api` the issue list): #195 personal strip, #196 practice
+memory, #197 divergence callout, #199 "Start here", #207 sparring, #209 unnamed
+continuations, #228–233 common plans. Build on them or say why not; night 1
+proposed three shapes that overlap #195 and #196 without citing them.
+
 ## Queue
 
 Phase 1 — Discover (one research file each):

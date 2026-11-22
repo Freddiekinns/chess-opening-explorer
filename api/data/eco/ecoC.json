@@ -106822,7 +106822,7 @@
     "name": "Two Knights: Morphy, Main Line 9.Nf3 e4",
     "scid": "C59c",
     "analysis_json": {
-      "description": "This line of the Two Knights Defense is a sharp, dynamic gambit where Black sacrifices a pawn for a powerful initiative and central control. The thrust 9...e4 seizes space, cramps White's position, and sets the stage for a complex tactical battle. This opening is perfect for aggressive players who thrive on the initiative and are comfortable valuing development and attacking chances over raw material.",
+      "description": "This line of the Two Knights Defence is a sharp, dynamic gambit where Black sacrifices a pawn for a powerful initiative and central control. The thrust 9...e4 attacks the f3-knight, seizes space and cramps White's position, setting the stage for a complex tactical battle. This opening is perfect for aggressive players who thrive on the initiative and are comfortable valuing development and attacking chances over raw material.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -106866,7 +106866,7 @@
       ],
       "common_plans": [
         "Black's Plan: Use the e4-pawn to cramp White and launch a kingside attack. Develop quickly with ...Bd6, ...O-O, and prepare to activate the rooks. The knight on a5 can be rerouted to a more active square.",
-        "White's Plan: Consolidate the position and neutralize Black's initiative. Challenge the e4-pawn with moves like Ne1-d3. Aim to exchange pieces to simplify the position and realize the extra pawn advantage in the endgame."
+        "White's Plan: Move the attacked f3-knight, usually to the central e5-square (10.Ne5 is the main line), then consolidate and neutralise Black's initiative. Aim to exchange pieces to simplify the position and realise the extra pawn advantage in the endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:20:15.507Z"
@@ -106945,7 +106945,7 @@
     "name": "Two Knights: Morphy, Steiner Variation",
     "scid": "C59d",
     "analysis_json": {
-      "description": "The Steiner Variation is a sharp and aggressive line within the Two Knights Defense where Black sacrifices a pawn for a powerful, long-term initiative. Black's central e4-pawn cramps White's position and fuels a dangerous attack, leading to highly complex and dynamic middlegames. This opening is perfect for ambitious, tactical players who are comfortable playing with an initiative and are not afraid to embrace unbalanced positions from the outset.",
+      "description": "The Steiner Variation is a sharp and aggressive line within the Two Knights Defence where Black sacrifices a pawn for a powerful, long-term initiative. Black's central e4-pawn cramps White's position, and the c5-bishop aims at f2, fuelling a dangerous attack and leading to highly complex and dynamic middlegames. This opening is perfect for ambitious, tactical players who are comfortable playing with an initiative and are not afraid to embrace unbalanced positions from the outset.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -106987,8 +106987,8 @@
         "Restricting the Opponent"
       ],
       "common_plans": [
-        "Black's Plan: Continue development with ...O-O and ...Re8 to build pressure on the e-file, use the active pieces to create threats against White's king, and potentially advance the d-pawn (...d4) to open the center further.",
-        "White's Plan: Consolidate the position with moves like c3, d3, and O-O, challenge Black's central e4-pawn, and aim to neutralize the initiative by exchanging pieces to reach a favorable endgame with an extra pawn."
+        "Black's Plan: Castle, use the c5-bishop's pressure on f2 and the cramping e4-pawn to create threats against White's king, and bring the a5-knight back into play.",
+        "White's Plan: Consolidate the position with moves like c3, d3 and O-O, challenge Black's central e4-pawn, and aim to neutralise the initiative by exchanging pieces to reach a favourable endgame with an extra pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:20:47.151Z"
@@ -107077,7 +107077,7 @@
       "icsbot": "Alapin Defense, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Alapin Defense is a rare and provocative response to the Ruy Lopez, where Black immediately mirrors White's bishop move with 3...Bb4. This opening sidesteps the vast theory of the main lines, aiming for a more open and often symmetrical game where immediate tactical considerations can take precedence. It suits creative and practical players who wish to pose an early, unexpected question to their opponent and are comfortable navigating less-trodden paths.",
+      "description": "The Alapin Defence is a rare and provocative response to the Ruy Lopez, where Black immediately mirrors White's bishop move with 3...Bb4. This opening sidesteps the vast theory of the main lines, aiming for an open game where immediate tactical considerations can take precedence, although the b4-bishop can be hit by c3 and the e5-pawn is still only defended by the c6-knight. It suits creative and practical players who wish to pose an early, unexpected question to their opponent and are comfortable navigating less-trodden paths.",
       "style_tags": [
         "Unorthodox",
         "Tactical",
@@ -107115,10 +107115,10 @@
         "Exploiting the Pin on f3"
       ],
       "common_plans": [
-        "White: Play c3 and d4 to build a strong center, forcing the black bishop to move or exchange itself.",
-        "White: Castle quickly (O-O) and meet ...Bxc3 with bxc3, using the newly opened b-file for the rook.",
-        "Black: Exchange the bishop for the knight on c3 (...Bxc3) to create doubled pawns, then aim to control the light squares and exploit the structural imbalance.",
-        "Black: Develop rapidly with moves like ...d6 and ...O-O, seeking equality in an open position by challenging White's central control."
+        "White: Play c3 and d4 to build a strong centre, gaining time on the b4-bishop.",
+        "White: Castle quickly and keep developing; the b4-bishop only eyes d2 and can be hit later with c3.",
+        "Black: If White develops the knight to c3, take it with the b4-bishop to double White's pawns, then aim to exploit the structural imbalance.",
+        "Black: Develop rapidly with moves like ...Nge7, ...d6 and ...O-O, seeking equality by challenging White's central control."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:21:22.988Z"
@@ -107269,7 +107269,7 @@
       "icsbot": "Bulgarian Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Bulgarian Variation is a rare and provocative sideline against the Ruy Lopez, immediately challenging White's queenside ambitions. By playing ...a5, Black sidesteps mountains of mainstream theory and steers the game into unique strategic territory, often focusing on queenside control and specific pawn structures. This opening is well-suited for creative and positional players who enjoy surprising their opponents and navigating less-traveled paths.",
+      "description": "The Bulgarian Variation is a rare and provocative sideline against the Ruy Lopez. By playing 3...a5, Black sidesteps mountains of mainstream theory and steers the game into unique strategic territory, gaining a little queenside space and discouraging b4. This opening is well-suited for creative and positional players who enjoy surprising their opponents and navigating less-travelled paths.",
       "style_tags": [
         "Offbeat",
         "Strategic",
@@ -107310,10 +107310,10 @@
         "Provoking White's intentions"
       ],
       "common_plans": [
-        "Black: Solidify the queenside, often by meeting Bxc6 with bxc6 to open the b-file, and prepare a central challenge with ...d5.",
-        "White: Seize the center with c3 and d4, develop rapidly to punish Black's slow ...a5, or exchange on c6 to create a favorable pawn structure and target the a5 pawn.",
-        "Black: Develop pieces harmoniously and use the a5-pawn to restrict White's queenside expansion (b2-b4).",
-        "White: Castle quickly and prepare to reroute the knight (e.g., Nf3-d2-f1-g3) to support a kingside attack if the center becomes locked."
+        "Black: Keep the queenside solid, recapture with the d- or b-pawn if White exchanges on c6, and prepare a central challenge with ...d5.",
+        "White: Seize the centre with c3 and d4, develop rapidly to punish Black's slow ...a5, or exchange on c6 to create a favourable pawn structure and target the a5-pawn.",
+        "Black: Develop pieces harmoniously and use the a5-pawn to keep White's b-pawn from advancing to b4.",
+        "White: Castle quickly, play c3, d4 and Re1, and in slower positions bring the b1-knight round via d2 and f1 to g3, the typical Spanish manoeuvre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:22:15.519Z"
@@ -107462,7 +107462,7 @@
       "icsbot": "Tartakower Gambit, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Tartakower Gambit within the Cozio Defense is a sharp and ambitious response to the Ruy Lopez. Black immediately challenges White's central control with the ...d5 pawn break, leading to dynamic, open positions where piece activity and initiative are paramount. This opening is ideal for aggressive, tactical players who are comfortable with complex, double-edged struggles and are willing to take calculated risks to seize the initiative.",
+      "description": "The Tartakower Gambit within the Cozio Defence is a sharp and ambitious response to the Ruy Lopez. Black immediately challenges White's central control with the ...d5 pawn break, leading to dynamic, open positions where piece activity and initiative are paramount. This opening is ideal for aggressive, tactical players who are comfortable with complex, double-edged struggles and are willing to take calculated risks to seize the initiative.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -107505,8 +107505,8 @@
       ],
       "common_plans": [
         "White: Complete development with O-O-O, challenge Black's central setup with moves like exd5, and launch a kingside pawn storm (h4-h5) to attack the black king.",
-        "Black: Resolve the central tension to free the fianchettoed bishop, generate counterplay against White's king (especially after O-O-O), and use active piece play to compensate for any potential structural weaknesses.",
-        "White: Control the d-file, neutralize the g7-bishop, and consolidate the central space advantage.",
+        "Black: Resolve the central tension to free the fianchettoed bishop, generate counterplay against White's king (especially if White castles queenside), and use active piece play to compensate for any potential structural weaknesses.",
+        "White: Control the d-file, neutralise the g7-bishop, and consolidate the central space advantage.",
         "Black: Create threats along the long diagonal and the e-file, aiming to disrupt White's coordination and prove that White's central setup is overextended."
       ],
       "version": "1.0",
@@ -107760,10 +107760,10 @@
         "Cramped Piece Development"
       ],
       "common_plans": [
-        "White: Play d4 to open the center and challenge Black's setup, often followed by developing pieces to attack the weakened kingside.",
-        "Black: Consolidate with an eventual ...d5, develop the kingside knight to e7, and try to neutralize White's pressure to reach a solid endgame.",
-        "White: Maneuver pieces (especially knights) to exploit the weak squares around Black's king, such as f5 and h5.",
-        "Black: Seek counterplay by challenging White's control of the center or expanding on the queenside."
+        "White: Play d4 to open the centre and challenge Black's setup, often followed by developing pieces to attack the weakened kingside.",
+        "Black: Consolidate with an eventual ...d5, develop the kingside knight to e7, and try to neutralise White's pressure to reach a solid endgame.",
+        "White: Target the weakened light squares around Black's king, especially along the a2-g8 diagonal once the bishop returns to c4.",
+        "Black: Seek counterplay by challenging White's control of the centre or expanding on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T20:24:42.276Z"
@@ -107781,7 +107781,7 @@
       "scid": "Spanish: Pollock Defence"
     },
     "analysis_json": {
-      "description": "The Pollock Defense is a rare and provocative sideline in the Ruy Lopez where Black immediately challenges the b5-bishop with 3...Na5. By moving the knight to the rim, Black aims to disrupt White's typical plans at the cost of temporarily ceding central control and development. This opening is best suited for creative and surprise-oriented players who thrive in unbalanced, non-standard positions and are comfortable defending against a central initiative.",
+      "description": "The Pollock Defence is a rare and provocative sideline in the Ruy Lopez where Black moves the knight to the rim with 3...Na5. The knight no longer defends the e5-pawn, so White can simply take it with Nxe5, while Black's idea is to follow up with ...c6 and ...b5 to chase the bishop and perhaps trade the knight for it. It suits surprise-oriented players who are comfortable in unbalanced, non-standard positions, but it costs time and often a pawn.",
       "style_tags": [
         "Offbeat",
         "Provocative",
@@ -107820,9 +107820,9 @@
         "Exploiting a misplaced piece"
       ],
       "common_plans": [
-        "Black: Challenge the b5-bishop with ...c6, followed by queenside expansion with ...b5.",
-        "White: Seize the center with an early d4, often supported by c3, to punish Black's flank play.",
-        "White: Develop rapidly and target the misplaced knight on a5 or the weakened d5-square.",
+        "Black: Challenge the b5-bishop with ...c6, and once it retreats to a4, gain queenside space and keep hunting it with the b-pawn.",
+        "White: Seize the centre with an early d4, often supported by c3, to punish Black's flank play.",
+        "White: Develop rapidly and exploit the knight on the rim; Nxe5 wins the e5-pawn, which the a5-knight no longer defends.",
         "Black: Aim to reroute the a5-knight back into the game, often via c4 or b7, after achieving queenside objectives."
       ],
       "version": "1.0",
@@ -107901,7 +107901,7 @@
       "icsbot": "Rotary-Albany Gambit, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Rotary-Albany Gambit is a rare and passive response to the Ruy Lopez where Black prepares to fianchetto the queen's bishop. By playing 3...b6, Black neglects the center and allows White to easily seize the initiative, often with a quick d2-d4. This opening is best suited for players who enjoy surprising opponents and navigating unusual, less-theoretical positions, though it is objectively considered dubious.",
+      "description": "The Rotary-Albany Gambit is a rare and passive response to the Ruy Lopez where Black prepares to fianchetto the queen's bishop. By playing 3...b6, Black neglects the centre and allows White to easily seize the initiative, often with a quick d2-d4. This opening is best suited for players who enjoy surprising opponents and navigating unusual, less-theoretical positions, though it is objectively considered dubious.",
       "style_tags": [
         "Offbeat",
         "Unusual",
@@ -107942,9 +107942,9 @@
         "Punishing passive play"
       ],
       "common_plans": [
-        "White: Seize the center with an immediate d4, develop rapidly, and exploit the weakened light squares on Black's queenside.",
+        "White: Seize the centre with an immediate d4, develop rapidly, and exploit the weakened light squares on Black's queenside.",
         "Black: Complete the fianchetto with ...Bb7, challenge White's central control, and aim to consolidate a solid, albeit passive, defensive setup.",
-        "White: Target the c6-knight and the weakened a6-b6 pawn structure.",
+        "White: Keep up the pressure on the c6-knight, which defends e5, for example with d4, aiming to win the e5-pawn or force concessions.",
         "Black: Seek counterplay by challenging the e4 pawn and preparing a potential ...d5 pawn break."
       ],
       "version": "1.0",
@@ -108162,7 +108162,7 @@
       "icsbot": "Vinogradov Var, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Vinogradov Variation is a solid and flexible, though somewhat rare, response to the Ruy Lopez. Black's primary idea is to break the pin on the c6-knight and prepare to meet an eventual Bxc6 with ...dxc6, avoiding the typical doubled pawns of the Exchange Variation. This opening suits a strategic player who enjoys steering the game into less theoretical waters and understands the nuances of a flexible pawn structure.",
+      "description": "The Vinogradov Variation is a rare response to the Ruy Lopez in which Black defends the e5-pawn with the queen, so that after Bxc6 and ...dxc6 White cannot simply take on e5. The drawback is that the queen on e7 blocks the f8-bishop's natural diagonal, so Black often fianchettoes it with ...g6 and ...Bg7. This opening suits a strategic player who enjoys steering the game into less theoretical waters.",
       "style_tags": [
         "Solid",
         "Strategic",
@@ -108204,9 +108204,9 @@
         "Solving the light-squared bishop's development"
       ],
       "common_plans": [
-        "Black: Meet Bxc6 with ...dxc6, opening the d-file and challenging for the center.",
-        "Black: Develop via a fianchetto setup with ...g6 and ...Bg7 to solve the problem of the light-squared bishop.",
-        "White: Castle and play c3-d4 to build a strong pawn center and challenge Black's setup.",
+        "Black: If White exchanges on c6, recapture with the d-pawn, opening the d-file and freeing the c8-bishop.",
+        "Black: Develop the kingside with a fianchetto, ...g6 and ...Bg7, since the e7-queen blocks the f8-bishop's usual diagonal.",
+        "White: Castle and play c3-d4 to build a strong pawn centre and challenge Black's setup.",
         "White: Develop harmoniously, often keeping the tension by delaying the capture on c6 to see how Black commits."
       ],
       "version": "1.0",
@@ -108222,7 +108222,7 @@
     "name": "Spanish: Alapin, 4.c3",
     "scid": "C60i",
     "analysis_json": {
-      "description": "The Alapin variation against the Spanish is a solid and strategic response to Black's unusual 3...Bb4. By playing 4.c3, White prepares to build a strong pawn center with d4, aiming for a lasting space advantage and harmonious development. This opening leads to less theoretical and more strategic battles, ideal for players who prefer to outmaneuver their opponents based on general principles rather than memorized lines.",
+      "description": "The Alapin Variation against the Spanish is a solid and strategic response to Black's unusual 3...Bb4. 4.c3 attacks the bishop at once and prepares d4, aiming for a broad pawn centre, a lasting space advantage and harmonious development. This opening leads to less theoretical and more strategic battles, ideal for players who prefer to outmanoeuvre their opponents based on general principles rather than memorised lines.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -108262,9 +108262,9 @@
         "Exploiting Tempo"
       ],
       "common_plans": [
-        "White: Establish a d4-e4 pawn center, develop pieces harmoniously, and use the space advantage.",
-        "Black: Exchange on c3 to disrupt White's pawn structure (Bxc3), challenge the center with ...d5, and seek counterplay.",
-        "White: Play a4 to question the b4-bishop and gain queenside space.",
+        "White: Build a broad pawn centre with d4 next to the e4-pawn, develop pieces harmoniously, and use the space advantage.",
+        "Black: Retreat the attacked bishop, usually to a5 or c5, then challenge the centre with ...d6 or ...Nf6 and seek counterplay.",
+        "White: Follow up with d4, building a broad centre and, if the bishop has gone to c5, gaining time on it.",
         "Black: Complete development quickly and try to prove White's setup is too slow."
       ],
       "version": "1.0",

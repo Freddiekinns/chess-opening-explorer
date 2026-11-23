@@ -14242,5 +14242,65 @@
     "verdict": "fixed",
     "contentHash": "7d2b49d5ec2f5d64",
     "notes": "Overview said 4.e3 unpins the knight, when it creates the pin to d1; plan 1 gave Rc1 with b1 and c1 still occupied; plan 4 sent the c6-knight to e7 (first rewrite rejected for a false ...Nf6 claim; fixed to ...e6 and ...Nge7 and re-accepted). British spelling."
+  },
+  "r2qkbnr/ppp1pppp/2n5/3p4/2PP2b1/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 4 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "4f81912f7c43d614",
+    "notes": "Overview and plans 2-3 called ...Bg4 a pin (the e2-pawn blocks it); plan 4 recaptured on f3 with the queen through the e2-pawn and wrote gxf3 before ...Bxf3. Rewrote overview and plans 2-4. British spelling."
+  },
+  "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 2 3": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "2a0b56188d1c550c",
+    "notes": "Plan 3 named ...Bxc3 with the f8-bishop shut in and said it opens the b-file for Black's rook. Rewrote plan 3; British spelling elsewhere (Chigorin Defence)."
+  },
+  "r1bqkbnr/ppp1pppp/2n5/8/2pP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "e8186cb9e90e1d4c",
+    "notes": "Plan 1 wrote the centre as a d4-e4 route; plan 4 called ...Bg4 a pin on a knight that is not yet on f3. Rewrote plans 1 and 4; British spelling."
+  },
+  "r1b1k1nr/ppp2ppp/2n5/3q4/3p4/2B1P3/PP2NPPP/R2QKB1R b KQkq - 1 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "3c28d25d7b2c2be9",
+    "notes": "Plan 3 developed Nf3 although the g1-knight is on e2 and castled with the bishop on f1 (first rewrite with g3/Bg2 rejected as unconfirmed; fixed to Nxd4, Be2 and O-O and re-accepted). British spelling."
+  },
+  "r2qkbnr/ppp1pppp/2n5/3p4/2PP2b1/5N2/PP2PPPP/RNBQKB1R w KQkq - 3 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "c71e45fcae6f3379",
+    "notes": "Overview called ...Bg4 a pin (the e2-pawn blocks it); plan 2 wrote gxf3 before ...Bxf3. Rewrote overview and plan 2; British spelling."
+  },
+  "r1bqkbnr/ppp2ppp/2n5/3pp3/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "36e4c3b7aacb35e1",
+    "notes": "Plan 3 invented threats against f2 and an exposed white king; plan 4 developed Be2 with the e-pawn still on e2 and castled with it. Rewrote plans 3-4; British spelling."
+  },
+  "r1bqkbnr/1pp2ppp/2n5/p3P3/2Pp4/P4N2/1P2PPPP/RNBQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "8bad7038c569e30f",
+    "notes": "Plan 1 named b6 as a White target; plan 2 made b5 a Black outpost (first rewrite making b4 a home rejected, since a3 covers b4; fixed and re-accepted). Rewrote plans 1-2."
+  },
+  "r2qkbnr/ppp2ppp/2n5/4P3/2Pp2b1/5N2/PP1NPPPP/R1BQKB1R w KQkq - 4 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "388802a17396c3c1",
+    "notes": "Overview called ...Bg4 a pin; plan 1 said ...Bxf3 creates kingside weaknesses, though the d2-knight recaptures; plan 2 broke the pin with g4 onto the bishop's square. Rewrote overview and plans 1-2; British spelling."
+  },
+  "r1b1kbnr/ppp1qppp/2n5/4P3/2Pp4/5N2/PP1NPPPP/R1BQKB1R w KQkq - 4 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "f3749e42572c357d",
+    "notes": "Overview called the Balogh, Black's 5...Qe7, a White approach; plan 1 gave ...f5; plan 2 routed a knight Nf1-e3 with the f1-bishop at home. Rewrote all."
+  },
+  "rnbqk1nr/ppp2ppp/8/4P3/1bP5/4p3/PP1B1PPP/RN1QKBNR w KQkq - 0 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "40a2aabe97a60b14",
+    "notes": "Plan 1 relied on a d4-pawn that has already captured on e3. Rewrote plan 1."
   }
 }

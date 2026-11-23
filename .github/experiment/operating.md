@@ -113,6 +113,12 @@ have read the pages. So:
   reading in a fresh subagent that returns a short brief, and write the file
   from that. Never start a unit that needs a gate the owner has not passed.
 - No more than ~150 tool calls in all, and at most four subagents.
+- **Measure as you go, since usage is invisible.** Run `date -u` first and note
+  the time. Keep a running count of tool calls, and add up the `subagent_tokens`
+  each subagent reports when it returns. Stop starting new work at 60 minutes,
+  120 tool calls or 400k subagent tokens, whichever comes first, and finish what
+  is open. Record all three in the journal's Cost line, so the owner's usage
+  figures can be matched to them.
 - Read excerpts, not whole large files; never load `api/data/` files whole.
 - If a site is refused by the network allowlist, say which in the journal so the
   owner can add it; do not pass search summaries off as reading.
@@ -128,7 +134,7 @@ Did: … (links to files, branch, PR)
 Decided: … (and why, in a line)
 Assumed: … (anything taken as a default)
 Next: …
-Cost: tool calls ~N, subagents N, web pages N
+Cost: minutes N, tool calls ~N, subagents N (~N k tokens), web pages N
 ```
 
 ## When a run fails

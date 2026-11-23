@@ -1,10 +1,10 @@
 # Plan reference check
 
-1400 references on 1099 of 12377 pages fail the check and show as plain text.
+1386 references on 1089 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5439 name no move, route, square or piece
-- References by kind: {"square":16641,"piece":15933,"move":55514,"route":8556}
-- References by result: {"now":70757,"on-board":14969,"later":9518,"invalid":1400}
+- References by kind: {"square":16645,"piece":15937,"move":55531,"route":8551}
+- References by result: {"now":70778,"on-board":14975,"later":9525,"invalid":1386}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -59,16 +59,17 @@
   - `...Nh6-f7`: One step of ...Nh6-f7 can't be played here
 - **C92 Spanish: Closed, Karpov Variation, 10.d4 Bf6 11.a4 Bb7 12.Na3** (0 views)
   - `c4`: No piece can play c4 here, now or after the plan's earlier moves
-- **D00 Tejler Gambit** (0 views)
+- **D02 London System: Poisoned Pawn Variation** (0 views)
+  - `c7`: No piece can play c7 here, now or after the plan's earlier moves
+- **D02 Queen's Pawn Game: Anti-Torre** (0 views)
+  - `h3`: No piece can play h3 here, now or after the plan's earlier moves
   - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **D00 Trompowsky: 2...d5 3.Bxf6 exf6 4.e3 c6** (0 views)
-  - `...b5-b4`: One step of ...b5-b4 can't be played here
-- **D01 Rapport-Jobava System, with e6** (0 views)
+- **D02 Queen's Pawn Game: Krause Variation** (0 views)
   - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **D01 Richter-Veresov Attack: Two Knights System** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **D01 Richter-Veresov Attack: Two Knights System, Grünfeld Defense** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **D01 Richter-Veresov Attack: Veresov Variation** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-  - `Ne2-g3-e5`: One step of Ne2-g3-e5 can't be played here
+- **D02 Queen's Pawn Game: London System, with e6** (0 views)
+  - `Nd2-f1-g3-e5`: Nd2 is ambiguous: the knights on f3 and b1 can both go there
+  - `...Nh5`: No piece can play Nh5 here, now or after the plan's earlier moves
+- **D02 Queen's Pawn: 2.Nf3 Bf5 3.Bf4** (0 views)
+  - `...Nh5`: No piece can play Nh5 here, now or after the plan's earlier moves
+- **D02 Queen's Pawn: 2.Nf3 Bf5 3.Bf4 c6** (0 views)
+  - `c6-d5-e6`: One step of c6-d5-e6 can't be played here

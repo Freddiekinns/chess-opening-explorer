@@ -8098,10 +8098,10 @@
         "King Safety"
       ],
       "common_plans": [
-        "White: Gambit the b2-pawn with ...Qxb2, then use Nb5 and Rb1 to attack the queen and c7, seeking a rapid attack.",
-        "White: If Black avoids the pawn, continue with central development and pressure.",
+        "White: Let Black take with 5...Qxb2, then hit back with Nb5, threatening Nc7+, and Rb1 to harass the queen, using the lead in development for a quick attack.",
+        "White: If Black declines, keep developing and cover b2 with Rb1 when needed, ready to meet ...c4 with play in the centre.",
         "Black: Accept the gambit with ...Qxb2 and try to survive the ensuing attack while consolidating the material advantage.",
-        "Black: Decline the gambit with moves like ...a6 or ...cxd4, aiming for a more solid and less chaotic middlegame."
+        "Black: Decline the gambit with 5...c4, gaining queenside space, or with 5...a6, which takes b5 from the knight, aiming for a more solid and less chaotic middlegame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:41:06.887Z"
@@ -8181,7 +8181,7 @@
     "moves": "1. Nf3 d5 2. d4 Bg4",
     "name": "Queen's Pawn Game: Anti-Torre",
     "analysis_json": {
-      "description": "The Queen's Pawn Game: Anti-Torre is a provocative and ambitious response to White's flexible d4/Nf3 setup. By immediately pinning the f3-knight with 2...Bg4, Black disrupts White's plans and steers the game into less-traveled, dynamic territory. This opening is perfect for players who enjoy creating early imbalances and are comfortable with sharp, tactical complications, aiming to seize the initiative from the very beginning.",
+      "description": "The Queen's Pawn Game: Anti-Torre is a provocative and ambitious response to White's flexible d4/Nf3 setup. By immediately hitting the f3-knight with 2...Bg4, Black develops the light-squared bishop before ...e6 can shut it in and steers the game into less-travelled, dynamic territory. This opening is perfect for players who enjoy creating early imbalances and are comfortable with sharp, tactical complications, aiming to seize the initiative from the very beginning.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -8220,10 +8220,10 @@
         "Bishop Pair vs. Pawn Structure"
       ],
       "common_plans": [
-        "Black: Maintain the pin with ...Bh5 to provoke h3 and g4, creating long-term weaknesses in White's kingside.",
-        "White: Break the pin with an early Ne5, or play h3 to question the bishop, aiming to gain the bishop pair or a space advantage.",
-        "Black: After development, prepare a central break with ...c5 to undermine White's pawn center.",
-        "White: Develop a solid center with c4 and Nc3, preparing to seize the initiative if Black misplays the pin."
+        "Black: Keep the bishop active: after 3.Ne5, drop back with ...Bf5 or ...Bh5, and meet a kingside pawn chase with ...Bg6, so that White's g- and h-pawn advances leave holes behind them.",
+        "White: Hit the bishop at once with Ne5, or play h3 to question it, aiming to gain the bishop pair or a space advantage.",
+        "Black: After development, prepare a central break with ...c5 to undermine White's pawn centre.",
+        "White: Develop a solid centre with c4 and Nc3, preparing to seize the initiative if Black misplays the bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:41:57.704Z"
@@ -8929,7 +8929,7 @@
     "name": "Queen's Pawn: 2.Nf3 Bf5 3.Bf4",
     "scid": "D02d",
     "analysis_json": {
-      "description": "This variation, often transposing into a London System setup, is a highly solid and system-based approach for White. By developing both the knight and the light-squared bishop before committing the central pawns, White aims for a flexible, low-theory game focused on strategic maneuvering and controlling the e5-square. It suits players who prefer a quiet, positional battle where understanding typical plans and structures is more important than memorizing sharp, tactical lines.",
+      "description": "This variation, often transposing into a London System setup, is a highly solid and system-based approach for White. By developing both the knight and the dark-squared bishop before committing the central pawns, White aims for a flexible, low-theory game focused on strategic manoeuvring and controlling the e5-square. It suits players who prefer a quiet, positional battle where understanding typical plans and structures is more important than memorising sharp, tactical lines.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -8969,9 +8969,9 @@
         "Development with harmony"
       ],
       "common_plans": [
-        "For White: Complete the solid pawn pyramid with c3 and e3, prepare a central advance with e4, and maneuver pieces to control key squares like e5.",
-        "For Black: Challenge White's light-squared bishop with moves like ...Nh5 or ...h6-g5, undermine the d4-pawn with a ...c5 break, and seek active piece play.",
-        "Both sides often maneuver for control of the center, with White trying to maintain a space advantage and Black seeking counter-punching opportunities."
+        "For White: Complete the solid pawn pyramid with c3 and e3, prepare a central advance with e4, and manoeuvre pieces to control key squares like e5.",
+        "For Black: Mirror White with ...e6, ...Nf6 and ...c6 or ...c5, undermine the d4-pawn with the ...c5 break, and use ...Qb6 to hit b2 once the queen's way is clear.",
+        "For White: Exploit the bishop's absence from c8 with c4 and Qb3, hitting b7 and d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:46:08.871Z"
@@ -8986,7 +8986,7 @@
     "name": "Queen's Pawn: 2.Nf3 Bf5 3.Bf4 c6",
     "scid": "D02d",
     "analysis_json": {
-      "description": "This opening is a very solid and system-based approach for both sides, often leading to a quiet, strategic game. White employs a London System setup, aiming for a stable position with clear plans, while Black's response with ...Bf5 and ...c6 creates a robust, resilient structure that resembles a Slav Defense. The game revolves around subtle maneuvering, control of key squares like e5, and long-term strategic planning, making it ideal for patient players who prefer to outmaneuver their opponents rather than engage in immediate tactical brawls.",
+      "description": "This opening is a very solid and system-based approach for both sides, often leading to a quiet, strategic game. White employs a London System setup, aiming for a stable position with clear plans, while Black's response with ...Bf5 and ...c6 creates a robust, resilient structure that resembles a Slav Defence. The game revolves around subtle manoeuvring, control of key squares like e5, and long-term strategic planning, making it ideal for patient players who prefer to outmanoeuvre their opponents rather than engage in immediate tactical brawls.",
       "style_tags": [
         "Positional",
         "Solid",
@@ -9030,8 +9030,8 @@
       "common_plans": [
         "White: Complete the typical London setup with e3, c3, Nbd2, Bd3, and O-O, often aiming for a central pawn break with e4 or a kingside attack.",
         "Black: Develop with ...e6, ...Nf6, ...Nbd7, and challenge White's control, often by putting pressure on the b2 pawn with ...Qb6 or preparing a ...c5 pawn break.",
-        "Black: Create a solid 'Slav Triangle' with c6-d5-e6, aiming to neutralize White's initiative and exploit any overextensions.",
-        "White: Maneuver the knight from f3 to e5 (via d2) to establish a strong central outpost."
+        "Black: Complete the Slav-type set-up with ...e6, pawns on c6, d5 and e6 with the light-squared bishop already outside the chain, and offer to trade the f4-bishop with ...Bd6.",
+        "White: Plant the f3-knight on e5, backed by the f4-bishop and the d4-pawn, as a strong central outpost, with Nbd2 to follow."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:46:30.784Z"
@@ -9695,7 +9695,7 @@
     "name": "Queen's Pawn: 2.Nf3 g6",
     "scid": "D02a",
     "analysis_json": {
-      "description": "This is a flexible and solid hypermodern response to the Queen's Pawn Game. Black signals an intention to fianchetto the dark-squared bishop, aiming to control the center from the flank rather than occupying it directly. The resulting game is highly strategic, focusing on piece placement, long-term plans, and the battle for key diagonals and squares, making it ideal for patient, positional players who enjoy flexible setups.",
+      "description": "This is a flexible and solid hypermodern response to the Queen's Pawn Game. Black signals an intention to fianchetto the dark-squared bishop, aiming to control the centre from the flank rather than occupying it directly. The resulting game is highly strategic, focusing on piece placement, long-term plans, and the battle for key diagonals and squares, making it ideal for patient, positional players who enjoy flexible setups.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -9733,8 +9733,8 @@
         "Transpositional Possibilities"
       ],
       "common_plans": [
-        "Black: Complete the fianchetto with ...Bg7, challenge the center with a ...c5 or ...e5 pawn break, and use the g7-bishop to pressure White's position.",
-        "White: Establish a strong pawn center (often with c4), restrict the influence of the Bg7, and use the space advantage to develop an attack."
+        "Black: Complete the fianchetto with ...Bg7, challenge the centre with a ...c5 or ...e5 pawn break, and use the g7-bishop to pressure White's position.",
+        "White: Establish a strong pawn centre, often with c4 and Nc3, restrict the fianchettoed bishop, and use the space advantage to develop an attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:50:18.159Z"
@@ -9866,7 +9866,7 @@
     "name": "Queen's Pawn: 2.Nf3 Nc6 3.g3 Bg4",
     "scid": "D02g",
     "analysis_json": {
-      "description": "This opening represents a fascinating clash between White's flexible, system-based approach and Black's active, provocative defense. By pinning the f3-knight, Black immediately creates tension and aims to disrupt White's standard development, leading to a strategically complex game where piece activity often trumps static pawn structure. It suits players who enjoy creating early imbalances and fighting for the initiative against quiet setups.",
+      "description": "This opening represents a fascinating clash between White's flexible, system-based approach and Black's active, provocative defence. By hitting the f3-knight with ...Bg4, Black immediately creates tension and aims to disrupt White's standard development, leading to a strategically complex game where piece activity often trumps static pawn structure. It suits players who enjoy creating early imbalances and fighting for the initiative against quiet setups.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -9906,10 +9906,10 @@
         "Fighting for the Initiative"
       ],
       "common_plans": [
-        "White: Complete the fianchetto with Bg2 and O-O, then challenge the pin with h3. White often aims to control the center with a later c4 pawn break and utilize the long diagonal.",
+        "White: Complete the fianchetto with Bg2 and O-O, then question the bishop with h3. White often aims to control the centre with a later c4 pawn break and use the long diagonal.",
         "Black: Maintain pressure on f3, often exchanging with ...Bxf3 to create doubled pawns for White. Black will then fight for central control, typically with a timely ...e5 break, and develop pieces to active squares.",
-        "White: Develop methodically with Bg2, O-O, and Nbd2, preparing to challenge Black's central setup and untangle the position after the inevitable exchange on f3.",
-        "Black: Develop the queenside with ...e6 and ...b5-Bb7 to create counterplay, or play for a direct central assault after developing the kingside knight."
+        "White: Develop methodically with Bg2, O-O, and Nbd2, preparing to challenge Black's central setup and untangle the position after a possible exchange on f3.",
+        "Black: Back the ...e5 break with ...Qd7 and ...O-O-O, a typical Chigorin plan, and keep ...Bh3 in reserve to offer a trade of White's g2-bishop once it arrives."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:51:17.609Z"
@@ -9924,7 +9924,7 @@
     "name": "Queen's Pawn: 3.c3",
     "scid": "D02k",
     "analysis_json": {
-      "description": "The 3.c3 System is a solid and reliable approach against the Queen's Pawn Game, often transposing into a Colle System setup. By bolstering the d4-pawn, White prepares for a gradual central buildup, typically aiming for a timely e4-break. This opening is ideal for players who prefer a safe, strategic game, avoiding sharp, theoretical lines in favor of understanding key plans and piece placements.",
+      "description": "The 3.c3 System is a solid and reliable approach in the Queen's Pawn Game, often transposing into a Colle System setup. By bolstering the d4-pawn, White prepares for a gradual central buildup, typically aiming for a timely e4-break. This opening is ideal for players who prefer a safe, strategic game, avoiding sharp, theoretical lines in favour of understanding key plans and piece placements.",
       "style_tags": [
         "Solid",
         "System-based",
@@ -9964,10 +9964,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White's Plan: Develop harmoniously (Bd3, Nbd2, 0-0) and prepare the e4 pawn break to seize central space and open lines for attack.",
+        "White's Plan: Develop harmoniously (e3, Bd3, Nbd2, O-O) and prepare the e4 pawn break to seize central space and open lines for attack.",
         "White's Plan: Initiate a classic kingside attack, often involving a knight on e5 and the bishop on d3 pointing towards h7.",
-        "Black's Plan: Challenge White's center with an early ...c5, transitioning into a Slav-like structure to fight for the d4-square.",
-        "Black's Plan: Develop solidly, often with ...e6 and ...b6, preparing to fianchetto the light-squared bishop to b7 to control the long diagonal and neutralize White's pressure."
+        "Black's Plan: Challenge the d4-pawn early with ...c5, or bring the light-squared bishop out with ...Bf5 or ...Bg4 before ...e6 so it is not shut in.",
+        "Black's Plan: Develop solidly, often with ...e6 and ...b6, preparing to fianchetto the light-squared bishop to b7 to control the long diagonal and neutralise White's pressure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:51:37.477Z"
@@ -10097,7 +10097,7 @@
     "name": "Queen's Pawn: 3.g3 c6 4.Bg2 Bg4",
     "scid": "D02t",
     "analysis_json": {
-      "description": "This opening represents a strategic and flexible approach for both sides. White's fianchetto setup (g3, Bg2) aims for long-term positional pressure on the long diagonal, while Black's solid c6-d5 pawn structure, combined with the active ...Bg4 pin, immediately challenges White's control of the key e4-square. The resulting game is typically a maneuvering battle, ideal for players who enjoy accumulating small advantages and understanding subtle piece placement over sharp, tactical complications.",
+      "description": "This opening represents a strategic and flexible approach for both sides. White's fianchetto setup (g3, Bg2) aims for long-term positional pressure on the long diagonal, while Black's solid c6-d5 pawn structure, combined with the active ...Bg4, puts pressure on the f3-knight, a key defender of d4 and e5. The resulting game is typically a manoeuvring battle, ideal for players who enjoy accumulating small advantages and understanding subtle piece placement over sharp, tactical complications.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -10137,10 +10137,10 @@
         "Battle for the Bishop Pair"
       ],
       "common_plans": [
-        "White: Play h3 to question the bishop, followed by Ne5 or recapturing with the g-pawn. Complete development with O-O, Nbd2, and prepare a central break with e3 and c4 to activate the g2-bishop.",
-        "Black: Maintain the pin or trade on f3 to create pawn weaknesses. Solidify the center with ...e6 and ...Nbd7, and prepare to challenge White's control with ...dxc4 or expand on the queenside with ...b5.",
-        "White: Maneuver the knight from d2 to f1 to e3 to support the center and prepare for kingside action.",
-        "Black: Develop the light-squared bishop to d6 or e7, complete castling, and seek counterplay based on White's central pawn breaks."
+        "White: Question the bishop with h3 or Ne5, castle, and open the long diagonal with c4 or, after Nbd2, with the e4 break.",
+        "Black: Keep the bishop on g4 or give it up for the f3-knight, solidify the centre with ...e6 and ...Nbd7, and once White plays c4 consider capturing on c4 or the ...b5 expansion.",
+        "White: In the e4 plan, set up Nbd2 and Re1 before pushing e4; if Black takes on e4, the g2-bishop's diagonal opens towards Black's queenside.",
+        "Black: Develop the dark-squared bishop to d6 or e7, castle, and meet White's central breaks by capturing on e4 or c4 to free the position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:52:38.405Z"
@@ -132085,7 +132085,7 @@
     "eco": "D02",
     "src": "wiki_b",
     "analysis_json": {
-      "description": "The Krause Variation is a flexible and modern system where White employs a King's Fianchetto against Black's active central challenge with ...c5. The game takes on a highly strategic character, revolving around the central tension and White's long-term pressure from the g2-bishop. It is well-suited for positional players who enjoy system-based openings and excel at maneuvering and understanding pawn structure nuances, rather than engaging in immediate tactical brawls.",
+      "description": "The Krause Variation is a flexible and modern system where White employs a King's Fianchetto against Black's active central challenge with ...c5. The game takes on a highly strategic character, revolving around the central tension and White's long-term pressure from the g2-bishop. It is well-suited for positional players who enjoy system-based openings and excel at manoeuvring and understanding pawn structure nuances, rather than engaging in immediate tactical brawls.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -132129,8 +132129,8 @@
       "common_plans": [
         "White: Complete development with O-O, play c4 to challenge d5, and use the g2-bishop to exert lasting pressure on the center and queenside.",
         "Black: Develop actively with ...Nf6 and ...e6, resolve the central tension with ...cxd4, and seek counterplay against White's center or on the queenside.",
-        "White: Maneuver the f3-knight to a more active square like e5 to increase central influence.",
-        "Black: Challenge White's fianchetto setup by controlling the long diagonal or creating a kingside attack later in the game."
+        "White: If Black exchanges on d4, recapture with the f3-knight and use it and the g2-bishop to press on the c6-knight and the d5-pawn.",
+        "Black: Keep the d5-pawn firmly supported with ...e6 and ...Nf6 so the g2-bishop bites on a solid pawn, and develop with ...Be7 and ...O-O before deciding when to release the tension with ...cxd4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-22T12:08:50.305Z"
@@ -132442,7 +132442,7 @@
     "name": "Queen's Pawn Game: London System, with e6",
     "added": "Feb 2025",
     "analysis_json": {
-      "description": "The London System is a highly reliable, system-based opening for White, characterized by developing the light-squared bishop to f4 before committing the central pawns. It sidesteps vast amounts of opening theory, leading to a quiet, strategic game focused on solid structures and long-term plans. This opening is perfect for players who prefer a safe, understandable position where they can gradually outmaneuver their opponent without taking excessive risks.",
+      "description": "The London System is a highly reliable, system-based opening for White, characterised by developing the dark-squared bishop to f4 before committing the central pawns. It sidesteps vast amounts of opening theory, leading to a quiet, strategic game focused on solid structures and long-term plans. This opening is perfect for players who prefer a safe, understandable position where they can gradually outmanoeuvre their opponent without taking excessive risks.",
       "style_tags": [
         "System-based",
         "Solid",
@@ -132483,10 +132483,10 @@
         "Preparing a kingside attack"
       ],
       "common_plans": [
-        "White: Complete development with e3, c3, Bd3, Nbd2, and prepare a kingside attack, often starting with h4.",
+        "White: Complete development with e3, c3, Bd3, Nbd2, and prepare a kingside attack, with the d3-bishop and the queen aiming at h7.",
         "Black: Challenge White's setup with ...c5, develop pieces to good squares, and seek counterplay on the queenside or in the center.",
-        "White: Use the e5 square as a key outpost for a knight (e.g., Nd2-f1-g3-e5).",
-        "Black: Neutralize the active Bf4 bishop, often via ...Nh5 or by preparing to trade it."
+        "White: Plant the f3-knight on e5, supported by the f4-bishop and the d4-pawn, and follow with Nbd2 and Bd3 as the base for a kingside attack.",
+        "Black: Neutralise the active f4-bishop by offering a trade with ...Bd6, or by chasing it with ...Nf6 and ...Nh5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-22T12:10:50.202Z"

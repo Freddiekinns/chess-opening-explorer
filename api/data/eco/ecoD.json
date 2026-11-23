@@ -53234,7 +53234,7 @@
       "icsbot": "Bishop Attack, Tarrasch "
     },
     "analysis_json": {
-      "description": "The Pseudo-Tarrasch Bishop Attack is a sharp and provocative response to the solid Tarrasch Defense. By developing the bishop to g5 on move 5, White immediately creates pressure and challenges Black's setup, often leading to tactical skirmishes centered around the d5-pawn. This line is ideal for players who enjoy seizing the initiative and steering the game into dynamic, unbalanced positions rather than the slow, strategic grind typical of many Queen's Gambit lines.",
+      "description": "The Pseudo-Tarrasch Bishop Attack is a sharp and provocative response to the solid Tarrasch Defence. With 5.Bg5, White attacks the d8-queen at once, so Black must block the diagonal or move the queen (...Be7, ...f6 or ...Qb6) before carrying on with development, often leading to tactical skirmishes centred around the d5-pawn. This line is ideal for players who enjoy seizing the initiative and steering the game into dynamic, unbalanced positions rather than the slow, strategic grind typical of many Queen's Gambit lines.",
       "style_tags": [
         "Sharp",
         "Aggressive",
@@ -53275,8 +53275,8 @@
         "Provoking Weaknesses"
       ],
       "common_plans": [
-        "White: Develop quickly to pressure the d5-pawn, exploit the pin along the h4-d8 diagonal, and seek a kingside attack before Black can consolidate the center.",
-        "Black: Respond to the pin with ...Be7, complete development efficiently, and use the central d5-pawn as a source of strength to generate counterplay and control key squares like e4."
+        "White: Develop quickly to pressure the d5-pawn, often taking on c5 to isolate it, and use the g5-bishop to provoke concessions before Black can consolidate the centre.",
+        "Black: Meet the attack on the queen with ...Be7 or ...Qb6 (which also hits b2), complete development efficiently, and use the central d5-pawn as a source of strength to generate counterplay and control the e4-square."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:17:39.607Z"
@@ -53351,7 +53351,7 @@
       "eco_js": "Queen's Gambit Declined: Vienna Variation, 3. Nf3 d5 4. Bg5 Bb4+"
     },
     "analysis_json": {
-      "description": "The Vienna Variation is a sharp and provocative response to the Queen's Gambit, characterized by the immediate check with 4...Bb4+. This move forces White's hand, often leading to complex and less-trodden paths than the mainline QGD, sometimes transposing into the Ragozin Defense. It's an excellent choice for players who want to avoid quiet, symmetrical positions and prefer to create immediate tactical and structural imbalances.",
+      "description": "The Vienna Variation is a sharp and provocative response to the Queen's Gambit, characterised by the immediate check with 4...Bb4+. This move forces White's hand, often leading to complex and less-trodden paths than the mainline QGD, sometimes transposing into the Ragozin Defence. It's an excellent choice for players who want to avoid quiet, symmetrical positions and prefer to create immediate tactical and structural imbalances.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -53389,9 +53389,9 @@
         "Transpositional Play"
       ],
       "common_plans": [
-        "Black: Exchange the b4-bishop for a knight on c3 to create pawn weaknesses, followed by challenging White's central control with a ...c5 pawn break.",
-        "White: Complete development smoothly, aiming to prove Black's check was a tempo loss. After ...Bxc3 bxc3, White will utilize the open b-file and strong pawn center.",
-        "Both sides: Fight for control of the key e4-square and the initiative in the center."
+        "Black: Take on c4 with ...dxc4 and strike with ...c5, or exchange the b4-bishop for a knight on c3 to damage White's pawns.",
+        "White: Block the check, most often with Nc3 (the main line, where Black usually answers ...dxc4) or Nbd2, complete development smoothly and use the strong centre; if Black gives up the bishop for the c3-knight, White gets the bishop pair and a broad pawn centre.",
+        "Both sides: Fight for control of the key e4-square and the initiative in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:18:21.264Z"
@@ -53989,8 +53989,8 @@
       "common_plans": [
         "White: Initiate the queenside minority attack with Rb1 and b4-b5 to create a weakness on c6.",
         "White: Play g4 to challenge the f5-bishop, gain kingside space, and prepare a potential kingside attack.",
-        "Black: Neutralize the minority attack, often with ...a6 and ...b5, or by creating central counterplay.",
-        "Black: Reposition pieces (...Nf6-d7-f8) to defend the kingside and control key central squares like e5."
+        "Black: Neutralise the minority attack, often with ...a6 and ...b5, or by creating central counterplay.",
+        "Black: Reposition pieces (...Nf6-d7-f8) to defend the kingside, with the knight watching the e5-square from d7 on the way."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:21:27.523Z"
@@ -54230,8 +54230,8 @@
         "Struggle for the e4-square"
       ],
       "common_plans": [
-        "Black: Exert pressure on the center (especially e4) with the fianchettoed bishop on b7 and seek counterplay.",
-        "White: Seize central space, restrict the influence of Black's Bb7, and use the development advantage to create threats.",
+        "Black: Develop the queen's bishop with ...Bb7, where it comes to life on the long diagonal once the centre opens (for example after ...dxc4), and seek counterplay with ...c5.",
+        "White: Seize central space, restrict the influence of Black's b7-bishop once it arrives, and use the development advantage to create threats.",
         "White: Play cxd5 to open the position, challenge Black's central pawn, and gain control of the c-file.",
         "Black: After an exchange on d5, use the resulting central pawn majority to control key squares and restrict White's pieces."
       ],
@@ -54320,7 +54320,7 @@
       "icsbot": "Miladinovic Gambit, QGD "
     },
     "analysis_json": {
-      "description": "The Miladinovic Gambit is a sharp and aggressive attempt by White to seize the initiative in the Queen's Gambit Declined. By sacrificing a pawn with 5.f3, White aims to build a powerful pawn center, open the f-file for an attack, and create immediate tactical complications. This opening is perfect for aggressive, creative players who enjoy taking calculated risks and are comfortable navigating sharp, unbalanced positions from the very beginning.",
+      "description": "The Miladinovic Gambit is a sharp and aggressive attempt by White to seize the initiative in the Queen's Gambit Declined. By sacrificing a pawn with 5.f3, White aims to build a powerful pawn centre, half-open the f-file for an attack, and create immediate tactical complications. This opening is perfect for aggressive, creative players who enjoy taking calculated risks and are comfortable navigating sharp, unbalanced positions from the very beginning.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -54362,9 +54362,9 @@
         "Development Race"
       ],
       "common_plans": [
-        "White's Plan: After Black plays ...exf3, White recaptures (Nxf3 or Bxf3) and aims to dominate the center with a future e4-e5 push. White will develop rapidly, often pointing pieces towards the kingside and using the open f-file for a rook attack.",
+        "White's Plan: After 5...exf3, recapture with the knight and use the lead in development, the half-open f-file and the c4-d4 centre for a quick attack, often with Bd3 and O-O pointing pieces towards the kingside.",
         "Black's Plan: Accept the gambit with 5...exf3, aiming to consolidate the extra pawn and weather the storm. Black must develop quickly, challenge White's central control with moves like ...c5, and seek counterplay against White's potentially overextended position.",
-        "Black's Alternative: Decline the gambit with 5...e5, immediately striking back in the center. This changes the nature of the game, leading to a different set of complex, open positions where Black avoids a purely defensive role."
+        "Black's Alternative: Decline the gambit with 5...e5, immediately striking back in the centre. This changes the nature of the game, leading to a different set of complex, open positions where Black avoids a purely defensive role."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:23:25.312Z"
@@ -55633,7 +55633,7 @@
     "name": "Semi-Slav: 4.cxd5 exd5 5.Bf4",
     "scid": "D31m",
     "analysis_json": {
-      "description": "This variation of the Semi-Slav leads to a Carlsbad pawn structure, setting the stage for a deep, strategic battle. By developing the light-squared bishop to f4 before playing e3, White avoids entombing it and aims to control key squares, often preparing a minority attack on the queenside. This opening is perfect for positional players who appreciate long-term planning, subtle maneuvering, and exploiting structural nuances.",
+      "description": "This variation of the Semi-Slav leads to a Carlsbad pawn structure, setting the stage for a deep, strategic battle. By developing the dark-squared bishop to f4 before playing e3, White keeps it outside the pawn chain and aims to control key squares, often preparing a minority attack on the queenside. This opening is perfect for positional players who appreciate long-term planning, subtle manoeuvring, and exploiting structural nuances.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -55674,9 +55674,9 @@
       ],
       "common_plans": [
         "White: Execute the queenside minority attack (b4-b5) to create a weakness on c6 or open the b-file for the rooks.",
-        "White: Control the center, prevent Black's ...e5 break, and utilize the active light-squared bishop.",
-        "Black: Counter White's queenside plan by launching a kingside attack, often involving ...Ne4 and piece pressure.",
-        "Black: Solidify the queenside with moves like ...a6 and ...b5, and work to activate the 'bad' light-squared bishop."
+        "White: Control the centre, especially the e5-square, develop with e3, Bd3 and Nf3, and use the active dark-squared bishop.",
+        "Black: Counter White's queenside plan by launching a kingside attack, often with a knight on e4 and piece pressure.",
+        "Black: Develop the light-squared bishop actively to f5, challenge the f4-bishop with ...Bd6, and meet the minority attack with ...a5 or ...b5 when needed."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:29:51.705Z"
@@ -55868,7 +55868,7 @@
     "name": "Semi-Slav: 4.e3 Nf6",
     "scid": "D31o",
     "analysis_json": {
-      "description": "The Semi-Slav Defense is a premier, highly respected response to the Queen's Gambit, blending the solidity of the Queen's Gambit Declined (...e6) with the dynamic potential of the Slav Defense (...c6). This setup creates a formidable central pawn triangle, leading to strategically profound and complex middlegames. It is perfect for the ambitious, well-prepared player who enjoys deep strategic planning, understanding pawn structures, and is ready for both quiet maneuvering and sharp, tactical complications that can arise from the central tension.",
+      "description": "The Semi-Slav Defence is a premier, highly respected response to the Queen's Gambit, blending the solidity of the Queen's Gambit Declined (...e6) with the dynamic potential of the Slav Defence (...c6). This setup creates a formidable central pawn triangle, leading to strategically profound and complex middlegames. It is perfect for the ambitious, well-prepared player who enjoys deep strategic planning, understanding pawn structures, and is ready for both quiet manoeuvring and sharp, tactical complications that can arise from the central tension.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -55911,10 +55911,10 @@
         "Prophylaxis and maneuvering"
       ],
       "common_plans": [
-        "For White: Complete development with Nf3, Bd3, and 0-0. Maintain central space and pressure, often aiming to prove Black's c8-bishop is a weakness. Prepare to meet Black's ...dxc4 with Bxc4, leading to sharp Meran or quieter Anti-Meran lines.",
-        "For Black: Complete development with ...Nbd7, ...Be7, and 0-0. Prepare to resolve the central tension, typically by playing ...dxc4 followed by queenside expansion with ...b5 (the Meran Variation).",
+        "For White: Complete development with Nf3, Bd3 and O-O. Maintain central space and pressure, often aiming to prove Black's c8-bishop is a weakness. Meet Black's capture on c4 by recapturing with the bishop, leading to sharp Meran or quieter Anti-Meran lines.",
+        "For Black: Complete development with ...Nbd7, ...Be7 and ...O-O. Prepare to resolve the central tension, typically by playing ...dxc4 followed by queenside expansion with ...b5 (the Meran Variation).",
         "For Black: A key goal is to solve the problem of the c8-bishop, either by developing it to b7 after queenside expansion or finding another active square.",
-        "For White: In many lines, White will try to execute a central pawn break with d4-d5 or use the space advantage to launch an attack on the kingside or queenside."
+        "For White: In many lines, White will try to execute the central e3-e4 break after Bd3 and Qc2, or use the space advantage to launch an attack on the kingside or queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:31:10.502Z"
@@ -56046,7 +56046,7 @@
     "name": "Semi-Slav: Marshall Gambit, 4...dxe4",
     "scid": "D31w",
     "analysis_json": {
-      "description": "The Marshall Gambit is a sharp and ambitious attempt by White to seize the initiative against the solid Semi-Slav. By sacrificing the e-pawn, White gains a lead in development and central space, aiming for a swift attack. This opening leads to dynamic, unbalanced positions where concrete calculation is paramount, suiting players who thrive on tactical complications and fighting for the initiative from the very first moves.",
+      "description": "The Marshall Gambit is a sharp and ambitious attempt by White to seize the initiative against the solid Semi-Slav. White usually wins the e4-pawn back with Nxe4, and in the main line, 5...Bb4+ 6.Bd2 Qxd4 7.Bxb4 Qxe4+, gives up the d-pawn instead for a lead in development and play on the dark squares that Black's departed dark-squared bishop can no longer guard. This opening leads to dynamic, unbalanced positions where concrete calculation is paramount, suiting players who thrive on tactical complications and fighting for the initiative from the very first moves.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -56089,9 +56089,9 @@
         "Attack on the King"
       ],
       "common_plans": [
-        "White aims to use the open e-file and superior development to launch a quick attack, often involving pieces like Bc4, Nf3, and Qe2 to pressure Black's kingside.",
-        "Black's primary goal is to consolidate, complete development safely, and neutralize White's initiative, often being prepared to return the extra pawn to reach a stable or slightly better endgame.",
-        "White often castles quickly and uses the f1-rook on the e-file to increase pressure on Black's central files and weak points.",
+        "White aims to regain the e4-pawn with Nxe4 and, in the main line, gives up the d-pawn to gain a lead in development and attack on the dark squares around Black's king.",
+        "Black's primary goal is to consolidate, complete development safely, and neutralise White's initiative, often being prepared to return the extra pawn to reach a stable or slightly better endgame.",
+        "White often castles quickly and brings a rook to the centre to increase pressure on Black's central files and weak points.",
         "Black seeks to challenge White's central control with moves like ...b5 or ...Nd7-b6, aiming to trade pieces to defuse the attack."
       ],
       "version": "1.0",
@@ -56399,8 +56399,8 @@
       ],
       "common_plans": [
         "White: Complete development with Nf3 and O-O, then launch a direct attack on the uncastled black king, often targeting the f7 and c7 squares.",
-        "Black: Defend accurately against White's initiative, develop pieces with moves like ...Nd7, and aim to trade pieces to simplify into a winning endgame with the extra pawn.",
-        "White: Prevent Black from castling and keep the black king stuck in the center as a long-term target.",
+        "Black: Defend accurately against White's initiative, develop with ...Ne7, which blocks the b4-bishop's diagonal and makes castling possible, and aim to trade pieces and convert the extra pawn in the endgame.",
+        "White: Prevent Black from castling and keep the black king stuck in the centre as a long-term target.",
         "Black: Use the active queen and the ...Na6 knight to create counter-threats, forcing White to respond and buying time to consolidate."
       ],
       "version": "1.0",
@@ -56459,10 +56459,10 @@
         "Converting an Advantage"
       ],
       "common_plans": [
-        "White: Complete development rapidly with Be3, 0-0, and f3. Use open files and active pieces to generate a powerful attack against Black's king, often targeting the exposed black queen.",
-        "Black: Consolidate the position by developing pieces safely (e.g., ...Na6, ...Nd7, ...b6, ...Bb7). Aim to neutralize White's initiative, trade pieces to relieve pressure, and eventually convert the material advantage in an endgame.",
-        "White: Create threats on the kingside, sometimes involving a rook lift (Re1-e3-g3/h3) to exploit weaknesses around the black king.",
-        "Black: Find a safe square for the king, which may involve preparing for queenside castling or simply keeping it in the center behind a solid pawn shield."
+        "White: Use the b4-bishop to keep Black's king from castling short, bring the queen to d6 or d2 and the rooks to the centre, and gain time against Black's exposed queen.",
+        "Black: Consolidate by developing safely (e.g. ...Na6, ...Ne7, ...b6 and ...Bb7), neutralise White's initiative, trade pieces to relieve the pressure, and eventually convert the extra pawn in an endgame.",
+        "White: Create threats against the king in the centre, using the d-file and the dark squares weakened by the loss of Black's dark-squared bishop.",
+        "Black: Find a safe square for the king, which may involve preparing for queenside castling or simply keeping it in the centre behind a solid pawn shield."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:33:48.100Z"

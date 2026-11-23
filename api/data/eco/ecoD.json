@@ -3030,10 +3030,10 @@
         "Provocation"
       ],
       "common_plans": [
-        "White aims to castle queenside and launch a pawn storm with h2-h4-h5 to rip open the Black kingside, seeking a decisive attack.",
-        "Black focuses on neutralizing White's immediate threats, completing development, and exploiting White's overextended position and exposed king.",
+        "White aims to castle queenside and launch a pawn storm with the h-pawn, hitting the g6-bishop and trying to rip open Black's kingside.",
+        "Black: Meet the check with ...Nc6, which also guards the b4-bishop, then complete development and use the pin on the c3-knight to keep White tied up.",
         "White often sacrifices more material to maintain the attack and prevent Black from consolidating the extra pawn.",
-        "Black may seek to trade queens to defuse the attack and transition into a favorable endgame with a material advantage."
+        "Black may seek to trade queens to defuse the attack and transition into a favourable endgame with a material advantage."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:13:13.554Z"
@@ -3675,7 +3675,7 @@
     "name": "Hodgson Attack, 2...h6",
     "scid": "D00h",
     "analysis_json": {
-      "description": "The Hodgson Attack with 2...h6 is a provocative and less-trodden path against the Queen's Pawn Game. White immediately develops the bishop to g5 to disrupt Black's setup, while Black's 2...h6 is a practical and challenging response that forces White's hand. The resulting game is often a strategic battle focused on imbalances and piece activity, suiting players who prefer to pose problems and avoid heavy theory in favor of creative play.",
+      "description": "The Hodgson Attack with 2...h6 is a provocative and less-trodden path against the Queen's Pawn Game. White immediately develops the bishop to g5 to disrupt Black's setup, while Black's 2...h6 is a practical and challenging response that forces White's hand. The resulting game is often a strategic battle focused on imbalances and piece activity, suiting players who prefer to pose problems and avoid heavy theory in favour of creative play.",
       "style_tags": [
         "Provocative",
         "Strategic",
@@ -3715,8 +3715,8 @@
         "Bishop vs Knight imbalance"
       ],
       "common_plans": [
-        "White: Maintain pressure with Bh4, aiming to provoke ...g5 to weaken Black's kingside. Develop with Nf3, e3, and c4 to control the center and challenge Black's d5-pawn.",
-        "Black: Develop soundly with moves like ...Nf6, ...c5, and ...Bf5. Use the tempo gained by ...h6 to complete development and challenge White's central control. If White plays Bxf6, Black aims to utilize the long-term advantage of the bishop pair."
+        "White: Retreat with Bh4, keeping an eye on e7, and if Black chases the bishop with the g-pawn, drop back with Bg3; develop with Nf3, e3 and c4 to challenge the d5-pawn.",
+        "Black: Develop soundly with ...Nf6, ...c5 and ...Bf5, using the time ...h6 has gained to challenge White's central control; if White ever gives up the bishop for the f6-knight, Black keeps the bishop pair."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:16:49.317Z"
@@ -3829,8 +3829,8 @@
         "Central Control"
       ],
       "common_plans": [
-        "White: Retreat the bishop (Bh4), prepare a kingside attack (h4-h5), and exploit the light-square weaknesses around Black's king.",
-        "Black: Seize the center with ...e5, develop quickly to generate counterplay, and potentially castle queenside to secure the king."
+        "White: Retreat the bishop with Bh4 or Bf4, then strike in the centre with e4 or c4, exploiting the light squares that ...f6 has weakened around Black's king.",
+        "Black: Seize the centre with ...e5, develop quickly to generate counterplay, and potentially castle queenside to secure the king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:17:27.925Z"
@@ -3904,7 +3904,7 @@
     "name": "Hodgson Attack: 2...h6 3.Bh4 c6",
     "scid": "D00h",
     "analysis_json": {
-      "description": "The Hodgson Attack with 3...c6 is a modern and flexible system where Black adopts a solid, Slav-like setup to counter White's early aggression. By playing ...h6 and ...c6, Black neutralizes the immediate threats from the Bg5-h4 bishop and prepares for a strategically complex middlegame. This opening suits players who enjoy a subtle, strategic battle, aiming to outmaneuver their opponent rather than engaging in immediate tactical fireworks.",
+      "description": "The Hodgson Attack with 3...c6 is a modern and flexible system where Black adopts a solid, Slav-like setup to counter White's early aggression. By playing ...h6 and ...c6, Black neutralises the immediate threats from the Bg5-h4 bishop and prepares for a strategically complex middlegame. This opening suits players who enjoy a subtle, strategic battle, aiming to outmanoeuvre their opponent rather than engaging in immediate tactical fireworks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -3944,8 +3944,8 @@
         "The Nuisance Bishop on h4"
       ],
       "common_plans": [
-        "White: Play for a kingside attack, often involving Ne5 and f4, or sacrifice the bishop on f6 to damage Black's pawn structure.",
-        "Black: Complete development, challenge White's central control with moves like ...e5, and try to trap or trade the h4-bishop.",
+        "White: Develop with Nf3 and e3, with a later Ne5 backed up by f4 a way to build a grip on the kingside.",
+        "Black: Complete development with ...Bf5, ...Nd7 and ...e6, or aim for ...e5, and keep ...g5 in reserve to chase the h4-bishop.",
         "White: Develop with Nf3, e3, Bd3, and c4, aiming for a small but stable space advantage.",
         "Black: Use the queenside for counterplay with ...Qb6, putting pressure on the b2 pawn."
       ],
@@ -4148,7 +4148,7 @@
       "eco_js": "Queen's Pawn Game, 2. e3"
     },
     "analysis_json": {
-      "description": "The 2.e3 system in the Queen's Pawn Game is a quiet, solid, and highly flexible approach for White. It sidesteps the main theoretical battles of the Queen's Gambit, aiming instead for harmonious development and a stable central presence. This opening is perfect for strategic players who prefer to understand plans and ideas rather than memorize sharp variations, leading to a game where patient maneuvering and long-term strategy are key.",
+      "description": "The 2.e3 system in the Queen's Pawn Game is a quiet, solid, and highly flexible approach for White. It sidesteps the main theoretical battles of the Queen's Gambit, aiming instead for harmonious development and a stable central presence. This opening is perfect for strategic players who prefer to understand plans and ideas rather than memorise sharp variations, leading to a game where patient manoeuvring and long-term strategy are key.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -4189,10 +4189,10 @@
         "Restricting Black's Counterplay"
       ],
       "common_plans": [
-        "White aims for a classic setup with Nf3, Bd3, 0-0, and Nbd2, often preparing the central e3-e4 pawn break to open the position favorably.",
-        "A primary plan for White is to build up for a kingside attack, often involving transferring pieces like Ne5, Qh5, and using the f-pawn.",
-        "Black's main counter-plan is to challenge White's center with the ...c7-c5 pawn break, aiming to open the c-file and create queenside pressure.",
-        "Black will develop pieces to solid squares (...Nf6, ...e6, ...Be7) and seek to neutralize White's central control and attacking ideas before creating their own chances."
+        "White aims for a classic setup with Nf3, Bd3, 0-0, and Nbd2, often preparing the central e3-e4 pawn break to open the position favourably.",
+        "White can also build up for a kingside attack in Colle or Stonewall style, with Nf3-e5, f4 and Bd3 aimed at h7.",
+        "Black's main counter-plan is to challenge White's centre with the ...c7-c5 pawn break, aiming to open the c-file and create queenside pressure.",
+        "Black will develop pieces to solid squares (...Nf6, ...e6, ...Be7) and seek to neutralise White's central control and attacking ideas before creating their own chances."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:19:08.584Z"
@@ -4274,7 +4274,7 @@
       "icsbot": "Sarratt Attack "
     },
     "analysis_json": {
-      "description": "The Accelerated London System is a highly popular and solid opening choice for White, characterized by the immediate development of the light-squared bishop to f4. It's a system-based approach, meaning White can employ a similar setup against many of Black's responses, reducing the need for extensive theoretical knowledge. This opening is perfect for players who prefer a safe, strategic game, aiming to build a harmonious position before launching well-prepared middlegame plans, often involving a kingside attack.",
+      "description": "The Accelerated London System is a highly popular and solid opening choice for White, characterised by the immediate development of the dark-squared bishop to f4. It's a system-based approach, meaning White can employ a similar set-up against many of Black's responses, reducing the need for extensive theoretical knowledge. This opening is perfect for players who prefer a safe, strategic game, aiming to build a harmonious position before launching well-prepared middlegame plans, often involving a kingside attack.",
       "style_tags": [
         "System-based",
         "Solid",
@@ -4314,8 +4314,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White aims to form the c3-d4-e3 pawn triangle, develop knights to f3 and d2, and prepare either a central e4-break or a kingside attack.",
-        "Black typically challenges the center with ...c5, develops pieces naturally, and may try to harass the Bf4 with moves like ...Nh5 or ...Qb6."
+        "White aims for the London pawn triangle on c3, d4 and e3 by playing c3 and e3, develops the knights with Nf3 and Nd2, and prepares either a central e4-break or a kingside attack.",
+        "Black typically challenges the centre with ...c5, develops pieces naturally, and may harass the f4-bishop with ...Nf6-h5 or hit b2 with ...Qb6."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:19:48.826Z"
@@ -4646,7 +4646,7 @@
       "icsbot": "Alburt Defense, QP "
     },
     "analysis_json": {
-      "description": "The Alburt Defense is a solid and strategic response to the Chigorin Variation, immediately developing the light-squared bishop to f5. This approach, reminiscent of the Slav Defense, aims to create a robust central presence and solve the problem of the 'bad' bishop early on. The resulting games are typically positional, focusing on piece activity and control of key squares, making it ideal for players who prefer strategic maneuvering over sharp, tactical complications.",
+      "description": "The Alburt Defence is a solid and strategic response to the Chigorin Variation, immediately developing the light-squared bishop to f5. This approach, reminiscent of the Slav Defence, aims to create a robust central presence and solve the problem of the 'bad' bishop early on. The resulting games are typically positional, focusing on piece activity and control of key squares, making it ideal for players who prefer strategic manoeuvring over sharp, tactical complications.",
       "style_tags": [
         "Positional",
         "Solid",
@@ -4686,9 +4686,9 @@
         "Slav-like structures"
       ],
       "common_plans": [
-        "For Black: Solidify the center with ...e6 and ...c6, complete development with ...Nf6, and prepare a queenside pawn break like ...c5.",
-        "For White: Challenge the Bf5 bishop with moves like g4 or Nh4 to gain tempo, fight for central control by preparing e2-e4, and develop pieces to active squares.",
-        "For Black: Reposition the Bf5 bishop if attacked (e.g., to g6) and aim for counterplay against White's center or extended kingside.",
+        "For Black: Solidify the centre with ...e6 and ...c6, complete development with ...Nf6, and prepare a queenside pawn break like ...c5.",
+        "For White: Challenge the f5-bishop with Nf3-h4, or play f3 and e4 to build a big centre with gain of time, and develop pieces to active squares.",
+        "For Black: Reposition the Bf5 bishop if attacked (e.g., to g6) and aim for counterplay against White's centre or extended kingside.",
         "For White: Complete development with Nf3, Bf4/Bg5, e3, and castle, seeking a small but persistent spatial or positional advantage."
       ],
       "version": "1.0",
@@ -133010,9 +133010,9 @@
         "Consolidation"
       ],
       "common_plans": [
-        "White: Castle short and use the open f-file for a rook lift (Rf3-g3/h3) to attack the kingside.",
+        "White: Castle short and use the half-open f-file and the queen to attack the kingside, often with Bg5 pinning the f6-knight against the queen.",
         "White: Develop the queen to e2 or h5 to support the attack and prevent piece trades.",
-        "Black: Complete development with ...Be7, ...0-0, and ...b6 followed by ...Bb7 to challenge White's control.",
+        "Black: Complete development with ...Be7, castling, and ...b6 followed by ...Bb7 to challenge White's control of the long diagonal.",
         "Black: Neutralize White's initiative by exchanging pieces and aim to convert the extra pawn in the endgame."
       ],
       "version": "1.0",
@@ -134873,7 +134873,7 @@
     "moves": "1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 Bf5 5. g4 Bg6 6. g5 Nd5 7. fxe4",
     "src": "chessGraph",
     "analysis_json": {
-      "description": "The Kampars Gambit is a hyper-aggressive and sharp variation of the Blackmar-Diemer Gambit, defined by the provocative g2-g4-g5 pawn thrust. White sacrifices a pawn for a massive lead in development and a direct kingside attack, aiming to create chaos and overwhelm the opponent before they can consolidate. This opening is perfect for daring, tactical players who enjoy high-risk, high-reward situations and excel at maintaining the initiative at all costs.",
+      "description": "The Kampars Gambit is a hyper-aggressive and sharp variation of the Blackmar-Diemer Gambit, in which White drives the f6-knight to d5 with the g2-g4-g5 pawn thrust and then takes back on e4, attacking the knight. After the usual 7...Nxc3 8.bxc3 Bxe4 White is a pawn down again, but has open lines and a lead in development for a kingside attack. This opening is perfect for daring, tactical players who enjoy high-risk, high-reward situations and excel at maintaining the initiative at all costs.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -134916,10 +134916,10 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White aims for rapid development (Bc4, Ne2), using the open f-file and g-pawn to launch a direct assault on the Black king.",
-        "White often sacrifices more material to fuel the attack, with rook lifts (Rf3-h3) being a common idea.",
-        "Black seeks to consolidate the material advantage, neutralize White's threats through exchanges, and complete development safely.",
-        "Black often launches a counterattack against White's weakened king position or overextended center."
+        "White aims for rapid development (Bc4, Ne2, Qe2), using the half-open f-file and the advanced g-pawn to launch a direct assault on the black king.",
+        "White often gives up more material to keep the initiative, and after castling a rook can join the attack along the f-file.",
+        "Black seeks to consolidate: ...Nxc3 bxc3 Bxe4 wins a pawn, after which Black completes development safely and trades pieces to neutralise White's threats.",
+        "Black often launches a counterattack against White's weakened king position or overextended centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-22T12:23:00.381Z"
@@ -135091,10 +135091,10 @@
         "Opening Lines for Attack"
       ],
       "common_plans": [
-        "White: Castle queenside to use the h-pawn in the attack, utilize the open f-file for the rook, and create threats against Black's king with active pieces.",
-        "Black: Complete development and castle kingside, challenge White's central pieces, neutralize the attack by trading pieces, and aim to convert the extra pawn in the endgame.",
-        "White: Provoke exchanges on e4 (e.g., Nxe4, dxe4) to open the d-file and create further attacking possibilities against Black's center.",
-        "Black: Solidify the position with moves like ...c5 to undermine White's center and create counter-chances on the queenside."
+        "White: Aim the e4-knight and g5-bishop at f6, where Nxf6+ can strip away a defender of Black's king, then castle and bring the rooks to the half-open f-file.",
+        "Black: Complete development and castle kingside, challenge White's central pieces, neutralise the attack by trading pieces, and aim to convert the extra pawn in the endgame.",
+        "White: Keep the pieces trained on Black's king, so that if Black exchanges with ...Nxe4, the d3-bishop recaptures onto a strong diagonal.",
+        "Black: Simplify with ...Nxe4 where possible and free the game with ...e5, or hit the d3-bishop with ...Nb4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-22T12:23:57.205Z"

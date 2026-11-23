@@ -32035,7 +32035,7 @@
       "icsbot": "Krause Attack, Slav "
     },
     "analysis_json": {
-      "description": "The Krause Attack is one of White's most aggressive and principled attempts against the solid Czech Variation of the Slav. By immediately planting a knight on the e5-outpost, White aims to seize the initiative, disrupt Black's development, and launch a swift kingside attack. This opening leads to sharp, tactical, and theory-heavy positions, ideal for aggressive players who thrive on concrete calculation and fighting for an early advantage.",
+      "description": "The Krause Attack is one of White's most aggressive and principled attempts against the solid Czech Variation of the Slav. By immediately planting a knight on e5, White aims to win back the c4-pawn quickly, often with Nxc4, or to build a big centre with f3 and e4 that gains time on the f5-bishop. This opening leads to sharp, tactical, and theory-heavy positions, ideal for aggressive players who thrive on concrete calculation and fighting for an early advantage.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -32080,10 +32080,10 @@
         "Provoking and Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White: Support the Ne5 knight with f4, prepare a kingside pawn storm with g4-h4, and target the f7-square, often with a sacrifice.",
-        "Black: Challenge the Ne5 knight with ...Nbd7, followed by ...e6 and ...Nxe5, to neutralize White's primary attacking piece.",
-        "Black: Consolidate the position, complete development, and seek counterplay on the queenside by targeting the a4 and c4 pawns.",
-        "White: Prevent Black from achieving the ...e5 pawn break, which would equalize the position and relieve central pressure."
+        "White: Win back the c4-pawn with Nxc4, or play f3 and e4 to build a big centre, gaining time on the f5-bishop.",
+        "Black: Challenge the e5-knight with ...Nbd7, and after it takes on c4, prepare a central pawn strike on e5 with ...Qc7, or play ...e6 and ...Bb4 against the f3 and e4 plan.",
+        "Black: Consolidate the position, complete development, and hold the extra c4-pawn only as long as it is safe, using the active f5-bishop for counterplay.",
+        "White: Stop Black from freeing the game with a central pawn break, which would equalise the position and relieve central pressure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T18:22:18.222Z"
@@ -32353,7 +32353,7 @@
     "name": "Slav: Central, 6.Ne5 Na6",
     "scid": "D17g",
     "analysis_json": {
-      "description": "A sophisticated and flexible response to White's most aggressive setup in the Slav, the Chebanenko variation with 6...Na6 prepares to challenge White's central control from the flank. Black's knight is typically rerouted to b4 to pressure d4 and c2, leading to strategically complex middlegames that blend positional maneuvering with sharp tactical possibilities. This opening is ideal for patient, strategic players who enjoy subtle, long-term battles and creating counterplay from a solid foundation.",
+      "description": "A flexible response to White's most aggressive setup in the Slav, 6...Na6 develops the knight towards b4 and c5 rather than d7. The knight is typically brought to b4, where it eyes c2 and d3, leading to strategically complex middlegames that blend positional manoeuvring with sharp tactical possibilities. This opening is ideal for patient, strategic players who enjoy subtle, long-term battles and creating counterplay from a solid foundation.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -32395,9 +32395,9 @@
         "Knight Maneuvers"
       ],
       "common_plans": [
-        "White: Support the e5-knight with f3, prepare the e2-e4 pawn push, develop the light-squared bishop, and neutralize Black's queenside pressure.",
-        "Black: Maneuver the Na6 to b4 to attack d4 and c2, prepare the ...c5 or ...e5 pawn breaks to challenge the center, and create pressure against White's queenside.",
-        "White: Exchange on f6 (Nxf6) to damage Black's pawn structure, followed by developing the kingside and exploiting the weakened light squares.",
+        "White: Support the e5-knight with f3, prepare the e4 push, develop the light-squared bishop, and neutralise Black's queenside pressure.",
+        "Black: Bring the a6-knight to b4, eyeing the c2- and d3-squares, prepare the ...c5 break against the centre, and create pressure against White's queenside.",
+        "White: Win back the c4-pawn with Nxc4, then develop the kingside with e4 or with g3 and Bg2.",
         "Black: Maintain the solid pawn structure, complete development, and use the active Bf5 bishop to create problems for White's king position or central setup."
       ],
       "version": "1.0",
@@ -32413,7 +32413,7 @@
     "name": "Slav: Central, 6.Ne5 Na6 7.f3",
     "scid": "D17g",
     "analysis_json": {
-      "description": "This variation of the Slav Defense initiates a sharp and theoretically dense struggle. White's ambitious 7.f3 signals a direct attempt to seize the center with e4, challenging Black's active bishop and aiming for a space advantage. The resulting positions are highly dynamic and complex, suiting players who are well-prepared, enjoy tactical calculation, and are comfortable navigating double-edged scenarios where central control clashes with active piece play.",
+      "description": "This variation of the Slav Defence initiates a sharp and theoretically dense struggle. White's ambitious 7.f3 signals a direct attempt to seize the centre with e4, challenging Black's active bishop and aiming for a space advantage. The resulting positions are highly dynamic and complex, suiting players who are well-prepared, enjoy tactical calculation, and are comfortable navigating double-edged scenarios where central control clashes with active piece play.",
       "style_tags": [
         "Sharp",
         "Aggressive",
@@ -32454,9 +32454,9 @@
         "The fate of the light-squared bishops"
       ],
       "common_plans": [
-        "White: Execute the e2-e4 push, drive back the f5-bishop, consolidate the center, and launch a kingside attack.",
-        "Black: Undermine White's center with ...e5 or ...c5, use the Na6 for queenside pressure (e.g., ...Nb4), and create counterplay against White's extended position.",
-        "White: Develop the light-squared bishop, often to d3 or via g3 to b2, to support the center and attack.",
+        "White: Execute the e4 push, drive back the f5-bishop, consolidate the centre, and launch a kingside attack.",
+        "Black: Undermine White's centre with ...c5, use the a6-knight for queenside pressure (e.g., ...Nb4), and create counterplay against White's extended position.",
+        "White: Win back the c4-pawn, with Nxc4 or with Bxc4 once e4 has opened the f1-bishop's diagonal, and use the bishop to support the centre and the attack.",
         "Black: Complete development, often with ...e6 and ...Be7, and prepare to challenge White's control of key squares."
       ],
       "version": "1.0",
@@ -32472,7 +32472,7 @@
     "name": "Slav: Central, 6.Ne5 Nbd7",
     "scid": "D17h",
     "analysis_json": {
-      "description": "This line represents one of the most critical and theoretical battlegrounds in the Slav Defense. White's aggressive 6.Ne5 immediately challenges Black's active bishop, leading to sharp, tactical positions where concrete knowledge is paramount. The game often revolves around White's central pressure and space versus Black's solid structure and counter-attacking potential, making it ideal for dynamic players who are well-prepared and enjoy a complex fight.",
+      "description": "This line represents one of the most critical and theoretical battlegrounds in the Slav Defence. White's aggressive 6.Ne5 immediately challenges Black's active bishop, leading to sharp, tactical positions where concrete knowledge is paramount. The game often revolves around White's central pressure and space versus Black's solid structure and counter-attacking potential, making it ideal for dynamic players who are well-prepared and enjoy a complex fight.",
       "style_tags": [
         "Sharp",
         "Tactical",
@@ -32513,10 +32513,10 @@
         "Queenside counterplay"
       ],
       "common_plans": [
-        "White: Play Nxc4 followed by g3, Bg2, and O-O to control the center and pressure Black's position, often targeting the b7 pawn.",
-        "Black: Respond to Nxc4 with ...Qc7, preparing ...e5 to challenge the center and develop the queenside.",
-        "White: Create a strong pawn center with f3 and e4, aiming for a long-term space advantage at the cost of a slight delay in development.",
-        "Black: Complete development, neutralize White's pressure, and create counterplay on the queenside with moves like ...a5 and ...b5."
+        "White: Play Nxc4 followed by g3, Bg2, and O-O to control the centre and pressure Black's position, often targeting the b7-pawn.",
+        "Black: Once the knight has taken on c4, play ...Qc7, preparing a central pawn strike on e5 and the development of the queenside.",
+        "White: Create a strong pawn centre with f3 and e4, aiming for a long-term space advantage at the cost of a slight delay in development.",
+        "Black: Complete development, neutralise White's pressure, and create counterplay on the queenside with moves like ...a5 and ...b5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T18:24:43.477Z"
@@ -32590,7 +32590,7 @@
     "name": "Slav: Central, 7.f3 Bb4 8.Bg5",
     "scid": "D17m",
     "analysis_json": {
-      "description": "This is a highly aggressive and tactical variation of the Slav Defense where White immediately challenges for central dominance with the f3-e4 plan. Black's counter-pin with 7...Bb4 and White's subsequent pin with 8.Bg5 create a tense, double-edged battle from the outset. The opening is perfect for sharp, tactical players who are well-prepared and thrive in complex, concrete positions where calculation and initiative are paramount.",
+      "description": "This is a highly aggressive and tactical variation of the Slav Defence where White immediately challenges for central dominance with the f3-e4 plan. Black's counter-pin with 7...Bb4 and White's subsequent pin with 8.Bg5 create a tense, double-edged battle from the outset. The opening is perfect for sharp, tactical players who are well-prepared and thrive in complex, concrete positions where calculation and initiative are paramount.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -32631,10 +32631,10 @@
         "Development versus central control"
       ],
       "common_plans": [
-        "White aims to complete the e2-e4 push, develop pieces, and use the central space to launch a kingside attack.",
-        "Black seeks to undermine White's center by maintaining the pin on c3, challenging the g5 bishop with ...h6, and developing quickly to create counterplay.",
-        "White often plays e3, Bd3, and 0-0 to prepare the e4 advance and consolidate.",
-        "Black frequently responds to Bg5 with ...h6, leading to sharp variations after Bh4 g5, aiming to dislodge White's key pieces."
+        "White aims to complete the e4 push, develop pieces, and use the central space to launch a kingside attack.",
+        "Black seeks to undermine White's centre by maintaining the pin on c3, challenging the g5 bishop with ...h6, and developing quickly to create counterplay.",
+        "White uses the pin of the f6-knight against the d8-queen to back the e4 advance, which is the point of 8.Bg5.",
+        "Black frequently answers Bg5 with ...h6, and if the bishop drops back to h4, a g-pawn advance can follow to dislodge White's key pieces, at some cost to Black's own kingside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T18:25:22.548Z"
@@ -32710,7 +32710,7 @@
     "name": "Slav: Central, Carlsbad, Main Line",
     "scid": "D17j",
     "analysis_json": {
-      "description": "This main line of the Slav Defense leads to one of the most theoretically complex and strategically rich positions in modern chess. After Black solidifies the crucial e5-knight with ...f6, the game becomes a tense, double-edged struggle. White aims to exploit the long-term weaknesses created in Black's camp, particularly the e6-square, while Black seeks to consolidate, untangle, and launch counter-play. This opening is perfect for deeply prepared, strategic players who thrive in navigating sharp tactical situations and appreciate long-term planning.",
+      "description": "This main line of the Slav Defence leads to one of the most theoretically complex and strategically rich positions in modern chess. After Black solidifies the crucial e5-knight with ...f6, the game becomes a tense, double-edged struggle. White aims to exploit the long-term weaknesses created in Black's camp, particularly the e6-square, while Black seeks to consolidate, untangle, and launch counterplay. This opening is perfect for deeply prepared, strategic players who thrive in navigating sharp tactical situations and appreciate long-term planning.",
       "style_tags": [
         "Strategic",
         "Tactical",
@@ -32750,8 +32750,8 @@
         "Prophylaxis against opponent's plans"
       ],
       "common_plans": [
-        "White: Castle, play Qc2, and prepare to attack the e6-square with pieces like Ne5 or Ng5. Maintain pressure on the pinned d7-knight.",
-        "Black: Castle, play ...Be7, and carefully untangle the pieces. Neutralize White's pressure before creating counterplay, sometimes with ...g5 or by rerouting the f6-knight."
+        "White: Castle, then go after the light squares weakened by ...f6 with Ne3 and Qb3, aiming at e6 and b7 and harassing the f5-bishop.",
+        "Black: Complete development with ...Be7 or ...Bc5 and castle, keep the e5-knight firmly supported, and neutralise White's pressure on the light squares before seeking counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T18:26:03.223Z"
@@ -32825,7 +32825,7 @@
     "name": "Slav: Central, Main Line",
     "scid": "D17q",
     "analysis_json": {
-      "description": "This is one of the sharpest and most theoretically demanding lines in the entire Slav Defense, often called the 'Poisoned Pawn' variation. Black makes a daring bishop sacrifice on e4 to shatter White's pawn structure and expose the king, leading to a wild, tactical melee. The resulting positions are incredibly unbalanced, with White's exposed king and central pawn mass fighting against Black's superior structure and active pieces, making it ideal for fearless players who thrive on calculation and navigating chaos.",
+      "description": "This is one of the sharpest and most theoretically demanding lines in the entire Slav Defence. Black gives up a piece on e4 to shatter White's pawn centre and expose the king, and after the forced sequence White has an extra piece against four pawns, with the king stranded on d2. The resulting positions are incredibly unbalanced, with White's extra piece fighting against Black's pawns and active queen, making it ideal for fearless players who thrive on calculation and navigating chaos.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -32869,9 +32869,9 @@
         "Material vs. Positional Compensation"
       ],
       "common_plans": [
-        "White: Consolidate the king's position (e.g., Kc2-Kb1), utilize the e4-pawn for central control, and aim to trade queens to reach a favorable endgame.",
+        "White: Bring the king to safety, often via c2 or c1, complete development, and aim to trade queens to reach a favourable endgame where the extra piece counts against Black's pawns.",
         "Black: Maintain pressure on the exposed white king, prevent consolidation, and exploit White's ruined pawn structure and open files for a lasting attack.",
-        "Both: Navigate the complex queen endgame that often arises after 13...Qd5, where White's king safety and Black's activity remain the key themes."
+        "Both: After 13...Qd5, the usual move, the game turns on White's king safety and piece coordination against Black's four pawns and active queen."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T18:26:44.070Z"
@@ -33700,10 +33700,10 @@
         "Black's queenside counterplay"
       ],
       "common_plans": [
-        "White: Challenge the Bf5 bishop with Nh4, often followed by f3 and a central push with e4 to gain space and control.",
-        "Black: Preserve the active bishop (e.g., with ...Bg6), complete development, and prepare to counter in the center or on the queenside with moves like ...a5-b5.",
+        "White: Follow up 9.Nh4 with Nxf5 to win the bishop pair, or with f3 and e4 to gain space and control.",
+        "Black: Either keep the bishop with ...Bg4 or ...Bg6, or castle and allow the exchange, then complete development and counter in the centre with ...c5 or ...e5.",
         "White: Exchange on f5 to gain the bishop pair, then slowly improve the position and restrict Black's pieces.",
-        "Black: Respond to Nxf5 with ...exf5, opening the e-file and preparing to challenge White's central ambitions."
+        "Black: If White takes on f5, recapture with the e-pawn, which opens the e-file and strengthens Black's hold on e4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T18:31:17.401Z"
@@ -33833,7 +33833,7 @@
     "name": "Slav: Dutch, 8...Nbd7 9.Qb3 a5",
     "scid": "D18j",
     "analysis_json": {
-      "description": "This variation of the Slav Defense is a classical and highly strategic battleground. Black establishes a rock-solid pawn structure and completes development, with the key move 9...a5 being a sophisticated prophylactic measure against White's queenside expansion. The game revolves around deep positional concepts, primarily the fight for central control and the timing of pawn breaks, making it ideal for patient players who excel at long-term planning and subtle maneuvering.",
+      "description": "This variation of the Slav Defence is a classical and highly strategic battleground. Black establishes a rock-solid pawn structure and completes development, with the key move 9...a5 being a sophisticated prophylactic measure against White's queenside expansion. The game revolves around deep positional concepts, primarily the fight for central control and the timing of pawn breaks, making it ideal for patient players who excel at long-term planning and subtle manoeuvring.",
       "style_tags": [
         "Strategic",
         "Solid",
@@ -33874,8 +33874,8 @@
         "Exploiting weak squares (b5)"
       ],
       "common_plans": [
-        "White: Prepare the e3-e4 pawn advance, often with Qe2 and Rd1. Maneuver the knight to b5 (via Na4 or Ne2-c1-a2-b4) to pressure Black's position. Create long-term pressure on the queenside.",
-        "Black: Prepare and execute the central ...e6-e5 pawn break to challenge White's control and liberate their position. Maintain the pin on c3 or trade the bishop to disrupt White's pawn structure. Solidify the position and neutralize White's initiative before seeking counterplay."
+        "White: Prepare the e4 pawn advance, often with Rd1 and Bd2, keeping the queen on b3, where it eyes the b4-bishop and, behind the c4-bishop, the e6-pawn.",
+        "Black: Prepare the central ...e5 break, often after ...O-O and ...Qe7, to challenge White's control and free the position. Keep the b4-bishop active or trade it on c3 to weaken White's queenside pawns, and neutralise White's initiative before seeking counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T18:32:12.853Z"
@@ -33948,7 +33948,7 @@
     "name": "Slav: Dutch, 8...Nbd7 9.Qe2 Bg6",
     "scid": "D18l",
     "analysis_json": {
-      "description": "This variation of the Slav Defense represents a sophisticated and strategically rich battleground. The central theme is the fight for the e4-square; White's entire setup with Qe2 is geared towards achieving this central break, while Black's flexible development with ...Bg6 aims to control this square and create counter-chances. The resulting middlegames are complex and nuanced, appealing to strategic players who appreciate long-term planning and understanding subtle piece maneuvers.",
+      "description": "This variation of the Slav Defence represents a sophisticated and strategically rich battleground. The central theme is the fight for the e4-square; White's entire setup with Qe2 is geared towards achieving this central break, while Black's flexible development with ...Bg6 aims to control this square and create counter-chances. The resulting middlegames are complex and nuanced, appealing to strategic players who appreciate long-term planning and understanding subtle piece manoeuvres.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -33988,9 +33988,9 @@
         "The light-squared bishop battle"
       ],
       "common_plans": [
-        "White: Achieve the e3-e4 pawn break to open the center and activate their pieces.",
-        "White: Control the center, often placing a rook on d1, and build pressure for a kingside attack.",
-        "Black: Prevent White's e4-break while preparing the ...c5 counter-break to challenge the d4-pawn.",
+        "White: Achieve the e3-e4 pawn break to open the centre and activate their pieces.",
+        "White: Control the centre, often placing a rook on d1, and build pressure for a kingside attack.",
+        "Black: Hold back White's central break, with the g6-bishop and the f6-knight covering the e4-square, while preparing the ...c5 counter-break to challenge the d4-pawn.",
         "Black: Complete development, castle, and create queenside counterplay, often starting with ...a5."
       ],
       "version": "1.0",

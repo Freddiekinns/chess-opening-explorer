@@ -1,10 +1,10 @@
 # Plan reference check
 
-1212 references on 950 of 12377 pages fail the check and show as plain text.
+1136 references on 890 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5433 name no move, route, square or piece
-- References by kind: {"square":16750,"piece":16059,"move":55725,"route":8468}
-- References by result: {"now":71105,"on-board":15105,"later":9580,"invalid":1212}
+- Plans: 41062, of which 5439 name no move, route, square or piece
+- References by kind: {"square":16784,"piece":16101,"move":55759,"route":8445}
+- References by result: {"now":71218,"on-board":15150,"later":9585,"invalid":1136}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -62,13 +62,14 @@
 - **D05 Colle: 5.c3 Nc6 6.Nbd2 Bd6 7.O-O O-O** (0 views)
   - `e4`: No piece can play e4 here, now or after the plan's earlier moves
   - `dxc4`: No piece can play dxc4 here, now or after the plan's earlier moves
-- **D24 QGA: 4.Nc3 c5 5.d5** (0 views)
-  - `f4-f5`: One step of f4-f5 can't be played here
-- **D24 QGA: 4.Nc3 c5 5.d5 e6 6.e4** (0 views)
-  - `f8-e6`: One step of f8-e6 can't be played here
-- **D24 QGA: 4.Nc3 e6 5.Bg5** (0 views)
-  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
-- **D24 QGA: Bogoljubow, 7.a4 Nxc3** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **D24 QGA: Bogoljubow, 7.a4 Nxc3** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **D32 Tarrasch Defense: Tarrasch Gambit** (0 views)
+  - `a3-c2`: One step of a3-c2 can't be played here
+- **D33 QGD Tarrasch: 6.g3 cxd4** (0 views)
+  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
+- **D33 QGD Tarrasch: 6.g3 Nf6 (Prague)** (0 views)
+  - `Re8`: No piece can play Re8 here, now or after the plan's earlier moves
+- **D33 QGD Tarrasch: 7.Bg2 Be6** (0 views)
+  - `d5-d4`: One step of d5-d4 can't be played here
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+- **D33 QGD Tarrasch: 7.Bg2 cxd4 8.Nxd4** (0 views)
+  - `...d4`: No piece can play d4 here, now or after the plan's earlier moves

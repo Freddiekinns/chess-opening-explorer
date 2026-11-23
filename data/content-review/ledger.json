@@ -15190,5 +15190,65 @@
     "verdict": "fixed",
     "contentHash": "c0ccb069693c79a7",
     "notes": "Plan 1 pushed d5-d4 into White's pawn. Rewrote it; British spelling, including Tarrasch Defence."
+  },
+  "rnbqkbnr/p4ppp/8/1pP5/N2p4/8/PP2PPPP/R1BQKBNR w KQkq b6 0 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "cfaacd0a4a8ae193",
+    "notes": "Plan 2 routed the a4-knight via a3-c2 (impossible) and claimed a central majority; plan 1 had Black pressing a c5-pawn that cxb6 removes. Rewrote both: cxb6 e.p. because the knight has no safe retreat."
+  },
+  "r1bqkbnr/pp3ppp/2n5/3p4/3p4/2N2NP1/PP2PP1P/R1BQKB1R w KQkq - 0 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d84fe22d696c9812",
+    "notes": "Plan 1 called c4 and e4 White's target squares (they are Black's outposts); rewrote plans 1, 2 and 4 around Nxd4 blockade and the ...d4 push once the knight leaves; British spelling."
+  },
+  "r1bqkb1r/pp3ppp/2n2n2/2pp4/3P4/2N2NP1/PP2PPBP/R1BQK2R b KQkq - 2 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "3fb6b8c4bb0cd78c",
+    "notes": "Plan 4 listed Re8 and Qc7 as bare moves before castling; rewrote as ...Be7, ...O-O, ...Re8, ...Be6/...Bg4; British spelling (Defence, favourable, centre)."
+  },
+  "r2qkb1r/pp3ppp/2n1bn2/2pp4/3P4/2N2NP1/PP2PPBP/R1BQK2R w KQkq - 3 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "869d39da73b7de42",
+    "notes": "Plans pushed d5-d4 with White's pawn on d4 and listed e4 as a move; plan 3 vague. Rewrote all four around dxc5 creating the IQP, Nd4 blockade, ...d4 hitting Nc3 and ...Ne4; British spelling."
+  },
+  "r1bqkb1r/pp3ppp/2n2n2/3p4/3N4/2N3P1/PP2PPBP/R1BQK2R b KQkq - 0 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "788489c191e52916",
+    "notes": "Plan 2 pushed ...d4 with White's knight on d4; now conditional on the blockader leaving; British spelling."
+  },
+  "r1bqk2r/pp2bppp/2n2n2/3p4/3N4/2N3P1/PP2PPBP/R1BQK2R w KQkq - 1 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "9298343cdc8b5961",
+    "notes": "Plan 3 proposed a minority attack b2-b4-b5 (no White c-pawn); replaced with Be3/Bg5, Rc1, Qa4/Qb3 and Nxc6 bxc6 targeting c6/c5. Plan 2 ...d4 made conditional; British spelling (manoeuvring, centred)."
+  },
+  "r1bqk2r/pp2bppp/2n2n2/3p4/3N4/2N3P1/PP2PPBP/R1BQ1RK1 b kq - 2 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "36996c35b601bae2",
+    "notes": "Plan 2 pushed ...d4 with White's knight on d4; made conditional; British spelling."
+  },
+  "r1bq1rk1/pp2bppp/2n2n2/3p4/3N4/2N3P1/PP2PPBP/R1BQ1RK1 w - - 3 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "6d184b62c67ee08a",
+    "notes": "Plan 2 pushed ...d5-d4 with White's knight on d4; made conditional; British spelling."
+  },
+  "r1bq1rk1/pp2bppp/2n2n2/3p4/3N4/2N1B1P1/PP2PPBP/R2Q1RK1 b - - 4 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "6fc4b9283270b226",
+    "notes": "Plan 2 pushed ...d5-d4 into the d4-knight and suggested ...Qh4 against the g3 fianchetto; replaced with ...Re8, ...Bg4, ...Ng4 hitting e3 and a conditional d-pawn advance; British spelling."
+  },
+  "r1bqkbnr/pp3ppp/2n5/3p4/2pP4/2N2NP1/PP2PPBP/R1BQK2R b KQkq - 1 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "dcfd20a0dae12c4c",
+    "notes": "Plan 1 b3 break read as ambiguous and missed the main e4 idea; now e2-e4 or b2-b3; plan 2 adds ...Nge7; British spelling."
   }
 }

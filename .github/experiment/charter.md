@@ -60,6 +60,12 @@ runs **Monday to Friday nights only**, one run a night.
 - Cloud runs cannot see usage. Until calibrated, the owner posts the weekly % in
   the inbox issue on the mornings of the first week, and `operating.md`'s run
   limits are tuned to it.
+- **Extra runs.** The owner may ask for an extra run at any time (in a local
+  session or in #249), for example to use what is left before a reset. An extra
+  run goes ahead outside Monday-to-Friday nights and does not count against the
+  one-run-a-day rule; it records the request in `questions.md`. An extra run is
+  still a full unit of work: being late in the week is no reason to cut research
+  short.
 - A run that has done its one unit of work stops. A night that is waiting on the
   owner costs one short turn and exits.
 

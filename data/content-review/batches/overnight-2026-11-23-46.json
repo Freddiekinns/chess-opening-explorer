@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r1bqk2r/pp2nppp/2n5/3p4/1bpP4/P1N2NP1/1P2PPBP/R1BQ1RK1 b kq - 0 9",
+      "name": "QGD Tarrasch: Swedish, 9.a3",
+      "eco": "D33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had White playing Bxc3; plan 4 was garbled. Rewrote both (...Bxc3 bxc3 leaves an isolated a-pawn and half-open b-file; ...Ba5 alternative). Reviewer rejected a first draft claiming doubled c-pawns; fixed and re-reviewed. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/pp2nppp/2n5/3p4/1bpPP3/2N2NP1/PP3PBP/R1BQ1RK1 b kq - 0 9",
+      "name": "QGD Tarrasch: Swedish, 9.e4",
+      "eco": "D33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had dxe5/exf5 (impossible), plan 3 a pin on c3 to nothing, plan 4 ...dxc4 with Black's own pawn on c4. Rewrote around ...dxe4 and regaining the pawn with Ng5/Nxe4; British spelling."
+    },
+    {
+      "fen": "r1bqk2r/pp2nppp/2n5/8/1bpPp3/2N2NP1/PP3PBP/R1BQ1RK1 w kq - 0 10",
+      "name": "QGD Tarrasch: Swedish, 9.e4 dxe4",
+      "eco": "D33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview was generic; plan 1 ignored the e4-pawn; plan 3 routed the c3-knight Na2-c1-e2 for a d4 bind that does not exist. Rewrote overview and plans 1 and 3 around regaining e4 with Ng5/Nxe4 against the uncastled king."
+    },
+    {
+      "fen": "r1bqk2r/pp3ppp/2n2n2/2bp4/3N4/2N3P1/PP2PPBP/R1BQK2R w KQkq - 1 9",
+      "name": "Tarrasch Defense: Dubov Tarrasch",
+      "eco": "D33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 pushed ...d4 into the d4-knight; now conditional; plan 4 rewritten; British spelling (Neutralise, Use, favourable, centre)."
+    },
+    {
+      "fen": "r1bqkbnr/pp3ppp/2n5/3p4/2pP4/2N2NP1/PP2PP1P/R1BQKB1R w KQkq - 0 7",
+      "name": "Tarrasch Defense: Swedish Variation",
+      "eco": "D33",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 put a white knight on d4, occupied by White's own pawn; replaced with the e2-e4 break. Plan 4 swapped ...a6/...Rb8 for the standard ...Bb4/...Nge7; British spelling."
+    },
+    {
+      "fen": "r1bqk2r/pp2bppp/2n2n2/2pp4/3P4/2N2NP1/PP2PPBP/R1BQ1RK1 b kq - 4 8",
+      "name": "QGD Tarrasch: 7.Bg2 Be7 8.O-O",
+      "eco": "D34",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed d5-d4 into White's d4-pawn; plan 4 proposed a minority attack in an IQP structure. Rewrote both; British spelling."
+    },
+    {
+      "fen": "r2qk2r/pp2bppp/2n1bn2/2pp4/3P4/2N2NP1/PP2PPBP/R1BQ1RK1 w kq - 5 9",
+      "name": "QGD Tarrasch: 7.Bg2 Be7 8.O-O Be6",
+      "eco": "D34",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 pushed ...d5-d4 into White's d4-pawn; made conditional on the c- and d-pawn exchanges; British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/pp2bppp/2n5/2pp4/3Pn3/1PN2NP1/P3PPBP/R1BQ1RK1 w - - 1 10",
+      "name": "QGD Tarrasch: 9.b3 Ne4",
+      "eco": "D34",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 pushed d5-d4 into White's d4-pawn; made conditional; British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/pp2bppp/2n2n2/2pp4/3P1B2/2N2NP1/PP2PPBP/R2Q1RK1 b - - 6 9",
+      "name": "QGD Tarrasch: 9.Bf4",
+      "eco": "D34",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said Bf4 pressures d5 (it controls e5); plan 2 had ...Qf6 through the e7-bishop and d5-d4 into a pawn; plan 3 garbled. Fixed; British spelling."
+    },
+    {
+      "fen": "r2q1rk1/pp2bppp/2N1bn2/3p2B1/2pP4/2N3P1/PP2PPBP/R2Q1RK1 b - - 0 11",
+      "name": "QGD Tarrasch: 9.Bg5 c4 10.Ne5 Be6 11.Nxc6",
+      "eco": "D34",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called c6/d5 hanging pawns (Black has c6, c4, d5); plan 1 had Ba3 with a dark-squared bishop on g5 and a4-a5 minority attack. Rewrote overview and both plans around b2-b3 and Bxf6/e2-e4 against the chain."
+    }
+  ]
+}

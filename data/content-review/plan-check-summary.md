@@ -1,10 +1,10 @@
 # Plan reference check
 
-1576 references on 1227 of 12377 pages fail the check and show as plain text.
+1497 references on 1169 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5445 name no move, route, square or piece
-- References by kind: {"square":16547,"piece":15849,"move":55272,"route":8633}
-- References by result: {"now":70388,"on-board":14875,"later":9462,"invalid":1576}
+- References by kind: {"square":16617,"piece":15866,"move":55355,"route":8590}
+- References by result: {"now":70555,"on-board":14899,"later":9477,"invalid":1497}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -54,20 +54,23 @@
 - **C83 Spanish: Open, Classical, 10.Nbd2 O-O 11.Bc2 f5 12.exf6** (0 views)
   - `e6 pawn`: There is no pawn on e6, or on its way
   - `f1-e3`: One step of f1-e3 can't be played here
-- **C88 Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3** (0 views)
-  - `Nf1-g3`: One step of Nf1-g3 can't be played here
-- **C88 Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6** (0 views)
+- **C90  Leonhardt Variation, Ruy Lopez ** (0 views)
+  - `f5`: No piece can play f5 here, now or after the plan's earlier moves
+  - `...Nh6-f7`: One step of ...Nh6-f7 can't be played here
+- **C92 Ruy Lopez: Closed, Flohr System** (0 views)
+  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
+  - `Nf3-d2-f1-g3`: One step of Nf3-d2-f1-g3 can't be played here
   - `e3`: No piece can play e3 here, now or after the plan's earlier moves
-- **C88 Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6 10.c3** (0 views)
-  - `...c8-g4`: One step of ...c8-g4 can't be played here
-  - `...a8`: No piece can play a8 here, now or after the plan's earlier moves
-- **C88 Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6 10.Nc3** (0 views)
+- **C92 Ruy Lopez: Closed, Karpov Variation** (0 views)
+  - `...Nb8-c6`: Nb8 is ambiguous: the knights on d7 and c6 can both go there
+- **C92 Spanish: Closed, Karpov Variation, 10.d4 Bf6 11.a4 Bb7 12.Na3** (0 views)
+  - `c4`: No piece can play c4 here, now or after the plan's earlier moves
+- **C92 Spanish: Closed, Zaitsev, 12.a4 h6** (0 views)
+  - `e3`: No piece can play e3 here, now or after the plan's earlier moves
+  - `...Nbd7`: No piece can play Nbd7 here, now or after the plan's earlier moves
+- **C94 Ruy Lopez: Closed, Breyer Defense** (0 views)
+  - `Nf1-g3-f5`: One step of Nf1-g3-f5 can't be played here
+- **C94 Spanish: Closed, Breyer, Matulovic Variation** (0 views)
   - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
-- **C89 Ruy Lopez, Marshall Gambit with 15. Re4** (0 views)
-  - `g2-pawn`: There is no pawn on g2, or on its way
-- **C89 Ruy Lopez: Marshall Attack** (0 views)
-  - `...Qh4-h3`: One step of ...Qh4-h3 can't be played here
-- **C89 Ruy Lopez: Marshall Attack, Modern Main Line** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **C89 Ruy Lopez: Marshall Attack, Modern Variation** (0 views)
-  - `...Ra7-g7`: One step of ...Ra7-g7 can't be played here
+- **C95 Ruy Lopez: Closed, Breyer** (0 views)
+  - `Nf1-g3`: One step of Nf1-g3 can't be played here

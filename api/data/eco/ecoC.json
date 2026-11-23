@@ -142807,7 +142807,7 @@
       "icsbot": "Flohr; Zaitsev; Lenzerheide Var, Ruy "
     },
     "analysis_json": {
-      "description": "The Flohr System is a highly respected and solid variation of the Closed Ruy Lopez, characterized by the flexible developing move 9...Bb7. Black prepares to challenge White's central control, often by supporting a future ...d5 pawn break, while keeping options open for queenside play. This opening leads to a complex, strategic battle where deep understanding of pawn structures and long-term plans is more crucial than immediate tactical fireworks, making it ideal for patient, strategic players.",
+      "description": "The Flohr System is a solid and flexible line of the Closed Ruy Lopez, built on the developing move 9...Bb7. The bishop joins the f6-knight in eyeing White's e4-pawn, and Black usually follows with ...Re8 and ...Bf8, the set-up later made famous as the Zaitsev, to keep that pressure on e4 while White builds the c3/d4 centre. This opening leads to a complex, strategic battle where deep understanding of pawn structures and long-term plans is more crucial than immediate tactical fireworks, making it ideal for patient, strategic players.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -142850,10 +142850,10 @@
         "Prophylaxis against White's plans"
       ],
       "common_plans": [
-        "White: Advance with d4 to seize central space, prepare a kingside attack (e.g., Nd2-f1-g3), and restrain Black's queenside.",
-        "Black: Prepare the ...d5 pawn break to equalize in the center, develop queenside counterplay, and use the Bb7 to pressure White's e4-pawn.",
-        "White: Reposition the 'Ruy Lopez Knight' (Nf3-d2-f1-g3/e3) to support the center and prepare for kingside action.",
-        "Black: Use the Bb7 to pressure e4 and support the center, often rerouting pieces to bolster the kingside and prepare for central breaks."
+        "White: Play d4 to build the classical centre, then bring the queen's knight round with Nbd2-f1-g3 once e4 is securely defended, preparing kingside play.",
+        "Black: Add ...Re8 and ...Bf8 to the pressure on e4, so White's queen's knight cannot easily leave d2, and look for queenside counterplay with ...Na5 and ...c5.",
+        "White: Meet the pressure on e4 with Bc2 and a4: the bishop guards e4 and the a-pawn questions b5, asking Black how to hold the queenside.",
+        "Black: Keep the b7-bishop and f6-knight trained on e4; if White closes the centre with d5, reroute the c6-knight (...Ne7 or ...Nb8-d7) and prepare ...c6 or ...c5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:28:17.213Z"
@@ -142876,7 +142876,7 @@
       "icsbot": "Keres Defense, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Karpov Variation is a highly strategic and solid system within the Closed Ruy Lopez, epitomizing a patient, maneuvering style of play. By playing 9...Nd7, Black prepares to challenge White's central control, often by rerouting the knight to c6 or preparing a ...c5 pawn break, without creating immediate weaknesses. This opening is perfect for positional players who excel at long-term planning, prophylaxis, and accumulating small advantages in a complex, closed middlegame.",
+      "description": "The Karpov Variation is a solid, strategic system within the Closed Ruy Lopez, epitomising a patient, manoeuvring style of play. By playing 9...Nd7, Black clears f6 for the bishop: after 10.d4, ...Bf6 shores up e5 and bears down on d4, while the d7-knight can go to b6 and the c6-knight to a5 ahead of a ...c5 break. This opening is perfect for positional players who excel at long-term planning, prophylaxis, and accumulating small advantages in a complex, closed middlegame.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -142919,10 +142919,10 @@
         "Prophylaxis against White's plans"
       ],
       "common_plans": [
-        "Black: Prepare the ...c5 pawn break to challenge the center, reroute the knight via ...Nb8-c6 to pressure d4, and utilize the queenside pawn structure for counterplay.",
-        "White: Establish a strong center with d4, execute the classic knight maneuver (Nbd2-f1-g3) to prepare a kingside attack, and restrict Black's counterplay.",
-        "Black: Develop the light-squared bishop to b7 after a ...c5 break, controlling key diagonals.",
-        "White: Maintain the tension and slowly improve the position, aiming to exploit any inaccuracies in Black's setup."
+        "Black: Play ...Bf6 to support e5 and bear down on White's centre, then bring the knights to the queenside with ...Na5 and ...Nb6, preparing ...c5 for counterplay.",
+        "White: Establish a strong centre with d4, execute the classic knight manoeuvre (Nbd2-f1-g3) to prepare a kingside attack, and restrict Black's counterplay.",
+        "Black: Develop the light-squared bishop to b7, where it adds to the pressure on e4 and is ready for the long diagonal if the centre opens.",
+        "White: Play a4 to question the b5-pawn and keep the d4/e4 centre intact, so Black's pieces stay tied to the defence of e5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:28:33.142Z"
@@ -143835,7 +143835,7 @@
     "name": "Spanish: Closed, Zaitsev, 12.a4 h6",
     "scid": "C92r",
     "analysis_json": {
-      "description": "The Zaitsev Variation of the Closed Ruy Lopez is a battleground for deep strategic minds, famously championed by World Champion Anatoly Karpov. Black's plan involves a patient regrouping with ...Re8 and ...Bf8 to bolster the center and prepare counterplay, while White's 12.a4 directly challenges Black's queenside expansion. This opening leads to a complex, maneuvering game where understanding long-term pawn structures and piece coordination is paramount, making it ideal for strategic players who thrive on accumulating small, lasting advantages.",
+      "description": "The Zaitsev Variation of the Closed Ruy Lopez is a battleground for deep strategic minds, famously championed by World Champion Anatoly Karpov. Black's plan involves a patient regrouping with ...Re8 and ...Bf8 to bolster the centre and prepare counterplay, while White's 12.a4 directly challenges Black's queenside expansion. This opening leads to a complex, manoeuvring game where understanding long-term pawn structures and piece coordination is paramount, making it ideal for strategic players who thrive on accumulating small, lasting advantages.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -143879,10 +143879,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Pressure on the b5-pawn with axb5, followed by maneuvering the knight via Nf1-g3/e3 to support the center.",
+        "White: Play Bc2 to keep the e4-pawn guarded; after ...exd4 cxd4 ...Nb4 the bishop drops back to b1, and the a1-rook can join the play via a3.",
         "Black: Maintain queenside stability, often with ...b4, and prepare the ...c5 pawn break to challenge White's d4-pawn.",
-        "White: Control the center and slowly build up an attack, potentially involving a d5 push at an opportune moment.",
-        "Black: Complete the regrouping plan (e.g. ...Nbd7) and create counterplay against White's center, using the active Bb7."
+        "White: Control the centre and slowly build up an attack, potentially involving a d5 push at an opportune moment.",
+        "Black: Keep the e4-pawn under fire with the b7-bishop, e8-rook and f6-knight; after ...exd4 and ...Nb4, ...c5 strikes at d4, and if White pushes d5 the f6-knight can reroute with ...Nd7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:33:36.224Z"
@@ -145042,7 +145042,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Breyer Defense is a sophisticated and highly strategic system within the Ruy Lopez, favored by deep positional thinkers. Black's signature maneuver, 9...Nb8, aims to redeploy the knight to d7, bolstering the center, freeing the c-pawn for a future ...c5 break, and creating a flexible, resilient structure. This opening is ideal for patient players who excel at long-term planning, subtle maneuvering, and accumulating small advantages in a complex, closed game.",
+      "description": "The Breyer Defence is a sophisticated and highly strategic system within the Ruy Lopez, favoured by deep positional thinkers. Black's signature manoeuvre, 9...Nb8, aims to redeploy the knight to d7, bolstering the centre, freeing the c-pawn for a future ...c5 break, and creating a flexible, resilient structure. This opening is ideal for patient players who excel at long-term planning, subtle manoeuvring, and accumulating small advantages in a complex, closed game.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -145085,10 +145085,10 @@
         "Prophylaxis (h3)"
       ],
       "common_plans": [
-        "White: Execute the d4 pawn break to open the center, often followed by a kingside attack with pieces like Nf1-g3-f5.",
-        "Black: Complete the ...Nb8-d7 maneuver, prepare and execute the ...c5 pawn break to challenge White's center and create queenside space.",
+        "White: Build the centre with d4, then bring the queen's knight round via Nbd2-f1-g3 towards the kingside, with Bc2 keeping the e4-pawn protected.",
+        "Black: Complete the ...Nb8-d7 manoeuvre, prepare and execute the ...c5 pawn break to challenge White's centre and create queenside space.",
         "White: Restrict Black's counterplay with moves like a4, controlling the queenside while slowly building pressure across the board.",
-        "Black: Develop the light-squared bishop to b7 or c7 and maintain a solid defensive setup, waiting to exploit any overextensions by White."
+        "Black: Develop the light-squared bishop to b7 and regroup with ...Re8 and ...Bf8, often adding ...g6 and ...Bg7, a solid set-up that waits for the right moment to challenge the centre with ...c5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:12:41.401Z"
@@ -145344,7 +145344,7 @@
     "name": "Spanish: Closed, Breyer, Matulovic Variation",
     "scid": "C94b",
     "analysis_json": {
-      "description": "The Matulovic Variation against the Breyer Defense is a highly strategic and nuanced line of the Ruy Lopez. White's 10. a4 immediately challenges Black's queenside structure, aiming to create long-term weaknesses, while Black relies on the Breyer's inherent solidity and flexibility to counter-maneuver. This opening leads to a complex, slow-burning game where deep positional understanding and long-term planning are paramount, making it ideal for patient, strategic players.",
+      "description": "The Matulovic Variation against the Breyer Defence is a highly strategic and nuanced line of the Ruy Lopez. White's 10. a4 immediately challenges Black's queenside structure, aiming to create long-term weaknesses, while Black relies on the Breyer's inherent solidity and flexibility to counter-manoeuvre. This opening leads to a complex, slow-burning game where deep positional understanding and long-term planning are paramount, making it ideal for patient, strategic players.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -145385,10 +145385,10 @@
         "Timing of Pawn Breaks"
       ],
       "common_plans": [
-        "White: Play axb5 to open the a-file and pressure a6, or maintain tension to restrain Black's queenside.",
-        "White: Complete development with Nbd2-f1-g3 and prepare the central d3-d4 pawn break.",
-        "Black: Respond to a4 with ...Bb7, developing and defending the b5 pawn.",
-        "Black: Complete the knight maneuver to d7, support the center, and prepare the ...c5 pawn break for counterplay."
+        "White: Press on b5 with the a-pawn; the threat of axb5 opening the a-file makes Black decide how to hold the queenside before the b8-knight has been redeployed.",
+        "White: Support the centre with d3, or play d4 at once, and route the queen's knight via Nbd2-f1-g3 for kingside play.",
+        "Black: Answer a4 with ...Bb7, which keeps the a8-rook defended if White opens the a-file, before completing the regrouping with ...Nbd7 and ...c5.",
+        "Black: Complete the knight manoeuvre to d7, support the centre, and prepare the ...c5 pawn break for counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:14:24.493Z"
@@ -145410,7 +145410,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Breyer Defense is a sophisticated and highly strategic system within the Ruy Lopez. Black's signature maneuver, 9...Nb8, aims to redeploy the knight to d7, where it bolsters the center, prepares the ...c5 pawn break, and frees the c-pawn for future action. This opening leads to a complex, maneuvering game, ideal for patient, strategic players who excel at long-term planning and understanding subtle positional nuances.",
+      "description": "The Breyer Defence is a sophisticated and highly strategic system within the Ruy Lopez. Black's signature manoeuvre, 9...Nb8, aims to redeploy the knight to d7, where it bolsters the centre, prepares the ...c5 pawn break, and frees the c-pawn for future action. This opening leads to a complex, manoeuvring game, ideal for patient, strategic players who excel at long-term planning and understanding subtle positional nuances.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -145451,10 +145451,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Control the center, prepare a kingside attack (e.g., Nf1-g3), and time the d5 pawn break.",
-        "Black: Complete the ...Nb8-d7 maneuver, challenge the center with ...c5, and create queenside counterplay.",
-        "White: Restrict Black's queenside with a4 and maneuver pieces to optimal squares before committing to a plan.",
-        "Black: Solidify the position, reroute the light-squared bishop (e.g., ...Bb7), and neutralize White's central space advantage."
+        "White: Hold the d4/e4 centre, bring the queen's knight round via Nbd2-f1-g3 for kingside play, and choose the moment for d5.",
+        "Black: Complete the ...Nb8-d7 manoeuvre, challenge the centre with ...c5, and create queenside counterplay.",
+        "White: Restrict Black's queenside with a4 and manoeuvre pieces to optimal squares before committing to a plan.",
+        "Black: Solidify the position, reroute the light-squared bishop (e.g., ...Bb7), and neutralise White's central space advantage."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:14:42.093Z"
@@ -145475,7 +145475,7 @@
       "chronos": "Ruy Lopez: closed, Breyer, Gligoric variation"
     },
     "analysis_json": {
-      "description": "The Breyer Defense is a subtle and profound system within the Ruy Lopez, epitomizing strategic depth over immediate confrontation. By rerouting the b8-knight to d7, Black prepares to challenge White's center with ...c5, creating a flexible and resilient pawn structure. This opening leads to a complex, maneuvering game where understanding long-term plans, pawn breaks, and piece coordination is paramount, making it ideal for patient, strategic players who enjoy accumulating small advantages.",
+      "description": "The Breyer Defence is a subtle and profound system within the Ruy Lopez, epitomizing strategic depth over immediate confrontation. By rerouting the b8-knight to d7, Black prepares to challenge White's centre with ...c5, creating a flexible and resilient pawn structure. This opening leads to a complex, manoeuvring game where understanding long-term plans, pawn breaks, and piece coordination is paramount, making it ideal for patient, strategic players who enjoy accumulating small advantages.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -145516,9 +145516,9 @@
         "Control of the d5-square"
       ],
       "common_plans": [
-        "White: Execute the d4-d5 pawn break, expand on the kingside with moves like Ng3-f5, and maintain central control.",
-        "Black: Challenge the center with ...cxd4, complete the knight maneuver (...Nf8-g6), and create queenside pressure via the c-file.",
-        "White: Maintain the central tension, reroute the knight to f1-g3, and prepare a kingside attack.",
+        "White: Close the centre with d5 at a good moment, gaining space, and send the d2-knight towards f5 with Nf1-g3-f5.",
+        "Black: Weigh ...cxd4, which opens the c-file for the rooks, against keeping the tension; if White plays d5, Black gains queenside space with ...c4 and brings a knight to c5.",
+        "White: Keep the central tension with Nf1 and Ng3, and if Black plays ...cxd4 recapture with the c-pawn so the d4/e4 centre stays intact.",
         "Black: Solidify the position with ...Re8 and ...Bf8, preparing to meet White's plans and exploit any overextensions."
       ],
       "version": "1.0",
@@ -145607,7 +145607,7 @@
       "icsbot": "Borisenko Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Breyer Defense is a sophisticated and resilient system within the Closed Ruy Lopez, characterized by the deep knight maneuver 9...Nb8. This hybrid, which continues with 10...Nbd7, creates an exceptionally solid and flexible structure for Black, focusing on long-term strategic goals over immediate tactical clashes. This opening is perfect for patient, strategic players who excel at subtle maneuvering, understanding pawn structures, and gradually building pressure in complex positions.",
+      "description": "The Breyer Defence is a sophisticated and resilient system within the Closed Ruy Lopez, characterised by the deep knight manoeuvre 9...Nb8. This hybrid, which continues with 10...Nbd7, creates an exceptionally solid and flexible structure for Black, focusing on long-term strategic goals over immediate tactical clashes. This opening is perfect for patient, strategic players who excel at subtle manoeuvring, understanding pawn structures, and gradually building pressure in complex positions.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -145649,10 +145649,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Prepare the d5 pawn break, maneuver the f3-knight (Nf3-d2-f1-g3/e3), and potentially launch a kingside attack.",
-        "Black: Prepare the ...c5 pawn break to challenge the center, reroute pieces (e.g., Bf8-g7), and create queenside counterplay with ...Na5 and ...b4.",
+        "White: Bring the queen's knight round via Nbd2-f1-g3 with Bc2 guarding e4, and keep d5 in reserve to close the centre when it gains space.",
+        "Black: Develop with ...Bb7, ...Re8 and ...Bf8, often adding ...g6 and ...Bg7, then challenge the centre with ...c5 or ...exd4.",
         "White: Exert pressure on the queenside with a4 to restrain Black's ...b4 advance and challenge the b5 pawn.",
-        "Black: Solidify the center and prepare the liberating ...d5 pawn break under favorable conditions."
+        "Black: Hold the e5-point solidly with the d7-knight and d6-pawn; if White closes the centre with d5, turn to the queenside with ...Nb6 and ...c6 or ...c5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:15:40.765Z"
@@ -145667,7 +145667,7 @@
     "name": "Spanish: Closed, Breyer, 10.d4 Bb7",
     "scid": "C95a",
     "analysis_json": {
-      "description": "The Breyer Defense is a highly sophisticated and strategic system within the Closed Ruy Lopez, characterized by Black's subtle ...Nb8-d7 maneuver. Instead of immediate confrontation, Black opts for a flexible setup, aiming to bolster the center and prepare for future counterplay, often via the ...c5 pawn break. This opening is perfect for patient, strategic players who enjoy deep maneuvering and accumulating small advantages in a complex, closed position.",
+      "description": "The Breyer Defence is a highly sophisticated and strategic system within the Closed Ruy Lopez, characterised by Black's subtle ...Nb8-d7 manoeuvre. Instead of immediate confrontation, Black opts for a flexible setup, aiming to bolster the centre and prepare for future counterplay, often via the ...c5 pawn break. This opening is perfect for patient, strategic players who enjoy deep manoeuvring and accumulating small advantages in a complex, closed position.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -145709,8 +145709,8 @@
         "The ...c7-c5 pawn break"
       ],
       "common_plans": [
-        "White: Utilize the space advantage, often with the knight maneuver Nf1-g3-f5, to build pressure on the kingside or in the center. White aims to restrict Black's counterplay and exploit any positional concessions.",
-        "Black: Complete the regrouping with ...Nbd7, challenge White's center with ...c5, and use the Bb7 to pressure the e4 pawn. The goal is to neutralize White's initiative and create counter-chances on the queenside or in the center."
+        "White: Use the space advantage: the queen's knight comes round via Nbd2-f1-g3 towards the kingside, while Bc2 keeps the e4-pawn covered. White aims to restrict Black's counterplay and exploit any positional concessions.",
+        "Black: Complete the regrouping with ...Nbd7, challenge White's centre with ...c5, and use the Bb7 to pressure the e4 pawn. The goal is to neutralise White's initiative and create counter-chances on the queenside or in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:15:58.889Z"
@@ -145725,7 +145725,7 @@
     "name": "Spanish: Closed, Breyer, 10.d4 Nbd7 11.Bg5",
     "scid": "C95d",
     "analysis_json": {
-      "description": "The Breyer Defense is a sophisticated and resilient system within the Closed Ruy Lopez, characterized by Black's subtle 9...Nb8 maneuver. This move prepares to reroute the knight to d7, bolstering the center and preparing for queenside counterplay. White's 11.Bg5 is a direct and challenging response, creating a pin on the f6-knight and leading to a strategically rich and complex battle. This opening is ideal for patient, strategic players who excel at deep maneuvering and long-term planning.",
+      "description": "The Breyer Defence is a sophisticated and resilient system within the Closed Ruy Lopez, characterised by Black's subtle 9...Nb8 manoeuvre. This move prepares to reroute the knight to d7, bolstering the centre and preparing for queenside counterplay. White's 11.Bg5 is a direct and challenging response, creating a pin on the f6-knight and leading to a strategically rich and complex battle. This opening is ideal for patient, strategic players who excel at deep manoeuvring and long-term planning.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -145766,10 +145766,10 @@
         "Control of the d5-square and the c-file"
       ],
       "common_plans": [
-        "White: Execute the knight maneuver Nbd2-f1-g3-f5 to attack the kingside, while maintaining central control and restricting Black's counterplay.",
-        "Black: Prepare and execute the ...c5 pawn break to challenge White's center and open lines on the queenside for the rooks and bishop on b7.",
-        "White: Use the Bg5 pin to provoke weaknesses (like ...h6, ...g5) or to exchange on f6, damaging Black's pawn structure.",
-        "Black: Methodically untangle pieces, often with moves like ...Bb7, ...Re8, and ...h6, to neutralize White's pressure before initiating active operations."
+        "White: Execute the knight manoeuvre Nbd2-f1-g3-f5 to attack the kingside, while maintaining central control and restricting Black's counterplay.",
+        "Black: Prepare and execute the ...c5 pawn break to challenge White's centre and open lines on the queenside for the rooks and bishop on b7.",
+        "White: Use Bg5 to put pressure on the f6-knight; after ...h6 the bishop can drop back to h4, or take on f6 to remove a piece that attacks e4.",
+        "Black: Methodically untangle pieces, often with moves like ...Bb7, ...Re8, and ...h6, to neutralise White's pressure before initiating active operations."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:16:19.133Z"

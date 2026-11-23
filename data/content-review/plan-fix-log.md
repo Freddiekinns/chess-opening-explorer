@@ -257,4 +257,4 @@ independent reviewer before commit; notes per page are in
 | 2026-11-23 09:30 | 1     | 10    | 10 / 0 / 0                  | 30 / 2 (fixed, re-accepted) | none (batch 2026-11-23-39) |
 | 2026-11-23 09:33 | 1     | 10    | 10 / 0 / 0                  | 37 / 1 (fixed, re-accepted) | none (batch 2026-11-23-40) |
 | 2026-11-23 09:38 | 1     | 10    | 10 / 0 / 0                  | 37 / 0 | none (batch 2026-11-23-41) |
-| 2026-11-23 09:40 | 1     | 10    | 10 / 0 / 0                  | 39 / 0 | none (batch 2026-11-23-42) |
+| 2026-11-23 09:40 | 1     | 10    | 10 / 0 / 0                  | 39 / 0 | none; `npm run test:all` passed (1,203 Jest, 819 Vitest) (batch 2026-11-23-42) |

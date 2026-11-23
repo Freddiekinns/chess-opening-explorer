@@ -17,6 +17,12 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-23 afternoon — **Extra run** (charter: Extra runs). Unit of work: the
+  plan's next item, night 3 (why learners use YouTube and not sites like ours),
+  under the new run limits in `operating.md` (read in depth, critic if budget is
+  left) and with Full network access. Tuesday 01:00 UTC then takes the item
+  after it. (Owner, in chat.)
+
 - 2026-11-23 13:35 UTC — **Extra run** (charter: Extra runs). Unit of work: the
   plan's "Before Gate A" item, done properly. Read the primary pages (not search
   summaries) behind night 2's two load-bearing claims: learners return only when

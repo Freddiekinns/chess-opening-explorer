@@ -13402,5 +13402,65 @@
     "verdict": "fixed",
     "contentHash": "efadceb718a0152c",
     "notes": "Plan 1 put Nbd2-f1-g3 before d4 with the pawn on d2; plan 4 gave ...Nb8-d7 with the knight on c6. Rewrote plans 1 and 4. British spelling."
+  },
+  "r2q1rk1/2p1bppp/p1npbn2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 w - - 1 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "7d459729456fe273",
+    "notes": "Plan 1 sent the f3-knight via f1 to g3 and used an f-file that does not open; plan 2 rerouted the knight via b8-d7, a Breyer idea (first plan 2 rewrite rejected for keeping it; corrected and accepted). Rewrote plans 1-2. British spelling."
+  },
+  "r1bqr1k1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 w - - 1 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "cef50220faae65f9",
+    "notes": "Overview said ...Re8 overprotects e5 and presses e4 through Black's own pawn; plan 2 gave ...Nf8-g6 (first rewrites rejected for the same e-file claim; corrected and accepted). Rewrote overview and plan 2."
+  },
+  "r1bq1rk1/2pn1ppp/p1np1b2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 w - - 1 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "4469a8ad58e95bfd",
+    "notes": "Plan 1 gave Ng3-f5 with no knight on g3; plan 3 rerouted the d7-knight to f8, where the rook stands, or b8. Rewrote plans 1 and 3. British spelling."
+  },
+  "r1bq1rk1/2pn1ppp/p1np1b2/1p2p3/P2PP3/1BP2N1P/1P3PP1/RNBQR1K1 b - - 0 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "a0369545648a7813",
+    "notes": "Plan 1 played Nf1-g3 with no knight on f1. Rewrote plan 1. British spelling."
+  },
+  "r2q1rk1/1bpn1ppp/p1np1b2/1p2p3/P2PP3/NBP2N1P/1P3PP1/R1BQR1K1 b - - 2 12": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "needs-research",
+    "contentHash": "93848483d0446a5f",
+    "notes": "Overview and plan 1 gave the route Na3-b1-c2; rewrote both around Na3-c2-e3 (accepted). Plan 4 says the f6-bishop pressures d4, but Black's e5-pawn blocks the diagonal; two rewrites rejected, so the old text is kept with British spelling and its c4 reference added to the skips."
+  },
+  "r1bq1rk1/2p1bppp/2np1n2/pp2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 w - - 0 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "ccf7c57cb02e9406",
+    "notes": "Plan 2 played Nf1-g3 with no knight on f1 and an early a4. Rewrote plan 2. British spelling."
+  },
+  "r2q1rk1/2p1bppp/p1np1n2/1p2p3/3PP3/1QP2N1P/PP3PP1/RNB1R1K1 b - - 0 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "cc96aa731d231c09",
+    "notes": "Overview and plan 1 gave White the bishop pair after the light-squared bishops were traded; plan 1 gave Ng3-f5; plan 2 pressed e4 with a rook blocked by the e7-bishop (first rewrite rejected for that; corrected and accepted). Rewrote overview and plans 1-2."
+  },
+  "r2qr1k1/1bp1bppp/p1np1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 w - - 1 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "fcf46ee7db38551a",
+    "notes": "Overview gave ...Nf8 for ...Bf8; plan 2 gave ...Nf8-g6 and pressed e4 through blockers (first rewrite rejected for that; corrected and accepted). Rewrote overview and plan 2. British spelling."
+  },
+  "r2qr1k1/1bp1bppp/p1np1n2/1p2p1N1/3PP3/1BP4P/PP3PP1/RNBQR1K1 b - - 2 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "a181bb2c603efc11",
+    "notes": "Plan 1 played Nf1-g3 with no knight on f1 and Bg5 onto the knight's square; plan 2 gave ...c5 through the c6-knight. Rewrote plans 1-2. British spelling."
+  },
+  "r2qrbk1/1bp2ppp/p1np1n2/1p2p3/3PP3/PBP2N1P/1P1N1PP1/R1BQR1K1 b - - 0 12": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "948775aa96487956",
+    "notes": "Plan 1 rerouted a b1-knight that is already on d2 and missed the point of 12.a3 (Ba2 against ...Na5). Rewrote plan 1. British spelling."
   }
 }

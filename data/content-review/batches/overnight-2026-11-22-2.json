@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-22",
+  "pages": [
+    {
+      "fen": "rnbqkbnr/pppp2pp/8/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3",
+      "name": "Latvian Gambit: Mayet Attack",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview and plan 1 had the c4-bishop targeting an f7-pawn that has gone (it is on f5); rewrote both around the a2-g8 diagonal, 3...fxe4 4.Nxe5 and Qh5+. Plan 2's ...Qh4 replaced with ...d5 and ...Qg5 (hitting e5 and g2)."
+    },
+    {
+      "fen": "rnbqkb1r/pppp2pp/5n2/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 4",
+      "name": "Latvian Gambit: Mayet Attack, Morgado Defense",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 attacked an f7-pawn that is on f5; rewrote it around the a2-g8 diagonal, Nxe5 (e5 is undefended) and Ng5 against the f7-square. British spelling in the overview."
+    },
+    {
+      "fen": "rnbqkbnr/ppp5/6p1/3p3Q/2B1p3/8/PPPP1PPP/RNB1K2R w KQkq - 0 7",
+      "name": "Latvian Gambit: Svedenborg, 6.Nxg6 hxg6",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Qxh7 (the h-pawn has gone to g6) and ignored that the h5-queen is attacked by the g6-pawn and the h8-rook; rewrote it (Qxg6+ or Qxh8 ...dxc4). Plan 3 now says the h8-rook already hits the queen."
+    },
+    {
+      "fen": "rnb1kbnr/ppppqppp/8/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3",
+      "name": "Open Game: Gunderam Defence, 3.Nc3",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview called the bishop blocked by ...Qe7 light-squared (it is the dark-squared f8-bishop); plan 4 had ...Be7 with the queen on e7, now ...g6 and ...Bg7. British spelling in the overview and plan 1."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "name": "Philidor Defense",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...exd4 before White has played d4; rewrote it around the Hanham set-up and later freeing breaks. British spelling in the overview and plan 1."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/3p4/8/3pP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4",
+      "name": "Philidor Defense: Bird Gambit",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Nxc3 before Black takes on c3, '0-0' and an 'open d-file'; rewrote it. British spelling in the overview and plan 3."
+    },
+    {
+      "fen": "r1bqkbnr/pp1n1ppp/2pp4/4p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5",
+      "name": "Philidor Defense: Hanham Variation, Delmar Variation",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Nc3 with the c3-pawn on that square; now Nbd2 and Re1 with the Ng5 motif. Plan 2's ambiguous ...Nf6 is now ...Ngf6. British spelling in the overview."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2p1p/3p2p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "name": "Philidor Defense: Larsen Variation",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had ...c5 against a d4-pawn that is a knight; plan 3 had ...Bg4 pinning an f3-knight that is on d4. Rewrote both. British spelling in the overview."
+    },
+    {
+      "fen": "r1bqk2r/pppnbBpp/3p1n2/4p3/3PP3/2N2N2/PPP2PPP/R1BQK2R b KQkq - 0 6",
+      "name": "Philidor Defense: Lion Variation, Bishop Sacrifice",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Qh5 through the f3-knight and plan 2 Kg8 without ...Kxf7 and Ng5+; rewrote both around 6...Kxf7 7.Ng5+ Kg8 8.Ne6. British spelling in plan 3."
+    },
+    {
+      "fen": "r1bqk2r/pppnbBpp/5n2/4p3/4P3/2N2N2/PPP2PPP/R1BQK2R b KQkq - 0 7",
+      "name": "Philidor Defense: Lion Variation, Delayed Bishop Sacrifice",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had an 'open f-file' for White (the f2-pawn is still there) and the queen to h5/f3 through the knight; plan 2 had the king to g8 without the moves before it. Rewrote both."
+    }
+  ]
+}

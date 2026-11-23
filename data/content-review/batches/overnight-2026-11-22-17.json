@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-22",
+  "pages": [
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1P3/2Bp2n1/2P2N2/PP3PPP/RNBQ1RK1 b kq - 0 7",
+      "name": "Italian Game: Two Knights Defense, Max Lange Attack, Krause Variation",
+      "eco": "C55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Nxc3 before Black's ...dxc3; rewritten as 7...dxc3 8.Nxc3. British spelling."
+    },
+    {
+      "fen": "r2qk2r/ppp2p1p/2n1bPp1/2b3N1/2pp4/8/PPP2PPP/RNBQR1K1 w kq - 0 10",
+      "name": "Italian Game: Two Knights Defense, Max Lange Attack, Loman Defense",
+      "eco": "C55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "needs-research: plan 1 plays fxg7 with no pawn on g7 (9...g6 moved it), but two rewrites were rejected (the reviewer could not confirm Qf3/Qe2, and Qg4 neither attacks the king nor stops ...O-O); old text kept and the reference added to the skips. Fixed: plan 2's 'central pawns (c4, d5)' (Black's pawns are on c4 and d4) and the overview, which now explains the pinned e6-bishop; British spelling."
+    },
+    {
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/2PP1N2/PP3PPP/RNBQK2R b KQkq - 0 5",
+      "name": "Two Knights: 4.d3 Be7 5.c3",
+      "eco": "C55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2's route Nf3-e1-g3 is not a knight route; rewritten as Nbd2-f1-g3 after castling and Re1. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/ppppbppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 w - - 3 6",
+      "name": "Two Knights: 4.d3 Be7 5.O-O O-O",
+      "eco": "C55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1's 'Knight's Tour Ng1-e2-g3' (the knight is on f3) rewritten around Re1 and Nbd2-f1-g3. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/ppppbppp/2n2n2/4p3/4P3/1B1P1N2/PPP2PPP/RNBQ1RK1 b - - 4 6",
+      "name": "Two Knights: 4.d3 Be7 5.O-O O-O 6.Bb3",
+      "eco": "C55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted the f3-knight via d2-f1-g3 (it is the b1-knight, and only after Re1); plan 2 sent the c6-knight via e7, where the bishop stands (caught by the reviewer); plan 3's Bc2 needs c3 first. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/ppppbppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQR1K1 b - - 4 6",
+      "name": "Two Knights: 4.d3 Be7 5.O-O O-O 6.Re1",
+      "eco": "C55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans 1 and 2 wrote unreadable routes (c3-d4, b1 via d2-f1-g3); rewritten. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/ppppbppp/2n2n2/8/2BpP3/5N2/PPP2PPP/RNBQ1RK1 w kq - 2 6",
+      "name": "Two Knights: 5.O-O Be7",
+      "eco": "C55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Re1 pressing an e5-pawn that isn't there; the overview called 5...Nxe4 the Max Lange (it is 5...Bc5 6.e5). Rewritten around 6.e5 Ne4; British spelling."
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n2n2/2bpP3/2Bp4/5N2/PPP2PPP/RNBQ1RK1 w kq d6 0 7",
+      "name": "Two Knights: Max Lange, 6.e5 d5",
+      "eco": "C55",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 called e6 a pawn (the bishop stands there); plan 2 had ...Qd7, ...O-O-O and an 'open c-file' that doesn't exist; rewritten around 9...Qd5 10.Nc3 Qf5 (the first rewrite claimed Qf5 holds f7, rejected and corrected). British spelling in the overview."
+    },
+    {
+      "fen": "r3kb1r/ppp2ppp/2n1b3/3q2B1/3pN3/5N2/PPP2PPP/R2QR1K1 b kq - 4 11",
+      "name": "Italian Game: Scotch Gambit, Anderssen Attack, Main Line",
+      "eco": "C56",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 exploited 'the pin on the f6-knight' with no knight on f6; plan 3's ...h6 and ...g5 rewritten around castling short (the g5-bishop covers d8). Overview notes this."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1ppp/2n5/8/2Bpn3/5N2/PPP2PPP/RNBQ1RK1 w kq - 0 6",
+      "name": "Italian Game: Scotch Gambit, Double Gambit Accepted",
+      "eco": "C56",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2's 'c3 to prepare d5' had no White d-pawn; rewritten around 6.Re1 d5 7.Bxd5 Qxd5 8.Nc3. Overview names the Anderssen Attack; British spelling."
+    }
+  ]
+}

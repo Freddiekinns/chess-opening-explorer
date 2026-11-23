@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r1bqkb1r/pp3ppp/2n1pn2/2pp4/3P4/2PBPN2/PP3PPP/RNBQK2R w KQkq - 1 6",
+      "name": "Colle: 5.c3 Nc6",
+      "eco": "D05",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named White's e4 in a Black plan; plan 4 rerouted knights from e1, where none stands. Rewrote plans 2 and 4; overview no longer writes the triangle as a route; notation and British spelling."
+    },
+    {
+      "fen": "r1bqk2r/pp3ppp/2nbpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQK2R w KQkq - 3 7",
+      "name": "Colle: 5.c3 Nc6 6.Nbd2 Bd6",
+      "eco": "D05",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 sent the d2-knight via f1 to e3 or g3, not a Colle idea; plan 3 named ...dxe4 before White's e4; plan 4 gave a ...a5-a4 route. Rewrote plans 2-4 (plan 3 revised once more after a later reviewer showed ...Qc7 cannot eye e5 through the d6-bishop; re-accepted). British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/pp3ppp/2nbpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 5 8",
+      "name": "Colle: 5.c3 Nc6 6.Nbd2 Bd6 7.O-O O-O",
+      "eco": "D05",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Plan 2 routed the d2-knight through f1, where the rook now stands; plan 4 pushed ...b5 into the d3-bishop. Rewrote plans 2 and 4. Plan 3 (\"exchanging on d4 (dxc4)\") is wrong, but two rewrites were rejected (...b6/...Bb7 cannot cover e4 or e5 here, and ...Qc7 cannot see e5 through the d6-bishop), so the old text is kept and its references are in the skips. British spelling in the overview."
+    },
+    {
+      "fen": "r1bq1rk1/pp3ppp/2n1pn2/2bp4/8/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 0 9",
+      "name": "Colle: 5.c3 Nc6 6.Nbd2 Bd6 7.O-O O-O 8.dxc5 Bxc5",
+      "eco": "D05",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 1 said e4 activates the d3-bishop; it frees the c1-bishop. Plan 2 named White's e4 in a Black plan. British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pp3ppp/4pn2/2pp4/3P4/1P2PN2/P1PN1PPP/R1BQKB1R b KQkq - 0 5",
+      "name": "Queen's Pawn Game: Zukertort Variation",
+      "eco": "D05",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 routed the b1-knight via f1-g3 although it is on d2; plan 4 called for a minority attack with no such structure; plan 1 omitted Bd3. British spelling."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pp1p/6p1/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "name": "Alekhine Defense, QGD",
+      "eco": "D06",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 (White) named Black's Bg7. British spelling throughout, including Alekhine Defence."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/8/3n4/3PP3/8/PP3PPP/RNBQKBNR b KQkq - 0 4",
+      "name": "QGD: Marshall Defence, 3.cxd5 Nxd5 4.e4",
+      "eco": "D06",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 wrote Be2/d3 and 0-0; plan 2 fianchettoed ...b7 to hit e4 instead of the line's ...e5 and ...c5 strikes. British spelling."
+    },
+    {
+      "fen": "rn1qkbnr/ppp1pppp/8/3p1b2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "name": "Queen's Gambit Declined: Baltic Defense",
+      "eco": "D06",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named Qb3 in a Black plan; plan 2 said Qb3 attacks the f5-bishop; plan 3 garbled 3.cxd5 Bxb1; plan 4 invented a loosened kingside. Rewrote all plans; British spelling (Baltic Defence)."
+    },
+    {
+      "fen": "r2qkbnr/ppp2ppp/2n1p3/3p1b2/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 2 5",
+      "name": "Queen's Gambit Declined: Baltic Defense, Pseudo-Chigorin",
+      "eco": "D06",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 said Qb3 challenges the f5-bishop; plan 2 rerouted a knight to e5 via ...Ne4; plan 3 named a central pawn majority that does not exist; plan 4 gave ...c5 with the knight on c6. Rewrote all plans; British spelling."
+    },
+    {
+      "fen": "r2qkbnr/ppp1pppp/2n5/3p4/2PP2b1/4PN2/PP3PPP/RNBQKB1R b KQkq - 0 4",
+      "name": "QGD: Chigorin, 3.Nf3 Bg4 4.e3",
+      "eco": "D07",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said 4.e3 unpins the knight, when it creates the pin to d1; plan 1 gave Rc1 with b1 and c1 still occupied; plan 4 sent the c6-knight to e7 (first rewrite rejected for a false ...Nf6 claim; fixed to ...e6 and ...Nge7 and re-accepted). British spelling."
+    }
+  ]
+}

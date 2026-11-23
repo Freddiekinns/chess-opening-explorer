@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "r1bq1rk1/pp2ppbp/2np1np1/8/4P3/1NN5/PPP1BPPP/R1BQ1RK1 w - - 6 9",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O Nc6 8.Nb3 O-O",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rc8 with the bishop on c8 and targeted a d4-pawn that is not there; plan 3 had a knight route d2-e4 onto White's own pawn. Rewrote plans 1-3."
+    },
+    {
+      "fen": "rnbq1rk1/pp2ppbp/3p1np1/8/3NP3/2N5/PPP1BPPP/R1BQ1RK1 w - - 4 8",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had ...Rc8 with the bishop on c8 and an ...a6-b5 route; plan 4 had ...Rxc3 with no rook on the c-file; plan 2 proposed a3 and b4. Rewrote plans 2-4."
+    },
+    {
+      "fen": "rnbq1rk1/pp2ppbp/3p1np1/6B1/3NP3/2N5/PPP1BPPP/R2Q1RK1 b - - 5 8",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "The overview and plan 2 called Bg5 a pin (the e7-pawn shields d8); plan 1 called the g5-bishop light-squared; plan 3 had a Qe1-h4 route through the f2-pawn. Rewrote the overview and all four plans."
+    },
+    {
+      "fen": "r1bq1rk1/pp2ppbp/2np1np1/6B1/3NP3/2N5/PPP1BPPP/R2Q1RK1 w - - 6 9",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 said Bxf6 weakens the dark squares, though the g7-bishop stays; plan 2 had ...Rxc3 with no rook on the c-file. Rewrote plans 1 and 2."
+    },
+    {
+      "fen": "r1bq1rk1/pp2ppbp/2np1np1/6B1/4P3/1NN5/PPP1BPPP/R2Q1RK1 b - - 7 9",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had ...Rxc3 with no rook on the c-file; plan 1 proposed a3 and said f4 controls d5 (reviewer). Rewrote plans 1 and 4."
+    },
+    {
+      "fen": "r1bq1rk1/1p2ppbp/p1np1np1/6B1/4P3/1NN5/PPP1BPPP/R2Q1RK1 w - - 0 10",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 a6",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rxc3 with no rook on the c-file; the overview called Bg5 a pin. Reworded the overview and plan 2."
+    },
+    {
+      "fen": "r2q1rk1/pp2ppbp/2npbnp1/6B1/4P3/1NN5/PPP1BPPP/R2Q1RK1 w - - 8 10",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 Be6",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed the b3-knight via c1-d3 in a way the parser could not read; plan 2 had a ...b7-b5-b4 route and ...Rxc3 with no rook on c3. Rewrote both plans."
+    },
+    {
+      "fen": "r2q1rk1/pp2ppbp/2npbnp1/6B1/4P3/1NN5/PPP1BPPP/R2Q1R1K b - - 9 10",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Bg5 Nc6 9.Nb3 Be6 10.Kh1",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had ...Rxc3 with no rook on the c-file. Reworded plan 4."
+    },
+    {
+      "fen": "rnbq1rk1/pp2ppbp/3p1np1/8/3NP3/2N5/PPP1BPPP/R1BQR1K1 b - - 5 8",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Re1",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had a Bf1-h3 route for a bishop on e2; plan 3 had ...Rc8 with the bishop on c8 and ...Rxc3. Rewrote plans 2 and 3; British spelling in the overview."
+    },
+    {
+      "fen": "r1bq1rk1/pp2ppbp/2np1np1/8/4P3/1NN5/PPP1BPPP/R1BQR1K1 b - - 7 9",
+      "name": "Sicilian: Dragon, 6.Be2 Bg7 7.O-O O-O 8.Re1 Nc6 9.Nb3",
+      "eco": "B70",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted a knight from f3 that does not exist; plan 2 called the half-open c-file open and had ...Rc8 and ...Rxc3 before a rook can get there. Rewrote both plans (reviewer caught that a b3-knight does not cover a4); British spelling in the overview."
+    }
+  ]
+}

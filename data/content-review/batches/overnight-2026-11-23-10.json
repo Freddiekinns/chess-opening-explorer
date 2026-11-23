@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r1b1k2r/2q1bppp/p2p1n2/npp1p3/P2PP3/2P2N2/1PB2PPP/RNBQR1K1 b kq - 0 11",
+      "name": "Ruy Lopez: Closed, Balla Variation",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed the knight via d2 to c4 or f1-e3; plan 2 used a closed c-file. Rewrote plans 1-2. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 w kq - 0 8",
+      "name": "Spanish: Closed 7...d6",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Nbd2 before the d-pawn moved; plan 3's Qh5 attack was unsound; plan 4 played ...b7-b6 with the pawn on b5. Rewrote plans 1, 3 and 4. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/2p1bppp/p2p1n2/np2p3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w kq - 1 9",
+      "name": "Spanish: Closed 7...d6 8.c3 Na5",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed the knight via d2 with the d-pawn still there; plan 3 said White prevents ...c5; plan 4 gave Black a queenside majority it lacks. Rewrote plans 1, 2 (unreadable b7 reference), 3 and 4. British spelling."
+    },
+    {
+      "fen": "r1b1k2r/2q1bppp/p2p1n2/npp1p3/3PP3/2P2N2/PPB2PPP/RNBQR1K1 w kq - 1 11",
+      "name": "Spanish: Closed 7...d6 8.c3 Na5",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Nf1-g3 with no knight on f1; plan 2 proposed ...Qc7, already played. Rewrote overview (adding that ...Bg4 is still possible without h3) and plans 1-2."
+    },
+    {
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/B3P3/5N2/PPPP1PPP/RNBQR1K1 w kq - 0 7",
+      "name": "Spanish: Closed, 6...b5",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called 6...b5 sharp and tactical and missed its point (ending the Bxc6 and Nxe5 threat); plan 1 pushed d4 before Bb3; plan 3 played Nf1-g3 with no knight on f1. Rewrote overview and plans 1 and 3. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2ppbppp/p1n2n2/1p2p3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 b - - 0 8",
+      "name": "Spanish: Closed, 8.c3",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview did not mention that 8.c3 allows the Marshall Gambit; plan 1 played Nf1-g3 with no knight on f1. Rewrote overview and plan 1. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1B1P1N2/PPP2PPP/RNBQR1K1 w - - 0 9",
+      "name": "Spanish: Closed, 8.d3 d6",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 1 sent the f3-knight on the d2-f1-g3 route meant for the queen's knight. Rewrote overview and plan 1. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2ppbppp/p1n2n2/1p2p3/4P3/1B3N1P/PPPP1PP1/RNBQR1K1 b - - 0 8",
+      "name": "Spanish: Closed, 8.h3",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Nf1-g3 with no knight on f1; plan 2 gave ...c5-c4 before ...Na5; plan 3 called 9.d3 the Chigorin; plan 4 gave ...Nb8-d7 with the knight on c6. Rewrote all four plans. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2ppbppp/p1n2n2/4p3/Pp2P3/1B3N2/1PPP1PPP/RNBQR1K1 w - - 0 9",
+      "name": "Spanish: Closed, Anti-Marshall 8.a4 b4",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 4 gave Black a passed a-pawn that does not exist; plan 2 routed a knight from b8, where there is none; plan 1 played Nf1-e3 with no knight on f1. Rewrote overview and all four plans."
+    },
+    {
+      "fen": "r2q1rk1/1bppbppp/p1n2n2/1p2p3/P3P3/1B3N2/1PPP1PPP/RNBQR1K1 w - - 1 9",
+      "name": "Spanish: Closed, Anti-Marshall 8.a4 Bb7",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 sent the f3-knight via d2-f1-g3. Rewrote plan 3. British spelling."
+    }
+  ]
+}

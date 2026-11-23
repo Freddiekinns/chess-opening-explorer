@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "r2qkbnr/pp1b1ppp/2n1p3/2ppP3/3P4/2P2N2/PP2BPPP/RNBQK2R b KQkq - 4 6",
+      "name": "French: Advance, Euwe, 6.Be2",
+      "eco": "C02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "6.Be2 Euwe: plan 1 had f4-f5 behind the f3-knight; overview generic. Rewrote overview and both plans around d4 (Na3-c2, ...Nge7-f5, ...Qb6, ...cxd4, ...f6)."
+    },
+    {
+      "fen": "r2qkb1r/pp1bnppp/2n1p3/2ppP3/3P4/2P2N2/PP2BPPP/RNBQK2R w KQkq - 5 7",
+      "name": "French: Advance, Euwe, 6.Be2 Nge7",
+      "eco": "C02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had exf6 before any ...f6; plans 3-4 vague (bad bishop via ...a6-b5, control of d4). Rewrote overview and all four plans."
+    },
+    {
+      "fen": "r1bqkbnr/ppp2ppp/2n1p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR w KQkq - 2 4",
+      "name": "French Defense: Tarrasch Variation, Guimard Defense",
+      "eco": "C03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had ...Qb6 and ...c5 with the c6-knight blocking the c-pawn and the c7-pawn blocking the queen. Rewrote overview and plans; first rewrite said the c-pawn break was impossible outright, reviewer rejected, reworded and re-accepted."
+    },
+    {
+      "fen": "rnbqk2r/pp2bppp/4pn2/2Pp4/4P3/3B4/PPPN1PPP/R1BQK1NR w KQkq - 1 6",
+      "name": "French: Tarrasch, 3...Be7 4.Bd3 c5 5.dxc5 Nf6",
+      "eco": "C03",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Nxc5 with no knight able to reach c5; overview generic. Rewrote overview and plans (Qe2, ...Bxc5, ...Nc6-b4)."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2n1pn2/3p4/3PP3/5N2/PPPN1PPP/R1BQKB1R w KQkq - 4 5",
+      "name": "French Defense: Tarrasch Variation, Guimard Defense, Main Line",
+      "eco": "C04",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had f4-f5 behind the f3-knight; plan 2 said ...f6 frees the light-squared bishop; overview described 5.e5 as already played. Rewrote overview and plans."
+    },
+    {
+      "fen": "r1bqkb1r/ppp2ppp/2n1pn2/3pP3/3P4/5N2/PPPN1PPP/R1BQKB1R b KQkq - 0 5",
+      "name": "French: Tarrasch, Guimard, 4.Ngf3 Nf6 5.e5",
+      "eco": "C04",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...c5 (blocked by the c6-knight) and ...Qb6 (blocked by c7); plan 1 had f4-g4 behind the f3-knight. Rewrote overview and all four plans; overview reworded once after reviewer rejection."
+    },
+    {
+      "fen": "r1bqkb1r/pppn1ppp/2n1p3/3pP3/3P4/5N2/PPPNBPPP/R1BQK2R b KQkq - 2 6",
+      "name": "French: Tarrasch, Guimard, Main Line, 6.Be2",
+      "eco": "C04",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had knights heading to f5 and c4 with no route; plan 4 vague. Rewrote overview and plans 3-4, British spelling in plans 1-2."
+    },
+    {
+      "fen": "r1bqkb1r/pppn1ppp/2n1p3/3pP3/3P4/1N3N2/PPP2PPP/R1BQKB1R b KQkq - 2 6",
+      "name": "French: Tarrasch, Guimard, Main Line, 6.Nb3",
+      "eco": "C04",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had f4-f5 behind the f3-knight; plan 2 had ...c5 with the c6-knight blocking. Rewrote overview and plans (Bf4, ...f6, ...a5-a4)."
+    },
+    {
+      "fen": "r1bqk2r/pppnbppp/2n1p3/3pP3/3P4/1N3N2/PPP2PPP/R1BQKB1R w KQkq - 3 7",
+      "name": "French: Tarrasch, Guimard, Main Line, 6.Nb3 Be7",
+      "eco": "C04",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans 2-4 built on a ...c5 break the c6-knight blocks and a d7-knight route to f8 where the bishop stands. Rewrote overview and all four plans; overview claimed a Bb5 pin the d7-knight blocks, reviewer rejected, reworded and re-accepted."
+    },
+    {
+      "fen": "rnbqkb1r/p2n1ppp/1p2p3/2ppP3/3P4/2PB4/PP1N1PPP/R1BQK1NR w KQkq - 0 7",
+      "name": "French Defense: Tarrasch Variation, Botvinnik Variation",
+      "eco": "C05",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had ...Qb6 with a pawn on b6; plan 2 had Ne2-f3 (not a knight move) and Ba3 with the c1-bishop shut in. Rewrote both plans; overview kept."
+    }
+  ]
+}

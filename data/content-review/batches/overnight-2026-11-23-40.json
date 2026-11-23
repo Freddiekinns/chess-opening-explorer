@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r2qk2r/pppn1ppp/3bpn2/7b/2BP4/2N1PN1P/PP3PP1/R1BQ1RK1 w kq - 5 9",
+      "name": "QGA: Janowski-Larsen, 6.h3 Bh5 7.Nc3 Nbd7 8.O-O Bd6",
+      "eco": "D25",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 routed a knight Nd2-f1-e3 with no knight on d2 and a rook on f1; plan 2 said ...c5 controls e5. Rewrote plans 2-4 (the e4-e5 fork, Be2 to unpin); British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/ppp2ppp/4pn2/8/2BP2b1/2N1PN2/PP3PPP/R1BQK2R b KQkq - 1 6",
+      "name": "QGA: Janowski-Larsen, 6.Nc3",
+      "eco": "D25",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 said g4 traps the h5-bishop (it escapes to g6); plan 4 gave Black an open g-file after Bxf3. Rewrote both; British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/ppp2ppp/4pn2/8/2BP2b1/4PN2/PP3PPP/RNBQ1RK1 b kq - 1 6",
+      "name": "QGA: Janowski-Larsen, 6.O-O",
+      "eco": "D25",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pressed a d5-pawn Black does not have. Rewrote it; British spelling."
+    },
+    {
+      "fen": "rnbqk2r/ppp1ppbp/5np1/8/2BP4/4PN2/PP3PPP/RNBQ1RK1 b kq - 2 6",
+      "name": "QGA: Smyslov, 5.Bxc4 Bg7 6.O-O",
+      "eco": "D25",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Qe2/c2 shorthand; reworded. British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/ppp1pppp/4bn2/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq - 1 5",
+      "name": "Queen's Gambit Accepted: Winawer Defense",
+      "eco": "D25",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played ...e6 and ...Be7 with the bishop on e6; plan 2 regained c4 with a3 and b4. Rewrote both; British spelling, including Defence."
+    },
+    {
+      "fen": "rnbqkb1r/1pp2ppp/p3pn2/8/2BP4/4PN2/PP3PPP/RNBQ1RK1 b kq - 1 6",
+      "name": "QGA: 4.e3 e6 5.Bxc4 a6 6.O-O",
+      "eco": "D26",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 said a3 stops ...b5 (a4 does); plan 2 offered a fianchetto or b7 as alternatives; plan 3 wrote dxc5 as an immediate move. Rewrote plans 1-3; British spelling."
+    },
+    {
+      "fen": "rnbqk2r/1p3ppp/p3pn2/2b5/2B5/4PN2/PP2QPPP/RNB2RK1 b kq - 1 8",
+      "name": "QGA: Classical, Furman, 6...a6 7.dxc5 Bxc5 8.O-O",
+      "eco": "D26",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed d4-d5 with no white d-pawn. Rewrote it; British spelling."
+    },
+    {
+      "fen": "rnbqk2r/5ppp/p3pn2/1pb5/2B5/4PN2/PP2QPPP/RNB2RK1 w kq - 0 9",
+      "name": "QGA: Classical, Furman, 6...a6 7.dxc5 Bxc5 8.O-O b5",
+      "eco": "D26",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 wrote White's e4 break as a Black move. Rewrote it (...Bb7 controls e4); British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pp3ppp/4pn2/8/2Bp4/4PN2/PP2QPPP/RNB1K2R w KQkq - 0 7",
+      "name": "QGA: Classical, Furman, 6...cxd4",
+      "eco": "D26",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 used d5 as White's outpost and pushed d4-d5 and e4-e5 with Black's pawn on d4 and White's on e3. Rewrote it; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/1p3ppp/p3pn2/2p5/2BP4/P3PN2/1P3PPP/RNBQ1RK1 b kq - 0 7",
+      "name": "QGA: Classical, 6...a6 7.a3",
+      "eco": "D27",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said 7.a3 prevents ...b5 (it prepares b4 and gives the bishop a2); plan 1 had White playing against its own isolated pawn; plan 3 routed a knight into c5 where Black has a pawn. Rewrote all three; British spelling."
+    }
+  ]
+}

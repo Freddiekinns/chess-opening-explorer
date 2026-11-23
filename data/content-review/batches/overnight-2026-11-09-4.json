@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 0 2",
+      "name": "Van Geet: 1...d5 2.e4",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 suggested Black exploits White's c3 (blocked by the c3-knight), generic overview. Rewritten around 2...dxe4 3.Nxe4, 2...d4 3.Nce2 and transpositions to the French and Caro-Kann."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/8/4p3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 0 3",
+      "name": "Van Geet: 1...d5 2.e4 dxe4",
+      "eco": "A00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called it a Scandinavian with colours reversed (it is a Scandinavian-type line with colours as normal); plans generic. Rewritten, with the 3.f3 and 3.d3 gambits."
+    },
+    {
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/8/1P6/P1PPPPPP/RNBQKBNR w KQkq - 0 2",
+      "name": "Nimzo-Larsen Attack: English Variation",
+      "eco": "A01",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 read the e5-square as a move; American spelling. Rewritten with the brief's set-ups."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1p1pp/8/3p1p2/3P1P2/8/PPP1P1PP/RNBQKBNR w KQkq - 0 3",
+      "name": "Bird Opening: Double Duck Formation",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans had a knight route Ne1-d3 with no knight able to reach e1 that way, no side prefixes, and the bad-bishop point unclear. Rewritten around the e5/e4 outposts, the e-pawn breaks and the Ba3/...Ba6 bishop trades."
+    },
+    {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4P3/8/5N2/PPPPP1PP/RNBQKB1R b KQkq - 2 3",
+      "name": "Bird Opening: Schlechter Gambit",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said White accepts a gambit and Black challenges e5 (Black's 2...Nc6 is the gambit); 0-0 notation. Rewritten around 3...g5 and ...g4 against the f3-knight."
+    },
+    {
+      "fen": "rnbqkbnr/pp1p1ppp/8/2p5/3p1P2/2P2N2/PP2P1PP/RNBQKB1R b KQkq - 0 4",
+      "name": "Bird Opening: Siegener Gambit",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said White sacrifices to handle the From Gambit (2.d4 declines it); plans had Nxd4 into the c5-pawn's guard. Rewritten around 4...dxc3 5.Nxc3 and cxd4. Reviewer rejections (4.c3 called a further pawn; d-file called open, it is half-open) fixed and re-reviewed."
+    },
+    {
+      "fen": "rnbqkb1r/pppppppp/5n2/8/5P2/4P3/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+      "name": "Bird: 1..Nf6 2.e3",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had the impossible queen route Qe1-h4 from d1 with the king on e1; Stonewall set-up with Be2. Rewritten."
+    },
+    {
+      "fen": "rnbqkb1r/pppppppp/5n2/8/5P2/6P1/PPPPP2P/RNBQKBNR b KQkq - 0 2",
+      "name": "Bird: 1..Nf6 2.g3",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Bg7 neutralising the g2-bishop (different diagonal). Rewritten around ...d5/...c5 and a mirrored ...g6 set-up."
+    },
+    {
+      "fen": "rnbqk2r/ppppppbp/5np1/8/5P2/5NP1/PPPPP1BP/RNBQK2R b KQkq - 2 4",
+      "name": "Bird: 1..Nf6 2.Nf3 g6 3.g3",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan had Qe1-h4, which the g3-pawn blocks; plan 4 vague. Rewritten around d3/e4 and the central breaks."
+    },
+    {
+      "fen": "rnbqk1nr/ppp2p1p/3b4/6p1/3P4/5N2/PPP1P1PP/RNBQKB1R b KQkq - 0 5",
+      "name": "Bird: From Gambit, Lasker, 5.d4",
+      "eco": "A02",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans named ...Ng6 with no route and a vague g3/h4 idea. Rewritten around 5...g4, ...Qh4+ on the e1-h4 diagonal and 6.Ne5 Bxe5 7.dxe5 Qxd1+."
+    }
+  ]
+}

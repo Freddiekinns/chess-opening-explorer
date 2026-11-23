@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rn1qkbnr/ppp2p2/3p4/6pp/2B1PpP1/5N2/PPPP2P1/RNBQ1RK1 b kq - 0 7",
+      "name": "King's Gambit Accepted: King's Knight's Gambit",
+      "eco": "C37",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had White attacking down an h-file that only Black uses (White has no rook on h1) with Qe1-h4; plan 4 had an h6-f5 route without the knight; plan 2 had ...Qh4 through the g5-pawn. Rewrote plans 1, 2 and 4 (a first plan 1 naming Nd4/Nh2 was rejected by the reviewer as unconfirmed)."
+    },
+    {
+      "fen": "rnbqkbnr/pppp1B1p/8/8/4Ppp1/5N2/PPPP2PP/RNBQK2R b KQkq - 0 5",
+      "name": "King's Gambit Accepted: Lolli Gambit",
+      "eco": "C37",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Qh5+ through the g4-pawn; plan 2 had ...Kg7. Rewrote both around 5...Kxf7 6.Ne5+ Ke8 7.Qxg4 Nf6 8.Qxf4; British spelling in plan 4."
+    },
+    {
+      "fen": "rnbqkbnr/pppp1p1p/8/8/2B1Ppp1/2N2N2/PPPP2PP/R1BQK2R b KQkq - 1 5",
+      "name": "King's Gambit Accepted: McDonnell Gambit",
+      "eco": "C37",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Qxf3 before ...gxf3 and O-O-O with the c1-bishop at home. Rewrote plan 1; British spelling in plans 3-4."
+    },
+    {
+      "fen": "rn1qkbnr/ppp2p2/3p4/6p1/2B1Ppp1/5N2/PPPP2P1/RNBQ1RK1 w kq - 0 8",
+      "name": "King's Gambit Accepted: Middleton Countergambit",
+      "eco": "C37",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Kh1 into the open h-file; plan 2 had ...Qh4 through the g5-pawn. Rewrote both (a first plan 1 naming Nd4/Nh2 was rejected by the reviewer as unconfirmed)."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2p1p/8/3p4/2B1Ppp1/5N2/PPPP2PP/RNBQ1RK1 w kq - 0 6",
+      "name": "King's Gambit Accepted: Muzio Gambit, Brentano Defense",
+      "eco": "C37",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Qxf3 before ...gxf3 and Re1 piling on f7. Rewrote it (6.exd5 or 6.Bxd5); British spelling in overview and plan 4."
+    },
+    {
+      "fen": "rnb1kbnr/pppp1p1p/8/4N3/3PPppq/6P1/PPP4P/RNBQKB1R b KQkq - 0 6",
+      "name": "King's Gambit Accepted: Rosentreter Gambit, Bird Gambit",
+      "eco": "C37",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Plan 2 named weak squares f2 and h2 (f2 empty): rewritten and accepted; plan 1 now says half-open f-file. Plan 3 gives an illegal 7.Qxg3 line; two rewrites around 6...fxg3 7.Qxg4 g2+ 8.Qxh4 gxh1=Q were rejected by the reviewer, so the old text is kept and needs research."
+    },
+    {
+      "fen": "rnb1kbnr/pppp1p1p/8/4N3/2B1Pppq/8/PPPP2PP/RNBQK2R w KQkq - 2 6",
+      "name": "King's Gambit Accepted: Salvio Gambit",
+      "eco": "C37",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had h4 with Black's queen on h4. Rewrote plans 1 and 4 (6.Kf1; round up the f4- and g4-pawns); British spelling in plan 2."
+    },
+    {
+      "fen": "rnb1kb1r/pppp1p1p/7n/4N3/2B1Pppq/8/PPPP2PP/RNBQ1K1R w kq - 4 7",
+      "name": "King's Gambit Accepted: Salvio Gambit, Silberschmidt Defense",
+      "eco": "C37",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had h4 with Black's queen on h4. Rewrote plan 3; half-open f-file and British spelling in overview and plan 1."
+    },
+    {
+      "fen": "rnbqk1nr/ppp2pb1/3p3p/6p1/2BPPp1P/3Q1N2/PPP3P1/RNB1K2R b KQkq - 1 7",
+      "name": "KGA: Philidor Gambit, Schultz Variation",
+      "eco": "C38",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had the queen going to g3 or h3 through the f3-knight and d5 as a bare move. Rewrote plan 1; British spelling in overview and plan 2."
+    },
+    {
+      "fen": "rnb1k2r/ppp2p1p/5n2/3qN3/1b1P1ppP/2N5/PPP2KP1/R1BQ1B1R b kq - 3 9",
+      "name": "KGA: Kieseritsky, Brentano Defence, Kaplanek Variation",
+      "eco": "C39",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans called the b4-bishop's line a pin after 9.Kf2 had already broken it, and gave Bxc3 as a White move. Rewrote both plans (the c3-knight now hits the d5-queen); British spelling in overview."
+    }
+  ]
+}

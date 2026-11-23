@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r2qk2r/pp1n1ppp/2p1pnb1/8/PbBPP3/2N2N2/1P2QPPP/R1B2RK1 b kq - 0 10",
+      "name": "Slav: Dutch, 8...Nbd7 9.Qe2 Bg6 10.e4",
+      "eco": "D18",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "10.e4 overview did not explain the gambit (10...Bxc3 11.bxc3 Nxe4 12.Ba3); plan 1 gave an impossible f4-f5 push; plan 2 claimed an isolated d-pawn for White. Rewrote overview and both plans."
+    },
+    {
+      "fen": "rn1q1rk1/pp3ppp/2p1pn2/5b2/PbBP3N/2N1P3/1P3PPP/R1BQ1RK1 b - - 4 9",
+      "name": "Slav: Dutch, 8...O-O 9.Nh4",
+      "eco": "D18",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 claimed an open g-file and f2-f4; plan 3 said Qe2 connects the rooks with the c1-bishop at home. Rewrote overview (not sharp; Nxf5 threat, ...Bg4/...Bg6 or ...exf5) and all plans; British spelling."
+    },
+    {
+      "fen": "rn1q1rk1/pp3ppp/2p1pnb1/8/PbBP3N/2N1P3/1P3PPP/R1BQ1RK1 w - - 5 10",
+      "name": "Slav: Dutch, 8...O-O 9.Nh4 Bg6",
+      "eco": "D18",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 1 said Nxg6 gives doubled h-pawns (they are g-pawns) and an open h-file (half-open); plan 4 gave Black the bishop pair after bxc3. Rewrote all; British spelling."
+    },
+    {
+      "fen": "r2q1rk1/pp1n1ppp/2p1pn2/5b2/PbBP3N/2N1P3/1P3PPP/R1BQ1RK1 w - - 5 10",
+      "name": "Slav: Dutch, 8...O-O 9.Nh4 Nbd7",
+      "eco": "D18",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named a d5-pawn Black does not have and an ...e6-e5 break after the e-pawn has gone to f5. Rewrote overview and both plans; British spelling."
+    },
+    {
+      "fen": "r2q1rk1/pp1n1ppp/2p2n2/5p2/PbBP4/2N1P3/1P3PPP/R1BQ1RK1 w - - 0 11",
+      "name": "Slav: Dutch, 8...O-O 9.Nh4 Nbd7 10.Nxf5 exf5",
+      "eco": "D18",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview claimed an open g-file and an f4 outpost; plans named an e6-pawn and a light-squared bishop Black no longer has, ...Ba6, and the g-file. Rewrote all."
+    },
+    {
+      "fen": "r2q1rk1/pp1n1ppp/2p2n2/5p2/PbBP4/2N1P3/1PQ2PPP/R1B2RK1 b - - 1 11",
+      "name": "Slav: Dutch, 8...O-O 9.Nh4 Nbd7 10.Nxf5 exf5 11.Qc2",
+      "eco": "D18",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 said Qc2 pressures g7 (it hits f5); plan 2 called the e-file open. Fixed both; British spelling in overview."
+    },
+    {
+      "fen": "rn1q1rk1/pp3ppp/2p1pnb1/8/PbBP4/2N1PN2/1P2QPPP/R1B2RK1 w - - 5 10",
+      "name": "Slav: Dutch, 8...O-O 9.Qe2 Bg6",
+      "eco": "D19",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said 9...Bg6 unpins the f6-knight (no pin exists); plan 2 routed ...Nbd7-e4, which a knight cannot do. Rewrote overview and plans 2 and 3."
+    },
+    {
+      "fen": "r2q1rk1/pp1n1ppp/2p1pnb1/8/PbBP4/2N1PN2/1P2QPPP/R1BR2K1 w - - 7 11",
+      "name": "Slav: Dutch, 8...O-O 9.Qe2 Bg6 10.Rd1 Nbd7",
+      "eco": "D19",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 gave ...Nb6 as controlling e4 and an impossible ...a5-a4 with White's pawn on a4. Rewrote plan 2; British spelling elsewhere."
+    },
+    {
+      "fen": "r2q1rk1/pp1n1ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P2QPPP/R1B2RK1 w - - 5 10",
+      "name": "Slav: Dutch, 8...O-O 9.Qe2 Nbd7",
+      "eco": "D19",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 met e4 with ...dxe4, but Black has no d-pawn. Rewrote plan 2; British spelling in overview and plan 4."
+    },
+    {
+      "fen": "r2q1rk1/pp1n1ppp/2p1pnb1/8/Pb1PP3/2NB1N2/1P2QPPP/R1B2RK1 b - - 2 11",
+      "name": "Slav: Dutch, 8...O-O 9.Qe2 Nbd7 10.e4 Bg6 11.Bd3",
+      "eco": "D19",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave an impossible f4-f5 (knight on f3); plans 3 and 4 were vague. Rewrote plans 1, 3 and 4 (e5 Nd5, ...Bh5 pin, guarding d4); British spelling."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "rnbqkbnr/pp2pp1p/2p3p1/3p4/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 1 4",
+      "name": "Caro-Kann: Gurgenidze: 4.Nf3",
+      "eco": "B15",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 named Bg7 as if White's bishop; plan 1 paired short castling with an h4-h5 storm. Rewrote plans 1 and 3 (reviewer: first draft supported d4 with c3, where White's knight stands)."
+    },
+    {
+      "fen": "rnbqk2r/pp2ppbp/2p2np1/3pP3/3P4/2N2N1P/PPP2PP1/R1BQKB1R b KQkq - 0 6",
+      "name": "Caro-Kann: Gurgenidze: 4.Nf3 Bg7 5.h3 Nf6 6.e5",
+      "eco": "B15",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called it a French Advance structure with a kingside attack and ignored that 6.e5 hits the f6-knight; plan 1 pushed f4-f5 through the f3-knight; plan 2 rerouted the attacked knight via e8. Rewrote overview and plans 1-2."
+    },
+    {
+      "fen": "rnbqkbnr/pp2ppp1/2p4p/8/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 0 5",
+      "name": "Caro-Kann Defense: Finnish Variation",
+      "eco": "B16",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 challenged a Bf5 not yet on the board. Rewrote plan 2; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqk2r/pp1n1pp1/2pbp2p/8/3PQ3/3B1N2/PPP2PPP/R1B1K2R b KQkq - 0 10",
+      "name": "Caro-Kann Defense: Karpov Variation, Modern Main Line",
+      "eco": "B17",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed f2-f4-f5 through the f3-knight. Rewrote plans 1-2 around ...Nf6 gaining time, Bd2/long castling and ...c5; British spelling in overview and plans 3-4."
+    },
+    {
+      "fen": "r1bqkb1r/pp1npppp/2p2n2/8/2BPN3/8/PPP2PPP/R1BQK1NR w KQkq - 3 6",
+      "name": "Caro-Kann: Steinitz, 5.Bc4 Ngf6",
+      "eco": "B17",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 assumed ...gxf6 after Nxf6+ (the d7-knight recaptures); plan 4 fianchettoed the light-squared bishop to g7; plan 3's Qh5/h4-h5 was not this line's idea. Rewrote all four plans; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkb1r/pp1npppp/2p2n2/8/3PN3/5N2/PPP2PPP/R1BQKB1R w KQkq - 3 6",
+      "name": "Caro-Kann: Steinitz, 5.Nf3 Ngf6",
+      "eco": "B17",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Be7 before ...e6 and the bishop reaching g6 in one move; plan 3 called the e-file semi-open after ...exf6 (it is open). Rewrote all four plans; British spelling in the overview."
+    },
+    {
+      "fen": "r1bqkb1r/pp1npppp/2p2N2/8/3P4/5N2/PPP2PPP/R1BQKB1R b KQkq - 0 6",
+      "name": "Caro-Kann: Steinitz, 5.Nf3 Ngf6 6.Nxf6+",
+      "eco": "B17",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 3 used ...gxf6 and a g7 fianchetto of the light-squared bishop; the real alternative is ...exf6. Rewrote overview and all three plans."
+    },
+    {
+      "fen": "r1bqkb1r/pp1npppp/2p2n2/6N1/3P4/3B4/PPP2PPP/R1BQK1NR b KQkq - 4 6",
+      "name": "Caro-Kann: Steinitz, 5.Ng5 Ngf6 6.Bd3",
+      "eco": "B17",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Bxe6 (the d3-bishop can't reach e6) and Qe2-h5 sacrifices; overview missed the 6...h6? 7.Ne6 Bg6 mate trap. Rewrote overview and all four plans."
+    },
+    {
+      "fen": "rn2kbnr/pp2pppp/2p5/5b2/3qN3/3B4/PPP2PPP/R1BQK1NR w KQkq - 0 6",
+      "name": "Caro-Kann Defence: Burris Gambit accepted",
+      "eco": "B18",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 retreat squares written as bare d6/d8. Rewrote plan 2 with ...Qd8 or ...Qd5 after Nf3; British spelling."
+    },
+    {
+      "fen": "rn2kbnr/pp2pppp/2p2N2/5b2/3q4/3B4/PPP2PPP/R1BQK1NR b KQkq - 1 6",
+      "name": "Caro-Kann Defence:Burris Gambit accepted",
+      "eco": "B18",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plans treated 6.Nf6+ as a sound gambit and plan 2 moved the queen while Black was in check; 6...Nxf6 7.Bxf5 Qe5+ leaves Black a knight and pawn up. Rewrote overview and plans (reviewer: first draft said the check forces a recapture, but 6...Kd8 is legal)."
+    }
+  ]
+}

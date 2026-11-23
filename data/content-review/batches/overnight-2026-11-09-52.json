@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "rnbqr1k1/1p3pbp/p2p1np1/2pP4/4P3/2N5/PP1NBPPP/R1BQ1RK1 w - - 0 11",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 a6",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 called the queenside majority a minority attack; plan 1 tightened (Nc4, f4 then e5). British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/pp1n1pbp/3p1np1/2pP4/P3P3/2N5/1P1NBPPP/R1BQ1RK1 b - - 0 11",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 Nbd7 11.a4",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 rerouted Nd2-f1-e3 with a rook on f1; plan 4 prepared ...f5 through the f6-knight; plan 1 used Rb1 to restrain the queenside. Rewrote plans 1, 2, 4; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/1p1n1pbp/p2p1np1/2pP4/P3P3/2N5/1P1NBPPP/R1BQ1RK1 w - - 0 12",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 Nbd7 11.a4 a6",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview wrote \"Nd2-a4\" as if a knight move; plan 4 rerouted the f6-knight via h7 onto its own pawn; plan 3 had White seeking a light-squared bishop trade (reviewer catch). Rewrote overview phrase and plans 1, 3, 4; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/1p1n1pbp/p2p1np1/2pP4/P3P3/2N4P/1P1NBPP1/R1BQ1RK1 b - - 0 12",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 Nbd7 11.a4 a6 12.h3",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 rerouted the d2-knight via f1 with a rook there. Rewrote plan 3; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/1p1n1pbp/p2p1np1/2pP4/P3P3/2N5/1PQNBPPP/R1B2RK1 b - - 1 12",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 Nbd7 11.a4 a6 12.Qc2",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted the knight via f1 with a rook there; plan 2 recommended a4 and Qc2, both already played. Rewrote plans 1-2; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/pp3pbp/3p1np1/2pPn3/P3P3/2N5/1P1NBPPP/R1BQ1RK1 w - - 1 12",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 Nbd7 11.a4 Ne5",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed e4-e5 into the e5-knight, rerouted via f1 and recommended a4 already played. Rewrote plan 1; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/pp3pbp/3p1np1/2pPn3/P3P3/2N5/1P2BPPP/RNBQ1RK1 b - - 2 12",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 Nbd7 11.a4 Ne5 12.Ndb1",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed e4-e5 into the e5-knight; plan 3 rerouted the b1-knight to c3 (occupied). Rewrote plans 1 and 3 around Na3-c4/b5 and f2-f4; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/pp3pbp/3p1np1/2pPn3/P3P3/2N5/1PQNBPPP/R1B2RK1 b - - 2 12",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 Nbd7 11.a4 Ne5 12.Qc2",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted via f1 and pushed e4-e5 into the knight; plan 3 had the e5-knight controlling e4. Rewrote plans 1 and 3; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/pp3pbp/3p1np1/2pPn3/P3P3/R1N5/1P1NBPPP/2BQ1RK1 b - - 2 12",
+      "name": "Benoni: Classical, Main Line, 10.Nd2 Nbd7 11.a4 Ne5 12.Ra3",
+      "eco": "A77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 1 described a rook lift Ra3-f3/g3 blocked by the c3-knight; Ra3 guards the c3-knight. Rewrote overview sentence and both plans; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/pp3pbp/n2p1np1/2pP4/4P3/2N5/PP1NBPPP/R1BQ1RK1 w - - 7 11",
+      "name": "Benoni Defense: Classical Variation, Czerniak Defense",
+      "eco": "A78",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 supported ...b5 with ...a6 while the knight stands on a6; plan 2 had the g7-bishop hitting e4; plan 4 rerouted the knight via f1 (rook there). Rewrote plans 1, 2, 4; British spelling."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/3P4/2P5/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "name": "Indian: 2.c3 g6",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 wrote the centre as a route (d4-c3-e4); overview said 2.c3 prepares d5 or b4. Rewrote overview and plan 1 (reviewer rejection: c3 and d4 do not guard e4; fixed and re-reviewed); British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pppp1ppp/4pn2/8/3P1B2/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 3",
+      "name": "London System Indian Setup with 2. Bf4 e6",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called the f4-bishop light-squared; plan 1 wrote the pawn triangle as a route and suggested h4-h5. Rewrote overview and plan 1 (reviewer rejection of the 'problem bishop' wording fixed and re-reviewed)."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 3",
+      "name": "London System Main Line with ...d5",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called the f4-bishop light-squared; plan 1 wrote the triangle and the knight route as moves. Rewrote overview and plan 1; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P1B2/4P3/PPP2PPP/RN1QKBNR w KQkq - 0 4",
+      "name": "London System Main Line with 3. ...e6",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 supported a knight on e5 with f4, where White's bishop stands; plan 2 read c8 as a move; overview dated ...e6 to move 3. Rewrote overview and both plans."
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P1B2/4P3/PPPN1PPP/R2QKBNR b KQkq - 1 4",
+      "name": "London System Main Line with Black ...e6 and ...c5",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 proposed a rook lift via e3, White's own pawn, and wrote castling as 0-0; overview called the f4-bishop light-squared. Rewrote overview and plans 1 and 4."
+    },
+    {
+      "fen": "r1bqkb1r/pp3ppp/2n1pn2/2pp4/3P1B2/2P1P3/PP1N1PPP/R2QKBNR w KQkq - 1 6",
+      "name": "London System Main Line with Black ...e6 and ...c5",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 rerouted a b1-knight that is already on d2 via f1, where the bishop stands; plan 3 suggested ...b5 and ...a5. Rewrote plans 2-3; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pppppp1p/5np1/6B1/3P4/8/PPP1PPPP/RN1QKBNR w KQkq - 0 3",
+      "name": "Trompowsky 2...g6",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 relied on ...gxf6 and an open g-file, impossible with the pawn on g6. Rewrote plan 2; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pppppp1p/5Bp1/8/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 0 3",
+      "name": "Trompowsky 2...g6 3.Bxf6",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 3 offered a ...gxf6 recapture the g6-pawn cannot make. Rewrote overview and plans 2-3 (reviewer rejection fixed and re-reviewed)."
+    },
+    {
+      "fen": "rnbqkb1r/pppp1p1p/5pp1/8/3P4/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 4",
+      "name": "Trompowsky 2...g6 3.Bxf6 exf6 4.e3",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 played ...Re8 before castling. Rewrote plan 2; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2",
+      "name": "Trompowsky Attack",
+      "eco": "A45",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 2 described a pin the e7-pawn blocks; plan 3 played ...g5 onto White's bishop. Rewrote overview and plans 1-3; British spelling."
+    }
+  ]
+}

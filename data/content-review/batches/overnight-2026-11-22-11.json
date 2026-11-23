@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-22",
+  "pages": [
+    {
+      "fen": "rnbqkbnr/pppp2pp/8/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3",
+      "name": "Latvian Gambit: Mayet Attack",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named White's Nxe5 in a Black plan without the ...fxe4 that precedes it; rewritten with the moves numbered. Plan 3 was generic; rewritten around the weakened light squares and d3 against the e4-pawn."
+    },
+    {
+      "fen": "rnb1kbnr/ppppqppp/8/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3",
+      "name": "Open Game: Gunderam Defence, 3.Nc3",
+      "eco": "C40",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 wrote 'e7' as if it were a move; reworded. Plan 1 gained the Nd5 idea, hitting the e7-queen and c7."
+    },
+    {
+      "fen": "r1bqk2r/pppnbBpp/3p1n2/4p3/3PP3/2N2N2/PPP2PPP/R1BQK2R b KQkq - 0 6",
+      "name": "Philidor Defense: Lion Variation, Bishop Sacrifice",
+      "eco": "C41",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plans 1 and 2 named Ng5+, Ne6 and Nxc7 without the line that makes them legal; rewritten with 6...Kxf7 7.Ng5+ Kg8 8.Ne6 Qe8 9.Nxc7 and Black's ...Qg6 counter."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1ppp/5n2/4p3/B3P3/2N2n2/PPPP1PPP/R1BQK2R w KQkq - 0 6",
+      "name": "Four Knights: Rubinstein, 5.Ba4 Nxf3+",
+      "eco": "C48",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 said White uses 'the two bishops' (both sides keep both bishops); plan 2's ...d5 could not be read while White is in check; rewrote both around 6.Qxf3."
+    },
+    {
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/1B2p3/1b2P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 7",
+      "name": "Four Knights Game: Spanish Variation, Symmetrical Variation",
+      "eco": "C49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 named a 'Rubinstein Maneuver' Nd2-f1-g3 (no such name; the rook stands on f1). Plans 1 and 2 missed that 7.Bg5 is the main move; overview, plans 1 to 3 rewritten. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/ppp1nppp/3p1n2/1B2p1B1/1b2P3/2NP1N2/PPP2PPP/R2Q1RK1 w - - 2 8",
+      "name": "Four Knights Game: Spanish Variation, Symmetrical Variation",
+      "eco": "C49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "After 7...Ne7 plan 1 played Bxc6 (no knight on c6) and plan 3 called ...Ne7 a pin-breaker; the overview did not describe the Pillsbury. Rewrote the overview and all four plans (Bxf6, Nh4, ...Ng6, ...c6 and ...d5)."
+    },
+    {
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/1B2p3/1b2P3/3P1N2/PPP1NPPP/R1BQ1RK1 b - - 1 7",
+      "name": "Four Knights Game: Spanish Variation, Symmetrical Variation",
+      "eco": "C49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named White's d4 in a Black plan and suggested ...Ne7 without its point; rewritten (...Ne7-g6, ...Ba5 or ...Bc5 against c3, ...c6 and ...d5). Overview: British spelling and what 7.Ne2 does."
+    },
+    {
+      "fen": "r1b2rk1/ppp1qppp/2np1n2/1B2p1B1/4P3/2PP1N2/P1P2PPP/R2Q1RK1 w - - 1 9",
+      "name": "Four Knights Game: Spanish Variation, Symmetrical Variation, Metger Unpin",
+      "eco": "C49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 routed the knight ...Ne8-g7 (g7 holds a pawn) and missed the Metger idea, ...Nd8-e6; plan 4's 'light-square blockade' was vague. Rewrote the overview and plans 1, 2 and 4; British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/1B2p3/1b2P3/2N2N2/PPPP1PPP/R1BQ1RK1 w - - 8 6",
+      "name": "Four Knights: 4.Bb5 Bb4 5.O-O O-O",
+      "eco": "C49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 developed the c8-bishop to e6 or g4 with the d7-pawn still blocking it; rewritten with ...d6 first. Plans 1 and 4 rewritten around 6.d3 d6 7.Bg5 and Ne2-g3. British spelling in the overview."
+    },
+    {
+      "fen": "r1bq1rk1/ppp2ppp/2np1n2/1B2p1B1/1b2P3/2NP1N2/PPP2PPP/R2Q1RK1 b - - 1 7",
+      "name": "Four Knights: Symmetrical, 7.Bg5",
+      "eco": "C49",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 said Black gets the bishop pair after ...Bxc3 (Black gives it up); plan 4 said ...Qe7 alone breaks the pin; plan 1 named bxc3 before ...Bxc3. Rewrote the overview and all four plans."
+    }
+  ]
+}

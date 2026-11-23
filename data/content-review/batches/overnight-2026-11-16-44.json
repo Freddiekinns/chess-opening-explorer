@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "r2q1rk1/pp1bppbp/2np1np1/8/3NP3/1BN1BP2/PPPQ2PP/R3K2R b KQ - 6 10",
+      "name": "Sicilian: Dragon, Yugoslav, 9.Bc4 Bd7 10.Bb3",
+      "eco": "B77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rxc3 with no rook on the c-file; the overview called the half-open c-file open. Reworded both."
+    },
+    {
+      "fen": "r2q1rk1/pp1bppbp/2np1np1/8/2BNP1P1/2N1BP2/PPPQ3P/R3K2R b KQ - 0 10",
+      "name": "Sicilian: Dragon, Yugoslav, 9.Bc4 Bd7 10.g4",
+      "eco": "B77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rxc3; plan 1 named g7 as a move. Reworded both."
+    },
+    {
+      "fen": "r2q1rk1/pp1bppbp/2np1np1/8/2BNP2P/2N1BP2/PPPQ2P1/R3K2R b KQ - 0 10",
+      "name": "Sicilian: Dragon, Yugoslav, 9.Bc4 Bd7 10.h4",
+      "eco": "B77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rxc3 with no rook on the c-file. Reworded plan 2."
+    },
+    {
+      "fen": "2rq1rk1/pp1bppbp/2np1np1/8/2BNP2P/2N1BP2/PPPQ2P1/R3K2R w KQ - 1 11",
+      "name": "Sicilian: Dragon, Yugoslav, 9.Bc4 Bd7 10.h4 Rc8",
+      "eco": "B77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had an h4-h5-h6 route; plan 2 called the half-open c-file open and had ...Rxc3 through the c6-knight. Reworded both."
+    },
+    {
+      "fen": "r1bq1rk1/pp2ppbp/3p1np1/4n3/2BNP3/2N1BP2/PPPQ2PP/R3K2R w KQ - 5 10",
+      "name": "Sicilian: Dragon, Yugoslav, 9.Bc4 Ne5",
+      "eco": "B77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 put Bb3 on the long diagonal and the queen on h2 with the h-pawn at home; plan 2 had ...Rxc3. Rewrote plans 2 and 3; British spelling in plan 4."
+    },
+    {
+      "fen": "r1bq1rk1/pp2ppbp/3p1np1/8/2BnP3/2N1BP2/PPPQ2PP/R3K2R w KQ - 0 10",
+      "name": "Sicilian: Dragon, Yugoslav, 9.Bc4 Nxd4",
+      "eco": "B77",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rxc3 with no rook on the c-file. Reworded plan 2; British spelling in plan 4."
+    },
+    {
+      "fen": "2rq1rk1/pp1bppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/2KR3R w - - 7 11",
+      "name": "Sicilian Defense: Dragon Variation, Yugoslav Attack, Old Line",
+      "eco": "B78",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rxc3 through the c6-knight. Reworded plan 2; British spelling in plans 1, 3 and 4."
+    },
+    {
+      "fen": "r2q1rk1/pp1bppbp/3p1np1/4n3/2BNP3/2N1BP2/PPPQ2PP/2KR3R w - - 7 11",
+      "name": "Sicilian: Dragon, Yugoslav, 10.O-O-O Ne5",
+      "eco": "B78",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a sacrifice on g7 and plan 2 called the half-open c-file open with ...Rxc3. Rewrote both plans."
+    },
+    {
+      "fen": "2rq1rk1/pp1bppbp/3p1np1/4n3/3NP2P/1BN1BP2/PPPQ2P1/2KR3R b - - 0 12",
+      "name": "Sicilian: Dragon, Yugoslav, Main Line, 12.h4",
+      "eco": "B78",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Rxc3 and missed the main 12...h5 (Soltis). Rewrote plan 2."
+    },
+    {
+      "fen": "2rq1rk1/pp1bppb1/3p1np1/4n1Bp/3NP2P/1BN2P2/PPPQ2P1/2KR3R b - - 1 13",
+      "name": "Sicilian: Dragon, Yugoslav, Main Line, 12.h4 h5 13.Bg5",
+      "eco": "B78",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had Kh1 with the king on c1 and called the g5-bishop light-squared; plan 2 had ...Rxc3 and named g7 as a move. Rewrote both plans."
+    }
+  ]
+}

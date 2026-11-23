@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-16",
+  "pages": [
+    {
+      "fen": "r1bqk2r/1pp2ppp/p1np1n2/2b1p3/2B1PP2/2NP1N2/PPP3PP/R1BQK2R w KQkq - 0 7",
+      "name": "Vienna: 3.Bc4 Nc6 4.d3 Bc5 5.f4 d6 6.Nf3 a6",
+      "eco": "C28",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a Qe1-g3 manoeuvre with the king on e1 and ignored that the c5-bishop covers g1; plan 2 had the impossible ...dxe5 (e5 is Black's own pawn). Rewrote both plans; British spelling in overview."
+    },
+    {
+      "fen": "r2qk2r/ppp2ppp/2np1n2/2b1p3/2B1PPb1/2NP1N2/PPP3PP/R1BQK2R w KQkq - 2 7",
+      "name": "Vienna: 3.Bc4 Nc6 4.d3 Bc5 5.f4 d6 6.Nf3 Bg4",
+      "eco": "C28",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had g4 with Black's bishop on g4; plan 3 a Qe1-g3 manoeuvre with the king on e1. Rewrote plans 1-3 around the main line 7.h3 Bxf3 8.Qxf3 Nd4 9.Qg3 and the c5-bishop covering g1; British spelling in plan 4."
+    },
+    {
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/2NP4/PPP2PPP/R1BQK1NR w KQkq - 1 5",
+      "name": "Vienna: 3.Bc4 Nc6 4.d3 Be7",
+      "eco": "C28",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had the c3-knight going to g3 via e2 (unconfirmed); plan 4 rerouted a b8-knight that stands on c6, and ...Ne7 with the bishop on e7. Rewrote plans 2 and 4; British spelling in overview and plans 1 and 3."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1ppp/5n2/n3p3/2B1P3/2NP4/PPP2PPP/R1BQK1NR w KQkq - 1 5",
+      "name": "Vienna: 3.Bc4 Nc6 4.d3 Na5",
+      "eco": "C28",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 recaptured on c4 with Nxc4 or bxc4; only dxc4 is possible. Rewrote plan 2; British spelling in overview and plans 3-4."
+    },
+    {
+      "fen": "r1bqkb1r/pppp1ppp/5n2/n3p3/2B1P3/2NP4/PPP1NPPP/R1BQK2R b KQkq - 2 5",
+      "name": "Vienna: 3.Bc4 Nc6 4.d3 Na5 5.Nge2",
+      "eco": "C28",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 1 had White recapturing on c4 with a knight; no knight can reach c4, so the recapture is dxc4. Rewrote overview and plan 1; British spelling and O-O in plans 3-4."
+    },
+    {
+      "fen": "rnbqk2r/ppp1bppp/8/3pP3/4n3/2N2N2/PPPPQ1PP/R1B1KB1R b KQkq - 3 6",
+      "name": "Vienna Gambit: Breyer, 6.Qe2",
+      "eco": "C29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 castled queenside with the c1-bishop at home and had a g4-g5 storm; plan 2 named White's O-O-O in a Black plan and an unconfirmed ...d4 (reviewer). Rewrote plans 1-2 (...c5, ...Nc6, ...Be6 as in 6...Nxc3 7.dxc3 c5 8.Bf4 Nc6 9.O-O-O); British spelling in plans 3-4."
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/8/3pP3/8/2nP4/PPP3PP/R1BQKBNR w KQkq - 0 6",
+      "name": "Vienna Gambit: Oxford, 5...Nxc3",
+      "eco": "C29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a Rf1-f3-g3 lift with the rook on h1 and called the f-file open (it is half-open). Rewrote plan 1; British spelling in plan 2."
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/8/4P3/3p4/2PP4/P1P3PP/R1BQKBNR w KQkq - 0 7",
+      "name": "Vienna Gambit: Oxford, 5...Nxc3 6.bxc3 d4",
+      "eco": "C29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had the same Rf1-f3-g3 lift and open f-file; plan 2 named a bare e6. Rewrote plans 1-2."
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/8/3pP3/8/2n2Q2/PPPP2PP/R1B1KBNR w KQkq - 0 6",
+      "name": "Vienna Gambit: Paulsen Attack, 5...Nxc3",
+      "eco": "C29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 named f4 as a square in a way that reads as a move. Rewrote plan 3 (queen on f3 eyes f7); plan 4 'diffuse' corrected to 'defuse'; British spelling in plans 1-2 and the f-file called half-open."
+    },
+    {
+      "fen": "rnb1kb1r/ppp2ppp/8/3pP3/4n2q/2NP4/PPP3PP/R1BQKBNR w KQkq - 1 6",
+      "name": "Vienna Game, Würzburger Trap",
+      "eco": "C29",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said the trap was 6.g3? Nxg3!; the trap is 6.g3 Nxg3 7.Nf3 Qh5 8.Nxd5 Nxh1? 9.Nxc7+ Kd8 10.Nxa8, and 8...Bg4 is Black's best try. Plan 1 had Ke2-f2 with f2 covered by the queen. Rewrote overview and plans 1 and 4 (a claim that 8...Bg4 keeps the initiative was rejected by the reviewer and dropped); British spelling in plan 3."
+    }
+  ]
+}

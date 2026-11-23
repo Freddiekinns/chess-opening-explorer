@@ -1,0 +1,182 @@
+[
+  {
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 1 3",
+    "plan": "White: Recapture the e4-pawn via Nc3-Nxe4, castle quickly, and use the active Bb2 to pressure Black's kingside.",
+    "reference": "Nxe4",
+    "reason": "correct plan, parser can't read a recapture that needs the opponent's ...dxe4 first yet"
+  },
+  {
+    "fen": "rnbq1rk1/1p1n1pbp/p2p2p1/2pP4/P3PP2/2NB1N2/1P4PP/R1BQK2R b KQ - 0 11",
+    "plan": "Black: Create queenside pressure with ...Rb8 and ...Na6-b4 to challenge White's structure.",
+    "reference": "...Na6-b4",
+    "reason": "needs-research"
+  },
+  {
+    "fen": "r2qkb1r/pp2pppp/2n5/3n4/3P2b1/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 8",
+    "plan": "White: Use the space advantage to build a kingside attack, often with a bishop on d3 and queen on e2. Prepare the d4-d5 pawn break to open lines. Control the critical d5 square.",
+    "reference": "d4-d5",
+    "reason": "correct plan, parser can't read a pawn break that waits for the blockading d5-knight to leave yet"
+  },
+  {
+    "fen": "rnbqkbnr/1p1ppppp/2p5/pP6/8/8/PBPPPPPP/RN1QKBNR b KQkq - 0 3",
+    "plan": "White: After 3...cxb5 4.e4, aim to win the pawn back with Bxb5, then continue with Nf3 and castling while the b2-bishop works on the long diagonal.",
+    "reference": "Bxb5",
+    "reason": "correct plan, parser can't read a recapture that needs the opponent's ...cxb5 first yet"
+  },
+  {
+    "fen": "rnbqkb1r/pp2pppp/5n2/2p5/3p1P2/1P2PN2/PBPP2PP/RN1QKB1R b KQkq - 0 5",
+    "plan": "White: Recapture on e3, develop with Re1, and use the open e-file and the a1-h8 diagonal to pressure Black's center.",
+    "reference": "Re1",
+    "reason": "needs-research: Re1 is impossible, but the gambit's real follow-up after 5...dxe3 is not settled by the board or a short search"
+  },
+  {
+    "fen": "r1b1k2r/ppppqppp/2n5/4P3/1bP2Bn1/4PN2/PP1N1PPP/R2QKB1R b KQkq - 0 7",
+    "plan": "Black's Alternative: Maintain the pin on d2 and pressure on the centre, sometimes delaying the capture on e5 to build up an attack, potentially involving ...O-O-O.",
+    "reference": "...O-O-O",
+    "reason": "needs-research: Black castling queenside is not a recognised plan here; two rewrites were rejected (the pin on d2 usually ends when White castles, and ...d6 with the pawn still on e5 allows exd6)"
+  },
+  {
+    "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/1P6/PBPP1PPP/RN1QKBNR b KQkq - 1 3",
+    "plan": "White: Recapture the e4-pawn via Nc3-Nxe4, castle quickly, and use the active Bb2 to pressure Black's kingside.",
+    "reference": "Nc3-Nxe4",
+    "reason": "correct plan, parser can't read a recapture route that needs the opponent's ...dxe4 first yet"
+  },
+  {
+    "fen": "r1bqkbnr/1p1ppppp/p1n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+    "plan": "White: Maneuver pieces to control the light squares, especially d5, and restrict Black's pieces.",
+    "reference": "d5",
+    "reason": "needs-research: two rewrites rejected; after Bxc6 dxc6 White's light-squared bishop is gone and the c6-pawn covers d5, so this line's real White plan needs a source"
+  },
+  {
+    "fen": "r1bqkb1r/1p3ppp/p1nppn2/1N6/2P1P3/2N5/PP3PPP/R1BQKB1R w KQkq - 0 8",
+    "plan": "White: Prevent Black's ...b5 break by playing a3 and developing harmoniously, aiming to squeeze Black positionally.",
+    "reference": "...b5",
+    "reason": "needs-research: two rewrites rejected; White's standard way to restrain ...b5 here (with the b5-knight attacked and a2-a4 blocked once it goes to a3) needs a source"
+  },
+  {
+    "fen": "r1bqkb1r/p2p1ppp/2p1p3/3nP3/8/2N5/PPP2PPP/R1BQKB1R w KQkq - 1 8",
+    "plan": "White: Challenge the Nd5 knight (e.g., with Ne2-c3), develop with Bd3, and prepare a kingside attack, often involving f2-f4.",
+    "reference": "Ne2-c3",
+    "reason": "needs-research: Follow-up to batch 2026-11-16-23: plan 1 (a knight route Ne2-c3 for the knight already on c3) was rewritten twice and rejected twice (Bc4 runs into ...cxd5; Ne4 does not attack d5). Old text kept."
+  },
+  {
+    "fen": "rqb1kbnr/1p1p1ppp/pBn1p3/1N6/4P3/2N5/PPP2PPP/R2QKB1R b KQkq - 1 8",
+    "plan": "Black must accept the sacrifice with ...axb6 and then carefully defend, aiming to neutralize White's initiative by trading pieces and eventually converting the material advantage in the endgame.",
+    "reference": "...axb6",
+    "reason": "needs-research: The overview calls 8.Bb6 a bishop sacrifice and plan 2 has Black take with ...axb6, but the b6-bishop cannot be taken that way; the piece en prise is the b5-knight (8...axb5). A short search did not settle the theory of 8.Bb6 axb5 9.Nxb5, so the text was left unchanged."
+  },
+  {
+    "fen": "r1b1k2r/1pqpbppp/p1n1pn2/8/N2NP3/4B3/PPP1BPPP/R2Q1RK1 w kq - 6 10",
+    "plan": "White: Play Nxc6 to damage Black's pawn structure and gain long-term control over the light squares, especially d5.",
+    "reference": "d5",
+    "reason": "needs-research: Follow-up to batch 2026-11-16-24: plan 2 (Nxc6 for 'control of d5', which the c6- and e6-pawns cover after either recapture) was rewritten twice and rejected twice (second draft: Nb6 at once drops the knight to ...Qxb6). Old text kept."
+  },
+  {
+    "fen": "r1b1kb1r/pp2pppp/1qnp1n2/8/2B1P3/1NN5/PPP2PPP/R1BQK2R b KQkq - 6 7",
+    "plan": "White: Reroute the Nb3 knight, often to c1-d3 or via a1 to c2, to increase central control and support an attack.",
+    "reference": "c1-d3",
+    "reason": "needs-research: two rewrites rejected (Rd1 and Qe2 do not back up f4; Qf3 blocks the f-pawn); old text kept"
+  },
+  {
+    "fen": "r1bqkbnr/pp3ppp/2n1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5",
+    "plan": "Black: Increase pressure on d4 with ...Qb6 and sometimes ...f6, seek queenside counterplay with ...b5-b4, and solve the problem of the light-squared bishop, often via ...b6 and ...Ba6.",
+    "reference": "...b5-b4",
+    "reason": "needs-research: two rewrites rejected (...b6/...Ba6 clashes with ...Qb6; ...Bb5 is blocked by the c6-knight); old text kept"
+  },
+  {
+    "fen": "rnbqkb1r/pp3ppp/4pn2/2pP4/3P4/8/PPPN1PPP/R1BQKBNR w KQkq - 1 5",
+    "plan": "For Black, the main plan is to use the development advantage to create immediate threats, often involving ...Bxc5, ...Nc6, and ...Qb6 to pressure White's queenside and centre before they can consolidate. The goal is to either regain the pawn with a superior position or launch a decisive attack.",
+    "reference": "...Bxc5",
+    "reason": "needs-research: reviewer could not confirm a rewrite of the Shaposhnikov Gambit plan (theory after 4...Nf6 unsettled: 5.Bb5+, 5.dxe6, 5.dxc5); old text kept"
+  },
+  {
+    "fen": "rnbqk2r/p3nppp/1p2p3/1BppP3/3P4/P1P2N2/2P2PPP/R1BQK2R b KQkq - 1 8",
+    "plan": "White: Use the bishop pair and central space to build a kingside attack, often involving Qg4 and h4-h5.",
+    "reference": "Qg4",
+    "reason": "needs-research: rewrite rejected (the f3-knight blocks Qg4; White's usual plan after 8.Bb5+ Bd7 is 9.Bd3 or 9.Ba4); old text kept"
+  },
+  {
+    "fen": "rnbqk2r/p3nppp/1p2p3/1BppP3/3P4/P1P2N2/2P2PPP/R1BQK2R b KQkq - 1 8",
+    "plan": "White: Use the bishop pair and central space to build a kingside attack, often involving Qg4 and h4-h5.",
+    "reference": "h4-h5",
+    "reason": "needs-research: see Qg4 entry for this plan"
+  },
+  {
+    "fen": "r3k2r/pp1bnppp/2n1p3/qBppP3/P2P4/2P2N2/2PB1PPP/R2QK2R b KQkq - 4 10",
+    "plan": "White: Utilise the bishop pair, often via Ba3; solidify the centre with c4; create kingside threats with h4-h5.",
+    "reference": "Ba3",
+    "reason": "needs-research: rewrite rejected (plan after 10.Bb5 unconfirmed: ...a6 and Bxc6 are common); old text kept"
+  },
+  {
+    "fen": "r1bqk2r/pppp1ppp/2n2n2/4p3/1bB1P3/2NP1N2/PPP2PPP/R1BQK2R b KQkq - 2 5",
+    "plan": "White: Prepare the d3-d4 pawn break, break the pin with a3, manoeuvre the c3-knight (e.g., Ne2-g3), and develop a kingside initiative.",
+    "reference": "Ne2-g3",
+    "reason": "needs-research: rewrite rejected twice by the reviewer (move order of castling against the Bb4 pin unconfirmed); old text kept"
+  },
+  {
+    "fen": "rnbqkb1r/ppp2ppp/3p4/8/2P1n3/5N2/PP1P1PPP/RNBQKB1R b KQkq - 0 5",
+    "plan": "Black: Solidify the centre with ...d5, develop pieces with ...Be7, ...Nc6, and ...O-O, and seek counterplay by challenging White's control of d5 or targeting the e4 pawn.",
+    "reference": "e4 pawn",
+    "reason": "needs-research: the plan names an e4-pawn that is a black knight; two rewrites were rejected by the reviewer (counterplay against the d-pawn and d4-square unconfirmed; the structure is not symmetrical after ...Nxc3 dxc3). Old text kept."
+  },
+  {
+    "fen": "r1bqkb1r/pppp1ppp/5n2/1B2N3/3nP3/2N5/PPPP1PPP/R1BQK2R b KQkq - 0 5",
+    "plan": "White: Often involves retreating the knight from e5 to g4 or f3, followed by d4 to challenge Black's central control.",
+    "reference": "d4",
+    "reason": "needs-research: the plan pushes d4 onto Black's d4-knight; two rewrites were rejected by the reviewer (after 5...Qe7 neither Nf3 nor 6.f4 keeps the extra pawn, and the d4-knight usually takes on b5). Old text kept."
+  },
+  {
+    "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2NPBN2/PPP2PPP/R2QK2R b KQkq - 1 6",
+    "plan": "If Black captures on e3 (...Bxe3), White recaptures with the f-pawn (fxe3) to open the f-file for the rook and bolster the centre.",
+    "reference": "fxe3",
+    "reason": "correct plan, parser can't read a recapture that follows the opponent's capture in a plan with no side prefix yet"
+  },
+  {
+    "fen": "r2qk2r/ppp2p1p/2n1bPp1/2b3N1/2pp4/8/PPP2PPP/RNBQR1K1 w kq - 0 10",
+    "plan": "White: Continue the kingside attack with moves like Nxe6 and fxg7, exploiting the f6-pawn and open e-file to target the weakened Black king.",
+    "reference": "fxg7",
+    "reason": "needs-research: fxg7 is impossible after 9...g6, but two rewrites (Qf3/Qe2, then 10.Nxe6 fxe6 11.Qg4) were rejected by the reviewer; old text kept"
+  },
+  {
+    "fen": "r2q1rk1/2p1b1pp/p1n1bP2/1p1p4/4n3/2P2N2/PPBN1PPP/R1BQ1RK1 b - - 0 12",
+    "plan": "White aims to pressure Black's central weaknesses, particularly the e6 pawn, by controlling the e-file and maneuvering the knight from d2 to f1-e3/g3.",
+    "reference": "e6 pawn",
+    "reason": "needs-research: two rewrites rejected (Nb3 has no kingside role; knights on d4 and c5 do not eye d5, and Re1 is blocked by the e4-knight); old text kept"
+  },
+  {
+    "fen": "r2q1rk1/2p1b1pp/p1n1bP2/1p1p4/4n3/2P2N2/PPBN1PPP/R1BQ1RK1 b - - 0 12",
+    "plan": "White aims to pressure Black's central weaknesses, particularly the e6 pawn, by controlling the e-file and maneuvering the knight from d2 to f1-e3/g3.",
+    "reference": "f1-e3",
+    "reason": "needs-research: two rewrites rejected (Nb3 has no kingside role; knights on d4 and c5 do not eye d5, and Re1 is blocked by the e4-knight); old text kept"
+  },
+  {
+    "fen": "r1bn1rk1/2qpbp1p/p4n2/1ppPp1p1/4P3/2P2N1P/PPBN1PP1/R1BQR1K1 w - - 0 14",
+    "plan": "White's Plan: Exploit the weakened dark squares around the Black king (especially f5), challenge the g5-pawn with f4 or capture it with Nxg5 to open the h-file, and use the central space advantage to launch a decisive attack.",
+    "reference": "f5",
+    "reason": "needs-research: reviewer could not confirm the line (sources give 12...Nb8, not 12...Nd8) and the g5-pawn appears to hang to Nxg5; old text kept"
+  },
+  {
+    "fen": "r1bn1rk1/2qpbp1p/p4n2/1ppPp1p1/4P3/2P2N1P/PPBN1PP1/R1BQR1K1 w - - 0 14",
+    "plan": "Black's Plan: Justify the g5-pawn by continuing the kingside assault with moves like ...h5 and ...Nh6-f7, generate threats against the White king, and use the dynamic potential of the position to compensate for the structural weaknesses.",
+    "reference": "...Nh6-f7",
+    "reason": "needs-research: reviewer could not confirm the line (sources give 12...Nb8, not 12...Nd8) and the g5-pawn appears to hang to Nxg5; old text kept"
+  },
+  {
+    "fen": "r2q1rk1/1bpn1ppp/p1np1b2/1p2p3/P2PP3/NBP2N1P/1P3PP1/R1BQR1K1 b - - 2 12",
+    "plan": "Black: Reroute the d7-knight to b6 to control key squares (like c4) and support the queenside, while the f6-bishop pressures White's d4-pawn.",
+    "reference": "c4",
+    "reason": "needs-research: two rewrites rejected (the f6-bishop does not bear on d4 through the e5-pawn); old text kept"
+  },
+  {
+    "fen": "r1bq1rk1/pp3ppp/2nbpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 5 8",
+    "plan": "Black: Prevent or neutralize White's e4 break by exchanging on d4 (dxc4) followed by ...b5, or by controlling e4 with pieces.",
+    "reference": "e4",
+    "reason": "needs-research: two rewrites rejected (a ...b6/...Bb7 or ...Qc7 hold on e4/e5 that the d5-pawn, c6-knight or d6-bishop blocks); old text kept"
+  },
+  {
+    "fen": "r1bq1rk1/pp3ppp/2nbpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 5 8",
+    "plan": "Black: Prevent or neutralize White's e4 break by exchanging on d4 (dxc4) followed by ...b5, or by controlling e4 with pieces.",
+    "reference": "dxc4",
+    "reason": "needs-research: two rewrites rejected (a ...b6/...Bb7 or ...Qc7 hold on e4/e5 that the d5-pawn, c6-knight or d6-bishop blocks); old text kept"
+  }
+]

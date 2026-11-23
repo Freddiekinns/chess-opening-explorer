@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-09",
+  "pages": [
+    {
+      "fen": "r1bq1rk1/1p1n1pbp/p2p1np1/2pP4/P7/2N3P1/1P1NPPBP/R1BQ1RK1 b - - 2 11",
+      "name": "Benoni: Fianchetto, 9...a6 10.a4 Nbd7",
+      "eco": "A63",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted Nd2-f1 with a rook on f1; plan 4 had ...Re8 preparing ...Ne8-d7 and a ...f5 break blocked by the f6-knight; plan 3 rerouted a knight already on d2. Rewrote plans 1, 3, 4; British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/1p1n1pbp/p2p1np1/2pP4/P7/2N3P1/1P1NPPBP/R1BQ1RK1 b - - 0 11",
+      "name": "Benoni: Fianchetto, 9...Nbd7 10.Nd2 a6 11.a4",
+      "eco": "A63",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 rerouted Nd2-f1-e3 with a rook on f1. Rewrote plan 1; overview said \"Nd2-a4 system\" (reads as a knight move), now \"Nd2 and a4 set-up\"; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/1p1n1pbp/p2p1np1/2pP4/P7/2N3P1/1P1NPPBP/R1BQ1RK1 w - - 3 12",
+      "name": "Benoni Defense: Fianchetto Variation, Hastings Defense, Main Line",
+      "eco": "A64",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 rerouted the d7-knight via b8-c6; plan 2 had ...f5 breaks blocked by the f6-knight. Rewrote plans 2 and 4; British spelling."
+    },
+    {
+      "fen": "r1bqr1k1/1p1n1pbp/p2p1np1/2pP4/P7/2N3P1/1P1NPPBP/R1BQ1RK1 w - - 1 12",
+      "name": "Benoni: Fianchetto, 11...Re8",
+      "eco": "A64",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview had Black preparing a ...e5 break with no e-pawn; plan 1 routed a knight f8-e6. Rewrote overview sentence and both plans."
+    },
+    {
+      "fen": "r1bqr1k1/1p1n1pbp/p2p1np1/P1pP4/8/2N3P1/1P1NPPBP/R1BQ1RK1 b - - 0 12",
+      "name": "Benoni: Fianchetto, 11...Re8 12.a5",
+      "eco": "A64",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 2 prepared a ...e5 break with no e-pawn and rerouted a b8-knight already on d7; plan 3 put a knight on b6 covered by Black; plan 4 played ...b6 into axb6. Rewrote all four plans and the overview phrase; British spelling."
+    },
+    {
+      "fen": "1rbqr1k1/1p1n1pbp/p2p1np1/2pP4/P7/2N3PP/1P1NPPB1/R1BQ1RK1 w - - 1 13",
+      "name": "Benoni: Fianchetto, 11...Re8 12.h3 Rb8",
+      "eco": "A64",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 sent the f6-knight to e8 with a rook there and pressed an e4-pawn that does not exist; plan 2 pushed e4-e5 from e2. Rewrote both plans; British spelling."
+    },
+    {
+      "fen": "1rbqr1k1/1p3pbp/pn1p1np1/2pP4/P1N5/2N3PP/1P2PPB1/R1BQ1RK1 w - - 3 14",
+      "name": "Benoni: Fianchetto, 11...Re8 12.h3 Rb8 13.Nc4 Nb6",
+      "eco": "A64",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 exchanged the c4-knight with ...Na5 (no knight can reach it); plan 3 was vague; plan 1 relied on f2-f4. Rewrote plans 1, 3, 4; British spelling."
+    },
+    {
+      "fen": "1rbqr1k1/1p3pbp/p2p1np1/2pPn3/P1N5/2N3PP/1P2PPB1/R1BQ1RK1 w - - 3 14",
+      "name": "Benoni: Fianchetto, 11...Re8 12.h3 Rb8 13.Nc4 Ne5",
+      "eco": "A64",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 pushed e4-e5 with the pawn on e2 and a black knight on e5. Rewrote plan 1; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP4/4P3/2N5/PP3PPP/R1BQKBNR w KQkq - 0 7",
+      "name": "Benoni: 6.e4 g6",
+      "eco": "A65",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 named Nd2-b3 with no knight on d2; plan 4 rerouted the f6-knight to e8 with the king there. Rewrote plans 3-4; British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/pp3p1p/3p1np1/2pP4/4P3/2NB4/PP3PPP/R1BQK1NR b KQkq - 1 7",
+      "name": "Benoni: 6.e4 g6 7.Bd3",
+      "eco": "A65",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had an Nf3-d2-f1 route in a Bd3 line with no knight on f3; plan 4 played ...Re8 before castling and a knight to c5 onto its own pawn. Rewrote plans 1 and 4; British spelling."
+    }
+  ]
+}

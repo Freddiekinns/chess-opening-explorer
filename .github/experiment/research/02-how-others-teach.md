@@ -7,6 +7,78 @@ learners _do_ come from reviews and forum posts and are anecdotal. The question,
 set by night 1: **what gives a study session an end, and what brings a learner
 back?**
 
+## Revisited — extra run, 2026-11-23 afternoon
+
+The owner asked for the primary pages behind this file's two load-bearing
+claims. **Most could not be read:** the cloud's network allowlist refuses
+`lichess.org` and `chessbook.com` (DNS fails, as `openingbook.xyz` did on night
+1), so Lichess studies and practice, the HollowLeaf and CheckRaiseMate posts and
+Chessbook's site were not opened, and nothing was tried hands-on. GitHub was
+reachable. What follows is from eight more searches and one repository page —
+better than night 2's pass, still mostly developer listings. The hands-on check
+is now a `[local]` item, or a night once those hosts are allowed.
+
+**Claim A — "no free site joins video → book → drill → own games for one
+opening".** _Weakened; restate it._ Steps 2–4 (repertoire, drill, own games) are
+free in at least two newer tools, which night 2 missed:
+
+- **Repertoire Builder** (HollowLeaf, Chessboard Magic; Lichess blog posts):
+  free tier of 5,000 moves, 10 repertoires and **100 imported games from Lichess
+  or Chess.com**, with a practice mode against Stockfish, the Lichess database
+  "or even your own games". No spaced repetition found.
+- **ChessAtlas** (App Store, Product Hunt; free with in-app purchases): "Connect
+  Lichess or Chess.com and ChessAtlas shows exactly where you left your opening
+  prep, then drills it back with spaced repetition". Few ratings; the free
+  tier's limits are not stated.
+- **Chessbook**: the listing also claims a free web platform and a 400-move free
+  cap; which of the game check is free is unconfirmed.
+- Open source: **chessli** (Lichess games and mistakes into Anki) and
+  **chessdriller** (spaced repetition on Lichess studies; archived 2026-10-03).
+
+Steps 1 + 3 (video with a drill) are free in **Chessable's Short & Sweet**
+courses (10–30 annotated lines, "sometimes with an hour or two of video",
+MoveTrainer reviews) and Chess.com Practice. **Chessly** joins video and drill
+but sells it ($64 a course; one free chapter).
+
+So "own games against your prep" is **not** a paid-only moat (bullet 5 below was
+wrong), and the four-step join is not ours alone to claim. What none of the
+sources showed is the shape we already have: **no sign-up, every named position
+(12,377), videos pooled from many creators per position, and line choice by how
+often club players meet it**. Every tool above starts from a repertoire the
+learner must build first; ours could start from the page a learner lands on.
+That, not "the only free site", is the claim to carry to Gate A, and it still
+needs a hands-on check of HollowLeaf and ChessAtlas.
+
+**Claim B — "learners return only when something changes while they are away".**
+_Holds as a pattern, unproven as a cause; add a third mechanism._ No retention
+numbers were found for any product (Chess.com, Chessable or a spaced-repetition
+app). The counter-example is Chess.com's **Daily Puzzle**: the same new puzzle
+for "more than a million members" every day, kept alive by a streak (each puzzle
+within 48 hours) and a calendar of flames. That is new content bringing people
+back, but as a daily ritual with a streak, not as volume. Restated: three return
+mechanisms — **reviews come due, new games to check, a daily ritual with a
+streak**. Each needs per-learner state; the first two need it to change on its
+own. A forum sceptic notes streaks bring people back for the puzzle and no
+further, which is the risk for us too.
+
+**What changes for Gate A.** The own-games idea is worth building only if it
+starts from where learners already are (our page, no account) — a repertoire
+tool that needs setting up first exists free elsewhere. A cheap daily ritual
+("today's line" on an opening you visited) is a third candidate shape alongside
+practice memory (#196) and the personal strip (#195).
+
+Sources (this section): chessdriller
+[GitHub](https://github.com/gtim/chessdriller); via search only —
+[Repertoire Builder beta](https://lichess.org/@/HollowLeaf/blog/chess-repertoire-builder-beta-update/hfMtn2Rs),
+[ChessAtlas, App Store](https://apps.apple.com/app/id6770867404),
+[ChessAtlas, Product Hunt](https://www.producthunt.com/products/chessatlas),
+[Chessbook, App Store](https://apps.apple.com/us/app/chessbook/id6466343415),
+[chessli](https://github.com/pwenker/chessli2),
+[Chessly Beginner course](https://chessly.com/courses/940dcdc1-b49a-403f-8375-919d186d5dd4),
+[Chessable Short & Sweet guide](https://www.chess.com/blog/TheUnidentifiedWolf/comprehensive-guide-to-chessables-free-short-and-sweet-opening-courses),
+[Chess.com Daily Puzzle](https://support.chess.com/en/articles/8708990-how-does-the-daily-puzzle-work),
+[Chess.com Streaks](https://support.chess.com/en/articles/9714718-what-are-streaks).
+
 ## The products, in one line each
 
 | Product                            | Unit of study                                                                        | What ends a session                                             | What brings you back                                                                                                       |
@@ -36,10 +108,11 @@ back?**
    problem: "knew my way out of the opening but lacked a plan after it". Books
    answer this with whole annotated games. Our `common_plans` are the raw
    material for "the plan after it", but unlinked to positions (night 1).
-5. **Your own games are the strongest hook, and it is paid everywhere.**
-   Chessbook's game check and Aimchess's opening improver are behind Pro tiers
-   ($7.99/month each in US listings). Lichess and Chess.com "insights" show
-   stats but do not turn them into a lesson.
+5. **Your own games are the strongest hook, and it is paid everywhere.** _(Wrong
+   — see Revisited: free in Repertoire Builder and ChessAtlas.)_ Chessbook's
+   game check and Aimchess's opening improver are behind Pro tiers ($7.99/month
+   each in US listings). Lichess and Chess.com "insights" show stats but do not
+   turn them into a lesson.
 6. **Learners already use a four-step workflow across four sites.** Forum and
    blog advice converges on: _video for the overview → a Lichess study as the
    written repertoire → spaced-repetition drill → refine from your own games._
@@ -50,11 +123,13 @@ back?**
 
 ## What this means for us
 
-- **No free site joins all four steps for one opening.** We already hold three
-  of the four ingredients per position: ranked videos (step 1), descriptions and
-  `common_plans` (the written book, step 2), and a Practice mode that makes you
-  play the moves (step 3, single line, no memory). Step 4 has a seam: `/analyse`
-  links into pages with `ref=personal&username=…`, ignored today.
+- **No free site joins all four steps for one opening.** _(Weakened — see
+  Revisited: steps 2–4 are free elsewhere; our edge is no account and every
+  position.)_ We already hold three of the four ingredients per position: ranked
+  videos (step 1), descriptions and `common_plans` (the written book, step 2),
+  and a Practice mode that makes you play the moves (step 3, single line, no
+  memory). Step 4 has a seam: `/analyse` links into pages with
+  `ref=personal&username=…`, ignored today.
 - **The cheapest "end" for a session** is a finite unit on one opening — a
   chapter with N lines to play through — and a visible "done". That is a lesson,
   not a reference page.

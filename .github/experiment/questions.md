@@ -8,6 +8,13 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 1. **Testers.** Can the owner name 2–3 people (club players, friends) who would
    try a prototype for ten minutes? _Default: the owner is the only tester._
 
+2. **Network allowlist.** The cloud refuses `lichess.org` and `chessbook.com`
+   (and likely other chess sites), so research reads search summaries, not
+   pages, and nothing can be tried hands-on. Add `lichess.org`, `chessbook.com`,
+   `chessable.com`, `chess.com` and `chessly.com` to the environment's allowed
+   domains? _Default: carry on from search results, mark such claims unverified,
+   and leave hands-on checks as `[local]` items._
+
 ## Decided
 
 - 2026-11-23 13:35 UTC — **Extra run** (charter: Extra runs). Unit of work: the

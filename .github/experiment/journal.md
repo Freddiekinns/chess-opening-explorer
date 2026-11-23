@@ -2,6 +2,22 @@
 
 Newest first. Template in `operating.md`.
 
+## Extra run — 2026-11-23 (13:35 UTC) — researcher: night 2's two claims, deepened
+
+Did: tried to read the primary pages behind night 2's load-bearing claims;
+`lichess.org` and `chessbook.com` are refused by the cloud allowlist, so ran
+eight targeted searches and read one GitHub page instead; added a "Revisited"
+section to `research/02-how-others-teach.md` and marked the claims it changes.
+Decided: "no free site joins all four steps" is wrong as stated — HollowLeaf's
+Repertoire Builder and ChessAtlas give own games + repertoire + drill free; our
+edge is no account, every position and many creators' videos, starting from the
+page a learner lands on. The return claim holds as a pattern with a third
+mechanism (daily ritual + streak, Chess.com's Daily Puzzle); no retention
+numbers exist in public. Assumed: developer listings describe the products truly
+(unverified, nothing hands-on). Next: night 3 (YouTube), Tuesday 01:00 UTC;
+hands-on check of Repertoire Builder and ChessAtlas before Gate A. Cost: tool
+calls ~17, subagents 0, web pages 1 (+8 searches; 3 fetches refused).
+
 ## Night 2 — 2026-11-23 — researcher: how others teach openings
 
 Did: surveyed Chessable, Chessbook, Lichess studies, Aimchess, Chess.com

@@ -378,10 +378,10 @@
     "notes": "Style brief audit (queens-gambit-declined-three-knights-variation, researched 2026-10-03): 9 claims, 0 wrong, 1 unverifiable."
   },
   "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
-    "reviewedAt": "2026-10-11",
-    "verdict": "ok",
-    "contentHash": "0ed88922dd8126ff",
-    "notes": "Style brief audit (queens-gambit-declined, researched 2026-10-03): 8 claims, 0 wrong, 0 unverifiable."
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "bafd42aa77ac22e5",
+    "notes": "Plan 1 ran a minority attack before any Carlsbad exchange; plan 3 played ...Ne4 with no knight on f6 and offered ...Bb4 as a fix for the light-squared bishop. Rewrote both; British spelling."
   },
   "rnbqkbnr/ppp1pppp/8/3p4/3P4/2N5/PPP1PPPP/R1BQKBNR b KQkq - 1 2": {
     "reviewedAt": "2026-10-11",
@@ -15016,5 +15016,59 @@
     "verdict": "fixed",
     "contentHash": "2acee25d54fa66d2",
     "notes": "Plan 2 named Moscow and Anti-Moscow lines that need Nc3 and wrote White's Bxf6 as a Black move. Rewrote it."
+  },
+  "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/4PN2/PP3PPP/RNBQKB1R b KQkq - 0 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "31926ba181d0d4f1",
+    "notes": "Plan 3 ran a minority attack without the Carlsbad exchange; plan 4 routed ...Nbd7-f8-e6 through the f8-bishop to control e4. Rewrote both; 0-0 to O-O; British spelling."
+  },
+  "r1bqkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/3BPN2/PP1N1PPP/R1BQK2R b KQkq - 3 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "35d00deeddbcf5c6",
+    "notes": "Plan 1 rerouted the d2-knight via f1 to e3, where White's pawn stands. Rewrote it; British spelling, including Semi-Slav Defence."
+  },
+  "rnbqkbnr/pp3ppp/8/2pp4/3P4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "fbd0bb15564b73b5",
+    "notes": "Plans blockaded on d4 and pushed d5-d4 while White's pawn is on d4. Rewrote plans 1-2 (dxc5 first); overview now says when the pawn is isolated; British spelling."
+  },
+  "rnbqkbnr/pp3ppp/8/2pp4/3P4/5NP1/PP2PP1P/RNBQKB1R b KQkq - 0 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "98a7a14a267ed70c",
+    "notes": "Plan 1 routed an ambiguous Nd2-f1-e3; plan 3 pushed e3-e4 with the pawn on e2. Fixed both; British spelling."
+  },
+  "r1bqkbnr/pp3ppp/2n5/2pp4/3P4/5NP1/PP2PP1P/RNBQKB1R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "db619a8b50c5a3d1",
+    "notes": "Plan 2 played ...Ne4 with the knight on g8 and used an open c-file that is White's. Rewrote both plans; British spelling."
+  },
+  "r1bqkbnr/pp3ppp/2n5/2pp4/3P4/5NP1/PP2PPBP/RNBQK2R b KQkq - 2 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "e70b670810c842f2",
+    "notes": "Plans blockaded on d4 and pushed d5-d4 with White's pawn on d4; plan 3 proposed a minority attack; plan 4 put the bishop on b7. Rewrote all; British spelling."
+  },
+  "r1bqkb1r/pp3ppp/2n2n2/2pp4/3P4/5NP1/PP2PPBP/RNBQK2R w KQkq - 3 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "c8ec20bf1f922480",
+    "notes": "Plans blockaded on d4 and pushed d5-d4 with White's pawn on d4; plan 3 played Rc1 through the c1-bishop. Rewrote plans 1-3; British spelling."
+  },
+  "r1bqkb1r/pp3ppp/2n2n2/2pp4/3P4/5NP1/PP2PPBP/RNBQ1RK1 b kq - 4 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "c0312b64d1a53087",
+    "notes": "Plans blockaded on d4 and pushed d5-d4 with White's pawn on d4. Rewrote both plans; overview wording; British spelling."
+  },
+  "rnbqkb1r/pp3p1p/2p1pnp1/3p4/2PP4/4PN2/PP1N1PPP/R1BQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "caf398d3e4a43f3e",
+    "notes": "Plan 2 played Rc1 through the c1-bishop; plan 4 proposed a minority attack without the structure. Rewrote both; British spelling, including King's Indian Defence."
   }
 }

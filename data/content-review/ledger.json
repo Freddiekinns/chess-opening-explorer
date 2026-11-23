@@ -13048,5 +13048,65 @@
     "verdict": "fixed",
     "contentHash": "938b8fdedcb2d667",
     "notes": "Plan 1 played Nf1-g3 with no knight on f1; plan 2 gave ...Na5-c4 with the knight on c6. Rewrote plans 1-2. British spelling."
+  },
+  "r2qk2r/1pp1bppp/p1np1n2/4p3/B3P1b1/2P2N2/PP1P1PPP/RNBQR1K1 w kq - 1 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "0391e3bc0af2b0fb",
+    "notes": "Plan 1 routed the knight via d2 with the d-pawn still there and proposed a4-b4; plan 2 developed the light-squared bishop to b7 when it is already on g4. Rewrote plans 1-2. British spelling."
+  },
+  "r2qk2r/1pp1bppp/p1np1n2/4p3/B3P1b1/2PP1N2/PP3PPP/RNBQR1K1 b kq - 0 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "70d6e5e9fd845606",
+    "notes": "Plan 2's ...h5 and ...Ne7 made no sense with the bishop on e7; plan 4 developed the g4-bishop to b7. Rewrote plans 1, 2 and 4. British spelling."
+  },
+  "r2qk2r/1pp1bppp/p1np1n2/4p3/B3P1b1/2P2N1P/PP1P1PP1/RNBQR1K1 b kq - 0 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d7ef65c2a1cbcf4f",
+    "notes": "Plan 1 routed the knight via d2 before d4; plan 3 said ...Bxf3 damages White's pawns when the queen recaptures; plan 2 was vague. Rewrote all four plans. British spelling."
+  },
+  "r1bq1rk1/1pp1bppp/p1np1n2/4p3/B3P3/2P2N2/PP1P1PPP/RNBQR1K1 w - - 1 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "17612fa0e6e247dd",
+    "notes": "Plan 1 played Nf1-g3 with no knight on f1; plan 2 gave the Breyer as ...Nb8-d7 with the knight on c6. Rewrote plans 1-2. British spelling."
+  },
+  "r2q1rk1/1ppbbppp/p1np1n2/4p3/B2PP3/2P2N2/PP3PPP/RNBQR1K1 w - - 1 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d524a50fc8efa432",
+    "notes": "Plan 2 rerouted the d7-bishop to c8 for the long diagonal; plan 1 played Nf1-g3 with no knight on f1. Rewrote overview and plans 1-2."
+  },
+  "r1bq1rk1/1pp1bppp/p1np1n2/4p3/B3P3/2P2N1P/PP1P1PP1/RNBQR1K1 b - - 0 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "51906916c38f9e08",
+    "notes": "Plan 1 routed the knight via d2 before d4; plan 4 gave ...Na5-c7, which a knight cannot play. Rewrote plans 1, 2 and 4. British spelling."
+  },
+  "r2q1rk1/1ppbbppp/p1np1n2/4p3/B3P3/2P2N1P/PP1P1PP1/RNBQR1K1 w - - 1 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "733f2146fd3d0bd2",
+    "notes": "Overview had the bishop rerouted to c8; plan 2 played ...Bb7 with the bishop on d7; plan 1 played Nf1-g3 with no knight on f1. Rewrote overview and plans 1-2 (first overview rejected for a false causal claim; corrected and accepted). British spelling."
+  },
+  "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq - 1 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "f4c51aea8132deaf",
+    "notes": "Plan 2 routed the knight through the d2-pawn. Rewrote plan 2. British spelling."
+  },
+  "r1bq1rk1/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 w - - 2 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "df44bd3a2fabf8b7",
+    "notes": "Overview was generic and missed the Marshall choice that 7...O-O offers; plan 2 gave ...Na5-c5; plan 3 called the queen's knight the king's knight and played it from f1. Rewrote overview and plans 2-3. British spelling."
+  },
+  "r1bq1rk1/2ppbppp/p1n2n2/1p2p3/P3P3/1B3N2/1PPP1PPP/RNBQR1K1 b - - 0 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "8aa14dcce941f491",
+    "notes": "Plan 1 routed the knight via d2-c4 or f1-e3-g2. Rewrote plan 1. British spelling."
   }
 }

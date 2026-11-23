@@ -6323,7 +6323,7 @@
     "name": "Trompowsky: 2...d5 3.Bxf6 exf6 4.e3 c6",
     "scid": "D00k",
     "analysis_json": {
-      "description": "This line of the Trompowsky Attack leads to a highly strategic and imbalanced position. White immediately trades the bishop for the knight, saddling Black with doubled f-pawns in exchange for giving up the bishop pair. The resulting game is a long-term struggle where White tries to exploit the weakened Black kingside, while Black leverages the open e-file, central control, and the long-term potential of the two bishops. This opening is perfect for patient, strategic players who enjoy maneuvering and understanding the subtleties of pawn structures.",
+      "description": "This line of the Trompowsky Attack leads to a highly strategic and imbalanced position. White immediately trades the bishop for the knight, saddling Black with doubled f-pawns in exchange for giving up the bishop pair. The resulting game is a long-term struggle where White tries to exploit the weakened Black kingside, while Black leverages the half-open e-file, central control, and the long-term potential of the two bishops. This opening is perfect for patient, strategic players who enjoy manoeuvring and understanding the subtleties of pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -6364,8 +6364,8 @@
         "Control of the e-file"
       ],
       "common_plans": [
-        "White: Play c3, Nf3, Bd3, and 0-0. Often, White will launch a kingside pawn advance with g4-h4 to attack Black's structural weaknesses.",
-        "Black: Develop with ...Bd6, ...Nd7, and ...Re8 to control the center and the e-file. A key plan is to create queenside counterplay with ...Qb6, targeting b2, followed by a ...b5-b4 pawn break.",
+        "White: Develop with c4 or c3, Bd3, Ne2 or Nf3 and castling, aiming for a sound position in which Black's doubled f-pawns matter more as pieces come off.",
+        "Black: Develop with ...Bd6, castling and ...Re8 to use the half-open e-file, and look for queenside play with ...b5 and ...b4, or with ...Qb6 hitting b2.",
         "White: Restrain Black's queenside expansion and try to trade pieces to reach an endgame where Black's doubled pawns are a more significant liability.",
         "Black: Use the bishop pair to create threats across the board and aim to open the position to their advantage, potentially targeting the d4-pawn."
       ],
@@ -7157,7 +7157,7 @@
       "eco_js": "Queen's Pawn Game: Veresov Attack, Two Knights System"
     },
     "analysis_json": {
-      "description": "The Richter-Veresov Attack's Two Knights System is a flexible and less-trodden path against the Queen's Pawn Game. By developing both knights before committing the e-pawn, White maintains a solid structure while creating subtle pressure with the Bg5 pin. This opening suits players who prefer to understand strategic ideas over memorizing long theoretical lines, leading to a game where piece activity and long-term plans often decide the outcome.",
+      "description": "The Richter-Veresov Attack's Two Knights System is a flexible and less-trodden path against the Queen's Pawn Game. By developing both knights before committing the e-pawn, White maintains a solid structure while creating subtle pressure with the Bg5 pin. This opening suits players who prefer to understand strategic ideas over memorising long theoretical lines, leading to a game where piece activity and long-term plans often decide the outcome.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -7199,9 +7199,9 @@
         "Flexible pawn structure"
       ],
       "common_plans": [
-        "White: Prepare the e2-e4 pawn break, often after castling kingside, to open the center and activate pieces.",
-        "White: Maneuver the queen to d2 or d3 to support the center, connect the rooks, and prepare for kingside action.",
-        "Black: Break the pin with ...h6 and ...g5, accepting a slight structural change for piece activity, or challenge White's center with a timely ...c5.",
+        "White: Prepare the e2-e4 pawn break, often after castling kingside, to open the centre and activate pieces.",
+        "White: Manoeuvre the queen to d2 or d3 to support the centre, connect the rooks, and prepare for kingside action.",
+        "Black: Question the bishop with ...h6 to ask whether White will give up the bishop pair, or challenge White's centre with a timely ...c5.",
         "Black: Develop harmoniously with moves like ...e6, ...Be7, and ...0-0, aiming for a solid and resilient position."
       ],
       "version": "1.0",
@@ -7224,7 +7224,7 @@
       "icsbot": "Grunfeld Defense, Veresov "
     },
     "analysis_json": {
-      "description": "The Richter-Veresov Attack's Two Knights System against a Grünfeld setup is a flexible and strategic opening. White avoids immediate confrontation, instead developing pieces logically to control the center, with the Bg5 pin posing a subtle long-term question. Black responds with a solid fianchetto plan, aiming to challenge White's central grip with the powerful g7-bishop. This opening leads to a complex strategic battle, ideal for players who enjoy maneuvering, understanding pawn structures, and fighting for key squares like e5, rather than engaging in sharp, tactical melees.",
+      "description": "The Richter-Veresov Attack's Two Knights System against a Grünfeld setup is a flexible and strategic opening. White avoids immediate confrontation, instead developing pieces logically to control the centre, with the Bg5 pin posing a subtle long-term question. Black responds with a solid fianchetto plan, aiming to challenge White's central grip with the powerful g7-bishop. This opening leads to a complex strategic battle, ideal for players who enjoy manoeuvring, understanding pawn structures, and fighting for key squares like e5, rather than engaging in sharp, tactical melees.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7264,10 +7264,10 @@
         "Hybrid Pawn Structures"
       ],
       "common_plans": [
-        "White: Solidify the center with e3, develop the light-squared bishop, and prepare either a central push with e4 or queenside expansion.",
-        "Black: Complete the fianchetto with ...Bg7 and ...O-O, then challenge White's center with a pawn break, typically ...c5 or ...e5.",
-        "White: Exchange on f6 (Bxf6) to inflict a pawn weakness, aiming to exploit it in the long run.",
-        "Black: Challenge the pinning bishop with ...h6 and ...g5, accepting a slight kingside weakening for increased activity and space."
+        "White: Solidify the centre with e3, develop the light-squared bishop, and prepare either a central push with e4 or queenside expansion.",
+        "Black: Complete the fianchetto with ...Bg7 and ...O-O, then challenge White's centre with a pawn break, typically ...c5 or ...e5.",
+        "White: Build with e3 and Bd3 or Be2, castle, and aim for the e4 push; Bxf6 is an option when it helps that push.",
+        "Black: Question the bishop with ...h6, and use the time to strike in the centre with ...Ne4 or ...c5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:36:36.305Z"
@@ -7289,7 +7289,7 @@
       "icsbot": "Veresov Variation, QP "
     },
     "analysis_json": {
-      "description": "The Richter-Veresov Attack with the Veresov Variation is a strategically complex and imbalanced system where White immediately trades the light-squared bishop to inflict doubled pawns on Black. This creates a fascinating struggle where White aims to exploit the pawn weakness and control key light squares, while Black gains the bishop pair and an open g-file for counterplay. This opening is ideal for strategic players who enjoy navigating non-standard positions and understanding long-term structural advantages over memorizing sharp, theoretical lines.",
+      "description": "The Richter-Veresov Attack with the Veresov Variation is a strategically complex and imbalanced system where White immediately gives up the dark-squared bishop for the f6-knight to double Black's pawns. Black recaptures with ...exf6 or ...gxf6 and gains the bishop pair, while White builds a centre and aims to show that the doubled pawns are a lasting weakness. This opening is ideal for strategic players who enjoy navigating non-standard positions and understanding long-term structural advantages over memorising sharp, theoretical lines.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7330,9 +7330,9 @@
         "Queenside vs. Kingside Play"
       ],
       "common_plans": [
-        "White aims to control the center with moves like f3 and e4, restrain Black's pieces, and often targets the weak pawns on the queenside.",
-        "Black accepts the doubled pawns after ...gxf6 to utilize the open g-file for a kingside attack with ...Rg8, while leveraging the long-term power of the bishop pair.",
-        "White often plays for light-square control, using the knight to maneuver to squares like e5 (via Ne2-g3-e5).",
+        "White aims to control the centre with f3 and e4 or with e3, Bd3 and Nge2, and to target the doubled f-pawns in the long run.",
+        "Black: Recapture with ...gxf6 or ...exf6; after ...gxf6 the half-open g-file and ...Rg8 give kingside play, and the bishop pair is a long-term asset.",
+        "White often plays e3, Bd3 and Nge2, offering to trade the light-squared bishops so that Black's bishop pair loses some of its force.",
         "Black seeks to keep the position fluid, control the e4-square to blunt White's central ambitions, and create threats against the white king."
       ],
       "version": "1.0",
@@ -7405,7 +7405,7 @@
     "name": "Richter-Veresov: 3...Bf5 4.Nf3",
     "scid": "D01j",
     "analysis_json": {
-      "description": "The 4.Nf3 variation of the Richter-Veresov against 3...Bf5 is a quieter, more strategic approach compared to the main lines with 4.f3. White opts for classical development, leading to a positional game centered on control of the key e4-square. This opening is well-suited for players who enjoy maneuvering and accumulating small advantages in less-trodden Queen's Pawn structures, avoiding sharp, immediate confrontations.",
+      "description": "The 4.Nf3 variation of the Richter-Veresov against 3...Bf5 is a quieter, more strategic approach compared to the main lines with 4.f3. White opts for classical development, leading to a positional game centreed on control of the key e4-square. This opening is well-suited for players who enjoy manoeuvring and accumulating small advantages in less-trodden Queen's Pawn structures, avoiding sharp, immediate confrontations.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -7446,10 +7446,10 @@
         "Transpositional possibilities"
       ],
       "common_plans": [
-        "White: Prepare the e2-e4 pawn push, often with Re1, and develop kingside pressure.",
-        "Black: Solidify the center with ...e6, challenge for the e4-square, and seek counterplay with ...c5.",
+        "White: Play e3 and Bd3 to challenge the f5-bishop, castle, and prepare the e4 push.",
+        "Black: Solidify the centre with ...e6, challenge for the e4-square, and seek counterplay with ...c5.",
         "White: Exchange the g5-bishop for the f6-knight to inflict a pawn weakness.",
-        "Black: Develop the queenside and neutralize White's bishop on g5."
+        "Black: Develop the queenside and neutralise White's bishop on g5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:37:38.193Z"
@@ -7737,10 +7737,10 @@
         "Prophylaxis against White's attack"
       ],
       "common_plans": [
-        "White: Exchange on f6 to create pawn weaknesses, control the light squares (especially e5), and potentially launch a kingside attack using the semi-open g-file.",
-        "Black: Recapture with the e-pawn (exf6) to gain the bishop pair and an open e-file, challenge White's center with ...c5, and use the two bishops to create long-term pressure.",
-        "White: If 4.Bh4, maintain the pin and pressure on the kingside, preparing to meet Black's central break.",
-        "Black: If 4.Bh4, break the pin with moves like ...g5 or undermine White's center with ...c5 to seize the initiative."
+        "White: Exchange on f6, giving up the bishop pair for a sounder pawn structure, then build the centre with e3 or with f3 and e4.",
+        "Black: After the exchange on f6, recapture with the e-pawn for quick development and a half-open e-file, then challenge White's centre with ...c5 and use the two bishops to create long-term pressure.",
+        "White: If 4.Bh4, keep the bishop on the h4-d8 diagonal, eyeing the f6-knight, and complete development with e3 and Nf3, ready to meet Black's central break.",
+        "Black: If the bishop retreats to h4, chase it with the g-pawn when that is safe, or strike at the centre with ...c5 to seize the initiative."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:39:11.381Z"
@@ -7879,7 +7879,7 @@
       "icsbot": "Two Knights System, Veresov "
     },
     "analysis_json": {
-      "description": "The Richter-Veresov with 4.Nf3 is a flexible and less-traveled system that blends strategic and tactical elements. White develops rapidly, putting pressure on Black's setup with the Bg5 pin, but opts for solid development with Nf3 rather than the more aggressive f3-e4 push. This leads to a complex middlegame where White often seeks a kingside attack, while Black aims to neutralize the pressure and challenge the center, suiting players who enjoy non-standard positions that require both careful planning and tactical alertness.",
+      "description": "The Richter-Veresov with 4.Nf3 is a flexible and less-travelled system that blends strategic and tactical elements. White develops rapidly, putting pressure on Black's setup with the Bg5 pin, but opts for solid development with Nf3 rather than the more aggressive f3-e4 push. This leads to a complex middlegame where White often seeks a kingside attack, while Black aims to neutralise the pressure and challenge the centre, suiting players who enjoy non-standard positions that require both careful planning and tactical alertness.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -7919,10 +7919,10 @@
         "Exploiting the Nc3 knight's placement"
       ],
       "common_plans": [
-        "White: Prepare a kingside attack, often with Qd2 and 0-0-0, while controlling the center.",
-        "Black: Challenge the center with ...c5 or ...e6, neutralize the Bg5, and develop queenside counterplay.",
-        "White: Trade the light-squared bishop for the f6 knight to create long-term structural weaknesses.",
-        "Black: Complete development, often with ...Be7 and ...0-0, and look to simplify into a favorable endgame."
+        "White: Prepare a kingside attack, often with Qd2 and 0-0-0, while controlling the centre.",
+        "Black: Challenge the centre with ...c5 or ...e6, neutralise the Bg5, and develop queenside counterplay.",
+        "White: Build with e3 and Bd3, and aim for the e4 push to open the centre.",
+        "Black: Complete development, often with ...Be7 and castling, and look to simplify into a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:40:11.648Z"
@@ -8000,7 +8000,7 @@
       "icsbot": "Boyce Defense, Veresov "
     },
     "analysis_json": {
-      "description": "The Richter-Veresov with 3...Ne4 is a sharp and provocative defense where Black immediately challenges White's intentions. This move steers the game into tactical and often unorthodox territory, prioritizing initiative and piece activity over quiet development. It is an excellent choice for aggressive players who enjoy creating immediate complications and are comfortable navigating sharp, unbalanced positions.",
+      "description": "The Richter-Veresov with 3...Ne4 is a sharp and provocative defence where Black immediately challenges White's intentions. This move steers the game into tactical and often unorthodox territory, prioritising initiative and piece activity over quiet development. It is an excellent choice for aggressive players who enjoy creating immediate complications and are comfortable navigating sharp, unbalanced positions.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -8039,8 +8039,8 @@
         "Exploiting Tempo"
       ],
       "common_plans": [
-        "White: Challenge the e4-pawn with moves like f3 and c4, complete development, and exploit Black's sometimes awkward piece placement.",
-        "Black: Solidify the e4-pawn, develop quickly with moves like ...c5 and ...Bf5, and use active pieces to create threats."
+        "White: Challenge the e4-knight with Nxe4, or play around it with Bf4 or Bh4, then complete development and exploit the time Black has spent moving the knight twice.",
+        "Black: The e4-knight hits both the g5-bishop and the c3-knight, so White must decide at once how to deal with it; Black then develops quickly with ...c5 and ...Bf5 and uses active pieces to create threats."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:40:47.411Z"
@@ -132425,9 +132425,9 @@
       ],
       "common_plans": [
         "For White, a primary plan is to launch a kingside attack, often supported by f3, g4, and sometimes long castling, aiming to overwhelm Black's king position.",
-        "White seeks to maintain piece activity and control key squares like e5, preventing Black from comfortably equalizing and creating long-term pressure.",
-        "For Black, a key idea is to challenge the active Bf4 bishop, often with ...Nf6-h5 or a pawn push like ...h6-g5, to neutralize White's most dangerous piece.",
-        "Black will often play ...c5 to strike at the center, challenge White's d4 pawn, and create counterplay on the queenside."
+        "White seeks to maintain piece activity, with Nb5 ideas against c7 and a grip on the central dark squares, preventing Black from comfortably equalising and creating long-term pressure.",
+        "For Black, a key idea is to challenge the active f4-bishop, often with ...Bd6 or ...Nf6-h5, to neutralise White's most dangerous piece.",
+        "Black will often play ...c5 to strike at the centre, challenge White's d4 pawn, and create counterplay on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-22T12:10:31.638Z"
@@ -133027,7 +133027,7 @@
     "moves": "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qg4",
     "src": "eco_wikip.g",
     "analysis_json": {
-      "description": "The Tejler Gambit is a hyper-aggressive and sharp variation of the Blackmar-Diemer Gambit where White sacrifices two pawns for a massive lead in development and a direct attack on the king. This opening leads to wild, tactical complications where White bets everything on a swift checkmate, while Black aims to weather the storm, neutralize the initiative (often by trading queens), and convert the material advantage. It is tailored for fearless, attacking players who thrive in chaotic, double-edged positions.",
+      "description": "The Tejler Gambit is a hyper-aggressive and sharp variation of the Blackmar-Diemer Gambit where White sacrifices two pawns for a massive lead in development and a direct attack on the king. This opening leads to wild, tactical complications where White bets everything on a swift checkmate, while Black aims to weather the storm, neutralise the initiative (often by trading queens), and convert the material advantage. It is tailored for fearless, attacking players who thrive in chaotic, double-edged positions.",
       "style_tags": [
         "Aggressive",
         "Gambit",
@@ -133070,10 +133070,10 @@
         "Queen Harassment"
       ],
       "common_plans": [
-        "White: Castle queenside, use the open f-file for a rook lift, and launch a direct kingside pawn storm (g4, h4) to expose the Black king.",
+        "White: Castle queenside with O-O-O, putting a rook on the open d-file at once, and use the half-open f-file and the lead in development to attack before Black consolidates.",
         "Black: Trade queens to defuse the attack, consolidate the material advantage, complete development, and exploit White's structural weaknesses in the endgame.",
         "White: Prevent Black from consolidating by creating constant threats and maintaining the initiative, even at the cost of more material.",
-        "Black: Use the active queen to create counter-threats, disrupt White's coordination, and force favorable exchanges."
+        "Black: Use the active queen to create counter-threats, disrupt White's coordination, and force favourable exchanges."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-22T12:13:57.660Z"

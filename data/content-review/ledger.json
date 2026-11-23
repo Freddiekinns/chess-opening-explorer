@@ -12628,5 +12628,65 @@
     "verdict": "needs-research",
     "contentHash": "c4785097e2cfe859",
     "notes": "Overview and plans 2-3 credited Black with a bishop pair it does not have and named a c3-knight that is a pawn; overview and plans 1-3 rewritten and accepted. Plan 4 (long-range power of the bishops) is still wrong: two rewrites were rejected (first: White takes on d4 at once so the choice does not arise; second: named knights on d4 and e6 with no sequence), so the old text was restored."
+  },
+  "r2qkb1r/2p2ppp/p1n1b3/1pn1P3/3P4/1B3N2/PP1N1PPP/R1BQ1RK1 b kq - 0 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "453a514e7f2e9e95",
+    "notes": "Plan 1 suggested b3 and Bb2 with the bishop already on b3; overview called 10...d4 a gambit and missed that both b3 and d4 are attacked twice. Rewrote overview and plans. British spelling."
+  },
+  "r2qkb1r/2p2ppp/p1n1b3/1pnpP3/8/1B3N2/PPPN1PPP/R1BQ1RK1 w kq - 3 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "50e21f39d70c0732",
+    "notes": "Plan 1 said c3 challenges the c5-knight and routed a knight through the f1-rook; plan 2 proposed ...c7-c5 with the knight on c5; plans 3-4 were generic. Rewrote plans. British spelling."
+  },
+  "r2qkb1r/2p2ppp/p1n1b3/1pn1P3/3p4/1BP2N2/PP1N1PPP/R1BQ1RK1 w kq - 0 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "2ff5480e215f8bb4",
+    "notes": "Plan 2 suggested Bxd4, which no bishop can play, and Nf1-e3 with the rook on f1; overview missed that ...d4 opens the e6-bishop's diagonal onto b3. Rewrote overview and plans around 11.Bxe6 Nxe6 12.cxd4 Ncxd4 and 11.Ng5."
+  },
+  "r4rk1/2pqbppp/p1n1b3/3pP3/2B1n3/5N2/PP2QPPP/RNBR2K1 w - - 1 13": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "2007d5402fab88a4",
+    "notes": "Plan 1 called Qe2 and Rd1 a battery; plan 2 proposed ...c5 with the knight on c6; plan 3 sent the f3-knight round via f1. Rewrote overview and plans 1-3 around the pressure on d5. British spelling."
+  },
+  "r2qk2r/2p2ppp/p1n1b3/1pbpP3/4n3/1B3N2/PPP1QPPP/RNB2RK1 w kq - 3 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d034d98ea15882ee",
+    "notes": "Plan 1 routed a knight through the f1-rook and gave White a queenside majority it does not have. Rewrote overview and plans around Be3, Rd1 and c4. British spelling."
+  },
+  "r2qk2r/2p1bppp/p1n1b3/1p1pP3/4n3/1B3N2/PPP1QPPP/RNB2RK1 w kq - 3 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "ee435591659a58f7",
+    "notes": "Plan 4 named a white e4-pawn that is gone and ...f5; plan 1 routed a knight through the f1-rook. Rewrote plans 1, 3 and 4. British spelling."
+  },
+  "r2qk2r/2p1bppp/p1n1b3/1p1pP3/4n3/1B3N2/PPP1QPPP/RNBR2K1 b kq - 4 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "88f7f27776c74b12",
+    "notes": "Plan 2's ...f5 was not a real idea here; plan 1 reworded. Rewrote plans 1-2. British spelling."
+  },
+  "r2q1rk1/2p1bppp/p1n1b3/1p1pP3/4n3/1B3N2/PPP1QPPP/RNBR2K1 w - - 5 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "3ebe203e70771551",
+    "notes": "Plan 1 routed the f3-knight via d2-f1; plan 3 tucked the c1-bishop to f1. Rewrote plans 1 and 3 around 11.c4 bxc4 12.Bxc4. British spelling."
+  },
+  "r2q1rk1/2p1bppp/p1n1b3/1p1pP3/4n3/1BP2N2/PP2QPPP/RNBR2K1 b - - 0 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "9838087aabf8aeaf",
+    "notes": "Plan 1 prepared a d4 break with no white d-pawn; plan 2's ...f6 did not support d5; plan 4 suggested ...Nf6, which the e5-pawn covers. Rewrote plans. British spelling."
+  },
+  "r2q1rk1/2p1bppp/p1n1b3/1p1pP3/2P1n3/1B3N2/PP2QPPP/RNBR2K1 b - - 0 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "c158f31096aad3d5",
+    "notes": "Plan 1 called a d5 recapture structure isolated and named a Qe2-Rd1 battery; plan 3 proposed ...d4 as a pawn sacrifice. Rewrote plans around 11...bxc4 12.Bxc4 Qd7. British spelling."
   }
 }

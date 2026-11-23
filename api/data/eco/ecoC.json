@@ -129331,7 +129331,7 @@
     "name": "Spanish: Open, Bernstein, 11.cxd4",
     "scid": "C80s",
     "analysis_json": {
-      "description": "The Bernstein Variation of the Open Spanish is a sharp and highly theoretical battleground where Black sacrifices a pawn with 10...d4 to seize the initiative. This line leads to dynamic, unbalanced positions where concrete calculation and understanding of tactical nuances are paramount. It's an opening for players who thrive on complexity and enjoy fighting for active counterplay, even at the cost of material.",
+      "description": "With 11.cxd4 White takes the pawn on d4 at once instead of first exchanging bishops with 11.Bxe6. White briefly has an extra pawn and a d4-e5 pawn centre, but the b3-bishop is attacked by both the c5-knight and the e6-bishop, and the d4-pawn by the c6-knight and the queen, so Black usually wins the pawn back with active pieces. The play is concrete and depends on accurate move orders.",
       "style_tags": [
         "Sharp",
         "Tactical",
@@ -129372,8 +129372,8 @@
         "Exploiting weak color complexes"
       ],
       "common_plans": [
-        "White: Consolidate the extra pawn, neutralize Black's initiative, complete development with moves like b3 and Bb2, and eventually use the material advantage in the endgame.",
-        "Black: Maintain pressure with active pieces (especially the knights), control the d-file, create threats against the f2 pawn, and prevent White from untangling and consolidating."
+        "White: Keep the d4-e5 pawn centre that 11.cxd4 has created, and finish development with Re1 and Ne4 or Nb3 once the b3-bishop's future is settled.",
+        "Black: Regain the pawn by hitting d4 with the c6-knight and the queen, and use the c5-knight and e6-bishop, which both attack the b3-bishop, to trade off White's best minor piece."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:13:19.854Z"
@@ -129445,7 +129445,7 @@
     "name": "Spanish: Open, Bernstein, 9...Nc5",
     "scid": "C80r",
     "analysis_json": {
-      "description": "The Open Spanish is a dynamic and theoretically rich battleground where Black immediately challenges White's central control by capturing the e4-pawn. The Bernstein Variation with 9...Nc5 is a solid and respected continuation, aiming to neutralize White's initiative by controlling key squares and putting pressure on the b3-bishop. This opening leads to a complex strategic struggle, ideal for well-rounded players who can blend solid positional play with sharp tactical awareness.",
+      "description": "The Open Spanish is a dynamic and theoretically rich battleground where Black immediately challenges White's central control by capturing the e4-pawn. The Bernstein Variation with 9...Nc5 is a solid and respected continuation, aiming to neutralise White's initiative by controlling key squares and putting pressure on the b3-bishop. This opening leads to a complex strategic struggle, ideal for well-rounded players who can blend solid positional play with sharp tactical awareness.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -129487,10 +129487,10 @@
         "Prophylaxis and controlling key squares"
       ],
       "common_plans": [
-        "White: Play c3 to challenge the Nc5, followed by rerouting the b1-knight via d2-f1-e3. Develop the light-squared bishop and seek to undermine Black's central pawn on d5.",
-        "Black: Solidify the center with ...Be7 and ...O-O, maintain the strong knight on c5, and prepare for queenside counterplay, often involving a ...c7-c5 pawn break.",
-        "White: Create kingside attacking chances by maneuvering pieces towards the king, leveraging the space advantage.",
-        "Black: Exchange pieces to relieve pressure and aim for a favorable endgame where the solid pawn structure can be an asset."
+        "White: Play c3 and Bc2, keeping the light-squared bishop away from the c5-knight, then use Nb3 or Nd4 to challenge Black's pieces on the queenside and in the centre.",
+        "Black: Choose between the sharp ...d4, which gains space and opens the e6-bishop's diagonal towards b3 once White has committed the c-pawn, and quieter development with ...Be7 and ...O-O.",
+        "White: Use the space the e5-pawn gives on the kingside, with Re1 and Nd4 bringing pieces to the centre.",
+        "Black: Trade White's light-squared bishop with ...Nxb3 when allowed, which removes White's best minor piece and eases the pressure on d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:13:54.818Z"
@@ -129509,7 +129509,7 @@
       "icsbot": "Karpov Gambit, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "This variation of the Open Spanish is a sharp and ambitious undertaking for Black. The move 10...d4 immediately challenges White's central control, aiming to blow the position open and create tactical, double-edged play. This line is for players who thrive on seizing the initiative and are unafraid of complex, concrete calculation, as it often leads to positions where piece activity trumps static structural considerations.",
+      "description": "With 10...d4 Black pushes the pawn past White's c-pawn instead of defending d5 passively. The push opens the e6-bishop's diagonal towards the b3-bishop, which is now attacked by both the bishop and the c5-knight, and it threatens ...dxc3. White usually answers 11.Bxe6 Nxe6 12.cxd4 Ncxd4, when Black's knights are lively and White aims for a4 against the b5-pawn or a knight on e4. It suits players who like concrete, open positions.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -129550,8 +129550,8 @@
         "Activity vs. Structure"
       ],
       "common_plans": [
-        "Black's plan is to use the newly opened lines to generate a swift attack, leveraging superior piece activity to compensate for the potential long-term weakness of the d4-pawn. This often involves moves like ...Bg4, ...Qd7, and quick development to pressure White's king.",
-        "White aims to neutralize Black's initiative, blockade and eventually win the d4-pawn. Common strategies include exchanging on d4 (Bxd4 or cxd4), rerouting the knight via Nf1-e3 to control key squares, and aiming to simplify into a favorable endgame where the isolated pawn is a clear liability."
+        "Black: After 11.Bxe6 Nxe6 12.cxd4 Ncxd4, Black has regained the pawn with active knights; finish development with ...Be7 and ...O-O and keep an eye on the b5-pawn.",
+        "White: 11.Bxe6 Nxe6 12.cxd4 Ncxd4 is the main line, after which White plays a4 against the b5-pawn and brings the d2-knight to e4; the sharp 11.Ng5 is a well-known alternative that offers the knight to open lines against the black king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:14:14.894Z"
@@ -129699,7 +129699,7 @@
       "scid": "Spanish: Open, Keres, Ekstrom Variation"
     },
     "analysis_json": {
-      "description": "The Ekstrom Variation of the Howell Attack is a highly theoretical and dynamic battleground within the Open Ruy Lopez. White leverages the strong e5-pawn to claim a central space advantage and pressure on the d-file, while Black seeks immediate counterplay with active pieces and challenges White's central grip. This opening leads to complex, double-edged middlegames where precise calculation and deep strategic understanding are paramount, suiting players who thrive on sharp, concrete struggles.",
+      "description": "In the Ekstrom Variation of the Howell Attack, White's 11.c4 has broken up Black's queenside pawns, and after 11...bxc4 12.Bxc4 Qd7 Black's d5-pawn is under fire from the c4-bishop and the d1-rook. Black defends it with the e6-bishop and the queen and relies on active pieces, including the e4-knight and the half-open b-file. White's e5-pawn gives space, and the game turns on whether the d5-pawn holds.",
       "style_tags": [
         "Dynamic",
         "Tactical",
@@ -129741,9 +129741,9 @@
         "Piece activity over static advantages"
       ],
       "common_plans": [
-        "White: Consolidate the e5 pawn, control the d-file with the Rd1 and Qe2 battery, and probe Black's kingside.",
-        "Black: Challenge White's central control with moves like ...f5 or ...c5, create queenside counterplay using the open b-file, and neutralize White's active bishop on c4.",
-        "White: Maneuver the knight from f3 (e.g., to d2-f1-g3/e3) to support the center and prepare a kingside attack.",
+        "White: Develop with Nc3 to add a third attacker to the d5-pawn alongside the c4-bishop and the d1-rook, while the e5-pawn keeps Black's kingside cramped.",
+        "Black: Defend d5 with the e6-bishop and the d7-queen, use the half-open b-file with ...Rab8 or ...Rfb8, and consider ...Na5 to hit the c4-bishop.",
+        "White: Complete development with Be3 and Nc3, then bring the a1-rook into play to increase the pressure on d5.",
         "Black: Exchange pieces to relieve pressure and transition into a more manageable endgame where the e5-pawn might become a weakness."
       ],
       "version": "1.0",
@@ -129759,7 +129759,7 @@
     "name": "Spanish: Open, Keres Attack, 9...Bc5",
     "scid": "C81",
     "analysis_json": {
-      "description": "The Keres Attack in the Open Spanish is a sophisticated and strategically complex system where both sides vie for central control and the initiative. Black's active 9...Bc5 leads to a sharp, dynamic struggle, demanding precise calculation and a deep understanding of positional nuances. This opening is perfect for ambitious players who enjoy double-edged positions where both tactical and long-term strategic ideas are paramount.",
+      "description": "In the Keres Attack, 9.Qe2 prepares Rd1 to put a rook opposite the d5-pawn, and 9...Bc5 places Black's bishop on its most active square, aimed at f2 alongside the e4-knight. White usually challenges the bishop with Be3, and play turns on White's pressure against d5 with Rd1 and c4 against Black's active minor pieces.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -129803,8 +129803,8 @@
         "White's knight maneuver (Nbd2-f1-g3/e3)"
       ],
       "common_plans": [
-        "White: Play c4 to challenge Black's d5 pawn, maneuver the knight from b1 via d2-f1-g3 to attack Black's center and kingside, and utilize the queenside pawn majority.",
-        "Black: Maintain control of the d5 square, use the active Bc5 to create threats against f2, and seek counterplay on the kingside or in the center, often involving ...f5 pawn breaks."
+        "White: Challenge the c5-bishop with Be3, and use Rd1 and c4 to put pressure on the d5-pawn; the e5-pawn gives a kingside pawn majority.",
+        "Black: Keep the d5-pawn supported by the e6-bishop, use the active c5-bishop and e4-knight against f2, and castle quickly."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:15:28.181Z"
@@ -129819,7 +129819,7 @@
     "name": "Spanish: Open, Keres Attack, 9...Be7",
     "scid": "C81",
     "analysis_json": {
-      "description": "The Keres Attack is a sophisticated and highly respected line in the Open Spanish. White's 9. Qe2 is a flexible and subtle move that prepares to challenge Black's central foothold, leading to a complex and strategically rich middlegame. This opening is ideal for well-rounded players who appreciate a deep strategic battle where precise maneuvering and long-term planning are paramount, but must remain alert to sharp tactical possibilities.",
+      "description": "The Keres Attack is a sophisticated and highly respected line in the Open Spanish. White's 9. Qe2 is a flexible and subtle move that prepares to challenge Black's central foothold, leading to a complex and strategically rich middlegame. This opening is ideal for well-rounded players who appreciate a deep strategic battle where precise manoeuvring and long-term planning are paramount, but must remain alert to sharp tactical possibilities.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -129860,10 +129860,10 @@
         "Harmonious piece development and coordination"
       ],
       "common_plans": [
-        "White often plays c3 and Rd1 to solidify the center, followed by maneuvering the b1-knight to d2-f1-g3/e3 to support the kingside and center.",
+        "White: Play Rd1 to oppose the d5-pawn and c4 to strike at it, or c3 with Nbd2 to challenge the e4-knight.",
         "Black aims to complete development with ...O-O, maintain the strongpoint on d5, and prepare to use the queenside pawn majority as a long-term trump card.",
-        "White may try to create an attack on the kingside, leveraging the active bishop on b3 and the potential for a knight on g3.",
-        "Black often seeks counterplay by challenging White's e4-pawn and activating the light-squared bishop, sometimes via ...f5 or by rerouting the c6-knight."
+        "White: The e5-pawn gives kingside space, and once Rd1 has cleared the f1-square the b1-knight can head via d2 towards g3 or e3 to support play there.",
+        "Black: Seek counterplay with ...Na5-c4, or with ...Nc5 to trade off the b3-bishop, which eases the pressure on d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:15:48.313Z"
@@ -129878,7 +129878,7 @@
     "name": "Spanish: Open, Keres, 10.Rd1",
     "scid": "C81",
     "analysis_json": {
-      "description": "The Keres Variation (10.Rd1) is a classical and highly respected approach against the Open Spanish, aiming for a slight but lasting positional edge. White solidifies the center, prepares to challenge the d-file, and develops harmoniously, leading to a complex strategic battle. This line is perfect for players who enjoy deep theoretical preparation and excel at maneuvering in intricate middlegames where both tactical and positional understanding are paramount.",
+      "description": "The Keres Variation (10.Rd1) is a classical and highly respected approach against the Open Spanish, aiming for a slight but lasting positional edge. White solidifies the centre, prepares to challenge the d-file, and develops harmoniously, leading to a complex strategic battle. This line is perfect for players who enjoy deep theoretical preparation and excel at manoeuvring in intricate middlegames where both tactical and positional understanding are paramount.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -129920,8 +129920,8 @@
         "Pawn breaks (c4 vs ...f5)"
       ],
       "common_plans": [
-        "White: Play c3 and Nbd2 to challenge the e4-knight and solidify the center. Maneuver the queen's knight to f1-g3 to support a kingside attack. Exert pressure along the d-file.",
-        "Black: Castle kingside (O-O) and challenge White's central control, often with ...Nc5 or ...f5. Seek counterplay on the queenside or by targeting White's e-pawn. Complete development and neutralize White's initiative."
+        "White: Play c4 to strike at the d5-pawn, or c3 and Nbd2 to challenge the e4-knight; the d1-rook adds pressure on the d-file, and the knight can later go from d2 via f1 to g3.",
+        "Black: Castle and decide the e4-knight's role: ...Nc5 aims to trade off the b3-bishop, while ...Na5-c4 brings the other knight to an active post. Then complete development and seek queenside counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:16:07.407Z"
@@ -129936,7 +129936,7 @@
     "name": "Spanish: Open, Keres, 10.Rd1 O-O",
     "scid": "C81",
     "analysis_json": {
-      "description": "The Keres Variation of the Open Spanish is a classical and strategically profound battleground where both sides fight for central control and the initiative. Unlike more volatile openings, this line leads to a sophisticated struggle of maneuver, where deep understanding of pawn structures and long-term plans is paramount. It is perfectly suited for the patient, strategic player who enjoys accumulating small advantages and outmaneuvering their opponent in a complex middlegame.",
+      "description": "The Keres Variation of the Open Spanish is a classical and strategically profound battleground where both sides fight for central control and the initiative. Unlike more volatile openings, this line leads to a sophisticated struggle of manoeuvre, where deep understanding of pawn structures and long-term plans is paramount. It is perfectly suited for the patient, strategic player who enjoys accumulating small advantages and outmanoeuvring their opponent in a complex middlegame.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -129977,10 +129977,10 @@
         "The fight for the initiative"
       ],
       "common_plans": [
-        "White's Plan: Increase pressure on the d5-pawn with moves like c4 and by maneuvering the f3-knight (e.g., Nd2-f1-e3) to bolster the center and prepare for kingside activity.",
+        "White's Plan: Strike at the d5-pawn with c4, as in the main line 11.c4 bxc4 12.Bxc4, then add pressure with Nc3 and the d1-rook.",
         "Black's Plan: Solidify the d5-pawn and seek counterplay via the ...c7-c5 pawn break. Black often challenges the b3-bishop with ...Na5 to facilitate queenside expansion.",
-        "White's Plan: Systematically improve piece placement, often tucking the c1-bishop to f1, and use the d-file rook to restrict Black's development.",
-        "Black's Plan: Neutralize White's central pressure, complete development, and aim to transition into a favorable endgame where the e5-pawn could become a weakness."
+        "White's Plan: Develop the c1-bishop to e3 and the b1-knight to d2 or c3, then use the d1-rook to restrict Black's pieces.",
+        "Black's Plan: Neutralise White's central pressure, complete development, and aim to transition into a favourable endgame where the e5-pawn could become a weakness."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:16:28.968Z"
@@ -129995,7 +129995,7 @@
     "name": "Spanish: Open, Keres, 10.Rd1 O-O 11.c3",
     "scid": "C81",
     "analysis_json": {
-      "description": "The Keres System in the Open Spanish is a highly respected and strategically profound line. White adopts a solid, patient setup with Qe2, Rd1, and c3, aiming to build long-term pressure against Black's central d5-pawn. This opening leads to a complex maneuvering game, ideal for players who excel at deep strategic planning, prophylaxis, and accumulating small advantages over immediate tactical skirmishes.",
+      "description": "The Keres System in the Open Spanish is a highly respected and strategically profound line. White adopts a solid, patient setup with Qe2, Rd1, and c3, aiming to build long-term pressure against Black's central d5-pawn. This opening leads to a complex manoeuvring game, ideal for players who excel at deep strategic planning, prophylaxis, and accumulating small advantages over immediate tactical skirmishes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -130036,10 +130036,10 @@
         "The role of the e4-knight"
       ],
       "common_plans": [
-        "White: Methodically prepare the d4 pawn break, use the d-file for pressure, and maneuver pieces to challenge Black's central foothold.",
-        "Black: Solidify the d5-pawn (e.g., with ...f6 or ...Qd7), seek counterplay with the ...f5 pawn break, and complete development to neutralize White's pressure.",
-        "White: Reroute the f3-knight (e.g., via d2) to challenge the e4-knight or support the center.",
-        "Black: Decide the future of the e4-knight, which can retreat to c5 or f6, or be maintained as a central thorn."
+        "White: Play Nbd2 to challenge the e4-knight and Bc2 to keep the bishop aimed at the kingside, while the d1-rook watches the d5-pawn.",
+        "Black: Keep the e4-knight active, with ...Nc5 available if White challenges it, and add support to the d5-pawn with ...Qd7 and ...Rad8.",
+        "White: Reroute the b1-knight via d2 and f1 towards e3 or g3, where it eyes d5 and the kingside.",
+        "Black: Decide the future of the e4-knight, which can retreat to c5 or be kept on e4 as a central thorn; f6 is covered by the e5-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:16:48.145Z"
@@ -130102,10 +130102,10 @@
         "Queenside Counterplay"
       ],
       "common_plans": [
-        "White aims to open the center with cxd5, creating an isolated pawn for Black and exploiting pressure on the d-file with the Rd1-Qe2 battery.",
-        "White often reroutes the b1-knight via d2-f1-g3/e3 to support the center and prepare kingside activity.",
-        "Black's main response is ...bxc4 followed by the pawn thrust ...d4, sacrificing a pawn to break open the position and activate their pieces.",
-        "Black seeks to maintain central stability with moves like ...Qd7 and create counterplay by targeting White's e5-pawn or expanding on the queenside."
+        "White: Break up Black's queenside pawns with c4; after 11...bxc4 12.Bxc4 the d5-pawn is under fire from the c4-bishop and the d1-rook.",
+        "White: Develop the b1-knight to c3, adding pressure on d5, and the c1-bishop to e3.",
+        "Black: The usual reply is 11...bxc4 12.Bxc4, then ...Qd7 (the Ekstrom Variation) to defend d5 with the queen and bishop.",
+        "Black: Use the half-open b-file after ...bxc4 for the rooks, and keep the e4-knight active to make up for the pressure on d5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:17:09.940Z"

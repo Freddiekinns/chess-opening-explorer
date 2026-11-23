@@ -12383,7 +12383,7 @@
     "name": "Torre Attack: 3...g6 4.e3 Bg7 5.Nbd2 O-O 6.Bd3 c5",
     "scid": "D03t",
     "analysis_json": {
-      "description": "The Torre Attack with this setup is a solid, system-based approach for White, aiming for a stable central structure and a comfortable middlegame. It leads to a strategic battle where understanding pawn structures and piece maneuvering is more important than memorizing sharp tactical lines. This opening is perfect for positional players who enjoy building up pressure slowly and outplaying their opponents in a long, strategic fight.",
+      "description": "The Torre Attack with this setup is a solid, system-based approach for White, aiming for a stable central structure and a comfortable middlegame. It leads to a strategic battle where understanding pawn structures and piece manoeuvring is more important than memorising sharp tactical lines. This opening is perfect for positional players who enjoy building up pressure slowly and outplaying their opponents in a long, strategic fight.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -12424,10 +12424,10 @@
         "Pawn Pyramid Structure"
       ],
       "common_plans": [
-        "White: Prepare and execute the e3-e4 pawn break to seize central space and activate pieces. Maneuver a knight to the key e5-outpost (e.g., Nf3-e5 or Nbd2-f1-e3-e5).",
-        "Black: Challenge White's center with ...cxd4 to open the c-file, or with ...b5 to start queenside expansion. Reposition the b8-knight to d7 to support the center and prepare the ...e5 break.",
+        "White: Prepare and execute the e4 pawn break, backed by the d2-knight and the d3-bishop, to seize central space and activate the pieces; the f3-knight can also jump to the key e5-outpost.",
+        "Black: Challenge White's centre with ...cxd4 to open the c-file, or with ...b5 to start queenside expansion. Reposition the b8-knight to d7 to support the centre and prepare the ...e5 break.",
         "White: Initiate a kingside attack, often involving moves like h3, Ne5, and sometimes f2-f4, aiming at the Black king.",
-        "Black: Neutralize White's dangerous light-squared bishop, either by forcing a trade with ...Nh5 or by challenging it with ...h6."
+        "Black: Ask the dark-squared bishop on g5 to decide with ...h6, and hit the b2-pawn with ...Qb6, a standard Torre resource now that the bishop is away from the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:06:30.122Z"
@@ -12712,9 +12712,9 @@
         "Central pawn breaks (...c5 for Black, e4 for White)"
       ],
       "common_plans": [
-        "White: Solidify the center with c3 and e3, challenge the Ne4 with h3, and prepare the e3-e4 pawn break.",
-        "Black: Support the Ne4 knight, often with ...f5, and strike at White's center with an early ...c5.",
-        "White: Complete development with Bd3, Nbd2, and O-O, aiming for a slight but lasting spatial and positional advantage.",
+        "White: Solidify the centre with e3 and c3, and challenge the e4-knight with Nbd2 and Bd3, exchanging it when that suits White.",
+        "Black: Support the e4-knight, often with ...f5, and strike at White's centre with an early ...c5.",
+        "White: Complete development with e3, Bd3, Nbd2 and O-O, aiming for a slight but lasting spatial and positional advantage.",
         "Black: Develop the queenside, often with ...b6 and ...Bb7, to create counterplay and challenge White's control."
       ],
       "version": "1.0",
@@ -12730,7 +12730,7 @@
     "name": "Colle: 3...Bf5, Alekhine Variation",
     "scid": "D04d",
     "analysis_json": {
-      "description": "The Alekhine Variation against the Colle System is a solid and principled defense where Black develops the light-squared bishop before committing to ...e6. This leads to a strategic game focused on central control and pawn structure, particularly the critical e4-square. The play is often quiet and maneuvering, suiting players who appreciate accumulating small advantages and understanding long-term plans rather than engaging in immediate tactical fireworks.",
+      "description": "The Alekhine Variation against the Colle System is a solid and principled defence where Black develops the light-squared bishop before committing to ...e6. This leads to a strategic game focused on central control and pawn structure, particularly the critical e4-square. The play is often quiet and manoeuvring, suiting players who appreciate accumulating small advantages and understanding long-term plans rather than engaging in immediate tactical fireworks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -12770,10 +12770,10 @@
         "Solving the 'bad' bishop problem"
       ],
       "common_plans": [
-        "White: Prepare and execute the e4 pawn break, often preceded by O-O, c3, and Nbd2. After an exchange on f5, White may try to exploit the doubled pawns or use the open g-file.",
-        "Black: Solidify control over the e4 square, complete development, and challenge White's center with a ...c5 pawn break.",
-        "Black: After an exchange on f5, use the strengthened central control (from exf5) and the open e-file for counterplay.",
-        "White: Maneuver the knight to e5 to create a strong central outpost and pressure Black's position."
+        "White: Prepare the e4 pawn break with O-O, c3 and Nbd2, often adding Qc2 or Qe2 to support it; trading bishops with Bxf5 leaves Black with doubled f-pawns but a firmer hold on e4.",
+        "Black: Solidify control over the e4 square, complete development, and challenge White's centre with a ...c5 pawn break.",
+        "Black: If White exchanges on f5 and Black recaptures with the e-pawn, use the extra control of e4 and the half-open e-file for counterplay.",
+        "White: Plant the f3-knight on e5 as a strong central outpost to pressure Black's position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:08:27.549Z"
@@ -12903,7 +12903,7 @@
     "name": "Colle: 3...c5 4.c3",
     "scid": "D04h",
     "analysis_json": {
-      "description": "This variation of the Colle System creates a solid and resilient pawn structure, often transposing to lines of the Semi-Slav Defense. White establishes a c3-d4-e3 pawn triangle, aiming for a controlled, strategic game centered around the eventual e4 pawn break. This opening is perfect for positional players who enjoy building up pressure slowly and excel in maneuvering and long-term planning.",
+      "description": "This variation of the Colle System creates a solid and resilient pawn structure, a Semi-Slav set-up with colours reversed. White establishes a pawn triangle on c3, d4 and e3, aiming for a controlled, strategic game centred around the eventual e4 pawn break. This opening is perfect for positional players who enjoy building up pressure slowly and excel in manoeuvring and long-term planning.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -12944,7 +12944,7 @@
         "Queenside pressure vs. Central break"
       ],
       "common_plans": [
-        "White: Complete development and prepare the central e3-e4 pawn break, often supported by Nbd2 and Re1.",
+        "White: Complete development with Bd3, Nbd2 and O-O, and prepare the central e4 pawn break, often supported by Re1 or Qe2.",
         "Black: Exert pressure on d4 with moves like ...Nc6 and ...Qb6, while preparing to challenge for central control or expand on the queenside with ...b5."
       ],
       "version": "1.0",
@@ -12960,7 +12960,7 @@
     "name": "Colle: 3...c5 4.c3 Nbd7",
     "scid": "D04j",
     "analysis_json": {
-      "description": "This variation of the Colle System leads to a solid, strategic game where both sides build up their positions carefully. White aims to complete the classic Colle setup and prepare the central e3-e4 pawn break, while Black establishes a firm grip on d5 and prepares to counter-punch on the queenside or in the center. The resulting positions are often closed or semi-closed, suiting players who enjoy maneuvering and long-term planning over immediate tactical fireworks.",
+      "description": "This variation of the Colle System leads to a solid, strategic game where both sides build up their positions carefully. White aims to complete the classic Colle setup and prepare the central e3-e4 pawn break, while Black establishes a firm grip on d5 and prepares to counter-punch on the queenside or in the centre. The resulting positions are often closed or semi-closed, suiting players who enjoy manoeuvring and long-term planning over immediate tactical fireworks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -13001,10 +13001,10 @@
         "The 'Bad' Bishop Problem"
       ],
       "common_plans": [
-        "White: Complete development with Bd3, Nbd2, 0-0, and meticulously prepare the e4 pawn break, often leading to a kingside attack.",
-        "Black: Solidify the center with ...e6, ...Be7, ...0-0, and exert pressure on the d4-pawn, often preparing queenside expansion with ...b5.",
-        "White: Reposition the queen's knight via d2-f1-g3 to support the kingside and the e4 push.",
-        "Black: Challenge White's central control by trading on d4 (...cxd4) to open the c-file for the rook and create a target on d4."
+        "White: Complete development with Bd3, Nbd2 and O-O, and meticulously prepare the e4 pawn break, often leading to a kingside attack.",
+        "Black: Solidify the centre with ...e6, ...Be7 and ...O-O, and exert pressure on the d4-pawn, often preparing queenside expansion with ...b5.",
+        "White: After Bd3 and O-O, back the e4 break with Qe2 and Re1, so that once it lands the queen and rook bear down the opened e-file.",
+        "Black: Trade on d4 with ...cxd4 at a good moment to open the c-file for the rooks and press on White's queenside pawns."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:09:40.994Z"
@@ -13019,7 +13019,7 @@
     "name": "Colle: 3...c5 4.c3 Nc6",
     "scid": "D04i",
     "analysis_json": {
-      "description": "This is a solid, strategic variation of the Colle System where Black immediately challenges the center with ...c5, often transposing to a Semi-Slav-like structure. The game revolves around White's attempt to achieve the thematic e3-e4 pawn break, while Black aims to control the e4-square and generate counterplay. This opening leads to a rich, positional struggle, suitable for players who appreciate maneuvering and long-term planning over early tactical fireworks.",
+      "description": "This is a solid, strategic variation of the Colle System where Black immediately challenges the centre with ...c5, while White's c3-pawn gives a Semi-Slav-like structure with colours reversed. The game revolves around White's attempt to achieve the thematic e3-e4 pawn break, while Black aims to control the e4-square and generate counterplay. This opening leads to a rich, positional struggle, suitable for players who appreciate manoeuvring and long-term planning over early tactical fireworks.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -13060,8 +13060,8 @@
         "Pawn structure transformation"
       ],
       "common_plans": [
-        "White: Prepare and execute the e4 pawn break, often preceded by Nbd2, Bd3, and O-O. Develop the c1-bishop, sometimes to b2 after b3, and build a kingside attack.",
-        "Black: Control the e4 square with pieces and pawns (often with a follow-up ...e6). Develop pieces to challenge White's setup (e.g., ...Qb6 putting pressure on d4). Prepare a queenside minority attack with ...b5-b4."
+        "White: Prepare and execute the e4 pawn break, preceded by Nbd2, Bd3 and O-O, and use the opened lines to build a kingside attack.",
+        "Black: Control the e4-square with pieces and pawns (often with a follow-up ...e6). Expand on the queenside with ...b5 and ...b4 to undermine the c3-pawn, or use ...Qb6 to put pressure on d4 and b2."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:09:58.027Z"
@@ -13135,7 +13135,7 @@
     "name": "Colle: 3...g6",
     "scid": "D04e",
     "analysis_json": {
-      "description": "This is a solid and flexible response to the Colle System, where Black opts for a King's Indian-style fianchetto. The game becomes a strategic battle centered on White's attempt to achieve the thematic e3-e4 pawn break versus Black's long-range pressure from the g7-bishop and counterplay with ...c5. This opening is well-suited for strategic players who appreciate maneuvering and understanding the long-term consequences of different pawn structures.",
+      "description": "This is a solid and flexible response to the Colle System, where Black opts for a King's Indian-style fianchetto. The game becomes a strategic battle centred on White's attempt to achieve the thematic e3-e4 pawn break versus Black's long-range pressure from the g7-bishop and counterplay with ...c5. This opening is well-suited for strategic players who appreciate manoeuvring and understanding the long-term consequences of different pawn structures.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -13178,9 +13178,9 @@
       ],
       "common_plans": [
         "White: Complete the Colle setup with c3, Bd3, Nbd2, O-O, and prepare the central e3-e4 pawn break to open the position for an attack.",
-        "Black: Fianchetto the bishop to g7, control the long diagonal, and prepare the ...c5 pawn break to challenge White's center and create queenside play.",
-        "White: Restrict Black's fianchettoed bishop and slowly build up pressure, aiming to exploit Black's slightly passive setup if the ...c5 break is delayed.",
-        "Black: Maintain a solid, flexible structure, neutralize White's attacking ideas, and aim to exploit any weaknesses created by White's e4 advance."
+        "Black: Fianchetto the bishop to g7, control the long diagonal, and prepare the ...c5 pawn break to challenge White's centre and create queenside play.",
+        "White: Blunt the fianchettoed bishop by keeping the d4-pawn firmly supported with c3 and e3, so that ...c5 can be met calmly, and build up slowly behind that wall.",
+        "Black: Maintain a solid, flexible structure, neutralise White's attacking ideas, and meet White's central advance by striking at d4 with ...c5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:10:32.348Z"
@@ -13319,7 +13319,7 @@
       "eco_js": "Queen's Pawn Game: Colle System, Gruenfeld Formation"
     },
     "analysis_json": {
-      "description": "The Colle System against a Grünfeld Formation is a strategic and flexible opening where White's solid, system-based setup clashes with Black's fianchetto defense. The game's character revolves around White's central ambition, aiming for the classic e3-e4 pawn break to open lines for an attack, while Black uses the powerful g7-bishop to control the long diagonal and counter-pressure the d4-pawn. This opening suits patient, strategic players who prefer understanding plans and structures over memorizing sharp, theoretical variations.",
+      "description": "The Colle System against a Grünfeld Formation is a strategic and flexible opening where White's solid, system-based setup clashes with Black's fianchetto defence. The game's character revolves around White's central ambition, aiming for the classic e3-e4 pawn break to open lines for an attack, while Black uses the powerful g7-bishop to control the long diagonal and counter-pressure the d4-pawn. This opening suits patient, strategic players who prefer understanding plans and structures over memorising sharp, theoretical variations.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -13359,9 +13359,9 @@
         "Control of the Long Diagonal"
       ],
       "common_plans": [
-        "White: Complete development with 0-0, Nbd2, and c3, then prepare and execute the e3-e4 pawn break to open the center and attack the kingside.",
-        "Black: Solidify the center, often with ...c5, use the g7-bishop to pressure d4, and prepare to meet an e4 advance by challenging White's central control.",
-        "White: Reposition the f3-knight (e.g., to e1 or h2) to support the e4 push and clear the way for the f-pawn.",
+        "White: Complete development with O-O, Nbd2 and c3, then prepare and execute the e3-e4 pawn break to open the centre and attack the kingside.",
+        "Black: Strike at d4 with ...c5 and use the g7-bishop to pressure it; if White pushes e4, exchanging on e4 opens the long diagonal further.",
+        "White: Support the e4 break with Re1 or Qe2 after castling, so that when it comes the rook or queen stands on the opening e-file.",
         "Black: Develop the queenside (e.g., ...b6, ...Bb7 or ...a6, ...b5) to create counterplay against White's structure."
       ],
       "version": "1.0",
@@ -13436,7 +13436,7 @@
     "name": "Colle: 3...e6 4.Nbd2",
     "scid": "D05b",
     "analysis_json": {
-      "description": "The Colle System is a solid and reliable opening for White, characterized by a quiet, system-based development scheme. Instead of fighting for an immediate advantage, White builds a robust pawn structure with d4 and e3, aiming for a controlled middlegame where the central e3-e4 pawn break becomes the primary strategic goal. This opening is ideal for strategic players who prefer understanding clear plans and executing a thematic kingside attack over navigating sharp, theoretical lines.",
+      "description": "The Colle System is a solid and reliable opening for White, characterised by a quiet, system-based development scheme. Instead of fighting for an immediate advantage, White builds a robust pawn structure with d4 and e3, aiming for a controlled middlegame where the central e3-e4 pawn break becomes the primary strategic goal. This opening is ideal for strategic players who prefer understanding clear plans and executing a thematic kingside attack over navigating sharp, theoretical lines.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -13477,10 +13477,10 @@
         "Restricting Counterplay"
       ],
       "common_plans": [
-        "White's Plan: Achieve the e3-e4 pawn break to open lines for an attack, often targeting the h7-square with the Bd3 and supporting pieces.",
-        "White's Plan: Develop a kingside attack with pieces like Ne5, Qh5, and a rook lift (e.g., Re1-e3-g3).",
+        "White's Plan: Achieve the e3-e4 pawn break to open lines for an attack, often targeting the h7-square with a bishop on d3 and supporting pieces.",
+        "White's Plan: Build a kingside attack with Ne5 and f4, then bring the queen to f3 or h5 and, after castling, swing a rook into the attack via f3.",
         "Black's Plan: Challenge White's central control with the ...c5 pawn break, aiming to open the queenside.",
-        "Black's Plan: Firmly control the e4-square with pieces to prevent or neutralize White's primary plan, then seek counterplay."
+        "Black's Plan: Firmly control the e4-square with pieces to prevent or neutralise White's primary plan, then seek counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:12:12.628Z"
@@ -13495,7 +13495,7 @@
     "name": "Colle: 5.c3 Nbd7",
     "scid": "D05i",
     "analysis_json": {
-      "description": "A solid and reliable setup for both sides within the Colle System. White aims for a controlled game, preparing the central e3-e4 pawn break to open lines for the pieces, while Black establishes a firm grip on the center, often looking to challenge White's plans with ...b5 or by controlling the e4-square. The resulting positions are typically strategic and require patient maneuvering rather than immediate tactical fireworks, making it suitable for players who enjoy building up their position methodically.",
+      "description": "A solid and reliable setup for both sides within the Colle System. White aims for a controlled game, preparing the central e3-e4 pawn break to open lines for the pieces, while Black establishes a firm grip on the centre, often looking to challenge White's plans with ...b5 or by controlling the e4-square. The resulting positions are typically strategic and require patient manoeuvring rather than immediate tactical fireworks, making it suitable for players who enjoy building up their position methodically.",
       "style_tags": [
         "System-based",
         "Positional",
@@ -13535,10 +13535,10 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Prepare and execute the e3-e4 pawn break, often preceded by Nbd2, 0-0, and Qe2.",
+        "White: Prepare and execute the e3-e4 pawn break, often preceded by Nbd2, O-O and Qe2.",
         "White: Initiate a kingside attack, often starting with Ne5, if Black is passive.",
-        "Black: Control the e4-square to restrain White's central ambitions, often with moves like ...Be7 and preparing to meet e4 with ...dxe4.",
-        "Black: Create queenside counterplay with ...b5-b4 to undermine White's c3-d4 pawn chain."
+        "Black: Control the e4-square to restrain White's central ambitions, with ...Be7 and ...O-O, and be ready to capture on e4 when White pushes the pawn there.",
+        "Black: Create queenside counterplay with ...b5 and ...b4 to undermine the c3-pawn that supports d4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:12:31.714Z"

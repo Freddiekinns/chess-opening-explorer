@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r2q1rk1/2p1b1pp/p1n1bP2/1p1p4/4n3/2P2N2/PPBN1PPP/R1BQ1RK1 b - - 0 12",
+      "name": "Spanish: Open, Classical, 10.Nbd2 O-O 11.Bc2 f5 12.exf6",
+      "eco": "C83",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Overview and plans 2-3 rewritten and accepted (plan 2 had a ...c5 break blocked by the c6-knight; overview was generic). Plan 1 (targets an e6-pawn that is a bishop; routes the d2-knight through the f1-rook) is still wrong: two rewrites were rejected (Nb3 has no kingside role; knights on d4 and c5 do not eye d5, and Re1 is blocked by the e4-knight), so the old text was restored and its references added to the skips file."
+    },
+    {
+      "fen": "r2q1rk1/2p1b1pp/p1n1b3/1p1pPp2/4n3/1NP2N2/PPB2PPP/R1BQ1RK1 b - - 1 12",
+      "name": "Spanish: Open, Classical, 10.Nbd2 O-O 11.Bc2 f5 12.Nb3",
+      "eco": "C83",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named a d7-pawn that is not there; plan 2 named e6 as a pawn square; plan 4 used a Nb3-c5 route. Rewrote plans 1, 2 and 4 around Nfd4, Nc5 and ...Qd7. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/2p1bppp/p1n1b3/1p1pP3/3Nn3/1BP5/PP3PPP/RNBQR1K1 b - - 4 11",
+      "name": "Spanish: Open, Classical, 10.Re1",
+      "eco": "C83",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called the e5-pawn isolated and a possible strength for Black; plan 1 had White pressing its own e5-pawn and Bf1 with no bishop able to go there; plan 2 had Black supporting e5. Rewrote overview and plans 1-3 around 11...Nxd4 and the Breslau 11...Nxe5. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 6",
+      "name": "Ruy Lopez: Closed",
+      "eco": "C84",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed a knight from f1 where there is none. Rewrote it around the 6.Re1 main line. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/1pppbppp/p1n2n2/4p3/B3P3/3P1N2/PPP2PPP/RNBQ1RK1 b kq - 0 6",
+      "name": "Ruy Lopez: Closed, Martinez Variation",
+      "eco": "C84",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed a knight from f1 where there is none. Rewrote it. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B1P1N2/PPP2PPP/RNBQ1RK1 b kq - 1 7",
+      "name": "Spanish: Closed, 6.d3 b5",
+      "eco": "C84",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed the b1-knight through the f1-rook; plan 4 sent the c1-bishop via d2 to f1. Fixed. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/B3P3/2N2N2/PPPP1PPP/R1BQ1RK1 w kq - 0 7",
+      "name": "Spanish: Closed, 6.Nc3 b5",
+      "eco": "C84",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed a knight from f1 where there is none; plan 2 proposed ...c5 with the c6-knight blocking it. Fixed. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/2p1bppp/p1np1n2/1p2p3/4P3/1BN2N2/PPPP1PPP/R1BQ1RK1 w kq - 0 8",
+      "name": "Spanish: Closed, 6.Nc3 b5 7.Bb3 d6",
+      "eco": "C84",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 routed the f3-knight through the f1-rook; plan 4 spoke of a pin on the c6-knight that does not exist. Fixed. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/1pppbppp/p1n5/4P3/B2pn3/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 8",
+      "name": "Spanish: Closed, Centre Attack, 7.e5 Ne4",
+      "eco": "C84",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 had c3 supporting a d4-pawn that is Black's and routed a knight through the f1-rook. Fixed. British spelling."
+    },
+    {
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p6/B2pP3/5N2/PPP2PPP/RNBQR1K1 w kq - 0 8",
+      "name": "Spanish: Closed, Centre Attack, 7.Re1 b5",
+      "eco": "C84",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 proposed recapturing on e4 with no piece there; plan 2 proposed ...c5 with the c6-knight blocking it; plan 3 moved a b3-bishop that is still on a4. Fixed. British spelling."
+    }
+  ]
+}

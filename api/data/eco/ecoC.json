@@ -132304,7 +132304,7 @@
     "name": "Spanish: Open, Classical, 10.Nbd2 O-O 11.Bc2 f5 12.exf6",
     "scid": "C83",
     "analysis_json": {
-      "description": "This line of the Open Spanish is a sharp, double-edged battleground where Black aggressively challenges White's central control with the move 11...f5. This committal pawn thrust creates significant imbalances, weakening Black's own king position in exchange for dynamic potential and control over the e4-square. The resulting positions are tactically complex and require precise calculation, making it ideal for ambitious players who thrive in dynamic, unbalanced struggles for the initiative.",
+      "description": "In this line of the Classical Open Spanish, Black supported the e4-knight with 11...f5 and White has taken en passant with 12.exf6, removing both the knight's support and White's own e5-pawn. Black recaptures on f6 and gets a half-open f-file and freer pieces, but the e6-bishop and the d5-pawn can become targets for White's pieces on the open e-file. It leads to open, concrete play.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -132347,8 +132347,8 @@
       ],
       "common_plans": [
         "White aims to pressure Black's central weaknesses, particularly the e6 pawn, by controlling the e-file and maneuvering the knight from d2 to f1-e3/g3.",
-        "Black seeks to generate counterplay using the semi-open f-file, often after recapturing with the knight (...Nxf6), and may challenge White's center further with a ...c5 pawn break.",
-        "White often tries to exploit the light-square weaknesses around Black's king created by the ...f5 push.",
+        "Black recaptures on f6 with the e7-bishop or the e4-knight and uses the half-open f-file for the rooks, keeping the d5-pawn supported.",
+        "White's c2-bishop aims at h7 along the b1-h7 diagonal, which becomes more dangerous once the e4-knight has moved.",
         "Both sides must carefully balance attacking ambitions with defensive necessities, as the position can quickly become volatile."
       ],
       "version": "1.0",
@@ -132364,7 +132364,7 @@
     "name": "Spanish: Open, Classical, 10.Nbd2 O-O 11.Bc2 f5 12.Nb3",
     "scid": "C83",
     "analysis_json": {
-      "description": "This variation of the Open Spanish is characterized by Black's ambitious `...f5` push, creating a tense and double-edged struggle. White aims to exploit the resulting weaknesses in Black's camp, particularly the e6 square, while Black seeks to neutralize White's central e5-pawn and generate counterplay. The resulting middlegames are strategically complex, demanding precise calculation and a deep understanding of pawn structures.",
+      "description": "This variation of the Open Spanish is characterised by Black's ambitious `...f5` push, creating a tense and double-edged struggle. White aims to exploit the resulting weaknesses in Black's camp, particularly the e6 square, while Black seeks to neutralise White's central e5-pawn and generate counterplay. The resulting middlegames are strategically complex, demanding precise calculation and a deep understanding of pawn structures.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -132406,10 +132406,10 @@
         "Struggle for the initiative"
       ],
       "common_plans": [
-        "White: Maneuver the b3-knight to the c5 outpost to pressure the e6-bishop and d7-pawn, often preparing f3 to solidify the center.",
-        "Black: Play ...Qd7 to defend e6 and connect the rooks, preparing to challenge White's central e5-pawn.",
+        "White: Put a knight on d4 with Nfd4 to blockade and challenge the c6-knight, or jump to c5 with Nc5 to hit the e6-bishop.",
+        "Black: Play ...Qd7 to support the e6-bishop and connect the rooks, preparing to challenge White's central e5-pawn.",
         "White: Use the c2-bishop to control the long diagonal and put pressure on Black's kingside, especially after the weakening ...f5 move.",
-        "Black: Neutralize White's queenside pressure (e.g., against Nb3-c5) with moves like ...Na5, while seeking counterplay on the kingside."
+        "Black: Watch the c5-square, where a white knight would hit the e6-bishop; ...Qd7 or ...Na5 helps, and the f5-pawn and e4-knight give kingside counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:30:01.529Z"
@@ -132496,7 +132496,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Ruy Lopez Closed is a cornerstone of classical chess, leading to profound strategic battles rich in long-term plans. White aims to build a lasting positional pressure, often dubbed the 'Spanish torture,' by controlling the center and restricting Black's pieces. This opening is perfect for patient, strategic players who enjoy maneuvering, understanding complex pawn structures, and gradually outplaying their opponent in a deep, intellectual struggle.",
+      "description": "The Ruy Lopez Closed is a cornerstone of classical chess, leading to profound strategic battles rich in long-term plans. White aims to build a lasting positional pressure, often dubbed the 'Spanish torture,' by controlling the centre and restricting Black's pieces. This opening is perfect for patient, strategic players who enjoy manoeuvring, understanding complex pawn structures, and gradually outplaying their opponent in a deep, intellectual struggle.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -132537,7 +132537,7 @@
         "Maneuvering vs. Counterplay"
       ],
       "common_plans": [
-        "White: The 'slow squeeze' plan involving c3-d4 to build a powerful center, followed by the knight maneuver Nf1-g3.",
+        "White: The main line is 6.Re1 b5 7.Bb3 d6 8.c3, preparing d4; the b1-knight later goes via d2 and the f1-square to g3.",
         "Black: Achieve the central liberating pawn break ...d5, often prepared by moves like ...d6 and ...Re8.",
         "White: Restrict Black's queenside counterplay with a4 and maintain long-term pressure with the bishop on the a2-g8 diagonal.",
         "Black: Create queenside counterplay with ...b5 and ...Bb7, aiming to challenge White's control and open lines for the rooks."
@@ -132751,7 +132751,7 @@
       "ct": "Spanish Game, Closed Variations"
     },
     "analysis_json": {
-      "description": "The Martinez Variation is a subtle and strategic approach to the Closed Ruy Lopez, sidestepping the immense theory of the main lines while avoiding the Marshall Attack. By playing 6. d3, White immediately solidifies the center and prepares a flexible development, often aiming for a slow-building kingside initiative. This opening is perfect for positional players who enjoy maneuvering, understanding pawn structures, and accumulating small advantages in a less forced, strategically complex game.",
+      "description": "The Martinez Variation is a subtle and strategic approach to the Closed Ruy Lopez, sidestepping the immense theory of the main lines while avoiding the Marshall Attack. By playing 6. d3, White immediately solidifies the centre and prepares a flexible development, often aiming for a slow-building kingside initiative. This opening is perfect for positional players who enjoy manoeuvring, understanding pawn structures, and accumulating small advantages in a less forced, strategically complex game.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -132792,8 +132792,8 @@
         "Maneuvering vs. direct confrontation"
       ],
       "common_plans": [
-        "White: Prepare c3-d4 to challenge the center, maneuver the knight via Nf1-g3, develop the c1-bishop (often to g5), and build a kingside attack.",
-        "Black: Play ...b5 and ...d6 to create a solid pawn chain, maneuver the knight from c6 (e.g., ...Na5 to challenge the b3-bishop), and seek counterplay on the queenside or in the center with a timely ...d5 break."
+        "White: Play c3, Re1 and Nbd2, then route the knight via the f1-square to g3, keeping d3-d4 in reserve; the c1-bishop often goes to g5.",
+        "Black: Play ...b5 and ...d6 to create a solid pawn chain, manoeuvre the knight from c6 (e.g., ...Na5 to challenge the b3-bishop), and seek counterplay on the queenside or in the centre with a timely ...d5 break."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:32:08.489Z"
@@ -132928,7 +132928,7 @@
     "name": "Spanish: Closed, 6.d3 b5",
     "scid": "C84f",
     "analysis_json": {
-      "description": "The 6.d3 variation of the Closed Spanish is a modern, highly strategic system that avoids the sharpest theoretical battles of the main lines. White opts for a solid, flexible setup, aiming for a slow, maneuvering game focused on long-term positional pressure and accumulating small advantages. This opening is ideal for patient, strategic players who excel at understanding subtle piece placement, pawn structures, and executing long-term plans.",
+      "description": "The 6.d3 variation of the Closed Spanish is a modern, highly strategic system that avoids the sharpest theoretical battles of the main lines. White opts for a solid, flexible setup, aiming for a slow, manoeuvring game focused on long-term positional pressure and accumulating small advantages. This opening is ideal for patient, strategic players who excel at understanding subtle piece placement, pawn structures, and executing long-term plans.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -132970,10 +132970,10 @@
         "Long-term pressure of the b3 Bishop"
       ],
       "common_plans": [
-        "White: Play c3 followed by d4 to challenge the center, maneuver the knight via Nb1-d2-f1-g3, and build pressure on the kingside.",
-        "Black: Solidify the center with ...d6, complete development, expand on the queenside with ...b4, and prepare the ...c5 pawn break.",
-        "Black: Maneuver the c6-knight to a5 to challenge White's key light-squared bishop on b3.",
-        "White: Reposition the queen's bishop, often via d2 to e3 or f1, to support the center and kingside."
+        "White: Play c3, Re1 and Nbd2, then bring the knight via the f1-square to g3, with a4 or d3-d4 to challenge Black's position.",
+        "Black: Solidify the centre with ...d6, complete development, expand on the queenside with ...b4, and prepare the ...c5 pawn break.",
+        "Black: Manoeuvre the c6-knight to a5 to challenge White's key light-squared bishop on b3.",
+        "White: Develop the c1-bishop to g5 or e3, and keep the b3-bishop on the a2-g8 diagonal aimed at f7."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:33:02.554Z"
@@ -133031,10 +133031,10 @@
         "The role of the light-squared bishops"
       ],
       "common_plans": [
-        "White: Play d4 to open the center, reroute the knight via Nf1-g3 to support a kingside attack, and use the b3-bishop to pressure Black's structure.",
-        "Black: Continue queenside expansion with ...c5 and ...b4, challenge White's center, and create threats against the white king.",
+        "White: Retreat with 7.Bb3, then play d3 or d4 depending on Black's setup; the c3-knight can later head for d5 or go via e2 to g3.",
+        "Black: Gain queenside space with ...d6 and ...b4, which hits the c3-knight, and use ...Na5 to trade off the light-squared bishop.",
         "White: Restrain Black's queenside pawns and create pressure on the e5-pawn.",
-        "Black: Solidify the center, complete development, and use the queenside space advantage to create a passed pawn or attack."
+        "Black: Solidify the centre, complete development, and use the queenside space advantage to create a passed pawn or attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:33:19.357Z"
@@ -133106,7 +133106,7 @@
     "name": "Spanish: Closed, 6.Nc3 b5 7.Bb3 d6",
     "scid": "C84c",
     "analysis_json": {
-      "description": "This variation of the Closed Ruy Lopez introduces a dynamic and strategically complex struggle. By playing 6.Nc3, White develops a piece and prepares d4, but the knight can become a target for Black's queenside expansion. The resulting positions are rich in maneuvering, where both sides vie for central control and initiative, making it suitable for versatile players who are comfortable navigating both tactical and positional complexities.",
+      "description": "This variation of the Closed Ruy Lopez introduces a dynamic and strategically complex struggle. By playing 6.Nc3, White develops a piece and prepares d4, but the knight can become a target for Black's queenside expansion. The resulting positions are rich in manoeuvring, where both sides vie for central control and initiative, making it suitable for versatile players who are comfortable navigating both tactical and positional complexities.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -133145,10 +133145,10 @@
         "Maneuvering and Piece Repositioning"
       ],
       "common_plans": [
-        "White: Achieve the d2-d4 pawn break to control the center and reroute the knight (e.g., Nf3-d2-f1-g3) to support kingside play.",
-        "Black: Solidify the center, expand on the queenside with ...b4 to harass White's pieces, and prepare the ...Na5 maneuver to challenge the Spanish bishop.",
+        "White: Play d3 or the more ambitious d4, and use Nd5 to exchange Black's f6-knight and relieve the pressure on e4.",
+        "Black: Solidify the centre, expand on the queenside with ...b4 to harass White's pieces, and prepare the ...Na5 manoeuvre to challenge the Spanish bishop.",
         "White: Use the a2-a4 push to restrain Black's queenside and create a target on b5.",
-        "Black: Complete development and prepare to break the pin on the c6 knight, often by maneuvering it to a new square."
+        "Black: Complete development with ...O-O and ...Bb7, or ...Bg4 to pin the f3-knight."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:33:59.805Z"
@@ -133336,7 +133336,7 @@
     "name": "Spanish: Closed, Centre Attack, 7.e5 Ne4",
     "scid": "C84h",
     "analysis_json": {
-      "description": "This variation of the Closed Ruy Lopez leads to a sharp and theoretically rich middlegame. White's central pawn thrust with 6.d4 and 7.e5 aims to seize space and the initiative, but Black's active knight jump to e4 creates immediate tension. The resulting positions are dynamic and complex, revolving around the fate of the e4-knight and control of the center, making it ideal for players who enjoy navigating concrete tactical and strategic challenges.",
+      "description": "This variation of the Closed Ruy Lopez leads to a sharp and theoretically rich middlegame. White's central pawn thrust with 6.d4 and 7.e5 aims to seize space and the initiative, but Black's active knight jump to e4 creates immediate tension. The resulting positions are dynamic and complex, revolving around the fate of the e4-knight and control of the centre, making it ideal for players who enjoy navigating concrete tactical and strategic challenges.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -133378,9 +133378,9 @@
       ],
       "common_plans": [
         "White's primary plan is to challenge and remove the strong Ne4, typically with moves like Nxd4, Re1, or f3, while using the e5-pawn to cramp Black and build a kingside attack.",
-        "Black aims to support the Ne4 outpost, often by preparing the ...d5 pawn break to challenge White's center and free their pieces.",
-        "White will often play c3 to support the d4-pawn and prepare to reroute the knight from b1 to d2 to c4 or f1-e3.",
-        "Black seeks counterplay by developing the queenside (e.g., ...b5, ...Bb7) and challenging White's control of the center."
+        "Black aims to support the Ne4 outpost, often by preparing the ...d5 pawn break to challenge White's centre and free their pieces.",
+        "White: Regain the pawn with Nxd4, or open lines with c3, and bring the b1-knight into play via d2 to fight the e4-knight.",
+        "Black seeks counterplay by developing the queenside (e.g., ...b5, ...Bb7) and challenging White's control of the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:35:19.773Z"
@@ -133686,7 +133686,7 @@
     "name": "Spanish: Closed, Centre Attack, 7.Re1 b5",
     "scid": "C84m",
     "analysis_json": {
-      "description": "This variation of the Ruy Lopez, the Centre Attack, signals White's intention to fight for the initiative immediately by challenging Black's central foothold. Black's counter-thrust 7...b5 creates a dynamic and unbalanced position, leading to a sharp, tactical game where control of the center and queenside space are paramount. This opening is well-suited for players who enjoy complex, double-edged positions and are comfortable with direct, concrete calculation.",
+      "description": "This variation of the Ruy Lopez, the Centre Attack, signals White's intention to fight for the initiative immediately by challenging Black's central foothold. Black's counter-thrust 7...b5 creates a dynamic and unbalanced position, leading to a sharp, tactical game where control of the centre and queenside space are paramount. This opening is well-suited for players who enjoy complex, double-edged positions and are comfortable with direct, concrete calculation.",
       "style_tags": [
         "Dynamic",
         "Sharp",
@@ -133728,10 +133728,10 @@
         "Exploiting the open e-file"
       ],
       "common_plans": [
-        "White: Recapture on e4 (Nxe4 or e5), exert pressure on the e-file, and potentially launch a kingside attack.",
-        "Black: Complete development, use the b5-pawn to support queenside play (e.g., ...c5), and challenge White's central control.",
-        "White: Maneuver the b3-bishop to a more active square, often via c2, to influence the center and kingside.",
-        "Black: Neutralize the pressure on the e-file, often by trading pieces, and create counterplay against White's position."
+        "White: Push 8.e5 to attack the f6-knight, or retreat with 8.Bb3 first; either way White plays for the initiative and to regain the d4-pawn with Nxd4.",
+        "Black: Complete development with ...d6 and ...O-O, keeping the extra d4-pawn as long as it is safe.",
+        "White: Keep the light-squared bishop active after Bb3, aimed at f7 along the a2-g8 diagonal.",
+        "Black: Neutralise the pressure on the e-file, often by trading pieces, and create counterplay against White's position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:37:18.560Z"
@@ -173539,7 +173539,7 @@
       "icsbot": "Breslau Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "This variation of the Open Spanish is a sharp, theoretically demanding line where White immediately challenges Black's central setup with 11.Nd4. The game's character revolves around the isolated e5 pawn, which can be either a strength for Black or a target for White. This opening leads to dynamic, complex middlegames that require precise calculation and a deep strategic understanding, making it ideal for well-prepared players who enjoy fighting for the initiative.",
+      "description": "With 10.Re1 O-O 11.Nd4 White centralises the knight and offers Black a choice. 11...Nxd4 12.cxd4 leads to a quieter game in which White's e5-pawn gives space, while the sharp 11...Nxe5 is the Breslau Variation, where Black gives up the e4-knight for an attack after 12.f3. The e5-pawn is the focal point either way.",
       "style_tags": [
         "Tactical",
         "Strategic",
@@ -173580,9 +173580,9 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: After the typical ...Nxd4 cxd4, White builds pressure on the e5 pawn with moves like Nbd2-f1-g3, Qe2, and Bf1, aiming to win the pawn or force concessions.",
-        "Black: Solidify the e5 pawn, often with ...f5. Develop counterplay against White's center with a ...c5 pawn break, and use active pieces to neutralize White's pressure.",
-        "White: Reposition the Re1 to d1 or f1 to support central plans or prepare for kingside activity.",
+        "White: After 11...Nxd4 12.cxd4, use the e5-pawn's space and the half-open c-file, with Nc3 or Nd2 to challenge the e4-knight.",
+        "Black: Choose between 11...Nxd4, trading into a solid position, and the Breslau 11...Nxe5, which after 12.f3 Bd6 13.fxe4 Bg4 gives up the knight for an attack.",
+        "White: Keep the e1-rook behind the e5-pawn, and after 11...Nxd4 12.cxd4 play f3 to drive away the e4-knight.",
         "Black: Complete development and seek to trade pieces to alleviate pressure, transitioning into a more manageable endgame where the e-pawn is less of a liability."
       ],
       "version": "1.0",

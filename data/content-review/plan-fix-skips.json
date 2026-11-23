@@ -136,5 +136,17 @@
     "plan": "White: Continue the kingside attack with moves like Nxe6 and fxg7, exploiting the f6-pawn and open e-file to target the weakened Black king.",
     "reference": "fxg7",
     "reason": "needs-research: fxg7 is impossible after 9...g6, but two rewrites (Qf3/Qe2, then 10.Nxe6 fxe6 11.Qg4) were rejected by the reviewer; old text kept"
+  },
+  {
+    "fen": "r2q1rk1/2p1b1pp/p1n1bP2/1p1p4/4n3/2P2N2/PPBN1PPP/R1BQ1RK1 b - - 0 12",
+    "plan": "White aims to pressure Black's central weaknesses, particularly the e6 pawn, by controlling the e-file and maneuvering the knight from d2 to f1-e3/g3.",
+    "reference": "e6 pawn",
+    "reason": "needs-research: two rewrites rejected (Nb3 has no kingside role; knights on d4 and c5 do not eye d5, and Re1 is blocked by the e4-knight); old text kept"
+  },
+  {
+    "fen": "r2q1rk1/2p1b1pp/p1n1bP2/1p1p4/4n3/2P2N2/PPBN1PPP/R1BQ1RK1 b - - 0 12",
+    "plan": "White aims to pressure Black's central weaknesses, particularly the e6 pawn, by controlling the e-file and maneuvering the knight from d2 to f1-e3/g3.",
+    "reference": "f1-e3",
+    "reason": "needs-research: two rewrites rejected (Nb3 has no kingside role; knights on d4 and c5 do not eye d5, and Re1 is blocked by the e4-knight); old text kept"
   }
 ]

@@ -96,9 +96,11 @@ the context (learned the hard way by the content routines, 2026-11-17).
 
 **Measured 2026-11-23:** night 1, night 2 and the extra run together used about
 4% of the owner's 5-hour window, at ~17 tool calls and 2–5 minutes each. Night 3
-under these limits (~35 tool calls, 11 pages, a critic) used about 7%. Runs have
-been too short, not too long: night 2 skimmed search summaries when it should
-have read the pages. So:
+under these limits (~35 tool calls, 11 pages, a critic) used about 7%. The
+two-unit run (nights 4 and 5: ~15 minutes, ~65 tool calls, 3 subagents at ~178k
+tokens, 21 pages) used about 10%. So a full two-unit night is roughly 10% of a
+5-hour window. Runs have been too short, not too long: night 2 skimmed search
+summaries when it should have read the pages. So:
 
 - Each unit done in depth. A research night reads 10–15 primary pages, tries
   products hands-on where no account is needed, and checks its strongest claim

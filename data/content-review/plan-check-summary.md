@@ -1,10 +1,10 @@
 # Plan reference check
 
-1328 references on 1040 of 12377 pages fail the check and show as plain text.
+1265 references on 990 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5433 name no move, route, square or piece
-- References by kind: {"square":16679,"piece":15981,"move":55631,"route":8520}
-- References by result: {"now":70891,"on-board":15019,"later":9573,"invalid":1328}
+- Plans: 41062, of which 5434 name no move, route, square or piece
+- References by kind: {"square":16737,"piece":16019,"move":55664,"route":8483}
+- References by result: {"now":71009,"on-board":15059,"later":9570,"invalid":1265}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -62,15 +62,16 @@
 - **D05 Colle: 5.c3 Nc6 6.Nbd2 Bd6 7.O-O O-O** (0 views)
   - `e4`: No piece can play e4 here, now or after the plan's earlier moves
   - `dxc4`: No piece can play dxc4 here, now or after the plan's earlier moves
-- **D09 QGD: Albin, 5.g3 Be6 6.Nbd2** (0 views)
-  - `...Ng4`: No piece can play Ng4 here, now or after the plan's earlier moves
-- **D09 QGD: Albin, 5.g3 Be6 6.Nbd2 Qd7 7.Bg2 Nge7** (0 views)
-  - `Nc3`: No piece can play Nc3 here, now or after the plan's earlier moves
-- **D09 Queen's Gambit Declined: Albin Countergambit, Fianchetto Variation, Bf5 Line** (0 views)
-  - `c2-pawn`: There is no pawn on c2, or on its way
-- **D09 Queen's Gambit Declined: Albin Countergambit, Fianchetto Variation, Bg4 Line** (0 views)
-  - `...O-O`: No piece can play O-O here, now or after the plan's earlier moves
-- **D10 Slav Defense: Exchange Variation** (0 views)
-  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
-  - `Qb3`: No piece can play Qb3 here, now or after the plan's earlier moves
-  - `...Na5`: No piece can play Na5 here, now or after the plan's earlier moves
+- **D18 Slav: Dutch, 8...Nbd7 9.Qe2 Bg6 10.e4** (0 views)
+  - `f4-f5`: One step of f4-f5 can't be played here
+- **D18 Slav: Dutch, 8...O-O 9.Nh4** (0 views)
+  - `g6`: No piece can play g6 here, now or after the plan's earlier moves
+  - `h4-h5`: One step of h4-h5 can't be played here
+- **D18 Slav: Dutch, 8...O-O 9.Nh4 Bg6** (0 views)
+  - `...hxg6`: No piece can play hxg6 here, now or after the plan's earlier moves
+  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
+- **D18 Slav: Dutch, 8...O-O 9.Nh4 Nbd7** (0 views)
+  - `...exf5`: No piece can play exf5 here, now or after the plan's earlier moves
+- **D18 Slav: Dutch, 8...O-O 9.Nh4 Nbd7 10.Nxf5 exf5** (0 views)
+  - `e6-pawn`: There is no pawn on e6, or on its way
+  - `...Ba6`: No piece can play Ba6 here, now or after the plan's earlier moves

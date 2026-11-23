@@ -1,10 +1,10 @@
 # Plan reference check
 
-1265 references on 990 of 12377 pages fail the check and show as plain text.
+1212 references on 950 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5434 name no move, route, square or piece
-- References by kind: {"square":16737,"piece":16019,"move":55664,"route":8483}
-- References by result: {"now":71009,"on-board":15059,"later":9570,"invalid":1265}
+- Plans: 41062, of which 5433 name no move, route, square or piece
+- References by kind: {"square":16750,"piece":16059,"move":55725,"route":8468}
+- References by result: {"now":71105,"on-board":15105,"later":9580,"invalid":1212}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -62,16 +62,13 @@
 - **D05 Colle: 5.c3 Nc6 6.Nbd2 Bd6 7.O-O O-O** (0 views)
   - `e4`: No piece can play e4 here, now or after the plan's earlier moves
   - `dxc4`: No piece can play dxc4 here, now or after the plan's earlier moves
-- **D18 Slav: Dutch, 8...Nbd7 9.Qe2 Bg6 10.e4** (0 views)
+- **D24 QGA: 4.Nc3 c5 5.d5** (0 views)
   - `f4-f5`: One step of f4-f5 can't be played here
-- **D18 Slav: Dutch, 8...O-O 9.Nh4** (0 views)
-  - `g6`: No piece can play g6 here, now or after the plan's earlier moves
-  - `h4-h5`: One step of h4-h5 can't be played here
-- **D18 Slav: Dutch, 8...O-O 9.Nh4 Bg6** (0 views)
-  - `...hxg6`: No piece can play hxg6 here, now or after the plan's earlier moves
-  - `bxc3`: No piece can play bxc3 here, now or after the plan's earlier moves
-- **D18 Slav: Dutch, 8...O-O 9.Nh4 Nbd7** (0 views)
-  - `...exf5`: No piece can play exf5 here, now or after the plan's earlier moves
-- **D18 Slav: Dutch, 8...O-O 9.Nh4 Nbd7 10.Nxf5 exf5** (0 views)
-  - `e6-pawn`: There is no pawn on e6, or on its way
-  - `...Ba6`: No piece can play Ba6 here, now or after the plan's earlier moves
+- **D24 QGA: 4.Nc3 c5 5.d5 e6 6.e4** (0 views)
+  - `f8-e6`: One step of f8-e6 can't be played here
+- **D24 QGA: 4.Nc3 e6 5.Bg5** (0 views)
+  - `...g5`: No piece can play g5 here, now or after the plan's earlier moves
+- **D24 QGA: Bogoljubow, 7.a4 Nxc3** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **D24 QGA: Bogoljubow, 7.a4 Nxc3** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves

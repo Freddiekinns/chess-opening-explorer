@@ -66,8 +66,8 @@ runs **Monday to Friday nights only**, one run a night.
   one-run-a-day rule; it records the request in `questions.md`. An extra run is
   still a full unit of work: being late in the week is no reason to cut research
   short.
-- A run that has done its one unit of work stops. A night that is waiting on the
-  owner costs one short turn and exits.
+- A run that has done its work (up to two units, `operating.md`) stops. A night
+  that is waiting on the owner costs one short turn and exits.
 
 ## Length and end
 

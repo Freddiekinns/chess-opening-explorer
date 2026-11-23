@@ -74,8 +74,8 @@ path, which is what the 2026-11-23 13:36 comment in #249 shows).
    a day.
 2. **Read** `charter.md`, `operating.md`, `plan.md`, `questions.md`, the last 3
    journal entries, and owner replies in the inbox since Claude's last comment.
-3. **Decide the night's one unit of work** — the plan's next item, unless a
-   reply changes it. If the next item waits on a gate the owner has not passed
+3. **Decide the night's work (up to two units)** — the plan's next item, unless
+   a reply changes it. If the next item waits on a gate the owner has not passed
    and nothing else in the queue is useful, write a one-line journal entry and
    exit.
 4. **Do it.** Research → write `research/NN-topic.md`. Design → prototype on a
@@ -100,10 +100,10 @@ under these limits (~35 tool calls, 11 pages, a critic) used about 7%. Runs have
 been too short, not too long: night 2 skimmed search summaries when it should
 have read the pages. So:
 
-- One unit of work, done in depth. A research night reads 10–15 primary pages,
-  tries products hands-on where no account is needed, and checks its strongest
-  claim against a source that would disagree. Finishing in five minutes is a
-  sign of skimming.
+- Each unit done in depth. A research night reads 10–15 primary pages, tries
+  products hands-on where no account is needed, and checks its strongest claim
+  against a source that would disagree. Finishing in five minutes is a sign of
+  skimming.
 - Run the critic on each unit (a fresh subagent arguing against its conclusions)
   and answer the objections in the file.
 - **Up to two units a night** (owner, 2026-11-23: "it can definitely run for

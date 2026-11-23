@@ -41,6 +41,14 @@ route or flag, Gate C per PR.
 
 Phase 4 — Retrospective: `retro.md`.
 
+## Before Gate A
+
+- Night 2 (`research/02`) ran in 90 seconds on 7 search summaries and no page
+  reads, rushed by the reset. Before Gate A, read the primary pages behind its
+  two load-bearing claims: that learners return only when something changes
+  while they are away, and that no free site joins video, book, drill and own
+  games for one opening.
+
 ## Local items `[local]`
 
 - Find out what the w/c 2026-11-09 spike was (PostHog: landing pages, user
@@ -49,8 +57,3 @@ Phase 4 — Retrospective: `retro.md`.
 - Walk night 1's three journeys on a real phone (fold positions were read from
   code, not seen).
 - Week 1: owner posts weekly usage % in the inbox each morning.
-- Night 2 (`research/02`) ran in 90 seconds on 7 search summaries and no page
-  reads, rushed by the reset. Before Gate A, read the primary pages behind its
-  two load-bearing claims: that learners return only when something changes
-  while they are away, and that no free site joins video, book, drill and own
-  games for one opening.

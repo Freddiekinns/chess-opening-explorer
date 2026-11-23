@@ -5,7 +5,7 @@
     "moves": "1. d4 d5 2. Qd3",
     "name": "Amazon Attack",
     "analysis_json": {
-      "description": "The Amazon Attack is a rare and provocative system designed to sidestep mainstream theory and create an unusual, flexible position. By developing the queen to d3, White prepares to control the e4-square and eyes potential kingside attacking ideas, while keeping options open for the rest of the pieces. This opening is perfect for creative players who enjoy surprising their opponents and are comfortable navigating uncharted territory where understanding plans is more important than memorizing theory.",
+      "description": "The Amazon Attack is a rare and provocative system designed to sidestep mainstream theory and create an unusual, flexible position. By developing the queen to d3, White prepares to control the e4-square and eyes potential kingside attacking ideas, while keeping options open for the rest of the pieces. This opening is perfect for creative players who enjoy surprising their opponents and are comfortable navigating uncharted territory where understanding plans is more important than memorising theory.",
       "style_tags": [
         "Unusual",
         "System-based",
@@ -45,8 +45,8 @@
       ],
       "common_plans": [
         "White's Plan: Develop with Nc3 and Bf4, castle queenside, and launch a kingside attack, often starting with h4-h5. The queen may transfer to g3 or h3 to join the assault.",
-        "Black's Plan: Challenge White's setup with an early ...c5 pawn break. Develop pieces to harass the white queen, for example with ...Nc6 and a later ...Ne4 jump.",
-        "Black's Plan: Focus on rapid, solid development, secure the king, and aim to exploit the slightly awkward placement of White's queen and the passivity of the c1-bishop."
+        "Black's Plan: Challenge White's set-up with an early ...c5, and develop with gain of time against the queen: ...Bf5 and ...Nc6-b4 both attack it.",
+        "Black's Plan: Focus on rapid, solid development and king safety, and aim to gain time against White's early queen."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:58:05.768Z"
@@ -318,7 +318,7 @@
       "icsbot": "Bogoljubow Variation, BDG "
     },
     "analysis_json": {
-      "description": "The Bogoljubow Defense against the Blackmar-Diemer Gambit is a sharp and dynamic battle of contrasting strategies. White sacrifices a pawn for a rapid lead in development and direct attacking chances, particularly along the f-file. Black responds with a solid fianchetto setup (...g6 and ...Bg7), aiming to neutralize the initiative, create a resilient defensive structure, and ultimately convert the extra pawn in the long run. This opening is perfect for players who enjoy a tactical fight where White's aggression is met by Black's flexible and modern counter-attacking scheme.",
+      "description": "The Bogoljubow Defence against the Blackmar-Diemer Gambit is a sharp and dynamic battle of contrasting strategies. White sacrifices a pawn for a rapid lead in development and direct attacking chances, particularly along the f-file. Black responds with a solid fianchetto setup (...g6 and ...Bg7), aiming to neutralise the initiative, create a resilient defensive structure, and ultimately convert the extra pawn in the long run. This opening is perfect for players who enjoy a tactical fight where White's aggression is met by Black's flexible and modern counter-attacking scheme.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -359,8 +359,8 @@
         "Development Lead"
       ],
       "common_plans": [
-        "White: Rapidly develop pieces (Bc4, 0-0) to attack the kingside, often using the open f-file for a rook lift (Rf3-h3).",
-        "Black: Complete the fianchetto (...Bg7, ...0-0), challenge the center with ...c5, and aim to neutralize White's attack to reach a favorable endgame with an extra pawn."
+        "White: Develop rapidly with Bc4 and O-O, then bring the queen towards the kingside with Qe1-h4, and look for Bh6 to trade off Black's fianchettoed bishop.",
+        "Black: Complete the fianchetto (...Bg7, ...0-0), challenge the centre with ...c5, and aim to neutralise White's attack to reach a favourable endgame with an extra pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T11:59:49.079Z"
@@ -1013,7 +1013,7 @@
       "icsbot": "Pietrowsky Variation, BDG "
     },
     "analysis_json": {
-      "description": "The Pietrowsky Defense is a solid and classical response to the Blackmar-Diemer Gambit, where Black develops the queenside knight to challenge central control. This line leads to a sharp, tactical game where White aggressively pursues the initiative with rapid development and attacking chances, while Black aims to consolidate the extra pawn and launch a counterattack. It's a battle of development versus material, ideal for players who enjoy complex, double-edged positions and are adept at both attack and defense.",
+      "description": "The Pietrowsky Defence is a solid and classical response to the Blackmar-Diemer Gambit, where Black develops the queenside knight to challenge central control. This line leads to a sharp, tactical game where White aggressively pursues the initiative with rapid development and attacking chances, while Black aims to consolidate the extra pawn and launch a counterattack. It's a battle of development versus material, ideal for players who enjoy complex, double-edged positions and are adept at both attack and defence.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -1054,8 +1054,8 @@
         "Central Tension"
       ],
       "common_plans": [
-        "White aims for a swift kingside attack using the open f-file, often with Bc4, Bg5, and a rook lift (Rf3-h3), seeking sacrifices to expose the black king.",
-        "Black focuses on solidifying the position with moves like ...e6 and ...Be7, preparing to challenge the center with ...e5, neutralizing White's threats, and converting the material advantage in the long run."
+        "White aims for a swift kingside attack along the half-open f-file, often with Bc4 or Bb5, Bg5 and O-O, with the queen joining via Qe1-h4.",
+        "Black focuses on solidifying the position with moves like ...e6 and ...Be7, preparing to challenge the centre with ...e5, neutralising White's threats, and converting the material advantage in the long run."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:03:28.369Z"
@@ -1184,9 +1184,9 @@
         "Punishing Greed"
       ],
       "common_plans": [
-        "White aims for rapid development with moves like Bc4, Ng5, and castling kingside to launch a direct assault on the f7 square and Black's king.",
-        "White often sacrifices more material to open lines and maintain the momentum of the attack.",
-        "Black seeks to consolidate, neutralize White's immediate threats, and challenge White's central control with moves like ...c5 or ...Bg4.",
+        "White aims for rapid development with moves like Be3, Bd3 and long castling with O-O-O, using the half-open f-file and the lead in development against Black's king.",
+        "White often gives up the d4-pawn as well, the Ryder's point: after ...Qxd4 Be3 the black queen is harassed and White gains still more time for development.",
+        "Black seeks to consolidate, neutralise White's immediate threats, and challenge White's central control with moves like ...c5 or ...Bg4.",
         "Black's goal is to survive the initial onslaught, trade pieces to relieve pressure, and convert the material advantage in the endgame."
       ],
       "version": "1.0",
@@ -1274,7 +1274,7 @@
       "icsbot": "Teichmann Variation, BDG "
     },
     "analysis_json": {
-      "description": "The Teichmann Defense is a classical and highly respected response to the Blackmar-Diemer Gambit. By pinning the f3-knight with 5...Bg4, Black immediately challenges White's primary attacking plans and aims to neutralize the initiative. The resulting positions are dynamic and sharp, with White seeking to justify the gambit through a kingside attack while Black works to consolidate the extra pawn and exploit the pin. This line is perfect for players who enjoy meeting aggression with principled, active defense.",
+      "description": "The Teichmann Defence is a classical and highly respected response to the Blackmar-Diemer Gambit. By pinning the f3-knight with 5...Bg4, Black immediately challenges White's primary attacking plans and aims to neutralise the initiative. The resulting positions are dynamic and sharp, with White seeking to justify the gambit through a kingside attack while Black works to consolidate the extra pawn and exploit the pin. This line is perfect for players who enjoy meeting aggression with principled, active defence.",
       "style_tags": [
         "Gambit",
         "Sharp",
@@ -1315,8 +1315,8 @@
         "Consolidation"
       ],
       "common_plans": [
-        "White: Break the pin with h3, followed by g4. Develop with Bc4 and Qe2, castle, and launch an attack using the open f-file.",
-        "Black: Solidify the position with ...e6. Develop with ...Be7 and ...0-0, challenge White's center with ...c5, and trade pieces to reach a favorable endgame."
+        "White: Ask the bishop with h3; after ...Bxf3 Qxf3 White has the bishop pair and the queen on the half-open f-file, and follows with Be3 or Bd3 and long castling with O-O-O.",
+        "Black: Solidify the position with ...e6. Develop with ...Be7 and ...0-0, challenge White's centre with ...c5, and trade pieces to reach a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:04:41.848Z"
@@ -1683,8 +1683,8 @@
         "Disrupting Coordination"
       ],
       "common_plans": [
-        "White: Accept the challenge with dxe5, aiming to control the center with pieces, complete development, and use the newly opened f-file for a kingside attack.",
-        "Black: Continue to challenge the center, often with ...Nxe4, aiming to disrupt White's coordination, trade pieces to neutralize the attack, and exploit any weaknesses in White's camp.",
+        "White: Take with dxe5, when ...Qxd1+ leads to an early queenless game, and keep the knights active to defend the extra pawn.",
+        "Black: After dxe5, trade queens with ...Qxd1+ and regain the pawn by attacking e5, for example with ...Nfd7 or ...Ng4.",
         "Both Sides: Fight for control of the e-file and d5-square, which become critical strategic points after the central pawn exchanges."
       ],
       "version": "1.0",
@@ -1828,7 +1828,7 @@
       "icsbot": "Langeheinecke Variation, BDG "
     },
     "analysis_json": {
-      "description": "The Langeheinicke Defense is a subtle and strategic way to decline the Blackmar-Diemer Gambit. By playing 4...e3, Black immediately returns the gambit pawn to disrupt White's development, block the d-pawn, and steer the game away from the wild tactical battles of the main lines. This approach leads to a more positional struggle where Black aims to exploit the awkwardness of the e3-pawn while White seeks to prove their space and development advantage.",
+      "description": "The Langeheinicke Defence is a subtle and strategic way to decline the Blackmar-Diemer Gambit. By playing 4...e3, Black gives the pawn back at once rather than give White the half-open f-file: after Bxe3, White's f3-pawn takes the natural square from the g1-knight, and the game steers away from the wild tactical battles of the main lines. This approach leads to a more positional struggle where Black aims to exploit the awkwardness of White's set-up while White seeks to prove their space and development advantage.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -1867,10 +1867,10 @@
         "Development race"
       ],
       "common_plans": [
-        "White: Capture on e3 (usually with the Bishop), complete development with Nf3, Be2/d3, and 0-0, and try to use the space advantage and open lines.",
-        "Black: Develop pieces quickly (e.g., ...Be7, ...0-0, ...c5), challenge White's central control, and exploit any awkwardness in White's setup.",
-        "White: Fianchetto the light-squared bishop with g3 and Bg2 to bypass the e3-pawn's influence.",
-        "Black: Put pressure on the d4 pawn, which is now harder for White to defend."
+        "White: Capture with Bxe3, then complete development with Bd3, Nge2 and O-O, and try to use the space advantage and open lines.",
+        "Black: Develop pieces quickly (e.g., ...Be7, castling and ...c5), challenge White's central control, and exploit any awkwardness in White's set-up.",
+        "White: After Bxe3, finish development with Qd2 and long castling (O-O-O), keeping the extra central space.",
+        "Black: Put pressure on the d4-pawn with ...c5 and ...Nc6; with the f-pawn on f3, White's centre is less flexible than usual."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:07:34.702Z"
@@ -1957,7 +1957,7 @@
       "icsbot": "Hans Mullers; Vienna V "
     },
     "analysis_json": {
-      "description": "The Vienna Defense is a critical and principled way for Black to decline the main thrust of the Blackmar-Diemer Gambit. By developing the bishop to f5, Black immediately challenges White's central control and aggressive intentions, leading to a sharp and complex struggle where Black aims to refute White's gambit idea directly. This line is ideal for combative players who enjoy actively punishing premature attacks and exploiting positional weaknesses created by their opponent's aggression.",
+      "description": "The Vienna Defence is a critical and principled way for Black to decline the main thrust of the Blackmar-Diemer Gambit. By developing the bishop to f5, Black immediately challenges White's central control and aggressive intentions, leading to a sharp and complex struggle where Black aims to refute White's gambit idea directly. This line is ideal for combative players who enjoy actively punishing premature attacks and exploiting positional weaknesses created by their opponent's aggression.",
       "style_tags": [
         "Sharp",
         "Counter-attacking",
@@ -1999,8 +1999,8 @@
       ],
       "common_plans": [
         "White: Push g4 to challenge the Bf5, complete development, and attack on the f-file.",
-        "Black: Maintain central pressure, develop with ...e6 and ...c5, and exploit the weaknesses created by White's f3 and potential g4 pushes.",
-        "Black: Often prepares to meet White's kingside aggression with a solid setup or a counter-attack in the center."
+        "Black: Maintain central pressure, develop with ...e6 and ...c5, and exploit the weaknesses that f3 and any later g-pawn push leave around White's king.",
+        "Black: Often prepares to meet White's kingside aggression with a solid setup or a counter-attack in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:08:15.461Z"
@@ -2128,10 +2128,10 @@
         "King Safety"
       ],
       "common_plans": [
-        "For White: Rapidly develop pieces, castle quickly, and use the open f-file to launch a kingside attack, often involving further sacrifices on squares like e6 or f7.",
-        "For White: Control the center with pieces (Nc3, Bd3, Qe2) and aim for a swift checkmating attack before Black can consolidate.",
-        "For Black: Accept the gambit and carefully consolidate the material advantage by developing pieces, challenging White's central control with moves like ...c5 or ...e6.",
-        "For Black: Return the pawn at an opportune moment to neutralize White's initiative, trade pieces, and steer the game towards a favorable endgame."
+        "For White: Rapidly develop pieces, castle quickly, and use the half-open f-file to launch a kingside attack, often involving piece sacrifices against Black's king.",
+        "For White: Control the centre with pieces (Nc3, Bd3, Qe2) and aim for a swift checkmating attack before Black can consolidate.",
+        "For Black: Take on f3 and consolidate, or strike back at once with ...e5, which hits d4 and challenges White's centre.",
+        "For Black: Return the pawn at an opportune moment to neutralise White's initiative, trade pieces, and steer the game towards a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T12:08:55.171Z"
@@ -2712,8 +2712,8 @@
         "Development Speed"
       ],
       "common_plans": [
-        "White plays f3 to blast open the f-file, followed by developing pieces (Bc4, Ng5, Qe2) to attack Black's weakened kingside.",
-        "Black attempts to consolidate, develop pieces to defend the king (e.g., ...Nf6, ...e6, ...Be7), and neutralize White's initiative before the attack becomes overwhelming.",
+        "White plays f3 to break up Black's centre and open lines, then develops with Bc4 and Qe2 against Black's weakened kingside.",
+        "Black attempts to consolidate, develop pieces to defend the king (e.g., ...Nf6, ...e6, ...Be7), and neutralise White's initiative before the attack becomes overwhelming.",
         "White often castles queenside to launch a pawn storm on the kingside with g4 and h4.",
         "Black looks for opportunities to trade pieces to relieve pressure and steer the game towards an endgame where the extra pawn can be decisive."
       ],

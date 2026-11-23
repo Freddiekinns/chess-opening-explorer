@@ -13762,5 +13762,65 @@
     "verdict": "fixed",
     "contentHash": "298deec273ac6415",
     "notes": "Plan 2 had ...Bd7 pressure d4; plan 3 used a b3-knight that is not there and an Re1-e3-g3 lift. Rewrote both (first plan 3 rewrite rejected because a knight on e3 does not cover d4; corrected and accepted). British spelling."
+  },
+  "rnbqkbnr/ppp1pppp/8/3p4/3P4/3Q4/PPP1PPPP/RNB1KBNR b KQkq - 1 2": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "5a634dd93419f449",
+    "notes": "Plan 2 had a later ...Ne4 from a knight on c6, which cannot reach e4; plan 3 called the c1-bishop passive, though its diagonal is open. Rewrote plans 2-3 around ...c5, ...Bf5 and ...Nc6-b4 hitting the queen. British spelling."
+  },
+  "rnbqkb1r/ppp1pp1p/5np1/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 0 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "5d97b47cef28d67d",
+    "notes": "Plan 1 had a rook lift Rf3-h3 with the knight on f3. Rewrote it around Bc4, O-O, Qe1-h4 and Bh6. British spelling."
+  },
+  "r1bqkb1r/ppp1pppp/2n2n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "439f4765236fdf6a",
+    "notes": "Plan 1 had a rook lift Rf3-h3 with the knight on f3. Rewrote it around Bc4/Bb5, Bg5, O-O and Qe1-h4. British spelling."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N2Q2/PPP3PP/R1B1KBNR b KQkq - 0 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "f7411e66f9d160bd",
+    "notes": "Plan 1 gave Ng5, which the g1-knight cannot reach; plan 2 was vague about further sacrifices. Rewrote both around Be3, Bd3, O-O-O and the ...Qxd4 Be3 point (first plan 1 rewrite rejected for calling the f-file open with Black's f7-pawn on it; corrected and accepted). British spelling."
+  },
+  "rn1qkb1r/ppp1pppp/5n2/8/3P2b1/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "6c69d80b2b956d99",
+    "notes": "Plan 1 broke the pin with h3 and g4, when Black simply takes on f3. Rewrote it around h3 Bxf3 Qxf3, the bishop pair and O-O-O (first rewrite rejected for calling the f-file open; corrected and accepted). British spelling."
+  },
+  "rnbqkb1r/ppp2ppp/5n2/4p3/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "424d4f1e3b1d5e92",
+    "notes": "Plan 1 used an open f-file with White's pawn on f3; plan 2 had ...Nxe4, a capture of Black's own pawn. Rewrote both around dxe5 Qxd1+ and ...Nfd7 or ...Ng4. British spelling."
+  },
+  "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N1pP2/PPP3PP/R1BQKBNR w KQkq - 0 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "6d23e99bc41c4c5f",
+    "notes": "Overview said 4...e3 blocks the d-pawn; plan 1 gave Be2/d3 and plan 2 wrote ...0-0; plan 3 fianchettoed the bishop to get round an e3-pawn White has just taken. Rewrote the overview (first rewrite rejected for 'open f-file'; corrected and accepted) and all four plans. British spelling."
+  },
+  "rn1qkb1r/ppp1pppp/5n2/5b2/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 1 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "b16030c6ccbb1674",
+    "notes": "Plan 2 gave g4 as a Black move. Rewrote it. British spelling."
+  },
+  "rnbqkbnr/ppp1pppp/8/8/3Pp3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 3": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "c8655e0c79dc572d",
+    "notes": "Plan 1 named sacrifices on e6 or f7 as bare squares; plan 3 left out 3...e5, Black's main way to strike back. Rewrote plans 1 and 3."
+  },
+  "rnbqkbnr/ppp1p1pp/8/5p2/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "f391f1d91fd9bd97",
+    "notes": "Plan 1 gave Ng5, which the g1-knight cannot reach. Rewrote it. British spelling."
   }
 }

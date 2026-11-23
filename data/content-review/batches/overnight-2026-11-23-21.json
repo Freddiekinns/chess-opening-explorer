@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/3Q4/PPP1PPPP/RNB1KBNR b KQkq - 1 2",
+      "name": "Amazon Attack",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had a later ...Ne4 from a knight on c6, which cannot reach e4; plan 3 called the c1-bishop passive, though its diagonal is open. Rewrote plans 2-3 around ...c5, ...Bf5 and ...Nc6-b4 hitting the queen. British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pp1p/5np1/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 0 6",
+      "name": "Blackmar-Diemer Gambit Accepted: Bogoljubow Defense",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a rook lift Rf3-h3 with the knight on f3. Rewrote it around Bc4, O-O, Qe1-h4 and Bh6. British spelling."
+    },
+    {
+      "fen": "r1bqkb1r/ppp1pppp/2n2n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6",
+      "name": "Blackmar-Diemer Gambit Accepted: Pietrowsky Defense",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a rook lift Rf3-h3 with the knight on f3. Rewrote it around Bc4/Bb5, Bg5, O-O and Qe1-h4. British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N2Q2/PPP3PP/R1B1KBNR b KQkq - 0 5",
+      "name": "Blackmar-Diemer Gambit Accepted: Ryder Gambit",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave Ng5, which the g1-knight cannot reach; plan 2 was vague about further sacrifices. Rewrote both around Be3, Bd3, O-O-O and the ...Qxd4 Be3 point (first plan 1 rewrite rejected for calling the f-file open with Black's f7-pawn on it; corrected and accepted). British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/ppp1pppp/5n2/8/3P2b1/2N2N2/PPP3PP/R1BQKB1R w KQkq - 1 6",
+      "name": "Blackmar-Diemer Gambit Accepted: Teichmann Defense",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 broke the pin with h3 and g4, when Black simply takes on f3. Rewrote it around h3 Bxf3 Qxf3, the bishop pair and O-O-O (first rewrite rejected for calling the f-file open; corrected and accepted). British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/5n2/4p3/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 0 5",
+      "name": "Blackmar-Diemer Gambit Declined: Elbert Countergambit",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 used an open f-file with White's pawn on f3; plan 2 had ...Nxe4, a capture of Black's own pawn. Rewrote both around dxe5 Qxd1+ and ...Nfd7 or ...Ng4. British spelling."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N1pP2/PPP3PP/R1BQKBNR w KQkq - 0 5",
+      "name": "Blackmar-Diemer Gambit Declined: Langeheinicke Defense",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said 4...e3 blocks the d-pawn; plan 1 gave Be2/d3 and plan 2 wrote ...0-0; plan 3 fianchettoed the bishop to get round an e3-pawn White has just taken. Rewrote the overview (first rewrite rejected for 'open f-file'; corrected and accepted) and all four plans. British spelling."
+    },
+    {
+      "fen": "rn1qkb1r/ppp1pppp/5n2/5b2/3Pp3/2N2P2/PPP3PP/R1BQKBNR w KQkq - 1 5",
+      "name": "Blackmar-Diemer Gambit Declined: Vienna Defense",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 gave g4 as a Black move. Rewrote it. British spelling."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/8/3Pp3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 3",
+      "name": "Blackmar-Diemer Gambit: Blackmar Gambit",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 named sacrifices on e6 or f7 as bare squares; plan 3 left out 3...e5, Black's main way to strike back. Rewrote plans 1 and 3."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1p1pp/8/5p2/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4",
+      "name": "Blackmar-Diemer Gambit: Netherlands Variation",
+      "eco": "D00",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave Ng5, which the g1-knight cannot reach. Rewrote it. British spelling."
+    }
+  ]
+}

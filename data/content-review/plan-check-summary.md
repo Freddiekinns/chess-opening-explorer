@@ -1,10 +1,10 @@
 # Plan reference check
 
-1651 references on 1277 of 12377 pages fail the check and show as plain text.
+1638 references on 1267 of 12377 pages fail the check and show as plain text.
 
 - Plans: 41062, of which 5451 name no move, route, square or piece
-- References by kind: {"square":16527,"piece":15824,"move":55125,"route":8665}
-- References by result: {"now":70229,"on-board":14850,"later":9411,"invalid":1651}
+- References by kind: {"square":16536,"piece":15831,"move":55139,"route":8656}
+- References by result: {"now":70253,"on-board":14856,"later":9415,"invalid":1638}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -54,22 +54,20 @@
 - **C83 Spanish: Open, Classical, 10.Nbd2 O-O 11.Bc2 f5 12.exf6** (0 views)
   - `e6 pawn`: There is no pawn on e6, or on its way
   - `f1-e3`: One step of f1-e3 can't be played here
-- **C84 Spanish: Closed, Centre Attack, 7.Re1 b5 8.e5** (0 views)
-  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
-- **C84 Spanish: Closed, Centre Attack, 7.Re1 O-O** (0 views)
-  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
-- **C85 Spanish: Closed, Exchange** (0 views)
-  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
-- **C85 Spanish: Closed, Exchange, 7.d3** (0 views)
+- **C85 Spanish: Closed, Exchange, 7.Qe1 Nd7** (0 views)
+  - `Rad1`: No piece can play Rad1 here, now or after the plan's earlier moves
+- **C85 Spanish: Closed, Exchange, 7.Qe1 Nd7 8.b3** (0 views)
+  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
+- **C85 Spanish: Closed, Exchange, 7.Qe2** (0 views)
+  - `Nb1-d2-f1-e3`: One step of Nb1-d2-f1-e3 can't be played here
+- **C86 English Variation, Ruy Lopez** (0 views)
+  - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
+- **C86 Ruy Lopez: Closed, Worrall Attack** (0 views)
   - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
   - `e3`: No piece can play e3 here, now or after the plan's earlier moves
-- **C85 Spanish: Closed, Exchange, 7.d3 Bg4** (0 views)
-  - `Nf1-g3`: One step of Nf1-g3 can't be played here
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **C85 Spanish: Closed, Exchange, 7.d3 Nd7** (0 views)
+- **C86 Ruy Lopez: Closed, Worrall Attack, Castling Line** (0 views)
   - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
-- **C85 Spanish: Closed, Exchange, 7.d3 Nd7 8.Nbd2** (0 views)
-  - `f1-g3`: One step of f1-g3 can't be played here
-  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
-- **C85 Spanish: Closed, Exchange, 7.d3 Nd7 8.Nbd2 O-O 9.Nc4 f6 10.Nh4 Nc5 11.Nf5** (0 views)
-  - `g4-h5`: One step of g4-h5 can't be played here
+- **C86 Ruy Lopez: Closed, Worrall Attack, Delayed Castling Line** (0 views)
+  - `...Na5-c5`: One step of ...Na5-c5 can't be played here
+- **C86 Spanish: Worrall Attack, 6...b5** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here

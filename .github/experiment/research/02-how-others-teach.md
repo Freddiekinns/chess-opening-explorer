@@ -40,3 +40,60 @@ back?**
    Chessbook's game check and Aimchess's opening improver are behind Pro tiers
    ($7.99/month each in US listings). Lichess and Chess.com "insights" show
    stats but do not turn them into a lesson.
+6. **Learners already use a four-step workflow across four sites.** Forum and
+   blog advice converges on: _video for the overview → a Lichess study as the
+   written repertoire → spaced-repetition drill → refine from your own games._
+   One poster's failure mode is ours too: hopping video to video, opening to
+   opening, and forgetting the first. Chess.com's Practice pairs a drill against
+   the engine with a "Learn" tab lesson for the chosen opening — the only
+   free, single-site version of steps 1 and 3 found tonight.
+
+## What this means for us
+
+- **No free site joins all four steps for one opening.** We already hold three
+  of the four ingredients per position: ranked videos (step 1), descriptions and
+  `common_plans` (the written book, step 2), and a Practice mode that makes you
+  play the moves (step 3, single line, no memory). Step 4 has a seam: `/analyse`
+  links into pages with `ref=personal&username=…`, ignored today.
+- **The cheapest "end" for a session** is a finite unit on one opening — a
+  chapter with N lines to play through — and a visible "done". That is a
+  lesson, not a reference page.
+- **The cheapest "reason to return"** without accounts is local state that
+  changes while you're away: lines due for review (#196 practice memory is the
+  existing issue) or "your recent games left your lines here" (the deviation
+  trainer, #195's personal strip). Both are paid features elsewhere.
+- **Don't copy Chessable's depth.** The critiques are about overload and lines
+  too deep for club players. Our popularity stats (all rated Lichess players)
+  can choose lines by how often they are actually met at a learner's level —
+  Chessbook's one differentiator, and it charges for it.
+- **Plans need positions.** Every critique that "I know the moves but not the
+  plan" points at `common_plans`; tying a plan to the board where it applies is
+  what a book chapter does and a bullet list does not (night 4's question).
+
+## Not checked tonight
+
+- The YouTube creators the video index ranks highest: `video-index.json` is 31
+  MB and its shape was not obvious from a quick read; left to night 3, which
+  asks the YouTube question directly.
+- Chessable's and Chess.com's actual retention or completion numbers: none
+  published in what was found. No Starting Out series detail beyond Move by
+  Move.
+- Nothing was clicked through; all from search summaries.
+
+## Sources
+
+- Chessable MoveTrainer: [Andy Matuschak's notes](https://notes.andymatuschak.org/zDr94hP6bG3jJYrdYy8B5hx),
+  [FIDE, "From flashcards to Chessable"](https://www.fide.com/from-flashcards-to-chessable/),
+  [Zwischenzug on spaced repetition](https://zwischenzug.substack.com/p/spaced-repetition)
+- Chessbook: [App Store listing](https://apps.apple.com/us/app/chessbook/id6466343415)
+- Lichess: [Interactive lessons](https://lichess.org/blog/WtDErSQAADJfhJJs/interactive-lessons),
+  [Chess insights](https://lichess.org/blog/VmZbaigAABACtXQC/chess-insights)
+- Aimchess: [aimchess.com](https://aimchess.com),
+  [review on Chess.com](https://www.chess.com/blog/SheldonOfOsaka/aimchess-a-review)
+- Chess.com: [What is Practice](https://support.chess.com/en/articles/8724749-what-is-practice),
+  [Opening Insights](https://www.chess.com/news/view/announcing-opening-insights)
+- Move by Move: [English: Move by Move](https://www.simonandschuster.com/books/English-Move-by-Move/Steve-Giddins/9781857446999),
+  [Sicilian Scheveningen preview](https://www.everand.com/book/951184708/The-Sicilian-Scheveningen-Move-by-Move)
+- Workflow: [CheckRaiseMate, how to learn an opening](https://lichess.org/@/CheckRaiseMate/blog/how-to-learn-an-opening-in-2023/1Utogv4G),
+  [Chess.com forum, preferred method](https://www.chess.com/forum/view/chess-openings/preferred-method-for-learning-openings),
+  [MoveTrainer vs a video series](https://www.chess.com/forum/view/chess-openings/learning-with-movetrainer-vs-a-video-series)

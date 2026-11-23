@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r2qkbnr/ppp2ppp/2n1b3/4P3/2Pp4/5NP1/PP1NPP1P/R1BQKB1R b KQkq - 2 6",
+      "name": "QGD: Albin, 5.g3 Be6 6.Nbd2",
+      "eco": "D09",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 gave ...Ng4 with no knight able to reach it. Rewrote plan 2 around ...Qd7, ...O-O-O, ...Bh3 and ...h5-h4; British spelling in plan 1."
+    },
+    {
+      "fen": "r3kb1r/pppqnppp/2n1b3/4P3/2Pp4/5NP1/PP1NPPBP/R1BQK2R w KQkq - 5 8",
+      "name": "QGD: Albin, 5.g3 Be6 6.Nbd2 Qd7 7.Bg2 Nge7",
+      "eco": "D09",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Nc3, a square no white knight can reach; plan 2 wrote the pawn storm as an ...h5-g5 route; plan 3 was a vague unprefixed d5 note. Rewrote plans 1-3."
+    },
+    {
+      "fen": "r2qkbnr/ppp2ppp/2n5/4Pb2/2Pp4/5NP1/PP2PP1P/RNBQKB1R w KQkq - 1 6",
+      "name": "Queen's Gambit Declined: Albin Countergambit, Fianchetto Variation, Bf5 Line",
+      "eco": "D09",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 aimed at a c2-pawn that is on c4. Rewrote plan 3; British spelling in plan 4."
+    },
+    {
+      "fen": "r2qkbnr/ppp2ppp/2n5/4P3/2Pp2b1/5NP1/PP2PP1P/RNBQKB1R w KQkq - 1 6",
+      "name": "Queen's Gambit Declined: Albin Countergambit, Fianchetto Variation, Bg4 Line",
+      "eco": "D09",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 2 called ...Bg4 a pin (the e2-pawn blocks it); plan 1 wrote an ambiguous Nd2; plan 2 castled kingside with the f8-bishop at home. Rewrote overview and plans 1-2; British spelling."
+    },
+    {
+      "fen": "rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+      "name": "Slav Defense: Exchange Variation",
+      "eco": "D10",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named ...Rc8 and ...Na5 with no piece able to get there and named White's Qb3 in a Black plan. Rewrote plans 1-2; British spelling in the overview and plan 3."
+    },
+    {
+      "fen": "rnbqkb1r/pp2pppp/5n2/3p4/3P4/2N2P2/PP2P1PP/R1BQKBNR b KQkq - 0 5",
+      "name": "Slav Defense: Exchange Variation, Boor Attack",
+      "eco": "D10",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 named White's e4 in a Black plan. Rewrote plan 2; British spelling in the overview and plan 1."
+    },
+    {
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP1B2/8/PP2PPPP/RN1QKBNR b KQkq - 1 3",
+      "name": "Slav: 3.Bf4",
+      "eco": "D10",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called the f4-bishop light-squared; plan 4 developed the bishop after ...e6, the opposite of the Slav idea; plan 3 named ...Nh5 in a White plan. Rewrote the overview and plans 2-4; British spelling."
+    },
+    {
+      "fen": "rn1qkbnr/pp2pppp/2p5/3p1b2/2PP4/4P3/PP3PPP/RNBQKBNR w KQkq - 1 4",
+      "name": "Slav: 3.e3 Bf5",
+      "eco": "D10",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Nh4 with no knight on f3. Rewrote plan 1; British spelling in the overview and plan 2."
+    },
+    {
+      "fen": "rnbqkb1r/pp2pppp/2p2n2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
+      "name": "Slav: 3.Nc3 Nf6 4.Bg5",
+      "eco": "D10",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plans called Bg5 a pin (the e7-pawn blocks it) and overstated the line as among the most complex in chess; plan 3 named ...g5 with the bishop on g5. Rewrote the overview and plans 1, 3 and 4."
+    },
+    {
+      "fen": "rn1qkb1r/pp2pppp/2p2n2/3p1b2/2PP4/2N1P3/PP3PPP/R1BQKBNR w KQkq - 1 5",
+      "name": "Slav: 3.Nc3 Nf6 4.e3 Bf5",
+      "eco": "D10",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Nh4 with no knight on f3; plan 2 proposed a minority attack the structure does not allow. Rewrote plans 1-2; British spelling in the overview."
+    }
+  ]
+}

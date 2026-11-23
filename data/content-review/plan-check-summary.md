@@ -1,10 +1,10 @@
 # Plan reference check
 
-1386 references on 1089 of 12377 pages fail the check and show as plain text.
+1328 references on 1040 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5439 name no move, route, square or piece
-- References by kind: {"square":16645,"piece":15937,"move":55531,"route":8551}
-- References by result: {"now":70778,"on-board":14975,"later":9525,"invalid":1386}
+- Plans: 41062, of which 5433 name no move, route, square or piece
+- References by kind: {"square":16679,"piece":15981,"move":55631,"route":8520}
+- References by result: {"now":70891,"on-board":15019,"later":9573,"invalid":1328}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -59,17 +59,18 @@
   - `...Nh6-f7`: One step of ...Nh6-f7 can't be played here
 - **C92 Spanish: Closed, Karpov Variation, 10.d4 Bf6 11.a4 Bb7 12.Na3** (0 views)
   - `c4`: No piece can play c4 here, now or after the plan's earlier moves
-- **D02 London System: Poisoned Pawn Variation** (0 views)
-  - `c7`: No piece can play c7 here, now or after the plan's earlier moves
-- **D02 Queen's Pawn Game: Anti-Torre** (0 views)
-  - `h3`: No piece can play h3 here, now or after the plan's earlier moves
-  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
-- **D02 Queen's Pawn Game: Krause Variation** (0 views)
-  - `e5`: No piece can play e5 here, now or after the plan's earlier moves
-- **D02 Queen's Pawn Game: London System, with e6** (0 views)
-  - `Nd2-f1-g3-e5`: Nd2 is ambiguous: the knights on f3 and b1 can both go there
-  - `...Nh5`: No piece can play Nh5 here, now or after the plan's earlier moves
-- **D02 Queen's Pawn: 2.Nf3 Bf5 3.Bf4** (0 views)
-  - `...Nh5`: No piece can play Nh5 here, now or after the plan's earlier moves
-- **D02 Queen's Pawn: 2.Nf3 Bf5 3.Bf4 c6** (0 views)
-  - `c6-d5-e6`: One step of c6-d5-e6 can't be played here
+- **D05 Colle: 5.c3 Nc6 6.Nbd2 Bd6 7.O-O O-O** (0 views)
+  - `e4`: No piece can play e4 here, now or after the plan's earlier moves
+  - `dxc4`: No piece can play dxc4 here, now or after the plan's earlier moves
+- **D09 QGD: Albin, 5.g3 Be6 6.Nbd2** (0 views)
+  - `...Ng4`: No piece can play Ng4 here, now or after the plan's earlier moves
+- **D09 QGD: Albin, 5.g3 Be6 6.Nbd2 Qd7 7.Bg2 Nge7** (0 views)
+  - `Nc3`: No piece can play Nc3 here, now or after the plan's earlier moves
+- **D09 Queen's Gambit Declined: Albin Countergambit, Fianchetto Variation, Bf5 Line** (0 views)
+  - `c2-pawn`: There is no pawn on c2, or on its way
+- **D09 Queen's Gambit Declined: Albin Countergambit, Fianchetto Variation, Bg4 Line** (0 views)
+  - `...O-O`: No piece can play O-O here, now or after the plan's earlier moves
+- **D10 Slav Defense: Exchange Variation** (0 views)
+  - `...Rc8`: No piece can play Rc8 here, now or after the plan's earlier moves
+  - `Qb3`: No piece can play Qb3 here, now or after the plan's earlier moves
+  - `...Na5`: No piece can play Na5 here, now or after the plan's earlier moves

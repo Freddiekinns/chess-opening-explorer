@@ -576,10 +576,10 @@
     "notes": "Style brief audit (sicilian-defense, researched 2026-10-03): 10 claims, 0 wrong, 1 unverifiable."
   },
   "rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3": {
-    "reviewedAt": "2026-10-11",
+    "reviewedAt": "2026-11-23",
     "verdict": "fixed",
-    "contentHash": "11640b6aca3c7f99",
-    "notes": "Style brief audit (slav-defense-exchange-variation, researched 2026-10-03): 8 claims, 3 wrong and fixed in #171, 1 unverifiable."
+    "contentHash": "1176b770076ec528",
+    "notes": "Plan 2 named ...Rc8 and ...Na5 with no piece able to get there and named White's Qb3 in a Black plan. Rewrote plans 1-2; British spelling in the overview and plan 3."
   },
   "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3": {
     "reviewedAt": "2026-10-11",
@@ -14302,5 +14302,59 @@
     "verdict": "fixed",
     "contentHash": "40a2aabe97a60b14",
     "notes": "Plan 1 relied on a d4-pawn that has already captured on e3. Rewrote plan 1."
+  },
+  "r2qkbnr/ppp2ppp/2n1b3/4P3/2Pp4/5NP1/PP1NPP1P/R1BQKB1R b KQkq - 2 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "f5b3d592f3911633",
+    "notes": "Plan 2 gave ...Ng4 with no knight able to reach it. Rewrote plan 2 around ...Qd7, ...O-O-O, ...Bh3 and ...h5-h4; British spelling in plan 1."
+  },
+  "r3kb1r/pppqnppp/2n1b3/4P3/2Pp4/5NP1/PP1NPPBP/R1BQK2R w KQkq - 5 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "6d316afe2b5c3f51",
+    "notes": "Plan 1 played Nc3, a square no white knight can reach; plan 2 wrote the pawn storm as an ...h5-g5 route; plan 3 was a vague unprefixed d5 note. Rewrote plans 1-3."
+  },
+  "r2qkbnr/ppp2ppp/2n5/4Pb2/2Pp4/5NP1/PP2PP1P/RNBQKB1R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d4895d447dcca6aa",
+    "notes": "Plan 3 aimed at a c2-pawn that is on c4. Rewrote plan 3; British spelling in plan 4."
+  },
+  "r2qkbnr/ppp2ppp/2n5/4P3/2Pp2b1/5NP1/PP2PP1P/RNBQKB1R w KQkq - 1 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "13aedca57e9b8544",
+    "notes": "Overview and plan 2 called ...Bg4 a pin (the e2-pawn blocks it); plan 1 wrote an ambiguous Nd2; plan 2 castled kingside with the f8-bishop at home. Rewrote overview and plans 1-2; British spelling."
+  },
+  "rnbqkb1r/pp2pppp/5n2/3p4/3P4/2N2P2/PP2P1PP/R1BQKBNR b KQkq - 0 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "18e24add43f89ac2",
+    "notes": "Plan 2 named White's e4 in a Black plan. Rewrote plan 2; British spelling in the overview and plan 1."
+  },
+  "rnbqkbnr/pp2pppp/2p5/3p4/2PP1B2/8/PP2PPPP/RN1QKBNR b KQkq - 1 3": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "453f739f8c20f45a",
+    "notes": "Overview called the f4-bishop light-squared; plan 4 developed the bishop after ...e6, the opposite of the Slav idea; plan 3 named ...Nh5 in a White plan. Rewrote the overview and plans 2-4; British spelling."
+  },
+  "rn1qkbnr/pp2pppp/2p5/3p1b2/2PP4/4P3/PP3PPP/RNBQKBNR w KQkq - 1 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "957eb847f4b3ecb3",
+    "notes": "Plan 1 played Nh4 with no knight on f3. Rewrote plan 1; British spelling in the overview and plan 2."
+  },
+  "rnbqkb1r/pp2pppp/2p2n2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "7af24c6e62f5e2ea",
+    "notes": "Overview and plans called Bg5 a pin (the e7-pawn blocks it) and overstated the line as among the most complex in chess; plan 3 named ...g5 with the bishop on g5. Rewrote the overview and plans 1, 3 and 4."
+  },
+  "rn1qkb1r/pp2pppp/2p2n2/3p1b2/2PP4/2N1P3/PP3PPP/R1BQKBNR w KQkq - 1 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "4b5aa098b08bd905",
+    "notes": "Plan 1 played Nh4 with no knight on f3; plan 2 proposed a minority attack the structure does not allow. Rewrote plans 1-2; British spelling in the overview."
   }
 }

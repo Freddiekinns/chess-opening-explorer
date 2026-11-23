@@ -10,6 +10,16 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-23 13:35 UTC — **Extra run** (charter: Extra runs). Unit of work: the
+  plan's "Before Gate A" item, done properly. Read the primary pages (not search
+  summaries) behind night 2's two load-bearing claims: learners return only when
+  something changes while they are away; no free site joins video, book, drill
+  and own games for one opening. Try the free tiers where they need no account
+  (Lichess studies and practice, Chessbook's site, Chessable's free pages).
+  Revise `research/02-how-others-teach.md` with what holds and what does not.
+  Take the time it needs. Night 3 (YouTube) stays next, for Tuesday 01:00.
+  (Owner, in chat.)
+
 - 2026-11-23 — Run night 2 now, Monday ~13:20 UTC, in the last 40 minutes before
   the weekly reset, to use what is left of the week; Tuesday 01:00 UTC is then
   night 3. Usage may run out mid-run: push the research file after each section,

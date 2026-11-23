@@ -28,8 +28,8 @@ Phase 1 — Discover (one research file each):
    → review), pending Practice's drop-off and night 4/5.
 4. ~~What the free chess book needs~~ — done, extra run 2026-11-23. The book
    exists (Wikibooks); ours lacks a chapter's shape. Candidate shrunk: Practice
-   fixes (wrong-move message, show the line first, band-aware extension) +
-   #196, then one family unit.
+   fixes (wrong-move message, show the line first, band-aware extension) + #196,
+   then one family unit.
 5. ~~Your games~~ — done, extra run 2026-11-23. Own games are a later optional
    layer; #195's `?practice=` is the shared seam.
 6. **Gate A.** Two or three candidate features, a recommendation, the critic's
@@ -46,6 +46,12 @@ Phase 4 — Retrospective: `retro.md`.
 
 ## Before Gate A
 
+- Check open PRs as well as issues before recommending
+  (`gh api repos/Freddiekinns/chess-opening-explorer/pulls`). Night 4 found
+  Practice silently rejects a wrong move; PR #241 (`feat/practice-hint-ladder`,
+  open) already draws an arrow after the third wrong move. Gate A's "Practice
+  fixes" must build on #241, not duplicate it. #234–236 (common plans) are open
+  too.
 - Night 2's claims were revisited on the extra run (`research/02`, "Revisited"):
   own games + repertoire + drill are free elsewhere (HollowLeaf Repertoire
   Builder, ChessAtlas), so Gate A must argue our edge as no account and every

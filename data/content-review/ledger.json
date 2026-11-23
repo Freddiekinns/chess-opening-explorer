@@ -12704,8 +12704,8 @@
   "r2qk2r/2p1nppp/p3b3/1pbpP3/4n3/1BPQ1N2/PP3PPP/RNB2RK1 w kq - 3 11": {
     "reviewedAt": "2026-11-23",
     "verdict": "fixed",
-    "contentHash": "92b68b1c270d16be",
-    "notes": "Plan 2 suggested ...Na5 with no knight on c6; overview misdescribed 10.Qd3. Rewrote overview and plan 1 (accepted). The plan 2 rewrite was rejected (a knight on f5 does not press on e5), so plan 2 keeps its old text in this commit and is resubmitted with batch 2026-11-23-4. British spelling."
+    "contentHash": "7beb9d8edab5ea37",
+    "notes": "Follow-up to batch 2026-11-23-3: plan 2 (...Na5 with no c6-knight) rewritten; the first rewrite (knight on f5 pressing e5) was rejected, the corrected version accepted."
   },
   "r2qk2r/2p2ppp/p1n1b3/1pbpP3/4n3/1BP2N2/PP1N1PPP/R1BQ1RK1 b kq - 2 10": {
     "reviewedAt": "2026-11-23",
@@ -12748,5 +12748,65 @@
     "verdict": "fixed",
     "contentHash": "dfc31cfbabc0d252",
     "notes": "Plan 1's route started from d2 with the knight on b1. Rewrote it as Nbd2, Nf1 and Ng3. British spelling."
+  },
+  "r2q1rk1/2p3pp/p1n1bP2/1pbp4/8/2P2N2/PPBN1RPP/R1BQ2K1 b - - 0 13": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "e46e15b8fd3c09d7",
+    "notes": "Plan 3 named light squares g3 and h4 (both dark) and plans were generic about who has the material. Rewrote overview and plans around 13...Bxf2+ 14.Kxf2 Qxf6 (a rook and a pawn for two minor pieces; first rewrite said two pawns, rejected and corrected). British spelling."
+  },
+  "r2q1rk1/2p2ppp/p1n1b3/1pbpP3/4n3/1BP2N2/PP1N1PPP/R1BQ1RK1 w - - 3 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "5e9c2b52f2df9bfd",
+    "notes": "Plan 1 routed a knight through the f1-rook; plan 2 named d-file pressure Black does not have; overview was generic. Rewrote overview and plans around 11.Bc2, ...f5 and the Dilworth."
+  },
+  "r2q1rk1/2p2ppp/p1n1b3/1pbpP3/4n3/2P2N2/PPBN1PPP/R1BQ1RK1 b - - 4 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "2cdd4b257fe7c934",
+    "notes": "Plan 2 claimed ...f5 creates a passed e-pawn; plan 3 routed the d2-knight through the f1-rook. Rewrote plans 1-3 around Nb3, Nfd4 and the Dilworth. British spelling."
+  },
+  "r2q1rk1/2p3pp/p1n1b3/1pbpPp2/4n3/2P2N2/PPBN1PPP/R1BQ1RK1 w - f6 0 12": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "a1ba84710e7c8cfe",
+    "notes": "Plan 1 targeted an e6-pawn that is a bishop. Rewrote it around 12.exf6 e.p. or Nb3 and Nfd4."
+  },
+  "r2q1rk1/2p1bppp/p3b3/1p1pn3/3Nn3/1BP5/PP3PPP/RNBQR1K1 w - - 0 12": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "a9ea3c2bafe4f514",
+    "notes": "Plans 2 and 4 targeted a d4-pawn that is a knight; plan 1's f4 replaced by the main 12.f3. Rewrote plans 1, 2 and 4 around 12.f3 Bd6 13.fxe4 Bg4. British spelling."
+  },
+  "r2qk2r/2p1bppp/p1n1b3/1p1pP3/4n3/1BP2N2/PP3PPP/RNBQ1RK1 w kq - 1 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "a81027025c04f2b0",
+    "notes": "Plan 1 routed a knight through the f1-rook; overview claimed an open e-file. Rewrote overview and plan 1. British spelling."
+  },
+  "r2qk2r/2p1bppp/p1n1b3/1p1pP3/4n3/1BP1BN2/PP3PPP/RN1Q1RK1 b kq - 2 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "e113d405354aab00",
+    "notes": "Overview and plan 1 used an ambiguous Nd2 and a route through the f1-rook. Rewrote overview and plan 1. British spelling."
+  },
+  "r2qk2r/2p1bppp/p1n1b3/1pnpP3/8/1BP2N2/PP1N1PPP/R1BQ1RK1 w kq - 3 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "28a2b0f90c96c57a",
+    "notes": "Plan 1 named Nf1-e3 with no knight on f1; plan 2 put a knight on e6, where the bishop stands, to defend d5; plan 3 named an open d-file and Rad1. Rewrote overview and plans."
+  },
+  "r2q1rk1/2p1bppp/p1n1b3/1p1pP3/4n3/1BP2N2/PP1N1PPP/R1BQ1RK1 w - - 3 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "5d5cd096c327abe0",
+    "notes": "Plan 1 routed a knight through the f1-rook; plan 2 proposed ...c7-c5 with the knight on c6; plan 3 had the b3-bishop pressing f7 through the d5-pawn; plan 4 had the e7-bishop attacking e5. Rewrote plans. British spelling."
+  },
+  "r2q1rk1/2p1bppp/p1n1b3/1p1pP3/4n3/2P2N2/PPBN1PPP/R1BQ1RK1 b - - 4 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "a91ec8199612edc8",
+    "notes": "Plan 1 routed the d2-knight through the f1-rook. Rewrote it. British spelling."
   }
 }

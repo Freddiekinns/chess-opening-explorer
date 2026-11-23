@@ -132,10 +132,10 @@ work.
 
 ## What the cloud can reach
 
-Night 1 found `openingbook.xyz` refused by the proxy. The owner then added it to
-the environment's allowed domains, and a check on 2026-11-22 returned 200 for
-the home page and `/api/openings/search-index`. So a run can read production.
-Vercel previews (`*.vercel.app`) are not allowed and are behind Vercel's login.
+The environment's network access is **Full** (owner, 2026-11-23), after night 1
+found production refused and the extra run found lichess.org and chessbook.com
+refused under the Limited allowlist. Any public site can be read. Vercel
+previews are still behind Vercel's login.
 
 Chrome for Testing is installed at `/usr/bin/google-chrome` (`CHROME_PATH` is
 set; version 153). Point Playwright at it

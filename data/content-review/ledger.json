@@ -14956,5 +14956,65 @@
     "verdict": "fixed",
     "contentHash": "0e684771e3ad9af7",
     "notes": "Overview said 7.a3 prevents ...b5 (it prepares b4 and gives the bishop a2); plan 1 had White playing against its own isolated pawn; plan 3 routed a knight into c5 where Black has a pawn. Rewrote all three; British spelling."
+  },
+  "rnbqkb1r/1p3ppp/p3pn2/8/3p4/1B2PN2/PP3PPP/RNBQ1RK1 w kq - 0 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "0ca4268ebb77d6fc",
+    "notes": "Overview called the structure symmetrical; plan 3 pushed d4-d5 with Black's pawn still on d4. Rewrote plans 1 and 3; British spelling."
+  },
+  "r1bqkb1r/1p3ppp/p1n1pn2/8/P1Bp4/4PN2/1P2QPPP/RNB2RK1 w kq - 0 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d36ce03374c61a5b",
+    "notes": "Overview spoke of an open d-file and plan 2 of a d5-pawn, neither of which exists. Rewrote overview and both plans around the isolated pawn after exd4."
+  },
+  "rnb1k2r/1p3ppp/p3pn2/2b5/2B5/1P2PN2/P4PPP/RNBR2K1 b kq - 0 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "14161ca9c541530d",
+    "notes": "Overview called the c1-bishop light-squared; plan 1 gave a minority attack with a4-a5 and wrote e5 as a move. Fixed both; British spelling."
+  },
+  "rnb1k2r/1p3ppp/p3pn2/2b5/2B5/4PN2/PP1N1PPP/R1BR2K1 b kq - 1 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "e345ffb0427506cd",
+    "notes": "Plan 1 pressed a c5-pawn (it is a bishop); plan 3 routed Nf1-e3 with no knight on f1. Rewrote both; British spelling."
+  },
+  "r1bqkb1r/5ppp/p1n1pn2/1p6/2pP4/1B2PN2/PP2QPPP/RNBR2K1 w kq - 0 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "877c34c9ce1f7e01",
+    "notes": "Plan 1 challenged a d5-pawn Black does not have; plan 2 wrote White's e4 as a Black move. Rewrote both (Nc3 and e4; ...Bb7, ...Nb4 against c2); British spelling."
+  },
+  "r3kb1r/1bq2ppp/p3pn2/1p1P4/2p5/2N1PN2/PPQ2PPP/R1BR2K1 w kq - 1 14": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "0fd39077ca250951",
+    "notes": "Overview and plan 1 gave White the bishop pair after the c2-bishop was traded. Rewrote overview and plans 1-2 around 13.d5 and e4; British spelling."
+  },
+  "r2qkb1r/1b1n1ppp/p3pn2/1pp5/P2P4/1B2PN2/1P2QPPP/RNB2RK1 w kq - 1 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "ec1ac74cf163b880",
+    "notes": "Plan 3 routed a knight d2-b3-c5 into Black's c5-pawn; overview called the b7-bishop fianchettoed. Fixed both; British spelling."
+  },
+  "rnbqkb1r/ppp2ppp/4pn2/8/2PPp3/2N1B3/PP3PPP/R2QKBNR b KQkq - 3 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "27fd5f2c1cd4a89d",
+    "notes": "Plan 1 played Nf3 after f3 and used 0-0 shorthand. Rewrote plans 1-2; British spelling, including French Defence."
+  },
+  "rnbqkb1r/pp3ppp/4pn2/2p5/2PPp3/2N2P2/PP4PP/R1BQKBNR w KQkq - 0 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "50a5f49f3d791539",
+    "notes": "Plan 1 lifted a rook from f1 to h3 through the f3-pawn; plan 3 used an open c-file that is closed. Rewrote both; British spelling."
+  },
+  "rnbqkb1r/pp3ppp/2p1pn2/3p2B1/2PP4/5N2/PPQ1PPPP/RN2KB1R b KQkq - 3 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "2acee25d54fa66d2",
+    "notes": "Plan 2 named Moscow and Anti-Moscow lines that need Nc3 and wrote White's Bxf6 as a Black move. Rewrote it."
   }
 }

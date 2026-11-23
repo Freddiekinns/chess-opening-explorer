@@ -13,7 +13,7 @@ month, so own games are an optional later layer, not the front door or the
 return hook. Gate A will recommend: `?practice=` (#195's seam) + Practice fixes
 + #196 memory first, then one family unit as the Gate B prototype.
 Assumed: competitors' marketing pages describe them truly (none tried).
-Refused: lichess.org pages; OpenTree returned only its title.
+Refused: lichess.org pages; OpeningTree returned only its title.
 Next: night 6, Gate A — Tuesday 01:00 UTC.
 Cost (whole run): minutes ~15 by container clock, tool calls ~65, subagents 3
 (~178k tokens: critic 50k, brief 75k, critic 53k), web pages 21 (12 + 9 by

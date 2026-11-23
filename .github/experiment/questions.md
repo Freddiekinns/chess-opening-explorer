@@ -10,6 +10,11 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-23 — Run night 2 now, Monday ~13:20 UTC, in the last 40 minutes before
+  the weekly reset, to use what is left of the week; Tuesday 01:00 UTC is then
+  night 3. Usage may run out mid-run: push the research file after each section,
+  not only at the end. (Owner, in chat; one-off, charter unchanged.)
+
 - 2026-11-22 — Night 1 may run on Sunday despite the Mon–Fri rule, lean, as ~30%
   of the week is left. (Owner, in chat; one-off, charter unchanged.)
 

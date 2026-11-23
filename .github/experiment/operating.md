@@ -88,16 +88,28 @@ and `-f body=@file` to post.
 ## Run limits
 
 Cost grows roughly with the square of a run's turns, because each turn re-sends
-the context (learned the hard way by the content routines, 2026-11-17). So:
+the context (learned the hard way by the content routines, 2026-11-17).
 
-- One unit of work. If it turns out bigger, split it in `plan.md` and stop at
-  the split.
-- No more than ~60 tool calls, and at most two subagents (critic, reviewer).
+**Measured 2026-11-23:** night 1, night 2 and the extra run together used about
+4% of the owner's 5-hour window, at ~17 tool calls and 2–5 minutes each. Runs
+have been too short, not too long: night 2 skimmed search summaries when it
+should have read the pages. So:
+
+- One unit of work, done in depth. A research night reads 10–15 primary pages,
+  tries products hands-on where no account is needed, and checks its strongest
+  claim against a source that would disagree. Finishing in five minutes is a
+  sign of skimming.
+- If the unit is done with budget to spare, run the critic on it (a fresh
+  subagent arguing against its conclusions) and answer the objections in the
+  file. Do not start the next queue item; one unit a night keeps the owner able
+  to follow.
+- No more than ~80 tool calls, and at most two subagents (critic, reviewer).
 - Read excerpts, not whole large files; never load `api/data/` files whole.
-- Web research: plan the searches up front and send them together; read at most
-  ~8 pages a night.
+- If a site is refused by the network allowlist, say which in the journal so the
+  owner can add it; do not pass search summaries off as reading.
 
-Tune these numbers once the owner has posted a week of usage figures.
+The weekly allowance, not the 5-hour window, is the real limit; recalibrate when
+the owner posts weekly figures.
 
 ## Journal entry template
 

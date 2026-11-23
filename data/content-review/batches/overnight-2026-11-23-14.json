@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r1bq1rk1/2p1bppp/p2p1n2/np2p3/4P3/1BPP1N2/PP3PPP/RNBQR1K1 w - - 1 10",
+      "name": "Spanish: Closed, Pilnik, 9...Na5",
+      "eco": "C90",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said ...Na5 aims to win the bishop pair when White simply retreats to c2; plan 1 played Nf1-g3 with no knight on f1 and an f4 push the f3-knight blocks. Rewrote overview and all three plans. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/4bppp/p2p1n2/npp1p3/4P3/2PP1N2/PPB2PPP/RNBQR1K1 w - - 0 11",
+      "name": "Spanish: Closed, Pilnik, 9...Na5",
+      "eco": "C90",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Plans 1-2 fixed and accepted (plan 1 gave Ng3-f5 and d5 from d3; plan 2 pressed a d4-pawn that does not exist). Plan 3 still tells White to move the bishop to c2, where it already stands; two rewrites were rejected (the d3- and e4-pawns block the c2-bishop's diagonal, so it does not bear on the kingside), so the old text is kept with British spelling only."
+    },
+    {
+      "fen": "r1bn1rk1/2qpbp1p/p4n2/1ppPp1p1/4P3/2P2N1P/PPBN1PP1/R1BQR1K1 w - - 0 14",
+      "name": "Leonhardt Variation, Ruy Lopez ",
+      "eco": "C90 ",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "needs-research",
+      "notes": "Rewrites of both plans rejected: the reviewer could not confirm the line (sources give 12...Nb8 13.Nbd2 g5, not 12...Nd8) and the g5-pawn appears to hang to Nxg5, which neither plan addresses. Old text kept; plan 1 calls f5 a dark square and plan 2 gives ...Nh6-f7 with no knight that can reach h6. References added to the skips."
+    },
+    {
+      "fen": "r2q1rk1/2p1bppp/p1np1n2/1p2p3/3PP1b1/1BP2N2/PP3PPP/RNBQR1K1 w - - 1 10",
+      "name": "Ruy Lopez: Closed, Bogoljubow Variation",
+      "eco": "C91",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 routed the knight via d2-f1-g3/e3 before d4 is secured (first rewrite rejected because Nbd2 cuts the queen's guard of d4 while the f3-knight is pinned; corrected and accepted); plan 2 said ...Bxf3 damages the kingside when the queen recaptures. Rewrote plans 2-3. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/3PP3/1BP2N2/PP3PPP/RNBQR1K1 b - - 0 9",
+      "name": "Ruy Lopez: Closed, Yates Variation",
+      "eco": "C91",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview was generic and missed that 9.d4 without h3 allows 9...Bg4; plan 1 gave Nf1-g3-f5 with no knight on f1; plan 2 gave ...Na5-c7 and ...Nb8-d7 with the knight on c6. Rewrote overview and plans 1-2. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/2p1bppp/p1np1n2/1p1Pp3/4P1b1/1BP2N2/PP3PPP/RNBQR1K1 b - - 0 10",
+      "name": "Spanish: Closed, Bogoljubow, 10.d5",
+      "eco": "C91",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said d5 forces the knight to the edge; plan 1 called Nbd2-f1-g3 the 'Pilnik manoeuvre'; plan 2 proposed ...f5; plan 4 gave the route b7-d8-e6. Rewrote overview and plans 1, 2 and 4. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/2p1bppp/p2p1n2/np1Pp3/4P1b1/2P2N2/PPB2PPP/RNBQR1K1 b - - 2 11",
+      "name": "Spanish: Closed, Bogoljubow, 10.d5 Na5",
+      "eco": "C91",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called a5 an outpost; plan 2 gave the route b7-c5 onto the c-pawn's square. Rewrote overview and plan 2. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/4bppp/p1pp1n2/np1Pp3/4P1b1/2P2N2/PPB2PPP/RNBQR1K1 w - - 0 12",
+      "name": "Spanish: Closed, Bogoljubow, 10.d5 Na5 11.Bc2 c6",
+      "eco": "C91",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave Nf1-g3-f5 with no knight on f1; plan 2 called the c-file open with White's pawn on c3 (first rewrite rejected for that; corrected and accepted). Rewrote plans 1-2. British spelling."
+    },
+    {
+      "fen": "r2qr1k1/1bp1bppp/p1np1n2/1p2p3/P2PP3/1BP2N1P/1P3PP1/RNBQR1K1 b - - 0 11",
+      "name": "Ruy Lopez, Zaitsev Variation",
+      "eco": "C92",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said the Zaitsev prepares ...d5; plan 1 routed the knight via d2-f1-g3/e3 with an a5 'weakness on b5'. Rewrote overview and plan 1. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2p1bppp/p1np1n2/1p2p3/4P3/1BP2N1P/PP1P1PP1/RNBQR1K1 b - - 0 9",
+      "name": "Ruy Lopez: Closed",
+      "eco": "C92",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 put Nbd2-f1-g3 before d4 with the pawn on d2; plan 4 gave ...Nb8-d7 with the knight on c6. Rewrote plans 1 and 4. British spelling."
+    }
+  ]
+}

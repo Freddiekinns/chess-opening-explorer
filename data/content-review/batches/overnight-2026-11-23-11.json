@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r2q1rk1/1bppbppp/p1n2n2/1p2p3/P3P3/1B1P1N2/1PP2PPP/RNBQR1K1 b - - 0 9",
+      "name": "Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 sent the king's knight from f1 where there is none; plan 2 developed the c8-bishop that is already on b7. Rewrote plans 1-2. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/1bp1bppp/p1np1n2/1p2p3/P3P3/1B1P1N2/1PP2PPP/RNBQR1K1 w - - 0 10",
+      "name": "Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave a knight route ending on e3 that the parser could not place and mixed the order; plan 4 rerouted the bishop to f8 with the rook there and promised a passed b-pawn. Rewrote plans 1, 2 and 4. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/1bp1bppp/p1np1n2/1p2p3/P3P3/1BPP1N2/1P3PPP/RNBQR1K1 b - - 0 10",
+      "name": "Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6 10.c3",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 aimed at an a6-pawn that is exchanged once the a-file opens; plan 4 rerouted the b7-bishop via c8-g4 or a8 (first rewrite rejected because the c6-knight blocks the diagonal to e4; corrected and accepted). Rewrote plans 3-4. British spelling."
+    },
+    {
+      "fen": "r2q1rk1/1bp1bppp/p1np1n2/1p2p3/P3P3/1BNP1N2/1PP2PPP/R1BQR1K1 b - - 1 10",
+      "name": "Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6 10.Nc3",
+      "eco": "C88",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played Nbd2-f1-g3 with the queen's knight already on c3; plan 2 proposed b4 through the b3-bishop. Rewrote plans 1, 2 and 4. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/5p1p/p1pb4/1p1n2p1/3PR3/1BP3Pq/PP3P1P/RNBQ2K1 w - - 0 16",
+      "name": "Ruy Lopez, Marshall Gambit with 15. Re4",
+      "eco": "C89",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 targeted a g2-pawn that has gone to g3; plan 2 gave Qf3 'to challenge g5' instead of the main-line Qf1 (first rewrite of plan 1 rejected because the g5-pawn does not touch e4; rewritten around ...Bf5 and accepted). Rewrote plans 1-2. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2p1bppp/p1n2n2/1p1pp3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - - 0 9",
+      "name": "Ruy Lopez: Marshall Attack",
+      "eco": "C89",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave ...Qh4-h3 with the queen still on d8. Rewrote plan 1. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/5ppp/p1pb4/1p1n4/3P4/1BP3Pq/PP3P1P/RNBQR1K1 w - - 1 15",
+      "name": "Ruy Lopez: Marshall Attack, Modern Main Line",
+      "eco": "C89",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 pushed d5 into the d5-knight (first rewrite rejected because Qf1 is blocked while the rook stays on e1; corrected and accepted). Rewrote plan 4. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/4bppp/p1p5/1p1nR3/8/1BP5/PP1P1PPP/RNBQ2K1 w - - 0 12",
+      "name": "Ruy Lopez: Marshall Attack, Modern Variation",
+      "eco": "C89",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 3 gave the nonsensical ...Ra7-g7. Rewrote plan 3. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2p1bppp/p4n2/1p2R3/8/1BP5/PP1P1PPP/RNBQ2K1 w - - 1 12",
+      "name": "Ruy Lopez: Marshall Attack, Original Marshall Attack",
+      "eco": "C89",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 played ...Qh4 through the e7-bishop; plan 3 opened a c-file for a rook; plan 4 put the queen on d2 where the pawn stands. Rewrote plans 1, 3 and 4 around Capablanca-Marshall 1918. British spelling."
+    },
+    {
+      "fen": "r1bq1rk1/2p1bppp/p7/1p1nR3/8/1BP5/PP1P1PPP/RNBQ2K1 b - - 0 11",
+      "name": "Spanish: Marshall, 11.Rxe5",
+      "eco": "C89",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had ...c6 followed by ...d5 with a knight already on d5. Rewrote plan 1. British spelling."
+    }
+  ]
+}

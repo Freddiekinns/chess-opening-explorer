@@ -1,10 +1,10 @@
 # Plan reference check
 
-1638 references on 1267 of 12377 pages fail the check and show as plain text.
+1576 references on 1227 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5451 name no move, route, square or piece
-- References by kind: {"square":16536,"piece":15831,"move":55139,"route":8656}
-- References by result: {"now":70253,"on-board":14856,"later":9415,"invalid":1638}
+- Plans: 41062, of which 5445 name no move, route, square or piece
+- References by kind: {"square":16547,"piece":15849,"move":55272,"route":8633}
+- References by result: {"now":70388,"on-board":14875,"later":9462,"invalid":1576}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -54,20 +54,20 @@
 - **C83 Spanish: Open, Classical, 10.Nbd2 O-O 11.Bc2 f5 12.exf6** (0 views)
   - `e6 pawn`: There is no pawn on e6, or on its way
   - `f1-e3`: One step of f1-e3 can't be played here
-- **C85 Spanish: Closed, Exchange, 7.Qe1 Nd7** (0 views)
-  - `Rad1`: No piece can play Rad1 here, now or after the plan's earlier moves
-- **C85 Spanish: Closed, Exchange, 7.Qe1 Nd7 8.b3** (0 views)
-  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
-- **C85 Spanish: Closed, Exchange, 7.Qe2** (0 views)
-  - `Nb1-d2-f1-e3`: One step of Nb1-d2-f1-e3 can't be played here
-- **C86 English Variation, Ruy Lopez** (0 views)
-  - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
-- **C86 Ruy Lopez: Closed, Worrall Attack** (0 views)
-  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+- **C88 Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3** (0 views)
+  - `Nf1-g3`: One step of Nf1-g3 can't be played here
+- **C88 Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6** (0 views)
   - `e3`: No piece can play e3 here, now or after the plan's earlier moves
-- **C86 Ruy Lopez: Closed, Worrall Attack, Castling Line** (0 views)
+- **C88 Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6 10.c3** (0 views)
+  - `...c8-g4`: One step of ...c8-g4 can't be played here
+  - `...a8`: No piece can play a8 here, now or after the plan's earlier moves
+- **C88 Spanish: Closed, Anti-Marshall 8.a4 Bb7 9.d3 d6 10.Nc3** (0 views)
   - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
-- **C86 Ruy Lopez: Closed, Worrall Attack, Delayed Castling Line** (0 views)
-  - `...Na5-c5`: One step of ...Na5-c5 can't be played here
-- **C86 Spanish: Worrall Attack, 6...b5** (0 views)
-  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+- **C89 Ruy Lopez, Marshall Gambit with 15. Re4** (0 views)
+  - `g2-pawn`: There is no pawn on g2, or on its way
+- **C89 Ruy Lopez: Marshall Attack** (0 views)
+  - `...Qh4-h3`: One step of ...Qh4-h3 can't be played here
+- **C89 Ruy Lopez: Marshall Attack, Modern Main Line** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **C89 Ruy Lopez: Marshall Attack, Modern Variation** (0 views)
+  - `...Ra7-g7`: One step of ...Ra7-g7 can't be played here

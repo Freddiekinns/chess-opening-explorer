@@ -14356,5 +14356,65 @@
     "verdict": "fixed",
     "contentHash": "4b5aa098b08bd905",
     "notes": "Plan 1 played Nh4 with no knight on f3; plan 2 proposed a minority attack the structure does not allow. Rewrote plans 1-2; British spelling in the overview."
+  },
+  "rnb1kbnr/pp3ppp/2p5/q3P3/2PpN3/8/PP1BPPPP/R2QKBNR b KQkq - 3 6": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "bafa80f9585854e9",
+    "notes": "Plan 1 supported d4 with ...f5; plan 2 harassed the queen with Nb3, a move no knight can make; plan 3 fianchettoed the light-squared bishop to g7. Rewrote plans 1-3 around ...Qxe5, Nf3/g3/e3 and ...Bf5/...Nd7. British spelling."
+  },
+  "rn1qkbnr/pp2pppp/2p5/3p4/2PP2b1/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d244e3d4eb07a0ce",
+    "notes": "Overview called ...Bg4 a pin (the e2-pawn blocks it); plan 1 wrote Black's Bxf3 into a White sequence. Rewrote the overview and plan 1; British spelling in plan 2."
+  },
+  "rn1qkbnr/pp2pppp/2p1b3/8/2pP4/4PN2/PP3PPP/RNBQKB1R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "1a8b5d7346fa94e4",
+    "notes": "Plan 1 chased the e6-bishop with Na4; plan 2 played ...e6 and ...Be7 with the bishop on e6 and the e-pawn at home (first rewrite with ...g6/...Bg7 rejected as unconfirmed; simplified and re-accepted); plan 3 attacked a d5-pawn that has gone. British spelling."
+  },
+  "rn1qkb1r/pp2pppp/2p2n2/3p4/2PP2b1/5NP1/PP2PP1P/RNBQKB1R w KQkq - 1 5": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "2029b04d562f5e6d",
+    "notes": "Overview and plan 2 called ...Bg4 a pin and said ...Bxf3 damages White's structure (the g2-bishop can recapture); plan 1 wrote gxf3 and an open g-file. Rewrote the overview and plans 1-2; British spelling."
+  },
+  "r2qkb1r/pp1n1ppp/2p1pn2/3p4/2PP2b1/5NP1/PP1NPPBP/R1BQ1RK1 b kq - 3 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "67d946d440530b9b",
+    "notes": "Plan 3 routed the d2-knight via f1, where the rook stands; plan 4 called ...Bg4 a pin and ...Bxf3 structural damage, though the d2-knight recaptures. Rewrote plans 3-4; British spelling."
+  },
+  "r2qk2r/pp1n1ppp/2pbpn2/3p4/2PP2b1/5NP1/PP1NPPBP/R1BQ1RK1 w kq - 4 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "9b0f6b5ea87b409b",
+    "notes": "Plan 2 named g4 onto the bishop's square; plan 3 named White's e4 in a Black plan; plan 4 called ...a6/...b5 a minority attack. Rewrote plans 2-4; British spelling."
+  },
+  "r2qk2r/pp1nbppp/2p1pn2/3p4/2PP2b1/5NP1/PP1NPPBP/R1BQ1RK1 w kq - 4 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "4c735f50874bd9ef",
+    "notes": "Plan 1 routed the d2-knight via f1, where the rook stands; plan 2 called ...Bg4 a pin. British spelling in the overview."
+  },
+  "r2qkb1r/pp1n1ppp/2p1pn2/3p1b2/2PP4/5NP1/PP2PPBP/RNBQ1RK1 w kq - 2 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d82f54d53b8fe109",
+    "notes": "Plan 3 rerouted a knight ...Nf6-d7-f8 to stop e4, which makes no sense here. Rewrote plans 2-3; British spelling in the overview."
+  },
+  "rn1qkb1r/pp3pp1/2p1pn1p/3p1b2/2PP4/5NP1/PP2PPBP/RNBQ1RK1 w kq - 0 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "f90282e5acff0382",
+    "notes": "Plan 1 proposed a b4-b5 minority attack the structure does not allow; plan 3 gave an Nc3-e1-d3 route; plan 4 wrote the pawn triangle as a route and named Nh4 in a Black plan. Rewrote the overview's ...h6 sentence and plans 1, 3 and 4. British spelling."
+  },
+  "rn1qkb1r/pp3pp1/2p1pn1p/3p1b2/2PP4/5NP1/PP1NPPBP/R1BQ1RK1 b kq - 1 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "7de578694fc99dda",
+    "notes": "Plan 1 supported e4 with Qe2 while the e2-pawn stands there; plan 3 was vague; plan 4 routed the d2-knight via f1, where the rook stands. Rewrote plans 1, 3 and 4; British spelling."
   }
 }

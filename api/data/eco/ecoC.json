@@ -139579,10 +139579,10 @@
         "Defense and Consolidation"
       ],
       "common_plans": [
-        "Black aims to use their lead in development to create immediate threats against White's king, often involving moves like ...c6, ...Bb7, ...Qh4, and bringing rooks into the attack.",
+        "Black: Recapture with ...Nxd5, the main line (9...e4 is a rarer alternative), let White take on e5, and use the lead in development for ...c6, ...Bd6 and a queen sortie to h4 against the white king.",
         "White's primary plan is to survive Black's initial storm, defend accurately, exchange pieces to reduce the attacking pressure, and ultimately convert the extra pawn in the endgame.",
-        "Black often targets the weak light squares around White's king (f2, g3, h2) and uses the open e-file for their rook.",
-        "White seeks to complete development, challenge Black's central control, and create counterplay on the queenside or through the center once the kingside is secure."
+        "Black often targets the dark squares around White's king, h2 and f2, with the bishop coming to d6, and uses the e-file for the rooks once the e5-pawn has gone.",
+        "White seeks to complete development, challenge Black's central control, and create counterplay on the queenside or through the centre once the kingside is secure."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T09:09:33.558Z"
@@ -139638,7 +139638,7 @@
         "Exploiting Weak Squares"
       ],
       "common_plans": [
-        "Black: Rapidly develop pieces towards the kingside (...Bb7, ...Qh4, ...Re6-g6) to create direct threats against White's king, often involving further sacrifices.",
+        "Black: After the exchanges on e5, develop rapidly towards the kingside with ...c6, ...Bd6 and a queen sortie to h4, often swinging a rook over along the sixth rank, and be ready for further sacrifices.",
         "White: Survive the initial attack, trade pieces (especially the queens) to relieve pressure, consolidate the position, and aim to convert the extra pawn in the resulting endgame.",
         "Black: Use the open e-file and active pieces to prevent White from coordinating and completing development.",
         "White: Push d4 at an opportune moment to challenge Black's central influence and open lines for the queen and c1-bishop."
@@ -140001,9 +140001,9 @@
         "Kingside Attack"
       ],
       "common_plans": [
-        "Black: Continue the kingside attack with moves like ...Qh3, ...Bg4, and a rook lift (...Rf6-h6), targeting White's weakened king position.",
+        "Black: Continue with ...Qh3, then ...Bg4 or ...Bf5 and a rook brought over via ...Rae8 and ...Re6, targeting the weakened light squares around White's king.",
         "White: Defend accurately, seek to exchange Black's most dangerous attacking pieces (especially the queen), and consolidate the extra pawn.",
-        "White: Untangle pieces, challenge Black in the center, and aim to transition into a winning endgame where the material advantage is decisive.",
+        "White: Untangle pieces, challenge Black in the centre, and aim to transition into a winning endgame where the material advantage is decisive.",
         "Black: Maintain the initiative at all costs, preventing White from completing development and coordinating their pieces."
       ],
       "version": "1.0",
@@ -140063,8 +140063,8 @@
         "Exploiting Weak Color Complexes"
       ],
       "common_plans": [
-        "Black: Launch a swift kingside attack with ...Qh4, often followed by ...Bg4. Maneuver the a8-rook to the kingside via the ...Re8-e6-g6/h6 lift. Create decisive threats against the white king or force a favorable endgame.",
-        "White: Consolidate the position and neutralize Black's threats, using the Re2 to defend the second rank (e.g., g3 and Rh2). Complete development, trade pieces to defuse the attack, and aim to convert the extra pawn in the long run."
+        "Black: Attack with ...Qh4 and ...Bg4, which also hits the e2-rook, bring the a8-rook over via e8 and e6 to the kingside, and aim for either a decisive attack or regaining the pawn on favourable terms.",
+        "White: Consolidate with the rook on e2 covering the second rank, answer ...Qh4 with g3, complete development with Nd2 and the c1-bishop, and trade pieces to convert the extra pawn in the long run."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:14:20.707Z"
@@ -140079,7 +140079,7 @@
     "name": "Spanish: Marshall, Main Line, 15.Be3",
     "scid": "C89p",
     "analysis_json": {
-      "description": "The Marshall Attack is a sharp and dynamic gambit where Black sacrifices a pawn for a dangerous, long-term attack against the White king. This main line with 15.Be3 sees White developing solidly, aiming to consolidate and neutralize Black's initiative while Black seeks to exploit the exposed kingside. The resulting positions are incredibly tactical and complex, suiting players who thrive on initiative, calculation, and attacking play.",
+      "description": "The Marshall Attack is a sharp and dynamic gambit where Black sacrifices a pawn for a dangerous, long-term attack against the White king. This main line with 15.Be3 sees White developing solidly, aiming to consolidate and neutralise Black's initiative while Black seeks to exploit the exposed kingside. The resulting positions are incredibly tactical and complex, suiting players who thrive on initiative, calculation, and attacking play.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -140123,10 +140123,10 @@
         "Queenside Majority vs. Central Control"
       ],
       "common_plans": [
-        "Black: Continue the attack with moves like ...Bg4, ...f5-f4, and bringing rooks into the game via ...Re8 and ...Rae8 to prevent White from consolidating.",
-        "White: Defend precisely, challenge Black's active pieces, and consolidate the position, often with Qd2. Aim to trade pieces to relieve pressure and eventually utilize the extra pawn.",
+        "Black: Continue with ...Bg4 and ...Rae8, often followed by ...Re6, and consider the ...f5-f4 push to break open White's kingside before White consolidates.",
+        "White: Defend precisely, challenge Black's active pieces and consolidate, usually with Qd3 and Nd2. Aim to trade pieces to relieve pressure and eventually make use of the extra pawn.",
         "Black: Create mating threats on the kingside, often by targeting the g3 pawn and the f2 square.",
-        "White: Push the d-pawn (d5) at an opportune moment to break up Black's coordination and open lines for White's pieces."
+        "White: Remove key attackers when possible, for instance by Bxd5, and use a4 against Black's queenside so that the extra pawn eventually counts."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:14:35.247Z"
@@ -140201,7 +140201,7 @@
     "name": "Spanish: Marshall, Main Line, 15.Be3 Bg4 16.Qd3",
     "scid": "C89p",
     "analysis_json": {
-      "description": "The Marshall Attack is a sharp, gambit-style defense where Black sacrifices a pawn for a dangerous and lasting attack against the white king. This specific line is a critical battleground where White's 16.Qd3 aims to control key squares and prepare to untangle, while Black's pin with 16...Bg4 maintains immense pressure. This opening is perfect for aggressive, tactical players who thrive on initiative and complex, double-edged positions.",
+      "description": "The Marshall Attack is a sharp gambit where Black sacrifices a pawn for a dangerous and lasting attack against the white king. In this main line, 15...Bg4 attacked the queen, and 16.Qd3 puts it on a square where it covers f5 and f1 and prepares Nd2 and Qf1 to untangle. Black keeps up the pressure with ...Rae8 and ...Re6. This opening is perfect for aggressive, well-prepared players who thrive on initiative and complex, double-edged positions.",
       "style_tags": [
         "Aggressive",
         "Tactical",
@@ -140244,7 +140244,7 @@
       ],
       "common_plans": [
         "Black: Continue the attack with ...Rae8 and a potential ...f5-f4 pawn push, maintaining pressure on White's king.",
-        "White: Defend accurately, untangle pieces via Nd2-f1-g3, challenge Black's queen, and aim to trade pieces to simplify into a winning endgame with the extra pawn."
+        "White: Defend accurately, untangle with Nd2 and Qf1 to challenge Black's queen, and aim to trade pieces to simplify into an endgame where the extra pawn counts."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:15:29.155Z"
@@ -140302,9 +140302,9 @@
         "Material vs. Activity"
       ],
       "common_plans": [
-        "Black's plan is to continue the kingside assault, often involving ...f5 to open the f-file, using the pin on f3, and creating mating threats against the exposed white king.",
-        "White aims to survive the initial onslaught by carefully defending, untangling pieces (e.g., Nd2-f1-g3), and challenging Black's active pieces.",
-        "White's long-term goal is to neutralize Black's initiative, simplify the position through exchanges, and convert the extra pawn in the endgame.",
+        "Black's plan is to continue the kingside assault, often with ...Re6 to bring the rook towards the king or ...f5-f4 to open lines, creating mating threats against the exposed white king.",
+        "White aims to survive the initial onslaught by carefully defending, untangling pieces with Nd2 and Qf1, and challenging Black's active pieces.",
+        "White's long-term goal is to neutralise Black's initiative, simplify the position through exchanges, and convert the extra pawn in the endgame.",
         "Black must maintain pressure and avoid piece trades that would relieve the tension on White's position."
       ],
       "version": "1.0",
@@ -140427,9 +140427,9 @@
       ],
       "common_plans": [
         "Black: Build the attack with ...f5-f4, transfer a rook to the h-file via ...Re6-h6, and create threats against the g3-pawn and h2-square.",
-        "White: Consolidate the kingside with Nf1-g3, challenge Black's control of the e-file, trade pieces to relieve pressure, and eventually utilize the extra pawn.",
-        "Black: Maintain constant pressure to prevent White from untangling their pieces and coordinating a defense.",
-        "White: Seek opportunities for queenside counterplay with a3 and b4 to distract Black from the kingside attack."
+        "White: Challenge Black's queen with Qf1, which also covers the kingside, contest the e-file, trade pieces to relieve pressure and eventually make use of the extra pawn.",
+        "Black: Maintain constant pressure to prevent White from untangling their pieces and coordinating a defence.",
+        "White: Use a4 to open the a-file and distract Black from the kingside attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:16:16.725Z"
@@ -140781,10 +140781,10 @@
         "Exploiting Weak Squares"
       ],
       "common_plans": [
-        "Black's Plan: Continue the kingside assault with moves like ...Qh5 or ...Rh6, aiming for a decisive attack or a favorable endgame due to White's exposed king.",
+        "Black's Plan: Continue the kingside assault with moves like ...Qh5 or ...Rh6, aiming for a decisive attack or a favourable endgame due to White's exposed king.",
         "White's Plan: Survive the initial onslaught, exchange pieces (especially the queens) to relieve pressure, and convert the extra pawn in the endgame.",
         "Black's Plan: Prevent White from consolidating by creating constant threats and maintaining the initiative, even at the cost of more material.",
-        "White's Plan: Use the a-pawn (...a4) to create a distraction and challenge Black's queenside pawn structure."
+        "White's Plan: Use the a-pawn with a4 to open the a-file and give Black something to think about on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:18:07.421Z"
@@ -140862,7 +140862,7 @@
       "eco_js": "Ruy Lopez: Closed Variations, Closed Defense"
     },
     "analysis_json": {
-      "description": "The Ruy Lopez Closed is the quintessential classical opening, representing a deep and strategically rich battleground. White aims to build a powerful center with the c3-d4 pawn lever, preparing for a long-term struggle, while Black establishes a solid, resilient setup, preparing to counter-punch in the center or expand on the queenside. This opening is perfect for patient, strategic players who excel at maneuvering, understanding subtle positional nuances, and executing long-term plans.",
+      "description": "The Ruy Lopez Closed is the quintessential classical opening, representing a deep and strategically rich battleground. White aims to build a powerful centre with the c3-d4 pawn lever, preparing for a long-term struggle, while Black establishes a solid, resilient setup, preparing to counter-punch in the centre or expand on the queenside. This opening is perfect for patient, strategic players who excel at manoeuvring, understanding subtle positional nuances, and executing long-term plans.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -140906,8 +140906,8 @@
         "Tension in the Center"
       ],
       "common_plans": [
-        "White: Execute the d4 pawn break to gain central space and open lines. Prepare a kingside attack, often by maneuvering the knight via Nf1-g3-f5. Restrict Black's counterplay on the queenside.",
-        "Black: Solidify the position and prepare to counter in the center with ...d5. Create queenside counterplay with moves like ...Na5 and ...c5. Maneuver pieces to optimal squares to neutralize White's pressure (e.g., the Breyer maneuver ...Nb8-d7)."
+        "White: Play h3 and d4 to gain central space, then bring the queen's knight round with Nbd2-f1-g3 with an eye on the kingside, and restrict Black's queenside counterplay.",
+        "Black: Choose a set-up after 9.h3: the Chigorin with ...Na5 and ...c5, the Breyer with the knight back to b8 and on to d7, or the Zaitsev with ...Bb7 and ...Re8, all aimed at holding e5 and building queenside counterplay."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-20T15:18:47.253Z"

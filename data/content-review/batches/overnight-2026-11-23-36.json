@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r2q1rk1/pp1n1pp1/2p1pnbp/8/Pb1PP3/2NB1N2/1P2QPPP/R1B2RK1 w - - 0 12",
+      "name": "Slav: Dutch, 8...O-O 9.Qe2 Nbd7 10.e4 Bg6 11.Bd3 h6",
+      "eco": "D19",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave an impossible f2-f4-f5 push (knight on f3); replaced with Rd1/Re1 and e5. British spelling elsewhere."
+    },
+    {
+      "fen": "r2qr1k1/pp1n1ppp/2p1pnb1/8/Pb1PP3/2NB1N2/1P2QPPP/R1B2RK1 w - - 3 12",
+      "name": "Slav: Dutch, 8...O-O 9.Qe2 Nbd7 10.e4 Bg6 11.Bd3 Re8",
+      "eco": "D19",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave f2-f4-f5 with the knight on f3; plan 2 said ...Qa5 presses d4. Rewrote both (e5 Nf6-kick; ...e5 break, ...Nf8, ...Bh5 pin); British spelling."
+    },
+    {
+      "fen": "rn1q1rk1/pp3ppp/2p1p3/5b2/PbBPn3/2N1PN2/1P2QPPP/R1B2RK1 w - - 5 10",
+      "name": "Slav: Dutch, 8...O-O 9.Qe2 Ne4",
+      "eco": "D19",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 traded on e4 with a c4-bishop that cannot reach it and pressed a d5-pawn Black does not have. Rewrote both plans; overview now says what 9...Ne4 does; British spelling."
+    },
+    {
+      "fen": "rnbqk1nr/ppp2ppp/8/8/1bBP4/8/PP3PPP/RNBQK1NR w KQkq - 1 6",
+      "name": "QGA: 3.e3 e5",
+      "eco": "D20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview called the structure symmetrical; plan 3 called the d-file open with a pawn on d4. Rewrote overview and plans (isolated d4-pawn, block the check, e-file and d5); British spelling."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/4p3/8/2pP4/4P3/PP3PPP/RNBQKBNR w KQkq - 0 4",
+      "name": "QGA: 3.e3 e6",
+      "eco": "D20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 put the isolated pawn and a minority attack in Black's camp; plans used 0-0 and Be2/d3 shorthand. Rewrote both plans; British spelling."
+    },
+    {
+      "fen": "rnbqk1nr/ppp2ppp/8/4p3/1bpPP3/5N2/PP3PPP/RNBQKB1R w KQkq - 2 5",
+      "name": "QGA: 3.e4 e5 4.Nf3 Bb4+",
+      "eco": "D20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 was vague; plan 2 wrote Nc3 as a Black move. Rewrote both (block with Bd2/Nc3, regain c4; ...exd4 and the pin)."
+    },
+    {
+      "fen": "rnbqkbnr/ppp2ppp/4p3/8/2pPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4",
+      "name": "QGA: 3.Nc3 e6 4.e4",
+      "eco": "D20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 used Be2/d3 shorthand; rewrote it; British spelling elsewhere."
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+      "name": "QGA: 3.Nc3 Nf6",
+      "eco": "D20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 wrote the centre as a d4-e4 route; plan 2 missed the ...e5 counter. Rewrote both; British spelling."
+    },
+    {
+      "fen": "rnbqkbnr/ppp1pppp/8/8/Q1pP4/8/PP2PPPP/RNB1KBNR b KQkq - 1 3",
+      "name": "Queen's Gambit Accepted: Accelerated Mannheim Variation",
+      "eco": "D20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 sent the queen to d3 or c2 and named Be2 loosely; rewrote both plans (Qxc4, blocks ...c6/...Nc6, time against the queen)."
+    },
+    {
+      "fen": "rnb1kbnr/ppp1qppp/8/8/2Bp4/PQ2P3/1P3PPP/RNB1K1NR b KQkq - 0 6",
+      "name": "Queen's Gambit Accepted: Old Variation, Billinger Gambit",
+      "eco": "D20",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview said 6.a3 stops a ...Bb4 pin; it stops ...Qb4+ and ...Bb4+. Plan 3 castled with the f8-bishop still home. Fixed both; British spelling."
+    }
+  ]
+}

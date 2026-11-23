@@ -4,12 +4,11 @@ Phase: **1 — Discover** (nights 1–5). Gate A at the end.
 
 ## Next
 
-**Night 4 — what the free chess book needs** (queue item 4). The common plans as
-they stand (#228–236), what a real opening book chapter has that a plan list
-lacks, and what can be built from data we already hold. Carry in night 3's
-findings (`research/03-youtube.md`): the unit drills what its video covers, so
-it sits at family level; and read the Practice flow — 13 started, 5 finished —
-to find where it loses people before any unit leans on it.
+**Night 5 — your games** (queue item 5). The deviation-trainer PRD
+(`docs/proposals/2026-07-11-deviation-trainer-prd.md`), what shipped from slice 1
+and why slice 2 never started; how others connect games to study. Carry in
+night 4's shrunk candidate (`research/04`): Practice fixes + #196, then one
+family unit as the Gate B prototype.
 
 Before Gate A, every candidate is checked against the open issues that already
 cover parts of it (`gh api` the issue list): #195 personal strip, #196 practice
@@ -25,9 +24,10 @@ Phase 1 — Discover (one research file each):
 3. ~~Why learners use YouTube and not sites like ours~~ — done, extra run
    2026-11-23. Candidate: a family-level study unit (short video → play the line
    → review), pending Practice's drop-off and night 4/5.
-4. **What the free chess book needs.** The common plans as they stand
-   (#228–236), what a real opening book chapter has that a plan list lacks, and
-   what can be built from data we already hold without new pipelines.
+4. ~~What the free chess book needs~~ — done, extra run 2026-11-23. The book
+   exists (Wikibooks); ours lacks a chapter's shape. Candidate shrunk: Practice
+   fixes (wrong-move message, show the line first, band-aware extension) +
+   #196, then one family unit.
 5. **Your games.** The deviation-trainer PRD, what shipped from slice 1, and why
    slice 2 never started; how others (Aimchess, Chessbook, Lichess insights)
    connect games to study.
@@ -66,4 +66,6 @@ Phase 4 — Retrospective: `retro.md`.
   X" (study)? Decides who a study unit serves (`research/03`, critic 3).
 - Do Hanging Pawns' and Naroditsky's videos carry chapter timestamps? (Cloud
   gets YouTube's captcha.) Decides whether "jump to this line" is cheap.
+- Read `practice_abandon` `{moves, of}` in PostHog: where do the 8 of 13 stop?
+  Decides which Practice fix comes first (`research/04` §3).
 - Week 1: owner posts weekly usage % in the inbox each morning.

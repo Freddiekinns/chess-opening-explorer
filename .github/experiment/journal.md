@@ -2,6 +2,30 @@
 
 Newest first. Template in `operating.md`.
 
+## Extra run — 2026-11-23 (13:52 UTC) — researcher: the free chess book (night 4)
+
+Did: profiled the generated book (`analysis_json` on all 12,377 positions, the
+content ledger, families); read #228–236; played Practice on production at 390
+px (`gates/night4/`); read 12 primary pages (Wikibooks ×3, Chess.com's Italian
+page, a Move by Move extract as text, Chessbook, three coaching articles, Chassy
+& Gobet 2011); wrote `research/04-free-chess-book.md`; ran the critic and
+answered it in the file.
+Decided: the free chess book exists (Wikibooks, pulled into Lichess's explorer),
+good at the top of the tree and thin below it; what ours lacks is a chapter's
+shape — key positions, plans shown in games, questions, the why. We can build
+the questions from real explorer data, not the prose. Practice silently rejects
+a wrong move, ends at "Complete!" with nothing next, and on the Italian its
+popularity-picked extension drills 4.Nc3 Nxe4. The critic shrank the candidate
+again: Practice fixes + #196 first, then one unit for one family as the Gate B
+prototype; no 31-family book.
+Assumed: one Practice page is indicative of the mechanism, not its frequency.
+Refused: lichess.org, chessable.com (403); stackexchange and reddit (fetch tool).
+Also noted: a stray `git checkout origin/main --` detached HEAD mid-run; caught
+before any commit, nothing lost.
+Next: night 5, your games (unit 2 of this run, by subagent brief).
+Cost: minutes ~10 (container clock), tool calls ~55, subagents 1 (critic, ~50k
+tokens), web pages 12 (+5 searches; 6 refused).
+
 ## Extra run — 2026-11-23 (13:41 UTC) — researcher: why learners use YouTube (night 3)
 
 Did: profiled `video-index.json` and the production page at 390 px; read 11

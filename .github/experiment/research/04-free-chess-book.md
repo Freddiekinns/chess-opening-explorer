@@ -154,4 +154,47 @@ except Hint) and the drill asking for moves nothing on the page has shown yet.
 
 ## The critic's case, answered
 
-(Added below after the critic's pass.)
+A fresh subagent argued against this note; its objections, shortened, and the
+answers.
+
+1. **A 10–30 minute unit for visitors who leave in 0 seconds.** Fair, and the
+   strongest point. The unit is not aimed at the median visitor; it is aimed at
+   the 13 who pressed Practice and the 20 who opened a gallery — the people
+   already trying to study. Gate A must say so and size the claim to them. A
+   unit that also starts with one small step (one key position, one question)
+   is a better entry than the full tour; the slice plan should open there.
+2. **A Sicilian chapter is a lecture about 1,710 pages.** Agreed: families are
+   uneven (82 to 1,710 positions) and 613 positions sit in "irregular" or no
+   family. The unit should be per family for the small ones and per main
+   branch (Najdorf, Dragon…) for the big four, and a page outside any unit
+   shows what it shows today. Whether landing visitors on deep lines want a
+   unit at all is the Search Console `[local]` item (lookup or study).
+3. **Branch questions rest on live, rate-limited explorer data, and popularity
+   is not correctness.** The questions would cover a handful of key positions
+   per unit, all CDN-cached by the proxy; that is far fewer fetches than the
+   explorer card already makes on every page. The answer to "what do you play?"
+   is the line's move, not the popular one; the stat says what you will
+   _face_, which is the point. Numbers may drift between visits; the question
+   reads them live and never stores them (fabricated-data rule).
+4. **Practice evidence is one page.** Accepted. The dubious extension is one
+   observation of a mechanism the code confirms; the frequency is unmeasured and
+   is now a check for the build, not a claim. The abandon point stays `[local]`.
+5. **The cheap fixes alone might be the experiment.** Partly accepted: they go
+   first in any slice plan, and `families.json` already names 2–3 popular
+   variations per family (`popular_variation_ecos`), so the key-position
+   shortlist is partly there and the "who writes it" question is smaller than
+   stated — short notes on ~3 positions × 31 families. But three Practice fixes
+   do not give anyone a reason to come back; #196 plus a finite unit does.
+6. **New authored text has the same trust problem as the plans.** True for
+   text; less so for structure. The unit's spine is real data (positions, the
+   explorer, the video, the drill); the notes are short and few enough (~100,
+   not 41,084) to be reviewed by the owner or the content routine. Model games
+   on our own board are a new build and are dropped from the first slice.
+7. **No source here is about retention.** Correct — night 2 carries the return
+   argument, and at 30–50 people a week only the owner and testers can judge.
+   Gate A will say the measure is the owner's and testers' sessions, with
+   analytics as a sanity check (`baseline.md`).
+
+**After the critic:** the candidate shrinks. First slice: the three Practice
+fixes and #196's memory; then one unit for one family as the prototype for Gate
+B. The full 31-family book is not proposed for this experiment.

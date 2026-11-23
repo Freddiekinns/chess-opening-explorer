@@ -17,6 +17,12 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-23 ~13:50 UTC — **Extra run** (charter: Extra runs), ten minutes
+  before the weekly reset. The night's work as `operating.md` now says: the
+  plan's next items, up to two units, with the usage-proxy limits. Running past
+  the reset is fine. Tuesday 01:00 UTC takes whatever comes after. (Owner, in
+  chat.)
+
 - 2026-11-23 afternoon — **Extra run** (charter: Extra runs). Unit of work: the
   plan's next item, night 3 (why learners use YouTube and not sites like ours),
   under the new run limits in `operating.md` (read in depth, critic if budget is

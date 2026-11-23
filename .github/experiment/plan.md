@@ -4,10 +4,12 @@ Phase: **1 — Discover** (nights 1–5). Gate A at the end.
 
 ## Next
 
-**Night 2 — how others teach openings** (queue item 2). Night 1's finding to
-test against: the site is a reference, not a lesson, and nothing brings a
-learner back (`research/01-journey-today.md`). Look for what makes a session
-have an end, and what makes a learner return.
+**Night 3 — why learners use YouTube and not sites like ours** (queue item 3).
+Start with the creators `api/data/video-index.json` ranks highest (31 MB: read
+its shape with a streaming or `head -c` look, never whole). Night 2's finding to
+test: learners already run video → written book → drill → own games across four
+sites, and hop video to video and forget (`research/02-how-others-teach.md`).
+What would make our page the place they watch, then keep going?
 
 Before Gate A, every candidate is checked against the open issues that already
 cover parts of it (`gh api` the issue list): #195 personal strip, #196 practice
@@ -19,14 +21,8 @@ proposed three shapes that overlap #195 and #196 without citing them.
 
 Phase 1 — Discover (one research file each):
 
-2. ~~How others teach openings~~ — now Next. Chessable, Lichess studies and
-   practice, Chess.com lessons, Aimchess, Chessbook, opening books (Everyman
-   "move by move", Starting Out), and the YouTube creators the video index
-   already ranks highest. What makes a learner stay for a session, and come
-   back.
-3. **Why learners use YouTube and not sites like ours.** Comments, creator
-   formats, what a viewer does after a video. What would make a video on our
-   page the better place to watch it.
+2. ~~How others teach openings~~ — done, night 2.
+3. ~~Why learners use YouTube and not sites like ours~~ — now Next.
 4. **What the free chess book needs.** The common plans as they stand
    (#228–236), what a real opening book chapter has that a plan list lacks, and
    what can be built from data we already hold without new pipelines.

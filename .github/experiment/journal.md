@@ -2,6 +2,20 @@
 
 Newest first. Template in `operating.md`.
 
+## Night 2 — 2026-11-23 — researcher: how others teach openings
+
+Did: surveyed Chessable, Chessbook, Lichess studies, Aimchess, Chess.com
+Practice and the Move by Move books, plus learner forum advice; wrote
+`research/02-how-others-teach.md`, pushed in two parts as the owner asked.
+Decided: a session ends when a finite unit is done, and learners return only
+when something changes while they are away (reviews come due, or new games); no
+free site joins video → written book → drill → own games for one opening, and we
+hold three of the four. Assumed: search summaries and listings are good enough
+for a first pass (nothing clicked or signed into); the video index's top
+creators moved to night 3, where they fit. Next: night 3, why learners use
+YouTube and not sites like ours. Cost: tool calls ~14, subagents 0, web pages 0
+(7 searches, no page fetches).
+
 ## Night 1 — 2026-11-22 — researcher: the learner's journey today
 
 Did: walked three learners (London beginner, KID club player, Google arrival on

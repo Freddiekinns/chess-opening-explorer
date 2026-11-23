@@ -9,23 +9,23 @@ back?**
 
 ## The products, in one line each
 
-| Product | Unit of study | What ends a session | What brings you back |
-| --- | --- | --- | --- |
-| **Chessable** (MoveTrainer) | A course chapter: text/video, then lines you must play on the board | The chapter's lines are learned, or today's reviews are cleared | Spaced repetition: lines come back "when due", missed ones sooner |
-| **Chessbook** | Your own repertoire tree, built from several sources | Review queue empty; coverage % per opening | Reviews due; it checks your recent Lichess/Chess.com games against your repertoire and quizzes you on where you went wrong |
-| **Lichess studies** | A chapter; "interactive lesson" mode gives instructions, hints, right/wrong feedback | The chapter's last move | Nothing built in; listudy.org (third party) adds a move trainer on top |
-| **Aimchess** | A report on your last ~40 games, then trainers | The trainer set | Your new games: it finds your commonest opening mistakes and drills the right move with spaced repetition |
-| **Everyman "Move by Move"** (book) | A chapter built round complete annotated games | The chapter | — (a book); its form is Q&A that "replicates lessons between teacher and student", with exercises throughout |
+| Product                            | Unit of study                                                                        | What ends a session                                             | What brings you back                                                                                                       |
+| ---------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Chessable** (MoveTrainer)        | A course chapter: text/video, then lines you must play on the board                  | The chapter's lines are learned, or today's reviews are cleared | Spaced repetition: lines come back "when due", missed ones sooner                                                          |
+| **Chessbook**                      | Your own repertoire tree, built from several sources                                 | Review queue empty; coverage % per opening                      | Reviews due; it checks your recent Lichess/Chess.com games against your repertoire and quizzes you on where you went wrong |
+| **Lichess studies**                | A chapter; "interactive lesson" mode gives instructions, hints, right/wrong feedback | The chapter's last move                                         | Nothing built in; listudy.org (third party) adds a move trainer on top                                                     |
+| **Aimchess**                       | A report on your last ~40 games, then trainers                                       | The trainer set                                                 | Your new games: it finds your commonest opening mistakes and drills the right move with spaced repetition                  |
+| **Everyman "Move by Move"** (book) | A chapter built round complete annotated games                                       | The chapter                                                     | — (a book); its form is Q&A that "replicates lessons between teacher and student", with exercises throughout               |
 
 ## What the sources agree on
 
 1. **A session ends when a finite thing is done.** Every product above has one:
    a chapter, a review queue, a trainer set. Our opening page has none — it is
    12,377 positions of reference with no "you've done this one".
-2. **Return visits are driven by something that changes while you're away.**
-   Two mechanisms only: _reviews come due_ (Chessable, Chessbook) or _you played
-   new games_ (Chessbook, Aimchess). Nobody brings learners back with new
-   content alone.
+2. **Return visits are driven by something that changes while you're away.** Two
+   mechanisms only: _reviews come due_ (Chessable, Chessbook) or _you played new
+   games_ (Chessbook, Aimchess). Nobody brings learners back with new content
+   alone.
 3. **Playing the move beats reading it.** Chessable, Chessbook, Lichess
    interactive lessons and the Move by Move Q&A all make the learner produce the
    move before showing it. Our Practice mode does this for one line, then
@@ -45,8 +45,8 @@ back?**
    written repertoire → spaced-repetition drill → refine from your own games._
    One poster's failure mode is ours too: hopping video to video, opening to
    opening, and forgetting the first. Chess.com's Practice pairs a drill against
-   the engine with a "Learn" tab lesson for the chosen opening — the only
-   free, single-site version of steps 1 and 3 found tonight.
+   the engine with a "Learn" tab lesson for the chosen opening — the only free,
+   single-site version of steps 1 and 3 found tonight.
 
 ## What this means for us
 
@@ -56,8 +56,8 @@ back?**
   play the moves (step 3, single line, no memory). Step 4 has a seam: `/analyse`
   links into pages with `ref=personal&username=…`, ignored today.
 - **The cheapest "end" for a session** is a finite unit on one opening — a
-  chapter with N lines to play through — and a visible "done". That is a
-  lesson, not a reference page.
+  chapter with N lines to play through — and a visible "done". That is a lesson,
+  not a reference page.
 - **The cheapest "reason to return"** without accounts is local state that
   changes while you're away: lines due for review (#196 practice memory is the
   existing issue) or "your recent games left your lines here" (the deviation
@@ -82,18 +82,24 @@ back?**
 
 ## Sources
 
-- Chessable MoveTrainer: [Andy Matuschak's notes](https://notes.andymatuschak.org/zDr94hP6bG3jJYrdYy8B5hx),
+- Chessable MoveTrainer:
+  [Andy Matuschak's notes](https://notes.andymatuschak.org/zDr94hP6bG3jJYrdYy8B5hx),
   [FIDE, "From flashcards to Chessable"](https://www.fide.com/from-flashcards-to-chessable/),
   [Zwischenzug on spaced repetition](https://zwischenzug.substack.com/p/spaced-repetition)
-- Chessbook: [App Store listing](https://apps.apple.com/us/app/chessbook/id6466343415)
-- Lichess: [Interactive lessons](https://lichess.org/blog/WtDErSQAADJfhJJs/interactive-lessons),
+- Chessbook:
+  [App Store listing](https://apps.apple.com/us/app/chessbook/id6466343415)
+- Lichess:
+  [Interactive lessons](https://lichess.org/blog/WtDErSQAADJfhJJs/interactive-lessons),
   [Chess insights](https://lichess.org/blog/VmZbaigAABACtXQC/chess-insights)
 - Aimchess: [aimchess.com](https://aimchess.com),
   [review on Chess.com](https://www.chess.com/blog/SheldonOfOsaka/aimchess-a-review)
-- Chess.com: [What is Practice](https://support.chess.com/en/articles/8724749-what-is-practice),
+- Chess.com:
+  [What is Practice](https://support.chess.com/en/articles/8724749-what-is-practice),
   [Opening Insights](https://www.chess.com/news/view/announcing-opening-insights)
-- Move by Move: [English: Move by Move](https://www.simonandschuster.com/books/English-Move-by-Move/Steve-Giddins/9781857446999),
+- Move by Move:
+  [English: Move by Move](https://www.simonandschuster.com/books/English-Move-by-Move/Steve-Giddins/9781857446999),
   [Sicilian Scheveningen preview](https://www.everand.com/book/951184708/The-Sicilian-Scheveningen-Move-by-Move)
-- Workflow: [CheckRaiseMate, how to learn an opening](https://lichess.org/@/CheckRaiseMate/blog/how-to-learn-an-opening-in-2023/1Utogv4G),
+- Workflow:
+  [CheckRaiseMate, how to learn an opening](https://lichess.org/@/CheckRaiseMate/blog/how-to-learn-an-opening-in-2023/1Utogv4G),
   [Chess.com forum, preferred method](https://www.chess.com/forum/view/chess-openings/preferred-method-for-learning-openings),
   [MoveTrainer vs a video series](https://www.chess.com/forum/view/chess-openings/learning-with-movetrainer-vs-a-video-series)

@@ -2,6 +2,23 @@
 
 Newest first. Template in `operating.md`.
 
+## Extra run, unit 2 — 2026-11-23 (~14:00 UTC) — researcher: your games (night 5)
+
+Did: a fresh subagent read the deviation-trainer PRD, the Analyse code, the
+backlog, #195/#207 and nine product and coaching pages and returned a brief;
+wrote `research/05-your-games.md` from it; ran the critic and answered it.
+Decided: slice 2 stalled on sequencing only (backlog rev 4); every competitor
+compares games against a repertoire you build first; Analyse has 15 users a
+month, so own games are an optional later layer, not the front door or the
+return hook. Gate A will recommend: `?practice=` (#195's seam) + Practice fixes
++ #196 memory first, then one family unit as the Gate B prototype.
+Assumed: competitors' marketing pages describe them truly (none tried).
+Refused: lichess.org pages; OpenTree returned only its title.
+Next: night 6, Gate A — Tuesday 01:00 UTC.
+Cost (whole run): minutes ~15 by container clock, tool calls ~65, subagents 3
+(~178k tokens: critic 50k, brief 75k, critic 53k), web pages 21 (12 + 9 by
+subagent; +8 searches).
+
 ## Extra run — 2026-11-23 (13:52 UTC) — researcher: the free chess book (night 4)
 
 Did: profiled the generated book (`analysis_json` on all 12,377 positions, the

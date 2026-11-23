@@ -4,11 +4,13 @@ Phase: **1 — Discover** (nights 1–5). Gate A at the end.
 
 ## Next
 
-**Night 5 — your games** (queue item 5). The deviation-trainer PRD
-(`docs/proposals/2026-07-11-deviation-trainer-prd.md`), what shipped from slice 1
-and why slice 2 never started; how others connect games to study. Carry in
-night 4's shrunk candidate (`research/04`): Practice fixes + #196, then one
-family unit as the Gate B prototype.
+**Night 6 — Gate A** (queue item 6). Write `gates/gate-a.md` from
+`research/01`–`05`: the recommendation (first slice `?practice=` + Practice
+fixes + #196 memory; then one family unit as the Gate B prototype), the
+alternatives turned down (deviation trainer first, the 31-family written book,
+Practice fixes without memory, more per-page plan text), the critic's case
+answered, the success measure (owner and testers, analytics as sanity check),
+and a rough slice plan. Comment in #249.
 
 Before Gate A, every candidate is checked against the open issues that already
 cover parts of it (`gh api` the issue list): #195 personal strip, #196 practice
@@ -28,9 +30,8 @@ Phase 1 — Discover (one research file each):
    exists (Wikibooks); ours lacks a chapter's shape. Candidate shrunk: Practice
    fixes (wrong-move message, show the line first, band-aware extension) +
    #196, then one family unit.
-5. **Your games.** The deviation-trainer PRD, what shipped from slice 1, and why
-   slice 2 never started; how others (Aimchess, Chessbook, Lichess insights)
-   connect games to study.
+5. ~~Your games~~ — done, extra run 2026-11-23. Own games are a later optional
+   layer; #195's `?practice=` is the shared seam.
 6. **Gate A.** Two or three candidate features, a recommendation, the critic's
    case against it answered, the success measure, and a rough slice plan.
    Comment in the inbox.

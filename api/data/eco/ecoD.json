@@ -57195,7 +57195,7 @@
     "name": "QGD Tarrasch: 5.Nf3 Nc6 6.Bf4",
     "scid": "D32o",
     "analysis_json": {
-      "description": "This line of the Tarrasch Defense leads to a classic battle centered around Black's Isolated Queen's Pawn (IQP). White's active 6.Bf4 places immediate pressure on the d5-pawn and aims for a space advantage, while Black seeks dynamic counterplay using open lines and active pieces. The resulting middlegames are strategically complex and double-edged, ideal for players who enjoy a rich fight between static structure and dynamic potential.",
+      "description": "This line of the Tarrasch Defence leads to a classic battle centred around Black's Isolated Queen's Pawn (IQP). White's active 6.Bf4 develops the bishop before e3 and controls the e5-square, while Black seeks dynamic counterplay using open lines and active pieces. The resulting middlegames are strategically complex and double-edged, ideal for players who enjoy a rich fight between static structure and dynamic potential.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -57238,8 +57238,8 @@
         "Control of the e5-square"
       ],
       "common_plans": [
-        "White: Increase pressure on the d5 pawn, often by occupying d4 with a knight. Develop pieces to control key squares (like e5) and prepare a potential kingside attack.",
-        "Black: Use the IQP as a strength to support piece activity and central outposts (especially Ne4). Develop quickly, create counter-threats, and if necessary, liquidate the center to relieve pressure on the d5 pawn."
+        "White: After dxc5 or ...cxd4, blockade the d5-pawn with a knight on d4 and increase the pressure on it, using the f4-bishop to keep Black's pieces off the e5-square.",
+        "Black: Use the d5-pawn as a strength to support piece activity and central outposts (especially a knight on e4). Develop quickly, create counter-threats, and if necessary, liquidate the centre to relieve pressure on the d5-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:37:49.868Z"
@@ -57254,7 +57254,7 @@
     "name": "QGD Tarrasch: 5.Nf3 Nc6 6.Bf4 Nf6",
     "scid": "D32o",
     "analysis_json": {
-      "description": "This is a highly principled and dynamic variation of the Tarrasch Defense. Black immediately challenges the center, accepting an Isolated Queen's Pawn (IQP) in exchange for active piece play and open lines. White's 6.Bf4 develops the light-squared bishop to an active square before committing to e3, aiming to control the center and exert long-term pressure on the d5-pawn. The resulting middlegames are strategically complex, revolving around the classic battle of piece activity versus structural soundness, making it ideal for players who enjoy dynamic, open positions and understand long-term strategic plans.",
+      "description": "This is a highly principled and dynamic variation of the Tarrasch Defence. Black immediately challenges the centre, accepting an Isolated Queen's Pawn (IQP) in exchange for active piece play and open lines. White's 6.Bf4 develops the dark-squared bishop to an active square before committing to e3, aiming to control the centre and exert long-term pressure on the d5-pawn. The resulting middlegames are strategically complex, revolving around the classic battle of piece activity versus structural soundness, making it ideal for players who enjoy dynamic, open positions and understand long-term strategic plans.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -57296,9 +57296,9 @@
         "Development Race"
       ],
       "common_plans": [
-        "White: Blockade the d5 pawn (often with Nd4), exchange minor pieces to reach a favorable endgame, and exert pressure on the d-file.",
+        "White: After dxc5, blockade the isolated d5-pawn with a knight on d4, exchange minor pieces to reach a favourable endgame, and exert pressure on the d-file.",
         "Black: Use the IQP as a strength to support active pieces (e.g., a knight on e4), generate a kingside attack, and avoid premature simplification.",
-        "White: Develop harmoniously with Be2, O-O, and prepare to challenge Black's central influence.",
+        "White: Develop harmoniously with e3, Be2 and O-O, and prepare to challenge Black's central influence.",
         "Black: Complete development with ...Be7, ...O-O, and use the semi-open e-file for counterplay."
       ],
       "version": "1.0",
@@ -57314,7 +57314,7 @@
     "name": "QGD Tarrasch: 5.Nf3 Nc6 6.Bg5",
     "scid": "D32p",
     "analysis_json": {
-      "description": "This variation of the Tarrasch Defense leads to a sharp, classical confrontation centered around Black's Isolated Queen's Pawn (IQP). White's 6.Bg5 is a direct and challenging move, immediately creating a pin and aiming to exploit the potential long-term weaknesses of the IQP. The resulting positions are dynamic and double-edged, suiting players who are comfortable with both strategic planning around pawn structures and sharp tactical calculation.",
+      "description": "This variation of the Tarrasch Defence leads to a sharp, classical confrontation centred around Black's Isolated Queen's Pawn (IQP). White's 6.Bg5 is a direct and challenging move, immediately attacking the d8-queen and aiming to exploit the potential long-term weaknesses of the IQP. The resulting positions are dynamic and double-edged, suiting players who are comfortable with both strategic planning around pawn structures and sharp tactical calculation.",
       "style_tags": [
         "Sharp",
         "Dynamic",
@@ -57356,10 +57356,10 @@
         "Initiative"
       ],
       "common_plans": [
-        "White: Blockade the d5 pawn (often with Nd4), exchange pieces to reach a favorable endgame, and pressure the weak d5 pawn.",
-        "Black: Use the active pieces and central space granted by the IQP to generate an attack, often aiming for a d5-d4 pawn break to open lines.",
-        "White: Target the kingside, exploiting the pin created by Bg5 to disrupt Black's development and coordination.",
-        "Black: Complete development quickly (...Be7, ...Nf6, ...O-O) and use the open e-file and active pieces to create counter-threats."
+        "White: After dxc5, blockade the isolated d5-pawn with a knight on d4, exchange pieces to reach a favourable endgame, and pressure the weak pawn.",
+        "Black: Use the active pieces and central space to generate an attack, often aiming for the advance of the d-pawn, once White's d4-pawn has gone, to open lines.",
+        "White: Use the g5-bishop to gain time against Black's queen and, after ...Nf6, to pin the knight and disrupt Black's development and coordination.",
+        "Black: Complete development quickly (...Be7, ...Nf6, ...O-O) and use the half-open e-file and active pieces to create counter-threats."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:38:23.723Z"
@@ -57615,7 +57615,7 @@
     "name": "QGD Tarrasch: 5.Nf3 Nc6 6.e3 Nf6 7.Be2",
     "scid": "D32t",
     "analysis_json": {
-      "description": "This classical line of the Tarrasch Defense leads to a strategically rich middlegame centered around Black's Isolated Queen's Pawn (IQP) on d5. White aims to blockade the pawn, control the d4 square, and exploit its potential weakness, while Black uses the pawn to support active piece play and generate attacking chances. The resulting positions are a perfect training ground for understanding dynamic and static elements, suiting players who enjoy deep strategic battles over immediate tactical skirmishes.",
+      "description": "This classical line of the Tarrasch Defence leads to a strategically rich middlegame centred around Black's Isolated Queen's Pawn (IQP) on d5. White aims to blockade the pawn, control the d4 square, and exploit its potential weakness, while Black uses the pawn to support active piece play and generate attacking chances. The resulting positions are a perfect training ground for understanding dynamic and static elements, suiting players who enjoy deep strategic battles over immediate tactical skirmishes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -57658,10 +57658,10 @@
         "Transition to Favorable Endgame"
       ],
       "common_plans": [
-        "White: Blockade the d5 pawn (often with Nd4), exchange minor pieces to reduce Black's attacking potential, and aim to transition into a favorable endgame where the d5 pawn is a clear weakness.",
-        "Black: Use the central pawn to support active piece play and a kingside attack, avoid simplifying exchanges of minor pieces, and prepare the ...d4 pawn break to dissolve the weakness.",
+        "White: After dxc5, blockade the isolated d5-pawn with a knight on d4, exchange minor pieces to reduce Black's attacking potential, and aim to transition into a favourable endgame where the d5-pawn is a clear weakness.",
+        "Black: Use the central pawn to support active piece play and a kingside attack, avoid simplifying exchanges of minor pieces, and prepare the advance of the d-pawn to dissolve the weakness.",
         "White: Complete development, castle, and use moves like a3 and b4 to control queenside space and prepare to challenge Black's structure.",
-        "Black: Develop the light-squared bishop to b7 or g4, place rooks on central or semi-open files (c8, d8, e8), and seek tactical opportunities based on White's defensive tasks."
+        "Black: Develop the light-squared bishop to e6 or g4, place the rooks on the central files, and seek tactical opportunities based on White's defensive tasks."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:40:30.520Z"
@@ -57676,7 +57676,7 @@
     "name": "QGD Tarrasch: 5.Nf3 Nc6 6.e3 Nf6 7.Be2 Be7",
     "scid": "D32u",
     "analysis_json": {
-      "description": "This line of the Tarrasch Defense leads to one of the most classic and instructive pawn structures in chess: the Isolated Queen's Pawn (IQP). Black accepts a structurally weak d5-pawn in exchange for superior piece activity, central space, and dynamic attacking chances. The game becomes a fascinating strategic battle where White tries to blockade and pressure the weak pawn, while Black uses their active pieces to generate an initiative and attack. This opening is perfect for dynamic, strategic players who enjoy complex middlegames and understand how to convert temporary advantages into decisive attacks.",
+      "description": "This line of the Tarrasch Defence leads to one of the most classic and instructive pawn structures in chess: the Isolated Queen's Pawn (IQP). Black accepts a structurally weak d5-pawn in exchange for superior piece activity, central space, and dynamic attacking chances. The game becomes a fascinating strategic battle where White tries to blockade and pressure the weak pawn, while Black uses their active pieces to generate an initiative and attack. This opening is perfect for dynamic, strategic players who enjoy complex middlegames and understand how to convert temporary advantages into decisive attacks.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -57719,8 +57719,8 @@
         "Piece Activity vs. Pawn Structure"
       ],
       "common_plans": [
-        "Black's Plan: Use the central space to develop pieces aggressively. Prepare the d5-d4 pawn push to open lines for attack. Often, Black will launch a kingside attack, using the active pieces to create threats against the white king.",
-        "White's Plan: Control the d4-square to blockade the IQP. Exchange minor pieces to reduce Black's attacking potential and steer the game towards an endgame where the d5-pawn becomes a clear weakness. Pressure the isolated pawn directly with pieces like Nc3-b5 or rooks on the d-file."
+        "Black's Plan: Use the central space to develop pieces aggressively. Prepare the advance of the d-pawn to open lines for attack. Often, Black will launch a kingside attack, using the active pieces to create threats against the white king.",
+        "White's Plan: Control the d4-square to blockade the d5-pawn once it is isolated. Exchange minor pieces to reduce Black's attacking potential and steer the game towards an endgame where the d5-pawn becomes a clear weakness. Pressure the pawn directly with Bf3 and rooks on the d-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:40:48.149Z"
@@ -57854,7 +57854,7 @@
     "name": "QGD Tarrasch: 5.Nf3 Nc6 6.e3 Nf6 7.Be2 cxd4 8.Nxd4 Bd6",
     "scid": "D32v",
     "analysis_json": {
-      "description": "This line of the Tarrasch Defense leads to a classic Isolated Queen's Pawn (IQP) position, one of the most strategically rich and important structures in chess. Black accepts a long-term structural weakness (the isolated d-pawn) in exchange for superior piece activity, central space, and attacking chances. This opening is perfect for dynamic, strategic players who enjoy fighting for the initiative and understand how to balance structural considerations with active piece play.",
+      "description": "This line of the Tarrasch Defence leads to a classic Isolated Queen's Pawn (IQP) position, one of the most strategically rich and important structures in chess. Black accepts a long-term structural weakness (the isolated d-pawn) in exchange for superior piece activity, central space, and attacking chances. This opening is perfect for dynamic, strategic players who enjoy fighting for the initiative and understand how to balance structural considerations with active piece play.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -57897,10 +57897,10 @@
         "Kingside Attack"
       ],
       "common_plans": [
-        "White: Blockade the d5-pawn (often with Nd2-b3 or Nd2-f1-e3), exchange pieces to simplify into a favorable endgame, and exert pressure on the d-file.",
-        "Black: Use the d5-pawn as a springboard for a kingside attack, develop pieces to active squares (e.g., Bd6, Qe7, Re8), and avoid premature exchanges to maintain dynamic potential.",
-        "White: Create a queenside minority attack to stretch Black's defenses.",
-        "Black: Utilize the semi-open c and e-files for rooks to pressure White's position."
+        "White: Keep the knight on d4 as a blockader, exchange pieces to simplify into a favourable endgame, and exert pressure on the d5-pawn with Bf3 and the rooks on the d-file.",
+        "Black: Use the d5-pawn as a springboard for a kingside attack, develop pieces to active squares (e.g. ...O-O, ...Qe7 and ...Re8), and avoid premature exchanges to maintain dynamic potential.",
+        "White: Develop the dark-squared bishop, often with b3 and Bb2, and keep pressing the d5-pawn so that Black's pieces stay tied to its defence.",
+        "Black: Use the open c-file and the half-open e-file for the rooks to pressure White's position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:41:47.851Z"
@@ -57915,7 +57915,7 @@
     "name": "QGD Tarrasch: 5.Nf3 Nc6 6.e3 Nf6 7.Be2 cxd4 8.Nxd4 Bd6 9.O-O",
     "scid": "D32v",
     "analysis_json": {
-      "description": "This line of the Tarrasch Defense leads to a classic Isolated Queen's Pawn (IQP) position, one of the most strategically rich and instructive structures in chess. Black accepts a long-term structural weakness (the isolated d-pawn) in exchange for superior piece activity, open lines, and attacking chances. This opening is perfect for dynamic, strategic players who enjoy fighting for the initiative and understand the delicate balance between positional structure and piece play.",
+      "description": "This line of the Tarrasch Defence leads to a classic Isolated Queen's Pawn (IQP) position, one of the most strategically rich and instructive structures in chess. Black accepts a long-term structural weakness (the isolated d-pawn) in exchange for superior piece activity, open lines, and attacking chances. This opening is perfect for dynamic, strategic players who enjoy fighting for the initiative and understand the delicate balance between positional structure and piece play.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -57958,8 +57958,8 @@
         "Kingside Attack"
       ],
       "common_plans": [
-        "Black: Use active pieces (especially the Bd6 and Nf6) to build a kingside attack. Prepare the d5-d4 pawn break to open lines. Avoid premature exchanges of active pieces.",
-        "White: Control the d5-square to blockade the IQP. Exchange pieces to reduce Black's attacking potential. Target the d5-pawn as a weakness and aim for a favorable endgame."
+        "Black: Use active pieces (especially the Bd6 and Nf6) to build a kingside attack. Prepare the advance of the d-pawn to open lines. Avoid premature exchanges of active pieces.",
+        "White: Control the d4-square to blockade the isolated pawn. Exchange pieces to reduce Black's attacking potential. Target the d5-pawn as a weakness and aim for a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:42:05.562Z"
@@ -58035,7 +58035,7 @@
     "name": "QGD Tarrasch: 5.Nf3 Nc6 6.e3 Nf6 7.Be2 cxd4 8.Nxd4 Bd6 9.O-O O-O 10.b3",
     "scid": "D32x",
     "analysis_json": {
-      "description": "The Tarrasch Defense creates a dynamic and strategically complex middlegame centered around Black's Isolated Queen's Pawn (IQP). Black accepts this potential long-term weakness in exchange for active piece play, central influence, and attacking possibilities. This opening is perfect for players who enjoy dynamic positions, understand the interplay between structure and initiative, and are comfortable playing with and against the IQP.",
+      "description": "The Tarrasch Defence creates a dynamic and strategically complex middlegame centred around Black's Isolated Queen's Pawn (IQP). Black accepts this potential long-term weakness in exchange for active piece play, central influence, and attacking possibilities. This opening is perfect for players who enjoy dynamic positions, understand the interplay between structure and initiative, and are comfortable playing with and against the IQP.",
       "style_tags": [
         "Strategic",
         "Dynamic",
@@ -58076,8 +58076,8 @@
         "Transition to Favorable Endgame"
       ],
       "common_plans": [
-        "White: Control the d4 square, exchange pieces to reach a favorable endgame, and use the b2-bishop to pressure d5.",
-        "Black: Use active pieces to generate a kingside attack, prepare the d5-d4 pawn break to open the position, and avoid simplification.",
+        "White: Keep control of the d4-square, exchange pieces to reach a favourable endgame, and develop the bishop with Bb2, eyeing the long diagonal once the c3-knight moves.",
+        "Black: Use active pieces to generate a kingside attack, prepare the advance of the d-pawn to open the position, and avoid simplification.",
         "Both sides fight for control of the key e5 square, which can serve as a powerful outpost for a knight."
       ],
       "version": "1.0",
@@ -58337,7 +58337,7 @@
     "name": "QGD Tarrasch: von Hennig-Schara Gambit, 5.Qxd4",
     "scid": "D32d",
     "analysis_json": {
-      "description": "The von Hennig-Schara Gambit is a sharp and ambitious response to the Tarrasch Defense, where Black immediately challenges White's central control by sacrificing a pawn. By playing 5.Qxd4, White accepts the challenge, leading to a dynamic and tactical battle where Black's lead in development and active pieces compensate for the material deficit. This opening is perfect for aggressive, tactical players who enjoy fighting for the initiative from the very beginning.",
+      "description": "The von Hennig-Schara Gambit is a sharp and ambitious response to the Tarrasch Defence, where Black immediately challenges White's central control by sacrificing a pawn. By playing 5.Qxd4, White accepts the challenge, leading to a dynamic and tactical battle where Black's lead in development and active pieces compensate for the material deficit. This opening is perfect for aggressive, tactical players who enjoy fighting for the initiative from the very beginning.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -58379,10 +58379,10 @@
         "Targeting the Queen"
       ],
       "common_plans": [
-        "Black: Harass the white queen with ...Nc6 to gain tempo, followed by rapid development of minor pieces (...Nf6, ...Bg4) to build an attack against White's position.",
-        "White: Safely retreat the queen (usually to d1), complete development (Nf3, Be2, 0-0), and neutralize Black's initiative, aiming to consolidate the extra pawn.",
-        "Black: Utilize open files (d and e) for rooks to pressure the center and prevent White from easily coordinating their pieces.",
-        "White: Challenge Black's central influence and seek timely piece exchanges to relieve pressure and simplify into a favorable endgame."
+        "Black: Harass the white queen with ...Nc6 to gain time, followed by rapid development (...exd5, ...Nf6, ...Be6 or ...Bd7) to build an attack against White's position.",
+        "White: Retreat the queen when ...Nc6 hits it (usually to d1), complete development with e3, Nf3 and Be2, castle, and neutralise Black's initiative, aiming to consolidate the extra material.",
+        "Black: Play for development and the initiative rather than the pawn, using the rooks on the central files to keep White from coordinating the pieces.",
+        "White: Challenge Black's central influence and seek timely piece exchanges to relieve pressure and simplify into a favourable endgame."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:44:14.897Z"
@@ -58759,7 +58759,7 @@
     },
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Tarrasch Defense is an ambitious and principled response to the Queen's Gambit, where Black immediately challenges White's center with the move ...c5. This choice often leads to positions with an Isolated Queen's Pawn (IQP) for Black, creating a double-edged game where Black's superior piece activity and attacking chances compensate for the long-term structural weakness. It is ideal for dynamic, confident players who enjoy seizing the initiative and are comfortable handling complex, unbalanced positions.",
+      "description": "The Tarrasch Defence is an ambitious and principled response to the Queen's Gambit, where Black immediately challenges White's centre with the move ...c5. This choice often leads to positions with an Isolated Queen's Pawn (IQP) for Black, creating a double-edged game where Black's superior piece activity and attacking chances compensate for the long-term structural weakness. It is ideal for dynamic, confident players who enjoy seizing the initiative and are comfortable handling complex, unbalanced positions.",
       "style_tags": [
         "Dynamic",
         "Aggressive",
@@ -58800,8 +58800,8 @@
         "Blockade"
       ],
       "common_plans": [
-        "For Black: Use active pieces to support a d5-d4 pawn break, create kingside attacking chances, and control the e5-square.",
-        "For White: Blockade the isolated pawn on d4, exchange pieces to simplify into a favorable endgame, and target the d5-pawn as a weakness."
+        "For Black: Use active pieces to support the advance of the d-pawn once the centre has been cleared, create kingside attacking chances, and control the e5-square.",
+        "For White: Blockade the isolated pawn on d4, exchange pieces to simplify into a favourable endgame, and target the d5-pawn as a weakness."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T20:46:11.732Z"

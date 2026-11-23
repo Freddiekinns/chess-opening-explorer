@@ -104,11 +104,15 @@ have read the pages. So:
   tries products hands-on where no account is needed, and checks its strongest
   claim against a source that would disagree. Finishing in five minutes is a
   sign of skimming.
-- If the unit is done with budget to spare, run the critic on it (a fresh
-  subagent arguing against its conclusions) and answer the objections in the
-  file. Do not start the next queue item; one unit a night keeps the owner able
-  to follow.
-- No more than ~80 tool calls, and at most two subagents (critic, reviewer).
+- Run the critic on each unit (a fresh subagent arguing against its conclusions)
+  and answer the objections in the file.
+- **Up to two units a night** (owner, 2026-11-23: "it can definitely run for
+  quite a bit longer"). Commit and push the first, with its journal entry,
+  before starting the second, so a cut-off loses at most one. To keep the
+  context from growing with the square of the turns, do the second unit's
+  reading in a fresh subagent that returns a short brief, and write the file
+  from that. Never start a unit that needs a gate the owner has not passed.
+- No more than ~150 tool calls in all, and at most four subagents.
 - Read excerpts, not whole large files; never load `api/data/` files whole.
 - If a site is refused by the network allowlist, say which in the journal so the
   owner can add it; do not pass search summaries off as reading.

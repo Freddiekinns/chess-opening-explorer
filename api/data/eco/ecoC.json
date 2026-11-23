@@ -130252,7 +130252,7 @@
       "icsbot": "Berlin Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "This variation of the Open Ruy Lopez leads to a complex and strategically rich middlegame where both sides have clear plans. Black establishes a solid foothold in the center with ...d5 and places the knight actively on c5, from where it influences key squares and prepares to challenge White's setup. The game revolves around central control, piece activity, and long-term strategic plans, making it suitable for players who enjoy dynamic, yet deeply positional, struggles.",
+      "description": "In the Berlin Variation of the Open Spanish, Black answers 9.c3 by retreating the e4-knight to c5, where it attacks the b3-bishop and covers the d3- and e6-squares. White usually keeps the bishop with 10.Bc2, and Black then often pins the f3-knight with ...Bg4. The play is quieter than in the 9...Bc5 lines: White builds on the space the e5-pawn gives, while Black relies on the d5-pawn and well-placed minor pieces.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -130292,10 +130292,10 @@
         "Exploiting/defending the e5 pawn"
       ],
       "common_plans": [
-        "White: Play Bc2 to challenge the c5 knight, followed by Nbd2-f1-g3 to bolster the center and prepare kingside activity.",
-        "Black: Develop the queenside with ...Bb7, control the d4 square, and use the c5 knight to create pressure or reroute it to e6.",
-        "White: Maneuver the queen's knight (Nbd2) to support the center and potentially challenge Black's control of key squares.",
-        "Black: Prepare a queenside pawn advance (...c5-c4) to gain space and challenge White's bishop on b3."
+        "White: Retreat the bishop with 10.Bc2 so that the c5-knight cannot exchange it, then develop with Nbd2 and Re1; the e5-pawn gives kingside space.",
+        "Black: Develop with ...Be7 or ...Bg4 and castle; the c5-knight can trade itself for the b3-bishop or go to e6 to cover d4.",
+        "White: Bring the b1-knight to d2 and, once the rook has gone to e1, on via the f1-square to g3 or e3.",
+        "Black: Gain queenside space with ...b4 or ...a5, or trade on b3 with ...Nxb3 if White leaves the bishop there."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:18:08.940Z"
@@ -130422,10 +130422,10 @@
         "King safety in an open position"
       ],
       "common_plans": [
-        "White: Develop with Nbd2-f1-g3 to support the e5 pawn and challenge Black's active pieces, often aiming for a kingside attack.",
+        "White: Develop with Nbd2 to challenge the e4-knight, or Qd3 to hit it and eye the kingside; the e5-pawn gives space.",
         "Black: Maintain the initiative with active piece play, pressure White's e5 pawn, and use the active bishop on c5 to create threats against f2.",
-        "White: Play Qe2 to connect rooks and prepare to challenge Black's control of the d-file, often retreating the bishop to c2 to maintain its influence.",
-        "Black: Castle kingside, play ...Re8 to increase pressure on the e5 pawn, and look for opportunities to challenge White's central setup with moves like ...f5."
+        "White: Keep the light-squared bishop by dropping it back to c2 when needed, where it aims at the kingside, while Nbd2 prepares to exchange or drive away the e4-knight.",
+        "Black: Castle, then support the e4-knight with ...f5, a common idea in these lines; once White's bishop has dropped back to c2, the Dilworth sacrifice ...Nxf2 is a sharp alternative."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:18:44.270Z"
@@ -130509,7 +130509,7 @@
       "icsbot": "Nenarokov Variation, Ruy Lopez "
     },
     "analysis_json": {
-      "description": "The Nenarokov Variation of the Motzko Attack is a sophisticated and strategic line in the Open Ruy Lopez. White's unusual 10. Qd3 aims to bolster the center and prepare queen activity, while Black's 10...Ne7 is a flexible response, preparing to reroute the knight to key squares like g6 or f5. The resulting positions are complex and maneuvering, revolving around the fight for central control and the coordination of pieces, making it ideal for strategic players who enjoy a deep, intellectual battle over immediate tactical fireworks.",
+      "description": "In the Motzko Attack White plays 10.Qd3, hitting the e4-knight and putting the queen on the b1-h7 diagonal towards Black's kingside. The Nenarokov reply 10...Ne7 reinforces the d5-pawn and plans to bring the knight to f5 or g6, where it covers the kingside. The play is more manoeuvring than in the main 9...Bc5 lines, with White using the e5-pawn's space and Black relying on the centralised e4-knight.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -130552,7 +130552,7 @@
         "Queenside space advantage for Black"
       ],
       "common_plans": [
-        "White: Play Nbd2 followed by c4 to solidify the center, maneuver the queen to f3 or g3 to create threats, and prepare a potential f2-f4 pawn break.",
+        "White: Bring the b1-knight to d2 to challenge the e4-knight, and use the d3-queen and the b3-bishop against Black's centre, with Bc2 lining up on the b1-h7 diagonal.",
         "Black: Complete development with ...O-O, reroute the knight via ...Ng6 to control f4 or to f5 to pressure the center, and use the b5-pawn to create queenside counterplay, often with ...Na5 to challenge the b3 bishop."
       ],
       "version": "1.0",
@@ -130616,10 +130616,10 @@
         "Queenside expansion"
       ],
       "common_plans": [
-        "White: Challenge the e4-knight with Nf1-g3, expand on the queenside with a3 and b4, and exploit Black's slightly loose piece coordination.",
-        "Black: Solidify the center, often with ...O-O followed by ...f5 to support the e4-knight, and use the active Bc5 to create threats against White's kingside.",
-        "White: Maneuver the knight from d2 to f1 and then g3 or e3 to control key squares and prepare an attack.",
-        "Black: Seek counterplay on the queenside or in the center if White overextends on the kingside."
+        "White: Exchange or challenge the e4-knight, playing Bc2 and then Nb3 to drive the c5-bishop off the a7-g1 diagonal.",
+        "Black: Solidify the centre, often with ...O-O followed by ...f5 to support the e4-knight, and use the active Bc5 to create threats against White's kingside.",
+        "White: If Black supports the knight with ...f5, keep the tension with Nb3 and Nfd4, aiming for a blockade on the d4-square, or take en passant.",
+        "Black: After ...O-O, and once White's bishop has dropped back to c2, the Dilworth sacrifice ...Nxf2 opens the f-file against the white king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:19:42.650Z"
@@ -130754,7 +130754,7 @@
     "name": "Spanish: Open, Berlin, 10.Bc2",
     "scid": "C82b",
     "analysis_json": {
-      "description": "The Open Spanish with 10.Bc2 is a classical and strategically profound system where both sides engage in a complex battle for central control. White's key move, 10.Bc2, repositions the 'Spanish Bishop' to a more active and secure square, preparing to support the center and eye the kingside. The resulting middlegames are rich in maneuvering and long-term planning, appealing to players who enjoy accumulating small advantages and navigating intricate positional struggles.",
+      "description": "The Open Spanish with 10.Bc2 is a classical and strategically profound system where both sides engage in a complex battle for central control. White's key move, 10.Bc2, repositions the 'Spanish Bishop' to a more active and secure square, preparing to support the centre and eye the kingside. The resulting middlegames are rich in manoeuvring and long-term planning, appealing to players who enjoy accumulating small advantages and navigating intricate positional struggles.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -130795,8 +130795,8 @@
         "Kingside potential vs. Queenside counterplay"
       ],
       "common_plans": [
-        "White: Support the e5 pawn with the knight maneuver Nbd2-f1-g3, challenge Black's knight on c5, and prepare for potential kingside activity with f4.",
-        "Black: Solidify control of d5, often with ...Qd7, and challenge White's central grip with moves like ...Bg4 or preparing a ...f5 pawn break.",
+        "White: Develop with Nbd2 and Re1, then route the knight via the f1-square to g3 or e3 once the rook has moved; the c2-bishop aims at the kingside.",
+        "Black: Pin the f3-knight with ...Bg4, the main move, then develop with ...Be7 and castle; the c5-knight can go to e6 to cover d4.",
         "White: Control the d4-square and restrict Black's pieces, slowly building pressure across the board.",
         "Black: Develop queenside counterplay, often involving the b-pawn and rook, to create distractions and target White's structure."
       ],
@@ -130854,8 +130854,8 @@
         "Queenside expansion for Black"
       ],
       "common_plans": [
-        "White: Break the pin with h3, followed by the knight maneuver Nbd2-f1-g3 to bolster the kingside and center. White aims to consolidate, prove the e5-pawn is a strength, and challenge Black's control of d5.",
-        "Black: Increase pressure on the center, often by trading the bishop for the f3-knight (...Bxf3) to damage White's pawn structure. Black will prepare the ...c7-c5 pawn break to undermine White's central grip and create queenside counterplay."
+        "White: Develop with Nbd2 or Re1, and once the rook is on e1 bring the knight via the f1-square to g3 or e3; h3 can question the g4-bishop at a convenient moment.",
+        "Black: Keep the pin and develop with ...Be7 and ...O-O; ...Bxf3 can damage White's pawns if White recaptures with the g-pawn, but gives up the light-squared bishop."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:21:08.444Z"
@@ -130870,7 +130870,7 @@
     "name": "Spanish: Open, Berlin, 10.Bc2 Bg4 11.Nbd2",
     "scid": "C82e",
     "analysis_json": {
-      "description": "This line of the Open Spanish leads to a strategically rich and highly theoretical middlegame. Black establishes a nagging pin with Bg4, putting White's central e5-pawn under immediate pressure. The game becomes a tense, maneuvering battle where White seeks to untangle, consolidate, and use a long-term space advantage, while Black aims to exploit the pin to generate tactical threats and counterplay. This opening is perfect for sophisticated players who enjoy deep strategic planning and navigating complex, double-edged positions.",
+      "description": "This line of the Open Spanish leads to a strategically rich and highly theoretical middlegame. Black establishes a nagging pin with Bg4, putting White's central e5-pawn under immediate pressure. The game becomes a tense, manoeuvring battle where White seeks to untangle, consolidate, and use a long-term space advantage, while Black aims to exploit the pin to generate tactical threats and counterplay. This opening is perfect for sophisticated players who enjoy deep strategic planning and navigating complex, double-edged positions.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -130912,9 +130912,9 @@
         "Bishop Pair Potential"
       ],
       "common_plans": [
-        "White: Break the pin with h3 (and sometimes g4), reroute the f3-knight (often via f1-g3), and use the central space to build an attack.",
+        "White: Put the question to the g4-bishop with h3, play Re1, and bring the d2-knight via the f1-square to g3 or e3 once the rook has moved.",
         "Black: Increase pressure on the f3-knight with moves like ...Qd7, complete development, and decide whether to maintain the pin or exchange on f3 to damage White's structure.",
-        "White: Solidify the center, control the long a2-g8 diagonal with the Bc2, and prepare for a kingside expansion.",
+        "White: Use the c2-bishop on the b1-h7 diagonal towards Black's kingside, backed by the space the e5-pawn gives.",
         "Black: Create queenside counterplay based on the b5-pawn or challenge White's central control directly."
       ],
       "version": "1.0",
@@ -130930,7 +130930,7 @@
     "name": "Spanish: Open, Berlin, 10.Bc2 Bg4 11.Nbd2 Be7",
     "scid": "C82e",
     "analysis_json": {
-      "description": "This is a modern and highly theoretical branch of the Open Spanish, leading to a complex and strategically rich middlegame. White aims to consolidate the central e5-pawn and use it as a springboard for an attack, while Black relies on active piece play, particularly the pin from the Bg4, to create counter-chances. The resulting positions are balanced and require deep understanding, making this a favorite battleground for well-prepared players who enjoy maneuvering and long-term strategic planning.",
+      "description": "This is a modern and highly theoretical branch of the Open Spanish, leading to a complex and strategically rich middlegame. White aims to consolidate the central e5-pawn and use it as a springboard for an attack, while Black relies on active piece play, particularly the pin from the Bg4, to create counter-chances. The resulting positions are balanced and require deep understanding, making this a favourite battleground for well-prepared players who enjoy manoeuvring and long-term strategic planning.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -130971,8 +130971,8 @@
         "Black's queenside counterplay vs. White's central and kingside pressure"
       ],
       "common_plans": [
-        "White: Play h3 to question the g4 bishop, followed by Re1. Maneuver the knight from d2 to f1 and then to g3 or e3 to bolster the center and prepare for kingside operations. The Bc2 is a key piece, controlling the a4-e8 diagonal and eyeing f5.",
-        "Black: Maintain the pin on f3, often retreating the bishop to h5 after h3. Complete development with ...O-O and ...Qd7. Prepare to either challenge White's center directly or seek counterplay on the queenside with moves like ...a5 or ...c5."
+        "White: Play Re1 and bring the d2-knight via the f1-square to g3 or e3, with h3 to question the g4-bishop; the c2-bishop aims along the b1-h7 diagonal at Black's kingside.",
+        "Black: Maintain the pin on f3, retreating the bishop to h5 if White's h-pawn challenges it. Complete development with ...O-O and ...Qd7, then seek queenside counterplay with ...a5 or ...b4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:21:52.325Z"
@@ -131046,7 +131046,7 @@
     "name": "Spanish: Open, Berlin, 10.Bc2 Bg4 11.Nbd2 Be7 12.Re1 O-O",
     "scid": "C82h",
     "analysis_json": {
-      "description": "This line of the Open Spanish leads to a deeply strategic and complex middlegame. Both sides have completed their initial development, resulting in a maneuvering battle where understanding long-term plans and piece placement is paramount. It's a modern and highly respected system favored by players who enjoy accumulating small advantages and navigating intricate positional struggles, rather than engaging in immediate, wide-open tactical combat.",
+      "description": "This line of the Open Spanish leads to a deeply strategic and complex middlegame. Both sides have completed their initial development, resulting in a manoeuvring battle where understanding long-term plans and piece placement is paramount. It's a modern and highly respected system favoured by players who enjoy accumulating small advantages and navigating intricate positional struggles, rather than engaging in immediate, wide-open tactical combat.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -131087,8 +131087,8 @@
         "Exploiting or neutralizing the pin on the f3-knight"
       ],
       "common_plans": [
-        "White: Play h3 to question the g4-bishop, followed by the knight maneuver Nf1-g3 to control f5 and prepare kingside action. Consolidate the center and slowly build pressure.",
-        "Black: Maintain the pin with ...Bh5 after h3. Prepare the ...f5 pawn break to challenge White's central pawn on e4. Reroute pieces to optimal squares and seek counterplay."
+        "White: Play h3 to question the g4-bishop, then Nf1 and Ng3 to cover the f5-square and prepare kingside action, keeping the e5-pawn firmly supported.",
+        "Black: Keep the pin with ...Bh5 if White's h-pawn challenges the bishop, bring the c5-knight to e6, and support the d5-pawn with ...Qd7 and ...Rad8."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:22:31.815Z"
@@ -131160,7 +131160,7 @@
     "name": "Spanish: Open, Berlin, 10.Bc2 Bg4 11.Re1",
     "scid": "C82d",
     "analysis_json": {
-      "description": "This line of the Open Spanish represents a sophisticated and strategically deep battle. White's setup with Bc2 and Re1 aims to consolidate control over the crucial e5-pawn and prepare for a long, maneuvering struggle. Black's active development with Nc5 and the challenging Bg4 pin creates immediate tension, leading to a complex game where both sides fight for central control and the initiative. This opening is ideal for advanced, strategic players who enjoy navigating subtle positional nuances and executing long-term plans.",
+      "description": "This line of the Open Spanish represents a sophisticated and strategically deep battle. White's setup with Bc2 and Re1 aims to consolidate control over the crucial e5-pawn and prepare for a long, manoeuvring struggle. Black's active development with Nc5 and the challenging Bg4 pin creates immediate tension, leading to a complex game where both sides fight for central control and the initiative. This opening is ideal for advanced, strategic players who enjoy navigating subtle positional nuances and executing long-term plans.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -131201,9 +131201,9 @@
         "Central tension vs. Queenside pressure"
       ],
       "common_plans": [
-        "White: Play h3 to question the g4-bishop, followed by maneuvering the b1-knight via d2-f1-g3 to bolster the kingside and center.",
+        "White: Play h3 to question the g4-bishop, then bring the b1-knight round with Nbd2, Nf1 and Ng3 to bolster the kingside and centre.",
         "Black: Maintain the pin on f3, prepare to challenge the e5-pawn with ...f6, and use the c5-knight to pressure White's position.",
-        "White: Solidify the center and use the e1-rook for flexibility, either supporting e5 or transferring to the kingside for an attack.",
+        "White: Solidify the centre and use the e1-rook for flexibility, either supporting e5 or transferring to the kingside for an attack.",
         "Black: Seek counterplay on the queenside, often involving the advance of the a-pawn, and aim to trade pieces to relieve central pressure."
       ],
       "version": "1.0",

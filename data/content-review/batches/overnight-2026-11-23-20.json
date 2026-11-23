@@ -1,0 +1,106 @@
+{
+  "views": "data/content-review/views/2026-11-01.json",
+  "created": "2026-11-23",
+  "pages": [
+    {
+      "fen": "r4rk1/2qbbppp/p2p1n2/npp1p3/3PP3/2P2N1P/PPB2PP1/R1BQRNK1 b - - 4 13",
+      "name": "Spanish: Closed, Chigorin, 12...Bd7 13.Nf1",
+      "eco": "C97",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 sent the a5-knight to b7/c6 squares the parser could not read and offered a ...d5 break; plan 3 put a rook on c1 with the bishop still there; plan 4 called a closed c-file semi-open. Rewrote plans 2-4. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/2q1bppp/p1np1n2/1ppPp3/4P3/2P2N1P/PPBN1PP1/R1BQR1K1 b - - 0 13",
+      "name": "Spanish: Closed, Chigorin, 12...Nc6 13.d5",
+      "eco": "C98",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave an f2-f4 attack, not this line's plan; plan 3 spoke of central tension in a closed centre; plan 4 sent the d8-knight to f8 and b7 with a bare ...Nf8 it cannot make. Rewrote plans 1, 3, 4 around Nf1-g3, a4 and ...Nd8 with ...Ne8, ...f6, ...Nf7. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/2q1bppp/p2p1n2/nppPp3/4P3/2P2N1P/PPBN1PP1/R1BQR1K1 w - - 1 14",
+      "name": "Spanish: Closed, Chigorin, 12...Nc6 13.d5 Na5",
+      "eco": "C98",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Overview and plan 1 centred White's play on an f2-f4 push and sent 'the b1 knight' via f1 (it is on d2); plan 2 prepared for that f4 push. Rewrote the overview and both plans around b3, Nf1-g3 and ...Nb7, ...c4, ...b4. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/2q1bppp/p1n2n2/1pp1p3/4P3/2P2N1P/PPBN1PP1/R1BQR1K1 w - - 0 14",
+      "name": "Spanish: Closed, Chigorin, Rauzer Attack",
+      "eco": "C98",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave Nbd2-f1-g3 (or e3) with the knight already on d2. Rewrote it around Nf1-e3 and the open d-file. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/2q1bppp/p1n2n2/1pp1p3/P3P3/2P2N1P/1PBN1PP1/R1BQR1K1 b - - 0 14",
+      "name": "Rauzer Variation, Ruy Lopez ",
+      "eco": "C98 ",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 manoeuvred a knight from f1 that is on d2; plan 2 offered a ...d5 break with no black d-pawn left. Rewrote both. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/2q1bppp/p2p1n2/np2p3/3PP3/5N1P/PPBN1PP1/R1BQR1K1 b - - 0 13",
+      "name": "Ruy Lopez: Closed, Chigorin Defense, Panov System",
+      "eco": "C99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 gave Nbd2-f1-g3(e3) with the knight already on d2. Rewrote it as Nf1-g3 with Nf5 ideas. British spelling."
+    },
+    {
+      "fen": "r4rk1/1bq1bppp/p2p1n2/np2p3/3PP3/5N1P/PPB2PP1/R1BQRNK1 b - - 2 14",
+      "name": "Spanish: Closed, Chigorin, 13...Bb7 14.Nf1",
+      "eco": "C99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 built White's attack on f2-f4; plan 4 sent the a5-knight to b7, where the bishop stands, and offered a ...d5 break. Rewrote both. British spelling."
+    },
+    {
+      "fen": "2r2rk1/1bq1bppp/p2p1n2/np2p3/3PP3/5N1P/PPB1RPP1/R1BQ1NK1 b - - 4 15",
+      "name": "Spanish: Closed, Chigorin, 13...Bb7 14.Nf1 Rac8 15.Re2",
+      "eco": "C99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 4 had the e2-rook swing to g2 through White's own f2-pawn and to c2 where the bishop stands. Rewrote it. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/2q1bppp/2np1n2/1p2p3/p2PP3/1N2BN1P/PPB2PP1/R2QR1K1 w - - 0 16",
+      "name": "Spanish: Closed, Chigorin, 13...Nc6 14.Nb3 a5 15.Be3 a4",
+      "eco": "C99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 1 had a knight go Nb3-d2 and also Nf1-g3 with no knight on f1; plan 2 sent the c6-knight to e7, where the bishop stands; plan 4 offered a ...d5 break. Rewrote plans 1, 2 and 4. British spelling."
+    },
+    {
+      "fen": "r1b2rk1/2q1bppp/p1np1n2/1p2p3/3PP3/5N1P/PPB2PP1/R1BQRNK1 b - - 2 14",
+      "name": "Spanish: Closed, Chigorin, 13...Nc6 14.Nf1",
+      "eco": "C99",
+      "views": 0,
+      "people": 0,
+      "reason": "plan-check",
+      "verdict": "fixed",
+      "notes": "Plan 2 had ...Bd7 pressure d4; plan 3 used a b3-knight that is not there and an Re1-e3-g3 lift. Rewrote both (first plan 3 rewrite rejected because a knight on e3 does not cover d4; corrected and accepted). British spelling."
+    }
+  ]
+}

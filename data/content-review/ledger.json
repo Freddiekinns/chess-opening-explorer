@@ -12568,5 +12568,65 @@
     "verdict": "fixed",
     "contentHash": "bd3bf57e0579bdbf",
     "notes": "Plan 1 manoeuvred a \"b2-knight\" via Nf1-g3 and put the dark-squared bishop on the light squares. Rewritten around Nd2, c3 and 9...Nc5 10.c3 d4. Reviewer queried a game citation; removed and re-accepted. British spelling."
+  },
+  "r2qkb1r/2p2ppp/p1n1b3/1p1pP3/4n3/1B3N2/PPP2PPP/RNBQ1RK1 w kq - 1 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "c44e2187ff3b078f",
+    "notes": "Overview was generic; plan 1 routed the b1-knight via f1 with the rook there; plan 3 named control of e5, which White's pawn occupies. Rewrote the overview and plans to the 8...Be6 structure. British spelling."
+  },
+  "r1bqkb1r/1pp2ppp/p1n5/3pp3/B3n3/5N2/PPPP1PPP/RNBQR1K1 w kq - 0 7": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d801240596bf7d83",
+    "notes": "Plans named an open d-file that is not open, treated 7.Nxe5 as winning an extra pawn when it only restores material, and sent the c8-bishop to b7 or c6, both occupied. Rewrote overview and plans around the a4-c6 pin, 7.Bxc6+ and 7.Nxe5."
+  },
+  "r1bqkb1r/2p1nppp/p7/1p1pP3/4n3/1B3N2/PPP2PPP/RNBQ1RK1 w kq - 1 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "334b03eb8ad799d1",
+    "notes": "Plan 1 used an ambiguous Nd2 and a route through the f1-rook; plan 2 put both the knight and bishop on e7; plan 3 called the d-file open. Fixed. British spelling."
+  },
+  "r1bqk2r/1pp2ppp/p1nb4/3p4/B2Nn3/8/PPP2PPP/RNBQR1K1 w kq - 1 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "2d0436ee6cbc1394",
+    "notes": "Plan 1 named ...Ng4, which no knight can reach; plan 3 claimed a d-file pin that does not exist; plan 4 said White has a material advantage when Black is a pawn up. Rewrote plans around the real pins and the 9.Nxc6 Bxh2+ main line. British spelling."
+  },
+  "r1bqk2r/1pp2ppp/p1nb4/3p4/B2Nn3/5P2/PPP3PP/RNBQR1K1 b kq - 0 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "d2c62ab3e97729c5",
+    "notes": "Plan 1 named ...Ng4 and ...Nf5, which no knight can reach; rewrote it around the pinned e4-knight and ...Bc5 pinning the d4-knight. British spelling (a spelling-pass typo, centreed, was caught by the reviewer and corrected)."
+  },
+  "r1bqk2r/1pp2ppp/p1N5/3p4/B3n3/8/PPP2PPb/RNBQR2K b kq - 1 10": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "69397a8bdf0deee7",
+    "notes": "Plan 2 suggested Kg1, which the h2-bishop covers; plans 3 and 4 misdescribed the material. Rewrote plans around 10...Qh4 and the 11.Rxe4+ endgame line. British spelling."
+  },
+  "r1bqkb1r/2p2ppp/p1n5/1p1pp3/3Pn3/1B3N2/PPP2PPP/RNBQ1RK1 w kq - 0 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "072bb76064299f49",
+    "notes": "Overview was generic; plan 2 named a white e4-pawn that is gone; plan 3 routed the f3-knight via d2-f1 with the rook on f1. Rewrote overview and plans around 8.dxe5 and 8.Nxe5."
+  },
+  "r2qkb1r/2p2ppp/p1n1b3/1p1pP3/4n3/1B2BN2/PPP2PPP/RN1Q1RK1 b kq - 2 9": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "0bd58898becdb449",
+    "notes": "Plan 1 routed a knight through the f1-rook and lifted a rook from e1 that is not there; plan 2's ...f5 was not a real idea here. Fixed. British spelling."
+  },
+  "r1bqkb1r/2p2ppp/p1n5/1p1pN3/3Pn3/1B6/PPP2PPP/RNBQ1RK1 b kq - 0 8": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "fixed",
+    "contentHash": "3ebb3434a05a98be",
+    "notes": "Plan 3 named an e5-pawn that is a knight; plan 1 had c3 and Nc3 together. Rewrote plans around 8...Nxe5 9.dxe5. British spelling."
+  },
+  "r2qkb1r/2p2ppp/p1n1B3/1pn1P3/3p4/2P2N2/PP1N1PPP/R1BQ1RK1 b kq - 0 11": {
+    "reviewedAt": "2026-11-23",
+    "verdict": "needs-research",
+    "contentHash": "c4785097e2cfe859",
+    "notes": "Overview and plans 2-3 credited Black with a bishop pair it does not have and named a c3-knight that is a pawn; overview and plans 1-3 rewritten and accepted. Plan 4 (long-range power of the bishops) is still wrong: two rewrites were rejected (first: White takes on d4 at once so the choice does not arise; second: named knights on d4 and e6 with no sequence), so the old text was restored."
   }
 }

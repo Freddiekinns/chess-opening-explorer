@@ -1,10 +1,10 @@
 # Plan reference check
 
-1791 references on 1376 of 12377 pages fail the check and show as plain text.
+1722 references on 1326 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5461 name no move, route, square or piece
-- References by kind: {"square":16447,"piece":15675,"move":54893,"route":8729}
-- References by result: {"now":69909,"on-board":14691,"later":9353,"invalid":1791}
+- Plans: 41062, of which 5460 name no move, route, square or piece
+- References by kind: {"square":16483,"piece":15698,"move":54999,"route":8709}
+- References by result: {"now":70059,"on-board":14716,"later":9392,"invalid":1722}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -51,23 +51,22 @@
   - `fxe3`: No piece can play fxe3 here, now or after the plan's earlier moves
 - **C55 Italian Game: Two Knights Defense, Max Lange Attack, Loman Defense** (0 views)
   - `fxg7`: No piece can play fxg7 here, now or after the plan's earlier moves
-- **C70 Ruy Lopez: Morphy Defense, Fianchetto Defense Deferred** (0 views)
-  - `Bg7`: No piece can play Bg7 here, now or after the plan's earlier moves
-- **C70 Ruy Lopez: Morphy Defense, Norwegian Variation, Nightingale Gambit** (0 views)
-  - `...Kg8`: No piece can play Kg8 here, now or after the plan's earlier moves
-- **C70 Spanish: 4.Ba4** (0 views)
-  - `Nd2-f1-g3`: One step of Nd2-f1-g3 can't be played here
-- **C70 Spanish: Schliemann Deferred, 5.d4 exd4 6.e5** (0 views)
-  - `...Ne7-g6`: Ne7 is ambiguous: the knights on g8 and c6 can both go there
-- **C71 Ruy Lopez: Morphy Defense, Modern Steinitz Defense** (0 views)
-  - `...exd4`: No piece can play exd4 here, now or after the plan's earlier moves
-- **C71 Spanish: Modern Steinitz, 5.d4** (0 views)
-  - `...c5`: No piece can play c5 here, now or after the plan's earlier moves
-- **C72 Ruy Lopez: Morphy Defense, Modern Steinitz Defense** (0 views)
+- **C80 Ruy Lopez: Open, Main Line** (0 views)
+  - `Nbd2-f1-e3`: One step of Nbd2-f1-e3 can't be played here
+- **C80 Ruy Lopez: Open, Skipworth Gambit** (0 views)
+  - `c6`: No piece can play c6 here, now or after the plan's earlier moves
+- **C80 Ruy Lopez: Open, Zukertort Variation** (0 views)
+  - `Nd2-f1-g3`: Nd2 is ambiguous: the knights on f3 and b1 can both go there
+- **C80 Ruy Lopez:Riga Variation** (0 views)
+  - `Ng4`: No piece can play Ng4 here, now or after the plan's earlier moves
+- **C80 Ruy Lopez:Riga Variation** (0 views)
+  - `...Ng4`: No piece can play Ng4 here, now or after the plan's earlier moves
+  - `...Nf5`: No piece can play Nf5 here, now or after the plan's earlier moves
+- **C80 Ruy Lopez:Riga Variation** (0 views)
+  - `Kg1`: No piece can play Kg1 here, now or after the plan's earlier moves
+- **C80 Spanish: Open, 7.Bb3 d5** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+- **C80 Spanish: Open, 8...Be6 9.Be3** (0 views)
   - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
-- **C72 Spanish: Modern Steinitz, 5.O-O Bd7** (0 views)
-  - `Nf1-g3`: One step of Nf1-g3 can't be played here
-- **C72 Spanish: Modern Steinitz, 5.O-O Ne7** (0 views)
-  - `...O-O`: No piece can play O-O here, now or after the plan's earlier moves
-  - `...c5`: No piece can play c5 here, now or after the plan's earlier moves
-  - `...c5`: No piece can play c5 here, now or after the plan's earlier moves
+- **C80 Spanish: Open, 8.Nxe5** (0 views)
+  - `e5-pawn`: There is no pawn on e5, or on its way

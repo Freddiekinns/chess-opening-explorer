@@ -38668,10 +38668,10 @@
         "Unconventional Positions"
       ],
       "common_plans": [
-        "White: Rapidly complete development with Nf3 and Be2/d3, connect the rooks, and use the initiative to create threats against Black's uncastled king and weak pawns.",
+        "White: Develop quickly with Nf3 and Nbd2 or Bd2, win back the d4-pawn (with the king off the e-file, exd4 is now possible), and use the b3-queen and c4-bishop against f7 and b7 while Black's king is still in the centre.",
         "Black: Challenge White's queen, complete development (e.g., ...Nf6, ...Nc6, ...Be6), and aim to prove that White's king on f1 is a permanent weakness.",
-        "White: Use the open e-file for the rook (Re1) to support an attack and control central squares.",
-        "Black: Seek to trade queens to neutralize White's attack and transition into an endgame where the White king's placement is a clear disadvantage."
+        "White: Once the minor pieces are out, untangle the king and the h1-rook, for example with h3 and Kg1, or g3 and Kg2.",
+        "Black: Seek to trade queens to neutralise White's attack and transition into an endgame where the White king's placement is a clear disadvantage."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T18:59:04.764Z"
@@ -38690,7 +38690,7 @@
       "icsbot": "Novikov Gambit, QGA "
     },
     "analysis_json": {
-      "description": "The Novikov Gambit is a sharp and ambitious line within the Queen's Gambit Accepted where White prioritizes rapid development and initiative over immediate material equality. By playing 5. Qb3 and 6. Nd2, White creates immediate threats and aims for a lasting attack, making it a dynamic battle from the early moves. This opening suits players who enjoy tactical complications and are comfortable playing with the initiative in exchange for a potential pawn deficit.",
+      "description": "The Novikov Gambit is a sharp and ambitious line within the Queen's Gambit Accepted where White prioritises rapid development and initiative over immediate material equality. By playing 5. Qb3 and 6. Nd2, White creates immediate threats and aims for a lasting attack, making it a dynamic battle from the early moves. This opening suits players who enjoy tactical complications and are comfortable playing with the initiative in exchange for a potential pawn deficit.",
       "style_tags": [
         "Gambit",
         "Aggressive",
@@ -38731,9 +38731,9 @@
         "Queen Activity"
       ],
       "common_plans": [
-        "For White: Develop rapidly with Nf3 and O-O, using the active queen on b3 to create threats against f7 and b7. Aim to maintain the initiative and prevent Black from consolidating.",
-        "For Black: Complete development with ...Nf6, ...Be7, and ...O-O while neutralizing White's threats. Challenge White's central control and look to exploit the potentially exposed white queen.",
-        "For White: Prepare to regain the d4 pawn or maintain long-term pressure as compensation. Maneuver the d2-knight to a more active square like f1-e3.",
+        "For White: Develop rapidly with Ngf3 and O-O, using the active queen on b3 to create threats against f7 and b7. Aim to maintain the initiative and prevent Black from consolidating.",
+        "For Black: Complete development with ...Nf6, ...Nc6 and ...Be6, which challenges the c4-bishop and the b3-queen, while neutralising White's threats, then castle once the king is safe. Look to keep the extra d4-pawn and exploit the potentially exposed white queen.",
+        "For White: Win back the d4-pawn with Ngf3 and Nxd4 (the e3-pawn is pinned against the king by the queen on e7, so exd4 is not yet possible), or keep up the pressure as compensation if Black holds the pawn.",
         "For Black: Solidify the position, trade pieces to relieve pressure, and aim to prove that White's compensation for the pawn is insufficient."
       ],
       "version": "1.0",
@@ -39273,8 +39273,8 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Solidify control of d5, develop pieces to support the knight (Be2, Bg5), and exert pressure on the c7-pawn to restrict Black's development.",
-        "Black: Immediately address the d5-knight with ...Na6 to defend c7. Complete development (...Bd7, ...Nf6), and aim to challenge or trade off the d5-knight to equalize the position."
+        "White: Use the d5-knight's threat of Nc7+, forking the king and the a8-rook, to gain time; then win back the c4-pawn with e4 and Bxc4 and develop quickly.",
+        "Black: Cover the c7-square at once, with ...Bd6, ...Na6 or ...Kd8, then complete development (...Ne7 or ...Nf6, ...Be6) and challenge the d5-knight, keeping the extra c4-pawn as long as it is safe."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T19:02:18.661Z"
@@ -39289,7 +39289,7 @@
     "name": "QGA: 3.Nf3 c5 4.d5 e6 5.Nc3 exd5 6.Qxd5 Qxd5 7.Nxd5 Bd6",
     "scid": "D21q",
     "analysis_json": {
-      "description": "This line leads to an immediate queen trade, transitioning the game into a complex endgame-like middlegame. White's main asset is the powerful knight on d5, while Black aims to neutralize this piece and create counterplay based on a solid pawn structure. This opening is perfect for players who enjoy strategic maneuvering and understanding the nuances of piece activity in simplified positions.",
+      "description": "This line leads to an immediate queen trade, transitioning the game into a complex endgame-like middlegame. White's main asset is the powerful knight on d5, while Black aims to neutralise this piece and create counterplay based on a solid pawn structure. This opening is perfect for players who enjoy strategic manoeuvring and understanding the nuances of piece activity in simplified positions.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -39330,7 +39330,7 @@
         "Prophylaxis"
       ],
       "common_plans": [
-        "White: Solidify control of the d5 outpost, often with the e2-e4 push, and develop pieces to pressure Black's position, particularly the c7-pawn.",
+        "White: Win back the c4-pawn with Nd2 and Nxc4, or e4 and Bxc4, keep the knight strong on d5, and use the lead in development to press Black's queenside.",
         "Black: Challenge the d5-knight (e.g., via ...Na6-b4), complete development harmoniously, and seek counterplay on the queenside with moves like ...b5."
       ],
       "version": "1.0",
@@ -39346,7 +39346,7 @@
     "name": "QGA: 3.Nf3 c5 4.d5 e6 5.Nc3 exd5 6.Qxd5 Qxd5 7.Nxd5 Bd6 8.Nd2",
     "scid": "D21r",
     "analysis_json": {
-      "description": "This variation leads to an early queen trade, ushering in a complex and strategic middlegame where positional understanding is paramount. White leverages a space advantage from the d5 pawn to pressure Black's position, while Black relies on the solid d6-bishop to hold the structure together and seek counterplay. This line is perfect for patient, strategic players who enjoy a nuanced battle of piece maneuvering and long-term planning over immediate tactical skirmishes.",
+      "description": "This variation leads to an early queen trade, ushering in a complex and strategic middlegame where positional understanding is paramount. White's knight on d5 is the key piece, and 8.Nd2 heads for the c4-pawn, so White aims to win back the pawn while keeping the initiative; Black relies on the d6-bishop, which guards c7, and looks to finish development and challenge the d5-knight. This line is perfect for patient, strategic players who enjoy a nuanced battle of piece manoeuvring and long-term planning over immediate tactical skirmishes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -39388,10 +39388,10 @@
         "Knight Maneuvering"
       ],
       "common_plans": [
-        "White: Execute the Nd2-b3-c4 maneuver to challenge the d6-bishop and control key squares.",
-        "Black: Solidify the position with ...Be7 and ...Ne7, preparing to reroute the knight to challenge White's central grip.",
+        "White: Win back the c4-pawn with Nxc4, which also hits the d6-bishop, and keep the d5-knight as a strong central piece.",
+        "Black: Challenge the d5-knight with ...Ne7 and complete development with ...Nbc6 and ...Be6, accepting that White will regain the c4-pawn.",
         "White: Prepare the e2-e4 pawn push to gain more central space and activate the light-squared bishop.",
-        "Black: Complete development and seek counterplay by challenging White's control of the c-file or preparing a queenside pawn break."
+        "Black: Complete development, castle, and look for counterplay on the queenside with ...b5, which supports the c4-pawn."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T19:02:57.354Z"
@@ -39406,7 +39406,7 @@
     "name": "QGA: 3.Nf3 c5 4.e3",
     "scid": "D21j",
     "analysis_json": {
-      "description": "This variation of the Queen's Gambit Accepted leads to a strategically rich and double-edged game. Black's early ...c5 challenges the center immediately, often resulting in an Isolated Queen's Pawn (IQP) for White after ...cxd4 exd4. This creates a classic dynamic struggle: White leverages the IQP for a space advantage and attacking chances, while Black aims to blockade the pawn, exchange pieces, and exploit it as a long-term weakness. It's an excellent choice for players who enjoy understanding and playing with specific pawn structures.",
+      "description": "This variation of the Queen's Gambit Accepted leads to a strategically rich and double-edged game. Black's early ...c5 challenges the centre immediately, often resulting in an Isolated Queen's Pawn (IQP) for White after ...cxd4 exd4. This creates a classic dynamic struggle: White leverages the IQP for a space advantage and attacking chances, while Black aims to blockade the pawn, exchange pieces, and exploit it as a long-term weakness. It's an excellent choice for players who enjoy understanding and playing with specific pawn structures.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -39449,7 +39449,7 @@
       ],
       "common_plans": [
         "White: Use the space advantage from the IQP to build a kingside attack, place pieces on active squares (e.g., Ne5), and avoid simplifying exchanges. A timely d4-d5 pawn break is a key goal.",
-        "Black: Blockade the isolated d-pawn (often with ...Nd5), exchange pieces to reduce White's attacking potential, and pressure the pawn in the endgame. Control of the d5 square is paramount."
+        "Black: Blockade the isolated d-pawn (often with a knight on d5), exchange pieces to reduce White's attacking potential, and pressure the pawn in the endgame. Control of the d5 square is paramount."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T19:03:20.442Z"
@@ -39564,8 +39564,8 @@
         "Initiative for a Structural Weakness"
       ],
       "common_plans": [
-        "For White: Use the d5-square as an outpost. Develop pieces to attack the kingside, often using the open files. Prepare the d4-d5 pawn break to open the position further.",
-        "For Black: Blockade the d4-pawn, typically with a knight on d5. Exchange pieces to relieve pressure and transition to a favorable endgame where the d-pawn is a clear weakness. Create counterplay against the d4-pawn and on the queenside."
+        "For White: Recapture on d4, usually with exd4 for an isolated queen's pawn and free piece play, or with Nxd4 for a quieter game. Then use the e5-square as an outpost for a knight, aim the pieces at the kingside, and prepare the advance of the d-pawn to open the position further.",
+        "For Black: Blockade the d4-pawn, typically with a knight on d5. Exchange pieces to relieve pressure and transition to a favourable endgame where the d-pawn is a clear weakness. Create counterplay against the d4-pawn and on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T19:04:03.920Z"
@@ -39639,7 +39639,7 @@
     "name": "QGA: 3.Nf3 e6 4.e3",
     "scid": "D21g",
     "analysis_json": {
-      "description": "This variation of the Queen's Gambit Accepted is a classical and highly solid system for White. By playing 3.Nf3 and 4.e3, White forgoes immediate sharp complications in favor of building a robust pawn center and ensuring the swift recapture of the c4-pawn. The resulting game is typically strategic and positional, revolving around central control, piece development, and long-term plans, making it ideal for players who appreciate a clear, logical battle and excel at accumulating small advantages.",
+      "description": "This variation of the Queen's Gambit Accepted is a classical and highly solid system for White. By playing 3.Nf3 and 4.e3, White forgoes immediate sharp complications in favour of building a robust pawn centre and ensuring the swift recapture of the c4-pawn. The resulting game is typically strategic and positional, revolving around central control, piece development, and long-term plans, making it ideal for players who appreciate a clear, logical battle and excel at accumulating small advantages.",
       "style_tags": [
         "Positional",
         "Strategic",
@@ -39681,9 +39681,9 @@
       ],
       "common_plans": [
         "White: Recapture on c4 with the bishop, complete development, and use the central pawn majority to control the game or launch a kingside attack in IQP positions.",
-        "Black: Complete kingside development, challenge White's center with the ...c5 pawn break, and aim to neutralize White's space advantage or blockade and attack an isolated d-pawn.",
-        "White: Develop pieces to their optimal squares (e.g., Nc3, Be2/d3, 0-0) and exert long-term pressure on the d5-pawn and along the c-file.",
-        "Black: Seek favorable piece trades to relieve pressure and transition into a simplified middlegame or an equal endgame, especially if White is left with an IQP."
+        "Black: Complete kingside development, challenge White's centre with the ...c5 pawn break, and aim to neutralise White's space advantage or blockade and attack an isolated d-pawn.",
+        "White: Develop pieces to good squares (Bxc4, Nc3, O-O) and, after ...c5, choose between keeping the tension and allowing an isolated d-pawn in return for active pieces.",
+        "Black: Seek favourable piece trades to relieve pressure and transition into a simplified middlegame or an equal endgame, especially if White is left with an IQP."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T19:04:43.354Z"
@@ -39856,7 +39856,7 @@
         "Fighting for the Center"
       ],
       "common_plans": [
-        "White: Use the queen check to disrupt Black's setup, recapture the c4-pawn with e3 and Bxc4, and exploit any awkwardness in Black's piece placement.",
+        "White: Use the check to provoke a block on d7 or c6, then win back the c4-pawn with Qxc4 and develop quickly, aiming to show that Black's blocking piece stands awkwardly.",
         "Black: Block the check efficiently (e.g., ...Bd7, ...Nd7), complete development, and challenge White's central control, often with a ...c5 pawn break, to prove the white queen is misplaced."
       ],
       "version": "1.0",
@@ -39929,7 +39929,7 @@
     "name": "QGA: Seirawan Variation",
     "scid": "D21s",
     "analysis_json": {
-      "description": "The Seirawan Variation of the Queen's Gambit Accepted leads to a rapid exchange of queens, ushering in a strategic, queenless middlegame. White gains a space advantage with the d5-pawn, while Black aims for a solid setup to neutralize this pressure and equalize. This opening is perfect for technical and strategic players who enjoy subtle maneuvering and have confidence in their endgame skills, as the game revolves around positional concepts rather than sharp tactical attacks.",
+      "description": "The Seirawan Variation of the Queen's Gambit Accepted leads to a rapid exchange of queens, ushering in a strategic, queenless middlegame. White's knight on d5 is the most active piece, and 8...Ne7 challenges it at once, while Black aims for a solid setup to neutralise this pressure and equalise. This opening is perfect for technical and strategic players who enjoy subtle manoeuvring and have confidence in their endgame skills, as the game revolves around positional concepts rather than sharp tactical attacks.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -39969,10 +39969,10 @@
         "Space Advantage vs Solid Structure"
       ],
       "common_plans": [
-        "White: Solidify the center with e4, maneuver the d2-knight to b3 to pressure c5, and use the space advantage to restrict Black's pieces.",
-        "Black: Challenge White's central pawn on d5, often via a ...b5 pawn break, complete development, and neutralize White's pressure to achieve an equal endgame.",
+        "White: Decide what to do with the d5-knight, which the e7-knight now challenges, usually by exchanging it with Nxe7, then win back the c4-pawn with Nxc4 and gain space with e4.",
+        "Black: Exchange the d5-knight with ...Nxd5 if White allows it, support the c4-pawn with ...b5 where possible, complete development and neutralise White's pressure to reach an equal endgame.",
         "White: Develop the light-squared bishop, often via g3 and Bg2, to control key diagonals and prepare for kingside castling.",
-        "Black: Use the Bd6 as a key defensive and controlling piece, reroute the Ne7 to a more active square like c6, and seek counterplay on the queenside."
+        "Black: Use the Bd6 as a key defensive and controlling piece, reroute the e7-knight with ...Nec6 to a more active square, and seek counterplay on the queenside."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T19:06:15.158Z"

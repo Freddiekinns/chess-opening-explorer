@@ -1,10 +1,10 @@
 # Plan reference check
 
-1722 references on 1326 of 12377 pages fail the check and show as plain text.
+1651 references on 1277 of 12377 pages fail the check and show as plain text.
 
-- Plans: 41062, of which 5460 name no move, route, square or piece
-- References by kind: {"square":16483,"piece":15698,"move":54999,"route":8709}
-- References by result: {"now":70059,"on-board":14716,"later":9392,"invalid":1722}
+- Plans: 41062, of which 5451 name no move, route, square or piece
+- References by kind: {"square":16527,"piece":15824,"move":55125,"route":8665}
+- References by result: {"now":70229,"on-board":14850,"later":9411,"invalid":1651}
 
 ## Most viewed flagged pages (views from 2026-11-01.json)
 
@@ -51,22 +51,25 @@
   - `fxe3`: No piece can play fxe3 here, now or after the plan's earlier moves
 - **C55 Italian Game: Two Knights Defense, Max Lange Attack, Loman Defense** (0 views)
   - `fxg7`: No piece can play fxg7 here, now or after the plan's earlier moves
-- **C80 Ruy Lopez: Open, Main Line** (0 views)
-  - `Nbd2-f1-e3`: One step of Nbd2-f1-e3 can't be played here
-- **C80 Ruy Lopez: Open, Skipworth Gambit** (0 views)
-  - `c6`: No piece can play c6 here, now or after the plan's earlier moves
-- **C80 Ruy Lopez: Open, Zukertort Variation** (0 views)
-  - `Nd2-f1-g3`: Nd2 is ambiguous: the knights on f3 and b1 can both go there
-- **C80 Ruy Lopez:Riga Variation** (0 views)
-  - `Ng4`: No piece can play Ng4 here, now or after the plan's earlier moves
-- **C80 Ruy Lopez:Riga Variation** (0 views)
-  - `...Ng4`: No piece can play Ng4 here, now or after the plan's earlier moves
-  - `...Nf5`: No piece can play Nf5 here, now or after the plan's earlier moves
-- **C80 Ruy Lopez:Riga Variation** (0 views)
-  - `Kg1`: No piece can play Kg1 here, now or after the plan's earlier moves
-- **C80 Spanish: Open, 7.Bb3 d5** (0 views)
+- **C83 Spanish: Open, Classical, 10.Nbd2 O-O 11.Bc2 f5 12.exf6** (0 views)
+  - `e6 pawn`: There is no pawn on e6, or on its way
+  - `f1-e3`: One step of f1-e3 can't be played here
+- **C84 Spanish: Closed, Centre Attack, 7.Re1 b5 8.e5** (0 views)
+  - `d5`: No piece can play d5 here, now or after the plan's earlier moves
+- **C84 Spanish: Closed, Centre Attack, 7.Re1 O-O** (0 views)
   - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
-- **C80 Spanish: Open, 8...Be6 9.Be3** (0 views)
+- **C85 Spanish: Closed, Exchange** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+- **C85 Spanish: Closed, Exchange, 7.d3** (0 views)
+  - `d2-f1-g3`: One step of d2-f1-g3 can't be played here
+  - `e3`: No piece can play e3 here, now or after the plan's earlier moves
+- **C85 Spanish: Closed, Exchange, 7.d3 Bg4** (0 views)
+  - `Nf1-g3`: One step of Nf1-g3 can't be played here
+  - `g4`: No piece can play g4 here, now or after the plan's earlier moves
+- **C85 Spanish: Closed, Exchange, 7.d3 Nd7** (0 views)
   - `Nbd2-f1-g3`: One step of Nbd2-f1-g3 can't be played here
-- **C80 Spanish: Open, 8.Nxe5** (0 views)
-  - `e5-pawn`: There is no pawn on e5, or on its way
+- **C85 Spanish: Closed, Exchange, 7.d3 Nd7 8.Nbd2** (0 views)
+  - `f1-g3`: One step of f1-g3 can't be played here
+  - `f2-f4-f5`: One step of f2-f4-f5 can't be played here
+- **C85 Spanish: Closed, Exchange, 7.d3 Nd7 8.Nbd2 O-O 9.Nc4 f6 10.Nh4 Nc5 11.Nf5** (0 views)
+  - `g4-h5`: One step of g4-h5 can't be played here

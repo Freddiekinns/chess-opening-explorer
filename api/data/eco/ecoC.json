@@ -133746,7 +133746,7 @@
     "name": "Spanish: Closed, Centre Attack, 7.Re1 b5 8.e5",
     "scid": "C84n",
     "analysis_json": {
-      "description": "This variation of the Ruy Lopez Centre Attack is a sharp and ambitious attempt by White to seize the initiative early. By thrusting the e-pawn forward with 8.e5, White immediately creates a dynamic and unbalanced position, forcing Black to react precisely. The game departs from the typical strategic maneuvering of the Closed Spanish and enters a tactical phase where piece activity and control of key squares are paramount, suiting players who enjoy forcing the action and fighting for the initiative from the outset.",
+      "description": "This variation of the Ruy Lopez Centre Attack is a sharp and ambitious attempt by White to seize the initiative early. By thrusting the e-pawn forward with 8.e5, White immediately creates a dynamic and unbalanced position, forcing Black to react precisely. The game departs from the typical strategic manoeuvring of the Closed Spanish and enters a tactical phase where piece activity and control of key squares are paramount, suiting players who enjoy forcing the action and fighting for the initiative from the outset.",
       "style_tags": [
         "Aggressive",
         "Sharp",
@@ -133787,9 +133787,9 @@
         "Exploiting the e-file"
       ],
       "common_plans": [
-        "White aims to support the advanced e5-pawn, often with moves like d5, to cramp Black and launch a kingside attack. The rook on e1 and bishop (usually on b3) become key attacking pieces.",
-        "Black must resolve the pressure on the f6-knight (e.g., with ...Ne4 or ...Nd5) and generate counterplay by challenging White's center and expanding on the queenside with the a- and b-pawns.",
-        "White often reroutes the queen's knight via d2 to support the center or join a kingside attack.",
+        "White meets 8...Nxe5 with 9.Rxe5, and after 9...d6 10.Re1 bxa4 regains material with 11.Nxd4, leaving Black's queenside pawns split while White's pieces are active.",
+        "Black must resolve the pressure on the f6-knight, most often with 8...Nxe5 9.Rxe5 d6, then take the a4-bishop with ...bxa4 once the rook has retreated.",
+        "White often reroutes the queen's knight via d2 to support the centre or join a kingside attack.",
         "Black seeks to undermine the e5-pawn, which can become a long-term weakness if not properly supported, and activate the light-squared bishop, often via b7."
       ],
       "version": "1.0",
@@ -133921,7 +133921,7 @@
     "name": "Spanish: Closed, Centre Attack, 7.Re1 O-O",
     "scid": "C84o",
     "analysis_json": {
-      "description": "This mainline of the Closed Ruy Lopez features White's direct challenge in the center with 6.d4. The resulting positions are strategically complex and double-edged, revolving around control of the e-file and the central squares. It's a battle of deep strategic understanding where both sides must balance piece activity with structural considerations, making it a favorite for players who enjoy rich, classical chess.",
+      "description": "In the Centre Attack White opens the centre with 6.d4 instead of the usual 6.Re1, and after 6...exd4 7.Re1 O-O White usually plays 8.e5 to drive the f6-knight back before regaining the pawn. Black is a pawn up for the moment and aims for ...d6 or ...d5 to free the position, while White relies on the e-file and quicker development.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -133961,9 +133961,9 @@
         "Piece Maneuvering"
       ],
       "common_plans": [
-        "White: Play c3 followed by recapturing on d4 (often with e5 first), solidifying the center and preparing to use the e-file pressure.",
-        "White: Maneuver the f3-knight (often via d2-f1-g3) to support the kingside or control key central squares.",
-        "Black: Prepare and execute the ...d5 pawn break to liquidate the center and free the position.",
+        "White: Push 8.e5 to drive the f6-knight back to e8, then regain the pawn with c3 or Nxd4, using the space the e5-pawn gives.",
+        "White: Regain the d4-pawn with Nxd4, centralising the knight, and use the e1-rook behind the e-pawn to support its advance.",
+        "Black: Prepare and execute the ...d5 pawn break to liquidate the centre and free the position.",
         "Black: Develop the queenside with ...b5 and ...Bb7, putting pressure on White's e4 pawn and preparing counterplay."
       ],
       "version": "1.0",
@@ -134221,7 +134221,7 @@
     "scid": "C85b",
     "isEcoRoot": true,
     "analysis_json": {
-      "description": "The Closed Exchange Spanish variation creates a rich, strategic battle defined by a fundamental imbalance: White gains a superior pawn structure in exchange for Black's bishop pair. This opening bypasses the sharp tactical lines of the main Spanish, leading to a game of long-term maneuvering where understanding structural weaknesses and the potential of the two bishops is paramount. It is ideal for patient, positional players who enjoy accumulating small advantages and navigating complex endgames.",
+      "description": "The Closed Exchange Spanish variation creates a rich, strategic battle defined by a fundamental imbalance: White gains a superior pawn structure in exchange for Black's bishop pair. This opening bypasses the sharp tactical lines of the main Spanish, leading to a game of long-term manoeuvring where understanding structural weaknesses and the potential of the two bishops is paramount. It is ideal for patient, positional players who enjoy accumulating small advantages and navigating complex endgames.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -134261,8 +134261,8 @@
         "Endgame Advantage"
       ],
       "common_plans": [
-        "White: Play d4, reroute the knight via d2-f1-g3, pressure the e5 pawn, and exploit the better pawn structure in the endgame.",
-        "Black: Utilize the bishop pair, challenge for central control with moves like ...c5, and create counterplay on the kingside or in the center."
+        "White: Play d3 and Nbd2, then bring the knight to c4 or, after Re1, via the f1-square to g3; the kingside pawn majority gives White the better structure for the endgame.",
+        "Black: Utilise the bishop pair, challenge for central control with moves like ...c5, and create counterplay on the kingside or in the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:40:08.238Z"
@@ -134277,7 +134277,7 @@
     "name": "Spanish: Closed, Exchange, 7.d3",
     "scid": "C85j",
     "analysis_json": {
-      "description": "The Spanish Exchange Variation with 7.d3 is a highly strategic and positional system where White voluntarily gives up the bishop pair to create a long-term structural advantage. White aims to leverage a kingside pawn majority, often steering the game towards a favorable endgame. This opening is perfect for patient, strategic players who enjoy squeezing small advantages from a seemingly quiet position and have a deep understanding of pawn play and endgame technique.",
+      "description": "The Spanish Exchange Variation with 7.d3 is a highly strategic and positional system where White voluntarily gives up the bishop pair to create a long-term structural advantage. White aims to leverage a kingside pawn majority, often steering the game towards a favourable endgame. This opening is perfect for patient, strategic players who enjoy squeezing small advantages from a seemingly quiet position and have a deep understanding of pawn play and endgame technique.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -134317,9 +134317,9 @@
         "Central Counterplay"
       ],
       "common_plans": [
-        "White: Maneuver the knight from f3 (e.g., to d2-f1-g3/e3) to support the center and prepare for kingside expansion with f4-g4, aiming to create a passed pawn.",
-        "Black: Utilize the bishop pair for active counterplay, often by challenging White's center with moves like ...f5 or placing a knight on the d4 outpost.",
-        "White: Systematically trade pieces to simplify the position, aiming to reach a winning king and pawn endgame where the kingside majority is decisive.",
+        "White: Bring the b1-knight via d2 to c4 or, after Re1, via the f1-square to g3, and prepare a slow kingside expansion; the kingside pawn majority is White's long-term trump.",
+        "Black: Use the bishop pair, often with ...Nd7-c5 or ...Bg4, and play ...c5 and ...f6 to keep White's knights out.",
+        "White: Simplify towards an endgame, where the kingside majority and Black's doubled c-pawns favour White.",
         "Black: Create queenside pressure or open lines for the rooks and bishops to prevent White from comfortably executing their kingside plan."
       ],
       "version": "1.0",
@@ -134335,7 +134335,7 @@
     "name": "Spanish: Closed, Exchange, 7.d3 Bg4",
     "scid": "C85k",
     "analysis_json": {
-      "description": "A highly strategic variation of the Ruy Lopez Exchange where White seeks a long-term structural advantage based on Black's doubled pawns. In return, Black gains the bishop pair and active piece play, initiated by the pin with 7...Bg4. The game is typically a slow, maneuvering battle that rewards deep positional understanding and patience, often transitioning into complex endgames where small advantages can be decisive.",
+      "description": "A highly strategic variation of the Ruy Lopez Exchange where White seeks a long-term structural advantage based on Black's doubled pawns. In return, Black gains the bishop pair and active piece play, initiated by the pin with 7...Bg4. The game is typically a slow, manoeuvring battle that rewards deep positional understanding and patience, often transitioning into complex endgames where small advantages can be decisive.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -134377,8 +134377,8 @@
         "Control of the d-file"
       ],
       "common_plans": [
-        "White: Break the pin with h3, maneuver the knight (Nf1-g3), and use the kingside pawn majority (f4, g4) to create an attack or a passed pawn. Pressure Black's weak c-pawns and aim for a favorable endgame.",
-        "Black: Utilize the bishop pair to control key squares and create threats. Prepare the ...c5 pawn break to challenge White's structure. Maneuver the knight from d7 to support the center and prepare to challenge White's e4 pawn."
+        "White: Ask the bishop with h3, develop with Nbd2 and Re1, then bring the knight via the f1-square to g3; the kingside pawn majority and Black's doubled c-pawns favour White in the endgame.",
+        "Black: Use the bishop pair and the pin on the f3-knight, reroute the f6-knight via d7 to c5, and play ...c5 or ...f6 to fix the centre."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:40:50.609Z"
@@ -134393,7 +134393,7 @@
     "name": "Spanish: Closed, Exchange, 7.d3 Nd7",
     "scid": "C85l",
     "analysis_json": {
-      "description": "The Spanish Exchange with 7.d3 is a deeply strategic and positional battle. White trades the bishop pair for a superior pawn structure, aiming to leverage a kingside pawn majority for a long-term attack. Black, in turn, relies on the two bishops and queenside counterplay to compensate for the structural deficit. This opening is perfect for patient, strategic players who enjoy maneuvering and accumulating small advantages over a long game.",
+      "description": "The Spanish Exchange with 7.d3 is a deeply strategic and positional battle. White trades the bishop pair for a superior pawn structure, aiming to leverage a kingside pawn majority for a long-term attack. Black, in turn, relies on the two bishops and queenside counterplay to compensate for the structural deficit. This opening is perfect for patient, strategic players who enjoy manoeuvring and accumulating small advantages over a long game.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -134434,8 +134434,8 @@
         "Exploiting Weaknesses"
       ],
       "common_plans": [
-        "White: Develop with Nbd2-f1-g3, Qe2, and h3. Prepare a slow kingside expansion with f4 and/or g4 to create an attack.",
-        "Black: Challenge the center with ...c5 and ...Bd6. Activate the bishop pair, often developing the light-squared bishop to g4 or e6, and create queenside counterplay.",
+        "White: Develop with Nbd2 and Nc4, or Re1 and the knight via the f1-square to g3; h3 and a slow kingside expansion follow.",
+        "Black: Challenge the centre with ...c5 and ...Bd6. Activate the bishop pair, often developing the light-squared bishop to g4 or e6, and create queenside counterplay.",
         "White: Control the d-file and pressure Black's weak c-pawns, aiming to restrict Black's pieces.",
         "Black: Trade pieces to simplify into an endgame where the bishop pair can dominate, especially if White's king becomes exposed."
       ],
@@ -134452,7 +134452,7 @@
     "name": "Spanish: Closed, Exchange, 7.d3 Nd7 8.Nbd2",
     "scid": "C85m",
     "analysis_json": {
-      "description": "The Ruy Lopez Exchange with 7.d3 is a subtle and strategic system where White aims to leverage a kingside pawn majority for a long-term advantage. By avoiding immediate confrontation, White builds a solid position, planning to slowly expand on the kingside or transition into a favorable endgame. This opening is perfect for patient, strategic players who enjoy maneuvering and exploiting structural imbalances, rather than engaging in early tactical skirmishes.",
+      "description": "The Ruy Lopez Exchange with 7.d3 is a subtle and strategic system where White aims to leverage a kingside pawn majority for a long-term advantage. By avoiding immediate confrontation, White builds a solid position, planning to slowly expand on the kingside or transition into a favourable endgame. This opening is perfect for patient, strategic players who enjoy manoeuvring and exploiting structural imbalances, rather than engaging in early tactical skirmishes.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -134492,8 +134492,8 @@
         "Endgame Conversion"
       ],
       "common_plans": [
-        "White: Maneuver the knight from d2 to f1-g3 to support a kingside pawn storm with f2-f4-f5. Control the center and restrict Black's bishops, aiming to trade into a favorable endgame where the pawn majority is decisive.",
-        "Black: Utilize the bishop pair to create threats and control key diagonals. Prepare the ...f5 pawn break to open lines for the pieces and challenge White's central control. Reroute the Nd7 to f8 to bolster kingside defense or to b6 to eye the c4 square."
+        "White: Bring the d2-knight to c4, or play Re1 and route it via the f1-square to g3; once the f3-knight has moved, f4 can start a kingside pawn advance.",
+        "Black: Use the bishop pair, castle and support e5 with ...f6; the d7-knight can go to c5 or b6 to meet a white knight on c4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:41:31.059Z"
@@ -134736,7 +134736,7 @@
     "name": "Spanish: Closed, Exchange, 7.d3 Nd7 8.Nbd2 O-O 9.Nc4 f6 10.Nh4 Nc5 11.Nf5",
     "scid": "C85r",
     "analysis_json": {
-      "description": "This variation of the Ruy Lopez Exchange leads to a strategically rich and double-edged struggle. White's aggressive Nh4-f5 plan establishes a powerful knight outpost, aiming for a direct kingside attack. Black, in turn, seeks to neutralize this pressure, often by exchanging the knight, and leverage the long-term advantages of the bishop pair and a queenside pawn majority. This opening is perfect for strategic players who enjoy complex maneuvering and balancing attack with long-term positional goals.",
+      "description": "This variation of the Ruy Lopez Exchange leads to a strategically rich and double-edged struggle. White's aggressive Nh4-f5 plan establishes a powerful knight outpost, aiming for a direct kingside attack. Black, in turn, seeks to neutralise this pressure, often by exchanging the knight, and leverage the long-term advantages of the bishop pair and a queenside pawn majority. This opening is perfect for strategic players who enjoy complex manoeuvring and balancing attack with long-term positional goals.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -134779,8 +134779,8 @@
         "Pawn Structure Imbalance"
       ],
       "common_plans": [
-        "White: Support the Nf5 knight and launch a kingside pawn storm with g4-h5. Use the queen to join the attack via g4 or h5. Prevent Black from activating the bishop pair.",
-        "Black: Neutralize the knight on f5, typically via ...Bxf5 or ...Ne6xf5. Create counterplay using the bishop pair and the queenside pawn majority (...c5, ...b5). Challenge White's central control."
+        "White: Keep the f5-knight, support it with g4 or Qg4, and push f4 to open lines on the kingside.",
+        "Black: Exchange the f5-knight with ...Bxf5, giving up the bishop pair to remove White's best piece; once White recaptures with the e-pawn, Black regroups with ...Qd7 and ...Rfd8, aiming at the d3-pawn on the half-open d-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:43:20.850Z"
@@ -134892,8 +134892,8 @@
         "Kingside Pawn Majority"
       ],
       "common_plans": [
-        "White: Break the pin with h3, challenge the center with d4, target Black's e5 and c5 pawns, and utilize the kingside pawn majority in the endgame.",
-        "Black: Maintain the pin, use the bishop pair for active play, challenge White's central control, and create counterplay on the d-file and against the white king."
+        "White: Ask the bishop with h3, then play d3 and aim for a favourable structure; the kingside pawn majority and Black's doubled c-pawns are White's long-term assets.",
+        "Black: Maintain the pin, use the bishop pair for active play, and create counterplay on the half-open d-file and against the white king."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:44:00.275Z"
@@ -134963,7 +134963,7 @@
     "name": "Spanish: Closed, Exchange, 7.Qe1 c5",
     "scid": "C85g",
     "analysis_json": {
-      "description": "The Exchange Variation of the Ruy Lopez with 7.Qe1 leads to a deeply strategic and positional struggle. White voluntarily gives up the bishop pair to inflict a doubled pawn on Black, aiming to exploit this structural advantage in a long-term game. This opening is perfect for patient, strategic players who enjoy maneuvering and grinding out small advantages, focusing on pawn structure and endgame transitions.",
+      "description": "The Exchange Variation of the Ruy Lopez with 7.Qe1 leads to a deeply strategic and positional struggle. White voluntarily gives up the bishop pair to inflict a doubled pawn on Black, aiming to exploit this structural advantage in a long-term game. This opening is perfect for patient, strategic players who enjoy manoeuvring and grinding out small advantages, focusing on pawn structure and endgame transitions.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -135005,10 +135005,10 @@
         "Endgame Preparation"
       ],
       "common_plans": [
-        "White: Play d3, Nbd2-f1-g3, and slowly build pressure on the kingside and center, aiming for a favorable endgame.",
-        "Black: Utilize the bishop pair and open d-file for active counterplay, often with moves like ...Nd7, ...f6, and challenging White's central control.",
-        "White: Control the c5 square and target Black's doubled c-pawns as a long-term weakness.",
-        "Black: Use the c5 pawn to restrict White's pieces and create space on the queenside, potentially liquidating the doubled pawns at a favorable moment."
+        "White: Play d3, Nbd2 and Nc4, aiming the knights at Black's weakened queenside while keeping the e5-pawn under watch; the kingside majority is the long-term trump.",
+        "Black: Use the bishop pair and the half-open d-file for active counterplay, often with ...Nd7 and ...f6, challenging White's central control.",
+        "White: Target Black's doubled c-pawns, now on c7 and c5, as a long-term weakness.",
+        "Black: Use the c5 pawn to restrict White's pieces and create space on the queenside, potentially liquidating the doubled pawns at a favourable moment."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T08:44:37.241Z"

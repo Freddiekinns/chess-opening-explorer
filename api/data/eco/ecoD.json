@@ -13553,7 +13553,7 @@
     "name": "Colle: 5.c3 Nc6",
     "scid": "D05j",
     "analysis_json": {
-      "description": "The Colle System is a solid, system-based opening for White, characterized by the d4-e3-c3 pawn triangle. It leads to a strategic game where White methodically prepares the central e4 pawn break, often aiming to launch a subsequent kingside attack. This opening is ideal for players who prefer a clear, reliable plan and enjoy accumulating positional advantages before initiating direct conflict.",
+      "description": "The Colle System is a solid, system-based opening for White, characterised by its pawn triangle on c3, d4 and e3. It leads to a strategic game where White methodically prepares the central e4 pawn break, often aiming to launch a subsequent kingside attack. This opening is ideal for players who prefer a clear, reliable plan and enjoy accumulating positional advantages before initiating direct conflict.",
       "style_tags": [
         "System-based",
         "Positional",
@@ -13594,10 +13594,10 @@
         "Prophylaxis against e4"
       ],
       "common_plans": [
-        "White: Complete development with Nbd2 and 0-0, then prepare and execute the e4 pawn break to open lines for an attack, often targeting the h7 square.",
-        "Black: Prevent or neutralize White's e4 break, often with moves like ...b6 and ...Bb7. Develop pieces to challenge central control and seek queenside counterplay, for example with ...cxd4 followed by ...b5.",
+        "White: Complete development with Nbd2 and O-O, then prepare and execute the e4 pawn break to open lines for an attack, often targeting the h7-square.",
+        "Black: Keep a firm grip on e4 to hold back White's central break, often adding ...b6 and ...Bb7, and seek queenside counterplay, for example with ...cxd4 and ...b5.",
         "Black: Trade off White's dangerous light-squared bishop on d3, a key attacking piece in the Colle.",
-        "White: If e4 is not possible, reroute pieces (e.g., Ne1-f3 or Ne1-g2) to support the kingside or prepare for other pawn breaks."
+        "White: If the e4 break is held up, switch to Ne5 and f4, a Stonewall-style grip on e5 that supports a kingside attack."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:12:48.972Z"
@@ -13668,7 +13668,7 @@
     "name": "Colle: 5.c3 Nc6 6.Nbd2 Bd6",
     "scid": "D05l",
     "analysis_json": {
-      "description": "The Colle System with this setup is a reliable, system-based opening for White, aiming for a solid central structure and a clear middlegame plan. The primary goal is to achieve the e3-e4 pawn break, which opens lines for a kingside attack. This opening suits strategic players who prefer understanding plans over memorizing sharp, tactical variations, leading to a game of maneuver and long-term strategy.",
+      "description": "The Colle System with this setup is a reliable, system-based opening for White, aiming for a solid central structure and a clear middlegame plan. The primary goal is to achieve the e3-e4 pawn break, which opens lines for a kingside attack. This opening suits strategic players who prefer understanding plans over memorising sharp, tactical variations, leading to a game of manoeuvre and long-term strategy.",
       "style_tags": [
         "System-based",
         "Positional",
@@ -13709,9 +13709,9 @@
       ],
       "common_plans": [
         "White: Prepare and execute the e3-e4 pawn break, often via O-O and Re1, to open the position for a kingside attack.",
-        "White: Reposition the knight from d2 to f1 to e3 or g3 to support the center and the attack.",
-        "Black: Prevent or control White's e4 break, often by playing ...O-O and ...Re8, and preparing to meet e4 with ...dxe4.",
-        "Black: Create queenside counterplay with moves like ...b5 and ...a5-a4 to challenge White's pawn structure."
+        "White: Back the break with Qe2 or Qc2 and Re1, keeping the d3-bishop pointed at h7 for the attack once the centre opens.",
+        "Black: Castle and line up ...Qc7 behind the d6-bishop on the b8-h2 diagonal, ready to exchange on e4 when White pushes there and to strike with ...e5 if given time.",
+        "Black: Create queenside counterplay with ...b6 and ...Bb7, or exchange with ...cxd4 to open the c-file for the rooks."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:13:29.759Z"
@@ -13726,7 +13726,7 @@
     "name": "Colle: 5.c3 Nc6 6.Nbd2 Bd6 7.O-O O-O",
     "scid": "D05m",
     "analysis_json": {
-      "description": "The Colle System is a reliable, system-based opening for White, aiming for a solid pawn structure and a clear plan. The goal is to prepare and execute the central e4 pawn break, which often transitions into a potent kingside attack. This opening is ideal for strategic players who appreciate a safe, well-structured setup from which they can launch a methodical assault, without needing to memorize vast amounts of theory.",
+      "description": "The Colle System is a reliable, system-based opening for White, aiming for a solid pawn structure and a clear plan. The goal is to prepare and execute the central e4 pawn break, which often transitions into a potent kingside attack. This opening is ideal for strategic players who appreciate a safe, well-structured setup from which they can launch a methodical assault, without needing to memorise vast amounts of theory.",
       "style_tags": [
         "System-based",
         "Strategic",
@@ -13766,9 +13766,9 @@
       ],
       "common_plans": [
         "White: Prepare and execute the e4 pawn break, often followed by a kingside attack using pieces like Ng5, Qh5, and the classic bishop sacrifice on h7.",
-        "White: Reposition the knight from d2 to f1 and then to e3 or g3 to support the center and the attack.",
+        "White: Prepare the break with Qe2 or Re1, often clarifying the tension with dxc5 first so that e4 comes with greater force.",
         "Black: Prevent or neutralize White's e4 break by exchanging on d4 (dxc4) followed by ...b5, or by controlling e4 with pieces.",
-        "Black: Generate queenside counterplay by challenging White's c3-d4 pawn chain, often with moves like ...b5-b4."
+        "Black: Generate queenside counterplay with ...b6, ...Bb7 and ...Rc8, using the c-file after an exchange on d4."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:13:47.155Z"
@@ -13783,7 +13783,7 @@
     "name": "Colle: 5.c3 Nc6 6.Nbd2 Bd6 7.O-O O-O 8.dxc5 Bxc5",
     "scid": "D05n",
     "analysis_json": {
-      "description": "This line of the Colle System sees White immediately clarifying the central tension with 8.dxc5. The game transitions from a typical system-based setup into a more classical and dynamic middlegame, resembling a Queen's Gambit Declined structure. The entire struggle revolves around White's ambition to achieve the e3-e4 pawn break, which would grant a space advantage and activate the light-squared bishop. This opening is ideal for strategic players who enjoy maneuvering and fighting for central control, rather than executing a pre-packaged attacking plan.",
+      "description": "This line of the Colle System sees White clarifying the central tension with 8.dxc5. The game transitions from a typical system-based setup into a more classical and dynamic middlegame, resembling a Queen's Gambit Declined structure. The entire struggle revolves around White's ambition to achieve the e3-e4 pawn break, which would grant central space and free the dark-squared bishop on c1. This opening is ideal for strategic players who enjoy manoeuvring and fighting for central control, rather than executing a pre-packaged attacking plan.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -13824,9 +13824,9 @@
         "Prophylaxis against e4"
       ],
       "common_plans": [
-        "White's primary plan is to prepare and execute the e4 pawn break, often with Qe2, to open the center and activate the Bd3.",
-        "Black's main goal is to restrain White's e4 push by controlling the square, often preparing queenside counterplay with ...a6 and ...b5.",
-        "If White achieves e4, the game becomes a dynamic battle for the initiative in an open center.",
+        "White's primary plan is to prepare and execute the e4 pawn break, often with Qe2, to open the centre and free the c1-bishop.",
+        "Black's main goal is to restrain White's central advance by controlling e4, often preparing queenside counterplay with ...a6 and ...b5.",
+        "If White achieves e4, the game becomes a dynamic battle for the initiative in an open centre.",
         "Black may also aim for their own central break with ...e5, completely changing the nature of the position."
       ],
       "version": "1.0",
@@ -14098,7 +14098,7 @@
       "eco_js": "Queen's Pawn Game, Zukertort Variation"
     },
     "analysis_json": {
-      "description": "The Zukertort Variation is a flexible and strategic system for White, often leading to the Colle-Zukertort setup. White aims for harmonious development, with the key idea being the fianchetto of the queen's bishop to b2, which pressures Black's center and supports the vital e3-e4 pawn break. This opening is ideal for positional players who enjoy building up pressure slowly and executing long-term plans, often leading to a complex middlegame focused on a kingside attack versus queenside counterplay.",
+      "description": "The Zukertort Variation is a flexible and strategic system for White, often leading to the Colle-Zukertort setup. White aims for harmonious development, with the key idea being the fianchetto of the queen's bishop to b2, which pressures Black's centre and supports the vital e3-e4 pawn break. This opening is ideal for positional players who enjoy building up pressure slowly and executing long-term plans, often leading to a complex middlegame focused on a kingside attack versus queenside counterplay.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -14139,10 +14139,10 @@
         "Fianchetto Pressure"
       ],
       "common_plans": [
-        "White: Complete development with Bb2 and O-O, prepare and execute the e4 pawn break, and launch a kingside attack.",
-        "Black: Solidify the center with ...Nc6 and ...Be7, control the e4 square, and seek counterplay by opening the c-file (...cxd4) or expanding on the queenside (...b5).",
-        "White: Maneuver the b1-knight via f1-g3 to support the attack, while the b2-bishop exerts long-range pressure.",
-        "Black: Create a minority attack on the queenside to undermine White's pawn structure."
+        "White: Complete development with Bb2, Bd3 and O-O, prepare and execute the e4 pawn break, and launch a kingside attack.",
+        "Black: Solidify the centre with ...Nc6 and ...Be7, control the e4-square, and seek counterplay by opening the c-file (...cxd4) or expanding on the queenside (...b5).",
+        "White: Plant the f3-knight on e5, often backed up by f4, while the b2-bishop waits for the long diagonal to open once the d4-pawn is exchanged.",
+        "Black: Contest the long diagonal and the e4-square with ...b6 and ...Bb7, often combined with ...cxd4 to open the c-file."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:15:48.915Z"
@@ -15314,7 +15314,7 @@
     "name": "QGD: Marshall Defence, 3.cxd5 Nxd5 4.e4",
     "scid": "D06k",
     "analysis_json": {
-      "description": "This line of the Marshall Defence leads to a sharp, dynamic confrontation where White seizes a powerful pawn center and a significant space advantage with 4.e4. The character of the game is a direct struggle between White's central dominance and Black's attempts to undermine it from the flanks. This opening is excellent for aggressive and tactical players who enjoy fighting for the initiative and are comfortable navigating complex, open positions.",
+      "description": "This line of the Marshall Defence leads to a sharp, dynamic confrontation where White seizes a powerful pawn centre and a significant space advantage with 4.e4. The character of the game is a direct struggle between White's central dominance and Black's attempts to undermine it from the flanks. This opening is excellent for aggressive and tactical players who enjoy fighting for the initiative and are comfortable navigating complex, open positions.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -15355,10 +15355,10 @@
         "Flank Pressure"
       ],
       "common_plans": [
-        "White: Solidify the d4-e4 center, complete development with Nf3, Be2/d3, and 0-0, and use the space advantage to launch an attack or squeeze Black.",
-        "Black: Challenge the center with an early ...c5, often fianchettoing the light-squared bishop to b7 to pressure the e4 pawn.",
-        "White: Prevent or favorably meet Black's ...c5 break, control the key d5-square, and prepare to expand on the kingside.",
-        "Black: After the knight retreats (e.g., to b6), complete development with ...e6, ...Be7, and ...0-0, aiming to prove White's center is overextended and create targets."
+        "White: Solidify the d4-e4 centre, complete development with Nf3, Be2 or Bd3, and O-O, and use the space advantage to launch an attack or squeeze Black.",
+        "Black: After the knight retreats to f6 or b6, hit the centre at once with ...e5 or ...c5, aiming to break up White's pawns before they become dangerous.",
+        "White: Prevent or favourably meet Black's ...c5 break, control the key d5-square, and prepare to expand on the kingside.",
+        "Black: After the knight retreats (e.g., to b6), complete development with ...e6, ...Be7, and ...O-O, aiming to prove White's centre is overextended and create targets."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:22:23.117Z"
@@ -15882,7 +15882,7 @@
       "icsbot": "Brieger Defense; Sahovic Defense, QGD; Baltic Defense "
     },
     "analysis_json": {
-      "description": "The Baltic Defense is an ambitious and provocative response to the Queen's Gambit, characterized by the immediate development of the light-squared bishop. Unlike more traditional QGD lines, Black immediately solves the problem of the 'bad' bishop, leading to sharp, unbalanced positions where tactical alertness is paramount. This opening is well-suited for dynamic players who enjoy active piece play and are comfortable navigating early complications to fight for the initiative.",
+      "description": "The Baltic Defence is an ambitious and provocative response to the Queen's Gambit, characterised by the immediate development of the light-squared bishop. Unlike more traditional QGD lines, Black immediately solves the problem of the 'bad' bishop, leading to sharp, unbalanced positions where tactical alertness is paramount. This opening is well-suited for dynamic players who enjoy active piece play and are comfortable navigating early complications to fight for the initiative.",
       "style_tags": [
         "Aggressive",
         "Dynamic",
@@ -15923,10 +15923,10 @@
         "Creating early imbalances"
       ],
       "common_plans": [
-        "For Black, the plan is to complete development rapidly with ...e6, ...Nf6, and ...c6, using the active Bf5 to create threats and counter-attack. Black must be prepared to respond accurately to White's critical test with Qb3.",
-        "For White, a primary plan is to challenge the exposed Bf5, often with Qb3 to attack both b7 and the bishop. Another key idea is to play cxd5, aiming to seize a space advantage in the center and prove that Black's early bishop sortie is premature.",
-        "In lines where White plays cxd5, Black often recaptures with the bishop on b1 (after ...Bxb1), aiming to disrupt White's coordination and play in the resulting imbalanced position.",
-        "White often seeks to consolidate central control, develop pieces harmoniously, and exploit the potential weaknesses in Black's camp, such as the b7-pawn or the slightly loosened kingside."
+        "For Black, the plan is to complete development rapidly with ...e6, ...Nf6, and ...c6, using the active f5-bishop to create threats and counter-attack. Black must be ready for White's critical tests, the queen sortie to b3 against b7 and the exchange on d5.",
+        "For White, a primary plan is Qb3 to attack the b7-pawn the bishop has left unguarded. Another key idea is to play cxd5, aiming to seize a space advantage in the centre and prove that Black's early bishop sortie is premature.",
+        "For Black: Answer the exchange on d5 by taking the b1-knight with the bishop, then regain the pawn with the queen, and play the resulting imbalanced position.",
+        "For White: Develop harmoniously with Nc3 and Nf3, keep the central space advantage, and target the b7-pawn that the bishop left behind."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:25:03.003Z"
@@ -16009,7 +16009,7 @@
       "icsbot": "Pseudo-Chigorin, QGD "
     },
     "analysis_json": {
-      "description": "The Pseudo-Chigorin variation of the Baltic Defense is a combative and unorthodox system against the Queen's Gambit. Black immediately develops the light-squared bishop to avoid a passive position, then adopts a Chigorin-style knight development to challenge the center. This opening leads to strategically complex and dynamic middlegames, suiting players who enjoy fighting for the initiative and are comfortable with non-standard structures.",
+      "description": "The Pseudo-Chigorin variation of the Baltic Defence is a combative and unorthodox system against the Queen's Gambit. Black immediately develops the light-squared bishop to avoid a passive position, then adopts a Chigorin-style knight development to pressure the centre. This opening leads to strategically complex and dynamic middlegames, suiting players who enjoy fighting for the initiative and are comfortable with non-standard structures.",
       "style_tags": [
         "Dynamic",
         "Strategic",
@@ -16050,10 +16050,10 @@
         "Fighting for the initiative"
       ],
       "common_plans": [
-        "White: Challenge the Bf5 bishop with moves like Qb3, open the center with cxd5 to exploit the potentially awkward Nc6, and aim for a space advantage.",
-        "Black: Solidify the center, put pressure on the d4-pawn, often rerouting the knight to e5 via ...Ne4, and seek active counterplay.",
-        "White: Complete development smoothly and use the central pawn majority to create a lasting advantage.",
-        "Black: Complete development and prepare to challenge White's control of the center, sometimes involving a timely ...c5 pawn break."
+        "White: Hit b7 with Qb3, or play cxd5 so that the c6-knight, standing in front of Black's c-pawn, looks awkward, and aim for a space advantage.",
+        "Black: Develop with ...Nf6 and ...Bb4, pinning the c3-knight, and press on the d4-pawn with the c6-knight; ...dxc4 can free the position at the right moment.",
+        "White: Complete development smoothly with e3, Be2 or Bd3 and O-O, and use the extra central space, aiming for an eventual e4.",
+        "Black: Complete development and challenge White's centre with ...e5 at a good moment, the typical Chigorin break, since the c6-knight rules out ...c5."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:25:36.395Z"
@@ -17202,7 +17202,7 @@
     "name": "QGD: Chigorin, 3.Nf3 Bg4 4.e3",
     "scid": "D07i",
     "analysis_json": {
-      "description": "This line represents a more positional and restrained approach against the dynamic Chigorin Defense. By playing 4.e3, White calmly unpins the knight and reinforces the center, aiming to exploit long-term structural nuances rather than engaging in immediate tactical brawls. The game often revolves around Black's pressure on the d4-pawn and White's attempts to complete development and use their space advantage, making it suitable for strategic players who enjoy subtle maneuvering.",
+      "description": "This line represents a more positional and restrained approach against the dynamic Chigorin Defence. By playing 4.e3, White calmly reinforces the d4-pawn and opens the f1-bishop's diagonal, accepting that the f3-knight is now pinned to the queen, and aims to exploit long-term structural nuances rather than engaging in immediate tactical brawls. The game often revolves around Black's pressure on the d4-pawn and White's attempts to complete development and use their space advantage, making it suitable for strategic players who enjoy subtle manoeuvring.",
       "style_tags": [
         "Strategic",
         "Positional",
@@ -17243,10 +17243,10 @@
         "Development Race"
       ],
       "common_plans": [
-        "White: Complete development with Be2, 0-0, and Rc1. Challenge Black's control of the center and use the bishop pair if Black plays ...Bxf3.",
+        "White: Develop with Nc3, Be2 and O-O, breaking the pin, and challenge Black's hold on the centre; if Black plays ...Bxf3, use the bishop pair.",
         "Black: Maintain pressure on d4, often with ...e6 to solidify d5. Consider trading the g4-bishop for the f3-knight to disrupt White's pawn structure and seek counterplay.",
         "White: Expand on the queenside with a3 and b4 to gain space and challenge the c6-knight.",
-        "Black: Develop the queenside knight to e7 and prepare to challenge White's central control or launch a kingside attack."
+        "Black: Follow up with ...e6 and ...Nge7, keeping the c6-knight's pressure on d4, and choose between ...dxc4 and the ...e5 break to free the position."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-21T13:31:30.598Z"
@@ -134277,7 +134277,7 @@
     "moves": "1. d4 d5 2. c4 g6",
     "src": "chessGraph",
     "analysis_json": {
-      "description": "This is a provocative and flexible hypermodern response to the Queen's Gambit, often called the 'Alekhine Defense to the QGD'. Black immediately signals an intention to fianchetto the dark-squared bishop, ceding the center temporarily to challenge it from the flank. This approach leads to sharp, unbalanced positions and is ideal for creative, dynamic players who are comfortable fighting against a space advantage and enjoy creating complex strategic battles.",
+      "description": "This is a provocative and flexible hypermodern response to the Queen's Gambit, often called the 'Alekhine Defence to the QGD'. Black immediately signals an intention to fianchetto the dark-squared bishop, ceding the centre temporarily to challenge it from the flank. This approach leads to sharp, unbalanced positions and is ideal for creative, dynamic players who are comfortable fighting against a space advantage and enjoy creating complex strategic battles.",
       "style_tags": [
         "Hypermodern",
         "Dynamic",
@@ -134321,10 +134321,10 @@
         "Pressure on the Long Diagonal"
       ],
       "common_plans": [
-        "For Black: Fianchetto the bishop to g7, undermine White's center with a ...c5 pawn break, and create pressure on the long diagonal.",
-        "For White: Seize a broad pawn center (e.g., with e2-e4), use the space advantage to develop pieces harmoniously, and restrict the influence of Black's Bg7.",
+        "For Black: Fianchetto the bishop to g7, undermine White's centre with a ...c5 pawn break, and create pressure on the long diagonal.",
+        "For White: Seize a broad pawn centre with Nc3 and e4, often after cxd5, use the space advantage to develop pieces harmoniously, and restrict the fianchettoed bishop.",
         "For Black: Complete development and prepare to challenge White's central control, often looking to trade pieces to relieve pressure and exploit any weaknesses.",
-        "For White: Solidify the center, prevent Black's counter-play (especially the ...c5 break), and slowly build up an attack based on the space advantage."
+        "For White: Solidify the centre, prevent Black's counter-play (especially the ...c5 break), and slowly build up an attack based on the space advantage."
       ],
       "version": "1.0",
       "last_enriched_at": "2025-07-22T12:20:08.921Z"

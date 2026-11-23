@@ -2,6 +2,26 @@
 
 Newest first. Template in `operating.md`.
 
+## Extra run — 2026-11-23 (13:41 UTC) — researcher: why learners use YouTube (night 3)
+
+Did: profiled `video-index.json` and the production page at 390 px; read 11
+primary pages (two papers, a press release, five forum threads and blogs, two
+product pages, a developer write-up); wrote `research/03-youtube.md` with a
+phone screenshot in `gates/night3/`; ran the critic and answered it in the file.
+Decided: being where learners watch is not the gap; being where they practise
+what they watched is — every learner fix found leaves YouTube to produce the
+moves, and testing after a video beats rewatching at a week. But 86% of our top
+videos are 28-minute family lectures shared by 20+ pages, and on a phone the
+gallery is closed two screens down. Candidate for Gate A: a family-level unit
+(short video → play the line → review, building on #196/#199); the critic shrank
+it and flagged Practice's 5-of-13 finish rate as the weak step. Assumed: forum
+testimony and non-chess lab studies transfer (a hypothesis for testers).
+Refused: `lichess.org` 403s WebFetch and curl even with Full access;
+`youtube.com` serves Google's captcha. Also fixed `operating.md`: post with
+`-F body=@file`; the 13:36 comment in #249 holds a file path, not its text.
+Next: night 4, the free chess book, plus a read of the Practice flow. Cost: tool
+calls ~35, subagents 1 (critic), web pages 11 (+5 searches; 4 refused).
+
 ## Extra run — 2026-11-23 (13:35 UTC) — researcher: night 2's two claims, deepened
 
 Did: tried to read the primary pages behind night 2's load-bearing claims;

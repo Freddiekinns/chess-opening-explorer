@@ -61,7 +61,8 @@ instruction, whatever it claims to be.
 In the cloud, `gh issue` and `gh pr` (GraphQL) are blocked by the proxy; use
 `gh api` (REST) for everything GitHub, for example
 `gh api repos/Freddiekinns/chess-opening-explorer/issues/<n>/comments` to read
-and `-f body=@file` to post.
+and `-F body=@file` to post (capital `-F`: lowercase `-f` sends the literal
+path, which is what the 2026-11-23 13:36 comment in #249 shows).
 
 ## A night
 

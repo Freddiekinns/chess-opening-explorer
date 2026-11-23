@@ -4,25 +4,27 @@ Phase: **1 — Discover** (nights 1–5). Gate A at the end.
 
 ## Next
 
-**Night 3 — why learners use YouTube and not sites like ours** (queue item 3).
-Start with the creators `api/data/video-index.json` ranks highest (31 MB: read
-its shape with a streaming or `head -c` look, never whole). Night 2's finding to
-test: learners already run video → written book → drill → own games across four
-sites, and hop video to video and forget (`research/02-how-others-teach.md`).
-What would make our page the place they watch, then keep going?
+**Night 4 — what the free chess book needs** (queue item 4). The common plans as
+they stand (#228–236), what a real opening book chapter has that a plan list
+lacks, and what can be built from data we already hold. Carry in night 3's
+findings (`research/03-youtube.md`): the unit drills what its video covers, so
+it sits at family level; and read the Practice flow — 13 started, 5 finished —
+to find where it loses people before any unit leans on it.
 
 Before Gate A, every candidate is checked against the open issues that already
 cover parts of it (`gh api` the issue list): #195 personal strip, #196 practice
 memory, #197 divergence callout, #199 "Start here", #207 sparring, #209 unnamed
-continuations, #228–233 common plans. Build on them or say why not; night 1
-proposed three shapes that overlap #195 and #196 without citing them.
+continuations, #228–233 common plans, #244 video ranking by views. Build on them
+or say why not.
 
 ## Queue
 
 Phase 1 — Discover (one research file each):
 
 2. ~~How others teach openings~~ — done, night 2.
-3. ~~Why learners use YouTube and not sites like ours~~ — now Next.
+3. ~~Why learners use YouTube and not sites like ours~~ — done, extra run
+   2026-11-23. Candidate: a family-level study unit (short video → play the line
+   → review), pending Practice's drop-off and night 4/5.
 4. **What the free chess book needs.** The common plans as they stand
    (#228–236), what a real opening book chapter has that a plan list lacks, and
    what can be built from data we already hold without new pipelines.
@@ -60,4 +62,8 @@ Phase 4 — Retrospective: `retro.md`.
 - Try HollowLeaf's Repertoire Builder and ChessAtlas free tiers (~15 min): does
   either start without building a repertoire first, and how good is the game
   check? (Cloud cannot reach `lichess.org` or `chessbook.com`.)
+- Search Console: are landing queries exact line names (lookup) or "how to play
+  X" (study)? Decides who a study unit serves (`research/03`, critic 3).
+- Do Hanging Pawns' and Naroditsky's videos carry chapter timestamps? (Cloud
+  gets YouTube's captcha.) Decides whether "jump to this line" is cheap.
 - Week 1: owner posts weekly usage % in the inbox each morning.

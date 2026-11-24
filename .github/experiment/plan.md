@@ -4,19 +4,12 @@ Phase: **1 — Discover** (nights 1–5). Gate A at the end.
 
 ## Next
 
-**Night 6 — Gate A** (queue item 6). Write `gates/gate-a.md` from
-`research/01`–`05`: the recommendation (first slice `?practice=` + Practice
-fixes + #196 memory; then one family unit as the Gate B prototype), the
-alternatives turned down (deviation trainer first, the 31-family written book,
-Practice fixes without memory, more per-page plan text), the critic's case
-answered, the success measure (owner and testers, analytics as sanity check),
-and a rough slice plan. Comment in #249.
-
-Before Gate A, every candidate is checked against the open issues that already
-cover parts of it (`gh api` the issue list): #195 personal strip, #196 practice
-memory, #197 divergence callout, #199 "Start here", #207 sparring, #209 unnamed
-continuations, #228–233 common plans, #244 video ranking by views. Build on them
-or say why not.
+**Waiting on Gate A** (`gates/gate-a.md`, asked in #249 on 2026-11-24). Until
+the owner answers, a night writes one journal line and exits; nothing is
+designed. When it passes: night 7 starts Phase 2 from the gate's slice plan
+(step 0 `[local]` abandon read, then the one-line Giuoco Piano prototype). It
+applies the owner's answers to the gate's questions 2–5 first, and builds slice
+1 first if question 4 is a yes.
 
 ## Queue
 
@@ -32,9 +25,7 @@ Phase 1 — Discover (one research file each):
    then one family unit.
 5. ~~Your games~~ — done, extra run 2026-11-23. Own games are a later optional
    layer; #195's `?practice=` is the shared seam.
-6. **Gate A.** Two or three candidate features, a recommendation, the critic's
-   case against it answered, the success measure, and a rough slice plan.
-   Comment in the inbox.
+6. ~~Gate A~~ — written night 6, `gates/gate-a.md`; awaiting the owner.
 
 Phase 2 — Design (after Gate A; nights ~7–9): prototype, iterate on the owner's
 notes, Gate B.
@@ -60,6 +51,8 @@ Phase 4 — Retrospective: `retro.md`.
   (questions.md 2).
 
 ## Local items `[local]`
+
+- Gate A questions 1–5 in `gates/gate-a.md` (answer in #249).
 
 - Find out what the w/c 2026-11-09 spike was (PostHog: landing pages, user
   agents and session lengths of US direct visitors to `/`).

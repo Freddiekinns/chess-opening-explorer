@@ -2,6 +2,26 @@
 
 Newest first. Template in `operating.md`.
 
+## Night 6 — 2026-11-24 — product manager: Gate A
+
+Did: read `research/01`–`05`, the open issues and PRs, and #241's Rev 5.1
+backlog note. Wrote `gates/gate-a.md`, ran the critic, re-checked its video
+numbers against `video-index.json` (they hold) and answered it in the file.
+Commented in #249 asking for Gate A. Decided: recommend a study unit for **one
+line** (default Giuoco Piano, an 11-minute video, 3…Nf6 marked "not covered"):
+watch, then play once from memory with a wrong-move message, then two or three
+"what your level plays" questions, then a visible done. The critic changed it.
+The unit gives a visit an end but no reason to return, so that claim is
+withdrawn. Gate B is a usability check, and return is tested only with outside
+testers. The family lecture video (22 minutes, leading 258 of the 413 Italian
+pages) does not fit a ten-minute unit. #241's 2026-11-10 "no trainer" decision
+is now put to the owner as a question with no default. Assumed: #196 and #241
+stand as the issues describe them. Slice 1 waits for Gate B unless the owner
+says yes to building it early. Next: wait for Gate A. Until it passes, a night
+writes one line and exits. `[local]`: read `practice_abandon` before designing.
+Cost: minutes ~6 by container clock, tool calls ~25, subagents 1 (critic, ~78k
+tokens), web pages 0.
+
 ## Extra run, unit 2 — 2026-11-23 (~14:00 UTC) — researcher: your games (night 5)
 
 Did: a fresh subagent read the deviation-trainer PRD, the Analyse code, the
@@ -11,13 +31,13 @@ Decided: slice 2 stalled on sequencing only (backlog rev 4); every competitor
 compares games against a repertoire you build first; Analyse has 15 users a
 month, so own games are an optional later layer, not the front door or the
 return hook. Gate A will recommend: `?practice=` (#195's seam) + Practice fixes
-+ #196 memory first, then one family unit as the Gate B prototype.
-Assumed: competitors' marketing pages describe them truly (none tried).
-Refused: lichess.org pages; OpeningTree returned only its title.
-Next: night 6, Gate A — Tuesday 01:00 UTC.
-Cost (whole run): minutes ~15 by container clock, tool calls ~65, subagents 3
-(~178k tokens: critic 50k, brief 75k, critic 53k), web pages 21 (12 + 9 by
-subagent; +8 searches).
+
+- #196 memory first, then one family unit as the Gate B prototype. Assumed:
+  competitors' marketing pages describe them truly (none tried). Refused:
+  lichess.org pages; OpeningTree returned only its title. Next: night 6, Gate A
+  — Tuesday 01:00 UTC. Cost (whole run): minutes ~15 by container clock, tool
+  calls ~65, subagents 3 (~178k tokens: critic 50k, brief 75k, critic 53k), web
+  pages 21 (12 + 9 by subagent; +8 searches).
 
 ## Extra run — 2026-11-23 (13:52 UTC) — researcher: the free chess book (night 4)
 
@@ -26,20 +46,18 @@ content ledger, families); read #228–236; played Practice on production at 390
 px (`gates/night4/`); read 12 primary pages (Wikibooks ×3, Chess.com's Italian
 page, a Move by Move extract as text, Chessbook, three coaching articles, Chassy
 & Gobet 2011); wrote `research/04-free-chess-book.md`; ran the critic and
-answered it in the file.
-Decided: the free chess book exists (Wikibooks, pulled into Lichess's explorer),
-good at the top of the tree and thin below it; what ours lacks is a chapter's
-shape — key positions, plans shown in games, questions, the why. We can build
-the questions from real explorer data, not the prose. Practice silently rejects
-a wrong move, ends at "Complete!" with nothing next, and on the Italian its
-popularity-picked extension drills 4.Nc3 Nxe4. The critic shrank the candidate
-again: Practice fixes + #196 first, then one unit for one family as the Gate B
-prototype; no 31-family book.
-Assumed: one Practice page is indicative of the mechanism, not its frequency.
-Refused: lichess.org, chessable.com (403); stackexchange and reddit (fetch tool).
-Also noted: a stray `git checkout origin/main --` detached HEAD mid-run; caught
-before any commit, nothing lost.
-Next: night 5, your games (unit 2 of this run, by subagent brief).
+answered it in the file. Decided: the free chess book exists (Wikibooks, pulled
+into Lichess's explorer), good at the top of the tree and thin below it; what
+ours lacks is a chapter's shape — key positions, plans shown in games,
+questions, the why. We can build the questions from real explorer data, not the
+prose. Practice silently rejects a wrong move, ends at "Complete!" with nothing
+next, and on the Italian its popularity-picked extension drills 4.Nc3 Nxe4. The
+critic shrank the candidate again: Practice fixes + #196 first, then one unit
+for one family as the Gate B prototype; no 31-family book. Assumed: one Practice
+page is indicative of the mechanism, not its frequency. Refused: lichess.org,
+chessable.com (403); stackexchange and reddit (fetch tool). Also noted: a stray
+`git checkout origin/main --` detached HEAD mid-run; caught before any commit,
+nothing lost. Next: night 5, your games (unit 2 of this run, by subagent brief).
 Cost: minutes ~10 (container clock), tool calls ~55, subagents 1 (critic, ~50k
 tokens), web pages 12 (+5 searches; 6 refused).
 

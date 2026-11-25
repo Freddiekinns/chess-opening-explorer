@@ -63,7 +63,9 @@ Never, without the owner's yes in the inbox issue:
 - run a data pipeline, or spend money on any API (LLM, YouTube quota, Lichess
   beyond the cached `/api/explorer` proxy);
 - edit files the content routines own: `api/data/` ECO files,
-  `data/content-review/`, the `overnight/**` branches, or open PRs #234–236;
+  `data/content-review/`, the content routines' `overnight/**` branches (not
+  `overnight/experiment-state`, which is this experiment's own), or open PRs
+  #234–236;
 - change the existing routines, CI, `vercel.json`, hooks or `AGENTS.md`;
 - contact anyone but the owner, or post anywhere but this repo.
 

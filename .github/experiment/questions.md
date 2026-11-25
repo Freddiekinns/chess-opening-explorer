@@ -26,7 +26,9 @@ not answered by the next night. Answered ones move to **Decided** with the date.
    preview on the owner's free plan. May a run add `"overnight/**": false` to
    `vercel.json`'s `git.deploymentEnabled` (state branch, and a one-line PR to
    `main` so the content routines' branches stop too)? Or the owner sets it in
-   Vercel's dashboard. _Default: no file change; runs push once a night._
+   Vercel's dashboard. _Default: no file change; runs push twice a night (a
+   checkpoint and the end), since unpushed work is lost if a long run is cut off
+   (2026-11-25)._
 
 ## Decided
 

@@ -109,8 +109,12 @@ path).
 All experiment state is on the branch **`overnight/experiment-state`**, never
 merged until the retrospective. Cloud runs start from `main`, so a run checks it
 out first. Every push to this branch builds a Vercel preview on the owner's free
-plan (`vercel.json` excludes only `dependabot/**`), so **commit as you go, push
-once, at the end of the night.**
+plan (`vercel.json` excludes only `dependabot/**`). But commits that are not
+pushed vanish with the container if a run crashes or is cut off, and runs are
+now long. So **commit as you go, and push twice a night**: a checkpoint once the
+first meaningful piece of work is committed and about an hour has passed, and
+again at the end. If the owner excludes `overnight/**` from Vercel builds
+(`questions.md` 4), push after each piece instead.
 
 | File           | Holds                                                 | Read each night    |
 | -------------- | ----------------------------------------------------- | ------------------ |
@@ -143,12 +147,13 @@ open on a phone.
    would change your mind. Answer the owner's replies first.
 4. **Work the loop** above, for as long as it is producing something. Commit to
    the state branch after each meaningful piece (an idea tested, a research
-   file, a spike's notes), so a cut-off loses little.
+   file, a spike's notes), and push the checkpoint described under Where things
+   live, so a cut-off loses little.
 5. **Check** anything built against the commands `AGENTS.md` names.
 6. **Write down** the journal entry, update `plan.md`, `ideas.md` and
    `questions.md`, comment in #249 only if needed.
-7. **Push** the state branch once, with commit messages ending `[exp]`, and
-   stop.
+7. **Push** the state branch (the night's second push), with commit messages
+   ending `[exp]`, and stop.
 
 ## Your own agents and skills
 
@@ -190,12 +195,20 @@ Measured so far, as a guide:
 - Extra run of 2026-11-23: ~15 minutes, ~65 tool calls, 3 subagents (~178k
   tokens) ≈ 10% of a 5-hour window.
 
-Provisional limits until the owner posts new weekly figures: stop **starting new
-work** at about 100 main-session tool calls, 1.2M subagent tokens or 3 hours of
-wall clock, whichever comes first, then finish and write up what is open. There
-is no minimum, but a night that ends before an hour with untested ideas left
-should say why in the journal. Record all three figures in the Cost line, so the
-owner's usage numbers can be matched to them and these limits tuned.
+**Choose subagent models for cost.** Bulk reading, data sweeps, page fetches and
+spike scaffolding go to Sonnet or Haiku; keep Opus for judgment (critics, design
+calls, deciding what an idea's result means). Record each subagent's model in
+the Cost line.
+
+Provisional limits, set low on purpose for the first long night (night 8, a
+calibration night) because the 8% ceiling is a maximum: stop **starting new
+work** at about 80 main-session tool calls, 500k subagent tokens or 3 hours of
+wall clock, whichever comes first, then finish and write up what is open. The
+owner posts that night's weekly usage % in #249, and the next night raises the
+limits in this file towards the ceiling (or lowers them), saying so in the
+journal. There is no minimum, but a night that ends before an hour with untested
+ideas left should say why in the journal. Record all three figures in the Cost
+line, so the owner's usage numbers can be matched to them.
 
 - Read excerpts, not whole large files; never load `api/data/` files whole.
 - If a site is refused, say which in the journal; do not pass search summaries

@@ -16,7 +16,9 @@ owner is offered once an idea has survived the tests that could have killed it
    it anyway: does an animated walk with band pauses actually say something a
    learner cares about, on real lines, on a phone? A spike in the container
    answers that better than the gate document did.
-3. Record results, kill or promote, journal, push once.
+3. Record results, kill or promote, journal; push a checkpoint and at the end.
+   Night 8 is the calibration night: lower limits (`operating.md`), cheaper
+   models for bulk work.
 
 If the owner answers Gate A Revision 1 in #249, that answer goes into idea 1; a
 yes does not stop the other ideas being tested before anything is built.

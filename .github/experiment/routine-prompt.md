@@ -28,8 +28,9 @@ in your working directory.
    widen the ideas, test the riskiest assumptions where each idea would break,
    narrow — for as long as it is producing something, within the run limits.
    Think hard before anything goes to the owner. Commit as you go, write the
-   journal, update the plan, push the state branch once, and stop. Waiting on
-   the owner for one thing is never a reason to stop early.
+   journal, update the plan, push the state branch at a checkpoint and at the
+   end, and stop. Waiting on the owner for one thing is never a reason to stop
+   early.
 4. Never merge, never push to `main`, never force-push. Comment in the inbox
    issue only for a question, a discussion or a blocker, at most once, ending
    the comment with the line `🤖 Experiment run`.

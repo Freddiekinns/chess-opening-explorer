@@ -16,10 +16,11 @@ not answered by the next night. Answered ones move to **Decided** with the date.
    and leave hands-on checks as `[local]` items._
 
 3. **Gate A, revision 1** (`gates/gate-a.md`, 2026-11-25). A: yes or no to the
-   board-first play-through; B: Center Attack line or one the owner plays; 3:
-   is one play-through plus #196 memory inside the "no trainer" decision; 4:
-   slice 1 before Gate B. _Default: a gate, so no work until A is answered;
-   then Center Attack / memory left out / slice 1 waits._
+   board-first play-through; B: Center Attack line or one the owner plays; 3: is
+   one play-through plus #196 memory inside the "no trainer" decision; 4: slice
+   1 before Gate B. _Meanwhile (revised 2026-11-25): nothing is built as a PR
+   until A is answered, but idea 1 and the others keep being tested
+   (`ideas.md`). Then Center Attack / memory left out / slice 1 waits._
 
 4. **Vercel builds for `overnight/**`.** Every push to the state branch builds a
    preview on the owner's free plan. May a run add `"overnight/**": false` to
@@ -29,12 +30,23 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-25 — **Work deeper and more autonomously.** The owner, in a local
+  session: runs use almost no usage, are short, do not think deeply and are not
+  autonomous; they should research, generate ideas, test them early, think them
+  through, and bring a considered idea to discuss, not one the owner punctures
+  in ten seconds. Testing fits each idea (where that idea would break), not a
+  fixed checklist. The routine stays Opus 5.5 at medium effort; Claude picks
+  models and effort for subagents and may write its own agents and skills. ~8%
+  of the week a night is the maximum, not a target, but runs can be much longer.
+  Charter (gates, budget) and `operating.md` rewritten; `ideas.md` added;
+  routine prompt updated. (Owner, in chat.)
+
 - 2026-11-24 — **Gate A, first answer: "possibly", with questions.** Videos
   can't be sourced per line; the unit pays only on medium-to-long lines; 11
   minutes is overkill for the Giuoco Piano; it leans on video quality; animate
-  the line on the board behind a play button instead. Night 7 revised Gate A
-  to a board-first play-through (`gates/gate-a.md`, Revision 1). Also: night 6
-  used ~2% of the week. (Owner, #249.)
+  the line on the board behind a play button instead. Night 7 revised Gate A to
+  a board-first play-through (`gates/gate-a.md`, Revision 1). Also: night 6 used
+  ~2% of the week. (Owner, #249.)
 
 - 2026-11-24 — **Deploy less often.** Each run triggers a Vercel deployment on
   the free plan; deploy only occasionally. Runs now push once a night; question

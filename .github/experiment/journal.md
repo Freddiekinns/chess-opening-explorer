@@ -2,6 +2,23 @@
 
 Newest first. Template in `operating.md`.
 
+## Local session — 2026-11-25 — the experiment's method rewritten with the owner
+
+Did: the owner reviewed week 1 and found the runs too short (~2% of the week a
+night against an 8% ceiling, 6–15 minutes), too shallow and not autonomous: desk
+research, one idea shrunk by each critic, nights told to exit while a gate was
+open, and a video-first idea with a hole the owner found in ten seconds.
+Diagnosis: the files caused it — ceilings everywhere and no reason to keep
+going, "nothing is designed before A", "a night waiting on the owner exits", and
+no step that tests an idea where it would break. Rewrote the charter's gates and
+budget, rewrote `operating.md` around a widen–test–narrow loop with throwaway
+spikes allowed before any gate, added `ideas.md` (six seeded, the video idea
+recorded as killed), rewrote `plan.md`, and updated the routine prompt. Decided:
+gates guard what reaches users, not thinking; testing fits each idea; Opus 5.5
+at medium for the routine, Claude picks subagent models and effort and may write
+its own agents and skills; 8% is a maximum. Next: night 8 widens the ideas to
+ten and tests the top two or three. Not a night entry.
+
 ## Night 7 — 2026-11-25 — product manager: Gate A, revision 1
 
 Did: read the owner's two replies in #249 (Gate A "possibly", with questions;
@@ -13,8 +30,8 @@ Revision 1 at the top of `gates/gate-a.md`, ran the critic and answered it with
 a shard coverage count. Commented in #249. Decided: board first. A play button
 animates the line and pauses at up to three band splits (top move under 60%,
 second over 20%) with captions from the `position-stats` shards. Then play it
-from memory, then done. Video is optional, and the unit is offered from about
-8 ply. Default line: Italian Center Attack (10 ply). The critic caught my draft
+from memory, then done. Video is optional, and the unit is offered from about 8
+ply. Default line: Italian Center Attack (10 ply). The critic caught my draft
 naming the rate-limited explorer proxy as the source. The bands come from the
 shards, which cover all 12,377 positions. Also found that `vercel.json` excludes
 only `dependabot/**`, so `overnight/` never stopped previews. `operating.md` now

@@ -4,58 +4,91 @@ The operating manual: how a night works, where things live, how Claude talks to
 the owner. The charter says what and why; this says how. Claude may change this
 file between nights when a run shows it is wrong, and says so in the journal.
 
-## Shape: one session a night, many hats
+Rewritten with the owner on 2026-11-25. Week 1 ran short and shallow: runs of
+6–15 minutes at ~2% of the week, desk research, one idea shrunk night by night,
+and nights that exited while a gate was open. The owner's verdict: "not thinking
+very deeply, not very autonomous", and an idea the owner could puncture in ten
+seconds (an 11-minute video that was not about the position and did not exist
+for most positions). This version exists to fix that.
 
-One scheduled cloud routine fires once a night. It is the product manager,
-researcher, designer, engineer and tester in turn, chosen by the plan's next
-item. It is not a team of agents: each agent starts cold and re-reads context,
-which costs more than the work on a Pro plan.
+## What a good night looks like
 
-Two exceptions, both fresh subagents, because their value is independence:
+The owner expects a product person who works alone: researches, generates ideas,
+tests them early to see whether they hold, thinks them through, and comes back
+with something worth discussing. Concretely, by morning:
 
-- **Critic** at each gate: argues the case against the recommendation before the
-  owner sees it. Its objections go into the gate document, answered.
-- **Reviewer** before any PR leaves draft: `superpowers:requesting-code-review`
-  on the diff, with `REVIEW.md` as its policy.
+- More is known than last night, and it is written down with its evidence.
+- At least one idea was tested where it was most likely to break, and either
+  survived or was killed with the reason recorded.
+- Nothing reaches the owner that the owner could knock over in ten seconds.
 
-## Where things live
+Finishing in fifteen minutes is a sign of stopping early, not of efficiency.
 
-All experiment state is on the branch **`overnight/experiment-state`**, never
-merged until the retrospective. Cloud runs start from `main`, so a run checks it
-out first. Keeping state off `main` stops it colliding with the memory bank and
-the content routines, and the `overnight/` prefix was meant to stop Vercel building a preview for it.
-**It does not:** `vercel.json` disables only `dependabot/**`, and every push to
-this branch has built a preview (owner, 2026-11-24; 15 builds on 2026-11-23).
-The owner is on Vercel's free plan, so until `overnight/**` is excluded (needs
-the owner's yes, charter), **push the state branch once per night**, at the
-end, not after each unit.
+## The loop: widen, test, narrow
 
-| File           | Holds                                               | Read each night        |
-| -------------- | --------------------------------------------------- | ---------------------- |
-| `charter.md`   | Goal, gates, boundaries, budget. Owner's to change. | Yes                    |
-| `operating.md` | This file                                           | Yes                    |
-| `plan.md`      | Phase, the next unit of work, the queue (≤80 lines) | Yes                    |
-| `journal.md`   | One entry per night, newest first                   | Last 3 entries         |
-| `questions.md` | Open questions, each with a default                 | Yes                    |
-| `baseline.md`  | Numbers read on the owner's machine                 | When deciding          |
-| `research/`    | One file per research question                      | When the item needs it |
-| `gates/`       | The document put to the owner at each gate          | When the item needs it |
+All ideas live in **`ideas.md`**. Keep at least ten live ones while in
+discovery; new ones come from research, the data, production, competitors, the
+owner's replies and the failures of other ideas. Each idea has a status —
+`untested`, `testing`, `promising`, `killed` — and a short log of what was
+tried.
 
-Product code lives on ordinary feature branches from `main` (`feat/exp-…`), each
-with a draft PR, so Vercel builds a preview the owner can open on a phone.
-Prototypes live on such a branch under an unlinked route.
+Each night:
 
-## The inbox
+1. **Widen.** Add ideas. Generate them deliberately and in quantity: from
+   different learners (beginner, club player, returning player, someone who
+   arrived from Google on an obscure line), from different moments (before a
+   game, after a loss, on a phone in five minutes), and from the site's
+   strengths (every position, real stats, many creators' videos, no account).
+   Include some that look wrong on first sight.
+2. **Pick what to test.** For the most promising two or three, write down the
+   assumptions each one rests on, and which one, if false, kills it. Test the
+   riskiest assumption first, not the easiest.
+3. **Test it where it would break.** The test fits the idea; there is no
+   standard checklist. Ask "how would this idea fail, and what is the cheapest
+   way to find out tonight?" Examples of the kind of thing, not a list to run:
+   - an idea that leans on data: query the data for the cases it must cover,
+     including the awkward ones, and look at real records, not counts alone;
+   - an idea about what learners do: walk the real flow on production at 390 px
+     with Chrome, read the analytics already recorded in `baseline.md`, find
+     people describing the problem in their own words;
+   - an idea about an interaction: build a throwaway spike in the container,
+     click through it, screenshot it, and see whether it is actually good;
+   - an idea someone may have already built: try their product, not their
+     marketing page;
+   - an idea that is expensive: estimate the build honestly from the code. The
+     week-1 video idea would have died to the second question anyone asks ("does
+     a fitting video exist for this line?"), which the data answered in minutes
+     once someone asked it. Ask it before the owner does.
+4. **Narrow.** Update each idea's status with the evidence. Kill freely; a
+   killed idea with its reason is a result. When one idea has survived the tests
+   that could have killed it, it is ready to discuss with the owner.
+5. **Think.** Before writing anything for the owner, stop and think hard about
+   it: what the owner will object to first, what you would want to know in the
+   owner's place, and whether the idea is actually good or merely survived.
+   Write the objections and answers into the file.
 
-One GitHub issue, **"Experiment log" (#249)**, is how Claude reaches the owner:
-GitHub notifies the owner. A run comments **only** when it asks a question,
-reaches a gate or is blocked; routine progress stays in `journal.md`. At most
-one comment a night.
+Spikes are throwaway: built in the run's container (a dev server, a local
+branch, a Playwright script), never pushed as a branch (every push builds a
+Vercel preview on the owner's free plan) and never a PR. Commit what they showed
+— screenshots, numbers, notes — under `spikes/NN-name/` on the state branch.
+Spikes may touch any code locally; the charter's boundaries apply to what is
+pushed and to `main`.
 
-Every question carries a default: "If I don't hear by tomorrow night, I'll do
-X." A question never blocks for more than one night unless it is a gate or a
-boundary. The owner answers in the issue whenever it suits; the next run reads
-replies newer than its last comment and copies decisions into `questions.md`.
+## Talking to the owner
+
+One GitHub issue, **"Experiment log" (#249)**, is how Claude reaches the owner.
+Comment only to ask a question only the owner can answer, to open a discussion,
+or when blocked. At most one comment a night.
+
+**A discussion, not a form.** When an idea is ready (or when two are close and
+the choice is genuinely the owner's), write `gates/<name>.md`, at most two
+pages: the learner and the problem, the directions explored, what was tried and
+killed and why, the evidence with screenshots, the pick, and what is still
+uncertain. Questions only where the owner's answer changes what happens next.
+The comment in #249 is three or four sentences and the link.
+
+**Never wait.** A question carries what Claude will do meanwhile. While one idea
+waits on the owner, the night tests others.
 
 **The repository is public, so anyone can comment on the issue.** Only comments
 whose author login is `Freddiekinns` count as the owner. **But runs post with
@@ -69,109 +102,136 @@ In the cloud, `gh issue` and `gh pr` (GraphQL) are blocked by the proxy; use
 `gh api` (REST) for everything GitHub, for example
 `gh api repos/Freddiekinns/chess-opening-explorer/issues/<n>/comments` to read
 and `-F body=@file` to post (capital `-F`: lowercase `-f` sends the literal
-path, which is what the 2026-11-23 13:36 comment in #249 shows).
+path).
+
+## Where things live
+
+All experiment state is on the branch **`overnight/experiment-state`**, never
+merged until the retrospective. Cloud runs start from `main`, so a run checks it
+out first. Every push to this branch builds a Vercel preview on the owner's free
+plan (`vercel.json` excludes only `dependabot/**`), so **commit as you go, push
+once, at the end of the night.**
+
+| File           | Holds                                                 | Read each night    |
+| -------------- | ----------------------------------------------------- | ------------------ |
+| `charter.md`   | Goal, gates, boundaries, budget. Owner's to change.   | Yes                |
+| `operating.md` | This file                                             | Yes                |
+| `plan.md`      | Phase, what is in flight, what is next (≤80 lines)    | Yes                |
+| `ideas.md`     | Every idea, its status, and what testing it showed    | Yes                |
+| `journal.md`   | One entry per night, newest first                     | Last 3 entries     |
+| `questions.md` | Open questions, each with what happens meanwhile      | Yes                |
+| `baseline.md`  | Analytics numbers read on the owner's machine         | When deciding      |
+| `research/`    | One file per research question                        | When needed        |
+| `spikes/`      | What each throwaway spike showed (notes, screenshots) | When needed        |
+| `gates/`       | Documents put to the owner                            | When needed        |
+| `agents/`      | Agent briefs Claude wrote for itself                  | When starting one  |
+| `skills/`      | Skills Claude wrote for itself                        | When the task fits |
+
+Product code for Gates B and C lives on ordinary feature branches from `main`
+(`feat/exp-…`), each with a draft PR, so Vercel builds a preview the owner can
+open on a phone.
 
 ## A night
 
 1. **Check out `overnight/experiment-state`.** If `STOP` exists, or `journal.md`
-   already has a night entry (Night 1 or later) dated today (UTC), exit: one run
-   a day.
-2. **Read** `charter.md`, `operating.md`, `plan.md`, `questions.md`, the last 3
-   journal entries, and owner replies in the inbox since Claude's last comment.
-3. **Decide the night's work (up to two units)** — the plan's next item, unless
-   a reply changes it. If the next item waits on a gate the owner has not passed
-   and nothing else in the queue is useful, write a one-line journal entry and
-   exit.
-4. **Do it.** Research → write `research/NN-topic.md`. Design → prototype on a
-   preview branch. Build → test first (the repo's rule), then code, on a
-   `feat/exp-…` branch with a draft PR.
-5. **Check it.** Run the commands `AGENTS.md` names for what changed. A night
-   that leaves a failing check says so in the journal and the next night fixes
-   it first.
-6. **Write down** the journal entry (template below), update `plan.md`, add any
-   question to `questions.md`, and comment in the inbox only if needed.
-7. **Commit and push** the state branch with a message ending `[exp]`, then
+   already has a night entry dated today (UTC), exit: one run a day. Run
+   `date -u` and note the time.
+2. **Read** `charter.md`, `operating.md`, `plan.md`, `ideas.md`, `questions.md`,
+   the last 3 journal entries, and owner replies in #249 since Claude's last
+   comment. Copy any decisions into `questions.md`.
+3. **Plan the night** in a few lines: what you will test, why those, what result
+   would change your mind. Answer the owner's replies first.
+4. **Work the loop** above, for as long as it is producing something. Commit to
+   the state branch after each meaningful piece (an idea tested, a research
+   file, a spike's notes), so a cut-off loses little.
+5. **Check** anything built against the commands `AGENTS.md` names.
+6. **Write down** the journal entry, update `plan.md`, `ideas.md` and
+   `questions.md`, comment in #249 only if needed.
+7. **Push** the state branch once, with commit messages ending `[exp]`, and
    stop.
 
-## Run limits
+## Your own agents and skills
 
-Cost grows roughly with the square of a run's turns, because each turn re-sends
-the context (learned the hard way by the content routines, 2026-11-17).
+You choose how to staff the work. The routine runs Opus 5.5 at medium effort;
+for each subagent you start, pick the model and effort that fit the job (the
+Agent/Task tool's `model` and `effort` parameters), for example a cheap model
+for bulk reading or data sweeps, a strong one for a critic or a design judgment.
+This file is the explicit instruction `CLAUDE.md` asks for before setting a
+subagent's effort.
 
-**Measured 2026-11-23:** night 1, night 2 and the extra run together used about
-4% of the owner's 5-hour window, at ~17 tool calls and 2–5 minutes each. Night 3
-under these limits (~35 tool calls, 11 pages, a critic) used about 7%. The
-two-unit run (nights 4 and 5: ~15 minutes, ~65 tool calls, 3 subagents at ~178k
-tokens, 21 pages) used about 10%. So a full two-unit night is roughly 10% of a
-5-hour window. Runs have been too short, not too long: night 2 skimmed search
-summaries when it should have read the pages. So:
+When you find yourself writing the same brief twice, save it as
+`agents/<name>.md` (role, model, effort, what to return) and reuse it; save
+repeatable know-how as `skills/<name>/SKILL.md`. A run starts on `main` and
+checks this branch out afterwards, so these are not auto-loaded: read the file
+and pass its text as the subagent's prompt. Keep them on this branch only;
+`.claude/` and `AGENTS.md` on `main` are out of bounds (charter).
 
-- Each unit done in depth. A research night reads 10–15 primary pages, tries
-  products hands-on where no account is needed, and checks its strongest claim
-  against a source that would disagree. Finishing in five minutes is a sign of
-  skimming.
-- Run the critic on each unit (a fresh subagent arguing against its conclusions)
-  and answer the objections in the file.
-- **Up to two units a night** (owner, 2026-11-23: "it can definitely run for
-  quite a bit longer"). Commit the first, with its journal entry, before
-  starting the second, so a cut-off loses at most one; push once, at the end
-  (see Where things live). To keep the
-  context from growing with the square of the turns, do the second unit's
-  reading in a fresh subagent that returns a short brief, and write the file
-  from that. Never start a unit that needs a gate the owner has not passed.
-- No more than ~150 tool calls in all, and at most four subagents.
-- **Measure as you go, since usage is invisible.** Run `date -u` first and note
-  the time. Keep a running count of tool calls, and add up the `subagent_tokens`
-  each subagent reports when it returns. Stop starting new work at 60 minutes,
-  120 tool calls or 400k subagent tokens, whichever comes first, and finish what
-  is open. Record all three in the journal's Cost line, so the owner's usage
-  figures can be matched to them.
+Use independent subagents where independence is the point: a critic that argues
+against a conclusion before the owner sees it, and a code reviewer
+(`superpowers:requesting-code-review`, `REVIEW.md` as policy) before any PR
+leaves draft.
+
+## Budget and run limits
+
+The ceiling is **~8% of the weekly allowance per night** (charter) — a maximum,
+not a target. Week 1 used about 2% a night, so there is roughly four times as
+much room as runs have used.
+
+What drives cost: every turn in the main session re-sends its whole context, so
+a long main session grows expensive faster than its length. Subagents start
+small and cost roughly what they read. So **keep the main session the
+orchestrator** — planning, deciding, writing — and send bulk reading, data
+sweeps and spikes to subagents that return short briefs.
+
+Measured so far, as a guide:
+
+- Night 6: ~6 minutes, ~25 tool calls, one critic (~78k tokens) ≈ 2% of the
+  week.
+- Extra run of 2026-11-23: ~15 minutes, ~65 tool calls, 3 subagents (~178k
+  tokens) ≈ 10% of a 5-hour window.
+
+Provisional limits until the owner posts new weekly figures: stop **starting new
+work** at about 100 main-session tool calls, 1.2M subagent tokens or 3 hours of
+wall clock, whichever comes first, then finish and write up what is open. There
+is no minimum, but a night that ends before an hour with untested ideas left
+should say why in the journal. Record all three figures in the Cost line, so the
+owner's usage numbers can be matched to them and these limits tuned.
+
 - Read excerpts, not whole large files; never load `api/data/` files whole.
-- If a site is refused by the network allowlist, say which in the journal so the
-  owner can add it; do not pass search summaries off as reading.
-
-The weekly allowance, not the 5-hour window, is the real limit. **Weekly
-figure (owner, 2026-11-24):** night 6 (~25 tool calls, one critic) used about
-2% of the week, against a target of up to 8% a night, so a run can do roughly
-three times that before it nears the target.
+- If a site is refused, say which in the journal; do not pass search summaries
+  off as reading.
 
 ## Journal entry template
 
 ```
-## Night N — YYYY-MM-DD — <hat>: <unit of work>
-Did: … (links to files, branch, PR)
-Decided: … (and why, in a line)
+## Night N — YYYY-MM-DD — <one line: what the night found>
+Tested: … (idea, the assumption, how, result; links to files)
+Killed / promoted: … (and why, in a line)
+New ideas: …
 Assumed: … (anything taken as a default)
 Next: …
-Cost: minutes N, tool calls ~N, subagents N (~N k tokens), web pages N
+Cost: minutes N, main tool calls ~N, subagents N (~N k tokens, models), web pages N
 ```
 
 ## When a run fails
 
-A run that crashes leaves no journal entry for that night. The owner sees that
-as no new commit on the state branch in the morning, and the routine's runs page
-shows why. The next night starts by noticing the gap in the journal, reading
-`git log` for anything half done, and writing the missed night up before new
-work.
+A run that crashes leaves no journal entry for that night. The next night starts
+by noticing the gap in the journal, reading `git log` for anything half done,
+and writing the missed night up before new work.
 
 ## What the cloud can reach
 
-The environment's network access is **Full** (owner, 2026-11-23), after night 1
-found production refused and the extra run found lichess.org and chessbook.com
-refused under the Limited allowlist. Any public site can be read. Vercel
-previews are still behind Vercel's login.
+Network access is **Full** (owner, 2026-11-23), but `lichess.org` 403s fetches
+and `youtube.com` serves a captcha. Vercel previews are behind Vercel's login.
 
 Chrome for Testing is installed at `/usr/bin/google-chrome` (`CHROME_PATH` is
-set; version 153). Point Playwright at it
-(`executablePath: process.env.CHROME_PATH`) instead of downloading a browser.
-Use it to click through production or a build running in the container, at phone
-width (390 px) as well as desktop, and commit screenshots a gate needs under
-`gates/`. Real-phone checks are still `[local]` items for the owner.
+set). Point Playwright at it (`executablePath: process.env.CHROME_PATH`) instead
+of downloading a browser. Use it to click through production, a spike, or a
+build running in the container, at phone width (390 px) as well as desktop.
 
 ## Sessions on the owner's machine
 
 Some work needs the owner's computer: PostHog and Search Console through the
-owner's Chrome, testing in a real browser, a faster back-and-forth. Items like
-that are tagged `[local]` in `plan.md` and skipped by night runs. When the owner
-opens a session here, it starts by reading `plan.md` and doing the `[local]`
-items.
+owner's Chrome, a real phone. Items like that are tagged `[local]` in `plan.md`
+and skipped by night runs. When the owner opens a session, it starts by reading
+`plan.md` and doing the `[local]` items.

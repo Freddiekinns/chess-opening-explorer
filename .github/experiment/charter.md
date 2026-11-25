@@ -22,10 +22,30 @@ with the owner only answering questions, approving gates and testing. Record
 honestly what worked and what did not; a failed experiment with a good
 retrospective is a result.
 
+## How Claude works (revised with the owner, 2026-11-25)
+
+Claude is expected to be autonomous: to research, generate many ideas, test them
+early and cheaply to see whether they hold up, think them through, and come to
+the owner only with something worth discussing — an idea already explored,
+tested where it was most likely to break, with what was killed along the way.
+Not an idea from thirty seconds that the owner can puncture in ten.
+
+The first week ran too short and too shallow (~2% of the week a night, 6–15
+minutes, one idea shrunk by each critic, nights that exited while waiting on a
+gate). The cause was this file and `operating.md`, which put ceilings everywhere
+and blocked design before Gate A. Both were rewritten on 2026-11-25.
+
 ## Gates (the owner's)
 
-- **A — direction.** Research done; one recommended feature, the alternatives
-  turned down, and why. Nothing is designed before A.
+Gates guard what reaches users, not thinking. Exploring, measuring, sketching
+and throwaway spikes in the run's container are allowed at any time, before any
+gate, and a night never idles while waiting on the owner.
+
+- **A — direction.** A discussion, not a form: the problem, the directions
+  explored, what was tried and killed and why, the evidence (including
+  screenshots of spikes), Claude's pick and what it is still unsure of. The
+  owner's yes commits the experiment to one direction. Nothing is built as a PR
+  before A.
 - **B — design.** A clickable prototype on a Vercel preview, tested on the
   owner's phone. Nothing is built for production before B.
 - **C — ship.** Each production PR: the owner tests the preview and merges.
@@ -56,18 +76,24 @@ The owner is on Pro; the weekly allowance resets **Monday 14:00 UTC**. The
 content routines spend what is left from Sunday 19:00 UTC, so the experiment
 runs **Monday to Friday nights only**, one run a night.
 
-- Target: **at most ~8% of the weekly allowance per night**, so ~40% a week.
-- Cloud runs cannot see usage. Until calibrated, the owner posts the weekly % in
-  the inbox issue on the mornings of the first week, and `operating.md`'s run
-  limits are tuned to it.
+- **Ceiling: ~8% of the weekly allowance per night**, so ~40% a week. It is a
+  maximum, not a target (owner, 2026-11-25). But runs have used a quarter of it,
+  and they can and should run much longer than they have: stop because the work
+  is done well, not because a unit is ticked off.
+- Model: the routine runs Opus 5.5 at its default (medium) effort. Claude picks
+  the model and effort for every subagent it starts, and may write its own agent
+  briefs and skills (`operating.md`, Your own agents and skills).
+- Cloud runs cannot see usage. The owner posts the weekly % in the inbox issue
+  when it is useful, and `operating.md`'s run limits are tuned to it.
 - **Extra runs.** The owner may ask for an extra run at any time (in a local
   session or in #249), for example to use what is left before a reset. An extra
   run goes ahead outside Monday-to-Friday nights and does not count against the
   one-run-a-day rule; it records the request in `questions.md`. An extra run is
   still a full unit of work: being late in the week is no reason to cut research
   short.
-- A run that has done its work (up to two units, `operating.md`) stops. A night
-  that is waiting on the owner costs one short turn and exits.
+- A run stops when its work is done well or it nears the ceiling. Waiting on the
+  owner for one thing is never a reason to stop: there is always another idea to
+  test or a risk to retire.
 
 ## Length and end
 

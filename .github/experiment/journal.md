@@ -2,6 +2,66 @@
 
 Newest first. Template in `operating.md`.
 
+## Night 8 — 2026-11-25 — named lines are rarely reached, but so is every line; the common mistake is real but lives on ~500 popular pages
+
+Plan: widen `ideas.md` to ten-plus, then test the riskiest data assumption of
+idea 1 (do its pauses say anything, on lines learners meet?) and of whatever the
+data turned up. A result that would change my mind: band data too thin to
+caption, or ideas that only work on pages nobody lands on.
+
+Tested:
+
+- Idea 1, does a learner meet the named line? (`spikes/01`). At 1400 a named 9+
+  ply line is reached in a median ~1.3% of games; median 4 band splits per line.
+  I first read this as weakening idea 1; **the critic overturned it**: the
+  opponent's most played path only reaches ~4%, so every long line is rare. The
+  fair finding is "the splits are the content", which Revision 1 already uses.
+  Idea 1 stands as it was.
+- Idea 8, the common mistake at your level (new; `spikes/02`, `03`, `05`). The
+  data rediscovers the Fried Liver, Stafford, Blackburne–Kostić, Englund and the
+  Petrov copycat unprompted; 164 such moves at 1400, 34 at 2200; 89 survive a
+  stricter rule and most replicate across bands. A Sonnet spike put the panel on
+  the page at 390 px: readable, but "scores 35%" is jargon and "better by top
+  score" picked a sideline over the book move. The critic's test nearly killed
+  it as a page feature: of the 69% of pages with under 2,000 games at 1400, none
+  has a mistake on or near it. Narrowed to ~500 popular pages or a family trap
+  set (idea 17).
+- Idea 11, "how often this line happens" (`spikes/04`): multiplying move shares
+  is wrong on 81% of obscure lines (unnamed steps); reframed as games reaching
+  the page ÷ games at the family root, available on 9,421 pages at 1400.
+- Data reach for 7/13/15: the shards stop at the named tree, but the page
+  already calls the band-aware `/api/explorer` proxy (CDN 24 h) off it, so these
+  are not blocked — a cold walk spends the token's 25 req/min.
+- Idea 16, gambit honesty: scores at the gambit move vary under 6 points across
+  bands. Killed, folded into 8.
+- Idea 17, trap set per family (late in the night): the strict rule finds 216 at
+  1400 across 13 families with 5+, but the sample shows the kill risk — score is
+  not soundness. It flags the Dragon's main move 7...O-O against 7...Ng4, which
+  scores 60% at 1400 only because 8.Bb5+ goes unseen. A data-only "better move"
+  can teach a bad move; needs an engine (a dependency) or only mistakes whose
+  punishment the data shows.
+- Bands differ: the top move at u1400 differs from 2200 in 39% of well-played
+  positions (feeds 12 and 15). Killed / promoted: 16 killed. 8 narrowed (not
+  promoted). 1 restored. 17 added. New ideas: 7, 11–15, 17. Assumed: the 1400
+  band (average rating ~1628) stands for "a learner"; games weighting is not
+  visitor weighting (the critic's point — where visitors land is a `[local]`
+  PostHog read). Mistakes I made: a hand-typed FEN in the spike brief (subagent
+  caught it); the spike subagent rendered one made-up number (100 − 85) in a
+  screenshot, deleted before commit; the reach claim was overstated until the
+  critic checked it. Nothing went to the owner: nothing has survived its tests
+  yet, and Gate A Revision 1 is not changed by tonight's evidence. Next: night 9
+  (01:00 UTC) — idea 17 restricted to mistakes whose punishment the shards show
+  (count by family; read every item for soundness), and idea 15 (spike the
+  u1400-vs-2200 path at 390 px). `[local]`: which opening pages visitors land
+  on, which decides 8 against 11. Cost: container clock 19:43–~20:00 UTC (the
+  clock looked slow against the work done; treat minutes as unknown), main tool
+  calls ~68, subagents 2 (Sonnet spike ~59k, Opus critic ~71k = ~130k tokens),
+  web pages 1 (production at 390 px). The limit hit was none; stopped because
+  the next tests that would decide 8 and 11 need the owner's PostHog or a
+  dependency (engine), and 15 and 17 are queued for night 9 with their test
+  written down. Under an hour by the container clock: say so plainly, the owner
+  should judge it against the usage %.
+
 ## Local session — 2026-11-25 — the experiment's method rewritten with the owner
 
 Did: the owner reviewed week 1 and found the runs too short (~2% of the week a

@@ -6,22 +6,20 @@ owner is offered once an idea has survived the tests that could have killed it
 
 ## Next
 
-**Night 8 (Wednesday 01:00 UTC), the first under the new manual:**
+**Night 9 (Thursday 01:00 UTC).** Night 8 (`journal.md`) widened `ideas.md` to
+17 and tested 1, 7, 8, 11, 15, 16, 17 against the shards. Nothing is ready for
+the owner yet; Gate A Revision 1 stands unchanged by the evidence.
 
-1. Widen `ideas.md` to at least ten live ideas (it holds six). Deliberately from
-   different learners and moments; include some that look wrong.
-2. For the two or three most promising, write their kill assumptions and test
-   the riskiest of each, using the cheapest test that fits that idea. Idea 1
-   (board-first play-through) is still with the owner as Gate A Revision 1. Test
-   it anyway: does an animated walk with band pauses actually say something a
-   learner cares about, on real lines, on a phone? A spike in the container
-   answers that better than the gate document did.
-3. Record results, kill or promote, journal; push a checkpoint and at the end.
-   Night 8 is the calibration night: lower limits (`operating.md`), cheaper
-   models for bulk work.
-
-If the owner answers Gate A Revision 1 in #249, that answer goes into idea 1; a
-yes does not stop the other ideas being tested before anything is built.
+1. **Idea 17 / 8 soundness.** Score is not soundness (Dragon 7...Ng4). Restrict
+   to mistakes whose punishment the shards show; count by family; read every
+   item by hand for whether the "better" move is sound. If under ~5 families
+   survive, 17 dies and 8 is a small feature for popular pages.
+2. **Idea 15 spike.** The u1400 vs 2200 main path side by side, at 390 px, on
+   three families (Italian, French, 1.d4 Nf6). Data reach via the shards first;
+   note where the proxy would be needed.
+3. **Idea 11 copy.** "About 1 in N games that start <root> reach this position"
+   on three obscure pages: does it lead anywhere (a "usual game goes X" link)?
+4. Raise or lower the run limits in `operating.md` from the owner's usage %.
 
 ## Later
 
@@ -41,6 +39,10 @@ yes does not stop the other ideas being tested before anything is built.
   every position, not "the only free site". Unverified hands-on.
 
 ## Local items `[local]`
+
+- **Which opening pages do visitors land on?** PostHog, landing pageviews by
+  page over 60 days, split by games at the 1400 band (popular vs obscure).
+  Decides idea 8 (popular pages only) against idea 11 (obscure pages).
 
 - Gate A Revision 1 questions (A, B, 3, 4) in `gates/gate-a.md` (answer in
   #249), now one input among the ideas rather than a blocker.

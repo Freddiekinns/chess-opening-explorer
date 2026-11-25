@@ -31,6 +31,8 @@ few moves of this opening, what scores better, and (where data reaches) the
 punishing reply. Then let the learner try it: set up the position, find the
 better move or the punishment. Data only, nothing written.
 
+- 2026-11-25 (night 8): the "better move" can be unsound — see idea 17 (Dragon
+  7...Ng4). Applies to 8 as much as 17.
 - 2026-11-25 (night 8, critic, `spikes/05`): nearly killed as a page feature.
   69% of pages have under 2,000 games at 1400; of those, 0 have a mistake on the
   page and 2 within 4 ply. Relaxed rules add 99 pages; 6,057 get nothing at any
@@ -184,7 +186,7 @@ learner which habits to drop. Riskiest: data reach at u1400 (spike 01).
   2.Bf4 vs 2.c4, French 2.Nf3 vs 2.d4, French Advance 3.e5 vs 3.Nc3. The u1400
   top move is under 60% in 1,673 (74%), so a guess is rarely obvious.
 
-### 17. A trap set per family — `untested`
+### 17. A trap set per family — `testing`
 
 From any page in a family (obscure ones included), "the N mistakes players at
 your level make in the Italian": each a position to solve — find the better move
@@ -194,6 +196,19 @@ by the loose rule; fewer by the strict one), and the punishing reply is in the
 shards for 41 of 164.
 
 ## Killed
+
+- 2026-11-25 (night 8, data): strict rule (vs the most played alternative with
+  15%+ share, gap 8+ points, 6+ below the rest; position 1,000+ games): 131 at
+  u1400, 216 at 1400, 256 at 1800; families with 5+: 10, 13, 18. Enough for a
+  set in ~10 families, not 31.
+- **The kill risk found: score is not soundness.** Sample at 1400: the Dragon's
+  7...O-O (the main line) is flagged against 7...Ng4 (60%), a move that loses a
+  piece to 8.Bb5+ when White sees it — it scores well because 1400s don't. The
+  QGD Exchange "Bd3 46% vs Be2 55%" is a quiet preference, not a trap. A
+  data-only "better move" can teach an unsound move. Needs an engine check
+  (Stockfish is a dependency: owner's yes) or a restriction to mistakes whose
+  punishment the data itself shows (41 of 164 by spike 02). Night 9 tests the
+  second: how many sound-looking items survive it, by family.
 
 ### 16. Gambit honesty — `killed` 2026-11-25
 

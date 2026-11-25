@@ -36,10 +36,12 @@ not answered by the next night. Answered ones move to **Decided** with the date.
   allowed.** Night 8 was better (17 ideas, five spikes, a critic that overturned
   a claim) but stopped at 13 minutes with doable work left as "Next". Agreed:
   (1) do the "Next" items you can do tonight, tonight; (2) a 90-minute floor
-  unless a limit comes first or everything left is blocked, reached by
-  delegating more; (3) the charter allows tools installed in the run's container
-  only (Stockfish, spike packages), never committed and never in `package.json`
-  or the lockfile. (Owner, in chat.)
+  unless a limit comes first or everything left is blocked — how to reach it is
+  the run's own call, not "delegate more" (owner, later the same evening: it
+  should find the way that works best, not use subagents by force); (3) the
+  charter allows tools installed in the run's container only (Stockfish, spike
+  packages), never committed and never in `package.json` or the lockfile.
+  (Owner, in chat.)
 
 - 2026-11-25 ~19:45 UTC — **Extra run: night 8, early** (charter: Extra runs).
   The owner wants to see how a night runs under the rewritten method, so night 8

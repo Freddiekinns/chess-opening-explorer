@@ -191,11 +191,14 @@ The ceiling is **~8% of the weekly allowance per night** (charter) — a maximum
 not a target. Week 1 used about 2% a night, so there is roughly four times as
 much room as runs have used.
 
-What drives cost: every turn in the main session re-sends its whole context, so
-a long main session grows expensive faster than its length. Subagents start
-small and cost roughly what they read. So **keep the main session the
-orchestrator** — planning, deciding, writing — and send bulk reading, data
-sweeps and spikes to subagents that return short briefs.
+What drives cost, so you can choose well: every turn in the main session
+re-sends its whole context, so a long main session grows expensive faster than
+its length. A subagent starts cold — it re-reads what it needs, and its result
+is only a brief — but costs roughly what it reads. Neither is the default. **How
+to do the work is your call** — yourself, in subagents, in parallel or in
+sequence — whatever gives the best result for the budget. A spike you need to
+see and judge closely may be better done yourself; a broad sweep whose detail
+you will never look at may be better delegated.
 
 Measured so far, as a guide:
 
@@ -204,10 +207,10 @@ Measured so far, as a guide:
 - Extra run of 2026-11-23: ~15 minutes, ~65 tool calls, 3 subagents (~178k
   tokens) ≈ 10% of a 5-hour window.
 
-**Choose subagent models for cost.** Bulk reading, data sweeps, page fetches and
-spike scaffolding go to Sonnet or Haiku; keep Opus for judgment (critics, design
-calls, deciding what an idea's result means). Record each subagent's model in
-the Cost line.
+When you do start a subagent, a cheaper model (Sonnet, Haiku) often does
+mechanical work as well as Opus for less; judgment (critics, design calls)
+usually needs the stronger one. Your call each time; record each subagent's
+model in the Cost line.
 
 Provisional limits, kept low because the 8% ceiling is a maximum and no night
 under this manual has been measured yet: stop **starting new work** at about 80
@@ -217,14 +220,12 @@ posts a night's weekly usage % in #249, the next night raises the limits in this
 file towards the ceiling (or lowers them), saying so in the journal.
 
 **Floor: at least 90 minutes**, unless a limit comes first or everything left is
-blocked on the owner (the journal says which). Night 8 (13 minutes, ~67 turns,
-~130k subagent tokens) came near the main-session cap while leaving most of the
-subagent budget unused: the main session did the work itself. To reach the floor
-within the caps, delegate more — give subagents whole tests (build the spike,
-run the sweep, read the ten pages, argue the case), run independent ones in
-parallel, and keep the main session to planning, judging results and writing.
-Record all three figures in the Cost line, so the owner's usage numbers can be
-matched to them.
+blocked on the owner (the journal says which). Night 8 stopped at 13 minutes
+(~67 turns, ~130k subagent tokens) with doable work left. How you spend the time
+and budget to reach the floor is yours to work out — and to improve night to
+night; if one way of working ran out of room early, try another and say in the
+journal what you learned. Record all three figures in the Cost line, so the
+owner's usage numbers can be matched to them.
 
 - Read excerpts, not whole large files; never load `api/data/` files whole.
 - If a site is refused, say which in the journal; do not pass search summaries

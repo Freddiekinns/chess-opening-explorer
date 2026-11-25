@@ -32,6 +32,13 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-25 evening — **Free to carry on.** "It should be free to carry on, but
+  it shouldn't just stop if it can or thinks it should carry on." The old limits
+  (80 calls, 500k subagent tokens) become checkpoints where the run decides; a
+  higher safety net (150 calls, 1M tokens, 4 hours) guards the 8% maximum until
+  a night is measured; the 90-minute floor is a minimum, not a stopping point.
+  (Owner, in chat.)
+
 - 2026-11-25 ~20:20 UTC — **After night 8: keep going, and an engine is
   allowed.** Night 8 was better (17 ideas, five spikes, a critic that overturned
   a claim) but stopped at 13 minutes with doable work left as "Next". Agreed:

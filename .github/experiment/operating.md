@@ -147,17 +147,17 @@ open on a phone.
    comment. Copy any decisions into `questions.md`.
 3. **Plan the night** in a few lines: what you will test, why those, what result
    would change your mind. Answer the owner's replies first.
-4. **Work the loop** above until a run limit is reached (Budget and run limits).
-   **Do it now, not next night:** before writing the journal, read your own
-   "Next" list. Anything on it you could do tonight — a spike, a narrower rule,
-   a second test — you do now, then look again. A night stops only for a run
-   limit, for something that needs the owner (an answer, a boundary), or when
-   nothing testable is left; the journal says which. Night 8 stopped after 13
-   minutes with two doable items written as "Next" and most of its budget
-   unused; that is the pattern this rule exists to break. Commit to the state
-   branch after each meaningful piece (an idea tested, a research file, a
-   spike's notes), and push the checkpoint described under Where things live, so
-   a cut-off loses little.
+4. **Work the loop** above for as long as there is work worth doing, up to the
+   safety net (Budget and run limits). **Do it now, not next night:** before
+   writing the journal, read your own "Next" list. Anything on it you could do
+   tonight — a spike, a narrower rule, a second test — you do now, then look
+   again. A night stops only for the safety net, for something that needs the
+   owner (an answer, a boundary), or when nothing testable is left; the journal
+   says which. Night 8 stopped after 13 minutes with two doable items written as
+   "Next" and most of its budget unused; that is the pattern this rule exists to
+   break. Commit to the state branch after each meaningful piece (an idea
+   tested, a research file, a spike's notes), and push the checkpoint described
+   under Where things live, so a cut-off loses little.
 5. **Check** anything built against the commands `AGENTS.md` names.
 6. **Write down** the journal entry, update `plan.md`, `ideas.md` and
    `questions.md`, comment in #249 only if needed.
@@ -212,20 +212,27 @@ mechanical work as well as Opus for less; judgment (critics, design calls)
 usually needs the stronger one. Your call each time; record each subagent's
 model in the Cost line.
 
-Provisional limits, kept low because the 8% ceiling is a maximum and no night
-under this manual has been measured yet: stop **starting new work** at about 80
-main-session tool calls, 500k subagent tokens or 3 hours of wall clock,
-whichever comes first, then finish and write up what is open. When the owner
-posts a night's weekly usage % in #249, the next night raises the limits in this
-file towards the ceiling (or lowers them), saying so in the journal.
+**You are free to carry on.** The only hard line is the 8% maximum, which a run
+cannot see, so it is guarded in two steps (owner, 2026-11-25):
 
-**Floor: at least 90 minutes**, unless a limit comes first or everything left is
-blocked on the owner (the journal says which). Night 8 stopped at 13 minutes
-(~67 turns, ~130k subagent tokens) with doable work left. How you spend the time
-and budget to reach the floor is yours to work out — and to improve night to
-night; if one way of working ran out of room early, try another and say in the
-journal what you learned. Record all three figures in the Cost line, so the
-owner's usage numbers can be matched to them.
+- **Checkpoints, not stops:** at about 80 main-session tool calls, 500k subagent
+  tokens or 2 hours of wall clock, pause and decide. If there is still work you
+  think is worth doing, carry on, and write one line in the journal saying why.
+  Never stop at a checkpoint just because you reached it.
+- **Safety net, until a night is measured:** stop starting new work at about 150
+  main-session tool calls, 1M subagent tokens or 4 hours, whichever comes first,
+  then finish and write up what is open. When the owner posts a night's weekly
+  usage % in #249, the next night moves these figures towards the 8% maximum (or
+  lowers them), saying so in the journal.
+
+**Floor: at least 90 minutes**, unless the safety net comes first or everything
+left is blocked on the owner (the journal says which). The floor is a minimum,
+not a place to stop: after it, keep going while there is work worth doing. Night
+8 stopped at 13 minutes (~67 turns, ~130k subagent tokens) with doable work
+left. How you spend the time and budget to reach the floor is yours to work out
+— and to improve night to night; if one way of working ran out of room early,
+try another and say in the journal what you learned. Record all three figures in
+the Cost line, so the owner's usage numbers can be matched to them.
 
 - Read excerpts, not whole large files; never load `api/data/` files whole.
 - If a site is refused, say which in the journal; do not pass search summaries

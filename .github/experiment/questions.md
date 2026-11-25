@@ -15,11 +15,11 @@ not answered by the next night. Answered ones move to **Decided** with the date.
    domains? _Default: carry on from search results, mark such claims unverified,
    and leave hands-on checks as `[local]` items._
 
-3. **Gate A** (`gates/gate-a.md`, 2026-11-24). Direction yes/no; family; whether
-   one play-through + #196 memory is inside the 2026-11-10 "no trainer"
-   decision; slice 1 before Gate B; video and line. _Default: a gate, so no work
-   until answered; then Italian / memory left out / slice 1 waits / Giuoco
-   Piano, 11-minute video._
+3. **Gate A, revision 1** (`gates/gate-a.md`, 2026-11-25). A: yes or no to the
+   board-first play-through; B: Center Attack line or one the owner plays; 3:
+   is one play-through plus #196 memory inside the "no trainer" decision; 4:
+   slice 1 before Gate B. _Default: a gate, so no work until A is answered;
+   then Center Attack / memory left out / slice 1 waits._
 
 4. **Vercel builds for `overnight/**`.** Every push to the state branch builds a
    preview on the owner's free plan. May a run add `"overnight/**": false` to

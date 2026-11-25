@@ -2,6 +2,27 @@
 
 Newest first. Template in `operating.md`.
 
+## Night 7 — 2026-11-25 — product manager: Gate A, revision 1
+
+Did: read the owner's two replies in #249 (Gate A "possibly", with questions;
+every push builds a Vercel preview on the free plan). Measured where line videos
+exist from `video-index.json`, `popularity_stats.json` and the ECO files: of the
+positions with 5,000+ games, a line video (15 minutes or less, title names the
+line) exists for 10% of lines up to 4 ply and 3–4% of lines from 9 ply. Wrote
+Revision 1 at the top of `gates/gate-a.md`, ran the critic and answered it with
+a shard coverage count. Commented in #249. Decided: board first. A play button
+animates the line and pauses at up to three band splits (top move under 60%,
+second over 20%) with captions from the `position-stats` shards. Then play it
+from memory, then done. Video is optional, and the unit is offered from about
+8 ply. Default line: Italian Center Attack (10 ply). The critic caught my draft
+naming the rate-limited explorer proxy as the source. The bands come from the
+shards, which cover all 12,377 positions. Also found that `vercel.json` excludes
+only `dependabot/**`, so `overnight/` never stopped previews. `operating.md` now
+says push once a night, and questions.md 4 asks to exclude it. Recorded the 2%
+weekly figure there too. Assumed: the title match is a fair proxy for "covers
+this line". Next: wait for Gate A (A, B, 3, 4). Cost: minutes ~12 by container
+clock, tool calls ~27, subagents 1 (critic, ~57k tokens), web pages 0.
+
 ## Night 6 — 2026-11-24 — product manager: Gate A
 
 Did: read `research/01`–`05`, the open issues and PRs, and #241's Rev 5.1

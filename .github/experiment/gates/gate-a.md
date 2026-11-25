@@ -45,8 +45,9 @@ where you said the unit is worth having. Making our own videos is out of reach.
 
 This works on every one of the 1,885 lines of 9+ ply with 5,000+ games, not on
 the 70 that happen to have a fitting video. It needs no new data, no LLM and no
-pipeline. The explorer numbers come from the cached `/api/explorer` proxy, the
-same source as Practice. It also stays inside your "videos, then play" way of
+pipeline. The band numbers come from the `position-stats` shards in the
+`/page/:fen` response, which the page already loads, not from the
+rate-limited `/api/explorer` proxy (corrected after the critic). It also stays inside your "videos, then play" way of
 learning: the animation stands in for the part of a video that walks the moves,
 and the video is still there when a good one exists.
 
@@ -72,7 +73,40 @@ band-blind extension) is unchanged.
 - **3 and 4 below** are still open. _Defaults as written: memory left out, slice
   1 waits for Gate B._
 
-<!-- critic-rev1 -->
+**The critic's case against Revision 1, answered.** A fresh subagent argued
+against this revision. Its points were checked tonight.
+
+1. **"The band data comes from the rate-limited proxy, so a cold 10-ply line
+   would burn 10 of the 25 calls a minute."** _The source was wrong in my
+   draft; the budget worry is not real._ Since #204 the bands come from the
+   `position-stats` shards in `/page/:fen`, and the shards hold all 12,377
+   positions (counted tonight, not the ~512 the critic guessed from six shards).
+   The explorer proxy is not touched. Coverage, 1400 band, for the 1,885 lines
+   of 9+ ply with 5,000+ games: 1,330 have every earlier position as a named
+   position, and every one of those has 100+ band games at each of them. The
+   other 555 pass through a position with no name, which gets no caption
+   (string match on move order, so it undercounts).
+2. **"A play button is nearly free: the page has step buttons and Practice's
+   autoplay."** _Accepted._ The novelty is the pauses and their captions, plus
+   handing over to Practice. The play button itself is cheap.
+3. **"It is watch-then-play with a weaker watch."** _Partly accepted._ It is
+   meant to be the same shape as the owner's way of learning. Whether an
+   animation is enough to then play the line is what Gate B tests on a phone.
+   The `practice_abandon` read (step 0) is still `[local]`, and still comes
+   first.
+4. **"The table shows video-first fails, not that board-first works."**
+   _Accepted._ Nothing shows learners want an animation. That is a hypothesis
+   for Gate B, and the owner suggested it.
+5. **"Which moves count as a split is unspecified."** _Accepted; a rule
+   now._ A split is a position where the band's top move is under 60% and the
+   second is over 20%. By that rule, 1,799 of the 1,885 lines have two or more,
+   so the prototype shows at most three, the ones with the most band games.
+   Nothing is written by hand.
+6. **"Caption numbers can differ between viewers; the bands are coarse."** The
+   shards are rebuilt by the popularity pipeline, not live, so the numbers do
+   not drift between viewers. The bands are the site's existing four (under
+   1400, 1400, 1800, 2200). The caption names the band rather than "your level"
+   until the learner picks one.
 
 ---
 

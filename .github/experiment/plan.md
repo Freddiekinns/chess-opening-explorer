@@ -4,12 +4,14 @@ Phase: **1 — Discover** (nights 1–5). Gate A at the end.
 
 ## Next
 
-**Waiting on Gate A** (`gates/gate-a.md`, asked in #249 on 2026-11-24). Until
-the owner answers, a night writes one journal line and exits; nothing is
-designed. When it passes: night 7 starts Phase 2 from the gate's slice plan
-(step 0 `[local]` abandon read, then the one-line Giuoco Piano prototype). It
-applies the owner's answers to the gate's questions 2–5 first, and builds slice
-1 first if question 4 is a yes.
+**Waiting on Gate A, revision 1** (`gates/gate-a.md`, top section; asked in
+#249 on 2026-11-25). The owner's first answer (2026-11-24) was "possibly" with
+questions, so the recommendation became a board-first play-through (video
+optional, from ~8 ply, default line Italian Center Attack). Until the owner
+answers A, a night writes one journal line and exits. When it passes: Phase 2
+starts with step 0 `[local]` abandon read, then the play-through prototype, with
+the answers to B, 3 and 4 applied first. Push the state branch once a night
+(Vercel builds every push).
 
 ## Queue
 
@@ -25,7 +27,8 @@ Phase 1 — Discover (one research file each):
    then one family unit.
 5. ~~Your games~~ — done, extra run 2026-11-23. Own games are a later optional
    layer; #195's `?practice=` is the shared seam.
-6. ~~Gate A~~ — written night 6, `gates/gate-a.md`; awaiting the owner.
+6. ~~Gate A~~ — written night 6; revised night 7 after the owner's questions
+   (board first); awaiting the owner.
 
 Phase 2 — Design (after Gate A; nights ~7–9): prototype, iterate on the owner's
 notes, Gate B.

@@ -138,8 +138,10 @@ open on a phone.
 ## A night
 
 1. **Check out `overnight/experiment-state`.** If `STOP` exists, or `journal.md`
-   already has a night entry dated today (UTC), exit: one run a day. Run
-   `date -u` and note the time.
+   already has a night entry dated today (UTC), exit: one run a day — unless
+   `questions.md`'s Decided list records an extra run the owner asked for today
+   that the journal does not yet show (charter, Extra runs); then this is that
+   run. Run `date -u` and note the time.
 2. **Read** `charter.md`, `operating.md`, `plan.md`, `ideas.md`, `questions.md`,
    the last 3 journal entries, and owner replies in #249 since Claude's last
    comment. Copy any decisions into `questions.md`.

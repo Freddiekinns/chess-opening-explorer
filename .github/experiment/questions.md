@@ -32,6 +32,13 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-25 ~19:45 UTC — **Extra run: night 8, early** (charter: Extra runs).
+  The owner wants to see how a night runs under the rewritten method, so night 8
+  runs now instead of at 01:00 UTC. Its journal heading is "Night 8 —
+  2026-11-25". The 01:00 UTC run on 2026-11-26 is then night 9. Everything else
+  as `operating.md` says, including night 8 as the calibration night. (Owner, in
+  chat.)
+
 - 2026-11-25 — **Work deeper and more autonomously.** The owner, in a local
   session: runs use almost no usage, are short, do not think deeply and are not
   autonomous; they should research, generate ideas, test them early, think them

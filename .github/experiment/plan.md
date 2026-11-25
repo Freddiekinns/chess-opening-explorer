@@ -12,8 +12,11 @@ the owner yet; Gate A Revision 1 stands unchanged by the evidence.
 
 1. **Idea 17 / 8 soundness.** Score is not soundness (Dragon 7...Ng4). Restrict
    to mistakes whose punishment the shards show; count by family; read every
-   item by hand for whether the "better" move is sound. If under ~5 families
-   survive, 17 dies and 8 is a small feature for popular pages.
+   item by hand for whether the "better" move is sound. The owner allowed a
+   container-only engine (charter, 2026-11-25): install Stockfish in the run's
+   container and check each "better" move with it, committing nothing installed.
+   If under ~5 families survive, 17 dies and 8 is a small feature for popular
+   pages.
 2. **Idea 15 spike.** The u1400 vs 2200 main path side by side, at 390 px, on
    three families (Italian, French, 1.d4 Nf6). Data reach via the shards first;
    note where the proxy would be needed.

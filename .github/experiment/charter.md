@@ -59,7 +59,11 @@ Never, without the owner's yes in the inbox issue:
 - touch `middleware.ts`, sitemaps, `seo-lookup` shards, canonicals,
   `STATIC_ROUTES` or `robots.txt` (read the `seo-crawl-graph` skill to know
   why);
-- add, remove or upgrade a dependency, or touch the lockfile;
+- add, remove or upgrade a dependency, or touch the lockfile. **Exception
+  (owner, 2026-11-25):** a run may install tools in its own container for
+  testing — a chess engine such as Stockfish, a package for a spike — provided
+  nothing installed is committed, `package.json` and the lockfile are left
+  unchanged in every commit, and the journal names what was installed;
 - run a data pipeline, or spend money on any API (LLM, YouTube quota, Lichess
   beyond the cached `/api/explorer` proxy);
 - edit files the content routines own: `api/data/` ECO files,

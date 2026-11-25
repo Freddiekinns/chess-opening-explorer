@@ -21,7 +21,24 @@ not answered by the next night. Answered ones move to **Decided** with the date.
    until answered; then Italian / memory left out / slice 1 waits / Giuoco
    Piano, 11-minute video._
 
+4. **Vercel builds for `overnight/**`.** Every push to the state branch builds a
+   preview on the owner's free plan. May a run add `"overnight/**": false` to
+   `vercel.json`'s `git.deploymentEnabled` (state branch, and a one-line PR to
+   `main` so the content routines' branches stop too)? Or the owner sets it in
+   Vercel's dashboard. _Default: no file change; runs push once a night._
+
 ## Decided
+
+- 2026-11-24 — **Gate A, first answer: "possibly", with questions.** Videos
+  can't be sourced per line; the unit pays only on medium-to-long lines; 11
+  minutes is overkill for the Giuoco Piano; it leans on video quality; animate
+  the line on the board behind a play button instead. Night 7 revised Gate A
+  to a board-first play-through (`gates/gate-a.md`, Revision 1). Also: night 6
+  used ~2% of the week. (Owner, #249.)
+
+- 2026-11-24 — **Deploy less often.** Each run triggers a Vercel deployment on
+  the free plan; deploy only occasionally. Runs now push once a night; question
+  4 asks to exclude `overnight/**`. (Owner, #249.)
 
 - 2026-11-23 ~13:50 UTC — **Extra run** (charter: Extra runs), ten minutes
   before the weekly reset. The night's work as `operating.md` now says: the

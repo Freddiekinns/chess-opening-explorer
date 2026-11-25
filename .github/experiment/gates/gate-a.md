@@ -1,5 +1,83 @@
 # Gate A — direction
 
+## Revision 1 — night 7, 2026-11-25: your questions answered
+
+You said "possibly", and asked four things: where would the videos come from,
+the idea only pays on medium-to-long lines, 11 minutes is too much for the
+Giuoco Piano, and it leans on every video being good. You also suggested
+animating the line on the board behind a play button. The numbers agree with
+you, so the recommendation changes. **The board carries the unit, and video
+becomes optional.**
+
+**Where the videos would come from: for long lines, nowhere.** These numbers
+come from `video-index.json`, `popularity_stats.json` and the ECO files, for
+positions with 5,000+ Lichess games. A "line video" here is one of 15 minutes or
+less whose title names the line.
+
+| Line length | Positions | Has a line video | Lead video is a 20+ min lecture |
+| ----------- | --------- | ---------------- | ------------------------------- |
+| ≤4 ply      | 748       | 74 (10%)         | 457 (61%)                       |
+| 5–8 ply     | 2,068     | 163 (8%)         | 1,505 (73%)                     |
+| 9–12 ply    | 1,396     | 54 (4%)          | 1,195 (86%)                     |
+| 13+ ply     | 489       | 16 (3%)          | 453 (93%)                       |
+
+The title match is crude and undercounts a little: "Chess Openings: Giuoco
+Piano" counts, but a video that covers 5.d4 without saying so does not. The
+shape still holds. The longer the line, the more its shelf is family lectures
+shared by hundreds of pages. Every video-first design fails on exactly the lines
+where you said the unit is worth having. Making our own videos is out of reach.
+
+**Revised recommendation: "Play through this line", board first.**
+
+1. **A play button animates the line on the board**, one move at a time, at a
+   readable pace. Pause and step back work at any point. It stops by itself at
+   the two or three moves where players at your level split, with a one-line
+   caption of real explorer data, such as "At 1400–1600, N% play 5.d4 here" (the prototype fills N from the proxy).
+   No prose is written for it, so there is nothing to fabricate or review.
+2. **Then your turn:** play the same line from memory in Practice, with a
+   message on a wrong move ("the line plays 5.d4"). This builds on #241's
+   arrow.
+3. **A visible done.** If the shelf holds a short video that names this line
+   (3–10% of pages, table above), it is offered under "Watch someone explain
+   it". It is never required, and nothing depends on video quality.
+4. **Only on lines worth it:** offered from about 8 ply. The 1.e4 e5 page does
+   not get a play-through of two moves (your point).
+
+This works on every one of the 1,885 lines of 9+ ply with 5,000+ games, not on
+the 70 that happen to have a fitting video. It needs no new data, no LLM and no
+pipeline. The explorer numbers come from the cached `/api/explorer` proxy, the
+same source as Practice. It also stays inside your "videos, then play" way of
+learning: the animation stands in for the part of a video that walks the moves,
+and the video is still there when a good one exists.
+
+**Default prototype line:** Italian, Classical Variation, Center Attack
+(1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4, 10 ply, 252k games), where the
+order of c3 and d4 is the point, rather than the 6-ply Giuoco Piano. Its shelf
+holds no line video, so the prototype also shows what the unit looks like
+without one. That is the common case.
+
+**What this drops from the first draft:** the 11-minute video as the default,
+"watch first" as step one, and the claim that the unit leans on the shelf. The
+rest stands: no account, no repertoire, nothing loops, and no claim to bring
+anyone back. The slice plan below still applies, with step 1's prototype
+changed to the play-through. Slice 1 (wrong-move message, `?practice=`, no
+band-blind extension) is unchanged.
+
+**Questions, revised** (they replace 2 and 5 below; 3 and 4 stand):
+
+- **A. Yes or no to the board-first direction?** _A gate: no design until you
+  answer._
+- **B. Is the Center Attack line right for the prototype**, or do you want a
+  line you play yourself? _Default: Center Attack._
+- **3 and 4 below** are still open. _Defaults as written: memory left out, slice
+  1 waits for Gate B._
+
+<!-- critic-rev1 -->
+
+---
+
+_The first draft follows, unchanged except where Revision 1 overrides it._
+
 Night 6, 2026-11-24. Written from `research/01`–`05`, the open issues and PRs
 (read tonight), and `baseline.md`. The charter says nothing is designed before
 this gate passes; this file asks for that yes.

@@ -23,8 +23,12 @@ Two exceptions, both fresh subagents, because their value is independence:
 All experiment state is on the branch **`overnight/experiment-state`**, never
 merged until the retrospective. Cloud runs start from `main`, so a run checks it
 out first. Keeping state off `main` stops it colliding with the memory bank and
-the content routines, and the `overnight/` prefix means Vercel builds no preview
-for it (`vercel.json`).
+the content routines, and the `overnight/` prefix was meant to stop Vercel building a preview for it.
+**It does not:** `vercel.json` disables only `dependabot/**`, and every push to
+this branch has built a preview (owner, 2026-11-24; 15 builds on 2026-11-23).
+The owner is on Vercel's free plan, so until `overnight/**` is excluded (needs
+the owner's yes, charter), **push the state branch once per night**, at the
+end, not after each unit.
 
 | File           | Holds                                               | Read each night        |
 | -------------- | --------------------------------------------------- | ---------------------- |
@@ -109,8 +113,9 @@ summaries when it should have read the pages. So:
 - Run the critic on each unit (a fresh subagent arguing against its conclusions)
   and answer the objections in the file.
 - **Up to two units a night** (owner, 2026-11-23: "it can definitely run for
-  quite a bit longer"). Commit and push the first, with its journal entry,
-  before starting the second, so a cut-off loses at most one. To keep the
+  quite a bit longer"). Commit the first, with its journal entry, before
+  starting the second, so a cut-off loses at most one; push once, at the end
+  (see Where things live). To keep the
   context from growing with the square of the turns, do the second unit's
   reading in a fresh subagent that returns a short brief, and write the file
   from that. Never start a unit that needs a gate the owner has not passed.
@@ -125,8 +130,10 @@ summaries when it should have read the pages. So:
 - If a site is refused by the network allowlist, say which in the journal so the
   owner can add it; do not pass search summaries off as reading.
 
-The weekly allowance, not the 5-hour window, is the real limit; recalibrate when
-the owner posts weekly figures.
+The weekly allowance, not the 5-hour window, is the real limit. **Weekly
+figure (owner, 2026-11-24):** night 6 (~25 tool calls, one critic) used about
+2% of the week, against a target of up to 8% a night, so a run can do roughly
+three times that before it nears the target.
 
 ## Journal entry template
 

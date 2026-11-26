@@ -1,0 +1,12 @@
+import fs from 'fs';
+import { asyncBufferFromFile, parquetRead } from '/tmp/claude-0/-home-user-chess-opening-explorer/a2cfd5f8-5aff-5981-affa-fcd1f6680f76/scratchpad/tools/node_modules/hyparquet/src/hyparquet.js';
+const eco = {}; for (const L of 'ABCDE') Object.assign(eco, JSON.parse(fs.readFileSync('api/data/eco/eco' + L + '.json')));
+const norm = (s) => s.replace(/[:,]/g, '').replace(/'/g, '').replace(/\s+/g, '_');
+const names = new Set(Object.values(eco).map((r) => norm(r.name)));
+const file = await asyncBufferFromFile('/tmp/claude-0/-home-user-chess-opening-explorer/a2cfd5f8-5aff-5981-affa-fcd1f6680f76/scratchpad/pq/p0.parquet');
+const cnt = {};
+await parquetRead({ file, columns: ['Themes', 'OpeningTags'], onComplete: (rows) => { for (const [th, tags] of rows) if (th && th.includes('opening') && tags && tags[1]) cnt[tags[1]] = (cnt[tags[1]] || 0) + 1; } });
+const all = Object.entries(cnt); const hit = all.filter(([t]) => names.has(t));
+const pz = (a) => a.reduce((x, [, n]) => x + n, 0);
+console.log('variation tags', all.length, 'matching an ECO page name exactly', hit.length, 'puzzles covered', pz(hit), 'of', pz(all));
+console.log('unmatched, biggest:', all.filter(([t]) => !names.has(t)).sort((a, b) => b[1] - a[1]).slice(0, 8).map((x) => x.join(' ')).join('; '));

@@ -24,7 +24,9 @@ owner.
    pawn signatures per line, as night 9 did for the Center Attack.
 5. **Return reason** is still the weakest part of the charter goal (idea 3): one
    cheap test of what would change while a learner is away.
-6. Raise or lower the run limits from the owner's usage % if posted.
+6. Run limits retuned from night 9's measured ~4% (`questions.md`, Decided
+   2026-11-26): safety net ~180 main calls, no time floor; finish the Next items
+   you can do tonight (item 2 is one).
 
 ## Later
 
@@ -62,5 +64,5 @@ owner.
   gets YouTube's captcha.) Tests idea 5.
 - Read `practice_abandon` `{moves, of}` in PostHog: where do the 8 of 13 stop?
   Tests idea 2.
-- After night 8: owner posts that night's weekly usage % in #249, to tune the
+- After night 10: owner reports that night's weekly usage %, to check the new
   limits in `operating.md`.

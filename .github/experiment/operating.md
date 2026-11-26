@@ -206,6 +206,12 @@ Measured so far, as a guide:
   week.
 - Extra run of 2026-11-23: ~15 minutes, ~65 tool calls, 3 subagents (~178k
   tokens) ≈ 10% of a 5-hour window.
+- Night 9 (2026-11-26): 64 minutes, ~120 main tool calls (132 turns), one Opus
+  critic (~76k tokens) ≈ **4% of the week** (owner's figure). The main context
+  grew from ~56k to ~285k tokens a turn, and that growth was most of the cost:
+  each extra call costs more than the one before. On that curve ~150 calls is
+  roughly 5–5.5% and ~190–200 calls reaches the 8% maximum. Wall clock was
+  nearly free: ~35 of the 64 minutes were engine runs.
 
 When you do start a subagent, a cheaper model (Sonnet, Haiku) often does
 mechanical work as well as Opus for less; judgment (critics, design calls)
@@ -219,20 +225,36 @@ cannot see, so it is guarded in two steps (owner, 2026-11-25):
   tokens or 2 hours of wall clock, pause and decide. If there is still work you
   think is worth doing, carry on, and write one line in the journal saying why.
   Never stop at a checkpoint just because you reached it.
-- **Safety net, until a night is measured:** stop starting new work at about 150
-  main-session tool calls, 1M subagent tokens or 4 hours, whichever comes first,
-  then finish and write up what is open. When the owner posts a night's weekly
-  usage % in #249, the next night moves these figures towards the 8% maximum (or
-  lowers them), saying so in the journal.
+- **Safety net (measured on night 9, owner 2026-11-26):** stop starting new work
+  at about **180 main-session tool calls**, 1M subagent tokens or 4 hours,
+  whichever comes first, then finish and write up what is open. 180 leaves room
+  under 8% for the write-up. When the owner reports another night's weekly usage
+  %, the next night moves these figures again, saying so in the journal.
 
-**Floor: at least 90 minutes**, unless the safety net comes first or everything
-left is blocked on the owner (the journal says which). The floor is a minimum,
-not a place to stop: after it, keep going while there is work worth doing. Night
-8 stopped at 13 minutes (~67 turns, ~130k subagent tokens) with doable work
-left. How you spend the time and budget to reach the floor is yours to work out
-— and to improve night to night; if one way of working ran out of room early,
-try another and say in the journal what you learned. Record all three figures in
-the Cost line, so the owner's usage numbers can be matched to them.
+**No time floor (replaced 2026-11-26, owner).** Minutes measure neither cost nor
+value: engine runs fill the clock for almost nothing, and the main context is
+what costs. What a night must not do is stop with work it could do tonight. So:
+
+- **Not done while the Next list has something testable tonight.** Before
+  stopping, read the Next list you are about to write. If an item could be done
+  now, do it. "Better done fresh next night" is not a reason: next night is a
+  fresh session either way, and the day is lost. A night stops only for the
+  safety net, for something that needs the owner, or when nothing testable is
+  left; the journal names which, and lists any Next item left undone with why it
+  could not be done tonight. Night 8 stopped at 13 minutes and night 9 at 64
+  minutes (~4%), both with a doable Next item left.
+- **Keep the main context lean, so the budget buys work, not re-reading.** Send
+  long outputs (sweeps, engine runs, large queries) to files and read back a
+  summary, not the raw output; hand a broad sweep whose detail you will not
+  inspect to a cheaper subagent. A lean main session gets more calls out of the
+  same 8%.
+- **Commit each piece when it is done, not at the write-up.** Night 9 made 11 of
+  its 13 commits in its last 12 minutes; a cut-off at 01:45 would have lost most
+  of the night.
+
+Record in the Cost line: start and end time from `date -u` (not an estimate),
+main tool calls, and subagent tokens with models, so the owner's usage numbers
+can be matched to them.
 
 - Read excerpts, not whole large files; never load `api/data/` files whole.
 - If a site is refused, say which in the journal; do not pass search summaries

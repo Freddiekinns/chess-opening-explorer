@@ -45,6 +45,15 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
+- 2026-11-26 — **Night 9 measured at ~4% of the week; the 90-minute floor is
+  replaced.** Night 9 (64 minutes, ~120 main tool calls, one critic) used about
+  4% of the weekly allowance. The safety net rises from 150 to ~180 main tool
+  calls (~190–200 would reach 8%, since cost grows with the main context). The
+  time floor goes: a night is not done while its Next list holds something it
+  could test tonight, it keeps its main context lean, and it commits each piece
+  as it finishes. Details in `operating.md`, Budget and run limits. (Owner, in
+  chat.)
+
 - 2026-11-25 evening — **Free to carry on.** "It should be free to carry on, but
   it shouldn't just stop if it can or thinks it should carry on." The old limits
   (80 calls, 500k subagent tokens) become checkpoints where the run decides; a

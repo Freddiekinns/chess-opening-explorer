@@ -1,0 +1,214 @@
+all 209 vs top-score move { quiet: 103, mixed: 49, real: 37, unsound: 20 }
+strict 101 vs most-played alt { mixed: 30, quiet: 39, real: 28, unsound: 4 }
+either (real if best or alt is a sound fix) { quiet: 103, mixed: 45, real: 42, unsound: 19 }
+real by family ruy-lopez 8, italian 7, french 4, sicilian 4, kings-pawn 3, caro-kann 3, queens-pawn 2, reti 2, queens-gambit 2, london 1, grunfeld 1, scotch 1, petroff 1, english 1, philidor 1, kings-gambit 1
+real positions 40
+[real] italian | 1. e4  e5 2. Nf3  Nc6 3. Bc4  Nf6 4. Ng5  Bc5 5. Nxf7  Bxf2 6. Kxf2  Nxe4 7. Kg1  Qh4  | Qf3 44% scores 35% (eng -151) | best Qf1 14% 48% (eng -191) | alt g3 21% 43% (eng 34) | sf g3 83
+[quiet] french | 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 6. h4 | Bxg5 47% scores 37% (eng -26) | best h6 20% 50% (eng -5) | alt h6 20% 50% (eng -5) | sf h6 -58
+[unsound] irregular | 1. b4  e6 2. Bb2  Bxb4 3. Bxg7  | Nf6 23% scores 21% (eng -28) | best Ne7 5% 31% (eng -85) | alt f6 24% 23% (eng -5) | sf e5 -485
+[unsound] vienna | 1. e4 e5 2. Nc3 Nc6 3. f4 exf4 4. Nf3 Be7 | d4 51% scores 42% (eng -39) | best h4 9% 54% (eng -111) | alt Bc4 26% 51% (eng -6) | sf Bc4 32
+[unsound] queens-gambit | 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 Be6 5. Nc3 | Nc6 25% scores 37% (eng -10) | best Nd5 9% 49% (eng -114) | sf c5 -56
+[mixed] sicilian | 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. c4 d6 6. Nc3 Bg7 | Nxc6 22% scores 41% (eng -58) | best Be3 73% 55% (eng -13) | alt Be3 73% 55% (eng -13) | sf Be3 64
+[real] queens-pawn | 1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 e5 | d5 36% scores 43% (eng -305) | best dxe5 30% 55% (eng 5) | alt dxe5 30% 55% (eng 5) | sf dxe5 88
+[real] caro-kann | 1. e4 c6 2. d4 d5 3. f3 dxe4 4. fxe4 e5 5. Nf3 exd4 6. Bc4 | Bg4 21% scores 25% (eng -167) | best Nf6 21% 43% (eng -5) | alt Nf6 21% 43% (eng -5) | sf Nd7 -47
+[quiet] slav | 1. d4 d5 2. c4 c6 3. Nf3 Bf5 4. Nc3 e6 5. Qb3 | Qc7 28% scores 36% (eng 9) | best Qb6 32% 47% (eng 0) | alt Qb6 32% 47% (eng 0) | sf Qc7 -60
+[real] reti | 1. Nf3 f5 2. e4 fxe4 3. Ng5 Nf6 | Bc4 24% scores 41% (eng -249) | best d3 37% 59% (eng -3) | alt d3 37% 59% (eng -3) | sf d3 3
+[mixed] french | 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 6. Bxe7 Qxe7 7. f4 | c5 53% scores 37% (eng -56) | best a6 20% 54% (eng -13) | alt a6 20% 54% (eng -13) | sf O-O -40
+[quiet] sicilian | 1. e4 c5 2. Nf3 a6 3. Be2 | Nc6 38% scores 42% (eng -10) | best d6 14% 53% (eng -2) | alt e6 21% 52% (eng -24) | sf d6 -28
+[quiet] kings-pawn | 1. e4 e5 2. Nf3 f6 3. Nxe5 fxe5 4. Qh5+ g6 5. Qxe5+ Qe7 6. Qxh8 | Qxe4+ 45% scores 22% (eng -37) | best Nf6 38% 34% (eng -54) | alt Nf6 38% 34% (eng -54) | sf d5 -358
+[quiet] sicilian | 1. e4 c5 2. Nf3 Nc6 3. Nc3 e5 4. Bc4 Be7 5. d3 d6 | Be3 25% scores 42% (eng -16) | best Nd5 24% 51% (eng -7) | alt Nd5 24% 51% (eng -7) | sf a4 26
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Be3 e5 7. d5 | c6 38% scores 42% (eng -6) | best a5 11% 57% (eng -2) | alt Nbd7 23% 49% (eng -30) | sf a5 -79
+[quiet] english | 1. c4 c5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7 5. Nf3 Nf6 6. O-O O-O 7. d4 cxd4 8. Nxd4 | Nxd4 38% scores 40% (eng -9) | best Qb6 7% 51% (eng -21) | sf Qa5 -40
+[quiet] london | 1. d4 Nf6 2. Nf3 e6 3. Bg5 h6 4. Bh4 | Be7 32% scores 44% (eng -5) | best c5 8% 54% (eng -4) | alt g5 36% 46% (eng -12) | sf d5 -16
+[mixed] vienna | 1. e4 e5 2. Nc3 Bc5 3. Qg4 | Qf6 56% scores 42% (eng -58) | best Nf6 11% 55% (eng 2) | alt g6 18% 48% (eng -89) | sf Nf6 47
+[quiet] sicilian | 1. e4 c5 2. Nf3 d6 3. c3 Nf6 4. h3 | Nc6 33% scores 44% (eng -5) | best g6 15% 53% (eng -22) | alt Nxe4 23% 24% (eng -292) | sf Nc6 1
+[real] sicilian | 1. e4 c5 2. Nf3 d6 3. c3 Nf6 4. h3 | Nxe4 23% scores 24% (eng -279) | best g6 15% 53% (eng -10) | alt Nc6 33% 44% (eng 5) | sf Nc6 0
+[real] scotch | 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. c3 dxc3 5. Nxc3 Bb4 6. Bc4 d6 7. O-O | Bg4 29% scores 42% (eng -105) | best Bxc3 21% 50% (eng 9) | alt Nf6 31% 50% (eng -94) | sf Bxc3 11
+[mixed] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. d3 | O-O 23% scores 44% (eng -71) | best d6 16% 55% (eng -2) | alt b5 58% 47% (eng 9) | sf b5 -37
+[mixed] caro-kann | 1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nc3 e6 5. g4 Bg6 6. Nge2 | h6 24% scores 41% (eng -56) | best c5 29% 52% (eng -6) | alt c5 29% 52% (eng -6) | sf c5 10
+[mixed] reti | 1. Nf3 d5 2. g3 Nf6 3. Bg2 c6 4. O-O Bf5 5. d3 e6 6. Nbd2 | Bd6 37% scores 39% (eng -63) | best Bc5 7% 57% (eng -35) | alt Be7 23% 54% (eng -41) | sf h6 0
+[quiet] english | 1. c4 e5 2. Nc3 Nc6 3. g3 Nf6 4. Bg2 Bb4 5. Nd5 | Nxd5 65% scores 39% (eng -14) | best Bc5 7% 49% (eng 7) | sf O-O -44
+[real] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Nc3 Nxe4 8. O-O Bxc3 9. d5 | Na5 25% scores 40% (eng -97) | best Bf6 25% 65% (eng -20) | alt Bf6 25% 65% (eng -20) | sf Bf6 55
+[mixed] italian | 1. e4  e5 2. Nf3  Nc6 3. Bc4  Nf6 4. Ng5  Bc5 5. Nxf7  Bxf2 6. Kxf2  Nxe4 7. Ke3  Qh4  | Nxh8 33% scores 15% (eng -10010) | best Qf3 42% 52% (eng -394) | alt Qf3 42% 52% (eng -394) | sf g3 10
+[real] grunfeld | 1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Bg5 Ne4 | Nxe4 36% scores 33% (eng -210) | best Bh4 11% 53% (eng -28) | alt e3 15% 53% (eng -62) | sf Bf4 9
+[quiet] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 b5 6. Bf1 | Qxd5 56% scores 41% (eng 20) | best Nd4 8% 50% (eng 2) | alt Nxd5 33% 45% (eng 7) | sf Nd4 -78
+[mixed] queens-indian | 1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Bb7 5. Bg2 Be7 6. O-O O-O 7. Nc3 | d6 29% scores 44% (eng -65) | best Ne4 6% 59% (eng -8) | alt d5 31% 49% (eng -8) | sf Ne4 -32
+[quiet] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5 9. exd5 Nxd5 10. Nxe5 Nxe5 11. Rxe5 c6 | d4 67% scores 36% (eng -32) | best d3 5% 64% (eng -15) | sf Re1 40
+[real] italian | 1. e4  e5 2. Nf3  Nc6 3. Bc4  Nf6 4. Ng5  d5 5. exd5  b5 6. Bxb5  Qxd5 7. Nc3  Qxg2  | Bxc6+ 28% scores 32% (eng -164) | best Qf3 46% 53% (eng 7) | alt Qf3 46% 53% (eng 7) | sf Qf3 -24
+[real] italian | 1. e4  e5 2. Nf3  Nc6 3. Bc4  Nf6 4. Ng5  d5 5. exd5  b5 6. Bxb5  Qxd5 7. Nc3  Qxg2  | Rf1 24% scores 44% (eng -148) | best Qf3 46% 53% (eng 4) | alt Qf3 46% 53% (eng 4) | sf Qf3 -16
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. h3 O-O 6. Bg5 | Nbd7 28% scores 44% (eng -21) | best c6 6% 56% (eng -26) | alt h6 22% 48% (eng -41) | sf c5 -31
+[quiet] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. O-O Nf6 7. d4 exd4 | cxd4 30% scores 43% (eng -12) | best Ba3 6% 56% (eng -27) | alt e5 52% 50% (eng 14) | sf Ba3 -17
+[quiet] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O Nf6 | cxd4 30% scores 43% (eng -15) | best Ba3 6% 56% (eng -7) | alt e5 52% 50% (eng -7) | sf cxd4 -11
+[mixed] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Bg5 h6 | Bxf6 23% scores 40% (eng -62) | best Bh4 53% 53% (eng -46) | alt Bh4 53% 53% (eng -46) | sf Bd2 31
+[unsound] queens-pawn | 1. d4 Nc6 2. Bg5 | f6 26% scores 42% (eng -7) | best Nf6 12% 55% (eng -65) | alt d5 30% 44% (eng -3) | sf f6 11
+[mixed] slav | 1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 dxc4 6. e4 | Be7 46% scores 42% (eng -59) | best b5 42% 52% (eng 5) | alt b5 42% 52% (eng 5) | sf b5 -65
+[quiet] irregular | 1. f4 d5 2. g3 Nf6 3. Bg2 | e6 21% scores 44% (eng 1) | best Nc6 27% 57% (eng -15) | alt Nc6 27% 57% (eng -15) | sf g6 28
+[mixed] uncategorised | 1. d4 d5 2. Nf3 Bg4 3. Ne5 Bf5 4. g4 | Bg6 44% scores 41% (eng -60) | best Bc8 7% 53% (eng -3) | alt Be4 22% 42% (eng -69) | sf Be6 -53
+[mixed] uncategorised | 1. d4 d5 2. Nf3 Bg4 3. Ne5 Bf5 4. g4 | Be4 22% scores 42% (eng -72) | best Bc8 7% 53% (eng -8) | alt Bg6 44% 41% (eng -61) | sf Be6 -56
+[quiet] dutch | 1. d4 f5 2. e4 fxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 | e6 44% scores 37% (eng -45) | best d5 21% 47% (eng 7) | alt d5 21% 47% (eng 7) | sf d5 -31
+[quiet] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6 9. Bc4 Bd7 10. O-O-O | a6 23% scores 41% (eng -19) | best Rc8 47% 51% (eng 14) | alt Rc8 47% 51% (eng 14) | sf Rc8 -81
+[real] reti | 1. Nf3 d5 2. c4 d4 3. e3 c5 4. b4 | b6 50% scores 44% (eng -115) | best Bg4 5% 61% (eng -52) | alt dxe3 18% 49% (eng -9) | sf Nf6 8
+[quiet] english | 1. c4 c5 2. Nc3 Nf6 3. Nf3 g6 | e3 21% scores 43% (eng -39) | best d4 20% 55% (eng -26) | alt g3 36% 53% (eng -53) | sf e4 53
+[real] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. O-O Bg4 6. h3 h5 | hxg4 22% scores 7% (eng -82) | best Nc3 5% 49% (eng -20) | alt d3 55% 45% (eng 8) | sf d3 2
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 Nbd7 7. O-O e5 8. dxe5 | Nxe5 41% scores 41% (eng 0) | best dxe5 59% 54% (eng 5) | alt dxe5 59% 54% (eng 5) | sf dxe5 -30
+[real] caro-kann | 1. e4  c6 2. d4  d5 3. Nc3  dxe4 4. Nxe4  Nd7 5.Qe2 | Ngf6 20% scores 0% (eng -9966) | best Ndf6 33% 56% (eng 6) | alt e6 37% 51% (eng -39) | sf Ndf6 -34
+[unsound] french | 1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3 Qb6 6. Bd3 cxd4 7. O-O Bd7 8. Re1 | dxc3 76% scores 40% (eng -21) | best Bc5 6% 54% (eng -96) | sf Rc8 -18
+[quiet] dutch | 1. d4 f5 2. c4 Nf6 3. g3 e6 4. Bg2 Be7 5. Nf3 O-O 6. O-O | d6 37% scores 44% (eng -2) | best d5 9% 53% (eng 5) | alt c6 21% 51% (eng 9) | sf d5 -56
+[quiet] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. f4 Bg7 | Be3 23% scores 43% (eng -15) | best e5 26% 62% (eng -16) | alt e5 26% 62% (eng -16) | sf Bb5+ 32
+[quiet] philidor | 1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. Nc3 Nbd7 5. Bc4 Be7 6. O-O O-O | dxe5 28% scores 44% (eng -43) | best h3 13% 57% (eng -9) | alt Re1 17% 53% (eng 4) | sf Re1 53
+[quiet] french | 1. e4 e6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bd7 5. Nf3 Bc6 6. Bd3 Nd7 7. O-O Ngf6 | Nxf6+ 22% scores 42% (eng -31) | best Re1 29% 52% (eng -24) | alt Bg5 31% 47% (eng -11) | sf Nc3 61
+[quiet] irregular | 1. f4 d5 2. Nf3 Nf6 3. e3 c5 4. b3 | Nc6 55% scores 43% (eng -19) | best g6 10% 59% (eng -5) | sf g6 22
+[unsound] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 Nc6 8. Qd2 Bd7 9. O-O-O | O-O 47% scores 36% (eng -18) | best Nxd4 5% 54% (eng -50) | alt a6 18% 41% (eng -58) | sf h5 -78
+[mixed] sicilian | 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 a6 6. Nxc6 bxc6 7. Bd3 d5 | exd5 70% scores 43% (eng -77) | best O-O 18% 56% (eng -11) | alt O-O 18% 56% (eng -11) | sf O-O 53
+[quiet] english | 1. c4 e6 2. Nf3 d5 3. g3 Nf6 4. Bg2 c5 5. O-O | Nc6 44% scores 43% (eng -22) | best dxc4 7% 51% (eng -41) | alt d4 20% 39% (eng -7) | sf d4 -19
+[quiet] english | 1. c4 e6 2. Nf3 d5 3. g3 Nf6 4. Bg2 c5 5. O-O | d4 20% scores 39% (eng -2) | best dxc4 7% 51% (eng -28) | alt Nc6 44% 43% (eng -11) | sf d4 -25
+[quiet] grunfeld | 1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5 5. e4 Nxc3 6. bxc3 c5 | Nf3 36% scores 42% (eng -7) | best Bc4 10% 50% (eng -13) | alt d5 19% 48% (eng -48) | sf Bb5+ 38
+[quiet] queens-gambit | 1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. e3 Nf6 7. Be2 | cxd4 23% scores 44% (eng -9) | best a6 5% 60% (eng -34) | alt Be7 21% 52% (eng -32) | sf c4 10
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 c6 6. Be3 | O-O 56% scores 43% (eng -3) | best Nbd7 17% 51% (eng -21) | alt Nbd7 17% 51% (eng -21) | sf a6 -58
+[mixed] slav | 1. d4 d5 2. c4 c6 3. cxd5 cxd5 4. Nc3 Nf6 5. f3 | e6 26% scores 43% (eng -56) | best g6 5% 56% (eng -73) | alt Bf5 34% 45% (eng -25) | sf Qb6 16
+[quiet] catalan | 1. d4 Nf6 2. c4 e6 3. g3 Bb4+ 4. Bd2 | Bxd2+ 54% scores 42% (eng -12) | best a5 8% 53% (eng -9) | sf a5 -22
+[mixed] english | 1. c4 e5 2. Nc3 Nf6 3. Nf3 Nc6 4. a3 | Bc5 23% scores 33% (eng -65) | best d5 26% 56% (eng 10) | alt d5 26% 56% (eng 10) | sf d5 4
+[real] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 Bb4 4. c3 | Bc5 21% scores 31% (eng -94) | best Ba5 67% 44% (eng -27) | alt Ba5 67% 44% (eng -27) | sf Ba5 -65
+[mixed] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4 6. d4 b5 7. Bb3 | exd4 22% scores 32% (eng -50) | best d5 47% 44% (eng 9) | alt d5 47% 44% (eng 9) | sf d5 -48
+[quiet] english | 1. c4 c5 2. Nc3 Nf6 3. g3 d5 4. cxd5 Nxd5 5. Bg2 | Nxc3 52% scores 38% (eng 0) | best Nc7 23% 54% (eng 22) | alt Nc7 23% 54% (eng 22) | sf Nc7 -26
+[real] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 6. Bb5+ c6 7. dxc6 bxc6 8. Be2 h6 9. Nf3 e4 10. Ne5 Bd6 | Nc4 25% scores 37% (eng -114) | best f4 13% 55% (eng -42) | alt d4 51% 48% (eng 0) | sf d4 0
+[mixed] pirc-modern | 1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Be2 Bg7 5. h4 | O-O 32% scores 35% (eng -57) | best c6 6% 57% (eng -51) | alt h5 31% 48% (eng -10) | sf h5 -43
+[quiet] catalan | 1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O c6 7. Qc2 | Nbd7 49% scores 43% (eng 5) | best Ne4 6% 56% (eng -25) | sf b6 -44
+[quiet] slav | 1. d4 d5 2. c4 e6 3. Nc3 c6 4. Nf3 dxc4 5. Bg5 | f6 23% scores 40% (eng -49) | best Be7 45% 50% (eng 2) | alt Be7 45% 50% (eng 2) | sf Be7 -2
+[quiet] nimzo-indian | 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. e4 | Bxc3+ 24% scores 37% (eng -39) | best d6 13% 47% (eng -12) | alt d5 39% 46% (eng -6) | sf d5 -24
+[quiet] english | 1. c4 c5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7 5. e4 d6 6. Nge2 | Nf6 55% scores 43% (eng -6) | best Bg4 9% 55% (eng 0) | sf a6 3
+[mixed] french | 1. e4 e6 2. d4 d5 3. Nd2 c5 4. exd5 exd5 5. Ngf3 Nc6 6. Bb5 | Bd7 30% scores 35% (eng -67) | best Nf6 21% 50% (eng -46) | alt Nf6 21% 50% (eng -46) | sf Qe7+ -30
+[mixed] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Be7 4. d4 exd4 5. c3 Nf6 6. e5 Ne4 | cxd4 66% scores 44% (eng -61) | best Bd5 10% 58% (eng 5) | sf Bd5 69
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. h3 Nbd7 7. Bg5 | c5 21% scores 40% (eng -29) | best h6 21% 51% (eng -21) | alt e5 24% 47% (eng 1) | sf e5 -53
+[quiet] benoni-benko | 1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. Nc3 axb5 | Nxb5 88% scores 41% (eng -9) | best e4 7% 58% (eng -39) | sf Nxb5 40
+[real] english | 1. c4 Nf6 2. Nc3 d5 3. Nf3 | dxc4 23% scores 42% (eng -114) | best d4 30% 57% (eng 9) | alt d4 30% 57% (eng 9) | sf d4 74
+[unsound] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6 9. O-O-O d5 | exd5 39% scores 39% (eng 19) | best Kb1 6% 56% (eng -13) | alt Nxc6 35% 47% (eng -2) | sf exd5 52
+[real] french | 1. e4 e6 2. d4 d5 3. Nd2 Nc6 4. c3 | Nf6 26% scores 41% (eng -98) | best Be7 6% 49% (eng -75) | alt dxe4 24% 40% (eng 2) | sf e5 -53
+[unsound] french | 1. e4 e6 2. d4 d5 3. Nd2 Nc6 4. c3 | dxe4 24% scores 40% (eng 0) | best Be7 6% 49% (eng -84) | alt Nf6 26% 41% (eng -99) | sf e5 -47
+[quiet] sicilian | 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. c4 Nf6 6. Nc3 d6 | Bg5 23% scores 43% (eng -12) | best f3 5% 60% (eng -19) | alt Be2 27% 50% (eng 2) | sf Be3 65
+[quiet] catalan | 1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Bb4+ 5. Bd2 | Bxd2+ 71% scores 42% (eng -20) | best Be7 7% 58% (eng -1) | sf a5 -25
+[quiet] queens-gambit | 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 Bg4 5. Bxc4 e6 6. O-O | Bd6 43% scores 41% (eng -4) | best Nbd7 5% 54% (eng -21) | alt Nc6 16% 48% (eng -17) | sf Be7 -44
+[quiet] english | 1. c4 e5 2. Nc3 Nc6 3. g3 d6 4. Bg2 Be6 5. d3 | Nf6 37% scores 43% (eng -2) | best Be7 9% 51% (eng -5) | alt Qd7 29% 45% (eng -9) | sf Nf6 -41
+[quiet] grunfeld | 1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. e3 O-O 6. Be2 c5 | cxd5 20% scores 42% (eng -1) | best dxc5 17% 54% (eng -2) | alt O-O 55% 45% (eng -10) | sf dxc5 -6
+[quiet] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3 Ng4 | Qd2 22% scores 41% (eng -35) | best Bg5 23% 58% (eng -5) | alt Bg5 23% 58% (eng -5) | sf Bc1 35
+[quiet] sicilian | 1. e4 c5 2. Nf3 Nc6 3. g3 e6 4. d3 d5 | Bg2 23% scores 42% (eng -33) | best Nbd2 35% 56% (eng -9) | alt Nbd2 35% 56% (eng -9) | sf Qe2 5
+[quiet] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. Qe2 | b5 50% scores 40% (eng -8) | best d6 14% 48% (eng -36) | alt Bc5 21% 40% (eng -16) | sf b5 5
+[quiet] kings-indian | 1. d4 Nf6 2. Nf3 e6 3. Bf4 c5 4. e3 Qb6 | b3 49% scores 39% (eng -24) | best Qc1 22% 50% (eng -45) | alt Qc1 22% 50% (eng -45) | sf Na3 34
+[quiet] caro-kann | 1. e4 c6 2. d4 d5 3. Nc3 g6 4. e5 Bg7 5. f4 | e6 22% scores 42% (eng -4) | best h5 9% 54% (eng 4) | alt Bf5 28% 45% (eng -37) | sf h5 -71
+[quiet] queens-gambit | 1. d4 d5 2. c4 e5 3. dxe5 d4 4. Nf3 Nc6 5. a3 Bg4 6. Nbd2 | Nge7 35% scores 43% (eng -23) | best a5 5% 63% (eng -48) | alt Qe7 16% 53% (eng 0) | sf Qe7 -99
+[quiet] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 Be7 5. O-O O-O 6. Bb3 d6 7. c3 | Bg4 42% scores 39% (eng -16) | best Be6 19% 50% (eng 3) | alt Be6 19% 50% (eng 3) | sf d5 -27
+[quiet] dutch | 1. d4 f5 2. g4 | fxg4 53% scores 41% (eng -15) | best d5 8% 58% (eng 9) | sf d5 3
+[mixed] queens-gambit | 1. d4 d5 2. c4 e5 3. dxe5 d4 4. e4 | Bb4+ 22% scores 41% (eng -50) | best c5 11% 52% (eng -50) | alt Nc6 51% 50% (eng 12) | sf Nc6 4
+[real] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O b5 6. Bb3 Bc5 7. Nxe5 Nxe5 8. d4 | Bd6 20% scores 22% (eng -364) | best Bxd4 48% 45% (eng -3) | alt Bxd4 48% 45% (eng -3) | sf Bxd4 -30
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Be2 O-O 6. f4 | Nbd7 23% scores 43% (eng -44) | best Re8 7% 57% (eng -32) | alt c5 24% 49% (eng 4) | sf c5 -30
+[real] petroff | 1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nxf7 Kxf7 5. d4 | Nxe4 26% scores 37% (eng -213) | best c5 5% 57% (eng -8) | alt Be7 37% 45% (eng -32) | sf c5 86
+[mixed] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Be2 | Nbd7 23% scores 43% (eng -52) | best Re8 7% 57% (eng -39) | alt c5 24% 49% (eng -7) | sf c5 -36
+[quiet] queens-gambit | 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Qa4+ c6 5. Qxc4 | Be6 22% scores 42% (eng -34) | best Nbd7 6% 55% (eng -25) | alt e6 32% 45% (eng -31) | sf Bf5 -11
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be3 e5 | d5 60% scores 44% (eng 2) | best Be2 9% 53% (eng -8) | alt dxe5 23% 45% (eng -12) | sf Be2 40
+[real] french | 1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. Qg4 | Bxc3+ 25% scores 40% (eng -104) | best Nf6 14% 60% (eng 0) | alt g6 24% 44% (eng -101) | sf Nf6 0
+[real] french | 1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. Qg4 | g6 24% scores 44% (eng -103) | best Nf6 14% 60% (eng 10) | alt Bxc3+ 25% 40% (eng -94) | sf Nf6 0
+[quiet] queens-gambit | 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 Nbd7 7. Rc1 c6 8. Bd3 | dxc4 31% scores 43% (eng 8) | best b6 9% 52% (eng -18) | alt h6 29% 45% (eng 7) | sf dxc4 -29
+[quiet] sicilian | 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nc3 Bg7 6. Be3 Nf6 7. Bc4 O-O 8. Bb3 | d6 36% scores 42% (eng -13) | best a5 6% 58% (eng -1) | alt e6 16% 43% (eng -39) | sf Qa5 -29
+[unsound] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. Nf3 d6 5. g3 O-O 6. Bg2 c5 7. d5 | e6 25% scores 40% (eng -3) | best e5 6% 66% (eng -46) | alt Nbd7 19% 49% (eng -45) | sf e6 -32
+[unsound] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O b5 6. Bb3 Be7 7. d4 | d6 36% scores 42% (eng -1) | best Nxd4 9% 53% (eng -255) | alt exd4 43% 45% (eng -112) | sf d6 -41
+[quiet] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Nc3 | O-O 26% scores 40% (eng -31) | best b5 58% 54% (eng 5) | alt b5 58% 54% (eng 5) | sf b5 -15
+[real] kings-gambit | 1. e4  e5 2. f4  Bc5 3. fxe5 Qh4 | Ke2 23% scores 3% (eng -9661) | best g3 77% 31% (eng -17) | alt g3 77% 31% (eng -17) | sf g3 -339
+[mixed] queens-gambit | 1. d4 d5 2. c4 Bf5 3. Nf3 e6 4. Qb3 | b6 63% scores 41% (eng -77) | best dxc4 8% 50% (eng -44) | sf Nc6 -34
+[real] sicilian | 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Nc3 Qc7 6. g3 Nf6 | Bf4 29% scores 31% (eng -229) | best Bg2 60% 50% (eng 8) | alt Bg2 60% 50% (eng 8) | sf Bg2 29
+[quiet] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 g6 4. O-O | Bg7 86% scores 43% (eng -11) | best Nge7 6% 62% (eng -12) | sf Bg7 -44
+[unsound] reti | 1. Nf3 Nf6 2. c4 c6 3. b3 d5 4. Bb2 | Bg4 25% scores 41% (eng 7) | best g6 9% 60% (eng -37) | alt Bf5 27% 50% (eng -30) | sf Bg4 1
+[quiet] english | 1. c4 c6 2. Nf3 d5 3. b3 Nf6 4. Bb2 | Bg4 25% scores 41% (eng -1) | best g6 9% 60% (eng -23) | alt Bf5 27% 50% (eng -31) | sf Bg4 -3
+[quiet] italian | 1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Nd4 5. Ba4 | Nxf3+ 39% scores 39% (eng -40) | best c6 23% 54% (eng 5) | alt c6 23% 54% (eng 5) | sf c6 19
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. d5 Nbd7 | O-O 55% scores 43% (eng -28) | best Be3 11% 53% (eng 1) | sf Be3 50
+[quiet] sicilian | 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nc3 Bg7 6. Be3 Nf6 7. Bc4 O-O 8. Bb3 d6 9. f3 | Bd7 33% scores 40% (eng -15) | best Na5 9% 52% (eng -21) | alt a6 25% 37% (eng -66) | sf Qa5 -33
+[mixed] sicilian | 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nc3 Bg7 6. Be3 Nf6 7. Bc4 O-O 8. Bb3 d6 9. f3 | a6 25% scores 37% (eng -69) | best Na5 9% 52% (eng -16) | alt Bd7 33% 40% (eng -16) | sf Qa5 -35
+[real] kings-pawn | 1. e4  e5 2. d4  exd4 3. c3  dxc3 4. Bc4  cxb2 5. Bxb2  Nf6 6. e5  d5  | exd6 22% scores 37% (eng -166) | best exf6 60% 54% (eng 13) | alt exf6 60% 54% (eng 13) | sf exf6 -67
+[mixed] dutch | 1. d4 f5 2. h3 Nf6 3. g4 | fxg4 63% scores 23% (eng -69) | best d5 7% 67% (eng 7) | alt e6 16% 47% (eng -21) | sf d5 19
+[real] queens-pawn | 1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 c5 | fxe4 20% scores 32% (eng -191) | best d5 50% 54% (eng 3) | alt d5 50% 54% (eng 3) | sf d5 -45
+[quiet] queens-gambit | 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 b6 8. cxd5 | exd5 34% scores 42% (eng -26) | best Nxd5 66% 53% (eng -2) | alt Nxd5 66% 53% (eng -2) | sf Nxd5 -8
+[real] queens-gambit | 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. a4 | c6 23% scores 30% (eng -99) | best Nc6 17% 55% (eng -6) | alt e6 21% 43% (eng -50) | sf Nc6 30
+[quiet] queens-gambit | 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. Nc3 a6 5. a4 | e6 21% scores 43% (eng -40) | best Nc6 17% 55% (eng 0) | alt c6 23% 30% (eng -95) | sf Nc6 28
+[real] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Ne7 | Nxe5 36% scores 36% (eng -185) | best O-O 19% 52% (eng -23) | alt O-O 19% 52% (eng -23) | sf Nc3 46
+[mixed] french | 1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. a3 Bxc3+ 5. bxc3 dxe4 6. f3 | exf3 75% scores 34% (eng -177) | best Nf6 18% 47% (eng -160) | alt Nf6 18% 47% (eng -160) | sf c5 94
+[mixed] italian | 1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4 Bb4 5. Nxe5 | Nxe5 43% scores 36% (eng -143) | best Nxe4 27% 51% (eng -52) | alt Nxe4 27% 51% (eng -52) | sf Bxc3+ -42
+[unsound] italian | 1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d4 Bb4 5. Nxe5 | Bxc3+ 21% scores 40% (eng -1) | best Nxe4 27% 51% (eng -63) | alt Nxe5 43% 36% (eng -150) | sf Bxc3+ -41
+[quiet] caro-kann | 1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. h4 h6 7. Nf3 Nd7 8. h5 Bh7 9. Bd3 Bxd3 10. Qxd3 e6 11. Bd2 Ngf6 12. O-O-O | Bd6 35% scores 39% (eng -41) | best Qc7 9% 61% (eng -18) | alt Be7 24% 48% (eng 11) | sf Be7 -27
+[mixed] caro-kann | 1. e4  c6 2. d4  d5 3. exd5  cxd5 4. Bd3  Nc6 5. c3  Nf6 6. Bf4  Bg4 7. Qb3  Qd7 8. Nd2  e6 9. Ngf3  | Be7 40% scores 36% (eng -55) | best Bxf3 15% 52% (eng -9) | alt Bd6 27% 47% (eng 4) | sf Bd6 -21
+[quiet] nimzo-indian | 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. e3 | cxd4 29% scores 44% (eng 5) | best O-O 21% 56% (eng -9) | alt Nc6 23% 42% (eng -29) | sf cxd4 0
+[quiet] nimzo-indian | 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 c5 5. e3 | Nc6 23% scores 42% (eng -24) | best O-O 21% 56% (eng 0) | alt cxd4 29% 44% (eng 10) | sf cxd4 0
+[quiet] grunfeld | 1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5 5. e4 Nxc3 6. bxc3 Bg7 7. Be3 c5 | Nf3 33% scores 43% (eng 0) | best Rc1 9% 54% (eng -15) | alt Bc4 17% 52% (eng -28) | sf Nf3 32
+[unsound] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6 9. g4 | Nxd4 21% scores 38% (eng -19) | best d5 7% 55% (eng -65) | alt Bd7 21% 46% (eng -55) | sf Be6 -48
+[real] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 f5 4. Nc3 fxe4 5. Nxe4 d5 | Bxc6+ 26% scores 42% (eng -83) | best Nxe5 18% 64% (eng -13) | alt Ng3 28% 48% (eng -29) | sf Nxe5 76
+[mixed] caro-kann | 1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nf3 e6 5. Be2 c5 6. Be3 | Nc6 23% scores 35% (eng -55) | best Qb6 22% 44% (eng -6) | alt cxd4 45% 43% (eng -21) | sf Qb6 -21
+[quiet] french | 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 | Be2 32% scores 43% (eng -11) | best Ne2 8% 66% (eng -6) | alt Qd2 22% 55% (eng 2) | sf Qd2 41
+[quiet] english | 1. c4 e5 2. Nc3 Nf6 3. g3 g6 4. Bg2 Bg7 5. e4 d6 6. Nge2 O-O 7. d3 | Nc6 39% scores 42% (eng -7) | best Nbd7 11% 55% (eng -36) | sf c5 -33
+[mixed] nimzo-indian | 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 d5 5. cxd5 | Nxd5 49% scores 38% (eng -56) | best exd5 43% 52% (eng -7) | alt exd5 43% 52% (eng -7) | sf exd5 -7
+[quiet] sicilian | 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Qc7 6. f4 a6 | Be3 33% scores 41% (eng -8) | best Nxc6 19% 55% (eng -2) | alt Nxc6 19% 55% (eng -2) | sf Be2 29
+[quiet] queens-gambit | 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. cxd5 exd5 5. Bg5 c6 6. Qc2 Be7 7. e3 | O-O 42% scores 38% (eng -5) | best Be6 9% 54% (eng -15) | alt h6 24% 50% (eng -1) | sf O-O -30
+[unsound] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Nge2 | Nbd7 25% scores 43% (eng -12) | best e5 20% 51% (eng -43) | alt e5 20% 51% (eng -43) | sf c5 -39
+[mixed] vienna | 1. e4 e5 2. Nc3 Bb4 3. Qg4 | Qf6 29% scores 14% (eng -463) | best Bxc3 30% 53% (eng -62) | alt Bxc3 30% 53% (eng -62) | sf Nf6 0
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 Nc6 7. d5 | Ne5 46% scores 42% (eng -33) | best Nb4 14% 52% (eng -6) | alt Nb8 38% 47% (eng -4) | sf Nb8 -79
+[quiet] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5 9. exd5 Nxd5 10. Nxe5 Nxe5 11. Rxe5 c6 12. d4 Bd6 13. Re1 Qh4 14. g3 Qh3 | Qf3 46% scores 26% (eng -44) | best Re4 15% 58% (eng 0) | alt Re4 15% 58% (eng 0) | sf Re4 17
+[quiet] nimzo-indian | 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 Nc6 5. Nf3 | d5 35% scores 38% (eng -13) | best d6 11% 51% (eng -14) | alt O-O 29% 48% (eng -18) | sf Bxc3+ -38
+[mixed] sicilian | 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Bxf6 gxf6 10. Nd5 | Be6 22% scores 38% (eng -71) | best Bg7 31% 49% (eng 6) | alt f5 34% 46% (eng 13) | sf f5 -41
+[quiet] english | 1. c4 c5 2. Nf3 Nf6 3. d4 cxd4 4. Nxd4 e6 5. g3 | Nc6 46% scores 43% (eng -26) | best d5 10% 53% (eng 3) | alt Bc5 21% 50% (eng -28) | sf d5 -20
+[unsound] sicilian | 1. e4 c5 2. b4 cxb4 3. a3 d5 | exd5 35% scores 39% (eng 5) | best e5 38% 50% (eng -36) | alt e5 38% 50% (eng -36) | sf exd5 -42
+[mixed] sicilian | 1. e4 c5 2. b4 cxb4 3. a3 d5 | axb4 24% scores 37% (eng -50) | best e5 38% 50% (eng -47) | alt e5 38% 50% (eng -47) | sf exd5 -39
+[quiet] sicilian | 1. e4 c5 2. Nf3 d6 3. Bb5+ Nc6 4. O-O Bd7 5. Re1 Nf6 6. c3 | e5 21% scores 39% (eng -15) | best a6 16% 50% (eng -2) | alt g6 37% 49% (eng -22) | sf a6 -67
+[quiet] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bc4 e6 7. Bb3 b5 | Bg5 23% scores 39% (eng -10) | best Be3 7% 54% (eng 7) | alt O-O 28% 51% (eng 1) | sf a3 15
+[mixed] queens-gambit | 1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3 Nf6 7. Bg2 cxd4 8. Nxd4 | Nxd4 23% scores 38% (eng -76) | best Be7 9% 52% (eng -32) | alt Bc5 28% 48% (eng 12) | sf Bc5 -38
+[quiet] alekhine | 1. e4 Nf6 2. Nc3 d5 3. d3 dxe4 4. Bg5 | exd3 43% scores 43% (eng -7) | best Bg4 9% 61% (eng -28) | alt Bf5 16% 56% (eng -34) | sf h6 57
+[real] kings-pawn | 1. e4 e5 2. Nf3 d5 3. Nxe5 dxe4 4. Bc4 Qg5 | Nxf7 52% scores 31% (eng -383) | best d4 12% 50% (eng 17) | alt Bxf7+ 34% 44% (eng 23) | sf Bxf7+ 112
+[real] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nd4 | Nxe5 21% scores 34% (eng -86) | best c3 17% 59% (eng -41) | alt Nxd4 50% 59% (eng -3) | sf Nxd4 88
+[real] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 Be7 8. Qf3 Qc7 9. O-O-O | b5 21% scores 44% (eng -185) | best Nc6 11% 54% (eng -73) | alt Nbd7 55% 48% (eng -7) | sf Nbd7 -44
+[mixed] french | 1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. a3 Bxc3+ 5. bxc3 dxe4 6. Qg4 | Qf6 30% scores 41% (eng -56) | best Nf6 42% 54% (eng 0) | alt Nf6 42% 54% (eng 0) | sf Nf6 0
+[mixed] kings-gambit | 1. e4 e5 2. f4 exf4 3. Qf3 | g5 25% scores 29% (eng -88) | best Nf6 8% 50% (eng -89) | sf Nc6 101
+[quiet] queens-gambit | 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O Nc6 7. Nc3 | Be7 27% scores 43% (eng -27) | best a6 15% 52% (eng 2) | alt cxd4 41% 47% (eng -22) | sf a6 -27
+[mixed] sicilian | 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6 6. Ndb5 d6 | Bg5 35% scores 43% (eng -68) | best Bf4 36% 61% (eng 0) | alt Bf4 36% 61% (eng 0) | sf Bf4 36
+[quiet] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. f4 Nc6 | Bb5 27% scores 39% (eng -19) | best Bc4 12% 48% (eng -40) | alt Be3 24% 45% (eng -1) | sf Be3 4
+[real] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 Bc5 5. Bxf7+ Ke7 6. Bd5 | Nxd5 28% scores 31% (eng -243) | best d6 10% 64% (eng -13) | alt Rf8 35% 55% (eng 18) | sf Rf8 -89
+[quiet] grunfeld | 1. d4 Nf6 2. c4 g6 3. g3 d5 4. Bg2 | c6 27% scores 43% (eng -4) | best dxc4 13% 53% (eng -2) | alt Bg7 53% 50% (eng -21) | sf c6 -16
+[real] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O b5 6. Bb3 Bb7 7. c3 | Bc5 34% scores 37% (eng -100) | best Be7 16% 47% (eng -41) | alt Nxe4 21% 47% (eng 1) | sf Nxe4 -15
+[quiet] vienna | 1. e4 e5 2. Nc3 Nf6 3. g3 d5 4. exd5 Nxd5 5. Bg2 | Nxc3 68% scores 41% (eng -3) | best Be6 18% 51% (eng -27) | alt Be6 18% 51% (eng -27) | sf Nxc3 0
+[real] queens-gambit | 1. d4 d5 2. c4 dxc4 3. Nf3 c5 4. e3 cxd4 5. Bxc4 | dxe3 32% scores 25% (eng -662) | best Nc6 30% 50% (eng -8) | alt Nc6 30% 50% (eng -8) | sf e6 -47
+[mixed] kings-gambit | 1. e4 e5 2. f4 Nc6 3. Nf3 f5 4. exf5 e4 5. Ne5 Nf6 | Nxc6 23% scores 39% (eng -162) | best Bc4 39% 50% (eng -79) | alt Bc4 39% 50% (eng -79) | sf Nc3 50
+[quiet] catalan | 1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 dxc4 5. Nf3 Be7 6. O-O O-O 7. Qc2 | b5 32% scores 36% (eng -17) | best a6 18% 52% (eng 5) | alt a6 18% 52% (eng 5) | sf a6 -27
+[quiet] uncategorised | 1. d4 d5 2. e4 dxe4 3. f3 f5 | fxe4 40% scores 44% (eng -10) | best Nc3 37% 53% (eng -11) | alt Nc3 37% 53% (eng -11) | sf fxe4 4
+[unsound] kings-pawn | 1. e4 e5 2. Nf3 f5 3. Bc4 fxe4 4. Nxe5 Nf6 | Nf7 64% scores 42% (eng -6) | best Bf7+ 21% 58% (eng -41) | alt Bf7+ 21% 58% (eng -41) | sf Nf7 259
+[mixed] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. h3 e5 7. d5 a5 | a4 26% scores 34% (eng -79) | best Be3 16% 54% (eng 2) | alt Bd3 24% 50% (eng -4) | sf g4 48
+[quiet] kings-gambit | 1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ng5 h6 6. Nxf7 Kxf7 7. Bc4+ | Ke8 56% scores 41% (eng -33) | best d5 35% 58% (eng 35) | alt d5 35% 58% (eng 35) | sf d5 146
+[quiet] reti | 1. Nf3 d5 2. c4 d4 3. e3 Nc6 4. exd4 Nxd4 | Nxd4 60% scores 42% (eng 6) | best d3 10% 51% (eng -13) | alt Nc3 20% 46% (eng -24) | sf Be2 -14
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O Nbd7 8. Be3 | exd4 32% scores 38% (eng -3) | best Re8 11% 47% (eng -6) | alt Ng4 25% 39% (eng -10) | sf exd4 -78
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O Nbd7 8. Be3 | Ng4 25% scores 39% (eng -13) | best Re8 11% 47% (eng -6) | alt exd4 32% 38% (eng -10) | sf exd4 -72
+[real] philidor | 1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. dxe5 Nxe4 5. Qd5 | Bf5 25% scores 36% (eng -111) | best Nc5 57% 49% (eng 10) | alt Nc5 57% 49% (eng 10) | sf Nc5 -82
+[quiet] nimzo-indian | 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. a3 Bxc3+ 5. bxc3 d5 6. f3 | dxc4 26% scores 43% (eng 2) | best Nc6 9% 52% (eng -19) | alt O-O 40% 47% (eng 0) | sf O-O -9
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nge2 O-O 6. Ng3 | Nbd7 23% scores 38% (eng -20) | best Nc6 17% 48% (eng -50) | alt e5 22% 41% (eng -8) | sf h5 -32
+[quiet] nimzo-indian | 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 | b6 22% scores 40% (eng -13) | best Ne4 23% 58% (eng -36) | alt d5 37% 51% (eng 1) | sf d5 -7
+[mixed] queens-gambit | 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. cxd5 Nxd5 5. e4 Nxc3 6. bxc3 c5 7. Nf3 cxd4 8. cxd4 Bb4+ 9. Bd2 Qa5 | Be2 24% scores 41% (eng -73) | best Bc4 9% 68% (eng -77) | alt Bxb4 21% 45% (eng -46) | sf Rb1 112
+[quiet] kings-indian | 1. d4 Nf6 2. c4 d6 3. Nc3 e5 4. Nf3 Nbd7 5. Bg5 Be7 | dxe5 34% scores 42% (eng -37) | best e3 39% 54% (eng 1) | alt e3 39% 54% (eng 1) | sf e3 43
+[real] kings-pawn | 1. e4  e5 2. d4  exd4 3. c3  dxc3 4. Bc4  cxb2 5. Bxb2  Nf6 6. e5  d5 7. exf6  | dxc4 66% scores 43% (eng -122) | best Bb4+ 28% 55% (eng 4) | alt Bb4+ 28% 55% (eng 4) | sf Bb4+ 68
+[quiet] queens-gambit | 1. d4 d5 2. c4 Nc6 3. cxd5 Qxd5 4. e3 e5 5. Nc3 Bb4 6. Bd2 Bxc3 7. bxc3 | exd4 55% scores 43% (eng -42) | best e4 8% 54% (eng -65) | alt Nf6 29% 50% (eng 2) | sf Nf6 -50
+[real] french | 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 cxd4 8. Nxd4 Bc5 | Nxc6 29% scores 38% (eng -88) | best Qd2 28% 66% (eng -13) | alt Qd2 28% 66% (eng -13) | sf Qd2 50
+[quiet] caro-kann | 1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. Nh3 | e6 30% scores 40% (eng -25) | best Nd7 11% 49% (eng -12) | alt Nf6 27% 41% (eng -6) | sf Nf6 -15
+[real] caro-kann | 1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. Nh3 | h6 26% scores 41% (eng -100) | best Nd7 11% 49% (eng -6) | alt e6 30% 40% (eng -11) | sf Nf6 -17
+[mixed] catalan | 1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 dxc4 5. Nf3 Be7 6. O-O O-O 7. Ne5 | Nbd7 22% scores 39% (eng -52) | best Nc6 27% 60% (eng -10) | alt Nc6 27% 60% (eng -10) | sf Nc6 -18
+[mixed] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Be3 b6 7. Qd2 | Bb7 57% scores 44% (eng -60) | best Re8 10% 63% (eng -46) | alt c5 20% 49% (eng -6) | sf c5 -49
+[quiet] french | 1. e4 e6 2. d4 d5 3. Nd2 Nf6 4. e5 Nfd7 5. f4 c5 6. c3 Nc6 7. Ndf3 Qb6 | Ne2 35% scores 40% (eng -30) | best a3 28% 62% (eng -15) | alt a3 28% 62% (eng -15) | sf h4 59
+[real] sicilian | 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6 6. Ndb5 Bb4 7. Nd6+ | Bxd6 50% scores 39% (eng -154) | best Ke7 46% 60% (eng 15) | alt Ke7 46% 60% (eng 15) | sf Ke7 -8
+[mixed] kings-indian | 1. d4 Nf6 2. c4 e6 3. Nf3 a6 4. Nc3 c5 | Bg5 32% scores 42% (eng -50) | best d5 21% 60% (eng 9) | alt d5 21% 60% (eng 9) | sf d5 82
+[real] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. O-O f6 6. d4 exd4 7. Nxd4 | Bc5 40% scores 44% (eng -583) | best Bd6 12% 53% (eng -71) | alt c5 38% 50% (eng -7) | sf c5 1
+[quiet] sicilian | 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 e6 7. Qd2 | Be7 70% scores 37% (eng -14) | best a6 18% 47% (eng -9) | alt a6 18% 47% (eng -9) | sf a6 -32
+[quiet] queens-gambit | 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 b6 8. Bd3 Bb7 9. O-O Nbd7 | Rc1 25% scores 43% (eng -7) | best Re1 12% 53% (eng -15) | alt cxd5 23% 41% (eng -8) | sf Qe2 8
+[quiet] sicilian | 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. c4 Bg7 6. Be3 Nf6 7. Nc3 O-O 8. Be2 d6 9. O-O Bd7 10. f3 | Rc8 31% scores 43% (eng -26) | best Nxd4 14% 54% (eng -3) | alt a6 33% 47% (eng -24) | sf Nxd4 -48
+[mixed] queens-gambit | 1. d4 d5 2. c4 dxc4 3. Nf3 a6 4. a4 | c6 28% scores 40% (eng -57) | best Nf6 12% 57% (eng 0) | sf Nf6 -21
+[mixed] ruy-lopez | 1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d4 exd4 5. O-O | Bc5 46% scores 44% (eng -64) | best Be7 11% 57% (eng -24) | alt Nxe4 16% 46% (eng -87) | sf a6 6
+[quiet] sicilian | 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 a6 6. g3 | Qc7 26% scores 38% (eng -13) | best Nf6 17% 51% (eng -13) | alt Nf6 17% 51% (eng -13) | sf Qc7 -32
+[real] london | 1. d4 Nf6 2. Nf3 e6 3. Bg5 c5 4. e3 cxd4 | Nxd4 27% scores 32% (eng -475) | best exd4 59% 51% (eng 2) | alt exd4 59% 51% (eng 2) | sf exd4 21
+[mixed] irregular | 1. Nc3 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qh4 | Nf6 57% scores 42% (eng -120) | best g6 16% 51% (eng -115) | alt g6 16% 51% (eng -115) | sf d5 82
+[quiet] benoni-benko | 1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. e4 Bxf1 8. Kxf1 g6 | g3 41% scores 40% (eng -9) | best Nge2 15% 51% (eng -39) | alt Nf3 34% 41% (eng -15) | sf a4 92
+[unsound] benoni-benko | 1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. e4 Bxf1 8. Kxf1 g6 | Nf3 34% scores 41% (eng -1) | best Nge2 15% 51% (eng -32) | alt g3 41% 40% (eng 8) | sf g3 82
+[quiet] kings-pawn | 1. e4 e5 2. Nf3 f5 3. Bc4 fxe4 4. Nxe5 Qg5 | Nf7 36% scores 32% (eng -42) | best d4 25% 50% (eng 5) | alt d4 25% 50% (eng 5) | sf d4 4
+[real] italian | 1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Be7 6. d4 Na5 | Bxf7+ 29% scores 34% (eng -132) | best Bd3 29% 52% (eng -6) | alt Bd3 29% 52% (eng -6) | sf Be2 -6
+[unsound] ruy-lopez | 1. e4  e5 2. Nf3  Nc6 3. Bb5  a6 4. Ba4  Bc5 5. Nxe5  | Nxe5 61% scores 39% (eng -18) | best Bxf2+ 30% 50% (eng -62) | alt Bxf2+ 30% 50% (eng -62) | sf Qe7 0
+[quiet] kings-indian | 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O Nbd7 8. d5 Nc5 9. Qc2 a5 | Be3 33% scores 40% (eng -38) | best h3 14% 50% (eng -44) | alt a3 19% 49% (eng -36) | sf Bg5 25
+[unsound] english | 1. c4 e5 2. Nc3 Nf6 3. f4 | exf4 45% scores 40% (eng -19) | best e4 25% 48% (eng -58) | alt e4 25% 48% (eng -58) | sf exf4 36

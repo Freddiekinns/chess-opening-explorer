@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trap set spike</title>
+<style>
+:root{--bg:#1a1816;--raised:#232120;--el:#2c2a27;--text:#f2ede6;--muted:#a69f95;--orange:#e85d04;--good:#6fbf73;--bad:#e5735c;--light:#e9dcc6;--dark:#b58863}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 'DM Sans',system-ui,sans-serif}
+main{max-width:480px;margin:0 auto;padding:16px}
+h1{font:600 20px/1.2 'Bricolage Grotesque',system-ui;margin:0 0 4px}.sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.progress{display:flex;gap:4px;margin-bottom:12px}.progress i{flex:1;height:4px;border-radius:2px;background:var(--el)}.progress i.done{background:var(--orange)}.progress i.now{background:var(--muted)}
+.line{font-size:13px;color:var(--muted);margin-bottom:8px}
+.board{display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);width:100%;aspect-ratio:1;border-radius:6px;overflow:hidden;user-select:none}
+.sq{display:flex;align-items:center;justify-content:center;font-size:clamp(26px,9vw,40px);line-height:1;cursor:pointer;position:relative}
+.sq.l{background:var(--light)}.sq.d{background:var(--dark)}.sq.sel{box-shadow:inset 0 0 0 3px var(--orange)}.sq.last{background:#d9c46a}
+.pw{color:#fff;text-shadow:0 0 2px #000,0 0 1px #000}.pb{color:#111}
+.prompt{background:var(--raised);border-radius:8px;padding:12px;margin-top:12px}
+.prompt b{color:var(--text)}.k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:6px 0 2px}.bar span:nth-child(1){background:#ddd}.bar span:nth-child(2){background:#888}.bar span:nth-child(3){background:#333}
+.fb{margin-top:10px;padding:10px;border-radius:8px;display:none}.fb.ok{display:block;background:rgba(111,191,115,.12);border:1px solid var(--good)}.fb.no{display:block;background:rgba(229,115,92,.1);border:1px solid var(--bad)}
+button{background:var(--orange);color:#fff;border:0;border-radius:6px;padding:10px 14px;font:600 14px 'DM Sans',system-ui;margin-top:10px}button.ghost{background:transparent;border:1px solid var(--el);color:var(--muted)}
+</style></head><body><main>
+<h1>1.e4 e5: mistakes at your level</h1>
+<p class="sub">Positions where many players rated about 1400–1800 on Lichess go wrong. Checked by Stockfish.</p>
+<div class="progress" id="prog"></div>
+<div class="line" id="line"></div>
+<div class="board" id="board"></div>
+<div class="prompt" id="prompt"></div>
+<div class="fb" id="fb"></div>
+<div id="btns"></div>
+</main>
+<script type="module">
+import { Chess } from 'https://unpkg.com/chess.js@1.0.0/dist/esm/chess.js';
+const ITEMS = /*ITEMS*/[];
+const G = { w: { k: '♔', q: '♕', r: '♖', b: '♗', n: '♘', p: '♙' }, b: { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' } };
+const pct = (x) => Math.round(x * 100) + '%';
+let i = 0, stage = 'fix', sel = null, game, flip, last = null, tries = 0;
+const $ = (id) => document.getElementById(id);
+function stat(s, san) { const m = s && s[san]; if (!m) return ''; return `<div class="bar"><span style="width:${m.win * 100}%"></span><span style="width:${m.draw * 100}%"></span><span style="width:${m.loss * 100}%"></span></div><div style="font-size:12px;color:var(--muted)">${pct(m.share)} play it · won ${pct(m.win)}, drew ${pct(m.draw)}, lost ${pct(m.loss)} (${m.g.toLocaleString('en-GB')} games)</div>`; }
+function draw() {
+  const b = $('board'); b.innerHTML = ''; const rows = game.board();
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) {
+    const rr = flip ? 7 - r : r, cc = flip ? 7 - c : c; const sq = 'abcdefgh'[cc] + (8 - rr); const p = rows[rr][cc];
+    const d = document.createElement('div'); d.className = 'sq ' + ((rr + cc) % 2 ? 'd' : 'l') + (sel === sq ? ' sel' : '') + (last && (last.from === sq || last.to === sq) ? ' last' : '');
+    if (p) d.innerHTML = `<span class="${p.color === 'w' ? 'pw' : 'pb'}">${G[p.color][p.type]}</span>`;
+    d.onclick = () => click(sq); b.appendChild(d);
+  }
+}
+function setup() {
+  const it = ITEMS[i]; tries = 0; sel = null; $('fb').className = 'fb'; $('btns').innerHTML = '';
+  $('prog').innerHTML = ITEMS.map((_, k) => `<i class="${k < i ? 'done' : k === i ? 'now' : ''}"></i>`).join('');
+  const side = it.fen.split(' ')[1] === 'w' ? 'White' : 'Black', other = side === 'White' ? 'Black' : 'White';
+  $('line').textContent = it.moves + (stage === 'fix' ? '' : ' ' + it.san);
+  if (stage === 'fix') {
+    game = new Chess(it.fen); flip = side === 'Black'; last = null;
+    $('prompt').innerHTML = `<div class="k">${side} to move · ${i + 1} of ${ITEMS.length}</div>Here, <b>${pct(it.sh)} of players at your level play ${it.san}</b>, and it goes badly for them:${stat(it.rootStats, it.san)}<p style="margin:10px 0 0">Find a better move.</p>`;
+  } else {
+    game = new Chess(it.after); flip = other === 'Black'; const h = new Chess(it.fen).move(it.san); last = h;
+    $('prompt').innerHTML = `<div class="k">Now you're ${other} · ${i + 1} of ${ITEMS.length}</div>Your opponent just played <b>${it.san}</b>. Punish it.`;
+  }
+  draw();
+}
+function click(sq) {
+  const p = game.get(sq);
+  if (sel && sel !== sq) {
+    let mv = null; try { mv = game.move({ from: sel, to: sq, promotion: 'q' }); } catch {}
+    if (mv) { judge(mv); return; }
+  }
+  sel = p && p.color === game.turn() ? sq : null; draw();
+}
+function judge(mv) {
+  const it = ITEMS[i]; const ok = (stage === 'fix' ? it.fixes : it.punish).includes(mv.san); last = mv; sel = null; draw();
+  const fb = $('fb');
+  if (ok) {
+    const s = stage === 'fix' ? it.rootStats : it.afterStats;
+    fb.className = 'fb ok'; fb.innerHTML = `<b>${mv.san} — yes.</b> ${stage === 'fix' ? 'Stockfish agrees.' : `That is Stockfish's choice${it.found != null ? `; ${pct(it.found)} of players at your level find it` : ''}.`}${stat(s, mv.san)}`;
+    $('btns').innerHTML = `<button id="next">${stage === 'fix' ? 'Now punish it' : i + 1 < ITEMS.length ? 'Next position' : 'Finish'}</button>`;
+    $('next').onclick = () => { if (stage === 'fix') stage = 'punish'; else { stage = 'fix'; i++; } if (i < ITEMS.length) setup(); else done(); };
+  } else {
+    tries++; game.undo(); last = null; draw();
+    const s = stage === 'fix' ? it.rootStats : it.afterStats;
+    fb.className = 'fb no'; fb.innerHTML = `<b>${mv.san}</b> is not it${mv.san === it.san && stage === 'fix' ? ' — that is the common mistake' : ''}.${s && s[mv.san] ? stat(s, mv.san) : ''}${tries >= 2 ? `<p style="margin:8px 0 0">Answer: <b>${(stage === 'fix' ? it.fixes : it.punish).join(' or ')}</b>.</p>` : ''}`;
+    if (tries >= 2) { $('btns').innerHTML = `<button id="next">Continue</button>`; $('next').onclick = () => { if (stage === 'fix') stage = 'punish'; else { stage = 'fix'; i++; } if (i < ITEMS.length) setup(); else done(); }; }
+  }
+}
+function done() { $('prog').innerHTML = ITEMS.map(() => '<i class="done"></i>').join(''); $('line').textContent = ''; $('board').innerHTML = ''; $('prompt').innerHTML = `<b>Done: ${ITEMS.length} positions.</b> These are the 1.e4 e5 mistakes most often made at your level.`; $('fb').className = 'fb'; $('btns').innerHTML = ''; }
+setup();
+window.__spike = { get state() { return { i, stage }; }, click };
+</script></body></html>

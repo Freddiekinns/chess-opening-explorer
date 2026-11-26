@@ -83,3 +83,14 @@ pawn). **Idea 17 per family is killed.** What the data does support:
 - "Loses 100 cp" is the engine's view; whether it is the right lesson for a 1200
   (a missed pawn versus an opening principle) is a teaching judgment no script
   makes. Every item would need a human (or the owner) to read it.
+
+## 3. The same at u1400 (the band traps are for)
+
+Same sweep at u1400 (3,229 positions with 1,000+ games), confirmed at depth 20
+(`engine-first-u1400-d20.txt`): **143 of 187 confirmed, 83 cost games at
+u1400, 51 of them in 1.e4 e5.** Italian 27, Ruy Lopez 7, King's pawn 6, then 4
+or fewer. Only 34 items are shared with 1400: the bands make different
+mistakes. Union of both bands: 143 distinct costly mistakes, 80 in 1.e4 e5.
+
+Raw sweeps (depth 14, one JSON line per position) are kept gzipped
+(`sweep-*-d14.jsonl.gz`) so the analysis can be re-run without the engine.

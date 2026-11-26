@@ -1,0 +1,153 @@
+[
+ {
+  "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5",
+  "family": "italian",
+  "fen": "r1bqkb1r/ppp2ppp/2n2n2/3Pp1N1/2B5/8/PPPP1PPP/RNBQK2R b KQkq - 0 5",
+  "san": "Nxd5",
+  "sh": 0.3170986526366614,
+  "s": 0.3521041715890893,
+  "rest": 0.5240179197269375,
+  "after": "r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6",
+  "fixes": [
+   "Na5",
+   "b5",
+   "Nd4",
+   "Nb4"
+  ],
+  "punish": [
+   "Nxf7",
+   "d4"
+  ],
+  "found": 0.6346369882697181
+ },
+ {
+  "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4",
+  "family": "italian",
+  "fen": "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+  "san": "Nxe5",
+  "sh": 0.21900805364235998,
+  "s": 0.23796132982794768,
+  "rest": 0.5597586696031953,
+  "after": "r1bqkbnr/pppp1ppp/8/4N3/2BnP3/8/PPPP1PPP/RNBQK2R b KQkq - 0 4",
+  "fixes": [
+   "Nxd4",
+   "O-O",
+   "Nc3",
+   "h3",
+   "c3"
+  ],
+  "punish": [
+   "Qg5"
+  ],
+  "found": 0.9743213499633162
+ },
+ {
+  "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 f5",
+  "family": "italian",
+  "fen": "r1bqkbnr/pppp2pp/2n5/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+  "san": "exf5",
+  "sh": 0.34115975370458085,
+  "s": 0.3911256556040372,
+  "rest": 0.515507856629352,
+  "after": "r1bqkbnr/pppp2pp/2n5/4pP2/2B5/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 4",
+  "fixes": [
+   "d4",
+   "d3"
+  ],
+  "punish": [
+   "e4"
+  ],
+  "found": 0.7877510701350017
+ },
+ {
+  "moves": "1. e4 e5 2. Nf3 f6 3. Nxe5",
+  "family": "uncategorised",
+  "fen": "rnbqkbnr/pppp2pp/5p2/4N3/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
+  "san": "fxe5",
+  "sh": 0.6909620991253644,
+  "s": 0.23709061683745228,
+  "rest": 0.424303683737646,
+  "after": "rnbqkbnr/pppp2pp/8/4p3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 4",
+  "fixes": [
+   "Qe7",
+   "Ne7",
+   "Nh6"
+  ],
+  "punish": [
+   "Qh5+"
+  ],
+  "found": null
+ },
+ {
+  "moves": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Qh4",
+  "family": "scotch",
+  "fen": "r1b1kbnr/pppp1ppp/2n5/8/3NP2q/8/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+  "san": "Nxc6",
+  "sh": 0.39835531189805895,
+  "s": 0.41826297191742606,
+  "rest": 0.44951360669868246,
+  "after": "r1b1kbnr/pppp1ppp/2N5/8/4P2q/8/PPP2PPP/RNBQKB1R b KQkq - 0 5",
+  "fixes": [
+   "Nc3",
+   "Nb5",
+   "Be3",
+   "Nf3",
+   "Qd3"
+  ],
+  "punish": [
+   "Qxe4+"
+  ],
+  "found": null
+ },
+ {
+  "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 Nxe4",
+  "family": "italian",
+  "fen": "r1bqkb1r/pppp1ppp/2n5/4p1N1/2B1n3/8/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+  "san": "Nxf7",
+  "sh": 0.35217350483522675,
+  "s": 0.34457478005865105,
+  "rest": 0.5209782608695652,
+  "after": "r1bqkb1r/pppp1Npp/2n5/4p3/2B1n3/8/PPPP1PPP/RNBQK2R b KQkq - 0 5",
+  "fixes": [
+   "Bxf7+"
+  ],
+  "punish": [
+   "Qh4"
+  ],
+  "found": null
+ },
+ {
+  "moves": "1. e4 e5 2. Nf3 d6 3. d4 Nf6 4. dxe5",
+  "family": "philidor",
+  "fen": "rnbqkb1r/ppp2ppp/3p1n2/4P3/4P3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+  "san": "dxe5",
+  "sh": 0.38419963968772936,
+  "s": 0.33674887113581103,
+  "rest": 0.4641347925018962,
+  "after": "rnbqkb1r/ppp2ppp/5n2/4p3/4P3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+  "fixes": [
+   "Nxe4"
+  ],
+  "punish": [
+   "Qxd8+"
+  ],
+  "found": null
+ },
+ {
+  "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 Bc5 5. Nxf7 Bxf2+ 6. Kxf2 Nxe4+",
+  "family": "italian",
+  "fen": "r1bqk2r/pppp1Npp/2n5/4p3/2B1n3/8/PPPP1KPP/RNBQ3R w kq - 0 7",
+  "san": "Ke1",
+  "sh": 0.239247311827957,
+  "s": 0.1283264340626848,
+  "rest": 0.41751906267435374,
+  "after": "r1bqk2r/pppp1Npp/2n5/4p3/2B1n3/8/PPPP2PP/RNBQK2R b kq - 1 7",
+  "fixes": [
+   "Kg1"
+  ],
+  "punish": [
+   "Qh4+"
+  ],
+  "found": null
+ }
+]

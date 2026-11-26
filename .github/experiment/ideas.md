@@ -18,8 +18,8 @@ Night 9 added a container-only Stockfish and tested 8, 11, 15, 17 and the new
   Any idea that says "better" or "mistake" needs an engine check, and so the
   owner's decision on engine output in production (`spikes/06`).
 - **Opening mistakes live in 1.e4 e5.** Engine-first, 94 costly popular mistakes
-  at 1400 and 83 at u1400 (143 distinct); 80 of them are in 1.e4 e5, which is
-  ~38% of u1400 games and 2,323 of 12,377 pages. Closed openings have almost
+  at 1400 and 83 at u1400 (140 distinct); 78 of them are in 1.e4 e5, which is
+  ~37% of u1400 games and 2,323 of 12,377 pages. Closed openings have almost
   none in the early tree.
 
 ## What night 8's data changes for every idea
@@ -38,7 +38,7 @@ Two facts from the position-stats shards that any idea has to live with:
 
 ## Live
 
-### 8. The common mistake at your level — `killed` as data-only; lives in 17
+### 8. The common mistake at your level — `killed` as data-only; a pause in 1 at most
 
 On a page, name the move players at your level commonly get wrong in the next
 few moves of this opening, what scores better, and (where data reaches) the
@@ -106,6 +106,11 @@ A play button animates the line, pausing where players at your level split,
 captioned from the `position-stats` shards; then play it from memory; then done.
 (`gates/gate-a.md`, Revision 1.)
 
+- 2026-11-26 (night 9, competitor): openingpuzzles.com has "21 interactive
+  opening studies" (ideas and main variations on a live board) beside its
+  puzzles. Not tried hands-on. Idea 1's difference has to be every position (all
+  12,377, not 21) and the band splits; say so at Gate A.
+
 - 2026-11-26 (night 9, from `spikes/06`): a pause could also mark where your
   level commonly goes wrong (engine-confirmed). That applies to 485 of 8,464
   named 9+ ply lines (6%), but to 360 of 1,643 in 1.e4 e5 (22%). 48 named lines
@@ -130,24 +135,6 @@ captioned from the `position-stats` shards; then play it from memory; then done.
 - 2026-11-25 (night 7): the shards cover all 12,377 named positions; 1,330 of
   1,885 lines of 9+ ply with 5,000+ games have band data at every step.
 - Owner, 2026-11-24: "possibly"; the animation was the owner's suggestion.
-
-### 11. Say how often this line actually happens — `killed` 2026-11-26
-
-- 2026-11-26 (night 9): the copy test kills it. On obscure pages the number is
-  "1 in 28,000" (French Tarrasch 3...Be7 4.Ngf3) to "1 in 160,000" (Najdorf
-  13.f5 Bxg5+): it says the line is deep, not that it is rare (every 12-ply line
-  is that rare, night 8). The relative form, the share at the parent, is
-  already in the parent's Next moves. What a visitor could use instead is where
-  their level leaves the line and what it plays there: idea 7.
-
-On a line page: "At your level, opponents allow this in about 1 game in 70; the
-usual game goes 6.Bg5 instead" with a link. Honest about obscure lines that
-people land on from Google. Looks wrong (tells a visitor the page is rarely
-relevant) — that is why it is here.
-
-- Data: reach is computable for every named line, but as an upper bound (10% of
-  steps unknown). Riskiest: the number is wrong where steps are missing, and it
-  might push the visitor away rather than on.
 
 ### 12. Guess what your level plays — `untested`
 
@@ -231,57 +218,43 @@ learner which habits to drop. Riskiest: data reach at u1400 (spike 01).
   2.Bf4 vs 2.c4, French 2.Nf3 vs 2.d4, French Advance 3.e5 vs 3.Nc3. The u1400
   top move is under 60% in 1,673 (74%), so a guess is rarely obvious.
 
-### 17. A trap set per family — `testing`
-
-From any page in a family (obscure ones included), "the N mistakes players at
-your level make in the Italian": each a position to solve — find the better move
-or the punishment. A finite session with an end, built from idea 8's data.
-Riskiest: only ~3 families have enough (Italian 46, QG 19, Sicilian 16 at 1400
-by the loose rule; fewer by the strict one), and the punishing reply is in the
-shards for 41 of 164.
-
-### 18. Does this trick work at your level? — `promising` (small)
-
-On a gambit or trap page, one line: what Stockfish thinks of it and what it
-scores at your level. "Stafford: Stockfish −1.7. At your level it scores 52%,
-and still 48% at 2200." The honest answer to the question trap videos raise.
-
-- 2026-11-26 (night 9, `spikes/09`): 20 gambits checked at depth 20. Unsound
-  ones (Stafford −1.7, Halloween −1.4, Traxler −1.5, Rousseau −1.3, Englund
-  −1.2) score 46–55% at every band. "Where it stops working" cannot be shown
-  (strong players do not play them; score barely moves, as night 8 found). True,
-  short, on popular pages; a small add-on, not a direction. Needs engine numbers
-  in production (owner's decision, as 17).
-
-### 19. Puzzles from your opening, from Lichess — `untested`
-
-Lichess's puzzle database is CC0 and tagged by opening, and Lichess has a
-puzzles-by-opening page. Link each family to it, or show a few of its puzzles.
-Content that exists for most families, already engine-verified. Riskiest: those
-puzzles happen in the middlegame of games that began with the opening, so they
-may not teach the opening at all; and a plain link sends the learner away. The
-cloud cannot reach lichess.org, so the tag names and coverage are unverified
-(`[local]`, or the CC0 file, which is a download the owner should allow).
-
-### 20. How forgiving is this opening at your level? — `untested`
-
-For a beginner choosing what to play: count the common mistakes (tonight's
-engine-first list) in each opening's early tree at their band. The Italian has
-27 at 1400; most d4 openings have 0–2. "The London rarely punishes you; the
-Italian is a minefield for both sides." Ties to 13. Riskiest: the count follows
-how many well-played named positions a family has, so it needs normalising by
-games, and "few mistakes" may mean "few tactics", not "easy to learn".
-
-- 2026-11-26 (night 9, quick count from the `spikes/06` sweeps): confirmed
-  mistakes played per 100 games entering the family (its busiest position as
-  the denominator). u1400: Petroff 17 (the 3...Nxe4 copycat), Italian 4.4, Ruy
-  4.0, King's Gambit 3.1, QG 2.0, Sicilian 0.7, French 0.9, London 0, King's
-  Indian 0.1. 1400: Petroff 8, Italian 5.6, KG 3.9, everything d4 under 3. The
-  signal is strong and matches chess sense. Caveats: only positions with 1,000+
-  games were swept, and "uncategorised" (25) shows the family denominators are
-  rough. A comparison for a beginner choosing an opening, not a session.
-
 ## Killed
+
+### 17. A trap set per family — `killed` 2026-11-26
+
+From any page in a family, "the N mistakes players at your level make in the
+Italian", each a position to solve.
+
+- 2026-11-26 (night 9, `spikes/06`, `08`, critic): killed three ways. Engine-first
+  there are 8+ costly mistakes in only 3 families (Italian 27, QG 9, King's pawn
+  9 at 1400), so per family fails the rule set before the test. Reframed as one
+  "1.e4 e5 at your level" set (78 distinct items across u1400 and 1400) and
+  spiked at 390 px: it works, but **it already exists** (openingpuzzles.com:
+  Stockfish-checked opening puzzles and "5...Nxd5: 49% of players rated
+  1200–1400 fall for it"), half its items are trivia or famous traps, and it is
+  a one-off quiz. Survives only as an optional "punish it" step at a pause of
+  idea 1, with engine output in production.
+- 2026-11-25 (night 8): the data-only rule found 216 at 1400 across 13 families
+  with 5+, but score is not soundness (Dragon 7...Ng4).
+
+### 11. Say how often this line actually happens — `killed` 2026-11-26
+
+- 2026-11-26 (night 9): the copy test kills it. On obscure pages the number is
+  "1 in 28,000" (French Tarrasch 3...Be7 4.Ngf3) to "1 in 160,000" (Najdorf
+  13.f5 Bxg5+): it says the line is deep, not that it is rare (every 12-ply line
+  is that rare, night 8). The relative form, the share at the parent, is
+  already in the parent's Next moves. What a visitor could use instead is where
+  their level leaves the line and what it plays there: idea 7.
+
+On a line page: "At your level, opponents allow this in about 1 game in 70; the
+usual game goes 6.Bg5 instead" with a link. Honest about obscure lines that
+people land on from Google. Looks wrong (tells a visitor the page is rarely
+relevant) — that is why it is here.
+
+- Data: reach is computable for every named line, but as an upper bound (10% of
+  steps unknown). Riskiest: the number is wrong where steps are missing, and it
+  might push the visitor away rather than on.
+
 
 - 2026-11-25 (night 8, data): strict rule (vs the most played alternative with
   15%+ share, gap 8+ points, 6+ below the rest; position 1,000+ games): 131 at

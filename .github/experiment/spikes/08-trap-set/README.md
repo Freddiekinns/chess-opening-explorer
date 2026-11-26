@@ -52,3 +52,27 @@ Engine output in production. Either a committed file of ~100–150 vetted items
 (made by a script with Stockfish run on someone's machine: a pipeline and a tool
 the owner must allow), or a client-side engine (a dependency). Plus a human
 read of every item. Nothing here is buildable before that decision.
+
+## Killed as a direction (same night): it exists, and the critic agrees
+
+- **openingpuzzles.com** (read with a fetch, not tried hands-on): free, "119,345
+  puzzles · 21 interactive opening studies", every puzzle from 1800+ Lichess
+  games and "Stockfish checks every puzzle at depth 20", kept only with "one
+  clearly best answer". Its Traps page lists 23 traps with a fall rate by band:
+  "Fried Liver Attack … 5...Nxd5: 49% of players rated 1200–1400 fall for it".
+  That is this spike's first card. Lichess also has free puzzles by opening
+  (`lichess.org/training/openings`, CC0 data).
+- **The critic (Opus, `spikes/06`, `08`)** re-counted 94/54 (holds) and the
+  union (140 distinct, not 143: three positions reached by two move orders),
+  read 18 items: about half good lessons, a third engine trivia or duplicates
+  (four Traxler lines; Ruy 3...f6 4.Bxc6 at −0.15), the rest famous traps whose
+  punishment 97–100% already find. In 29 of 94 the mover still scores 45%+, so
+  "goes badly for them" overclaims. Punishment found-rate known for 13 of 94.
+  Ranked objections: the content needs a human read of every item and still
+  overlaps the trap-video canon; it is a one-off quiz with nothing for the 63%
+  of u1400 games that do not start 1.e4 e5; the band copy overstates.
+
+What survives is the critic's proposal: inside the board-first play-through
+(Gate A Revision 1), where a pause falls on an engine-confirmed common mistake,
+offer "punish it" as an optional step. About 40 vetted 1.e4 e5 items (a 6-point
+gap and still bad after the move), and only with engine output in production.

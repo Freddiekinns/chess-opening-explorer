@@ -11,9 +11,13 @@ through. **Screenshots:** `spikes/10-play-through/1-pause.png` … `6-memory-don
   of 10 steps). And end with "what next": 68% play 6.cxd4, 24% play 6.e5, which
   wins more. Then, with an engine, the mistake: after 6.e5, 29% of Black answer
   6...Ng4, which Stockfish rates more than a pawn worse; "Punish it →".
-- **What it is not yet:** a session. Watch plus memory is 2–3 minutes for 10
-  ply. Gate B has to string several cards (the family's lines, or the line and
-  its end-pause branches).
+- **From card to session.** Watch plus memory is 2–3 minutes for 10 ply. Adding
+  three puzzles from real games in the same variation (Lichess's public-domain
+  puzzle file, rated 1600 or below; `spikes/11`) makes it 5–7 minutes, and the
+  first puzzle is visibly this line turning into a tactic at move 9
+  (`9-puzzle-ask.png`). The puzzles exist for most variations (909 of 1,212
+  Lichess variation tags equal one of our page names). Using them is a data
+  step (download and filter a CC0 file): your yes, in question 5.
 - **The alternative, killed:** an engine-checked "mistakes at your level" trap
   set (`spikes/06`, `08`). The data-only version would have taught something
   false 2 times in 5; with Stockfish it holds, but it lives almost only in

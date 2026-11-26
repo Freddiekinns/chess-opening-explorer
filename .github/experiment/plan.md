@@ -12,18 +12,15 @@ Revision 1 for the first time (`spikes/10`) and added an addendum to
 `gates/gate-a.md`. Revision 1 is still the pick; Gate A still waits on the owner.
 
 1. **Owner replies first** (Gate A; question 5, engine output on the site).
-2. **The session question** (Gate B's design, testable before A): a 10-ply card
-   is 2–3 minutes. What strings cards into a session? Spike a three-card Italian
-   chapter at 390 px, choosing lines by what each band actually meets
-   (`spikes/07`: u1400 meets the Two Knights and the Fried Liver, 1400 the
-   c3/d4 Giuoco, 2200 the Pianissimo). Test: does card 2 feel like a next step
-   or a repeat?
-3. **Idea 12 as a pause:** at an opponent split, ask "what do most of your
-   opponents play here?" before showing the bars. Spike it in `spikes/10`'s
-   page; judge whether guessing teaches or is trivia.
-4. **Idea 19:** coverage of Lichess's CC0 puzzles by opening tag, from a mirror
-   that is not lichess.org (the Hugging Face dataset viewer), counted against
-   our 31 families, and whether those puzzles happen in the opening phase.
+2. **The session, done on night 9** (`spikes/10`): watch → memory → three
+   CC0 puzzles from the same variation, ~5–7 minutes. Next test: run it on two
+   more lines (one d4, e.g. a King's Indian; one obscure) to see whether the
+   puzzles still fit when the variation tag is broad or thin.
+3. **Idea 12 as a pause** failed on night 9 (40% coin tosses). Try "which of
+   these scores best for you?" at a pause instead, if it is cheap.
+4. **Puzzle fit, measured not eyeballed:** for a sample of variations, replay
+   each puzzle's game id? Not reachable (lichess.org refuses the cloud). Use
+   pawn signatures per line, as night 9 did for the Center Attack.
 5. **Return reason** is still the weakest part of the charter goal (idea 3):
    one cheap test of what would change while a learner is away.
 6. Raise or lower the run limits from the owner's usage % if posted.

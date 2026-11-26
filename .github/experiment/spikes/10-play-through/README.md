@@ -37,6 +37,26 @@ and `4-pause.png` (the end).
   session. A session needs several cards in a row (the family's lines, or the
   line and its end-pause branches), which is the design question for Gate B.
 
+## Stage 3: three puzzles from games like this (spiked the same night)
+
+After "Your turn", the spike runs three Lichess CC0 puzzles tagged
+`Italian_Game_Classical_Variation`, rated 1600 or below, with the c3/d4 pawn
+signature, most played first (`puzzles.json`, `spikes/11`). The opponent's
+move is played, then "A Lichess game in this variation reached this position,
+and the move just played is a mistake. White to move: find the best move."
+(`9-puzzle-ask.png`, `10-puzzle-solved.png`). A scripted walk solved all three
+and reached "Session done".
+
+- The first puzzle is recognisably the line: c3, Black's pawn on d4, Bc5, and
+  Ng5 + Qh5 against f7 after 9...h6?. The learner sees the line they just played
+  turn into a tactic at move 9.
+- **Watch, memory, three puzzles is about 5–7 minutes**: a session, not a card,
+  and the puzzle content exists for 71% of opening-phase puzzles by exact
+  variation name, with no engine and no writing of ours.
+- Rough edges: the puzzle jumps from move 5 to move 9 without the moves between
+  (the database has only the game id); "your level" for puzzles is the puzzle's
+  rating, not the explorer band.
+
 ## Guess first (idea 12 as a pause), spiked the same night
 
 `?guess` asks "What do most of your opponents play here?" with the top three

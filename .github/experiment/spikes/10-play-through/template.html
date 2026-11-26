@@ -24,6 +24,7 @@ main{max-width:480px;margin:0 auto;padding:16px}h1{font:600 20px/1.2 'Bricolage 
 <script type="module">
 import { Chess } from 'https://unpkg.com/chess.js@1.0.0/dist/esm/chess.js';
 const L = /*LINE*/[];
+const PZ = /*PUZZLES*/[];
 const G = { w: { k: '♔', q: '♕', r: '♖', b: '♗', n: '♘', p: '♙' }, b: { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' } };
 const GUESS = new URLSearchParams(location.search).has('guess');
 const moves = L.filter((s) => !s.end); const end = L.find((s) => s.end);
@@ -69,12 +70,27 @@ function memClick(sq) {
   if (sel && sel !== sq) { let mv = null; try { mv = c.move({ from: sel, to: sq, promotion: 'q' }); } catch {} sel = null;
     if (mv) { const want = moves[ply];
       if (mv.san === want.san) { ply++; tries = 0; if (ply < moves.length) ply++; memRender();
-        if (ply >= moves.length) { $('cap').innerHTML = `<div class="k">Done</div><b>You played the Center Attack from memory.</b> ${tries === 0 ? '' : ''}Next time this line is on your board, the pauses above are the moments to look for.`; mem = false; }
+        if (ply >= moves.length) { $('cap').innerHTML = `<div class="k">Done</div><b>You played the Center Attack from memory.</b> ${tries === 0 ? '' : ''}Next time this line is on your board, the pauses above are the moments to look for.`; mem = false; puzStart(0); }
         else $('cap').innerHTML = `<div class="k">Your turn</div>Good. Black played ${num(ply - 1)}${moves[ply - 1].san}.`; return; }
       tries++; const alt = (want.top || []).find((m) => m.san === mv.san);
       $('cap').innerHTML = `<div class="k">Not the line</div><b>${mv.san}</b> is not this line${alt ? ` (${pct(alt.share)} of your level play it)` : ''}.${tries >= 2 ? ` The line plays <b>${num(ply)}${want.san}</b>.` : ' Try again.'}`; memRender(); return; } }
   sel = c.get(sq) && c.get(sq).color === c.turn() ? sq : null; memRender();
 }
 $('mem').onclick = memStart;
-render(); window.__spike = { memStart, memClick, get mem() { return mem; }, step, get ply() { return ply; } };
+// Stage 3: puzzles from games in this variation (Lichess CC0, rated <= 1600). Moves[0] is the opponent's move.
+let pz = -1, pc = null, pk = 0, psel = null, pmiss = 0;
+function puzDraw() { const b = $('board'); b.innerHTML = ''; const rows = pc.board(); const fl = pc.turn() === 'b';
+  for (let r = 0; r < 8; r++) for (let f = 0; f < 8; f++) { const rr = fl ? 7 - r : r, ff = fl ? 7 - f : f; const sq = 'abcdefgh'[ff] + (8 - rr); const p = rows[rr][ff]; const d = document.createElement('div'); d.className = 'sq ' + ((rr + ff) % 2 ? 'd' : 'l') + (psel === sq ? ' sel' : '') + (last && (last.from === sq || last.to === sq) ? ' last' : ''); if (p) d.innerHTML = `<span class="${p.color === 'w' ? 'pw' : 'pb'}">${G[p.color][p.type]}</span>`; d.onclick = () => puzClick(sq); b.appendChild(d); } }
+const uci = (u) => ({ from: u.slice(0, 2), to: u.slice(2, 4), promotion: u[4] });
+function puzStart(k) { pz = k; if (k >= PZ.length) { $('cap').innerHTML = `<div class="k">Session done</div><b>Line watched, played from memory, and ${PZ.length} positions from real games solved.</b>`; return; }
+  const P = PZ[k]; pc = new Chess(P.fen); last = pc.move(uci(P.moves[0])); pk = 1; psel = null; pmiss = 0; $('moves').textContent = '';
+  $('cap').className = 'cap on'; $('cap').innerHTML = `<div class="k">From games like this · ${k + 1} of ${PZ.length}</div>A Lichess game in this variation reached this position, and the move just played is a mistake. <b>${pc.turn() === 'w' ? 'White' : 'Black'} to move: find the best move.</b> <span style="color:var(--muted)">(Lichess puzzle, rated ${P.rating})</span>`; puzDraw(); }
+function puzClick(sq) { if (pz < 0 || pz >= PZ.length) return; const P = PZ[pz];
+  if (psel && psel !== sq) { let mv = null; try { mv = pc.move({ from: psel, to: sq, promotion: 'q' }); } catch {} psel = null;
+    if (mv) { if (mv.from + mv.to === P.moves[pk].slice(0, 4) || pc.isCheckmate()) { pk++; last = mv; if (pk < P.moves.length) { last = pc.move(uci(P.moves[pk])); pk++; }
+        if (pk >= P.moves.length) { puzDraw(); $('cap').innerHTML = `<div class="k">Solved</div><b>Yes.</b> <button id="pn">Next →</button>`; $('pn').onclick = () => puzStart(pz + 1); return; }
+        puzDraw(); $('cap').innerHTML = `<div class="k">Keep going</div>Right. Your opponent replied; continue.`; return; }
+      pc.undo(); pmiss++; $('cap').innerHTML = `<div class="k">Not that</div>${mv.san} is not the best move here.${pmiss >= 2 ? ` It is <b>${new Chess(pc.fen()).move(uci(P.moves[pk])).san}</b>.` : ' Try again.'}`; puzDraw(); return; } }
+  psel = pc.get(sq) && pc.get(sq).color === pc.turn() ? sq : null; puzDraw(); }
+render(); window.__spike = { puzStart, puzClick, get pz() { return pz; }, memStart, memClick, get mem() { return mem; }, step, get ply() { return ply; } };
 </script></body></html>

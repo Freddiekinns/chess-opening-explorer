@@ -106,6 +106,14 @@ A play button animates the line, pausing where players at your level split,
 captioned from the `position-stats` shards; then play it from memory; then done.
 (`gates/gate-a.md`, Revision 1.)
 
+- 2026-11-26 (night 9, from `spikes/06`): a pause could also mark where your
+  level commonly goes wrong (engine-confirmed). That applies to 485 of 8,464
+  named 9+ ply lines (6%), but to 360 of 1,643 in 1.e4 e5 (22%). 48 named lines
+  follow the mistake themselves (the Fried Liver, 5...Nxd5, the Lolli, the
+  Damiano Gambit, the Blackburne Shilling): a play-through of those that does
+  not say so teaches the losing side as if it were book. Needs the same engine
+  decision as 17; without it, Revision 1's band-split captions stand alone.
+
 - 2026-11-25 (night 8, critic, `spikes/05`): the reach objection below is
   **withdrawn**. Even the opponent's most played path reaches a median 4% at 9+
   ply, so every long line is "rarely reached"; counted from the family, the

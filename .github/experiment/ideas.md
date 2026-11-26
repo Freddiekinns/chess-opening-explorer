@@ -7,6 +7,20 @@ ideas while in discovery. Statuses: `untested`, `testing`, `promising`,
 
 Seeded 2026-11-25 from week 1's research and Gate A (ideas 1–6). Night 8 widened
 it (7–17) and tested 1, 7, 8, 11 and 16 against the data (`spikes/01`–`05`).
+Night 9 added a container-only Stockfish and tested 8, 11, 15, 17 and the new
+18 (`spikes/06`–`09`).
+
+## What night 9's engine changes for every idea
+
+- **Score is not soundness, measurably.** Of 164 data-only "mistakes" at 1400,
+  54 are not mistakes by Stockfish and 14 have an engine-worse "better" move
+  (speculative Bxf7+ / Bxf2+ sacrifices that score because 1400s defend badly).
+  Any idea that says "better" or "mistake" needs an engine check, and so the
+  owner's decision on engine output in production (`spikes/06`).
+- **Opening mistakes live in 1.e4 e5.** Engine-first, 94 costly popular mistakes
+  at 1400 and 83 at u1400 (143 distinct); 80 of them are in 1.e4 e5, which is
+  ~38% of u1400 games and 2,323 of 12,377 pages. Closed openings have almost
+  none in the early tree.
 
 ## What night 8's data changes for every idea
 
@@ -24,12 +38,19 @@ Two facts from the position-stats shards that any idea has to live with:
 
 ## Live
 
-### 8. The common mistake at your level — `testing` (narrowed)
+### 8. The common mistake at your level — `killed` as data-only; lives in 17
 
 On a page, name the move players at your level commonly get wrong in the next
 few moves of this opening, what scores better, and (where data reaches) the
 punishing reply. Then let the learner try it: set up the position, find the
 better move or the punishment. Data only, nothing written.
+
+- 2026-11-26 (night 9, `spikes/06`): **killed in its data-only form.** Two in
+  five of night 8's 164 items would teach something false by Stockfish's depth
+  18 (54 not mistakes, 14 with a worse "better" move, e.g. Italian 4.Nc3 Nxe4
+  5.Bxf7+ is −1.4 but scores 48% vs 39%). Relaxing thresholds makes it worse
+  (42 real of 209). With an engine, the page feature is still the ~500 popular
+  pages of night 8; the set form (17) is where it goes.
 
 - 2026-11-25 (night 8): the "better move" can be unsound — see idea 17 (Dragon
   7...Ng4). Applies to 8 as much as 17.
@@ -102,7 +123,14 @@ captioned from the `position-stats` shards; then play it from memory; then done.
   1,885 lines of 9+ ply with 5,000+ games have band data at every step.
 - Owner, 2026-11-24: "possibly"; the animation was the owner's suggestion.
 
-### 11. Say how often this line actually happens — `untested`
+### 11. Say how often this line actually happens — `killed` 2026-11-26
+
+- 2026-11-26 (night 9): the copy test kills it. On obscure pages the number is
+  "1 in 28,000" (French Tarrasch 3...Be7 4.Ngf3) to "1 in 160,000" (Najdorf
+  13.f5 Bxg5+): it says the line is deep, not that it is rare (every 12-ply line
+  is that rare, night 8). The relative form, the share at the parent, is
+  already in the parent's Next moves. What a visitor could use instead is where
+  their level leaves the line and what it plays there: idea 7.
 
 On a line page: "At your level, opponents allow this in about 1 game in 70; the
 usual game goes 6.Bg5 instead" with a link. Honest about obscure lines that
@@ -181,6 +209,15 @@ nobody opens a website before a game (needs a human).
 Show the u1400 path beside the 2200 path (Italian: d3/Ng5 vs c3/d4). Tells a
 learner which habits to drop. Riskiest: data reach at u1400 (spike 01).
 
+- 2026-11-26 (night 9, `spikes/07`): the bands play different openings, not
+  move orders: from 3.Bc4, u1400 goes into the Two Knights and the Fried Liver
+  (5...Nxd5 played by 57%, scoring 37%), 1400 into the Giuoco Piano c3/d4, 2200
+  into the slow 4.d3; 1.d4 Nf6 is a London at u1400, a King's Indian at 1400, a
+  Nimzo at 2200; QG 2.c4 is accepted below 1800 and declined above. Vivid. But
+  the u1400 path leaves the shards at ply 2–4 in the French, 1.d4 Nf6 and the
+  Sicilian, and it is information, not an activity. Its best use is choosing
+  what a set or a drill covers (u1400 meets the Fried Liver, so drill that).
+  Stays `testing`; not a direction on its own.
 - 2026-11-25 (night 8, data): of 2,250 positions with 1,000+ games at both u1400
   and 2200, the most played move differs in 879 (39%): 1.d4 d5 vs Nf6, 1.d4 Nf6
   2.Bf4 vs 2.c4, French 2.Nf3 vs 2.d4, French Advance 3.e5 vs 3.Nc3. The u1400
@@ -194,6 +231,38 @@ or the punishment. A finite session with an end, built from idea 8's data.
 Riskiest: only ~3 families have enough (Italian 46, QG 19, Sicilian 16 at 1400
 by the loose rule; fewer by the strict one), and the punishing reply is in the
 shards for 41 of 164.
+
+### 18. Does this trick work at your level? — `promising` (small)
+
+On a gambit or trap page, one line: what Stockfish thinks of it and what it
+scores at your level. "Stafford: Stockfish −1.7. At your level it scores 52%,
+and still 48% at 2200." The honest answer to the question trap videos raise.
+
+- 2026-11-26 (night 9, `spikes/09`): 20 gambits checked at depth 20. Unsound
+  ones (Stafford −1.7, Halloween −1.4, Traxler −1.5, Rousseau −1.3, Englund
+  −1.2) score 46–55% at every band. "Where it stops working" cannot be shown
+  (strong players do not play them; score barely moves, as night 8 found). True,
+  short, on popular pages; a small add-on, not a direction. Needs engine numbers
+  in production (owner's decision, as 17).
+
+### 19. Puzzles from your opening, from Lichess — `untested`
+
+Lichess's puzzle database is CC0 and tagged by opening, and Lichess has a
+puzzles-by-opening page. Link each family to it, or show a few of its puzzles.
+Content that exists for most families, already engine-verified. Riskiest: those
+puzzles happen in the middlegame of games that began with the opening, so they
+may not teach the opening at all; and a plain link sends the learner away. The
+cloud cannot reach lichess.org, so the tag names and coverage are unverified
+(`[local]`, or the CC0 file, which is a download the owner should allow).
+
+### 20. How forgiving is this opening at your level? — `untested`
+
+For a beginner choosing what to play: count the common mistakes (tonight's
+engine-first list) in each opening's early tree at their band. The Italian has
+27 at 1400; most d4 openings have 0–2. "The London rarely punishes you; the
+Italian is a minefield for both sides." Ties to 13. Riskiest: the count follows
+how many well-played named positions a family has, so it needs normalising by
+games, and "few mistakes" may mean "few tactics", not "easy to learn".
 
 ## Killed
 

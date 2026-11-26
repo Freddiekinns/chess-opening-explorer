@@ -264,6 +264,15 @@ Italian is a minefield for both sides." Ties to 13. Riskiest: the count follows
 how many well-played named positions a family has, so it needs normalising by
 games, and "few mistakes" may mean "few tactics", not "easy to learn".
 
+- 2026-11-26 (night 9, quick count from the `spikes/06` sweeps): confirmed
+  mistakes played per 100 games entering the family (its busiest position as
+  the denominator). u1400: Petroff 17 (the 3...Nxe4 copycat), Italian 4.4, Ruy
+  4.0, King's Gambit 3.1, QG 2.0, Sicilian 0.7, French 0.9, London 0, King's
+  Indian 0.1. 1400: Petroff 8, Italian 5.6, KG 3.9, everything d4 under 3. The
+  signal is strong and matches chess sense. Caveats: only positions with 1,000+
+  games were swept, and "uncategorised" (25) shows the family denominators are
+  rough. A comparison for a beginner choosing an opening, not a session.
+
 ## Killed
 
 - 2026-11-25 (night 8, data): strict rule (vs the most played alternative with

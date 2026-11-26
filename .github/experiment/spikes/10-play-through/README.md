@@ -28,8 +28,14 @@ and `4-pause.png` (the end).
   the critic's add-on (spike 08) working where it fits.
 - **The line is short.** Ten ply plays in ~9 seconds plus pauses. A unit is
   under two minutes before Practice. That matches "a few minutes on a phone"
-  but is not a study session by itself; Practice from memory (step 2 of
-  Revision 1) is what makes it one, and was not spiked.
+  but is not a study session by itself.
+- **Your turn (memory), spiked later the same night** (`5-memory-wrong.png`,
+  `6-memory-done.png`): play White's five moves, Black answers by the line. A
+  wrong move gets "d4 is not this line. Try again", and the second miss names
+  "4.c3". It works, and it is the site's existing Practice in another place.
+  Watch plus memory is about 2–3 minutes for a 10-ply line: a lesson card, not a
+  session. A session needs several cards in a row (the family's lines, or the
+  line and its end-pause branches), which is the design question for Gate B.
 
 ## Does the pause rule generalise?
 

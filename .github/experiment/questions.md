@@ -39,9 +39,9 @@ not answered by the next night. Answered ones move to **Decided** with the date.
    `package.json`), or a client-side engine (a dependency). A third route found
    the same night: Lichess's public-domain puzzle file, already engine-checked
    and tagged by opening and variation (`spikes/11`): a download and a filter,
-   still a data step. Allowed, and which? _Default:
-   no engine output on the site; nights keep using a container-only Stockfish
-   for testing, as the charter allows._
+   still a data step. Allowed, and which? _Default: no engine output on the
+   site; nights keep using a container-only Stockfish for testing, as the
+   charter allows._
 
 ## Decided
 

@@ -3,11 +3,11 @@
 The first spike of Gate A Revision 1. Throwaway HTML (`template.html` +
 `line.json`, built by `build.js`; data by `line.js`) for the default line,
 Italian Center Attack, 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4, at the
-1400 band. Play animates a move every 0.9 s; ◀ and ▶| step. Every number is
-from the shards; the 6...Ng4 note is Stockfish's (depth 18, `spikes/06`).
+1400 band. Play animates a move every 0.9 s; ◀ and ▶| step. Every number is from
+the shards; the 6...Ng4 note is Stockfish's (depth 18, `spikes/06`).
 
-Screenshots: `1-pause.png` (3...Bc5), `2-pause.png` (4...Nf6), `3-pause.png`
-and `4-pause.png` (the end).
+Screenshots: `1-pause.png` (3...Bc5), `2-pause.png` (4...Nf6), `3-pause.png` and
+`4-pause.png` (the end).
 
 ## What it showed
 
@@ -20,15 +20,15 @@ and `4-pause.png` (the end).
   opponents go Nf6 instead (Two Knights)" is useful preparation, but it is the
   page's own Next moves, shown in order. The names under each bar carry it:
   without them a learner sees "h6 15%" and learns nothing.
-- **The end is the best pause.** "What White plays next": 68% 6.cxd4, 24%
-  6.e5, which wins more (57% vs 52%). Then the engine step: after 6.e5, 29% of
-  Black players answer 6...Ng4, more than a pawn worse than 6...d5, with
-  "Punish 6...Ng4 →". The line stops being a sequence to memorise and becomes
-  "here is what happens next at your level, and the mistake to punish". That is
-  the critic's add-on (spike 08) working where it fits.
+- **The end is the best pause.** "What White plays next": 68% 6.cxd4, 24% 6.e5,
+  which wins more (57% vs 52%). Then the engine step: after 6.e5, 29% of Black
+  players answer 6...Ng4, more than a pawn worse than 6...d5, with "Punish
+  6...Ng4 →". The line stops being a sequence to memorise and becomes "here is
+  what happens next at your level, and the mistake to punish". That is the
+  critic's add-on (spike 08) working where it fits.
 - **The line is short.** Ten ply plays in ~9 seconds plus pauses. A unit is
-  under two minutes before Practice. That matches "a few minutes on a phone"
-  but is not a study session by itself.
+  under two minutes before Practice. That matches "a few minutes on a phone" but
+  is not a study session by itself.
 - **Your turn (memory), spiked later the same night** (`5-memory-wrong.png`,
   `6-memory-done.png`): play White's five moves, Black answers by the line. A
   wrong move gets "d4 is not this line. Try again", and the second miss names
@@ -41,9 +41,9 @@ and `4-pause.png` (the end).
 
 After "Your turn", the spike runs three Lichess CC0 puzzles tagged
 `Italian_Game_Classical_Variation`, rated 1600 or below, with the c3/d4 pawn
-signature, most played first (`puzzles.json`, `spikes/11`). The opponent's
-move is played, then "A Lichess game in this variation reached this position,
-and the move just played is a mistake. White to move: find the best move."
+signature, most played first (`puzzles.json`, `spikes/11`). The opponent's move
+is played, then "A Lichess game in this variation reached this position, and the
+move just played is a mistake. White to move: find the best move."
 (`9-puzzle-ask.png`, `10-puzzle-solved.png`). A scripted walk solved all three
 and reached "Session done".
 

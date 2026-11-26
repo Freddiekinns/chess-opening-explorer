@@ -7,8 +7,8 @@ ideas while in discovery. Statuses: `untested`, `testing`, `promising`,
 
 Seeded 2026-11-25 from week 1's research and Gate A (ideas 1–6). Night 8 widened
 it (7–17) and tested 1, 7, 8, 11 and 16 against the data (`spikes/01`–`05`).
-Night 9 added a container-only Stockfish and tested 8, 11, 15, 17 and the new
-18 (`spikes/06`–`09`).
+Night 9 added a container-only Stockfish and tested 8, 11, 15, 17 and the new 18
+(`spikes/06`–`09`).
 
 ## What night 9's engine changes for every idea
 
@@ -48,9 +48,9 @@ better move or the punishment. Data only, nothing written.
 - 2026-11-26 (night 9, `spikes/06`): **killed in its data-only form.** Two in
   five of night 8's 164 items would teach something false by Stockfish's depth
   18 (54 not mistakes, 14 with a worse "better" move, e.g. Italian 4.Nc3 Nxe4
-  5.Bxf7+ is −1.4 but scores 48% vs 39%). Relaxing thresholds makes it worse
-  (42 real of 209). With an engine, the page feature is still the ~500 popular
-  pages of night 8; the set form (17) is where it goes.
+  5.Bxf7+ is −1.4 but scores 48% vs 39%). Relaxing thresholds makes it worse (42
+  real of 209). With an engine, the page feature is still the ~500 popular pages
+  of night 8; the set form (17) is where it goes.
 
 - 2026-11-25 (night 8): the "better move" can be unsound — see idea 17 (Dragon
   7...Ng4). Applies to 8 as much as 17.
@@ -100,20 +100,20 @@ from the page's position, pausing where your level splits. Idea 1, re-aimed.
   off the named tree there is no data: the u1400 path leaves it at ply 3 in the
   Italian and ply 1 in the London. Blocked on data reach, not on the idea.
 
-### 1. Board-first play-through of a named line — `testing`
+### 1. Board-first play-through of a named line — `promising`
 
 A play button animates the line, pausing where players at your level split,
 captioned from the `position-stats` shards; then play it from memory; then done.
 (`gates/gate-a.md`, Revision 1.)
 
-- 2026-11-26 (night 9, `spikes/10`): first spike, Center Attack at 390 px.
-  Works and is true. Revision 1's split rule pauses at 5 of 10 steps; pausing
-  only on the opponent's splits gives 3, and 1–3 on 88% of 706 long lines.
-  Mid-line pauses are the page's Next moves in order (useful prep, thin); the
-  end pause ("what next": 6.cxd4 68%, 6.e5 24% and wins more; then 29% answer
-  6...Ng4, which Stockfish rates more than a pawn worse) is the strongest. A
-  unit is under two minutes before Practice, so Practice from memory is what
-  makes it a session, and that step was not spiked.
+- 2026-11-26 (night 9, `spikes/10`): first spike, Center Attack at 390 px. Works
+  and is true. Revision 1's split rule pauses at 5 of 10 steps; pausing only on
+  the opponent's splits gives 3, and 1–3 on 88% of 706 long lines. Mid-line
+  pauses are the page's Next moves in order (useful prep, thin); the end pause
+  ("what next": 6.cxd4 68%, 6.e5 24% and wins more; then 29% answer 6...Ng4,
+  which Stockfish rates more than a pawn worse) is the strongest. A unit is
+  under two minutes before Practice, so Practice from memory is what makes it a
+  session, and that step was not spiked.
 
 - 2026-11-26 (night 9, competitor): openingpuzzles.com has "21 interactive
   opening studies" (ideas and main variations on a live board) beside its
@@ -218,8 +218,8 @@ nobody opens a website before a game (needs a human).
 Show the u1400 path beside the 2200 path (Italian: d3/Ng5 vs c3/d4). Tells a
 learner which habits to drop. Riskiest: data reach at u1400 (spike 01).
 
-- 2026-11-26 (night 9, `spikes/07`): the bands play different openings, not
-  move orders: from 3.Bc4, u1400 goes into the Two Knights and the Fried Liver
+- 2026-11-26 (night 9, `spikes/07`): the bands play different openings, not move
+  orders: from 3.Bc4, u1400 goes into the Two Knights and the Fried Liver
   (5...Nxd5 played by 57%, scoring 37%), 1400 into the Giuoco Piano c3/d4, 2200
   into the slow 4.d3; 1.d4 Nf6 is a London at u1400, a King's Indian at 1400, a
   Nimzo at 2200; QG 2.c4 is accepted below 1800 and declined above. Vivid. But
@@ -239,15 +239,15 @@ learner which habits to drop. Riskiest: data reach at u1400 (spike 01).
 From any page in a family, "the N mistakes players at your level make in the
 Italian", each a position to solve.
 
-- 2026-11-26 (night 9, `spikes/06`, `08`, critic): killed three ways. Engine-first
-  there are 8+ costly mistakes in only 3 families (Italian 27, QG 9, King's pawn
-  9 at 1400), so per family fails the rule set before the test. Reframed as one
-  "1.e4 e5 at your level" set (78 distinct items across u1400 and 1400) and
-  spiked at 390 px: it works, but **it already exists** (openingpuzzles.com:
-  Stockfish-checked opening puzzles and "5...Nxd5: 49% of players rated
-  1200–1400 fall for it"), half its items are trivia or famous traps, and it is
-  a one-off quiz. Survives only as an optional "punish it" step at a pause of
-  idea 1, with engine output in production.
+- 2026-11-26 (night 9, `spikes/06`, `08`, critic): killed three ways.
+  Engine-first there are 8+ costly mistakes in only 3 families (Italian 27, QG
+  9, King's pawn 9 at 1400), so per family fails the rule set before the test.
+  Reframed as one "1.e4 e5 at your level" set (78 distinct items across u1400
+  and 1400) and spiked at 390 px: it works, but **it already exists**
+  (openingpuzzles.com: Stockfish-checked opening puzzles and "5...Nxd5: 49% of
+  players rated 1200–1400 fall for it"), half its items are trivia or famous
+  traps, and it is a one-off quiz. Survives only as an optional "punish it" step
+  at a pause of idea 1, with engine output in production.
 - 2026-11-25 (night 8): the data-only rule found 216 at 1400 across 13 families
   with 5+, but score is not soundness (Dragon 7...Ng4).
 
@@ -256,9 +256,9 @@ Italian", each a position to solve.
 - 2026-11-26 (night 9): the copy test kills it. On obscure pages the number is
   "1 in 28,000" (French Tarrasch 3...Be7 4.Ngf3) to "1 in 160,000" (Najdorf
   13.f5 Bxg5+): it says the line is deep, not that it is rare (every 12-ply line
-  is that rare, night 8). The relative form, the share at the parent, is
-  already in the parent's Next moves. What a visitor could use instead is where
-  their level leaves the line and what it plays there: idea 7.
+  is that rare, night 8). The relative form, the share at the parent, is already
+  in the parent's Next moves. What a visitor could use instead is where their
+  level leaves the line and what it plays there: idea 7.
 
 On a line page: "At your level, opponents allow this in about 1 game in 70; the
 usual game goes 6.Bg5 instead" with a link. Honest about obscure lines that
@@ -268,7 +268,6 @@ relevant) — that is why it is here.
 - Data: reach is computable for every named line, but as an upper bound (10% of
   steps unknown). Riskiest: the number is wrong where steps are missing, and it
   might push the visitor away rather than on.
-
 
 - 2026-11-25 (night 8, data): strict rule (vs the most played alternative with
   15%+ share, gap 8+ points, 6+ below the rest; position 1,000+ games): 131 at

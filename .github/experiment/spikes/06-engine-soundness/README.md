@@ -28,23 +28,23 @@ at depth 18 against the move the panel would have called better
 | Unsound: the "better" move is worse than the flagged one     | 14    |
 
 So **two in five items would teach something false**: a "mistake" that is not
-one, or a fix that is worse. The unsound fixes are a pattern, not noise: speculative
-sacrifices that score well at 1400 because the defender goes wrong. Italian
-4.Nc3 Nxe4: the data prefers 5.Bxf7+ (48%) to 5.Nxe4 (39%), but 5.Bxf7+ is
-−1.4. The same with ...Bxf2+ against 4.Nxe5 in three Four Knights/Ruy lines,
-Bxf7+ in the King's Gambit, 4.c4 in the Alekhine (−1.2). Relaxing the
-thresholds to positions with 400–2,000 games (`list-1400-400to2000games.txt`)
-makes it worse: 42 real of 209, 103 quiet.
+one, or a fix that is worse. The unsound fixes are a pattern, not noise:
+speculative sacrifices that score well at 1400 because the defender goes wrong.
+Italian 4.Nc3 Nxe4: the data prefers 5.Bxf7+ (48%) to 5.Nxe4 (39%), but 5.Bxf7+
+is −1.4. The same with ...Bxf2+ against 4.Nxe5 in three Four Knights/Ruy lines,
+Bxf7+ in the King's Gambit, 4.c4 in the Alekhine (−1.2). Relaxing the thresholds
+to positions with 400–2,000 games (`list-1400-400to2000games.txt`) makes it
+worse: 42 real of 209, 103 quiet.
 
-**Verdict:** a data-only "better move" must never ship. Idea 8 as night 8
-spiked it is killed; it lives only with an engine check.
+**Verdict:** a data-only "better move" must never ship. Idea 8 as night 8 spiked
+it is killed; it lives only with an engine check.
 
 ## 2. Engine first: what real common mistakes exist
 
-Every named position with 1,000+ games at 1400 (4,699), depth 14, then the
-hits re-checked at depth 20 (`engine-first-1400-d20.txt`). A mistake: the
-position is not already decided (|eval| ≤ 2.5), 20%+ of the band plays the
-move, and it loses 100+ cp.
+Every named position with 1,000+ games at 1400 (4,699), depth 14, then the hits
+re-checked at depth 20 (`engine-first-1400-d20.txt`). A mistake: the position is
+not already decided (|eval| ≤ 2.5), 20%+ of the band plays the move, and it
+loses 100+ cp.
 
 - **152 confirmed at depth 20** (of 206 at depth 14: depth 14 is too noisy on
   its own). 111 ruin the position (mover's eval below −0.5 after it); 41 miss
@@ -58,20 +58,20 @@ move, and it loses 100+ cp.
 - **By family (the 94): Italian 27, Queen's Gambit 9, King's pawn 9, King's
   Gambit 6, Ruy Lopez 5, Sicilian 4**, then 3 or fewer each. French 2, King's
   Indian 1, Slav 0, English 1.
-- The punishing reply comes from the engine, so night 8's gap (punishment in
-  the shards for 41 of 164) no longer matters. Only 28 of the after-mistake
+- The punishing reply comes from the engine, so night 8's gap (punishment in the
+  shards for 41 of 164) no longer matters. Only 28 of the after-mistake
   positions are named, so how often a band finds the punishment is mostly
   unknown.
 
-The rule set before the test was: under ~5 families with a set, and idea 17
-dies as a per-family feature. Three families have 8+ (Italian, QG, King's
-pawn). **Idea 17 per family is killed.** What the data does support:
+The rule set before the test was: under ~5 families with a set, and idea 17 dies
+as a per-family feature. Three families have 8+ (Italian, QG, King's pawn).
+**Idea 17 per family is killed.** What the data does support:
 
-- **By first moves, not by family.** Mistakes cluster in 1.e4 e5 (Italian, King's
-  pawn, King's Gambit, Ruy, Scotch, Petroff, Vienna, Philidor: 54 of 94). And
-  1.e4 e5 is where beginners are: 66% × 57% ≈ 38% of u1400 games, 27% at 1400,
-  9% at 2200. One "1.e4 e5 at your level" set reaches more learners than ten
-  family sets.
+- **By first moves, not by family.** Mistakes cluster in 1.e4 e5 (Italian,
+  King's pawn, King's Gambit, Ruy, Scotch, Petroff, Vienna, Philidor: 54 of 94).
+  And 1.e4 e5 is where beginners are: 66% × 57% ≈ 38% of u1400 games, 27% at
+  1400, 9% at 2200. One "1.e4 e5 at your level" set reaches more learners than
+  ten family sets.
 
 ## Where this still breaks
 
@@ -87,10 +87,11 @@ pawn). **Idea 17 per family is killed.** What the data does support:
 ## 3. The same at u1400 (the band traps are for)
 
 Same sweep at u1400 (3,229 positions with 1,000+ games), confirmed at depth 20
-(`engine-first-u1400-d20.txt`): **143 of 187 confirmed, 83 cost games at
-u1400, 51 of them in 1.e4 e5.** Italian 27, Ruy Lopez 7, King's pawn 6, then 4
-or fewer. Only 34 items are shared with 1400: the bands make different
-mistakes. Union of both bands: 143 by FEN, 140 distinct positions (the critic: three are reached by two move orders), 78 in 1.e4 e5.
+(`engine-first-u1400-d20.txt`): **143 of 187 confirmed, 83 cost games at u1400,
+51 of them in 1.e4 e5.** Italian 27, Ruy Lopez 7, King's pawn 6, then 4 or
+fewer. Only 34 items are shared with 1400: the bands make different mistakes.
+Union of both bands: 143 by FEN, 140 distinct positions (the critic: three are
+reached by two move orders), 78 in 1.e4 e5.
 
 Raw sweeps (depth 14, one JSON line per position) are kept gzipped
 (`sweep-*-d14.jsonl.gz`) so the analysis can be re-run without the engine.

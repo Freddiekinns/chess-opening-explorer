@@ -18,17 +18,17 @@ from the shards (`gambits.txt`).
 
 Twenty in the file. What it shows:
 
-- **Unsound gambits score about 50% at every band, 2200 included.** The
-  Stafford is −1.7 by Stockfish and still scores 48% at 2200. Night 8 was
-  right that the score barely moves with rating; the engine column is what is
-  new, and the gap between the two is the honest answer to "is the Stafford
-  any good?": objectively lost, practically fine, at every level we have.
+- **Unsound gambits score about 50% at every band, 2200 included.** The Stafford
+  is −1.7 by Stockfish and still scores 48% at 2200. Night 8 was right that the
+  score barely moves with rating; the engine column is what is new, and the gap
+  between the two is the honest answer to "is the Stafford any good?":
+  objectively lost, practically fine, at every level we have.
 - **"Where it stops working" cannot be shown** from the sweep: of 15%+ share
   moves that are engine-bad (150+ cp) yet score at least as well as the
-  alternatives at 1400, there are only 10 (`popular-unsound-1400.txt`), and
-  2200 players do not play any of them.
+  alternatives at 1400, there are only 10 (`popular-unsound-1400.txt`), and 2200
+  players do not play any of them.
 
-Verdict: a one-line verdict on ~20 gambit pages ("Stockfish: −1.7. At your
-level it scores 52%.") is true, short and on popular pages. It is a small
-add-on, not a direction, and it needs engine numbers in production (the same
-owner decision as idea 17).
+Verdict: a one-line verdict on ~20 gambit pages ("Stockfish: −1.7. At your level
+it scores 52%.") is true, short and on popular pages. It is a small add-on, not
+a direction, and it needs engine numbers in production (the same owner decision
+as idea 17).

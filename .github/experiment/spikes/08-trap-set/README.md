@@ -21,11 +21,11 @@ all 16 steps through without an error.
 ## What clicking through showed
 
 - **The real outcome makes the stakes plain.** "Lost 63% of 76,182 games" needs
-  no jargon, unlike night 8's "scores 35%". The two-sided step (avoid it as
-  one side, punish it as the other) is a natural pair.
+  no jargon, unlike night 8's "scores 35%". The two-sided step (avoid it as one
+  side, punish it as the other) is a natural pair.
 - **Accepting only the engine's top moves is wrong teaching.** At 0.4 pawns'
-  tolerance, 5...b5 and 5...Nd4 in the Two Knights (playable, scoring 56% at
-  1400) were marked "not it". At 0.8 the mistake itself crept in (5...Nxd5 is
+  tolerance, 5...b5 and 5...Nd4 in the Two Knights (playable, scoring 56%
+  at 1400) were marked "not it". At 0.8 the mistake itself crept in (5...Nxd5 is
   only about −1.2). The rule that works: the avoid step accepts anything within
   0.8 except the flagged move; the punish step accepts within 0.4. Items close
   to the 1-pawn line are fragile and need a person to read them.
@@ -50,8 +50,8 @@ all 16 steps through without an error.
 
 Engine output in production. Either a committed file of ~100–150 vetted items
 (made by a script with Stockfish run on someone's machine: a pipeline and a tool
-the owner must allow), or a client-side engine (a dependency). Plus a human
-read of every item. Nothing here is buildable before that decision.
+the owner must allow), or a client-side engine (a dependency). Plus a human read
+of every item. Nothing here is buildable before that decision.
 
 ## Killed as a direction (same night): it exists, and the critic agrees
 

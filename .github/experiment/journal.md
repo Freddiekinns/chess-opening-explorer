@@ -2,6 +2,70 @@
 
 Newest first. Template in `operating.md`.
 
+## Night 9 — 2026-11-26 — the engine kills the trap set, and the play-through becomes a session with Lichess's own puzzles
+
+Plan: test idea 17/8 for soundness with a container-only Stockfish (the owner
+allowed it on 2026-11-25); spike idea 15; test idea 11's copy. A result that
+would change my mind: a sound mistake set across 5+ families.
+
+Tested:
+
+- **Ideas 8 and 17, soundness** (`spikes/06`). Stockfish 16 at depth 18 on night
+  8's 164 data-only "mistakes": 58 real, 54 not mistakes, 38 mixed, 14 with an
+  engine-worse "better" move (unsound sacrifices that score because 1400s defend
+  badly). Then engine-first over every named position with 1,000+ games at 1400
+  (4,699) and u1400 (3,229), confirmed at depth 20: 94 and 83 costly common
+  mistakes, 140 distinct, 78 of them in 1.e4 e5 (~37% of u1400 games). Only the
+  Italian (27), QG and King's pawn (9) have 8+.
+- **The trap set as a "1.e4 e5 at your level" spike** (`spikes/08`, 390 px):
+  avoid it, then punish it, with real W/D/L. Readable, but the engine tolerance
+  needs care (0.4 rejects playable 5...b5 and 5...Nd4; 0.8 lets the mistake in).
+- **The critic (Opus)** confirmed 94/54, corrected 143 to 140, read 18 items
+  (half good lessons, a third trivia or duplicates) and ranked the objections.
+  **A search found openingpuzzles.com already does it** ("Fried Liver …
+  5...Nxd5: 49% of players rated 1200–1400 fall for it").
+- **Idea 18, gambit verdict** (`spikes/09`): unsound gambits score ~50% at every
+  band (Stafford −1.7, 52% at 1400, 48% at 2200). True, small.
+- **Idea 15, band paths** (`spikes/07`): the bands play different openings
+  (u1400 Fried Liver, 1400 c3/d4 Giuoco, 2200 Pianissimo; QG accepted below
+  1800). u1400 data ends at ply 2–4 off 1.e4 e5. Information, not an activity.
+- **Idea 11** killed by its copy: "1 in 160,000" says deep, not rare.
+- **Idea 20** quick count: confirmed mistakes per 100 games entering a family at
+  u1400: Petroff 17, Italian 4.4, London 0.
+- **Idea 1, first spike** (`spikes/10`): play-through of the Center Attack at
+  390 px. Revision 1's split rule pauses at 5 of 10 steps; opponent-only splits
+  give 1–3 pauses on 88% of 706 long lines. The end pause ("what next", then 29%
+  answer 6...Ng4) is the strongest. Memory step spiked: works, and is Practice
+  in another place. Guess-first pauses fail (40% coin tosses).
+- **Idea 19, Lichess CC0 puzzles** (`spikes/11`): a third of the file has ~98k
+  opening-phase puzzles, every one tagged with family and variation; 909 of
+  1,212 variation tags equal our page names; the Center Attack's parent
+  variation has 476 at ≤1600, 87% with its c3/d4 structure. Added as stage 3 of
+  the play-through: watch → memory → three puzzles ≈ 5–7 minutes.
+
+Killed / promoted: 8 (data-only), 11, 17 killed; 12-at-pauses failed. 1 promoted
+to `promising` (pauses generalise; the session problem has a content answer). 19
+`promising` as the card's last step; 18 `promising` (small). New ideas: 18,
+19, 20. Assumed: the 1400 band (average 1628) stands for "your level"; depth
+18–20 is enough to call a 1-pawn mistake; the CC0 puzzle file is usable once the
+owner allows the data step. Installed in the container only: Stockfish 16 (apt),
+chess.js 1.0.0 and hyparquet 1.8.0 (scratchpad npm), one 295 MB parquet file of
+Lichess puzzles (Hugging Face). Nothing installed was committed; `package.json`
+and the lockfile are unchanged. Mistakes I made: a sweep crashed on a checkmate
+position and lost 10 minutes of output (fixed to write line by line); the first
+spike accepted only the engine's top moves, which would have taught that
+playable moves are wrong. Updated `gates/gate-a.md` with a night 9 addendum and
+added question 5 (engine output or CC0 puzzles on the site). Commented once in
+#249. Next: night 10 runs the session on a d4 line and an obscure line, to see
+whether the puzzles still fit. Checkpoint: at ~100 main tool calls I went on,
+because the session question was testable tonight and was the plan's next item.
+Cost: container clock 01:00–~02:10 UTC (it barely moved across some long steps;
+the engine runs alone measured ~35 minutes of `time`), main tool calls ~120,
+subagents 1 (Opus critic ~76k tokens), web pages 4 (2 searches, 2 fetches of
+openingpuzzles.com; lichess.org refused 1) plus Hugging Face API calls. Stopped
+because the night's plan and its follow-ups are done and written up; the rest
+(more lines, another band) is better done fresh on night 10.
+
 ## Night 8 — 2026-11-25 — named lines are rarely reached, but so is every line; the common mistake is real but lives on ~500 popular pages
 
 Plan: widen `ideas.md` to ten-plus, then test the riskiest data assumption of

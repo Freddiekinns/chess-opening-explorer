@@ -31,6 +31,13 @@ and `4-pause.png` (the end).
   but is not a study session by itself; Practice from memory (step 2 of
   Revision 1) is what makes it one, and was not spiked.
 
+## Does the pause rule generalise?
+
+Across the 706 named lines of 9+ ply whose end has 5,000+ games at 1400 (learner
+= the side that plays the line's last move), opponent-side splits give **1–3
+pauses on 619 (88%)**, none on 69, four on 18. The end position is itself a
+split (a real "what next" fork) on 299 (42%). Every end has 1,000+ games.
+
 ## Open
 
 - The engine step needs engine output in production (questions.md 5). Without

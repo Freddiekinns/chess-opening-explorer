@@ -106,6 +106,15 @@ A play button animates the line, pausing where players at your level split,
 captioned from the `position-stats` shards; then play it from memory; then done.
 (`gates/gate-a.md`, Revision 1.)
 
+- 2026-11-26 (night 9, `spikes/10`): first spike, Center Attack at 390 px.
+  Works and is true. Revision 1's split rule pauses at 5 of 10 steps; pausing
+  only on the opponent's splits gives 3, and 1–3 on 88% of 706 long lines.
+  Mid-line pauses are the page's Next moves in order (useful prep, thin); the
+  end pause ("what next": 6.cxd4 68%, 6.e5 24% and wins more; then 29% answer
+  6...Ng4, which Stockfish rates more than a pawn worse) is the strongest. A
+  unit is under two minutes before Practice, so Practice from memory is what
+  makes it a session, and that step was not spiked.
+
 - 2026-11-26 (night 9, competitor): openingpuzzles.com has "21 interactive
   opening studies" (ideas and main variations on a live board) beside its
   puzzles. Not tried hands-on. Idea 1's difference has to be every position (all

@@ -1,6 +1,7 @@
 // Engine-first sweep: every named position with N+ games at a band; Stockfish evals the root and every
 // move with 15%+ share (50+ games). Worker k of K handles positions i % K == k.
-// Usage (repo root): CHESSJS=<dir> node sweep.js <band> <minGames> <depth> <k> <K> > part.json
+// Writes one JSON line per position (so a crash keeps what is done); skips mate/stalemate positions.
+// Usage (repo root): CHESSJS=<dir> node sweep.js <band> <minGames> <depth> <k> <K> > part.jsonl
 const fs = require('fs');
 const { spawn } = require('child_process');
 const { Chess } = require(process.env.CHESSJS + '/node_modules/chess.js');
@@ -22,10 +23,10 @@ async function ev(fen, mv) {
 }
 (async () => {
   send('uci'); await until(/uciok/); send('setoption name Hash value 64'); send('isready'); await until(/readyok/);
-  const res = [];
   for (const [fen, e] of todo) {
     const b = e.bands[band]; const tot = b.moves.reduce((a, m) => a + m.g, 0);
     const root = await ev(fen);
+    if (root.best === '(none)') continue;
     const c = new Chess(fen); const bm = c.move({ from: root.best.slice(0, 2), to: root.best.slice(2, 4), promotion: root.best[4] });
     const moves = [];
     for (const m of b.moves.filter((m) => m.g / tot >= 0.15 && m.g >= 50)) {
@@ -33,7 +34,7 @@ async function ev(fen, mv) {
       const r = await ev(fen, mv.from + mv.to + (mv.promotion || ''));
       moves.push({ san: m.san, v: -r.v, reply: (() => { try { return cc.move({ from: r.best.slice(0, 2), to: r.best.slice(2, 4), promotion: r.best[4] }).san; } catch { return r.best; } })() });
     }
-    res.push({ fen, g: b.g, root: root.v, best: bm.san, moves });
+    console.log(JSON.stringify({ fen, g: b.g, root: root.v, best: bm.san, moves }));
   }
-  console.log(JSON.stringify(res)); sf.kill();
+  sf.kill();
 })();

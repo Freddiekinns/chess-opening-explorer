@@ -1,5 +1,28 @@
 # Gate A — direction
 
+## Night 9 addendum, 2026-11-26: Revision 1 spiked, and the alternative tested
+
+Revision 1 is still the pick, and tonight is the first time it was clicked
+through. **Screenshots:** `spikes/10-play-through/1-pause.png` … `6-memory-done.png`
+(Center Attack, 390 px, throwaway HTML, real 1400-band numbers).
+
+- **Two changes from clicking it.** Pause only where your _opponents_ split
+  (3 pauses on this line; 1–3 on 88% of 706 long lines), not at every split (5
+  of 10 steps). And end with "what next": 68% play 6.cxd4, 24% play 6.e5, which
+  wins more. Then, with an engine, the mistake: after 6.e5, 29% of Black answer
+  6...Ng4, which Stockfish rates more than a pawn worse; "Punish it →".
+- **What it is not yet:** a session. Watch plus memory is 2–3 minutes for 10
+  ply. Gate B has to string several cards (the family's lines, or the line and
+  its end-pause branches).
+- **The alternative, killed:** an engine-checked "mistakes at your level" trap
+  set (`spikes/06`, `08`). The data-only version would have taught something
+  false 2 times in 5; with Stockfish it holds, but it lives almost only in
+  1.e4 e5, half of it is famous traps or engine trivia, and **openingpuzzles.com
+  already does it** ("Fried Liver … 5...Nxd5: 49% of players rated 1200–1400
+  fall for it"). It survives only as the optional "punish it" step above.
+- **New question (5 in `questions.md`):** may engine evaluations be used on the
+  site at all? Default: no; the end pause then shows the moves and results only.
+
 ## Revision 1 — night 7, 2026-11-25: your questions answered
 
 You said "possibly", and asked four things: where would the videos come from,

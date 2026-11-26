@@ -30,6 +30,16 @@ not answered by the next night. Answered ones move to **Decided** with the date.
    checkpoint and the end), since unpushed work is lost if a long run is cut off
    (2026-11-25)._
 
+5. **Engine output on the site.** Night 9 showed that a "mistake" or "better
+   move" from the stats alone is false about 2 times in 5 (`spikes/06`);
+   Stockfish fixes it. Using it anywhere on the site (the play-through's "punish
+   it" step, a gambit verdict) means either a small committed file of vetted
+   items, made by a script with Stockfish run once on your machine or in a run's
+   container (a new data step: your yes; no API spend, nothing in
+   `package.json`), or a client-side engine (a dependency). Allowed? _Default:
+   no engine output on the site; nights keep using a container-only Stockfish
+   for testing, as the charter allows._
+
 ## Decided
 
 - 2026-11-25 evening — **Free to carry on.** "It should be free to carry on, but

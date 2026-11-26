@@ -37,6 +37,18 @@ and `4-pause.png` (the end).
   session. A session needs several cards in a row (the family's lines, or the
   line and its end-pause branches), which is the design question for Gate B.
 
+## Guess first (idea 12 as a pause), spiked the same night
+
+`?guess` asks "What do most of your opponents play here?" with the top three
+moves as buttons before showing the bars (`7-guess-ask.png`,
+`8-guess-reveal.png`). It fails on structure: a pause sits at a split by
+definition, so the answer is often a coin toss. At 3...Bc5 it is 32% against
+31%, and "You said Nf6; most play Bc5" reads as unfair. Of the 225 distinct
+opponent-split pause positions on the 706 long lines, **91 (40%) have the top
+two moves within 10 points.** Guessing popularity belongs where the top move is
+clearly ahead (idea 12's daily form, if anywhere), not at the play-through's
+pauses. Better pause question, untested: "which of these scores best for you?"
+
 ## Does the pause rule generalise?
 
 Across the 706 named lines of 9+ ply whose end has 5,000+ games at 1400 (learner

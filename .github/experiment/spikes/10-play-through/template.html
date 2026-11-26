@@ -25,6 +25,7 @@ main{max-width:480px;margin:0 auto;padding:16px}h1{font:600 20px/1.2 'Bricolage 
 import { Chess } from 'https://unpkg.com/chess.js@1.0.0/dist/esm/chess.js';
 const L = /*LINE*/[];
 const G = { w: { k: '♔', q: '♕', r: '♖', b: '♗', n: '♘', p: '♙' }, b: { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' } };
+const GUESS = new URLSearchParams(location.search).has('guess');
 const moves = L.filter((s) => !s.end); const end = L.find((s) => s.end);
 // Pauses: the opponent's (Black's) split points, then the end.
 const PAUSE = new Set(moves.map((s, i) => (i % 2 === 1 && s.split ? i : -1)).filter((i) => i >= 0));
@@ -46,7 +47,14 @@ function caption(i) {
     return;
   }
   const s = moves[i];
-  cap.innerHTML = `<div class="k">Paused · Black's choice here at your level</div>${rows(s.top, s.san)}<p style="margin:10px 0 0">The line follows <b>${num(i)}${s.san}</b>; ${pct(s.top.find((m) => m.san !== s.san).share)} of your opponents go ${s.top.find((m) => m.san !== s.san).san} instead.</p>`;
+  if (GUESS && !s.guessed) {
+    const opts = s.top.map((m) => m.san).sort();
+    cap.innerHTML = `<div class="k">Paused · your guess</div>What do most of your opponents play here?<div class="ctl" style="margin-top:10px">${opts.map((o) => `<button class="ghost" data-g="${o}">${o}</button>`).join('')}</div>`;
+    cap.querySelectorAll('button').forEach((bt) => (bt.onclick = () => { s.guessed = bt.dataset.g; caption(i); }));
+    return;
+  }
+  const verdict = s.guessed ? (s.guessed === s.top[0].san ? `<p style="margin:0 0 8px"><b>Right: ${s.top[0].san}.</b></p>` : `<p style="margin:0 0 8px">You said ${s.guessed}; most play <b>${s.top[0].san}</b>.</p>`) : '';
+  cap.innerHTML = verdict + `<div class="k">Paused · Black's choice here at your level</div>${rows(s.top, s.san)}<p style="margin:10px 0 0">The line follows <b>${num(i)}${s.san}</b>; ${pct(s.top.find((m) => m.san !== s.san).share)} of your opponents go ${s.top.find((m) => m.san !== s.san).san} instead.</p>`;
 }
 function step() { if (ply >= moves.length) { stop(); caption('end'); return false; } ply++; render(); $('cap').className = 'cap'; if (PAUSE.has(ply - 1)) { stop(); caption(ply - 1); return false; } return true; }
 function stop() { clearInterval(timer); timer = null; $('play').textContent = '▶ Play'; }

@@ -6,23 +6,27 @@ owner is offered once an idea has survived the tests that could have killed it
 
 ## Next
 
-**Night 9 (Thursday 01:00 UTC).** Night 8 (`journal.md`) widened `ideas.md` to
-17 and tested 1, 7, 8, 11, 15, 16, 17 against the shards. Nothing is ready for
-the owner yet; Gate A Revision 1 stands unchanged by the evidence.
+**Night 10 (Friday 01:00 UTC).** Night 9 (`journal.md`) installed a
+container-only Stockfish, killed the trap set (8 data-only, 17, 11), spiked
+Revision 1 for the first time (`spikes/10`) and added an addendum to
+`gates/gate-a.md`. Revision 1 is still the pick; Gate A still waits on the owner.
 
-1. **Idea 17 / 8 soundness.** Score is not soundness (Dragon 7...Ng4). Restrict
-   to mistakes whose punishment the shards show; count by family; read every
-   item by hand for whether the "better" move is sound. The owner allowed a
-   container-only engine (charter, 2026-11-25): install Stockfish in the run's
-   container and check each "better" move with it, committing nothing installed.
-   If under ~5 families survive, 17 dies and 8 is a small feature for popular
-   pages.
-2. **Idea 15 spike.** The u1400 vs 2200 main path side by side, at 390 px, on
-   three families (Italian, French, 1.d4 Nf6). Data reach via the shards first;
-   note where the proxy would be needed.
-3. **Idea 11 copy.** "About 1 in N games that start <root> reach this position"
-   on three obscure pages: does it lead anywhere (a "usual game goes X" link)?
-4. Raise or lower the run limits in `operating.md` from the owner's usage %.
+1. **Owner replies first** (Gate A; question 5, engine output on the site).
+2. **The session question** (Gate B's design, testable before A): a 10-ply card
+   is 2–3 minutes. What strings cards into a session? Spike a three-card Italian
+   chapter at 390 px, choosing lines by what each band actually meets
+   (`spikes/07`: u1400 meets the Two Knights and the Fried Liver, 1400 the
+   c3/d4 Giuoco, 2200 the Pianissimo). Test: does card 2 feel like a next step
+   or a repeat?
+3. **Idea 12 as a pause:** at an opponent split, ask "what do most of your
+   opponents play here?" before showing the bars. Spike it in `spikes/10`'s
+   page; judge whether guessing teaches or is trivia.
+4. **Idea 19:** coverage of Lichess's CC0 puzzles by opening tag, from a mirror
+   that is not lichess.org (the Hugging Face dataset viewer), counted against
+   our 31 families, and whether those puzzles happen in the opening phase.
+5. **Return reason** is still the weakest part of the charter goal (idea 3):
+   one cheap test of what would change while a learner is away.
+6. Raise or lower the run limits from the owner's usage % if posted.
 
 ## Later
 

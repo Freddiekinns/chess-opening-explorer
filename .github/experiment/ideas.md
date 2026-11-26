@@ -152,6 +152,11 @@ the split and the scores. A daily one gives a reason to return without an
 account (local streak). Riskiest: is guessing popularity a learning activity or
 trivia? Needs a spike and a human.
 
+- 2026-11-26 (night 9, `spikes/10`): as a guess at the play-through's pauses it
+  fails: 91 of 225 pause positions (40%) have the top two moves within 10
+  points, so the "answer" is a coin toss (3...Bc5 32% vs 3...Nf6 31%). Only the
+  daily form, on positions with a clear favourite, is left.
+
 - 2026-11-25 (night 8, data): of 2,250 positions with 1,000+ games at both u1400
   and 2200, the most played move differs in 879 (39%): 1.d4 d5 vs Nf6, 1.d4 Nf6
   2.Bf4 vs 2.c4, French 2.Nf3 vs 2.d4, French Advance 3.e5 vs 3.Nc3. The u1400

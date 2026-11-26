@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Play-through spike</title>
+<style>
+:root{--bg:#1a1816;--raised:#232120;--el:#2c2a27;--text:#f2ede6;--muted:#a69f95;--orange:#e85d04;--light:#e9dcc6;--dark:#b58863}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 'DM Sans',system-ui,sans-serif}
+main{max-width:480px;margin:0 auto;padding:16px}h1{font:600 20px/1.2 'Bricolage Grotesque',system-ui;margin:0 0 4px}.sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+.board{display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);width:100%;aspect-ratio:1;border-radius:6px;overflow:hidden}
+.sq{display:flex;align-items:center;justify-content:center;font-size:clamp(26px,9vw,40px);line-height:1}.sq.l{background:var(--light)}.sq.d{background:var(--dark)}.sq.last{background:#d9c46a}
+.pw{color:#fff;text-shadow:0 0 2px #000,0 0 1px #000}.pb{color:#111}
+.moves{margin:10px 0;font-size:14px;color:var(--muted);min-height:22px}.moves b{color:var(--text)}
+.ctl{display:flex;gap:8px}button{background:var(--orange);color:#fff;border:0;border-radius:6px;padding:10px 14px;font:600 14px 'DM Sans',system-ui}button.ghost{background:var(--el);color:var(--text)}
+.cap{background:var(--raised);border-radius:8px;padding:12px;margin-top:12px;display:none}.cap.on{display:block}.k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.row{display:grid;grid-template-columns:52px 1fr 44px;gap:8px;align-items:center;font-size:14px;margin:4px 0}.row .bar{height:8px;border-radius:4px;background:var(--el);overflow:hidden}.row .bar i{display:block;height:100%;background:var(--muted)}.row.me .bar i{background:var(--orange)}
+.nm{font-size:12px;color:var(--muted);grid-column:2/4;margin-top:-4px}
+</style></head><body><main>
+<h1>Italian: Center Attack</h1>
+<p class="sub">1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 · stats from Lichess games at 1400–1800 (band average 1628)</p>
+<div class="board" id="board"></div>
+<div class="moves" id="moves"></div>
+<div class="ctl"><button id="play">▶ Play</button><button class="ghost" id="back">◀</button><button class="ghost" id="fwd">▶|</button></div>
+<div class="cap" id="cap"></div>
+</main>
+<script type="module">
+import { Chess } from 'https://unpkg.com/chess.js@1.0.0/dist/esm/chess.js';
+const L = /*LINE*/[];
+const G = { w: { k: '♔', q: '♕', r: '♖', b: '♗', n: '♘', p: '♙' }, b: { k: '♚', q: '♛', r: '♜', b: '♝', n: '♞', p: '♟' } };
+const moves = L.filter((s) => !s.end); const end = L.find((s) => s.end);
+// Pauses: the opponent's (Black's) split points, then the end.
+const PAUSE = new Set(moves.map((s, i) => (i % 2 === 1 && s.split ? i : -1)).filter((i) => i >= 0));
+let ply = 0, timer = null, last = null; const $ = (id) => document.getElementById(id);
+const pct = (x) => Math.round(x * 100) + '%';
+const num = (i) => (i % 2 === 0 ? `${i / 2 + 1}.` : `${(i + 1) / 2}...`);
+function render() {
+  const c = new Chess(); last = null; for (let i = 0; i < ply; i++) last = c.move(moves[i].san);
+  const b = $('board'); b.innerHTML = ''; const rows = c.board();
+  for (let r = 0; r < 8; r++) for (let f = 0; f < 8; f++) { const sq = 'abcdefgh'[f] + (8 - r); const p = rows[r][f]; const d = document.createElement('div'); d.className = 'sq ' + ((r + f) % 2 ? 'd' : 'l') + (last && (last.from === sq || last.to === sq) ? ' last' : ''); if (p) d.innerHTML = `<span class="${p.color === 'w' ? 'pw' : 'pb'}">${G[p.color][p.type]}</span>`; b.appendChild(d); }
+  $('moves').innerHTML = moves.map((s, i) => (i < ply ? (i === ply - 1 ? `<b>${num(i)}${s.san}</b>` : `${i % 2 === 0 ? num(i) : ''}${s.san}`) : '')).join(' ');
+}
+const rows = (top, mine) => top.map((m) => `<div class="row${m.san === mine ? ' me' : ''}"><span>${m.san}</span><span class="bar"><i style="width:${m.share * 100}%"></i></span><span>${pct(m.share)}</span>${m.name ? `<span class="nm">${m.name.replace(/^Italian Game: /, '')}</span>` : ''}</div>`).join('');
+function caption(i) {
+  const cap = $('cap'); cap.className = 'cap on';
+  if (i === 'end') {
+    const be = end.beyond;
+    cap.innerHTML = `<div class="k">End of the line · what White plays next</div>${rows(end.top)}<p style="margin:10px 0 4px">${pct(end.top[1].share)} play <b>6.e5</b>, and it scores better for White (won ${pct(end.top[1].win)} against ${pct(end.top[0].win)} after 6.cxd4).</p>${be ? `<p style="margin:4px 0 0">After 6.e5, <b>${pct(be.sh)} of Black players at this level answer 6...${be.san}</b>, which Stockfish rates more than a pawn worse than 6...${be.fix}. <button class="ghost" style="margin-top:8px">Punish 6...${be.san} →</button></p>` : ''}`;
+    return;
+  }
+  const s = moves[i];
+  cap.innerHTML = `<div class="k">Paused · Black's choice here at your level</div>${rows(s.top, s.san)}<p style="margin:10px 0 0">The line follows <b>${num(i)}${s.san}</b>; ${pct(s.top.find((m) => m.san !== s.san).share)} of your opponents go ${s.top.find((m) => m.san !== s.san).san} instead.</p>`;
+}
+function step() { if (ply >= moves.length) { stop(); caption('end'); return false; } ply++; render(); $('cap').className = 'cap'; if (PAUSE.has(ply - 1)) { stop(); caption(ply - 1); return false; } return true; }
+function stop() { clearInterval(timer); timer = null; $('play').textContent = '▶ Play'; }
+$('play').onclick = () => { if (timer) return stop(); $('play').textContent = '❚❚ Pause'; if (step()) timer = setInterval(() => { if (!step()) stop(); }, 900); };
+$('fwd').onclick = () => { stop(); step(); }; $('back').onclick = () => { stop(); if (ply > 0) ply--; render(); $('cap').className = 'cap'; };
+render(); window.__spike = { step, get ply() { return ply; } };
+</script></body></html>

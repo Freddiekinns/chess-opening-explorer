@@ -5,45 +5,22 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Open
 
-1. **Testers.** Can the owner name 2–3 people (club players, friends) who would
-   try a prototype for ten minutes? _Default: the owner is the only tester._
-
-2. **Network allowlist.** The cloud refuses `lichess.org` and `chessbook.com`
-   (and likely other chess sites), so research reads search summaries, not
-   pages, and nothing can be tried hands-on. Add `lichess.org`, `chessbook.com`,
-   `chessable.com`, `chess.com` and `chessly.com` to the environment's allowed
-   domains? _Default: carry on from search results, mark such claims unverified,
-   and leave hands-on checks as `[local]` items._
-
-3. **Gate A, revision 1** (`gates/gate-a.md`, 2026-11-25). A: yes or no to the
-   board-first play-through; B: Center Attack line or one the owner plays; 3: is
-   one play-through plus #196 memory inside the "no trainer" decision; 4: slice
-   1 before Gate B. _Meanwhile (revised 2026-11-25): nothing is built as a PR
-   until A is answered, but idea 1 and the others keep being tested
-   (`ideas.md`). Then Center Attack / memory left out / slice 1 waits._
-
-4. **Vercel builds for `overnight/**`.** Every push to the state branch builds a
-   preview on the owner's free plan. May a run add `"overnight/**": false` to
-   `vercel.json`'s `git.deploymentEnabled` (state branch, and a one-line PR to
-   `main` so the content routines' branches stop too)? Or the owner sets it in
-   Vercel's dashboard. _Default: no file change; runs push twice a night (a
-   checkpoint and the end), since unpushed work is lost if a long run is cut off
-   (2026-11-25)._
-
-5. **Engine output on the site.** Night 9 showed that a "mistake" or "better
-   move" from the stats alone is false about 2 times in 5 (`spikes/06`);
-   Stockfish fixes it. Using it anywhere on the site (the play-through's "punish
-   it" step, a gambit verdict) means either a small committed file of vetted
-   items, made by a script with Stockfish run once on your machine or in a run's
-   container (a new data step: your yes; no API spend, nothing in
-   `package.json`), or a client-side engine (a dependency). A third route found
-   the same night: Lichess's public-domain puzzle file, already engine-checked
-   and tagged by opening and variation (`spikes/11`): a download and a filter,
-   still a data step. Allowed, and which? _Default: no engine output on the
-   site; nights keep using a container-only Stockfish for testing, as the
-   charter allows._
+None open. Questions 1–5 were answered by the owner on 2026-11-26 (Decided).
 
 ## Decided
+
+- 2026-11-26 09:24 UTC — **Gate A: yes to board-first; Stockfish and the
+  Lichess puzzles allowed.** "Happy for a board first approach. If it doesn't
+  work we can pivot." Stockfish is fine, but be careful about page performance:
+  Vercel is the free tier, so nothing CPU- or memory-heavy on the server. The
+  Lichess puzzle file is fine (CC0). Network is Full (the proxy's refusals of
+  lichess.org are not something the owner can see a setting for). Two Vercel
+  builds a night are fine. The owner is the only tester for now. Answers
+  questions 1–5 and Gate A question A; B (which line) and 4 (slice 1 first)
+  fall to Claude's defaults: Center Attack first, slice 1 before Gate B.
+  Night 10 reads "Stockfish is fine" as: engine output may reach the site as a
+  committed file computed in a run's container (no dependency, no server CPU);
+  a client-side engine (a dependency) is not assumed. (Owner, #249.)
 
 - 2026-11-26 — **Night 9 measured at ~4% of the week; the 90-minute floor is
   replaced.** Night 9 (64 minutes, ~120 main tool calls, one critic) used about

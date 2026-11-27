@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Chess, type Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import { BANDS, type BandId, type ExplorerResult } from '../../lib/lichessExplorer';
-import puzzleFile from '../../data/playThroughPuzzles.json';
 import styles from './PlayThrough.module.css';
 
 /**
@@ -17,7 +16,8 @@ type LineBands = { fen: string; bands: Record<string, ExplorerResult | null> | n
 type Puzzle = { id: string; fen: string; moves: string[]; rating: number };
 type Stage = 'watch' | 'memory' | 'puzzles' | 'done';
 
-const PUZZLES = puzzleFile as Record<string, { name: string; puzzles: Puzzle[] }>;
+// Lichess CC0 puzzles by page FEN, fetched only when the memory step starts.
+const PUZZLE_URL = '/lab/play-through-puzzles.json';
 const STEP_MS = 900;
 const MIN_GAMES = 500;
 const TOP_SPLIT = 0.6;
@@ -60,6 +60,12 @@ function isSplit(r: MoveRow[]): boolean {
 function lastSquares(before: string, san: string): string {
   const m = new Chess(before).move(san);
   return m.from + m.to;
+}
+
+/** The variation Lichess tags its puzzles with: the name's first part after the family. */
+function variationOf(name: string): string {
+  const [family, rest] = name.split(': ');
+  return rest ? rest.split(',')[0] : family;
 }
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
@@ -187,7 +193,19 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
   };
 
   // ── Puzzles ──
-  const puzzles = PUZZLES[fen]?.puzzles ?? [];
+  const [puzzleSet, setPuzzleSet] = useState<Puzzle[] | null>(null);
+  useEffect(() => {
+    if (stage !== 'memory' || puzzleSet) return;
+    let alive = true;
+    fetch(PUZZLE_URL)
+      .then((r) => (r.ok ? r.json() : {}))
+      .then((all: Record<string, Puzzle[]>) => alive && setPuzzleSet(all[fen] ?? []))
+      .catch(() => alive && setPuzzleSet([]));
+    return () => {
+      alive = false;
+    };
+  }, [stage, puzzleSet, fen]);
+  const puzzles = puzzleSet ?? [];
   const [pIndex, setPIndex] = useState(0);
   const [pStep, setPStep] = useState(0); // index into puzzle.moves already played
   const [pNote, setPNote] = useState<string | null>(null);
@@ -463,10 +481,17 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
             {memNote && <p className={styles.note}>{memNote}</p>}
             {memPly >= moves.length && (
               <div className={styles.row}>
-                <button type="button" className={styles.primary} onClick={startPuzzles}>
-                  {puzzles.length > 0
-                    ? `${puzzles.length} puzzles from games like this →`
-                    : 'Finish'}
+                <button
+                  type="button"
+                  className={styles.primary}
+                  onClick={startPuzzles}
+                  disabled={puzzleSet === null}
+                >
+                  {puzzleSet === null
+                    ? 'Finding puzzles…'
+                    : puzzles.length > 0
+                      ? `${puzzles.length} puzzles from games like this →`
+                      : 'Finish'}
                 </button>
                 <button type="button" className={styles.ghost} onClick={startMemory}>
                   Again
@@ -480,7 +505,7 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
           <>
             <p className={styles.muted}>
               Puzzle {pIndex + 1} of {puzzles.length} · move {puzzle.fen.split(' ')[5]} of a Lichess
-              game in this variation · rated {puzzle.rating}
+              game in the {variationOf(name)} · rated {puzzle.rating}
             </p>
             {!puzzleDone && pStep === 0 && (
               <p>

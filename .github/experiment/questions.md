@@ -17,7 +17,7 @@ None open. Questions 1–5 were answered by the owner on 2026-11-26 (Decided).
   lichess.org are not something the owner can see a setting for). Two Vercel
   builds a night are fine. The owner is the only tester for now. Answers
   questions 1–5 and Gate A question A; B (which line) and 4 (slice 1 first)
-  fall to Claude's defaults: Center Attack first, slice 1 before Gate B.
+  fall to the defaults: Center Attack first, slice 1 waits for Gate B.
   Night 10 reads "Stockfish is fine" as: engine output may reach the site as a
   committed file computed in a run's container (no dependency, no server CPU);
   a client-side engine (a dependency) is not assumed. (Owner, #249.)

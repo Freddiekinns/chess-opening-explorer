@@ -23,7 +23,13 @@ the Gate B prototype (`spikes/13`, PR #252, `feat/exp-play-through`) and wrote
    behind its flag, puzzle file + its generator under `tools/`), each with tests.
    The generator becomes a documented data step (the owner allowed the CC0
    file); it must not live only in `spikes/`.
-5. Do not re-push #252 needlessly: every push builds a preview.
+5. Do not re-push #252 needlessly: every push builds a preview. **On the next
+   push, fix the button copy** "3 puzzles from games like this" → "3 puzzles
+   from the <variation>" (`spikes/13`: 14 of 36 fit the exact sub-line, 33 the
+   variation).
+6. `[local]` option for exact fit: export the 1,548 puzzle games' moves from
+   lichess.org on the owner's machine (the cloud is refused), keep only puzzles
+   whose game passed through the page's position.
 
 Decided
    2026-11-26): safety net ~180 main calls, no time floor; finish the Next items

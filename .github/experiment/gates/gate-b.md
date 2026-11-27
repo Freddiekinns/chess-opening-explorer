@@ -7,7 +7,9 @@ come back as separate, smaller PRs.
 
 ## Try it (about 10 minutes)
 
-Open the preview from #252 on your phone. Add any of these paths, or put
+Open the preview on your phone:
+https://openingbook-git-feat-exp-play-through-fred-wildis-projects.vercel.app
+(Vercel's login). Add any of these paths, or put
 `?lab=playthrough` after any opening page you play yourself:
 
 - Italian Center Attack (White): `/opening/r1bqk2r%2Fpppp1ppp%2F2n2n2%2F2b5%2F2BpP3%2F2P2N2%2FPP3PPP%2FRNBQK2R%20w%20KQkq%20-%200%206?lab=playthrough`
@@ -57,8 +59,19 @@ three steps (screenshots in `spikes/13-prototype/`):
   - on sub-variation pages, 7 of 18 puzzles came from a sibling line (for
     example, Neo-Arkhangelsk puzzles where Black never played ...Nf6).
 
-  After the fixes, a fresh sample on sub-variation pages scored
-  **FIT_RESULT**.
+  After the fixes, a second agent (Sonnet) checked 36 puzzles on 12 random
+  sub-variation pages under a stricter test: can the page's position legally
+  reach the puzzle in the moves available? **14 fit the exact sub-line, 19 are
+  from a sibling line of the same variation, and 3 are unrelated.** Some
+  "sibling" calls are arguable. It marks the Center Attack's 15cq6 sibling
+  because the f6 knight is gone, but 6.e5 Ng4 takes it to e5. Even so, the
+  honest claim is "**a game in the same variation**", which holds for 33 of
+  36, not "a game like this one". The puzzle screen says the former. The
+  button before it still says "3 puzzles from games like this", which
+  overstates; I'll fix it with the next push rather than trigger a third
+  preview build tonight. Reliable fit to the exact line would need each
+  puzzle's game moves, which lichess.org refuses to the cloud. One `[local]`
+  route: fetch the 1,548 games once from your machine.
 
 ## What I'm still unsure of
 

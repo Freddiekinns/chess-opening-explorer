@@ -248,6 +248,37 @@ router.get('/page/:fen', async (req, res) => {
 });
 
 /**
+ * @route GET /api/openings/line-bands?fens=<fen>|<fen>|…
+ * @desc Every Lichess band at each position along a line, in order, top six
+ * moves per band. For the play-through prototype (unlinked, `?lab=playthrough`);
+ * a lookup in the position-stats shards, no computation.
+ */
+const LINE_BANDS_MAX = 40;
+const LINE_BANDS_TOP = 6;
+
+router.get('/line-bands', (req, res) => {
+  const fens = typeof req.query.fens === 'string' ? req.query.fens.split('|') : [];
+  if (fens.length === 0 || fens.length > LINE_BANDS_MAX) {
+    return res
+      .status(400)
+      .json({ success: false, error: `Expected 1–${LINE_BANDS_MAX} FENs separated by |` });
+  }
+  const data = fens.map((fen) => {
+    const bands = positionStats.bandsFor(fen);
+    if (!bands) return { fen, bands: null };
+    const trimmed = Object.fromEntries(
+      Object.entries(bands).map(([band, result]) => [
+        band,
+        result ? { ...result, moves: result.moves.slice(0, LINE_BANDS_TOP) } : null,
+      ])
+    );
+    return { fen, bands: trimmed };
+  });
+  res.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800');
+  res.json({ success: true, data });
+});
+
+/**
  * @route GET /api/openings/random
  * @desc Get random opening for training
  */

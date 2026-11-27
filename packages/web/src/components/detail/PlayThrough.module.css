@@ -1,0 +1,176 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  background: var(--color-bg-main);
+  color: var(--color-text-primary);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.title {
+  margin: 2px 0 0;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.close {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.stages {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.stageOn {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.board {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.panel {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.panel p {
+  margin: 0 0 8px;
+}
+
+.muted {
+  color: var(--color-text-secondary);
+}
+
+.note {
+  color: var(--color-text-warning);
+}
+
+.credit {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.credit a {
+  color: var(--color-text-accent);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.primary,
+.ghost {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--color-brand-orange);
+  color: var(--color-text-inverse);
+  border: none;
+  font-weight: 600;
+}
+
+.ghost {
+  background: none;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.bars {
+  list-style: none;
+  margin: 4px 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bars li {
+  display: grid;
+  grid-template-columns: 52px 1fr 40px 72px;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.barLine .san {
+  color: var(--color-brand-orange);
+  font-weight: 600;
+}
+
+.san {
+  font-weight: 500;
+}
+
+.track {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-surface-subtle);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  background: var(--color-text-secondary);
+}
+
+.barLine .fill {
+  background: var(--color-brand-orange);
+}
+
+.num {
+  text-align: right;
+}
+
+.wins {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}

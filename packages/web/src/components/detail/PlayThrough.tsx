@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Chess, type Square } from 'chess.js';
 import { Chessboard } from 'react-chessboard';
 import { BANDS, type BandId, type ExplorerResult } from '../../lib/lichessExplorer';
@@ -31,9 +31,18 @@ interface Props {
   onClose: () => void;
 }
 
-/** Names with "Defense"/"Defence" are Black's openings; the rest are White's. */
+/**
+ * The learner's side from the name's last telling word: Defense, Declined,
+ * Accepted, Countergambit or Counterattack are Black's; Gambit, Attack, System
+ * or Opening are White's. Center Attack is White's, Traxler Counterattack
+ * Black's. No such word: White.
+ */
 function defaultSide(name: string): Side {
-  return /Defen[cs]e/.test(name.split(':')[0]) ? 'black' : 'white';
+  let side: Side = 'white';
+  const re =
+    /(Defen[cs]e|Declined|Accepted|Countergambit|Counterattack)|(Gambit|Attack|System|Opening)/g;
+  for (const m of name.matchAll(re)) side = m[1] ? 'black' : 'white';
+  return side;
 }
 
 interface MoveRow {
@@ -42,15 +51,16 @@ interface MoveRow {
   wins: number;
 }
 
-function rows(result: ExplorerResult | null | undefined, mover: Side): MoveRow[] {
+function rows(result: ExplorerResult | null | undefined, mover: Side, line?: string): MoveRow[] {
   if (!result || result.totalGames < MIN_GAMES) return [];
-  const total = result.moves.reduce((sum, m) => sum + m.games, 0);
-  if (!total) return [];
-  return result.moves.slice(0, 3).map((m) => ({
+  const all = result.moves.map((m) => ({
     san: m.san,
-    share: m.games / total,
+    share: m.games / result.totalGames,
     wins: mover === 'white' ? m.whitePct : m.blackPct,
   }));
+  const top = all.slice(0, 3);
+  const mine = line ? all.find((r) => r.san === line) : undefined;
+  return mine && !top.includes(mine) ? [...top, mine] : top;
 }
 
 function isSplit(r: MoveRow[]): boolean {
@@ -71,7 +81,7 @@ function variationOf(name: string): string {
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 const sideName = (s: Side) => (s === 'white' ? 'White' : 'Black');
 
-function Bars({ data, line }: { data: MoveRow[]; line?: string }) {
+function Bars({ data, line, mover }: { data: MoveRow[]; line?: string; mover: Side }) {
   return (
     <ul className={styles.bars}>
       {data.map((r) => (
@@ -81,7 +91,9 @@ function Bars({ data, line }: { data: MoveRow[]; line?: string }) {
             <span className={styles.fill} style={{ width: pct(r.share) }} />
           </span>
           <span className={styles.num}>{pct(r.share)}</span>
-          <span className={styles.wins}>wins {Math.round(r.wins)}%</span>
+          <span className={styles.wins}>
+            {sideName(mover)} wins {Math.round(r.wins)}%
+          </span>
         </li>
       ))}
     </ul>
@@ -119,7 +131,7 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
   }, [fens]);
 
   const moverAt = (i: number): Side => (fens[i].split(' ')[1] === 'w' ? 'white' : 'black');
-  const rowsAt = (i: number) => rows(bands?.[i]?.bands?.[level], moverAt(i));
+  const rowsAt = (i: number) => rows(bands?.[i]?.bands?.[level], moverAt(i), moves[i]);
 
   // Pauses: before an opponent's move where the opponents split, and the end.
   const pauses = useMemo(() => {
@@ -172,13 +184,12 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
   const [misses, setMisses] = useState(0);
   const [memNote, setMemNote] = useState<string | null>(null);
   const [selected, setSelected] = useState<Square | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(() => () => void (timer.current && clearTimeout(timer.current)), []);
 
   useEffect(() => {
     if (stage !== 'memory' || memPly >= moves.length) return;
     if (moverAt(memPly) !== side) {
-      timer.current = setTimeout(() => setMemPly((p) => p + 1), 500);
+      const t = setTimeout(() => setMemPly((p) => p + 1), 500);
+      return () => clearTimeout(t);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stage, memPly, side, moves.length]);
@@ -193,19 +204,23 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
   };
 
   // ── Puzzles ──
-  const [puzzleSet, setPuzzleSet] = useState<Puzzle[] | null>(null);
+  const [puzzleSet, setPuzzleSet] = useState<Record<Side, Puzzle[]> | null>(null);
   useEffect(() => {
     if (stage !== 'memory' || puzzleSet) return;
     let alive = true;
     fetch(PUZZLE_URL)
       .then((r) => (r.ok ? r.json() : {}))
-      .then((all: Record<string, Puzzle[]>) => alive && setPuzzleSet(all[fen] ?? []))
-      .catch(() => alive && setPuzzleSet([]));
+      .then(
+        (all: Record<string, Record<Side, Puzzle[]>>) =>
+          alive && setPuzzleSet(all[fen] ?? { white: [], black: [] })
+      )
+      .catch(() => alive && setPuzzleSet({ white: [], black: [] }));
     return () => {
       alive = false;
     };
   }, [stage, puzzleSet, fen]);
-  const puzzles = puzzleSet ?? [];
+  // Only puzzles the learner's side solves.
+  const puzzles = puzzleSet?.[side] ?? [];
   const [pIndex, setPIndex] = useState(0);
   const [pStep, setPStep] = useState(0); // index into puzzle.moves already played
   const [pNote, setPNote] = useState<string | null>(null);
@@ -231,7 +246,8 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
     if (stage !== 'puzzles' || !puzzle || puzzleDone) return;
     // Even steps are the opponent's: the mistake, then each reply.
     if (pStep % 2 === 0) {
-      timer.current = setTimeout(() => setPStep((s) => s + 1), pStep === 0 ? 800 : 500);
+      const t = setTimeout(() => setPStep((s) => s + 1), pStep === 0 ? 800 : 500);
+      return () => clearTimeout(t);
     }
   }, [stage, puzzle, pStep, puzzleDone]);
 
@@ -317,9 +333,9 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
 
   const onSquareClick = ({ square }: { square: string }) => {
     if (selected && selected !== square) {
-      const ok = tryMove(selected, square);
+      tryMove(selected, square);
       setSelected(null);
-      if (ok) return;
+      return;
     }
     setSelected(square as Square);
   };
@@ -432,7 +448,7 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
                 <p>
                   <strong>{opp} has a choice here.</strong> What your opponents at {levelText} play:
                 </p>
-                <Bars data={rowsAt(paused)} line={moves[paused]} />
+                <Bars data={rowsAt(paused)} line={moves[paused]} mover={moverAt(paused)} />
                 <p className={styles.muted}>
                   This line follows {moveLabel(paused, moves[paused])}.
                 </p>
@@ -449,7 +465,7 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
                     ? ` What ${sideName(moverAt(moves.length))} plays next at ${levelText}:`
                     : ''}
                 </p>
-                {endRows.length > 0 && <Bars data={endRows} />}
+                {endRows.length > 0 && <Bars data={endRows} mover={moverAt(moves.length)} />}
                 <div className={styles.row}>
                   <button type="button" className={styles.primary} onClick={startMemory}>
                     Your turn: play it from memory →

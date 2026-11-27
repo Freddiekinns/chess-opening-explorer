@@ -16,7 +16,7 @@ vi.mock('react-chessboard', () => ({
   },
 }));
 
-const PUZZLES: Record<string, { moves: string[] }[]> = JSON.parse(
+const PUZZLES: Record<string, Record<'white' | 'black', { moves: string[] }[]>> = JSON.parse(
   readFileSync(resolve(__dirname, '../../../../public/lab/play-through-puzzles.json'), 'utf8')
 );
 
@@ -107,7 +107,8 @@ describe('PlayThrough (experiment prototype)', () => {
     await tick(5000);
     expect(screen.getByText(/White has a choice here/)).toBeTruthy();
     expect(screen.getByText('This line follows 2.d4.')).toBeTruthy();
-    expect(screen.getByText('40%')).toBeTruthy();
+    expect(screen.getByText('40%')).toBeTruthy(); // of all 10,000 games, not of the top moves
+    expect(screen.getAllByText('White wins 48%')).toHaveLength(3);
     fireEvent.click(screen.getByRole('button', { name: 'Continue' }));
     await tick(5000);
     expect(screen.getByText(/The line ends here/)).toBeTruthy();
@@ -132,7 +133,7 @@ describe('PlayThrough (experiment prototype)', () => {
   });
 
   it('runs the variation puzzles after memory and counts the solved ones', async () => {
-    const puzzles = PUZZLES[CARO_FEN];
+    const puzzles = PUZZLES[CARO_FEN].black; // the Caro-Kann learner is Black
     await mount('Caro-Kann Defense: Advance Variation', CARO_FEN, CARO);
     await watchToTheEnd();
     fireEvent.click(screen.getByRole('button', { name: /Your turn/ }));
@@ -171,6 +172,59 @@ describe('PlayThrough (experiment prototype)', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Finish' }));
     expect(screen.getByText('You watched the line and played it from memory.')).toBeTruthy();
     expect(screen.getByText(/No puzzles fit this line/)).toBeTruthy();
+  });
+
+  it.each([
+    ['Italian Game: Classical Variation, Center Attack', 'White'],
+    ['Italian Game: Two Knights Defense, Traxler Counterattack', 'Black'],
+    ["Queen's Gambit Declined: Modern Variation", 'Black'],
+    ['Sicilian Defense: Smith-Morra Gambit', 'White'],
+  ])('picks the side from the name: %s → %s', async (name, side) => {
+    const moves = ['e4', 'e5', 'Nf3'];
+    await mount(name, fensOf(moves)[3], moves);
+    expect(screen.getByText(/Watch the line as/).textContent).toContain(side);
+  });
+
+  it('shows the line move at a pause even when it is not in the top three', async () => {
+    const moves = ['e4', 'c6', 'h4'];
+    global.fetch = vi.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: fensOf(moves).map((fen, i) => ({
+              fen,
+              bands: {
+                1400:
+                  i === 2
+                    ? band([
+                        ['d4', 4000],
+                        ['Nf3', 3000],
+                        ['Nc3', 2000],
+                        ['h4', 300],
+                      ])
+                    : band([[moves[i] ?? 'd5', 9000]]),
+              },
+            })),
+          }),
+      })
+    ) as unknown as typeof fetch;
+    await act(async () => {
+      render(
+        <PlayThrough
+          name="Caro-Kann Defense"
+          fen={fensOf(moves)[3]}
+          moves={moves}
+          band="1400"
+          onClose={vi.fn()}
+        />
+      );
+    });
+    fireEvent.click(screen.getByRole('button', { name: /Play the line/ }));
+    await tick(3000);
+    expect(screen.getByText('This line follows 2.h4.')).toBeTruthy();
+    expect(screen.getByText('h4')).toBeTruthy();
+    expect(screen.getByText('3%')).toBeTruthy();
   });
 
   it('plays White by default for a White opening, and can switch sides', async () => {

@@ -8,7 +8,9 @@ ideas while in discovery. Statuses: `untested`, `testing`, `promising`,
 Seeded 2026-11-25 from week 1's research and Gate A (ideas 1–6). Night 8 widened
 it (7–17) and tested 1, 7, 8, 11 and 16 against the data (`spikes/01`–`05`).
 Night 9 added a container-only Stockfish and tested 8, 11, 15, 17 and the new 18
-(`spikes/06`–`09`).
+(`spikes/06`–`09`). **Gate A passed on 2026-11-26 (board-first, idea 1).** Night
+10 tested puzzle fit (`spikes/12`) and built the Gate B prototype in the real
+app (`spikes/13`, branch `feat/exp-play-through`).
 
 ## What night 9's engine changes for every idea
 
@@ -100,7 +102,18 @@ from the page's position, pausing where your level splits. Idea 1, re-aimed.
   off the named tree there is no data: the u1400 path leaves it at ply 3 in the
   Italian and ply 1 in the London. Blocked on data reach, not on the idea.
 
-### 1. Board-first play-through of a named line — `promising`
+### 1. Board-first play-through of a named line — `Gate A passed`; Gate B prototype built
+
+- 2026-11-27 (night 10, `spikes/13`): built in the real app behind
+  `?lab=playthrough`: watch with opponent-split pauses, memory, three CC0
+  puzzles on 526 lines. Walked at 390 px on four lines (White and Black, 1400
+  and u1400, with and without puzzles). The end pause carries it: KID Orthodox,
+  7.d5 is played by 47% at 1400 and wins 42%, 7.O-O by 21% and wins 53%.
+- 2026-11-27 (night 10, `spikes/13/next.js`): a session can continue. Of 1,592
+  named lines of 6+ ply with 5,000+ games at 1400, 1,054 end where a top-three
+  move (5%+) leads to another named page, and 776 to another line of the same
+  grade. "Next line" after the end pause is data-backed on half the lines. A
+  reason to come back (idea 3) is still missing.
 
 A play button animates the line, pausing where players at your level split,
 captioned from the `position-stats` shards; then play it from memory; then done.
@@ -231,6 +244,18 @@ learner which habits to drop. Riskiest: data reach at u1400 (spike 01).
   and 2200, the most played move differs in 879 (39%): 1.d4 d5 vs Nf6, 1.d4 Nf6
   2.Bf4 vs 2.c4, French 2.Nf3 vs 2.d4, French Advance 3.e5 vs 3.Nc3. The u1400
   top move is under 60% in 1,673 (74%), so a guess is rarely obvious.
+
+### 19. Lichess CC0 puzzles as the session's last step — `in the prototype`
+
+- 2026-11-27 (night 10, `spikes/12`): fit holds on structural lines (London
+  569, Najdorf 708, Caro Advance 1,094 fitting at ≤1600), is thin on the King's
+  Indian (83 and 72 in all, mostly move 13–18), and fails on long tactical
+  lines (all 155 Frankenstein–Dracula puzzles happen inside the line). A
+  generic pawn rule admits sibling lines where the line keeps tension (Center
+  Attack: 2 of the tolerant rule's top 3 were c3/d3 games); the strict rule
+  (keptAll) keeps 28, enough for three. 524 of 1,592 popular long lines get
+  three; the rest end at memory. Pawns cannot separate lines that differ only
+  in piece moves (Polerio vs Fritz): see the critic's sample in `spikes/13`.
 
 ## Killed
 

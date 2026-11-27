@@ -2,6 +2,96 @@
 
 Newest first. Template in `operating.md`.
 
+## Night 10 — 2026-11-27 — Gate A passed; the play-through is built as a Gate B prototype on PR #252
+
+Plan: answer the owner's Gate A reply first; test whether the puzzles fit d4 and
+obscure lines (night 9's Next item 2); then build the clickable prototype Gate B
+asks for. A result that would change my mind: puzzles that do not fit outside
+1.e4 e5, which would cut stage 3.
+
+Owner (#249, 2026-11-26 09:24): yes to board-first; Stockfish and the Lichess
+puzzles allowed (careful about page performance on Vercel's free tier); two
+builds a night fine; the owner is the only tester. Copied to `questions.md`;
+questions 1–5 closed.
+
+Tested:
+
+- **Puzzle fit on seven lines** (`spikes/12`): structural lines have hundreds
+  (London 569, Najdorf 708, Caro Advance 1,094 at ≤1600). The King's Indian is
+  thin (83 and 72 in all). Long tactical lines fail: all 155 Frankenstein–
+  Dracula puzzles happen inside the line. A tolerant pawn rule admits sibling
+  lines (Center Attack: 2 of the top 3 were c3/d3 games).
+- **The prototype, built in the real app** (`spikes/13`, branch
+  `feat/exp-play-through`, draft PR #252): `?lab=playthrough` opens watch →
+  memory → three CC0 puzzles; a new `GET /api/openings/line-bands` (shard
+  lookup); a 338 KB puzzle file fetched only at the memory step, 516 lines.
+  Walked at 390 px on four lines: Center Attack, Caro Advance at u1400, KID
+  Orthodox, Polerio. Seven screenshots in the spike folder. Ten component tests
+  and two route tests; `test:all`, `build`, `build:vercel` pass, and CI is green
+  on #252.
+- **Critic (Opus)** before anything reached the owner. It found five problems,
+  all fixed the same night:
+  - shares were of the top six moves, not all games (34% shown, 32% true);
+  - 47% of puzzles were solved by the other side;
+  - the line's move was missing from 113 of 839 pauses;
+  - "wins" didn't say whose;
+  - on sub-variation pages, 7 of 18 puzzles came from sibling lines.
+
+  Fixes: per-side puzzles; a developed-minor-piece check; a name-based side rule
+  (Center Attack White, Traxler Black).
+
+- **Fit re-measured (Sonnet, legal-reachability test)** on 12 new sub-variation
+  pages: 14 of 36 fit the exact sub-line, 19 are siblings in the same variation,
+  3 unrelated. The honest claim is "a game in the same variation" (33 of 36).
+  The puzzle screen says that; the button still says "from games like this",
+  which is to be fixed on the next push (`plan.md`).
+- **A reason to continue** (`spikes/13/next.js`): 776 of 1,592 popular long
+  lines end where a top-three move leads to another line of the same grade.
+
+Killed / promoted: idea 1 passed Gate A and is now a prototype; idea 19 is in
+it, its fit is measured and qualified. The tolerant pawn rule, puzzles after
+long tactical lines and the bundled puzzle file were dropped.
+
+New ideas: (a) next line, (b) rotating puzzles, (c) a re-test in a few days.
+These are the three return reasons in `gates/gate-b.md`; (c) asks question 7.
+
+Assumed: Intermediate (1400) when no level is saved; "wins" without draws is
+fine for comparing moves at one stop; the name's last telling word picks the
+side.
+
+Installed in the container only: Stockfish 16 (apt, unused tonight), chess.js
+1.0.0 and hyparquet 1.8.0 (scratchpad npm), and the three Lichess puzzle parquet
+files (885 MB, Hugging Face). `package.json` and the lockfile are unchanged.
+`build:vercel` rewrote sitemaps in the working tree; they were reverted and
+never committed.
+
+Mistakes:
+
+- The first build divided shares by the top six moves. The critic caught it, and
+  it is close to the fabricated-data rule.
+- The side default and the puzzle side were not thought through until the critic
+  counted them.
+- A first draft of the gate document carried a made-up game count (1,548);
+  replaced by the real 1,914 before commit.
+
+Gate B went to the owner (`gates/gate-b.md`, one comment in #249). PR #252 was
+auto-subscribed and then unsubscribed once CI was green (`AGENTS.md`).
+
+Next: Monday (night 11), the owner's Gate B answer first; spike return reasons
+(a) and (b); the copy fix on the next push. Undone tonight: none of these could
+be done without either the owner's phone test (Gate B) or a third preview build
+tonight. Spiking (a) and (b) locally was possible but would change the prototype
+under the owner while they test it; better after their answer.
+
+Checkpoint: at ~80 main calls I went on, because the critic's findings were
+fixable tonight and a prototype with them unfixed would fail a ten-second phone
+test.
+
+Cost: 01:01–02:27 UTC (86 minutes; the Sonnet fit agent alone ran ~55 minutes).
+Main tool calls ~125. Subagents 5, ~270k tokens: Haiku verifier ×2 (~28k), Opus
+critic (~87k), Sonnet fit re-measure (~155k). Web: Hugging Face API and 3
+downloads, the GitHub API.
+
 ## Night 9 — 2026-11-26 — the engine kills the trap set, and the play-through becomes a session with Lichess's own puzzles
 
 Plan: test idea 17/8 for soundness with a container-only Stockfish (the owner

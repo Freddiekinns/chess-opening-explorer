@@ -247,15 +247,15 @@ learner which habits to drop. Riskiest: data reach at u1400 (spike 01).
 
 ### 19. Lichess CC0 puzzles as the session's last step — `in the prototype`
 
-- 2026-11-27 (night 10, `spikes/12`): fit holds on structural lines (London
-  569, Najdorf 708, Caro Advance 1,094 fitting at ≤1600), is thin on the King's
-  Indian (83 and 72 in all, mostly move 13–18), and fails on long tactical
-  lines (all 155 Frankenstein–Dracula puzzles happen inside the line). A
-  generic pawn rule admits sibling lines where the line keeps tension (Center
-  Attack: 2 of the tolerant rule's top 3 were c3/d3 games); the strict rule
-  (keptAll) keeps 28, enough for three. 524 of 1,592 popular long lines get
-  three; the rest end at memory. Pawns cannot separate lines that differ only
-  in piece moves (Polerio vs Fritz): see the critic's sample in `spikes/13`.
+- 2026-11-27 (night 10, `spikes/12`): fit holds on structural lines (London 569,
+  Najdorf 708, Caro Advance 1,094 fitting at ≤1600), is thin on the King's
+  Indian (83 and 72 in all, mostly move 13–18), and fails on long tactical lines
+  (all 155 Frankenstein–Dracula puzzles happen inside the line). A generic pawn
+  rule admits sibling lines where the line keeps tension (Center Attack: 2 of
+  the tolerant rule's top 3 were c3/d3 games); the strict rule (keptAll) keeps
+  28, enough for three. 524 of 1,592 popular long lines get three; the rest end
+  at memory. Pawns cannot separate lines that differ only in piece moves
+  (Polerio vs Fritz): see the critic's sample in `spikes/13`.
 
 ## Killed
 

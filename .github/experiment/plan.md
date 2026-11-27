@@ -1,8 +1,9 @@
 # Plan
 
 Phase: **Gate B, waiting on the owner's phone test** (Gate A passed 2026-11-26;
-prototype on draft PR #252, `gates/gate-b.md`). Previously: Discover, by testing (revised 2026-11-25). Gate A is a discussion the
-owner is offered once an ## Next
+prototype on draft PR #252, `gates/gate-b.md`). Previously: Discover, by testing
+(revised 2026-11-25). Gate A is a discussion the owner is offered once an ##
+Next
 
 **Night 11 (Monday 01:00 UTC; Friday is the week's last night).** Night 10 built
 the Gate B prototype (`spikes/13`, PR #252, `feat/exp-play-through`) and wrote
@@ -15,25 +16,24 @@ the Gate B prototype (`spikes/13`, PR #252, `feat/exp-play-through`) and wrote
    `feat/exp-play-through`; push to #252 only if the owner has not started
    testing (ask first), else keep local with screenshots.
 3. **Puzzle fit, residual:** pawns and minor pieces cannot separate lines that
-   differ only in where a developed piece went (Polerio 5...Na5 vs Fritz
-   5...Nd4 both leave b8). A cheap extra check: the piece the line's last
-   moves placed must be on its square or have moved on (not on a square the
-   sibling uses). Measure on a sample before changing the file.
+   differ only in where a developed piece went (Polerio 5...Na5 vs Fritz 5...Nd4
+   both leave b8). A cheap extra check: the piece the line's last moves placed
+   must be on its square or have moved on (not on a square the sibling uses).
+   Measure on a sample before changing the file.
 4. **Gate C plan** once Gate B says yes: three small PRs (route, component
-   behind its flag, puzzle file + its generator under `tools/`), each with tests.
-   The generator becomes a documented data step (the owner allowed the CC0
-   file); it must not live only in `spikes/`.
+   behind its flag, puzzle file + its generator under `tools/`), each with
+   tests. The generator becomes a documented data step (the owner allowed the
+   CC0 file); it must not live only in `spikes/`.
 5. Do not re-push #252 needlessly: every push builds a preview. **On the next
    push, fix the button copy** "3 puzzles from games like this" → "3 puzzles
    from the <variation>" (`spikes/13`: 14 of 36 fit the exact sub-line, 33 the
    variation).
-6. `[local]` option for exact fit: export the 1,548 puzzle games' moves from
+6. `[local]` option for exact fit: export the 1914 puzzle games' moves from
    lichess.org on the owner's machine (the cloud is refused), keep only puzzles
    whose game passed through the page's position.
 
-Decided
-   2026-11-26): safety net ~180 main calls, no time floor; finish the Next items
-   you can do tonight (item 2 is one).
+Decided 2026-11-26): safety net ~180 main calls, no time floor; finish the Next
+items you can do tonight (item 2 is one).
 
 ## Later
 

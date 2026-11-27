@@ -7,8 +7,8 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 6. **Gate B: does the play-through feel like a study session on your phone?**
    (`gates/gate-b.md`, draft PR #252's preview, `?lab=playthrough`). Try two
-   lines, one you play. _Meanwhile: nights test the return reasons (a) next
-   line and (b) fresh puzzles as spikes; nothing goes to production._
+   lines, one you play. _Meanwhile: nights test the return reasons (a) next line
+   and (b) fresh puzzles as spikes; nothing goes to production._
 
 7. **Is a re-test in a few days (local, no account) inside the 2026-11-10 "no
    trainer" decision?** It is the only one of the three return reasons that
@@ -16,18 +16,18 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Decided
 
-- 2026-11-26 09:24 UTC — **Gate A: yes to board-first; Stockfish and the
-  Lichess puzzles allowed.** "Happy for a board first approach. If it doesn't
-  work we can pivot." Stockfish is fine, but be careful about page performance:
-  Vercel is the free tier, so nothing CPU- or memory-heavy on the server. The
-  Lichess puzzle file is fine (CC0). Network is Full (the proxy's refusals of
+- 2026-11-26 09:24 UTC — **Gate A: yes to board-first; Stockfish and the Lichess
+  puzzles allowed.** "Happy for a board first approach. If it doesn't work we
+  can pivot." Stockfish is fine, but be careful about page performance: Vercel
+  is the free tier, so nothing CPU- or memory-heavy on the server. The Lichess
+  puzzle file is fine (CC0). Network is Full (the proxy's refusals of
   lichess.org are not something the owner can see a setting for). Two Vercel
   builds a night are fine. The owner is the only tester for now. Answers
-  questions 1–5 and Gate A question A; B (which line) and 4 (slice 1 first)
-  fall to the defaults: Center Attack first, slice 1 waits for Gate B.
-  Night 10 reads "Stockfish is fine" as: engine output may reach the site as a
-  committed file computed in a run's container (no dependency, no server CPU);
-  a client-side engine (a dependency) is not assumed. (Owner, #249.)
+  questions 1–5 and Gate A question A; B (which line) and 4 (slice 1 first) fall
+  to the defaults: Center Attack first, slice 1 waits for Gate B. Night 10 reads
+  "Stockfish is fine" as: engine output may reach the site as a committed file
+  computed in a run's container (no dependency, no server CPU); a client-side
+  engine (a dependency) is not assumed. (Owner, #249.)
 
 - 2026-11-26 — **Night 9 measured at ~4% of the week; the 90-minute floor is
   replaced.** Night 9 (64 minutes, ~120 main tool calls, one critic) used about

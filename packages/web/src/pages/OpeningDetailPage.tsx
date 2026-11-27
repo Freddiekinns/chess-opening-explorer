@@ -120,8 +120,12 @@ const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>();
   // The middleware's content for this URL, if this is the visit's first page.
   const prerender = prerenderFor(useLocation().pathname);
-  // Experiment prototype (Gate B): unlinked, only via ?lab=playthrough.
-  const labPlayThrough = new URLSearchParams(useLocation().search).get('lab') === 'playthrough';
+  // Experiment prototype (Gate B): unlinked. On by default on Vercel previews,
+  // whose protection breaks query-string URLs to opening pages; elsewhere only
+  // via ?lab=playthrough.
+  const labPlayThrough =
+    new URLSearchParams(useLocation().search).get('lab') === 'playthrough' ||
+    window.location.hostname.endsWith('.vercel.app');
   const [playThroughOpen, setPlayThroughOpen] = useState(true);
   const [opening, setOpening] = useState<Opening | null>(null);
   const [videos, setVideos] = useState<Video[]>([]);

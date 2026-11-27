@@ -5,7 +5,14 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Open
 
-None open. Questions 1–5 were answered by the owner on 2026-11-26 (Decided).
+6. **Gate B: does the play-through feel like a study session on your phone?**
+   (`gates/gate-b.md`, draft PR #252's preview, `?lab=playthrough`). Try two
+   lines, one you play. _Meanwhile: nights test the return reasons (a) next
+   line and (b) fresh puzzles as spikes; nothing goes to production._
+
+7. **Is a re-test in a few days (local, no account) inside the 2026-11-10 "no
+   trainer" decision?** It is the only one of the three return reasons that
+   brings someone back. _Default: not built; (a) and (b) only._
 
 ## Decided
 

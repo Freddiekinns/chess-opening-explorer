@@ -1,30 +1,31 @@
 # Plan
 
-Phase: **Discover, by testing** (revised 2026-11-25). Gate A is a discussion the
-owner is offered once an idea has survived the tests that could have killed it
-(`operating.md`, The loop). Nights never idle while waiting on the owner.
+Phase: **Gate B, waiting on the owner's phone test** (Gate A passed 2026-11-26;
+prototype on draft PR #252, `gates/gate-b.md`). Previously: Discover, by testing (revised 2026-11-25). Gate A is a discussion the
+owner is offered once an ## Next
 
-## Next
+**Night 11 (Monday 01:00 UTC; Friday is the week's last night).** Night 10 built
+the Gate B prototype (`spikes/13`, PR #252, `feat/exp-play-through`) and wrote
+`gates/gate-b.md`. Nothing goes to production before the owner's Gate B answer.
 
-**Night 10 (Friday 01:00 UTC).** Night 9 (`journal.md`) installed a
-container-only Stockfish, killed the trap set (8 data-only, 17, 11), spiked
-Revision 1 for the first time (`spikes/10`) and added an addendum to
-`gates/gate-a.md`. Revision 1 is still the pick; Gate A still waits on the
-owner.
+1. **Owner replies first:** Gate B questions 6 and 7 in `questions.md`.
+2. **Return reason, spiked** (the critic's first objection): (a) "next line"
+   after the end pause (776 of 1,592 lines have one; `spikes/13/next.js`) and
+   (b) rotating puzzles from the pool. Spike both in the container on top of
+   `feat/exp-play-through`; push to #252 only if the owner has not started
+   testing (ask first), else keep local with screenshots.
+3. **Puzzle fit, residual:** pawns and minor pieces cannot separate lines that
+   differ only in where a developed piece went (Polerio 5...Na5 vs Fritz
+   5...Nd4 both leave b8). A cheap extra check: the piece the line's last
+   moves placed must be on its square or have moved on (not on a square the
+   sibling uses). Measure on a sample before changing the file.
+4. **Gate C plan** once Gate B says yes: three small PRs (route, component
+   behind its flag, puzzle file + its generator under `tools/`), each with tests.
+   The generator becomes a documented data step (the owner allowed the CC0
+   file); it must not live only in `spikes/`.
+5. Do not re-push #252 needlessly: every push builds a preview.
 
-1. **Owner replies first** (Gate A; question 5, engine output on the site).
-2. **The session, done on night 9** (`spikes/10`): watch → memory → three CC0
-   puzzles from the same variation, ~5–7 minutes. Next test: run it on two more
-   lines (one d4, e.g. a King's Indian; one obscure) to see whether the puzzles
-   still fit when the variation tag is broad or thin.
-3. **Idea 12 as a pause** failed on night 9 (40% coin tosses). Try "which of
-   these scores best for you?" at a pause instead, if it is cheap.
-4. **Puzzle fit, measured not eyeballed:** for a sample of variations, replay
-   each puzzle's game id? Not reachable (lichess.org refuses the cloud). Use
-   pawn signatures per line, as night 9 did for the Center Attack.
-5. **Return reason** is still the weakest part of the charter goal (idea 3): one
-   cheap test of what would change while a learner is away.
-6. Run limits retuned from night 9's measured ~4% (`questions.md`, Decided
+Decided
    2026-11-26): safety net ~180 main calls, no time floor; finish the Next items
    you can do tonight (item 2 is one).
 

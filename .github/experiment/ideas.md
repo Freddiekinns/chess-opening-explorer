@@ -40,6 +40,46 @@ Two facts from the position-stats shards that any idea has to live with:
 
 ## Live
 
+### Night 11 widening: drills (owner, Gate B reply, 2026-11-27)
+
+The owner tried the prototype: "the memorisation is good"; asked for parts that
+repeat on a miss, then once through (idea 20, built); puzzles are "interesting
+but not necessarily connected", the board must clearly still be the opening
+"unless we can come up with a clever way" (ideas 21, 22); and "we can further
+explore these opening drills… a fair few ideas". New drill ideas, untested
+unless a line below says otherwise:
+
+- **20. Memory in parts** — `in the prototype` (`spikes/14`). A part with a
+  miss repeats until clean, then the whole once through.
+- **21. They leave the line** — `testing`. Replay the line; at a split the
+  opponent plays their common alternative (10%+ at your level) instead; you
+  find the reply. Connected by construction: it is the watch step's "White has a
+  choice here", turned into a question. Riskiest: is there one right reply, and
+  is it sound?
+- **22. Puzzles that still look like the opening** — `testing`. Keep only
+  puzzles whose board keeps most of the line's end position (same pieces on the
+  same squares) and starts soon after it. Riskiest: enough survive.
+- **23. Punish their common mistake, as a drill step** — `untested`. Night 9's
+  140 engine-confirmed costly mistakes, where one lies in the line's subtree
+  (mostly 1.e4 e5). Narrow coverage, but it is the most "opening" tactic there
+  is.
+- **24. Play the other side** — `untested`. Drill your line as the opponent:
+  what are they trying to do? Cheap (a side switch), but is it learning or just
+  more memory?
+- **25. Line and its next line, mixed** — `untested`. After two lines, a final
+  run where the opponent picks either (interleaving). Needs idea 1's "next line"
+  (776 of 1,592 have one).
+- **26. The wrong move you are likely to play** — `untested`. When the learner
+  misses, if their move is common at their level, say so with its share and
+  score ("31% of players here play d3"), so a miss teaches the branch rather
+  than only "not this line". Data is already on the page (line-bands). Risk:
+  score is not soundness (night 9); never call it "worse" without the engine.
+- **27. Find the line's move from three** — `untested`. On a phone, a
+  multiple-choice pick (the line's move, and the two most played others at your
+  level) before drag-and-drop memory, for beginners. Risk: recognition is easier
+  than recall, and is the drill only trivia?
+
+
 ### 8. The common mistake at your level — `killed` as data-only; a pause in 1 at most
 
 On a page, name the move players at your level commonly get wrong in the next

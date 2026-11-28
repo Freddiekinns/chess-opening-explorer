@@ -59,11 +59,36 @@ function bandsFor(moves: string[]) {
   }));
 }
 
+// One opponent move off the Caro-Kann line: 2.Nf3 instead of 2.d4.
+const BRANCHES = {
+  [CARO_FEN]: {
+    side: 'black',
+    items: [
+      {
+        ply: 2,
+        dev: 'Nf3',
+        devShare: 0.35,
+        reply: 'd5',
+        replyShare: 0.6,
+        common: [],
+        ok: ['d5', 'g6'],
+      },
+    ],
+  },
+};
+
 function mockFetch(moves: string[]) {
   global.fetch = vi.fn((url: string) =>
     Promise.resolve({
       ok: true,
-      json: () => Promise.resolve(url.includes('line-bands') ? { data: bandsFor(moves) } : PUZZLES),
+      json: () =>
+        Promise.resolve(
+          url.includes('line-bands')
+            ? { data: bandsFor(moves) }
+            : url.includes('branches')
+              ? BRANCHES
+              : PUZZLES
+        ),
     })
   ) as unknown as typeof fetch;
 }
@@ -179,6 +204,20 @@ describe('PlayThrough (experiment prototype)', () => {
     expect(screen.getByText('You played the line from memory, once through.')).toBeTruthy();
   });
 
+  it('says when a miss is a move many players at this level play', async () => {
+    const moves = ['e4', 'e5', 'Nf3', 'Nc6', 'Bc4', 'Bc5'];
+    await mount('Italian Game', fensOf(moves)[6], moves);
+    await watchToTheEnd();
+    await tick(3000);
+    fireEvent.click(screen.getByRole('button', { name: /Your turn/ }));
+    expect(drop('a2', 'a3')).toBe(false); // 2,000 of 10,000 games in the mock
+    expect(
+      screen.getByText('a3 is played by 20% at your level, but it is another line. Try again.')
+    ).toBeTruthy();
+    expect(drop('h2', 'h3')).toBe(false);
+    expect(screen.getByText('The line plays 1.e4.')).toBeTruthy();
+  });
+
   it('ends at once through when the first pass is clean', async () => {
     await mount('Caro-Kann Defense: Advance Variation', CARO_FEN, CARO);
     await watchToTheEnd();
@@ -201,7 +240,21 @@ describe('PlayThrough (experiment prototype)', () => {
     await tick(600);
     drop('d7', 'd5');
     await tick(600);
-    fireEvent.click(screen.getByRole('button', { name: /3 puzzles from the Advance Variation/ }));
+    fireEvent.click(screen.getByRole('button', { name: 'Test it: 1 off the line, 3 puzzles →' }));
+    await tick(1200);
+    expect(screen.getByText(/White leaves the line: 2.Nf3 instead of 2.d4./)).toBeTruthy();
+    expect(position).toBe(fensOf(['e4', 'c6', 'Nf3'])[3]);
+    expect(drop('g7', 'g6')).toBe(false);
+    expect(
+      screen.getByText(
+        'g6 is playable, the engine says, but few players at your level choose it. Try again.'
+      )
+    ).toBeTruthy();
+    expect(drop('d7', 'd5')).toBe(true);
+    expect(
+      screen.getByText('Yes. 2...d5 (60% of players at your level), and the engine agrees.')
+    ).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: '3 puzzles →' }));
     for (const p of puzzles) {
       await tick(900);
       expect(screen.getByText(/The last move was a mistake/)).toBeTruthy();
@@ -213,7 +266,9 @@ describe('PlayThrough (experiment prototype)', () => {
       expect(screen.getByText('Solved.')).toBeTruthy();
       fireEvent.click(screen.getByRole('button', { name: /Next puzzle|Finish/ }));
     }
-    expect(screen.getByText(/solved 3 of 3 puzzles/)).toBeTruthy();
+    expect(
+      screen.getByText(/found 1 of 1 replies off the line, solved 3 of 3 puzzles/)
+    ).toBeTruthy();
   });
 
   it('ends at memory when no puzzles fit the line', async () => {
@@ -229,8 +284,8 @@ describe('PlayThrough (experiment prototype)', () => {
     drop('d7', 'd5');
     await tick(600);
     fireEvent.click(screen.getByRole('button', { name: 'Finish' }));
-    expect(screen.getByText('You watched the line and played it from memory.')).toBeTruthy();
-    expect(screen.getByText(/No puzzles fit this line/)).toBeTruthy();
+    expect(screen.getByText(/You watched the line and played it from memory\./)).toBeTruthy();
+    expect(screen.getByText(/No test fits this line/)).toBeTruthy();
   });
 
   it.each([

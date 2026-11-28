@@ -14,10 +14,23 @@ import styles from './PlayThrough.module.css';
 type Side = 'white' | 'black';
 type LineBands = { fen: string; bands: Record<string, ExplorerResult | null> | null };
 type Puzzle = { id: string; fen: string; moves: string[]; rating: number };
-type Stage = 'watch' | 'memory' | 'puzzles' | 'done';
+type Stage = 'watch' | 'memory' | 'branches' | 'puzzles' | 'done';
+// A common opponent move off the line, and the learner's reply (most played at 1400 and within
+// 50 cp of Stockfish's best). `common`: other replies 10%+ play that the engine also accepts;
+// `ok`: every move within 50 cp, playable but not what players at this level choose.
+type Branch = {
+  ply: number;
+  dev: string;
+  devShare: number;
+  reply: string;
+  replyShare: number;
+  common: string[];
+  ok: string[];
+};
 
 // Lichess CC0 puzzles by page FEN, fetched only when the memory step starts.
 const PUZZLE_URL = '/lab/play-through-puzzles.json';
+const BRANCH_URL = '/lab/play-through-branches.json';
 const STEP_MS = 900;
 const MIN_GAMES = 500;
 const TOP_SPLIT = 0.6;
@@ -254,6 +267,61 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
     }
   };
 
+  // ── Off the line ──
+  const [branchSet, setBranchSet] = useState<{ side: Side; items: Branch[] } | null>(null);
+  useEffect(() => {
+    if (stage !== 'memory' || branchSet) return;
+    let alive = true;
+    fetch(BRANCH_URL)
+      .then((r) => (r.ok ? r.json() : {}))
+      .then(
+        (all: Record<string, { side: Side; items: Branch[] }>) =>
+          alive && setBranchSet(all[fen] ?? { side, items: [] })
+      )
+      .catch(() => alive && setBranchSet({ side, items: [] }));
+    return () => {
+      alive = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stage, branchSet, fen]);
+  const branches = branchSet && branchSet.side === side ? branchSet.items : [];
+  const [bIndex, setBIndex] = useState(0);
+  const [bShown, setBShown] = useState(false);
+  const [bMove, setBMove] = useState<string | null>(null);
+  const [bNote, setBNote] = useState<string | null>(null);
+  const [bMisses, setBMisses] = useState(0);
+  const [bGood, setBGood] = useState(0);
+  const branch = branches[bIndex];
+  const devFen = useMemo(() => {
+    if (!branch) return null;
+    const g = new Chess(fens[branch.ply]);
+    g.move(branch.dev);
+    return g.fen();
+  }, [branch, fens]);
+  const bDone = bMove !== null;
+  useEffect(() => {
+    if (stage !== 'branches' || bShown) return;
+    const t = setTimeout(() => setBShown(true), 900);
+    return () => clearTimeout(t);
+  }, [stage, bShown, bIndex]);
+  const startBranches = () => {
+    setStage('branches');
+    setBIndex(0);
+    setBShown(false);
+    setBMove(null);
+    setBNote(null);
+    setBMisses(0);
+    setBGood(0);
+  };
+  const nextBranch = () => {
+    if (bIndex + 1 >= branches.length) return startPuzzles();
+    setBIndex((i) => i + 1);
+    setBShown(false);
+    setBMove(null);
+    setBNote(null);
+    setBMisses(0);
+  };
+
   // ── Puzzles ──
   const [puzzleSet, setPuzzleSet] = useState<Record<Side, Puzzle[]> | null>(null);
   useEffect(() => {
@@ -347,11 +415,50 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
         setMisses(n);
         if (pass === 'parts') setPartMissed(true);
         else if (n === 1) setWholeMisses((w) => w + 1);
+        // A miss that many players at this level make is a real move, just another line.
+        const r = bands?.[memPly]?.bands?.[level];
+        const g2 =
+          r && r.totalGames >= MIN_GAMES ? r.moves.find((m) => m.san === played.san) : null;
+        const share = g2 && r ? g2.games / r.totalGames : 0;
         setMemNote(
           n >= 2
             ? `The line plays ${moveLabel(memPly, moves[memPly])}.`
-            : `${played.san} is not this line. Try again.`
+            : share >= 0.05
+              ? `${played.san} is played by ${pct(share)} at your level, but it is another line. Try again.`
+              : `${played.san} is not this line. Try again.`
         );
+        return false;
+      }
+      if (stage === 'branches' && branch && devFen && bShown && !bDone) {
+        const g = new Chess(devFen);
+        let played;
+        try {
+          played = g.move({ from, to, promotion: 'q' });
+        } catch {
+          return false;
+        }
+        const top = `${moveLabel(branch.ply + 1, branch.reply)} (${pct(branch.replyShare)} of players at your level)`;
+        if (played.san === branch.reply || branch.common.includes(played.san)) {
+          setBMove(played.san);
+          setBGood((n) => n + 1);
+          setBNote(
+            played.san === branch.reply
+              ? `Yes. ${top}, and the engine agrees.`
+              : `Good too: a common choice, and the engine agrees. Most play ${top}.`
+          );
+          return true;
+        }
+        const n = bMisses + 1;
+        setBMisses(n);
+        if (n >= 2) {
+          setBMove(branch.reply);
+          setBNote(`The move here is ${top}.`);
+        } else
+          setBNote(
+            branch.ok.includes(played.san)
+              ? `${played.san} is playable, the engine says, but few players at your level choose it. Try again.`
+              : `The engine rates ${played.san} clearly lower here. Try again.`
+          );
         return false;
       }
       if (stage === 'puzzles' && puzzle && puzzleFen && pStep % 2 === 1 && !puzzleDone) {
@@ -398,6 +505,13 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
       partMissed,
       repeats,
       parts,
+      branch,
+      devFen,
+      bShown,
+      bDone,
+      bMisses,
+      bands,
+      level,
     ]
   );
 
@@ -421,18 +535,31 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
       ? fens[ply]
       : stage === 'memory'
         ? fens[Math.min(memPly, moves.length)]
-        : stage === 'puzzles' && puzzleFen
-          ? puzzleFen
-          : fens[moves.length];
+        : stage === 'branches' && branch && devFen
+          ? !bShown
+            ? fens[branch.ply]
+            : bMove
+              ? new Chess(devFen).move(bMove).after
+              : devFen
+          : stage === 'puzzles' && puzzleFen
+            ? puzzleFen
+            : fens[moves.length];
   // The move just played, highlighted so a puzzle's mistake is visible.
   const lastMove: string | null =
     stage === 'watch' && ply > 0
       ? lastSquares(fens[ply - 1], moves[ply - 1])
       : stage === 'memory' && memPly > 0
         ? lastSquares(fens[memPly - 1], moves[memPly - 1])
-        : stage === 'puzzles' && puzzle && pStep > 0
-          ? puzzle.moves[pStep - 1].slice(0, 4)
-          : null;
+        : stage === 'branches' && branch && devFen && bShown
+          ? bMove
+            ? (() => {
+                const m = new Chess(devFen).move(bMove);
+                return m.from + m.to;
+              })()
+            : lastSquares(fens[branch.ply], branch.dev)
+          : stage === 'puzzles' && puzzle && pStep > 0
+            ? puzzle.moves[pStep - 1].slice(0, 4)
+            : null;
   const highlight: Record<string, React.CSSProperties> = {};
   if (lastMove) {
     highlight[lastMove.slice(0, 2)] = { background: 'var(--accent-a30)' };
@@ -444,6 +571,7 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
       rewindTo === null &&
       memPly < moves.length &&
       moverAt(memPly) === side) ||
+    (stage === 'branches' && bShown && !bDone) ||
     (stage === 'puzzles' && pStep % 2 === 1 && !puzzleDone);
   if (selected && interactive) highlight[selected] = { background: 'var(--accent-a50)' };
 
@@ -464,8 +592,13 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
 
       <ol className={styles.stages}>
         {(['watch', 'memory', 'puzzles'] as const).map((s, i) => (
-          <li key={s} className={stage === s ? styles.stageOn : undefined}>
-            {i + 1}. {s === 'watch' ? 'Watch' : s === 'memory' ? 'Your turn' : 'Puzzles'}
+          <li
+            key={s}
+            className={
+              stage === s || (s === 'puzzles' && stage === 'branches') ? styles.stageOn : undefined
+            }
+          >
+            {i + 1}. {s === 'watch' ? 'Watch' : s === 'memory' ? 'Your turn' : 'Test'}
           </li>
         ))}
       </ol>
@@ -595,19 +728,55 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
                 <button
                   type="button"
                   className={styles.primary}
-                  onClick={startPuzzles}
-                  disabled={puzzleSet === null}
+                  onClick={branches.length > 0 ? startBranches : startPuzzles}
+                  disabled={puzzleSet === null || branchSet === null}
                 >
-                  {puzzleSet === null
-                    ? 'Finding puzzles…'
-                    : puzzles.length > 0
-                      ? `${puzzles.length} puzzles from the ${variationOf(name)} →`
+                  {puzzleSet === null || branchSet === null
+                    ? 'Getting the test ready…'
+                    : branches.length + puzzles.length > 0
+                      ? `Test it: ${[
+                          branches.length > 0 && `${branches.length} off the line`,
+                          puzzles.length > 0 &&
+                            `${puzzles.length} ${puzzles.length === 1 ? 'puzzle' : 'puzzles'}`,
+                        ]
+                          .filter(Boolean)
+                          .join(', ')} →`
                       : 'Finish'}
                 </button>
                 <button type="button" className={styles.ghost} onClick={startMemory}>
                   Again
                 </button>
               </div>
+            )}
+          </>
+        )}
+
+        {stage === 'branches' && branch && (
+          <>
+            <p className={styles.muted}>
+              Off the line {bIndex + 1} of {branches.length}
+            </p>
+            {!bShown ? (
+              <p>Back to move {Math.floor(branch.ply / 2) + 1}…</p>
+            ) : (
+              <p>
+                <strong>
+                  {opp} leaves the line: {moveLabel(branch.ply, branch.dev)} instead of{' '}
+                  {moveLabel(branch.ply, moves[branch.ply])}.
+                </strong>{' '}
+                {pct(branch.devShare)} of {opp} players at your level play it.
+                {!bDone && ' What do you play?'}
+              </p>
+            )}
+            {bNote && <p className={bDone ? undefined : styles.note}>{bNote}</p>}
+            {bDone && (
+              <button type="button" className={styles.primary} onClick={nextBranch}>
+                {bIndex + 1 < branches.length
+                  ? 'Next →'
+                  : puzzles.length > 0
+                    ? `${puzzles.length} ${puzzles.length === 1 ? 'puzzle' : 'puzzles'} →`
+                    : 'Finish'}
+              </button>
             )}
           </>
         )}
@@ -658,13 +827,12 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
         {stage === 'done' && (
           <>
             <p>
-              <strong>Session done.</strong>{' '}
-              {puzzles.length > 0
-                ? `You watched the line, played it from memory and solved ${solved} of ${puzzles.length} puzzles.`
-                : 'You watched the line and played it from memory.'}
+              <strong>Session done.</strong> You watched the line and played it from memory
+              {branches.length > 0 && `, found ${bGood} of ${branches.length} replies off the line`}
+              {puzzles.length > 0 && `, solved ${solved} of ${puzzles.length} puzzles`}.
             </p>
-            {puzzles.length === 0 && (
-              <p className={styles.muted}>No puzzles fit this line closely enough yet.</p>
+            {branches.length + puzzles.length === 0 && (
+              <p className={styles.muted}>No test fits this line closely enough yet.</p>
             )}
             <div className={styles.row}>
               <button

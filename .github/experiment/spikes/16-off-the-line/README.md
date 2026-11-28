@@ -60,7 +60,8 @@ White players at your level play it. What do you play?"
 ## Where it is weak
 
 - **Trivial answers.** Of 279 sound positions, 22 are answered by castling and
-  54 by a capture (mostly recaptures). The KID gets only castling.
+  73 by a capture (mostly recaptures). 374 of the 519 lines have at least one
+  question that is neither. The KID gets only castling.
 - **Popular is not the same as best.** The engine filter (50 cp) keeps out
   unsound replies, but "most played at 1400" picks the answer among sound ones.
   The copy says "most players", not "best".

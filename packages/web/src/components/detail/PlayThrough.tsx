@@ -180,27 +180,78 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
   };
 
   // ── Memory ──
+  // The learner's moves come in parts of two (a lone last move joins the part before). A part
+  // with a miss repeats from its start until it is played clean; if any part needed that, the
+  // whole line follows once through.
+  const mine = moves.map((_, i) => i).filter((i) => moverAt(i) === side);
+  const parts = useMemo(() => {
+    const out: number[][] = [];
+    for (let i = 0; i < mine.length; i += 2) out.push(mine.slice(i, i + 2));
+    if (out.length > 1 && out[out.length - 1].length === 1) out[out.length - 2].push(out.pop()![0]);
+    return out;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mine.join(',')]);
+  const partOf = (ply: number) => parts.findIndex((p) => p.includes(ply));
   const [memPly, setMemPly] = useState(0);
   const [misses, setMisses] = useState(0);
   const [memNote, setMemNote] = useState<string | null>(null);
   const [selected, setSelected] = useState<Square | null>(null);
+  const [pass, setPass] = useState<'parts' | 'whole'>('parts');
+  const [partMissed, setPartMissed] = useState(false);
+  const [repeats, setRepeats] = useState(0);
+  const [wholeMisses, setWholeMisses] = useState(0);
+  const [rewindTo, setRewindTo] = useState<number | null>(null);
 
   useEffect(() => {
-    if (stage !== 'memory' || memPly >= moves.length) return;
+    if (stage !== 'memory') return;
+    if (rewindTo !== null) {
+      const t = setTimeout(() => {
+        setMemPly(rewindTo);
+        setRewindTo(null);
+      }, 1200);
+      return () => clearTimeout(t);
+    }
+    if (memPly >= moves.length) return;
     if (moverAt(memPly) !== side) {
       const t = setTimeout(() => setMemPly((p) => p + 1), 500);
       return () => clearTimeout(t);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stage, memPly, side, moves.length]);
+  }, [stage, memPly, side, moves.length, rewindTo]);
 
-  const mine = moves.map((_, i) => i).filter((i) => moverAt(i) === side);
   const startMemory = () => {
     setStage('memory');
     setMemPly(0);
     setMisses(0);
     setMemNote(null);
     setSelected(null);
+    setPass('parts');
+    setPartMissed(false);
+    setRepeats(0);
+    setWholeMisses(0);
+    setRewindTo(null);
+  };
+
+  // After a correct move: finish the part (repeat it if it had a miss) or the parts pass.
+  const afterCorrect = (ply: number) => {
+    if (pass === 'whole') return;
+    const k = partOf(ply);
+    const part = parts[k];
+    if (ply !== part[part.length - 1]) return;
+    if (partMissed) {
+      setPartMissed(false);
+      setRepeats((r) => r + 1);
+      setMemNote(
+        parts.length > 1
+          ? `Part ${k + 1} again, until it is clean.`
+          : 'Again from the start, until it is clean.'
+      );
+      setRewindTo(part[0] - (part[0] > 0 && moverAt(part[0] - 1) !== side ? 1 : 0));
+    } else if (k === parts.length - 1 && repeats > 0 && parts.length > 1) {
+      setPass('whole');
+      setMemNote('Every part is clean. Now the whole line, once through.');
+      setRewindTo(0);
+    }
   };
 
   // ── Puzzles ──
@@ -289,10 +340,13 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
           setMemPly((p) => p + 1);
           setMisses(0);
           setMemNote(null);
+          afterCorrect(memPly);
           return true;
         }
         const n = misses + 1;
         setMisses(n);
+        if (pass === 'parts') setPartMissed(true);
+        else if (n === 1) setWholeMisses((w) => w + 1);
         setMemNote(
           n >= 2
             ? `The line plays ${moveLabel(memPly, moves[memPly])}.`
@@ -328,7 +382,23 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
       return false;
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [stage, memPly, misses, side, fens, moves, puzzle, puzzleFen, pStep, puzzleDone, pMisses]
+    [
+      stage,
+      memPly,
+      misses,
+      side,
+      fens,
+      moves,
+      puzzle,
+      puzzleFen,
+      pStep,
+      puzzleDone,
+      pMisses,
+      pass,
+      partMissed,
+      repeats,
+      parts,
+    ]
   );
 
   const onSquareClick = ({ square }: { square: string }) => {
@@ -370,7 +440,10 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
   }
   const orientation = stage === 'puzzles' && puzzleSide ? puzzleSide : side;
   const interactive =
-    (stage === 'memory' && memPly < moves.length && moverAt(memPly) === side) ||
+    (stage === 'memory' &&
+      rewindTo === null &&
+      memPly < moves.length &&
+      moverAt(memPly) === side) ||
     (stage === 'puzzles' && pStep % 2 === 1 && !puzzleDone);
   if (selected && interactive) highlight[selected] = { background: 'var(--accent-a50)' };
 
@@ -481,21 +554,43 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
 
         {stage === 'memory' && (
           <>
-            {memPly < moves.length ? (
+            {memPly < moves.length || rewindTo !== null ? (
               <p>
-                Play {sideName(side)}&apos;s moves. {opp} answers by the line.
+                {pass === 'whole' ? (
+                  <>The whole line, once through. {opp} answers by the line.</>
+                ) : (
+                  <>
+                    Play {sideName(side)}&apos;s moves. {opp} answers by the line.
+                  </>
+                )}
                 <span className={styles.muted}>
                   {' '}
-                  Move {mine.filter((i) => i < memPly).length + 1} of {mine.length}.
+                  {pass === 'parts' && parts.length > 1
+                    ? `Part ${partOf(mine.find((i) => i >= memPly) ?? mine[mine.length - 1]) + 1} of ${parts.length} · `
+                    : ''}
+                  Move {Math.min(mine.filter((i) => i < memPly).length + 1, mine.length)} of{' '}
+                  {mine.length}.
                 </span>
               </p>
             ) : (
               <p>
-                <strong>You played the line from memory.</strong>
+                <strong>
+                  {repeats === 0
+                    ? 'You played the line from memory, first time.'
+                    : wholeMisses === 0
+                      ? `You played the line from memory${parts.length > 1 ? ', once through' : ''}.`
+                      : `You played the line through, with ${wholeMisses} ${wholeMisses === 1 ? 'move' : 'moves'} to look at again.`}
+                </strong>
+                {repeats > 0 && (
+                  <span className={styles.muted}>
+                    {' '}
+                    {repeats} {repeats === 1 ? 'part' : 'parts'} repeated on the way.
+                  </span>
+                )}
               </p>
             )}
             {memNote && <p className={styles.note}>{memNote}</p>}
-            {memPly >= moves.length && (
+            {memPly >= moves.length && rewindTo === null && (
               <div className={styles.row}>
                 <button
                   type="button"
@@ -506,7 +601,7 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
                   {puzzleSet === null
                     ? 'Finding puzzles…'
                     : puzzles.length > 0
-                      ? `${puzzles.length} puzzles from games like this →`
+                      ? `${puzzles.length} puzzles from the ${variationOf(name)} →`
                       : 'Finish'}
                 </button>
                 <button type="button" className={styles.ghost} onClick={startMemory}>

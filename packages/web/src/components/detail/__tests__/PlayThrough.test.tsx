@@ -128,8 +128,67 @@ describe('PlayThrough (experiment prototype)', () => {
     expect(drop('c7', 'c6')).toBe(true);
     await tick(600);
     expect(drop('d7', 'd5')).toBe(true);
+    // A miss means the part again, from the start, until it is clean.
+    expect(screen.getByText('Again from the start, until it is clean.')).toBeTruthy();
+    await tick(1800);
+    expect(drop('c7', 'c6')).toBe(true);
+    await tick(600);
+    expect(drop('d7', 'd5')).toBe(true);
     await tick(600);
     expect(screen.getByText('You played the line from memory.')).toBeTruthy();
+    expect(screen.getByText(/1 part repeated on the way/)).toBeTruthy();
+  });
+
+  it('repeats only the part with a miss, then plays the whole line once through', async () => {
+    const moves = ['e4', 'e5', 'Nf3', 'Nc6', 'Bc4', 'Bc5', 'c3', 'Nf6', 'd4', 'exd4'];
+    const white = [
+      ['e2', 'e4'],
+      ['g1', 'f3'],
+      ['f1', 'c4'],
+      ['c2', 'c3'],
+      ['d2', 'd4'],
+    ];
+    await mount('Italian Game: Center Attack', fensOf(moves)[10], moves);
+    await watchToTheEnd();
+    await tick(6000); // ten plies take longer than the Caro's five
+    fireEvent.click(screen.getByRole('button', { name: /Your turn/ }));
+    expect(screen.getByText(/Part 1 of 2 · Move 1 of 5/)).toBeTruthy();
+    for (const [f, t] of white.slice(0, 3)) {
+      expect(drop(f, t)).toBe(true);
+      await tick(600);
+    }
+    expect(screen.getByText(/Part 2 of 2 · Move 4 of 5/)).toBeTruthy();
+    expect(drop('d2', 'd3')).toBe(false); // the miss
+    expect(drop('c2', 'c3')).toBe(true);
+    await tick(600);
+    expect(drop('d2', 'd4')).toBe(true);
+    expect(screen.getByText('Part 2 again, until it is clean.')).toBeTruthy();
+    await tick(1800); // back to the position before 2...Nc6, which replays
+    expect(position).toBe(fensOf(moves)[4]);
+    for (const [f, t] of white.slice(2)) {
+      expect(drop(f, t)).toBe(true);
+      await tick(600);
+    }
+    expect(screen.getByText('Every part is clean. Now the whole line, once through.')).toBeTruthy();
+    await tick(1800);
+    expect(position).toBe(fensOf(moves)[0]);
+    for (const [f, t] of white) {
+      expect(drop(f, t)).toBe(true);
+      await tick(600);
+    }
+    expect(screen.getByText('You played the line from memory, once through.')).toBeTruthy();
+  });
+
+  it('ends at once through when the first pass is clean', async () => {
+    await mount('Caro-Kann Defense: Advance Variation', CARO_FEN, CARO);
+    await watchToTheEnd();
+    fireEvent.click(screen.getByRole('button', { name: /Your turn/ }));
+    await tick(600);
+    drop('c7', 'c6');
+    await tick(600);
+    drop('d7', 'd5');
+    await tick(600);
+    expect(screen.getByText('You played the line from memory, first time.')).toBeTruthy();
   });
 
   it('runs the variation puzzles after memory and counts the solved ones', async () => {
@@ -142,7 +201,7 @@ describe('PlayThrough (experiment prototype)', () => {
     await tick(600);
     drop('d7', 'd5');
     await tick(600);
-    fireEvent.click(screen.getByRole('button', { name: /3 puzzles from games like this/ }));
+    fireEvent.click(screen.getByRole('button', { name: /3 puzzles from the Advance Variation/ }));
     for (const p of puzzles) {
       await tick(900);
       expect(screen.getByText(/The last move was a mistake/)).toBeTruthy();

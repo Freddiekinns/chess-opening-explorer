@@ -41,6 +41,7 @@ import { levelLabel, type StyleProfile } from '../lib/styleProfile';
 import type { TreeContext, TreeNode } from '../hooks/useOpeningTree';
 import { buildOpeningDescription, SITE_NAME } from '../lib/siteConfig';
 import { trackEvent } from '../lib/analytics';
+import PlayThrough from '../components/detail/PlayThrough';
 
 // Use ChessOpening type from shared
 type Opening = ChessOpening & {
@@ -119,6 +120,13 @@ const OpeningDetailPage: React.FC = () => {
   const { fen } = useParams<{ fen: string }>();
   // The middleware's content for this URL, if this is the visit's first page.
   const prerender = prerenderFor(useLocation().pathname);
+  // Experiment prototype (Gate B): unlinked. On by default on Vercel previews,
+  // whose protection breaks query-string URLs to opening pages; elsewhere only
+  // via ?lab=playthrough.
+  const labPlayThrough =
+    new URLSearchParams(useLocation().search).get('lab') === 'playthrough' ||
+    window.location.hostname.endsWith('.vercel.app');
+  const [playThroughOpen, setPlayThroughOpen] = useState(true);
   const [opening, setOpening] = useState<Opening | null>(null);
   const [videos, setVideos] = useState<Video[]>([]);
   const [game, setGame] = useState(new Chess());
@@ -1020,6 +1028,16 @@ const OpeningDetailPage: React.FC = () => {
 
   return (
     <div className="detail-page-body">
+      {labPlayThrough && playThroughOpen && opening?.moves && (
+        <PlayThrough
+          key={opening.fen}
+          name={opening.name}
+          fen={opening.fen}
+          moves={getMovesList()}
+          band={myLevel}
+          onClose={() => setPlayThroughOpen(false)}
+        />
+      )}
       <title>{seoTitle}</title>
       <meta name="description" content={seoDescription} />
       <meta property="og:title" content={seoTitle} />

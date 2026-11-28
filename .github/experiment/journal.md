@@ -43,7 +43,9 @@ Tested:
   questions); Stockfish's best refused in 38 positions (within 15 cp now
   counts); sibling puzzles on the Fried Liver, Traxler and Maróczy (the
   reachability rule).
-- **Per band** (data only, no push): `spikes/16`, Per band.
+- **Per band** (data only, no push): the step holds at every level. Pages and
+  questions: u1400 250/267, 1400 279/309, 1800 272/290, 2200 334/348. Of 214 new
+  position+reply pairs, 202 are sound (`spikes/16`, Per band).
 
 Killed / promoted: 21 is promising and in the prototype; 20, 22 and 26 are in
 the prototype. The night 10 puzzle selection is replaced. The "castle" and
@@ -76,6 +78,13 @@ building it needs a fourth build or waits on the owner's verdict on 21 (question
 
 Checkpoint: past ~80 main calls I went on, because the critic's four findings
 were fixable tonight and the owner would hit the first one in ten seconds.
+
+Stopped because: what is left needs the owner (questions 8 and 9) or a fourth
+build (the per-band file in the component).
+
+Cost: 01:01–02:17 UTC (76 minutes; ~35 of them engine and parquet runs). Main
+tool calls ~145. Subagents 3, ~163k tokens: Haiku verifier ×2 (~29k), Opus
+critic, high (~134k). Web: Hugging Face (3 parquet downloads), the GitHub API.
 
 ## Night 10 — 2026-11-27 — Gate A passed; the play-through is built as a Gate B prototype on PR #252
 

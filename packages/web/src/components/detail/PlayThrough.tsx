@@ -15,9 +15,9 @@ type Side = 'white' | 'black';
 type LineBands = { fen: string; bands: Record<string, ExplorerResult | null> | null };
 type Puzzle = { id: string; fen: string; moves: string[]; rating: number };
 type Stage = 'watch' | 'memory' | 'branches' | 'puzzles' | 'done';
-// A common opponent move off the line, and the learner's reply (most played at 1400 and within
-// 50 cp of Stockfish's best). `common`: other replies 10%+ play that the engine also accepts;
-// `ok`: every move within 50 cp, playable but not what players at this level choose.
+// A common opponent move off the line at 1400, and the learner's reply (most played at 1400 and
+// within 50 cp of Stockfish's best). Found: the reply, `common` (other replies in 10%+ of games
+// that the engine accepts) or `top` (within 15 cp of the engine's best). `ok`: within 50 cp.
 type Branch = {
   ply: number;
   dev: string;
@@ -25,6 +25,7 @@ type Branch = {
   reply: string;
   replyShare: number;
   common: string[];
+  top: string[];
   ok: string[];
 };
 
@@ -284,7 +285,8 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stage, branchSet, fen]);
-  const branches = branchSet && branchSet.side === side ? branchSet.items : [];
+  // Built from the 1400 band only, so shown only at that level (night 11 critic).
+  const branches = branchSet && branchSet.side === side && level === '1400' ? branchSet.items : [];
   const [bIndex, setBIndex] = useState(0);
   const [bShown, setBShown] = useState(false);
   const [bMove, setBMove] = useState<string | null>(null);
@@ -424,7 +426,7 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
           n >= 2
             ? `The line plays ${moveLabel(memPly, moves[memPly])}.`
             : share >= 0.05
-              ? `${played.san} is played by ${pct(share)} at your level, but it is another line. Try again.`
+              ? `${played.san} is played in ${pct(share)} of games here at your level, but it is another line. Try again.`
               : `${played.san} is not this line. Try again.`
         );
         return false;
@@ -437,14 +439,19 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
         } catch {
           return false;
         }
-        const top = `${moveLabel(branch.ply + 1, branch.reply)} (${pct(branch.replyShare)} of players at your level)`;
-        if (played.san === branch.reply || branch.common.includes(played.san)) {
+        const mv = moveLabel(branch.ply + 1, branch.reply);
+        const sh = pct(branch.replyShare);
+        const found =
+          played.san === branch.reply ||
+          branch.common.includes(played.san) ||
+          branch.top.includes(played.san);
+        if (found) {
           setBMove(played.san);
           setBGood((n) => n + 1);
           setBNote(
             played.san === branch.reply
-              ? `Yes. ${top}, and the engine agrees.`
-              : `Good too: a common choice, and the engine agrees. Most play ${top}.`
+              ? `Yes. ${mv} is played in ${sh} of games here at your level, and the engine rates it sound.`
+              : `Good: the engine rates it sound. Most games here at your level go ${mv} (${sh}).`
           );
           return true;
         }
@@ -452,11 +459,11 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
         setBMisses(n);
         if (n >= 2) {
           setBMove(branch.reply);
-          setBNote(`The move here is ${top}.`);
+          setBNote(`The move here is ${mv}, played in ${sh} of games here at your level.`);
         } else
           setBNote(
             branch.ok.includes(played.san)
-              ? `${played.san} is playable, the engine says, but few players at your level choose it. Try again.`
+              ? `${played.san} is playable, the engine says, but it is rare here at your level. Try again.`
               : `The engine rates ${played.san} clearly lower here. Try again.`
           );
         return false;
@@ -722,6 +729,26 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
                 )}
               </p>
             )}
+            {pass === 'parts' &&
+              parts.length > 1 &&
+              (memPly < moves.length || rewindTo !== null) && (
+                <p className={styles.muted} aria-label="Parts">
+                  {parts.map((part, k) => {
+                    const cur = partOf(mine.find((i) => i >= memPly) ?? mine[mine.length - 1]);
+                    const label = part
+                      .map((i) => (i === part[0] ? moveLabel(i, '…') : ''))
+                      .filter(Boolean)
+                      .join('');
+                    return (
+                      <span key={k}>
+                        {k > 0 && ' · '}
+                        {k < cur ? '✓ ' : k === cur ? '▸ ' : ''}
+                        Part {k + 1} (from {label.replace('…', '')})
+                      </span>
+                    );
+                  })}
+                </p>
+              )}
             {memNote && <p className={styles.note}>{memNote}</p>}
             {memPly >= moves.length && rewindTo === null && (
               <div className={styles.row}>
@@ -764,7 +791,7 @@ export default function PlayThrough({ name, fen, moves, band, onClose }: Props) 
                   {opp} leaves the line: {moveLabel(branch.ply, branch.dev)} instead of{' '}
                   {moveLabel(branch.ply, moves[branch.ply])}.
                 </strong>{' '}
-                {pct(branch.devShare)} of {opp} players at your level play it.
+                It is played in {pct(branch.devShare)} of games here at your level.
                 {!bDone && ' What do you play?'}
               </p>
             )}

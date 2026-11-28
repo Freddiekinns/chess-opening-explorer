@@ -71,6 +71,7 @@ const BRANCHES = {
         reply: 'd5',
         replyShare: 0.6,
         common: [],
+        top: ['d5'],
         ok: ['d5', 'g6'],
       },
     ],
@@ -212,7 +213,9 @@ describe('PlayThrough (experiment prototype)', () => {
     fireEvent.click(screen.getByRole('button', { name: /Your turn/ }));
     expect(drop('a2', 'a3')).toBe(false); // 2,000 of 10,000 games in the mock
     expect(
-      screen.getByText('a3 is played by 20% at your level, but it is another line. Try again.')
+      screen.getByText(
+        'a3 is played in 20% of games here at your level, but it is another line. Try again.'
+      )
     ).toBeTruthy();
     expect(drop('h2', 'h3')).toBe(false);
     expect(screen.getByText('The line plays 1.e4.')).toBeTruthy();
@@ -247,12 +250,14 @@ describe('PlayThrough (experiment prototype)', () => {
     expect(drop('g7', 'g6')).toBe(false);
     expect(
       screen.getByText(
-        'g6 is playable, the engine says, but few players at your level choose it. Try again.'
+        'g6 is playable, the engine says, but it is rare here at your level. Try again.'
       )
     ).toBeTruthy();
     expect(drop('d7', 'd5')).toBe(true);
     expect(
-      screen.getByText('Yes. 2...d5 (60% of players at your level), and the engine agrees.')
+      screen.getByText(
+        'Yes. 2...d5 is played in 60% of games here at your level, and the engine rates it sound.'
+      )
     ).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: '3 puzzles →' }));
     for (const p of puzzles) {

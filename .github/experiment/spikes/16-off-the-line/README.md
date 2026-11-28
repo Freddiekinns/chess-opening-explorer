@@ -23,8 +23,8 @@ are the content.
    Gambit reply 4.Bc4 in a ...g5 line, −100 against −42.
 4. `engine-all.js`: every legal reply at depth 14 gives `ok` (within 50 cp,
    median 5 moves).
-5. `branches.js`: up to 3 per page, non-trivial replies first (castling and
-   captures last), then in line order. This gives **519 pages, 610 questions**.
+5. `branches.js`: up to 3 per page, in line order (the easy ones are dropped
+   since the critic; see the end). This gives **519 pages, 610 questions**.
    331 questions also have another reply, played 10%+ and engine-accepted,
    that counts as found.
 
@@ -77,3 +77,29 @@ In 643 of 788 learner positions with data (82%), another move is played by 10%+
 at 1400. In 430 it is 20%+, and in 222 it is played **more** than the line's
 move. A miss is often a real move, so the first-miss message now says so:
 "a3 is played by 20% at your level, but it is another line."
+
+## After the critic (same night)
+
+The critic (Opus, high, `critic/`) re-ran the numbers. The shares match
+`bandsFor` at 1400 to within 0.6 points on all 610 items, and it found no wrong
+reply in ~60 read. It also found four problems, all fixed:
+
+1. **Built from 1400 only, but shown at any level.** At 1800, 345 shares were 5+
+   points off and 54 deviations fell under 10%. The step is now shown only when
+   the level is 1400 (the default). The fix that keeps it at every level is a
+   file per band: next.
+2. **Half the questions were easy.** 330 of 610 were easy: one acceptable move,
+   90%+ agreement, the learner's own next line move, castling, or a recapture.
+   All of those are dropped, leaving **279 pages and 309 questions**. The KID
+   Orthodox loses its two "castle" questions.
+3. **Stockfish's best was answered "Try again"** in 38 of 223 positions.
+   `engine-cp.js` now keeps each move's loss at depth 14, and any move within 15
+   cp of the best counts as found (`top`). 122 of 309 items gained a move that
+   was refused before.
+4. **Wording.** "N% of White players" became "played in N% of games here at
+   your level". "The engine agrees" became "the engine rates it sound": the
+   check is within 50 cp, not first choice.
+
+Coverage after the fixes (1,592 popular lines): off the line **279**, near
+puzzles **364**, either **553**, both **90**. Night 10 had 524 lines with three
+loosely fitting puzzles.

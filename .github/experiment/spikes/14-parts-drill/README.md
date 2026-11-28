@@ -38,7 +38,10 @@ updated; 12 of 12 pass.
 
 ## Where it is weak
 
-- The learner cannot see where a part ends. A row of part markers (clean,
-  repeated, to come) would help; not built.
+- Part markers were added after the critic: "✓ Part 1 (from 1.) · ▸ Part 2
+  (from 3.)". The moves themselves stay hidden.
+- Misses in the once-through pass give hints but do not loop again (the critic:
+  "until each sequence is right" stops there). Deliberate, so the drill ends;
+  the owner may want otherwise.
 - During the 1.2 s before a rewind the counter already reads the next move.
 - On a 3-move line, "part" = the whole line: the drill is "again until clean".

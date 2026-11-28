@@ -55,3 +55,24 @@ Examples (top 3, moved kept / board kept / moves after the line):
   tactics.
 - KID Orthodox: EjprU 0.92 / 0.94 / +1. Night 10 had only 83 middlegame
   puzzles here.
+
+## After the critic (same night)
+
+The critic found 48 of 1,012 learner-side puzzles on 34 pages that could not
+come from the line's end. On the Fried Liver page, all three were copies of one
+6.Qf3 position with the knight still on g5. Traxler and Maróczy pages had
+siblings too. `near.mjs` now also requires a puzzle to be **reachable** from the
+line's end:
+
+- every pawn the line moved is still there or further up its file;
+- no pawn is back on a home square the line emptied, and neither side has more
+  pawns than at the line's end;
+- no minor piece the line developed is back home;
+- no castling right comes back;
+- the line's last move still stands if the puzzle starts within a move;
+- no position is used twice.
+
+New coverage for the learner's default side: **364 lines with at least one
+puzzle, 194 with three**. The Fried Liver keeps one (f7YHg) and the Traxler
+Knight Sacrifice one (EUUJ9, ...Bxf2+ Kf1). Polerio and French Exchange keep all
+three.

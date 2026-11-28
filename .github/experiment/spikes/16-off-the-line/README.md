@@ -1,0 +1,78 @@
+# Spike 16 — "they leave the line" (night 11, idea 21)
+
+The owner asked for a "clever way" to make the last step connected to the
+opening. A puzzle from someone else's game is connected only by a filter
+(`spikes/15`). This step is connected by construction. It replays the line, but
+at a point where your opponents at your level often play something else, the
+opponent plays that move, and you find the reply. It turns the watch step's
+"White has a choice here" into a question. Night 8's finding was that the splits
+are the content.
+
+## The rule (scripts here, run in order)
+
+1. `dev-cover.js`: for each of the 1,592 popular lines, with the learner's side
+   from the prototype's own `defaultSide` rule, list each opponent move off the
+   line with 10%+ of games at 1400 and 500+ games. That gives 9,995 moves. For
+   8,480 of them the shards hold the next position (300+ games).
+2. `dev-refine.js`: keep moves from ply 4 on (the opening is set) whose
+   position is in the same family or unnamed. 1,630 are kept, all of them named
+   positions: unnamed ones have no shard data. 812 have a **clear** reply (45%+
+   of games and 1.5× the next move).
+3. `engine.js`: Stockfish 16, depth 16, MultiPV 5. **279 of 287** clear replies
+   are within 50 cp of best. The 8 that fail are dropped. Example: the Bishop's
+   Gambit reply 4.Bc4 in a ...g5 line, −100 against −42.
+4. `engine-all.js`: every legal reply at depth 14 gives `ok` (within 50 cp,
+   median 5 moves).
+5. `branches.js`: up to 3 per page, non-trivial replies first (castling and
+   captures last), then in line order. This gives **519 pages, 610 questions**.
+   331 questions also have another reply, played 10%+ and engine-accepted,
+   that counts as found.
+
+What the learner sees: "White leaves the line: 4.d3 instead of 4.Ng5. 34% of
+White players at your level play it. What do you play?"
+
+- The most played reply, or another common reply the engine accepts: "Yes" or
+  "Good too".
+- A move the engine accepts but few people play: "playable, the engine says, but
+  few players at your level choose it. Try again."
+- Anything else: "the engine rates X clearly lower". The second miss names the
+  move.
+
+## Coverage
+
+| Of 1,592 popular lines                     | Lines |
+| ------------------------------------------ | ----- |
+| off-the-line questions                     | 519   |
+| near puzzles for the learner's side (15)   | 428   |
+| either (a Test step exists)                | 760   |
+| both                                       | 187   |
+| night 10's loosely fitting puzzles (3 for) | 524   |
+
+## Walked at 390 px (real app, `test-walk.js`)
+
+- **Polerio (Black):** 4.d3 instead of 4.Ng5 (34%), answered 4...Bc5 (49%).
+  Rb8 got "playable but few choose it". Then 3 near puzzles, the first a
+  6.d3 Polerio game with the knight on a5 and the pawn on d5. Screenshots 2–5.
+- **KID Orthodox (Black):** 4.Nf3 (22%) and 5.f4 (15%, the Four Pawns), both
+  answered by castling. Right, but it teaches little.
+- No page errors.
+
+## Where it is weak
+
+- **Trivial answers.** Of 279 sound positions, 22 are answered by castling and
+  54 by a capture (mostly recaptures). The KID gets only castling.
+- **Popular is not the same as best.** The engine filter (50 cp) keeps out
+  unsound replies, but "most played at 1400" picks the answer among sound ones.
+  The copy says "most players", not "best".
+- **Flagship lines miss out.** The Center Attack and the Najdorf have no clear
+  reply at any split, so the Center Attack's Test is 1 near puzzle and the
+  Najdorf's is 3 puzzles.
+- Shares are of all games at the 1400 band (Lichess rated games, ~1400–1800),
+  the same base as the watch step.
+
+## Idea 26, measured (`miss.js`)
+
+In 643 of 788 learner positions with data (82%), another move is played by 10%+
+at 1400. In 430 it is 20%+, and in 222 it is played **more** than the line's
+move. A miss is often a real move, so the first-miss message now says so:
+"a3 is played by 20% at your level, but it is another line."

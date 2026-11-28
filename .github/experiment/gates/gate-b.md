@@ -1,5 +1,66 @@
 # Gate B — the play-through prototype
 
+## Revision 1 — night 11 (2026-11-28), after your phone test
+
+You said the memory step is good but should repeat the parts you get wrong, then
+go once through. You said the puzzles are interesting but not connected to the
+opening, unless there is "a clever way". Both are now on the same preview (PR
+#252, updated tonight). On the `vercel.app` address, Play through opens on any
+opening page without `?lab=`.
+
+Try these three (Black, Black, White) at the Intermediate level:
+
+- French Exchange: `/opening/rnbqkbnr%2Fppp2ppp%2F8%2F3p4%2F3P4%2F5N2%2FPPP2PPP%2FRNBQKB1R%20b%20KQkq%20-%201%204`
+- Two Knights, Polerio: `/opening/r1bqkb1r%2Fppp2ppp%2F5n2%2Fn2Pp1N1%2F2B5%2F8%2FPPPP1PPP%2FRNBQK2R%20w%20KQkq%20-%201%206`
+- Italian, Center Attack (to see the parts drill on 5 moves):
+  `/opening/r1bqk2r%2Fpppp1ppp%2F2n2n2%2F2b5%2F2BpP3%2F2P2N2%2FPP3PPP%2FRNBQK2R%20w%20KQkq%20-%200%206`
+
+**1. Memory in parts** (`spikes/14`). Your moves come in parts of two. A part
+with a miss repeats from its start until it is clean, then you play the whole
+line once through. A clean first pass ends at once. Part markers show where you
+are. A miss that many players make now says so: "d3 is played in 21% of games
+here at your level, but it is another line."
+
+**2. The clever way: "they leave the line"** (`spikes/16`). The Test step
+replays your line, but where your opponents often play something else, they do,
+and you find the reply. French Exchange: "White leaves the line: 3.e5 instead of
+3.exd5. It is played in 42% of games here at your level. What do you play?" The
+answer is 3...c5, the Advance French's key idea. Answers are the most played
+reply at 1400 that Stockfish rates sound. A move within 15 cp of the engine's
+best also counts. Easy ones are dropped: recaptures, castling, a move already in
+your line, a single possible answer. **279 lines** have one.
+
+**3. Puzzles that still look like the opening** (`spikes/15`). Night 10's
+puzzles kept a median 69% of the line's board and started 5 moves later. That
+is what you saw. Now a puzzle must keep the pieces your line moved and be
+reachable from the line's end (pawns, developed pieces, castling rights). It
+starts a median 2 moves after the line. **364 lines** have at least one.
+
+Together, 553 of 1,592 popular lines have a Test step, up from 524 with loose
+puzzles. The others end after memory.
+
+**An independent critic** (Opus) checked all this before you. It found four
+real problems, and all are fixed:
+
+- the shares were true only at 1400 (the step now shows only at 1400);
+- half the questions were trivial;
+- Stockfish's own first choice was refused;
+- the Fried Liver page had three copies of a sibling-line puzzle.
+
+**Still weak:** the Center Attack and the Najdorf have no "off the line" question
+(no clear reply at any split), and the step needs a file per level before it can
+show above or below 1400.
+
+**Questions** (answer in #249):
+
+- **8.** Does "they leave the line" feel like the connected test you meant? If
+  yes, it goes into the Gate C plan, built per level. If not, the Test step is
+  near puzzles only.
+- **9.** Should a miss in the final once-through send you back to that part
+  again (stricter), or end with "1 move to look at again" (now)?
+
+---
+
 Night 10 (2026-11-27). You said yes to board-first at Gate A. This is the
 clickable prototype. It is built in the real app on draft PR #252, so the Vercel
 preview runs it on your phone. **Please don't merge it**: Gate C will come back

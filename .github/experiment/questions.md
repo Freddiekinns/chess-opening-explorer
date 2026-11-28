@@ -5,7 +5,16 @@ not answered by the next night. Answered ones move to **Decided** with the date.
 
 ## Open
 
+8. **Does "they leave the line" feel like the connected test you meant?**
+   (`gates/gate-b.md`, Revision 1; PR #252's preview.) _Meanwhile: nights build
+   it per band in the container and keep the Test step as is; nothing goes to
+   production._
+
+9. **A miss in the final once-through: back to that part again, or end with "1
+   move to look at again"?** _Default: end (as built)._
+
 6. **Gate B: does the play-through feel like a study session on your phone?**
+   Partly answered 2026-11-27 (below, Decided); Revision 1 asks again.
    (`gates/gate-b.md`, draft PR #252's preview, `?lab=playthrough`). Try two
    lines, one you play. _Meanwhile: nights test the return reasons (a) next line
    and (b) fresh puzzles as spikes; nothing goes to production._
@@ -15,6 +24,17 @@ not answered by the next night. Answered ones move to **Decided** with the date.
    brings someone back. _Default: not built; (a) and (b) only._
 
 ## Decided
+
+- 2026-11-27 23:15 UTC — **Gate B, first answer.** "It's a fun feature, the
+  memorisation is good." Better if a part you get wrong repeats until right,
+  "then once through". The puzzles are "interesting but not necessarily
+  connected": the board must clearly still be the opening, "unless we can come
+  up with a clever way". Also: "We can further explore these opening drills as
+  desired", and weekly usage was 18% after night 10. Night 11 built the parts
+  drill, "they leave the line" and near puzzles (`gates/gate-b.md`, Revision 1).
+  A local session also made the preview playable (commit d616d3d: the play-
+  through opens by default on `*.vercel.app`; the middleware cause of the blank
+  `?lab=` page is unconfirmed). (Owner, #249.)
 
 - 2026-11-26 09:24 UTC — **Gate A: yes to board-first; Stockfish and the Lichess
   puzzles allowed.** "Happy for a board first approach. If it doesn't work we

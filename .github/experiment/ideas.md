@@ -50,15 +50,23 @@ explore these opening drills… a fair few ideas". New drill ideas, untested
 unless a line below says otherwise:
 
 - **20. Memory in parts** — `in the prototype` (`spikes/14`). A part with a
-  miss repeats until clean, then the whole once through.
-- **21. They leave the line** — `testing`. Replay the line; at a split the
-  opponent plays their common alternative (10%+ at your level) instead; you
-  find the reply. Connected by construction: it is the watch step's "White has a
-  choice here", turned into a question. Riskiest: is there one right reply, and
-  is it sound?
-- **22. Puzzles that still look like the opening** — `testing`. Keep only
-  puzzles whose board keeps most of the line's end position (same pieces on the
-  same squares) and starts soon after it. Riskiest: enough survive.
+  miss repeats until clean, then the whole once through. 61% of popular lines
+  have only 3–4 learner moves, so parts of three would change nothing for them;
+  parts of two, error-driven, was built. Pushed to #252 for the owner.
+- **21. They leave the line** — `promising`, in the prototype (`spikes/16`).
+  Replay the line; at a split the opponent plays their common alternative (10%+
+  at your level) instead; you find the reply. Connected by construction.
+  Tested: a clear reply exists for 812 of 1,630 in-family deviations; 279 of 287
+  are within 50 cp of Stockfish's best; the critic read ~60 and found none
+  wrong. Broke on: triviality (330 of 610 easy, now dropped: 279 pages, 309
+  questions), band (true at 1400 only, now shown only there), the engine's own
+  best being refused (fixed). Next: a file per band; the owner's verdict
+  (question 8).
+- **22. Puzzles that still look like the opening** — `in the prototype`
+  (`spikes/15`). Night 10's puzzles kept a median 69% of the board and started
+  5 moves on; now moved pieces kept ≥0.75, board ≥0.8, reachable from the
+  line's end: 364 lines get one, 194 three, starting a median 2 moves on.
+  Broke on: siblings (Fried Liver, Traxler) until the reachability rule.
 - **23. Punish their common mistake, as a drill step** — `untested`. Night 9's
   140 engine-confirmed costly mistakes, where one lies in the line's subtree
   (mostly 1.e4 e5). Narrow coverage, but it is the most "opening" tactic there
@@ -69,7 +77,8 @@ unless a line below says otherwise:
 - **25. Line and its next line, mixed** — `untested`. After two lines, a final
   run where the opponent picks either (interleaving). Needs idea 1's "next line"
   (776 of 1,592 have one).
-- **26. The wrong move you are likely to play** — `untested`. When the learner
+- **26. The wrong move you are likely to play** — `in the prototype` (82% of
+  learner positions have a 10%+ alternative; 222 of 788 a more played one). When the learner
   misses, if their move is common at their level, say so with its share and
   score ("31% of players here play d3"), so a miss teaches the branch rather
   than only "not this line". Data is already on the page (line-bands). Risk:

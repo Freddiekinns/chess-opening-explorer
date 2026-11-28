@@ -1,39 +1,32 @@
 # Plan
 
-Phase: **Gate B, waiting on the owner's phone test** (Gate A passed 2026-11-26;
-prototype on draft PR #252, `gates/gate-b.md`). Previously: Discover, by testing
-(revised 2026-11-25). Gate A is a discussion the owner is offered once an ##
-Next
+Phase: **Gate B, Revision 1 waiting on the owner** (Gate A passed 2026-11-26;
+prototype on draft PR #252, `gates/gate-b.md`; first phone test 2026-11-27).
+Previously: Discover, by testing (revised 2026-11-25).
 
-**Night 11 (Monday 01:00 UTC; Friday is the week's last night).** Night 10 built
-the Gate B prototype (`spikes/13`, PR #252, `feat/exp-play-through`) and wrote
-`gates/gate-b.md`. Nothing goes to production before the owner's Gate B answer.
+## Next
 
-1. **Owner replies first:** Gate B questions 6 and 7 in `questions.md`.
-2. **Return reason, spiked** (the critic's first objection): (a) "next line"
-   after the end pause (776 of 1,592 lines have one; `spikes/13/next.js`) and
-   (b) rotating puzzles from the pool. Spike both in the container on top of
-   `feat/exp-play-through`; push to #252 only if the owner has not started
-   testing (ask first), else keep local with screenshots.
-3. **Puzzle fit, residual:** pawns and minor pieces cannot separate lines that
-   differ only in where a developed piece went (Polerio 5...Na5 vs Fritz 5...Nd4
-   both leave b8). A cheap extra check: the piece the line's last moves placed
-   must be on its square or have moved on (not on a square the sibling uses).
-   Measure on a sample before changing the file.
-4. **Gate C plan** once Gate B says yes: three small PRs (route, component
-   behind its flag, puzzle file + its generator under `tools/`), each with
-   tests. The generator becomes a documented data step (the owner allowed the
-   CC0 file); it must not live only in `spikes/`.
-5. Do not re-push #252 needlessly: every push builds a preview. **On the next
-   push, fix the button copy** "3 puzzles from games like this" → "3 puzzles
-   from the <variation>" (`spikes/13`: 14 of 36 fit the exact sub-line, 33 the
-   variation).
-6. `[local]` option for exact fit: export the 1914 puzzle games' moves from
-   lichess.org on the owner's machine (the cloud is refused), keep only puzzles
-   whose game passed through the page's position.
+**Night 12 (Tuesday 01:00 UTC).** Runs fall on Monday-to-Friday nights, at 01:00
+the morning after; Saturday 01:00 is Friday night, and the content routines own
+Sunday 19:00 to Monday 14:00. Night 11 answered the owner's Gate B reply with
+Revision 1 on PR #252: the parts drill, "they leave the line" and near puzzles
+(`gates/gate-b.md`).
 
-Decided 2026-11-26): safety net ~180 main calls, no time floor; finish the Next
-items you can do tonight (item 2 is one).
+1. **Owner replies first:** questions 8 and 9 (and 6, 7).
+2. **"Off the line" per band.** Night 11 measured the other bands (`spikes/16`,
+   Per band). Build the file per band and let the component pick the learner's
+   level. Push to #252 only together with an owner-requested change (each push
+   is a build).
+3. **Gate C plan** once Gate B says yes. It is three small PRs: the route; the
+   component behind its flag; the data files with their generators under
+   `tools/` (positions, engine and puzzle filter, documented as a data step,
+   since the owner allowed the CC0 file and Stockfish output). The generators
+   must not live only in `spikes/`.
+4. **Lines with no Test step** (1,039 of 1,592, including the Center Attack and
+   the Najdorf): is there a third connected test? Candidates are idea 23 (punish
+   the common mistake) and idea 25 (the line and its next line, mixed).
+5. `[local]` option for exact fit: export the 1914 puzzle games' moves from
+   lichess.org on the owner's machine (the cloud is refused).
 
 ## Later
 

@@ -30,16 +30,15 @@ forcing a learner who already knows the line through parts is friction. So (b):
 
 ## Walked at 390 px (Italian Center Attack, White, real app)
 
-`drill-walk.js`: part 1 clean, a miss in part 2 (4.d3), part 2 again from
-before 2...Nc6, clean; the whole line once through; done. No page errors.
-Screenshots 1–5 here. Code: `parts-drill.patch` (on top of
-`feat/exp-play-through`), with two new component tests and the old memory test
-updated; 12 of 12 pass.
+`drill-walk.js`: part 1 clean, a miss in part 2 (4.d3), part 2 again from before
+2...Nc6, clean; the whole line once through; done. No page errors. Screenshots
+1–5 here. Code: `parts-drill.patch` (on top of `feat/exp-play-through`), with
+two new component tests and the old memory test updated; 12 of 12 pass.
 
 ## Where it is weak
 
-- Part markers were added after the critic: "✓ Part 1 (from 1.) · ▸ Part 2
-  (from 3.)". The moves themselves stay hidden.
+- Part markers were added after the critic: "✓ Part 1 (from 1.) · ▸ Part 2 (from
+  3.)". The moves themselves stay hidden.
 - Misses in the once-through pass give hints but do not loop again (the critic:
   "until each sequence is right" stops there). Deliberate, so the drill ends;
   the owner may want otherwise.

@@ -2,6 +2,81 @@
 
 Newest first. Template in `operating.md`.
 
+## Night 11 — 2026-11-28 — the owner's Gate B reply answered: parts drill, "they leave the line", puzzles that look like the opening
+
+Run date: Saturday 01:00 UTC. That is Friday night: runs are Monday-to-Friday
+nights at 01:00 the next morning, and the content routines own Sunday 19:00 to
+Monday 14:00. Night 10's plan said "Monday 01:00", which falls inside the
+content window, so I read it as Tuesday. This is my reading, not the owner's
+(see Assumed).
+
+Owner (#249, 2026-11-27 23:15): "the memorisation is good". Better if a part you
+get wrong repeats until right, then once through. The puzzles are "interesting
+but not necessarily connected", unless "a clever way" is found. "We can further
+explore these opening drills as desired." Weekly usage was 18%. Copied to
+`questions.md`.
+
+Plan: build what the owner asked for (parts). Test two "clever ways" to connect
+the last step to the opening where each would break: a stricter puzzle filter
+(22) and a new step where the opponent leaves the line (21). Widen the drill
+ideas. Result that would change my mind: too few lines covered, or answers that
+are trivial or unsound.
+
+Tested:
+
+- **Parts drill** (`spikes/14`): 61% of popular lines have 3–4 learner moves, so
+  parts of three would change nothing. Built error-driven parts of two: a part
+  with a miss repeats until clean, then once through. Walked at 390 px; part
+  markers added after the critic.
+- **Near puzzles** (`spikes/15`): night 10's puzzles kept a median 69% of the
+  line's board and started 5 moves on, which is what the owner saw. Ranking by
+  the line's moved pieces, plus a reachability rule (pawns, developed minors,
+  castling rights, the last move, dedupe), leaves 364 lines with a puzzle (194
+  with three), starting a median 2 moves on.
+- **They leave the line** (`spikes/16`): of 9,995 opponent moves off the line
+  (10%+ at 1400), 1,630 are in-family from ply 4. 812 have a clear reply, and
+  279 of 287 are sound by Stockfish 16. A misses-named check (idea 26): 82% of
+  learner positions have a 10%+ alternative.
+- **Critic (Opus, high)**: no wrong reply in ~60 read; shares exact at 1400. It
+  found four problems, all fixed tonight: shares true only at 1400 (now shown
+  only there); 330 of 610 questions easy (dropped, leaving 279 pages and 309
+  questions); Stockfish's best refused in 38 positions (within 15 cp now
+  counts); sibling puzzles on the Fried Liver, Traxler and Maróczy (the
+  reachability rule).
+- **Per band** (data only, no push): `spikes/16`, Per band.
+
+Killed / promoted: 21 is promising and in the prototype; 20, 22 and 26 are in
+the prototype. The night 10 puzzle selection is replaced. The "castle" and
+recapture questions are dropped.
+
+New ideas: 20–27 in `ideas.md` (drills: parts, off the line, near puzzles,
+punish the mistake, the other side, mixed lines, the likely miss, pick from
+three).
+
+Assumed: Saturday 01:00 is a run night (above). Parts of two. The step is shown
+at 1400 only until a per-band file exists. A miss in the once-through does not
+loop (question 9).
+
+Installed in the container only: Stockfish 16 (apt), chess.js 1.0.0 and
+hyparquet 1.8.0 (scratchpad npm), and the Lichess puzzle parquet files (885 MB,
+Hugging Face). `package.json` and the lockfile are unchanged.
+
+Builds: three Vercel builds, one more than the owner's "two a night". There was
+a state checkpoint push (the Stop hook asked for it mid-run), PR #252 once, and
+the end push. Next time the checkpoint should wait until #252 is pushed, or fold
+into the end push.
+
+PR #252 was updated by fast-forward (commits ea3b865d and two before it).
+`test:all` (1,279), `build` and `format:check` pass (Haiku verifier, twice). CI
+was not watched: there are no subscriptions (the AGENTS.md rule on wake-ups).
+
+Next: `plan.md`. Undone tonight: the per-band file in the component, because
+building it needs a fourth build or waits on the owner's verdict on 21 (question
+8). The data for it was measured tonight.
+
+Checkpoint: past ~80 main calls I went on, because the critic's four findings
+were fixable tonight and the owner would hit the first one in ten seconds.
+
 ## Night 10 — 2026-11-27 — Gate A passed; the play-through is built as a Gate B prototype on PR #252
 
 Plan: answer the owner's Gate A reply first; test whether the puzzles fit d4 and

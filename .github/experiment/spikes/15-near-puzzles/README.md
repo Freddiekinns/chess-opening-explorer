@@ -10,8 +10,8 @@ Two numbers per puzzle, against the line's end position:
 
 - **board kept**: the share of the end position's pieces on the same square in
   the puzzle's first position;
-- **moved pieces kept**: the same, counting only pieces the line moved (the
-  ones that make it this opening, not the rooks and king at home).
+- **moved pieces kept**: the same, counting only pieces the line moved (the ones
+  that make it this opening, not the rooks and king at home).
 
 Night 10's puzzle file (2,909 puzzles, the pawn rule `keptAll`): board kept
 median **0.69** (19% at 0.8+), moved pieces kept median **0.67** (40% at 0.75+),
@@ -53,8 +53,8 @@ Examples (top 3, moved kept / board kept / moves after the line):
 
 - Polerio: nXnCb 1.00 / 0.97 / +1, PZZZv 1.00 / 0.87 / +1. The Na5 line's own
   tactics.
-- KID Orthodox: EjprU 0.92 / 0.94 / +1. Night 10 had only 83 middlegame
-  puzzles here.
+- KID Orthodox: EjprU 0.92 / 0.94 / +1. Night 10 had only 83 middlegame puzzles
+  here.
 
 ## After the critic (same night)
 

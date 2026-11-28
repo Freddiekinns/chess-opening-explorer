@@ -10,8 +10,10 @@ opening page without `?lab=`.
 
 Try these three (Black, Black, White) at the Intermediate level:
 
-- French Exchange: `/opening/rnbqkbnr%2Fppp2ppp%2F8%2F3p4%2F3P4%2F5N2%2FPPP2PPP%2FRNBQKB1R%20b%20KQkq%20-%201%204`
-- Two Knights, Polerio: `/opening/r1bqkb1r%2Fppp2ppp%2F5n2%2Fn2Pp1N1%2F2B5%2F8%2FPPPP1PPP%2FRNBQK2R%20w%20KQkq%20-%201%206`
+- French Exchange:
+  `/opening/rnbqkbnr%2Fppp2ppp%2F8%2F3p4%2F3P4%2F5N2%2FPPP2PPP%2FRNBQKB1R%20b%20KQkq%20-%201%204`
+- Two Knights, Polerio:
+  `/opening/r1bqkb1r%2Fppp2ppp%2F5n2%2Fn2Pp1N1%2F2B5%2F8%2FPPPP1PPP%2FRNBQK2R%20w%20KQkq%20-%201%206`
 - Italian, Center Attack (to see the parts drill on 5 moves):
   `/opening/r1bqk2r%2Fpppp1ppp%2F2n2n2%2F2b5%2F2BpP3%2F2P2N2%2FPP3PPP%2FRNBQK2R%20w%20KQkq%20-%200%206`
 
@@ -31,25 +33,25 @@ best also counts. Easy ones are dropped: recaptures, castling, a move already in
 your line, a single possible answer. **279 lines** have one.
 
 **3. Puzzles that still look like the opening** (`spikes/15`). Night 10's
-puzzles kept a median 69% of the line's board and started 5 moves later. That
-is what you saw. Now a puzzle must keep the pieces your line moved and be
-reachable from the line's end (pawns, developed pieces, castling rights). It
-starts a median 2 moves after the line. **364 lines** have at least one.
+puzzles kept a median 69% of the line's board and started 5 moves later. That is
+what you saw. Now a puzzle must keep the pieces your line moved and be reachable
+from the line's end (pawns, developed pieces, castling rights). It starts a
+median 2 moves after the line. **364 lines** have at least one.
 
 Together, 553 of 1,592 popular lines have a Test step, up from 524 with loose
 puzzles. The others end after memory.
 
-**An independent critic** (Opus) checked all this before you. It found four
-real problems, and all are fixed:
+**An independent critic** (Opus) checked all this before you. It found four real
+problems, and all are fixed:
 
 - the shares were true only at 1400 (the step now shows only at 1400);
 - half the questions were trivial;
 - Stockfish's own first choice was refused;
 - the Fried Liver page had three copies of a sibling-line puzzle.
 
-**Still weak:** the Center Attack and the Najdorf have no "off the line" question
-(no clear reply at any split), and the step needs a file per level before it can
-show above or below 1400.
+**Still weak:** the Center Attack and the Najdorf have no "off the line"
+question (no clear reply at any split), and the step needs a file per level
+before it can show above or below 1400.
 
 **Questions** (answer in #249):
 

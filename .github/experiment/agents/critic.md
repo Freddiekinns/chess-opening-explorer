@@ -20,8 +20,8 @@ Written night 11, after the third time the same brief was written (nights 8, 10,
   3. Check every claim shown to a learner against the never-fabricate rule in
      `AGENTS.md`: is each percentage of all games, at the stated level, and is
      each "better"/"the engine agrees" actually checked?
-  4. Ask whether the work answers what the owner asked, or only something
-     near it.
+  4. Ask whether the work answers what the owner asked, or only something near
+     it.
 - **What it returns (under 600 words):** a ranked list of problems, each with
   its evidence (the command or record) and the smallest fix; then what holds up;
   then the one objection the owner is most likely to raise first.
